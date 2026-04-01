@@ -1,0 +1,49 @@
+{
+  "brand": "ServiceCore",
+  "company": "Servicecore Bilgi Teknolojileri A.S.",
+  "language": "tr",
+  "founded": 2000,
+  "origin": "Educore'dan dogdu, 25 yillik ITSM deneyimi",
+  "market": "Kurumsal ITSM / ESM platformu",
+
+  "tone": {
+    "primary": "profesyonel, guven veren, uzman",
+    "secondary": "yenilikci, cozum odakli",
+    "avoid": "agresif satis dili, abartili vaatler, teknik jargon yogunlugu"
+  },
+
+  "messaging": {
+    "hero": "ITSM ve Proje Yonetimini tek platformda kusursuzca birlestirin",
+    "value": "Karmasik surecleri otomatiklestirin",
+    "differentiator": "24+ modul ile ITIL4 sureclerine en kapsamli cozum",
+    "trust": "Turkiye'de gelistirildi, yerel muhendislik gucu",
+    "cta": {
+      "primary": "Demo Iste",
+      "secondary": "Teklif Isteyin",
+      "consultation": "Ucretsiz On Gorusme"
+    }
+  },
+
+  "keywords": [
+    "ITSM", "ESM", "ITIL4", "servis yonetimi", "orkestrasyon",
+    "otomasyon", "dijital donusum", "surec yonetimi"
+  ],
+
+  "socialProof": {
+    "clients": ["Sabanci Holding", "Toyota", "Boyner", "Roketsan", "QNB", "Logo Yazilim", "Aksa", "Misyon Bank"],
+    "stat": "600.000+ kullanici"
+  },
+
+  "contact": {
+    "hq": "Metropol Istanbul A Blok 2E Kat:21 Daire:331 Atasehir Istanbul",
+    "rd": "Zaim Teknopark / Halkali Cad No:281/23 Ofis No:118 Kucukcekmece/Istanbul",
+    "phone": ["0216 599 07 72", "0216 599 01 17"],
+    "hotline": "444CORE",
+    "email": "info@servicecore.com.tr",
+    "support": "support@servicecore.app",
+    "supportPortal": "https://support.servicecore.app",
+    "docs": "https://docs.servicecore.app",
+    "linkedin": "company/servicecoresw/",
+    "youtube": "@ServicecoreSM"
+  }
+}

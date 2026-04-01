@@ -1,0 +1,26 @@
+# Vercel
+.vercel
+
+# Claude Code (kisisel)
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Gemini
+.gemini/
+
+# Arastirma notlari (kisisel)
+merak/
+
+# Node
+node_modules/
+.next/
+out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.local
+.env.*.local

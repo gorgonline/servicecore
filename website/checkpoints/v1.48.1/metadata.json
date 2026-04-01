@@ -1,0 +1,1 @@
+{"version": "v1.48.1", "date": "2026-03-13T07:50:00+03:00", "category": "style", "summary": "Orchestrator URLi /orkestra olarak güncellendi.", "details": "Kullanıcı talebiyle dashboard adresi ve başlıkları yerlileştirildi.", "personas": ["@Chief-Agent"], "filesChanged": ["src/app/orkestra/page.tsx"]}

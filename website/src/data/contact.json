@@ -1,0 +1,59 @@
+{
+  "title": "Servicecore İletişim Kanalları",
+  "description": "İletişim formunu doldurarak veya çağrı merkezimizi arayarak bize ulaşabilirsiniz. Ayrıca demo, destek, danışman rehberliği vb. hizmetler için de aşağıdaki Online Demo Rezervasyonu bölümünden randevu oluşturabilirsiniz.",
+  "company": {
+    "name": "Servicecore Bilgi Teknolojileri A.Ş.",
+    "locations": [
+      {
+        "type": "Merkez",
+        "address": "Metropol İstanbul A Blok 2E Kat: 21 Daire: 331 Ataşehir İstanbul"
+      },
+      {
+        "type": "ArGe",
+        "address": "Zaim Teknopark / Halkalı Cad No:281/23 K:1 Ofis No:118 Küçükçekmece/İstanbul"
+      }
+    ],
+    "callCenter": "444 CORE"
+  },
+  "support": {
+    "title": "Servicecore Destek Kaydı Açma",
+    "description": "support@servicecore.app adresine gönderilen emaillerde soru ve sorun detayı açıkça belirtilerek destek alınabilir. Bu adrese gönderilen epostalar otomatik olarak çağrı kaydı oluşturur ve destek ekipleri tarafından destek paketi kapsamında taahhüt edilen sürelerde müdahale edilir.",
+    "email": "support@servicecore.app"
+  },
+  "contactInfo": [
+    { "title": "Müşteri Destek", "value": "+90 216 599 07 72" },
+    { "title": "Satış Destek", "value": "+90 216 599 01 16" },
+    { "title": "Muhasebe", "value": "+90 216 599 01 13" },
+    { "title": "Fax", "value": "+90 216 599 01 17" }
+  ],
+  "links": [
+    { "title": "Servicecore Demo ve Sunum Talebi", "url": "/demo" },
+    { "title": "Servicecore Teklif Talebi", "url": "#" },
+    { "title": "Servicecore Destek Hizmetleri", "url": "#" },
+    { "title": "Servicecore Canlı Destek Rezervasyonu", "url": "https://outlook.office365.com/owa/calendar/Servicecore1@servicecore.com.tr/bookings/" },
+    { "title": "Bizimle çalışmak ister misiniz?", "url": "https://servicecore.zohorecruit.com/jobs/Careers" },
+    { "title": "Servicecore Sayfası", "url": "#" },
+    { "title": "Servicecore Videoları", "url": "#" }
+  ],
+  "supportSystem": {
+    "title": "Servicecore Destek Sistemine Erişim",
+    "description": "support.servicecore.app web adresinden erişilebilecek destek portalından, destek taleplerinin durumu, yapılan işlemler, alınan notlar ve yazışmalar takip edilebilir.",
+    "url": "support.servicecore.app"
+  },
+  "contactForm": {
+    "title": "İletişim Formu",
+    "fields": [
+      { "name": "firstName", "label": "Ad", "required": true, "type": "text" },
+      { "name": "lastName", "label": "Soyad", "required": true, "type": "text" },
+      { "name": "email", "label": "E-Posta", "required": true, "type": "email", "placeholder": "Firma e-posta adresiniz" },
+      { "name": "phone", "label": "Telefon", "required": true, "type": "tel", "placeholder": "05XX XXX XXX" },
+      { "name": "message", "label": "Mesaj", "required": false, "type": "textarea" }
+    ],
+    "buttonText": "Gönder"
+  },
+  "maps": [
+    { "title": "Merkez Ofisi", "src": "map_merkez" },
+    { "title": "Teknopark Ofisi", "src": "map_teknopark" }
+  ],
+  "socials": []
+}

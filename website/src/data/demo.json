@@ -1,0 +1,71 @@
+{
+  "page": {
+    "title": "Servicecore Demo Başvurusu",
+    "description": "ITSM uzmanlarımız ve danışmanlarımız eşliğinde sizin için özel demo oturumları aracılığıyla ürünümüzü tüm ayrıntıları görebilirsiniz."
+  },
+  "form_section": {
+    "title": "Demo Talep Formu (Online Canlı Sunum)",
+    "fields": [
+      {
+        "name": "ad",
+        "label": "Ad",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "name": "soyad",
+        "label": "Soyad",
+        "required": true,
+        "type": "text"
+      },
+      {
+        "name": "eposta",
+        "label": "E-Posta",
+        "placeholder": "Şirket email adresiniz",
+        "required": true,
+        "type": "email"
+      },
+      {
+        "name": "telefon",
+        "label": "Telefon",
+        "placeholder": "05XX XXX XXX",
+        "required": true,
+        "type": "tel"
+      },
+      {
+        "name": "tarih",
+        "label": "Online toplantı için seçtiğiniz gün",
+        "placeholder": "gg.aa.yyyy",
+        "required": true,
+        "type": "date"
+      },
+      {
+        "name": "saat",
+        "label": "Online toplantı için seçtiğiniz saat",
+        "placeholder": "--:--",
+        "required": true,
+        "type": "time"
+      }
+    ],
+    "submit_button": {
+      "text": "Gönder",
+      "icon": "send"
+    }
+  },
+  "info_section": {
+    "tags": ["ÜRÜNÜ İNCELE", "UZMANLARIMIZ EŞLİĞİNDE"],
+    "title": "Danışman Rehberliğinde Demo",
+    "content": [
+      "Uzman danışmanlarımız size bağlanarak ürünümüzün tüm yeteneklerini sunabilirler.",
+      "Size özel olarak düzenlenecek bu oturumda tüm ihtiyaçlarınızın ürünümüz tarafından nasıl karşılandığını görebilirsiniz.",
+      "Size özel olarak düzenlenecek bu seans sonrasında kurumunuzun kullanımı için bir süreliğine demo hesap veya yerinde sunucular kurmanız mümkün olacaktır.",
+      "Firmanıza özel demo oturumu için lütfen soldaki formu doldurarak müsaitlik durumunuzu ve gün ve saatleri belirtiniz ya da aşağıdaki rezervasyon butonu üzerinden otomatik randevunuzu oluşturunuz.",
+      "Online toplantınız otomatik olarak oluşturulup davetiye uzaktan oturum linkleri iletilecektir."
+    ],
+    "action_button": {
+      "text": "Online Rezervasyon",
+      "action": "calendar",
+      "url": "https://outlook.office365.com/book/Servicecore1@servicecore.com.tr/?ismsaljsauthenabled=true"
+    }
+  }
+}

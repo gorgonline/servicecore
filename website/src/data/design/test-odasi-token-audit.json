@@ -1,0 +1,15 @@
+{
+  "handoff": {
+    "from": "@Design-System-Guardian",
+    "to": "@Motion-Master",
+    "summary": "/test-odasi tasarımı design tokenları ile senkronize edildi. Uyumluluk skoru: 🟢 100%",
+    "deliverables": {
+      "tokenAudit": {
+        "typography": { "H1": "text-5xl font-black", "H2": "text-2xl font-bold", "body": "text-sm leading-relaxed" },
+        "colors": { "bg": "bg-[#010E21]", "card": "bg-white/5", "border": "border-white/10" },
+        "spacing": { "section": "py-24", "gap": "gap-8", "container": "max-w-7xl" },
+        "status": "APPROVED"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "partnership_program": {
+    "title": "Servicecore İşbirliği / Bayilik Programı: Fırsatlar",
+    "description": "Servicecore'un, işletmelerin BT altyapılarını yönetmelerine ve optimize etmelerine yardımcı olmak için tasarlanmış bir programdır.",
+    "advantages_title": "Partner / bayi olmanın avantajları",
+    "advantages_description": "Servicecore ortaklık programına katılmanın bazı avantajlarını keşfedin. Düzeylerine ve uzmanlıklarına bağlı olarak, ortaklarımızın elde edeceği avantajlardan bazıları şunlardır:",
+    "benefits": [
+      { "text": "Web sayfamızda Yazılım Ortağı Bulucu bölümünde listelenme" },
+      { "text": "Özel ortak eğitim kurslarına sınırsız katılım hakkı" },
+      { "text": "Sunumlar, broşürler, markalama ve daha fazlasını içeren pazarlama kaynaklarına erişim" },
+      { "text": "Müşteri demoları, PoC ve ileri düzey konular hakkında uzman kullanımı" },
+      { "text": "Yıllık ServiceCore İş Ortağı Etkinliklerine davetler" },
+      { "text": "Yeni özellikler, ürün yol haritası vb. hakkında iş ortağına özel web seminerlerine davet" },
+      { "text": "Bölgenizdeki aday müşterilerden fırsatlar ve satış fırsatları" },
+      { "text": "Erken sürüm bilgileri ve ürün duyuruları içeren İş Ortağı Bülteni" },
+      { "text": "Bir teknik destek talebi gönderirken daha yüksek bir öncelik hakkı" },
+      { "text": "ServiceCore Sertifikalı Profesyonel unvanı için gerekli voucherlar" },
+      { "text": "Demo, PoC, eğitim ve daha fazlası için tanıtım ve NFR lisanslarına erişim" }
+    ],
+    "footer_note": "Daha fazla bilgi almak isterseniz ve Servicecore Partner Programı hakkında sorularınız varsa, lütfen partners@servicecore.app ile veya 444 CORE çağrı merkezinden kanal yöneticimizle iletişime geçiniz.",
+    "form_title": "İş Ortaklığı / Bayilik Başvuru Formu",
+    "call_to_action": {
+      "email": "partners@servicecore.app",
+      "phone": "444 CORE"
+    }
+  }
+}

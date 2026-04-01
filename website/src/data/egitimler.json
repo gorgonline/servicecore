@@ -1,0 +1,96 @@
+{
+  "egitimler": {
+    "hero": {
+      "title": "Servicecore Etkinlik ve Eğitimleri",
+      "description": "Düzenli eğitimler ile servis yönetimi bilginizi sürekli arttırın. Sertifikanız ile yetkinliklerinizi belgeleyin, kariyerinizde fark yaratın. Teknisyenler, süreç sahipleri, servis sahipleri, adminler, geliştiriciler ve danışmanlar için çeşitli eğitim ve etkinlikler..",
+      "badge": "Eğitim Programları"
+    },
+    "programs": [
+      {
+        "id": "cssm-p",
+        "code": "CSSM-P",
+        "title": "Certified Servicecore Service Management Practitioner",
+        "description": "Teknisyenler, süreç yöneticileri ve servis yöneticileri için sunulan; Servis yönetimi süreçlerinin ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir. Servicecore kullanımına başlamadan önce tüm teknisyenlerin bu eğitimi almış olması tavsiye edilir. Hem iyi pratiklerde anlatılan süreçlerin baştan doğru öğrenilmesi, hem de ürün yeteneklerinin doğru öğrenilmesi daha sağlıklı bir servis yönetimi işletilmesini sağlayacaktır. Teknik ekiplerin ürün modüllerini öğrenmesi, kurumsal bir servis yönetim sistemini inşa etmenin en önemli adımıdır. Bu sayede teknik ekipler çok daha doğru ve konforlu bir kullanıma sahip olacaklardır.",
+        "badge_type": "PRACTITIONER",
+        "info_cards": [
+          { "label": "Eğitim Tarihi", "value": "30 Mart 2026", "icon": "Calendar" },
+          { "label": "Eğitim Süresi", "value": "10:00 - 17:00", "icon": "Clock" },
+          { "label": "Eğitim Metodu", "value": "Eğitmen eşliğinde online senkron sunum", "icon": "Users" },
+          { "label": "Sertifikasyon", "value": "Eğitim katılımı (%80) + Sınav (%80)", "icon": "Trophy" }
+        ],
+        "curriculum_title": "CSSM-P EĞİTİM İÇERİĞİ",
+        "curriculum": [
+          { "title": "Servicecore ITSM Modüllerinin Amaçları", "content": "Modüllerin temel işlevleri ve Servicecore ekosistemindeki rolleri." },
+          { "title": "Pano ve raporların kullanımı", "content": "Dashboard özelleştirme, widget yönetimi ve temel raporlama teknikleri." },
+          { "title": "Görev yönetimi ekranları İş günlüğü yönetimi ekranları", "content": "Task yönetimi, iş günlüğü kaydı ve ekip içi koordinasyon." },
+          { "title": "Çağrı yönetimi arayüz ve fonksiyonları", "content": "Çağrı açma, yönlendirme, kategorizasyon ve çözüm süreçleri." },
+          { "title": "Tüm süreçlerde ortak fonksiyonların kullanımı", "content": "Arama, filtreleme, toplu işlemler ve bildirim ayarları." },
+          { "title": "Tüm süreçlerde iletişim ve operasyon detayları", "content": "E-posta entegrasyonu, yorumlar ve operasyonel kayıtlar." },
+          { "title": "İsteklerin detayları", "content": "Hizmet taleplerinin yönetimi ve onay süreçleri." },
+          { "title": "Son kullanıcı arayüzü", "content": "Self-servis portalı kullanımı ve kullanıcı deneyimi optimizasyonu." },
+          { "title": "Varlıklar, CMDB, Tedarikçiler, Sözleşmeler", "content": "Envanter yönetimi, ilişki haritaları ve tedarikçi yönetimi." },
+          { "title": "Proje Yönetimi Kullanımı", "content": "Proje planlama, görev atama ve ilerleme takibi." }
+        ]
+      },
+      {
+        "id": "cssm-a",
+        "code": "CSSM-A",
+        "title": "Certified Servicecore Service Management Administrator",
+        "description": "Servicecore SM ürün sahipleri, ITSM admin-ürün yöneticileri, süreç sahipleri, servis sahipleri ve danışman adayları için sunulan bu eğitim, servis yönetim sisteminin tüm yönetim ayarları, konfigürasyonu ve özelleştirilmesi işlemlerini içerir. Servicecore kurulumu sonrası implementasyona başlamadan önce tüm proje paydaşlarının, adminlerin, süreç ve servis yöneticilerinin bu eğitimi alması gerekir. Bu sayede kurulum sonrası yapılandırma, süreç uyarlama ve devreye alma adımları daha sağlıklı olacaktır. Canlıya alım sonrası servis yönetimini işletme, yaşatma ve sürekli iyileştirme için de her kurumda servis yönetim ekibinin bu eğitimdeki bilgileri kullanması gerekecektir.",
+        "badge_type": "ADMINISTRATOR",
+        "info_cards": [
+          { "label": "Eğitim Tarihi", "value": "28-29 Nisan 2026", "icon": "Calendar" },
+          { "label": "Eğitim Süresi", "value": "10:00 - 17:00", "icon": "Clock" },
+          { "label": "Eğitim Metodu", "value": "Eğitmen eşliğinde online senkron sunum", "icon": "Users" },
+          { "label": "Sertifikasyon", "value": "Eğitim katılımı (%80) + Sınav (%80)", "icon": "Trophy" }
+        ],
+        "curriculum_title": "CSSM-A EĞİTİM İÇERİĞİ",
+        "curriculum": [
+          { "title": "Servicecore ITSM Modüllerine Giriş", "content": "Yönetici perspektifinden modül mimarisi." },
+          { "title": "Genel Yönetim Ayarları", "content": "Sistem parametreleri, logo ve tema özelleştirmeleri." },
+          { "title": "Organizasyon Ayarları", "content": "Şirket yapısı, departmanlar, lokasyonlar ve ekipler." },
+          { "title": "Varlık ve Konfigürasyon Ayarları", "content": "Varlık türleri, nitelikleri ve CMDB ilişkileri." },
+          { "title": "Gelişmiş Ayarlar", "content": "SLA politikaları, iş saatleri ve otomasyon kuralları." },
+          { "title": "Hizmet Kataloğu Ayarları", "content": "Katalog yapısı, form tasarımı ve onay akışları." },
+          { "title": "Ortak Alan Ayarları", "content": "Ekran tasarımları ve özel alan yönetimi." },
+          { "title": "SRM Ayarları", "content": "Servis İlişki Yönetimi yapılandırması." },
+          { "title": "Servicecore Mimarisi ve Sürüm Yönetimi", "content": "Sürüm geçişleri ve sistem mimarisi." }
+        ]
+      },
+      {
+        "id": "cssm-dc",
+        "code": "CSSM-DC",
+        "title": "Certified Servicecore Service Management Developer & Consultant",
+        "description": "Servicecore adminleri, Servicecore geliştiricileri, Servicecore danışmanları ve Servicecore İş Ortakları için sunulan bu eğitimde, ileri düzey mimari, kurulum, süreç tasarımı, iş akış geliştirmeleri, arayüz geliştirmeleri, custom formlar ve custom actionlar için scripting, custom flowlar ile özelleştirilmiş süreç ve onay mekanizmaları, entegrasyon geliştirme, entegrasyonla otomasyon, rapor geliştirme, süreç otomasyonu gibi ileri düzey konular öğretilmektedir. Bu eğitime sahip bir danışman tüm Servicecore kullanan kurumlarda profesyonel hizmetler sunabilecek teknik ve süreç bilgisine ulaşmış olacaktır. Bu sayede Servicecore kullanan bir kurumdaki tüm ileri düzey ihtiyaçları bağımsız olarak karşılayabilen bir danışman bilgisi temin edilecektir.",
+        "badge_type": "CONSULTANT",
+        "info_cards": [
+          { "label": "Eğitim Tarihi", "value": "20-21-22 Mayıs 2026", "icon": "Calendar" },
+          { "label": "Eğitim Süresi", "value": "10:00 - 17:00", "icon": "Clock" },
+          { "label": "Eğitim Metodu", "value": "Sınıf Eğitimi + Lab Uygulamaları", "icon": "Users" },
+          { "label": "Sertifikasyon", "value": "Katılım (%80) + Sınav (%80) + Lab (%80)", "icon": "Trophy" }
+        ],
+        "curriculum_title": "CSSM-DC EĞİTİM İÇERİĞİ",
+        "curriculum": [
+          { "title": "Servicecore Kurulumu", "content": "Sunucu hazırlığı, veritabanı kurulumu ve uygulama deployment." },
+          { "title": "Servicecore Bakımı", "content": "Log yönetimi, performans izleme ve yedekleme stratejileri." },
+          { "title": "Entegrasyon ve Otomasyon İşlemleri", "content": "Webhooks, API ve dış sistem entegrasyonları." },
+          { "title": "Discovery, CMDB, Event Management", "content": "Otomatik varlık keşfi ve olay yönetimi entegrasyonu." },
+          { "title": "Süreç Tasarımı ve İş Akış Geliştirmeleri", "content": "Görsel iş akışı tasarımcısı ve karmaşık onay mekanizmaları." },
+          { "title": "Arayüz ve Form Geliştirmeleri", "content": "Custom CSS/JS ve dinamik form yapıları." },
+          { "title": "Enterprise Çözümler ve Add-onların Konfigürasyonu", "content": "Gelişmiş eklentiler ve kurumsal çözümler." },
+          { "title": "ITIL4 İleri Seviye Pratikleri", "content": "ITIL4 süreçlerinin Servicecore üzerinde ileri düzey uygulaması." }
+        ]
+      }
+    ],
+    "participation_info": {
+      "title": "Eğitim Katılım Bilgileri",
+      "items": [
+        "Eğitim başvurunuzu yandaki formdan yapabilirsiniz.",
+        "Lisanslı müşterilerimize ve iş ortaklarımıza özel eğitimlerdir, bu nedenle şirket ve kurumsal eposta bilgisi gereklidir. Sözleşme, lisans, kontenjan kontrolü yapıldıktan sonra tarafınıza davetiye iletilecektir.",
+        "Sertifikasyon için eğitimlere tam katılım ve eğitim sonrası sınava katılım zorunludur.",
+        "Eğitim kaydı veya tekrarı paylaşılmayacağından dolayı eksiksiz katılım önemli olacaktır.",
+        "Eğitim uygulamaları şirketiniz test ortamında veya size sunulacak eğitim lab ortamlarından yapılacaktır."
+      ]
+    }
+  }
+}

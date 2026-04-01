@@ -1,0 +1,446 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+
+import { 
+  ChevronDown, 
+  ArrowRight,
+  ShieldCheck,
+  FileText,
+  MousePointerClick,
+  Activity,
+  Box,
+  Settings,
+  Terminal,
+  RefreshCw,
+  AlertCircle,
+  HelpCircle,
+  MessageSquare,
+  CheckCircle2,
+  GitMerge,
+  FileSignature,
+  GitBranch,
+  Users,
+  Smartphone,
+  Link as LinkIcon,
+  Code,
+  Sliders,
+  BookOpen,
+  LineChart,
+  UserCircle,
+  TrendingUp,
+  Presentation,
+  Video,
+  GraduationCap,
+  BellRing,
+  Menu,
+  X,
+  Layers
+} from "lucide-react";
+
+// The full list of modules scraped from the live site
+const modules = [
+  { name: "Olay Yönetimi", icon: AlertCircle, desc: "Hizmet kesintilerini hızla çözün." },
+  { name: "Problem Yönetimi", icon: HelpCircle, desc: "Kök nedenleri analiz edin." },
+  { name: "Değişiklik Yönetimi", icon: RefreshCw, desc: "Riskleri minimize ederek yenilik yapın." },
+  { name: "Proje Yönetimi", icon: Layers, desc: "Agile ve stratejik planlama yapın.", href: "/proje-yonetimi" },
+  { name: "Bilgi Bankası", icon: FileText, desc: "Kurumsal hafızayı merkezileştirin.", href: "/bilgi-bankasi" },
+  { name: "İstek Yönetimi", icon: MousePointerClick, desc: "Kullanıcı taleplerini standartlaştırın." },
+  { name: "Görev Yönetimi", icon: CheckCircle2, desc: "Ekipler arası iş atamalarını izleyin." },
+  { name: "Varlık Yönetimi", icon: Box, desc: "Donanım ve yazılım envanterini takip edin." },
+  { name: "Servis Konfigürasyon", icon: Settings, desc: "Sistem bileşenlerinin haritasını çıkarın." },
+  { name: "Servis Kataloğu", icon: BookOpen, desc: "Kullanıcılara hizmet menüsü sunun." },
+  { name: "Servis Seviye Yön.", icon: Activity, desc: "SLA taahhütlerinizi güvenceye alın." },
+  { name: "Servis Otomasyonu", icon: Terminal, desc: "Tekrarlayan işleri makinelere devredin." },
+  { name: "Ölçüm ve Raporlama", icon: LineChart, desc: "Veriye dayalı kararlar alın." },
+  { name: "Self Servis Portal", icon: UserCircle, desc: "Kullanıcıların kendi çözümünü bulmasını sağlayın." },
+  { name: "Etkileşim Yönetimi", icon: MessageSquare, desc: "Tüm iletişim kanallarını birleştirin.", href: "/etkilesim-yonetimi" },
+  { name: "Sürekli İyileştirme", icon: TrendingUp, desc: "Hizmet kalitesini her adımda artırın." },
+  { name: "Sürüm Yönetimi", icon: GitMerge, desc: "Sürüm ve dağıtımların planlanmasını destekleyin." },
+  { name: "Sözleşme Yönetimi", icon: FileSignature, desc: "SLA'leri ve sözleşmeleri yönetin." },
+  { name: "İş Akış Yönetimi", icon: GitBranch, desc: "Süreçlerinizi sürükle bırak diyagramlarla modelleyin." },
+  { name: "Müşteri Portalı", icon: Users, desc: "Müşterilerin talep iletebildiği platform." },
+  { name: "Mobil Servis Yön.", icon: Smartphone, desc: "Mobil ITOM uygulaması deneyimi." },
+  { name: "Entegrasyon Modülü", icon: LinkIcon, desc: "API aracılığıyla veri alışverişi yapın." },
+  { name: "Low Code Geliştirme", icon: Code, desc: "Özel formlar ve süreç tasarımları oluşturun." },
+  { name: "Yönetici Paneli", icon: Sliders, desc: "Sistemin genel işleyişini optimize eden kontrol paneli." },
+  { name: "ITIL 4 Pratikleri", icon: ShieldCheck, desc: "34 adet yönetim pratiği ve kurumsal süreçler.", href: "/itil4-pratikleri" },
+];
+
+const resourcesSubmenu = [
+  { name: "Sunumlar", icon: Presentation, desc: "Görsel anlatılar ve ürün demoları.", href: "/sunumlar" },
+  { name: "Videolar", icon: Video, desc: "Eğitici ve tanıtıcı video içerikler.", href: "/videolar" },
+  { name: "Eğitimler", icon: GraduationCap, desc: "Sertifika ve eğitim programları.", href: "/egitimler" },
+  { name: "Kurslar", icon: BookOpen, desc: "Kısa süreli uzmanlık kursları.", href: "/kurslar" },
+  { name: "Pratikler", icon: ShieldCheck, desc: "34 adet ITIL 4 yönetim pratiği.", href: "/itil4-pratikleri" },
+  { name: "Fark Var", icon: ShieldCheck, desc: "Rakiplerimizden ayıran özellikler.", href: "/fark-var" },
+  { name: "Güncellemeler", icon: BellRing, desc: "Sürüm notları ve inovasyon duyuruları.", href: "/guncellemeler" },
+];
+
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Handle mobile menu scroll lock
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMobileMenuOpen]);
+
+  // Handle scroll detection for sticky glassmorphism
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "py-3 bg-(--color-surface-base) md:bg-(--color-surface-base)/80 backdrop-blur-xl shadow-lg" 
+          : "py-6 bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+        
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3 group cursor-pointer">
+          <div className="w-10 h-10 bg-white/5 border border-white/10 backdrop-blur-md rounded-lg flex items-center justify-center group-hover:drop-shadow-[0_0_15px_rgba(0,112,243,0.5)] transition-all">
+            <Image 
+              src="/logo-v1.png" 
+              alt="ServiceCore" 
+              width={24}
+              height={24}
+              className="object-contain"
+            />
+          </div>
+          <span className="text-xl font-normal text-white tracking-tight">Service<span className="font-bold text-(--color-brand-primary)">Core</span></span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8">
+          <Link href="/ozellikler" className="text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors cursor-pointer">
+            Özellikler
+          </Link>
+
+          {/* Mega Menu Trigger */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setActiveMenu("modules")}
+            onMouseLeave={() => setActiveMenu(null)}
+          >
+            <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
+              Modüller
+              <motion.div
+                animate={{ rotate: activeMenu === "modules" ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </motion.div>
+            </button>
+
+            {/* Mega Menu Dropdown */}
+            <AnimatePresence>
+              {activeMenu === "modules" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[1100px] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top"
+                >
+                  <div className="grid grid-cols-4 gap-x-6 gap-y-4">
+                    {modules.map((mod, idx) => {
+                      const Icon = mod.icon;
+                      return (
+                        <Link 
+                          key={idx} 
+                          href={mod.href || "#"} 
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+                        >
+                          <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-blue-light) group-hover:bg-(--color-brand-primary) group-hover:text-white transition-colors">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-brand-primary) transition-colors">{mod.name}</h4>
+                            <p className="text-xs text-(--color-text-secondary) leading-snug">{mod.desc}</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+                     <p className="text-sm text-(--color-text-secondary)">Tüm ekosistemi tek bir platformda yönetin.</p>
+                     <Link href="/moduller" className="text-sm font-medium text-(--color-brand-primary) hover:text-(--color-accent-blue-light) flex items-center gap-1 group cursor-pointer">
+                        Tüm Modülleri İncele
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                     </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <Link href="/planlar" className="text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors cursor-pointer">
+            Planlar
+          </Link>
+
+          {/* Resources Mega Menu Trigger */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setActiveMenu("resources")}
+            onMouseLeave={() => setActiveMenu(null)}
+          >
+            <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
+              Kaynaklar
+              <motion.div
+                animate={{ rotate: activeMenu === "resources" ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </motion.div>
+            </button>
+
+            {/* Resources Mega Menu Dropdown */}
+            <AnimatePresence>
+              {activeMenu === "resources" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[550px] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top"
+                  onMouseEnter={() => setActiveMenu("resources")}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+                    {resourcesSubmenu.map((resource, idx) => {
+                      const Icon = resource.icon;
+                      return (
+                        <Link 
+                          key={idx} 
+                          href={resource.href} 
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+                        >
+                          <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-emerald-light) group-hover:bg-(--color-accent-emerald-base) group-hover:text-white transition-colors">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div>
+                            <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-accent-emerald-light) transition-colors">{resource.name}</h4>
+                            <p className="text-xs text-(--color-text-secondary) leading-snug">{resource.desc}</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+                     <p className="text-sm text-(--color-text-secondary)">ServiceCore dünyasını keşfedin.</p>
+                     <Link href="/kaynaklar" className="text-sm font-medium text-(--color-accent-emerald-light) hover:text-emerald-300 flex items-center gap-1 group cursor-pointer">
+                        Kaynak Merkezine Git
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                     </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          <Link href="/iletisim" className="text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors cursor-pointer">
+            İletişim
+          </Link>
+        </nav>
+
+        {/* CTA Area */}
+        <div className="hidden lg:flex items-center gap-4">
+          <Link href="/demo">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="h-10 px-6 rounded-full bg-(--color-brand-primary) text-sm font-medium text-white flex items-center gap-2 shadow-(--shadow-glow-primary-subtle) cursor-pointer"
+            >
+              Demo İste
+            </motion.button>
+          </Link>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="lg:hidden p-2 text-(--color-text-overline) hover:text-white transition-colors cursor-pointer z-50 relative"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <AnimatePresence mode="wait">
+            {isMobileMenuOpen ? (
+              <motion.div key="close" initial={{ opacity: 0, rotate: -90 }} animate={{ opacity: 1, rotate: 0 }} exit={{ opacity: 0, rotate: 90 }} transition={{ duration: 0.2 }}>
+                <X className="w-6 h-6" />
+              </motion.div>
+            ) : (
+              <motion.div key="menu" initial={{ opacity: 0, rotate: 90 }} animate={{ opacity: 1, rotate: 0 }} exit={{ opacity: 0, rotate: -90 }} transition={{ duration: 0.2 }}>
+                <Menu className="w-6 h-6" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </button>
+
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 200 }}
+              className="fixed top-0 left-0 h-[100dvh] w-[85vw] max-w-sm bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-r border-white/10 z-50 lg:hidden flex flex-col overflow-y-auto"
+            >
+              <div className="flex flex-col pt-8 pb-8 px-6 h-full">
+                
+                {/* Mobile Drawer Logo */}
+                <Link href="/" className="flex items-center gap-3 mb-10 w-fit cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+                  <div className="w-10 h-10 bg-white/5 border border-white/10 backdrop-blur-md rounded-lg flex items-center justify-center">
+                    <img src="/logo-v1.png" alt="ServiceCore" className="w-6 h-6 object-contain" />
+                  </div>
+                  <span className="text-xl font-normal text-white tracking-tight">Service<span className="font-bold text-(--color-brand-primary)">Core</span></span>
+                </Link>
+
+                <div className="flex flex-col gap-6">
+                  
+                  <Link href="/ozellikler" className="text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                    Özellikler
+                  </Link>
+
+                  {/* Modüller Accordion */}
+                <div className="flex flex-col gap-3">
+                  <button 
+                    onClick={() => setActiveMenu(activeMenu === "modules" ? null : "modules")}
+                    className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors w-full cursor-pointer"
+                  >
+                    Modüller
+                    <motion.div animate={{ rotate: activeMenu === "modules" ? 180 : 0 }}>
+                      <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {activeMenu === "modules" && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden grid grid-cols-2 gap-x-2 gap-y-2 pt-3"
+                      >
+                        {modules.map((mod, idx) => (
+                          <Link 
+                            key={idx} 
+                            href="#" 
+                            className="flex items-center gap-3 text-(--color-text-overline) hover:text-white py-2 group cursor-pointer"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <mod.icon className="w-5 h-5 text-(--color-brand-primary) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
+                            <span className="text-sm font-medium transition-colors">{mod.name}</span>
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <Link href="/planlar" className="text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                  Planlar
+                </Link>
+
+
+
+                {/* Kaynaklar Accordion */}
+                <div className="flex flex-col gap-3">
+                  <button 
+                    onClick={() => setActiveMenu(activeMenu === "resources" ? null : "resources")}
+                    className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-accent-emerald-light) transition-colors w-full cursor-pointer"
+                  >
+                    Kaynaklar
+                    <motion.div animate={{ rotate: activeMenu === "resources" ? 180 : 0 }}>
+                      <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {activeMenu === "resources" && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden grid grid-cols-2 gap-x-2 gap-y-2 pt-3"
+                      >
+                        {resourcesSubmenu.map((resource, idx) => (
+                          <Link 
+                            key={idx} 
+                            href={resource.href} 
+                            className="flex items-center gap-3 text-(--color-text-overline) hover:text-white py-2 group cursor-pointer"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <resource.icon className="w-5 h-5 text-(--color-accent-emerald-light) group-hover:text-emerald-300 transition-colors shrink-0" />
+                            <span className="text-sm font-medium transition-colors">{resource.name}</span>
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                <Link href="/iletisim" className="text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                  İletişim
+                </Link>
+
+                  <div className="mt-auto pt-8">
+                    <Link href="/demo" onClick={() => setIsMobileMenuOpen(false)}>
+                      <motion.button
+                        whileTap={{ scale: 0.95 }}
+                        className="w-full h-14 rounded-xl bg-(--color-brand-primary) text-sm font-medium text-white flex items-center justify-center gap-2 shadow-(--shadow-glow-primary-subtle) cursor-pointer"
+                      >
+                        Demo İste
+                      </motion.button>
+                    </Link>
+                  </div>
+                </div>
+
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  );
+}

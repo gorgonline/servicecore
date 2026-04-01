@@ -1,0 +1,12 @@
+{
+  "version": "v1.54.0",
+  "date": "2026-03-15T01:15:00.000Z",
+  "summary": "God Mode & Autonomous Governance",
+  "features": [
+    "Auditor v6.1 (Hard Budget Cap, Cross-Agent Review)",
+    "Autonomous Rollback (Self-Healing)",
+    "Vector Memory (Semantic Search over lessons-learned)",
+    "7-Step Programmatic Expert DNA",
+    "Sidecar Architecture (.gemini decoupling)"
+  ]
+}

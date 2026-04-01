@@ -1,0 +1,3 @@
+node .gemini/scripts/memory-guard.js
+node .gemini/scripts/arch-auditor.js
+npx next lint

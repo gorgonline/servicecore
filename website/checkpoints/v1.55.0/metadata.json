@@ -1,0 +1,13 @@
+{
+  "version": "v1.55.0",
+  "date": "2026-03-15T05:15:00.000Z",
+  "summary": "Partnerlik Page Redesign & Build Fixes",
+  "features": [
+    "Partnerlik page overhauled with 2-column layout and contact form.",
+    "Data synchronized with partnerlik.png (11 advantages).",
+    "Navbar cleaned: removed Partnerlik from Resources.",
+    "Runtime ReferenceError fixed in Navbar.tsx (Handshake import).",
+    "Build ModuleNotFound fixed in iletisim/page.tsx (Alias fix).",
+    "Auditor v7.0: Terminal Transparency Mandate enforced."
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "hero": {
+    "title": "Servis Yönetimi Uzmanlığında Çeyrek Asır",
+    "subtitle": "GELECEĞİN MÜHENDİSLİĞİ",
+    "description": "2000 yılından beri süregelen deneyim, Ar-Ge gücü ve yerel mühendislik ile geleceğin ITSM çözümlerini inşa ediyoruz."
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "sections": [
+      {
+        "id": "tecrube",
+        "title": "Tecrübe",
+        "items": [
+          "Servicecore, 2000 yılında kurulan ve çeyrek asırdır ITSM danışmanlığı, eğitimleri ve yazılım implementasyonlarıyla sektörde derin bir uzmanlık geliştiren Educore’un deneyimlerinden doğmuştur. Bu birikim, beş yıllık kapsamlı yatırım ve Ar‑Ge çalışmalarıyla birleşerek yeni nesil bir servis yönetimi uygulamasına dönüşmüştür.",
+          "Servicecore, yalnızca bir service desk varyasyonu değil; 24’ten fazla modül ile ITIL4 süreçlerine en kapsamlı çözümü sunan, piyasadaki en geniş ITSM suitelerinden biri olarak konumlanmaktadır."
+        ]
+      },
+      {
+        "id": "temeller",
+        "title": "Temelleri ve Gücü",
+        "items": [
+          "Türk mühendisleri tarafından, global rekabeti hedefleyen ve Türkiye’nin en büyük kurumlarının ihtiyaçlarını karşılayacak kapsamlı özellikler setiyle geliştirilmiştir.",
+          "Yüzlerce kurumda gerçekleştirilen servis yönetimi implementasyonu, danışmanlığı ve denetimi tecrübesine dayanmaktadır.",
+          "Sektördeki tüm büyük ESM ve ITSM ürünleriyle çalışma deneyimini bünyesinde barındırmaktadır.",
+          "Binlerce öğrenciye ITSM ve ITIL eğitimleri sunan Educore Academy’nin bilgi birikimiyle güçlenmiştir.",
+          "ITIL4 yazar kadrosunda yer alan uzman danışmanlardan oluşan bir ekibin deneyimiyle desteklenmektedir."
+        ]
+      },
+      {
+        "id": "yenilik",
+        "title": "Yenilik ve Yatırım",
+        "items": [
+          "Türk mühendisliğinin gücü sayesinde, global oyuncuların tüm ürünlerinden Servicecore’a geçiş (migration) kolaylıkla gerçekleştirilebilmektedir.",
+          "Yerel destek ekibi, üstün hız ve performansıyla kurumlara konforlu ve güvenilir bir hizmet sunmaktadır.",
+          "ArGe yatırımları, teknopark bünyesinde yeni ürünlerin geliştirilmesini sağlamaktadır. Mobil ESM ve ITSM çözümleri, yapay zekâ destekli ESM ve ITSM uygulamaları ve SaaS ITSM platformları bu yatırımların somut çıktılarıdır."
+        ]
+      },
+      {
+        "id": "basari",
+        "title": "Başarı Öyküleri ve Referanslar",
+        "items": [
+          "SabancıDX: BT ve iş birimlerinin tüm süreçleri Servicecore ile otomasyona alınmıştır.",
+          "Logo Yazılım A.Ş.: On binlerce müşterinin destek taleplerini tek merkezden yöneten ESM yapısı Servicecore ile hayata geçirilmiştir.",
+          "Boyner A.Ş.: Tüm BT süreçleri Servicecore ITSM ile otomatize edilmiştir.",
+          "Misyon Yatırım Bankası A.Ş.: BT ve iş birimlerinin talepleri, görevleri ve projeleri tek platformda yönetilmiştir.",
+          "Aksa A.Ş.: Holding şirketlerinin tamamında 16 modül üzerinden merkezi servis yönetimi sağlanmıştır.",
+          "Roketsan A.Ş.: 16 Servicecore modülü ile tüm BT süreçleri dijitalleştirilmiştir."
+        ]
+      }
+    ]
+  },
+  "designPrinciples": {
+    "title": "Tasarım İlkeleri : Servis Yönetimi Mühendisliğimizin Özü",
+    "principles": [
+      {
+        "title": "Sezgisel Sadelik",
+        "description": "Her ekran, kullanıcıya doğal bir akış sunar. Karmaşık süreçler yalın görselleştirmelerle anlaşılır hale getirilir."
+      },
+      {
+        "title": "İşlevsel Estetik",
+        "description": "Görsel tasarım yalnızca estetik değil, işlevi destekleyen bir araçtır. Yerleşim, UI, ritim, renk, tipografi, ikonografi kullanıcı deneyimini kolaylaştırır."
+      },
+      {
+        "title": "İnsan + Otomasyon Uyumu",
+        "description": "İş akışları, AI ve otomasyon kullanıcıyı destekleyen bir yardımcıdır; karar verici değil. İnsan odaklı süreçler, otomasyonla hızlandırılır ama kontrol insanlarda kalır."
+      },
+      {
+        "title": "Bütünsel ve Entegre Yaklaşım",
+        "description": "24+ modülü ile tüm ITSM süreçlerini tek suite içinde barındırır. Sıradan bir hizmet masası yazılımı değil, bütüncül bir platform sunulur."
+      },
+      {
+        "title": "Yerel Gerçeklik + Küresel Standart",
+        "description": "Tasarım, global ekolleri benimser ama yerel operasyonel ihtiyaçlara uyum sağlar. Ergonomi, dil, kurallar, süreçler ülke ve regülasyon bağlamına göre optimize edilir."
+      },
+      {
+        "title": "Modülerlik ve Esneklik",
+        "description": "Her bileşen bağımsız çalışabilir, ama bütünle uyumlu kalır. Kullanıcı, ihtiyacına göre modülleri kolayca adapte edebilir."
+      },
+      {
+        "title": "Hızlı Öğrenme ve Adaptasyon",
+        "description": "Yeni kullanıcılar için minimum eğitimle maksimum verim sağlanır. Arayüz, öğrenme sürecini hızlandıracak şekilde tasarlanır."
+      },
+      {
+        "title": "Teknisyen Dostu Tasarım",
+        "description": "Zaten zor olan işi daha da zorlaştırmıyoruz. Arayüzler sezgisel, süreçler yalın."
+      },
+      {
+        "title": "Akışlarda Sadelik",
+        "description": "Karmaşık akışlarla işleri anlaşılmaz hale getirmiyoruz. Her süreç net ve takip edilebilir."
+      },
+      {
+        "title": "Onay ve Kural Setlerinde İsrafı Önleme",
+        "description": "Gereksiz onay zincirleriyle süreçleri boğmuyoruz. Her kural değer yaratır."
+      },
+      {
+        "title": "Sürdürülebilir Konfigürasyon",
+        "description": "Yönetim ve ayarlar demokratik tasarım prensibiyle herkesin kolayca yapabileceği şekilde sunulur."
+      },
+      {
+        "title": "Son Kullanıcıya Empati",
+        "description": "Son kullanıcı zaten zorluk yaşıyor; biz onu daha fazla zorlamıyoruz. Portal deneyimi öne çıkar."
+      },
+      {
+        "title": "Servis Kataloğunda Çeviklik",
+        "description": "Karmaşık katalogları parçalayarak sadeleştiriyoruz. Yönetim ve bakım çevikleşiyor."
+      },
+      {
+        "title": "Demokratik Yönetim",
+        "description": "Süreçlerde birkaç kişinin bilgisine bağımlılığı kaldırıyoruz. Administration herkes için kolay."
+      }
+    ]
+  },
+  "implementationPrinciples": {
+    "title": "Uygulama İlkeleri : ITIL4 ve LEAN (Yalın) Prensipleri ile Tam Uyum",
+    "principles": [
+      { "title": "Keep it simple", "description": "Servicecore gereksiz karmaşıklığı ortadan kaldırmaya odaklanır. Hem ürün fonksiyonlarında hem de müşterilerin gerçek kullanımlarında." },
+      { "title": "Focus on value", "description": "Servicecore keskin şekilde değere odaklıdır, kullanıcıya ve teknisyene değer üretmeyen fonksiyonlar veya özelliklere yer verilmez." },
+      { "title": "Progress iteratively", "description": "Servicecore'un geliştirilmesinde de devreye alınmasında da küçük adımlarla ilerlenir, ürün ve kullanım sürekli iyileştirilir." },
+      { "title": "Eliminate waste", "description": "Servicecore israf düşmanıdır, gereksiz bürokrasi ve değer katmayan her pratik üründe ve uyarlamada ortadan kaldırılır." },
+      { "title": "KaiZen !", "description": "Sürekli iyileştirme pratikleri Servicecore'un ana pratiğidir. Ürün fonksiyonları ve arayüzleri müşteri önerilerini dikkate alarak sürekli iyileştirilir." },
+      { "title": "Start where you are", "description": "Birikime ve gelinen yola saygı! Yaygın ve en önemli ITSM pratiklerinden yola çıktık. Ürünümüzü durmadan iyileştiriyor ve müşterilere uyarlıyoruz." },
+      { "title": "Visibility & Transparency", "description": "Ürün modüllerden süreçlere ve raporlamaya kadar şeffaf bilgi akışı ve hızlı raporlama için kurgulanmıştır." },
+      { "title": "Optimize first, then automate", "description": "Üründeki fonksiyonlar ve süreçler önce optimize edilir, sonra otomasyon uygulanır. \"Karmaşayı otomatikleştirme\" hatasına düşülmez." },
+      { "title": "Think global, focus on local", "description": "Küresel standartlara uyumlu tasarım yapılmaktadır fakat yerel ülke, müşteri ve regülatör ihtiyaçlarına göre ilerlenir." }
+    ]
+  },
+  "agilityPrinciples": {
+    "title": "Uygulama İlkeleri : Hız, Çeviklik ve Kaizen Ruhu",
+    "principles": [
+      { "title": "Continual Improvement", "description": "ITIL4'ün de Servicecore'un da itici gücü, başlangıç noktası ve temel mottosu KaiZen'dir. Ürün geliştirmeleri ve canlıya alma hizmetleri bu ilkeleri kullanır." },
+      { "title": "Rapid Implementation", "description": "Yıllar süren ITSM projelerine son. Servicecore ile haftalar içinde canlıya geçin; hazır şablonlar ve çevik kurulumla hız kazanın." },
+      { "title": "Exclusive Support", "description": "Servicecore Premium desteği yerel uzman kadro ile yanınızda. Kurulumdan işletmeye proaktif danışmanlık sunar." },
+      { "title": "Think Holistically", "description": "Bütünsel düşünme: Service management süreçlerini entegre ele alın. 24+ modül ile uçtan uca görünürlük sağlar." },
+      { "title": "Collaboration", "description": "İşbirliğini öne çıkarırız: Takım çalışması ve demokratik yönetim yapısıyla süreçlerde tek kişiye bağımlılığı ortadan kaldırırız." },
+      { "title": "Agility", "description": "Süreçlerde, kurulumda, kullanımda ve raporlamada çeviklik. Hızlı konfigürasyon ve yalın onay akışlarıyla değişime uyum sağlayın." }
+    ]
+  }
+}

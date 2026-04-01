@@ -1,0 +1,447 @@
+[
+  {
+    "version": "v0.1-core-infra",
+    "date": "2026-03-10T20:43:00+03:00",
+    "category": "infra",
+    "summary": "Agent altyapısı, modüler personalar, kural seti ve Next.js boilerplate başlatıldı.",
+    "details": "4 sub-agent, GLOBAL_META_RULES, Next.js 15 App Router ve Tailwind CSS konfigürasyonu oluşturuldu.",
+    "personas": [
+      "@Next-Code-Master"
+    ],
+    "filesChanged": [
+      ".agents/",
+      "src/app/",
+      "tailwind.config.ts"
+    ]
+  },
+  {
+    "version": "v0.2-clean-slate",
+    "date": "2026-03-10T22:58:00+03:00",
+    "category": "infra",
+    "summary": "Default Next.js boilerplate temizlendi, saf Tailwind layout hazırlandı.",
+    "details": "Varsayılan şablon dosyaları kaldırıldı, temiz globals.css ve layout.tsx oluşturuldu.",
+    "personas": [
+      "@Next-Code-Master"
+    ],
+    "filesChanged": [
+      "src/app/page.tsx",
+      "src/app/globals.css",
+      "src/app/layout.tsx"
+    ]
+  },
+  {
+    "version": "v1.43.0",
+    "date": "2026-03-13T05:12:00+03:00",
+    "category": "infra",
+    "summary": "Gereksiz CHANGELOG silindi ve README dökümantasyonu yenilendi.",
+    "details": ".gemini/CHANGELOG.md silindi. Kök README ve .gemini/README.md dosyaları ServiceCore vizyonu ve Agent Framework yapısını açıklayacak şekilde modernize edildi.",
+    "personas": [
+      "@Next-Code-Master"
+    ],
+    "filesChanged": [
+      "README.md",
+      ".gemini/README.md",
+      ".gemini/CHANGELOG.md"
+    ]
+  },
+  {
+    "version": "v1.44.0",
+    "date": "2026-03-13T05:35:00+03:00",
+    "category": "feature",
+    "summary": "\"Fark Var\" (Neden ServiceCore?) sayfası oluşturuldu ve navigasyon güncellendi.",
+    "details": "ServiceCore'u rakiplerinden ayıran 44+ madde live siteden çekilerek /fark-var sayfası premium tasarımla oluşturuldu. Navbar ve Footer linkleri senkronize edildi.",
+    "personas": [
+      "@Next-Code-Master",
+      "@UI-UX-Architect",
+      "@Content-SEO-Lead"
+    ],
+    "filesChanged": [
+      "src/app/fark-var/page.tsx",
+      "src/data/fark-var.json",
+      "src/components/layout/Navbar.tsx"
+    ]
+  },
+  {
+    "version": "v1.44.1",
+    "date": "2026-03-13T05:45:00+03:00",
+    "category": "fix",
+    "summary": "Build hatası giderildi: ServiceCoreHero ve Card bileşenleri eklendi.",
+    "details": "Missing module error resolved by creating ServiceCoreHero.tsx and card.tsx components.",
+    "personas": [
+      "@Next-Code-Master"
+    ],
+    "filesChanged": [
+      "src/components/ui/ServiceCoreHero.tsx",
+      "src/components/ui/card.tsx"
+    ]
+  },
+  {
+    "version": "v1.45.0",
+    "date": "2026-03-13T05:55:00+03:00",
+    "category": "infra",
+    "summary": "UI-UX ajanı için estetik sertleştirme (Aesthetic Hardening) uygulandı.",
+    "details": "design-tokens.json'a premium efektler eklendi. servicecore-rules.md'ye Görsel Mükemmeliyet Mandatı getirildi. @UI-UX-Architect personası benchmark zorunluluğu ile güncellendi.",
+    "personas": [
+      "@UI-UX-Architect"
+    ],
+    "filesChanged": [
+      "src/data/design-tokens.json",
+      ".gemini/rules/servicecore-rules.md",
+      ".gemini/agents/ui-ux-architect.md"
+    ]
+  },
+  {
+    "version": "v1.46.0",
+    "date": "2026-03-13T06:15:00+03:00",
+    "category": "design",
+    "summary": "\"Fark Var\" (Neden ServiceCore?) sayfası premium standartlara yükseltildi.",
+    "details": "ServiceCoreHero bileşeni MeshGradient ve dinamik derinlik ile güncellendi. 44 madde kategorize edilerek high-fidelity glassmorphic kartlarla yeniden tasarlandı. Aesthetic Hardening kuralları tam kapasite uygulandı.",
+    "personas": [
+      "@UI-UX-Architect",
+      "@Next-Code-Master"
+    ],
+    "filesChanged": [
+      "src/app/fark-var/page.tsx",
+      "src/components/ui/ServiceCoreHero.tsx"
+    ]
+  },
+  {
+    "version": "v1.46.1",
+    "date": "2026-03-13T06:25:00+03:00",
+    "category": "style",
+    "summary": "CTA kartları tam genişlik (full-width) yapıldı.",
+    "details": "PrivacyContact bileşeni ve fark-var sayfasındaki kullanımı, premium standartlar gereği tüm ekran genişliğini kaplayacak şekilde güncellendi.",
+    "personas": [
+      "@UI-UX-Architect"
+    ],
+    "filesChanged": [
+      "src/components/ui/privacy-contact.tsx",
+      "src/app/fark-var/page.tsx"
+    ]
+  },
+  {
+    "version": "v1.46.2",
+    "date": "2026-03-13T06:35:00+03:00",
+    "category": "style",
+    "summary": "Sayfa başlıkları standartlaştırıldı (Centered + Gradient).",
+    "details": "ServiceCoreHero bileşeni merkezli hizalama ve başlık içi gradyan vurgu (highlightedWord) desteği ile güncellendi. Fark Var sayfası bu yeni standarta geçirildi.",
+    "personas": [
+      "@UI-UX-Architect"
+    ],
+    "filesChanged": [
+      "src/components/ui/ServiceCoreHero.tsx",
+      "src/app/fark-var/page.tsx"
+    ]
+  },
+  {
+    "version": "v1.47.0",
+    "date": "2026-03-13T06:55:00+03:00",
+    "category": "infra",
+    "summary": "Antigravity Standartlarında Operasyonel Disiplin Aktif Edildi.",
+    "details": "Handoff (JSON paket) protokolü ve Skill okuma zorunluluğu tüm sistem genelinde mandat haline getirildi. Chief Agent denetimi sıkılaştırıldı.",
+    "personas": [
+      "@Chief-Agent"
+    ],
+    "filesChanged": [
+      ".gemini/rules/global-meta-rules.md",
+      ".gemini/rules/servicecore-rules.md",
+      ".gemini/agents/ui-ux-architect.md"
+    ]
+  },
+  {
+    "version": "v1.48.0",
+    "date": "2026-03-13T07:35:00+03:00",
+    "category": "feature",
+    "summary": "Premium AI Orchestrator Dashboard (React Flow) Uygulandı.",
+    "details": "Ajanların canlı takibi için n8n tarzı interaktif bir komuta merkezi kuruldu. React Flow, custom agent node ları ve gerçek zamanlı API bağlantısı entegre edildi.",
+    "personas": [
+      "@Chief-Agent",
+      "@Next-Code-Master",
+      "@UI-UX-Architect"
+    ],
+    "filesChanged": [
+      "src/app/orchestrator/page.tsx",
+      "src/components/orchestrator/AgentNode.tsx",
+      "src/app/api/orchestrator-state/route.ts",
+      ".gemini/tracker/orchestrator-state.json"
+    ]
+  },
+  {
+    "version": "v1.48.1",
+    "date": "2026-03-13T07:50:00+03:00",
+    "category": "style",
+    "summary": "Orchestrator URLi /orkestra olarak güncellendi.",
+    "details": "Kullanıcı talebiyle dashboard adresi ve başlıkları yerlileştirildi.",
+    "personas": [
+      "@Chief-Agent"
+    ],
+    "filesChanged": [
+      "src/app/orkestra/page.tsx"
+    ]
+  },
+  {
+    "version": "v1.49.0",
+    "date": "2026-03-13T09:15:00+03:00",
+    "category": "infra",
+    "summary": "Proje Mimarisi Refaktör Edildi ve Orkestra v3.1 Yayına Alındı.",
+    "details": "Next.js Route Groups yapısına geçilerek (main) ve (orkestra) ayrımı yapıldı. Orkestra dashboardu Türkçe dil desteği, dikey minimalist yerleşim ve canlı workflow takibi ile v3.1 seviyesine çıkarıldı.",
+    "personas": [
+      "@Chief-Agent",
+      "@Next-Code-Master",
+      "@UI-UX-Architect"
+    ],
+    "filesChanged": [
+      "src/app/layout.tsx",
+      "src/app/(main)/layout.tsx",
+      "src/app/(orkestra)/layout.tsx",
+      "src/app/(orkestra)/orkestra/page.tsx"
+    ]
+  },
+  {
+    "version": "v1.50.0",
+    "date": "2026-03-13T10:00:00+03:00",
+    "category": "infra",
+    "summary": "Double Sidebar & Uzman Protokolleri Entegre Edildi.",
+    "details": "Orkestra dashboardu çift sidebar mimarisine geçirildi. Şef Protokolü (sabit) ve Uzman Protokolü (dinamik) yapısı kuruldu. Tüm uzmanlar için profesyonel iç checklistler tanımlandı.",
+    "personas": [
+      "@Chief-Agent",
+      "@UI-UX-Architect",
+      "@Next-Code-Master"
+    ],
+    "filesChanged": [
+      "src/app/(orkestra)/orkestra/page.tsx",
+      ".gemini/tracker/orchestrator-state.json"
+    ]
+  },
+  {
+    "version": "v1.51.0",
+    "date": "2026-03-13T11:05:00+03:00",
+    "category": "feature",
+    "summary": "Orkestra v4.0: Deep Audit ve Kurumsal Hafıza Aktif Edildi.",
+    "details": "Maliyet (Token) takibi, saniye bazlı kronometreler, canlı çıktı terminali ve geçmiş hataları engelleyen lessons-learned.json sistemi kuruldu. Ajanların düşünce balonları canlı moda geçirildi.",
+    "personas": [
+      "@Chief-Agent",
+      "@Next-Code-Master",
+      "@UI-UX-Architect"
+    ],
+    "filesChanged": [
+      "src/app/(orkestra)/orkestra/page.tsx",
+      "src/components/orchestrator/AgentNode.tsx",
+      ".gemini/tracker/lessons-learned.json",
+      ".gemini/rules/global-meta-rules.md"
+    ]
+  },
+  {
+    "version": "v1.52.0",
+    "date": "2026-03-13T11:45:00+03:00",
+    "category": "feature",
+    "summary": "ITIL 4 Pratikleri Sayfası ve Tasarım Standardizasyonu.",
+    "details": "ITIL 4 Pratikleri sayfası premium Bento-Grid yapısıyla eklendi. Fark Var sayfasındaki CTA kartı tam genişlik yapıldı. Tüm sayfa başlıkları Centered+Gradient standarta çekildi. @UI-UX-Architect motoru Gemini 3.1 Pro seviyesine uyarlandı.",
+    "personas": [
+      "@Chief-Agent",
+      "@UI-UX-Architect",
+      "@Next-Code-Master"
+    ],
+    "filesChanged": [
+      "src/app/(main)/itil4-pratikleri/page.tsx",
+      "src/app/(main)/fark-var/page.tsx",
+      "src/components/layout/Navbar.tsx",
+      "src/data/pratikler.json"
+    ]
+  },
+  {
+    "version": "v1.53.0",
+    "date": "2026-03-13T11:55:00+03:00",
+    "category": "infra",
+    "summary": "Chief Agent Terfisi: Gemini 3.1 Pro.",
+    "details": "Orkestra şefi (ben) resmen Gemini 3.1 Pro modeline terfi ettim. Mutfaktaki tüm kritik zekalar (Şef, Tasarımcı, Kodcu) en üst model seviyesinde senkronize edildi. Operasyonel denetim gücü maksimuma çıkarıldı.",
+    "personas": [
+      "@Chief-Agent"
+    ],
+    "filesChanged": [
+      ".gemini/tracker/orchestrator-state.json"
+    ]
+  },
+  {
+    "version": "v1.54.0",
+    "date": "2026-03-15T01:15:00+03:00",
+    "category": "infra",
+    "summary": "God Mode & Autonomous Governance Mimarisi.",
+    "details": "Auditor v6.1 ile Bütçe Kilidi, Çapraz Ajan Denetimi (Cross-Review), Kendi Kendini Onarma (Rollback) ve Vektörel Hafıza (Vector Memory) sistemleri kuruldu. Tüm uzman DNA'ları 7-adımlık programatik protokollerle mühürlendi.",
+    "personas": [
+      "@Chief-Agent",
+      "@QA-Engineer",
+      "@Next-Code-Master",
+      "@UI-UX-Architect"
+    ],
+    "filesChanged": [
+      ".gemini/scripts/orkestra-auditor.py",
+      ".gemini/config.json",
+      "src/data/orchestrator-constants.ts",
+      ".gemini/agents/",
+      "GEMINI.md"
+    ]
+  },
+  {
+    "version": "v1.55.0",
+    "date": "2026-03-15T05:15:00+03:00",
+    "category": "feature",
+    "summary": "Partnerlik Sayfası Revizyonu ve Kritik Build Onarımları.",
+    "details": "Partnerlik sayfası görsel verilere göre (2-column layout, form) yenilendi. Navbar ve İletişim sayfasındaki runtime/build hataları alias sistemiyle onarıldı. Auditor v7.0 ile Terminal Şeffaflığı mühürlendi.",
+    "personas": [
+      "@Chief-Agent",
+      "@Next-Code-Master",
+      "@QA-Engineer"
+    ],
+    "filesChanged": [
+      "src/app/(main)/partnerlik/page.tsx",
+      "src/data/partnership.json",
+      "src/components/layout/Navbar.tsx",
+      "src/app/(main)/iletisim/page.tsx"
+    ]
+  },
+  {
+    "version": "v1.56.0",
+    "date": "2026-03-15T05:45:00+03:00",
+    "category": "infra",
+    "summary": "Portable Orchestra Blueprint & Migration Package.",
+    "details": "Orkestra yönetim sistemini başka projelere taşımak için gereken ORCHESTRA_BLUEPRINT.md rehberi oluşturuldu. Skill mimarisi ve klasör hiyerarşisi taşınabilir paket haline getirildi.",
+    "personas": [
+      "@Chief-Agent"
+    ],
+    "filesChanged": [
+      "ORCHESTRA_BLUEPRINT.md",
+      "GEMINI.md"
+    ]
+  },
+  {
+    "version": "v1.57.0",
+    "date": "2026-03-14T19:44:00+03:00",
+    "category": "infra",
+    "summary": "Pre-Upgrade Snapshot: Altyapı Analizi & 10/10 Hazırlık.",
+    "details": "Bağımsız altyapı analizi yapıldı (7.2/10). Husky hooks, scripts, tracker, workflows ve tüm agent tanımlarının mevcut durumu snapshot olarak kaydedildi. Gemini CLI Subagents dökümantasyonu doğrulandı — multi-agent sistemi gerçek izole context'lerde çalışıyor.",
+    "personas": [
+      "@Chief-Agent"
+    ],
+    "filesChanged": [
+      ".gemini/",
+      "package.json",
+      "CHECKPOINTS.md",
+      "checkpoints.json"
+    ]
+  },
+  {
+    "version": "v1.58.0",
+    "date": "2026-03-15T00:12:00+03:00",
+    "category": "infra",
+    "summary": "Clean Architecture v3.0: 7 ajan → 3 ajan, token-verimli, script-güvenli sistem.",
+    "details": "Tüm altyapı yeniden yapılandırıldı. 7 ajan 3'e indirildi (designer, coder, guardian). Guardian write yetkisi yok. Handover protokolü kaldırıldı. BeforeTool hook kaldırıldı. Pre-commit: memory-guard + arch-auditor + lint. Workflow'lar %70 kısaltıldı. Toplam ajan token: 560→124 satır.",
+    "personas": [
+      "@Chief-Agent"
+    ],
+    "filesChanged": [
+      "GEMINI.md",
+      ".gemini/agents/",
+      ".gemini/rules/",
+      ".gemini/workflows/",
+      ".gemini/scripts/",
+      ".gemini/tracker/",
+      ".gemini/config.json",
+      ".husky/pre-commit"
+    ]
+  },
+  {
+    "version": "v1.59.0",
+    "date": "2026-03-15T01:47:00+03:00",
+    "category": "infra",
+    "summary": "Agent Model Upgrades: Gemini 3.1 Pro.",
+    "details": "@designer ve @coder ajanları gemini-3.1-pro modeline yükseltildi. Altyapı v3.0 stabilizasyonu tamamlandı.",
+    "personas": [
+      "@Chief-Agent"
+    ],
+    "filesChanged": [
+      ".gemini/agents/designer.md",
+      ".gemini/agents/coder.md",
+      "checkpoints.json",
+      "CHECKPOINTS.md"
+    ]
+  },
+  {
+    "version": "v1.60.0",
+    "date": "2026-03-15T02:45:00+03:00",
+    "category": "feature",
+    "summary": "Kurslar Sayfası ve Global UI İyileştirmeleri.",
+    "details": "Yeni Kurslar sayfası eklendi (src/app/(main)/kurslar). Navbar, Footer, Hero ve çeşitli içerik sayfalarında (Motto, Partnerlik, İletişim vb.) tasarım ve link düzenlemeleri yapıldı. src/data/kurslar.json veri dosyası oluşturuldu.",
+    "personas": [
+      "@Chief-Agent",
+      "@coder",
+      "@designer"
+    ],
+    "filesChanged": [
+      "src/app/(main)/",
+      "src/components/",
+      "src/data/",
+      "checkpoints.json",
+      "CHECKPOINTS.md"
+    ]
+  },
+  {
+    "version": "v1.61.0",
+    "date": "2026-03-15T03:11:00+03:00",
+    "category": "feature",
+    "summary": "Videolar Sayfası ve Navbar Güncellemesi.",
+    "details": "Yeni Videolar sayfası eklendi (src/app/(main)/videolar). src/data/videos.json veri dosyası oluşturuldu. Navbar'a Videolar linki eklendi.",
+    "personas": [
+      "@Chief-Agent",
+      "@coder",
+      "@designer"
+    ],
+    "filesChanged": [
+      "src/app/(main)/videolar/page.tsx",
+      "src/data/videos.json",
+      "src/components/layout/Navbar.tsx",
+      "checkpoints.json",
+      "CHECKPOINTS.md"
+    ]
+  },
+  {
+    "version": "v1.61.0.a",
+    "date": "2026-03-15T16:15:00+03:00",
+    "category": "feature",
+    "summary": "Bilgi Bankası & Proje Yönetimi Landing Sayfaları ve Navigasyon Entegrasyonu.",
+    "details": "Bilgi Bankası (/bilgi-bankasi) ve Proje Yönetimi (/proje-yonetimi) sayfaları premium UI standartlarında inşa edildi. Navbar mega menü linkleri aktif edildi, mükerrer kayıtlar temizlendi. Modül görselleri dizinlere taşındı.",
+    "personas": [
+      "@Chief-Agent",
+      "@coder",
+      "@designer"
+    ],
+    "filesChanged": [
+      "src/app/(main)/bilgi-bankasi/page.tsx",
+      "src/app/(main)/proje-yonetimi/page.tsx",
+      "src/components/layout/Navbar.tsx",
+      "public/images/kb/",
+      "public/images/project/",
+      "checkpoints.json",
+      "CHECKPOINTS.md"
+    ]
+  },
+  {
+    "version": "v1.62.0",
+    "date": "2026-03-15T14:20:00+03:00",
+    "category": "feature",
+    "summary": "Etkileşim Yönetimi Modül Sayfası ve Navigasyon Entegrasyonu.",
+    "details": "Etkileşim Yönetimi (/etkilesim-yonetimi) sayfası premium UI standartlarında inşa edildi. Navbar mega menü linki aktif edildi. Modül görseli /public/images/etkilesim-modulu/ dizinine taşındı.",
+    "personas": [
+      "@Chief-Agent",
+      "@coder",
+      "@designer"
+    ],
+    "filesChanged": [
+      "src/app/(main)/etkilesim-yonetimi/page.tsx",
+      "src/components/layout/Navbar.tsx",
+      "public/images/etkilesim-modulu/",
+      "checkpoints.json",
+      "CHECKPOINTS.md"
+    ]
+  }
+]

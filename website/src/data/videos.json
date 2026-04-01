@@ -1,0 +1,135 @@
+{
+  "hero": {
+    "title": "Servicecore Video Kütüphanesi",
+    "subtitle": "Servicecore platformunun tüm yeteneklerini, admin eğitimlerini ve webinar kayıtlarını bu kütüphaneden izleyebilirsiniz.",
+    "stats": "71 Video"
+  },
+  "categories": [
+    {
+      "id": "tum",
+      "title": "Tüm Videolar",
+      "description": "Tüm eğitim ve tanıtım içerikleri."
+    },
+    {
+      "id": "guncel",
+      "title": "En Güncel İçerikler",
+      "description": "Yeni eklenen ve güncellenen servis yönetim içerikleri."
+    },
+    {
+      "id": "admin",
+      "title": "Admin Eğitimleri",
+      "description": "Platform yöneticileri için yapılandırma ve yönetim dersleri.",
+      "subcategories": [
+        { "id": "genel", "title": "Genel Panel Ayarları" },
+        { "id": "organizasyon", "title": "Organizasyon Ayarları" },
+        { "id": "varlik", "title": "Varlık ve Konfigürasyon" },
+        { "id": "gelismis", "title": "Gelişmiş Ayarlar" },
+        { "id": "hizmet", "title": "Hizmet İlişkileri" }
+      ]
+    },
+    {
+      "id": "teknisyen",
+      "title": "Teknisyen Eğitimleri",
+      "description": "Operasyonel süreçler ve modül kullanım eğitimleri."
+    }
+  ],
+  "videos": {
+    "guncel": [
+      { "id": "YJYMj5IlOT0", "title": "Administrator Eğitimi Ders 1: Genel Ayarlar" },
+      { "id": "vToy-60ljao", "title": "Administrator Eğitimi 2: Organizasyon Ayarları" },
+      { "id": "TyQ4mDGfMd8", "title": "Administrator Eğitimi Ders 3: Gelişmiş Ayarlar" },
+      { "id": "7v7tH38qs3E", "title": "Administrator Eğitimi Ders 4: Hizmet İlişkileri Yönetimi" },
+      { "id": "hClxvEPWEAQ", "title": "Low-code Geliştirme Ders-1: Genel Bakış" },
+      { "id": "u7Ftw9g-j3w", "title": "Low-code Geliştirme Ders-2: Form Tasarımı" },
+      { "id": "IPiG8pWwhbQ", "title": "Low-code Geliştirme Ders-3: Modüllerde Form Kullanımı" },
+      { "id": "hRUJeXxXoEM", "title": "Workflow-1: Genel Bakış" },
+      { "id": "s_mcQHcKQio", "title": "Workflow-2: Seri Onay Akışı" },
+      { "id": "VmZw4Q1gL4s", "title": "Workflow-3: Paralel Onay Akışı" },
+      { "id": "5kffe0Kt53s", "title": "Workflow-4: Örnek ve Uygulama" },
+      { "id": "jx1W2zbFxwI", "title": "Workflow Ders-5: Alt Akış" }
+    ],
+    "admin_genel": [
+      { "id": "YJYMj5IlOT0", "title": "Administrator Eğitimi Ders 1: Genel Ayarlar" },
+      { "id": "5Wi-VGXX094", "title": "Genel Ayarlar" },
+      { "id": "i2MYBr96q68", "title": "Genel Ayarlar (Uygulama Ayarları) 1.Bölüm" },
+      { "id": "w3hbP5xnbmM", "title": "Genel Ayarlar (Uygulama Ayarları) 2.Bölüm" },
+      { "id": "4GvoJ6d8PlY", "title": "Sistem Ayarları" },
+      { "id": "fUSnkyH2Ai0", "title": "Bildirim Şablonları" },
+      { "id": "8dSUi9RZEso", "title": "Süreç Şablonları" },
+      { "id": "Wsnvre2pEXw", "title": "Hazır Cevaplar" },
+      { "id": "Q9qRfRCR5zQ", "title": "Validasyon Ayarları" },
+      { "id": "HOE4M6AgRwI", "title": "Duyurular" },
+      { "id": "srCflyWanyo", "title": "İş Saatleri Yönetimi" },
+      { "id": "hClxvEPWEAQ", "title": "Low-code Geliştirme Ders-1: Genel Bakış" },
+      { "id": "u7Ftw9g-j3w", "title": "Low-code Geliştirme Ders-2: Form Tasarımı" },
+      { "id": "IPiG8pWwhbQ", "title": "Low-code Geliştirme Ders-3: Modüllerde Form Kullanımı" },
+      { "id": "0zBBQ24AkSI", "title": "Kurum Konumları" },
+      { "id": "XOcPIJorA4g", "title": "Alt Şirketler" },
+      { "id": "x34_z8EXTTw", "title": "Hakkında" }
+    ],
+    "admin_organizasyon": [
+      { "id": "vToy-60ljao", "title": "Administrator Eğitimi 2: Organizasyon Ayarları" },
+      { "id": "x9Fwk8QjIYk", "title": "Teknisyen Grupları" },
+      { "id": "ga6ZVHVQZB4", "title": "Kullanıcı Grupları" },
+      { "id": "6vMHy0NRrp4", "title": "Teknisyenler" },
+      { "id": "rp5PyAA7KXs", "title": "Kullanıcılar" },
+      { "id": "6HYrbmcDpTw", "title": "Onaylayanlar ve Danışmanlar" },
+      { "id": "00ArzW0N5Ao", "title": "Departmanlar" },
+      { "id": "yOaUxfAKUNk", "title": "Roller" },
+      { "id": "giA3D4gdq-k", "title": "Organizasyon Şemaları" }
+    ],
+    "admin_varlik": [
+      { "id": "kRgKo6lIleI", "title": "Üreticiler" },
+      { "id": "2RQmipeU1xQ", "title": "Kullanım Modelleri" },
+      { "id": "hjND7NPYW_M", "title": "Varlık Konumları" },
+      { "id": "5T51Y2wFQpc", "title": "Varlık Durumu" },
+      { "id": "1GwjgOHA3Go", "title": "Varlık Şirketleri" },
+      { "id": "8IOMEzMfooQ", "title": "İlişki Türleri" },
+      { "id": "eLT5DzQUF5E", "title": "Sözleşme Türleri" },
+      { "id": "w0e-17KZY8E", "title": "Varlık Türleri" },
+      { "id": "rVGUC6Xf76Q", "title": "Kurum İçi Destek Sözleşmeleri" },
+      { "id": "84s8o49Lmac", "title": "Tedarikçi Sözleşmeleri" },
+      { "id": "5NNnUr_3xBE", "title": "Tedarikçiler" }
+    ],
+    "admin_gelismis": [
+      { "id": "TyQ4mDGfMd8", "title": "Administrator Eğitimi Ders 3: Gelişmiş Ayarlar" },
+      { "id": "cDByxeCyPxY", "title": "SLA Politikaları" },
+      { "id": "EIHSRomK8QY", "title": "Kapatma Kural ve Gerekçeleri" },
+      { "id": "KFF7GGMD54s", "title": "Otomasyon Kuralları" },
+      { "id": "XJcgE3s4uoU", "title": "Ortak Alanları Yönetimi" },
+      { "id": "x5QtsNOyS7Q", "title": "Özel Ek Alanlar" },
+      { "id": "og2Fa1QqPEA", "title": "Global Durum Ayarları" },
+      { "id": "a_kH0485zm0", "title": "Anketler" },
+      { "id": "HEMpqrR-8xY", "title": "Sisteme Genel Bakış"},
+      { "id": "pGXUcP06d_U", "title": "Entegrasyonlar" },
+      { "id": "hRUJeXxXoEM", "title": "Workflow-1: Genel Bakış" },
+      { "id": "s_mcQHcKQio", "title": "Workflow-2: Seri Onay Akışı" },
+      { "id": "VmZw4Q1gL4s", "title": "Workflow-3: Paralel Onay Akışı" },
+      { "id": "5kffe0Kt53s", "title": "Workflow-4: Örnek ve Uygulama" },
+      { "id": "jx1W2zbFxwI", "title": "Workflow Ders-5: Alt Akış" },
+      { "id": "hRE86WPNSqA", "title": "İş Akışı" },
+      { "id": "F_yH34V5UMI", "title": "Dil Kaynağı Ayarları" },
+      { "id": "hwJ2jj_ug3U", "title": "Zamanlanmış Olaylar ve İstekler" },
+      { "id": "wP_fGdPUjyg", "title": "Otomatik Teknisyen Atama" }
+    ],
+    "admin_hizmet": [
+      { "id": "7v7tH38qs3E", "title": "Administrator Eğitimi Ders 4: Hizmet İlişkileri Yönetimi" },
+      { "id": "8I93JjIdD3o", "title": "Hizmet İlişkileri Yönetimi" }
+    ],
+    "teknisyen": [
+      { "id": "bsJ2EFohuuw", "title": "Pano (Dashboard) Ekranları ve Raporlama" },
+      { "id": "S07Sk3oFHaY", "title": "Görev Modülü" },
+      { "id": "bVvknaydR7U", "title": "Çağrı Modülü" },
+      { "id": "f8-y5VVJnSg", "title": "Olay Modülü" },
+      { "id": "TwVmZroBXqc", "title": "Problem Modülü" },
+      { "id": "aXAieXnom_M", "title": "İstek ve Katolog Modülü" },
+      { "id": "0_Sx18jRfdU", "title": "Değişiklik ve İyileştirme Modülü" },
+      { "id": "_xJBx1jlXzc", "title": "Bilgi Bankası" },
+      { "id": "8uQFmuFfydw", "title": "CMDB" },
+      { "id": "kKqWXPD_RBY", "title": "Sözleşme Modülü" },
+      { "id": "MCvaklqLNCM", "title": "Proje Modülü" },
+      { "id": "BzkZFMoFF48", "title": "Raporlar"},
+      { "id": "AlNrGSjS9n0", "title": "Son Kullanıcı Ekranları"}
+    ]
+  }
+}

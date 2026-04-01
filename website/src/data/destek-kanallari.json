@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "title": "Servicecore Profesyonel Destek Hizmetleri",
+    "description": "Uzman kadrosu ile Servicecore destek ekibi her zaman yanınızda. Hızlı, yerel, uzman desteği ile konforlu çalışma imkanı.\\n\\nUzman mühendis kadromuza ihtiyaç duyduğunuz her zaman erişebilir, yerli ve hızlı desteğin konforu ile kesintisiz ve sürekli desteğin avantajını yaşayabilirsiniz. Yerli üretici olarak, güçlü geliştirici kadrosunun yanısıra alanında uzman servis yönetimi danışmanları ile hızlı, kapsamlı ve birebir canlı destek sunulmaktadır.\\n\\nStandart bakım hizmetlerimizin yanısıra, aşağıda detaylarını bulabileceğiniz destek paketlerimizden ihtiyacınıza en uygun olanını seçerek kurumunuza özel destek hizmetlerimizin ayrıcalığını yaşayabilirsiniz."
+  },
+  "maintenanceServices": {
+    "title": "Bakım Hizmetleri",
+    "description": "Bakım, Servicecore’un sorumluluğu ve yükümlülüğü altındaki düzeltici ve iyileştirici faaliyetler bütünüdür. Müşterinin yazılım bakım aboneliğinin devam etmesi için yazılım yıllık lisans kiralama bedelinin ödenmesi veya yazılım yıllık lisans bakım ödemelerinin yapılması gerekmektedir.\\n\\nBakım aboneliği devam ettiği sürece, müşteri bakım faaliyetlerinden faydalanma hakkına sahiptir.\\n\\na. Düzeltici Faaliyetler: Servicecore yazılımı içindeki keşfedilen sorunların teşhis edilmesi ve düzeltilmesi faaliyetleridir. Sorunları düzeltmek için değişiklikler ve güncellemeler içerebilir.\\n\\nb. İyileştirici Faaliyetler: Ürün fonksiyonları ile ilgili olarak çözümü kullanılabilir ve ihtiyaca karşılık verebilecek durumda tutmak amacıyla yapılan yazılım güncellemeleridir. Güvenilirliği, performansı ve işlevselliği arttırmak için yeni özellikler içerebilir.\\n\\nMüşterinin izin vermesi durumunda Bakım kapsamında sağlanan yazılım güncellemeleri müşteri ortamında çalışmakta olan ürüne Servicecore paket depolarından otomatik olarak ve ek bir ücrete tabi olmadan yüklenecektir.\\n\\nBu iznin verilmediği durumlarda, yazılım güncellemelerinin Servicecore tarafından manuel olarak yüklenmesi destek kapsamına tabidir."
+  },
+  "additionalSupport": {
+    "title": "Ek Destek Hizmetleri",
+    "description": "Müşteride ürünün canlıya geçirilmesinden sonra bakım faaliyetleri dışında kalan aşağıdaki faaliyetler destek hizmeti kapsamındadır ve ek ücrete tabidir:\\n\\n• Proje kapsamı dışında müşterinin Servicecore’dan talep ettiği ve ürünün özelleştirme yetenekleri kapsamında yapılabilir durumda olan geliştirme, uyarlama ve entegrasyon faaliyetleri.\\n\\n• Müşteri ortamı ile ilgili olan ve Servicecore’a bildirilmemiş herhangi bir değişiklik sonucu ürünün çalışmasında ortaya çıkan sorunların belirlenmesi ve Servicecore tarafından çözülmesi.\\n\\n• Ürüne bilgi kaynağı oluşturan yapılarda (Active Directory, eposta sunucusu, veritabanı vb) yapılan bir değişiklik sonucunda meydana gelen değişikliklerin ürüne de yansıtılması ve konfigürasyonun tekrar yapılandırılması işlemleri.\\n\\n• Proje kapsamı dışında kalan ve müşteri tarafından ek olarak talep edilen çözüm ile ilgili eğitimler ve sorular.\\n\\n• Ürünün başka ortamlara taşınması, yedeklenmesi, failover yapılandırması işlemleri.\\n\\n• Ürüne ait versiyon ve paketlerin, uzaktan erişim verilmemesi durumunda ürüne manuel olarak geçilmesi.\\n\\n• Üründe yer alanlar dışında, müşterinin ek rapor geliştirme istekleri."
+  },
+  "supportChannels": {
+    "title": "Destek Kanalları",
+    "items": [
+      {
+        "channel": "support@servicecore.app",
+        "detail": "adresine gönderilen emaillerde soru ve sorun detayı açıkça belirtilerek destek alınabilir. Bu adrese gönderilen epostalar otomatik olarak çağrı kaydı oluşturur ve destek ekipleri tarafından destek paketi kapsamında taahhüt edilen sürelerde müdahale edilir."
+      },
+      {
+        "channel": "support.servicecore.app",
+        "detail": "web adresinden erişilebilecek destek portalından, destek taleplerinin durumu, yapılan işlemler, alınan notlar ve yazışmalar takip edilebilir."
+      },
+      {
+        "channel": "0216 599 07 72",
+        "detail": "nolu çağrı merkezi hattı aranarak soru ve sorunlar bildirilebilir."
+      },
+      {
+        "channel": "Servicecore bilgi bankaları, rehberleri, eğitim videoları ve dokümantasyonu",
+        "detail": "gibi kaynaklardan da faydalanılabilir."
+      },
+      {
+        "channel": "Ürün içerisinde Yönetim panelinde",
+        "detail": "yer alan destek formu aracılığı ile de sorun bildirilebilir."
+      }
+    ],
+    "disclaimer": "Servicecore yukarıdaki tanımlı kanallar harici diğer iletişim kanallarından gelen (email, telefon, sms, anlık mesajlaşma uygulamaları vb.) destek isteklerini kabul etmeyecektir, Platinum ve Mission Critical destek alan müşterilerimiz bu kısıtlamaya tabi değildir."
+  },
+  "supportPackages": {
+    "headers": ["Destek Paketleri", "Silver", "Gold", "Platinum", "Mission Critical"],
+    "features": [
+      {
+        "name": "Ticket (Yıllık Toplam)",
+        "values": ["15", "30", "60", "60"]
+      },
+      {
+        "name": "Destek Saatleri",
+        "values": ["5*8", "5*8", "7*8", "7*24"]
+      },
+      {
+        "name": "Online Anlık Mesaj Desteği",
+        "values": [false, false, true, true]
+      },
+      {
+        "name": "E-Posta ile Destek Açma",
+        "values": [true, true, true, true]
+      },
+      {
+        "name": "Telefon Desteği - 444 CORE",
+        "values": [true, true, true, true]
+      },
+      {
+        "name": "Service Portal Erişimi",
+        "values": [true, true, true, true]
+      },
+      {
+        "name": "Uzak Masaüstü Destek",
+        "values": [true, true, true, true]
+      },
+      {
+        "name": "Knowledge Base Kullanımı",
+        "values": [true, true, true, true]
+      },
+      {
+        "name": "Ürün Hata Log Takibi",
+        "values": [false, false, true, true]
+      },
+      {
+        "name": "Continuous Delivery ile Sürekli Update",
+        "values": [true, true, true, true]
+      },
+      {
+        "name": "Servicecore Seminer ve Eventlere Ücretsiz Katılım",
+        "values": ["2", "5", "Sınırsız", "Sınırsız"]
+      },
+      {
+        "name": "Health-Check Hizmeti",
+        "values": [true, true, true, true]
+      },
+      {
+        "name": "Ürün Konfigürasyon Yönetimi",
+        "values": [true, true, true, true]
+      },
+      {
+        "name": "Yüksek Öncelikli Müdahale",
+        "values": [false, false, true, true]
+      },
+      {
+        "name": "Dedicated Teknisyen",
+        "values": [false, false, true, true]
+      },
+      {
+        "name": "Uygulama Performansı İzleme",
+        "values": [false, false, true, true]
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "handoff": {
+    "from": "@UI-UX-Architect",
+    "to": "@Design-System-Guardian",
+    "summary": "/test-odasi için premium Bento Grid layout ve görsel hiyerarşi tasarlandı.",
+    "deliverables": {
+      "designSpec": {
+        "layout": "Bento Grid (Asymmetric)",
+        "sections": [
+          { "id": "hero", "type": "FullWidth", "style": "Glassmorphic Hero with Mesh Gradient" },
+          { "id": "workflow", "type": "BentoItem", "span": "col-span-2", "component": "InteractiveProtocolMap" },
+          { "id": "audit", "type": "BentoItem", "span": "col-span-1", "component": "LiveAuditFeed" }
+        ],
+        "visualStyle": {
+          "background": "Deep Space Blue (#010E21)",
+          "accents": ["Electric Blue", "Emerald Green"],
+          "effects": ["Backdrop Blur", "Outer Glow", "Skeletal Loading"]
+        }
+      }
+    }
+  }
+}

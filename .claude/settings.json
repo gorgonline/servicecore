@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(website/src/app/globals.css)",
+      "Write(website/src/app/globals.css)",
+      "Edit(website/src/lib/tokens.ts)",
+      "Write(website/src/lib/tokens.ts)"
+    ],
+    "ask": [
+      "Edit(brand/tokens.json)",
+      "Write(brand/tokens.json)",
+      "Edit(brand/voice.json)",
+      "Write(brand/voice.json)"
+    ]
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "sayfa_basligi": "FARK YARATAN ÖZELLİKLER",
+  "giris_metni": "Aşağıdaki başlıklar diğer rakiplerimizde bulunmayan ve sadece Servicecore'da bulunan ek özelliklerdir. Bu özellik ve fonksiyonlardan bazıları rakip ürünlerin bazılarında hiç bulunmazken bazılarında kısmen bulunmaktadır. Detaylı karşılaştırma bilgisi için danışmanlarımıza ulaşabilir, sektördeki tüm rakiplerle detaylı karşılaştırma için teknik analiz konusunda yardım alabilirsiniz.",
+  "fark_yaratan_ozellikler": [
+    {
+      "baslik": "ITIL4 UYUMLULUĞU",
+      "aciklama": "Servicecore ITIL4 en güncel versiyondaki çevik ve yalın süreç partikleri baz alınarak geliştirilmiştir."
+    },
+    {
+      "baslik": "ITIL4 SÜREÇ SAYISI",
+      "aciklama": "Servicecore bünyesinde 16 ITIL4 süreci yer almaktadır. Detay bilgi datasheet içinde yer almaktadır."
+    },
+    {
+      "baslik": "INTERACTION MANAGEMENT",
+      "aciklama": "Service desk ön karşılama, değerlendirme katmanı bulunmaktadır. Detay bilgi ekteki datasheet içinde yer almaktadır."
+    },
+    {
+      "baslik": "BACKLOG MANAGEMENT",
+      "aciklama": "Tüm süreçlerdeki tüm görevlerin kuyruk ve havuz modeli ile ajandaya alınmasını sürükle bırak ile sağlayan iş kayıtları yönetimi özelliği bulunmaktadır."
+    },
+    {
+      "baslik": "AGILE KANBAN VIEW",
+      "aciklama": "Tüm süreçlerde çevik planlama metotlarından Kanban desteği yer almaktadır."
+    },
+    {
+      "baslik": "CI MANAGEMENT",
+      "aciklama": "ITIL4’e göre en öncelikli süreçlerden olan sürekli iyileştirme modülüdür. CI modülü Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "WORKFORCE MANAGEMENT",
+      "aciklama": "Görevlerin koordinasyonu ve iş gücünün verimli kullanılması için gerekli olan planlama modülüdür, Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "TASK MANAGEMENT",
+      "aciklama": "Merkezi görev yönetimi modülü tüm süreçlerde gerçekleştirilen görevlerin bağımsız olarak yönetilebilmesini sağlayan ek modüldür, Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "ÇEVİK YÖNETİM – KANBAN",
+      "aciklama": "Kanban metodu ile sadece proje modülünde değil, süreçlerin tamamında görevlerin durumlarının takibi ve izlenmesi merkezi olarak sağlanmaktadır, bu özellik Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "SRM MODÜLÜ",
+      "aciklama": "Hizmet sağlayıcı firmalar için dış müşterilerin yönetimine yönelik bu modül ile hem iç departmanlara hem de dış kurumlara sağlanan hizmetlerin yönetimi aynı ürün içerisinde mümkün olmaktadır. Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "İLERİ DÜZEY PROJE YÖNETİMİ",
+      "aciklama": "Servicecore Proje modülü kapsamlı bir ürün olup, kaynak yönetimi, dinamik gantt şeması, roadmap, planlama, WBS, Kanban, Dosya yönetimi özellikleri Servicecore’da yer almaktadır."
+    },
+    {
+      "baslik": "ESM - MULTICOMPANY MODE",
+      "aciklama": "Holding yapılanmasında kullanılan, alt şirketlere göre ayrıştırma imkanı bulunmaktadır. Multitenant yapı ile aynı uygulamada sayısız departman veya alt şirkete hizmet sunabilme imkanı bulunmaktadır."
+    },
+    {
+      "baslik": "3 KATMANLI SÖZLEŞME",
+      "aciklama": "İç sözleşme, tedarikçi sözleşmesi ve dış müşteri sözleşmeleri olmak üzere 3 katmanlı yapı ve sözleşme onay mekanizmaları Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "5 KATMANLI RAPORLAMA",
+      "aciklama": "Dashboard, servis raporlama, dinamik raporlar (wizard), döküm raporları (custom export engine) ve servis analtiği olmak üzere 5 katmanlı ileri düzey raporlama yetenekleri Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "10+ SÜREÇTE NO-CODE OTOMASYON",
+      "aciklama": "Otomasyon yönetimi modülü ile üründe yer alan bütün süreçlerde koşullu aksiyonların otomatik çalıştırılması ve sınırsız senaryoda otomasyon imkanı Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "SÜREÇ ŞABLONLARI",
+      "aciklama": "Hızlı yeni kayıt eklemeye yarayan tüm süreçlerde ön tanımlı süreç şablonları Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "ÇİFT KATMANLI SLA",
+      "aciklama": "Olay ve İstek yönetiminde ve sınırsız koşul belirleme yetenekleri ile kapsamlı SLA modülü Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "SINIRSIZ AD SYNC",
+      "aciklama": "Sınırsız Active Directory ile senkronize olabilme özelliği Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "SINIRSIZ EPOSTA FETCHER",
+      "aciklama": "Sınırsız eposta adresini okuyarak ve farklı kurum esposta adreslerine gelen epostaları yakalayarak otomatik kayıt açma özelliği Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "DİNAMİK ONAY MEKANIZMASI",
+      "aciklama": "Otomatik organizasyon şeması çıkartma ve kurum içindeki hiyerarşik onay süreçlerini sınırsız koşullu akışa bağlayabilme yeteneği Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "CUSTOM FLOW DESIGN",
+      "aciklama": "İstenilen koşullu iş süreçlerinin kolayca modellenebilmesi ve otomatik eskalasyonları sağlayan akış tasarım modülü Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "SINIRSIZ AD ATTRIBUTE",
+      "aciklama": "AD üzerinden esnek veri senkronizasyonu için AD attribute yönetimi Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "ZİMMET FORMU",
+      "aciklama": "Otomatik zimmet formu üreticisi Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "ZİMMET ONAY-RED",
+      "aciklama": "Son kullanıcı zimmet takip, onay-red arayüzleri Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "HİZMETLER KATMANI",
+      "aciklama": "Asset yönetiminde üst katman olarak hizmetlerin yaşam döngüsü boyunca ve tüm CMDB ilişkileri ile yönetilebilmesi yeteneği Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "HİZMET HARITALARI",
+      "aciklama": "Hizmetlerin arka planındaki tüm bileşenlerle ilişkilerinin tanımı ile servis topolojilerinin CMDB üzerinde modellenebilmesi yeteneği Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "SINIRSIZ HİZMET KATEGORİSİ",
+      "aciklama": "Hizmet kataloğunda sınırsız alt kırılımda kategorizasyon yeteneği Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "TIME ENGINE",
+      "aciklama": "Otomatik timesheet hesaplamaları ve kolay iş/servis tutanağı üretimi için zaman makinesi özelliği patentli modüldür. Sadece Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "ESNEK LİSANSLAMA",
+      "aciklama": "Modüler add-on ekleme ile gerçek kullanıma bağlı lisanslama. Mevcut versiyona ilave modüller ile gerektiğinde ürün kullanımını arttırma veya azaltma seçenekleri bulunmaktadır. Bu sayede önemli ölçüde tasarruf elde edilmektedir."
+    },
+    {
+      "baslik": "HİBRİT LİSANSLAMA",
+      "aciklama": "Gerçek kullanıma bağlı hibrit lisanslama modeli Servicecore’da bulunmaktadır. Bu sayede üründe Standart veya Professional versiyondan ihtiyaç kadar mixleyerek kullanma ve adil add-on ekleme sayesinde tam hassas lisans kullanımı sağlanır."
+    },
+    {
+      "baslik": "TL SÖZLEŞME VE ÖDEME",
+      "aciklama": "Türk Lirası sözleşme ve ödeme yapabilme imkanı Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "AYLIK ÖDEME İMKANI",
+      "aciklama": "Yıllık kiralama veya satınalma modelinin yanı sıra aylık ödeme seçeneği Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "LOW CODE DESIGN YETENEĞİ",
+      "aciklama": "Formların ve arayüzlerin gelişmiş designer uygulaması ve lowcode destekli bileşenlerle özelleştirilebilme kabiliyeti Servicecore tarafından sunulabilmektedir."
+    },
+    {
+      "baslik": "WORKFLOW ENGINE YETENEĞİ",
+      "aciklama": "Dinamik iş ve onay akışları için sürükle bırak süreç akış tasarımcısı ile ileri düzey iş akış motoru yeteneği Servicecore ile sunulmaktadır."
+    },
+    {
+      "baslik": "EK GELİŞTİRMELER",
+      "aciklama": "Doğrudan üretici ile ek ihtiyaçların geliştirilmesi ve yüksek frekansta sürüm becerisi Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "ITIL UZMANLIĞI",
+      "aciklama": "ITIL uzmanı, ITIL expert ve ITIL MP sertifikalı yerli danışmanlarla implementasyon desteği sunulmaktadır."
+    },
+    {
+      "baslik": "YÜKSEK GELİŞTİRME HIZI",
+      "aciklama": "Çevik yazılım geliştirme ve güçlü kadro ile yüksek frekansta yeni özellikler ve hızlı sürümlerle sürekli geliştirme ve güncelleme imkanı bulunmaktadır."
+    },
+    {
+      "baslik": "UPDATE HIZI",
+      "aciklama": "Continuous Delivery modeli ile sıfır kesinti ile sürekli otomatik güncelleme hizmeti Servicecore’da bulunmaktadır. Sürekli güncel sistem otomasyonla ve sıfıra yakın kesinti ile yapılmaktadır."
+    },
+    {
+      "baslik": "ONPREMISE KULLANMA İMKANI",
+      "aciklama": "Müşteri sunucularında ve yerel barındırma ortamlarında kurulum ve implementasyon yapılmaktadır."
+    },
+    {
+      "baslik": "HOSTED YÖNETİLEN HİZMET OLARAK KULLANMA İMKANI",
+      "aciklama": "Servicecore ITSM ve ESM ürünlerinde yaygın iş ortağı ağından hosted ve yönetilen hizmet olarak ITSM as a Service modeli ile kullanma imkanı bulunmaktadır."
+    },
+    {
+      "baslik": "GELİŞMİŞ EĞİTİM KAYNAKLARI",
+      "aciklama": "Kapsamlı dokümantasyon, detaylı video eğitim kaynakları, Türkçe olarak sunulan sürekli açılan eğitimler ile hızlı öğrenme imkanları sunulmaktadır."
+    },
+    {
+      "baslik": "YAYGIN PARTNER AĞI DESTEĞİ",
+      "aciklama": "Servicecore 25 yıllık bir Türk şirketidir. ITIL ve ITSM alanında lider firmadır. ITSM konusunda uzman ve kurumsal 20’den fazla iş ortağı ve yerel destek sunabilen partnerleri bulunmaktadır."
+    },
+    {
+      "baslik": "YEREL DESTEK",
+      "aciklama": "Doğrudan üretici kurumdan, üst düzey destek anlaşması paketleri ile üretici kabiliyetinde yerelde destek alabilme imkanı sunulmaktadır. Yerel üretici desteği ve doğrudan Türk mühendislerden yakın temas ve hızlı destek alabilme imkanı Servicecore’da bulunmaktadır."
+    },
+    {
+      "baslik": "KOLAY VE HAZIR ENTEGRASYONLAR",
+      "aciklama": "Hazır entegrasyon paketleri kütüphanesi, API servisleri, çok düşük maliyetli ve hızlı entegrasyon desteği Servicecore’da bulunmaktadır."
+    }
+  ]
+}

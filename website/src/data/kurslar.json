@@ -1,0 +1,134 @@
+{
+  "kurslar": {
+    "hero": {
+      "title": "Servicecore Master ve ITSM Expert Programı",
+      "highlighted": "Master",
+      "subtitle": "Servis yönetimi en iyi pratikleri ve ITIL4 Practices Guide teorisini Servicecore ITSM platformu üzerinde uygulamalı eğitimlerle öğrenerek uluslararası geçerliliğe sahip çift sertifikaya hak kazanın. Servicecore Master ve ITSM Expert sertifikaları için programı tamamlayıp, kurs sonlarındaki sınavlardan geçer not alınması gerekmektedir.",
+      "badge": "Elite Sertifika Programı",
+      "details": "Kurs programı 1 yıl sürmektedir ve düzenli olarak açılan online canlı ve fiziksel sınıf canlı eğitimleri ile yapılmaktadır. Kursa kabul edilen adaylar ile güncel eğitim takvimi ve erişimleri paylaşılmaktadır. Sınavlar ise online sınav sistemimiz üzerinden uzaktan sınav ve test metodları ile yapılmaktadır."
+    },
+    "programs_title": "Modüller",
+    "programs_description": "20 ana modül ve ITIL4 pratikleri ile uçtan uca uzmanlık eğitimi.",
+    "modules": [
+      {
+        "title": "Service Desk / Interaction Management",
+        "description": "Servis masası, kullanıcılarla ilk temas noktasıdır. Bu eğitimde iletişim yönetimi, taleplerin kaydı ve yönlendirilmesi anlatılacaktır. Katılımcılar müşteri deneyimini iyileştirme yöntemlerini öğrenecektir.",
+        "icon": "MessagesSquare"
+      },
+      {
+        "title": "Incident Management",
+        "description": "Olay yönetimi, hizmet kesintilerini hızlıca çözmeyi hedefler. Bu eğitimde olayların sınıflandırılması, önceliklendirilmesi ve çözüm süreçleri anlatılacaktır. Katılımcılar kesinti sürelerini azaltmayı öğrenecektir.",
+        "icon": "Zap"
+      },
+      {
+        "title": "Problem Management",
+        "description": "Problem yönetimi, tekrar eden olayların kök nedenlerini bulur. Bu eğitimde analiz teknikleri ve kalıcı çözümler anlatılacaktır. Katılımcılar proaktif problem çözme becerisi kazanacaktır.",
+        "icon": "Search"
+      },
+      {
+        "title": "Service Request Management",
+        "description": "Servis taleplerinin yönetimi, kullanıcı ihtiyaçlarını karşılar. Bu eğitimde taleplerin sınıflandırılması ve otomasyonu anlatılacaktır. Katılımcılar talepleri etkin şekilde yönetmeyi öğrenecektir.",
+        "icon": "MousePointerClick"
+      },
+      {
+        "title": "Knowledge Management",
+        "description": "Bilgi yönetimi, kurumsal hafızayı güçlendirir. Bu eğitimde bilgi tabanlarının oluşturulması ve paylaşımı anlatılacaktır. Katılımcılar doğru bilgiye hızlı erişim sağlayacaktır.",
+        "icon": "BookOpen"
+      },
+      {
+        "title": "Change Management",
+        "description": "Değişiklik yönetimi, riskleri azaltarak yenilikleri uygular. Bu eğitimde değişiklik süreçleri ve onay mekanizmaları anlatılacaktır. Katılımcılar güvenli değişiklik uygulamayı öğrenecektir.",
+        "icon": "RefreshCw"
+      },
+      {
+        "title": "IT Asset Management",
+        "description": "BT varlık yönetimi, donanım ve yazılım takibini sağlar. Bu eğitimde varlık envanteri ve yaşam döngüsü yönetimi anlatılacaktır. Katılımcılar maliyetleri optimize etmeyi öğrenecektir.",
+        "icon": "Box"
+      },
+      {
+        "title": "Configuration Management & CMDB",
+        "description": "Konfigürasyon yönetimi, sistem bileşenlerini kontrol eder. Bu eğitimde CMDB kullanımı ve ilişkilerin yönetimi anlatılacaktır. Katılımcılar altyapıyı doğru şekilde modellemeyi öğrenecektir.",
+        "icon": "Settings"
+      },
+      {
+        "title": "Continual Improvement",
+        "description": "Sürekli iyileştirme, hizmet kalitesini arttırır. Bu eğitimde PDCA döngüsü ve iyileştirme teknikleri anlatılacaktır. Katılımcılar sürekli gelişim kültürünü benimseyecektir.",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Measurement & Reporting Management",
+        "description": "Ölçüm ve raporlama, performansı görünür kılar. Bu eğitimde KPI'lar ve raporlama yöntemleri anlatılacaktır. Katılımcılar veriye dayalı karar almayı öğrenecektir.",
+        "icon": "LineChart"
+      },
+      {
+        "title": "Service Catalogue Management",
+        "description": "Servis kataloğu, hizmetlerin tanımını içerir. Bu eğitimde katalog oluşturma ve yönetim süreçleri anlatılacaktır. Katılımcılar hizmetleri şeffaf şekilde sunmayı öğrenecektir.",
+        "icon": "Layout"
+      },
+      {
+        "title": "Service Level Management",
+        "description": "Servis seviyeleri, müşteri beklentilerini yönetir. Bu eğitimde SLA tanımlama, izleme ve raporlama anlatılacaktır. Katılımcılar hizmet kalitesini sözleşmeye uygun şekilde yönetmeyi öğrenecektir.",
+        "icon": "Activity"
+      },
+      {
+        "title": "Service Relationship Management",
+        "description": "Servis ilişkileri, müşteri ve sağlayıcı arasındaki güveni pekiştirir. Bu eğitimde ilişki yönetimi, iletişim ve iş birliği anlatılacaktır. Katılımcılar sürdürülebilir müşteri ilişkileri kurmayı öğrenecektir.",
+        "icon": "Handshake"
+      },
+      {
+        "title": "Workforce & Task Management",
+        "description": "İş gücü ve görev yönetimi, kaynakların verimli kullanılmasını sağlar. Bu eğitimde görev dağılımı, iş yükü dengesi ve performans takibi anlatılacaktır. Katılımcılar ekip yönetiminde etkinlik kazanacaktır.",
+        "icon": "Users"
+      },
+      {
+        "title": "Project Management",
+        "description": "Proje yönetimi, hedeflere zamanında ulaşmayı sağlar. Bu eğitimde planlama, risk yönetimi ve proje takibi anlatılacaktır. Katılımcılar projeleri başarıyla yönetmeyi öğrenecektir.",
+        "icon": "Briefcase"
+      },
+      {
+        "title": "ITIL4 CDS",
+        "description": "Create, Deliver & Support pratiği hizmetlerin uçtan uca yönetimini kapsar. Bu eğitimde hizmet tasarımı, teslimi ve destek süreçleri anlatılacaktır. Katılımcılar ITIL4 CDS uygulamalarını öğrenecektir.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "ITIL4 DITS",
+        "description": "Drive Stakeholder Value pratiği müşteri değerini artırır. Bu eğitimde müşteri yolculuğu, değer yaratma ve etkileşim anlatılacaktır. Katılımcılar müşteri odaklı hizmet geliştirmeyi öğrenecektir.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "ITIL4 DPI",
+        "description": "Direct, Plan & Improve pratiği stratejik yönetimi sağlar. Bu eğitimde planlama, yönlendirme ve sürekli iyileştirme anlatılacaktır. Katılımcılar ITIL4 DPI ile kurumsal gelişim sağlayacaktır.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "ITIL4 DSV",
+        "description": "Deliver & Support Value pratiği hizmetlerin değer üretimini yönetir. Bu eğitimde hizmet sunumu, destek ve müşteri memnuniyeti anlatılacaktır. Katılımcılar ITIL4 DSV süreçlerini uygulamayı öğrenecektir.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "title": "ITIL4 HVIT",
+        "description": "High Velocity IT pratiği hızlı değişim ortamlarında hizmet yönetimini kapsar. Bu eğitimde çeviklik, otomasyon ve dijital dönüşüm anlatılacaktır. Katılımcılar ITIL4 HVIT ile yüksek hızda değer üretmeyi öğrenecektir.",
+        "icon": "ShieldCheck"
+      }
+    ],
+    "participation_info": {
+      "title": "Eğitim Katılım Bilgileri",
+      "items": [
+        "Eğitim başvurunuzu yandaki formdan yapabilirsiniz.",
+        "Lisanslı müşterilerimize ve iş ortaklarımıza özel eğitimlerdir, bu nedenle şirket ve kurumsal eposta bilgisi gereklidir. Sözleşme, lisans, kontenjan kontrolü yapıldıktan sonra tarafınıza davetiye iletilecektir.",
+        "Sertifikasyon için eğitimlere tam katılım ve eğitim sonrası sınava katılım zorunludur.",
+        "Eğitim kaydı veya tekrarı paylaşılmayacağından dolayı eksiksiz katılım önemli olacaktır.",
+        "Eğitim uygulamaları şirketiniz test ortamında veya size sunulacak eğitim lab ortamlarından yapılacaktır."
+      ]
+    },
+    "form_title": "Eğitim Kayıt Formu",
+    "form_fields": {
+      "name": "Ad*",
+      "surname": "Soyad*",
+      "company": "Firma Adı*",
+      "title": "İş Ünvanı*",
+      "email": "E-Posta*",
+      "phone": "Telefon*"
+    }
+  }
+}

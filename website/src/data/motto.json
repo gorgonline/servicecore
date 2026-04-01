@@ -1,0 +1,163 @@
+{
+  "title": "Servicecore Tasarım ve\nUygulama Felsefesi",
+  "sections": [
+    {
+      "id": "design-principles",
+      "title": "Tasarım İlkeleri",
+      "subtitle": "Servis Yönetimi Mühendisliğimizin Özü",
+      "items": [
+        {
+          "title": "Sezgisel Sadelik",
+          "details": [
+            "Her ekran, kullanıcıya doğal bir akış sunar.",
+            "Karmaşık süreçler yalın görselleştirmelerle anlaşılır hale getirilir."
+          ]
+        },
+        {
+          "title": "İşlevsel Estetik",
+          "details": [
+            "Görsel tasarım yalnızca estetik değil, işlevi destekleyen bir araçtır.",
+            "Yerleşim, UI, ritim, renk, tipografi, ikonografi kullanıcı deneyimini kolaylaştırır."
+          ]
+        },
+        {
+          "title": "İnsan + Otomasyon Uyumu",
+          "details": [
+            "İş akışları, AI ve otomasyon kullanıcıyı destekleyen bir yardımcıdır; karar verici değil.",
+            "İnsan odaklı süreçler, otomasyonla hızlandırılır ama kontrol insanlarda kalır."
+          ]
+        },
+        {
+          "title": "Bütünsel ve Entegre Yaklaşım",
+          "details": [
+            "24+ modülü ile tüm ITSM süreçlerini tek suite içinde barındırır.",
+            "Sıradan bir hizmet masası yazılımı değil, bütüncül bir platform sunulur."
+          ]
+        },
+        {
+          "title": "Yerel Gerçeklik + Küresel Standart",
+          "details": [
+            "Tasarım, global ekolleri benimser ama yerel operasyonel ihtiyaçlara uyum sağlar.",
+            "Ergonomi, dil, kurallar, süreçler ülke ve regülasyon bağlamına göre optimize edilir."
+          ]
+        },
+        {
+          "title": "Modülerlik ve Esneklik",
+          "details": [
+            "Her bileşen bağımsız çalışabilir, ama bütünle uyumlu kalır.",
+            "Kullanıcı, ihtiyacına göre modülleri kolayca adapte edebilir."
+          ]
+        },
+        {
+          "title": "Hızlı Öğrenme ve Adaptasyon",
+          "details": [
+            "Yeni kullanıcılar için minimum eğitimle maksimum verim sağlanır.",
+            "Arayüz, öğrenme sürecini hızlandıracak şekilde tasarlanır."
+          ]
+        },
+        {
+          "title": "Teknisyen Dostu Tasarım",
+          "content": "Zaten zor olan işi daha da zorlaştırmıyoruz. Arayüzler sezgisel, süreçler yalın."
+        },
+        {
+          "title": "Akışlarda Sadelik",
+          "content": "Karmaşık akışlarla işleri anlaşılmaz hale getirmiyoruz. Her süreç net ve takip edilebilir."
+        },
+        {
+          "title": "Onay ve Kural Setlerinde İsrafı Önleme",
+          "content": "Gereksiz onay zincirleriyle süreçleri boğmuyoruz. Her kural değer yaratır."
+        },
+        {
+          "title": "Sürdürülebilir Konfigürasyon",
+          "content": "Yönetim ve ayarlar demokratik tasarım prensibiyle herkesin kolayca yapabileceği şekilde sunulur."
+        },
+        {
+          "title": "Son Kullanıcıya Empati",
+          "content": "Son kullanıcı zaten zorluk yaşıyor; biz onu daha fazla zorlamıyoruz. Portal deneyimi öne çıkar."
+        },
+        {
+          "title": "Servis Kataloğunda Çeviklik",
+          "content": "Karmaşık katalogları parçalayarak sadeleştiriyoruz. Yönetim ve bakım çevikleşiyor."
+        },
+        {
+          "title": "Demokratik Yönetim",
+          "content": "Süreçlerde birkaç kişinin bilgisine bağımlılığı kaldırıyoruz. Administration herkes için kolay."
+        }
+      ]
+    },
+    {
+      "id": "implementation-principles-itil",
+      "title": "Uygulama İlkeleri",
+      "subtitle": "ITIL4 ve LEAN (Yalın) Prensipleri ile Tam Uyum",
+      "items": [
+        {
+          "title": "Keep it simple",
+          "content": "Servicecore gereksiz karmaşıklığı ortadan kaldırmaya odaklanır. Hem ürün fonksiyonlarında hem de müşterilerin gerçek kullanımlarında."
+        },
+        {
+          "title": "Focus on value",
+          "content": "Servicecore keskin şekilde değere odaklıdır, kullanıcıya ve teknisyene değer üretmeyen fonksiyonlar veya özelliklere yer verilmez."
+        },
+        {
+          "title": "Progress iteratively",
+          "content": "Servicecore'un geliştirilmesinde de devreye alınmasında da küçük adımlarla ilerlenir, ürün ve kullanım sürekli iyileştirilir."
+        },
+        {
+          "title": "Eliminate waste",
+          "content": "Servicecore israf düşmanıdır, gereksiz bürokrasi ve değer katmayan her pratik üründe ve uyarlamada ortadan kaldırılır."
+        },
+        {
+          "title": "KaiZen !",
+          "content": "Sürekli iyileştirme pratikleri Servicecore'un ana pratiğidir. Ürün fonksiyonları ve arayüzleri müşteri önerilerini dikkate alarak sürekli iyileştirilir."
+        },
+        {
+          "title": "Start where you are",
+          "content": "Birikime ve gelinen yola saygı! Yaygın ve en önemli ITSM pratiklerinden yola çıktık. Ürünümüzü durmadan iyileştiriyor ve müşterilere uyarlıyoruz."
+        },
+        {
+          "title": "Visibility & Transparency",
+          "content": "Ürün modüllerden süreçlere ve raporlamaya kadar şeffaf bilgi akışı ve hızlı raporlama için kurgulanmıştır."
+        },
+        {
+          "title": "Optimize first, then automate",
+          "content": "Üründeki fonksiyonlar ve süreçler önce optimize edilir, sonra otomasyon uygulanır. \"Karmaşayı otomatikleştirme\" hatasına düşülmez."
+        },
+        {
+          "title": "Think global, focus on local",
+          "content": "Küresel standartlara uyumlu tasarım yapılmaktadır fakat yerel ülke, müşteri ve regülatör ihtiyaçlarına göre ilerlenir."
+        }
+      ]
+    },
+    {
+      "id": "implementation-principles-agility",
+      "title": "Uygulama İlkeleri",
+      "subtitle": "Hız, Çeviklik ve Kaizen Ruhu",
+      "items": [
+        {
+          "title": "Continual Improvement",
+          "content": "ITIL4'ün de Servicecore'un da itici gücü, başlangıç noktası ve temel mottosu KaiZen'dir. Ürün geliştirmeleri ve canlıya alma hizmetleri bu ilkeleri kullanır."
+        },
+        {
+          "title": "Rapid Implementation",
+          "content": "Yıllar süren ITSM projelerine son. Servicecore ile haftalar içinde canlıya geçin; hazır şablonlar ve çevik kurulumla hız kazanın."
+        },
+        {
+          "title": "Exclusive Support",
+          "content": "Servicecore Premium desteği yerel uzman kadro ile yanınızda. Kurulumdan işletmeye proaktif danışmanlık sunar."
+        },
+        {
+          "title": "Think Holistically",
+          "content": "Bütünsel düşünme: Service management süreçlerini entegre ele alın. 24+ modül ile uçtan uca görünürlük sağlar."
+        },
+        {
+          "title": "Collaboration",
+          "content": "İşbirliğini öne çıkarırız: Takım çalışması ve demokratik yönetim yapısıyla süreçlerde tek kişiye bağımlılığı ortadan kaldırırız."
+        },
+        {
+          "title": "Agility",
+          "content": "Süreçlerde, kurulumda, kullanımda ve raporlamada çeviklik. Hızlı konfigürasyon ve yalın onay akışlarıyla değişime uyum sağlayın."
+        }
+      ]
+    }
+  ]
+}

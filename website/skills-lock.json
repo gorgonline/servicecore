@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "skills": {
+    "accessibility-audit": {
+      "source": "webflow/webflow-skills",
+      "sourceType": "github",
+      "computedHash": "d76f378083037b87b644c401f85a5715b54982243f45238e13c0d0f82794c869"
+    },
+    "design-system-patterns": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "computedHash": "5f8c9b187e77fcb31db78da2f7b55f905dcd2357454624cac93f00c766ace346"
+    },
+    "design-tokens": {
+      "source": "dylanfeltus/skills",
+      "sourceType": "github",
+      "computedHash": "a5d55ed75e8feff1c8f45fa99b0a57804e590e384c6874ff4aa45b99c587841e"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "computedHash": "6412eb4eb3b91595ebab937f0c69501240e7ba761b3d82510b5cf506ec5c7adc"
+    },
+    "framer-motion-animator": {
+      "source": "patricio0312rev/skills",
+      "sourceType": "github",
+      "computedHash": "d0137ba04049bf8926bc80f6a5e2b82d94b5633b6445a85dbfb26ab4f1b104c6"
+    },
+    "gemini-api-dev": {
+      "source": "google-gemini/gemini-skills",
+      "sourceType": "github",
+      "computedHash": "a1bc395530ba9116a4509e27321eaf7cc81c5f93aa80a4778ad6f915180b4f2c"
+    },
+    "micro-interactions": {
+      "source": "dylantarre/animation-principles",
+      "sourceType": "github",
+      "computedHash": "22a154d2e1a33e32f2946504502849dba5a934ac3654ba625a5807b836272955"
+    },
+    "nextjs-app-router": {
+      "source": "omer-metin/skills-for-antigravity",
+      "sourceType": "github",
+      "computedHash": "8048e609a087b58b1e9ff5706436898df7651d71039cafd8d18607fa700948cf"
+    },
+    "nextjs-app-router-mastery": {
+      "source": "autohandai/community-skills",
+      "sourceType": "github",
+      "computedHash": "6089df98f758b736403cb78a3ded75a2c1febbdb24064ec875135d57ec689c1a"
+    },
+    "performance-testing": {
+      "source": "naodeng/awesome-qa-skills",
+      "sourceType": "github",
+      "computedHash": "d464754acdc21519108395bddb5fb1a443de1c2688ca6acaa9ebf688019acc95"
+    },
+    "premium_web_design": {
+      "source": "jerrar670/surf-website",
+      "sourceType": "github",
+      "computedHash": "64ea358c26f74241b62a181b461cb4b24d9fce8f858fc6696890da8eba2b9379"
+    },
+    "superdesign": {
+      "source": "superdesigndev/superdesign-skill",
+      "sourceType": "github",
+      "computedHash": "7208b5e2e1145d76abcd698b2a9085952d986022ec2d5d8b9f972106b1b2447b"
+    }
+  }
+}

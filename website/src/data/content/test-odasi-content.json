@@ -1,0 +1,25 @@
+{
+  "handoff": {
+    "from": "@Content-SEO-Lead",
+    "to": "@UI-UX-Architect",
+    "summary": "/test-odasi için SEO mimarisi, meta veriler ve semantik içerik yapısı tamamlandı.",
+    "deliverables": {
+      "contentSpec": {
+        "seo": {
+          "title": "ServiceCore Test Odası | Ajan Denetim ve PoW Laboratuvarı",
+          "metaDescription": "ServiceCore'un yeni nesil otonom ajan ekosistemini, PoW protokollerini ve External Auditor (Polis) denetim mekanizmasını canlı olarak test edin.",
+          "urlSlug": "test-odasi",
+          "primaryKeyword": "Ajan Denetim Sistemi",
+          "secondaryKeywords": ["PoW Protokolü", "Orkestra Paneli", "Otonom Yazılım Fabrikası"]
+        },
+        "headingStructure": {
+          "h1": "ServiceCore Deneyim ve Test Laboratuvarı",
+          "sections": [
+            { "h2": "Ajanik İş Akışları", "copy": "Ajanlar arası protokollerin nasıl çalıştığını ve her adımın nasıl doğrulandığını burada gözlemleyin." },
+            { "h2": "Polis Denetim Raporları", "copy": "Harici denetçinin (External Auditor) fiziksel dosya sistemi üzerindeki gerçek zamanlı kontrollerini inceleyin." }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "page": {
+    "title": "ITIL 4 Pratikleri ve Süreçleri",
+    "highlight": "Pratikleri ve Süreçleri",
+    "description": "ITIL 4 pratikleri, bir organizasyonun BT hizmetlerini uçtan uca planlamasını, tasarlamasını, sunmasını ve sürekli iyileştirmesini sağlayan yapı taşlarıdır. Bu pratikler, sadece teknik operasyonları değil, aynı zamanda insanları, süreçleri, iş hedeflerini ve teknolojiyi birlikte ele alır. Kurumların BT’yi bir maliyet merkezi olmaktan çıkarıp stratejik bir değer üretim aracına dönüştürmesini sağlar."
+  },
+  "sections": [
+    {
+      "id": "genel-yonetim",
+      "title": "Genel Yönetim Pratikleri",
+      "description": "Genel Yönetim Pratikleri, organizasyonun tamamını ilgilendiren yönetsel yetkinlikleri kapsar. Strateji, finans, risk, portföy ve insan kaynağı gibi alanlarda tutarlı yönetim sağlar.",
+      "items": [
+        { "title": "Mimari Yönetimi", "desc": "Organizasyonun iş hedefleri ile BT çözümleri arasındaki yapısal uyumu sağlar. Kurumsal mimari ilkelerini tanımlar." },
+        { "title": "Sürekli İyileştirme", "desc": "Ürünlerin, hizmetlerin ve uygulamaların zaman içinde sistematik olarak geliştirilmesini sağlar." },
+        { "title": "Bilgi Güvenliği Yönetimi", "desc": "Bilginin gizlilik, bütünlük ve erişilebilirlik ilkelerine uygun şekilde korunmasını sağlar." },
+        { "title": "Bilgi Yönetimi", "desc": "Doğru bilginin doğru zamanda doğru kişilere ulaşmasını sağlar. Kurumsal hafızayı güçlendirir." },
+        { "title": "Ölçümleme ve Raporlama", "desc": "Performansın objektif verilerle izlenmesini sağlar. Karar alma süreçlerini veriye dayandırır." },
+        { "title": "Organizasyonel Değişim Yönetimi", "desc": "Değişimlerin insanlar üzerindeki etkilerini yönetir, direci azaltır ve uyumu kolaylaştırır." },
+        { "title": "Portföy Yönetimi", "desc": "Tüm yatırım ve girişimlerin dengeli yönetimini sağlayarak en yüksek değeri hedefler." },
+        { "title": "Proje Yönetimi", "desc": "Belirli hedeflere ulaşmak için yürütüten geçici çalışmaların planlı yönetimini sağlar." },
+        { "title": "İlişki Yönetimi", "desc": "Paydaşlarla sağlıklı ve sürdürülebilir ilişkiler kurulmasını, beklentilerin yönetilmesini sağlar." },
+        { "title": "Risk Yönetimi", "desc": "Belirsizliklerin hedefler üzerindeki etkilerini yönetir, kurumsal dayanıklılığı artırır." },
+        { "title": "Hizmet Finansal Yönetimi", "desc": "Hizmet maliyetlerinin anlaşılmasını ve finansal sürdürülebilirliği destekler." },
+        { "title": "Strateji Yönetimi", "desc": "Organizasyonun uzun vadeli yönünü belirler ve iş hedefleriyle uyumu sağlar." },
+        { "title": "Tedarikçi Yönetimi", "desc": "Dış kaynak ve hizmet sağlayıcılarla olan ilişkilerin etkin yönetimini sağlar." },
+        { "title": "İş Gücü ve Yetenek Yönetimi", "desc": "Doğru yetkinliklerin doğru zamanda organizasyonda bulunmasını sağlar." }
+      ]
+    },
+    {
+      "id": "hizmet-yonetimi",
+      "title": "Hizmet Yönetimi Pratikleri",
+      "description": "BT hizmetlerinin tasarlanması, sunulması ve işletilmesine odaklanır. Müşteri deneyimini merkeze alarak operasyonel verimliliği artırır.",
+      "items": [
+        { "title": "Kullanılabilirlik Yönetimi", "desc": "Hizmetlerin ihtiyaç duyulduğunda erişilebilir olmasını ve kesintilerin azaltılmasını sağlar." },
+        { "title": "İş Analizi", "desc": "İş ihtiyaçlarının doğru anlaşılmasını ve çözüm tasarımına girdi oluşturulmasını sağlar." },
+        { "title": "Kapasite ve Performans Yönetimi", "desc": "Hizmetlerin mevcut ve gelecekteki talebi karşılayacak kapasitede olmasını sağlar." },
+        { "title": "Değişiklik Etkinleştirme", "desc": "Hizmetlerdeki değişikliklerin risk analizi yapılarak kontrollü hayata geçirilmesini sağlar." },
+        { "title": "Olay Yönetimi", "desc": "Hizmet kesintilerinin en kısa sürede giderilmesini ve normal seviyeye dönülmesini amaçlar." },
+        { "title": "BT Varlık Yönetimi", "desc": "BT varlıklarının yaşam döngüsü boyunca maliyet ve risk odaklı yönetimini sağlar." },
+        { "title": "İzleme ve Olay Yönetimi", "desc": "Hizmet bileşenlerinin sürekli izlenmesini ve sorunların proaktif tespitini sağlar." },
+        { "title": "Problem Yönetimi", "desc": "Olayların kök nedenlerini belirleyerek tekrarlayan sorunların önlenmesini sağlar." },
+        { "title": "Sürüm Yönetimi", "desc": "Yeni veya değişen hizmet bileşenlerinin kontrollü ve güvenli canlıya alınmasını sağlar." },
+        { "title": "Hizmet Katalog Yönetimi", "desc": "Sunulan hizmetlerin anlaşılır biçimde tanımlanmasını ve erişilebilir olmasını sağlar." },
+        { "title": "Hizmet Seviyesi Yönetimi", "desc": "Hizmet performansının anlaşılan seviyelerde (SLA) sunulmasını ve izlenmesini sağlar." },
+        { "title": "Hizmet Talep Yönetimi", "desc": "Standart kullanıcı taleplerinin etkin ve hızlı bir şekilde karşılanmasını sağlar." },
+        { "title": "Hizmet Doğrulama ve Test", "desc": "Hizmetlerin gereksinimleri karşıladığını canlıya alınmadan önce doğrular." },
+        { "title": "Hizmet Konfigürasyon Yönetimi", "desc": "Hizmet bileşenleri arasındaki ilişkilerin CMDB üzerinden yönetimini sağlar." },
+        { "title": "Hizmet Sürekliliği Yönetimi", "desc": "Kritik hizmetlerin büyük kesintilerden sonra devam edebilmesini güvenceye alır." },
+        { "title": "Hizmet Masası", "desc": "Kullanıcılar ile BT arasındaki tek temas noktasıdır, iletişimi merkezileştirir." },
+        { "title": "Hizmet Tasarımı", "desc": "Yeni hizmetlerin kalite, maliyet ve risk dengesi gözetilerek uçtan uca planlanmasını sağlar." }
+      ]
+    },
+    {
+      "id": "teknik-yonetim",
+      "title": "Teknik Yönetim Pratikleri",
+      "description": "BT altyapısının ve uygulamaların uzmanlık gerektiren teknik alanlarda etkin yönetimini kapsar.",
+      "items": [
+        { "title": "Dağıtım Yönetimi", "desc": "Hizmet bileşenlerinin canlı ortamlara güvenli aktarılmasını ve otomasyonunu sağlar." },
+        { "title": "Altyapı ve Platform Yönetimi", "desc": "Sunucu, ağ ve platform bileşenlerinin kararlı ve güvenli çalışmasını sağlar." },
+        { "title": "Yazılım Geliştirme ve Yönetimi", "desc": "Uygulamaların gereksinimlerden canlıya kadar tüm yaşam döngüsünü yönetir." }
+      ]
+    }
+  ]
+}

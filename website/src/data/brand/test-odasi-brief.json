@@ -1,0 +1,19 @@
+{
+  "handoff": {
+    "from": "@Brand-Expert",
+    "to": "@Content-SEO-Lead",
+    "summary": "/test-odasi sayfası için deneysel ve teknoloji odaklı marka stratejisi belirlendi.",
+    "deliverables": {
+      "brandBrief": {
+        "targetAudience": ["Geliştiriciler", "Ürün Yöneticileri", "Teknoloji Meraklıları"],
+        "valueProposition": "ServiceCore'un yeni nesil ajan ekosistemini ve 'Polis' denetim mekanizmasını canlı olarak test edebileceğiniz interaktif deneyim alanı.",
+        "messagingHierarchy": {
+          "primary": "Geleceğin Yazılım Fabrikası: Kontrollü Otonomi",
+          "secondary": "Her adımda doğrulama, her işlemde kanıt.",
+          "supporting": ["Ajanlar arası protokoller", "PoW (Proof-of-Work) güvenliği", "Dış Denetçi (The Polis) otoritesi"]
+        },
+        "toneCalibration": { "authoritative": 60, "innovative": 40 }
+      }
+    }
+  }
+}

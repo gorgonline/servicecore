@@ -1,0 +1,117 @@
+[
+  {
+    "title": "Sözleşme Yönetimi",
+    "description": "Sözleşmeler Modülü, kurum içi, tedarikçi ve müşteri hizmet sözleşmelerinin kolayca tanımlanıp yönetilebilmesi için geliştirilmiştir",
+    "link": "https://www.servicecore.com.tr/özellikler/sozlesme-yonetimi"
+  },
+  {
+    "title": "Müşteri Takip Servisi",
+    "description": "Müşteri ilişkilerinin güçlü bir şekilde yönetilmesi, işletmelerin başarısı için kritik öneme sahiptir. ServiceCore’un Müşteri Yönetimi Modülü, müşteri bilgilerini organize etmekten sözleşme bağlamaya kadar tüm süreçleri kolaylaştırarak işletmenize zaman ve verimlilik kazandırır.",
+    "link": "https://www.servicecore.com.tr/özellikler/musteri-takip-servisi"
+  },
+  {
+    "title": "Mobil Servis Yönetimi",
+    "description": "Modern iş dünyasında bilgi teknolojileri hizmet yönetimi (ITSM) süreçlerinin etkin bir şekilde yönetilmesi, işletmelerin başarısı için kritik bir unsurdur. ServiceCore Mobil Servis Uygulaması, tüm ITSM süreçlerinizi ITIL 4 metodolojisine uygun olarak optimize etmek ve kolaylaştırmak için tasarlanmıştır.",
+    "link": "https://www.servicecore.com.tr/özellikler/mobil-servis-yonetimi"
+  },
+  {
+    "title": "Ölçüm ve Raporlama Yönetimi",
+    "description": "ITIL4 ile birlikte başlı başına önemli bir pratik olarak tanımlanan MRM süreci ServiceCore üzerinde gerekli ölçüm ve raporlama araçları ile çalışacak şekilde modellenmiştir.",
+    "link": "https://www.servicecore.com.tr/özellikler/olcum-raporlama"
+  },
+  {
+    "title": "ESM",
+    "description": "Servicecore ESM, yalnızca BT süreçlerini değil, tüm departmanlarınızı kapsayan entegre bir hizmet yönetimi çözümü sunar. İş akışlarınızı optimize edin, departmanlar arası işbirliğini güçlendirin ve kullanıcı deneyimini yeni bir seviyeye taşıyın. Şeffaflık, otomasyon ve üstün müşteri odaklı yaklaşımla organizasyonunuzun potansiyelini açığa çıkarın.",
+    "link": "https://www.servicecore.com.tr/özellikler/esm"
+  },
+  {
+    "title": "İş Akış Yönetimi",
+    "description": "ServiceCore’un dinamik onay mekanizmaları sayesinde, iş süreçlerinizin her aşamasını daha akıllı ve verimli hale getirebilirsiniz. İster bir istek ister bir değişiklik yönetimi süreci olsun, ihtiyaçlarınıza özel olarak uyarlanabilen bu özellik, ekiplerinizin ve projelerinizin performansını artırır.",
+    "link": "https://www.servicecore.com.tr/özellikler/is-akis-yonetimi"
+  },
+  {
+    "title": "Entegrasyon Yönetimi",
+    "description": "ServiceCore API entegrasyonu, farklı yazılım uygulamaları arasında etkili iletişimi sağlayan ve veri alışverişini kolaylaştıran REST API teknolojisini temel alır. Bu güçlü entegrasyon altyapısı, iş süreçlerini optimize etmenize ve işletmenizin verimliliğini artırmanıza olanak tanır.",
+    "link": "https://www.servicecore.com.tr/özellikler/entegrasyon-yonetimi"
+  },
+  {
+    "title": "Low Code Yönetimi",
+    "description": "ServiceCore'un Low Code yapısı, teknik bilgi gerektirmeden hızlı ve etkili bir şekilde dinamik formlar oluşturmanıza olanak tanır. Bu yenilikçi özellik, karmaşık iş süreçlerini basitleştirerek işletmenizin dijital dönüşüm hedeflerine hızla ulaşmasını sağlar.",
+    "link": "https://www.servicecore.com.tr/özellikler/low-code-yonetimi"
+  },
+  {
+    "title": "Yönetim Paneli",
+    "description": "ServiceCore, sistemin genel işleyişini optimize etmek için kapsamlı yönetim ve yapılandırma özellikleri sunar. Bu özellikler, saat dilimi, dil, tema gibi temel ayarlardan, bildirim şablonları ve dinamik süreç şablonlarına kadar geniş bir yelpazeyi kapsar.",
+    "link": "https://www.servicecore.com.tr/özellikler/yonetim-paneli"
+  },
+  {
+    "title": "Proje Yönetimi",
+    "description": "ITIL4 ile birlikte proje yönetimi süreci ITSM’in doğal bir parçası ve zorunlu bir pratiği haline gelmiştir. Projelerin doğuşu her zaman iyileştirme, değişiklik, istek gibi süreçler tarafından tetiklenmektedir ve proje çıktıları çoğunlukla bu süreçlere geri besleme yapmayı gerektirmektedir.",
+    "link": "https://www.servicecore.com.tr/özellikler/proje-yönetimi"
+  },
+  {
+    "title": "Görev Yönetimi",
+    "description": "Tüm ITIL4 pratiklerinin arkasındaki bütün süreç aktiviteleri birer görevdir. Bu görevlerin yerine getirilmesi ile süreçler işlerini yapabilirler. Görev yönetimi bu nedenle tüm süreçlerin ortak zemini ve koordinasyon noktasıdır. Kolay kullanımlı ve iş yükü yönetimini kolaylaştıran bu modül ile işler daha verimli..",
+    "link": "https://www.servicecore.com.tr/özellikler/görev-yönetimi"
+  },
+  {
+    "title": "Sürekli İyileştirme",
+    "description": "Günümüzde her yönetici için gerekli olan modern ve özelleştirilebilir gösterge tabloları, her düzeydeki yöneticiye uzgörü sağlar.",
+    "link": "https://www.servicecore.com.tr/özellikler/sürekli-iyileştirme"
+  },
+  {
+    "title": "Servis Otomasyonu",
+    "description": "Servis yönetimi görevlerini otomatikleştirin. SARE- Service Automation Rules Engine olarak adlandırdığımız gelişmiş otomasyon motoruyla tüm servis yönetimi süreçlerini dijitalleştirin.",
+    "link": "https://www.servicecore.com.tr/özellikler/servis-otomasyonu"
+  },
+  {
+    "title": "Self Servis Portal",
+    "description": "Kullanıcılarınız olaylarını, isteklerini, değişikliklerini, çözümleri, projelerini, varlıklarını ve destek ekiplerinizle olan tüm etkileşimlerini bu portal üzerinden takip edebilirler.",
+    "link": "https://www.servicecore.com.tr/özellikler/self-servis-portal"
+  },
+  {
+    "title": "Bilgi Yönetimi",
+    "description": "Servis Bilgi Yönetim Sistemi, hem aracılar hem de kullanıcılar için çözümleri ve makaleleri bulmayı ve ilişkilendirmeyi kolaylaştırır.",
+    "link": "https://www.servicecore.com.tr/özellikler/bilgi-yönetimi"
+  },
+  {
+    "title": "Servis Seviye Yönetimi",
+    "description": "Geliştiricilerimiz tarafından icat edilen kurumsal sınıf önceliklendirme kural motoru tarafından sağlanan yüksek düzeyde özelleştirilebilir ve gelişmiş SLA otomasyon yetenekleri.",
+    "link": "https://www.servicecore.com.tr/özellikler/servis-seviye-yönetimi"
+  },
+  {
+    "title": "Servis Katalog Yönetimi",
+    "description": "Hızlı hizmet sunumu için önceden tanımlanmış hizmet yapıları ile süreçlerinizi kurumsallaştırın.",
+    "link": "https://www.servicecore.com.tr/özellikler/servis-katalog-yönetimi"
+  },
+  {
+    "title": "Varlık Yönetimi",
+    "description": "Kurumsal keşif yetenekleriyle tüm varlıkların yaşam döngüsünü yönetin. Varlık izleme sürecinizi bu modülle modernleştirin.",
+    "link": "https://www.servicecore.com.tr/özellikler/varlık-yönetimi"
+  },
+  {
+    "title": "Değişiklik Yönetimi",
+    "description": "Değişikliğin talep edildiği andan planlamaya, tavsiye ve onaylardan, implementasyona ve gözden geçirmeye.. tüm aşamaları içeren eksiksiz bir değişiklik yönetimi pratiği için geliştirilmiş modül..",
+    "link": "https://www.servicecore.com.tr/özellikler/değişiklik-yönetimi"
+  },
+  {
+    "title": "İstek Yönetimi",
+    "description": "Servicecore modern ve sezgisel kullanıcı arayüzü minimum düzeyde eğitim gerektirir veya hiç gerektirmez ve BT ve BT dışı ihtiyaçlara göre özelleştirilebilir. BT uzmanları için ITSM uzmanları tarafından tasarlanan kusursuz olay yönetimi deneyimi.",
+    "link": "https://www.servicecore.com.tr/özellikler/istek-yönetimi"
+  },
+  {
+    "title": "Problem Yönetimi",
+    "description": "Kullanımı kolay yönetim panellerimiz ile Problem Yönetimi sizin için çok kolay olacaktır.",
+    "link": "https://www.servicecore.com.tr/özellikler/problem-yönetimi"
+  },
+  {
+    "title": "Olay Yönetimi",
+    "description": "Tüm olayların kaydedildiği, kategorize edildiği, önceliklendirildiği bu katmanda çözüm araştırma, görev yönetimi, çözüm uygulama, müşteri etkileşimi gibi fonksiyonlarla hızlıca olayların giderilmesi otomatize edilir.",
+    "link": "https://www.servicecore.com.tr/özellikler/olay-yönetimi"
+  },
+  {
+    "title": "Servis Masası",
+    "description": "Modern kullanıcı arayüzleri ve kusursuz kullanım konforu, servis masası uygulamaları için en iyi kullanıcı deneyimini sunmaktadır. Servis masası etkileşimlerin yönetildiği birincil katmandır.",
+    "link": "https://www.servicecore.com.tr/özellikler/servis-masası"
+  }
+]
