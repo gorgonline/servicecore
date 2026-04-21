@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Proje Carousel - Slide 4 Sprint & Backlog</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; background: #1a1a2e;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .canvas {
+    width: 1080px; height: 1080px;
+    background: #010E21;
+    position: relative; overflow: hidden;
+  }
+  .glow {
+    position: absolute; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+    top: -80px; left: -80px; pointer-events: none;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px; pointer-events: none;
+  }
+
+  .content {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column;
+    height: 100%; padding: 64px;
+    justify-content: space-between;
+  }
+
+  .header { display: flex; align-items: center; justify-content: space-between; }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .feature-number {
+    font-size: 14px; font-weight: 700; color: #010E21;
+    background: #10B981; width: 32px; height: 32px;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  }
+  .feature-title {
+    font-size: 16px; font-weight: 600; color: #10B981;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .page-num { font-size: 13px; font-weight: 500; color: #475569; }
+
+  .main-area {
+    flex: 1; display: flex; flex-direction: column;
+    justify-content: center; gap: 36px;
+  }
+
+  .headline {
+    font-size: 40px; font-weight: 700;
+    line-height: 1.15; letter-spacing: -0.025em; color: #FFF;
+  }
+  .headline-accent {
+    background: linear-gradient(to right, #A855F7, #EC4899);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .desc {
+    font-size: 18px; font-weight: 300;
+    line-height: 1.6; color: #94A3B8; max-width: 600px;
+  }
+
+  /* Sprint + Backlog mockup */
+  .mockup {
+    display: flex; gap: 20px;
+  }
+
+  .sprint-card {
+    flex: 1;
+    padding: 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    display: flex; flex-direction: column; gap: 20px;
+  }
+
+  .sc-header {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .sc-title {
+    font-size: 15px; font-weight: 600; color: #FFF;
+  }
+  .sc-badge {
+    font-size: 10px; font-weight: 600; padding: 4px 12px;
+    border-radius: 9999px; text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: rgba(16,185,129,0.15); color: #34D399;
+  }
+
+  .sc-stats {
+    display: flex; gap: 20px;
+  }
+  .sc-stat { flex: 1; }
+  .sc-stat-val {
+    font-size: 24px; font-weight: 700;
+    letter-spacing: -0.025em; color: #FFF;
+  }
+  .sc-stat-label {
+    font-size: 10px; font-weight: 500; color: #64748B;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px;
+  }
+
+  .velocity-bars {
+    display: flex; align-items: flex-end; gap: 6px; height: 60px;
+  }
+  .vb {
+    flex: 1; border-radius: 4px 4px 0 0;
+  }
+  .vb1 { height: 45%; background: rgba(168,85,247,0.25); }
+  .vb2 { height: 60%; background: rgba(168,85,247,0.35); }
+  .vb3 { height: 50%; background: rgba(168,85,247,0.30); }
+  .vb4 { height: 80%; background: rgba(168,85,247,0.50); }
+  .vb5 { height: 70%; background: rgba(168,85,247,0.40); }
+  .vb6 { height: 90%; background: rgba(168,85,247,0.65); }
+  .vb7 { height: 100%; background: #A855F7; }
+
+  .velocity-label {
+    font-size: 10px; font-weight: 500; color: #475569;
+    margin-top: 8px;
+  }
+
+  /* Backlog side */
+  .backlog-card {
+    flex: 1;
+    padding: 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+
+  .bl-title {
+    font-size: 15px; font-weight: 600; color: #FFF;
+    margin-bottom: 4px;
+  }
+
+  .bl-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 10px;
+  }
+
+  .bl-priority {
+    width: 4px; height: 32px; border-radius: 2px; flex-shrink: 0;
+  }
+  .pri-high { background: #EF4444; }
+  .pri-med { background: #F59E0B; }
+  .pri-low { background: #10B981; }
+
+  .bl-info { flex: 1; }
+  .bl-item-title {
+    font-size: 13px; font-weight: 500; color: #CBD5E1;
+  }
+  .bl-item-meta {
+    font-size: 10px; font-weight: 400; color: #64748B; margin-top: 2px;
+  }
+  .bl-sp {
+    font-size: 12px; font-weight: 600; color: #475569;
+    flex-shrink: 0;
+  }
+
+  .bottom { display: flex; justify-content: center; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.10); }
+  .dot-active {
+    background: #10B981; box-shadow: 0 0 8px rgba(16,185,129,0.50);
+    width: 24px; border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="glow"></div>
+  <div class="grid"></div>
+
+  <div class="content">
+    <div class="header">
+      <div class="header-left">
+        <div class="feature-number">3</div>
+        <div class="feature-title">Sprint Kapasitesi & Backlog</div>
+      </div>
+      <div class="page-num">4 / 7</div>
+    </div>
+
+    <div class="main-area">
+      <h2 class="headline">
+        Gerçek Verilere Dayalı<br>
+        <span class="headline-accent">Planlama</span>
+      </h2>
+
+      <p class="desc">
+        Velocity trendleri ile gerçekçi taahhütler, önceliklendirilmiş backlog ile sprint'e hazır görevler.
+      </p>
+
+      <div class="mockup">
+        <div class="sprint-card">
+          <div class="sc-header">
+            <div class="sc-title">Sprint 12</div>
+            <div class="sc-badge">Aktif</div>
+          </div>
+          <div class="sc-stats">
+            <div class="sc-stat">
+              <div class="sc-stat-val">34</div>
+              <div class="sc-stat-label">Planlanan SP</div>
+            </div>
+            <div class="sc-stat">
+              <div class="sc-stat-val">28</div>
+              <div class="sc-stat-label">Tamamlanan</div>
+            </div>
+          </div>
+          <div class="velocity-bars">
+            <div class="vb vb1"></div>
+            <div class="vb vb2"></div>
+            <div class="vb vb3"></div>
+            <div class="vb vb4"></div>
+            <div class="vb vb5"></div>
+            <div class="vb vb6"></div>
+            <div class="vb vb7"></div>
+          </div>
+          <div class="velocity-label">Velocity: son 7 sprint trendi</div>
+        </div>
+
+        <div class="backlog-card">
+          <div class="bl-title">Backlog Öncelikleri</div>
+          <div class="bl-item">
+            <div class="bl-priority pri-high"></div>
+            <div class="bl-info">
+              <div class="bl-item-title">Güvenlik yaması</div>
+              <div class="bl-item-meta">Epic: Altyapı · Yüksek</div>
+            </div>
+            <div class="bl-sp">8 SP</div>
+          </div>
+          <div class="bl-item">
+            <div class="bl-priority pri-high"></div>
+            <div class="bl-info">
+              <div class="bl-item-title">SSO entegrasyonu</div>
+              <div class="bl-item-meta">Epic: Kimlik · Yüksek</div>
+            </div>
+            <div class="bl-sp">13 SP</div>
+          </div>
+          <div class="bl-item">
+            <div class="bl-priority pri-med"></div>
+            <div class="bl-info">
+              <div class="bl-item-title">Rapor iyileştirme</div>
+              <div class="bl-item-meta">Epic: Analitik · Orta</div>
+            </div>
+            <div class="bl-sp">5 SP</div>
+          </div>
+          <div class="bl-item">
+            <div class="bl-priority pri-low"></div>
+            <div class="bl-info">
+              <div class="bl-item-title">UI güncelleme</div>
+              <div class="bl-item-meta">Epic: Frontend · Düşük</div>
+            </div>
+            <div class="bl-sp">3 SP</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot dot-active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

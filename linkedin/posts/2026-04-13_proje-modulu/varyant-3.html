@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServiceCore Proje Modülü - Varyant 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1a1a2e;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .canvas {
+    width: 1200px;
+    height: 628px;
+    background: #010E21;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+
+  /* Left panel */
+  .left-panel {
+    width: 480px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 48px 48px 56px;
+  }
+
+  .left-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.10) 0%, transparent 65%);
+    top: 50%;
+    left: -100px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .logo-text {
+    font-size: 18px;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+  }
+
+  .logo-bold { font-weight: 700; }
+  .logo-light { font-weight: 400; color: #94A3B8; }
+
+  .module-label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #10B981;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .headline {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .headline-accent {
+    background: linear-gradient(to right, #10B981, #22D3EE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subline {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #94A3B8;
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 9999px;
+    border: none;
+    box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.50);
+    position: relative;
+    z-index: 2;
+  }
+
+  .cta-arrow { font-size: 16px; }
+
+  /* Right panel — dashboard mockup */
+  .right-panel {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 40px 32px 20px;
+  }
+
+  .right-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(0, 112, 243, 0.08) 0%, transparent 65%);
+    top: 50%;
+    right: -80px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .divider-line {
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(16, 185, 129, 0.20), transparent);
+  }
+
+  /* Sprint dashboard */
+  .sprint-dashboard {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .sprint-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+  }
+
+  .sprint-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .sprint-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .sprint-meta-item {
+    font-size: 11px;
+    font-weight: 500;
+    color: #64748B;
+  }
+
+  .sprint-meta-value {
+    color: #10B981;
+    font-weight: 600;
+  }
+
+  /* Stats grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+  }
+
+  .stat-value-green { color: #10B981; }
+  .stat-value-blue { color: #0070F3; }
+  .stat-value-purple { color: #A855F7; }
+
+  .stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 4px;
+  }
+
+  /* Velocity chart */
+  .velocity-card {
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+  }
+
+  .velocity-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .velocity-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .velocity-trend {
+    font-size: 11px;
+    font-weight: 600;
+    color: #10B981;
+  }
+
+  .velocity-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 50px;
+  }
+
+  .v-bar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .vb-1 { height: 50%; background: rgba(16, 185, 129, 0.25); }
+  .vb-2 { height: 65%; background: rgba(16, 185, 129, 0.35); }
+  .vb-3 { height: 55%; background: rgba(16, 185, 129, 0.30); }
+  .vb-4 { height: 80%; background: rgba(16, 185, 129, 0.50); }
+  .vb-5 { height: 70%; background: rgba(16, 185, 129, 0.40); }
+  .vb-6 { height: 90%; background: rgba(16, 185, 129, 0.60); }
+  .vb-7 { height: 100%; background: #10B981; }
+
+  .velocity-labels {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+  }
+
+  .velocity-label {
+    flex: 1;
+    text-align: center;
+    font-size: 9px;
+    font-weight: 500;
+    color: #334155;
+  }
+
+  /* Bottom logos */
+  .bottom-bar {
+    position: absolute;
+    bottom: 48px;
+    left: 56px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    z-index: 10;
+  }
+
+  .bottom-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #334155;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .bottom-separator {
+    width: 1px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .customer-logos {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .customer-logo {
+    height: 18px;
+    opacity: 0.25;
+    filter: brightness(0) invert(1);
+    object-fit: contain;
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+  <div class="grid-pattern"></div>
+
+  <!-- Left -->
+  <div class="left-panel">
+    <div class="left-glow"></div>
+
+    <div class="logo-area">
+      <div class="logo-icon">
+        <img src="../../../brand/assets/logo-v1.png" alt="ServiceCore">
+      </div>
+      <div class="logo-text">
+        <span class="logo-bold">Service</span><span class="logo-light">Core</span>
+      </div>
+    </div>
+
+    <div class="module-label">Proje Yönetimi Modülü</div>
+    <h1 class="headline">
+      Backlog, Kapasite, Bütçe<br>
+      <span class="headline-accent">Hepsi Kontrol Altında</span>
+    </h1>
+    <p class="subline">
+      Story point, velocity ve kapasite — gerçek verilere dayalı planlama.
+    </p>
+    <div class="cta-button">
+      Demo Talep Edin
+      <span class="cta-arrow">&rarr;</span>
+    </div>
+  </div>
+
+  <!-- Right -->
+  <div class="right-panel">
+    <div class="right-glow"></div>
+    <div class="divider-line"></div>
+
+    <div class="sprint-dashboard">
+      <!-- Sprint header -->
+      <div class="sprint-header">
+        <div class="sprint-title">Sprint 12 — Dashboard Yenileme</div>
+        <div class="sprint-meta">
+          <div class="sprint-meta-item">Kalan: <span class="sprint-meta-value">4 gün</span></div>
+          <div class="sprint-meta-item">İlerleme: <span class="sprint-meta-value">%72</span></div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value stat-value-green">34</div>
+          <div class="stat-label">Story Point</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value stat-value-blue">%87</div>
+          <div class="stat-label">Kapasite</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value stat-value-purple">12</div>
+          <div class="stat-label">Tamamlanan</div>
+        </div>
+      </div>
+
+      <!-- Velocity -->
+      <div class="velocity-card">
+        <div class="velocity-header">
+          <span class="velocity-title">Velocity Trendi</span>
+          <span class="velocity-trend">+18% &#8593;</span>
+        </div>
+        <div class="velocity-bars">
+          <div class="v-bar vb-1"></div>
+          <div class="v-bar vb-2"></div>
+          <div class="v-bar vb-3"></div>
+          <div class="v-bar vb-4"></div>
+          <div class="v-bar vb-5"></div>
+          <div class="v-bar vb-6"></div>
+          <div class="v-bar vb-7"></div>
+        </div>
+        <div class="velocity-labels">
+          <span class="velocity-label">S6</span>
+          <span class="velocity-label">S7</span>
+          <span class="velocity-label">S8</span>
+          <span class="velocity-label">S9</span>
+          <span class="velocity-label">S10</span>
+          <span class="velocity-label">S11</span>
+          <span class="velocity-label">S12</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom logos -->
+  <div class="bottom-bar">
+    <span class="bottom-label">Güvenen Kurumlar</span>
+    <div class="bottom-separator"></div>
+    <div class="customer-logos">
+      <img class="customer-logo" style="height: 28px;" src="../../../website/public/logos/sabanci.png" alt="Sabancı">
+      <img class="customer-logo" src="../../../website/public/logos/boyner.png" alt="Boyner">
+      <img class="customer-logo" src="../../../website/public/logos/roketsan.png" alt="Roketsan">
+      <img class="customer-logo" src="../../../website/public/logos/qnb.png" alt="QNB Finansbank">
+      <img class="customer-logo" style="height: 24px;" src="../../../website/public/logos/toyota.png" alt="Toyota">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

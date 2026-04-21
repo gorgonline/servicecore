@@ -44,7 +44,7 @@
 - ServiceCore mavi glow efekt (opsiyonel)
 
 ### Gorsel Turleri
-1. **Stat gorsel**: Buyuk rakam + kisa aciklama ("600.000+ kullanici")
+1. **Stat gorsel**: Buyuk rakam + kisa aciklama ("4M+ kullanici")
 2. **Alinti gorsel**: Musteri veya uzman alintilarini
 3. **Before/After**: Surec iyilestirme karsilastirmasi
 4. **Ozellik tanıtımı**: Tek ozellik, buyuk screenshot + overlay metin

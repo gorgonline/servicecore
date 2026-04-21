@@ -3,6 +3,32 @@
 
 ## Degisiklikler
 
+### 2026-04-21 — v1.1.0: Icerik Uretim Pipeline'i
+
+**Ozellikler:**
+- LinkedIn gorsel uretim scripti: `linkedin/html-to-png.mjs` (puppeteer tabanli HTML → PNG)
+- LinkedIn uretim ciktilari: 4 post klasoru (`linkedin/posts/`)
+- Email kampanya ilk uretim: `email/output/2026-04-15_genel-tanitim.html`
+- Email marka logolari: boyner, qnb, roketsan, sabanci, toyota (`email/assets/`)
+- Brand sembol varligi: `brand/assets/Symbol@4x.png`
+- package.json + lock: puppeteer ^24.40.0 (dev dependency)
+- LinkedIn sablon metni: "600.000" → "4M+ kullanici" guncellemesi
+- .gitignore: `*.zip` eklendi (paketlenmis arsivler dısarıda)
+
+**Etkilenen dosyalar:**
+- linkedin/html-to-png.mjs (yeni)
+- linkedin/posts/ (yeni — 4 post klasoru)
+- linkedin/templates/tek-gorsel/sablon.md (guncellendi)
+- linkedin/templates/text-post/sablon.md (guncellendi)
+- email/assets/*.png (yeni — 5 logo)
+- email/output/2026-04-15_genel-tanitim.html (yeni)
+- brand/assets/Symbol@4x.png (yeni)
+- package.json + package-lock.json (yeni)
+- .gitignore (guncellendi)
+- docs/durum.md (guncellendi)
+
+---
+
 ### 2026-04-01 — v1.0.0: Temel Kurulum
 
 **Ozellikler:**

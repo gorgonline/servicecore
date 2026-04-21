@@ -31,7 +31,7 @@
 
 - "IT ekibiniz gunun %60'ini tekrarlayan taleplere mi harcıyor?"
 - "ITIL4'e gecis projeniz neden 6. ayinda hala bitmedi?"
-- "600.000 kullanicinin ortak noktasi: surec otomasyonu."
+- "4 milyon+ kullanicinin ortak noktasi: surec otomasyonu."
 - "Servis masasi yazilimi degistirmek korkutucu. Ama gecikmenin maliyeti daha buyuk."
 - "7/24 destek vermek zorundasiniz. Ama ekibiniz 5/9 calisiyor."
 

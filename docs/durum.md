@@ -10,6 +10,10 @@
 - [x] next.config.ts: security headers, image optimization
 - [x] GitHub private repo (gorgonline/servicecore) + v1.0.0 tag
 - [x] Sistem denetimi: arastirma notlariyla %95 uyum dogrulandi
+- [x] LinkedIn gorsel uretim pipeline'i (puppeteer + html-to-png.mjs)
+- [x] Email kampanya ilk uretim ciktisi (2026-04-15_genel-tanitim) + marka logolari
+- [x] Brand sembol varligi (Symbol@4x.png)
+- [x] v1.1.0 tag — icerik uretim pipeline'i
 
 ## Devam Eden Isler
 

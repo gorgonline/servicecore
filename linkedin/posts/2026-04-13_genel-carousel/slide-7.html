@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Genel Carousel - Slide 7 CTA</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; background: #1a1a2e;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .canvas {
+    width: 1080px; height: 1080px;
+    background: #010E21;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+  }
+  .glow-1 {
+    position: absolute; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(0, 112, 243, 0.12) 0%, transparent 55%);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .glow-2 {
+    position: absolute; width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, transparent 70%);
+    bottom: -100px; right: -80px; pointer-events: none;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px; pointer-events: none;
+  }
+  .line-top {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 400px; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 112, 243, 0.40), transparent);
+  }
+  .line-bottom {
+    position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: 400px; height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 112, 243, 0.20), transparent);
+  }
+
+  .content {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    gap: 40px; padding: 80px 64px;
+    height: 100%; justify-content: space-between;
+  }
+
+  .top-area { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  .logo-row { display: flex; align-items: center; gap: 12px; }
+  .logo-icon { width: 44px; height: 44px; border-radius: 12px; overflow: hidden; }
+  .logo-icon img { width: 100%; height: 100%; object-fit: contain; }
+  .logo-text { font-size: 24px; letter-spacing: -0.025em; color: #FFF; }
+  .logo-bold { font-weight: 700; }
+  .logo-light { font-weight: 400; color: #94A3B8; }
+  .page-num { font-size: 12px; font-weight: 500; color: #475569; }
+
+  .center-area {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 32px;
+  }
+
+  .headline {
+    font-size: 56px; font-weight: 800;
+    line-height: 1.08; letter-spacing: -0.03em; color: #FFF;
+  }
+  .headline-accent {
+    background: linear-gradient(to right, #0070F3, #38BDF8);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subline {
+    font-size: 20px; font-weight: 300;
+    line-height: 1.6; color: #94A3B8; max-width: 550px;
+  }
+
+  .recap-row {
+    display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  }
+  .recap-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+  }
+  .recap-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(0,112,243,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: #0070F3; font-weight: 700; flex-shrink: 0;
+  }
+  .recap-text { font-size: 14px; font-weight: 500; color: #CBD5E1; }
+
+  .cta-button {
+    display: inline-flex; align-items: center; gap: 12px;
+    padding: 20px 52px;
+    background: #0070F3; color: #FFF;
+    font-size: 20px; font-weight: 700;
+    border-radius: 9999px; border: none;
+    box-shadow: 0 0 50px -5px rgba(0, 112, 243, 0.50);
+  }
+  .cta-arrow { font-size: 22px; }
+
+  .cta-note { font-size: 15px; font-weight: 400; color: #64748B; }
+  .cta-note strong { color: #94A3B8; font-weight: 500; }
+
+  .bottom-area {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 16px;
+  }
+
+  .customer-logos { display: flex; align-items: center; gap: 28px; }
+  .customer-logo {
+    height: 22px; opacity: 0.30;
+    filter: brightness(0) invert(1); object-fit: contain;
+  }
+
+  .dots { display: flex; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.10); }
+  .dot-active {
+    background: #0070F3; box-shadow: 0 0 8px rgba(0,112,243,0.50);
+    width: 24px; border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="glow-1"></div>
+  <div class="glow-2"></div>
+  <div class="grid"></div>
+  <div class="line-top"></div>
+  <div class="line-bottom"></div>
+
+  <div class="content">
+    <div class="top-area">
+      <div class="logo-row">
+        <div class="logo-icon"><img src="../../../brand/assets/logo-v1.png" alt="SC"></div>
+        <div class="logo-text"><span class="logo-bold">Service</span><span class="logo-light">Core</span></div>
+      </div>
+      <div class="page-num">7 / 7</div>
+    </div>
+
+    <div class="center-area">
+      <h1 class="headline">
+        Kurumsal Operasyonlarınızı<br>
+        <span class="headline-accent">Orkestra Edin</span>
+      </h1>
+
+      <p class="subline">
+        16 ITIL4 süreci, 24+ modül, çeyrek asır deneyim. Türkiye'nin kurumsal altyapısını şekillendiren platform.
+      </p>
+
+      <div class="recap-row">
+        <div class="recap-item">
+          <div class="recap-check">&#10003;</div>
+          <div class="recap-text">Hizmet Masası</div>
+        </div>
+        <div class="recap-item">
+          <div class="recap-check">&#10003;</div>
+          <div class="recap-text">Varlık Yönetimi</div>
+        </div>
+        <div class="recap-item">
+          <div class="recap-check">&#10003;</div>
+          <div class="recap-text">Değişiklik</div>
+        </div>
+        <div class="recap-item">
+          <div class="recap-check">&#10003;</div>
+          <div class="recap-text">Proje Yönetimi</div>
+        </div>
+        <div class="recap-item">
+          <div class="recap-check">&#10003;</div>
+          <div class="recap-text">Raporlama</div>
+        </div>
+      </div>
+
+      <div class="cta-button">
+        Demo Talep Edin
+        <span class="cta-arrow">&rarr;</span>
+      </div>
+
+      <div class="cta-note">
+        <strong>ITIL4 uyumlu</strong> · Modüler lisanslama · 4M+ kullanıcı
+      </div>
+    </div>
+
+    <div class="bottom-area">
+      <div class="customer-logos">
+        <img class="customer-logo" style="height: 36px;" src="../../../website/public/logos/sabanci.png" alt="Sabancı">
+        <img class="customer-logo" src="../../../website/public/logos/boyner.png" alt="Boyner">
+        <img class="customer-logo" src="../../../website/public/logos/roketsan.png" alt="Roketsan">
+        <img class="customer-logo" src="../../../website/public/logos/qnb.png" alt="QNB">
+        <img class="customer-logo" style="height: 30px;" src="../../../website/public/logos/toyota.png" alt="Toyota">
+      </div>
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot dot-active"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

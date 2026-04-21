@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServiceCore LinkedIn Ad - Varyant 3</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1a1a2e;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .canvas {
+    width: 1200px;
+    height: 628px;
+    background: #010E21;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+
+  /* Left panel — accent strip */
+  .left-panel {
+    width: 460px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(165deg, rgba(0, 112, 243, 0.12) 0%, rgba(168, 85, 247, 0.06) 50%, transparent 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .left-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 112, 243, 0.15) 0%, transparent 65%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .big-number {
+    position: relative;
+    z-index: 2;
+    font-size: 120px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    background: linear-gradient(to bottom, #FFFFFF, rgba(255, 255, 255, 0.40));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .big-number-label {
+    position: relative;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #0070F3;
+    margin-top: 8px;
+  }
+
+  .left-stats {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  .left-stat {
+    text-align: center;
+  }
+
+  .left-stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.025em;
+  }
+
+  .left-stat-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  .left-divider {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.15), transparent);
+    align-self: center;
+  }
+
+  /* Right panel */
+  .right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 56px;
+    position: relative;
+  }
+
+  .right-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, transparent 70%);
+    bottom: -80px;
+    right: -60px;
+    pointer-events: none;
+  }
+
+  /* Grid */
+  .grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* Top: logo + badge */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .logo-text {
+    font-size: 18px;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+  }
+
+  .logo-bold { font-weight: 700; }
+  .logo-light { font-weight: 400; color: #94A3B8; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    background: rgba(0, 112, 243, 0.08);
+    border: 1px solid rgba(0, 112, 243, 0.20);
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #60A5FA;
+    letter-spacing: 0.02em;
+  }
+
+  .badge-icon {
+    font-size: 12px;
+  }
+
+  /* Middle: headline + subline + CTA */
+  .middle-block {
+    position: relative;
+    z-index: 2;
+  }
+
+  .headline {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+  }
+
+  .headline-accent {
+    background: linear-gradient(to right, #0070F3, #22D3EE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subline {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #94A3B8;
+    margin-bottom: 28px;
+    max-width: 480px;
+  }
+
+  .cta-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    background: #0070F3;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 9999px;
+    border: none;
+    box-shadow: 0 0 30px -5px rgba(0, 112, 243, 0.50);
+  }
+
+  .cta-arrow { font-size: 16px; }
+
+  .cta-secondary {
+    font-size: 13px;
+    font-weight: 400;
+    color: #64748B;
+  }
+
+  .cta-secondary strong {
+    color: #94A3B8;
+    font-weight: 500;
+  }
+
+  /* Bottom: logos */
+  .bottom-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .bottom-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: #334155;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .bottom-separator {
+    width: 1px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .customer-logos {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .customer-logo {
+    height: 20px;
+    opacity: 0.30;
+    filter: brightness(0) invert(1);
+    object-fit: contain;
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+  <div class="grid-pattern"></div>
+
+  <!-- Left Panel -->
+  <div class="left-panel">
+    <div class="left-glow"></div>
+    <div class="big-number">16</div>
+    <div class="big-number-label">ITIL4 Süreci</div>
+    <div class="left-stats">
+      <div class="left-stat">
+        <div class="left-stat-value">24+</div>
+        <div class="left-stat-label">Modül</div>
+      </div>
+      <div class="left-divider"></div>
+      <div class="left-stat">
+        <div class="left-stat-value">4M+</div>
+        <div class="left-stat-label">Kullanıcı</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Panel -->
+  <div class="right-panel">
+    <div class="right-glow"></div>
+
+    <!-- Top -->
+    <div class="top-bar">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <img src="../../../brand/assets/logo-v1.png" alt="ServiceCore">
+        </div>
+        <div class="logo-text">
+          <span class="logo-bold">Service</span><span class="logo-light">Core</span>
+        </div>
+      </div>
+      <div class="badge">
+        <span class="badge-icon">&#9670;</span>
+        ITIL4 Uyumlu
+      </div>
+    </div>
+
+    <!-- Middle -->
+    <div class="middle-block">
+      <h1 class="headline">
+        ITSM ve Proje Yönetimini<br>
+        <span class="headline-accent">Tek Platformda</span> Birleştirin
+      </h1>
+      <p class="subline">
+        Hizmet masası, varlık yönetimi, değişiklik kontrolü ve proje yönetimi — kurumsal orkestrasyon tek çatı altında.
+      </p>
+      <div class="cta-row">
+        <div class="cta-button">
+          Demo Talep Edin
+          <span class="cta-arrow">&rarr;</span>
+        </div>
+        <div class="cta-secondary">
+          <strong>Çeyrek asır</strong> ITSM deneyimi
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom-bar">
+      <span class="bottom-label">Güvenen Kurumlar</span>
+      <div class="bottom-separator"></div>
+      <div class="customer-logos">
+        <img class="customer-logo" style="height: 32px;" src="../../../website/public/logos/sabanci.png" alt="Sabancı">
+        <img class="customer-logo" src="../../../website/public/logos/boyner.png" alt="Boyner">
+        <img class="customer-logo" src="../../../website/public/logos/roketsan.png" alt="Roketsan">
+        <img class="customer-logo" src="../../../website/public/logos/qnb.png" alt="QNB Finansbank">
+        <img class="customer-logo" style="height: 26px;" src="../../../website/public/logos/toyota.png" alt="Toyota">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

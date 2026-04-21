@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Proje Carousel - Slide 5 Isı Haritası & Ekip Yükü</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; background: #1a1a2e;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .canvas {
+    width: 1080px; height: 1080px;
+    background: #010E21;
+    position: relative; overflow: hidden;
+  }
+  .glow {
+    position: absolute; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 60%);
+    top: -80px; right: -80px; pointer-events: none;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px; pointer-events: none;
+  }
+
+  .content {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column;
+    height: 100%; padding: 64px;
+    justify-content: space-between;
+  }
+
+  .header { display: flex; align-items: center; justify-content: space-between; }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .feature-number {
+    font-size: 14px; font-weight: 700; color: #010E21;
+    background: #10B981; width: 32px; height: 32px;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  }
+  .feature-title {
+    font-size: 16px; font-weight: 600; color: #10B981;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .page-num { font-size: 13px; font-weight: 500; color: #475569; }
+
+  .main-area {
+    flex: 1; display: flex; flex-direction: column;
+    justify-content: center; gap: 36px;
+  }
+
+  .headline {
+    font-size: 40px; font-weight: 700;
+    line-height: 1.15; letter-spacing: -0.025em; color: #FFF;
+  }
+  .headline-accent {
+    background: linear-gradient(to right, #F97316, #EAB308);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .desc {
+    font-size: 18px; font-weight: 300;
+    line-height: 1.6; color: #94A3B8; max-width: 600px;
+  }
+
+  /* Heatmap */
+  .heatmap-container {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 28px;
+  }
+
+  .hm-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .hm-title {
+    font-size: 14px; font-weight: 600; color: #FFF;
+  }
+  .hm-legend {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hm-legend-item {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 500; color: #64748B;
+  }
+  .hm-legend-dot {
+    width: 10px; height: 10px; border-radius: 3px;
+  }
+  .leg-low { background: #10B981; }
+  .leg-med { background: #F59E0B; }
+  .leg-high { background: #EF4444; }
+
+  .hm-grid {
+    display: flex; flex-direction: column; gap: 6px;
+  }
+
+  .hm-row {
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  .hm-name {
+    width: 100px; font-size: 12px; font-weight: 500;
+    color: #94A3B8; text-align: right; padding-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .hm-cells {
+    display: flex; gap: 4px; flex: 1;
+  }
+
+  .hm-cell {
+    flex: 1; height: 44px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.60);
+  }
+
+  /* Utilization levels */
+  .u-20 { background: rgba(16,185,129,0.10); }
+  .u-40 { background: rgba(16,185,129,0.20); }
+  .u-60 { background: rgba(16,185,129,0.35); color: rgba(255,255,255,0.80); }
+  .u-70 { background: rgba(245,158,11,0.20); }
+  .u-80 { background: rgba(245,158,11,0.35); color: rgba(255,255,255,0.80); }
+  .u-90 { background: rgba(239,68,68,0.25); color: rgba(255,255,255,0.80); }
+  .u-100 { background: rgba(239,68,68,0.40); color: #FFF; }
+
+  .hm-days {
+    display: flex; gap: 4px; margin-left: 108px; margin-top: 8px;
+  }
+  .hm-day {
+    flex: 1; text-align: center;
+    font-size: 10px; font-weight: 500; color: #475569;
+  }
+
+  .bottom { display: flex; justify-content: center; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.10); }
+  .dot-active {
+    background: #10B981; box-shadow: 0 0 8px rgba(16,185,129,0.50);
+    width: 24px; border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="glow"></div>
+  <div class="grid"></div>
+
+  <div class="content">
+    <div class="header">
+      <div class="header-left">
+        <div class="feature-number">4</div>
+        <div class="feature-title">Isı Haritası & Ekip Yükü</div>
+      </div>
+      <div class="page-num">5 / 7</div>
+    </div>
+
+    <div class="main-area">
+      <h2 class="headline">
+        Kimin Aşırı Yüklendiğini<br>
+        <span class="headline-accent">Hemen Görün</span>
+      </h2>
+
+      <p class="desc">
+        Günlük, haftalık, aylık utilization analizi. Blokajları proaktif yakala, kaynakları dengeli dağıt.
+      </p>
+
+      <div class="heatmap-container">
+        <div class="hm-header">
+          <div class="hm-title">Ekip Utilization — Haftalık</div>
+          <div class="hm-legend">
+            <div class="hm-legend-item"><div class="hm-legend-dot leg-low"></div> Uygun</div>
+            <div class="hm-legend-item"><div class="hm-legend-dot leg-med"></div> Yoğun</div>
+            <div class="hm-legend-item"><div class="hm-legend-dot leg-high"></div> Aşırı</div>
+          </div>
+        </div>
+
+        <div class="hm-grid">
+          <div class="hm-row">
+            <div class="hm-name">Ahmet K.</div>
+            <div class="hm-cells">
+              <div class="hm-cell u-60">60</div>
+              <div class="hm-cell u-80">80</div>
+              <div class="hm-cell u-90">90</div>
+              <div class="hm-cell u-70">70</div>
+              <div class="hm-cell u-40">40</div>
+            </div>
+          </div>
+          <div class="hm-row">
+            <div class="hm-name">Elif Y.</div>
+            <div class="hm-cells">
+              <div class="hm-cell u-40">40</div>
+              <div class="hm-cell u-60">60</div>
+              <div class="hm-cell u-70">70</div>
+              <div class="hm-cell u-80">80</div>
+              <div class="hm-cell u-100">100</div>
+            </div>
+          </div>
+          <div class="hm-row">
+            <div class="hm-name">Murat D.</div>
+            <div class="hm-cells">
+              <div class="hm-cell u-90">90</div>
+              <div class="hm-cell u-100">100</div>
+              <div class="hm-cell u-80">80</div>
+              <div class="hm-cell u-60">60</div>
+              <div class="hm-cell u-40">40</div>
+            </div>
+          </div>
+          <div class="hm-row">
+            <div class="hm-name">Zeynep A.</div>
+            <div class="hm-cells">
+              <div class="hm-cell u-20">20</div>
+              <div class="hm-cell u-40">40</div>
+              <div class="hm-cell u-60">60</div>
+              <div class="hm-cell u-40">40</div>
+              <div class="hm-cell u-20">20</div>
+            </div>
+          </div>
+          <div class="hm-row">
+            <div class="hm-name">Can B.</div>
+            <div class="hm-cells">
+              <div class="hm-cell u-70">70</div>
+              <div class="hm-cell u-80">80</div>
+              <div class="hm-cell u-100">100</div>
+              <div class="hm-cell u-90">90</div>
+              <div class="hm-cell u-70">70</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hm-days">
+          <div class="hm-day">Pzt</div>
+          <div class="hm-day">Sal</div>
+          <div class="hm-day">Çar</div>
+          <div class="hm-day">Per</div>
+          <div class="hm-day">Cum</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot dot-active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

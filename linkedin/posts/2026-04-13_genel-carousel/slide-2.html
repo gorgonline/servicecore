@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Genel Carousel - Slide 2 Hizmet Masası</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; background: #1a1a2e;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .canvas {
+    width: 1080px; height: 1080px;
+    background: #010E21;
+    position: relative; overflow: hidden;
+  }
+  .glow {
+    position: absolute; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0, 112, 243, 0.10) 0%, transparent 60%);
+    top: -80px; right: -80px; pointer-events: none;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px; pointer-events: none;
+  }
+
+  .content {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column;
+    height: 100%; padding: 64px;
+    justify-content: space-between;
+  }
+
+  .header { display: flex; align-items: center; justify-content: space-between; }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .feature-number {
+    font-size: 14px; font-weight: 700; color: #010E21;
+    background: #0070F3; width: 32px; height: 32px;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  }
+  .feature-title {
+    font-size: 16px; font-weight: 600; color: #0070F3;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .page-num { font-size: 13px; font-weight: 500; color: #475569; }
+
+  .main-area {
+    flex: 1; display: flex; flex-direction: column;
+    justify-content: center; gap: 36px;
+  }
+
+  .headline {
+    font-size: 40px; font-weight: 700;
+    line-height: 1.15; letter-spacing: -0.025em; color: #FFF;
+  }
+  .headline-accent {
+    background: linear-gradient(to right, #0070F3, #38BDF8);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .desc {
+    font-size: 18px; font-weight: 300;
+    line-height: 1.6; color: #94A3B8; max-width: 600px;
+  }
+
+  /* Ticket mockup */
+  .tickets-container {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  .ticket {
+    display: flex; align-items: center;
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px; gap: 16px;
+  }
+  .ticket-active {
+    border-color: rgba(0, 112, 243, 0.25);
+    background: rgba(0, 112, 243, 0.04);
+  }
+
+  .ticket-priority {
+    width: 4px; height: 40px; border-radius: 2px; flex-shrink: 0;
+  }
+  .pri-critical { background: #EF4444; }
+  .pri-high { background: #F59E0B; }
+  .pri-medium { background: #0070F3; }
+  .pri-low { background: #10B981; }
+
+  .ticket-info { flex: 1; }
+  .ticket-id {
+    font-size: 11px; font-weight: 600; color: #475569;
+    letter-spacing: 0.05em; margin-bottom: 2px;
+  }
+  .ticket-title { font-size: 15px; font-weight: 500; color: #CBD5E1; }
+  .ticket-meta {
+    font-size: 11px; font-weight: 400; color: #64748B; margin-top: 4px;
+  }
+
+  .ticket-status {
+    padding: 5px 14px; border-radius: 9999px;
+    font-size: 10px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.05em; flex-shrink: 0;
+  }
+  .st-open { background: rgba(0,112,243,0.15); color: #60A5FA; }
+  .st-progress { background: rgba(245,158,11,0.15); color: #FBBF24; }
+  .st-resolved { background: rgba(16,185,129,0.15); color: #34D399; }
+  .st-waiting { background: rgba(168,85,247,0.15); color: #C084FC; }
+
+  .ticket-sla { flex-shrink: 0; text-align: right; }
+  .sla-label { font-size: 10px; font-weight: 500; color: #475569; }
+  .sla-value { font-size: 14px; font-weight: 600; color: #10B981; }
+  .sla-warning { color: #F59E0B; }
+
+  .bottom { display: flex; justify-content: center; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.10); }
+  .dot-active {
+    background: #0070F3; box-shadow: 0 0 8px rgba(0,112,243,0.50);
+    width: 24px; border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="glow"></div>
+  <div class="grid"></div>
+
+  <div class="content">
+    <div class="header">
+      <div class="header-left">
+        <div class="feature-number">1</div>
+        <div class="feature-title">Hizmet Masası</div>
+      </div>
+      <div class="page-num">2 / 7</div>
+    </div>
+
+    <div class="main-area">
+      <h2 class="headline">
+        Olay, Talep, SLA —<br>
+        <span class="headline-accent">Merkezi Yönetim</span>
+      </h2>
+
+      <p class="desc">
+        Tüm IT talepleri tek noktadan yönetilir. Otomatik atama, SLA takibi ve eskalasyon kurallarıyla hiçbir talep kaybolmaz.
+      </p>
+
+      <div class="tickets-container">
+        <div class="ticket ticket-active">
+          <div class="ticket-priority pri-critical"></div>
+          <div class="ticket-info">
+            <div class="ticket-id">INC-2847</div>
+            <div class="ticket-title">E-posta sunucusu erişilemiyor</div>
+            <div class="ticket-meta">Altyapı Ekibi · 12 dk önce</div>
+          </div>
+          <div class="ticket-status st-open">Açık</div>
+          <div class="ticket-sla">
+            <div class="sla-label">SLA</div>
+            <div class="sla-value sla-warning">28 dk</div>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket-priority pri-high"></div>
+          <div class="ticket-info">
+            <div class="ticket-id">INC-2845</div>
+            <div class="ticket-title">VPN bağlantı hatası — uzak ofis</div>
+            <div class="ticket-meta">Ağ Ekibi · 45 dk önce</div>
+          </div>
+          <div class="ticket-status st-progress">İşlemde</div>
+          <div class="ticket-sla">
+            <div class="sla-label">SLA</div>
+            <div class="sla-value">1s 15dk</div>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket-priority pri-medium"></div>
+          <div class="ticket-info">
+            <div class="ticket-id">SR-1203</div>
+            <div class="ticket-title">Yeni çalışan donanım talebi</div>
+            <div class="ticket-meta">İK Departmanı · 2 saat önce</div>
+          </div>
+          <div class="ticket-status st-waiting">Onay Bekliyor</div>
+          <div class="ticket-sla">
+            <div class="sla-label">SLA</div>
+            <div class="sla-value">6s 30dk</div>
+          </div>
+        </div>
+
+        <div class="ticket">
+          <div class="ticket-priority pri-low"></div>
+          <div class="ticket-info">
+            <div class="ticket-id">INC-2840</div>
+            <div class="ticket-title">Yazıcı toner değişimi</div>
+            <div class="ticket-meta">Destek Ekibi · 3 saat önce</div>
+          </div>
+          <div class="ticket-status st-resolved">Çözüldü</div>
+          <div class="ticket-sla">
+            <div class="sla-label">SLA</div>
+            <div class="sla-value">&#10003;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="dot"></div>
+      <div class="dot dot-active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

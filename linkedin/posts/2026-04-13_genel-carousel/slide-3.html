@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Genel Carousel - Slide 3 Varlık Yönetimi</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; background: #1a1a2e;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  .canvas {
+    width: 1080px; height: 1080px;
+    background: #010E21;
+    position: relative; overflow: hidden;
+  }
+  .glow {
+    position: absolute; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.10) 0%, transparent 60%);
+    bottom: -80px; left: -80px; pointer-events: none;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 40px 40px; pointer-events: none;
+  }
+
+  .content {
+    position: relative; z-index: 10;
+    display: flex; flex-direction: column;
+    height: 100%; padding: 64px;
+    justify-content: space-between;
+  }
+
+  .header { display: flex; align-items: center; justify-content: space-between; }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .feature-number {
+    font-size: 14px; font-weight: 700; color: #010E21;
+    background: #0070F3; width: 32px; height: 32px;
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  }
+  .feature-title {
+    font-size: 16px; font-weight: 600; color: #0070F3;
+    letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .page-num { font-size: 13px; font-weight: 500; color: #475569; }
+
+  .main-area {
+    flex: 1; display: flex; flex-direction: column;
+    justify-content: center; gap: 36px;
+  }
+
+  .headline {
+    font-size: 40px; font-weight: 700;
+    line-height: 1.15; letter-spacing: -0.025em; color: #FFF;
+  }
+  .headline-accent {
+    background: linear-gradient(to right, #10B981, #22D3EE);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .desc {
+    font-size: 18px; font-weight: 300;
+    line-height: 1.6; color: #94A3B8; max-width: 600px;
+  }
+
+  /* CMDB Grid */
+  .cmdb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .cmdb-card {
+    padding: 24px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  .cmdb-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .ic-green { background: rgba(16,185,129,0.12); color: #34D399; }
+  .ic-blue { background: rgba(0,112,243,0.12); color: #60A5FA; }
+  .ic-purple { background: rgba(168,85,247,0.12); color: #C084FC; }
+  .ic-cyan { background: rgba(6,182,212,0.12); color: #22D3EE; }
+  .ic-orange { background: rgba(249,115,22,0.12); color: #FB923C; }
+  .ic-pink { background: rgba(236,72,153,0.12); color: #F472B6; }
+
+  .cmdb-title { font-size: 15px; font-weight: 600; color: #FFF; }
+  .cmdb-value { font-size: 28px; font-weight: 700; color: #FFF; letter-spacing: -0.025em; }
+  .cmdb-label { font-size: 11px; font-weight: 400; color: #64748B; }
+
+  /* Wide card */
+  .cmdb-wide {
+    grid-column: span 3;
+    display: flex; align-items: center; gap: 24px;
+    padding: 20px 28px;
+  }
+
+  .relation-flow {
+    display: flex; align-items: center; gap: 12px; flex: 1;
+    justify-content: center;
+  }
+
+  .rel-node {
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    font-size: 12px; font-weight: 500; color: #CBD5E1;
+    text-align: center;
+  }
+
+  .rel-arrow {
+    font-size: 18px; color: #0070F3;
+  }
+
+  .bottom { display: flex; justify-content: center; gap: 8px; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.10); }
+  .dot-active {
+    background: #0070F3; box-shadow: 0 0 8px rgba(0,112,243,0.50);
+    width: 24px; border-radius: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="glow"></div>
+  <div class="grid"></div>
+
+  <div class="content">
+    <div class="header">
+      <div class="header-left">
+        <div class="feature-number">2</div>
+        <div class="feature-title">Varlık Yönetimi (CMDB)</div>
+      </div>
+      <div class="page-num">3 / 7</div>
+    </div>
+
+    <div class="main-area">
+      <h2 class="headline">
+        Tüm BT Varlıklarınız,<br>
+        <span class="headline-accent">Tek Envanter</span>
+      </h2>
+
+      <p class="desc">
+        Sunucu, ağ, yazılım, lisans — her varlık izlenir, ilişkilendirilir ve yaşam döngüsü boyunca yönetilir.
+      </p>
+
+      <div class="cmdb-grid">
+        <div class="cmdb-card">
+          <div class="cmdb-icon ic-blue">&#9881;</div>
+          <div class="cmdb-title">Sunucu</div>
+          <div class="cmdb-value">248</div>
+          <div class="cmdb-label">Fiziksel + Sanal</div>
+        </div>
+        <div class="cmdb-card">
+          <div class="cmdb-icon ic-green">&#9854;</div>
+          <div class="cmdb-title">İş İstasyonu</div>
+          <div class="cmdb-value">1,420</div>
+          <div class="cmdb-label">Masaüstü + Dizüstü</div>
+        </div>
+        <div class="cmdb-card">
+          <div class="cmdb-icon ic-purple">&#9636;</div>
+          <div class="cmdb-title">Yazılım</div>
+          <div class="cmdb-value">87</div>
+          <div class="cmdb-label">Lisanslı Uygulama</div>
+        </div>
+        <div class="cmdb-card">
+          <div class="cmdb-icon ic-cyan">&#9729;</div>
+          <div class="cmdb-title">Ağ Cihazı</div>
+          <div class="cmdb-value">156</div>
+          <div class="cmdb-label">Switch, Router, AP</div>
+        </div>
+        <div class="cmdb-card">
+          <div class="cmdb-icon ic-orange">&#9888;</div>
+          <div class="cmdb-title">Garanti Biten</div>
+          <div class="cmdb-value">23</div>
+          <div class="cmdb-label">Son 30 Gün</div>
+        </div>
+        <div class="cmdb-card">
+          <div class="cmdb-icon ic-pink">&#8635;</div>
+          <div class="cmdb-title">Otomatik Keşif</div>
+          <div class="cmdb-value">Aktif</div>
+          <div class="cmdb-label">Ağ Tarama</div>
+        </div>
+
+        <div class="cmdb-card cmdb-wide">
+          <div class="relation-flow">
+            <div class="rel-node">Sunucu<br><strong style="color:#60A5FA">SRV-042</strong></div>
+            <div class="rel-arrow">&rarr;</div>
+            <div class="rel-node">Uygulama<br><strong style="color:#34D399">ERP v4.2</strong></div>
+            <div class="rel-arrow">&rarr;</div>
+            <div class="rel-node">Servis<br><strong style="color:#C084FC">Finans Modülü</strong></div>
+            <div class="rel-arrow">&rarr;</div>
+            <div class="rel-node">SLA<br><strong style="color:#22D3EE">%99.9 Uptime</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot dot-active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

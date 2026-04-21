@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServiceCore LinkedIn Ad - Varyant 1</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #1a1a2e;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  .canvas {
+    width: 1200px;
+    height: 628px;
+    background: #010E21;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Background glow effects */
+  .glow-primary {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(0, 112, 243, 0.15) 0%, transparent 70%);
+    top: -100px;
+    right: -50px;
+    pointer-events: none;
+  }
+
+  .glow-secondary {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+    bottom: -100px;
+    right: 200px;
+    pointer-events: none;
+  }
+
+  .glow-accent {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, transparent 70%);
+    top: 200px;
+    left: -50px;
+    pointer-events: none;
+  }
+
+  /* Subtle grid pattern */
+  .grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  /* Content layout */
+  .content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 48px 56px;
+  }
+
+  /* Top bar: logo + badge */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .logo-text {
+    font-size: 20px;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+  }
+
+  .logo-text-bold {
+    font-weight: 700;
+  }
+
+  .logo-text-light {
+    font-weight: 400;
+    color: #94A3B8;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    backdrop-filter: blur(12px);
+  }
+
+  .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #10B981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.60);
+  }
+
+  /* Main content area */
+  .main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding: 20px 0;
+  }
+
+  .text-area {
+    flex: 1;
+    max-width: 620px;
+  }
+
+  .headline {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+
+  .headline-accent {
+    background: linear-gradient(to right, #0070F3, #38BDF8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subline {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #94A3B8;
+    margin-bottom: 32px;
+  }
+
+  .subline-divider {
+    color: #0070F3;
+    margin: 0 4px;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 32px;
+    background: #0070F3;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 9999px;
+    border: none;
+    box-shadow: 0 0 30px -5px rgba(0, 112, 243, 0.50);
+    letter-spacing: -0.01em;
+  }
+
+  .cta-arrow {
+    font-size: 18px;
+  }
+
+  /* Right visual - abstract dashboard mockup */
+  .visual-area {
+    width: 420px;
+    height: 340px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .dashboard-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+  }
+
+  .card-main {
+    width: 320px;
+    height: 220px;
+    top: 40px;
+    left: 50px;
+    padding: 24px;
+  }
+
+  .card-main-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .card-main-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .dot-blue { background: #0070F3; box-shadow: 0 0 8px rgba(0, 112, 243, 0.50); }
+  .dot-green { background: #10B981; box-shadow: 0 0 8px rgba(16, 185, 129, 0.50); }
+  .dot-purple { background: #A855F7; box-shadow: 0 0 8px rgba(168, 85, 247, 0.50); }
+
+  .card-main-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748B;
+    letter-spacing: 0.05em;
+  }
+
+  .card-stat-row {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  .card-stat {
+    flex: 1;
+  }
+
+  .card-stat-number {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFFFFF;
+    letter-spacing: -0.025em;
+  }
+
+  .card-stat-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: #64748B;
+    margin-top: 2px;
+  }
+
+  .card-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    height: 50px;
+    margin-top: 16px;
+  }
+
+  .bar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+    min-width: 16px;
+  }
+
+  .bar-1 { height: 60%; background: rgba(0, 112, 243, 0.30); }
+  .bar-2 { height: 80%; background: rgba(0, 112, 243, 0.50); }
+  .bar-3 { height: 45%; background: rgba(0, 112, 243, 0.25); }
+  .bar-4 { height: 100%; background: #0070F3; }
+  .bar-5 { height: 70%; background: rgba(0, 112, 243, 0.40); }
+  .bar-6 { height: 55%; background: rgba(0, 112, 243, 0.30); }
+  .bar-7 { height: 90%; background: rgba(0, 112, 243, 0.60); }
+  .bar-8 { height: 65%; background: rgba(0, 112, 243, 0.35); }
+
+  .card-floating-1 {
+    width: 180px;
+    height: 80px;
+    top: 0;
+    left: 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.20);
+  }
+
+  .card-floating-1-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #10B981;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  .card-floating-1-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+
+  .card-floating-2 {
+    width: 160px;
+    height: 90px;
+    bottom: 20px;
+    right: 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(168, 85, 247, 0.06);
+    border-color: rgba(168, 85, 247, 0.15);
+  }
+
+  .card-floating-2-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #A855F7;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  .card-floating-2-items {
+    display: flex;
+    gap: 6px;
+  }
+
+  .mini-pill {
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: 500;
+    background: rgba(168, 85, 247, 0.15);
+    color: #C084FC;
+  }
+
+  /* Bottom bar: customers */
+  .bottom-bar {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .bottom-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .bottom-separator {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.10);
+  }
+
+  .customer-logos {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .customer-logo {
+    height: 22px;
+    opacity: 0.35;
+    filter: brightness(0) invert(1);
+    object-fit: contain;
+  }
+
+  /* Top border glow */
+  .top-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 112, 243, 0.50), transparent);
+  }
+</style>
+</head>
+<body>
+
+<div class="canvas">
+  <!-- Background effects -->
+  <div class="glow-primary"></div>
+  <div class="glow-secondary"></div>
+  <div class="glow-accent"></div>
+  <div class="grid-pattern"></div>
+  <div class="top-glow"></div>
+
+  <!-- Content -->
+  <div class="content">
+
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="logo-area">
+        <div class="logo-icon">
+          <img src="../../../brand/assets/logo-v1.png" alt="ServiceCore">
+        </div>
+        <div class="logo-text">
+          <span class="logo-text-bold">Service</span><span class="logo-text-light">Core</span>
+        </div>
+      </div>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Kurumsal Orkestrasyon Platformu
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+      <div class="text-area">
+        <h1 class="headline">
+          ITSM ve Proje Yönetimini<br>
+          <span class="headline-accent">Tek Platformda</span> Birleştirin
+        </h1>
+        <p class="subline">
+          16 ITIL4 süreci
+          <span class="subline-divider">&middot;</span>
+          24+ modül
+          <span class="subline-divider">&middot;</span>
+          Kurumsal orkestrasyon
+        </p>
+        <div class="cta-button">
+          Demo Talep Edin
+          <span class="cta-arrow">&rarr;</span>
+        </div>
+      </div>
+
+      <div class="visual-area">
+        <!-- Floating card: SLA -->
+        <div class="dashboard-card card-floating-1">
+          <div class="card-floating-1-label">SLA Uyum</div>
+          <div class="card-floating-1-value">%99.2</div>
+        </div>
+
+        <!-- Main dashboard card -->
+        <div class="dashboard-card card-main">
+          <div class="card-main-header">
+            <span class="card-main-dot dot-blue"></span>
+            <span class="card-main-dot dot-green"></span>
+            <span class="card-main-dot dot-purple"></span>
+            <span class="card-main-title">Operasyon Paneli</span>
+          </div>
+          <div class="card-stat-row">
+            <div class="card-stat">
+              <div class="card-stat-number">2,847</div>
+              <div class="card-stat-label">Açık Talep</div>
+            </div>
+            <div class="card-stat">
+              <div class="card-stat-number">24</div>
+              <div class="card-stat-label">Aktif Modul</div>
+            </div>
+          </div>
+          <div class="card-bars">
+            <div class="bar bar-1"></div>
+            <div class="bar bar-2"></div>
+            <div class="bar bar-3"></div>
+            <div class="bar bar-4"></div>
+            <div class="bar bar-5"></div>
+            <div class="bar bar-6"></div>
+            <div class="bar bar-7"></div>
+            <div class="bar bar-8"></div>
+          </div>
+        </div>
+
+        <!-- Floating card: ITIL modules -->
+        <div class="dashboard-card card-floating-2">
+          <div class="card-floating-2-label">ITIL4 Süreç</div>
+          <div class="card-floating-2-items">
+            <span class="mini-pill">Olay</span>
+            <span class="mini-pill">Değişiklik</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar: customer logos -->
+    <div class="bottom-bar">
+      <span class="bottom-label">Tercih Eden Kurumlar</span>
+      <div class="bottom-separator"></div>
+      <div class="customer-logos">
+        <img class="customer-logo" style="height: 36px;" src="../../../website/public/logos/sabanci.png" alt="Sabanci">
+        <img class="customer-logo" src="../../../website/public/logos/boyner.png" alt="Boyner">
+        <img class="customer-logo" src="../../../website/public/logos/roketsan.png" alt="Roketsan">
+        <img class="customer-logo" src="../../../website/public/logos/qnb.png" alt="QNB Finansbank">
+        <img class="customer-logo" style="height: 30px;" src="../../../website/public/logos/toyota.png" alt="Toyota">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

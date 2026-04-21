@@ -20,6 +20,9 @@ out/
 .DS_Store
 Thumbs.db
 
+# Paketlenmis arsivler
+*.zip
+
 # Env
 .env
 .env.local
