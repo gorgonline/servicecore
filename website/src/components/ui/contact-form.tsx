@@ -10,14 +10,14 @@ export function ContactForm() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.2 }}
-      className="rounded-3xl bg-white/[0.02] border border-white/5 p-8 lg:p-10 relative overflow-hidden"
+      className="rounded-3xl bg-white/2 border border-white/5 p-8 lg:p-10 relative overflow-hidden"
     >
       {/* Background Details */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-(--color-brand-primary)/5 to-transparent rounded-bl-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-(--color-brand-primary)/5 to-transparent rounded-bl-full pointer-events-none" />
       
       <div className="relative z-10">
         <h2 className="text-2xl font-semibold text-white tracking-tight mb-8 flex items-center gap-3">
-          <span className="w-8 h-px bg-gradient-to-r from-(--color-brand-primary) to-transparent"></span>
+          <span className="w-8 h-px bg-linear-to-r from-(--color-brand-primary) to-transparent"></span>
           {contactData.contactForm.title}
         </h2>
 

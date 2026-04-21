@@ -2,28 +2,14 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { 
-  ShieldCheck, 
+import {
+  ShieldCheck,
   LucideIcon,
-  Workflow, 
-  Settings, 
-  Search, 
-  Zap, 
-  BarChart3, 
-  Users, 
-  Lock, 
-  BookOpen, 
-  Scale, 
-  Briefcase, 
-  GitBranch, 
-  Clock, 
-  CheckCircle2,
+  Workflow,
+  Settings,
   Sparkles,
   ArrowRight,
-  Database,
-  Monitor,
-  Layout,
-  Globe
+  Database
 } from 'lucide-react';
 import ServiceCoreHero from '@/components/ui/ServiceCoreHero';
 import { Card, CardContent } from '@/components/ui/card';
@@ -65,7 +51,7 @@ export default function PratiklerPage() {
     <main className="min-h-screen bg-(--color-surface-base) text-white pb-0 overflow-hidden">
       {/* Background depth glows */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[10%] -left-[5%] w-[600px] h-[600px] bg-blue-600/5 blur-[120px] rounded-full" />
+        <div className="absolute top-[10%] -left-[5%] w-150 h-150 bg-blue-600/5 blur-[120px] rounded-full" />
         <div className="absolute bottom-[20%] -right-[5%] w-[500px] h-[500px] bg-emerald-600/5 blur-[120px] rounded-full" />
       </div>
 
@@ -77,7 +63,7 @@ export default function PratiklerPage() {
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 -mt-32 relative z-20">
-        {pratiklerData.sections.map((section, secIdx) => {
+        {pratiklerData.sections.map((section) => {
           const Icon = sectionIcons[section.id] || ShieldCheck;
           const colorClass = sectionColors[section.id];
 
@@ -102,7 +88,7 @@ export default function PratiklerPage() {
                     {section.description}
                   </p>
                 </div>
-                <div className="hidden lg:block h-px flex-grow bg-gradient-to-r from-white/10 to-transparent ml-16 mb-8" />
+                <div className="hidden lg:block h-px flex-grow bg-linear-to-r from-white/10 to-transparent ml-16 mb-8" />
               </motion.div>
 
               {/* Items Grid */}
@@ -115,8 +101,8 @@ export default function PratiklerPage() {
               >
                 {section.items.map((item, index) => (
                   <motion.div key={item.title} variants={itemVariants}>
-                    <Card className="group h-full bg-white/[0.02] border-white/5 backdrop-blur-3xl hover:bg-white/[0.06] hover:border-white/10 transition-all duration-500 overflow-hidden rounded-[2rem]">
-                      <div className="absolute inset-0 bg-gradient-to-br from-(--color-brand-primary)/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <Card className="group h-full bg-white/2 border-white/5 backdrop-blur-3xl hover:bg-white/[0.06] hover:border-white/10 transition-all duration-500 overflow-hidden rounded-4xl">
+                      <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-primary)/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <CardContent className="p-8 relative z-10 flex flex-col h-full">
                         <div className="mb-8 flex items-center justify-between">
                           <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-(--color-text-muted) group-hover:text-(--color-accent-blue-light) group-hover:border-blue-500/30 transition-all duration-500 shadow-inner">

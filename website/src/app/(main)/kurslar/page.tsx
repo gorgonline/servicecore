@@ -93,7 +93,7 @@ export default function KurslarPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-1 p-1 rounded-[2.5rem] bg-white/[0.02] border border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden"
+          className="grid grid-cols-1 md:grid-cols-3 gap-1 p-1 rounded-[2.5rem] bg-white/2 border border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden"
         >
           {/* Duration */}
           <div className="p-8 md:p-10 flex flex-col items-center text-center group hover:bg-white/[0.03] transition-colors">
@@ -157,7 +157,7 @@ export default function KurslarPage() {
                 <motion.div 
                   key={idx} 
                   variants={cardVariants}
-                  className="group relative p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-blue-500/30 hover:bg-white/[0.04] transition-all duration-500 flex flex-col"
+                  className="group relative p-8 rounded-3xl bg-white/2 border border-white/5 hover:border-blue-500/30 hover:bg-white/4 transition-all duration-500 flex flex-col"
                 >
                   <div className="flex items-center gap-4 mb-6">
                     <div className="p-3 rounded-2xl bg-blue-500/10 text-(--color-accent-blue-light) group-hover:scale-110 group-hover:bg-(--color-accent-blue-base) group-hover:text-white transition-all duration-500">
@@ -207,7 +207,7 @@ export default function KurslarPage() {
             </div>
 
             {/* Support Info */}
-            <div className="p-10 rounded-[2.5rem] bg-gradient-to-br from-blue-500/10 to-transparent border border-white/10 relative overflow-hidden">
+            <div className="p-10 rounded-[2.5rem] bg-linear-to-br from-blue-500/10 to-transparent border border-white/10 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full" />
               <div className="flex items-center gap-6">
                 <div className="w-16 h-16 rounded-2xl bg-(--color-surface-elevated-solid) border border-white/10 flex items-center justify-center text-(--color-accent-blue-light) shadow-2xl">
@@ -248,33 +248,33 @@ export default function KurslarPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.name}</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.surname}</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.company}</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.title}</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.email}</label>
-                    <input type="email" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                    <input type="email" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.phone}</label>
-                    <input type="tel" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                    <input type="tel" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                   </div>
 
                   <button className="w-full py-5 rounded-2xl bg-(--color-accent-blue-base) hover:bg-blue-600 text-white font-black uppercase tracking-[0.2em] shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group/btn transition-all mt-4">
@@ -290,7 +290,7 @@ export default function KurslarPage() {
       </main>
 
       {/* FOOTER DECORATION */}
-      <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
     </div>
   );
 }

@@ -7,16 +7,13 @@ import { tokens as runtimeTokens } from "@/lib/tokens";
 import {
   ShieldCheck,
   LucideIcon,
-  Workflow, 
-  Layers, 
-  Terminal, 
-  MonitorCheck, 
-  Zap, 
+  Workflow,
+  Layers,
+  Terminal,
+  MonitorCheck,
+  Zap,
   User,
   Activity,
-  CheckCircle2,
-  Clock,
-  BookOpen,
   Scale,
   Coins,
   Timer,
@@ -165,7 +162,7 @@ const AgentNode = ({ data }: NodeProps) => {
                 className={`px-2.5 py-1 rounded-md border text-[8px] font-black uppercase tracking-widest transition-all duration-700
                   ${isSkillActive 
                     ? 'bg-emerald-500/10 border-emerald-500/50 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)]' 
-                    : 'bg-white/[0.02] border-white/5 text-slate-700 opacity-40'}
+                    : 'bg-white/2 border-white/5 text-slate-700 opacity-40'}
                 `}
               >
                 {skill}

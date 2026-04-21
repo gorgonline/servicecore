@@ -23,7 +23,7 @@ export function SupportCtaSection() {
             transition={{ duration: 0.6 }}
             className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-(--color-surface-elevated-solid)/50 backdrop-blur-xl border border-white/10 p-8 md:p-10 hover:border-white/20 transition-colors"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
@@ -33,7 +33,7 @@ export function SupportCtaSection() {
               
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight">
                 Servicecore Profesyonel <br className="hidden md:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-(--color-accent-blue-base) font-bold">Destek Hizmetleri</span>
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-(--color-accent-blue-base) font-bold">Destek Hizmetleri</span>
               </h2>
               
               <p className="text-(--color-text-secondary) font-light leading-relaxed mb-8">
@@ -70,9 +70,9 @@ export function SupportCtaSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-[1px]"
+            className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-[1px]"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <div className="relative h-full flex flex-col items-center justify-center text-center rounded-[23px] bg-(--color-surface-elevated-solid)/90 backdrop-blur-3xl px-8 py-16 md:px-12">
               <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-8 border border-white/20 shadow-inner">

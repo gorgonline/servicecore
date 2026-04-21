@@ -1,22 +1,5 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 import mottoData from '@/data/motto.json';
-import { 
-  Zap, 
-  Layers, 
-  Cpu, 
-  Globe, 
-  MousePointer2, 
-  Settings2, 
-  Heart, 
-  Users, 
-  CheckCircle2, 
-  ArrowRight,
-  Sparkles,
-  Command,
-  Activity,
-  Award
-} from 'lucide-react';
 // import { MotionDiv, MotionH1, MotionSection } from '@/components/ui/motion-elements'; // Not used and file missing
 
 export const metadata: Metadata = {

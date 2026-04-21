@@ -1,16 +1,14 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { 
-  ShieldCheck, 
-  Cpu, 
-  Calendar, 
-  Search, 
-  ChevronRight, 
-  Zap, 
-  History, 
-  CheckCircle2, 
-  Sparkles, 
+import {
+  ShieldCheck,
+  Cpu,
+  Search,
+  Zap,
+  History,
+  CheckCircle2,
+  Sparkles,
   Terminal,
   Filter,
   ArrowUpRight,
@@ -18,15 +16,8 @@ import {
   Layers,
   Smartphone
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import updatesData from "@/data/updates.json";
-
-// Types
-interface UpdateItem {
-  month: string;
-  year: string;
-  items: string[];
-}
 
 export default function UpdatesPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -100,7 +91,7 @@ export default function UpdatesPage() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8"
           >
-            Güncelleme <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-brand-primary) to-(--color-brand-accent)">logları</span>
+            Güncelleme <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-brand-accent)">logları</span>
           </motion.h1>
 
           <motion.p 
@@ -149,7 +140,7 @@ export default function UpdatesPage() {
         <div className="space-y-32 relative">
           
           {/* Vertical Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-blue-500/50 via-white/5 to-transparent hidden md:block" />
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1px] bg-linear-to-b from-blue-500/50 via-white/5 to-transparent hidden md:block" />
 
           {filteredUpdates.length === 0 ? (
             <div className="py-40 text-center">

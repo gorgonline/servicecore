@@ -14,6 +14,15 @@
 - [x] Email kampanya ilk uretim ciktisi (2026-04-15_genel-tanitim) + marka logolari
 - [x] Brand sembol varligi (Symbol@4x.png)
 - [x] v1.1.0 tag — icerik uretim pipeline'i
+- [x] Planlar sayfasi data-driven refactor (pricing-itsm.json + pricing-pm.json)
+- [x] Proje Yonetimi planlar sayfasi (/planlar-pm) + navbar dropdown entegrasyonu
+- [x] Modul sayfalarinda hero image pattern birlestirme (etkilesim, bilgi-bankasi, proje-yonetimi)
+- [x] Navbar: Moduller mega menu 25 madde + full-width, Planlar 2-link dropdown
+- [x] Kaynaklar menusu 6 link, Footer ANA MENU yeniden duzenlendi
+- [x] Tailwind 4 canonical class cleanup (45 dosya, 384 rename)
+- [x] ESLint temizligi: 32 error + 88 warning → 0
+- [x] Dev server workspace fix (package.json linkedin/ altina tasindi)
+- [x] v1.2.0 tag — planlar refactor + navbar overhaul
 
 ## Devam Eden Isler
 

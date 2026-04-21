@@ -1,20 +1,13 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { 
-  Play, 
-  LucideIcon,
-  Search, 
-  Filter, 
-  Video, 
-  ChevronRight,
-  MonitorPlay,
-  Settings,
-  Users,
-  Database,
-  ShieldCheck,
-  Zap
+import {
+  Play,
+  Search,
+  Video,
+  ChevronRight
 } from "lucide-react";
 import ServiceCoreHero from "@/components/ui/ServiceCoreHero";
 import videosData from "@/data/videos.json";
@@ -88,7 +81,7 @@ export default function VideolarPage() {
         
         {/* FILTERS & SEARCH */}
         <div className="flex flex-col lg:flex-row gap-8 items-center justify-between mb-12">
-          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 bg-white/5 p-1.5 rounded-[2rem] border border-white/10 backdrop-blur-xl">
+          <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 bg-white/5 p-1.5 rounded-4xl border border-white/10 backdrop-blur-xl">
             {categories.map((cat) => (
               <button
                 key={cat.id}
@@ -111,7 +104,7 @@ export default function VideolarPage() {
               placeholder="Video ara..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium text-sm"
+              className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium text-sm"
             />
           </div>
         </div>
@@ -162,9 +155,11 @@ export default function VideolarPage() {
               >
                 {/* Thumbnail Container */}
                 <div className="relative aspect-video overflow-hidden">
-                  <img 
+                  <Image
                     src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
                     alt={video.title}
+                    width={480}
+                    height={360}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
@@ -205,7 +200,7 @@ export default function VideolarPage() {
       </main>
 
       {/* FOOTER DECORATION */}
-      <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
     </div>
   );
 }

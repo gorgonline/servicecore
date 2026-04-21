@@ -102,7 +102,7 @@ export default function HeroSection() {
           
           <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8 w-full max-w-[900px]">
             ITSM ve Proje Yönetimini tek platformda{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-brand-primary) to-(--color-brand-accent)">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-brand-accent)">
               kusursuzca birleştirin.
             </span>
           </motion.h1>

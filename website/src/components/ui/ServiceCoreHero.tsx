@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { MeshGradient } from "@paper-design/shaders-react";
-import tokens from "@/data/design-tokens.json";
 import { tokens as runtimeTokens } from "@/lib/tokens";
 
 interface ServiceCoreHeroProps {
@@ -29,11 +28,11 @@ export default function ServiceCoreHero({
   useEffect(() => {
     if (!mounted) setMounted(true);
     setDimensions({ width: window.innerWidth, height: window.innerHeight });
-    
+
     const update = () => setDimensions({ width: window.innerWidth, height: window.innerHeight });
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
-  }, []);
+  }, [mounted]);
 
   // Başlığı parçalara ayırıp highlight kelimesini gradyanla sarmak için logic
   const renderTitle = () => {
@@ -42,7 +41,7 @@ export default function ServiceCoreHero({
     return (
       <>
         {parts[0]}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-brand-primary) to-(--color-brand-accent)">
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-brand-accent)">
           {highlightedWord}
         </span>
         {parts[1]}
@@ -110,8 +109,8 @@ export default function ServiceCoreHero({
       </div>
       
       {/* Premium Decorative Fade */}
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      <div className="absolute bottom-0 inset-x-0 h-64 bg-gradient-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-64 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
     </section>
   );
 }

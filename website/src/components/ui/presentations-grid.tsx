@@ -92,10 +92,10 @@ export function PresentationsGrid() {
               rel="noopener noreferrer"
               className="block h-full group focus:outline-none"
             >
-              <div className="relative h-full flex flex-col p-10 rounded-[32px] bg-white/[0.02] border border-white/5 transition-all duration-500 hover:bg-white/[0.04] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden">
+              <div className="relative h-full flex flex-col p-10 rounded-[32px] bg-white/2 border border-white/5 transition-all duration-500 hover:bg-white/4 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden">
                 
                 {/* Background Hover Effects */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${hoverGrad} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${hoverGrad} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
                 <div className="absolute -right-16 -top-16 w-32 h-32 rounded-full bg-white/5 blur-3xl group-hover:bg-white/10 transition-colors duration-700" />
 
                 <div className="relative z-10 flex flex-col h-full">

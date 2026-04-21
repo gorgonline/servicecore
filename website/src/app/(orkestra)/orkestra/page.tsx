@@ -1,17 +1,16 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { 
-  ReactFlow, 
-  Background, 
-  applyEdgeChanges, 
+import {
+  ReactFlow,
+  Background,
+  applyEdgeChanges,
   applyNodeChanges,
   Node,
   Edge,
   OnNodesChange,
   OnEdgesChange,
   BackgroundVariant,
-  Panel,
   MarkerType,
   BaseEdge,
   EdgeProps,
@@ -20,14 +19,18 @@ import {
 import "@xyflow/react/dist/style.css";
 
 import AgentNode from "@/components/orchestrator/AgentNode";
-import { ShieldCheck, Cpu, Radio, ChevronRight, CheckCircle2, ListChecks, Terminal as TerminalIcon, Coins, History, Activity, UserCheck, Sparkles, Zap, BrainCircuit, ExternalLink } from "lucide-react";
+import { Cpu, Radio, CheckCircle2, Terminal as TerminalIcon, Coins, History, Activity, Zap, BrainCircuit } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import { CHIEF_PROTOCOLS, AGENT_PROTOCOLS } from "@/data/orchestrator-constants";
 import { tokens as runtimeTokens } from "@/lib/tokens";
 
 // MASTER KADRO
-const MASTER_ROSTER: Record<string, any> = {
+interface AgentInfo {
+  name: string;
+  skills: string[];
+}
+
+const MASTER_ROSTER: Record<string, AgentInfo> = {
   "chief-agent": { name: "@Chief-Agent", skills: ["Gemini 3.1 Pro", "Orkestrasyon", "Denetim"] },
   "brand-expert": { name: "@Brand-Expert", skills: ["Marka Sesi", "Kurumsal Dil", "Strateji"] },
   "content-seo-lead": { name: "@Content-SEO-Lead", skills: ["SEO Mimari", "Semantik HTML", "Meta Veri"] },
@@ -38,7 +41,7 @@ const MASTER_ROSTER: Record<string, any> = {
   "qa-engineer": { name: "@QA-Engineer", skills: ["Performans Testi", "Lighthouse", "Denetim"] }
 };
 
-const DataParticleEdge = ({ id, sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition, style = {}, markerEnd, data }: EdgeProps) => {
+const DataParticleEdge = ({ sourceX, sourceY, targetX, targetY, sourcePosition, targetPosition, style = {}, markerEnd, data }: EdgeProps) => {
   const [edgePath] = getBezierPath({ sourceX, sourceY, sourcePosition, targetX, targetY, targetPosition });
   const isActive = data?.status === 'active';
   const isCompleted = data?.status === 'completed';
@@ -75,21 +78,14 @@ export default function OrchestratorPage() {
   const [nodes, setNodes] = useState<Node[]>(initialNodes);
   const [edges, setEdges] = useState<Edge[]>([]);
   const [lastUpdate, setLastUpdate] = useState<string>("");
-  const [activeWorkflow, setActiveWorkflow] = useState<any>(null);
+  const [activeWorkflow, setActiveWorkflow] = useState<Record<string, unknown> | null>(null);
   const [totalCost, setTotalCost] = useState<string>("$0.00");
-  const [chiefProtocol, setChiefProtocol] = useState<any[]>([]);
-  const [agentProtocols, setAgentProtocols] = useState<any>({});
+  const [chiefProtocol, setChiefProtocol] = useState<unknown[]>([]);
+  const [agentProtocols, setAgentProtocols] = useState<Record<string, unknown>>({});
   const [activeAgentId, setActiveAgentId] = useState<string | null>(null);
-  const [liveTerminal, setLiveTerminal] = useState<any>(null);
-  const [workflowSteps, setWorkflowSteps] = useState<any[]>([]);
+  const [liveTerminal, setLiveTerminal] = useState<Record<string, unknown> | null>(null);
+  const [workflowSteps, setWorkflowSteps] = useState<unknown[]>([]);
   const [currentStep, setCurrentStep] = useState<number>(0);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => setMousePos({ x: e.clientX, y: e.clientY });
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   const onNodesChange: OnNodesChange = useCallback((changes) => setNodes((nds) => applyNodeChanges(changes, nds)), []);
   const onEdgesChange: OnEdgesChange = useCallback((changes) => setEdges((eds) => applyEdgeChanges(changes, eds)), []);
@@ -125,13 +121,13 @@ export default function OrchestratorPage() {
         setNodes((currentNodes) => 
           currentNodes.map((node) => {
             const stateNodes = data.nodes || [];
-            const stateNode = stateNodes.find((n: any) => n.id === node.id);
+            const stateNode = stateNodes.find((n: { id: string }) => n.id === node.id);
             const masterData = MASTER_ROSTER[node.id];
             return { ...node, data: { ...masterData, ...stateNode?.data, id: node.id } };
           })
         );
 
-        const mappedEdges = (data.edges || []).map((edge: any) => ({
+        const mappedEdges = (data.edges || []).map((edge: { status?: string; [key: string]: unknown }) => ({
           ...edge,
           type: 'dataParticle',
           data: { status: edge.status },
@@ -262,7 +258,7 @@ export default function OrchestratorPage() {
 
         {/* TERMINAL */}
         <aside className="w-[450px] shrink-0 border-l border-white/5 bg-(--color-surface-base)/98 backdrop-blur-3xl z-[120] flex flex-col relative overflow-hidden">
-          <div className="h-14 border-b border-white/10 bg-white/[0.02] flex items-center justify-between px-8">
+          <div className="h-14 border-b border-white/10 bg-white/2 flex items-center justify-between px-8">
             <div className="flex items-center gap-3">
               <TerminalIcon size={16} className="text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
               <span className="text-[11px] font-black uppercase tracking-[0.3em] text-white">Live Operations Terminal</span>
@@ -280,7 +276,7 @@ export default function OrchestratorPage() {
               </div>
             ) : (
               <div className="h-full flex flex-col items-center justify-center opacity-30 text-center space-y-8">
-                <div className="w-24 h-24 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center"><History size={48} strokeWidth={1} /></div>
+                <div className="w-24 h-24 rounded-4xl bg-white/5 border border-white/10 flex items-center justify-center"><History size={48} strokeWidth={1} /></div>
                 <p className="uppercase tracking-[0.5em] font-black text-xs">Waiting for Signal...</p>
               </div>
             )}
@@ -298,7 +294,7 @@ export default function OrchestratorPage() {
             return (
               <React.Fragment key={step.id}>
                 <div className="flex flex-col items-center justify-center gap-2 h-full">
-                  <motion.div animate={isActive ? { scale: [1, 1.1, 1] } : {}} transition={{ repeat: Infinity, duration: 2 }} className={`w-9 h-9 rounded-xl border-2 flex items-center justify-center transition-all duration-700 ${isCompleted ? 'bg-emerald-500 border-emerald-400 text-white' : isActive ? 'bg-blue-600 border-blue-400 text-white shadow-2xl scale-110' : 'bg-white/[0.02] border-white/10 text-slate-600'}`}>
+                  <motion.div animate={isActive ? { scale: [1, 1.1, 1] } : {}} transition={{ repeat: Infinity, duration: 2 }} className={`w-9 h-9 rounded-xl border-2 flex items-center justify-center transition-all duration-700 ${isCompleted ? 'bg-emerald-500 border-emerald-400 text-white' : isActive ? 'bg-blue-600 border-blue-400 text-white shadow-2xl scale-110' : 'bg-white/2 border-white/10 text-slate-600'}`}>
                     {isCompleted ? <CheckCircle2 size={12} /> : <span className="text-[10px] font-black">{idx + 1}</span>}
                   </motion.div>
                   <span className={`text-[9px] font-black uppercase tracking-[0.2em] whitespace-nowrap transition-colors duration-700 ${isActive ? 'text-blue-400 underline underline-offset-4' : isCompleted ? 'text-emerald-500' : 'text-slate-700'}`}>{step.label}</span>

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { AlertCircle, HelpCircle, RefreshCw, FileText, MousePointerClick, CheckCircle2, Box, Settings, BookOpen, Activity, Terminal, LineChart, Store, MessageSquare, Briefcase, TrendingUp, GitMerge, FileSignature, GitBranch, Users, Code, Link, Smartphone, Sliders } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { tokens as runtimeTokens } from "@/lib/tokens";
 
 // Types for our modules
@@ -24,7 +24,7 @@ const IncidentModule = ({ title, description, delay = 0 }: ModuleProps) => {
       transition={{ duration: 0.4, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/[0.04] hover:shadow-(--shadow-glow-primary-hover) hover:border-white/10 [transform:translateZ(0)]"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-(--shadow-glow-primary-hover) hover:border-white/10 [transform:translateZ(0)]"
     >
       {/* Background Gradient */}
       <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-red-500/10 blur-[50px] transition-all duration-500 group-hover:bg-(--color-brand-primary)/20" />
@@ -104,7 +104,7 @@ const ProblemModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.1)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.1)] hover:border-white/10 lg:col-span-2"
     >
       {/* Background Gradient */}
       <div className="absolute -left-20 -bottom-20 h-56 w-56 rounded-full bg-yellow-500/5 blur-[60px] transition-all duration-500 group-hover:bg-yellow-500/15" />
@@ -189,7 +189,7 @@ const ChangeModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(168,85,247,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(168,85,247,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-purple-500/10 blur-[50px] transition-all duration-500 group-hover:bg-purple-500/20" />
 
@@ -203,7 +203,7 @@ const ChangeModule = ({ title, description, delay = 0 }: ModuleProps) => {
             initial={{ width: "0%" }}
             animate={{ width: isHovered ? "100%" : "0%" }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="absolute left-0 h-[2px] bg-gradient-to-r from-transparent via-purple-500/50 to-purple-400"
+            className="absolute left-0 h-[2px] bg-linear-to-r from-transparent via-purple-500/50 to-purple-400"
          />
 
          {/* Checkpoints */}
@@ -260,7 +260,7 @@ const KnowledgeModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(14,165,233,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(14,165,233,0.15)] hover:border-white/10"
     >
       <div className="absolute right-10 bottom-10 h-32 w-32 rounded-full bg-sky-500/10 blur-[50px] transition-all duration-500 group-hover:bg-sky-500/20" />
 
@@ -322,7 +322,7 @@ const RequestModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(244,63,94,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(244,63,94,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-rose-500/10 blur-[50px] transition-all duration-500 group-hover:bg-rose-500/20" />
 
@@ -380,7 +380,7 @@ const TaskModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(16,185,129,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(16,185,129,0.15)] hover:border-white/10 lg:col-span-2"
     >
       <div className="absolute right-20 top-10 h-32 w-32 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:bg-emerald-500/20" />
 
@@ -444,7 +444,7 @@ const AssetModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 -bottom-10 h-40 w-40 rounded-full bg-orange-500/10 blur-[50px] transition-all duration-500 group-hover:bg-orange-500/20" />
 
@@ -502,7 +502,7 @@ const ConfigModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:bg-blue-500/20" />
 
@@ -564,7 +564,7 @@ const CatalogModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(236,72,153,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(236,72,153,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-pink-500/10 blur-[50px] transition-all duration-500 group-hover:bg-pink-500/20" />
 
@@ -624,7 +624,7 @@ const SLAModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(34,211,238,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(34,211,238,0.15)] hover:border-white/10 lg:col-span-2"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-[50px] transition-all duration-500 group-hover:bg-cyan-500/20" />
 
@@ -762,7 +762,7 @@ const ReportingModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(139,92,246,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(139,92,246,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-violet-500/10 blur-[50px] transition-all duration-500 group-hover:bg-violet-500/20" />
 
@@ -817,7 +817,7 @@ const PortalModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(245,158,11,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(245,158,11,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-amber-500/10 blur-[50px] transition-all duration-500 group-hover:bg-amber-500/20" />
 
@@ -881,7 +881,7 @@ const InteractionModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:bg-blue-500/20" />
 
@@ -943,7 +943,7 @@ const ProjectModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10 lg:col-span-2"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-orange-500/10 blur-[50px] transition-all duration-500 group-hover:bg-orange-500/20" />
 
@@ -1008,7 +1008,7 @@ const ImprovementModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-(--color-surface-elevated-solid) to-(--color-surface-base-dark) border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-linear-to-br from-(--color-surface-elevated-solid) to-(--color-surface-base-dark) border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_rgba(16,185,129,0.15)] hover:border-white/10"
     >
       <div className="absolute left-0 bottom-0 h-40 w-40 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:bg-emerald-500/20" />
 
@@ -1078,7 +1078,7 @@ const ReleaseModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(168,85,247,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(168,85,247,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-purple-500/10 blur-[50px] transition-all duration-500 group-hover:bg-purple-500/20" />
 
@@ -1138,7 +1138,7 @@ const ContractModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(20,184,166,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(20,184,166,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-teal-500/10 blur-[50px] transition-all duration-500 group-hover:bg-teal-500/20" />
 
@@ -1201,7 +1201,7 @@ const WorkflowModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(239,68,68,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(239,68,68,0.15)] hover:border-white/10 lg:col-span-2"
     >
       <div className="absolute left-0 bottom-0 h-40 w-40 rounded-full bg-red-500/10 blur-[50px] transition-all duration-500 group-hover:bg-red-500/20" />
 
@@ -1287,7 +1287,7 @@ const CustomerPortalModule = ({ title, description, delay = 0 }: ModuleProps) =>
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(56,189,248,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(56,189,248,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-sky-500/10 blur-[50px] transition-all duration-500 group-hover:bg-sky-500/20" />
 
@@ -1354,7 +1354,7 @@ const LowCodeModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.15)] hover:border-white/10"
     >
       <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-yellow-500/10 blur-[50px] transition-all duration-500 group-hover:bg-yellow-500/20" />
 
@@ -1423,7 +1423,7 @@ const IntegrationModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(236,72,153,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(236,72,153,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-pink-500/10 blur-[50px] transition-all duration-500 group-hover:bg-pink-500/20" />
 
@@ -1484,7 +1484,7 @@ const MobileModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:bg-blue-500/20" />
 
@@ -1552,7 +1552,7 @@ const AdminModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/[0.04] hover:shadow-[0_0_30px_-5px_...a(71,85,105,0.3)] hover:border-white/10 lg:col-span-2 md:col-span-2 xl:col-span-1"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(71,85,105,0.3)] hover:border-white/10 lg:col-span-2 md:col-span-2 xl:col-span-1"
     >
       <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-slate-500/10 blur-[50px] transition-all duration-500 group-hover:bg-slate-500/20" />
 
@@ -1642,7 +1642,7 @@ export function ModulesGrid() {
           </div>
           
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 tracking-tight">
-            Karmaşık süreçleri <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light) font-bold">otomatikleştirin.</span>
+            Karmaşık süreçleri <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light) font-bold">otomatikleştirin.</span>
           </h2>
           
           <p className="text-base md:text-lg text-(--color-text-secondary) max-w-2xl mx-auto font-light leading-relaxed">

@@ -56,7 +56,7 @@ export function ReferencesLogoGrid() {
                 {category.title}
               </h2>
             </div>
-            <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent" />
+            <div className="flex-1 h-px bg-linear-to-r from-white/10 to-transparent" />
           </div>
 
           {/* Logo Cards Grid */}
@@ -75,7 +75,7 @@ export function ReferencesLogoGrid() {
               >
                 <div className="relative flex items-center justify-center h-24 rounded-2xl bg-white/90 backdrop-blur-md border border-white/20 shadow-xl transition-all duration-500 hover:bg-white hover:-translate-y-1 hover:shadow-white/10 overflow-hidden p-6">
                   {/* Hover glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/[0.04] group-hover:to-purple-500/[0.04] transition-all duration-700" />
+                  <div className="absolute inset-0 bg-linear-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/[0.04] group-hover:to-purple-500/[0.04] transition-all duration-700" />
                   
                   <div className="relative z-10 w-full h-full flex items-center justify-center p-4">
                     <Image
@@ -121,7 +121,7 @@ export function ReferencesDetailGrid() {
             Servicecore Referans Detayları
           </h2>
         </div>
-        <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent" />
+        <div className="flex-1 h-px bg-linear-to-r from-white/10 to-transparent" />
       </div>
 
       {/* Detail Cards */}
@@ -141,11 +141,11 @@ export function ReferencesDetailGrid() {
               className="group h-full"
             >
               <div
-                className={`relative h-full flex flex-col p-8 rounded-[28px] bg-white/[0.02] border transition-all duration-500 hover:bg-white/[0.04] hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden ${accent}`}
+                className={`relative h-full flex flex-col p-8 rounded-[28px] bg-white/2 border transition-all duration-500 hover:bg-white/4 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden ${accent}`}
               >
                 {/* Background gradient on hover */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${accent.split(" ")[0]} ${accent.split(" ")[1]} ${accent.split(" ")[2]}`}
+                  className={`absolute inset-0 bg-linear-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-700 ${accent.split(" ")[0]} ${accent.split(" ")[1]} ${accent.split(" ")[2]}`}
                 />
 
                 {/* Decorative blur */}

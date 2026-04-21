@@ -57,9 +57,9 @@ export function InteractiveSupportMetrics() {
              <motion.div 
                variants={itemVariants}
                whileHover={{ y: -4, boxShadow: "0 20px 40px -10px rgba(0,112,243,0.15)", borderColor: "rgba(255,255,255,0.1)" }}
-               className="p-8 md:p-10 rounded-[2rem] bg-white/[0.02] border border-white/5 relative overflow-hidden group transition-all duration-300"
+               className="p-8 md:p-10 rounded-4xl bg-white/2 border border-white/5 relative overflow-hidden group transition-all duration-300"
              >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-(--color-brand-primary) via-emerald-500 to-transparent opacity-50" />
+                <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-(--color-brand-primary) via-emerald-500 to-transparent opacity-50" />
                 
                 <h2 className="text-3xl font-bold text-white mb-6 tracking-tight">
                   {maintenanceServices.title}
@@ -76,7 +76,7 @@ export function InteractiveSupportMetrics() {
              <motion.div 
                variants={itemVariants}
                whileHover={{ y: -4, borderColor: "rgba(255,255,255,0.1)" }}
-               className="p-8 md:p-10 rounded-[2rem] bg-gradient-to-br from-(--color-surface-elevated-dark) to-(--color-surface-base) border border-white/5 relative"
+               className="p-8 md:p-10 rounded-4xl bg-linear-to-br from-(--color-surface-elevated-dark) to-(--color-surface-base) border border-white/5 relative"
              >
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
@@ -91,7 +91,7 @@ export function InteractiveSupportMetrics() {
                   {additionalSupport.description.split("\\n\\n").slice(1).map((item, index) => {
                     const cleanText = item.replace("• ", "");
                     return (
-                      <div key={index} className="flex gap-3 p-4 rounded-xl bg-white/[0.02] border border-white/[0.04]">
+                      <div key={index} className="flex gap-3 p-4 rounded-xl bg-white/2 border border-white/4">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-emerald-base) mt-2 shrink-0" />
                         <span className="text-sm text-(--color-text-overline) font-light leading-relaxed">
                           {cleanText}
@@ -107,7 +107,7 @@ export function InteractiveSupportMetrics() {
           <div className="lg:col-span-5 h-full">
             <motion.div 
                variants={itemVariants}
-               className="h-full flex flex-col p-8 md:p-10 rounded-[2rem] bg-white/[0.02] border border-white/5 relative shadow-[0_0_80px_-20px_rgba(0,112,243,0.05)]"
+               className="h-full flex flex-col p-8 md:p-10 rounded-4xl bg-white/2 border border-white/5 relative shadow-[0_0_80px_-20px_rgba(0,112,243,0.05)]"
              >
                 <div className="flex flex-col mb-8">
                    <h3 className="text-xl font-semibold text-white mb-2 flex items-center gap-3">
@@ -123,7 +123,7 @@ export function InteractiveSupportMetrics() {
                   {supportChannels.items.map((channel, index) => (
                     <div 
                       key={index} 
-                      className="group flex gap-4 p-4 rounded-2xl hover:bg-white/[0.04] border border-transparent hover:border-white/[0.05] transition-colors duration-300 cursor-pointer"
+                      className="group flex gap-4 p-4 rounded-2xl hover:bg-white/4 border border-transparent hover:border-white/5 transition-colors duration-300 cursor-pointer"
                     >
                       {getChannelIcon(index)}
                       <div>

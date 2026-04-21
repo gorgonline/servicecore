@@ -86,7 +86,7 @@ export default function PartnerlikPage() {
             </div>
 
             {/* Footer Note / Contact Info */}
-            <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm relative overflow-hidden">
+            <div className="p-8 rounded-3xl bg-white/2 border border-white/5 backdrop-blur-sm relative overflow-hidden">
               <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50" />
               <p className="text-(--color-text-secondary) font-light leading-relaxed mb-6">
                 {partnership_program.footer_note}
@@ -125,27 +125,27 @@ export default function PartnerlikPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Ad*</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Soyad*</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">E-Posta*</label>
-                    <input type="email" placeholder="jane@example.com" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                    <input type="email" placeholder="jane@example.com" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Telefon*</label>
-                    <input type="tel" placeholder="05XX XXX XXXX" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium" />
+                    <input type="tel" placeholder="05XX XXX XXXX" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
                   </div>
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Mesaj</label>
-                    <textarea rows={4} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all font-medium resize-none" />
+                    <textarea rows={4} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium resize-none" />
                   </div>
 
                   <button className="w-full py-5 rounded-2xl bg-(--color-accent-blue-base) hover:bg-blue-600 text-white font-black uppercase tracking-[0.2em] shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group/btn transition-all mt-8">
@@ -161,7 +161,7 @@ export default function PartnerlikPage() {
       </main>
 
       {/* FOOTER DECORATION */}
-      <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
     </div>
   );
 }

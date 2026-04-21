@@ -26,8 +26,8 @@ const statusIcons = {
 
 export default function AuditLogWidget() {
   return (
-    <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden group">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+    <div className="p-8 rounded-4xl bg-white/[0.03] border border-white/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden group">
+      <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
       
       <div className="flex items-center justify-between mb-8 relative z-10">
         <div className="flex items-center gap-3">
@@ -49,7 +49,7 @@ export default function AuditLogWidget() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
             key={log.id} 
-            className="flex items-start justify-between p-4 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.05] transition-colors group/item"
+            className="flex items-start justify-between p-4 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/5 transition-colors group/item"
           >
             <div className="flex gap-4">
               <div className="mt-1">{statusIcons[log.status]}</div>

@@ -132,7 +132,7 @@ export default function MottoContent({ data }: { data: MottoData }) {
   return (
     <div className="max-w-7xl mx-auto px-6 lg:px-12">
       {/* Background Decor */}
-      <div className="absolute top-0 inset-x-0 h-96 bg-gradient-to-b from-(--color-brand-primary)/10 to-transparent pointer-events-none -z-10" />
+      <div className="absolute top-0 inset-x-0 h-96 bg-linear-to-b from-(--color-brand-primary)/10 to-transparent pointer-events-none -z-10" />
 
       {/* Hero */}
       <motion.div 
@@ -191,10 +191,10 @@ export default function MottoContent({ data }: { data: MottoData }) {
                   variants={itemVariants}
                   className="h-full"
                 >
-                  <div className="group relative flex flex-col justify-between h-full overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8 transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-2 hover:shadow-2xl cursor-default">
+                  <div className="group relative flex flex-col justify-between h-full overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8 transition-all duration-300 hover:bg-white/4 hover:-translate-y-2 hover:shadow-2xl cursor-default">
                     
                     {/* Background Hover Gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${hoverGrad} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                    <div className={`absolute inset-0 bg-linear-to-br ${hoverGrad} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                     <div className="absolute -right-20 -top-20 w-40 h-40 rounded-full bg-white/5 blur-3xl group-hover:bg-white/10 transition-colors duration-500" />
                     
                     <div className="relative z-10 flex flex-col h-full">
@@ -252,9 +252,9 @@ export default function MottoContent({ data }: { data: MottoData }) {
             damping: 15
           }}
           viewport={{ once: true }}
-          className="group/cta relative flex flex-col justify-center overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-[1px]"
+          className="group/cta relative flex flex-col justify-center overflow-hidden rounded-[2.5rem] bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-[1px]"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500" />
           
           <div className="relative h-full flex flex-col items-center justify-center text-center rounded-[39px] bg-(--color-surface-elevated-solid)/90 backdrop-blur-3xl px-8 py-16 lg:px-16 lg:py-20">
             {/* Background Glows */}
@@ -266,7 +266,7 @@ export default function MottoContent({ data }: { data: MottoData }) {
                 Hemen Başlayın
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white tracking-tight">
-                Bu Felsefeyi <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Birlikte</span> Uygulayalım
+                Bu Felsefeyi <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-purple-400">Birlikte</span> Uygulayalım
               </h2>
               <p className="text-slate-300 max-w-2xl mx-auto mb-10 text-lg font-light leading-relaxed">
                 ServiceCore ile ITSM operasyonlarınızı mühendislik disipliniyle yeniden kurgulayın ve dijital dönüşümünüzü hızlandırın.

@@ -113,10 +113,10 @@ export function FeaturesGrid() {
         return (
           <motion.div key={feature.title} variants={itemVariants} className="h-full">
             <LinkWrapper href={feature.link} className="block h-full focus:outline-none focus:ring-2 focus:ring-(--color-border-active) rounded-3xl">
-              <div className="group relative flex flex-col justify-between h-full overflow-hidden rounded-3xl bg-white/[0.02] border border-white/5 p-8 transition-all duration-300 hover:bg-white/[0.04] hover:-translate-y-1 hover:shadow-2xl">
+              <div className="group relative flex flex-col justify-between h-full overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8 transition-all duration-300 hover:bg-white/4 hover:-translate-y-1 hover:shadow-2xl">
                 
                 {/* Background Hover Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${hoverGrad} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-linear-to-br ${hoverGrad} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
                 <div className="absolute -right-20 -top-20 w-40 h-40 rounded-full bg-white/5 blur-3xl group-hover:bg-white/10 transition-colors duration-500" />
 
                 <div className="relative z-10 flex flex-col h-full">

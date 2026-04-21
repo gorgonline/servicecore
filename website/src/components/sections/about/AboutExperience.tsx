@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clock, Building2, Lightbulb, Rocket } from "lucide-react";
+import { Clock, Building2, Lightbulb, Rocket, type LucideIcon } from "lucide-react";
 
 interface Section {
   id: string;
@@ -13,7 +13,7 @@ interface AboutExperienceProps {
   sections: Section[];
 }
 
-const icons: Record<string, any> = {
+const icons: Record<string, LucideIcon> = {
   tecrube: Clock,
   temeller: Building2,
   yenilik: Lightbulb,
@@ -75,7 +75,7 @@ function ExperienceRow({
         </div>
 
         {/* Thin separator for visual rhythm */}
-        <div className="h-px w-16 bg-gradient-to-r from-blue-500/30 to-transparent" />
+        <div className="h-px w-16 bg-linear-to-r from-blue-500/30 to-transparent" />
 
         <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
           {section.title}
@@ -99,10 +99,10 @@ function ExperienceRow({
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.6 }}
-        className="flex-1 w-full aspect-video md:aspect-[16/9] relative group overflow-hidden rounded-2xl bg-white/[0.02] border border-white/5"
+        className="flex-1 w-full aspect-video md:aspect-video relative group overflow-hidden rounded-2xl bg-white/2 border border-white/5"
       >
         {/* Background gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 group-hover:from-blue-500/8 group-hover:to-purple-500/8 transition-all duration-700" />
+        <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-purple-500/5 group-hover:from-blue-500/8 group-hover:to-purple-500/8 transition-all duration-700" />
 
         {/* Subtle grid pattern */}
         <div

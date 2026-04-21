@@ -1,16 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Building2, 
-  MapPin, 
-  PhoneCall, 
-  Mail, 
-  Phone, 
-  Printer, 
-  Linkedin, 
-  Youtube,
-  ExternalLink 
+import {
+  Building2,
+  MapPin,
+  PhoneCall,
+  Mail,
+  Phone,
+  Printer,
+  ExternalLink
 } from "lucide-react";
 import contactData from "@/data/contact.json";
 import Link from "next/link";
@@ -48,8 +46,8 @@ export function ContactInfoCards() {
     >
       {/* Primary Company Info Card */}
       <motion.div variants={itemVariants}>
-        <div className="rounded-3xl bg-white/[0.02] border border-white/5 p-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="rounded-3xl bg-white/2 border border-white/5 p-8 relative overflow-hidden group hover:border-blue-500/30 transition-colors">
+          <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           
           <div className="relative z-10">
             <div className="flex items-center gap-4 mb-8">
@@ -90,8 +88,8 @@ export function ContactInfoCards() {
       {/* Grid for Smaller Info Cards */}
       <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Support Call/Email Info */}
-        <div className="rounded-3xl bg-white/[0.02] border border-white/5 p-6 relative overflow-hidden group hover:border-(--color-brand-accent)/30 transition-colors">
-            <div className="absolute inset-0 bg-gradient-to-br from-(--color-brand-accent)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="rounded-3xl bg-white/2 border border-white/5 p-6 relative overflow-hidden group hover:border-(--color-brand-accent)/30 transition-colors">
+            <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-accent)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -105,8 +103,8 @@ export function ContactInfoCards() {
             </div>
         </div>
 
-        <div className="rounded-3xl bg-white/[0.02] border border-white/5 p-6 relative overflow-hidden group hover:border-(--color-brand-accent)/30 transition-colors">
-            <div className="absolute inset-0 bg-gradient-to-br from-(--color-brand-accent)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="rounded-3xl bg-white/2 border border-white/5 p-6 relative overflow-hidden group hover:border-(--color-brand-accent)/30 transition-colors">
+            <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-accent)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -120,8 +118,8 @@ export function ContactInfoCards() {
             </div>
         </div>
 
-        <div className="rounded-3xl bg-white/[0.02] border border-white/5 p-6 relative overflow-hidden group hover:border-(--color-brand-accent)/30 transition-colors">
-            <div className="absolute inset-0 bg-gradient-to-br from-(--color-brand-accent)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="rounded-3xl bg-white/2 border border-white/5 p-6 relative overflow-hidden group hover:border-(--color-brand-accent)/30 transition-colors">
+            <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-accent)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -135,8 +133,8 @@ export function ContactInfoCards() {
             </div>
         </div>
 
-        <div className="rounded-3xl bg-white/[0.02] border border-white/5 p-6 relative overflow-hidden group hover:border-(--color-brand-accent)/30 transition-colors">
-            <div className="absolute inset-0 bg-gradient-to-br from-(--color-brand-accent)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="rounded-3xl bg-white/2 border border-white/5 p-6 relative overflow-hidden group hover:border-(--color-brand-accent)/30 transition-colors">
+            <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-accent)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
@@ -153,8 +151,8 @@ export function ContactInfoCards() {
 
       {/* Support Opening Card */}
       <motion.div variants={itemVariants}>
-        <div className="rounded-3xl bg-white/[0.02] border border-white/5 p-8 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="rounded-3xl bg-white/2 border border-white/5 p-8 relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+            <div className="absolute inset-0 bg-linear-to-br from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <div className="relative z-10">
                 <h3 className="text-xl font-semibold text-white mb-4 tracking-tight">
                 {contactData.support.title}
@@ -182,7 +180,7 @@ export function ContactInfoCards() {
                   key={idx} 
                   href={link.url} 
                   {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="flex items-center justify-between p-4 rounded-2xl bg-white/[0.02] border border-white/5 group hover:bg-white/[0.04] hover:border-white/10 transition-all font-medium"
+                  className="flex items-center justify-between p-4 rounded-2xl bg-white/2 border border-white/5 group hover:bg-white/4 hover:border-white/10 transition-all font-medium"
                 >
                   <span className="text-sm font-medium text-(--color-text-overline) group-hover:text-white transition-colors">{link.title}</span>
                   <ExternalLink className="w-4 h-4 text-(--color-text-muted) group-hover:text-(--color-brand-accent) transition-colors" />

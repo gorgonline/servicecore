@@ -12,7 +12,7 @@ export default function ContactPage() {
   return (
     <main className="relative min-h-screen bg-(--color-surface-base) pb-32 pt-24 overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-(--color-brand-primary)/10 via-(--color-brand-primary)/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-[500px] bg-linear-to-b from-(--color-brand-primary)/10 via-(--color-brand-primary)/5 to-transparent pointer-events-none" />
       <div className="absolute top-1/4 -right-64 w-96 h-96 bg-(--color-brand-accent)/10 rounded-full blur-[128px] pointer-events-none" />
       <div className="absolute bottom-1/4 -left-64 w-96 h-96 bg-(--color-brand-primary)/10 rounded-full blur-[128px] pointer-events-none" />
 
@@ -25,7 +25,7 @@ export default function ContactPage() {
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-8">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-brand-primary) to-(--color-brand-accent)">Servicecore</span>{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-brand-accent)">Servicecore</span>{" "}
             Kanalları
           </h1>
           
@@ -41,8 +41,8 @@ export default function ContactPage() {
             <ContactInfoCards />
             
             {/* Quick Support Links - "Servicecore Destek Sistemine Erişim" */}
-            <div className="rounded-3xl bg-white/[0.02] border border-white/5 p-8 relative overflow-hidden group hover:border-(--color-brand-primary)/30 transition-colors">
-              <div className="absolute inset-0 bg-gradient-to-r from-(--color-brand-primary)/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="rounded-3xl bg-white/2 border border-white/5 p-8 relative overflow-hidden group hover:border-(--color-brand-primary)/30 transition-colors">
+              <div className="absolute inset-0 bg-linear-to-r from-(--color-brand-primary)/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative z-10">
                 <h3 className="text-xl font-semibold text-white mb-3 tracking-tight">
                   {contactData.supportSystem.title}
@@ -69,7 +69,7 @@ export default function ContactPage() {
             
             {/* Maps */}
             <div className="grid grid-cols-1 gap-6">
-               <div className="rounded-3xl bg-white/[0.02] border border-white/5 h-64 relative overflow-hidden group">
+               <div className="rounded-3xl bg-white/2 border border-white/5 h-64 relative overflow-hidden group">
                   <iframe 
                     width="100%" 
                     height="100%" 
@@ -86,7 +86,7 @@ export default function ContactPage() {
                   </div>
                </div>
                
-               <div className="rounded-3xl bg-white/[0.02] border border-white/5 h-64 relative overflow-hidden group">
+               <div className="rounded-3xl bg-white/2 border border-white/5 h-64 relative overflow-hidden group">
                   <iframe 
                     width="100%" 
                     height="100%" 

@@ -1,28 +1,24 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import { ExpandedPricingSection } from "@/components/ui/expanded-pricing";
 import AboutHero from "@/components/ui/AboutHero";
-import pricingData from "@/data/pricing.json";
+import pricingData from "@/data/pricing-itsm.json";
 import { HelpCircle } from "lucide-react";
 
 export default function PlanlarPage() {
   return (
-    <main className="min-h-screen bg-(--color-surface-base-dark) text-white selection:bg-(--color-brand-primary)/30">
-      <Navbar />
-      
+    <div className="bg-(--color-surface-base-dark) text-white selection:bg-(--color-brand-primary)/30">
       {/* Hero Section */}
-      <AboutHero 
-        title={pricingData.title}
-        subtitle={pricingData.subtitle}
-        description="ServiceCore'un modüler yapısı ile ihtiyacınız olan özellikleri seçin, sadece kullandığınız kadar ödeyin."
+      <AboutHero
+        title={pricingData.hero.title}
+        subtitle={pricingData.hero.subtitle}
+        description={pricingData.hero.description}
       />
 
-      {/* Expanded Pricing Grid (No Scrollbars) */}
-      <ExpandedPricingSection />
+      {/* Expanded Pricing Grid */}
+      <ExpandedPricingSection data={pricingData} />
 
       {/* FAQ Section */}
       <section className="py-24 bg-(--color-surface-base) relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/5 to-transparent" />
         <div className="mx-auto max-w-4xl px-6 lg:px-12 relative z-10">
           <div className="flex items-center gap-4 mb-12">
             <div className="p-3 rounded-xl bg-(--color-brand-primary)/10 border border-(--color-brand-primary)/20">
@@ -33,9 +29,9 @@ export default function PlanlarPage() {
 
           <div className="grid gap-6">
             {pricingData.faq.map((item, idx) => (
-              <div 
-                key={idx} 
-                className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors group"
+              <div
+                key={idx}
+                className="p-8 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 transition-colors group"
               >
                 <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-(--color-brand-primary) transition-colors">
                   {item.question}
@@ -49,7 +45,6 @@ export default function PlanlarPage() {
         </div>
       </section>
 
-      <Footer />
-    </main>
+    </div>
   );
 }

@@ -77,7 +77,7 @@ export function SupportTiersCards() {
   return (
     <section id="packages" className="relative w-full py-24 overflow-hidden bg-(--color-surface-base-dark)">
       {/* Background Gradients */}
-      <div className="absolute top-0 inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-1/4 -right-[20%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/10 to-transparent pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
@@ -91,7 +91,7 @@ export function SupportTiersCards() {
           className="text-center mb-16 max-w-3xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Performans <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light)">SLA Paketleri</span>
+            Performans <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light)">SLA Paketleri</span>
           </h2>
           <p className="text-base md:text-lg text-(--color-text-secondary) font-light leading-relaxed">
             Operasyonel kritiklik derecenize göre optimize edilmiş, esnek müdahale ve çözüm sürelerini barındıran lisans bazlı hizmet paketlerimizi karşılaştırın.
@@ -112,16 +112,16 @@ export function SupportTiersCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`flex flex-col rounded-[2rem] p-8 relative group transition-colors h-full ${
+                className={`flex flex-col rounded-4xl p-8 relative group transition-colors h-full ${
                   isPro 
-                    ? "bg-gradient-to-b from-(--color-brand-primary)/[0.08] to-(--color-surface-base) border border-(--color-brand-primary)/30 shadow-(--shadow-glow-primary-card)" 
+                    ? "bg-linear-to-b from-(--color-brand-primary)/[0.08] to-(--color-surface-base) border border-(--color-brand-primary)/30 shadow-(--shadow-glow-primary-card)" 
                     : "bg-(--color-surface-elevated-dark) border border-white/10"
                 }`}
               >
                 {/* Pro Badge */}
                 {isPro && (
                   <div className="absolute -top-3 1/2 transform -translate-x-1/2 left-1/2 z-20 w-max">
-                     <div className="relative bg-gradient-to-r from-(--color-brand-primary) to-cyan-500 text-white px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-xl ring-1 ring-white/20">
+                     <div className="relative bg-linear-to-r from-(--color-brand-primary) to-cyan-500 text-white px-4 py-1.5 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-xl ring-1 ring-white/20">
                         {pkgName === "Mission Critical" ? "Popüler Seçim" : "En Kapsamlı"}
                      </div>
                   </div>
@@ -146,7 +146,7 @@ export function SupportTiersCards() {
                   </button>
                 </div>
 
-                <div className={`w-full h-px mb-6 ${isPro ? "bg-gradient-to-r from-(--color-brand-primary)/30 via-(--color-brand-primary)/20 to-transparent" : "bg-gradient-to-r from-transparent via-white/10 to-transparent"}`} />
+                <div className={`w-full h-px mb-6 ${isPro ? "bg-linear-to-r from-(--color-brand-primary)/30 via-(--color-brand-primary)/20 to-transparent" : "bg-linear-to-r from-transparent via-white/10 to-transparent"}`} />
 
                 {/* Features Accordion List */}
                 <div className="flex flex-col gap-1 flex-grow">

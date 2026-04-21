@@ -2,21 +2,11 @@
 
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
-import { 
-  ShieldCheck, 
+import {
+  ShieldCheck,
   LucideIcon,
-  Workflow, 
-  Layers, 
-  Zap, 
-  BarChart3, 
-  Users, 
-  Lock, 
-  RefreshCw, 
-  Code2, 
-  Globe, 
-  Clock, 
+  Workflow,
   Gem,
-  CheckCircle2,
   Sparkles,
   ArrowRight
 } from 'lucide-react';
@@ -79,7 +69,7 @@ export default function FarkVarPage() {
     <main className="min-h-screen bg-(--color-surface-base) text-white pb-0 overflow-hidden">
       {/* Dynamic Background Effects */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-[20%] -left-[10%] w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full" />
+        <div className="absolute top-[20%] -left-[10%] w-150 h-150 bg-blue-500/5 blur-[120px] rounded-full" />
         <div className="absolute bottom-[10%] -right-[10%] w-[500px] h-[500px] bg-purple-500/5 blur-[120px] rounded-full" />
       </div>
 
@@ -116,7 +106,7 @@ export default function FarkVarPage() {
                     {category.description}
                   </p>
                 </div>
-                <div className="hidden md:block h-px flex-grow bg-gradient-to-r from-white/10 to-transparent ml-12 mb-6" />
+                <div className="hidden md:block h-px flex-grow bg-linear-to-r from-white/10 to-transparent ml-12 mb-6" />
               </motion.div>
 
               {/* Items Grid */}
@@ -130,7 +120,7 @@ export default function FarkVarPage() {
                 {category.items.map((item, index) => (
                   <motion.div key={item.baslik} variants={itemVariants}>
                     <Card className="group h-full bg-white/[0.03] border-white/5 backdrop-blur-xl hover:bg-white/[0.07] hover:border-white/10 transition-all duration-500 overflow-hidden rounded-3xl">
-                      <div className="absolute inset-0 bg-gradient-to-br from-(--color-brand-primary)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-primary)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <CardContent className="p-8 relative z-10 flex flex-col h-full">
                         <div className="mb-6 flex items-center justify-between">
                           <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-(--color-text-secondary) group-hover:text-(--color-brand-primary) group-hover:border-(--color-brand-primary)/30 transition-all duration-300">

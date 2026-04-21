@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { MousePointer2, Layout, Users, Layers, Globe, Settings2, Zap, HeartHandshake, TrendingUp, Shield, Target } from "lucide-react";
+import { MousePointer2, Layout, Users, Layers, Globe, Settings2, Zap, HeartHandshake, TrendingUp, Shield, Target, type LucideIcon } from "lucide-react";
 
 interface Principle {
   title: string;
@@ -14,7 +14,7 @@ interface DesignPhilosophyGridProps {
   principles: Principle[];
 }
 
-const icons: Record<string, any> = {
+const icons: Record<string, LucideIcon> = {
   "Sezgisel Sadelik": MousePointer2,
   "İşlevsel Estetik": Layout,
   "İnsan + Otomasyon Uyumu": Users,
@@ -72,7 +72,7 @@ function PrincipleCard({ principle, index }: { principle: Principle; index: numb
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="group relative flex flex-col p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col p-8 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/4 hover:border-white/10 transition-all duration-300 overflow-hidden"
     >
       {/* Icon Area — Micro-animated on hover */}
       <div className="mb-6 w-12 h-12 rounded-xl bg-blue-500/5 border border-blue-500/10 flex items-center justify-center text-(--color-accent-blue-light) group-hover:border-blue-500/30 group-hover:bg-blue-500/15 group-hover:scale-110 group-hover:rotate-[5deg] transition-all duration-300 ease-out">

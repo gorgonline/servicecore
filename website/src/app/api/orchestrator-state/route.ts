@@ -12,7 +12,7 @@ export async function GET() {
     const data = JSON.parse(fileContent);
     
     return NextResponse.json(data);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'State not found' }, { status: 404 });
   }
 }

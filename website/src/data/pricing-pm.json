@@ -1,0 +1,111 @@
+{
+  "hero": {
+    "title": "Proje Yönetimi Lisanslama",
+    "subtitle": "Modüler, Adil ve Esnek Lisanslama Seçenekleri",
+    "description": "Proje yönetimi süreçlerinizi ihtiyacınıza göre ölçeklendirin, sadece kullandığınız kadar ödeyin."
+  },
+  "section": {
+    "badge": "Versiyonlar ve Kapsam",
+    "titleLead": "İhtiyacınıza uygun",
+    "titleHighlight": "lisans modelini seçin.",
+    "description": "Minimum 10 teknisyen ile başlayın. Single Tenant veya ESM (Multi Tenant) mimarisiyle, ister Onpremises ister Bulut kurulumu tercih edin.",
+    "deploymentPill": "Onpremises veya Bulut Kurulum",
+    "subscriptionPill": "Yıllık Abonelik Modeli"
+  },
+  "standard": {
+    "title": "Project Standart Versiyon",
+    "description": "Temel proje yönetimi süreçlerine ihtiyaç duyan organizasyonlar için. Küçük ve orta ölçekli proje yönetimi ekipleri için uygundur.",
+    "infoBox": "Temel proje yönetimi ve görev koordinasyonu için uygundur. Çevik, SDLC, Gantt ve Kanban yaklaşımlarını kapsar.",
+    "featuresLabel": "Servicecore Project Standart temel modülleri",
+    "ctaLabel": "Teklif İsteyin",
+    "footerNote": "* Standart versiyona, Premium versiyon modüllerinden veya eklentilerden ihtiyaç duyulan modüller tekil olarak eklenebilmektedir. Minimum Standart 10 teknisyen alınabilir.",
+    "features": [
+      { "title": "Proje Yönetimi Modülü", "description": "Proje yönetimi temel özelliklerini içeren modüldür." },
+      { "title": "Çevik Proje Yönetimi", "description": "Agile metodların SCRUM vb. kullanılabildiği modüldür." },
+      { "title": "SDLC Yönetimi", "description": "Yazılım geliştirme işlerinin yönetimi, takibi, raporlanması ve CI CD platformları ile entegrasyonlar." },
+      { "title": "Panolar Dashboardlar", "description": "Projelerin farklı panolar ve dashboardlar ile takip edilebileceği modül." },
+      { "title": "Görev Yönetimi", "description": "Kaynakları proaktif olarak yönetmek için tüm görevlerin süreçler aracılığıyla birleştirilmiş görev yönetimi ve merkezi koordinasyonu." },
+      { "title": "Görev Ajanda Modülü", "description": "Görevlerinizi aylık ve günlük görünümlerde saat aralıkları ile takip edebilirsiniz." },
+      { "title": "Görev Kanban Panoları", "description": "Görevlerinizi sürekle bırak ile kanban pano seçeneği ile yönetebilirsiniz." },
+      { "title": "Gantt Modülü", "description": "Gantt Chartlar ile proje bağımlıkları ve zaman takibi." },
+      { "title": "Kaynak Yönetimi", "description": "Proje kaynaklarının görev, müsaitlik, kapasite, kullanım ve yük dağılımlarının yönetimi." },
+      { "title": "İş Kayıtları / Time Sheet Yönetimi", "description": "Karşılanan kayıtlar içerisinde iş kayıtlarınızı tutabilir ve o kayıt için toplam efor sürelerini hesaplayabilirsiniz." },
+      { "title": "Kapasite ve İş Yükü Takibi", "description": "Kapasite ve İş Yükü Takibi." },
+      { "title": "Self Servis Portal", "description": "Kullanıcıların olaylarını, isteklerini, değişikliklerini, varlıklarını ve destek ekiplerinizle olan tüm etkileşimlerini izleyebilmeleri için portal." },
+      { "title": "Bilgi ve Doküman Yönetimi Modülü", "description": "Kapsamlı Bilgi ve Doküman Yönetim Sistemi, hem teknik ekip hem de kullanıcılar için proje dokümantasyonunu, workspaceleri, makaleleri yönetmeyi, versiyonlamayı, paylaşmayı ve düzenlemeyi kolaylaştırır." },
+      { "title": "Görev, İş Günlüğü, Doküman Şablonları", "description": "Servicecore'un şablon yapısı sayesinde, kayıt oluşturma süreçleri standartlaşır ve hız kazanır. Tekrar eden işlemler için zaman kaybı ortadan kalkar, verimlilik artar." },
+      { "title": "Raporlama Modülü", "description": "Servicecore raporlama modülüyle proje, sprint, backlog, task verilerini anlamlı bilgilere dönüştürerek performansı ölçer ve iyileştirme alanlarını tespit eder. Hazır raporlar, dinamik panolar ve Report Wizard sayesinde stratejik, operasyonel ve analitik raporlamalar kolayca yapılabilir. Sürekli iyileştirme için gereken veri odaklı yönetim bu sayede sağlanır." },
+      { "title": "Zamanlanmış Raporlar", "description": "Zamanlanmış Raporlar ile tüm paydaşları güncel tutun." },
+      { "title": "Rol Yönetimi", "description": "Teknisyenlere farklı yetkiler tanımlanarak uygulama içinde yalnızca ilgili alanlara erişim sağlanır. Bu sayede güvenli ve verimli bir görev dağılımı gerçekleştirilir." },
+      { "title": "Anket Yönetimi", "description": "Servicecore'un anket yönetimi özelliği ile kullanıcı memnuniyeti ve hizmet kalitesi kolayca ölçümlenir. Otomatik gönderilen anketler sayesinde geri bildirim toplanır, analiz edilir ve sürekli iyileştirme sağlanır." },
+      { "title": "Service Desk ve Çağrı Modülü", "description": "Sisteme entegre ettiğiniz mail adresleri üzerinden gelen kayıtların ayrıştırılması, otomatik olarak çağrılara dönüştürülmesi çağrı modülünde yapılmaktadır." },
+      { "title": "Sınırsız E-mail Yakalayıcı", "description": "Servicecore, sınırsız e-posta tanımlama özelliği sayesinde, gelen e-postalar üzerinden otomatik kayıt oluşturulmasını sağlar. Bu sayede kayıt oluşturma süreçleri hızlanır, müdahale süreleri kısalır ve operasyonel verimlilik artar." },
+      { "title": "E-Posta ile Otomatik Kayıt Açma", "description": "Servicecore, gelen e-postalardan otomatik kayıt açma özelliği ile kayıt oluşturma süreçlerini hızlandırır, müdahale sürelerini kısaltır ve operasyonel verimliliği artırır." },
+      { "title": "E-Posta, SMS, Web Bildirim Şablonları", "description": "Servicecore, açılan kayıtlar için kullanıcılara ve teknisyenlere anlık e-posta bildirimleri göndererek hızlı bilgilendirme sağlar. Bu sayede süreçler kesintisiz ilerler ve müdahale süreleri minimuma iner." },
+      { "title": "Sınırsız AD Senkronizasyonu", "description": "Dilediğiniz kadar AD hesabı entegre ederek sınırsız kullanıcıyı Servicecore'da yetkilendir." },
+      { "title": "Genel Yönetim Modülü", "description": "Servicecore'un esnek, kolay kullanımlı ve kapsamlı administration seçenekleriyle iş süreçlerinizi kolaylaştırın!" }
+    ]
+  },
+  "pro": {
+    "title": "Project Premium Versiyon",
+    "description": "Enterprise ve kapsamlı proje yönetimi özellikleri ve ileri düzey süreç ve eklentilere ihtiyaç duyan kuruluşlara uygundur.",
+    "infoBox": {
+      "prefix": "Standart versiyondaki ",
+      "highlight": "tüm özellikleri dönemsel sınırlar olmadan",
+      "suffix": " kapsar."
+    },
+    "extraLabel": "Standart versiyona ek modüller",
+    "onlyLabel": "Premium Versiyona Özgü Fonksiyonlar",
+    "ctaLabel": "Teklif İsteyin",
+    "popularLabel": "En Çok Tercih Edilen",
+    "footerNote": "* Standart lisansın en az %25'i kadar Premium lisans ile hibrit yapılabilmektedir. ESM versiyonunda tenant başına bağımsız lisanslama mümkündür.",
+    "extraModules": [
+      { "title": "Değişiklik Talepleri Yönetimi Modülü", "description": "Bu modülde değişiklik talepleri proje yönetimi ile entegre edilmekte ve geriye dönük talep ilişkileri takip edilebilmektedir." },
+      { "title": "İyileştirme Talepleri Yönetimi Modülü", "description": "Taleplerin alınması, değerlendirilmesi, önceliklendirilmesi, fizibilite çalışması, advisory işlemleri ve uygulama kararları ve dönüşümü bu modül ile yapılır. Kullanıcı ve müşterilerden gelen iyileştirme, geliştirme öneri ve talepleri end user portalından alınarak tüm yaşam döngüsü boyunca talepler hem teknik ekip hem de kullanıcılar tarafından birlikte takip edilebilir." },
+      { "title": "Standart Taleplerin Yönetimi Modülü", "description": "Taleplerin bir diğer türü olan standartlaştırılmış ve kataloglanmış talepler ise bu modül ile alınmaktadır. Talep sonrası onay ve iş akışları ile taleplerin değerlendirilmesi, görevleri, projeye dönüşümleri bu modül üzerinden işletilmektedir." },
+      { "title": "Paydaş İlişkileri Yönetimi Modülü", "description": "Dış müşterilerle yönetilen projelerde müşteri bilgilerinin yönetimi bu modül sayesinde yapılmaktadır." },
+      { "title": "Sözleşme Yönetimi Modülü", "description": "Servicecore, işletmelerin proje süreçlerini yönetmelerine yardımcı olan güçlü bir yazılım platformudur. İçerisinde yer alan Sözleşme Yönetimi Modülü, sözleşme süreçlerini daha etkin ve organize bir şekilde yönetmek için geliştirilmiştir." },
+      { "title": "Otomasyon Modülü", "description": "Kolayca tanımlanabilen kurallar ile koşullara bağlı aksiyonlar otomatik yapılabilmekte ve bu sayede tüm talep kayıtlarının dinamik olarak güncellenmesi ve akışların hızlanması sağlanmaktadır." },
+      { "title": "Entegrasyonlar için API Modülü", "description": "Servicecore API entegrasyonu, farklı yazılım uygulamaları arasında etkin iletişim sağlayan ve veri alışverişini kolaylaştıran restAPI teknolojisini kullanan bir yapıdır. Bu entegrasyonlar, farklı platformlar arasında veri aktarımını hızlandırarak iş süreçlerinin optimize edilmesine ve verimliliğin artırılmasına yardımcı olur." }
+    ],
+    "onlyFeatures": [
+      { "title": "İş Akışları ve Onay Akışları Yönetimi", "description": "Servicecore onay iş akışları, akış şemaları ve diyagramlar aracılığıyla oluşturulur ve görsel olarak temsil edilir. Bu iş akışları, onay süreçlerini otomatikleştirmek ve optimize etmek için sıkça kullanılır. Böylece sistem onaylarını yönetmek ve izlemek daha kolay hale gelir. Onay iş akışları, verimliliği artırmak, hataları azaltmak ve karmaşık süreçleri iyi organize etmek için kullanışlı bir araçtır." },
+      { "title": "Onay ve Danışma Kurulları Yönetimi", "description": "ServiceCore, işletmelerin onay süreçlerini daha düzenli ve hızlı yönetebilmeleri için Onay Grupları özelliğini sunar. Bu yapı, belirli süreçler için onay veren ve danışmanlık sağlayan kişileri tanımlayıp, onay mekanizmalarında kullanmayı kolaylaştırır." },
+      { "title": "Özel Ek Alanlar ve Custom Formlar", "description": "Her işletmenin kendine özgü süreçleri ve ihtiyaçları vardır. ServiceCore, bu ihtiyaçlara tam uyum sağlayabilmeniz için Özel Ek Alanlar özelliğini sunar. Bu özellik sayesinde, standart formları geliştirerek işletmenize özel kayıt formları oluşturabilir ve süreçlerinizi daha verimli hale getirebilirsiniz." },
+      { "title": "Low Code Form Design ve Yönetimi", "description": "ServiceCore, yenilikçi Low-Code Form Oluşturma özelliği ile işletmenizin ihtiyaçlarına uygun özel formlar oluşturmanızı kolaylaştırır. Teknik bilgiye ihtiyaç duymadan, sürükle-bırak yöntemiyle hızlı ve etkili çözümler üretebilirsiniz." },
+      { "title": "Mobile Proje Yönetimi Modülü", "description": "ServiceCore, mobil native uygulaması ile projelerinizi mobil olarak da takip edebilirsiniz." },
+      { "title": "Azure AD / SAML / SSO", "description": "ServiceCore, modern iş gereksinimlerine uygun olarak geliştirilmiş bir platformdur ve güçlü kimlik doğrulama yöntemlerini destekler. Platform, Azure Active Directory (Azure AD), SAML (Security Assertion Markup Language) ve Single Sign-On (SSO) teknolojileriyle sorunsuz entegrasyon sağlar." },
+      { "title": "Validasyonlar/Süreç Doğrulama Kontrolleri", "description": "ServiceCore, iş süreçlerinizin düzenli ve eksiksiz bir şekilde yürütülmesini sağlamak için güçlü Zorunlu Alan Validasyonu özellikleri sunar. Bu özellik sayesinde, farklı modüllerde belirli alanların doldurulmasını zorunlu hale getirebilirsiniz." },
+      { "title": "Döküm Raporları", "description": "ServiceCore, tüm modüller üzerinden kapsamlı raporlar almanızı sağlayan Döküm Raporları özelliği sunar. Bu özellik, her modülde yer alan verileri detaylı bir şekilde döküm formatında çıkararak, işletmenizin analiz ve raporlama ihtiyaçlarını karşılar." },
+      { "title": "Dinamik Raporlar", "description": "ServiceCore, kullanıcıların farklı filtreler ve kolon yapıları kullanarak tamamen özelleştirilmiş raporlar oluşturabilmesini sağlayan Dinamik Raporlar özelliği sunar. Bu özellik, kullanıcıların ihtiyaçlarına göre veri analizini kişiselleştirmelerini ve daha detaylı, anlamlı raporlar elde etmelerini sağlar." },
+      { "title": "Çoklu Dil Desteği", "description": "ServiceCore, global kullanıcılar için Çoklu Dil Desteği sunarak, farklı dillerde çalışma imkanı sağlar. Bu özellik, kullanıcıların kendi tercihlerine göre platformu farklı dillerde kullanabilmelerini ve daha verimli bir deneyim elde etmelerini mümkün kılar." },
+      { "title": "Multitenant Yapı (ESM versiyon ile)", "description": "Servicecore'un içindeki tüm şirket süreçlerini ve bu süreçlere odaklanan bir yaklaşımı ifade eder. Bu, Servicecore'un sadece IT (Bilgi Teknolojileri) departmanı için değil, aynı zamanda diğer departmanlar ve iş birimleri için de süreç yönetimi uygulamalarını içerir. Servicecore ESM yaklaşımı, bir şirketin genel verimliliğini ve müşteri memnuniyetini artırmayı amaçlar. ESM versiyonda alt tenantlarda üye olan her bir teknisyen tenant bazında ayrı lisanslanmaktadır." },
+      { "title": "Multi Company / Holding Yapısı (ESM versiyon ile)", "description": "ServiceCore ESM (Enterprise Service Management), şirket içindeki tüm hizmet süreçlerini yönetmek için entegre bir yaklaşım sunar. Bu, sadece IT (Bilgi Teknolojileri) departmanı ile sınırlı kalmaz, aynı zamanda diğer departmanlar ve iş birimlerinin hizmet ve proje yönetimi uygulamalarını da kapsar. ServiceCore'un ESM yaklaşımı, organizasyonun genel verimliliğini artırmayı ve müşteri memnuniyetini yükseltmeyi hedefler. ESM versiyonda alt tenantlarda üye olan her bir teknisyen tenant bazında ayrı lisanslanmaktadır." }
+    ]
+  },
+  "addons": {
+    "title": "Eklentiler ve Çözümler",
+    "description": "Standart veya Premium versiyonlara ek olarak (Add-on) seçilip mevcut lisansınıza entegre edilebilecek ileri seviye yönetim modülleri ve dış sistem entegrasyonları.",
+    "categories": [
+      {
+        "title": "Standart veya Premiuma eklenebilen modüller",
+        "items": [
+          { "name": "MS Teams Eklentisi", "desc": "ServiceCore MS Teams Eklentisi, Microsoft Teams ile entegre olarak, proje yönetimi ve işbirliği süreçlerini daha verimli hale getirir." },
+          { "name": "Task Calendar Sync Eklentisi", "desc": "ServiceCore kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli bir şekilde hizmet yönetimi yapmalarını sağlar." },
+          { "name": "Failover / Cluster Sistem Add-on", "desc": "ServiceCore Failover / Cluster Sistem Add-on, yüksek erişilebilirlik ve kesintisiz hizmet sağlamak amacıyla, ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır. Bu özellik, kritik iş süreçlerinin ve hizmetlerin herhangi bir kesinti durumunda devamlılık göstermesini sağlar. Failover ve Cluster sistemleri, platformun daha dayanıklı, güvenilir ve kesintisiz çalışmasını garanti eder." },
+          { "name": "Disaster Center Add-on", "desc": "ServiceCore Disaster Center Add-on, şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır." },
+          { "name": "Sandbox / Test Sistem Add-on", "desc": "ServiceCore Sandbox / Test Sistem Add-on, kullanıcıların ServiceCore platformu üzerinde gerçekleştirecekleri değişiklikler ve yenilikleri gerçek ortamda uygulamadan önce güvenli bir şekilde test etmelerini sağlar." }
+        ]
+      },
+      {
+        "title": "Entegrasyonlarla Sunulan Çözümler",
+        "items": [
+          { "name": "Proje Analitiği Çözümleri", "desc": "PowerBI Entegre Add-on ile tüm raporların detaylı BI panolarına ürün içerisinden erişim imkanı sunar." },
+          { "name": "Sürüm Yönetimi Çözümleri", "desc": "SDLC ve DevOps Entegrasyonları ile yaygın kullanılan CI CD ürünleri ile eş güdümlü çalışma sağlanmaktadır." },
+          { "name": "GRC Çözümleri", "desc": "Risk, Audit, Compliance Add-on ile kurumun GRC platformları ile eşgüdümlü çalışma sağlanmaktadır." },
+          { "name": "Migration Çözümleri", "desc": "Diğer proje yönetimi platformlarından Veri, Konfigürasyon, Flow vb. öğelerin taşınması işlemleri yapılmaktadır." }
+        ]
+      }
+    ]
+  }
+}

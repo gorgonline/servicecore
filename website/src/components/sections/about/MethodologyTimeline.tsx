@@ -36,7 +36,7 @@ export default function MethodologyTimeline({ title, principles }: MethodologyTi
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.4 }}
-              className="relative group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-all duration-300 text-left"
+              className="relative group p-8 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/4 transition-all duration-300 text-left"
             >
               <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-(--color-accent-blue-light) font-bold mb-6 group-hover:bg-(--color-accent-blue-base) group-hover:text-white group-hover:scale-110 transition-all duration-300 ease-out">
                 {idx + 1}

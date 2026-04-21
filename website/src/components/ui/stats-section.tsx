@@ -84,7 +84,7 @@ export function StatsSection() {
   return (
     <section className="relative w-full py-24 overflow-hidden">
       {/* Background styling for breathing room */}
-      <div className="absolute inset-0 bg-gradient-to-b from-(--color-surface-base) via-(--color-surface-mid-gradient) to-(--color-surface-base) opacity-50" />
+      <div className="absolute inset-0 bg-linear-to-b from-(--color-surface-base) via-(--color-surface-mid-gradient) to-(--color-surface-base) opacity-50" />
       
       <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
         
@@ -122,8 +122,8 @@ export function StatsSection() {
       </div>
       
       {/* Decorative separators */}
-      <div className="absolute top-0 inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute bottom-0 inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
     </section>
   );
 }

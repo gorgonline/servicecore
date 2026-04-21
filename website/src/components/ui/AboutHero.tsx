@@ -100,7 +100,7 @@ export default function AboutHero({ title, subtitle, description }: AboutHeroPro
       </div>
       
       {/* Decorative Bottom Gradient */}
-      <div className="absolute bottom-0 inset-x-0 h-40 bg-gradient-to-t from-(--color-surface-base) to-transparent z-20" />
+      <div className="absolute bottom-0 inset-x-0 h-40 bg-linear-to-t from-(--color-surface-base) to-transparent z-20" />
     </section>
   );
 }

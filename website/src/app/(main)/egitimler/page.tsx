@@ -2,19 +2,17 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-import { 
-  Calendar, 
-  Clock, 
-  Users, 
-  Trophy, 
-  ChevronDown, 
-  Sparkles, 
-  Mail, 
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Calendar,
+  Clock,
+  Users,
+  Trophy,
+  ChevronDown,
+  Sparkles,
+  Mail,
   ArrowRight,
-  ShieldCheck,
   CircleCheckBig,
-  Award,
   Phone
 } from "lucide-react";
 import ServiceCoreHero from "@/components/ui/ServiceCoreHero";
@@ -67,16 +65,6 @@ const AccordionItem = ({ title, content }: { title: string; content: string }) =
 export default function EgitimlerPage() {
   const { egitimler } = egitimlerData;
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
-  };
-
-  const cardVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 100, damping: 15 } }
-  };
-
   return (
     <div className="min-h-screen bg-(--color-surface-base) text-white overflow-x-hidden selection:bg-blue-500/30">
       
@@ -94,10 +82,10 @@ export default function EgitimlerPage() {
           <div key={program.id} className="w-full relative pt-12">
             
             {/* Visual Separation Mesh for each program */}
-            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+            <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-blue-500/20 to-transparent" />
             <div className={`absolute -top-32 ${pIndex % 2 === 0 ? '-left-64' : '-right-64'} w-[800px] h-[800px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none`} />
 
-            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+            <div className="max-w-350 mx-auto px-4 sm:px-6 lg:px-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                 
                 {/* Left: Main Program Card */}
@@ -107,7 +95,7 @@ export default function EgitimlerPage() {
                   viewport={{ once: true }}
                   className="lg:col-span-7 relative group"
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-br from-blue-500/10 to-transparent rounded-[3rem] blur-lg group-hover:from-blue-500/20 transition duration-1000" />
+                  <div className="absolute -inset-1 bg-linear-to-br from-blue-500/10 to-transparent rounded-[3rem] blur-lg group-hover:from-blue-500/20 transition duration-1000" />
                   <div className="relative bg-(--color-surface-elevated-solid)/80 backdrop-blur-3xl border border-white/10 rounded-[3rem] p-10 lg:p-14 h-full shadow-2xl flex flex-col justify-between overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full group-hover:bg-blue-500/20 transition-colors duration-700" />
                     
@@ -147,7 +135,7 @@ export default function EgitimlerPage() {
                         viewport={{ once: true }}
                         transition={{ delay: idx * 0.1 }}
                         key={idx} 
-                        className="bg-white/[0.02] backdrop-blur-md border border-white/5 rounded-[2.5rem] p-8 flex flex-col justify-between hover:bg-white/[0.04] hover:border-blue-500/30 transition-all duration-500 group relative overflow-hidden"
+                        className="bg-white/2 backdrop-blur-md border border-white/5 rounded-[2.5rem] p-8 flex flex-col justify-between hover:bg-white/4 hover:border-blue-500/30 transition-all duration-500 group relative overflow-hidden"
                       >
                          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-[40px] rounded-full group-hover:bg-blue-500/10 transition-colors duration-500" />
                          <div className="flex justify-between items-start mb-8 relative z-10">
@@ -174,14 +162,14 @@ export default function EgitimlerPage() {
                 className="max-w-5xl mx-auto w-full mt-16"
               >
                 <div className="flex items-center gap-6 mb-10">
-                  <div className="h-px flex-grow bg-gradient-to-r from-transparent via-white/10 to-white/10" />
+                  <div className="h-px flex-grow bg-linear-to-r from-transparent via-white/10 to-white/10" />
                   <h3 className="text-xs font-black uppercase tracking-[0.3em] text-blue-400/70 shrink-0">
                     {program.curriculum_title}
                   </h3>
-                  <div className="h-px flex-grow bg-gradient-to-l from-transparent via-white/10 to-white/10" />
+                  <div className="h-px flex-grow bg-linear-to-l from-transparent via-white/10 to-white/10" />
                 </div>
                 
-                <div className="bg-gradient-to-br from-(--color-surface-elevated-solid)/50 to-transparent border border-white/5 rounded-[2.5rem] p-8 lg:p-10 shadow-xl backdrop-blur-sm">
+                <div className="bg-linear-to-br from-(--color-surface-elevated-solid)/50 to-transparent border border-white/5 rounded-[2.5rem] p-8 lg:p-10 shadow-xl backdrop-blur-sm">
                   {program.curriculum.map((item, idx) => (
                     <AccordionItem key={idx} title={item.title} content={item.content} />
                   ))}
@@ -197,10 +185,10 @@ export default function EgitimlerPage() {
 
       {/* 4. KATILIM BİLGİLERİ VE FORM (Full Width Split Screen) */}
       <section className="w-full relative overflow-hidden bg-(--color-surface-elevated-solid) border-t border-white/10 mt-24">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/40 to-transparent" />
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
         
-        <div className="max-w-[1400px] mx-auto">
+        <div className="max-w-350 mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[800px]">
             
             {/* LEFT: INFO */}
@@ -235,7 +223,7 @@ export default function EgitimlerPage() {
                 </div>
 
                 {/* Support Info Box */}
-                <div className="p-8 lg:p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/10 relative overflow-hidden group hover:border-blue-500/30 transition-colors backdrop-blur-sm">
+                <div className="p-8 lg:p-10 rounded-[2.5rem] bg-white/2 border border-white/10 relative overflow-hidden group hover:border-blue-500/30 transition-colors backdrop-blur-sm">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-3xl rounded-full" />
                   <div className="flex items-center gap-6 relative z-10">
                     <div className="w-16 h-16 rounded-2xl bg-(--color-surface-base) border border-white/10 flex items-center justify-center text-(--color-accent-blue-light) shadow-2xl group-hover:bg-(--color-accent-blue-base) group-hover:text-white transition-colors duration-500">
@@ -265,7 +253,7 @@ export default function EgitimlerPage() {
                 viewport={{ once: true }}
                 className="w-full max-w-xl mx-auto lg:mr-auto lg:ml-0"
               >
-                <div className="relative p-10 lg:p-12 rounded-[3rem] bg-white/[0.02] border border-white/10 shadow-2xl group focus-within:border-blue-500/40 transition-colors duration-500">
+                <div className="relative p-10 lg:p-12 rounded-[3rem] bg-white/2 border border-white/10 shadow-2xl group focus-within:border-blue-500/40 transition-colors duration-500">
                   <h3 className="text-2xl lg:text-3xl font-bold mb-10 flex items-center gap-3 text-white">
                     <Sparkles size={24} className="text-(--color-accent-blue-light)" />
                     Ön Kayıt Talep Formu

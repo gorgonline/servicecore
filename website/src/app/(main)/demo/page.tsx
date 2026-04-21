@@ -12,7 +12,7 @@ export default function DemoPage() {
   return (
     <main className="relative min-h-screen bg-(--color-surface-base) pb-32 pt-24 overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-(--color-brand-primary)/10 via-(--color-brand-primary)/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-[500px] bg-linear-to-b from-(--color-brand-primary)/10 via-(--color-brand-primary)/5 to-transparent pointer-events-none" />
       <div className="absolute top-1/4 -right-64 w-96 h-96 bg-(--color-brand-accent)/10 rounded-full blur-[128px] pointer-events-none" />
       <div className="absolute bottom-1/4 -left-64 w-96 h-96 bg-(--color-brand-primary)/10 rounded-full blur-[128px] pointer-events-none" />
 
@@ -25,7 +25,7 @@ export default function DemoPage() {
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-8">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-brand-primary) to-(--color-brand-accent)">Servicecore</span>{" "}
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-brand-accent)">Servicecore</span>{" "}
             Demo
           </h1>
           

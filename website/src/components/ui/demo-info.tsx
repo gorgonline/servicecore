@@ -12,11 +12,11 @@ export function DemoInfo() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.3 }}
-      className="rounded-3xl bg-white/[0.02] border border-white/5 p-8 lg:p-10 relative overflow-hidden h-full flex flex-col"
+      className="rounded-3xl bg-white/2 border border-white/5 p-8 lg:p-10 relative overflow-hidden h-full flex flex-col"
     >
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-(--color-brand-accent)/5 to-transparent rounded-bl-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-(--color-brand-primary)/5 to-transparent rounded-tr-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-(--color-brand-accent)/5 to-transparent rounded-bl-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-linear-to-tr from-(--color-brand-primary)/5 to-transparent rounded-tr-full pointer-events-none" />
 
       <div className="relative z-10 flex-1 flex flex-col">
         {/* Tags */}

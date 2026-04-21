@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import { MapPin, Phone, Printer, HeadphonesIcon, Github, Linkedin, Youtube, ArrowRight } from "lucide-react";
+import { MapPin, Phone, Printer, HeadphonesIcon, Linkedin, Youtube } from "lucide-react";
 
 const footerData = {
 
@@ -98,10 +98,11 @@ const footerData = {
         { text: "Specsheet", href: "/specsheet" },
         { text: "Demo", href: "/demo" },
         { text: "İş Ortaklığı", href: "/partnerlik" },
-        { text: "Kurslar", href: "/kurslar" },
         { text: "Özellikler", href: "/ozellikler" },
         { text: "Planlar & Lisanslama", href: "/planlar" },
         { text: "Modüller", href: "/moduller" },
+        { text: "Pratikler", href: "/itil4-pratikleri" },
+        { text: "Fark Var", href: "/fark-var" },
         { text: "Destek Kanalları", href: "/destek-kanallari" },
         { text: "İletişim", href: "/iletisim" },
       ],
@@ -143,17 +144,17 @@ export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-(--color-surface-base) border-t border-white/5 pt-24 pb-12">
       {/* Background Glow Effects */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-(--color-accent-primary-5) blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-150 h-150 bg-(--color-accent-primary-5) blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-125 h-125 bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
       
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-blue-500/20 to-transparent" />
 
       <motion.div 
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="container relative z-10 mx-auto px-6 lg:px-12 max-w-[1400px]"
+        className="container relative z-10 mx-auto px-6 lg:px-12 max-w-350"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
@@ -178,7 +179,7 @@ export default function Footer() {
             <div className="space-y-6 mb-10">
               {footerData.companyInfo.addresses.map((addr) => (
                 <div key={addr.label} className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-(--color-accent-blue-light)">
+                  <div className="shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-(--color-accent-blue-light)">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
@@ -253,7 +254,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-4">
             <Link href="/" className="flex items-center group cursor-pointer lg:hidden mb-2">
               <div className="w-10 h-10 bg-white/5 border border-white/10 backdrop-blur-md rounded-lg flex items-center justify-center">
-                <img src="/logo-v1.png" alt="ServiceCore" className="w-6 h-6 object-contain" />
+                <Image src="/logo-v1.png" alt="ServiceCore" width={24} height={24} className="w-6 h-6 object-contain" />
               </div>
             </Link>
 

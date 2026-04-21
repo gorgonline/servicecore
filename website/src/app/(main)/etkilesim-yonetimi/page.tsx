@@ -43,12 +43,12 @@ export default function EtkilesimYonetimiPage() {
       
       {/* 1. HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden w-full">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1200px] pointer-events-none">
-          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/20 blur-[120px] rounded-full mix-blend-screen" />
-          <div className="absolute top-40 right-1/4 w-[400px] h-[400px] bg-cyan-600/10 blur-[100px] rounded-full mix-blend-screen" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-300 pointer-events-none">
+          <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-150 h-150 bg-blue-600/20 blur-[120px] rounded-full mix-blend-screen" />
+          <div className="absolute top-40 right-1/4 w-100 h-100 bg-cyan-600/10 blur-[100px] rounded-full mix-blend-screen" />
         </div>
 
-        <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full max-w-[1400px]">
+        <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full max-w-7xl">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 lg:mb-24">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -66,7 +66,7 @@ export default function EtkilesimYonetimiPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.1]"
             >
-              Müşteri deneyiminin başladığı yer: <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-(--color-accent-cyan-light)">Tek Noktadan Etkileşim.</span>
+              Müşteri deneyiminin başladığı yer: <br/><span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-(--color-accent-cyan-light)">Tek Noktadan Etkileşim.</span>
             </motion.h1>
             
             <motion.p 
@@ -75,33 +75,32 @@ export default function EtkilesimYonetimiPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg lg:text-xl text-(--color-text-secondary) font-light leading-relaxed max-w-3xl"
             >
-              Omnichannel iletişim, akıllı sınıflandırma ve ITIL 4 "Engagement" standartlarıyla; henüz sınıflandırılmamış çağrılarınızı yakalayın, kaydedin ve doğru sürece hızla yönlendirin.
+              Omnichannel iletişim, akıllı sınıflandırma ve ITIL 4 &ldquo;Engagement&rdquo; standartlarıyla; henüz sınıflandırılmamış çağrılarınızı yakalayın, kaydedin ve doğru sürece hızla yönlendirin.
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mx-auto rounded-[2rem] border border-white/10 bg-white/[0.02] backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group max-w-5xl"
+            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full max-h-125"
           >
-             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-(--color-surface-base) to-transparent z-10 pointer-events-none" />
-             <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-inner bg-(--color-surface-elevated-solid)/50 border border-white/5">
-                <Image 
-                  src="/images/etkilesim-modulu/hero.avif" 
-                  alt="Etkileşim Yönetimi Dashboard" 
-                  fill 
-                  className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-700" 
-                  priority
-                />
-             </div>
+             <Image
+               src="/images/etkilesim-modulu/hero.avif"
+               alt="Etkileşim Yönetimi Dashboard"
+               width={1869}
+               height={838}
+               className="block max-w-none rounded-2xl group-hover:scale-[1.01] transition-transform duration-700 origin-top-left"
+               priority
+             />
+             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
           </motion.div>
         </div>
       </section>
 
       {/* 2. ZIG-ZAG FEATURE BLOCKS (Full Width Sections) */}
       <section className="py-24 relative z-20">
-        <div className="container mx-auto px-6 lg:px-12 w-full max-w-[1400px] flex flex-col gap-32">
+        <div className="container mx-auto px-6 lg:px-12 w-full max-w-350 flex flex-col gap-32">
           
           {/* Feature 1: Omnichannel / SPOC */}
           <motion.div 
@@ -112,10 +111,10 @@ export default function EtkilesimYonetimiPage() {
             className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24"
           >
             <div className="w-full lg:w-1/2">
-              <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
+              <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl flex items-center justify-center">
-                  <div className="w-full h-full bg-gradient-to-br from-(--color-surface-elevated-solid) to-(--color-surface-base) flex items-center justify-center p-8">
+                <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl flex items-center justify-center">
+                  <div className="w-full h-full bg-linear-to-br from-(--color-surface-elevated-solid) to-(--color-surface-base) flex items-center justify-center p-8">
                      <div className="grid grid-cols-2 gap-4 w-full max-w-sm shrink-0 mix-blend-screen opacity-80">
                          <div className="bg-white/5 border border-white/10 rounded-xl p-6 flex flex-col items-center justify-center gap-3">
                             <Mail className="w-8 h-8 text-(--color-accent-blue-light)" />
@@ -166,10 +165,10 @@ export default function EtkilesimYonetimiPage() {
             className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24"
           >
             <div className="w-full lg:w-1/2">
-              <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
+              <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-emerald-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-emerald-500/10 blur-[50px] group-hover:bg-emerald-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl">
-                    <div className="w-full h-full bg-gradient-to-br from-(--color-surface-elevated-solid) to-(--color-surface-base) flex flex-col px-8 py-10">
+                <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl">
+                    <div className="w-full h-full bg-linear-to-br from-(--color-surface-elevated-solid) to-(--color-surface-base) flex flex-col px-8 py-10">
                         <div className="w-full bg-white/5 border border-white/10 rounded-xl p-4 mb-auto">
                             <div className="h-6 w-1/3 bg-slate-400/20 rounded mb-3"></div>
                             <div className="h-4 w-2/3 bg-slate-400/10 rounded"></div>
@@ -214,10 +213,10 @@ export default function EtkilesimYonetimiPage() {
             className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24"
           >
             <div className="w-full lg:w-1/2">
-              <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-gradient-to-br from-purple-500/5 to-indigo-500/5 backdrop-blur-xl group overflow-hidden">
+              <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-purple-500/5 to-indigo-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-purple-500/10 blur-[50px] group-hover:bg-purple-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl flex items-center justify-center">
-                   <div className="w-full h-full bg-gradient-to-br from-(--color-surface-elevated-solid) to-(--color-surface-base) flex flex-col items-center justify-center gap-6 p-8 relative">
+                <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl flex items-center justify-center">
+                   <div className="w-full h-full bg-linear-to-br from-(--color-surface-elevated-solid) to-(--color-surface-base) flex flex-col items-center justify-center gap-6 p-8 relative">
                        <Zap className="w-16 h-16 text-(--color-accent-purple-light)" />
                        <div className="w-full space-y-3 max-w-sm">
                            <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
@@ -259,11 +258,11 @@ export default function EtkilesimYonetimiPage() {
       <section className="py-24 border-y border-white/5 bg-(--color-surface-base-dark) relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03] mix-blend-screen pointer-events-none" />
         
-        <div className="container mx-auto px-6 lg:px-12 w-full max-w-[1400px] relative z-10">
+        <div className="container mx-auto px-6 lg:px-12 w-full max-w-350 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-24">
             <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-6">Operasyonel Derinlik</h2>
             <p className="text-(--color-text-secondary) text-lg font-light leading-relaxed">
-              ITIL 4 standartlarında tanımlanan "Engagement" vizyonunun IT dünyasında vücut bulmuş en saf hali.
+              ITIL 4 standartlarında tanımlanan &ldquo;Engagement&rdquo; vizyonunun IT dünyasında vücut bulmuş en saf hali.
             </p>
           </div>
 
@@ -275,38 +274,38 @@ export default function EtkilesimYonetimiPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[280px]"
           >
              {/* Bento Item 1 - ITIL 4 */}
-             <motion.div variants={fadeUp} className="col-span-1 lg:col-span-2 row-span-1 rounded-[2rem] bg-gradient-to-br from-blue-500/10 to-transparent border border-white/10 p-8 hover:bg-white/[0.04] transition-colors relative overflow-hidden group flex flex-col md:flex-row gap-6 items-center">
+             <motion.div variants={fadeUp} className="col-span-1 lg:col-span-2 row-span-1 rounded-4xl bg-linear-to-br from-blue-500/10 to-transparent border border-white/10 p-8 hover:bg-white/4 transition-colors relative overflow-hidden group flex flex-col md:flex-row gap-6 items-center">
                <div className="w-full md:w-1/2 flex flex-col justify-center shrink-0">
                  <div className="w-12 h-12 rounded-xl bg-blue-500/20 text-(--color-accent-blue-light) flex items-center justify-center mb-6"><Layers /></div>
-                 <h3 className="text-xl font-bold text-white mb-2">ITIL 4 "Engagement" Uyumu</h3>
+                 <h3 className="text-xl font-bold text-white mb-2">ITIL 4 &ldquo;Engagement&rdquo; Uyumu</h3>
                  <p className="text-sm text-(--color-text-secondary) font-light pr-4">
                    Kullanıcı ile iletişimin, sürecin geri kalanından bağımsız şekilde kusursuz yürütülmesi için ServiceCore, ITIL 4 ile tam uyumlu Engagement prensiplerini sisteme nativ olarak dahil eder.
                  </p>
                </div>
-               <div className="w-full md:w-1/2 h-[180px] md:h-full relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 bg-(--color-surface-elevated-solid) flex items-center justify-center p-6">
+               <div className="w-full md:w-1/2 h-45 md:h-full relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 bg-(--color-surface-elevated-solid) flex items-center justify-center p-6">
                  <div className="text-center">
-                    <span className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-(--color-accent-cyan-light) opacity-90 block mb-2">ITIL 4</span>
+                    <span className="text-5xl font-black text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-(--color-accent-cyan-light) opacity-90 block mb-2">ITIL 4</span>
                     <span className="text-lg font-medium text-(--color-text-overline) tracking-wider uppercase">Engagement Phase</span>
                  </div>
                </div>
              </motion.div>
 
              {/* Bento Item 2 - Tarihçe */}
-             <motion.div variants={fadeUp} className="col-span-1 rounded-[2rem] bg-white/[0.02] border border-white/10 p-8 hover:bg-white/[0.04] transition-colors flex flex-col">
+             <motion.div variants={fadeUp} className="col-span-1 rounded-4xl bg-white/2 border border-white/10 p-8 hover:bg-white/4 transition-colors flex flex-col">
                <div className="w-12 h-12 rounded-xl bg-purple-500/20 text-(--color-accent-purple-light) flex items-center justify-center mb-6 shrink-0"><History /></div>
                <h3 className="text-lg font-bold text-white mb-2 shrink-0">Tüm İletişim Tarihçesi</h3>
                <p className="text-sm text-(--color-text-secondary) shrink-0 font-light">
                  Kullanıcının etkileşime geçtiği ilk andan, isteğin karşılandığı son ana kadar yapılan giden ve gelen yazışmalar sistemde görünür.
                </p>
                <div className="relative w-full flex-1 rounded-xl mt-4 border border-white/10 overflow-hidden bg-(--color-surface-elevated-solid) flex items-center justify-center flex-col gap-2 p-4">
-                  <div className="w-full h-8 bg-blue-500/10 rounded border border-blue-500/20 self-start w-3/4"></div>
-                  <div className="w-full h-12 bg-white/5 rounded border border-white/10 self-end w-3/4"></div>
-                  <div className="w-full h-8 bg-blue-500/10 rounded border border-blue-500/20 self-start w-3/4"></div>
+                  <div className="h-8 bg-blue-500/10 rounded border border-blue-500/20 self-start w-3/4"></div>
+                  <div className="h-12 bg-white/5 rounded border border-white/10 self-end w-3/4"></div>
+                  <div className="h-8 bg-blue-500/10 rounded border border-blue-500/20 self-start w-3/4"></div>
                </div>
              </motion.div>
 
              {/* Bento Item 3 - Yük Dağılımı */}
-             <motion.div variants={fadeUp} className="col-span-1 border border-white/10 bg-gradient-to-br from-indigo-500/5 to-transparent rounded-[2rem] p-8 hover:bg-white/[0.04] transition-colors flex flex-col justify-between">
+             <motion.div variants={fadeUp} className="col-span-1 border border-white/10 bg-linear-to-br from-indigo-500/5 to-transparent rounded-4xl p-8 hover:bg-white/4 transition-colors flex flex-col justify-between">
                 <div>
                    <div className="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-6 shrink-0"><Headphones /></div>
                    <h3 className="text-lg font-bold text-white mb-2 shrink-0">Ana Süreçleri Koruma</h3>
@@ -320,7 +319,7 @@ export default function EtkilesimYonetimiPage() {
              </motion.div>
 
              {/* Bento Item 4 - Email to Ticket */}
-             <motion.div variants={fadeUp} className="col-span-1 lg:col-span-2 row-span-1 rounded-[2rem] bg-white/[0.02] border border-white/10 p-8 hover:bg-white/[0.04] transition-colors relative overflow-hidden group flex flex-col md:flex-row gap-6 items-center">
+             <motion.div variants={fadeUp} className="col-span-1 lg:col-span-2 row-span-1 rounded-4xl bg-white/2 border border-white/10 p-8 hover:bg-white/4 transition-colors relative overflow-hidden group flex flex-col md:flex-row gap-6 items-center">
                <div className="w-full md:w-1/2 flex flex-col justify-center shrink-0">
                  <div className="w-12 h-12 rounded-xl bg-orange-500/20 text-(--color-accent-orange-light) flex items-center justify-center mb-6"><Mail /></div>
                  <h3 className="text-xl font-bold text-white mb-2">Otomatik E-Posta Entegrasyonu</h3>
@@ -328,7 +327,7 @@ export default function EtkilesimYonetimiPage() {
                    Ortak bir destek adresine gönderilen mailler otomatik olarak sistemde etkileşim kaydına dönüşür. Thread bozulmadan e-posta zinciri takip edilir, cevaplar sistem üzerinden gönderilir.
                  </p>
                </div>
-               <div className="w-full md:w-1/2 h-[180px] md:h-full relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 bg-(--color-surface-elevated-solid) flex items-center justify-center relative">
+               <div className="w-full md:w-1/2 h-45 md:h-full relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 bg-(--color-surface-elevated-solid) flex items-center justify-center">
                    <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
                    <div className="px-6 py-4 bg-white/5 border border-white/10 rounded-xl backdrop-blur-md relative z-10 w-3/4 flex items-center gap-4">
                        <Mail className="w-6 h-6 text-(--color-accent-orange-light)" />
@@ -346,16 +345,16 @@ export default function EtkilesimYonetimiPage() {
 
       {/* 4. CTA BANNER */}
       <section className="py-24 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] h-full bg-cyan-600/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-200 h-full bg-cyan-600/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
         
-        <div className="container mx-auto px-6 text-center relative z-10 w-full max-w-[1400px]">
+        <div className="container mx-auto px-6 text-center relative z-10 w-full max-w-350">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="rounded-[3rem] border border-white/10 bg-(--color-surface-elevated-solid)/80 backdrop-blur-3xl p-12 lg:p-20 shadow-2xl relative overflow-hidden"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-cyan-500/5 to-blue-500/5" />
+            <div className="absolute inset-0 bg-linear-to-r from-blue-500/5 via-cyan-500/5 to-blue-500/5" />
             
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-6">Etkileşimlerinizi Değere Dönüştürün</h2>

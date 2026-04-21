@@ -15,8 +15,8 @@ export function PremiumComparisonMatrix() {
   return (
     <section id="packages" className="relative w-full py-24 overflow-hidden bg-(--color-surface-base-dark)">
       {/* Background Ambience */}
-      <div className="absolute top-0 inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/10 via-transparent to-transparent pointer-events-none blur-[100px]" />
+      <div className="absolute top-0 inset-x-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-100 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/10 via-transparent to-transparent pointer-events-none blur-[100px]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 relative z-10">
         
@@ -29,7 +29,7 @@ export function PremiumComparisonMatrix() {
            className="text-center mb-16 max-w-3xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            SLA <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light)">Paket Karşılaştırması</span>
+            SLA <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light)">Paket Karşılaştırması</span>
           </h2>
           <p className="text-base md:text-lg text-(--color-text-secondary) font-light leading-relaxed">
             İhtiyacınıza uygun destek seviyesini seçin. Mission Critical ve Platinum paketlerimizle en üst düzey ayrıcalıklara sahip olun.
@@ -44,7 +44,7 @@ export function PremiumComparisonMatrix() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="w-full overflow-x-auto pb-6 custom-scrollbar"
         >
-          <div className="min-w-[900px] w-full rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl overflow-hidden relative shadow-2xl">
+          <div className="min-w-[900px] w-full rounded-2xl border border-white/10 bg-white/2 backdrop-blur-xl overflow-hidden relative shadow-2xl">
              
              {/* Table Header Row */}
              <div className="grid grid-cols-5 border-b border-white/10 bg-(--color-surface-elevated-dark)/80 backdrop-blur-md sticky top-0 z-20">
@@ -62,11 +62,11 @@ export function PremiumComparisonMatrix() {
                     <div 
                       key={idx} 
                       className={`col-span-1 p-4 md:p-6 flex flex-col items-center justify-end text-center relative border-r border-white/5 last:border-r-0 ${
-                        isPro ? "bg-gradient-to-t from-(--color-brand-primary)/10 to-transparent" : ""
+                        isPro ? "bg-linear-to-t from-(--color-brand-primary)/10 to-transparent" : ""
                       }`}
                     >
                       {isPro && (
-                        <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light) shadow-[0_0_15px_rgba(0,112,243,0.5)]" />
+                        <div className="absolute top-0 inset-x-0 h-1 bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light) shadow-[0_0_15px_rgba(0,112,243,0.5)]" />
                       )}
                       
                       {isPro && (

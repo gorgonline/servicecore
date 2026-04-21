@@ -146,7 +146,7 @@ export function PricingSection() {
   return (
     <section id="pricing" className="relative w-full py-24 overflow-hidden bg-(--color-surface-base-dark)">
       {/* Background Gradients */}
-      <div className="absolute top-0 inset-x-0 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-1/4 -left-[20%] w-[60%] h-[60%] rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
       <div className="absolute top-1/3 -right-[20%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/10 to-transparent pointer-events-none" />
 
@@ -160,14 +160,14 @@ export function PricingSection() {
           transition={{ duration: 0.7 }}
           className="text-center mb-20 max-w-3xl mx-auto"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-(--color-brand-primary)/10 to-emerald-500/10 border border-white/10  mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-linear-to-r from-(--color-brand-primary)/10 to-emerald-500/10 border border-white/10  mb-6">
             <Sparkles className="w-4 h-4 text-(--color-brand-primary)" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-(--color-text-overline)">Versiyonlar ve Kapsam</span>
           </div>
           
           <h2 className="text-4xl md:text-6xl font-medium text-white mb-6 tracking-tight">
             İhtiyacınıza uygun <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light) font-bold">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light) font-bold">
               lisans modelini seçin.
             </span>
           </h2>
@@ -178,11 +178,11 @@ export function PricingSection() {
 
           {/* Pricing Model Info Pills */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/5 text-sm text-(--color-text-overline)">
+             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/2 border border-white/5 text-sm text-(--color-text-overline)">
                 <Building2 className="w-4 h-4 text-(--color-brand-primary)" />
                 Onpremises veya Bulut Kurulum
              </div>
-             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/5 text-sm text-(--color-text-overline)">
+             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/2 border border-white/5 text-sm text-(--color-text-overline)">
                 <InfinityIcon className="w-4 h-4 text-(--color-accent-emerald-light)" />
                 Yıllık Abonelik Modeli
              </div>
@@ -198,7 +198,7 @@ export function PricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col rounded-[2rem] bg-(--color-surface-elevated-dark) border border-white/10 p-8 md:p-10  relative group transition-colors"
+            className="flex flex-col rounded-4xl bg-(--color-surface-elevated-dark) border border-white/10 p-8 md:p-10  relative group transition-colors"
           >
             {/* Header Area */}
             <div className="mb-8">
@@ -219,7 +219,7 @@ export function PricingSection() {
               </button>
             </div>
 
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
+            <div className="w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-8" />
 
             {/* Features Info Box - Standart (Green Theme) */}
             <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-sm text-emerald-100/80 font-light leading-relaxed flex items-start gap-3">
@@ -230,7 +230,7 @@ export function PricingSection() {
             {/* Features Accordion List */}
             <div className="flex flex-col gap-1">
                <h4 className="text-xs font-semibold text-(--color-text-secondary) mb-4 px-1 uppercase tracking-wider">Temel Modüller ({standardFeatures.length})</h4>
-               <div className="pr-2 max-h-[600px] overflow-y-auto green-scrollbar pb-4">
+               <div className="pr-2 max-h-150 overflow-y-auto green-scrollbar pb-4">
                   {standardFeatures.map((feat, idx) => (
                       <FeatureAccordion key={idx} feature={feat} />
                   ))}
@@ -250,10 +250,10 @@ export function PricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col rounded-[2rem] bg-gradient-to-b from-(--color-brand-primary)/[0.08] to-(--color-surface-base-dark) border border-(--color-brand-primary)/30 p-8 md:p-10  relative group shadow-(--shadow-glow-primary-card)"
+            className="flex flex-col rounded-4xl bg-linear-to-b from-(--color-brand-primary)/[0.08] to-(--color-surface-base-dark) border border-(--color-brand-primary)/30 p-8 md:p-10  relative group shadow-(--shadow-glow-primary-card)"
           >
              {/* Clipping Wrapper for Background Glow */}
-            <div className="absolute inset-0 rounded-[2rem] overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 rounded-4xl overflow-hidden pointer-events-none">
                <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/15 to-transparent rounded-full pointer-events-none" />
             </div>
 
@@ -261,7 +261,7 @@ export function PricingSection() {
             <div className="absolute -top-4 -right-2 md:right-8 z-20">
                 <div className="relative">
                    <div className="absolute inset-0 bg-(--color-brand-primary) blur-md opacity-60 rounded-full" />
-                   <div className="relative bg-gradient-to-r from-(--color-brand-primary) to-(--color-accent-blue-base) text-white px-5 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xl ring-1 ring-white/20 whitespace-nowrap">
+                   <div className="relative bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-blue-base) text-white px-5 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xl ring-1 ring-white/20 whitespace-nowrap">
                       En Çok Tercih Edilen
                    </div>
                 </div>
@@ -286,7 +286,7 @@ export function PricingSection() {
               </button>
             </div>
 
-            <div className="w-full h-px bg-gradient-to-r from-(--color-brand-primary)/30 via-(--color-brand-primary)/20 to-transparent mb-8" />
+            <div className="w-full h-px bg-linear-to-r from-(--color-brand-primary)/30 via-(--color-brand-primary)/20 to-transparent mb-8" />
 
             {/* Features Info Box - Pro (Blue Theme) */}
             <div className="mb-6 flex items-start gap-3 px-4 py-3.5 rounded-xl bg-(--color-brand-primary)/15 border border-(--color-brand-primary)/30 shadow-(--shadow-glow-primary-weak)">
@@ -337,9 +337,9 @@ export function PricingSection() {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true, margin: "-50px" }}
            transition={{ duration: 0.6, delay: 0.4 }}
-           className="w-full rounded-[2rem] bg-(--color-surface-addon) border border-white/5 p-8 md:p-12 relative overflow-hidden"
+           className="w-full rounded-4xl bg-(--color-surface-addon) border border-white/5 p-8 md:p-12 relative overflow-hidden"
         >
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-fuchsia-500/50 to-transparent opacity-50" />
+            <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-fuchsia-500/50 to-transparent opacity-50" />
             
             <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 text-fuchsia-400 shrink-0">
