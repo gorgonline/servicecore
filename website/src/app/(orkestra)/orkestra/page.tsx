@@ -168,7 +168,7 @@ export default function OrchestratorPage() {
     <div className="fixed inset-0 w-full h-full bg-(--color-surface-base) overflow-hidden text-white font-mono flex flex-col selection:bg-blue-500/30">
       
       {/* HEADER */}
-      <header className="h-14 shrink-0 border-b border-white/5 bg-(--color-surface-elevated-solid)/80 backdrop-blur-3xl flex items-center justify-between px-8 z-[130] relative">
+      <header className="h-14 shrink-0 border-b border-white/5 bg-(--color-surface-elevated-solid)/80 backdrop-blur-3xl flex items-center justify-between px-8 z-130 relative">
         <div className="flex items-center gap-4">
           <div className="w-7 h-7 rounded bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.3)]"><Cpu size={16} /></div>
           <h1 className="text-xs font-black tracking-widest uppercase italic">SC <span className="text-blue-500 not-italic">Orkestra</span> <span className="text-[9px] text-slate-500 font-bold ml-2">PRO v4.3</span></h1>
@@ -189,7 +189,7 @@ export default function OrchestratorPage() {
       <div className="flex-1 flex relative overflow-hidden z-10">
         
         {/* SIDEBARS - THE HACKER PROTOCOL (Dikey Ray ve İnce Hatlar) */}
-        <div className="flex shrink-0 h-full z-[120]">
+        <div className="flex shrink-0 h-full z-120">
           
           {/* LEVEL 1: ŞEF PROTOKOLÜ */}
           <aside className="w-64 border-r border-white/5 bg-(--color-surface-elevated-solid)/95 backdrop-blur-3xl flex flex-col p-8 overflow-y-auto no-scrollbar relative">
@@ -199,7 +199,7 @@ export default function OrchestratorPage() {
             </div>
 
             {/* Dikey Ray (Timeline Line) */}
-            <div className="absolute left-10 top-24 bottom-12 w-[1px] bg-white/5" />
+            <div className="absolute left-10 top-24 bottom-12 w-px bg-white/5" />
 
             <div className="space-y-10 relative">
               {CHIEF_PROTOCOLS.map((step) => {
@@ -238,7 +238,7 @@ export default function OrchestratorPage() {
                   <h2 className="text-[10px] font-black uppercase tracking-[0.4em]">Uzman Günlüğü</h2>
                 </div>
 
-                <div className="absolute left-10 top-24 bottom-12 w-[1px] bg-white/5" />
+                <div className="absolute left-10 top-24 bottom-12 w-px bg-white/5" />
 
                 <div className="space-y-10 relative">
                   {(AGENT_PROTOCOLS[activeAgentId] || []).map((step, i) => {
@@ -277,7 +277,7 @@ export default function OrchestratorPage() {
         </main>
 
         {/* TERMINAL */}
-        <aside className="w-[450px] shrink-0 border-l border-white/5 bg-(--color-surface-base)/98 backdrop-blur-3xl z-[120] flex flex-col relative overflow-hidden">
+        <aside className="w-112.5 shrink-0 border-l border-white/5 bg-(--color-surface-base)/98 backdrop-blur-3xl z-120 flex flex-col relative overflow-hidden">
           <div className="h-14 border-b border-white/10 bg-white/2 flex items-center justify-between px-8">
             <div className="flex items-center gap-3">
               <TerminalIcon size={16} className="text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
@@ -301,12 +301,12 @@ export default function OrchestratorPage() {
               </div>
             )}
           </div>
-          <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,118,0.03))] bg-[length:100%_4px,4px_100%] opacity-20" />
+          <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.1)_50%),linear-gradient(90deg,rgba(255,0,0,0.03),rgba(0,255,0,0.01),rgba(0,0,118,0.03))] bg-size-[100%_4px,4px_100%] opacity-20" />
         </aside>
       </div>
 
       {/* FOOTER PİPELİNE */}
-      <footer className="h-[80px] shrink-0 border-t border-white/5 bg-(--color-surface-elevated-solid) z-[130] flex items-center justify-center px-12 relative shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
+      <footer className="h-20 shrink-0 border-t border-white/5 bg-(--color-surface-elevated-solid) z-130 flex items-center justify-center px-12 relative shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">
         <div className="flex items-center gap-8 min-w-max mx-auto h-full">
           {workflowSteps.map((step, idx) => {
             const isCompleted = idx < currentStep - 1;
