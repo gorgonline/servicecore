@@ -30,6 +30,26 @@ interface AgentInfo {
   skills: string[];
 }
 
+interface ProtocolStep {
+  id?: string;
+  status?: string;
+  desc?: string;
+  label?: string;
+}
+
+interface ActiveWorkflow {
+  name?: string;
+  activeAgentId?: string | null;
+  pipeline?: ProtocolStep[];
+  step?: number;
+}
+
+interface LiveTerminalState {
+  agent?: string;
+  timestamp?: string;
+  content?: string;
+}
+
 const MASTER_ROSTER: Record<string, AgentInfo> = {
   "chief-agent": { name: "@Chief-Agent", skills: ["Gemini 3.1 Pro", "Orkestrasyon", "Denetim"] },
   "brand-expert": { name: "@Brand-Expert", skills: ["Marka Sesi", "Kurumsal Dil", "Strateji"] },
@@ -78,13 +98,13 @@ export default function OrchestratorPage() {
   const [nodes, setNodes] = useState<Node[]>(initialNodes);
   const [edges, setEdges] = useState<Edge[]>([]);
   const [lastUpdate, setLastUpdate] = useState<string>("");
-  const [activeWorkflow, setActiveWorkflow] = useState<Record<string, unknown> | null>(null);
+  const [activeWorkflow, setActiveWorkflow] = useState<ActiveWorkflow | null>(null);
   const [totalCost, setTotalCost] = useState<string>("$0.00");
-  const [chiefProtocol, setChiefProtocol] = useState<unknown[]>([]);
-  const [agentProtocols, setAgentProtocols] = useState<Record<string, unknown>>({});
+  const [chiefProtocol, setChiefProtocol] = useState<ProtocolStep[]>([]);
+  const [agentProtocols, setAgentProtocols] = useState<Record<string, ProtocolStep[]>>({});
   const [activeAgentId, setActiveAgentId] = useState<string | null>(null);
-  const [liveTerminal, setLiveTerminal] = useState<Record<string, unknown> | null>(null);
-  const [workflowSteps, setWorkflowSteps] = useState<unknown[]>([]);
+  const [liveTerminal, setLiveTerminal] = useState<LiveTerminalState | null>(null);
+  const [workflowSteps, setWorkflowSteps] = useState<ProtocolStep[]>([]);
   const [currentStep, setCurrentStep] = useState<number>(0);
 
   const onNodesChange: OnNodesChange = useCallback((changes) => setNodes((nds) => applyNodeChanges(changes, nds)), []);
@@ -159,7 +179,7 @@ export default function OrchestratorPage() {
           <div className="flex items-center gap-3 bg-blue-500/10 px-3 py-1 rounded-md border border-blue-500/20">
             <Radio size={12} className="text-blue-400 animate-pulse" />
             <span>
-              {typeof activeWorkflow === 'object' ? activeWorkflow?.name : (activeWorkflow || "Sistem Beklemede")}
+              {activeWorkflow?.name || "Sistem Beklemede"}
             </span>
           </div>
           <div className="flex items-center gap-2 border-l border-white/10 pl-8 text-emerald-400 font-bold tabular-nums tracking-widest">{lastUpdate ? new Date(lastUpdate).toLocaleTimeString() : "00:00:00"}</div>
