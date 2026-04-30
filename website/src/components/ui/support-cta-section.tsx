@@ -9,8 +9,8 @@ export function SupportCtaSection() {
   return (
     <section className="relative w-full py-24 lg:py-32 overflow-hidden border-t border-white/5">
       {/* Background Effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-(--color-brand-primary)/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-(--color-brand-primary)/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 right-0 w-125 h-125 bg-purple-500/10 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-stretch">
@@ -42,13 +42,13 @@ export function SupportCtaSection() {
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/20">
                     <ShieldCheck className="w-4 h-4 text-(--color-accent-blue-light)" />
                   </div>
                   <span className="text-sm font-medium text-(--color-text-overline)">Stratejik ve Teknik Danışmanlık</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20">
+                  <div className="shrink-0 w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20">
                     <Zap className="w-4 h-4 text-(--color-accent-cyan-light)" />
                   </div>
                   <span className="text-sm font-medium text-(--color-text-overline)">Hızlı ve Kesintisiz Çözümler</span>
@@ -70,7 +70,7 @@ export function SupportCtaSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-[1px]"
+            className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
           >
             <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             

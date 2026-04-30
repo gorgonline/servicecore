@@ -1,58 +1,62 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  FileSignature, 
-  Users, 
-  Smartphone, 
-  LineChart, 
-  Briefcase, 
-  GitBranch, 
-  Link, 
-  Code, 
-  Settings, 
-  Target, 
-  CheckCircle2, 
-  TrendingUp, 
-  Terminal, 
-  Globe, 
-  BookOpen, 
-  Activity, 
-  Box, 
-  Database, 
-  RefreshCw, 
-  HelpCircle, 
-  AlertCircle, 
-  MessageSquare, 
-  MonitorCheck
+import {
+  FileSignature,
+  Users,
+  Smartphone,
+  LineChart,
+  Building2,
+  GitBranch,
+  Link as LinkIcon,
+  Code,
+  Sliders,
+  Layers,
+  CheckCircle2,
+  TrendingUp,
+  Terminal,
+  UserCircle,
+  BookOpen,
+  Activity,
+  Box,
+  RefreshCw,
+  HelpCircle,
+  AlertCircle,
+  MessageSquare,
+  MousePointerClick,
+  FileText,
+  Settings,
+  Sparkles,
 } from "lucide-react";
 import featuresData from "@/lib/data/features.json";
-import LinkWrapper from "next/link"; // Assuming default Next.js setup
+import LinkWrapper from "next/link";
 
 const iconsMap: Record<string, React.ElementType> = {
-  "Sözleşme Yönetimi": FileSignature,
-  "Müşteri Takip Servisi": Users,
-  "Mobil Servis Yönetimi": Smartphone,
-  "Ölçüm ve Raporlama Yönetimi": LineChart,
-  "ESM": Briefcase,
-  "İş Akış Yönetimi": GitBranch,
-  "Entegrasyon Yönetimi": Link,
-  "Low Code Yönetimi": Code,
-  "Yönetim Paneli": Settings,
-  "Proje Yönetimi": Target,
-  "Görev Yönetimi": CheckCircle2,
-  "Sürekli İyileştirme": TrendingUp,
-  "Servis Otomasyonu": Terminal,
-  "Self Servis Portal": Globe,
-  "Bilgi Yönetimi": BookOpen,
-  "Servis Seviye Yönetimi": Activity,
-  "Servis Katalog Yönetimi": Box,
-  "Varlık Yönetimi": Database,
-  "Değişiklik Yönetimi": RefreshCw,
-  "İstek Yönetimi": MonitorCheck,
-  "Problem Yönetimi": HelpCircle,
+  "Hizmet Masası ve Etkileşim Yönetimi": MessageSquare,
   "Olay Yönetimi": AlertCircle,
-  "Servis Masası": MessageSquare,
+  "Problem Yönetimi": HelpCircle,
+  "İstek Yönetimi": MousePointerClick,
+  "Bilgi ve Doküman Yönetimi": FileText,
+  "Değişiklik Yönetimi": RefreshCw,
+  "Varlık Yönetimi": Box,
+  "Servis Konfigürasyon Yönetimi": Settings,
+  "Sürekli İyileştirme": TrendingUp,
+  "Servis Katalog Yönetimi": BookOpen,
+  "Servis Seviye Yönetimi": Activity,
+  "Servis Otomasyonu": Terminal,
+  "Raporlama Yönetimi": LineChart,
+  "Görev Yönetimi": CheckCircle2,
+  "Servis İlişkileri Yönetimi": Users,
+  "Agile Proje ve SDLC Yönetimi": Layers,
+  "ESM Kurumsal Servis Yönetimi": Building2,
+  "Self Servis Portal": UserCircle,
+  "Yönetim Paneli": Sliders,
+  "Mobil Servis Yönetimi": Smartphone,
+  "İş Akışı Yönetimi": GitBranch,
+  "Entegrasyon Modülü": LinkIcon,
+  "Low Code Geliştirme Modülü": Code,
+  "Sözleşme Yönetimi": FileSignature,
+  "AI Yol Haritası": Sparkles,
 };
 
 // Colors mapping for slightly varied accents based on index
@@ -126,7 +130,7 @@ export function FeaturesGrid() {
                   </div>
 
                   {/* Content Area */}
-                  <div className="flex-grow">
+                  <div className="grow">
                     <h3 className="mb-3 text-xl font-semibold text-white tracking-tight group-hover:text-(--color-brand-accent) transition-colors duration-300">
                       {feature.title}
                     </h3>

@@ -1,0 +1,119 @@
+{
+  "hero": {
+    "badge": "Yönetim Paneli",
+    "titleLead": "Sistemin tüm parametreleri,",
+    "titleAccent": "tek kontrol panelinde.",
+    "description": "ServiceCore Yönetim Paneli; Genel Yönetim, Organizasyon, Varlık & Konfigürasyon ve Gelişmiş Ayarlar başlıkları altında platformun her parametresini tek bir kontrol noktasından yönetir. Bildirim ve süreç şablonlarından kullanıcı/teknisyen rollerine, CMDB tanımlarından SLA politikaları ve otomasyona kadar ServiceCore'u kuruma uyarlayan tüm ayarlar bu panelde toplanır.",
+    "imageAlt": "Yönetim paneli ana ekranı — sistem ayarları ve genel yapılandırma"
+  },
+  "zigzag": [
+    {
+      "id": "genel-yonetim",
+      "accent": "blue",
+      "icon": "Settings",
+      "titleLead": "Genel Yönetim Ayarları,",
+      "titleAccent": "şablonlardan duyurulara.",
+      "description": "Sistemin genel işleyişine yön veren temel ayarlar; saat dilimi, dil, tema ve uygulama düzeyindeki yapılandırma seçenekleri burada belirlenir. Bildirim, süreç (Quick Create), hazır cevap, görev ve worklog şablonları sayesinde tekrar eden işlemler standartlaşır; validasyon kuralları, duyuru yönetimi ve kurum konumları/alt şirket tanımı aynı panel üzerinden yapılır.",
+      "bullets": [
+        "Genel ve uygulama ayarları (saat dilimi, dil, tema) ile sistemin temel işleyişi yapılandırılır.",
+        "Bildirim şablonları, süreç şablonları (Quick Create), hazır cevaplar, görev şablonları ve worklog şablonları sayesinde sık kullanılan işlemler standartlaşır.",
+        "Validasyon ayarları ile form alanlarına zorunluluk ve karakter kuralları tanımlanır; duyurular kullanıcı/grup bazında yönetilir.",
+        "Kurum konumları ve alt şirketler organizasyon yapısına uygun biçimde sisteme tanımlanır."
+      ],
+      "imageKey": "panel-1"
+    },
+    {
+      "id": "organizasyon",
+      "accent": "emerald",
+      "icon": "Users",
+      "titleLead": "Organizasyon Ayarları,",
+      "titleAccent": "kullanıcı, rol ve kurullar.",
+      "description": "Sistemde yer alacak kullanıcılar ve kullanıcı grupları (ekipler, departmanlar) tanımlanır; destek/teknik hizmet sağlayıcılar rollerine göre teknisyen gruplarına atanır. Süreçlerde karar verici ve danışman rolleri için onay ve danışma kurulları kurulur; kurumsal hiyerarşi departmanlar olarak sisteme yansıtılır ve her kullanıcının sistem yetkisi roller aracılığıyla kontrol edilir.",
+      "bullets": [
+        "Kullanıcılar ve kullanıcı grupları (ekipler, departmanlar) tanımlanır; her kullanıcı doğru gruba ve yetkiye eşleşir.",
+        "Teknisyenler ve teknisyen grupları rollerine göre belirlenir; destek/teknik hizmet sağlayıcılar disiplinli biçimde atanır.",
+        "Onay ve danışma kurulları (CAB, advisory) süreçlerdeki karar verici ve danışman rollerini kalibre eder.",
+        "Departmanlar kurumsal hiyerarşiye uygun olarak kayda alınır; roller kullanıcı yetki ve erişimlerini yönetir."
+      ],
+      "imageKey": "panel-2"
+    },
+    {
+      "id": "varlik-konfigurasyon",
+      "accent": "purple",
+      "icon": "Boxes",
+      "titleLead": "Varlık ve Konfigürasyon,",
+      "titleAccent": "CMDB temelinin ayarları.",
+      "description": "Konfigürasyon Yönetimi Veri Tabanı (CMDB) aracılığıyla varlıklar ve aralarındaki ilişkiler takip edilir. Üreticiler, kullanım modelleri, konumlar, durumlar, varlık türleri ve ilişkileri burada yapılandırılır; tedarikçiler ve onlarla yapılan sözleşmeler aynı panelden yönetilir. Tüm varlık disiplinin ayar tarafı tek bir yerde toplanır.",
+      "bullets": [
+        "Varlık Yönetimi ve CMDB kullanımı; varlıklar ile aralarındaki ilişkiler tek doğruluk kaynağında izlenir.",
+        "Üreticiler ve kullanım modelleri tanımlanarak envanter standart bir veri yapısına oturur.",
+        "Varlık konumları ve durumları (fiziksel yerleşim, işlevsel durum) sisteme kaydedilir.",
+        "Varlık türleri ve ilişkileri sınıflandırılır; tedarikçiler ile sözleşmeler aynı panelden yönetilir."
+      ],
+      "imageKey": "panel-3"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Gelişmiş Ayarlar — operasyonu kalibre eden yetkinlikler",
+    "sectionSubtitle": "SLA politikalarından otomasyona, anketten zamanlanmış olaylara ve global statüslere kadar ServiceCore'u kuruma uyarlayan ileri yapılandırma yetenekleri.",
+    "items": [
+      {
+        "id": "sla-kapatma",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "Gauge",
+        "title": "SLA politikaları ve kapatma kuralları",
+        "description": "Hizmet düzeyi anlaşmaları (SLA) için politikalar oluşturulur; olayların ve kayıtların nasıl, ne zaman kapatılacağı kurallarla belirlenir. Servis bazında kalibre edilen SLA'lar, otomatik kapatma kurallarıyla birleşince operasyonel disiplin standart hale gelir.",
+        "imageKey": "panel-4"
+      },
+      {
+        "id": "otomasyon",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Zap",
+        "title": "Otomasyon yönetimi",
+        "description": "Sık tekrarlanan işlemleri otomatize etmek için kurallar tanımlanır; kuralın koşulu karşılandığında aksiyon devreye girer. Operasyonel yük azalır, tutarlılık artar."
+      },
+      {
+        "id": "ek-alanlar",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Plus",
+        "title": "Özel ek alanlar (custom fields)",
+        "description": "Kuruma özgü gereksinimlere göre kayıtlara ek alanlar eklenir. Standart formların dışına çıkan iş kuralları için esnek bir yapı sunulur."
+      },
+      {
+        "id": "anket-isakisi",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "ClipboardList",
+        "title": "Anket tasarımı ve iş akışı",
+        "description": "Kullanıcı memnuniyet anketleri ve süreçlerin iş akışları aynı yönetim panelinden tasarlanır. Çağrı/talep kapanışında otomatik gönderilen anketlerle veri toplanır; süreç akışları kuruma özgü kurallara göre yapılandırılır."
+      },
+      {
+        "id": "zamanlanmis",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "CalendarClock",
+        "title": "Zamanlanmış olay ve istekler",
+        "description": "Belirli bir zamanda gerçekleşmesi gereken görevler veya istekler otomatik planlanır. Periyodik bakım, planlı denetim ve tekrar eden işler manuel takipten kurtarılır."
+      },
+      {
+        "id": "global-status",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "Tags",
+        "title": "Global statüslerin belirlenmesi",
+        "description": "Tüm organizasyon için geçerli olacak durum kodları (Beklemede, İşlemde, Tamamlandı vb.) yapılandırılır. Modüller arası ortak dil sağlanır, raporlama tutarlı kalır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "ServiceCore'u kurumunuza Yönetim Paneli ile uyarlayın.",
+    "description": "Genel ayarlardan organizasyona, varlık konfigürasyonundan SLA politikaları ve otomasyona kadar tüm yapılandırma yetkinliklerini canlı demoda inceleyin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

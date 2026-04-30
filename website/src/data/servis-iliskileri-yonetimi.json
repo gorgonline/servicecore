@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Servis İlişkileri Yönetimi",
+    "titleLead": "Müşteri kayıtları ve sözleşmeler",
+    "titleAccent": "tek platformda, uçtan uca.",
+    "description": "ServiceCore Müşteri Yönetimi Modülü; tüm müşteri bilgilerini detaylı ve düzenli bir şekilde kaydetmenize, etkileşim ve talep geçmişini takip etmenize, sözleşmeleri dijital ortamda oluşturup süreleri otomatik bildirimlerle izlemenize ve kayıt-sözleşme bilgilerini IT hizmet talepleriyle entegre yürütmenize olanak tanır. Modern, güvenilir ve etkili bir müşteri ilişkileri deneyimi tek panelden yönetilir.",
+    "imageAlt": "Müşteri yönetimi panosu — kayıtlar, sözleşmeler ve hizmet geçmişi"
+  },
+  "zigzag": [
+    {
+      "id": "kayit-takibi",
+      "accent": "blue",
+      "icon": "UserSquare2",
+      "titleLead": "Kayıt takibi,",
+      "titleAccent": "her müşteriye özel geçmiş.",
+      "description": "Tüm müşteri bilgilerini detaylı ve düzenli bir şekilde kaydedin. Müşterilerle yapılan tüm etkileşimleri, talepleri ve iletişim notlarını tek bir platformda takip edin. Her müşteriye özel bir geçmiş oluşturarak daha etkili hizmet sunun.",
+      "bullets": [
+        "Tüm müşteri bilgileri detaylı ve düzenli biçimde kayıt altına alınır; ad, iletişim, adres, departman ve özel alanlar standart bir veri modelinde tutulur.",
+        "Müşterilerle yapılan tüm etkileşimler, talepler ve iletişim notları tek bir platformda takip edilir; e-posta, telefon ve toplantı kayıtları aynı zaman çizelgesinde birleşir.",
+        "Her müşteriye özel bir geçmiş oluşturulur; ekipler kim, ne zaman, hangi konuda görüştü sorularına anında cevap verir ve daha etkili hizmet sunar."
+      ],
+      "imageKey": "musteri-detay"
+    },
+    {
+      "id": "sozlesme-yonetimi",
+      "accent": "emerald",
+      "icon": "FileSignature",
+      "titleLead": "Sözleşme bağlama,",
+      "titleAccent": "kritik tarihler kaçırılmaz.",
+      "description": "Müşterilerle yapılan sözleşmeleri dijital ortamda oluşturun ve saklayın. Sözleşme sürelerini, yenileme tarihlerini ve kritik detayları otomatik bildirimlerle takip edin. Sözleşme süreçlerini hızlı ve hatasız bir şekilde yönetin.",
+      "bullets": [
+        "Müşterilerle yapılan sözleşmeler dijital ortamda oluşturulur ve saklanır; kağıt arşivin yerini denetlenebilir tek doğruluk kaynağı alır.",
+        "Sözleşme süreleri, yenileme tarihleri ve kritik detaylar otomatik bildirimlerle takip edilir; yaklaşan tarihler unutulma riski olmadan ekibe ulaşır.",
+        "Sözleşme süreçleri hızlı ve hatasız yürütülür; manuel hatırlatmaların yerini disiplinli bir aksiyon zinciri alır."
+      ],
+      "imageKey": "sozlesme"
+    },
+    {
+      "id": "entegre-surec",
+      "accent": "purple",
+      "icon": "Share2",
+      "titleLead": "Entegre süreç yönetimi,",
+      "titleAccent": "uçtan uca müşteri deneyimi.",
+      "description": "Kayıt ve sözleşme bilgilerini IT hizmet talepleriyle entegre ederek uçtan uca bir müşteri yönetim deneyimi sağlayın. Sözleşme kapsamında verilen hizmetlerin takibini kolayca gerçekleştirin; raporlama ve analizle stratejik kararları veriye dayandırın.",
+      "bullets": [
+        "Kayıt ve sözleşme bilgileri IT hizmet talepleriyle entegre edilerek uçtan uca müşteri yönetim deneyimi sağlanır; her talepte sözleşme kapsamı ve müşteri geçmişi anında görünür.",
+        "Sözleşme kapsamında verilen hizmetler tek panelden takip edilir; SLA, hizmet kapsamı ve sorumluluk sınırı ekipler arasında tutarlı kalır.",
+        "Sözleşme durumları, müşteri kayıtları ve hizmet geçmişi hakkında detaylı raporlarla verilerle desteklenen stratejik kararlar alarak müşteri memnuniyeti arttırılır."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Müşteri ilişkileri disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Merkezi yönetim, otomatik sözleşme takibi, entegre IT talep akışı ve role özel ekiplere uygun yetenekler tek modülde toplanır.",
+    "items": [
+      {
+        "id": "merkezi-yonetim",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "LayoutDashboard",
+        "title": "Merkezi yönetim — tek platform, tek doğruluk kaynağı",
+        "description": "Kayıt ve sözleşme süreçleri tek platformda yönetilerek zamandan tasarruf edilir. Müşteri bilgileri, sözleşme detayları ve hizmet geçmişi aynı kayıtta birleşir; ekipler farklı sistemler arasında veri kovalamaz."
+      },
+      {
+        "id": "otomatik-bildirim",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Bell",
+        "title": "Otomatik takip ve bildirim",
+        "description": "Yenileme, fesih ihbar süresi ve kritik milestone'lar otomatik bildirim üretir. Önemli tarihlerin unutulması engellenir; hata payı azaltılır."
+      },
+      {
+        "id": "raporlama",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "LineChart",
+        "title": "Raporlama ve analiz",
+        "description": "Sözleşme durumları, müşteri kayıtları ve hizmet geçmişi hakkında detaylı raporlar üretilir. Verilerle desteklenen stratejik kararlarla müşteri memnuniyeti arttırılır."
+      },
+      {
+        "id": "entegre-talep",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Share2",
+        "title": "IT hizmet talepleriyle entegre akış",
+        "description": "Müşteri kaydı ve sözleşme bilgisi açılan her olay/istek/değişiklik kaydında otomatik bağlanır. Sözleşme kapsamı, SLA ve servis hakları ekipler için anında görünür hale gelir; kapsam dışı talepler ayrı kanaldan yönetilir."
+      },
+      {
+        "id": "kim-icin",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Users",
+        "title": "Satış, BT destek ve yöneticiler için",
+        "description": "Satış-pazarlama ekipleri, IT destek ekipleri ve işletme yöneticileri aynı kayıt yapısında çalışır. Her rol kendi bakış açısıyla aynı veriyi okur; kararlar ortak bir zeminde alınır."
+      },
+      {
+        "id": "guvenilir-iliski",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "ShieldCheck",
+        "title": "Daha güçlü, güvenilir ilişkiler",
+        "description": "Müşteri bilgileri ve sözleşme detayları eksiksiz yönetildiğinde güven ve memnuniyet artar. Karmaşık kayıt ve sözleşme işlemleri basitleşir, ekibin iş yükü hafifler."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Dijital çağın müşteri yönetimini ServiceCore ile kurun.",
+    "description": "Kayıt takibi, sözleşme yönetimi, IT hizmet talepleriyle entegre süreç ve raporlama yetkinliklerini canlı demoda inceleyin; müşteri ilişkilerinizi modern, güvenilir ve etkili bir şekilde yönetin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

@@ -398,7 +398,7 @@ export default function ProjeYonetimiPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[280px]"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[520px]"
           >
              {/* Bento Item 1 - Scheduler */}
              <motion.div variants={fadeUp} className="col-span-1 lg:col-span-2 row-span-1 rounded-4xl bg-linear-to-br from-indigo-500/10 to-transparent border border-white/10 p-8 hover:bg-white/4 transition-colors relative overflow-hidden group flex flex-col md:flex-row gap-6 items-center">
@@ -434,7 +434,7 @@ export default function ProjeYonetimiPage() {
                  Epic, Bug, Change veya kendi yapılandırdığınız özel tip iş kalemleriyle devasa projeleri ayrıştırın.
                </p>
                <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden">
-                  <Image src="/images/project/settingstasktypes.png" alt="Task Types" fill className="object-cover object-top" />
+                  <Image src="/images/project/settingstasktypes.png" alt="Task Types" fill className="object-cover object-top-left" />
                </div>
              </motion.div>
 
@@ -475,39 +475,70 @@ export default function ProjeYonetimiPage() {
       </section>
 
       {/* 4. CTA BANNER */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-200 h-full bg-blue-600/10 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
-        
-        <div className="container mx-auto px-6 text-center relative z-10 w-full max-w-350">
+      <section className="relative overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-12 relative z-10">
+          <div className="container mx-auto pb-20 max-w-7xl mt-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="rounded-[3rem] border border-white/10 bg-(--color-surface-elevated-solid)/80 backdrop-blur-3xl p-12 lg:p-20 shadow-2xl relative overflow-hidden"
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
           >
-            <div className="absolute inset-0 bg-linear-to-r from-blue-500/5 via-purple-500/5 to-blue-500/5" />
-            
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-6">Agile Dönüşümünüzü<br />ServiceCore ile Başlatın</h2>
-              <p className="text-(--color-text-secondary) text-lg mb-10 font-light leading-relaxed">
-                Dağınık izleme tablolarını, tutarsız taahhütleri ve gizli blokajları unutun. Proje süreçlerinizi profesyonelleştirmek için hemen bir demo planlayın.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/demo">
-                  <button className="h-14 px-8 rounded-full bg-(--color-accent-blue-base) text-white font-semibold text-lg hover:bg-blue-400 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] transition-all cursor-pointer flex items-center gap-2">
-                    Kontrolü Ele Al
-                    <ArrowRight className="w-5 h-5" />
-                  </button>
-                </Link>
-                <Link href="/iletisim">
-                  <button className="h-14 px-8 rounded-full bg-white/5 border border-white/10 text-white font-semibold text-lg hover:bg-white/10 transition-colors cursor-pointer">
-                    Uzmanla Görüş
-                  </button>
-                </Link>
+            <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+            <div className="relative h-full flex flex-col items-center justify-center text-center rounded-[23px] bg-(--color-surface-elevated-solid)/90 backdrop-blur-3xl px-8 py-16 md:px-12">
+              <div className="absolute top-0 left-1/4 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none" />
+              <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-purple-500/10 blur-[100px] rounded-full pointer-events-none" />
+
+              <div className="relative z-10 w-full">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-8 mx-auto">
+                  <Layers className="w-4 h-4 text-(--color-accent-blue-light)" />
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-(--color-text-overline)">Proje Yönetimi</span>
+                </div>
+
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
+                  Agile Dönüşümünüzü<br />ServiceCore ile Başlatın
+                </h2>
+
+                <p className="text-lg text-(--color-text-overline) font-light leading-relaxed mb-10 max-w-xl mx-auto">
+                  Dağınık izleme tablolarını, tutarsız taahhütleri ve gizli blokajları unutun. Proje süreçlerinizi profesyonelleştirmek için hemen bir demo planlayın.
+                </p>
+
+                <div className="flex flex-col items-center gap-8">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <Link href="/demo">
+                      <button className="px-8 py-4 rounded-full bg-(--color-brand-primary) text-white font-semibold hover:bg-blue-600 transition-all hover:scale-105 active:scale-95 shadow-(--shadow-glow-primary-weak) cursor-pointer flex items-center gap-2">
+                        Kontrolü Ele Al
+                        <ArrowRight className="w-5 h-5" />
+                      </button>
+                    </Link>
+                    <Link href="/iletisim">
+                      <button className="px-8 py-4 rounded-full bg-white/5 text-white font-semibold border border-white/10 hover:bg-white/10 transition-all cursor-pointer">
+                        Uzmanla Görüş
+                      </button>
+                    </Link>
+                  </div>
+
+                  <div className="flex flex-wrap justify-center gap-8 text-(--color-text-muted)">
+                    <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+                      <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                      Agile & Scrum
+                    </div>
+                    <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+                      <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-blue-base) shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
+                      Sprint Planlama
+                    </div>
+                    <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+                      <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
+                      Portföy Yönetimi
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
+          </div>
         </div>
       </section>
 

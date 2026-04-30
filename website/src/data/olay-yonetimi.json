@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "badge": "Olay Yönetimi",
+    "titleLead": "Kesintiye hızlı yanıt,",
+    "titleAccent": "ITIL4 ile ölçülebilir operasyon.",
+    "description": "ServiceCore Incident Management, iş sürekliliğini tehdit eden kesinti, hata ve servis aksaklıklarına hızlı ve kontrollü müdahale için tüm olayları tek platformda birleştirir; kayıt, sınıflandırma, önceliklendirme ve çözüm adımları ITIL4 prensiplerine uygun şekilde yürütülür. Dağınık süreçler yerini merkezi bir operasyon yapısına bırakır; SLA izleme, bilgi bankası ve CMDB entegrasyonu ile her müdahale ölçülebilir, denetlenebilir ve sürdürülebilir hale gelir.",
+    "imageAlt": "Merkezi olay yönetimi panosu — olay listesi ve çoklu kaynak entegrasyonu"
+  },
+  "zigzag": [
+    {
+      "id": "merkezi-yonetim",
+      "accent": "blue",
+      "icon": "AlertCircle",
+      "titleLead": "Kesintiye merkezi",
+      "titleAccent": "komuta yapısı.",
+      "description": "Tüm olaylar tek platform üzerinden yönetilerek iş sürekliliğini tehdit eden kesinti, hata ve servis aksaklıklarına hızlı ve kontrollü şekilde müdahale edilir. ITIL4 uyumlu yaşam döngüsü, farklı ekiplerin aynı disiplin altında çalışmasını sağlar ve dağınık araçları disiplinli tek bir akışa dönüştürür.",
+      "bullets": [
+        "Olaylar tek bir platform üzerinden yönetilerek iş sürekliliğini tehdit eden tüm kesinti, hata ve servis aksaklıklarına hızlı ve kontrollü şekilde müdahale edilir; tüm operasyon merkezi bir yapıdan yönetildiği için dağınık süreçler ortadan kaldırılır.",
+        "Olayların kaydedilmesi, sınıflandırılması, önceliklendirilmesi ve çözülmesi ITIL4 prensiplerine uygun şekilde yürütülür; süreçler standart, ölçülebilir ve sürdürülebilir bir yapıya kavuşur.",
+        "E-posta, sistem alarmları, monitoring araçları ve entegrasyonlar üzerinden gelen veriler otomatik olarak olay kaydına dönüştürülür; Interaction Management ile entegre çalışarak çağrılar tek tıkla olaya çevrilebilir."
+      ],
+      "imageKey": "Index"
+    },
+    {
+      "id": "tespit-sla",
+      "accent": "emerald",
+      "icon": "Zap",
+      "titleLead": "Anlık tespit,",
+      "titleAccent": "dinamik SLA yönetimi.",
+      "description": "Sistem, oluşan olayları gerçek zamanlı algılar, etki ve aciliyete göre otomatik önceliklendirir ve SLA süreçlerini anında başlatır. Omnichannel bildirimler ile ilgili ekipler ve paydaşlar aynı anda devreye girer; müdahale süresi minimuma iner, iş kaybı azalır.",
+      "bullets": [
+        "Sistem oluşan olayları anlık olarak algılar ve ilgili ekipleri bilgilendirir; müdahale süresi minimuma indirilir ve iş kaybı azaltılır.",
+        "Olaylar etki ve aciliyet kriterlerine göre otomatik önceliklendirilir; SLA süreçleri anında başlatılır ve farklı müşteri, hizmet veya öncelik seviyelerine göre dinamik SLA politikaları uygulanır.",
+        "E-posta, SMS, web bildirimleri ve Teams entegrasyonu ile tüm paydaşlar anlık olarak bilgilendirilir; bildirimler rol bazlı ve senaryoya özel olarak kurgulanabilir."
+      ],
+      "imageKey": "sla"
+    },
+    {
+      "id": "modern-ui",
+      "accent": "purple",
+      "icon": "LayoutGrid",
+      "titleLead": "Kart tabanlı",
+      "titleAccent": "modern operasyon ekranı.",
+      "description": "Olay kayıtları görsel kart yapısı ile listelenir; açık, beklemede, çözüldü veya SLA ihlali gibi durumlar tutarlı renk paletiyle kodlanır. Bildirim içerikleri expression yapılarıyla dinamik olarak şekillendirilerek ekip, yoğun iş yükünde bile önceliği metin okumadan ayırt eder.",
+      "bullets": [
+        "Olay kayıtları görsel kart yapısı ile listelenir; kullanıcılar kayıtları hızlıca analiz edebilir ve aksiyon alabilir.",
+        "Açık, beklemede, çözüldü veya SLA ihlali gibi durumlar tutarlı bir renk paletiyle kodlanır; liste veya pano görünümünde ekip, öncelik gerektiren kayıtları metin okumadan ayırt ederek tarama süresini kısaltır.",
+        "Bildirim içerikleri expression yapıları ile özelleştirilebilir; her bildirim ilgili olayın detaylarına göre dinamik olarak şekillenir ve iletişim kalitesi artar."
+      ],
+      "imageKey": "gorev"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Uçtan uca olay yönetimi yetkinlikleri",
+    "sectionSubtitle": "İletişimden çözüme, tekrarlayan olaylardan CMDB bağlantısına kadar her adımda hız, görünürlük ve ITIL4 disiplinini bir araya getiren entegre yetenekler.",
+    "items": [
+      {
+        "id": "iletisim",
+        "size": "wide",
+        "accent": "cyan",
+        "icon": "MessageSquare",
+        "title": "AMF® ile tek platformda iletişim ve iş birliği",
+        "description": "Gelen-giden e-posta iş parçacıkları, şablon yanıtları ve kanal bazlı mesajlar olay kaydıyla zaman çizelgesi halinde ilişkilendirilir; kim, ne zaman, hangi kanaldan yazdı net biçimde görülür. İç ekip, son kullanıcı ve üçüncü taraf tedarikçiler aynı olay bağlamında yorum, ek ve durum güncellemesi paylaşırken dahili teşhis adımları ile müşteriye giden açıklamalar ayrı akışlarda, yetkili rollere özel not yönetimiyle korunur.",
+        "imageKey": "gecmis"
+      },
+      {
+        "id": "toplu-islem",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Layers",
+        "title": "Toplu işlem ve gelişmiş filtreleme",
+        "description": "Listeden seçilen onlarca kayıt için aynı anda atama, durum değişimi, etiketleme veya yönlendirme uygulanır; kampanya sonrası veya dalga olaylarında ekip kapasitesi korunur. Durum, müşteri, hizmet, kategori, öncelik, tarih aralığı ve özel alanlar birleştirilerek sorgulanabilir; kayıtlı görünümler sayesinde sık kullanılan sorgular tek tıkla yeniden çağrılır.",
+        "imageKey": "gorusmeler"
+      },
+      {
+        "id": "quick-actions",
+        "size": "normal",
+        "accent": "amber",
+        "icon": "Zap",
+        "title": "Quick Actions, okunmamış uyarı ve pinleme",
+        "description": "İlk temas, atama veya güncelleme sonrası işlenmemiş kayıtlar rozet, vurgu veya liste üst sıralaması ile belirginleştirilir; nöbet değişimlerinde bile bekleyen işler kaybolmaz. Detay sayfasına geçmeden durum, öncelik, kategori ve atanan kişi alanları tek tıkla güncellenir; major olay ve kritik müşteri kayıtları pinleme ile üst çekmecede tutulur.",
+        "imageKey": "varlik"
+      },
+      {
+        "id": "gorev-worklog",
+        "size": "wide",
+        "accent": "indigo",
+        "icon": "CheckSquare",
+        "title": "Görev yönetimi, worklog ve ATS® ile efor takibi",
+        "description": "Karmaşık olaylar tek bir ana kayıt altında alt görevlere ayrılır; ağ, uygulama ve saha ekipleri kendi iş paketleri üzerinden ilerlerken ana olayın genel durumu tek yerden izlenir. Görev bağımlılıkları ile hatalı kapatma veya eksik doğrulama riski düşer; her müdahale için süre, aktivite tipi ve açıklama satırı içeren iş günlüğü oluşturulur ve ATS® otomatik zaman takibi manuel hata ile unutulan süre girişlerini ortadan kaldırarak SLA hesapları için tutarlı bir zaman ekseni üretir.",
+        "imageKey": "worklog"
+      },
+      {
+        "id": "cozum-ai",
+        "size": "normal",
+        "accent": "purple",
+        "icon": "Sparkles",
+        "title": "STE® ve bilgi bankası destekli çözüm",
+        "description": "ServiceCore Time Engine (STE®) öncelik, SLA kalan süre ve ekip yükü kurallarını birleştirerek iş sırasını dinamik olarak dengeler. Bilgi bankası, açıklama ve kategoriye göre ilgili makale ve çözüm adımlarını önerir; geçici çözüm, uygulanan düzeltme ve doğrulanmış kalıcı çözüm ayrı katmanlarda tutularak yanlış kapama gerekçeleri önlenir ve MTTR iyileşir.",
+        "imageKey": "cozum"
+      },
+      {
+        "id": "tekrar-problem",
+        "size": "normal",
+        "accent": "red",
+        "icon": "Repeat",
+        "title": "Tekrarlayan olay, Problem ve Change entegrasyonu",
+        "description": "Aynı belirti, varlık veya hata koduyla tekrar eden olaylar desen olarak işaretlenir; önerilen öncelik, atama ve çözüm şablonları geçmiş başarılı vakalardan beslenir. Yüksek etkili veya tekrar eden olaylar tek tıkla Problem kaydına bağlanır; ilgili Change veya iyileştirme talebiyle ilişkilendirilerek hangi değişiklikten sonra kesintinin başladığı hızla yanıtlanır.",
+        "imageKey": "tekrarlananolay"
+      },
+      {
+        "id": "cmdb-iliski",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Boxes",
+        "title": "CMDB, CI ilişkilendirme ve hızlı bağlam",
+        "description": "Aynı kesintiden doğan alt olaylar, upstream/downstream bağımlılıklar ve müşteri tarafında açılan paralel kayıtlar birbirine bağlanır; aynı fırtınanın tamamı tek resimde görülür. Sunucu, uygulama, ağ bileşeni ve iş servisi gibi CI'lar olaya bağlandığında etkilenen kullanıcı sayısı ve bağımlılık zinciri anında görünür; çağrı sahibi, sözleşme kapsamı, lokasyon ve bağlı varlıklar tek yüzeyde özetlenir.",
+        "imageKey": "iliski"
+      },
+      {
+        "id": "kapatma-sla",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "ShieldCheck",
+        "title": "History tracking, kapatma kuralları ve SLA/OLA uyumu",
+        "description": "Alan güncellemeleri, atama değişiklikleri, SLA duraklatmaları ve sistem yorumları zaman damgası ve kullanıcı bilgisiyle saklanır; denetim ve müşteri itirazında ne zaman kim ne yaptı şeffaf biçimde kanıtlanır. Kategori, öncelik veya müşteri segmentine göre kapatma öncesi zorunlu alanlar ve onay adımları tanımlanır; müşteri sözleşmesi, iç OLA ve öncelik matrisi olaya otomatik uygulanarak yanıt ve çözüm süreleri anlık izlenir.",
+        "imageKey": "kapatmakurallari"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Kesintiyi öngörülebilir operasyona çevirin.",
+    "description": "ITIL4 uyumlu Incident Management süreçlerini, AMF®, ATS® ve STE® ile güçlenen tek platformda canlı demoda inceleyin; ölçülebilir SLA ve sürdürülebilir kalite sizinle olsun.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

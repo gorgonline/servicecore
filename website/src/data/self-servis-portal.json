@@ -1,0 +1,120 @@
+{
+  "hero": {
+    "badge": "Self Servis Portal",
+    "titleLead": "Olay, talep, onay, varlık —",
+    "titleAccent": "tek noktadan, yetkiye göre.",
+    "description": "ServiceCore Son Kullanıcı Portalı; kullanıcıların olay, talep, iyileştirme, onay, varlık ve bilgi bankası süreçlerine tek bir noktadan erişmesini sağlar. Dinamik ve yetkiye bağlı arayüz yapısı sayesinde kullanıcıya yalnızca ihtiyaç duyduğu menü, işlem ve bilgiler gösterilir; self-service deneyimi güçlendirilirken gereksiz ticket açılması azaltılır.",
+    "imageAlt": "Self servis portal ana ekranı — yetkiye göre kişiselleştirilmiş arayüz"
+  },
+  "zigzag": [
+    {
+      "id": "dinamik-arayuz",
+      "accent": "blue",
+      "icon": "LayoutDashboard",
+      "titleLead": "Dinamik arayüz,",
+      "titleAccent": "self-service kayıt oluşturma.",
+      "description": "Son kullanıcı ekranları tamamen dinamik yapıdadır ve admin tarafından özelleştirilebilir. Menü, buton, alan ve işlem seçenekleri kullanıcıya göre gösterilebilir, gizlenebilir veya sadeleştirilmiş tek butonlu yapılar halinde sunulabilir. Kullanıcılar portal üzerinden olay, talep ve iyileştirme kayıtlarını dinamik formlar aracılığıyla oluşturur.",
+      "bullets": [
+        "Son kullanıcı ekranları tamamen dinamik yapıdadır ve admin tarafından özelleştirilebilir; menü, buton, alan ve işlem seçenekleri kullanıcıya göre gösterilir, gizlenir veya sadeleştirilmiş tek butonlu yapılar halinde sunulur.",
+        "Kullanıcılar portal üzerinden olay, talep ve iyileştirme kayıtlarını oluşturur; kategori, öncelik, açıklama, dosya ekleri ve özel ek alanlar tek formda doldurulur.",
+        "Dinamik formlar sayesinde kullanıcıdan ihtiyaç duyulan detaylar standart bir form yapısı içinde alınır; eksik bilgi nedeniyle teknisyen oyalanmaz."
+      ],
+      "imageKey": "hizmetler"
+    },
+    {
+      "id": "katalog-talep",
+      "accent": "emerald",
+      "icon": "BookMarked",
+      "titleLead": "Yetkili olduğun katalog,",
+      "titleAccent": "kontrollü talep süreci.",
+      "description": "Kullanıcılar yalnızca yetkili oldukları servis kataloglarını görüntüleyebilir ve bu kataloglar üzerinden talep oluşturabilir. Talep süreçleri, kurumun hizmet yapısına uygun şekilde kontrollü biçimde sunulur; isteğe bağlı olarak teknisyen veya ekip bilgisi kullanıcıya gösterilmeyebilir, atamalar sistem tarafından yapılır.",
+      "bullets": [
+        "Kullanıcılar yalnızca yetkili oldukları servis kataloglarını görüntüleyebilir ve bu kataloglar üzerinden talep oluşturabilir; kurum hizmet yapısına uygun, kontrollü bir talep akışı kurulur.",
+        "İsteğe bağlı olarak teknisyen veya ekip bilgisi kullanıcıya gösterilmez; atamalar tamamen sistem tarafından yapılır ve kullanıcı yalnızca kendi talep sürecine odaklanır.",
+        "Kullanıcıya yalnızca yetkili olduğu işlem, katalog, kayıt ve içerikler gösterilir; portal ekranı sadeleşir, kullanıcı kendi ihtiyacına uygun aksiyonlara hızlıca ulaşır."
+      ],
+      "imageKey": "katalog"
+    },
+    {
+      "id": "kayit-takip-iletisim",
+      "accent": "purple",
+      "icon": "MessageSquare",
+      "titleLead": "Takip, not ekleme,",
+      "titleAccent": "şeffaf yazışma.",
+      "description": "Kullanıcılar kendi kayıtlarını listeleyebilir, detaylarını görüntüleyebilir ve durum, kategori, tarih gibi temel bilgileri takip edebilir. Yetkileri dahilinde kayıtlara not ekler, güncelleme yapar veya yeniden açar. Paylaşım listesine eklenen kişilerin ekranında da kayıt görüntülenerek ekip içi farkındalık sağlanır.",
+      "bullets": [
+        "Kullanıcılar kendi kayıtlarını listeler, detaylarını görüntüler ve durum, kategori, tarih gibi temel bilgileri takip eder; destek süreçlerinde şeffaf ve izlenebilir bir deneyim sağlanır.",
+        "Yetkileri dahilinde kayıtlara not ekler, güncelleme yapar veya yeniden açar; yeniden açılan kayıtlar için teknisyen ve ilgili ekiplere otomatik bildirim gönderilir.",
+        "Kullanıcı, kayıt açarken başka kişileri bilgilendirme listesine ekleyebilir; paylaşılan kayıtlar ilgili kullanıcıların ekranında görüntülenerek ekip içi farkındalık ve takip kolaylığı sağlanır."
+      ],
+      "imageKey": "gorusmeler"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Self servis deneyimini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Onay süreçlerinden bilgi bankası entegrasyonuna, varlık yönetiminden duyuru sistemine kadar son kullanıcı portalının uçtan uca yetenekleri.",
+    "items": [
+      {
+        "id": "onay",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "CheckCircle2",
+        "title": "Portal üzerinden onay süreçleri",
+        "description": "Kullanıcılar kendilerine gelen onayları portal üzerinden yönetir, onay veya red işlemlerini gerçekleştirir. Onay ekranında kayıt detayları, ekler ve geçmiş bilgiler görüntülenir; onaycı tek panelde bağlamla birlikte hızlı karar alır.",
+        "imageKey": "onay"
+      },
+      {
+        "id": "bilgi-bankasi",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "BookOpen",
+        "title": "Bilgi bankası entegrasyonu",
+        "description": "Kullanıcılar yetkili oldukları bilgi bankası içeriklerine erişebilir. Arama sırasında sistem otomatik öneriler sunarak kullanıcının ticket açmadan çözüm bulmasına yardımcı olur.",
+        "imageKey": "cozumler"
+      },
+      {
+        "id": "varlik",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Boxes",
+        "title": "Varlık ve hizmet yönetimi",
+        "description": "Kullanıcılar kendilerine atanmış varlıkları görüntüler, zimmet kabul veya red işlemleri yapar. Ayrıca varlık üzerinden doğrudan arıza kaydı oluşturulabilir.",
+        "imageKey": "varliklar"
+      },
+      {
+        "id": "duyuru",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Megaphone",
+        "title": "Duyuru ve bildirim sistemi",
+        "description": "Sistem üzerinden kullanıcılara kesinti, bakım veya bilgilendirme gibi anlık duyurular gösterilebilir. Duyurular popup olarak yayınlanabilir ve belirli tarih aralıklarında aktif olacak şekilde planlanabilir.",
+        "imageKey": "duyuru1"
+      },
+      {
+        "id": "otomatik-atama",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Workflow",
+        "title": "Sistem tarafından otomatik atama",
+        "description": "İsteğe bağlı olarak teknisyen veya ekip bilgisi kullanıcıya gösterilmez. Atamalar tamamen sistem tarafından yapılır ve kullanıcı yalnızca kendi talep sürecine odaklanır."
+      },
+      {
+        "id": "duyuru-zamanlama",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "CalendarClock",
+        "title": "Zamanlanmış duyuru yönetimi",
+        "description": "Duyurular belirli tarih aralıklarında aktif olacak şekilde planlanır; kesinti, bakım ve bilgilendirme mesajları kullanıcıya doğru pencerede ulaşır. Otomasyon ve duyuru kombinasyonu sayesinde tekrarlayan kayıtların önüne geçilir.",
+        "imageKey": "duyuru2"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Son kullanıcı deneyimini ServiceCore portalı ile sadeleştirin.",
+    "description": "Dinamik arayüz, self-service kayıt, onay süreçleri, bilgi bankası, varlık yönetimi ve duyuru sistemini tek noktada birleştiren Son Kullanıcı Portalı'nı canlı demoda inceleyin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

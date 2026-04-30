@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "ESM · Enterprise Service Management",
+    "titleLead": "BT'nin ötesinde,",
+    "titleAccent": "kurumun her departmanına servis disiplini.",
+    "description": "ESM, geleneksel BT Hizmet Yönetimi (ITSM) prensiplerini İnsan Kaynakları, Finans, Lojistik, Satış ve Pazarlama gibi her birime yayarak organizasyonun tamamına servis disiplini taşır. ServiceCore ESM; tek panelden yönetim, departmanlar arası işbirliği, otomasyonla optimize edilmiş iş akışları ve self-servis portallarla daha verimli, şeffaf ve etkili bir hizmet yönetimi sunar.",
+    "imageAlt": "ESM panosu — kurum geneli departmanlar arası servis yönetimi"
+  },
+  "zigzag": [
+    {
+      "id": "esm-tanim",
+      "accent": "blue",
+      "icon": "Building2",
+      "titleLead": "ITSM'in evrimi:",
+      "titleAccent": "kurumun her birimine servis.",
+      "description": "ESM, geleneksel BT Hizmet Yönetimi prensiplerini organizasyonun her alanına yayarak bir adım öteye taşır. İK, Finans, Lojistik, Satış ve Pazarlama gibi her birimin süreçlerini birleştirerek daha verimli, işbirlikçi ve etkili bir hizmet yönetimi sağlar — hem de tek bir platform üzerinden.",
+      "bullets": [
+        "ITSM'nin yalnızca BT süreçlerine odaklanmasının aksine, ESM birçok iş biriminin hizmetlerini aynı veri modelinde entegre eder.",
+        "İK, Finans, Lojistik, Satış-Pazarlama ve diğer birimlerin süreçleri tek platformda birleşir; her departman kendi katalog ve iş akışlarıyla servis sunar.",
+        "Departmanlar arası bariyerler ortadan kalkar; çalışanlar talep ne olursa olsun aynı kapıdan girer ve doğru ekibe disiplinli biçimde yönlendirilir."
+      ],
+      "imageKey": "esm-1"
+    },
+    {
+      "id": "neden-esm",
+      "accent": "emerald",
+      "icon": "Sparkles",
+      "titleLead": "Çeviklik, şeffaflık,",
+      "titleAccent": "üstün kullanıcı deneyimi.",
+      "description": "Bugünün hızlı iş dünyasında çeviklik, şeffaflık ve üstün kullanıcı deneyimi bir zorunluluktur. ESM bu ihtiyaçları kapsamlı uygulama, gelişmiş işbirliği, optimize edilmiş iş akışları ve kullanıcı dostu tasarımla karşılar; çalışan ve müşteri ihtiyaçları sezgisel self-servis portallar üzerinden hızla giderilir.",
+      "bullets": [
+        "Kapsamlı uygulama: ITSM tek bir BT alanında değil, kurum genelindeki tüm hizmetlerde standart bir disiplinle yürütülür.",
+        "Gelişmiş işbirliği: Departmanlar arası bariyerleri ortadan kaldırır ve kusursuz bir takım çalışması kültürü yaratır.",
+        "Otomasyon ve standartlaştırma ile verimsizlikler ortadan kalkar; ekipler stratejik büyümeye odaklanır, kullanıcılar self-servis portallardan hızla çözüme ulaşır."
+      ],
+      "imageKey": "esm-2"
+    },
+    {
+      "id": "kim-faydalanir",
+      "accent": "purple",
+      "icon": "Users",
+      "titleLead": "Kim faydalanır?",
+      "titleAccent": "Liderden son kullanıcıya, dış paydaştan ekibe.",
+      "description": "ESM'den; işletme liderleri ve yöneticiler, BT departmanları, diğer birimler (İK, Finans vb.), çalışanlar ve son kullanıcılar ile dış paydaşlar ve müşteriler birlikte faydalanır. Her rol kendi bakış açısıyla aynı veriden faydalanır; kararlar ortak zemine oturur, müşteri deneyimi entegre ve duyarlı kalır.",
+      "bullets": [
+        "İşletme liderleri ve yöneticiler, operasyonlar ile performans metrikleri hakkında daha fazla görünürlükle bilinçli kararlar alır.",
+        "BT departmanları kurum geneli girişimlerde ölçeklenebilir ve güçlü çözümler sunar; İK, Finans ve diğer birimler taleplerini aynı altyapıda yönetir.",
+        "Çalışanlar ve son kullanıcılar tek portaldan talep iletir, sorunlarını hızla çözer; dış paydaşlar ve müşteriler entegre, duyarlı hizmetlerle güven kazanır."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "ESM disiplinini güçlendiren temel avantajlar",
+    "sectionSubtitle": "Operasyonel şeffaflık, standart süreçler, otomasyon, merkezi portal ve veri tabanlı içgörüler tek modülde toplanır.",
+    "items": [
+      {
+        "id": "tek-panel",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "LayoutDashboard",
+        "title": "Tek noktadan yönetim — BT, İK, Tesis, Finans ve daha fazlası",
+        "description": "BT, İK, Tesis Yönetimi, Finans ve diğer birimler tek kullanıcı dostu panelden yönetilir. Çalışan farklı sistemler arasında dolaşmaz; her birim kendi katalog ve iş akışıyla aynı altyapıda servis sunar."
+      },
+      {
+        "id": "seffaflik",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Eye",
+        "title": "Operasyonel şeffaflık",
+        "description": "Her departmanın işleyişine dair net bir görünürlük elde edilir. Tıkanıklıklar kolayca tespit edilir, ortadan kaldırılır ve yöneticiler ekiplerin gerçek zamanlı durumunu okur."
+      },
+      {
+        "id": "standart-surec",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "ListChecks",
+        "title": "Standartlaştırılmış süreçler",
+        "description": "Hizmet sunumunda tutarlılık sağlanarak tüm departmanlarda kalite arttırılır. Aynı talep her ekipte aynı disiplinle ele alınır."
+      },
+      {
+        "id": "otomasyon",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Workflow",
+        "title": "Otomasyon ve özelleştirilebilir iş akışları",
+        "description": "Tekrarlayan görevler otomatize edilerek değerli zaman yeniliklere ayrılır. Karmaşık süreçler basitleştirilir, yanıt süreleri iyileşir; iş akışları işletmenin özel gereksinimlerine göre şekillendirilebilir."
+      },
+      {
+        "id": "self-servis",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "MonitorSmartphone",
+        "title": "Sezgisel self-servis portal",
+        "description": "Çalışanlar ve müşteriler taleplerini tek merkezi portaldan iletir, kaynaklara erişir ve sorunlarını hızla çözer. Hem çalışan hem müşteri memnuniyeti aynı arayüzde yükselir."
+      },
+      {
+        "id": "veri-icgoru",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "LineChart",
+        "title": "Veri tabanlı içgörüler",
+        "description": "Gerçek zamanlı verilerle sürekli iyileştirme sağlanır ve stratejik kararlar veriye dayandırılır. Liderler, operasyonun her noktasını ölçülebilir biçimde takip eder."
+      }
+    ]
+  },
+  "cta": {
+    "title": "ESM ile dönüşümsel bir yolculuğa çıkın.",
+    "description": "BT'nin ötesinde tüm departmanlara servis disiplini taşıyan ServiceCore ESM'i canlı demoda inceleyin; işbirliği, yenilik ve verimlilik dolu bir geleceği bugün başlatın.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

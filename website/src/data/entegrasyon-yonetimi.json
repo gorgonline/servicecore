@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Entegrasyon Yönetimi",
+    "titleLead": "REST API ile",
+    "titleAccent": "tüm sistemleri tek ekosisteme bağlayın.",
+    "description": "ServiceCore API entegrasyonu; CRM, ERP ve üçüncü taraf yazılımlarla sorunsuz veri transferi, gerçek zamanlı senkronizasyon ve kapsamlı yetkilendirme sağlayan REST API protokolü üzerine kurulmuştur. Esnek ve ölçeklenebilir yapısı sayesinde işletmenize özel çözümler hızla geliştirilir; iş süreçleri hızlanır, veri doğruluğu artar, müşteri memnuniyeti yükselir.",
+    "imageAlt": "API entegrasyon panosu — REST API ve sistemler arası veri akışı"
+  },
+  "zigzag": [
+    {
+      "id": "veri-transferi",
+      "accent": "blue",
+      "icon": "ArrowLeftRight",
+      "titleLead": "Sorunsuz veri transferi,",
+      "titleAccent": "gerçek zamanlı senkronizasyon.",
+      "description": "Farklı platformlar ve sistemler arasında hızlı ve güvenli veri transferi sağlanır. Verilerin anlık aktarılması sayesinde iş süreçleri akıcı hale gelir; CRM, ERP veya üçüncü taraf yazılımlardaki güncellemeler ServiceCore'da anlık görünür olur ve tersi de aynı şekilde işler.",
+      "bullets": [
+        "Farklı platformlar ve sistemler arasında hızlı ve güvenli veri transferi sağlanır; manuel kopyalama, dışa aktarma ve içe aktarma adımları ortadan kalkar.",
+        "Verilerin anlık aktarılması sayesinde iş süreçleri akıcılaşır; CRM, ERP ve üçüncü taraf yazılımlardaki değişim ServiceCore'da gecikmesiz yansır.",
+        "Gerçek zamanlı güncellemeler, tüm sistemler arasında verilerin senkronize kalmasını sağlar; tek doğruluk kaynağı korunur."
+      ],
+      "imageKey": "api-1"
+    },
+    {
+      "id": "esnek-olcek",
+      "accent": "emerald",
+      "icon": "Layers",
+      "titleLead": "Esnek ve ölçeklenebilir,",
+      "titleAccent": "işletmenize özel çözümler.",
+      "description": "ServiceCore API'leri yazılım geliştiricilere sistemler arasında esnek bir veri alışverişi imkanı sunar. İşletmenizin ihtiyaçlarına uygun özelleştirilmiş çözümler hızla geliştirilir; standart paketlerin yetmediği yerde özel iş kuralları ve veri akışları kolayca tanımlanır.",
+      "bullets": [
+        "ServiceCore API'leri yazılım geliştiricilere sistemler arasında esnek bir veri alışverişi imkanı sunar; standart bir REST mimarisi tüm dillerden çağrılabilir.",
+        "İşletmenizin ihtiyaçlarına uygun özelleştirilmiş çözümler geliştirmek artık çok daha kolay; entegrasyon proje ekiplerinin önündeki büyük yük hafifler.",
+        "Ölçeklenebilir altyapı sayesinde küçük entegrasyonlardan büyük kurumsal veri akışlarına kadar aynı API üzerinden iş yapılır."
+      ]
+    },
+    {
+      "id": "guncel-bilgi",
+      "accent": "purple",
+      "icon": "ShieldCheck",
+      "titleLead": "Güncel ve doğru bilgi,",
+      "titleAccent": "kapsamlı yetkilendirme.",
+      "description": "API entegrasyonları sayesinde veri doğruluğu artar ve en güncel bilgilere hızla ulaşılır; iç süreçler iyileşir, müşteri memnuniyeti yükselir. Güvenli erişim için gelişmiş yetkilendirme mekanizmaları kullanılır — token tabanlı doğrulama, rol bazlı yetki ve kapsamlı audit izi tek altyapıda toplanır.",
+      "bullets": [
+        "API entegrasyonları sayesinde veri doğruluğu artar ve en güncel bilgilere hızla ulaşılır; karar süreci güncel veriyle beslenir.",
+        "İç süreçler iyileşir ve müşteri memnuniyeti artar; manuel veri girişi kaynaklı hatalar elenir, ekipler güvenle hareket eder.",
+        "Kapsamlı yetkilendirme: token tabanlı doğrulama, rol bazlı erişim ve audit izi ile güvenli erişim altyapısı kurulur."
+      ],
+      "imageKey": "api-2"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "API entegrasyonu — örnek kullanım alanları ve avantajlar",
+    "sectionSubtitle": "CRM-Satıştan ERP-Finansa, operasyonel izlemeden gelişmiş yetkilendirmeye kadar uçtan uca entegrasyon yetkinlikleri.",
+    "items": [
+      {
+        "id": "rest-api",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "Code2",
+        "title": "REST API protokolü",
+        "description": "ServiceCore entegrasyonları REST API protokolü üzerine kurulmuştur; GET, POST, PUT, DELETE metodlarıyla tüm kaynaklara erişilir. JSON tabanlı veri formatı ve standart HTTP yanıt kodları sayesinde herhangi bir programlama dili ve ortamdan çağrı yapılabilir."
+      },
+      {
+        "id": "crm-satis",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Users",
+        "title": "CRM ve satış entegrasyonu",
+        "description": "Satış ekibinizin kullandığı CRM uygulamaları ile ServiceCore arasında veri alışverişi yapılır; müşteri bilgileri her iki tarafta da güncel kalır. Satış süreci daha verimli hale gelir."
+      },
+      {
+        "id": "erp-finans",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Wallet",
+        "title": "ERP ve finans sistemleri",
+        "description": "Finans ve muhasebe işlemlerinizde kullanılan ERP sistemleri ile entegrasyon, finansal verilerinizi daha etkili yönetmenize yardımcı olur; mutabakat ve raporlama süresi kısalır."
+      },
+      {
+        "id": "izleme-rapor",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "LineChart",
+        "title": "Operasyonel izleme ve raporlama entegrasyonu",
+        "description": "Operasyonel süreçlerinizi izlemek ve kapsamlı raporlar oluşturmak için harici izleme/BI araçları ile entegrasyon sağlanır. ServiceCore'daki olay, talep, değişiklik ve performans verisi BI panellerine, alarm sistemlerine ve veri ambarlarına aktarılır; veri silosu yerine tek bir analiz katmanı kurulur."
+      },
+      {
+        "id": "yetki",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "ShieldCheck",
+        "title": "Kapsamlı yetkilendirme",
+        "description": "Güvenli erişim için gelişmiş yetkilendirme mekanizmaları kullanılır. Token tabanlı doğrulama, rol bazlı yetki ve kapsam (scope) tanımları ile her uygulama yalnızca ihtiyaç duyduğu kaynaklara ulaşır."
+      },
+      {
+        "id": "avantaj",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "Sparkles",
+        "title": "Hız, doğruluk, müşteri deneyimi",
+        "description": "Müşteri deneyimi iyileşir, iş süreçleri hızlanır, gelişmiş veri yönetimiyle veri bütünlüğü garanti altına alınır. Operasyonel verimlilik ile birlikte stratejik kararlar veriye dayandırılır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Dijital dönüşümünüzü API ile bir adım ileri taşıyın.",
+    "description": "REST API tabanlı, esnek ve ölçeklenebilir ServiceCore entegrasyon altyapısını canlı demoda inceleyin; CRM, ERP ve operasyonel araçlarınızı tek ekosistemde toplayın.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

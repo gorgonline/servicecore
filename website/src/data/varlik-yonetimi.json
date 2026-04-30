@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "badge": "Varlık Yönetimi",
+    "titleLead": "Tüm varlıklarınız",
+    "titleAccent": "tek panelde, yaşam döngüsü boyunca.",
+    "description": "ServiceCore Asset Management, IT ve non-IT tüm varlıkların durumunu, sahipliğini, finansal verisini ve sözleşme bilgisini yaşam döngüsü boyunca tek panelde toplayan entegre bir modüldür. Geniş konfigürasyon nesnesi kütüphanesi, özelleştirilebilir öznitelikler ve diğer ServiceCore modülleriyle native entegrasyon sayesinde güncel, geçerli ve birbirine bağlı varlık bilgisi her servis sürecine tek tuşla ulaşır.",
+    "imageAlt": "Varlık yönetimi panosu — yaşam döngüsü, sahiplik ve finansal görünüm"
+  },
+  "zigzag": [
+    {
+      "id": "yasam-dongusu",
+      "accent": "blue",
+      "icon": "Boxes",
+      "titleLead": "Yaşam döngüsü boyunca",
+      "titleAccent": "kesintisiz görünürlük.",
+      "description": "Varlıkların satın alımdan emekliliğe kadar tüm aşamaları aynı kayıt üzerinde proaktif olarak yönetilir. Durum, sahiplik ve finansal bilgiler aşama aşama kayıt altında tutulur; ekipler her an güncel, aktif ve geçerli veriye tek bir kaynaktan ulaşır.",
+      "bullets": [
+        "Tüm varlıkların yaşam döngüsü; tedarik, devreye alma, kullanım, bakım ve emeklilik aşamaları halinde tek panelde takip edilir; her aşamada hangi bilgilerin güncellendiği şeffaf biçimde görülür.",
+        "Varlıkların durum değişiklikleri ve geçmiş bilgisi (history) ayrıntılı şekilde kayıt altında tutulur; geriye dönük denetim ve raporlama için tutarlı bir kanıt zinciri oluşur.",
+        "Sahiplik bilgisi, lokasyon ve sorumlu ekip atamaları yaşam döngüsü boyunca güncel kalır; varlık devirleri ve transferler disiplinli akışla yönetilir."
+      ],
+      "imageKey": "panel"
+    },
+    {
+      "id": "esnek-konfigurasyon",
+      "accent": "emerald",
+      "icon": "SlidersHorizontal",
+      "titleLead": "IT ve non-IT için",
+      "titleAccent": "esnek öznitelik mimarisi.",
+      "description": "Donanım, yazılım, lisans, mobilya ya da araç fark etmez; her varlık türü için özelleştirilebilir öznitelikler tanımlanır. Geniş konfigürasyon nesnesi kütüphanesi sayesinde yönetilmesi gereken tüm parametreler standart bir veri modeline oturur ve tutarlı raporlama mümkün hale gelir.",
+      "bullets": [
+        "IT ve non-IT tüm varlıkların tespit edilip kayıt altına alınması için gerekli özelleştirilebilir öznitelikler sistemde rahatça oluşturulabilir; her kategori için farklı veri kümesi yönetilir.",
+        "Geniş konfigürasyon nesnesi kütüphanesi ile sıkça kullanılan öznitelikler hazır biçimde sunulur; tekrarlayan tanım yükü ortadan kalkar ve standartlaşma hızlanır.",
+        "Özelleştirilebilir formlar, doğrulama kuralları ve zorunlu alanlar sayesinde envanter veri kalitesi yüksek tutulur; eksik veya hatalı kayıtların önüne geçilir."
+      ]
+    },
+    {
+      "id": "native-entegrasyon",
+      "accent": "purple",
+      "icon": "Share2",
+      "titleLead": "Tüm modüllerle",
+      "titleAccent": "native entegrasyon.",
+      "description": "Varlık modülü Olay, Problem, Değişiklik, İstek ve Sözleşme süreçleriyle yerel olarak entegredir. Servis yönetimi süreçlerinin ihtiyaç duyduğu güncel varlık bilgisi tek tuşla sağlanır; varlıklar arası bağımlılıklar (dependencies) sistemde tutularak etki analizi gerçek veriyle yapılır.",
+      "bullets": [
+        "Varlık modülü tüm diğer ServiceCore modülleri ile native entegredir; servis süreçlerinin ihtiyaç duyduğu güncel varlık bilgisi farklı kayıtlara tek tıkla bağlanır.",
+        "Varlıklar arası ilişkiler (dependencies) sistemde tutulur; bir varlığın etkilendiği üst ve alt bağımlılıklar tek panelde görülerek doğru etki analizi yapılır.",
+        "Varlık-süreç bağıntıları sayesinde Olay, Problem ve Değişiklik kayıtlarında ilgili varlıklar otomatik ilişkilendirilir; kök neden ve etki kapsamı veri eşliğinde belirlenir."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Varlık disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Finansal takipten sözleşme yönetimine, bağımlılık haritasından durum geçmişine kadar varlık yaşam döngüsünü uçtan uca yöneten entegre yetenekler.",
+    "items": [
+      {
+        "id": "finansal",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "Wallet",
+        "title": "Yaşam döngüsü boyunca finansal takip",
+        "description": "Varlıkların satın alma maliyeti, amortisman, bakım gideri ve toplam sahip olma maliyeti gibi tüm finansal verileri yaşam döngüsü boyunca aynı kayıt üzerinde tutulur. Bütçe planlaması ve yenileme kararları, dağınık tablolar yerine güncel ve denetlenebilir tek bir veri kaynağıyla alınır."
+      },
+      {
+        "id": "sozlesme",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "FileSignature",
+        "title": "Sözleşme tanımlama ve takibi",
+        "description": "Varlıklarla ilgili sözleşmelerin tanımı, başlangıç-bitiş tarihleri, yenileme koşulları ve tedarikçi bilgileri sistemde merkezi olarak yönetilir. Yaklaşan yenilemeler önceden uyarı üretir; sözleşme süresi geçen varlıklar için disiplinli bir aksiyon zinciri kurulur."
+      },
+      {
+        "id": "history",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "History",
+        "title": "Durum değişiklikleri ve detaylı history",
+        "description": "Varlıkların tüm durum değişiklikleri, transfer ve sahiplik geçmişi sistemde ayrıntılı biçimde tutulur. Kim, ne zaman, hangi alanı değiştirdi sorularına geriye dönük net yanıt verilir; denetim ve uyumluluk gereksinimlerinde kanıt zinciri sağlam kalır."
+      },
+      {
+        "id": "bagimlilik",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Network",
+        "title": "Varlıklar arası bağımlılık ve ilişki haritası",
+        "description": "Sunucu, uygulama, ağ bileşeni ve iş servisi gibi varlıklar arası bağımlılıklar (dependencies) sistemde tutulur ve tek panelde haritalanır. Bir varlık üzerinde planlanan değişiklik veya oluşan olayda etkilenen tüm bağımlılıklar anında görünür hale gelir; etki analizi tahminden çıkıp veriye dayanır."
+      },
+      {
+        "id": "kutuphane",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "LayoutGrid",
+        "title": "Geniş konfigürasyon nesnesi kütüphanesi",
+        "description": "Sıkça kullanılan varlık tipleri ve öznitelikleri hazır kütüphanede sunulur; donanım, yazılım, lisans, ağ bileşeni gibi kategoriler için tanım yükünü ServiceCore üstlenir. Yeni envanter türleri dakikalar içinde tanımlanır, ekipler standart veri modelinde çalışır."
+      },
+      {
+        "id": "proaktif",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "Activity",
+        "title": "Proaktif yaşam döngüsü uyarıları",
+        "description": "Garanti bitişi, sözleşme yenileme, bakım periyodu ve kullanım ömrü gibi kritik eşikler proaktif uyarı üretir. Reaktif yangın söndürme yerine planlı yenileme ve önleyici bakım disiplini kurulur; varlık kullanılabilirliği yüksek tutulur."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Varlık disiplinini ServiceCore ile kurun.",
+    "description": "IT ve non-IT tüm varlıklarınızı yaşam döngüsü boyunca tek panelde yöneten entegre Asset Management modülünü canlı demoda inceleyin; finansal, sözleşmesel ve operasyonel veriyi tek kayıtta birleştirin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "hero": {
+    "badge": "Sürekli İyileştirme",
+    "titleLead": "Bitmeyen iyileştirme,",
+    "titleAccent": "ITIL4'ün ana metodolojisi.",
+    "description": "ServiceCore Continual Improvement modülü, ITIL4'ün ana uygulama metodolojisi olan sürekli iyileştirmeyi disiplinli bir kayıt ortamına (CI Register) taşır. Süreç ve servis raporlarından gelen sonuçlar, kullanıcı ve teknik ekip önerileri Interaction katmanında yakalanır; üç aşamalı analiz–değerlendirme–istişare akışıyla puanlanır, önceliklendirilir ve gerektiğinde Değişiklik veya Proje olarak devreye alınır.",
+    "imageAlt": "Sürekli iyileştirme panosu — CI Register ve insiyatif takibi"
+  },
+  "zigzag": [
+    {
+      "id": "ci-register",
+      "accent": "blue",
+      "icon": "Sparkles",
+      "titleLead": "CI Register,",
+      "titleAccent": "insiyatiflerin tek kayıt ortamı.",
+      "description": "Sürekli iyileştirme kayıtları (CI Register) ortamı olarak CI modülü, hedeflerle uyum, durum tespiti, zayıflıkların giderilmesi için görevlendirmeler ve insiyatiflerin baştan sona takibi için gerekli altyapıyı sağlar. Süreç ve servis raporlarından gelen sonuçlar ile kullanıcı önerileri aynı kayıt yapısında birleşir.",
+      "bullets": [
+        "Hedeflerle uyum, durum tespiti, zayıflıkların tespiti ve giderilmesi için görevlendirmeler tek kayıt yapısında tutulur; iyileştirme insiyatifleri baştan sona izlenebilir biçimde belgelenir.",
+        "Süreç ve servis raporlarından gelen sonuçlar otomatik olarak CI Register'a düşer; raporda görünen zayıflık dağınık tablolar yerine takip edilebilir bir insiyatife dönüşür.",
+        "Tüm teknik ekip ve kullanıcılardan gelen iyileştirme önerileri Interaction katmanında yakalanır ve iyileştirme fırsatı olarak CI modülünde takip edilir; kayıp gitmez."
+      ],
+      "imageKey": "panel"
+    },
+    {
+      "id": "uc-asamali-degerlendirme",
+      "accent": "emerald",
+      "icon": "ListChecks",
+      "titleLead": "Üç aşamalı değerlendirme,",
+      "titleAccent": "değer odaklı karar.",
+      "description": "Standart dışı her gereksinim CI Yöneticisi liderliğinde Analiz → Değerlendirme → İstişare-Danışma akışından geçirilir. İş analizi, servis seviye, ilişki, portföy, risk, finans, katalog ve istek yönetimi süreçleri karara katkı sağlar; her insiyatif değer odaklılık ilkesiyle puanlanır.",
+      "bullets": [
+        "Analiz aşamasında öneri kurum hedeflerine katkı, kapsam ve gereksinim netliği bakımından incelenir; değer odaklılık ilk eleme kriteri olarak işler.",
+        "Değerlendirme aşamasında fayda, efor, maliyet ve risk somut biçimde hesaplanır; ikna edici ve erişilebilir hedefler kayıt altına alınır.",
+        "İstişare-Danışma aşamasında ilgili süreçlerin (iş analizi, SLM, risk, finans, katalog, istek) görüşü toplanır; karar tek kişiye değil çok sesli bir kurula dayanır."
+      ],
+      "imageKey": "degerlendirme"
+    },
+    {
+      "id": "interaction-ci",
+      "accent": "purple",
+      "icon": "MessageSquare",
+      "titleLead": "Interaction ile entegre,",
+      "titleAccent": "öneri kayıp gitmez.",
+      "description": "ServiceCore'u farklı kılan özelliklerden biri; e-posta ve portal aracılığı ile gelen standart dışı isteklerin Interaction ve CI ara katmanları entegre edilerek alınmasıdır. Sıradan bir istek gibi geliveren geliştirme talepleri, doğru kapıdan girer ve değerlendirme dışı kalmaz.",
+      "bullets": [
+        "Standart dışı her gereksinim — geliştirme, tasarım, kodlama, entegrasyon, yapılandırma — istek modülüne değil iyileştirme insiyatifi olarak CI modülüne düşer; servis kataloğu kirlenmez.",
+        "ITIL4'ün üç temel kullanıcı etkileşim türü (olay, istek, iyileştirme önerisi) ayrı kapılardan girer; iyileştirme önerisi backloglara değerlendirilmeden girmez.",
+        "Engage safhasında müşteri ile yakın temasta yürütülen CI süreci, tüm önerileri fayda-değer-risk perspektifinde değerlendirir; az faydalılar elenir, yüksek katma değerliler önceliğe çıkar."
+      ],
+      "imageKey": "analiz"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Sürekli iyileştirme disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Beş soruluk değerlendirme çerçevesinden puantajlı önceliklendirmeye, Interaction yakalamadan Değişiklik/Proje devreye alımına kadar uçtan uca CI yetenekleri.",
+    "items": [
+      {
+        "id": "bes-soru",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "HelpCircle",
+        "title": "Beş soruluk değerlendirme çerçevesi",
+        "description": "Her insiyatif beş temel soruyla incelenir: hedeflere katkı, somut faydalar, gereken efor, maliyet ve yapma–yapmama riskleri. Acil ve öncelikli denilen her gereksinim, kurum hedefleri ve değer odaklılık prensibi karşısında objektif olarak süzülür."
+      },
+      {
+        "id": "puantaj",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "ListOrdered",
+        "title": "Önceliklendirme puantajı",
+        "description": "Hedef katkı, fayda, efor, maliyet ve risk kriterleri ağırlıklı puana çevrilir; kuruma özgü ek kriterler tanımlanabilir. Subjektif tartışma yerine sayısal önceliklendirme, hangi insiyatifin önce devreye alınacağına netlik kazandırır.",
+        "imageKey": "puantaj"
+      },
+      {
+        "id": "katki-suresleri",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Users",
+        "title": "Kararı besleyen süreçler",
+        "description": "İş analizi, servis seviye, ilişki, portföy, risk, finans, katalog ve istek yönetimi süreçleri CI Yöneticisi liderliğinde karara katkı sağlar. Karar çok sesli bir danışma kurulundan çıkar; tek bir ekibin görüşüyle backlog kirlenmez."
+      },
+      {
+        "id": "degisiklik-proje",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "GitBranch",
+        "title": "Değişiklik veya Proje ile devreye alma",
+        "description": "Önceliklendirmede üst sıraya çıkan iyileştirme insiyatifleri Change Management ile küçük ölçekli, Project Management ile büyük ölçekli teslimatlara dönüştürülür. CI'dan Change/Project'e geçişte kapsam, gerekçe ve değerlendirme kayıtları tek izlenebilir zincir oluşturur."
+      },
+      {
+        "id": "engage-katmani",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Layers",
+        "title": "ITIL4 Engage katmanı liderliği",
+        "description": "Engage safhasında karşılaşılan standart dışı her gereksinim CI sürecinin liderliğinde değerlendirilir. Müşteri ile yakın temas, fayda perspektifiyle birleşince yüksek katma değerli öneriler öne çıkar."
+      },
+      {
+        "id": "rapor-oneri",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "LineChart",
+        "title": "Rapor ve öneri kaynaklarının birleşmesi",
+        "description": "Süreç ve servis raporlarından gelen sonuçlar ile teknik ekip ve kullanıcı önerileri tek kayıt yapısında birleşir. Ölçüm verisi ve sahadan gelen ses, aynı CI Register üzerinden iyileştirme fırsatına dönüşür."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Sürekli iyileştirme kültürünü ServiceCore ile kurun.",
+    "description": "ITIL4'ün ana metodolojisi sürekli iyileştirmeyi; CI Register, üç aşamalı değerlendirme ve Interaction entegrasyonuyla yöneten ServiceCore CI modülünü canlı demoda inceleyin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

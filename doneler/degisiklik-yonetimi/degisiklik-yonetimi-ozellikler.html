@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>ServiceCore Değişiklik Yönetimi – Özellikler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    .page-intro {
+      margin-bottom: 28px;
+      padding: 20px 22px 22px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #f9fafb, #eff6ff);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .page-intro-title {
+      font-size: 30px;
+      font-weight: 750;
+      color: #111827;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .page-intro-text {
+      font-size: 15px;
+      color: #4b5563;
+      max-width: 880px;
+    }
+
+    .content-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 36px 40px 40px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.09);
+      margin-bottom: 40px;
+    }
+
+    .content-blocks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 900px) {
+      .content-blocks-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .content-blocks-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .content-card-item {
+      background: #f9fafb;
+      border-radius: 18px;
+      padding: 22px 22px 24px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    }
+
+    .content-card-item p + p {
+      margin-top: 10px;
+    }
+
+    .content-card-item-num {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      border-radius: 8px;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+    }
+
+    .content-card-item h2 {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .content-card-item p {
+      font-size: 14px;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .content-card {
+        padding: 24px 20px 28px;
+      }
+
+      .page-intro-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="content-card">
+      <div class="page-intro">
+        <h1 class="page-intro-title">
+          ITIL uyumlu merkezi değişiklik yönetimi
+        </h1>
+        <p class="page-intro-text">
+          ServiceCore Change Management, değişiklik taleplerinden uygulama ve gözden geçirmeye kadar tüm yaşam döngüsünü tek çatı altında yönetir; risk, onay ve izlenebilirlik gereksinimlerini operasyonel pratikle birleştirir. Böylece kurumlar hem kontrollü değişim disiplinini hem de hızlı teslimat ihtiyacını aynı platformda dengeler; denetim, raporlama ve sürekli iyileştirme için tutarlı veri üretir.
+        </p>
+      </div>
+
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">1</span>
+          <h2>Merkezi değişiklik yönetim paneli</h2>
+          <p>
+            Tüm değişiklik süreçleri, teknisyenlere özel tasarlanmış tek bir panel üzerinden yönetilir; böylece kayıt oluşturma, planlama, onay ve kapanış adımları aynı çalışma alanında toplanır.
+          </p>
+          <p>
+            Dağınık araçlar ve paralel iletişim kanalları azalır, ekipler tek ekrandan önceliklendirme ve ilerleme takibi yaparak operasyonel görünürlüğü ve teslimat tutarlılığını güçlendirir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">2</span>
+          <h2>Çok modüllü entegrasyon yapısı</h2>
+          <p>
+            Değişiklik talepleri; Olay, Problem ve İstek gibi farklı modüllerden entegre şekilde oluşturulabilir; böylece kök kaynak tek tip bir veri modeliyle sisteme taşınır.
+          </p>
+          <p>
+            Modüller arası bağlantı, tekrarlayan veri girişini azaltır ve servis yönetimi süreçlerinin bütünsel bir hikâye olarak raporlanmasını kolaylaştırır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">3</span>
+          <h2>Uçtan uca ilişkilendirme ve izlenebilirlik</h2>
+          <p>
+            Her değişiklik kaydı, kaynak aldığı kayıtlarla geriye dönük ilişkilendirilerek tam izlenebilirlik sağlar; “bu değişiklik nereden doğdu?” sorusu tek tıkla yanıtlanır.
+          </p>
+          <p>
+            İlişki ağı, kök neden analizi ve denetim hazırlığında güvenilir bir kanıt zinciri sunar, müşteri ve iç paydaşlarla şeffaf iletişimi destekler.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">4</span>
+          <h2>RFC ile standart kayıt süreci</h2>
+          <p>
+            Değişiklik süreçleri standart RFC kaydı ile başlatılarak disiplinli bir yapı oluşturur; kapsam, gerekçe ve zamanlama gibi temel alanlar baştan netleşir.
+          </p>
+          <p>
+            Standart RFC modeli, benzer değişikliklerin karşılaştırılabilir olmasını sağlar ve olgunluk seviyesi farklı ekipler arasında ortak dil oluşturur.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">5</span>
+          <h2>Detaylı planlama yönetimi</h2>
+          <p>
+            Etkiler, riskler, uygulama adımları ve koordinasyon ihtiyaçları detaylı şekilde kayıt altına alınır; böylece uygulama öncesi hazırlık ve paydaş uyumu sistematik hale gelir.
+          </p>
+          <p>
+            Planlama detayı, darboğazların ve eksik koordinasyonun erken görülmesine yardımcı olur, kesinti pencerelerinde kontrollü yürütmeyi destekler.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">6</span>
+          <h2>Risk ve etki analizi yönetimi</h2>
+          <p>
+            Değişikliklerin iş üzerindeki etkisi ve potansiyel riskleri sistematik olarak analiz edilir; öncelik ve onay gereksinimi bu analizle uyumlu şekilde şekillenir.
+          </p>
+          <p>
+            Yapılandırılmış analiz, “görünmeyen risk” ihtimalini düşürür ve yönetim kuruluna veya CAB’a sunulacak özetlerin tutarlı kalmasını sağlar.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">7</span>
+          <h2>Kaçış ve kurtarma planları</h2>
+          <p>
+            Başarısız senaryolar için geri dönüş ve kurtarma planları önceden tanımlanabilir; olumsuz durumda hangi adımların izleneceği netleşir.
+          </p>
+          <p>
+            Önceden yazılmış kaçış senaryoları, kesinti süresini ve operasyonel paniği azaltır, ekiplerin aynı playbook üzerinden hareket etmesini kolaylaştırır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">8</span>
+          <h2>Dinamik danışma (advisory) mekanizması</h2>
+          <p>
+            Her değişiklik için özel danışma grupları dinamik olarak belirlenebilir; konuya göre doğru uzmanların devreye girmesi mümkün olur.
+          </p>
+          <p>
+            Esnek danışma yapısı, gereksiz genel kurul toplantılarını azaltırken kritik konularda derin uzman görüşünün alınmasını garanti eder.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">9</span>
+          <h2>E-posta ile hızlı onay ve danışma</h2>
+          <p>
+            Onay ve görüş toplama süreçleri e-posta üzerinden hızlı ve entegre şekilde yürütülür; yoğun takvimlerde bile yanıt alınabilirliği artırır.
+          </p>
+          <p>
+            E-posta kanalı, portal erişimi sınırlı paydaşların da sürece dahil olmasını sağlar ve işlem kayıtlarının sistemde kalmasını sürdürür.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">10</span>
+          <h2>Otomatik e-posta birleştirme (email merge)</h2>
+          <p>
+            Kurum içi ve dışı uzmanlardan alınacak onaylar tek platform üzerinden kolayca yönetilir; kişiselleştirilmiş iletiler toplu ve tutarlı biçimde üretilir.
+          </p>
+          <p>
+            Email merge, iletişim yükünü azaltır ve aynı değişiklik için farklı dillere veya rollere özel mesajların hızlı üretimini destekler.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">11</span>
+          <h2>Modern ve sade onay yapısı</h2>
+          <p>
+            Geleneksel uzun onay süreçleri yerine esnek ve hızlı çalışan danışma kurulları kullanılır; gereksiz bürokrasi azaltılırken kontrol noktaları korunur.
+          </p>
+          <p>
+            Bu yaklaşım, düşük riskli rutin değişikliklerde hız kazandırırken yüksek riskli işlerde gerekli denetimi sürdürülebilir kılar.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">12</span>
+          <h2>Görev yönetimi ile operasyonel koordinasyon</h2>
+          <p>
+            Değişiklik uygulama süreci, görev bazlı yönetilerek adım adım ilerletilir; sorumluluklar ve teslim tarihleri netleşir.
+          </p>
+          <p>
+            Görev modeli, ekipler arası el değiştirmeyi düzenler ve uygulama gecesi koordinasyonunun kağıt üzerinde değil sistem üzerinden yürümesini sağlar.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">13</span>
+          <h2>Zaman çizelgesi ve süreç takibi</h2>
+          <p>
+            Tüm değişiklik adımları zaman bazlı olarak izlenebilir ve raporlanır; kilometre taşları ve gerçekleşen olaylar tek görünümde toplanır.
+          </p>
+          <p>
+            Zaman çizelgesi, gecikme ve sapmaların erken fark edilmesine yardımcı olur, yönetişim ve durum toplantılarında ortak bir gerçeklik sunar.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">14</span>
+          <h2>İş günlüğü ve efor takibi</h2>
+          <p>
+            Değişiklik sürecinde yapılan tüm çalışmalar detaylı şekilde kayıt altına alınır; harcanan süre ve yapılan işlemler şeffaf biçimde görünür.
+          </p>
+          <p>
+            Bu kayıtlar, maliyet dağılımı ve kapasite planlaması için güvenilir girdi sağlar, müşteri veya yönetim raporlarında somut kanıt oluşturur.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">15</span>
+          <h2>Varlık ve konfigürasyon entegrasyonu (CMDB)</h2>
+          <p>
+            Değişikliklerin etkileyeceği varlık ve servisler aynı ekran üzerinden analiz edilebilir; bağımlılıklar ve etki alanı daha baştan görünür hale gelir.
+          </p>
+          <p>
+            CMDB bağlantısı, yanlış kapsam tanımı riskini azaltır ve değişiklik sonrası yapılandırma tutarlılığını izlemeyi kolaylaştırır.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">16</span>
+          <h2>Sürüm ve proje yönetimi entegrasyonu</h2>
+          <p>
+            Değişiklikler ihtiyaç halinde projelere veya sürüm yönetimi süreçlerine dönüştürülebilir; böylece büyük teslimatlarla operasyonel değişiklikler aynı çizgide yönetilir.
+          </p>
+          <p>
+            Entegrasyon, portföy öncelikleriyle saha uygulaması arasında köprü kurar ve “değişiklik mi, proje mi?” ayrımının pratikte kaybolmasını önler.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">17</span>
+          <h2>Post-implementation review</h2>
+          <p>
+            Değişiklik sonrası hedeflerin karşılanıp karşılanmadığı analiz edilir; başarı ölçütleri ve öğrenilen dersler kayıt altına alınır.
+          </p>
+          <p>
+            PIR, benzer değişikliklerde tekrarlayan hataları azaltır ve sürekli iyileştirme döngüsüne somut veri kazandırır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">18</span>
+          <h2>Kapsamlı raporlama ve geçmiş takibi</h2>
+          <p>
+            Tüm değişiklikler geçmişe dönük olarak detaylı şekilde raporlanabilir; durum, kategori, risk ve sonuç kırılımlarıyla analiz üretilir.
+          </p>
+          <p>
+            Geçmiş görünürlüğü, denetim taleplerine hızlı yanıt vermeyi ve yönetim panolarında trend takibini mümkün kılar.
+          </p>
+        </div>
+      </div>
+
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">19</span>
+          <h2>Son kullanıcı ekranında değişiklik yönetimi</h2>
+          <p>
+            Yetkin son kullanıcılar değişiklik kayıtlarını kendi ekranları üzerinden görüntüleyebilir, talep oluşturabilir ve sürece dahil olabilir.
+          </p>
+          <p>
+            Self-servis yaklaşımı, destek masası yükünü dengeler ve kullanıcıların planlanan çalışmalar hakkında proaktif bilgilendirilmesini kolaylaştırır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">20</span>
+          <h2>Dinamik iş akışı (workflow) desteği</h2>
+          <p>
+            Değişiklik süreçleri, tür bazlı veya manuel seçilen iş akışları ile uçtan uca otomatik olarak işletilebilir; adımlar ve koşullar yapılandırılabilir kalır.
+          </p>
+          <p>
+            Dinamik workflow, manuel hatırlatma ve e-posta koşturma ihtiyacını azaltır, süreç tutarlılığını ve ölçülebilir SLA’ları güçlendirir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">21</span>
+          <h2>Değişiklik türüne bağlı otomatik süreç</h2>
+          <p>
+            Seçilen değişiklik türüne göre ilgili iş akışı otomatik tetiklenir ve süreç standartlaştırılır; doğru onay ve görev seti baştan yüklenir.
+          </p>
+          <p>
+            Tür bazlı tetikleme, benzer değişikliklerde karar tutarlılığını artırır ve yeni ekip üyelerinin sürece hızlı adapte olmasını destekler.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

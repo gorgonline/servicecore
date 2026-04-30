@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Service Desk / Interaction Management – Özellikler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    .page-intro {
+      margin-bottom: 28px;
+      padding: 20px 22px 22px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #f9fafb, #eff6ff);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .page-intro-title {
+      font-size: 30px;
+      font-weight: 750;
+      color: #111827;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .page-intro-text {
+      font-size: 15px;
+      color: #4b5563;
+      max-width: 880px;
+    }
+
+    .screenshot-block {
+      margin: 24px 0 32px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .screenshot-block img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .screenshot-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+      aspect-ratio: 21 / 9;
+      max-height: 380px;
+      background: linear-gradient(160deg, #f3f4f6 0%, #eef2ff 50%, #f9fafb 100%);
+      border: 2px dashed #d1d5db;
+      border-radius: 12px;
+      margin: 12px;
+      color: #6b7280;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-align: center;
+      padding: 24px 16px;
+    }
+
+    .screenshot-placeholder span {
+      max-width: 320px;
+      line-height: 1.45;
+    }
+
+    .screenshot-placeholder-sub {
+      display: block;
+      margin-top: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #9ca3af;
+    }
+
+    .content-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 36px 40px 40px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.09);
+      margin-bottom: 40px;
+    }
+
+    .content-blocks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    .page-intro + .screenshot-block {
+      margin-top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .content-blocks-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .content-blocks-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .content-card-item {
+      background: #f9fafb;
+      border-radius: 18px;
+      padding: 22px 22px 24px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      min-height: 170px;
+    }
+
+    .content-card-item-num {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      border-radius: 8px;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+    }
+
+    .content-card-item h2 {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .content-card-item p {
+      font-size: 14px;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .content-card {
+        padding: 24px 20px 28px;
+      }
+
+      .page-intro-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="content-card">
+      <div class="page-intro">
+        <h1 class="page-intro-title">
+          Service Desk / Interaction Management
+        </h1>
+        <p class="page-intro-text">
+          Servis yönetimi ürün ailesinin müşteri/kullanıcı etkileşimlerinin kaydedildiği karşılama alanı olarak Service Desk / Interaction Management modülü ile tüm kanallardan gelen etkileşimlerin tekil iletişim ve temas noktası simule edilmiştir.
+        </p>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="file:///C:/Users/Salih/Desktop/Interaction/index.png" alt="Service Desk — merkezi karşılama, omnichannel ve e-posta yakalayıcı">
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">1</span>
+          <h2>Tüm talepler için merkezi karşılama noktası</h2>
+          <p>
+            Tüm kullanıcı ve müşteri etkileşimleri tek bir merkezde karşılanır ve yönetilir. Farklı kanallardan gelen talepler standart bir yapıda toplanarak, ilk temas anından itibaren kontrollü ve izlenebilir bir süreç başlatılır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">2</span>
+          <h2>Omnichannel iletişim altyapısı</h2>
+          <p>
+            Email, telefon, chat, SMS, sosyal medya ve web kanallarından gelen tüm kayıtlar tek platformda toplanır. Böylece kullanıcı hangi kanaldan ulaşırsa ulaşsın, tüm etkileşimler tek bir sistem üzerinden yönetilir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">3</span>
+          <h2>E-posta yakalayıcı entegrasyonu</h2>
+          <p>
+            Tanımlanan e-posta adreslerine gelen talepler otomatik olarak çağrı kaydına dönüştürülür. Bu sayede manuel kayıt açma ihtiyacı ortadan kalkar ve tüm e-postalar sistematik olarak işlenir.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="file:///C:/Users/Salih/Desktop/Interaction/epostayakalayıcısı.png" alt="Service Desk — tekilleştirme, sınıflandırma ve otomasyon">
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">4</span>
+          <h2>Tekilleştirilmiş kayıt yönetimi</h2>
+          <p>
+            Farklı kanallardan gelen aynı içerikli talepler birleştirilerek mükerrer kayıtların önüne geçilir. Böylece ekipler tek bir kayıt üzerinden ilerleyerek daha verimli çalışır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">5</span>
+          <h2>Akıllı sınıflandırma ve yönlendirme</h2>
+          <p>
+            Gelen kayıtlar analiz edilerek olay, istek, öneri veya bilgi talebi gibi doğru süreçlere yönlendirilir. Bu sayede her kayıt uygun iş akışına dahil edilerek çözüm süreleri kısaltılır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">6</span>
+          <h2>No-code otomasyon ve akıllı süreç yönetimi</h2>
+          <p>
+            Kod yazmadan tanımlanabilen kurallar sayesinde kayıtlar otomatik olarak ilgili kişi, grup veya modüllere atanabilir. Otomasyon dışında kalan kayıtlar ise manuel olarak hızlıca işlenebilir ve uygun süreçlere dönüştürülebilir.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="file:///C:/Users/Salih/Desktop/Interaction/donustur2.png" alt="Service Desk — modül dönüşümü, yetki ve toplu işlem">
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">7</span>
+          <h2>Esnek modül dönüşüm yapısı</h2>
+          <p>
+            Çağrılar; olay, istek veya iyileştirme süreçlerine kolayca dönüştürülebilir. Bu dönüşüm sırasında tüm veriler otomatik taşınır ve süreçler kesintisiz şekilde devam eder.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">8</span>
+          <h2>Yetki bazlı aksiyon yönetimi</h2>
+          <p>
+            Kullanıcı rollerine göre farklı işlem seçenekleri (dönüştürme, kapatma, silme vb.) sunulur. Bu sayede güvenli ve kontrollü bir operasyon yapısı oluşturulur.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">9</span>
+          <h2>Toplu işlem kabiliyeti</h2>
+          <p>
+            Birden fazla kayıt üzerinde aynı anda işlem yapılabilir. Bu özellik özellikle yoğun operasyonlarda önemli ölçüde zaman kazandırır.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="file:///C:/Users/Salih/Desktop/Interaction/filtre.png" alt="Service Desk — gerçek zamanlı takip, filtreleme ve kayıtlı görünümler">
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">10</span>
+          <h2>Gerçek zamanlı kayıt takibi</h2>
+          <p>
+            Yeni gelen çağrılar anlık olarak görüntülenir. Kullanıcılar yeni kayıtları hızlıca fark ederek gecikmeden müdahale edebilir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">11</span>
+          <h2>Gelişmiş filtreleme ve arama</h2>
+          <p>
+            Kayıtlar; durum, müşteri, kategori ve konu gibi birçok kritere göre filtrelenebilir. Bu sayede aranan kayda hızlı erişim sağlanır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">12</span>
+          <h2>Kişiselleştirilebilir filtre görünümleri</h2>
+          <p>
+            Kullanıcılar kendi filtrelerini oluşturup kaydedebilir. Böylece sık kullanılan liste görünümlerine hızlı erişim sağlanır.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="file:///C:/Users/Salih/Desktop/Interaction/topluislemmenu.png" alt="Service Desk — içerik ve ekler, atama ve ITIL süreçleri">
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">13</span>
+          <h2>İçerik ve ek dosya yönetimi</h2>
+          <p>
+            Kayıt içerisindeki tüm açıklamalar, dosyalar ve iletişim detayları tek ekranda görüntülenebilir. Bu sayede bilgiye erişim kolaylaşır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">14</span>
+          <h2>Esnek atama ve organizasyon yapısı</h2>
+          <p>
+            Kayıtlar ekip, grup veya doğrudan kişilere atanabilir. Bu sayede iş yükü dengeli dağıtılır ve süreçler hızlanır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">15</span>
+          <h2>ITIL4 uyumlu süreç yönetimi</h2>
+          <p>
+            Olay, istek ve diğer servis yönetimi süreçleri ITIL4 prensiplerine uygun şekilde yapılandırılmıştır. Bu sayede süreçler standart, ölçülebilir ve sürdürülebilir bir yapıda yönetilir.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="file:///C:/Users/Salih/Desktop/Interaction/topluislemaction.png" alt="Service Desk — kullanıcı iletişimi, SPOC ve ön eleme">
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">16</span>
+          <h2>Süreç boyunca kesintisiz kullanıcı iletişimi</h2>
+          <p>
+            Tüm etkileşimler kayıt altına alınır ve süreç boyunca kullanıcı ile iletişim sürdürülebilir. Bu sayede şeffaf ve izlenebilir bir deneyim sunulur.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">17</span>
+          <h2>SPOC yaklaşımı ile merkezi yönetim</h2>
+          <p>
+            Tüm etkileşimler tek bir temas noktası üzerinden yönetilir. Bu yapı sayesinde operasyonel karmaşıklık azalır ve verimlilik artar.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">18</span>
+          <h2>Ön eleme ve operasyonel filtreleme katmanı</h2>
+          <p>
+            Çağrılar modülü, kayıtların doğrudan işleme alınmadan önce değerlendirilmesini sağlar. Böylece her kayıt doğru modüle yönlendirilerek operasyonel verimlilik artırılır.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Olay Yönetimi – Özellikler</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    .page-intro {
+      margin-bottom: 28px;
+      padding: 20px 22px 22px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #f9fafb, #eff6ff);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .page-intro-title {
+      font-size: 30px;
+      font-weight: 750;
+      color: #111827;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .page-intro-text {
+      font-size: 15px;
+      color: #4b5563;
+      max-width: 880px;
+    }
+
+    .screenshot-block {
+      margin: 24px 0 32px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+    }
+
+    .screenshot-block img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .content-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 36px 40px 40px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.09);
+      margin-bottom: 40px;
+    }
+
+    .content-blocks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    .page-intro + .screenshot-block {
+      margin-top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .content-blocks-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .content-card-item {
+      background: #f9fafb;
+      border-radius: 18px;
+      padding: 22px 22px 24px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+      min-height: 170px;
+    }
+
+    .content-card-item-num {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2563eb;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      border-radius: 8px;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+    }
+
+    .content-card-item h2 {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .content-card-item p {
+      font-size: 14px;
+      color: #4b5563;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .content-card {
+        padding: 24px 20px 28px;
+      }
+
+      .page-intro-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="content-card">
+      <div class="page-intro">
+        <h1 class="page-intro-title">
+          Olay Yönetimi (Incident Management)
+        </h1>
+        <p class="page-intro-text">
+          Olaylar tek bir platform üzerinden yönetilerek iş sürekliliğini tehdit eden kesinti, hata ve servis aksaklıklarına hızlı ve kontrollü müdahale sağlanır. Merkezi operasyon yapısı ile dağınık süreçler ortadan kalkar; ITIL4 uyumlu süreçler ölçülebilir ve sürdürülebilir hale gelir.
+        </p>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="Index.png" width="1320" height="480" alt="Merkezi olay yönetimi — olay listesi ve çoklu kaynak entegrasyonu" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">1</span>
+          <h2>Kesinti ve arıza yönetimi için merkezi yapı</h2>
+          <p>
+            Olaylar tek bir platform üzerinden yönetilerek iş sürekliliğini tehdit eden tüm kesinti, hata ve servis aksaklıklarına hızlı ve kontrollü şekilde müdahale edilir. Tüm operasyon merkezi bir yapıdan yönetildiği için dağınık süreçler ortadan kaldırılır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">2</span>
+          <h2>ITIL4 uyumlu olay yönetimi yaklaşımı</h2>
+          <p>
+            Olayların kaydedilmesi, sınıflandırılması, önceliklendirilmesi ve çözülmesi ITIL4 prensiplerine uygun şekilde yürütülür. Bu sayede süreçler standart, ölçülebilir ve sürdürülebilir bir yapıya kavuşur.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">3</span>
+          <h2>Çoklu kaynaklardan otomatik olay oluşturma ve entegrasyon</h2>
+          <p>
+            E-posta, sistem alarmları, monitoring araçları ve entegrasyonlar üzerinden gelen veriler otomatik olarak olay kaydına dönüştürülür. Interaction Management ile entegre çalışarak çağrılar tek tıkla olaya çevrilebilir.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="sla.png" width="1320" height="480" alt="Gerçek zamanlı olay tespiti, önceliklendirme ve SLA takibi" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">4</span>
+          <h2>Gerçek zamanlı olay tespiti ve hızlı müdahale</h2>
+          <p>
+            Sistem, oluşan olayları anlık olarak algılar ve ilgili ekipleri bilgilendirir. Bu sayede müdahale süresi minimuma indirilir ve iş kaybı azaltılır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">5</span>
+          <h2>Akıllı önceliklendirme, SLA yönetimi ve otomasyon</h2>
+          <p>
+            Olaylar etki ve aciliyet kriterlerine göre otomatik önceliklendirilir. SLA süreçleri anında başlatılır ve farklı müşteri, hizmet veya öncelik seviyelerine göre dinamik SLA politikaları uygulanır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">6</span>
+          <h2>Omnichannel bildirim ve paydaş yönetimi</h2>
+          <p>
+            E-posta, SMS, web bildirimleri ve Teams entegrasyonu ile tüm paydaşlar anlık olarak bilgilendirilir. Bildirimler rol bazlı ve senaryoya özel olarak kurgulanabilir.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="gorev.png" width="1320" height="480" alt="Kart tabanlı olay görünümü, bildirim ve durum renkleri" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">7</span>
+          <h2>Dinamik ve özelleştirilebilir bildirim içerikleri</h2>
+          <p>
+            Bildirim içerikleri expression yapıları ile özelleştirilebilir. Böylece her bildirim, ilgili olayın detaylarına göre dinamik olarak şekillenir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">8</span>
+          <h2>Kart tabanlı modern olay yönetim ekranı</h2>
+          <p>
+            Olay kayıtları görsel kart yapısı ile listelenir. Bu yapı sayesinde kullanıcılar kayıtları hızlıca analiz edebilir ve aksiyon alabilir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">9</span>
+          <h2>Duruma göre renk bazlı görselleştirme</h2>
+          <p>
+            Açık, beklemede, çözüldü veya SLA ihlali gibi durumlar tutarlı bir renk paletiyle kodlanır; liste veya pano görünümünde ekip, öncelik gerektiren kayıtları metin okumadan ayırt edebilir. Bu görsel dil, yoğun iş yükünde tarama süresini kısaltır ve yanlış önceliklendirmeyi azaltır.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="varlik.png" width="1320" height="480" alt="Kayıt listesi, okunmamış işaretleri, hızlı düzenleme ve önceliklendirme" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">10</span>
+          <h2>Okunmamış kayıtlar için görsel uyarı sistemi</h2>
+          <p>
+            İlk temas, atama veya güncelleme sonrası henüz “işlenmemiş” sayılan kayıtlar rozet, vurgu veya liste üst sıralaması ile belirginleştirilebilir. Böylece nöbet değişimlerinde ve çoklu ekran kullanımında bile yeni veya bekleyen işler sessizce kalıp kaybolmaz; müşteri tarafında oluşan algı gecikmesi azalır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">11</span>
+          <h2>Hızlı düzenleme (Quick Actions) paneli</h2>
+          <p>
+            Detay sayfasına geçmeden durum, öncelik, kategori, atanan grup veya kişi gibi alanlar tek tık veya kısa bir açılır panel üzerinden güncellenebilir. Toplantı sırasında, telefon görüşmesi esnasında veya çok kayıtlı listelerde bu akış, tıklama sayısını düşürür ve günlük operasyon hızını doğrudan artırır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">12</span>
+          <h2>Pinleme ve favorileme ile önceliklendirme</h2>
+          <p>
+            Major olay, yönetim takibi veya belirli bir müşteri için kritik kayıtlar kişisel veya ekip görünümünde sabitlenebilir; sık dönülen işler ise favori listelerine alınabilir. Standart filtrelerden bağımsız, “benim önceliğim” katmanı oluşturularak dikkat dağılığı azaltılır ve SLA riski yüksek işler üst çekmecede tutulur.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="gorusmeler.png" width="1320" height="480" alt="Toplu işlem, filtreleme, arama ve e-posta iletişim geçmişi (AMF)" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">13</span>
+          <h2>Toplu işlem ve operasyonel hızlandırma</h2>
+          <p>
+            Listeden seçilen onlarca kayıt için aynı anda atama, durum değişimi, etiketleme veya yönlendirme uygulanabilir; tekrarlayan tıklamalar ve kopyala-yapıştır ihtiyacı ortadan kalkar. Özellikle kampanya sonrası, toplu alarm veya aynı kök nedene bağlı dalga olaylarında ekip kapasitesi ölçülebilir şekilde korunur.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">14</span>
+          <h2>Gelişmiş filtreleme ve arama kabiliyeti</h2>
+          <p>
+            Durum, müşteri, hizmet, kategori, öncelik, tarih aralığı, atanan ekip ve özel alanlar birleştirilerek sorgulanabilir; tam metin veya yapılandırılmış arama ile büyük hacimli kuyruklarda bile hedef kayıt saniyeler içinde daraltılır. Kayıtlı görünümler sayesinde sık kullanılan sorgular tek tıkla yeniden çağrılabilir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">15</span>
+          <h2>E-posta ve iletişim geçmişi yönetimi (AMF®)</h2>
+          <p>
+            Gelen-giden e-posta iş parçacıkları, şablon yanıtları ve kanal bazlı mesajlar olay kaydıyla zaman çizelgesi halinde ilişkilendirilir; kim, ne zaman, hangi kanaldan yazdı net biçimde görülür. Denetim, müşteri şikâyeti veya SLA tartışmalarında iletişim kopukluğu yerine tek doğruluk kaynağı sunulur.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="gecmis.png" width="1320" height="480" alt="İletişim geçmişi, iş birliği ve gizli veya kullanıcıya açık notlar" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">16</span>
+          <h2>Tek platformda iletişim ve iş birliği</h2>
+          <p>
+            İç ekip, son kullanıcı ve gerektiğinde üçüncü taraf tedarikçiler aynı olay bağlamında yorum, ek ve durum güncellemesi paylaşır; paralel e-posta zincirleri veya anlık mesajda kalan “görünmeyen” bilgi birikmez. Geçiş teslimlerinde ve çok disiplinli vakalarda süreklilik ve hesap verebilirlik güçlenir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">17</span>
+          <h2>Gizli ve kullanıcıya açık not yönetimi</h2>
+          <p>
+            Dahili teşhis adımları, geçici çözüm detayları veya hassas müşteri verisi yalnızca yetkili rollere görünen notlarda tutulur; kullanıcıya giden açıklamalar ise ayrı bir akışta standart dil ve onay süreçleriyle yönetilir. Böylece hem KVKK/veri sınıflandırması hem de müşteri iletişiminde tutarlılık korunur.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">18</span>
+          <h2>Görev (Task) yönetimi ve ekip koordinasyonu</h2>
+          <p>
+            Karmaşık olaylar tek bir “ana kayıt” altında alt görevlere ayrılabilir; ağ, uygulama ve saha ekipleri kendi iş paketleri üzerinden ilerlerken ana olayın genel durumu tek yerden izlenir. Son teslim tarihleri ve sorumluluklar netleştiği için çift iş veya boşa harcanan bekleme süreleri azalır.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="worklog.png" width="1320" height="480" alt="Görev yönetimi, iş günlüğü (worklog) ve otomatik zaman takibi (ATS)" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">19</span>
+          <h2>Görev bağımlılıkları ve süreç akış yönetimi</h2>
+          <p>
+            “B tamamlanmadan A başlamasın” gibi öncelik ve tamamlanma bağımlılıkları tanımlanabilir; sistem izin vermediği sıçramaları engelleyerek hatalı kapatma veya eksik doğrulama riskini düşürür. Çok adımlı operasyonel senaryolarda iş sırası kurumsal bilgi birikimine göre kilitlenir, yeni ekip üyeleri bile doğru akışı takip eder.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">20</span>
+          <h2>İş günlüğü (Worklog) ve detaylı efor takibi</h2>
+          <p>
+            Her müdahale için süre, aktivite tipi ve açıklama satırı girilerek iş günlüğü oluşturulur; bütçe, faturalama veya kapasite planlaması için gerçekçi veri üretilir. Yönetim, hangi olayın ne kadar “görünmez” efor yediğini raporlayarak süreç iyileştirmesine ve doğru kadro ölçeklendirmesine karar verebilir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">21</span>
+          <h2>Otomatik zaman takibi (ATS®)</h2>
+          <p>
+            Kayıt üzerinde aktif çalışma, bekleme veya duraklatma gibi durumlar otomatik ölçülerek manuel hata ve unutulan süre girişleri azaltılır. SLA hesapları ve geriye dönük analizler için tutarlı bir zaman ekseni oluşur; ekip üyeleri yönetim yerine çözüme odaklanabilir.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="cozum.png" width="1320" height="480" alt="Zaman optimizasyonu (STE), bilgi bankası önerileri ve üç katmanlı çözüm yönetimi" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">22</span>
+          <h2>ServiceCore Time Engine (STE®) ile zaman optimizasyonu</h2>
+          <p>
+            Öncelik, SLA kalan süre ve ekip yükü kurallarıyla birleştirilerek iş sırası ve zaman tahsisleri dinamik olarak dengelenir. Böylece hem kritik olaylarda kaynak kaçırılması azalır hem de düşük öncelikli işlerin süresiz ertelenmesi önlenir; operasyon planı gerçek zamanlı veriye dayanır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">23</span>
+          <h2>Bilgi bankası entegrasyonu ve çözüm önerileri</h2>
+          <p>
+            Olay açıklaması, kategori veya etkilenen hizmete göre ilgili makale ve çözüm adımları önerilir; teknisyen aynı sorunu her seferinde sıfırdan araştırmak zorunda kalmaz. Bilgi bankası güncellendikçe öneriler de canlı kalır ve kurumsal hafıza somut MTTR iyileştirmesine dönüşür.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">24</span>
+          <h2>Üç katmanlı çözüm yönetimi yapısı</h2>
+          <p>
+            Önerilen geçici çözüm, uygulanan düzeltme ve doğrulanmış kalıcı çözüm ayrı kayıt katmanlarında tutulur; böylece “geçici çözüm kalıcı oldu” gibi karışıklıklar ve yanlış kapama gerekçeleri önlenir. Raporlama ve problem yönetimi için hangi adımın ne zaman etkili olduğu netleşir.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="tekrarlananolay.png" width="1320" height="480" alt="Tekrarlayan olay desenleri, Problem Management ve Change/CI entegrasyonu" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">25</span>
+          <h2>Tekrarlayan olaylar için öğrenen sistem yapısı</h2>
+          <p>
+            Aynı belirti, varlık veya hata koduyla tekrar eden olaylar desen olarak işaretlenir; önerilen öncelik, atama veya çözüm şablonları geçmiş başarılı vakalardan beslenir. Ekip müdahalesi hızlanırken kök nedenin üstüne gidilmesi için Problem kaydına tetikleyici sinyaller güçlenir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">26</span>
+          <h2>Problem Management entegrasyonu</h2>
+          <p>
+            Tekrarlayan veya yüksek etkili olaylar tek tıkla veya kural ile Problem kaydına bağlanabilir; ilişkili olaylar kök neden çalışmasında tek çatı altında toplanır. Incident tarafı çözülürken kalıcı iyileştirme takibi kopmadan sürdürülür ve ITIL hattında süreç bütünlüğü korunur.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">27</span>
+          <h2>Change ve CI süreçlerine entegrasyon</h2>
+          <p>
+            Olay, ilgili değişiklik kaydı veya iyileştirme (CI) talebiyle ilişkilendirilerek “bu kesinti hangi değişiklikten sonra başladı?” sorusu hızlıca yanıtlanır. Onaylı değişikliklerin operasyonel sonuçları izlenebilir; gereksiz acil değişiklik baskısı azalır, kontrollü iyileştirme kültürü desteklenir.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="iliski.png" width="1320" height="480" alt="Olay ilişkilendirme, CMDB ve varlık ile kullanıcı/müşteri detayları" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">28</span>
+          <h2>Olaylar arası ilişkilendirme ve linkleme</h2>
+          <p>
+            Aynı kesintiden doğan alt olaylar, upstream/downstream bağımlılıklar veya müşteri tarafında açılan paralel kayıtlar birbirine bağlanır; tekilleştirme kurallarıyla birlikte kullanıldığında “aynı fırtınanın” tamamı tek resimde görülür. İletişim ve kök neden analizi için parçalanmış gerçeklik yerine bütünsel izlenebilirlik sunulur.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">29</span>
+          <h2>CMDB ve varlık yönetimi entegrasyonu</h2>
+          <p>
+            Sunucu, uygulama, ağ bileşeni ve iş servisi gibi CI’lar olaya bağlandığında etkilenen kullanıcı sayısı, kritiklik ve bağımlılık zinciri anında görünür. Değişiklik ve yayın planlarıyla çapraz kontrol mümkün olur; “hangi varlık çöktü, kim etkilendi?” sorusu dakikalar içinde yanıtlanır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">30</span>
+          <h2>Kullanıcı, müşteri ve varlık detaylarına hızlı erişim</h2>
+          <p>
+            Araya sekme veya farklı uygulama girmeden çağrı sahibi, sözleşme kapsamı, lokasyon ve bağlı varlıklar tek yüzeyde özetlenir. Teknisyen, bağlamı tamamlamak için sistemler arası arama yapmak yerine çözüm adımına odaklanır; müşteri deneyimi ve çözüm süresi birlikte iyileşir.
+          </p>
+        </div>
+      </div>
+
+      <div class="screenshot-block">
+        <img src="kapatmakurallari.png" width="1320" height="480" alt="History tracking, esnek kapatma kuralları ve SLA/OLA uyum yönetimi" loading="lazy" decoding="async" />
+      </div>
+      <div class="content-blocks-grid">
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">31</span>
+          <h2>History tracking ile tam izlenebilirlik</h2>
+          <p>
+            Alan güncellemeleri, atama değişiklikleri, SLA duraklatmaları ve sistem yorumları zaman damgası ve kullanıcı bilgisiyle saklanır; denetim, iç soruşturma veya müşteri itirazında “ne zaman kim ne yaptı?” şeffaf biçimde kanıtlanır. Operasyonel öğrenme için geçmiş olaylar yeniden oynatılabilir nitelikte kalır.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">32</span>
+          <h2>Esnek kapatma kuralları ve kontrol mekanizmaları</h2>
+          <p>
+            Kategori, öncelik veya müşteri segmentine göre kapatma öncesi zorunlu alanlar, onay adımları veya çözüm kodu seçimi tanımlanabilir. Erken veya eksik kapatma engellenirken, düşük riskli taleplerde gereksiz bürokrasi aşılmaz; kalite ile hız dengesi kurumsal politika ile yönetilir.
+          </p>
+        </div>
+
+        <div class="content-card-item">
+          <span class="content-card-item-num" aria-hidden="true">33</span>
+          <h2>Sözleşme (SLA/OLA) ve operasyonel uyum yönetimi</h2>
+          <p>
+            Müşteri sözleşmesi, iç OLA ve öncelik matrisi olaya otomatik uygulanır; yanıt ve çözüm süreleri anlık izlenir, ihlal veya pausa nedenleri kayıt altına alınır. Yönetim için uyum raporları üretilebilir; sürekli iyileştirme toplantılarında somut metriklerle konuşulur, “söz verilen servis” ile “gerçekleşen operasyon” hizalanır.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

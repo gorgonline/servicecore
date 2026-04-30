@@ -1,0 +1,112 @@
+{
+  "hero": {
+    "badge": "Mobil Servis Yönetimi",
+    "titleLead": "IT hizmet yönetimi,",
+    "titleAccent": "her yerden, cebinizde.",
+    "description": "ServiceCore Mobil Servis Uygulaması; IT hizmet yönetimini sahaya, ofis dışına ve teknik ekibin cebine taşır. ITIL 4 ile uyumlu süreç altyapısı, gerçek zamanlı izleme, kullanıcı dostu arayüz, anlık bildirimler ve mevcut sistemlerle kolay entegrasyon sayesinde IT hizmet yönetimi yalnızca bir görev olmaktan çıkar, işletmeniz için stratejik bir avantaja dönüşür.",
+    "imageAlt": "ServiceCore mobil servis uygulaması — saha ve hareket özgürlüğü"
+  },
+  "zigzag": [
+    {
+      "id": "tam-mobilite",
+      "accent": "blue",
+      "icon": "Smartphone",
+      "titleLead": "Tam mobilite,",
+      "titleAccent": "ITIL 4 ile uyumlu süreç.",
+      "description": "Uygulama, IT hizmetlerini her yerden yönetebilmenizi sağlayarak teknik ekiplerinize hareket özgürlüğü sunar. Hizmet talebi yönetiminden problem çözümlemeye kadar tüm süreçler ITIL 4 standartlarına göre tasarlandığı için en iyi uygulamalardan ofis dışında da yararlanırsınız.",
+      "bullets": [
+        "Tam mobilite: IT hizmetleri her yerden yönetilir; teknik ekipler sahada, yolda veya uzaktan aynı yetkinlikle çalışır.",
+        "ITIL 4 metodolojisi ile uyumlu olarak hizmet talebi yönetimi, olay yönetimi ve problem çözümleme aynı standartla işletilir.",
+        "Tüm süreç adımları masaüstü deneyimiyle birebir uyumlu; mobil ekran küçülse de süreç disiplini korunur."
+      ]
+    },
+    {
+      "id": "gercek-zamanli",
+      "accent": "emerald",
+      "icon": "Activity",
+      "titleLead": "Gerçek zamanlı izleme,",
+      "titleAccent": "anında aksiyon.",
+      "description": "Talep durumları, olay çözümleri ve hizmet seviyeleri anlık olarak takip edilir; daha hızlı aksiyon alınması sağlanır. Kritik durumlar ve SLA ihlalleri hakkında push, e-posta ve uygulama içi bildirimlerle ekipler anında bilgilendirilir, kesintisiz hizmet korunur.",
+      "bullets": [
+        "Talep durumları, olay çözümleri ve hizmet seviyeleri anlık takip edilir; karar süresi saatlerden saniyelere iner.",
+        "Kritik durumlar ve SLA ihlalleri için anlık bildirimler push, e-posta ve uygulama içi kanallardan ekiplere ulaşır.",
+        "Hatırlatmalar ve eskalasyon uyarıları sayesinde unutulan adım kalmaz; kesintisiz hizmet sunumu mümkün olur."
+      ]
+    },
+    {
+      "id": "ux-entegrasyon",
+      "accent": "purple",
+      "icon": "Sparkles",
+      "titleLead": "Kullanıcı dostu arayüz,",
+      "titleAccent": "kolay entegrasyon.",
+      "description": "Teknik ekiplerin ve kullanıcıların ihtiyaçlarına göre optimize edilmiş basit ve etkili bir tasarım sunulur. Mevcut sistemlerinizle entegre çalışarak ekosisteminiz sorunsuz yönetilir; kayıp veri ya da çift kayıt riski olmadan tek doğruluk kaynağı korunur.",
+      "bullets": [
+        "Kullanıcı dostu arayüz: teknik ekipler ve son kullanıcılar için optimize edilmiş basit, etkili bir tasarım sunulur.",
+        "Kolay entegrasyon: mevcut sistemlerinizle uyumlu çalışarak ekosisteminiz sorunsuz yönetilir.",
+        "Tek doğruluk kaynağı korunur; mobil aktiviteler arka planda merkezi ServiceCore platformuyla senkron çalışır."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Mobil uygulamayla neler yapabilirsiniz?",
+    "sectionSubtitle": "Hizmet taleplerinden olay yönetimine, değişiklik takibinden performans ölçümüne kadar mobilde uçtan uca ITSM yetkinlikleri.",
+    "items": [
+      {
+        "id": "talep-yonetimi",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "MessageSquare",
+        "title": "Hizmet taleplerini yönetin",
+        "description": "Yeni talepleri hızlıca oluşturun, size atanmış görevleri görüntüleyin ve süreçlerin durumunu sahadan takip edin. Mobil cihazda tek dokunuşla talep oluşturma, durumu güncelleme ve ekiple iletişim kurma mümkündür."
+      },
+      {
+        "id": "olay-yonetimi",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "AlertCircle",
+        "title": "Olay yönetimini güçlendirin",
+        "description": "Beklenmeyen IT sorunlarına anında müdahale ederek iş sürekliliğini sağlayın. Kritik olaylar push bildirim olarak ulaşır; teknisyen yolda bile olsa hızla devreye girer."
+      },
+      {
+        "id": "degisiklik",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "GitBranch",
+        "title": "Değişiklikleri takip edin",
+        "description": "IT altyapınızdaki değişiklikleri mobilden planlayın, onay süreçlerini kolayca yürütün. Onay bekleyen kayıtlar bir bildirimle gelir, tek tıkla onaylanır."
+      },
+      {
+        "id": "performans",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "LineChart",
+        "title": "Performansı ölçün",
+        "description": "Özelleştirilebilir raporlar ve panolar ile hizmet performansınızı anlık analiz edin. CIO'dan teknisyene kadar her rol kendi mobil dashboard'undan ekibinin durumunu okur."
+      },
+      {
+        "id": "bildirim",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Bell",
+        "title": "Bildirimler ve hatırlatmalar",
+        "description": "Kritik durumlar ve SLA ihlalleri hakkında anında bilgilendirilirsiniz. Hatırlatmalar görevlerin kaçırılmasını engeller, kesintisiz hizmet sürdürülür."
+      },
+      {
+        "id": "entegrasyon",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "Link2",
+        "title": "Mevcut sistemlerle entegrasyon",
+        "description": "Mobil uygulama, mevcut kurumsal sistemlerle entegre çalışır. Çift kayıt, kayıp veri ve manuel senkronizasyon ihtiyacı ortadan kalkar."
+      }
+    ]
+  },
+  "cta": {
+    "title": "IT yönetiminde yeni bir dönem mobilden başlıyor.",
+    "description": "IT ekipleri, operasyon yöneticileri ve hizmet sağlayıcılar için ideal mobil ITSM deneyimini canlı demoda inceleyin; küçük işletmeden büyük kurumsal yapıya kadar her ölçeğe uyarlanır.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

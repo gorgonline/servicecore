@@ -1,0 +1,115 @@
+{
+  "hero": {
+    "badge": "Sözleşme Yönetimi",
+    "titleLead": "Tüm sözleşmeleriniz",
+    "titleAccent": "tek platformda, tam kontrol altında.",
+    "description": "Global iş dünyasında düzenli ve şeffaf bir sözleşme yönetimi, başarılı bir operasyonun temel taşlarından biridir. ServiceCore Sözleşmeler Modülü; kurum içi destek (OLA), tedarikçi ve müşteri hizmet (SLA) sözleşmelerinizi etkin bir şekilde yönetmenize olanak tanır. Tek platformdan kolayca erişilebilir, düzenli ve sürdürülebilir bir yapı kurarken zamandan tasarruf eder, süreçlerinizde tam kontrol sağlarsınız.",
+    "imageAlt": "Sözleşme yönetimi panosu — OLA, tedarikçi ve müşteri sözleşmeleri"
+  },
+  "zigzag": [
+    {
+      "id": "ola",
+      "accent": "blue",
+      "icon": "Building2",
+      "titleLead": "Kurum içi destek sözleşmeleri",
+      "titleAccent": "(Operation Level Agreement).",
+      "description": "Bilgi Teknolojileri biriminiz ile diğer departmanlar arasındaki hizmet anlaşmalarını (OLA) kolayca oluşturup takip edin. İç süreçlerdeki servis koşullarını düzenli tutarak verimliliği artırır, BT ile iş birimleri arasında ortak bir taahhüt çerçevesi kurarsınız.",
+      "bullets": [
+        "Bilgi Teknolojileri biriminiz ile diğer departmanlar arasındaki hizmet anlaşmaları (OLA) kolayca oluşturulur ve takip edilir.",
+        "İç süreçlerdeki servis koşulları düzenli tutularak verimlilik artırılır; BT ile iş birimleri arasında ortak bir taahhüt çerçevesi oluşur.",
+        "OLA kapsamı, kapsam dışı durumlar ve sorumluluk sınırları aynı kayıt üzerinde şeffaf biçimde tanımlanır."
+      ],
+      "imageKey": "sozlesme-1"
+    },
+    {
+      "id": "tedarikci",
+      "accent": "emerald",
+      "icon": "Truck",
+      "titleLead": "Tedarikçi sözleşmeleri,",
+      "titleAccent": "dış tedarik tek panelde.",
+      "description": "Malzeme, hizmet veya lisans gibi dış tedariklerle ilgili tüm anlaşmaları kaydedin ve tedarikçilerinizi sistematik bir şekilde yönetin. Yenileme tarihleri, fiyat değişiklikleri ve performans değerlendirmeleri tek panelden takip edilir; tedarikçi ekosistemi disiplinli yürür.",
+      "bullets": [
+        "Malzeme, hizmet ve lisans gibi dış tedariklerle ilgili tüm anlaşmalar kaydedilir; tedarikçi ekosistemi sistematik bir şekilde yönetilir.",
+        "Yenileme tarihleri, fiyat değişiklikleri ve performans değerlendirmeleri tek panelden izlenir; kritik tarihler kaçırılmaz.",
+        "Tedarikçi başına aktif sözleşme sayısı, kapsam ve sorumluluk sınırı tek bakışta görünür hale gelir."
+      ],
+      "imageKey": "sozlesme-2"
+    },
+    {
+      "id": "sla",
+      "accent": "purple",
+      "icon": "ShieldCheck",
+      "titleLead": "Müşteri hizmet sözleşmeleri",
+      "titleAccent": "(Service Level Agreement).",
+      "description": "İç müşterilerden global müşterilere kadar her seviyede sunulan hizmet anlaşmalarını (SLA) detaylandırın ve profesyonel bir yönetim standardı oluşturun. SLA hedefleri operasyonel süreçlerle entegre işler; uyum, ihlal ve eskalasyon verisi kararlara veri zemini sunar.",
+      "bullets": [
+        "İç müşterilerden global müşterilere kadar her seviyede sunulan hizmet anlaşmaları (SLA) detaylandırılır.",
+        "Profesyonel bir yönetim standardı oluşur; aynı disiplin tüm müşteri katmanlarında uygulanır.",
+        "SLA hedefleri operasyonel süreçlerle entegre işler; uyum, ihlal ve eskalasyon verisi kararlara veri zemini sunar."
+      ],
+      "imageKey": "sozlesme-3"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Sözleşme disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Yenileme uyarısından kapsam takibine, taraf yönetiminden raporlamaya kadar uçtan uca sözleşme yetkinlikleri.",
+    "items": [
+      {
+        "id": "merkezi-arsiv",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "FolderOpen",
+        "title": "Merkezi sözleşme arşivi",
+        "description": "Tüm sözleşmeleriniz tek platform üzerinden kolayca erişilebilir, düzenli ve sürdürülebilir bir şekilde yönetilir. Kağıt arşivin yerini denetlenebilir tek doğruluk kaynağı alır; istediğiniz sözleşmeye saniyeler içinde ulaşırsınız."
+      },
+      {
+        "id": "yenileme-uyari",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Bell",
+        "title": "Yenileme ve fesih uyarıları",
+        "description": "Yenileme, fesih ihbar süresi ve kritik milestone'lar otomatik bildirim üretir. Önemli tarihlerin unutulması engellenir, sözleşme yönetimi proaktif yürür."
+      },
+      {
+        "id": "kapsam-sla",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "ShieldCheck",
+        "title": "Kapsam ve SLA hedefleri",
+        "description": "Sözleşme başına kapsam, kapsam dışı durumlar ve SLA hedefleri standart bir yapıda tutulur. Bir olay/talep açıldığında ilgili sözleşme kapsamı anında görünür."
+      },
+      {
+        "id": "iliski-yonetimi",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Users",
+        "title": "Taraf ve iletişim yönetimi",
+        "description": "Sözleşmenin müşteri/tedarikçi tarafı, sorumlu kişiler ve iletişim noktaları tek kayıt üzerinde tutulur. Operasyonel sorumlu, yasal temsilci ve fatura muhatabı net biçimde tanımlanır; e-posta ve telefon iletişimi sözleşme bağlamında kayıt altına alınır."
+      },
+      {
+        "id": "tip",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Tags",
+        "title": "Sözleşme tipi sınıflandırması",
+        "description": "OLA, tedarikçi ve SLA gibi farklı sözleşme türleri standart sınıflandırma altında yönetilir. Raporlama ve filtreleme tutarlı, tek bir yapı üzerinden yapılır."
+      },
+      {
+        "id": "rapor",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "LineChart",
+        "title": "Sözleşme raporları",
+        "description": "Aktif/pasif sözleşme sayıları, yaklaşan yenilemeler, tedarikçi performansı ve SLA uyumu tek panelden raporlanır. Stratejik kararlar veriye dayandırılır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "İşinizi bir üst seviyeye taşıyın, sözleşmelerde tam kontrol kurun.",
+    "description": "OLA, tedarikçi ve SLA sözleşmelerini tek platformda yöneten ServiceCore Sözleşme Yönetimi modülünü canlı demoda inceleyin; zamandan tasarruf edin, süreçlerinizde tam kontrol sağlayın.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

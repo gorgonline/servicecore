@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "badge": "Ölçüm ve Raporlama Yönetimi",
+    "titleLead": "Ölçemediğimizi yönetemeyiz,",
+    "titleAccent": "veri anlamlı bilgiye dönüşür.",
+    "description": "ServiceCore entegre suite kapsamında yer alan tüm yönetim süreçlerinden gelen veriler anlamlı bilgilere raporlar sayesinde dönüştürülür. ITIL4 ile başlı başına önemli bir pratik olarak tanımlanan MRM (Measurement & Reporting Management) süreci, hedeflerden yola çıkan ölçümleme metodu, hazır rapor kitaplığı ve Service Report Wizard (SRW) ile uçtan uca modellenmiştir.",
+    "imageAlt": "Raporlama panosu — performans göstergeleri ve özelleştirilebilir widget'lar"
+  },
+  "zigzag": [
+    {
+      "id": "mrm-itil4",
+      "accent": "blue",
+      "icon": "Gauge",
+      "titleLead": "ITIL4 MRM süreci,",
+      "titleAccent": "hedeflerden yola çıkan ölçümleme.",
+      "description": "ITIL4 ile birlikte başlı başına önemli bir pratik olarak tanımlanan MRM süreci, ServiceCore üzerinde gerekli ölçüm ve raporlama araçları ile çalışacak şekilde modellenmiştir. Klasik raporlamadan farklı olarak ITIL4'te tanımlandığı şekliyle hedeflerden yola çıkan bir ölçümleme metodu oluşturulmuştur; operasyonel raporların yanı sıra stratejik ve analitik raporlar da geliştirilebilmektedir.",
+      "bullets": [
+        "ITIL4'ün MRM (Measurement & Reporting Management) pratiği, ServiceCore üzerinde gerekli ölçüm ve raporlama araçlarıyla çalışacak şekilde modellenmiştir.",
+        "Klasik raporlamadan farklı olarak ITIL4 tanımına uygun, hedeflerden yola çıkan bir ölçümleme metodu uygulanır; her metrik bir hedefe bağlanır.",
+        "Operasyonel raporların yanı sıra stratejik ve analitik raporlar da geliştirilebilir; farklı yönetim kademeleri kendi karar zeminini aynı veriden üretir."
+      ],
+      "imageKey": "dashboard"
+    },
+    {
+      "id": "rapor-kitapligi",
+      "accent": "emerald",
+      "icon": "BookOpen",
+      "titleLead": "Hazır rapor kitaplığı,",
+      "titleAccent": "performans göstergeleri yöneticilerde.",
+      "description": "Servis yönetiminde gerekli ve yaygın kullanılan raporlar önceden rapor kitaplığında hazırlanmış ve kullanıma sunulmuştur. Süreç ve servis kalitesini ölçmeye yönelik performans göstergeleri ile bunların farklı bileşenlere göre dinamik görünümleri detaylı raporlar halinde yöneticilerin erişimine sunulur.",
+      "bullets": [
+        "Servis yönetiminde gerekli ve yaygın kullanılan raporlar önceden hazırlanmış olarak rapor kitaplığında sunulur; sıfırdan tasarım yükü ortadan kalkar.",
+        "Süreç ve servis kalitesini ölçmeye yönelik performans göstergeleri detaylı raporlar halinde yöneticilerin erişimine sunulur.",
+        "Performans göstergelerinin farklı bileşenlere göre dinamik görünümleri tek raporda yer alır; aynı metrik müşteri, kategori veya ekip kırılımında okunabilir."
+      ]
+    },
+    {
+      "id": "srw-dashboard",
+      "accent": "purple",
+      "icon": "LayoutDashboard",
+      "titleLead": "SRW ve özelleştirilmiş",
+      "titleAccent": "Dashboard widget'ları.",
+      "description": "İhtiyaç duyulan yeni raporların tasarımı Service Report Wizard (SRW) aracılığı ile kolayca yapılabilir. Bu raporlar farklı bakış açılarında süreç ve servislere bakan farklı yönetim kademelerine göre özelleştirilen panolarda (Dashboard) bileşenler (widget) halinde gösterilir.",
+      "bullets": [
+        "İhtiyaç duyulan yeni raporlar Service Report Wizard (SRW) aracılığı ile kolayca tasarlanır; rapor üretimi BT bağımlılığından çıkar, kullanıcının kontrolüne girer.",
+        "Raporlar farklı yönetim kademelerine göre özelleştirilen Dashboard'larda widget'lar halinde gösterilir; her ekran kendi rolüne göre konuşur.",
+        "Aynı veri kaynağından üretilen widget'lar; CIO, süreç sahibi, takım lideri ve operasyon teknisyeni için farklı bakış açıları sunar."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Ölçüm ve raporlama disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Hedef bazlı KPI'lardan analitik raporlara, kişiselleştirilmiş Dashboard'lardan sürekli iyileştirme bağıntısına kadar uçtan uca MRM yetkinlikleri.",
+    "items": [
+      {
+        "id": "rapor-tipleri",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "Layers",
+        "title": "Operasyonel, stratejik ve analitik raporlar",
+        "description": "Operasyonel raporlar günlük takipleri, stratejik raporlar yönetim kararlarını, analitik raporlar trend ve tahmini destekler. Üç katmanın aynı veri kaynağından üretilmesi tutarlılığı garanti eder; aynı metriği farklı kademelerin farklı şekilde kullanması mümkün hale gelir."
+      },
+      {
+        "id": "srw",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Wand2",
+        "title": "Service Report Wizard (SRW)",
+        "description": "İhtiyaç duyulan yeni raporlar SRW sihirbazı ile adım adım kolayca tasarlanır. Veri kaynağı seçimi, filtre, gruplama ve görselleştirme kararları kullanıcı dostu ekranlardan yapılır; geliştirici desteği gerekmez."
+      },
+      {
+        "id": "kpi",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Target",
+        "title": "Hedef bazlı KPI takibi",
+        "description": "ITIL4 ölçümleme metoduna uygun şekilde her metrik bir hedefe bağlanır. Hedef–gerçekleşen sapması anında görünür; eksiklikler ölçülebilir biçimde takip edilir."
+      },
+      {
+        "id": "dashboard",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "LayoutDashboard",
+        "title": "Role özel Dashboard ve widget'lar",
+        "description": "Dashboard'lar farklı yönetim kademelerine göre özelleştirilebilir bileşenlerle (widget) inşa edilir. CIO için stratejik göstergeler, süreç sahibi için kalite metrikleri, takım lideri için yük dağılımı, teknisyen için bekleyen iş listesi aynı veri kaynağından farklı yüzeylerde sunulur."
+      },
+      {
+        "id": "dinamik-gorunum",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Filter",
+        "title": "Dinamik filtre ve kırılım",
+        "description": "Performans göstergeleri müşteri, kategori, ekip, servis ve zaman aralığı kırılımında dinamik görünümlere dönüşür. Tek rapor pek çok soruya cevap verir; tekrar tekrar rapor üretmeye gerek kalmaz."
+      },
+      {
+        "id": "ci-bagi",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "TrendingUp",
+        "title": "Sürekli iyileştirmeyle entegrasyon",
+        "description": "Sürekli iyileştirmenin ilk adımı süreç ve servislerdeki sorunlu, performansı düşük alanların tespitidir. Raporlama modülü, tüm süreçlerin denetiminin ve iyileştirilmesinin takibinde sürekli iyileştirme sürecinin vazgeçilmez aracıdır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ölçemediğinizi yönetemezsiniz, ServiceCore ölçüyor.",
+    "description": "ITIL4 MRM disipliniyle modellenmiş raporlama, hazır rapor kitaplığı, Service Report Wizard ve role özel Dashboard yetkinliklerini canlı demoda inceleyin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

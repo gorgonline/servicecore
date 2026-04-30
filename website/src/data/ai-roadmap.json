@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "badge": "AI Yol Haritası",
+    "title": "Servicecore AI Yol Haritası",
+    "highlight": "AI Yol Haritası",
+    "description": "Geleceği şekillendiren 30 yeni modülü keşfedin. Odaklanmamızı istediğiniz özellikleri seçin ve geri bildirimlerinizle gelişim sürecimize yön verin.",
+    "instruction": "Görüş bildireceğiniz yapay zeka özelliğimizin yanında bulunan kutucuğu işaretleyerek görüş bildir butonunu kullanabilirsiniz.",
+    "ctaLabel": "Görüş Bildir"
+  },
+  "years": [
+    {
+      "year": 2026,
+      "items": [
+        { "id": "replycore-solve", "name": "Replycore SolveAI", "description": "Uzun ve karmaşık ticket konuşmalarını saniyeler içinde analiz ederek özetler.", "release": "Eylül 2026", "icon": "FileText" },
+        { "id": "chatcore-self", "name": "Chatcore-SelfAI", "description": "Son kullanıcıların IT ekiplerine ticket açma ihtiyacını azaltmak için doğal dilde etkileşim kuran akıllı bir sanal asistan sunar.", "release": "Eylül 2026", "icon": "MessageSquare" },
+        { "id": "classificore-manage", "name": "Classificore ManageAI", "description": "Gelen ticket içeriklerini analiz ederek otomatik sınıflandırma ve yönlendirme yapar.", "release": "Ekim 2026", "icon": "Filter" },
+        { "id": "prioritycore", "name": "PrioritycoreAI", "description": "Gelen kayıtları içerik, etki, aciliyet ve servis kritikliği gibi sinyalleri analiz ederek otomatik olarak önceliklendiren akıllı bir karar motoru sunar.", "release": "Ekim 2026", "icon": "Target" },
+        { "id": "rootcore", "name": "RootCoreAI", "description": "Sistemdeki tüm kayıtları, logları ve alarmları analiz ederek ilişkili olayları akıllı şekilde gruplar.", "release": "Kasım 2026", "icon": "Search" },
+        { "id": "predicticore", "name": "PredicticoreAI", "description": "Geçmiş verileri analiz ederek SLA ihlallerini önceden tahmin eder.", "release": "Kasım 2026", "icon": "TrendingUp" },
+        { "id": "score", "name": "ScoreAI", "description": "Doğal dil ile rapor ve dashboard oluşturmayı mümkün kılar.", "release": "Kasım 2026", "icon": "BarChart3" },
+        { "id": "knowcore", "name": "KnowCoreAI", "description": "Çözülmüş olay, istek, problem ve yazışma kayıtlarını analiz ederek otomatik bilgi bankası içerikleri üretir.", "release": "Aralık 2026", "icon": "BookOpen" },
+        { "id": "flowcore", "name": "FlowCoreAI", "description": "Metin komutları ile iş akışlarının şemalarını otomatik oluşturur.", "release": "Aralık 2026", "icon": "GitBranch" },
+        { "id": "discore", "name": "DiscoreAI", "description": "Akıllı keşif ve CMDB haritaları yaratır.", "release": "Aralık 2026", "icon": "Network" }
+      ]
+    },
+    {
+      "year": 2027,
+      "items": [
+        { "id": "translate", "name": "TranslateAI", "description": "Farklı dillerdeki kullanıcı ve teknisyen iletişimini anlık olarak çevirir.", "release": "Mart 2027", "icon": "Languages" },
+        { "id": "merge", "name": "MergeAI", "description": "Benzer içerikteki ticket'ları tespit ederek aynı problem altında birleştirir.", "release": "Nisan 2027", "icon": "Merge" },
+        { "id": "projectplanpredict", "name": "ProjectplanpredictAI", "description": "Projelerin ilerleme durumunu analiz ederek gecikmeleri tahmin eder.", "release": "Mayıs 2027", "icon": "CalendarClock" },
+        { "id": "visicore", "name": "VisicoreAI", "description": "Kullanıcıların yüklediği ekran görüntülerini analiz ederek hataları otomatik olarak tespit eder.", "release": "Haziran 2027", "icon": "Eye" },
+        { "id": "sentiment", "name": "SentimentAI", "description": "Kullanıcı mesajlarını analiz ederek duygu durumunu tespit eder.", "release": "Ağustos 2027", "icon": "Heart" },
+        { "id": "knowcore-template", "name": "KnowcoreAI", "description": "Eksik bilgi bankası içeriklerini kurumsal şablonlara göre düzenler.", "release": "Eylül 2027", "icon": "FileCheck" },
+        { "id": "tone", "name": "ToneAI", "description": "Teknisyen iletişimlerini analiz ederek kurumsal dil standardı sağlar.", "release": "Ekim 2027", "icon": "Mic" },
+        { "id": "impacticore", "name": "ImpacticoreAI", "description": "Değişikliklerin risk seviyesini analiz eder.", "release": "Kasım 2027", "icon": "ShieldAlert" },
+        { "id": "shift", "name": "ShiftAI", "description": "İş yükünü analiz ederek Servicecore'un vardiya planlamasını yapar.", "release": "Aralık 2027", "icon": "Clock" },
+        { "id": "audit", "name": "AuditAI", "description": "ITIL ve ISO uyumluluğunu sürekli denetler.", "release": "Aralık 2027", "icon": "ShieldCheck" },
+        { "id": "asset-lifecycle", "name": "AssetLifecycleAI", "description": "Cihaz performansını analiz ederek yaşam döngüsünü yönetir.", "release": "Aralık 2027", "icon": "Package" }
+      ]
+    },
+    {
+      "year": 2028,
+      "items": [
+        { "id": "contract", "name": "ContractAI", "description": "Sözleşmeleri analiz ederek kritik bilgileri otomatik çıkarır.", "release": "Mart 2028", "icon": "FileSignature" },
+        { "id": "vendor", "name": "VendorAI", "description": "Tedarikçi performansını analiz eder.", "release": "Nisan 2028", "icon": "Truck" },
+        { "id": "storm", "name": "StormAI", "description": "Kısa sürede oluşan yoğun ticket akışını analiz ederek major incident tespiti yapar.", "release": "Mayıs 2028", "icon": "AlertTriangle" },
+        { "id": "budget", "name": "BudgetAI", "description": "Lisans ve harcamaları analiz ederek maliyet optimizasyonu sağlar.", "release": "Haziran 2028", "icon": "Wallet" },
+        { "id": "greenit", "name": "GreenIT-AI", "description": "Enerji kullanımını analiz ederek tasarruf fırsatlarını belirler.", "release": "Temmuz 2028", "icon": "Leaf" },
+        { "id": "coach", "name": "CoachAI", "description": "Teknisyen performansını analiz ederek gelişim önerileri sunar.", "release": "Ağustos 2028", "icon": "Users" },
+        { "id": "release", "name": "ReleaseAI", "description": "Teknik değişiklikleri kullanıcı dostu bültenlere dönüştürür.", "release": "Eylül 2028", "icon": "Megaphone" },
+        { "id": "voice", "name": "VoiceAI", "description": "Sesli çağrıları analiz ederek otomatik ticket oluşturur.", "release": "Ekim 2028", "icon": "Phone" },
+        { "id": "callcenter", "name": "CallcenterAI", "description": "Çağrı merkezi görüşmeleri sırasında müşteriye yanıt verebilen AI asistanı.", "release": "Aralık 2028", "icon": "Headphones" }
+      ]
+    }
+  ]
+}

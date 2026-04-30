@@ -1,0 +1,379 @@
+{
+  "hero": {
+    "badge": "Specsheet",
+    "title": "Servicecore Suite — Teknik Özellikleri",
+    "subtitle": "ESM & ITSM Entegre Çözümü",
+    "description": "Servicecore, kurumsal düzeyde servis yönetimi, entegre altyapı ve iş süreçleri için eksiksiz bir platform sunar. Tüm süreçler için kapsamlı teknik özellikler özetine bu sayfadan ulaşabilirsiniz."
+  },
+  "tabs": [
+    { "id": "genel", "label": "Genel Şartlar" },
+    { "id": "lisans", "label": "Lisanslama & Teknik Altyapı" },
+    { "id": "moduller", "label": "Temel Modüller" },
+    { "id": "bakim", "label": "Bakım & Destek" }
+  ],
+  "genel": {
+    "intro": [
+      "Bu ürün, bilgi teknolojileri ve kurum iş birimlerinin çeşitli yönetim ihtiyaçlarını karşılayan, kullanıma hazır, entegre bir servis yönetimi çözümüdür. Kurumsal servis yönetimi için gerektiğinde çoklu kiracılı (multi-tenant) yapıyı desteklemektedir.",
+      "Ürün, farklı kurumlarda kullanılan, kullanıma hazır bir paket çözümdür. Ek geliştirmeye ihtiyaç duymadan kullanılabilen, yaygın ve kurumsal olgunluğa sahip bir programdır.",
+      "Ürün, hizmet yönetiminde küresel en iyi uygulamaları içeren güncel ITIL4 süreçleriyle uyumludur. Aşağıdaki listede yer alan uygulamalarla ilgili çözümler, ekranlar, formlar ve yardımcı işlevler sunmaktadır."
+    ],
+    "accordion": [
+      { "no": 1, "title": "Çağrı Yönetimi", "desc": "Sisteme entegre ettiğiniz mail adresleri üzerinden gelen kayıtların ayrıştırılması çağrı modülünde yapılabilir." },
+      { "no": 2, "title": "Olay Yönetimi", "desc": "Olay kayıtlarının yaşam döngüsü, atama ve çözüm süreçleri bu modülde yönetilir." },
+      { "no": 3, "title": "Problem Yönetimi", "desc": "Tekrarlayan olayların kök neden analizi ve kalıcı çözüm süreçleri bu modülde yürütülür." },
+      { "no": 4, "title": "İstek Yönetimi", "desc": "Hizmet kataloğundaki taleplerin oluşturulması, onay akışları ve karşılanması bu modülde yapılır." },
+      { "no": 5, "title": "Bilgi Yönetimi", "desc": "Kurumsal bilgi bankası, çözüm dokümanları ve self-servis bilgi erişimi bu modülde sunulur." },
+      { "no": 6, "title": "Değişiklik Yönetimi", "desc": "Değişiklik taleplerinin planlanması, onay süreçleri ve risk yönetimi bu modülde gerçekleştirilir." },
+      { "no": 7, "title": "Varlık Yönetimi", "desc": "Donanım ve yazılım varlıklarının envanteri, ilişkileri ve yaşam döngüsü bu modülde takip edilir." },
+      { "no": 8, "title": "Konfigürasyon Yönetimi", "desc": "Konfigürasyon öğeleri (CI) ve ilişkilerinin kaydı, değişiklik geçmişi ve haritalama bu modülde yapılır." },
+      { "no": 9, "title": "Sürekli İyileştirme Yönetimi", "desc": "Hizmet ve süreç iyileştirme taleplerinin kaydı ve takibi bu modülde yönetilir." },
+      { "no": 10, "title": "Ölçme ve Raporlama", "desc": "KPI, dashboard ve raporlama araçları ile performans ölçümü bu modülde sunulur." },
+      { "no": 11, "title": "Hizmet Katalog Yönetimi", "desc": "Sunulan hizmetlerin kataloğu, tanımları ve talep süreçleri bu modülde yönetilir." },
+      { "no": 12, "title": "Hizmet Seviye Yönetimi", "desc": "SLA tanımları, hedefler ve eskalasyon kuralları bu modülde yapılandırılır." },
+      { "no": 13, "title": "Hizmet Otomasyonu", "desc": "Kod yazmadan otomasyon kuralları oluşturulabilir; tetikleyiciler ve aksiyonlar bu modülde tanımlanır." },
+      { "no": 14, "title": "Hizmet İlişkileri Yönetimi", "desc": "Müşteri ve tedarikçi ilişkileri, sözleşmeler ve hizmet bağlantıları bu modülde takip edilir." },
+      { "no": 15, "title": "Görev Yönetimi", "desc": "Görev oluşturma, atama, Kanban/Gantt görünümleri ve kuyruk yönetimi bu modülde sunulur." },
+      { "no": 16, "title": "Proje Yönetimi", "desc": "Proje planlama, aşamalar, kaynak atama ve ilerleme takibi bu modülde yapılır." }
+    ],
+    "outro": [
+      "Bu işlevler, tek bir üründe bütünleşik olarak çalışmaktadır. Bu sayede, farklı ürünlerin kurulup entegre edilmesine gerek kalmadan tüm işlevler tek bir platformda kullanıma sunulmaktadır. Ürün, ek geliştirme veya entegrasyon çalışmalarına ihtiyaç duymadan, dahili ve kullanıma hazır özelliklerle sunulmaktadır.",
+      "Ürün, hem kurum içi hizmet yönetimi hem de grup şirketleri veya harici müşterilere destek sağlama gibi durumlarda kullanılabilir. Dış müşteri desteğini yönetmek için gerekli tüm işlevler üründe dahili olarak bulunmaktadır."
+    ]
+  },
+  "lisans": [
+    "Lisanslama, yalnız teknik personel sayısına bağlıdır.",
+    "Son kullanıcı, kayıt veya varlık adedi lisans fiyatını etkilemez.",
+    "Hibrit, modüler, esnek kullanım sağlar; teknik ekip artışına %5 esneklik tanır.",
+    "Lisans-destek yenileme döneminde esnek ek artış uygulanabilir.",
+    "Türk Lirası ile sözleşme ve ödeme mümkündür.",
+    "Faturalar Türk Lirası düzenlenir ve ödemeler TL ile yapılır."
+  ],
+  "teknik": [
+    "Ürün, kurumun kendi sunucularına (On Premises) kurulacak yapıdadır. Gerekli durumlarda çoklu kiracılı (multi-tenant) yapıda kurulabilir, alt kurum veya farklı departmanlar için bağımsız kiracılar şeklinde kullanılabilir. Gerektiğinde yük devretme (failover) yapısında kurulum yapılabilir ve yüksek erişilebilirlik için yedekli uygulama sunucu yapısını destekler.",
+    "Web tabanlı ve kullanıcı bilgisayarlarına herhangi bir kurulum gerektirmeyen bir uygulama modeli kullanılmaktadır. HTTPS desteği ile güvenli veri alışverişi imkanı sağlanmaktadır.",
+    "Kullanıcılar, web arayüzü üzerinden erişecekleri portaldan işlemleri yapmaktadır.",
+    "Kurumun Aktif Dizini(leri) (Active Directory) ile senkronize olan bu uygulamada kullanıcılar, birden fazla ve sayı sınırı olmayan Aktif Dizin'e bağlantı yapabilir.",
+    "Yapılandırma ekranlarından Aktif Dizin ayarları, kurum kullanıcıları tarafından kolayca eklenebilir ve yönetilebilir. Ayrıca manuel kullanıcı ve teknisyen eklemeye de imkan tanınmaktadır.",
+    "Kurum kullanıcıları, uygulamaya Aktif Dizin erişimleri ile dahil olabilmektedir.",
+    "Kullanıcılar, şirket içinden ve dışından Aktif Dizin üzerinden güvenli bir şekilde oturum açabilir.",
+    "Aktif Dizin'den eşleştirme ile alınacak kullanıcı detayları (AD Attributes), yönetim panelinden kolaylıkla özelleştirilebilir durumdadır.",
+    "Uygulama, kurumun belirteceği birden fazla farklı e-posta adresinden e-postaları otomatik olarak alabilir/eşleştirebilir.",
+    "E-posta entegrasyonu, panel üzerinden kurum kullanıcıları tarafından kolayca tanımlanabilir ve e-posta erişimi tüm protokolleri desteklemektedir.",
+    "E-posta ile otomatik çağrı ve otomatik olay kaydı oluşturulabilir. Alınan e-postaların çağrı veya olay kaydı olmasına kurum yöneticileri panel üzerinden karar verebilir.",
+    "Uygulama, uzaktan kolay ve hızlı şekilde güncellenebilir.",
+    "Ürün sürüm güncellemeleri, uzaktan yapılan otomatik yama yükleme uygulamaları ile sürekli dağıtım (Continuous Delivery) modeli ile yapılabilir.",
+    "Uygulama, çoklu dil desteği sunmaktadır. Ana dili Türkçe olan uygulamada, gerekli durumlarda diğer dillerde de kullanım yapılabilir.",
+    "Yapılandırma için yönetim paneli bulunmakta ve panel üzerinden ürünle ilgili tüm düzenlemeler kolayca yapılabilir seviyede sade ve basit tasarlanmıştır.",
+    "Ürün kurulumunda uygulama sunucusu (IIS vb.) ve veri tabanı (MSSQL vb.) dışında ek bir yan ürüne veya farklı bir 3. taraf yazılıma gerek duyulmamaktadır.",
+    "Farklı süreç ve modüllere erişimin kontrol edilebileceği rol yönetimi altyapısı bulunmaktadır.",
+    "Üründe dış sistemlerle tüm veri alışverişi API üzerinden yapılabilmektedir. API uçlarına olan erişim teknisyenler tarafından belirlenebilmekte ve kimlik bilgisi bir anahtar (key) üzerinden yapılabilmektedir.",
+    "Üründe arayüzde kayıtlar kullanıcı tarayıcılarını güncellemeye gerek kalmadan otomatik olarak yenilenebilmektedir.",
+    "Uygulama çok katmanlı mimaridedir. Aynı kurulumda birden fazla alt kurum/alt birim aynı uygulama üzerinden hizmet alabilmekte, bu alt kurumların kayıtları ve yapılandırmaları farklı olabilmektedir.",
+    "Süreçlerdeki durum güncellemeleri bilgilendirme e-postaları ile teknisyen ve kullanıcılara e-posta gönderebilmektedir. Otomatik giden bilgilendirme e-posta şablonları farklı dil seçeneklerine göre düzenlenebilmektedir.",
+    "Kolay kullanımlı yönetim paneli üzerinden tüm ortak alanlar topluca düzenlenebilmektedir. Kategoriler, öncelik, aciliyet, kaynaklar, etki skalaları gibi ortak değerler kurum ihtiyaçlarına göre özelleştirilebilmektedir.",
+    "Teknisyen ve kullanıcı ekranlarındaki görseller, stiller, renkler panel üzerinden kolayca düzenlenebilmektedir.",
+    "Kullanıcı portalında yer alan alanların seçimli olanlarının gösterilmesi veya gizlenmesi mümkündür.",
+    "Son kullanıcı portalından Yeni Olay, Yeni İstek, Yeni İyileştirme gibi kayıtlar kolayca açılabilmektedir.",
+    "Son kullanıcı portalında kullanıcı profiline göre yetkilendirme tabanlı bir hizmet kataloğu yer almaktadır. Kullanıcılar buradan seçtikleri hizmetleri kendileri için ya da başkası adına açabilmektedir.",
+    "Kullanıcı portalında daha önce açılan çağrı, olay, istek ve iyileştirme listesi yer almakta ve kullanıcı tarafından bu kayıtlarla ilgili yapılan tüm işlemlerin detayları görülebilmektedir.",
+    "Son kullanıcı portal ekranında kullanıcının erişebileceği bilgi bankası bulunmaktadır.",
+    "Portal üzerinden son kullanıcılar kendilerine ait varlıkları ve hizmetleri görebilmekte ve bu varlıklarla ilgili olay bildiriminde bulunabilmektedirler.",
+    "Son kullanıcı ekranında duyurular yer almakta ve sistemden iletilen duyurular topluca burada görülebilmektedir.",
+    "Son kullanıcı ekranlarında istek, sözleşme, iyileştirme ve değişikliklerle ilgili onay ve görüş taleplerinin dökümü yer almaktadır.",
+    "Çağrı, Olay, Problem, İstek, Değişiklik, İyileştirme, Varlık, Görev, Sözleşme süreçlerindeki kayıt güncellemelerinde Teknisyen ve Kullanıcılara otomatik bilgilendirme e-postaları gönderilmektedir.",
+    "Görevlerin şablonları vardır ve tüm süreçlerden ilgili görev şablonları seçilip hazır kullanılabilmektedir.",
+    "İş Günlüklerinin şablonları vardır ve tüm süreçlerden ilgili şablonlar seçilip hazır kullanılabilmektedir.",
+    "Kurumun alt departmanları, alt lokasyonları ve alt şirketleri tanımlanabilmektedir.",
+    "Tüm süreçlerde kayıt kapatma kuralları yönetici panelinden kontrol edilebilmektedir.",
+    "Özelleştirilmiş form alanları eklenebilmekte ve merkezi olarak kontrol panelinden yönetilebilmektedir.",
+    "Üründe özelleştirilebilir pano, araç takımı (widget), rapor araçları bulunmakta ve tüm formatlara rapor çıktıları sistemden alınabilmektedir.",
+    "İhtiyaç halinde kullanılmak üzere olay, problem, istek gibi modüllerde teknisyenlerin kullandığı formlar ve arayüzlerde düşük kod/kodsuz (low-code/no-code) yetenekleri ile form tasarımı, veri alma (lookup), komut dosyası (script) çalıştırma gibi özelleştirilebilir özellikler bulunmaktadır.",
+    "Gerekli durumlarda istek, değişiklik gibi farklı akışlarla çalışabilecek süreçlerde özel iş akışları çalıştırılabilmektedir.",
+    "İhtiyaç halinde isteklerde veya değişiklik gibi onay gerektiren süreçlerde kurum organizasyon yapısını otomatik AD OU yapısı üzerinden çıkartan ve gerekli onay seviyelerini otomatik hesaplayıp çalıştırabilen yapıdır.",
+    "Uygulamaya giriş ekranında SSO (Tek Oturum Açma) yeteneği bulunmaktadır. Yaygın kullanılan bütün yetkilendirme ürünleri ile giriş yapılabilmektedir.",
+    "Uygulamanın REST API servisi, API desteği ve dokümantasyonu bulunmaktadır. Diğer uygulamalarla entegrasyon için aracı bir API ağ geçidi (gateway) gerek duyulmamaktadır."
+  ],
+  "moduller": [
+    {
+      "id": "modul-cagri",
+      "title": "Çağrı Yönetimi",
+      "items": [
+        "E-posta veya telefonla gelen çağrıların kaydedildiği bir ortam bulunmaktadır.",
+        "E-posta ile ortak bir adrese iletilen her tür kullanıcı çağrısı, e-posta senkronizasyonu ile uygulamaya otomatik çağrı kaydı açabilmektedir.",
+        "Kaydedilen çağrılar listelenmekte ve hızlıca üzerlerinde işlem yapılabilmektedir.",
+        "Çağrılar aynı sayfa içinde kolayca düzenlenebilmektedir.",
+        "Çağrılar olay kaydına dönüştürülebilmektedir.",
+        "Çağrılar istek kaydına dönüştürülebilmektedir.",
+        "Çağrılar iyileştirme kaydına dönüştürülebilmektedir.",
+        "Çağrılar cevaplanıp kullanıcıya bilgi verilebilmektedir.",
+        "İlgisiz veya yanlış açılan çağrılar doğrudan kapatılabilmekte, reddedilebilmekte veya silinebilmektedir.",
+        "Çağrılar çeşitli filtrelere göre görüntülenebilmekte, filtrelenerek gruplanabilmektedir.",
+        "Özel filtreler ile çağrıların listelenme görünümleri değiştirilebilmekte, bu görünümler ve filtreler kaydedilebilmektedir.",
+        "Çağrılar üzerinde toplu güncelleme, toplu dönüştürme, birleştirme, kapatma vb. işlemler yapılabilmektedir.",
+        "Çağrılar içerisinde ve konularında arama yapılabilmekte, anahtar sözcüklerle çağrılar bulunup listelenebilmektedir."
+      ]
+    },
+    {
+      "id": "modul-olay",
+      "title": "Olay Yönetimi",
+      "items": [
+        "Tüm hizmet kesintileri, arızalar, sorun bildirimleri olay kaydı olarak kaydedilebilmektedir.",
+        "Olaylar topluca listelenmekte; kategori, öncelik, durum, iş etkisi, teknisyen, kullanıcı, tarih aralığı, teknisyen grubu gibi çeşitli kriterlere göre filtrelenebilmektedir.",
+        "Olaylar; kullanıcı, teknisyen, öncelik, kategori, çözüm tarihi gibi özet bilgileri tek bakışta gösteren bir listede yer almaktadır. Listede yer alan öğelerin hızlı işlemlerle detay sayfalarına gidilmeden de düzenlenmesi mümkündür.",
+        "Olaylar önemlerine göre sabitleme, takip etme gibi özelliklerle üste sabitlenebilmektedir.",
+        "Çeşitli kriterlere göre özelleştirilebilir filtreler tanımlanabilmekte, kaydedilebilmekte ve yeniden kullanılabilmektedir.",
+        "Olay detayları tablo görünümünde veya kontrol panelinde, ekranı terk etmeden kolayca düzenlenebilmektedir.",
+        "Olaylar; kişiye, gruba veya kuruma ait bir veya daha fazla varlık ve hizmetle ilişkilendirilebilmektedir.",
+        "Olaylar birden fazla alt görevle ilişkilendirilebilmekte, görevlerin aralarındaki ilişkiler öncül-ardıl ve akış modellemesi ile belirlenebilmektedir.",
+        "Görev iş kayıtları/zaman tutanakları gibi, doğrudan olay kaydına da iş kayıtları/zaman tutanakları eklenebilmektedir.",
+        "Olaylara çözümler eklenebilmekte, çözümler bilgi bankasından sorgulanarak otomatik eklenebilmektedir.",
+        "Olaylar yeni veya var olan problemlerle ilişkilendirilebilmektedir.",
+        "Olaylar yeni veya var olan değişikliklerle ilişkilendirilebilmektedir.",
+        "Olaylar yeni veya var olan iyileştirmelerle ilişkilendirilebilmektedir.",
+        "Olaylar başka teknisyen ve kullanıcılarla paylaşılabilmektedir.",
+        "Olaylar içerisinde otomatik zaman takibi ile iş kayıtları oluşturulabilmektedir.",
+        "Olay kayıtlarında yapılan tüm işlemlerin tarihsel kayıtları tutulmakta ve geçmiş detayları izlenebilmektedir.",
+        "Olaylarla ilgili ileri tarihli tekrarlanan kayıtlar açılabilmekte, otomatik üretilen ve atanan olaylar belli frekanslarda tekrarlanacak şekilde planlanabilmektedir.",
+        "Olay kategorilerinde alt kırılım limiti bulunmamaktadır; sınırsız sayıda alt kırılım kontrol panelinden tanımlanabilmektedir.",
+        "Olaylar içerisinden diğer teknisyen ve kullanıcılarla yazışma yapılabilmekte; teknisyenler arası yazışmalar görünür veya gizli notlar olarak kaydedilebilmektedir.",
+        "Olaylar SLA ve iş kuralları otomasyonundan gelen otomatik tetikleyicilerle entegredir."
+      ]
+    },
+    {
+      "id": "modul-problem",
+      "title": "Problem Yönetimi",
+      "items": [
+        "Tekrarlayan olaylar, geçici veya kalıcı çözüm gerektiren problemler ve iyileştirme amaçlı çözüm geliştirme çalışmaları kaydedilebilmektedir.",
+        "Problemler topluca listelenmekte; kategori, öncelik, durum, iş etkisi, teknisyen, kullanıcı, tarih aralığı, teknisyen grubu gibi kriterlere göre filtrelenebilmektedir.",
+        "Problemler; kullanıcı, teknisyen, öncelik, kategori, çözüm tarihi gibi özet bilgileri tek bakışta gösteren bir listede yer almaktadır.",
+        "Problemler önemlerine göre sabitleme, takip etme gibi özelliklerle üste sabitlenebilmektedir.",
+        "Çeşitli kriterlere göre özelleştirilebilir filtreler tanımlanabilmekte, kaydedilebilmekte ve yeniden kullanılabilmektedir.",
+        "Problem detayları tablo görünümünde veya kontrol panelinde, ekranı terk etmeden kolayca düzenlenebilmektedir.",
+        "Problemler kişiye, gruba veya kuruma ait bir veya daha fazla varlık ve hizmetle ilişkilendirilebilmektedir.",
+        "Problemlerin kök nedenleri, iş etkileri ve semptomları analiz edilebilmektedir.",
+        "Problemler birden fazla alt görevle ilişkilendirilebilmektedir.",
+        "Problemlere doğrudan iş kayıtları/zaman tutanakları eklenebilmektedir.",
+        "Problemlere çözümler eklenebilmekte, çözümler bilgi bankasından sorgulanarak otomatik eklenebilmektedir.",
+        "Problemler yeni veya var olan değişikliklerle ilişkilendirilebilmektedir.",
+        "Problemler başka teknisyen ve kullanıcılarla paylaşılabilmektedir.",
+        "Problem kayıtlarında yapılan tüm işlemlerin tarihsel kayıtları tutulmakta ve geçmiş detayları izlenebilmektedir.",
+        "Problem kategorilerinde alt kırılım limiti bulunmamaktadır.",
+        "Problemler içerisinden diğer teknisyen ve kullanıcılarla yazışma yapılabilmektedir."
+      ]
+    },
+    {
+      "id": "modul-istek",
+      "title": "İstek Yönetimi",
+      "items": [
+        "Tüm hizmet istekleri katalogdan seçilerek veya çağrılardan dönüştürülerek istek kaydı olarak kaydedilebilmektedir.",
+        "İstekler topluca listelenmekte ve çeşitli kriterlere göre filtrelenebilmektedir.",
+        "İstekler; kullanıcı, teknisyen, öncelik, kategori, çözüm tarihi gibi özet bilgileri tek bakışta gösteren bir listede yer almaktadır.",
+        "İstekler önemlerine göre sabitleme, takip etme gibi özelliklerle üste sabitlenebilmektedir.",
+        "Çeşitli kriterlere göre özelleştirilebilir filtreler tanımlanabilmektedir.",
+        "İstek detayları tablo görünümünde veya kontrol panelinde kolayca düzenlenebilmektedir.",
+        "İstekler kişiye, gruba veya kuruma ait varlık ve hizmetlerle ilişkilendirilebilmektedir.",
+        "İstekler birden fazla alt görevle ilişkilendirilebilmektedir.",
+        "İsteklere doğrudan iş kayıtları/zaman tutanakları eklenebilmektedir.",
+        "İsteklere çözümler eklenebilmekte, çözümler bilgi bankasından sorgulanarak otomatik eklenebilmektedir.",
+        "İstekler yeni veya var olan değişikliklerle ilişkilendirilebilmektedir.",
+        "İstekler yeni veya var olan iyileştirmelerle ilişkilendirilebilmektedir.",
+        "İstekler başka teknisyen ve kullanıcılarla paylaşılabilmektedir.",
+        "İstekler içerisinde otomatik zaman takibi ile iş kayıtları oluşturulabilmektedir.",
+        "İstek kayıtlarında yapılan tüm işlemlerin tarihsel kayıtları tutulmaktadır.",
+        "İsteklerle ilgili ileri tarihli tekrarlanan kayıtlar açılabilmektedir.",
+        "İstek kategorilerinde alt kırılım limiti bulunmamaktadır.",
+        "İstekler içerisinden diğer teknisyen ve kullanıcılarla yazışma yapılabilmektedir.",
+        "İstekler, servis kataloglarından gelen ön tanımlı formlar üzerinden açılabilmekte; her hizmet için kendine özel form alanları tanımlanabilmektedir.",
+        "İsteklerde çoklu onay akışları, koşullu onaycılar ve yönetici hiyerarşisine bağlı dinamik onay süreçleri yürütülebilmektedir."
+      ]
+    },
+    {
+      "id": "modul-bilgi",
+      "title": "Bilgi Yönetimi",
+      "items": [
+        "Kurumsal bilgi bankası, çözüm dokümanları ve self-servis bilgi erişimi tek modülde sunulur.",
+        "Makaleler kategori, etiket ve yetkilendirme bazında organize edilmektedir.",
+        "Bilgi makaleleri olay, problem ve istek kayıtlarına ilişkilendirilebilmektedir.",
+        "Bilgi bankasında arama motoru ile hızlı erişim sağlanmaktadır.",
+        "Makalelerde sürüm geçmişi, taslak ve yayın durumları tutulmaktadır.",
+        "Makaleler son kullanıcı portalında yetki bazında görüntülenmektedir.",
+        "Makaleler için onay akışı tanımlanabilmektedir.",
+        "Yorum, beğeni ve faydalılık değerlendirmesi ile makaleler iyileştirilebilmektedir.",
+        "Sık başvurulan makalelerin raporları alınabilmektedir."
+      ]
+    },
+    {
+      "id": "modul-degisiklik",
+      "title": "Değişiklik Yönetimi",
+      "items": [
+        "Değişiklik talepleri (RFC) kayıt altına alınmaktadır.",
+        "Değişikliklerin planlama, etki analizi ve risk değerlendirmesi yapılabilmektedir.",
+        "Değişikliklerde tek/çoklu onay süreçleri ve danışma kurulları (CAB) yürütülebilmektedir.",
+        "Değişiklikler proje, görev ve iş akışlarıyla ilişkilendirilebilmektedir.",
+        "Değişiklik kategorileri (standart, normal, acil) için farklı süreç akışları yapılandırılabilmektedir.",
+        "Geri çekme (rollback) ve uygulama planları kayıt altında tutulmaktadır.",
+        "Değişikliklere bağlı varlıklar ve hizmetler tek panelde görüntülenebilmektedir.",
+        "Değişiklik gözden geçirme (post-implementation review) süreci yürütülebilmektedir.",
+        "Değişiklikler olay ve problem kayıtlarıyla ilişkilendirilebilmektedir.",
+        "Değişiklik takvimi ve zaman çizelgesi (forward schedule) görüntülenebilmektedir."
+      ]
+    },
+    {
+      "id": "modul-varlik",
+      "title": "Varlık Yönetimi",
+      "items": [
+        "Donanım ve yazılım varlıklarının tamamı kayıt altına alınabilmektedir.",
+        "Varlıkların yaşam döngüsü (satın alma, kullanım, bakım, emeklilik) takip edilmektedir.",
+        "Varlık atamaları kullanıcı, lokasyon ve departman bazında yapılmaktadır.",
+        "Varlık ilişkileri (ana varlık, alt varlık, bağımlı varlık) tanımlanabilmektedir.",
+        "Varlıklara olay, problem, değişiklik ve istek kayıtları bağlanabilmektedir.",
+        "Sözleşme, garanti ve bakım anlaşmaları varlık ile ilişkilendirilmektedir.",
+        "Varlıklara özel formlar ve özelleştirilmiş alanlar eklenebilmektedir.",
+        "Varlık keşfi (discovery) ve otomatik içe aktarma destekli yapıdadır.",
+        "Varlık tipleri (sunucu, dizüstü, lisans, mobil cihaz vb.) sınırsız tanımlanabilmektedir.",
+        "Toplu varlık güncellemeleri ve transfer işlemleri yapılabilmektedir.",
+        "Yetki bazlı varlık görüntüleme son kullanıcı portalında sunulmaktadır."
+      ]
+    },
+    {
+      "id": "modul-konfigurasyon",
+      "title": "Konfigürasyon Yönetimi (CMDB)",
+      "items": [
+        "Konfigürasyon Öğeleri (CI) ve aralarındaki ilişkilerin haritalanması yapılabilmektedir.",
+        "CI tipleri kuruma özel tanımlanabilmektedir.",
+        "İlişki tipleri (depends-on, runs-on, hosts vb.) belirlenebilmektedir.",
+        "Hizmet haritaları görsel olarak oluşturulabilmektedir.",
+        "Olay, problem ve değişiklik kayıtlarında ilgili CI'lar otomatik bağlanabilmektedir.",
+        "CI değişiklik geçmişi ve denetim izi tutulmaktadır.",
+        "CI bazlı etki analizi raporları alınabilmektedir.",
+        "API ile dış sistemlerden CI verisi senkronize edilebilmektedir."
+      ]
+    },
+    {
+      "id": "modul-iyilestirme",
+      "title": "Sürekli İyileştirme",
+      "items": [
+        "İyileştirme kayıtları (CI Register) merkezi bir kayıt yapısında tutulmaktadır.",
+        "İyileştirmeler analiz, değerlendirme ve istişare aşamalarından geçirilebilmektedir.",
+        "Beş soruluk değerlendirme çerçevesi (hedef katkı, fayda, efor, maliyet, risk) ile puantaj yapılabilmektedir.",
+        "İyileştirmeler önceliklendirme puantajına göre sıralanabilmektedir.",
+        "İyileştirme önerileri Interaction katmanından doğrudan kayıt olarak alınabilmektedir.",
+        "Onaylanan iyileştirmeler değişiklik veya proje kayıtlarına dönüştürülebilmektedir.",
+        "İş analizi, SLM, ilişki, portföy, risk, finans, katalog ve istek yönetimi süreçleriyle entegre çalışmaktadır.",
+        "İyileştirme süreç performansı raporlarla izlenebilmektedir."
+      ]
+    },
+    {
+      "id": "modul-raporlama",
+      "title": "Ölçme ve Raporlama",
+      "items": [
+        "ITIL4 MRM (Measurement & Reporting Management) pratiği uyarınca raporlama altyapısı sunulmaktadır.",
+        "Önceden tanımlı rapor kütüphanesi yer almaktadır.",
+        "Service Report Wizard (SRW) ile özel raporlar tasarlanabilmektedir.",
+        "Operasyonel, stratejik ve analitik raporlar üretilebilmektedir.",
+        "Hedef bazlı KPI takibi yapılabilmektedir.",
+        "Role özel Dashboard ve widget'lar (CIO, süreç sahibi, takım lideri, teknisyen) sunulmaktadır.",
+        "Dinamik filtreleme ile aynı rapor farklı kırılımlarda görüntülenebilmektedir.",
+        "Sürekli iyileştirme süreciyle entegre çalışmaktadır.",
+        "Raporlar PDF, Excel, CSV gibi farklı formatlarda dışa aktarılabilmektedir."
+      ]
+    },
+    {
+      "id": "modul-katalog",
+      "title": "Hizmet Katalog Yönetimi (SCM)",
+      "items": [
+        "Çok katmanlı hizmet katalogları kolayca oluşturulabilmektedir.",
+        "Her hizmet için ön tanımlı talep formları ve özel alanlar tanımlanabilmektedir.",
+        "Onay aşamaları hizmet bazında yapılandırılabilmektedir.",
+        "SLA hedefleri hizmet bazında düzenlenebilmektedir.",
+        "Her hizmetin arkasında ön tanımlı iş akışları tanımlanabilmektedir.",
+        "Otomatik görev dağıtımı ile servis kalitesi standardize edilmektedir.",
+        "Yetki bazlı katalog görüntüleme son kullanıcı portalında sunulmaktadır.",
+        "Hizmet versiyonlama ve yayın yönetimi desteklidir."
+      ]
+    },
+    {
+      "id": "modul-sla",
+      "title": "Hizmet Seviye Yönetimi (SLM)",
+      "items": [
+        "SLA Policy nesneleri tanımlanabilmektedir.",
+        "Çok katmanlı SLA (yanıt, ara hedef, çözüm) yapısı desteklidir.",
+        "Olay ve istek modülleriyle entegre kural bazlı önceliklendirme yapılmaktadır.",
+        "Çalışma saatleri, tatiller ve mesai saatleri SLA hesaplamasında dikkate alınmaktadır.",
+        "Due Date otomatik hesaplanarak ilgili kayıtın alanına yazılmaktadır.",
+        "SLA ihlali yaklaşan kayıtlar için eskalasyon kuralları çalıştırılmaktadır.",
+        "SLA uyum, ihlal ve eskalasyon raporları alınabilmektedir."
+      ]
+    },
+    {
+      "id": "modul-otomasyon",
+      "title": "Hizmet Otomasyonu (SARE)",
+      "items": [
+        "SARE (Service Automation Rules Engine) kural motoru sunulmaktadır.",
+        "Kayıt oluşturma, alan değişimi, durum güncelleme ve zaman bazlı tetikleyiciler desteklidir.",
+        "Çoklu koşul (AND/OR) ve çok katmanlı kural ağaçları yapılandırılabilmektedir.",
+        "Geniş aksiyon paleti: alan güncelleme, atama, e-posta, görev, eskalasyon, webhook.",
+        "Hazır kural kütüphanesi sunulmaktadır.",
+        "Kuralların aktiflik durumu ve tetiklenme sayıları izlenebilmektedir.",
+        "Kuralların test ortamında çalıştırılması mümkündür."
+      ]
+    },
+    {
+      "id": "modul-iliskiler",
+      "title": "Hizmet İlişkileri Yönetimi",
+      "items": [
+        "Müşteri kayıtları detaylı biçimde tutulmaktadır.",
+        "Müşteri etkileşim ve iletişim geçmişi merkezi olarak izlenmektedir.",
+        "Sözleşmeler dijital ortamda oluşturulup yönetilmektedir.",
+        "Sözleşme yenileme, fesih ve kritik tarihler için otomatik bildirim üretilmektedir.",
+        "Müşteri ve sözleşme bilgileri IT hizmet talepleriyle entegre çalışmaktadır.",
+        "Sözleşme kapsamı her olay/istek kaydında otomatik görünür olmaktadır.",
+        "Müşteri, sözleşme ve hizmet geçmişi raporları alınabilmektedir."
+      ]
+    },
+    {
+      "id": "modul-gorev",
+      "title": "Görev Yönetimi",
+      "items": [
+        "Tüm süreçlerden bağımsız ve süreçlere bağlı görev kayıtları tutulmaktadır.",
+        "Sürece özel Kanban panoları (olay, istek, problem, değişiklik) sunulmaktadır.",
+        "WTE (Workforce and Tasks Engine) iş gücü motoru ile yetkinlik bazlı atama yapılmaktadır.",
+        "STE (ServiceCore Time Engine) ile harcanan süre otomatik takip edilmektedir.",
+        "Round-robin ve load balancing destekli atama yapılabilmektedir.",
+        "Görev şablonları ile sık tekrarlanan görevler hızlı oluşturulabilmektedir.",
+        "Öncül-ardıl ve akış modellemesi ile görev bağımlılıkları tanımlanabilmektedir.",
+        "Görev iş günlüğü ve efor takibi merkezi olarak yönetilmektedir."
+      ]
+    },
+    {
+      "id": "modul-proje",
+      "title": "Proje Yönetimi",
+      "items": [
+        "Agile, hibrit ve klasik (waterfall) proje yönetim metodolojileri desteklidir.",
+        "Proje planlama, milestone, kaynak atama ve ilerleme takibi yapılabilmektedir.",
+        "Projeler iyileştirme, değişiklik veya istek süreçlerinden tetiklenebilmektedir.",
+        "Proje altında alt görevler ve aşamalar yönetilebilmektedir.",
+        "Gantt ve Kanban görünümleri ile proje izlenmektedir.",
+        "Proje üyeleri, rolleri ve sorumluluk matrisi (RACI) tanımlanabilmektedir.",
+        "Proje finans ve bütçe takibi yapılabilmektedir.",
+        "Projenin tamamlanma yüzdesi, kalan iş ve gecikmeler raporlanabilmektedir."
+      ]
+    }
+  ],
+  "bakim": [
+    "Üretici, ürünün canlı kullanım sırasında ortaya çıkabilecek hata, arıza ve çözüm gerektiren tüm konularda destek vermektedir.",
+    "Destek hizmetleri 7/24 e-posta, telefon ve ServiceCore destek portalı üzerinden sunulmaktadır.",
+    "Kritik öncelikli olay ve arızalar için hızlı müdahale (SLA tabanlı) çözüm taahhüdü verilmektedir.",
+    "Sürüm güncellemeleri sürekli dağıtım (Continuous Delivery) ile uzaktan otomatik yapılmaktadır.",
+    "Yamalar ve hata düzeltmeleri kurum onayıyla planlı bakım pencerelerinde uygulanabilmektedir.",
+    "Yıllık bakım anlaşması kapsamında tüm yeni özellikler, sürüm yükseltmeleri ve teknik destek hizmetleri sağlanmaktadır.",
+    "Lisans-destek yenileme dönemlerinde esnek artış ve ek modül seçenekleri sunulmaktadır.",
+    "Üretici tarafından kuruma özel ücretsiz onboarding ve eğitim hizmeti sunulmaktadır.",
+    "Yöneticiler için yönetim paneli kullanım eğitimi, teknisyenler için süreç eğitimi ve son kullanıcılar için portal eğitimi paketleri bulunmaktadır.",
+    "Talep edilmesi halinde danışmanlık ve süreç tasarımı hizmetleri verilebilmektedir.",
+    "Kuruma özel iş akışı tasarımı, özel form geliştirme ve entegrasyon projeleri ek hizmet kapsamında üstlenilmektedir.",
+    "Yedekleme, felaket kurtarma ve veri taşıma operasyonları için teknik destek sağlanmaktadır.",
+    "Kullanıcı tarafından açılan destek talepleri ServiceCore destek portalı üzerinden takip edilebilmektedir.",
+    "Üretici belirli aralıklarla müşteri memnuniyet anketi düzenlemekte ve sürekli iyileştirme yapmaktadır."
+  ]
+}

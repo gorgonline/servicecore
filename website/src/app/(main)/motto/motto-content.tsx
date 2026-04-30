@@ -204,7 +204,7 @@ export default function MottoContent({ data }: { data: MottoData }) {
                       </div>
                       
                       {/* Content Area */}
-                      <div className="flex-grow">
+                      <div className="grow">
                         <h3 className={`mb-4 text-xl font-semibold text-white tracking-tight transition-colors duration-300 ${titleColor}`}>
                           {card.title}
                         </h3>
@@ -252,7 +252,7 @@ export default function MottoContent({ data }: { data: MottoData }) {
             damping: 15
           }}
           viewport={{ once: true }}
-          className="group/cta relative flex flex-col justify-center overflow-hidden rounded-[2.5rem] bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-[1px]"
+          className="group/cta relative flex flex-col justify-center overflow-hidden rounded-[2.5rem] bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
         >
           <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500" />
           

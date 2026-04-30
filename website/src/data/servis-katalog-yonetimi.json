@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "badge": "Servis Katalog Yönetimi",
+    "titleLead": "Servisleri standartlaştırın,",
+    "titleAccent": "müşteri hizmetlerini uçtan uca dijitalleştirin.",
+    "description": "ServiceCore SCM modülü, gelişmiş otomasyon özellikleri ile servislerinizi standartlaştırarak müşteri hizmetlerinizi uçtan uca dijitalleştirir. Çok katmanlı servis kataloglarını kolay kullanımlı arayüzlerle hızlıca geliştirin, sürekli güncel tutun ve istek yönetiminin arkasındaki tüm servis aktivitelerini sürdürülebilir hizmet kalitesi prensibiyle yönetin.",
+    "imageAlt": "Servis katalog panosu — çok katmanlı servisler ve onay akışları"
+  },
+  "zigzag": [
+    {
+      "id": "cok-katmanli-katalog",
+      "accent": "blue",
+      "icon": "BookOpen",
+      "titleLead": "Çok katmanlı kataloglar,",
+      "titleAccent": "kolay kullanımlı arayüzlerle.",
+      "description": "ServiceCore SCM modülü ile çok katmanlı servis kataloglarınızı kolay kullanımlı arayüzler ile hızlıca geliştirin ve sürekli güncel tutun. İstek yönetiminin arka planında yer alan tüm servis yönetimi aktivitelerini standartlaştırma ve sürdürülebilir hizmet kalitesini sağlama amacıyla geliştirilen SCM, modern bir kullanıcı istek yönetimi için gerekli zemini sunmaktadır.",
+      "bullets": [
+        "Çok katmanlı servis katalogları kolay kullanımlı arayüzler ile hızlıca geliştirilir; kategori, alt kategori ve servis hiyerarşisi sürükle-bırak hızında düzenlenir.",
+        "Katalog sürekli güncel tutulur; servis sahipleri kendi kalemlerini doğrudan yönetir, yayın öncesi gözden geçirme akışı standardı korur.",
+        "İstek yönetiminin arka planındaki tüm servis aktiviteleri standartlaştırılarak modern kullanıcı istek yönetimi için sürdürülebilir bir zemin oluşur."
+      ],
+      "imageKey": "katalog"
+    },
+    {
+      "id": "ozellestirme",
+      "accent": "emerald",
+      "icon": "SlidersHorizontal",
+      "titleLead": "Her servisi",
+      "titleAccent": "uçtan uca özelleştirin.",
+      "description": "Ön tanımlı talep formlarını servise göre özelleştirebilme, onay aşamalarını ön tanımlı kurgulayabilme, servis seviye anlaşmalarını servis bazında düzenleyebilme özellikleri ile tüm servisler ihtiyaca göre tasarlanır. Standart bir kullanıcı deneyimi içinde her servis kendi kurallarıyla işler.",
+      "bullets": [
+        "Ön tanımlı talep formları servise göre özelleştirilir; her servis için yalnızca gerekli alanlar sorulur, kullanıcı deneyimi sade ve hızlı kalır.",
+        "Onay aşamaları ön tanımlı olarak kurgulanır; kim, hangi koşulda, hangi sıra ile onaylayacak ilk baştan netleşir ve manuel hatırlatma yükü ortadan kalkar.",
+        "Servis seviye anlaşmaları (SLA) servis bazında düzenlenir; her servisin yanıt ve çözüm süresi kendi kritikliğine göre yönetilir."
+      ]
+    },
+    {
+      "id": "otomatik-is-akisi",
+      "accent": "purple",
+      "icon": "Workflow",
+      "titleLead": "Ön tanımlı iş akışları,",
+      "titleAccent": "otomatik görev dağıtımı.",
+      "description": "Her servisin arkasında yer alan ön tanımlı iş akışlarını tanımlayabilme ve servisin her tekrarında otomatik görev dağıtımı yapabilme özellikleri ile servis yönetiminin kalite güvencesi sağlanır. Standartlaştırılmış iş akışları sayesinde servis yönetilebilirliği ve kullanıcı memnuniyeti birlikte güçlenir.",
+      "bullets": [
+        "Her servisin arkasında ön tanımlı iş akışı tanımlanır; servis isteği geldiğinde adımlar, sorumlular ve tetikleyiciler otomatik devreye girer.",
+        "Servisin her tekrarında otomatik görev dağıtımı yapılır; aynı işin farklı kişiler tarafından farklı şekilde yapılması riski ortadan kalkar.",
+        "Standartlaştırılmış iş akışları servis yönetilebilirliğini ve kullanıcı memnuniyetini birlikte yükseltir; kalite güvencesi süreçle birlikte gelir."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Servis katalog disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Gelişmiş otomasyon, çok katmanlı kataloglar ve servise özel SLA ile uçtan uca dijital servis sunumunu mümkün kılan entegre yetenekler.",
+    "items": [
+      {
+        "id": "talep-formu",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "FileText",
+        "title": "Servise özel ön tanımlı talep formları",
+        "description": "Her servis için yalnızca o servise ait alanları içeren ön tanımlı talep formları tanımlanır. Kullanıcılar gereksiz alanlarla boğulmaz; teknisyenler eksik bilgi nedeniyle oyalanmaz. Form değişikliği yayınlandığı an tüm yeni isteklerde geçerli hale gelir."
+      },
+      {
+        "id": "onay-akisi",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "CheckCircle2",
+        "title": "Ön tanımlı onay aşamaları",
+        "description": "Onay aşamaları servis bazında ön tanımlı kurgulanır; sıralı, paralel ve koşullu onay senaryoları aynı modelde yönetilir. Kullanıcı isteği gönderdiği an doğru onaycıya disiplinli biçimde ilerler."
+      },
+      {
+        "id": "sla",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Clock",
+        "title": "Servis bazında SLA",
+        "description": "Servis seviye anlaşmaları her servis için ayrı ayrı düzenlenir; yanıt süresi, çözüm süresi ve eskalasyon kuralları servisin kritikliğine göre kalibre edilir. Tek tip SLA dayatması yerine gerçeğe uyan taahhütler kurulur."
+      },
+      {
+        "id": "is-akisi",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Workflow",
+        "title": "Servisin arkasındaki ön tanımlı iş akışı",
+        "description": "Servis isteği geldiğinde sistem otomatik olarak o servise bağlı iş akışını tetikler; görev dağıtımı, sorumlu atama ve adım koşulları her tekrarda standart kalır. Kalite güvencesi insana değil sürece bağlanır."
+      },
+      {
+        "id": "katmanli",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Layers",
+        "title": "Çok katmanlı katalog hiyerarşisi",
+        "description": "Kategori → alt kategori → servis hiyerarşisi kolay kullanımlı arayüzlerle yönetilir. Yüzlerce servis arasında kullanıcının doğru kalemi bulması saniyeler alır."
+      },
+      {
+        "id": "guncellik",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "RefreshCw",
+        "title": "Sürekli güncellik ve yayın disiplini",
+        "description": "Servis sahipleri kendi servislerini doğrudan günceller; yayın öncesi gözden geçirme ve versiyon kontrolü kataloğun güncel ve tutarlı kalmasını sağlar. Eski formdan oluşturulmuş istekler kaybolmaz, yeni form tüm yeni taleplerde devreye girer."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Servis kataloğunuzu ServiceCore ile dijitalleştirin.",
+    "description": "Çok katmanlı kataloglar, servise özel formlar, ön tanımlı onaylar ve otomatik iş akışları ile uçtan uca dijital servis sunumunu canlı demoda inceleyin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

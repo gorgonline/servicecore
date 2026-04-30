@@ -1,0 +1,117 @@
+{
+  "hero": {
+    "badge": "Problem Yönetimi",
+    "titleLead": "Kesintileri değil,",
+    "titleAccent": "kök nedenleri yönetin.",
+    "description": "ServiceCore Problem Management, tekrar eden kesinti ve hataların gerçek kök nedenine inerek kalıcı çözüm üretmek için ITIL4 prensiplerine uygun tasarlanmış uçtan uca bir süreç sunar. Reactive ve proaktif yaklaşımlar aynı kayıt üzerinde yönetilir; Incident, Change ve Knowledge Management modülleriyle tam entegre çalışarak belirtileri gidermek yerine sorunların temelini ortadan kaldırır, iş sürekliliğini ölçülebilir ve denetlenebilir bir zemine taşır.",
+    "imageAlt": "Problem yönetimi panosu — kök neden analizi ve olay ilişkileri"
+  },
+  "zigzag": [
+    {
+      "id": "itil-reaktif-proaktif",
+      "accent": "blue",
+      "icon": "HelpCircle",
+      "titleLead": "ITIL4 uyumlu",
+      "titleAccent": "reactive ve proaktif disiplin.",
+      "description": "Problem süreçleri ITIL4 standartlarına uygun olarak tasarlanmıştır; oluşan olaylardan problem üretme (reactive) ve henüz oluşmadan riskleri tespit etme (proaktif) yetenekleri tek bir yaşam döngüsünde birleşir. Olay kayıtlarıyla tam entegrasyon sayesinde tekrar eden kesintiler ortak bir kayıt altında toplanır ve kök nedene inen disiplinli bir akış yürütülür.",
+      "bullets": [
+        "Problem Management, ITIL4 standartlarına uygun olarak tasarlanmış süreçleriyle problemlerin kök nedenine inerek kalıcı çözüm sağlar; yalnızca belirtileri gidermek yerine tekrarlayan kesintilerin önüne geçmeye yönelik yapılandırılmış kayıtlar tutulur.",
+        "Oluşan olaylardan problem üretme (reactive) ve henüz oluşmadan riskleri tespit etme (proaktif) yetenekleri uçtan uca kontrol sunar; her iki yaklaşım da aynı problem kaydı üzerinden yönetilerek süreç bütünlüğü korunur.",
+        "Olay kayıtlarından otomatik problem oluşturma ve ilişkilendirme sayesinde süreçler kesintisiz ilerler; tüm ilişkiler problem kaydı üzerinde şeffaf biçimde görünür kalır ve izlenebilirlik sürdürülür."
+      ],
+      "imageKey": "donusturolay"
+    },
+    {
+      "id": "analiz-rca",
+      "accent": "emerald",
+      "icon": "Search",
+      "titleLead": "Kök neden analizi,",
+      "titleAccent": "semptom değil neden odaklı.",
+      "description": "Root Cause Analysis (RCA) disiplini ile problemlerin sadece semptomları değil, gerçek nedenleri analiz edilerek tekrar eden hataların önüne geçilir. Belirti, iş etkisi ve kapsam detayları ortak referans olarak kayıt altına alınır; analiz tamamlanan kayıtlar Known Error olarak işaretlenerek benzer vakalarda hızlı müdahale için kurumsal hafızaya dönüştürülür.",
+      "bullets": [
+        "Problemlerin sadece semptomları değil gerçek nedenleri analiz edilerek tekrar eden hataların önüne geçilir; analiz notları, hipotezler ve bulgular yapılandırılmış biçimde kayıt altında tutularak ekipler arasında tutarlı bir teşhis zemini oluşur.",
+        "Her problem için belirtiler, iş etkisi ve kapsam detaylı şekilde kayıt altına alınır; bu alanlar kök neden çalışması ve önceliklendirme için ortak referans oluşturarak farklı ekiplerin aynı bağlam üzerinden ilerlemesini sağlar.",
+        "Analiz edilen problemler Known Error olarak işaretlenerek tekrar eden sorunlara hızlı müdahale imkanı sunar; geçici ve kalıcı çözüm bilgisi aynı kayıtta toplanarak operasyonel müdahale süresi kısaltılır."
+      ],
+      "imageKey": "Analiz"
+    },
+    {
+      "id": "change-cozum",
+      "accent": "purple",
+      "icon": "GitBranch",
+      "titleLead": "Change ile kalıcı çözüm,",
+      "titleAccent": "otomasyonla zincirleme kapatma.",
+      "description": "Problemlerin çözümü bazı durumlarda Change Management süreçlerini gerektirir; ServiceCore, Problem ve Change modülleri arasında tam entegre bir yapı sunarak problem kaydından doğrudan değişiklik oluşturulmasını ve sürecin uçtan uca yönetilmesini sağlar. Problem kapandığında ilişkili olaylara çözüm otomatik yansıtılır ve kurallar tanımlı senaryolara göre toplu kapatmayı disiplinli biçimde yürütür.",
+      "bullets": [
+        "Problem kayıtlarından doğrudan değişiklik oluşturulabilir; Problem ve Change Management modülleri arasındaki tam entegre yapı sayesinde kalıcı çözüm süreci uçtan uca yönetilir ve hangi değişikliğin hangi problemle bağlantılı olduğu her zaman izlenebilir kalır.",
+        "Problem çözüldüğünde ilişkili olaylara çözüm otomatik yansıtılabilir ve kayıtlar toplu olarak kapatılabilir; manuel tek tek güncelleme ihtiyacı ortadan kalkar, operasyonel yük azalır ve tutarsız kapatma riski düşer.",
+        "Problem kapanışında ilişkili olayların nasıl davranacağı (kapatma, çözüm kopyalama, durum güncelleme) tamamen otomatikleştirilebilir; kurallar tanımlı senaryolara göre yönetilerek farklı vakalar için disiplinli ve tekrarlanabilir bir akış kurulur."
+      ],
+      "imageKey": "donusturdegisiklik"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Uçtan uca problem yönetimi yetkinlikleri",
+    "sectionSubtitle": "Kök neden analizinden bilgi bankasına, uçtan uca problem yaşam döngüsü.",
+    "items": [
+      {
+        "id": "olay-problem-bagi",
+        "size": "wide",
+        "accent": "cyan",
+        "icon": "Link2",
+        "title": "Olay-problem bağıntı yönetimi",
+        "description": "Birden fazla olay kaydı tek bir problem altında toplanabilir, böylece dağınık süreçler merkezi hale getirilir ve aynı kök nedenden beslenen tüm vakalar tek resimde görülür. Bağlantılar ve güncellemeler kayıt geçmişinde izlenebilir; ekipler aynı problemin farklı yüzlerini tekrar tekrar araştırmak yerine ortak analiz zemininde ilerler ve çözüm sonrası ilişkili olayların tamamı disiplinli şekilde sonuçlandırılır.",
+        "imageKey": "problemcozum"
+      },
+      {
+        "id": "oncelik-siniflandirma",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "AlertTriangle",
+        "title": "Otomatik önceliklendirme ve sınıflandırma",
+        "description": "Öncelik, aciliyet ve iş etkisi gibi parametrelerle problemler hızlıca kategorize edilir ve doğru şekilde ele alınır. Tanımlı kurallar triyaj ve yönlendirmeyi tutarlı kılarak farklı ekiplerin aynı disiplin altında çalışmasını sağlar; kritik vakalar ilk dakikadan itibaren doğru önceliğe yerleşir."
+      },
+      {
+        "id": "filtreleme",
+        "size": "normal",
+        "accent": "amber",
+        "icon": "Filter",
+        "title": "Gelişmiş filtreleme ve listeleme ekranları",
+        "description": "Olay yönetimi ile birebir uyumlu ekranlar sayesinde problem kayıtları üzerinde hızlı filtreleme ve analiz yapılabilir. Sık kullanılan görünümler kaydedilebilir; durum, kategori, öncelik ve özel alanlar birleştirilerek sorgulanabilir, böylece doğru kayda ulaşmak saniyeler içinde mümkün hale gelir.",
+        "imageKey": "index"
+      },
+      {
+        "id": "kb-entegrasyon",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "BookOpen",
+        "title": "Knowledge Management entegrasyonu",
+        "description": "Geçici ve kalıcı çözümler bilgi bankasında saklanarak benzer problemlerde anında kullanılabilir. Problem kaydı ile bilgi öğeleri ilişkilendirilebilir; kurumsal hafıza aktif bir çözüm kütüphanesine dönüşür ve tekrar eden vakalarda sıfırdan analiz yükü ortadan kalkar."
+      },
+      {
+        "id": "iletisim-amf",
+        "size": "normal",
+        "accent": "red",
+        "icon": "MessageSquare",
+        "title": "İşbirliği ve iletişim yönetimi (AMF® & Conversations)",
+        "description": "Tüm yazışmalar otomatik olarak kayıt altına alınır, ekipler ve kullanıcılar tek platformda iletişim kurar. İletişim geçmişi problem kaydıyla birlikte kalır; kim, ne zaman, hangi bağlamda yazdı net biçimde görülür ve analiz sürecinin her adımı şeffaf biçimde belgelenir."
+      },
+      {
+        "id": "efor-ats-ste",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "Clock",
+        "title": "Zaman ve efor takibi (ATS® & STE®)",
+        "description": "Problem üzerinde harcanan süreler ATS® ile otomatik hesaplanır, iş günlükleri ve efor yönetimi detaylı şekilde izlenir. STE® kuralları iş sırasını ekip yüküne göre dengelerken bu veriler kapasite planlama ve iş yükü değerlendirmesinde kullanılabilir hale gelir."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Kesintiyi değil, kök nedeni yönetin.",
+    "description": "ITIL4 uyumlu Problem Management süreçlerini, Incident, Change ve Knowledge Management modülleriyle entegre biçimde canlı demoda inceleyin; tekrar eden vakaları kalıcı çözüme dönüştürün.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

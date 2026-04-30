@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Görev Yönetimi",
+    "titleLead": "Tüm görevler kayıt altında,",
+    "titleAccent": "iş yükü ve kaynak görünür.",
+    "description": "ServiceCore Task Management ortak fonksiyonu; süreçler boyunca işbirliğini ve süreçlerden bağımsız yürütülen tüm aktiviteleri kayıt altına alarak merkezi iş yükü koordinasyonunu sağlar. ITIL4 Workforce and Talent Management pratiğinin temelinde yer alan iş gücü yönetimi WTE® (Workforce and Tasks Engine) ve STE® (ServiceCore Time Engine) ile uçtan uca işletilir; Kanban panoları her süreç için ayrı ayrı görsel kontrol sunar.",
+    "imageAlt": "Görev yönetimi panosu — Kanban, WTE ve merkezi iş yükü koordinasyonu"
+  },
+  "zigzag": [
+    {
+      "id": "merkezi-koordinasyon",
+      "accent": "blue",
+      "icon": "ListTodo",
+      "titleLead": "Tüm görevler tek kayıtta,",
+      "titleAccent": "merkezi iş yükü koordinasyonu.",
+      "description": "Tüm servis yönetimi süreçlerinde teknisyenlerin yürüttüğü görevler sayesinde işler devam eder. Her olay, istek, problem, değişiklik, sürüm ve proje bir çok görevin teknik ekiplerce yerine getirilmesiyle tamamlanır. ServiceCore Task Management; süreçler boyunca işbirliğini ve süreçlerden bağımsız yürütülen tüm aktiviteleri kayıt altına alarak merkezi iş yükü koordinasyonunu sağlar.",
+      "bullets": [
+        "Olay, istek, problem, değişiklik, sürüm, proje ve diğer süreçlerdeki tüm görevler aynı kayıt yapısında toplanır; ekipler hangi süreçten gelirse gelsin tek panelde koordine olur.",
+        "Süreçler boyunca işbirliği ve süreçlerden bağımsız aktiviteler aynı modülde yönetilir; ad hoc çıkan iş ile süreç görevleri ayrı kanallara dağılmaz.",
+        "Tüm teknisyenlerin kaynak kullanımı ve uygunluğu tekil bir koordinasyon ile görünür olur; yapılan tüm görevler modüller boyunca kayıt altına alınır."
+      ],
+      "imageKey": "kanban"
+    },
+    {
+      "id": "wte-ste",
+      "accent": "emerald",
+      "icon": "Cpu",
+      "titleLead": "WTE® ve STE®,",
+      "titleAccent": "iş gücü ve kaynak motoru.",
+      "description": "Merkezi bir kaynak/iş gücü ve görev yönetimi için geliştirilen WTE® (Workforce and Tasks Engine) ve onu destekleyen STE® (ServiceCore Time Engine) sayesinde iş yükü ve kaynak yönetimi kolaylaşır. ITIL4 ile birlikte gelen Workforce and Talent Management pratiğinin temelinde yer alan iş gücü yönetimi bu modülde işletilir.",
+      "bullets": [
+        "WTE® — Workforce and Tasks Engine, görevleri yetkinlik, müsaitlik ve iş yüküne göre dengeleyerek doğru teknisyene yönlendirir.",
+        "STE® — ServiceCore Time Engine, görev üzerinde harcanan süreyi otomatik takip eder; kapasite planlama ve iş yükü değerlendirmesinde kullanılabilir veri üretir.",
+        "ITIL4 Workforce and Talent Management pratiğinin temelinde yer alan iş gücü yönetimi tek panelde uçtan uca yönetilir; insan kaynağı stratejik bir varlığa dönüşür."
+      ],
+      "imageKey": "wte"
+    },
+    {
+      "id": "kanban",
+      "accent": "purple",
+      "icon": "LayoutGrid",
+      "titleLead": "Sürece özel",
+      "titleAccent": "Kanban panoları.",
+      "description": "Görev yönetiminde önemli bir görselleştirme aracı olan Kanban panoları kullanılır. ServiceCore Görev Yönetimi sürecinde görevlerin durumları Kanban panoları üzerinden kolaylıkla görülür ve organize edilir. Görevlerin yer aldığı tüm ITSM süreçleri için ayrı ayrı Kanban panoları bulunur; her sürecin altındaki farklı görevler kendi Kanban panosu üzerinde yönetilir.",
+      "bullets": [
+        "Görevlerin durumları Kanban panoları üzerinden kolaylıkla görülür ve organize edilir; sürükle-bırak ile durum değişiklikleri tek hareketle yapılır.",
+        "Görevlerin yer aldığı tüm ITSM süreçleri için ayrı ayrı Kanban panoları bulunur; olay, istek, problem, değişiklik ve proje farklı panolarda izlenir.",
+        "Her sürecin altındaki farklı bütün görevler kendi Kanban panosu üzerinde ayrı ayrı görülebilir ve kolaylıkla yönetilebilir; süreç bazlı görsel disiplin korunur."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Görev disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Süreç bazlı Kanban panolarından yetkinlik bazlı atamaya, ATS® efor takibinden iş yükü dengelemeye kadar uçtan uca görev yönetimi yetkinlikleri.",
+    "items": [
+      {
+        "id": "kayitsiz-isin-maliyeti",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "AlertTriangle",
+        "title": "Kayıtsız işin görünmez maliyeti",
+        "description": "Kayıt altına alınmayan, platform dışı kalan, e-posta veya sözlü takip edilen görevler ölçülemeyen, ispatlanamayan iş yükü dağlarına dönüşür. ServiceCore Task Management bu görünmez yükü kayıt altına alarak dengesiz iş dağılımını, çok yöneticili teknisyen mutsuzluğunu ve süreç başarısızlıklarını ortadan kaldırır."
+      },
+      {
+        "id": "yetkinlik-bazli-atama",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Users",
+        "title": "Yetkinlik bazlı görev ataması",
+        "description": "WTE® motoru, görevi alacak teknisyeni yetkinlik, sertifika ve geçmiş başarıya göre önerir. Yetkinliklerin israf edilmesi engellenir; doğru iş doğru kişiye yönlendirilerek hem hız hem kalite sağlanır."
+      },
+      {
+        "id": "ats-efor",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Clock",
+        "title": "STE® efor ve süre takibi",
+        "description": "STE® zaman motoru, görev üzerinde harcanan süreleri otomatik hesaplar; iş günlükleri ve efor yönetimi detaylı izlenir. Bu veri kapasite planlama ve adil değerlendirmede kullanılabilir hale gelir."
+      },
+      {
+        "id": "is-yuku-dengeleme",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Scale",
+        "title": "İş yükü dengeleme ve kaynak görünürlüğü",
+        "description": "Tüm teknisyenlerin kaynak kullanımı ve uygunluğu tekil koordinasyon ile görülür. Aynı kişiye yığılan iş, ortak ajandaların görünmemesi ve adaletsiz görev dağılımı sona erer; yöneticiler ekibin kapasitesini gerçek zamanlı izleyerek dengeli atama yapar."
+      },
+      {
+        "id": "surec-disi-aktivite",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Plus",
+        "title": "Süreç dışı aktivite kayıtları",
+        "description": "Süreçlerden bağımsız yürütülen ad hoc görevler de aynı modülde kayıt altına alınır. E-posta veya sözlü takipten dolayı görünmez kalan işler ortadan kaybolmaz, iş yükü hesabına dahil olur."
+      },
+      {
+        "id": "isbirligi",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "Users2",
+        "title": "Süreçler boyunca işbirliği",
+        "description": "Görevler süreçler arasında devredildiğinde geçmiş, sorumlu ve yorumlar bağlam kaybetmeden taşınır. Ekipler arası el değiştirme şeffaf izlenir; çok yöneticili ortamda teknisyen tek panelden ilerler."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Görünmez iş yükünü ServiceCore ile kayda alın.",
+    "description": "WTE® iş gücü motoru, STE® zaman motoru ve sürece özel Kanban panolarıyla merkezi görev yönetimini canlı demoda inceleyin; iş yükü, kaynak ve adil dağılımı veriye dayandırın.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

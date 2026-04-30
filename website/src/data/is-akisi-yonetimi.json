@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "badge": "İş Akışı Yönetimi",
+    "titleLead": "No-code workflow,",
+    "titleAccent": "modüller arası uçtan uca otomasyon.",
+    "description": "ServiceCore iş akışı altyapısı; istek, değişiklik ve sürekli iyileştirme süreçlerinde merkezi, modüler ve no-code bir workflow yönetimi sunar. Tetikleme, koşul, onay, paralel süreç, aksiyon, entegrasyon, bildirim ve raporlama yetenekleri sayesinde kurumlar iş süreçlerini standartlaştırır, otomasyonu artırır ve tüm operasyonları uçtan uca izlenebilir hale getirir.",
+    "imageAlt": "İş akışı tasarım panosu — no-code workflow ve dallanma"
+  },
+  "zigzag": [
+    {
+      "id": "no-code-tasarim",
+      "accent": "blue",
+      "icon": "Workflow",
+      "titleLead": "No-code tasarım,",
+      "titleAccent": "merkezi workflow altyapısı.",
+      "description": "Kullanıcılar kod yazmadan uçtan uca iş akışları tasarlayabilir. Sürükle-bırak no-code mimari teknik bağımlılığı azaltır, süreçlerin daha hızlı devreye alınmasını sağlar. Tüm süreçler merkezi bir workflow altyapısı üzerinden yönetilir; İstek, Değişiklik ve Sürekli İyileştirme modülleri aynı yapıda işletilir. Süreçler otomasyon motoru tarafından otomatik veya kullanıcı kontrollü manuel butonlarla başlatılabilir; tetikleyiciler kayıt oluşturma, kayıt güncelleme, durum değişimi ve teknisyen ataması gibi olaylara bağlanır.",
+      "bullets": [
+        "Kullanıcılar kod yazmadan uçtan uca iş akışları tasarlar; sürükle-bırak mantığına uygun no-code mimari teknik bağımlılığı azaltır.",
+        "Tüm süreçler merkezi bir workflow altyapısı üzerinden yönetilir; İstek, Değişiklik ve Sürekli İyileştirme modülleri ortak ve sürdürülebilir bir model kullanır.",
+        "İş akışları isim ve açıklama alanları ile tanımlanır; her workflow raporlanabilir ve hangi süreç için kullanıldığı kolayca anlaşılır hale gelir.",
+        "Süreçler otomasyon motoru tarafından otomatik veya manuel butonlarla başlatılabilir; tetikleyiciler kayıt oluşturma, güncelleme, durum değişimi ve atama olaylarına bağlanabilir."
+      ],
+      "imageKey": "workflows"
+    },
+    {
+      "id": "kosul-motoru",
+      "accent": "emerald",
+      "icon": "Filter",
+      "titleLead": "Query Condition motoru,",
+      "titleAccent": "AND/OR ve script ile esneklik.",
+      "description": "Gelişmiş Query Condition yapısı ile çok katmanlı koşullar oluşturulabilir. Kayıtların hangi akışa gireceği tanımlı filtre ve iş kurallarına göre dinamik olarak belirlenir; AND/OR operatörleri ile kompleks karar ağaçları tasarlanır. Kategori, öncelik, kullanıcı, grup, departman, rol ve maliyet gibi alanlara göre koşullar tanımlanır; custom field değerleri de akış kararlarında dinamik kriter olur. Standart filtrelerin yetmediği yerde JavaScript veya C# benzeri script yapılarıyla özel koşullar yazılır. True, False ve Fail ayrımları sayesinde koşul sonuçları detaylı yönetilir; hata durumunda alternatif aksiyonlarla süreç devam eder.",
+      "bullets": [
+        "Gelişmiş Query Condition motoru ile çok katmanlı koşullar oluşturulur; kayıtların hangi akışa gireceği filtre ve iş kurallarına göre dinamik belirlenir.",
+        "AND/OR operatörleri ile kompleks karar ağaçları tasarlanır; kategori, öncelik, kullanıcı, grup, rol ve custom field bazında esnek koşullar tanımlanır.",
+        "JavaScript veya C# benzeri script yapılarıyla özel koşullar yazılır; standart filtrelerin yetmediği yerde kuruma özel iş kuralları akışa eklenir.",
+        "True, False ve Fail ayrımları sayesinde koşul sonuçları detaylı yönetilir; hata durumunda alternatif aksiyonlarla süreç kesilmeden devam eder."
+      ],
+      "imageKey": "scripting"
+    },
+    {
+      "id": "onay-surecleri",
+      "accent": "purple",
+      "icon": "CheckCircle2",
+      "titleLead": "Tekli, çoklu ve",
+      "titleAccent": "çok kanallı onay deneyimi.",
+      "description": "Workflow içinde tekli veya çoklu onay mekanizmaları tasarlanır. Onaycılar rol, departman, grup, kullanıcı veya koşul sonucuna göre dinamik atanır; üst yönetici onayı gereken durumlarda manager approval otomatik devreye girer. Onay veya red kararından sonra farklı aksiyonlar tetiklenebilir — kayıt durumu güncellenir, bildirim gönderilir, atama yapılır veya süreç farklı bir kola yönlendirilir. Kullanıcılar portal, e-posta veya reply mekanizması üzerinden onay/red verebilir; onay açıklaması zorunlu hale getirilebilir ve tüm onay geçmişi timeline üzerinden takip edilir.",
+      "bullets": [
+        "Tekli ya da çoklu onay mekanizmaları workflow içinde tasarlanır; kullanıcı bazlı veya grup bazlı onay yapıları farklı karar seviyelerini sürece dahil eder.",
+        "Onaycılar rol, departman, grup, kullanıcı veya koşul sonucuna göre dinamik atanır; manager approval gereken durumlarda otomatik devreye girer.",
+        "Onay veya red sonrası kayıt durumu güncellenir, bildirim gönderilir, atama yapılır veya süreç farklı kola yönlendirilir.",
+        "Kullanıcılar portal, e-posta veya reply ile onay/red verebilir; onay açıklaması zorunlu hale getirilir, tüm geçmiş timeline üzerinden izlenir."
+      ],
+      "imageKey": "email-approval"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "İş akışı disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Seri-paralel akıştan fork/join kontrolüne, otomatik atamadan HTTP entegrasyonuna, içerik tetikleyicilerinden audit trail'e kadar uçtan uca workflow yetenekleri.",
+    "items": [
+      {
+        "id": "akis-kontrolu",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "Network",
+        "title": "Seri, paralel, fork/join ve switch-case",
+        "description": "İş akışları seri olarak adım adım ilerletilebilir veya paralel onay/iş akışlarıyla birden fazla ekip aynı anda devreye alınabilir. Fork ile akış kollara ayrılır, join ile birleştirilir; Wait All ve Wait Any seçenekleriyle paralel adımların nasıl tamamlanacağı belirlenir. Switch-case yapısı ile çoklu senaryolar yönetilir; match-first, match-any ve dinamik branching ile kayıtlar farklı yollara yönlendirilir. Break, loop ve fork kombinasyonları gelişmiş süreç kontrolü sağlar.",
+        "imageKey": "control-flow"
+      },
+      {
+        "id": "kayit-aksiyon",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Zap",
+        "title": "Otomatik kayıt aksiyonları & atama",
+        "description": "Workflow içinde kayıt durumu otomatik güncellenir, ticket kapatılır, alanlar değiştirilir; Onay Bekleniyor, Onaylandı, Reddedildi gibi durumlar otomatik yönetilir. Teknisyen veya grup atamaları otomatik yapılır; round-robin ve load balancing desteği ile işler ekipler arasında dengeli dağıtılır.",
+        "imageKey": "action"
+      },
+      {
+        "id": "icerik-tetikleyici",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Activity",
+        "title": "İçerik & activity log tetikleyicileri",
+        "description": "Not, yorum, e-posta veya dosya yükleme/silme aksiyonları workflow başlatabilir. İş günlüğü üzerindeki değişiklikler de otomasyon tetikler; kullanıcı aksiyonları ve süreç ilerleyişi workflow ile entegre çalışır."
+      },
+      {
+        "id": "entegrasyon",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Globe",
+        "title": "HTTP request, subflow ve entegrasyon aksiyonları",
+        "description": "Custom HTTP request, Run Workflow, Run JS ve Run Integration aksiyonları ile dış sistemler ve alt akışlar devreye alınır. Workflow'lar arası veri taşıma ve parametre geçirme desteklenir; mevcut akışlar yeniden kullanılabilir bileşene dönüşür.",
+        "imageKey": "http"
+      },
+      {
+        "id": "veri-gorev",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Database",
+        "title": "Veri ve görev yönetimi",
+        "description": "Süreç içinde custom field enable/disable işlemleri, veri güncellemeleri, metadata değişiklikleri ve değişiklik görevleri oluşturulabilir. Workflow yalnızca yönlendirme değil, aktif işlem yönetimi de sağlar."
+      },
+      {
+        "id": "bildirim-audit",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "Bell",
+        "title": "Bildirim, audit trail ve görünürlük",
+        "description": "Email, SMS, web ve Teams bildirimleriyle kullanıcılar süreç aşamalarından haberdar edilir. Her adım loglanır, audit trail oluşturulur, performans ölçümlenir ve süreçler tek panelden izlenir.",
+        "imageKey": "akis"
+      }
+    ]
+  },
+  "cta": {
+    "title": "İş akışı disiplinini ServiceCore ile no-code kurun.",
+    "description": "Merkezi tasarımdan dinamik koşula, çoklu onaydan paralel süreç ve entegrasyona kadar tüm workflow yetkinliklerini canlı demoda inceleyin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

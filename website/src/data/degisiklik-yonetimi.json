@@ -1,0 +1,118 @@
+{
+  "hero": {
+    "badge": "Değişiklik Yönetimi",
+    "titleLead": "Kontrollü değişim,",
+    "titleAccent": "ölçülebilir sonuçlar.",
+    "description": "ServiceCore Change Management, değişiklik taleplerinden uygulama ve gözden geçirmeye kadar tüm yaşam döngüsünü tek çatı altında yönetir; risk, onay ve izlenebilirlik gereksinimlerini operasyonel pratikle birleştirir. Böylece kurumlar hem kontrollü değişim disiplinini hem de hızlı teslimat ihtiyacını aynı platformda dengeler; denetim, raporlama ve sürekli iyileştirme için tutarlı veri üretir.",
+    "imageAlt": "ITIL uyumlu merkezi değişiklik yönetimi panosu"
+  },
+  "zigzag": [
+    {
+      "id": "merkezi-yonetim",
+      "accent": "blue",
+      "icon": "LayoutDashboard",
+      "titleLead": "Tek panelde",
+      "titleAccent": "merkezi yönetim.",
+      "description": "Değişiklik kaydı, RFC başlatımı ve detaylı planlama aynı çalışma alanında birleşerek ekiplere uçtan uca görünürlük sağlar. Dağınık araç ve iletişim kanalları yerini disiplinli tek bir akışa bırakır.",
+      "bullets": [
+        "Tüm değişiklik süreçleri teknisyenlere özel tasarlanmış merkezi panel üzerinden yönetilir; kayıt oluşturma, planlama, onay ve kapanış adımları aynı ekranda toplanır.",
+        "Standart RFC modeli ile kapsam, gerekçe ve zamanlama başlangıçta netleşir; olgunluk seviyesi farklı ekipler arasında ortak bir dil oluşur.",
+        "Etki, risk, uygulama adımları ve koordinasyon ihtiyaçları detaylı şekilde kayıt altına alınarak uygulama öncesi hazırlık ve paydaş uyumu sistematik hale gelir."
+      ],
+      "imageKey": "planlama"
+    },
+    {
+      "id": "risk-danismanlik",
+      "accent": "emerald",
+      "icon": "ShieldCheck",
+      "titleLead": "Risk analizi ve",
+      "titleAccent": "dinamik danışma.",
+      "description": "Her değişiklik, iş etkisi ve potansiyel riskleri üzerinden yapılandırılmış analizle değerlendirilir; doğru uzman kurulu konuya göre dinamik olarak devreye girer. Kaçış senaryoları önceden yazılarak olası kesintilerde ekipler aynı playbook üzerinden hareket eder.",
+      "bullets": [
+        "Değişikliklerin iş üzerindeki etkisi ve potansiyel riskleri sistematik olarak analiz edilir; öncelik ve onay gereksinimi bu analizle uyumlu şekilde şekillenir.",
+        "Başarısız senaryolar için geri dönüş ve kurtarma planları önceden tanımlanır; kesinti süresini ve operasyonel paniği azaltan hazır playbook'lar sunar.",
+        "Her değişiklik için özel danışma (advisory) grupları dinamik olarak belirlenir; konuya göre doğru uzmanların devreye girmesi garanti altına alınır."
+      ],
+      "imageKey": "tavsiyeler1"
+    },
+    {
+      "id": "akis-otomasyon",
+      "accent": "purple",
+      "icon": "Workflow",
+      "titleLead": "Dinamik iş akışı,",
+      "titleAccent": "uçtan uca otomasyon.",
+      "description": "Değişiklik türüne göre iş akışı otomatik tetiklenir, görev bazlı yönetimle sorumluluklar ve teslim tarihleri netleşir. Manuel hatırlatma yükü azalır, süreç tutarlılığı ve ölçülebilir SLA'lar güçlenir.",
+      "bullets": [
+        "Değişiklik uygulama süreci görev bazlı yönetilerek adım adım ilerletilir; ekipler arası el değiştirme sistem üzerinden düzenli biçimde yürütülür.",
+        "Değişiklik süreçleri tür bazlı veya manuel seçilen iş akışları ile uçtan uca otomatik olarak işletilir; adımlar ve koşullar yapılandırılabilir kalır.",
+        "Seçilen değişiklik türüne göre ilgili iş akışı otomatik tetiklenir; doğru onay ve görev seti baştan yüklenerek karar tutarlılığı artırılır."
+      ],
+      "imageKey": "akis1"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Değişim disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Talep kaynağından sonuç analizine kadar her adımda görünürlük, izlenebilirlik ve şeffaf raporlama sağlayan entegre yetenekler.",
+    "items": [
+      {
+        "id": "entegrasyon",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "Share2",
+        "title": "Çok modüllü entegrasyon ve uçtan uca izlenebilirlik",
+        "description": "Değişiklik talepleri; Olay, Problem ve İstek gibi farklı modüllerden entegre şekilde oluşturulur ve kök kaynak tek tip bir veri modeliyle sisteme taşınır. Her kayıt, kaynağıyla geriye dönük ilişkilendirilerek kök neden analizi ve denetim hazırlığında güvenilir bir kanıt zinciri sunar.",
+        "imageKey": "akis2"
+      },
+      {
+        "id": "email",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Mail",
+        "title": "E-posta ile hızlı onay ve sade yapı",
+        "description": "Onay ve görüş toplama süreçleri e-posta üzerinden entegre yürütülür; otomatik e-posta birleştirme ile kişiselleştirilmiş iletiler tutarlı biçimde üretilir. Esnek danışma kurulları sayesinde düşük riskli rutin değişikliklerde hız kazanılırken kontrol noktaları korunur."
+      },
+      {
+        "id": "cmdb",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Boxes",
+        "title": "Varlık ve konfigürasyon entegrasyonu",
+        "description": "Değişikliklerin etkileyeceği varlık ve servisler aynı ekran üzerinden analiz edilerek bağımlılıklar ve etki alanı baştan görünür olur. CMDB bağlantısı, yanlış kapsam riskini azaltır ve değişiklik sonrası yapılandırma tutarlılığının izlenmesini kolaylaştırır.",
+        "imageKey": "cmdb"
+      },
+      {
+        "id": "pir",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "ClipboardCheck",
+        "title": "Post-implementation review ile sürekli iyileştirme",
+        "description": "Değişiklik sonrası hedeflerin karşılanıp karşılanmadığı analiz edilir; başarı ölçütleri ve öğrenilen dersler kayıt altına alınır. PIR disiplini, benzer değişikliklerde tekrarlayan hataları azaltır ve sürekli iyileştirme döngüsüne somut veri kazandırır.",
+        "imageKey": "gozdengecirme"
+      },
+      {
+        "id": "surum-proje",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "GitBranch",
+        "title": "Sürüm ve proje yönetimi entegrasyonu",
+        "description": "Değişiklikler ihtiyaç halinde projelere veya sürüm yönetimi süreçlerine dönüştürülerek büyük teslimatlarla operasyonel değişiklikler aynı çizgide yönetilir. Portföy öncelikleriyle saha uygulaması arasında köprü kurularak değişiklik ile proje ayrımının pratikte kaybolması önlenir."
+      },
+      {
+        "id": "raporlama",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "LineChart",
+        "title": "Raporlama, zaman çizelgesi ve self-servis",
+        "description": "Zaman çizelgesi, iş günlüğü ve efor takibi; durum, kategori, risk ve sonuç kırılımlarında geçmişe dönük detaylı analiz üretir. Yetkin son kullanıcılar kayıtları kendi ekranlarından görüntüleyerek planlı çalışmalardan proaktif haberdar olur."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Kontrollü değişim için ServiceCore'u keşfedin.",
+    "description": "Risk, onay ve izlenebilirlik gereksinimlerinizi operasyonel hızla birleştiren ITIL uyumlu değişiklik yönetimini canlı demoda inceleyin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

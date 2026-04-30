@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Servis Konfigürasyon Yönetimi",
+    "titleLead": "Hizmetler ve varlıklar arasındaki",
+    "titleAccent": "ilişkileri tek haritada görün.",
+    "description": "ServiceCore Service Configuration Management, varlıkların bir araya gelerek oluşturduğu hizmetlerin yapılandırmasını, ilişkilerini ve güncel durumunu tek panelde yönetir. CMDB modülü; hizmet haritalarını, varlık-varlık bağımlılıklarını, ilişkili sözleşmeleri ve harcamaları aynı veri modelinde toplayarak Olay, Problem, İstek ve Değişiklik süreçlerinin ihtiyaç duyduğu güncel konfigürasyon bilgisini tek tuşla sağlar.",
+    "imageAlt": "CMDB panosu — hizmet haritası, varlık ilişkileri ve konfigürasyon görünümü"
+  },
+  "zigzag": [
+    {
+      "id": "hizmet-haritasi",
+      "accent": "blue",
+      "icon": "Network",
+      "titleLead": "Hizmet haritaları,",
+      "titleAccent": "varlık ilişkileriyle canlanır.",
+      "description": "Bir hizmetin hangi varlıklardan oluştuğu ve hangi konfigürasyonda çalıştığı, varlıklar arası ilişkilerin tanımlanmasıyla görsel haritaya dönüşür. Yapılandırma değiştiğinde harita anlık güncellenir; etki analizi tahminden çıkıp veriye dayanır.",
+      "bullets": [
+        "Hizmetlerin hangi varlıklardan oluşturulduğu ve hangi konfigürasyonda çalıştığı CMDB üzerinden uçtan uca haritalanır; konfigürasyon değiştiğinde harita ve bağımlılıklar otomatik güncellenir.",
+        "Varlıklar arası ilişkiler ve servis haritaları ServiceCore CMDB modülü ile rahatlıkla düzenlenir; sürükle-bırak ve ilişki tanımlama akışları teknik ekibin günlük operasyonuna uyar.",
+        "Hizmetin etkilendiği olaylar, istekler ve değişiklikler haritaya bağlandığında etkilenen kullanıcı sayısı, kapsam ve kritik bağımlılıklar ilk bakışta görünür hale gelir."
+      ],
+      "imageKey": "harita"
+    },
+    {
+      "id": "cmdb",
+      "accent": "emerald",
+      "icon": "Database",
+      "titleLead": "Detaylı CMDB,",
+      "titleAccent": "tek doğruluk kaynağı.",
+      "description": "Configuration Management Data Base; hizmetlerin ve varlıkların detaylı özniteliklerini ve aralarındaki ilişkileri standart bir veri modelinde toplar. Tüm servis yönetimi süreçleri, dağınık tablolar yerine tek doğruluk kaynağı üzerinden konuşur; raporlama ve denetim tutarlı kalır.",
+      "bullets": [
+        "Hizmetlerin ve varlıkların detaylı öznitelikleri standart bir veri modelinde tanımlanır; donanım, yazılım, ağ, lisans ve iş servisi gibi farklı CI türleri ortak yapıda yönetilir.",
+        "Varlık-varlık ve hizmet-varlık ilişkileri ilişki tipleriyle birlikte (depends-on, runs-on, hosts gibi) sistemde tutulur; ilişkiler raporlama ve etki analizinde sorgulanabilir.",
+        "CMDB güncelliği; otomatik keşif, manuel düzenleme ve değişiklik kayıtlarıyla birlikte korunur; tek doğruluk kaynağı her servis sürecinin başvurduğu güvenilir referansa dönüşür."
+      ],
+      "imageKey": "cmdb"
+    },
+    {
+      "id": "surec-entegrasyonu",
+      "accent": "purple",
+      "icon": "Share2",
+      "titleLead": "Tüm süreçler",
+      "titleAccent": "hizmet kaydından beslenir.",
+      "description": "Hizmetin başından geçen olaylar, istekler ve değişiklikler aynı CI üzerinde geriye dönük takip edilir. Servis süreçleri, güncel konfigürasyon bilgisini tek tuşla CMDB'den çekerek karar tutarlılığını ve izlenebilirliği güçlendirir.",
+      "bullets": [
+        "Bir hizmetin ilişkili olayları, istekleri ve değişiklikleri tek kayıt üzerinden geriye dönük izlenir; hizmetin başından ne geçtiği denetlenebilir biçimde belgelenir.",
+        "Olay, Problem ve Değişiklik kayıtlarına ilgili CI'lar otomatik bağlanır; etki kapsamı, bağımlılık zinciri ve ilgili anlaşmalar tek panelde özetlenir.",
+        "Konfigürasyon değişiklikleri Change Management ile entegre yürütüldüğü için CMDB ile gerçek ortam arasındaki tutarsızlık riski azaltılır; değişiklik sonrası yapılandırma kontrolü kolaylaşır."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "CMDB disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Hizmet haritasından sözleşme yönetimine, harcama takibinden ilişki kütüphanesine kadar konfigürasyon yönetimini uçtan uca yöneten entegre yetenekler.",
+    "items": [
+      {
+        "id": "sozlesme-bagi",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "FileSignature",
+        "title": "Destek, tedarikçi ve müşteri anlaşmaları",
+        "description": "Hizmetle ilişkili tüm destek anlaşmaları, tedarikçi anlaşmaları ve müşteri anlaşmaları ayrı ayrı tanımlanır ve aynı CI üzerinde yönetilir. Bir olay veya değişiklik açıldığında ilgili anlaşma kapsamı, SLA ve sorumluluk sınırı tek bakışta görülerek doğru tarafa hızla yönlendirilir."
+      },
+      {
+        "id": "harcama",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Wallet",
+        "title": "Hizmet bazlı harcama ve masraf takibi",
+        "description": "Hizmetle ilgili yapılan tüm harcamalar ve masraflar CI bazında kayıt altında tutulur. Bütçe planlaması ve hizmet maliyeti analizi, dağınık tablolar yerine tek doğruluk kaynağı üzerinden alınır."
+      },
+      {
+        "id": "iliski-tipleri",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Link2",
+        "title": "İlişki tipleri ve bağımlılık katmanları",
+        "description": "depends-on, runs-on, hosts ve uses gibi standart ilişki tipleri ile karmaşık bağımlılıklar yapılandırılmış biçimde tanımlanır. Yukarı ve aşağı yönlü etki zincirleri tek panelde sorgulanabilir hale gelir."
+      },
+      {
+        "id": "etki-analizi",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Network",
+        "title": "Değişiklik öncesi etki analizi",
+        "description": "Bir CI üzerinde planlanan değişiklikte etkilenen hizmetler, bağımlılıklar ve kullanıcılar otomatik listelenir. Riskli kapsamlar değişiklik onayından önce görünür hale gelir; CAB ve advisory grupları konuya özgü dinamik olarak devreye girer."
+      },
+      {
+        "id": "ci-kutuphane",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "LayoutGrid",
+        "title": "CI tipi kütüphanesi ve özellik şablonları",
+        "description": "Hizmet, uygulama, sunucu, ağ bileşeni gibi CI türleri için hazır şablonlar sunulur. Yeni CI türleri dakikalar içinde tanımlanır; ekipler standart veri modeli üzerinden tutarlı biçimde çalışır."
+      },
+      {
+        "id": "guncellik",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "RefreshCw",
+        "title": "Güncellik ve denetim izi",
+        "description": "Konfigürasyon güncellemeleri kim, ne zaman, hangi alanı değiştirdi sorularına net yanıt veren denetim izi üretir. Değişiklik kayıtlarıyla bağlı tutulan history, uyumluluk gereksinimlerinde sağlam kanıt zinciri sağlar."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Hizmet haritanızı ServiceCore ile çıkarın.",
+    "description": "CMDB üzerinden varlık-varlık ve hizmet-varlık ilişkilerini görsel haritalarla yöneten Service Configuration Management modülünü canlı demoda inceleyin; tek doğruluk kaynağı üzerinden konuşan bir servis organizasyonu kurun.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

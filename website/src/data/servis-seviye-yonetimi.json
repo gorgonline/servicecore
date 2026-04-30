@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "badge": "Servis Seviye Yönetimi",
+    "titleLead": "SLA hedefleri otomatik,",
+    "titleAccent": "performans sizin kontrolünüzde.",
+    "description": "ServiceCore SLM modülü, müşterilere sunulan hizmet süre hedefi vaatlerini SLA Policy nesneleri olarak yönetir. Olay ve İstek modülleriyle entegre çalışan SLA tanımları, önceliklendirme yükünü otomatikleştirir; çalışma saatleri, tatiller ve mesai dahil hedef çözüm tarihi otomatik hesaplanarak ilgili kaydın Due Date alanına yazılır.",
+    "imageAlt": "SLA Policy panosu — servis seviye anlaşmaları ve hedef takibi"
+  },
+  "zigzag": [
+    {
+      "id": "sla-policy",
+      "accent": "blue",
+      "icon": "Gauge",
+      "titleLead": "SLA Policy nesneleri,",
+      "titleAccent": "tek noktadan parametrik tanım.",
+      "description": "SLA modülünde tanımlanan SLA Policy nesneleri; müşterilere sunulan hizmetlerle ilgili süre hedeflerinin hangi koşullarda çalışacağının tanımlarıdır. Bu hedefler servis kalitesinin başarısının ölçülmesi için en önemli metriklerdir. Müşteri beklentileri hem olay hem de istek bazında parametrik olarak yönetilir.",
+      "bullets": [
+        "Müşterilere sunulan hizmet süre hedefi vaatleri SLA kapsamında kayıt altına alınır; SLA Policy nesneleri bu hedeflerin hangi koşullarda çalışacağını tanımlar.",
+        "Olay ve istek tarafındaki müşteri beklentileri parametrik olarak ayrı ayrı yönetilir; tek tip dayatma yerine her senaryoya özel kural kurulur.",
+        "Erişilebilirlik ve servis sunum süreleri ile ilgili beklentiler doğru tanımlandığında SLA hedefleri servis kalitesinin başarısını ölçen ana metrik haline gelir."
+      ],
+      "imageKey": "sla-policy"
+    },
+    {
+      "id": "incident-request-entegre",
+      "accent": "emerald",
+      "icon": "Share2",
+      "titleLead": "Incident ve Request",
+      "titleAccent": "modülleriyle entegre.",
+      "description": "SLM, Incident ve Request modüllerinin entegrasyonu ile tüm servislerde performansı arttırmak için doğru SLA policy tanımları aracılığıyla servis hedefleri belirlenir. Olay ve istek yönetimi süreçlerinin öncelikli ve zorlu faaliyetlerinden olan önceliklendirme çalışması otomatikleştirilir.",
+      "bullets": [
+        "SLM, Incident ve Request modülleri ile entegredir; tüm servislerde performansı arttırmak için doğru SLA policy tanımlarıyla hedefler belirlenir.",
+        "Olay ve istek yönetiminin en zorlu faaliyetlerinden olan önceliklendirme, kural bazlı SLA'ler ile otomatikleştirilir; teknisyen kararı yerine sistem yönlendirmesi devreye girer.",
+        "Kural bazlı tanımlanan SLA'ler, olaylarda ve isteklerde hangi kaydın öncelikle ele alınacağını belirlemede yön gösterir; doğru sıralama ve zamanında müdahale imkanı sağlanır."
+      ]
+    },
+    {
+      "id": "due-date-otomasyonu",
+      "accent": "purple",
+      "icon": "Clock",
+      "titleLead": "Due Date otomasyonu,",
+      "titleAccent": "çalışma saati ve tatil hassas.",
+      "description": "Bir kaydın çözüme ulaşması için gerekli hedef tarih bilgisi sistem tarafından otomatik olarak ilgili kaydın Due Date bölümüne yazılır. Hesaplama yapılırken çalışma saatleri, tatiller ve mesai saatleri dikkate alınır; tam çözüm tarihi ve saati hedefi bu parametrelere göre belirlenir.",
+      "bullets": [
+        "Çözüme ulaşması için gerekli hedef tarih bilgisi sistem tarafından otomatik hesaplanır ve kaydın Due Date alanına yazılır; manuel takvim hesabı ortadan kalkar.",
+        "Hesaplama esnasında çalışma saatleri, tatiller ve mesai saatleri dikkate alınır; tam çözüm tarihi ve saati hedefi bu parametrelere göre netleşir.",
+        "Çok katmanlı servis seviye anlaşması (Multi-Level SLA) tanımları sayesinde aynı kayıt için yanıt, ara hedef ve çözüm gibi farklı süre hedefleri paralel takip edilir."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Servis seviye disiplinini güçlendiren yetkinlikler",
+    "sectionSubtitle": "Çok katmanlı SLA, otomatik önceliklendirme, çalışma takvimi hassas Due Date ve kural bazlı politika yönetimiyle uçtan uca SLM yetkinlikleri.",
+    "items": [
+      {
+        "id": "multi-level",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "Layers",
+        "title": "Çok katmanlı SLA (Multi-Level SLA)",
+        "description": "Aynı kayıt için yanıt süresi, ara hedef ve çözüm süresi gibi farklı katmanlar paralel tanımlanır. Müşteri servis süre beklentileri doğru belirlenip tüm faaliyetler doğru zamanlama ile sunulur; karmaşık taahhütler tek modelde yönetilir."
+      },
+      {
+        "id": "kolay-sla-girisi",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "FilePlus2",
+        "title": "Kolay SLA girişleri",
+        "description": "Kolay SLA girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanır. Yeni servis için SLA tanımı dakikalar içinde devreye alınır."
+      },
+      {
+        "id": "kural-bazli-oncelik",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "ListOrdered",
+        "title": "Kural bazlı öncelik belirleme",
+        "description": "Kural bazlı tanımlanan SLA'ler, olaylarda ve isteklerde hangi kaydın öncelikle ele alınacağını belirler. Subjektif tartışma yerine sistem yönlendirmesi öncelik kararını netleştirir."
+      },
+      {
+        "id": "calisma-takvimi",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "CalendarClock",
+        "title": "Çalışma saati, tatil ve mesai hassas hesaplama",
+        "description": "SLA hesaplamasında çalışma saatleri, tatiller ve mesai saatleri dikkate alınır. Cuma akşamı açılan bir kayıt için Pazartesi sabahı doğru başlangıçla hesaplanır; tatil günleri sayaç dondurulur ve hedef saat gerçeğe uyar."
+      },
+      {
+        "id": "performans-metrigi",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Target",
+        "title": "Servis kalite metrikleri",
+        "description": "SLA hedefleri servis kalitesinin başarısını ölçen ana metriklerdir. SLA'ya uyum oranı, ihlal sayısı ve eskalasyon adetleri panodan takip edilir; performans yönetilebilir hale gelir."
+      },
+      {
+        "id": "due-date",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "Clock",
+        "title": "Otomatik Due Date yazımı",
+        "description": "Hedef çözüm tarih ve saati ilgili kaydın Due Date alanına otomatik yazılır. Teknisyen kayıt açar açmaz hedefini görür; manuel takvim hesabı ve unutkanlık kaynaklı ihlaller engellenir."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Performansı kural bazlı SLA ile yönetin.",
+    "description": "Çok katmanlı SLA, otomatik önceliklendirme ve çalışma takvimi hassas Due Date hesaplamasını canlı demoda inceleyin; servis kalitesini ölçülebilir bir disipline dönüştürün.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

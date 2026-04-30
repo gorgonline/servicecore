@@ -1,0 +1,121 @@
+{
+  "hero": {
+    "badge": "İstek Yönetimi",
+    "titleLead": "Servis kataloğundan teslimata,",
+    "titleAccent": "ITIL4 uyumlu istek yaşam döngüsü.",
+    "description": "ServiceCore Request Management, en güncel ITIL4 pratiklerine uygun olarak tasarlanmış olup, tüm istek süreçlerini standart, ölçülebilir ve sürdürülebilir bir yapıya dönüştürür. İstek yaşam döngüsü; değer önerisinden karşılamaya, ölçümden sürekli iyileştirmeye kadar tek çatı altında yönetilir. Böylece kurumlar hem operasyonel disiplini hem de kullanıcı deneyimini aynı anda güçlendirir; raporlama, denetim ve kapasite planlaması için güvenilir veri üretir.",
+    "imageAlt": "Merkezi istek yönetimi panosu — servis kataloğu ve çoklu kanal girişleri"
+  },
+  "zigzag": [
+    {
+      "id": "katalog-merkezi",
+      "accent": "blue",
+      "icon": "BookOpen",
+      "titleLead": "Servis kataloğu ile",
+      "titleAccent": "merkezi talep omurgası.",
+      "description": "Tüm kullanıcı talepleri merkezi servis kataloğu üzerinden başlatılır; portal, e-posta, Interaction Management ve entegrasyonlardan gelen her giriş tek platformda toplanır. Kanal farklı olsa da süreç ve veri modeli bütünleşir; ekipler tek bir gerçeklik üzerinden önceliklendirme, atama ve ilerleme takibi yapar.",
+      "bullets": [
+        "Tüm kullanıcı talepleri merkezi servis kataloğu üzerinden başlatılır; \"ne talep edildi?\" sorusu her zaman net, tek tip ve iş kurallarıyla uyumlu bir kayıtla yanıtlanır. Standart giriş noktası karşılama sürelerini öngörülebilir kılar, yanlış yönlendirmeleri azaltır ve raporlama ile hizmet seviyesi yönetiminde tutarlı bir veri tabanı oluşturur.",
+        "Portal, e-posta, entegrasyonlar veya diğer kanallardan gelen tüm istekler tek platformda toplanır; dağınık Excel veya e-posta zincirleri yerine uçtan uca izlenebilir bir kayıt modeli sayesinde operasyonel görünürlük artar, mükerrer iş yükü ve iletişim kopuklukları azalır.",
+        "Kullanıcılar self-servis portal, e-posta veya Interaction Management gibi modüller üzerinden aynı hizmet tanımlarıyla talep oluşturabilir; omnichannel giriş yapısı sayesinde kullanıcı tercih ettiği kanaldan hızlıca iletişim kurarken kurum, tek bir istek kaydı üzerinden SLA, onay ve görev akışlarını kesintisiz yürütür."
+      ],
+      "imageKey": "katalog"
+    },
+    {
+      "id": "kullanici-form",
+      "accent": "emerald",
+      "icon": "FileText",
+      "titleLead": "Kullanıcı dostu katalog,",
+      "titleAccent": "esnek ve özelleştirilebilir formlar.",
+      "description": "Sade ve yönlendirici arayüz; arama, öne çıkan hizmetler ve açıklayıcı içeriklerle kullanıcıyı doğru katalog öğesine taşır. Çok seviyeli servis ağacı ve hizmet bazlı özelleştirilebilir formlar, iş birimine özel veri toplama ihtiyaçlarını tek tip süreç çerçevesinde karşılar.",
+      "bullets": [
+        "Sade ve yönlendirici arayüz; arama, öne çıkan hizmetler ve açıklayıcı içeriklerle kullanıcıyı doğru katalog öğesine taşır. Karmaşık teknik jargon yerine anlaşılır dil ve görsel hiyerarşi öne çıkar; talep oluşturma süresi kısalır, form hataları ve yanlış kategoriye açılan kayıt oranı düşer, kullanıcı memnuniyeti yükselir.",
+        "Çok seviyeli servis ağacı ile hizmetler departman, iş kolu veya teknoloji alanına göre sınırsız derinlikte kategorize edilebilir; yeni hizmetler eklemek veya yapıyı yeniden düzenlemek kod değişimi gerektirmeden yönetilebilir ve yöneticilere net bir hizmet envanteri ile raporlama kırılımı sunar.",
+        "Her katalog hizmeti için zorunlu ve isteğe bağlı alanlar, liste değerleri, doğrulama kuralları ve bağlamsal ipuçları tanımlanabilir; formlar sürümlenebilir ve yönetilebilir yapıda olduğundan kurumsal politika değişikliklerinde hızlı uyum ve tutarlı veri kalitesi sağlanır."
+      ],
+      "imageKey": "form"
+    },
+    {
+      "id": "sla-atama-yetki",
+      "accent": "purple",
+      "icon": "Gauge",
+      "titleLead": "Katalog bazlı SLA,",
+      "titleAccent": "otomatik atama ve yetkili erişim.",
+      "description": "Her hizmet veya hizmet paketi için ayrı SLA, öncelik ve eskalasyon eşikleri tanımlanır; kurallara dayalı otomatik atama ile talepler açılır açılmaz doğru destek grubuna yönlendirilir. Rol ve kapsam bazlı yetkilendirme, kullanıcının yalnızca erişim hakkı olan hizmetleri görmesini sağlayarak güvenlik ve odak bir arada korunur.",
+      "bullets": [
+        "Her hizmet veya hizmet paketi için yanıt ve çözüm hedefleri, öncelik seviyeleri ve eskalasyon eşikleri ayrı ayrı tanımlanabilir; beklentiler kullanıcıya şeffaf biçimde yansır, operasyon tarafında ölçülebilir KPI'lar üretilir ve kritik iş süreçlerinde öncelik ayrımı kaynakları doğru kayda yönlendirerek hem riski hem de gecikme maliyetini düşürür.",
+        "Önceden tanımlanan kurallar (hizmet türü, lokasyon, çalışma saatleri, yük dağılımı) ile talepler açılır açılmaz doğru destek grubuna veya uygun teknisyene yönlendirilir; manuel triyaj yükü azalır, ilk temas kalitesi artar ve organizasyon değiştiğinde atama mantığı hızlıca güncellenerek süreklilik ile ölçeklenebilirlik korunur.",
+        "Rol ve kapsam bazlı yetkilendirme ile kullanıcılar yalnızca kendilerine açılan katalog öğelerini görür ve bu kapsamda talep açabilir; hassas veya maliyetli hizmetler kontrollü şekilde sınırlandırılır, güvenlik ile uyum gereksinimleri karşılanırken kullanıcılar gereksiz seçeneklerle boğulmadan yalnızca ilgili hizmetlere odaklanır."
+      ],
+      "imageKey": "sla"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Uçtan uca istek yönetimi yetkinlikleri",
+    "sectionSubtitle": "Talep toplamaktan teslim etmeye, onaydan izlenebilirliğe — her adım tek platformda.",
+    "items": [
+      {
+        "id": "onay-akislari",
+        "size": "wide",
+        "accent": "cyan",
+        "icon": "CheckCircle2",
+        "title": "Gelişmiş, organizasyon uyumlu ve dinamik onay akışları",
+        "description": "Tek veya çok aşamalı, paralel veya sıralı ve rol bazlı onaycılar tanımlanabilir; hem sabit şablonlar hem de talep içeriğine göre şekillenen dinamik akışlar desteklenir. Active Directory veya benzeri dizin servisleriyle entegrasyon sayesinde yönetici hiyerarşisi, departman ve grup üyelikleri sistematik olarak kullanılır; onay zinciri organizasyon şemasıyla uyumlu şekilde otomatik oluşturularak yanlış onaycı hataları azalır. Onaycılar yoğun programlarında bile güvenli e-posta bağlantıları üzerinden tek tıkla onay veya red verebilir; portal erişimi ya da ek oturum açma zorunluluğu ortadan kalkar ve işlem kayıtları sistemde tutularak denetlenebilirlik korunur. Tutar eşiği, lokasyon, veri sınıfı veya seçilen hizmet paketi gibi koşullara bağlı olarak farklı onay yolları otomatik tetiklenir; tek tip akışa mahkum kalmadan kurumsal politikalara nüanslı uyum sağlanır, gereksiz onay katmanları budanır ve yüksek riskli senaryolarda ek kontroller devreye girer.",
+        "imageKey": "onayservis"
+      },
+      {
+        "id": "gorev-akis",
+        "size": "wide",
+        "accent": "indigo",
+        "icon": "ListChecks",
+        "title": "Otomatik görev üretimi, akıllı akış ve servis paketleme",
+        "description": "Talep kaydı açıldığı anda şablona bağlı görev setleri otomatik üretilir; kontrol listeleri, hazırlık adımları ve koordinasyon işleri anında iş kuyruğuna düşer. Ekipler her seferinde \"ne yapılacak?\" sorusunu yeniden tartışmak yerine standart yürütme planına güvenerek teslimat hızını ve kalitesini artırır. Görevler arasında önkoşul ve sıra ilişkileri tanımlanabilir; bir adım tamamlanmadan sonraki adım başlamaz veya paralel çalışması gereken işler eşzamanlı yürütülür, karmaşık teslimatlar kontrollü şekilde ilerler ve darboğazlar erken görülür. Servis paketleme yeteneği ile tek bir talep kaydı altında hesap, erişim, donanım veya eğitim gibi birden fazla alt hizmet eşzamanlı tetiklenir; örneğin işe alım paketi ilgili tüm adımları tek kullanıcı deneyiminde toplar, tekrarlayan koordinasyon azalır, süreç süresi kısalır ve eksik adım riski düşer.",
+        "imageKey": "gorev"
+      },
+      {
+        "id": "entegrasyon",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Plug",
+        "title": "Modüller arası entegrasyon ve dış sistem bağlantısı",
+        "description": "İstek kayıtları değişiklik yönetimi, proje portföyü, varlık ve CMDB süreçleriyle bağlantılı çalışır; çoklu disiplin gerektiren ihtiyaçlar kopukluk yaşanmadan yönetilir. API'ler, olay tabanlı bildirimler ve standart entegrasyon kalıpları üzerinden CRM, ERP, kimlik, iletişim veya izleme sistemleriyle gerçek zamanlı veri alışverişi kurulur; ServiceCore, kurumun dijital ekosisteminin merkezi omurgası hâline gelir, çift veri girişi ve manuel aktarım hataları azalır.",
+        "imageKey": "cmdb"
+      },
+      {
+        "id": "izlenebilirlik",
+        "size": "normal",
+        "accent": "amber",
+        "icon": "Eye",
+        "title": "Uçtan uca izlenebilirlik ve değer akışı şeffaflığı",
+        "description": "Talebin açılışından kapanışına kadar durum geçişleri, onaylar, görevler ve iletişimler tek zaman çizelgesinde izlenebilir. Servis değer akışı boyunca şeffaflık, hem iç ekip hem de talep sahibi için güven üretir; kök neden analizi, süreç iyileştirme ve kullanıcı bilgilendirmesinde somut veri sağlar.",
+        "imageKey": "akis"
+      },
+      {
+        "id": "gecmis-efor",
+        "size": "normal",
+        "accent": "red",
+        "icon": "Clock",
+        "title": "History tracking, efor ve iş günlüğü yönetimi",
+        "description": "Alan değişiklikleri, yorumlar, ekler, atamalar ve sistem tarafından tetiklenen olaylar zaman damgası ve aktör bilgisiyle saklanır; \"kim, ne zaman, neyi değiştirdi?\" sorusu denetim ve anlaşmazlık çözümünde net yanıtlanır. Teknisyenler çalışma günlükleri, süre girişleri ve yapılan işlemlerle kayıtları zenginleştirir; maliyet dağılımı, faturalama ve kapasite analizi gerçekçi verilere, yönetim raporları güvenilir girdilere dayanır.",
+        "imageKey": "gecmis"
+      },
+      {
+        "id": "tekrar-icgoru",
+        "size": "normal",
+        "accent": "purple",
+        "icon": "Repeat",
+        "title": "Tekrarlayan talep desenleri ve katalog iyileştirme içgörüleri",
+        "description": "Uçtan uca izlenebilirlik verisinin raporlama yüzü; hangi hizmetlerin daha sık talep edildiğini, hangi kategorilerde SLA baskısı oluştuğunu ve tekrarlayan talep desenlerini gün yüzüne çıkarır. ITIL4 sürekli iyileştirme prensibi doğrultusunda katalog yapısı, form alanları ve onay akışları bu içgörülere göre optimize edilir; otomasyona aday rutin talepler belirlenerek kapasite planlaması ve hizmet portföyü kararları veriyle desteklenir.",
+        "imageKey": "tekrarlananistek"
+      }
+    ]
+  },
+  "cta": {
+    "title": "İstek yaşam döngüsünü ölçülebilir değere çevirin.",
+    "description": "ITIL4 uyumlu Request Management süreçlerini, servis kataloğundan onaya, otomatik görevden uçtan uca izlenebilirliğe kadar tek platformda canlı demoda inceleyin; kullanıcı deneyimi ile operasyonel disiplin aynı çatıda buluşsun.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "badge": "Servis Otomasyonu",
+    "titleLead": "Kural tabanlı iş motoru,",
+    "titleAccent": "manuel yükten arınmış servis akışları.",
+    "description": "ServiceCore Servis Otomasyonu Kural Servisi (SARE — Service Automation Rules Engine), otomatik iş kuralları tanımlama ve koşullara bağlı olarak olay ve istekleri dinamik yönetme özellikleriyle donatılmıştır. Yönetim panelinden kolayca tanımlanabilen basit aksiyonlardan çok ön koşullu, çok katmanlı ve çok aksiyonlu dinamik kurallara kadar pek çok otomatik süreç önceden tanımlanarak iş akışlarında daha fazla otomasyon ve servislerde daha yüksek hız sağlanır.",
+    "imageAlt": "SARE kural motoru panosu — koşul, eylem ve dinamik akış"
+  },
+  "zigzag": [
+    {
+      "id": "sare",
+      "accent": "blue",
+      "icon": "Workflow",
+      "titleLead": "SARE kural motoru,",
+      "titleAccent": "manuel yönetimi otomatikleştirir.",
+      "description": "Servis Otomasyonu Kural Servisi (SARE), otomatik iş kuralları tanımlama ve koşullara bağlı olarak olay ve istekleri dinamik yönetme özellikleriyle donatılmıştır. Bu kural tabanlı iş motoru sayesinde bir çok manuel yönetim faaliyeti kuralla işletilir; teknisyen ve süreç yöneticisinin tekrar eden müdahalesine gerek kalmadan akışlar tutarlı yürür.",
+      "bullets": [
+        "SARE — Service Automation Rules Engine, otomatik iş kuralları tanımlama ve koşullara bağlı olay/istek yönetimini tek motorda toplar.",
+        "Kural tabanlı iş motoru ile bir çok manuel yönetim faaliyeti otomatikleştirilir; teknisyen müdahalesi sadece istisnai durumlarda gerekli kalır.",
+        "Manuel veri güncellemeye gerek kalmadan gerçekleşen her olası durumda, teknisyenin ve süreç yöneticisinin hayal gücüne bağlı tüm aksiyonların otomatikleştirilmesi mümkün hale getirilmiştir."
+      ],
+      "imageKey": "sare"
+    },
+    {
+      "id": "kosul-aksiyon",
+      "accent": "emerald",
+      "icon": "GitBranch",
+      "titleLead": "Koşullara bağlı aksiyonlar,",
+      "titleAccent": "akışlar dinamik hızlanır.",
+      "description": "Kolayca tanımlanabilen kurallar ile koşullara bağlı aksiyonlar otomatik yapılabilmekte ve bu sayede tüm servis kayıtlarının dinamik olarak güncellenmesi ve akışların hızlanması sağlanmaktadır. Olay ve istek tarafındaki dinamik yönetim, sahanın değişken senaryolarına anında uyum sağlar.",
+      "bullets": [
+        "Kolayca tanımlanabilen kurallar ile koşullara bağlı aksiyonlar otomatik yapılır; yönetim paneli, geliştirici desteği gerektirmeyen kullanıcı dostu bir kural tasarımı sunar.",
+        "Tüm servis kayıtlarının dinamik olarak güncellenmesi sağlanır; durum, sorumlu, öncelik ve özel alanlar koşula göre anında değişir.",
+        "Akışların hızlanması ile bekleme noktaları azalır; olay ve istek kayıtları statik formdan çıkıp ortama tepki veren dinamik kayıtlara dönüşür."
+      ]
+    },
+    {
+      "id": "katmanli-kurallar",
+      "accent": "purple",
+      "icon": "Layers",
+      "titleLead": "Basit aksiyondan",
+      "titleAccent": "çok katmanlı kurallara.",
+      "description": "Yönetim panelinden kolayca tanımlanabilen basit aksiyonlardan, çok ön koşullu, çok katmanlı ve çok aksiyonlu dinamik kurallara kadar pek çok otomatik süreç önceden tanımlanır. İş akışlarında daha fazla otomasyon ve servislerde daha yüksek hız aynı motorda birleşir.",
+      "bullets": [
+        "Basit tek koşul-tek aksiyon kurallarından çok ön koşullu, çok katmanlı, çok aksiyonlu dinamik kurallara kadar tüm senaryolar tek panelde modellenir.",
+        "Yönetim panelinden kolayca tanımlanan kurallar önceden hazırlanır; süreç yöneticileri olası durumları proaktif olarak otomasyona bağlar.",
+        "İş akışlarında daha fazla otomasyon ve servislerde daha yüksek hız sağlanır; kural kütüphanesi büyüdükçe operasyonel yük katlanarak azalır."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Servis otomasyonunu güçlendiren yetkinlikler",
+    "sectionSubtitle": "Kural tasarımından koşullu eylemlere, çoklu tetikleyicilerden hayal gücü kadar geniş aksiyon paletine kadar SARE motorunun uçtan uca yetenekleri.",
+    "items": [
+      {
+        "id": "kosul-tasarimi",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "Filter",
+        "title": "Görsel kural tasarımcısı",
+        "description": "Yönetim panelinden kolayca tanımlanan kurallarda IF/THEN/ELSE mantığı görsel olarak modellenir. Süreç yöneticisi tek satır kod yazmadan koşul ağacı kurar; aynı arayüzde kural test edilir, devreye alınır."
+      },
+      {
+        "id": "tetikleyici",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Zap",
+        "title": "Çoklu tetikleyici desteği",
+        "description": "Kayıt oluşturulduğunda, alan değiştiğinde, durum güncellendiğinde, SLA eşiği aşıldığında veya zaman bazlı koşul karşılandığında SARE devreye girer. Aynı kural birden fazla tetikleyici ile tanımlanabilir."
+      },
+      {
+        "id": "aksiyon-paleti",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "Sparkles",
+        "title": "Geniş aksiyon paleti",
+        "description": "Alan güncelleme, atama değişikliği, e-posta gönderimi, görev oluşturma, eskalasyon, başka kayıt açma ve webhook çağrısı tek paletten yönetilir. Hayal gücü ne kadar genişse otomasyon o kadar geniş kurulur."
+      },
+      {
+        "id": "katmanli-mantik",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Layers",
+        "title": "Çok katmanlı, çok aksiyonlu kurallar",
+        "description": "Tek koşul-tek aksiyon yetersiz kaldığında SARE; iç içe koşullar, paralel aksiyonlar ve sıralı eylemleri tek kuralda yönetir. Karmaşık senaryolar — kritik olaylar, çok onaycılı istekler, kademeli eskalasyonlar — kütüphaneye girer ve tekrarlanabilir kalır."
+      },
+      {
+        "id": "dinamik-guncelleme",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "RefreshCw",
+        "title": "Dinamik kayıt güncellemeleri",
+        "description": "Tüm servis kayıtları kurallar çalıştıkça dinamik olarak güncellenir. Manuel veri güncellemeye gerek kalmadan durum, sorumlu, etiket ve özel alanlar ortama tepki olarak değişir."
+      },
+      {
+        "id": "kural-kutuphanesi",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "BookOpen",
+        "title": "Önceden tanımlı kural kütüphanesi",
+        "description": "Sık kullanılan otomasyon senaryoları kural kütüphanesinde hazır gelir; süreç yöneticisi kurumuna göre uyarlayarak dakikalar içinde devreye alır. Sıfırdan tasarım yükü ortadan kalkar."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Manuel müdahaleyi SARE ile kurala dönüştürün.",
+    "description": "Koşullara bağlı dinamik aksiyonlardan çok katmanlı kural senaryolarına kadar tüm servis otomasyonu yetkinliklerini canlı demoda inceleyin.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

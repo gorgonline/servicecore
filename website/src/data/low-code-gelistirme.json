@@ -1,0 +1,113 @@
+{
+  "hero": {
+    "badge": "Low Code Geliştirme Modülü",
+    "titleLead": "Sürükle-bırak dinamik formlar,",
+    "titleAccent": "kod yazmadan iş süreçleri.",
+    "description": "ServiceCore Low Code altyapısı; kullanıcı dostu bir arayüz ve sürükle-bırak özellikleriyle dinamik form tasarımı yapmanıza olanak tanır. Formlar iş süreçlerinize göre tamamen özelleştirilir, gerçek zamanlı uyarlanır ve farklı sistemlerle kolayca entegre edilir. Teknik uzmanlığa ihtiyaç duymadan iş süreçleri dijitalleştirilir; uygulama süresi minimuma iner, yazılım geliştirme maliyeti düşer.",
+    "imageAlt": "Low Code form tasarım panosu — sürükle-bırak ve dinamik alanlar"
+  },
+  "zigzag": [
+    {
+      "id": "tasarim-araclari",
+      "accent": "blue",
+      "icon": "MousePointer2",
+      "titleLead": "Kullanıcı dostu",
+      "titleAccent": "tasarım araçları.",
+      "description": "Teknik bilgiye gerek duymadan form alanları kolayca oluşturulur ve düzenlenir. Sürükle-bırak ile metin, sayı, seçim, tarih ve dosya alanları sahaya bırakılır; doğrulama kuralları ve koşullu görünürlük basit ekranlardan tanımlanır. İş analisti, süreç sahibi ve admin doğrudan üretici olur.",
+      "bullets": [
+        "Sürükle-bırak özellikleriyle dinamik form tasarımı yapılır; metin, sayı, seçim, tarih, dosya ve özel alanlar sahaya bırakılır.",
+        "Teknik bilgiye gerek duymadan form alanları kolayca oluşturulur ve düzenlenir; iş analisti ve süreç sahibi formu kendi ekranından üretir.",
+        "Doğrulama kuralları, zorunlu alan tanımları ve koşullu görünürlük basit ekranlardan yönetilir."
+      ],
+      "imageKey": "form-tasarim"
+    },
+    {
+      "id": "gercek-zamanli",
+      "accent": "emerald",
+      "icon": "RefreshCw",
+      "titleLead": "Gerçek zamanlı",
+      "titleAccent": "özelleştirme.",
+      "description": "Formlar iş ihtiyaçlarınıza göre anında uyarlanır. Yayınlanan bir form üzerinde alan ekleme/çıkarma, başlık değişikliği veya doğrulama güncellemesi yayın saniyesinde tüm yeni kayıtlarda etkin olur; mevcut kayıtlar tutarlı kalır.",
+      "bullets": [
+        "Formlar iş ihtiyaçlarınıza göre anında uyarlanır; iş kuralındaki değişim formda da gecikmesiz yansır.",
+        "Yayınlanan bir form üzerindeki güncelleme yayın saniyesinde yeni kayıtlarda etkin olur; ekipler farklı sürümlerle uğraşmaz.",
+        "Form değişikliği için yazılım sürümü beklemeye gerek kalmaz; pilot uygulamadan tam yayına hızlı geçilir."
+      ]
+    },
+    {
+      "id": "entegrasyon-kolayligi",
+      "accent": "purple",
+      "icon": "Share2",
+      "titleLead": "Entegrasyon kolaylığı,",
+      "titleAccent": "tek ekosistem.",
+      "description": "Dinamik formlar farklı sistemler ve platformlarla kolayca entegre edilir; toplanan veri ServiceCore içinde değerlendirilebileceği gibi REST API üzerinden CRM, ERP ve BI gibi araçlara da aktarılabilir. Form bir veri silosu değil, akan ekosistemin parçası olur.",
+      "bullets": [
+        "Dinamik formlar farklı sistemler ve platformlarla kolayca entegre edilir; veri çift yönlü akar, kayıp gitmez.",
+        "Toplanan veri ServiceCore içinde işlenebileceği gibi REST API üzerinden CRM, ERP ve BI araçlarına da aktarılır.",
+        "Form bir veri silosu olmaktan çıkar; akan ekosistemin parçası olarak iş süreçlerini besler."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Low Code dinamik formlar — kullanım alanları ve avantajlar",
+    "sectionSubtitle": "Veri toplamadan onay süreçlerine, eğitim formlarından hızlı uyarlamaya kadar Low Code'un getirdiği uçtan uca yetkinlikler.",
+    "items": [
+      {
+        "id": "veri-toplama",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "ClipboardList",
+        "title": "Veri toplama ve analiz",
+        "description": "Müşterilerden, çalışanlardan veya iş ortaklarından hızlı bir şekilde veri toplanır; analiz süreçleri hızlanır. Anket, denetim ve değerlendirme formları dakikalar içinde devreye alınır."
+      },
+      {
+        "id": "onay-talep",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "CheckCircle2",
+        "title": "Onay süreçleri ve talep yönetimi",
+        "description": "Onay süreçleri veya iş talepleri için özelleştirilmiş formlar tasarlanır; süreçler daha verimli hale gelir. Form, onay zinciri ve SLA aynı yapıda yönetilir."
+      },
+      {
+        "id": "egitim-geri-bildirim",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "BookOpen",
+        "title": "Eğitim ve geri bildirim formları",
+        "description": "Eğitim oturumları veya geri bildirim toplamak için interaktif formlar oluşturulur. Sonuçlar otomatik raporlara aktarılır, sürekli iyileştirmeye girdi olur."
+      },
+      {
+        "id": "hizli-uygulama",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Zap",
+        "title": "Hızlı uygulama, esneklik, düşük maliyet",
+        "description": "Karmaşık iş süreçleri için form oluşturma süresi minimuma iner; iş gereksinimlerine göre formlar kolayca değiştirilir ve güncellenir. Yazılım geliştirme maliyeti azalır, bütçe korunur — teknik uzmanlığa ihtiyaç duymadan iş süreçleri dijitalleştirilir."
+      },
+      {
+        "id": "kosullu-mantik",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Filter",
+        "title": "Koşullu görünürlük ve mantık",
+        "description": "Alanlar koşula göre gösterilir veya gizlenir; bir seçim diğer alanları tetikler. Karmaşık formlar kullanıcının yalnızca ilgili kısmını görmesi için sadeleşir."
+      },
+      {
+        "id": "yayin-versiyon",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "GitBranch",
+        "title": "Yayın ve versiyon yönetimi",
+        "description": "Form değişiklikleri taslak halinde tutulur, hazır olduğunda yayınlanır. Eski sürümle açılmış kayıtlar bozulmaz; yeni sürüm tüm yeni kayıtlarda kullanılır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Dijital dönüşümünüzü Low Code ile bugün başlatın.",
+    "description": "Sürükle-bırak ile dinamik formlar, gerçek zamanlı özelleştirme ve kolay entegrasyon avantajlarını canlı demoda inceleyin; iş süreçlerinizi bir adım ileri taşıyın.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

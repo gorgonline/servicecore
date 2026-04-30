@@ -1,0 +1,119 @@
+{
+  "hero": {
+    "badge": "Etkileşim Yönetimi",
+    "titleLead": "Tüm kanallardan tek karşılama,",
+    "titleAccent": "SPOC disiplini ile kusursuz servis masası.",
+    "description": "ServiceCore Service Desk / Interaction Management, servis yönetimi ürün ailesinin müşteri ve kullanıcı etkileşimlerinin kaydedildiği karşılama alanı olarak tasarlanmıştır; e-posta, telefon, chat, SMS, sosyal medya ve web üzerinden gelen tüm kanalları tekil iletişim ve temas noktasında buluşturur. Her etkileşim ilk temas anından itibaren standart bir yapıda toplanır; no-code otomasyon, akıllı sınıflandırma ve ITIL4 uyumlu süreç yönetimi ile dağınık kanallar disiplinli, ölçülebilir ve sürdürülebilir bir servis masası operasyonuna dönüşür.",
+    "imageAlt": "Service Desk — merkezi karşılama ekranı, omnichannel kanallar ve e-posta yakalayıcı"
+  },
+  "zigzag": [
+    {
+      "id": "merkezi-karsilama",
+      "accent": "blue",
+      "icon": "MessageSquare",
+      "titleLead": "Tüm kanallardan",
+      "titleAccent": "merkezi karşılama noktası.",
+      "description": "Tüm kullanıcı ve müşteri etkileşimleri tek bir merkezde karşılanır ve yönetilir; e-posta, telefon, chat, SMS, sosyal medya ve web kanallarından gelen talepler tekil iletişim noktasında birleştirilerek ilk temas anından itibaren kontrollü ve izlenebilir bir süreç başlatılır. Omnichannel altyapı ve e-posta yakalayıcı entegrasyonu, manuel kayıt ihtiyacını ortadan kaldırarak sistematik bir karşılama deneyimi sunar.",
+      "bullets": [
+        "Tüm kullanıcı ve müşteri etkileşimleri tek bir merkezde karşılanır ve yönetilir; farklı kanallardan gelen talepler standart bir yapıda toplanarak ilk temas anından itibaren kontrollü ve izlenebilir bir süreç başlatılır.",
+        "E-posta, telefon, chat, SMS, sosyal medya ve web kanallarından gelen tüm kayıtlar omnichannel altyapı ile tek platformda toplanır; kullanıcı hangi kanaldan ulaşırsa ulaşsın tüm etkileşimler aynı sistem üzerinden yönetilir.",
+        "Tanımlanan e-posta adreslerine gelen talepler e-posta yakalayıcı entegrasyonu ile otomatik olarak çağrı kaydına dönüştürülür; manuel kayıt açma ihtiyacı ortadan kalkar ve gelen tüm e-postalar sistematik biçimde işlenir."
+      ],
+      "imageKey": "index"
+    },
+    {
+      "id": "tekillestirme-siniflandirma",
+      "accent": "emerald",
+      "icon": "Filter",
+      "titleLead": "Tekilleştirme, akıllı sınıflandırma",
+      "titleAccent": "ve no-code otomasyon.",
+      "description": "Farklı kanallardan gelen aynı içerikli talepler birleştirilerek mükerrer kayıtların önüne geçilir; gelen kayıtlar analiz edilerek olay, istek, öneri veya bilgi talebi gibi doğru süreçlere yönlendirilir. No-code kurallar sayesinde kayıtlar kod yazmadan ilgili kişi, grup veya modüllere atanır; otomasyon dışında kalanlar manuel olarak hızlıca işlenerek uygun süreçlere dönüştürülür.",
+      "bullets": [
+        "Farklı kanallardan gelen aynı içerikli talepler tekilleştirilerek mükerrer kayıtların önüne geçilir; ekipler tek bir kayıt üzerinden ilerleyerek daha verimli çalışır.",
+        "Gelen kayıtlar akıllı sınıflandırma ile analiz edilerek olay, istek, öneri veya bilgi talebi gibi doğru süreçlere yönlendirilir; her kayıt uygun iş akışına dahil edilerek çözüm süreleri kısaltılır.",
+        "Kod yazmadan tanımlanabilen no-code kurallar sayesinde kayıtlar otomatik olarak ilgili kişi, grup veya modüllere atanır; otomasyon dışında kalan kayıtlar manuel olarak hızlıca işlenip uygun süreçlere dönüştürülebilir."
+      ],
+      "imageKey": "epostayakalayici"
+    },
+    {
+      "id": "donusum-yetki",
+      "accent": "purple",
+      "icon": "GitBranch",
+      "titleLead": "Esnek modül dönüşümü,",
+      "titleAccent": "yetki ve toplu işlem yönetimi.",
+      "description": "Çağrılar; olay, istek veya iyileştirme süreçlerine kesintisiz şekilde dönüştürülür ve dönüşüm sırasında tüm veriler otomatik taşınır. Yetki bazlı aksiyon yönetimi ile kullanıcı rollerine göre farklı işlem seçenekleri sunulurken toplu işlem kabiliyeti sayesinde birden fazla kayıt üzerinde aynı anda aksiyon alınarak yoğun operasyonlarda önemli ölçüde zaman kazanılır.",
+      "bullets": [
+        "Çağrılar; olay, istek veya iyileştirme süreçlerine kolayca dönüştürülür; dönüşüm sırasında tüm veriler otomatik taşınır ve süreçler kesintisiz şekilde devam eder.",
+        "Kullanıcı rollerine göre dönüştürme, kapatma ve silme gibi farklı işlem seçenekleri yetki bazlı olarak sunulur; güvenli ve kontrollü bir operasyon yapısı oluşturulur.",
+        "Birden fazla kayıt üzerinde aynı anda işlem yapılabilen toplu işlem kabiliyeti, özellikle yoğun operasyonlarda önemli ölçüde zaman kazandırır."
+      ],
+      "imageKey": "donustur2"
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Uçtan uca servis masası yetkinlikleri",
+    "sectionSubtitle": "Service Desk operasyonunuzun her adımında verimliliği, şeffaflığı ve kontrolü tek platformda birleştirin.",
+    "items": [
+      {
+        "id": "takip-filtre",
+        "size": "wide",
+        "accent": "cyan",
+        "icon": "Search",
+        "title": "Gerçek zamanlı takip, gelişmiş filtreleme ve kayıtlı görünümler",
+        "description": "Yeni gelen çağrılar anlık olarak görüntülenerek kullanıcıların gecikmeden müdahale etmesi sağlanır; kayıtlar durum, müşteri, kategori ve konu gibi birçok kritere göre filtrelenebilir, aranan kayda hızlı erişim sunulur. Kullanıcılar kendi filtrelerini oluşturup kaydedebilir; sık kullanılan liste görünümlerine tek tıkla ulaşılarak günlük operasyonel rutinler hızlandırılır.",
+        "imageKey": "filtre"
+      },
+      {
+        "id": "icerik-ek",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "FileText",
+        "title": "İçerik ve ek dosya yönetimi",
+        "description": "Kayıt içerisindeki tüm açıklamalar, dosyalar ve iletişim detayları tek ekranda görüntülenebilir; bilgiye erişim kolaylaşır ve ekipler tüm kayıt bağlamını tek yüzeyde değerlendirir.",
+        "imageKey": "topluislemmenu"
+      },
+      {
+        "id": "atama",
+        "size": "normal",
+        "accent": "amber",
+        "icon": "Users",
+        "title": "Esnek atama ve organizasyon yapısı",
+        "description": "Kayıtlar ekip, grup veya doğrudan kişilere atanabilir; iş yükü dengeli biçimde dağıtılır ve süreçler hızlanır."
+      },
+      {
+        "id": "itil",
+        "size": "wide",
+        "accent": "indigo",
+        "icon": "ShieldCheck",
+        "title": "ITIL4 uyumlu süreç yönetimi",
+        "description": "Olay, istek ve diğer servis yönetimi süreçleri ITIL4 prensiplerine uygun şekilde yapılandırılmıştır; süreçler standart, ölçülebilir ve sürdürülebilir bir yapıda yönetilir. Etkileşim yönetimi ile olay, istek ve iyileştirme modülleri arasındaki geçişler kesintisiz akar; her kayıt doğru yaşam döngüsünün içinde yürütülerek denetlenebilir ve tekrarlanabilir servis masası operasyonu oluşturulur.",
+        "imageKey": "donustur1"
+      },
+      {
+        "id": "iletisim-spoc",
+        "size": "normal",
+        "accent": "purple",
+        "icon": "Headphones",
+        "title": "SPOC yaklaşımı ve kesintisiz kullanıcı iletişimi",
+        "description": "Tüm etkileşimler kayıt altına alınır ve süreç boyunca kullanıcı ile iletişim sürdürülebilir; SPOC yaklaşımı sayesinde tüm temaslar tek nokta üzerinden yönetilerek operasyonel karmaşıklık azalır, şeffaf ve izlenebilir bir deneyim sunulur.",
+        "imageKey": "topluislemaction"
+      },
+      {
+        "id": "on-eleme",
+        "size": "normal",
+        "accent": "red",
+        "icon": "Layers",
+        "title": "Ön eleme ve operasyonel filtreleme katmanı",
+        "description": "Çağrılar modülü, kayıtların doğrudan işleme alınmadan önce değerlendirilmesini sağlayan bir ön eleme katmanı olarak çalışır; her kayıt doğru modüle yönlendirilerek operasyonel verimlilik artırılır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Servis masanızı SPOC disipliniyle tek karşılama noktasına taşıyın.",
+    "description": "Omnichannel karşılama, no-code otomasyon ve ITIL4 uyumlu Interaction Management yetkinliklerini canlı demoda inceleyin; dağınık kanalları tek merkezde buluşturan servis masası deneyimi sizinle olsun.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}
