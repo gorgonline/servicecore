@@ -1,0 +1,283 @@
+{
+  "intro": {
+    "subtitle": "WORKSHOPLAR",
+    "title": "Servicecore Workshopları",
+    "description": "Düzenli atölye çalışmaları ile servis yönetimi bilginizi sürekli arttırın. Sertifikanız ile yetkinliklerinizi belgeleyin, kariyerinizde fark yaratın.",
+    "lead": "Teknisyenler, süreç sahipleri, servis sahipleri, adminler, geliştiriciler ve danışmanlar için çeşitli atölye ve uygulamalı eğitim çalışmaları."
+  },
+  "workshops": [
+    {
+      "id": "workflows-technical",
+      "category": "Onboarding · Teknik",
+      "title": "Workflows Technical Workshop",
+      "audience": "Teknisyenler, süreç yöneticileri ve servis yöneticileri",
+      "description": "Otomasyon ve iş akışlarının ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir.",
+      "importance": "Teknik ekiplerin iş akış sistemini ve otomasyon kabiliyetlerini öğrenmesi, kurumsal bir servis yönetim sistemini inşa etmenin en önemli adımıdır.",
+      "dateTime": "17 Kasım 2025 · 16:00 – 18:00",
+      "method": "Eğitmen eşliğinde online sunum",
+      "goal": "Katılımcılara Servicecore'un iş akışı sistemini teknik düzeyde tanıtmak; istek, değişiklik ve iyileştirme süreçlerinin dijitalleştirilmesini sağlayan akış tasarımı, objeler, onay ve karar mekanizmaları ile otomasyon tetikleyicilerini öğretmek.",
+      "status": "Tamamlandı",
+      "ctaText": "Eğitim Videolarını İzle",
+      "ctaUrl": "#",
+      "sections": [
+        {
+          "title": "Bölüm 1 · Workflow Temelleri ve Mimarisi",
+          "items": [
+            "Workflow: Birbirine bağlı aktivitelerden oluşan yürütülebilir süreçler",
+            "Activity: Her adımı temsil eden atomik yapıtaşları (örneğin: onay, koşul, tetikleyici)",
+            "Connection: Aktiviteler arası geçişi sağlayan bağlantılar ve outcome'lar",
+            "Workflow Tipleri: Kısa süreli (short-running) ve uzun süreli (long-running) akışlar",
+            "Blocking Activity & Suspend State: Akışın durdurulması ve tetiklenerek devam ettirilmesi"
+          ]
+        },
+        {
+          "title": "Bölüm 2 · Akış Tasarımı – Servicecore Uygulaması",
+          "subgroups": [
+            {
+              "label": "Uygulama Alanları",
+              "items": [
+                "İstek Akışı: Talep oluşturma, onay, sonuçlandırma",
+                "Değişiklik Akışı: CAB onayı, etki analizi, uygulama",
+                "İyileştirme Akışı: Sürekli iyileştirme döngüsü, öneri değerlendirme"
+              ]
+            },
+            {
+              "label": "Teknik Bileşenler",
+              "items": [
+                "Workflow Variables: Akış boyunca veri taşıyan key/value çiftleri",
+                "Workflow Context: Akışın çalıştığı iş objesi (talep, kullanıcı, ürün)",
+                "Context Provider: İş objesinin otomatik yüklenmesini sağlayan yapı"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Bölüm 3 · Koşul, Karar ve Otomasyon Mekanizmaları",
+          "subgroups": [
+            {
+              "label": "Mekanizmalar",
+              "items": [
+                "Koşul Aktiviteleri: If/Else yapıları ile yönlendirme",
+                "Karar Noktaları: Outcome bazlı dallanma",
+                "Onay Aktiviteleri: İnsan etkileşimi gerektiren adımlar",
+                "Otomasyon Tetikleyicileri: Zamanlayıcılar, olay bazlı tetikleme, API çağrıları"
+              ]
+            },
+            {
+              "label": "Örnek: Zaman Tabanlı Otomasyon",
+              "items": [
+                "Recurring Workflow: Timer activity ile her 5 saniyede tetiklenen görev",
+                "Visual Designer Kullanımı: Görsel akış tasarımı"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Bölüm 4 · Canlı Demo ve Uygulama",
+          "subgroups": [
+            {
+              "label": "Demo Senaryosu",
+              "items": [
+                "Bir 'Değişiklik Talebi' workflow'u tasarlanır: başlangıç aktivitesi, koşul kontrolü (aciliyet), CAB onayı, otomatik bildirim tetikleyicisi, süreç sonlandırma"
+              ]
+            },
+            {
+              "label": "Katılımcı Etkileşimi",
+              "items": [
+                "Her katılımcı kendi akışını tasarlar",
+                "Dashboard üzerinden test ve yayınlama"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lowcode-technical",
+      "category": "Onboarding · Teknik",
+      "title": "Lowcode Technical Workshop",
+      "audience": "Teknisyenler, süreç yöneticileri ve servis yöneticileri",
+      "description": "Lowcode sisteminin ve form tasarımı yapısının ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir.",
+      "importance": "Teknik ekiplerin form ve sistem objeleri ile sürükle-bırak tasarım ve esnek kod geliştirme kabiliyetlerini öğrenmesi, kurumsal bir servis yönetim sistemini özelleştirmenin önemli bir adımıdır.",
+      "dateTime": "01 Aralık 2025 · 16:00 – 18:00",
+      "method": "Eğitmen eşliğinde online sunum",
+      "goal": "Katılımcılara Servicecore LowCode bileşen sistemini tanıtmak; düşük kodlu form tasarımı, veri yönetimi, iş mantığı kontrolü ve gelişmiş kullanıcı arayüzü senaryolarını teknik düzeyde öğretmek.",
+      "status": "Tamamlandı",
+      "ctaText": "Eğitim Videolarını İzle",
+      "ctaUrl": "#",
+      "sections": [
+        {
+          "title": "Bölüm 1 · Servicecore LowCode'a Giriş ve Öğrenme Yolu",
+          "items": [
+            "Introduction: Servicecore LowCode nedir, neden tercih edilir?",
+            "How to Learn Servicecore LowCode: Dokümantasyon, topluluk, örnek senaryolar",
+            "Quick Start: Hızlı kurulum, temel form tanımı",
+            "V2 Upgrade Guide: V2 ile gelen yenilikler ve geçiş stratejisi",
+            "Contribution Guide & Issue Helper: Açık kaynak katkı süreci ve hata bildirimi"
+          ]
+        },
+        {
+          "title": "Bölüm 2 · Form Builder ve Senaryo Tabanlı Uygulamalar",
+          "subgroups": [
+            {
+              "label": "Form Builder Guide",
+              "items": [
+                "Görsel form tasarımı",
+                "JSON Schema ile yapılandırma",
+                "UI bileşenleri ve veri bağlama"
+              ]
+            },
+            {
+              "label": "Gerçek Senaryolar",
+              "items": [
+                "Kimlik doğrulama formları",
+                "Query List: Filtrelenebilir veri listesi",
+                "Edit & Details: CRUD işlemleri için detay ve düzenleme",
+                "Dialog & Drawer: Modal ve çekmece içinde form kullanımı",
+                "Step Form: Adım adım ilerleyen form yapısı",
+                "Tab Form: Sekmeli form düzeni",
+                "More Scenes: Karmaşık iş akışları için özel sahneler"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Bölüm 3 · Gelişmiş Form Özellikleri",
+          "items": [
+            "Form Validation: Zorunlu alanlar, özel doğrulama kuralları",
+            "Form Layout: Grid, inline, responsive düzenler",
+            "Asynchronous Data Sources: API ile veri çekme ve bağlama",
+            "Form Controlled: Controlled / uncontrolled bileşen mantığı",
+            "Linkage Logic: Alanlar arası etkileşim ve koşullu görünürlük",
+            "Calculator: Dinamik hesaplama alanları",
+            "Custom Components: Özel bileşen geliştirme ve entegrasyon"
+          ]
+        },
+        {
+          "title": "Bölüm 4 · İş Mantığı ve Veri Uyumluluğu",
+          "subgroups": [
+            {
+              "label": "İş Mantığı Yönetimi",
+              "items": [
+                "Manage Business Logic: Form davranışlarını iş kurallarına göre şekillendirme",
+                "Front-end & Back-end Data Compatibility: JSON uyumluluğu, veri dönüşümleri",
+                "Pack on Demand: Modüler yapı, sadece ihtiyaç duyulan bileşenler"
+              ]
+            },
+            {
+              "label": "Katılımcı Etkileşimi",
+              "items": [
+                "Her katılımcı kendi formunu Servicecore LowCode üzerinden tasarlar",
+                "JSON Schema + UI Schema ile yapılandırma",
+                "Test ve yayınlama adımları"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "advanced-administration",
+      "category": "Onboarding · Yönetim",
+      "title": "Advanced Administration Technical Workshop",
+      "audience": "ITSM sahipleri, adminler, ürün yöneticileri",
+      "description": "İleri düzey yönetim ayarlarının ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir.",
+      "importance": "Teknik ekiplerin yönetim sistemini ve özelleştirme kabiliyetlerini öğrenmesi, kurumsal bir servis yönetim sistemini inşa etmenin en önemli adımıdır. Bu sayede teknik ekipler çok daha doğru ve konforlu bir kullanıma sahip olur.",
+      "dateTime": "15 Aralık 2025 · 16:00 – 18:00",
+      "method": "Eğitmen eşliğinde online sunum",
+      "goal": "Katılımcılara Servicecore'un yönetici ayarlarını, organizasyonel yapılandırmaları, varlık konfigürasyonlarını ve onay akışı mimarisini ileri düzeyde öğretmek; özelleştirilebilir formlar ve sürekli dağıtım altyapısı ile sistemin tam kontrolünü kazandırmak.",
+      "status": "Tamamlandı",
+      "ctaText": "Eğitim Videolarını İzle",
+      "ctaUrl": "#",
+      "sections": [
+        {
+          "title": "Bölüm 1 · Yönetici Paneline Giriş",
+          "subgroups": [
+            {
+              "label": "Genel Ayarlar",
+              "items": [
+                "Süreç şablonları, hazır cevaplar, validasyon kuralları",
+                "Duyurular, iş saatleri, konumlar, alt şirketler",
+                "Bildirim şablonları, sistem ve instance ayarları"
+              ]
+            },
+            {
+              "label": "Organizasyon Ayarları",
+              "items": [
+                "Kullanıcı ve teknisyen grupları",
+                "Roller, departmanlar, organizasyon şemaları",
+                "Danışmanlar ve onaylayanlar"
+              ]
+            },
+            {
+              "label": "Varlık ve Konfigürasyon Ayarları",
+              "items": [
+                "Üreticiler, kullanım modelleri, varlık konumları",
+                "Sözleşme türleri, ilişki tipleri",
+                "Destek ve tedarikçi sözleşmeleri"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Bölüm 2 · Gelişmiş Ayarlar ve Sürekli Dağıtım",
+          "subgroups": [
+            {
+              "label": "Gelişmiş Yönetim",
+              "items": [
+                "SLA Politikaları",
+                "Kapatma Kuralları ve Gerekçeleri",
+                "Otomasyon Yönetimi",
+                "Global Durumlar ve Anketler",
+                "Dil Kaynağı Ayarları",
+                "Zamanlanmış Kayıtlar ve İstekler",
+                "Entegrasyonlar ve Ortak Alanlar"
+              ]
+            },
+            {
+              "label": "Sürekli Dağıtım",
+              "items": [
+                "Servicecore'un DevOps entegrasyonu",
+                "Güncelleme stratejileri ve rollback senaryoları",
+                "Ortam yönetimi ve versiyon kontrolü"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Bölüm 3 · İş Onay Akışı ve Mimarisi",
+          "items": [
+            "Onay Akış Mimarisi: Süreç içi insan etkileşimi, outcome bazlı yönlendirme",
+            "İş Akış Örnekleri: Talep, değişiklik, iyileştirme senaryoları",
+            "Onay Akışı Tanımlama: Süreç şablonları ile yapılandırma",
+            "Kataloğa Dinamik Onay Akışı: Hizmet kataloğu ile entegre onay süreçleri",
+            "Değişiklik Akış Tanımlama: CAB onayı, etki analizi, uygulama adımları"
+          ]
+        },
+        {
+          "title": "Bölüm 4 · Özelleştirilebilir Formlar",
+          "subgroups": [
+            {
+              "label": "Form Yönetimi",
+              "items": [
+                "Başlangıç: Form altyapısına giriş",
+                "Form Ekleme: Yeni form tanımı, alan tipi seçimi",
+                "Form Düzenleme: Var olan formların güncellenmesi, koşullu alanlar, doğrulama kuralları",
+                "JSON Schema ve UI Schema ile yapılandırma",
+                "Formların iş akışlarıyla entegrasyonu"
+              ]
+            },
+            {
+              "label": "Katılımcı Etkileşimi",
+              "items": [
+                "Her katılımcı kendi organizasyon yapısını ve onay akışını tanımlar",
+                "Form ekleme ve düzenleme pratiği",
+                "Süreç testleri ve geri bildirim"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

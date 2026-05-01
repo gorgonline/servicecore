@@ -94,6 +94,7 @@ const footerData = {
       links: [
         { text: "Hakkımızda", href: "/hakkimizda" },
         { text: "Rehberler", href: "/dokumanlar" },
+        { text: "Workshoplar", href: "/workshoplar" },
         { text: "Referanslar", href: "/referanslar" },
         { text: "Datasheet", href: "https://www.servicecore.app/media/pages/footer/02c880903c-1740047247/datasheet.pdf" },
         { text: "Specsheet", href: "/specsheet" },
