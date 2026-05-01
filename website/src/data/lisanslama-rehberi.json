@@ -1,0 +1,292 @@
+{
+  "hero": {
+    "title": "Abonelik ve Lisanslama Rehberi",
+    "subtitle": "LİSANSLAMA REHBERİ",
+    "description": "Servicecore platformunun lisanslama modeli, abonelik yapısı, edition kuralları, hibrit yapılandırma ve add-on'larla ilgili tüm detaylar."
+  },
+  "sections": [
+    {
+      "number": "01",
+      "title": "Rol Tanımları",
+      "groups": [
+        {
+          "label": "Teknisyen (Agent)",
+          "tagline": "Kullanıcıların çağrı, olay, istek ve öneri gibi bildirdikleri işleri karşılayan, cevaplayan ve çözen; hizmet sağlama süreçlerinde aktif görev alan, iş yapan ve iş kaydı oluşturan kişilerdir.",
+          "items": [
+            "Tüm kayıtlar ve kayıt raporlarına yetkileri çerçevesinde erişebilirler",
+            "İleri düzey bilgilere (raporlar, kayıt yazışmaları, çözüm detayları, loglar vb.) erişim yalnızca bu rol için geçerlidir",
+            "Sadece bu profildeki kullanıcılar lisansa tabidir"
+          ]
+        },
+        {
+          "label": "Son Kullanıcı (End User)",
+          "tagline": "Hizmet veya destek talep eden kişilerdir.",
+          "items": [
+            "Kendi kayıtlarına, yönettikleri grup veya firmaya ait kayıtlara erişebilirler",
+            "Varlıklarını görüntüleyebilirler",
+            "Onay süreçlerine katılabilirler",
+            "Son kullanıcılar lisansa tabi değildir"
+          ]
+        },
+        {
+          "label": "Onaylayıcı / Yönetici Kullanıcı",
+          "tagline": "Süreçlerde onay veren, reddeden veya görüş bildiren kişiler son kullanıcı rolünde olabilir.",
+          "items": [
+            "End user ekranları üzerinden işlem yaparlar",
+            "Bağlı oldukları ekip veya müşteri organizasyonuna ait kayıtlara erişebilirler",
+            "Bu kullanıcılar lisansa tabi değildir"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Lisans Kapsamı",
+      "items": [
+        "Lisanslama yalnızca teknisyen (agent) kullanıcılar için geçerlidir",
+        "Son kullanıcı sayısı sınırsız ve ücretsizdir",
+        "Varlık (asset) sayısı sınırsız ve ücretsizdir",
+        "Uygulamada kayıt sayısı veya işlem adedi ile ilgili herhangi bir sınır bulunmamaktadır"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Lisans Modeli",
+      "intro": "Platform, kullanıcı bazlı (named user) lisanslama modeli ile sunulmaktadır. Her lisans, belirli bir teknisyene atanır."
+    },
+    {
+      "number": "04",
+      "title": "Minimum Lisanslama",
+      "intro": "Lisanslama aşağıdaki minimum yapı ile başlar:",
+      "items": [
+        "Minimum 10 Standart lisans veya",
+        "Minimum 10 Professional lisans"
+      ]
+    },
+    {
+      "number": "05",
+      "title": "Abonelik Yapısı",
+      "intro": "Ürün, abonelik (subscription) modeli ile lisanslanmaktadır.",
+      "items": [
+        "1 yıl, 3 yıl ve 5 yıl seçenekleri mevcuttur",
+        "Süresiz (perpetual) lisans modeli bulunmamaktadır",
+        "Abonelik süresi boyunca kullanım hakkı sağlanır",
+        "Süre sonunda kullanımın devamı için abonelik yenilenmelidir"
+      ]
+    },
+    {
+      "number": "06",
+      "title": "Hibrit Lisanslama Modeli",
+      "intro": "Platform, karma (hibrit) lisanslama modelini destekler. Müşteriler aşağıdaki şekilde lisanslarını yapılandırabilir:",
+      "items": [
+        "Standart kullanıcılar",
+        "Professional kullanıcılar",
+        "Add-on modüller"
+      ],
+      "examples": {
+        "title": "Örnek Yapılandırmalar",
+        "items": [
+          "X adet Standart + Y adet Pro Modüllerinden biri + Z adet Add-on",
+          "A adet Standart + B adet Pro + C adet Add-on",
+          "M adet Standart + N adet Add-on",
+          "Q adet Pro + Z adet Add-on"
+        ]
+      }
+    },
+    {
+      "number": "07",
+      "title": "Edition Dağılım Kuralı",
+      "items": [
+        "Professional lisans sayısı, Standart lisans sayısının %25'inden az olamaz",
+        "Örneğin 100 lisans için minimum 25 Pro + 75 Std olmalıdır"
+      ]
+    },
+    {
+      "number": "08",
+      "title": "Standart Lisansa Ek Modül Kullanımı",
+      "items": [
+        "Standart kullanıcılar modül bazlı genişletilebilir",
+        "Modül sayısı, en az Standart kullanıcı sayısı kadar olmalıdır",
+        "Aşağıdaki modüllerden Standart lisansa ekleme yapılabilir"
+      ],
+      "moduleList": {
+        "title": "Standart versiyona teknisyen sayısı kadar eklenebilecek modüller",
+        "items": [
+          "İstek & Servis Katalog Modülü",
+          "Problem Yönetimi Modülü",
+          "Değişiklik Yönetimi Modülü",
+          "Varlık Yönetimi ve CMDB Modülü",
+          "Sözleşme Yönetimi Modülü",
+          "Sürekli İyileştirme Modülü",
+          "Proje Yönetimi Modülü",
+          "Servis İlişkileri Yönetimi Modülü"
+        ]
+      }
+    },
+    {
+      "number": "09",
+      "title": "Pro Pack Fonksiyon Paketi Lisansı",
+      "intro": "Pro versiyona özgü fonksiyonlar ile otomasyon ve entegrasyon modülleri, sistemde minimum Professional lisans bulunması durumunda aktif olarak kullanılabilir. Sistemde yalnızca Standart lisans kullanılması durumunda, aşağıdaki gelişmiş fonksiyonlar ile Otomasyon ve Entegrasyon modüllerinin kullanılabilmesi için Pro Pack (sabit fiyatlı) lisansının ayrıca alınması gerekmektedir.",
+      "categories": [
+        {
+          "label": "Süreç ve İş Akışı Yönetimi",
+          "items": [
+            "İş Akışları ve Onay Akışları Yönetimi",
+            "Onay ve Danışma Kurulları Yönetimi",
+            "Validasyonlar / Süreç Doğrulama Kontrolleri"
+          ]
+        },
+        {
+          "label": "Form ve Veri Yönetimi",
+          "items": [
+            "Özel Ek Alanlar ve Custom Formlar",
+            "Low-Code Form Tasarımı ve Yönetimi"
+          ]
+        },
+        {
+          "label": "Kimlik ve Erişim Yönetimi",
+          "items": ["Azure AD / SAML / SSO Entegrasyonları"]
+        },
+        {
+          "label": "Şablon ve Operasyonel Yapılar",
+          "items": [
+            "Olay, Problem, Değişiklik, Proje, CI, Görev ve İş Günlüğü Şablonları",
+            "Zimmet Formları ve Onay Sistemi",
+            "Zamanlanmış İstekler"
+          ]
+        },
+        {
+          "label": "Raporlama ve Analitik",
+          "items": [
+            "Zamanlanmış Raporlar",
+            "Döküm (Export) Raporları",
+            "Dinamik Raporlar"
+          ]
+        },
+        {
+          "label": "Platform ve Gelişmiş Özellikler",
+          "items": [
+            "Mobile ITSM Modülü Kullanımı",
+            "Çoklu Dil Desteği",
+            "Vardiya Yönetimi Modülü"
+          ]
+        },
+        {
+          "label": "Kurumsal Yapı Özellikleri (ESM)",
+          "items": [
+            "Multitenant (ESM) Yapı",
+            "Multi Company / Holding Yapısı (ESM)"
+          ]
+        }
+      ]
+    },
+    {
+      "number": "10",
+      "title": "ESM (Multi-Tenant) Lisanslama",
+      "intro": "ESM (Enterprise Service Management) yapısında her tenant (organizasyon / departman / birim) ayrı lisans kapsamı olarak değerlendirilir. Professional versiyon veya Pro Function Pack gerektirir.",
+      "items": [
+        "Bir teknisyen, üye olduğu her tenant içinde teknisyen rolü ile aktif çalışıyorsa, ilgili tenant için ayrı lisans tüketir",
+        "Aynı kişi farklı tenantlarda farklı rollerle yer alabilir, eğer teknisyen ise her tenantta lisans ataması ayrıca yapılmalıdır"
+      ],
+      "examples": {
+        "title": "Örnek",
+        "items": [
+          "BT tenantında → Professional teknisyen lisansı kullanır",
+          "Yazılım tenantında → Standart teknisyen lisansı kullanabilir",
+          "İK tenantında → sadece son kullanıcı rolünde ise lisans tüketmez"
+        ],
+        "footer": "Bu model ile her tenant kendi kullanım senaryosuna göre lisanslanır ve optimize edilir."
+      }
+    },
+    {
+      "number": "11",
+      "title": "Lisans Artışı",
+      "items": [
+        "Abonelik süresi içerisinde ek lisans alınabilir",
+        "Lisans artışlarında minimum 5 lisans ve üzeri alım yapılabilir",
+        "Ek lisanslar kalan süreye göre (pro-rata) fiyatlandırılır",
+        "Tüm lisanslar mevcut abonelik bitiş tarihine hizalanır"
+      ]
+    },
+    {
+      "number": "12",
+      "title": "Altyapı ve Sistem Add-on'ları",
+      "intro": "Aşağıdaki eklentiler teknisyen lisanslarından bağımsız olarak sabit fiyatlı lisanslanır:",
+      "items": [
+        "Failover / Cluster Sistem Add-on",
+        "Disaster Recovery Center Add-on",
+        "Sandbox / Test Sistem Add-on",
+        "Servicecore Discovery Add-on",
+        "VMware Discovery Add-on",
+        "Intune Discovery Add-on",
+        "Lansweeper Discovery Add-on",
+        "Shift Management Add-on",
+        "Federation Service Add-on"
+      ],
+      "note": {
+        "title": "Bu add-on'lar:",
+        "items": [
+          "Sabit (fixed) adetler üzerinden fiyatlandırılır",
+          "Kurulum ve bakım hizmetleri ayrıca fiyatlandırılır"
+        ]
+      }
+    },
+    {
+      "number": "13",
+      "title": "Kurulum, Bakım ve Destek",
+      "groups": [
+        {
+          "label": "Kurulum Modeli",
+          "items": [
+            "Ürün SaaS değildir",
+            "Kurulum, müşterinin kendi ortamına on-premise olarak yapılır"
+          ]
+        },
+        {
+          "label": "Bakım Kapsamı",
+          "tagline": "Abonelik süresi boyunca tüm bakım hizmetleri fiyata dahildir.",
+          "items": [
+            "Düzeltici bakım (bug fix)",
+            "Yeni özellikler (ürün roadmap kapsamında)",
+            "İyileştirmeler ve güncellemeler",
+            "Güncellemelerin müşteri ortamına kurulumu"
+          ]
+        },
+        {
+          "label": "Bakım Yöntemi",
+          "items": [
+            "Güncellemeler Continuous Delivery (CD) yöntemi ile sağlanır",
+            "CD erişimi mümkün değilse: destek talepleri üzerinden manuel kurulum yapılır",
+            "Gerekli durumlarda ek destek paketleri kullanılabilir"
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Son kullanıcılar neden lisanslanmıyor?",
+      "answer": "Son kullanıcılar yalnızca talep oluşturan ve süreçlere katılan kullanıcılar olduğu için lisans kapsamına dahil değildir."
+    },
+    {
+      "question": "ESM modelde aynı kullanıcı birden fazla tenantta lisans tüketir mi?",
+      "answer": "Evet. Bir kullanıcı birden fazla tenantta teknisyen olarak görev alıyorsa, her tenant için ayrı lisans tüketir."
+    },
+    {
+      "question": "Hangi durumlarda lisans tüketilmez?",
+      "answer": "Kullanıcı sadece son kullanıcı rolünde ise veya yalnızca onay süreçlerine katılıyorsa lisans tüketmez."
+    },
+    {
+      "question": "Kayıt veya işlem limiti var mı?",
+      "answer": "Hayır. Sistem üzerinde kayıt sayısı veya işlem adedi açısından herhangi bir sınırlama bulunmamaktadır."
+    },
+    {
+      "question": "Lisans artırımı nasıl yapılır?",
+      "answer": "Minimum 5 lisans olacak şekilde ek alım yapılabilir ve mevcut abonelik süresine göre fiyatlandırılır."
+    },
+    {
+      "question": "Abonelik bitince ne olur?",
+      "answer": "Abonelik yenilenmezse yazılımın kullanım hakkı sona erer ve ürün otomatik kapanarak kullanılamaz hale gelir."
+    }
+  ]
+}

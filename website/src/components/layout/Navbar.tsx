@@ -5,9 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 
-import { 
-  ChevronDown, 
+import {
+  ChevronDown,
   ArrowRight,
+  ScrollText,
   ShieldCheck,
   FileText,
   MousePointerClick,
@@ -75,6 +76,7 @@ const modules = [
 const plansSubmenu = [
   { name: "ITSM Lisans Seçenekleri", icon: ShieldCheck, desc: "Service Desk, ITIL4 ve ESM için lisans ve modül seçenekleri.", href: "/planlar" },
   { name: "Proje Yönetimi Lisans Seçenekleri", icon: Target, desc: "Agile, hibrit ve stratejik proje yönetimi lisans seçenekleri.", href: "/planlar-pm" },
+  { name: "Abonelik ve Lisanslama Rehberi", icon: ScrollText, desc: "Roller, edition kuralları, ESM ve add-on lisanslama detayları.", href: "/planlar/lisanslama-rehberi" },
 ];
 
 const resourcesSubmenu = [
