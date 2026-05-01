@@ -8,7 +8,7 @@
   "workshops": [
     {
       "id": "workflows-technical",
-      "category": "Onboarding · Teknik",
+      "category": "Servicecore Onboarding · Teknik",
       "title": "Workflows Technical Workshop",
       "audience": "Teknisyenler, süreç yöneticileri ve servis yöneticileri",
       "description": "Otomasyon ve iş akışlarının ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir.",
@@ -18,7 +18,7 @@
       "goal": "Katılımcılara Servicecore'un iş akışı sistemini teknik düzeyde tanıtmak; istek, değişiklik ve iyileştirme süreçlerinin dijitalleştirilmesini sağlayan akış tasarımı, objeler, onay ve karar mekanizmaları ile otomasyon tetikleyicilerini öğretmek.",
       "status": "Tamamlandı",
       "ctaText": "Eğitim Videolarını İzle",
-      "ctaUrl": "#",
+      "ctaUrl": "https://www.youtube.com/playlist?list=PLleBImP9Iw6tJgWHiMrECJYrnMlrIHLzj",
       "sections": [
         {
           "title": "Bölüm 1 · Workflow Temelleri ve Mimarisi",
@@ -94,7 +94,7 @@
     },
     {
       "id": "lowcode-technical",
-      "category": "Onboarding · Teknik",
+      "category": "Servicecore Onboarding · Teknik",
       "title": "Lowcode Technical Workshop",
       "audience": "Teknisyenler, süreç yöneticileri ve servis yöneticileri",
       "description": "Lowcode sisteminin ve form tasarımı yapısının ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir.",
@@ -104,7 +104,7 @@
       "goal": "Katılımcılara Servicecore LowCode bileşen sistemini tanıtmak; düşük kodlu form tasarımı, veri yönetimi, iş mantığı kontrolü ve gelişmiş kullanıcı arayüzü senaryolarını teknik düzeyde öğretmek.",
       "status": "Tamamlandı",
       "ctaText": "Eğitim Videolarını İzle",
-      "ctaUrl": "#",
+      "ctaUrl": "https://www.youtube.com/playlist?list=PLleBImP9Iw6umnQIfYiIANJbkmW1BQXRg",
       "sections": [
         {
           "title": "Bölüm 1 · Servicecore LowCode'a Giriş ve Öğrenme Yolu",
@@ -178,7 +178,7 @@
     },
     {
       "id": "advanced-administration",
-      "category": "Onboarding · Yönetim",
+      "category": "Servicecore Onboarding · Yönetim",
       "title": "Advanced Administration Technical Workshop",
       "audience": "ITSM sahipleri, adminler, ürün yöneticileri",
       "description": "İleri düzey yönetim ayarlarının ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir.",
@@ -188,7 +188,7 @@
       "goal": "Katılımcılara Servicecore'un yönetici ayarlarını, organizasyonel yapılandırmaları, varlık konfigürasyonlarını ve onay akışı mimarisini ileri düzeyde öğretmek; özelleştirilebilir formlar ve sürekli dağıtım altyapısı ile sistemin tam kontrolünü kazandırmak.",
       "status": "Tamamlandı",
       "ctaText": "Eğitim Videolarını İzle",
-      "ctaUrl": "#",
+      "ctaUrl": "https://www.youtube.com/playlist?list=PLleBImP9Iw6saRmocV45kJDOcn5bohE2k",
       "sections": [
         {
           "title": "Bölüm 1 · Yönetici Paneline Giriş",
