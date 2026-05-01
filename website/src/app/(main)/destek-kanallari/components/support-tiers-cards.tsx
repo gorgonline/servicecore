@@ -86,7 +86,7 @@ export function SupportTiersCards() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "100px" }}
           transition={{ duration: 0.7 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
@@ -110,7 +110,7 @@ export function SupportTiersCards() {
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, margin: "50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={`flex flex-col rounded-4xl p-8 relative group transition-colors h-full ${
                   isPro 

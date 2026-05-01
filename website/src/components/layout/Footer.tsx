@@ -155,7 +155,7 @@ export default function Footer() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: true, margin: "50px" }}
         className="container relative z-10 mx-auto px-6 lg:px-12 max-w-350"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">

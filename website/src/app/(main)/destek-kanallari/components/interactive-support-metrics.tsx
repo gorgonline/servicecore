@@ -46,7 +46,7 @@ export function InteractiveSupportMetrics() {
            variants={containerVariants}
            initial="hidden"
            whileInView="show"
-           viewport={{ once: true, margin: "-100px" }}
+           viewport={{ once: true, margin: "100px" }}
            className="grid grid-cols-1 lg:grid-cols-12 gap-8"
         >
 

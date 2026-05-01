@@ -179,7 +179,7 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
+              viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.5 }}
               className="flex items-end justify-between gap-4 pb-6 mb-10 border-b border-white/10"
             >
@@ -203,7 +203,7 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
                     key={item.id}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-30px" }}
+                    viewport={{ once: true, margin: "30px" }}
                     transition={{ duration: 0.4, delay: (idx % 6) * 0.05 }}
                   >
                     <button

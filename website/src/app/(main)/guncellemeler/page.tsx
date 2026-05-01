@@ -156,7 +156,7 @@ export default function UpdatesPage() {
                 key={`${update.month}-${update.year}`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "100px" }}
                 className={`relative flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start gap-12`}
               >
                 

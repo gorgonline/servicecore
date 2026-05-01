@@ -111,7 +111,7 @@ export default function ProblemYonetimiPage() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "100px" }}
             variants={fadeUp}
             className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24"
           >
@@ -161,7 +161,7 @@ export default function ProblemYonetimiPage() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "100px" }}
             variants={fadeUp}
             className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24"
           >
@@ -211,7 +211,7 @@ export default function ProblemYonetimiPage() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "100px" }}
             variants={fadeUp}
             className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24"
           >

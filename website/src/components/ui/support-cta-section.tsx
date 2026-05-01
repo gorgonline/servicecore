@@ -19,7 +19,7 @@ export function SupportCtaSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "100px" }}
             transition={{ duration: 0.6 }}
             className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-(--color-surface-elevated-solid)/50 backdrop-blur-xl border border-white/10 p-8 md:p-10 hover:border-white/20 transition-colors"
           >
@@ -68,7 +68,7 @@ export function SupportCtaSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
           >

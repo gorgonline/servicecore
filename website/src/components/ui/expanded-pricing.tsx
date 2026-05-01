@@ -118,7 +118,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "100px" }}
           transition={{ duration: 0.7 }}
           className="text-center mb-20 max-w-3xl mx-auto"
         >
@@ -158,7 +158,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "50px" }}
             transition={{ duration: 0.6 }}
             className="flex flex-col rounded-4xl bg-(--color-surface-elevated-dark) border border-white/10 p-8 md:p-10  relative group transition-colors"
           >
@@ -210,7 +210,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: true, margin: "50px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col rounded-4xl bg-linear-to-b from-(--color-brand-primary)/8 to-(--color-surface-base-dark) border border-(--color-brand-primary)/30 p-8 md:p-10  relative group shadow-(--shadow-glow-primary-card)"
           >
@@ -297,7 +297,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true, margin: "-50px" }}
+           viewport={{ once: true, margin: "50px" }}
            transition={{ duration: 0.6, delay: 0.4 }}
            className="w-full rounded-4xl bg-(--color-surface-addon) border border-white/5 p-8 md:p-12 relative overflow-hidden"
         >
