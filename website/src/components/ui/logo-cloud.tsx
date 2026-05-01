@@ -36,7 +36,7 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
         logo={{
           src: "/logos/boyner.png",
           alt: "Boyner",
-          className: "scale-[1.6] brightness-0 invert",
+          className: "scale-[1.2] brightness-0 invert",
         }}
       />
 
@@ -119,7 +119,7 @@ function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
           width={logo.width ?? 170}
           height={logo.height ?? 48}
           className={cn(
-            "pointer-events-none max-h-full max-w-[140px] md:max-w-[170px] object-contain select-none transition-all duration-300 drop-shadow-sm",
+            "pointer-events-none max-h-full max-w-35 md:max-w-42.5 object-contain select-none transition-all duration-300 drop-shadow-sm",
             logo.className || "opacity-90 hover:opacity-100"
           )}
           src={logo.src}

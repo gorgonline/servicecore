@@ -176,7 +176,7 @@ export default function VideolarPage() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-6 flex flex-col grow">
                   <h3 className="text-base font-bold text-slate-200 group-hover:text-(--color-accent-blue-light) transition-colors line-clamp-2 leading-snug mb-4">
                     {video.title}
                   </h3>

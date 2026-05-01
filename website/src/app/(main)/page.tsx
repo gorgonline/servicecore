@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import HeroSection from "@/components/ui/HeroSection";
 import { LogoCloud } from "@/components/ui/logo-cloud";
 import { ModulesGrid } from "@/components/ui/modules-grid";
@@ -16,6 +18,15 @@ export default function Home() {
           Başarılı müşterilerimiz ve <span className="font-semibold text-white">mutlu kullanıcılarımız.</span>
         </h2>
         <LogoCloud className="mx-auto" />
+        <div className="mt-12 flex justify-center">
+          <Link
+            href="/referanslar"
+            className="group inline-flex h-11 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 font-medium text-sm text-white transition-all duration-300 hover:border-white/20 hover:bg-white/10 cursor-pointer"
+          >
+            Tüm Referanslar
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </div>
       </section>
 
       {/* Modules Grid - Phase 1 */}

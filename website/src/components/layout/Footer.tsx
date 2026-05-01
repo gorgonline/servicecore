@@ -93,7 +93,7 @@ const footerData = {
       title: "ANA MENÜ",
       links: [
         { text: "Hakkımızda", href: "/hakkimizda" },
-        { text: "Rehberler", href: "https://docs.servicecore.app" },
+        { text: "Rehberler", href: "/dokumanlar" },
         { text: "Referanslar", href: "/referanslar" },
         { text: "Datasheet", href: "https://www.servicecore.app/media/pages/footer/02c880903c-1740047247/datasheet.pdf" },
         { text: "Specsheet", href: "/specsheet" },
@@ -117,7 +117,7 @@ const footerData = {
       { text: "Dökümanlar", href: "/dokumanlar" },
       { text: "Sunumlar", href: "/sunumlar" },
       { text: "Güncellemeler", href: "/guncellemeler" },
-      { text: "Destek Portalı", href: "https://support.servicecore.com.tr" },
+      { text: "Destek Portalı", href: "https://support.servicecore.app" },
       { text: "Partnerlik", href: "/partnerlik" },
       { text: "Gizlilik - KVKK", href: "/gizlilik" },
     ],
@@ -229,18 +229,28 @@ export default function Footer() {
                   {col.title}
                 </h3>
                 <ul className="space-y-4">
-                  {col.links.map((link, linkIdx) => (
-                    <li key={linkIdx}>
-                      <Link
-                        href={link.href}
-                        className="group flex items-center text-sm text-(--color-text-secondary) hover:text-(--color-accent-cyan-light) transition-colors"
-                      >
-                        <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5 overflow-visible">
-                          {link.text}
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
+                  {col.links.map((link, linkIdx) => {
+                    const isExternal = /^https?:\/\//.test(link.href);
+                    const className = "group flex items-center text-sm text-(--color-text-secondary) hover:text-(--color-accent-cyan-light) transition-colors";
+                    const inner = (
+                      <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5 overflow-visible">
+                        {link.text}
+                      </span>
+                    );
+                    return (
+                      <li key={linkIdx}>
+                        {isExternal ? (
+                          <a href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+                            {inner}
+                          </a>
+                        ) : (
+                          <Link href={link.href} className={className}>
+                            {inner}
+                          </Link>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </motion.div>
             ))}
@@ -294,15 +304,19 @@ export default function Footer() {
            variants={itemVariants} 
            className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3 pt-6 w-full border-t border-white/5"
         >
-          {footerData.bottomBar.links.map((link, idx) => (
-            <Link
-              key={idx}
-              href={link.href}
-              className="text-sm text-(--color-text-secondary) hover:text-white transition-colors"
-            >
-              {link.text}
-            </Link>
-          ))}
+          {footerData.bottomBar.links.map((link, idx) => {
+            const isExternal = /^https?:\/\//.test(link.href);
+            const className = "text-sm text-(--color-text-secondary) hover:text-white transition-colors";
+            return isExternal ? (
+              <a key={idx} href={link.href} target="_blank" rel="noopener noreferrer" className={className}>
+                {link.text}
+              </a>
+            ) : (
+              <Link key={idx} href={link.href} className={className}>
+                {link.text}
+              </Link>
+            );
+          })}
         </motion.div>
       </motion.div>
     </footer>

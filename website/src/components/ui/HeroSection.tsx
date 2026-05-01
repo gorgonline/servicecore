@@ -100,7 +100,7 @@ export default function HeroSection() {
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-(--color-text-overline)">Kurumsal Orkestrasyon Platformu</span>
           </motion.div>
           
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8 w-full max-w-[900px]">
+          <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8 w-full max-w-225">
             ITSM ve Proje Yönetimini tek platformda{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-brand-accent)">
               kusursuzca birleştirin.
@@ -130,14 +130,16 @@ export default function HeroSection() {
                 </motion.div>
               </motion.button>
             </Link>
-            <motion.button 
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              className="h-14 px-8 rounded-full bg-white/5 border border-white/10 font-medium cursor-pointer"
-            >
-              Platformu Keşfet
-            </motion.button>
+            <Link href="/ozellikler">
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                className="h-14 px-8 rounded-full bg-white/5 border border-white/10 font-medium cursor-pointer"
+              >
+                Platformu Keşfet
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
         {/* Right Visual Area (Glassmorphism Bento Grid) */}
@@ -147,7 +149,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="w-full hidden lg:flex items-center justify-center lg:justify-end xl:col-span-4 lg:col-span-5 relative mt-10 lg:mt-0"
         >
-          <div className="relative w-full max-w-[500px] h-[500px] flex flex-col justify-between">
+          <div className="relative w-full max-w-125 h-125 flex flex-col justify-between">
             
             {/* Background Connection Lines */}
             <motion.svg 

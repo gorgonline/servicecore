@@ -202,7 +202,7 @@ export default function DokumanlarPage() {
                 <div className="flex flex-col items-center gap-8">
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a 
-                      href="https://support.servicecore.com.tr" 
+                      href="https://support.servicecore.app"
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="px-8 py-4 rounded-full bg-(--color-brand-primary) text-white font-semibold hover:bg-blue-600 transition-all hover:scale-105 active:scale-95 shadow-(--shadow-glow-primary-weak)"
