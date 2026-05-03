@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import {
   Activity,
@@ -18,6 +17,8 @@ import {
   AlertCircle,
   MousePointerClick,
   TrendingUp,
+  AlertTriangle,
+  Bell,
 } from "lucide-react";
 import data from "@/data/servis-seviye-yonetimi.json";
 
@@ -89,17 +90,216 @@ export default function ServisSeviyeYonetimiPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full max-h-125"
+            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-6 lg:p-10 shadow-2xl overflow-hidden group w-full"
           >
-            <Image
-              src="/images/servis-seviye-modulu/sla-policy.webp"
-              alt={data.hero.imageAlt}
-              width={1250}
-              height={707}
-              className="block w-full h-auto rounded-2xl group-hover:scale-[1.01] transition-transform duration-700"
-              priority
-            />
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
+            {/* Toolbar */}
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5 pb-5 border-b border-white/8">
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-(--color-accent-blue-light)">
+                  SLA Operasyon Panosu
+                </span>
+                <span className="text-lg lg:text-xl font-bold text-white tracking-tight">
+                  Servis Seviye Yönetimi
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-mono text-(--color-text-muted)">son 30 gün</span>
+                <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent-emerald-light) shadow-[0_0_8px_currentColor] animate-pulse" />
+                  <span className="text-[9px] font-mono uppercase tracking-widest text-(--color-accent-emerald-light)">canlı</span>
+                </div>
+              </div>
+            </div>
+
+            {/* KPI metric row */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-5">
+              {[
+                { icon: TrendingUp, label: "SLA Uyumu", value: "%94", trend: "+2.1", tone: "emerald" },
+                { icon: AlertTriangle, label: "İhlal Sayısı", value: "8", trend: "-3", tone: "red", down: true },
+                { icon: AlertCircle, label: "Aktif Olay", value: "42", trend: "+5", tone: "blue" },
+                { icon: Clock, label: "Ortalama MTTR", value: "17dk", trend: "-4dk", tone: "purple", down: true },
+              ].map((m, i) => {
+                const Icon = m.icon;
+                const tone: Record<string, string> = {
+                  emerald: "from-emerald-500/15 to-emerald-500/5 border-emerald-500/25 text-(--color-accent-emerald-light) shadow-[0_0_25px_rgba(16,185,129,0.12)]",
+                  red: "from-red-500/15 to-red-500/5 border-red-500/25 text-(--color-accent-red-light) shadow-[0_0_25px_rgba(239,68,68,0.12)]",
+                  blue: "from-blue-500/15 to-blue-500/5 border-blue-500/25 text-(--color-accent-blue-light) shadow-[0_0_25px_rgba(59,130,246,0.12)]",
+                  purple: "from-purple-500/15 to-purple-500/5 border-purple-500/25 text-(--color-accent-purple-light) shadow-[0_0_25px_rgba(168,85,247,0.12)]",
+                };
+                const trendTone = m.down ? "text-(--color-accent-emerald-light)" : (m.tone === "red" || m.tone === "blue") ? "text-(--color-accent-red-light)" : "text-(--color-accent-emerald-light)";
+                return (
+                  <div key={i} className={`rounded-2xl bg-linear-to-br ${tone[m.tone]} border p-3 lg:p-4 flex flex-col gap-2`}>
+                    <div className="flex items-center justify-between">
+                      <Icon className="w-4 h-4" />
+                      <span className={`text-[9px] font-mono font-semibold ${trendTone}`}>
+                        {m.trend}
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[8px] font-medium uppercase tracking-wider text-(--color-text-muted)">
+                        {m.label}
+                      </span>
+                      <span className="text-2xl lg:text-3xl font-bold tracking-tight text-white">
+                        {m.value}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Split: Policy Compliance + Risk altındaki kayıtlar */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-4 mb-5">
+              {/* Left — Policy Compliance */}
+              <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid) p-4 flex flex-col gap-2">
+                <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                  <div className="flex items-center gap-1.5">
+                    <Gauge className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white">Policy Uyumu</span>
+                  </div>
+                  <span className="text-[8px] font-mono text-(--color-text-muted)">3 policy</span>
+                </div>
+                {[
+                  { name: "Premium", target: "P1·P2", percent: 96, count: 12, tone: "blue" },
+                  { name: "Standart", target: "P3", percent: 92, count: 24, tone: "cyan" },
+                  { name: "Best-Effort", target: "P4", percent: 85, count: 6, tone: "emerald" },
+                ].map((p, i) => {
+                  const barTone: Record<string, string> = {
+                    blue: "from-blue-500 to-cyan-400",
+                    cyan: "from-cyan-500 to-cyan-400",
+                    emerald: "from-emerald-500 to-emerald-400",
+                  };
+                  const textTone: Record<string, string> = {
+                    blue: "text-(--color-accent-blue-light)",
+                    cyan: "text-(--color-accent-cyan-light)",
+                    emerald: "text-(--color-accent-emerald-light)",
+                  };
+                  return (
+                    <div key={i} className="flex flex-col gap-1.5 px-1 py-1">
+                      <div className="grid grid-cols-[1fr_auto_auto] gap-2 items-center">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-semibold text-white">{p.name}</span>
+                          <span className="text-[8px] font-mono text-(--color-text-muted)">{p.target}</span>
+                        </div>
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">{p.count} kayıt</span>
+                        <span className={`text-[12px] font-mono font-bold ${textTone[p.tone]} w-10 text-right`}>%{p.percent}</span>
+                      </div>
+                      <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+                        <div className={`h-full bg-linear-to-r ${barTone[p.tone]} rounded-full`} style={{ width: `${p.percent}%` }} />
+                      </div>
+                    </div>
+                  );
+                })}
+                {/* Lifecycle footer */}
+                <div className="flex items-center justify-between gap-2 pt-2 border-t border-white/8 mt-1">
+                  {[
+                    { label: "Tanımla", icon: FilePlus2 },
+                    { label: "Atama", icon: Share2 },
+                    { label: "Takip", icon: Activity },
+                    { label: "Rapor", icon: Target },
+                  ].map((s, i, arr) => {
+                    const Icon = s.icon;
+                    return (
+                      <div key={i} className="flex items-center gap-1 flex-1">
+                        <div className="w-5 h-5 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0">
+                          <Icon className="w-2.5 h-2.5 text-(--color-accent-blue-light)" />
+                        </div>
+                        <span className="text-[8px] font-medium text-white">{s.label}</span>
+                        {i < arr.length - 1 && (
+                          <span className="text-[8px] text-(--color-text-muted) ml-auto">›</span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Right — Risk altındaki kayıtlar */}
+              <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid) p-4 flex flex-col gap-2">
+                <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                  <div className="flex items-center gap-1.5">
+                    <Bell className="w-3.5 h-3.5 text-(--color-accent-red-light)" />
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white">Risk Altındaki Kayıtlar</span>
+                  </div>
+                  <span className="text-[8px] font-mono font-bold text-(--color-accent-red-light) px-1.5 py-0.5 rounded-full bg-red-500/12 border border-red-500/25 animate-pulse">
+                    5 kritik
+                  </span>
+                </div>
+                {[
+                  { id: "INC-2412", title: "ERP API timeout", policy: "Premium · P1", remaining: "0s 18d", percent: 92, tone: "red" },
+                  { id: "REQ-0871", title: "VPN erişim talebi", policy: "Premium · P2", remaining: "1s 22d", percent: 76, tone: "amber" },
+                  { id: "INC-2410", title: "Mail gecikme", policy: "Standart · P3", remaining: "2s 03d", percent: 64, tone: "amber" },
+                  { id: "INC-2409", title: "AD parola sync", policy: "Standart · P3", remaining: "3s 45d", percent: 38, tone: "emerald" },
+                  { id: "REQ-0869", title: "Yazılım lisans", policy: "Best-Effort · P4", remaining: "6s 10d", percent: 18, tone: "emerald" },
+                ].map((r, i) => {
+                  const barTone: Record<string, string> = {
+                    red: "from-red-500 to-red-400",
+                    amber: "from-amber-500 to-amber-400",
+                    emerald: "from-emerald-500 to-emerald-400",
+                  };
+                  const textTone: Record<string, string> = {
+                    red: "text-(--color-accent-red-light)",
+                    amber: "text-amber-300",
+                    emerald: "text-(--color-accent-emerald-light)",
+                  };
+                  return (
+                    <div key={i} className="flex flex-col gap-1 px-2 py-1.5 rounded-lg bg-white/2 border border-white/5">
+                      <div className="grid grid-cols-[auto_1fr_auto_auto] gap-2 items-center">
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">{r.id}</span>
+                        <span className="text-[10px] font-medium text-white truncate">{r.title}</span>
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">{r.policy}</span>
+                        <span className={`text-[10px] font-mono font-bold ${textTone[r.tone]} w-12 text-right`}>{r.remaining}</span>
+                      </div>
+                      <div className="h-1 rounded-full bg-white/5 overflow-hidden">
+                        <div className={`h-full bg-linear-to-r ${barTone[r.tone]} rounded-full`} style={{ width: `${r.percent}%` }} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Bottom — Multi-level SLA targets */}
+            <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid) p-4 flex flex-col gap-2">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">Multi-Level SLA Hedefleri · Aktif Kayıt</span>
+                </div>
+                <span className="text-[8px] font-mono text-(--color-text-muted)">3 paralel hedef</span>
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { label: "Yanıt Süresi", target: "30 dk", percent: 95, current: "28dk", tone: "emerald" },
+                  { label: "Ara Hedef", target: "2 sa", percent: 70, current: "1s 24dk", tone: "amber" },
+                  { label: "Çözüm Süresi", target: "8 sa", percent: 40, current: "3s 12dk", tone: "blue" },
+                ].map((s, i) => {
+                  const tone: Record<string, string> = {
+                    emerald: "text-(--color-accent-emerald-light) from-emerald-500 to-emerald-400",
+                    amber: "text-amber-300 from-amber-500 to-amber-400",
+                    blue: "text-(--color-accent-blue-light) from-blue-500 to-cyan-400",
+                  };
+                  const [colorClass, gradFrom, gradTo] = tone[s.tone].split(" ");
+                  return (
+                    <div key={i} className="flex flex-col gap-1.5 px-3 py-2 rounded-lg bg-white/2 border border-white/8">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[9px] font-medium text-(--color-text-secondary)">{s.label}</span>
+                        <span className={`text-[10px] font-mono font-bold ${colorClass}`}>{s.target}</span>
+                      </div>
+                      <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+                        <div className={`h-full bg-linear-to-r ${gradFrom} ${gradTo} rounded-full`} style={{ width: `${s.percent}%` }} />
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">harcanan</span>
+                        <span className="text-[9px] font-mono font-semibold text-white">{s.current}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
           </motion.div>
         </div>
       </section>
@@ -118,14 +318,155 @@ export default function ServisSeviyeYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/servis-seviye-modulu/sla-policy.webp"
-                    alt="SLA Policy yönetim panosu"
-                    width={1250}
-                    height={707}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-135 rounded-2xl overflow-hidden border border-white/5 shadow-2xl bg-(--color-surface-elevated-solid) flex flex-col p-4 gap-3">
+                  {/* Toolbar */}
+                  <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                    <div className="flex items-center gap-1.5">
+                      <Gauge className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">SLA Policy Yönetimi</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="text-[8px] font-mono text-(--color-text-muted)">3 policy</span>
+                      <span className="text-[8px] font-mono font-semibold text-(--color-accent-blue-light) px-1.5 py-0.5 rounded-md bg-blue-500/12 border border-blue-500/25">
+                        + Yeni
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 flex-1 overflow-hidden">
+                    {/* Left — policy list */}
+                    <div className="w-1/3 flex flex-col gap-1.5 border-r border-white/8 pr-3">
+                      <span className="text-[8px] font-semibold uppercase tracking-widest text-(--color-text-muted) mb-0.5 px-1">
+                        Policy&apos;ler
+                      </span>
+                      {[
+                        { name: "Premium", desc: "Kritik müşteri", count: 12, active: true, tone: "blue" },
+                        { name: "Standart", desc: "Genel servis", count: 24, active: false, tone: "cyan" },
+                        { name: "Best-Effort", desc: "Düşük öncelik", count: 6, active: false, tone: "emerald" },
+                      ].map((p, i) => {
+                        const tone: Record<string, string> = {
+                          blue: "bg-blue-500/15 border-blue-500/35 shadow-[0_0_15px_rgba(59,130,246,0.15)]",
+                          cyan: "border-transparent hover:bg-white/3",
+                          emerald: "border-transparent hover:bg-white/3",
+                        };
+                        const dot: Record<string, string> = {
+                          blue: "bg-(--color-accent-blue-light)",
+                          cyan: "bg-(--color-accent-cyan-light)",
+                          emerald: "bg-(--color-accent-emerald-light)",
+                        };
+                        return (
+                          <div
+                            key={i}
+                            className={`flex flex-col gap-0.5 px-2 py-1.5 rounded-lg border ${p.active ? tone.blue : tone[p.tone]}`}
+                          >
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-1.5">
+                                <span className={`w-1.5 h-1.5 rounded-full ${dot[p.tone]} shadow-[0_0_6px_currentColor]`} />
+                                <span className={`text-[10px] font-bold ${p.active ? "text-white" : "text-(--color-text-secondary)"}`}>
+                                  {p.name}
+                                </span>
+                              </div>
+                              <span className="text-[8px] font-mono text-(--color-text-muted)">{p.count}</span>
+                            </div>
+                            <span className="text-[8px] text-(--color-text-muted) pl-3">{p.desc}</span>
+                          </div>
+                        );
+                      })}
+
+                      {/* Linked services */}
+                      <div className="mt-2 pt-2 border-t border-white/5 flex flex-col gap-1">
+                        <span className="text-[8px] font-semibold uppercase tracking-widest text-(--color-text-muted) mb-0.5 px-1">
+                          Bağlı Servisler
+                        </span>
+                        {["E-posta Sistemi", "ERP Servisi", "CRM"].map((s, i) => (
+                          <div key={i} className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-white/2 border border-white/5">
+                            <Share2 className="w-2.5 h-2.5 text-(--color-accent-blue-light)" />
+                            <span className="text-[9px] text-white truncate">{s}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Right — active policy detail */}
+                    <div className="flex-1 flex flex-col gap-2 min-w-0">
+                      {/* Detail header */}
+                      <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-linear-to-r from-blue-500/15 to-cyan-500/8 border border-blue-500/30">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
+                            <Gauge className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Aktif Policy</span>
+                            <span className="text-[11px] font-bold text-white">Premium · 12 kayıt</span>
+                          </div>
+                        </div>
+                        <span className="text-[8px] font-mono font-semibold text-(--color-accent-emerald-light) px-1.5 py-0.5 rounded-full bg-emerald-500/12 border border-emerald-500/25">
+                          AKTİF
+                        </span>
+                      </div>
+
+                      {/* SLA matrix */}
+                      <div className="flex flex-col gap-1">
+                        <span className="text-[8px] font-semibold uppercase tracking-widest text-(--color-text-muted) mb-0.5">
+                          Öncelik Matrisi
+                        </span>
+                        <div className="grid grid-cols-[auto_1fr_1fr_1fr] gap-1 px-2 py-1 text-[8px] font-semibold uppercase tracking-wider text-(--color-text-muted) bg-white/3 border border-white/5 rounded-md">
+                          <span className="w-8">Önc.</span>
+                          <span>Yanıt</span>
+                          <span>Çözüm</span>
+                          <span>Eskal.</span>
+                        </div>
+                        {[
+                          { p: "P1", color: "red", response: "15dk", resolve: "2sa", esc: "30dk" },
+                          { p: "P2", color: "orange", response: "30dk", resolve: "4sa", esc: "1sa" },
+                          { p: "P3", color: "cyan", response: "1sa", resolve: "8sa", esc: "2sa" },
+                          { p: "P4", color: "emerald", response: "4sa", resolve: "24sa", esc: "8sa" },
+                        ].map((r, i) => {
+                          const tone: Record<string, string> = {
+                            red: "bg-red-500/15 text-(--color-accent-red-light) border-red-500/30",
+                            orange: "bg-orange-500/15 text-(--color-accent-orange-light) border-orange-500/30",
+                            cyan: "bg-cyan-500/15 text-(--color-accent-cyan-light) border-cyan-500/30",
+                            emerald: "bg-emerald-500/15 text-(--color-accent-emerald-light) border-emerald-500/30",
+                          };
+                          return (
+                            <div key={i} className="grid grid-cols-[auto_1fr_1fr_1fr] gap-1 px-2 py-1.5 items-center bg-white/2 border border-white/5 rounded-md">
+                              <span className={`text-[9px] font-mono font-bold px-1.5 py-0.5 rounded border ${tone[r.color]} w-8 text-center`}>
+                                {r.p}
+                              </span>
+                              <span className="text-[10px] font-mono font-semibold text-white">{r.response}</span>
+                              <span className="text-[10px] font-mono font-semibold text-white">{r.resolve}</span>
+                              <span className="text-[10px] font-mono font-semibold text-(--color-accent-orange-light)">{r.esc}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* Notification rules */}
+                      <div className="flex flex-col gap-1 mt-1">
+                        <span className="text-[8px] font-semibold uppercase tracking-widest text-(--color-text-muted) mb-0.5">
+                          Bildirim Kuralları
+                        </span>
+                        {[
+                          { trigger: "%50 ulaşılınca", action: "Sahibe e-posta", tone: "cyan" },
+                          { trigger: "%80 ulaşılınca", action: "Yöneticiye uyarı", tone: "orange" },
+                          { trigger: "İhlal anında", action: "CAB + SMS", tone: "red" },
+                        ].map((n, i) => {
+                          const tone: Record<string, string> = {
+                            cyan: "text-(--color-accent-cyan-light)",
+                            orange: "text-(--color-accent-orange-light)",
+                            red: "text-(--color-accent-red-light)",
+                          };
+                          return (
+                            <div key={i} className="grid grid-cols-[1fr_auto_1fr] gap-2 items-center px-2 py-1.5 rounded-md bg-white/2 border border-white/5">
+                              <span className="text-[9px] font-medium text-white truncate">{n.trigger}</span>
+                              <span className={`text-[9px] font-mono ${tone[n.tone]}`}>→</span>
+                              <span className="text-[9px] text-(--color-text-secondary) truncate">{n.action}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

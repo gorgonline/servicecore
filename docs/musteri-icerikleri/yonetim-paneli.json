@@ -1,0 +1,233 @@
+{
+  "slug": "yonetim-paneli",
+  "sourceUrl": "https://servicecore.app/tr/resources/yonetim-paneli",
+  "fetchedAt": "2026-05-03",
+  "docTitle": "Servicecore Gelişmiş Yönetim Paneli - Servicecore",
+  "metaDescription": "Servicecore Enterprise Service Management Software",
+  "pageTitle": "✨ Neden Servicecore Yönetim Paneli?",
+  "hero": {
+    "paragraphs": [
+      "Merkezi Kontrol: Tüm süreçler tek panelde.",
+      "Esneklik: Organizasyonunuza göre özelleştirilebilir.",
+      "Verimlilik: Hazır şablonlar ve otomasyonlarla hız kazanın.",
+      "Şeffaflık: Varlık, kullanıcı ve süreçlerin tam görünürlüğü.",
+      "Servicecore A.Ş.",
+      "Çağrı Merkezi : 444CORE",
+      "Servicecore Destek",
+      "Copyright © 2025, Servicecore"
+    ],
+    "images": []
+  },
+  "sections": [
+    {
+      "heading": "Servicecore Gelişmiş Yönetim Paneli",
+      "paragraphs": [
+        "Tüm organizasyonunuzu tek bir merkezden yönetin.",
+        "Servicecore Yönetim Paneli, kurumunuzun tüm yapı taşlarını tek noktadan kontrol etmenizi sağlar. Genel ayarlardan organizasyon şemasına, varlık yönetiminden gelişmiş otomasyonlara kadar her şey, kullanıcı dostu bir arayüzde bir araya gelir."
+      ],
+      "bullets": [],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "",
+      "paragraphs": [],
+      "bullets": [],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "⚡ Genel Yönetim Ayarları",
+      "paragraphs": [
+        "İş süreçlerinizi hızlandıran ve standartlaştıran güçlü araçlar:",
+        "Genel Uygulama Ayarları : Tema, dil, saat dilimi, sistem konfigürasyonları",
+        "Sistem & Instance Ayarları : Genel sistem konfigürasyonları ve instance yönetimi",
+        "Uyarı ve Bildirimler : E-posta, SMS, Teams vb. kanallardan bildirim yönetimi",
+        "Süreç Şablonları : Modüller için hazır süreç şablonları",
+        "Hazır Cevaplar : Not ve e-postalar için hızlı yanıt şablonları",
+        "Validasyon Ayarları : Form alanları için doğrulama kuralları",
+        "Duyurular : Kullanıcı ve gruplara yönelik bilgilendirme mesajları",
+        "İş Saatleri : Kurum çalışma saatleri tanımları",
+        "Kurum Konumları & Alt Şirketler : Organizasyon yapınıza uygun konum ve alt şirket yönetimi",
+        "Denetim Günlükleri : Kullanıcı etkinlikleri ve sistem log kayıtları",
+        "Son Kullanıcı Ayarları : Son kullanıcı deneyimini özelleştirme"
+      ],
+      "bullets": [
+        "Genel Uygulama Ayarları : Tema, dil, saat dilimi, sistem konfigürasyonları",
+        "Sistem & Instance Ayarları : Genel sistem konfigürasyonları ve instance yönetimi",
+        "Uyarı ve Bildirimler : E-posta, SMS, Teams vb. kanallardan bildirim yönetimi",
+        "Süreç Şablonları : Modüller için hazır süreç şablonları",
+        "Hazır Cevaplar : Not ve e-postalar için hızlı yanıt şablonları",
+        "Validasyon Ayarları : Form alanları için doğrulama kuralları",
+        "Duyurular : Kullanıcı ve gruplara yönelik bilgilendirme mesajları",
+        "İş Saatleri : Kurum çalışma saatleri tanımları",
+        "Kurum Konumları & Alt Şirketler : Organizasyon yapınıza uygun konum ve alt şirket yönetimi",
+        "Denetim Günlükleri : Kullanıcı etkinlikleri ve sistem log kayıtları",
+        "Son Kullanıcı Ayarları : Son kullanıcı deneyimini özelleştirme"
+      ],
+      "images": [
+        {
+          "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/d2017081d1-1760801621/yon1.png",
+          "alt": ""
+        },
+        {
+          "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/d2017081d1-1760801621/yon1.png",
+          "alt": ""
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "heading": "👥 Organizasyon Yönetimi",
+      "paragraphs": [
+        "Kurum yapınızı dijital ortama taşıyın:",
+        "Teknisyenler & Teknisyen Grupları",
+        "Kullanıcılar & Kullanıcı Grupları",
+        "Onaylayanlar ve Danışmanlar",
+        "Departmanlar",
+        "Roller ve Yetkiler",
+        "Organizasyon Şemaları"
+      ],
+      "bullets": [
+        "Teknisyenler & Teknisyen Grupları",
+        "Kullanıcılar & Kullanıcı Grupları",
+        "Onaylayanlar ve Danışmanlar",
+        "Departmanlar",
+        "Roller ve Yetkiler",
+        "Organizasyon Şemaları"
+      ],
+      "images": [
+        {
+          "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/7bdca4deb7-1760802224/org.png",
+          "alt": ""
+        },
+        {
+          "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/7bdca4deb7-1760802224/org.png",
+          "alt": ""
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "heading": "🏗️ Varlık ve Konfigürasyon Yönetimi",
+      "paragraphs": [
+        "Tüm varlıklarınızı uçtan uca yönetin:",
+        "Üreticiler & Kullanım Modelleri",
+        "Varlık Konumları, Durumları ve Şirketleri",
+        "İlişki Türleri (CMDB)",
+        "Sözleşme Türleri",
+        "Varlık Türleri & Öznitelikleri",
+        "Kurum İçi Destek Sözleşmeleri",
+        "Tedarikçi Sözleşmeleri & Tedarikçiler"
+      ],
+      "bullets": [
+        "Üreticiler & Kullanım Modelleri",
+        "Varlık Konumları, Durumları ve Şirketleri",
+        "İlişki Türleri (CMDB)",
+        "Sözleşme Türleri",
+        "Varlık Türleri & Öznitelikleri",
+        "Kurum İçi Destek Sözleşmeleri",
+        "Tedarikçi Sözleşmeleri & Tedarikçiler"
+      ],
+      "images": [
+        {
+          "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/28ffc6cc49-1760802381/varlik.png",
+          "alt": ""
+        },
+        {
+          "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/28ffc6cc49-1760802381/varlik.png",
+          "alt": ""
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "heading": "⚙️ Gelişmiş Ayarlar",
+      "paragraphs": [
+        "Kurumsal ihtiyaçlarınıza göre özelleştirin:",
+        "SLA Politikaları : Performans ölçümü ve hizmet seviyesi yönetimi",
+        "Kapatma Kuralları : Kayıtların kapatılma koşulları",
+        "Otomasyon Yönetimi : Esnek otomasyon kuralları",
+        "Ortak Alanlar & Özel Ek Alanlar : Çağrı ve süreçlere özel alanlar",
+        "Global Durumlar : Tüm süreçlerde ortak durum yönetimi",
+        "Anketler : Kullanıcı geri bildirimleri için anket tasarımı",
+        "Sisteme Genel Bakış : Sistem ayarlarının özet görünümü",
+        "Entegrasyonlar : Dış sistemlerle entegrasyon yönetimi",
+        "İş Akışı Yönetimi : Süreçlere özel dinamik iş akışları",
+        "Dil Kaynağı Ayarları : Çok dilli kullanım için kaynak yönetimi",
+        "Zamanlanmış Olaylar & İstekler : Geleceğe yönelik otomatik işlemler",
+        "Otomatik Teknisyen Atama : Akıllı görev dağıtımı"
+      ],
+      "bullets": [
+        "SLA Politikaları : Performans ölçümü ve hizmet seviyesi yönetimi",
+        "Kapatma Kuralları : Kayıtların kapatılma koşulları",
+        "Otomasyon Yönetimi : Esnek otomasyon kuralları",
+        "Ortak Alanlar & Özel Ek Alanlar : Çağrı ve süreçlere özel alanlar",
+        "Global Durumlar : Tüm süreçlerde ortak durum yönetimi",
+        "Anketler : Kullanıcı geri bildirimleri için anket tasarımı",
+        "Sisteme Genel Bakış : Sistem ayarlarının özet görünümü",
+        "Entegrasyonlar : Dış sistemlerle entegrasyon yönetimi",
+        "İş Akışı Yönetimi : Süreçlere özel dinamik iş akışları",
+        "Dil Kaynağı Ayarları : Çok dilli kullanım için kaynak yönetimi",
+        "Zamanlanmış Olaylar & İstekler : Geleceğe yönelik otomatik işlemler",
+        "Otomatik Teknisyen Atama : Akıllı görev dağıtımı"
+      ],
+      "images": [
+        {
+          "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/42809cea63-1760802607/gelismis.png",
+          "alt": ""
+        },
+        {
+          "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/42809cea63-1760802607/gelismis.png",
+          "alt": ""
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "heading": "📝 Formlar",
+      "paragraphs": [
+        "Özel Form Düzenleme : İş süreçlerine uygun özelleştirilebilir formlar"
+      ],
+      "bullets": [
+        "Özel Form Düzenleme : İş süreçlerine uygun özelleştirilebilir formlar"
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "🤝 Hizmet İlişkileri Yönetimi",
+      "paragraphs": [
+        "Müşteri ilişkilerinizi tek panelden yönetin:",
+        "Müşteriler & Kişiler : Dış müşteri hesapları ve yetkili kişiler",
+        "Müşteri Hizmet Sözleşmeleri : SLA ve hizmet kapsamı yönetimi",
+        "Hizmet Planları : Paket bazlı hizmet tanımları"
+      ],
+      "bullets": [
+        "Müşteriler & Kişiler : Dış müşteri hesapları ve yetkili kişiler",
+        "Müşteri Hizmet Sözleşmeleri : SLA ve hizmet kapsamı yönetimi",
+        "Hizmet Planları : Paket bazlı hizmet tanımları"
+      ],
+      "images": [],
+      "subSections": []
+    }
+  ],
+  "allContentImages": [
+    {
+      "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/d2017081d1-1760801621/yon1.png",
+      "alt": ""
+    },
+    {
+      "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/7bdca4deb7-1760802224/org.png",
+      "alt": ""
+    },
+    {
+      "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/28ffc6cc49-1760802381/varlik.png",
+      "alt": ""
+    },
+    {
+      "src": "https://servicecore.app/media/pages/resources/yonetim-paneli/42809cea63-1760802607/gelismis.png",
+      "alt": ""
+    }
+  ]
+}

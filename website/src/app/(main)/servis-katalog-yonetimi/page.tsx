@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import {
   BookOpen,
@@ -20,6 +19,11 @@ import {
   Lock,
   ChevronRight,
   Users,
+  GraduationCap,
+  Smartphone,
+  Building2,
+  CreditCard,
+  HeartHandshake,
 } from "lucide-react";
 import data from "@/data/servis-katalog-yonetimi.json";
 
@@ -91,17 +95,88 @@ export default function ServisKatalogYonetimiPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full max-h-125"
+            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-6 lg:p-10 shadow-2xl overflow-hidden group w-full"
           >
-            <Image
-              src="/images/servis-katalog-modulu/katalog.webp"
-              alt={data.hero.imageAlt}
-              width={1250}
-              height={707}
-              className="block w-full h-auto rounded-2xl group-hover:scale-[1.01] transition-transform duration-700"
-              priority
-            />
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
+            {/* Catalog header */}
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6 pb-5 border-b border-white/8">
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-(--color-accent-blue-light)">
+                  Servis Katalog
+                </span>
+                <span className="text-lg lg:text-xl font-bold text-white tracking-tight">
+                  Tüm Hizmetler
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-mono text-(--color-text-muted)">
+                  12 hizmet
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-(--color-accent-emerald-light)">
+                  aktif
+                </span>
+              </div>
+            </div>
+
+            {/* Catalog cards grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 lg:gap-4">
+              {[
+                { icon: Laptop, name: "Donanım Talebi", category: "BT", sla: "3 gün", tone: "blue" },
+                { icon: Lock, name: "Erişim Yetkisi", category: "Güvenlik", sla: "4 saat", tone: "purple" },
+                { icon: Mail, name: "Mail Hesabı", category: "İK / BT", sla: "1 gün", tone: "emerald" },
+                { icon: Wifi, name: "VPN Erişimi", category: "Network", sla: "2 saat", tone: "cyan" },
+                { icon: GraduationCap, name: "Eğitim Talebi", category: "İK", sla: "5 gün", tone: "amber" },
+                { icon: Smartphone, name: "Mobil Cihaz", category: "BT", sla: "5 gün", tone: "pink" },
+                { icon: Server, name: "Sunucu Tahsis", category: "Altyapı", sla: "7 gün", tone: "indigo" },
+                { icon: HeartHandshake, name: "Onboarding", category: "İK", sla: "1 gün", tone: "rose" },
+                { icon: CreditCard, name: "Avans Talebi", category: "Finans", sla: "2 gün", tone: "orange" },
+                { icon: Building2, name: "Ofis Tahsisi", category: "Tesis", sla: "3 gün", tone: "teal" },
+                { icon: FileText, name: "Sözleşme Talebi", category: "Hukuk", sla: "4 gün", tone: "sky" },
+                { icon: RefreshCw, name: "Yazılım Lisans", category: "BT", sla: "2 gün", tone: "violet" },
+              ].map((item, i) => {
+                const Icon = item.icon;
+                const toneMap: Record<string, { bg: string; border: string; text: string; iconBg: string; glow: string }> = {
+                  blue: { bg: "from-blue-500/15 to-blue-500/5", border: "border-blue-500/25 hover:border-blue-500/50", text: "text-(--color-accent-blue-light)", iconBg: "bg-blue-500/20", glow: "shadow-[0_0_20px_rgba(59,130,246,0.15)]" },
+                  purple: { bg: "from-purple-500/15 to-purple-500/5", border: "border-purple-500/25 hover:border-purple-500/50", text: "text-(--color-accent-purple-light)", iconBg: "bg-purple-500/20", glow: "shadow-[0_0_20px_rgba(168,85,247,0.15)]" },
+                  emerald: { bg: "from-emerald-500/15 to-emerald-500/5", border: "border-emerald-500/25 hover:border-emerald-500/50", text: "text-(--color-accent-emerald-light)", iconBg: "bg-emerald-500/20", glow: "shadow-[0_0_20px_rgba(16,185,129,0.15)]" },
+                  cyan: { bg: "from-cyan-500/15 to-cyan-500/5", border: "border-cyan-500/25 hover:border-cyan-500/50", text: "text-(--color-accent-cyan-light)", iconBg: "bg-cyan-500/20", glow: "shadow-[0_0_20px_rgba(6,182,212,0.15)]" },
+                  amber: { bg: "from-amber-500/15 to-amber-500/5", border: "border-amber-500/25 hover:border-amber-500/50", text: "text-amber-300", iconBg: "bg-amber-500/20", glow: "shadow-[0_0_20px_rgba(245,158,11,0.15)]" },
+                  pink: { bg: "from-pink-500/15 to-pink-500/5", border: "border-pink-500/25 hover:border-pink-500/50", text: "text-pink-300", iconBg: "bg-pink-500/20", glow: "shadow-[0_0_20px_rgba(236,72,153,0.15)]" },
+                  indigo: { bg: "from-indigo-500/15 to-indigo-500/5", border: "border-indigo-500/25 hover:border-indigo-500/50", text: "text-indigo-300", iconBg: "bg-indigo-500/20", glow: "shadow-[0_0_20px_rgba(99,102,241,0.15)]" },
+                  rose: { bg: "from-rose-500/15 to-rose-500/5", border: "border-rose-500/25 hover:border-rose-500/50", text: "text-rose-300", iconBg: "bg-rose-500/20", glow: "shadow-[0_0_20px_rgba(244,63,94,0.15)]" },
+                  orange: { bg: "from-orange-500/15 to-orange-500/5", border: "border-orange-500/25 hover:border-orange-500/50", text: "text-(--color-accent-orange-light)", iconBg: "bg-orange-500/20", glow: "shadow-[0_0_20px_rgba(249,115,22,0.15)]" },
+                  teal: { bg: "from-teal-500/15 to-teal-500/5", border: "border-teal-500/25 hover:border-teal-500/50", text: "text-teal-300", iconBg: "bg-teal-500/20", glow: "shadow-[0_0_20px_rgba(20,184,166,0.15)]" },
+                  sky: { bg: "from-sky-500/15 to-sky-500/5", border: "border-sky-500/25 hover:border-sky-500/50", text: "text-sky-300", iconBg: "bg-sky-500/20", glow: "shadow-[0_0_20px_rgba(14,165,233,0.15)]" },
+                  violet: { bg: "from-violet-500/15 to-violet-500/5", border: "border-violet-500/25 hover:border-violet-500/50", text: "text-violet-300", iconBg: "bg-violet-500/20", glow: "shadow-[0_0_20px_rgba(139,92,246,0.15)]" },
+                };
+                const t = toneMap[item.tone];
+                return (
+                  <div
+                    key={i}
+                    className={`rounded-2xl bg-linear-to-br ${t.bg} border ${t.border} p-3 lg:p-4 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-0.5 ${t.glow}`}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className={`w-9 h-9 rounded-lg ${t.iconBg} ${t.text} flex items-center justify-center`}>
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <span className="text-[8px] font-semibold uppercase tracking-wider text-(--color-text-muted)">
+                        {item.category}
+                      </span>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-xs lg:text-sm font-bold text-white leading-tight">
+                        {item.name}
+                      </span>
+                      <div className="flex items-center gap-1.5 text-[9px] text-(--color-text-muted)">
+                        <Clock className="w-2.5 h-2.5" />
+                        <span className="font-mono">SLA {item.sla}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
           </motion.div>
         </div>
       </section>
@@ -120,14 +195,119 @@ export default function ServisKatalogYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/servis-katalog-modulu/katalog.webp"
-                    alt="Çok katmanlı servis katalog panosu"
-                    width={1250}
-                    height={707}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-135 rounded-2xl overflow-hidden border border-white/5 shadow-2xl bg-(--color-surface-elevated-solid) flex p-4 gap-3">
+                  {/* Category sidebar */}
+                  <div className="w-32 shrink-0 flex flex-col gap-1.5 border-r border-white/8 pr-3">
+                    <span className="text-[8px] font-semibold uppercase tracking-widest text-(--color-text-muted) mb-1 px-2">
+                      Kategoriler
+                    </span>
+                    {[
+                      { icon: Layers, label: "BT Hizmetleri", active: true, count: 24 },
+                      { icon: Users, label: "İK", count: 8 },
+                      { icon: CreditCard, label: "Finans", count: 6 },
+                      { icon: Building2, label: "Tesis", count: 5 },
+                      { icon: Lock, label: "Güvenlik", count: 4 },
+                      { icon: FileText, label: "Hukuk", count: 3 },
+                    ].map((cat, i) => {
+                      const Icon = cat.icon;
+                      return (
+                        <div
+                          key={i}
+                          className={`flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg ${
+                            cat.active
+                              ? "bg-blue-500/15 border border-blue-500/30"
+                              : "bg-transparent border border-transparent hover:bg-white/3"
+                          }`}
+                        >
+                          <div className="flex items-center gap-1.5 min-w-0">
+                            <Icon
+                              className={`w-3 h-3 shrink-0 ${
+                                cat.active
+                                  ? "text-(--color-accent-blue-light)"
+                                  : "text-(--color-text-muted)"
+                              }`}
+                            />
+                            <span
+                              className={`text-[10px] font-medium truncate ${
+                                cat.active ? "text-white" : "text-(--color-text-secondary)"
+                              }`}
+                            >
+                              {cat.label}
+                            </span>
+                          </div>
+                          <span className="text-[8px] font-mono text-(--color-text-muted) shrink-0">
+                            {cat.count}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Catalog cards (BT Hizmetleri) */}
+                  <div className="flex-1 flex flex-col gap-3 min-w-0">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[10px] font-semibold uppercase tracking-widest text-white">
+                        BT Hizmetleri · 24
+                      </span>
+                      <span className="text-[8px] font-mono text-(--color-text-muted)">
+                        L1 → L3
+                      </span>
+                    </div>
+
+                    {/* Sub-category groups */}
+                    <div className="flex-1 grid grid-cols-2 gap-2 overflow-hidden">
+                      {[
+                        { icon: Laptop, name: "Donanım", count: 8, tone: "blue" },
+                        { icon: Lock, name: "Erişim", count: 6, tone: "purple" },
+                        { icon: Mail, name: "İletişim", count: 4, tone: "emerald" },
+                        { icon: Wifi, name: "Network", count: 3, tone: "cyan" },
+                        { icon: Server, name: "Altyapı", count: 2, tone: "indigo" },
+                        { icon: RefreshCw, name: "Yazılım", count: 1, tone: "amber" },
+                      ].map((sub, i) => {
+                        const Icon = sub.icon;
+                        const toneText: Record<string, string> = {
+                          blue: "text-(--color-accent-blue-light)",
+                          purple: "text-(--color-accent-purple-light)",
+                          emerald: "text-(--color-accent-emerald-light)",
+                          cyan: "text-(--color-accent-cyan-light)",
+                          indigo: "text-indigo-300",
+                          amber: "text-amber-300",
+                        };
+                        const toneBg: Record<string, string> = {
+                          blue: "bg-blue-500/15",
+                          purple: "bg-purple-500/15",
+                          emerald: "bg-emerald-500/15",
+                          cyan: "bg-cyan-500/15",
+                          indigo: "bg-indigo-500/15",
+                          amber: "bg-amber-500/15",
+                        };
+                        return (
+                          <div
+                            key={i}
+                            className="rounded-lg bg-white/3 border border-white/8 p-2.5 flex flex-col gap-1.5 hover:border-white/20 transition-colors"
+                          >
+                            <div className="flex items-center justify-between">
+                              <div
+                                className={`w-7 h-7 rounded-md ${toneBg[sub.tone]} ${toneText[sub.tone]} flex items-center justify-center`}
+                              >
+                                <Icon className="w-3.5 h-3.5" />
+                              </div>
+                              <span className="text-[8px] font-mono text-(--color-text-muted)">
+                                {sub.count} hizmet
+                              </span>
+                            </div>
+                            <span className="text-[10px] font-semibold text-white">
+                              {sub.name}
+                            </span>
+                            <div className="flex items-center gap-1 text-[8px] text-(--color-text-muted) font-medium">
+                              <ChevronRight className="w-2 h-2" />
+                              <span>Alt kalemler</span>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

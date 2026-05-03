@@ -1,0 +1,31 @@
+{
+  "slug": "integrated-service-management",
+  "sourceUrl": "https://servicecore.app/tr/resources/integrated-service-management",
+  "fetchedAt": "2026-05-03",
+  "docTitle": "Entegre Servis Yönetim Süreçleri - Servicecore",
+  "metaDescription": "Servicecore Enterprise Service Management Software",
+  "pageTitle": "Entegre Servis Yönetimi Süreçleri",
+  "hero": {
+    "paragraphs": [
+      "Servicecore modülleri arasındaki ilişkiler ITIL4 süreçleri ile uyumlu olarak tasarlanmıştır. Aşağıdaki şema özet olarak süreçler arasındaki bağıntıları ve akışı göstermektedir.",
+      "Süreçlerin detay bilgileri için şu linkteki dokümantasyon ve videoları inceleyebilirsiniz.",
+      "Servicecore A.Ş.",
+      "Çağrı Merkezi : 444CORE",
+      "Servicecore Destek",
+      "Copyright © 2025, Servicecore"
+    ],
+    "images": [
+      {
+        "src": "https://servicecore.app/media/pages/resources/integrated-service-management/c578bc6cc1-1673801900/servicecoreprocessmapv6w.png",
+        "alt": ""
+      }
+    ]
+  },
+  "sections": [],
+  "allContentImages": [
+    {
+      "src": "https://servicecore.app/media/pages/resources/integrated-service-management/c578bc6cc1-1673801900/servicecoreprocessmapv6w.png",
+      "alt": ""
+    }
+  ]
+}

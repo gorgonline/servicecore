@@ -13,10 +13,16 @@ import {
   Mail,
   ArrowRight,
   CircleCheckBig,
-  Phone
+  Phone,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
 } from "lucide-react";
 import ServiceCoreHero from "@/components/ui/ServiceCoreHero";
 import egitimlerData from "@/data/egitimler.json";
+import { submitForm } from "@/lib/forms";
+
+type Status = "idle" | "loading" | "success" | "error";
 
 const iconMap = {
   Calendar,
@@ -64,6 +70,35 @@ const AccordionItem = ({ title, content }: { title: string; content: string }) =
 
 export default function EgitimlerPage() {
   const { egitimler } = egitimlerData;
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (status === "loading") return;
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = {
+      Ad: String(formData.get("ad") ?? ""),
+      Soyad: String(formData.get("soyad") ?? ""),
+      Firma: String(formData.get("firma") ?? ""),
+      "İş Ünvanı": String(formData.get("unvan") ?? ""),
+      "E-posta": String(formData.get("eposta") ?? ""),
+      Telefon: String(formData.get("telefon") ?? ""),
+    };
+
+    setStatus("loading");
+    setErrorMessage("");
+    const result = await submitForm("Eğitim", data);
+    if (result.ok) {
+      setStatus("success");
+      form.reset();
+    } else {
+      setStatus("error");
+      setErrorMessage(result.error);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-(--color-surface-base) text-white overflow-x-hidden selection:bg-blue-500/30">
@@ -83,7 +118,7 @@ export default function EgitimlerPage() {
             
             {/* Visual Separation Mesh for each program */}
             <div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-blue-500/20 to-transparent" />
-            <div className={`absolute -top-32 ${pIndex % 2 === 0 ? '-left-64' : '-right-64'} w-[800px] h-[800px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none`} />
+            <div className={`absolute -top-32 ${pIndex % 2 === 0 ? '-left-64' : '-right-64'} w-200 h-200 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none`} />
 
             <div className="max-w-350 mx-auto px-4 sm:px-6 lg:px-12">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -137,7 +172,7 @@ export default function EgitimlerPage() {
                         key={idx} 
                         className="bg-white/2 backdrop-blur-md border border-white/5 rounded-[2.5rem] p-8 flex flex-col justify-between hover:bg-white/4 hover:border-blue-500/30 transition-all duration-500 group relative overflow-hidden"
                       >
-                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-[40px] rounded-full group-hover:bg-blue-500/10 transition-colors duration-500" />
+                         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-2xl rounded-full group-hover:bg-blue-500/10 transition-colors duration-500" />
                          <div className="flex justify-between items-start mb-8 relative z-10">
                             <div className="p-3 rounded-2xl bg-blue-500/5 border border-white/5 text-(--color-accent-blue-light) group-hover:bg-(--color-accent-blue-base) group-hover:text-white group-hover:border-blue-400 transition-all duration-500 shadow-xl">
                                <Icon size={24} />
@@ -162,11 +197,11 @@ export default function EgitimlerPage() {
                 className="max-w-5xl mx-auto w-full mt-16"
               >
                 <div className="flex items-center gap-6 mb-10">
-                  <div className="h-px flex-grow bg-linear-to-r from-transparent via-white/10 to-white/10" />
+                  <div className="h-px grow bg-linear-to-r from-transparent via-white/10 to-white/10" />
                   <h3 className="text-xs font-black uppercase tracking-[0.3em] text-blue-400/70 shrink-0">
                     {program.curriculum_title}
                   </h3>
-                  <div className="h-px flex-grow bg-linear-to-l from-transparent via-white/10 to-white/10" />
+                  <div className="h-px grow bg-linear-to-l from-transparent via-white/10 to-white/10" />
                 </div>
                 
                 <div className="bg-linear-to-br from-(--color-surface-elevated-solid)/50 to-transparent border border-white/5 rounded-[2.5rem] p-8 lg:p-10 shadow-xl backdrop-blur-sm">
@@ -186,10 +221,10 @@ export default function EgitimlerPage() {
       {/* 4. KATILIM BİLGİLERİ VE FORM (Full Width Split Screen) */}
       <section className="w-full relative overflow-hidden bg-(--color-surface-elevated-solid) border-t border-white/10 mt-24">
         <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-blue-500/40 to-transparent" />
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-200 h-200 bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="max-w-350 mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[800px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 min-h-200">
             
             {/* LEFT: INFO */}
             <div className="py-24 px-6 lg:px-12 xl:pr-24 flex flex-col justify-center relative z-10">
@@ -259,42 +294,64 @@ export default function EgitimlerPage() {
                     Ön Kayıt Talep Formu
                   </h3>
 
-                  <form className="grid gap-6" onSubmit={(e) => e.preventDefault()}>
+                  <form className="grid gap-6" onSubmit={handleSubmit}>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">Ad*</label>
-                        <input type="text" className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)]" />
+                        <label htmlFor="ad" className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">Ad*</label>
+                        <input id="ad" name="ad" type="text" required disabled={status === "loading"} className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)] disabled:opacity-60" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">Soyad*</label>
-                        <input type="text" className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)]" />
+                        <label htmlFor="soyad" className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">Soyad*</label>
+                        <input id="soyad" name="soyad" type="text" required disabled={status === "loading"} className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)] disabled:opacity-60" />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">Firma Adı*</label>
-                        <input type="text" className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)]" />
+                        <label htmlFor="firma" className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">Firma Adı*</label>
+                        <input id="firma" name="firma" type="text" required disabled={status === "loading"} className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)] disabled:opacity-60" />
                       </div>
                       <div className="space-y-2">
-                        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">İş Ünvanı*</label>
-                        <input type="text" className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)]" />
+                        <label htmlFor="unvan" className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">İş Ünvanı*</label>
+                        <input id="unvan" name="unvan" type="text" required disabled={status === "loading"} className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)] disabled:opacity-60" />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">E-Posta Adresi*</label>
-                      <input type="email" className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)]" />
+                      <label htmlFor="eposta" className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">E-Posta Adresi*</label>
+                      <input id="eposta" name="eposta" type="email" required disabled={status === "loading"} className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)] disabled:opacity-60" />
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">Telefon Numarası*</label>
-                      <input type="tel" className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)]" />
+                      <label htmlFor="telefon" className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">Telefon Numarası*</label>
+                      <input id="telefon" name="telefon" type="tel" required disabled={status === "loading"} className="w-full bg-(--color-surface-base) border border-white/10 rounded-2xl py-4 px-6 outline-none text-white focus:border-(--color-accent-blue-base) focus:bg-blue-500/5 transition-all font-medium placeholder:text-(--color-text-dim) shadow-inner focus:shadow-[0_0_20px_rgba(59,130,246,0.1)] disabled:opacity-60" />
                     </div>
 
-                    <button className="w-full py-5 rounded-2xl bg-(--color-accent-blue-base) hover:bg-blue-400 text-white font-black uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] flex items-center justify-center gap-3 group/btn transition-all mt-6 active:scale-[0.98]">
-                      <span>Kayıt Talebi Gönder</span>
-                      <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                    {status === "success" && (
+                      <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-(--color-accent-emerald-light)">
+                        <CheckCircle2 className="w-4 h-4 shrink-0" />
+                        <span className="text-sm font-medium">Kayıt talebiniz alındı. En kısa sürede iletişime geçeceğiz.</span>
+                      </div>
+                    )}
+                    {status === "error" && (
+                      <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)">
+                        <AlertCircle className="w-4 h-4 shrink-0" />
+                        <span className="text-sm font-medium">Bir hata oluştu: {errorMessage || "Lütfen tekrar deneyin."}</span>
+                      </div>
+                    )}
+
+                    <button type="submit" disabled={status === "loading"} className="w-full py-5 rounded-2xl bg-(--color-accent-blue-base) hover:bg-blue-400 text-white font-black uppercase tracking-[0.2em] shadow-[0_0_30px_rgba(59,130,246,0.3)] hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] flex items-center justify-center gap-3 group/btn transition-all mt-6 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer">
+                      {status === "loading" ? (
+                        <>
+                          <Loader2 size={18} className="animate-spin" />
+                          <span>Gönderiliyor…</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Kayıt Talebi Gönder</span>
+                          <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
+                        </>
+                      )}
                     </button>
                   </form>
                 </div>

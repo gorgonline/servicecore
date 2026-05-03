@@ -36,8 +36,13 @@ import {
   X,
   Sparkles,
   Check,
+  Loader2,
+  AlertCircle,
   type LucideIcon,
 } from "lucide-react";
+import { submitForm } from "@/lib/forms";
+
+type Status = "idle" | "loading" | "success" | "error";
 
 interface RoadmapItem {
   id: string;
@@ -101,7 +106,8 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const allItems = useMemo(
     () => data.years.flatMap((y) => y.items),
@@ -124,14 +130,32 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
 
   const openDrawer = () => {
     setDrawerOpen(true);
-    setSubmitted(false);
+    setStatus("idle");
+    setErrorMessage("");
   };
 
   const closeDrawer = () => setDrawerOpen(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (status === "loading") return;
+
+    setStatus("loading");
+    setErrorMessage("");
+    const result = await submitForm("AI Yol Haritası", {
+      "Ad Soyad": form.name,
+      "E-posta": form.email,
+      Telefon: form.phone,
+      "Geri Bildirim": form.message,
+      "Seçilen Modüller": selectedItems.map((i) => i.name).join(", "),
+    });
+    if (result.ok) {
+      setStatus("success");
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } else {
+      setStatus("error");
+      setErrorMessage(result.error);
+    }
   };
 
   return (
@@ -242,7 +266,7 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
                       </h3>
 
                       {/* Description */}
-                      <p className="text-sm text-(--color-text-secondary) leading-relaxed font-light mb-5 flex-grow">
+                      <p className="text-sm text-(--color-text-secondary) leading-relaxed font-light mb-5 grow">
                         {item.description}
                       </p>
 
@@ -270,14 +294,14 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={closeDrawer}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-90"
             />
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 180 }}
-              className="fixed top-0 right-0 h-full w-full sm:w-[460px] bg-(--color-surface-elevated-solid) border-l border-white/10 z-[100] flex flex-col"
+              className="fixed top-0 right-0 h-full w-full sm:w-115 bg-(--color-surface-elevated-solid) border-l border-white/10 z-100 flex flex-col"
             >
               <header className="flex items-center justify-between px-6 py-5 border-b border-white/10">
                 <h3 className="text-lg font-semibold text-white tracking-tight">
@@ -293,7 +317,7 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
               </header>
 
               <div className="flex-1 overflow-y-auto px-6 py-6">
-                {submitted ? (
+                {status === "success" ? (
                   <div className="flex flex-col items-center justify-center h-full text-center gap-4">
                     <div className="w-16 h-16 rounded-full bg-(--color-accent-emerald-base)/20 border border-(--color-accent-emerald-base)/40 flex items-center justify-center">
                       <Check className="w-8 h-8 text-(--color-accent-emerald-light)" strokeWidth={2.5} />
@@ -333,10 +357,11 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
                         id="name"
                         type="text"
                         required
+                        disabled={status === "loading"}
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         placeholder="Adınız ve soyadınız"
-                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-(--color-text-muted) text-sm focus:outline-none focus:border-(--color-brand-primary)/60 focus:ring-2 focus:ring-(--color-brand-primary)/20 transition-colors"
+                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-(--color-text-muted) text-sm focus:outline-none focus:border-(--color-brand-primary)/60 focus:ring-2 focus:ring-(--color-brand-primary)/20 transition-colors disabled:opacity-60"
                       />
                     </div>
 
@@ -348,10 +373,11 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
                         id="email"
                         type="email"
                         required
+                        disabled={status === "loading"}
                         value={form.email}
                         onChange={(e) => setForm({ ...form, email: e.target.value })}
                         placeholder="isim@sirket.com"
-                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-(--color-text-muted) text-sm focus:outline-none focus:border-(--color-brand-primary)/60 focus:ring-2 focus:ring-(--color-brand-primary)/20 transition-colors"
+                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-(--color-text-muted) text-sm focus:outline-none focus:border-(--color-brand-primary)/60 focus:ring-2 focus:ring-(--color-brand-primary)/20 transition-colors disabled:opacity-60"
                       />
                     </div>
 
@@ -362,10 +388,11 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
                       <input
                         id="phone"
                         type="tel"
+                        disabled={status === "loading"}
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
                         placeholder="05xx xxx xx xx"
-                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-(--color-text-muted) text-sm focus:outline-none focus:border-(--color-brand-primary)/60 focus:ring-2 focus:ring-(--color-brand-primary)/20 transition-colors"
+                        className="w-full h-11 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-(--color-text-muted) text-sm focus:outline-none focus:border-(--color-brand-primary)/60 focus:ring-2 focus:ring-(--color-brand-primary)/20 transition-colors disabled:opacity-60"
                       />
                     </div>
 
@@ -377,19 +404,34 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
                         id="message"
                         rows={5}
                         required
+                        disabled={status === "loading"}
                         value={form.message}
                         onChange={(e) => setForm({ ...form, message: e.target.value })}
                         placeholder="Seçtiğiniz modüller hakkında önerilerinizi yazın..."
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-(--color-text-muted) text-sm focus:outline-none focus:border-(--color-brand-primary)/60 focus:ring-2 focus:ring-(--color-brand-primary)/20 transition-colors resize-none"
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-(--color-text-muted) text-sm focus:outline-none focus:border-(--color-brand-primary)/60 focus:ring-2 focus:ring-(--color-brand-primary)/20 transition-colors resize-none disabled:opacity-60"
                       />
                     </div>
 
+                    {status === "error" && (
+                      <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)">
+                        <AlertCircle className="w-4 h-4 shrink-0" />
+                        <span className="text-sm font-medium">Bir hata oluştu: {errorMessage || "Lütfen tekrar deneyin."}</span>
+                      </div>
+                    )}
+
                     <button
                       type="submit"
-                      disabled={selectedItems.length === 0}
-                      className="mt-2 h-12 rounded-full bg-(--color-brand-primary) hover:bg-(--color-brand-primary-hover) disabled:bg-white/5 disabled:text-white/40 disabled:cursor-not-allowed text-white font-semibold shadow-(--shadow-glow-primary) transition-all cursor-pointer"
+                      disabled={selectedItems.length === 0 || status === "loading"}
+                      className="mt-2 h-12 rounded-full bg-(--color-brand-primary) hover:bg-(--color-brand-primary-hover) disabled:bg-white/5 disabled:text-white/40 disabled:cursor-not-allowed text-white font-semibold shadow-(--shadow-glow-primary) transition-all cursor-pointer inline-flex items-center justify-center gap-2"
                     >
-                      Formu Gönder
+                      {status === "loading" ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          <span>Gönderiliyor…</span>
+                        </>
+                      ) : (
+                        <span>Formu Gönder</span>
+                      )}
                     </button>
                   </form>
                 )}

@@ -1,10 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
-import { 
-  Mail, 
-  Phone, 
+import {
+  Mail,
+  Phone,
   Sparkles,
   GraduationCap,
   Users,
@@ -26,10 +26,16 @@ import {
   Layout,
   Activity,
   Handshake,
-  Briefcase
+  Briefcase,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
 } from "lucide-react";
 import ServiceCoreHero from "@/components/ui/ServiceCoreHero";
 import kurslarData from "@/data/kurslar.json";
+import { submitForm } from "@/lib/forms";
+
+type Status = "idle" | "loading" | "success" | "error";
 
 const iconMap: Record<string, React.ElementType> = {
   MessagesSquare,
@@ -58,6 +64,35 @@ interface KursModule {
 
 export default function KurslarPage() {
   const { kurslar } = kurslarData;
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (status === "loading") return;
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = {
+      Ad: String(formData.get("ad") ?? ""),
+      Soyad: String(formData.get("soyad") ?? ""),
+      Firma: String(formData.get("firma") ?? ""),
+      "İş Ünvanı": String(formData.get("unvan") ?? ""),
+      "E-posta": String(formData.get("eposta") ?? ""),
+      Telefon: String(formData.get("telefon") ?? ""),
+    };
+
+    setStatus("loading");
+    setErrorMessage("");
+    const result = await submitForm("Kurs", data);
+    if (result.ok) {
+      setStatus("success");
+      form.reset();
+    } else {
+      setStatus("error");
+      setErrorMessage(result.error);
+    }
+  }
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -96,7 +131,7 @@ export default function KurslarPage() {
           className="grid grid-cols-1 md:grid-cols-3 gap-1 p-1 rounded-[2.5rem] bg-white/2 border border-white/10 backdrop-blur-2xl shadow-2xl overflow-hidden"
         >
           {/* Duration */}
-          <div className="p-8 md:p-10 flex flex-col items-center text-center group hover:bg-white/[0.03] transition-colors">
+          <div className="p-8 md:p-10 flex flex-col items-center text-center group hover:bg-white/3 transition-colors">
             <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-(--color-accent-blue-light) mb-6 group-hover:scale-110 group-hover:bg-(--color-accent-blue-base) group-hover:text-white transition-all duration-500">
               <Calendar size={24} />
             </div>
@@ -107,7 +142,7 @@ export default function KurslarPage() {
           </div>
 
           {/* Training Method */}
-          <div className="p-8 md:p-10 flex flex-col items-center text-center group hover:bg-white/[0.03] transition-colors border-y md:border-y-0 md:border-x border-white/10">
+          <div className="p-8 md:p-10 flex flex-col items-center text-center group hover:bg-white/3 transition-colors border-y md:border-y-0 md:border-x border-white/10">
             <div className="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center text-(--color-accent-purple-light) mb-6 group-hover:scale-110 group-hover:bg-(--color-accent-purple-base) group-hover:text-white transition-all duration-500">
               <Users size={24} />
             </div>
@@ -118,7 +153,7 @@ export default function KurslarPage() {
           </div>
 
           {/* Exam System */}
-          <div className="p-8 md:p-10 flex flex-col items-center text-center group hover:bg-white/[0.03] transition-colors">
+          <div className="p-8 md:p-10 flex flex-col items-center text-center group hover:bg-white/3 transition-colors">
             <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-(--color-accent-emerald-light) mb-6 group-hover:scale-110 group-hover:bg-(--color-accent-emerald-base) group-hover:text-white transition-all duration-500">
               <MonitorCheck size={24} />
             </div>
@@ -244,42 +279,64 @@ export default function KurslarPage() {
                   {kurslar.form_title}
                 </h3>
 
-                <form className="grid gap-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="grid gap-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.name}</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                      <label htmlFor="ad" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.name}</label>
+                      <input id="ad" name="ad" type="text" required disabled={status === "loading"} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.surname}</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                      <label htmlFor="soyad" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.surname}</label>
+                      <input id="soyad" name="soyad" type="text" required disabled={status === "loading"} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.company}</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                      <label htmlFor="firma" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.company}</label>
+                      <input id="firma" name="firma" type="text" required disabled={status === "loading"} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.title}</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                      <label htmlFor="unvan" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.title}</label>
+                      <input id="unvan" name="unvan" type="text" required disabled={status === "loading"} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.email}</label>
-                    <input type="email" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                    <label htmlFor="eposta" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.email}</label>
+                    <input id="eposta" name="eposta" type="email" required disabled={status === "loading"} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.phone}</label>
-                    <input type="tel" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                    <label htmlFor="telefon" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.phone}</label>
+                    <input id="telefon" name="telefon" type="tel" required disabled={status === "loading"} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                   </div>
 
-                  <button className="w-full py-5 rounded-2xl bg-(--color-accent-blue-base) hover:bg-blue-600 text-white font-black uppercase tracking-[0.2em] shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group/btn transition-all mt-4">
-                    <span>Gönder</span>
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                  {status === "success" && (
+                    <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-(--color-accent-emerald-light)">
+                      <CheckCircle2 className="w-4 h-4 shrink-0" />
+                      <span className="text-sm font-medium">Kayıt talebiniz alındı. En kısa sürede iletişime geçeceğiz.</span>
+                    </div>
+                  )}
+                  {status === "error" && (
+                    <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span className="text-sm font-medium">Bir hata oluştu: {errorMessage || "Lütfen tekrar deneyin."}</span>
+                    </div>
+                  )}
+
+                  <button type="submit" disabled={status === "loading"} className="w-full py-5 rounded-2xl bg-(--color-accent-blue-base) hover:bg-blue-600 text-white font-black uppercase tracking-[0.2em] shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group/btn transition-all mt-4 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer">
+                    {status === "loading" ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" />
+                        <span>Gönderiliyor…</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Gönder</span>
+                        <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </form>
               </div>

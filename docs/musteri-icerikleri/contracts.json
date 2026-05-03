@@ -1,0 +1,223 @@
+{
+  "slug": "contracts",
+  "sourceUrl": "https://servicecore.app/tr/resources/contracts",
+  "fetchedAt": "2026-05-03",
+  "docTitle": "Servicecore Sözleşme Yönetimi - Servicecore",
+  "metaDescription": "Servicecore Enterprise Service Management Software",
+  "pageTitle": "📑 Tüm sözleşmelerinizi tek platformda yönetin, şeffaflık ve kontrol kazanın.",
+  "hero": {
+    "paragraphs": [
+      "Servicecore Sözleşme Yönetimi Modülü, kurum içi, tedarikçi ve müşteri hizmet sözleşmelerinizi tek bir merkezden yönetmenizi sağlar. Sözleşmelerin yaşam döngüsünü uçtan uca takip ederek hem operasyonel verimliliğinizi artırır hem de riskleri minimize eder."
+    ],
+    "images": []
+  },
+  "sections": [
+    {
+      "heading": "Servis Sözleşme Yönetimi",
+      "paragraphs": [],
+      "bullets": [],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "✨ Öne Çıkan Özellikler",
+      "paragraphs": [
+        "Kurum İçi Destek Sözleşmeleri (OLA): BT birimi ile diğer departmanlar arasındaki hizmet anlaşmalarını düzenleyin, iç süreçlerde şeffaflık sağlayın.",
+        "Tedarikçi Sözleşmeleri: Malzeme, hizmet ve lisans anlaşmalarını kaydedin, tedarikçi performansını izleyin.",
+        "Müşteri Hizmet Sözleşmeleri (SLA): İç ve dış müşteriler için hizmet seviyelerini tanımlayın, profesyonel bir yönetim standardı oluşturun.",
+        "Otomatik Bildirimler: Sözleşme bitiş tarihleri yaklaşırken taraflara otomatik uyarılar gönderin.",
+        "Yenileme ve Uzatma: Sözleşmeleri belirlenen periyotlarla otomatik yenileyin veya manuel olarak uzatın.",
+        "Dosya ve Ek Yönetimi: Sözleşmelere ek belgeler yükleyin, görüntüleyin ve düzenleyin.",
+        "Onay Süreçleri: Sözleşmeleri kurul veya yetkili kişilere onaya gönderin.",
+        "Finansal Takip: Sözleşme maliyetlerini kaydedin, bütçe kontrolü sağlayın.",
+        "İlişkili Sözleşmeler: Farklı sözleşmeleri birbirine bağlayarak bütünsel yönetim sağlayın."
+      ],
+      "bullets": [
+        "Kurum İçi Destek Sözleşmeleri (OLA): BT birimi ile diğer departmanlar arasındaki hizmet anlaşmalarını düzenleyin, iç süreçlerde şeffaflık sağlayın.",
+        "Tedarikçi Sözleşmeleri: Malzeme, hizmet ve lisans anlaşmalarını kaydedin, tedarikçi performansını izleyin.",
+        "Müşteri Hizmet Sözleşmeleri (SLA): İç ve dış müşteriler için hizmet seviyelerini tanımlayın, profesyonel bir yönetim standardı oluşturun.",
+        "Otomatik Bildirimler: Sözleşme bitiş tarihleri yaklaşırken taraflara otomatik uyarılar gönderin.",
+        "Yenileme ve Uzatma: Sözleşmeleri belirlenen periyotlarla otomatik yenileyin veya manuel olarak uzatın.",
+        "Dosya ve Ek Yönetimi: Sözleşmelere ek belgeler yükleyin, görüntüleyin ve düzenleyin.",
+        "Onay Süreçleri: Sözleşmeleri kurul veya yetkili kişilere onaya gönderin.",
+        "Finansal Takip: Sözleşme maliyetlerini kaydedin, bütçe kontrolü sağlayın.",
+        "İlişkili Sözleşmeler: Farklı sözleşmeleri birbirine bağlayarak bütünsel yönetim sağlayın."
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "🏗️ Sözleşme Yaşam Döngüsü",
+      "paragraphs": [],
+      "bullets": [],
+      "images": [],
+      "subSections": [
+        {
+          "subheading": "1. Yeni Sözleşme Oluşturma",
+          "paragraphs": [
+            "Model Seçimi: Kurum içi, tedarikçi veya müşteri hizmet sözleşmesi.",
+            "Temel Bilgiler: Ad, açıklama, başlangıç ve bitiş tarihi.",
+            "Bildirim Ayarları: Süresi dolmadan önce/sonra kaç gün kala bilgilendirme yapılacağı.",
+            "Otomatik Yenileme: Belirli periyotlarla sözleşmenin kendini yenilemesi."
+          ],
+          "bullets": [
+            "Model Seçimi: Kurum içi, tedarikçi veya müşteri hizmet sözleşmesi.",
+            "Temel Bilgiler: Ad, açıklama, başlangıç ve bitiş tarihi.",
+            "Bildirim Ayarları: Süresi dolmadan önce/sonra kaç gün kala bilgilendirme yapılacağı.",
+            "Otomatik Yenileme: Belirli periyotlarla sözleşmenin kendini yenilemesi."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "2. Sözleşme Detayları",
+          "paragraphs": [
+            "Durum Yönetimi: Aktif/pasif hale getirme.",
+            "Dosya Yönetimi: Ek belgeler yükleme ve görüntüleme.",
+            "CNR Numarası: Tek tıkla sözleşme detayına erişim.",
+            "Özellikler & Detaylar: Sözleşme bilgilerini güncelleme."
+          ],
+          "bullets": [
+            "Durum Yönetimi: Aktif/pasif hale getirme.",
+            "Dosya Yönetimi: Ek belgeler yükleme ve görüntüleme.",
+            "CNR Numarası: Tek tıkla sözleşme detayına erişim.",
+            "Özellikler & Detaylar: Sözleşme bilgilerini güncelleme."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "3. Onay Süreci",
+          "paragraphs": [
+            "Sözleşmeler kurul veya belirlenen kişilere onaya gönderilebilir.",
+            "Onay/Red durumları süreç akışına otomatik yansır."
+          ],
+          "bullets": [
+            "Sözleşmeler kurul veya belirlenen kişilere onaya gönderilebilir.",
+            "Onay/Red durumları süreç akışına otomatik yansır."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "4. Varlık ve Hizmet İlişkileri",
+          "paragraphs": [
+            "Varlıklar Tabı: Sözleşmeye bağlı varlık girişleri.",
+            "Hizmetler Tabı: Sözleşmeye bağlı hizmet tanımları."
+          ],
+          "bullets": [
+            "Varlıklar Tabı: Sözleşmeye bağlı varlık girişleri.",
+            "Hizmetler Tabı: Sözleşmeye bağlı hizmet tanımları."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "5. Finansal Bilgiler",
+          "paragraphs": [
+            "Maliyet girişleri yapılabilir.",
+            "Bütçe ve harcama takibi sağlanır."
+          ],
+          "bullets": [
+            "Maliyet girişleri yapılabilir.",
+            "Bütçe ve harcama takibi sağlanır."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "6. İlişkili Sözleşmeler",
+          "paragraphs": [
+            "Farklı sözleşmeler birbirine bağlanarak bütünsel görünürlük sağlanır."
+          ],
+          "bullets": [
+            "Farklı sözleşmeler birbirine bağlanarak bütünsel görünürlük sağlanır."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "7. Bildirimler",
+          "paragraphs": [
+            "Hem kurum içi hem de karşı taraf kullanıcılarına otomatik bildirim gönderilebilir."
+          ],
+          "bullets": [
+            "Hem kurum içi hem de karşı taraf kullanıcılarına otomatik bildirim gönderilebilir."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "8. Geçmiş Kayıtları",
+          "paragraphs": [
+            "Sözleşme üzerinde yapılan tüm işlemler geçmiş tabında izlenebilir."
+          ],
+          "bullets": [
+            "Sözleşme üzerinde yapılan tüm işlemler geçmiş tabında izlenebilir."
+          ],
+          "images": []
+        }
+      ]
+    },
+    {
+      "heading": "🌟 Avantajlarınız",
+      "paragraphs": [
+        "Merkezi Yönetim: Tüm sözleşmeler tek panelde.",
+        "Şeffaflık: Onay süreçleri ve geçmiş kayıtlarıyla tam izlenebilirlik.",
+        "Risk Yönetimi: Süresi yaklaşan sözleşmeler için otomatik uyarılar.",
+        "Verimlilik: Tekrarlayan işlerin otomasyonu ile zaman tasarrufu.",
+        "Uyumluluk: SLA ve OLA standartlarına uygun yönetim.",
+        "Servicecore A.Ş.",
+        "Çağrı Merkezi : 444CORE",
+        "Servicecore Destek",
+        "Copyright © 2025, Servicecore"
+      ],
+      "bullets": [
+        "Merkezi Yönetim: Tüm sözleşmeler tek panelde.",
+        "Şeffaflık: Onay süreçleri ve geçmiş kayıtlarıyla tam izlenebilirlik.",
+        "Risk Yönetimi: Süresi yaklaşan sözleşmeler için otomatik uyarılar.",
+        "Verimlilik: Tekrarlayan işlerin otomasyonu ile zaman tasarrufu.",
+        "Uyumluluk: SLA ve OLA standartlarına uygun yönetim.",
+        "#sözleşme yönetimi",
+        "#müşteri sözleşmeleri",
+        "#tedarikçi sözleşmeleri",
+        "#iş birimleri sözleşmeleri",
+        "Service Desk",
+        "Interaction Management",
+        "Incident Management",
+        "Problem Management",
+        "Request Management",
+        "Change Management",
+        "Asset Management",
+        "Configuration Management",
+        "Service Catalog Management",
+        "Workflow Management",
+        "Low-Code Design",
+        "Task Management",
+        "Service Level Management",
+        "Continual Improvement",
+        "Service Portal",
+        "Knowledge Management",
+        "Service Dashboards",
+        "Service Analytics",
+        "Service Automation",
+        "Project Management",
+        "Contract Management",
+        "Relations Management",
+        "Hakkımızda",
+        "ITSM Özellikleri",
+        "ESM Özellikleri",
+        "Modüller",
+        "Rehberler",
+        "Workshoplar",
+        "Eğitimler",
+        "Data Sheet",
+        "Specification Sheet",
+        "Demo Başvurusu",
+        "İletişim",
+        "Özellikler",
+        "Modules",
+        "Versions",
+        "Partners",
+        "Demo",
+        "Contact"
+      ],
+      "images": [],
+      "subSections": []
+    }
+  ],
+  "allContentImages": []
+}

@@ -86,14 +86,14 @@ export default function BilgiBankasiPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full max-h-125"
+            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full"
           >
              <Image
                src="/images/kb/index.png"
                alt="Bilgi Bankası Genel Bakış Dashboard"
                width={1347}
                height={741}
-               className="block max-w-none rounded-2xl group-hover:scale-[1.01] transition-transform duration-700 origin-top-left"
+               className="block w-full h-auto rounded-2xl group-hover:scale-[1.01] transition-transform duration-700"
                priority
              />
              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
@@ -116,13 +116,13 @@ export default function BilgiBankasiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-purple-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl max-h-110">
+                <div className="relative w-full rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl">
                   <Image
                     src="/images/kb/spaces.png"
                     alt="Sayfa ve Alan Hiyerarşisi"
                     width={1893}
                     height={836}
-                    className="block max-w-none group-hover:scale-[1.01] transition-transform duration-500 origin-top-left"
+                    className="block w-full h-auto group-hover:scale-[1.01] transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -158,13 +158,13 @@ export default function BilgiBankasiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-emerald-500/5 to-blue-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-emerald-500/10 blur-[50px] group-hover:bg-emerald-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl max-h-110">
+                <div className="relative w-full rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl">
                   <Image
                     src="/images/kb/sablonkutuphane.png"
                     alt="Şablon Kütüphanesi"
                     width={1198}
                     height={881}
-                    className="block max-w-none group-hover:scale-[1.01] transition-transform duration-500 origin-top-left"
+                    className="block w-full h-auto group-hover:scale-[1.01] transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -200,13 +200,13 @@ export default function BilgiBankasiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-purple-500/5 to-pink-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-purple-500/10 blur-[50px] group-hover:bg-purple-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl max-h-110">
+                <div className="relative w-full rounded-2xl overflow-hidden bg-(--color-surface-base) border border-white/5 shadow-2xl">
                   <Image
                     src="/images/kb/iliskilikay%C4%B1tlar2.png"
                     alt="Çift Yönlü Linkleme"
                     width={1536}
                     height={1024}
-                    className="block max-w-none group-hover:scale-[1.01] transition-transform duration-500 origin-top-left"
+                    className="block w-full h-auto group-hover:scale-[1.01] transition-transform duration-500"
                   />
                 </div>
               </div>

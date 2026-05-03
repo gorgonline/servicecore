@@ -83,9 +83,11 @@ const resourcesSubmenu = [
   { name: "Sunumlar", icon: Presentation, desc: "Görsel anlatılar ve ürün demoları.", href: "/sunumlar" },
   { name: "Videolar", icon: Video, desc: "Eğitici ve tanıtıcı video içerikler.", href: "/videolar" },
   { name: "Dökümanlar", icon: FileText, desc: "Teknik dökümanlar ve kılavuzlar.", href: "/dokumanlar" },
+  { name: "Blog", icon: Sparkles, desc: "ITIL4, ITSM ve servis yönetimi üzerine yazılar.", href: "/blog" },
   { name: "Kurslar", icon: BookOpen, desc: "Kısa süreli uzmanlık kursları.", href: "/kurslar" },
   { name: "Güncellemeler", icon: BellRing, desc: "Sürüm notları ve inovasyon duyuruları.", href: "/guncellemeler" },
   { name: "Eğitimler", icon: GraduationCap, desc: "Sertifika ve eğitim programları.", href: "/egitimler" },
+  { name: "ITIL4 Pratikleri", icon: ScrollText, desc: "ITIL4 yaşam döngüsü ve pratik uygulamaları.", href: "/itil4-pratikleri" },
 ];
 
 export default function Navbar() {

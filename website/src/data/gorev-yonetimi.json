@@ -103,6 +103,60 @@
       }
     ]
   },
+  "challenges": {
+    "badge": "Kayıtsız İşin Görünmez Maliyeti",
+    "titleLead": "Kayıtsız ve görev yönetimsiz",
+    "titleAccent": "çalışan kurumlarda 10 kritik sorun.",
+    "description": "Kayıt altına alınmayan, platform dışı kalan, kayıtsız yürütülen, e-posta ortamından sürdürülen veya sözlü takip edilen görevler ölçülemeyen ve ispatlanamayan iş yükü dağlarına dönüşür. ServiceCore Task Management bu görünmez yükü kayıt altına alarak aşağıdaki sorunları ortadan kaldırır.",
+    "items": [
+      { "id": "dengesiz", "icon": "Scale", "title": "Dengesiz iş dağılımı", "tone": "red" },
+      { "id": "adaletsiz", "icon": "AlertTriangle", "title": "Adaletsiz görev dağılımı", "tone": "amber" },
+      { "id": "yetkinlik-israfi", "icon": "TrendingDown", "title": "Yetkinliklerin israf edilmesi", "tone": "purple" },
+      { "id": "oncelik", "icon": "Shuffle", "title": "Önceliklerin kontrolsüz değişmesi", "tone": "orange" },
+      { "id": "gorunmezlik", "icon": "EyeOff", "title": "Yapılan işlerin görünür olmaması", "tone": "indigo" },
+      { "id": "kaynak-yonetimi", "icon": "Users", "title": "Kaynak yönetiminin yapılamaması", "tone": "blue" },
+      { "id": "ortak-ajanda", "icon": "CalendarX", "title": "Ortak ajandaların görülememesi", "tone": "cyan" },
+      { "id": "mutsuzluk", "icon": "Frown", "title": "Çok yöneticili ortamda mutsuz çalışma", "tone": "rose" },
+      { "id": "gelisim", "icon": "Lock", "title": "Yetkinliklerin geliştirilememesi", "tone": "amber" },
+      { "id": "surec-basari", "icon": "XCircle", "title": "Süreçlerin başarılı olamaması", "tone": "red" }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "Görev yönetimi neden kritik, WTE® ve STE® motorları nasıl çalışır, Kanban panoları nasıl kullanılır — en sık merak edilenler.",
+    "items": [
+      {
+        "id": "neden-kritik",
+        "icon": "ListTodo",
+        "question": "Görev Yönetimi neden bu kadar kritik?",
+        "answer": "Tüm servis yönetimi süreçlerinde teknisyenlerin yürüttüğü görevler sayesinde işler devam eder. Her olay, istek, problem, değişiklik, sürüm ve proje bir çok görevin teknik ekiplerce yerine getirilmesiyle tamamlanır. ServiceCore Task Management ortak fonksiyonu hem süreçler boyunca işbirliğini, hem de süreçlerden bağımsız yürütülen tüm aktiviteleri kayıt altına alarak merkezi iş yükü koordinasyonu sağlar."
+      },
+      {
+        "id": "wte-nedir",
+        "icon": "Cpu",
+        "question": "WTE® (Workforce and Tasks Engine) nedir?",
+        "answer": "ITIL4 ile birlikte gelen en önemli süreçlerden biri olan Workforce and Talent Management pratiğinin temelinde yer alan iş gücü yönetimi, ServiceCore'da WTE® motoruyla işletilir. Tüm teknisyenlerin kaynak kullanımı ve uygunluğunu tekil bir koordinasyon ile görebilmenin yolu, yapılan tüm görevlerin modüller boyunca kayıt altına alınmasıdır. WTE® görevleri yetkinlik, müsaitlik ve iş yüküne göre dengeleyerek doğru teknisyene yönlendirir."
+      },
+      {
+        "id": "kayitsiz-is",
+        "icon": "AlertTriangle",
+        "question": "Kayıtsız iş yönetimi hangi sorunları doğurur?",
+        "answer": "Kayıt altına alınmayan, platform dışı kalan, kayıtsız yürütülen, email ortamlarından sürdürülen veya sözlü takip edilen görevler ölçülemeyen ve ispatlanamayan iş yükü dağlarına dönüşür. Bu durumdaki kurumlarda dengesiz ve adaletsiz iş dağılımı, yetkinliklerin israfı, kontrolsüz öncelik değişimleri, görünmezlik, kaynak yönetimsizliği, ortak ajanda eksikliği, çok yöneticili ortamda mutsuzluk ve sonuçta süreç başarısızlıkları yaşanır. Tüm bu sorunlar merkezi görev yönetimiyle çözülür."
+      },
+      {
+        "id": "kanban",
+        "icon": "LayoutGrid",
+        "question": "Kanban panoları nasıl kullanılır?",
+        "answer": "Görev yönetiminde önemli bir görselleştirme aracı olan Kanban panoları kullanılmaktadır. ServiceCore Görev Yönetimi sürecinde görevlerin durumları Kanban panoları üzerinden kolaylıkla görülür ve organize edilir. Görevlerin yer aldığı tüm ITSM süreçleri için ayrı ayrı Kanban panoları bulunur; olay, istek, problem, değişiklik ve proje farklı panolarda izlenir. Her sürecin altındaki farklı bütün görevler kendi Kanban panosu üzerinde ayrı ayrı görülebilir ve kolaylıkla yönetilebilir."
+      },
+      {
+        "id": "ste-efor",
+        "icon": "Clock",
+        "question": "STE® efor takibi nasıl çalışır?",
+        "answer": "STE® (ServiceCore Time Engine), görev üzerinde harcanan süreyi otomatik olarak takip eder. Görevin başlatılmasından kapanmasına kadar geçen aktif süre, harcanan dakikalar ve günlük efor logları otomatik kaydedilir. Bu veri kapasite planlama, teknisyen değerlendirmesi, müşteri faturalandırması ve adil iş yükü dağılımında kullanılabilir hale gelir. Manuel zaman girişine göre çok daha hızlı ve doğru bir yapı sunar."
+      }
+    ]
+  },
   "cta": {
     "title": "Görünmez iş yükünü ServiceCore ile kayda alın.",
     "description": "WTE® iş gücü motoru, STE® zaman motoru ve sürece özel Kanban panolarıyla merkezi görev yönetimini canlı demoda inceleyin; iş yükü, kaynak ve adil dağılımı veriye dayandırın.",

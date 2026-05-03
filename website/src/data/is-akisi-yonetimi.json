@@ -111,6 +111,92 @@
       }
     ]
   },
+  "scenarios": {
+    "badge": "Örnek Senaryolar",
+    "titleLead": "Üç gerçek senaryo,",
+    "titleAccent": "iş akışı motorunun pratik gücü.",
+    "description": "Yönetici onaylı süreçlerden otomatik teknisyen atamasına ve TicketAutoAssignAction ile yük dengelemeye kadar gerçek senaryolarla iş akışı motorunun pratiğini görün.",
+    "items": [
+      {
+        "id": "manager-approval",
+        "icon": "UserCheck",
+        "title": "Yönetici Onaylı Akış",
+        "subtitle": "Kurumsal onay zincirinde şeffaflık ve hız",
+        "tone": "blue",
+        "steps": [
+          { "label": "Başlangıç", "desc": "Kayıt oluşturulduğunda süreç tetiklenir" },
+          { "label": "Durum Ataması", "desc": "İlk adımda kayda bir durum atanır" },
+          { "label": "Yönetici Onayı", "desc": "Kaydı açan kişinin yöneticisine onay gönderilir; manuel atanır veya Active Directory'den otomatik çekilir" },
+          { "label": "Onay/Red Çatalı", "desc": "Manager-Approval ve Approve/Reject fork ile süreç dallanır" },
+          { "label": "Sonuç", "desc": "Onay verilirse kayıt ilgili teknisyen grubuna atanır, red verilirse süreç sonlandırılır" }
+        ]
+      },
+      {
+        "id": "auto-assign",
+        "icon": "Shuffle",
+        "title": "Otomatik Teknisyen Atamalı Akış",
+        "subtitle": "Yüksek hacimli taleplerin hızlı ve doğru dağıtımı",
+        "tone": "purple",
+        "steps": [
+          { "label": "Başlangıç", "desc": "Talep oluşturulduğunda süreç tetiklenir" },
+          { "label": "Otomatik Atama", "desc": "Katalogda tanımlı teknisyen gruplarına kayıtlar sıralı şekilde atanır" },
+          { "label": "Yönetici Onayı", "desc": "Atama sonrası yöneticiden onay alınır" },
+          { "label": "Onay/Red Çatalı", "desc": "Red verilirse kayıt kapanır, onay verilirse süreç devam eder" },
+          { "label": "Script Çalıştırma", "desc": "İleri adımlarda script çalıştırılarak gruplara kesin atama yapılır" }
+        ]
+      },
+      {
+        "id": "ticket-auto",
+        "icon": "Repeat",
+        "title": "İstek Kayıtları · TicketAutoAssignAction",
+        "subtitle": "İş yükü dengeleme — destek merkezleri için ideal",
+        "tone": "emerald",
+        "steps": [
+          { "label": "Başlangıç", "desc": "İstek kaydı açıldığında tetiklenir" },
+          { "label": "TicketAutoAssignAction", "desc": "Bu özellik sayesinde teknisyenler, katalogda tanımlı gruplardan sırayla atanır" },
+          { "label": "Sıralı Atama", "desc": "Her yeni kayıt, listedeki bir sonraki teknisyene yönlendirilir" },
+          { "label": "İş Yükü Dengelemesi", "desc": "Round-robin ile iş dağılımı eşitlenir; taleplerin boşa düşmesi engellenir" },
+          { "label": "Avantaj", "desc": "Müşteri destek merkezlerinde yoğun talep akışını adil ve sorunsuz dağıtır" }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "İş akışı tasarımı, dinamik onaylar, otomatik teknisyen atama ve script kullanımı hakkında en sık merak edilenler.",
+    "items": [
+      {
+        "id": "ne-saglar",
+        "icon": "Workflow",
+        "question": "Servicecore İş Akışı Yönetimi ne sağlar?",
+        "answer": "Servicecore İş Akışı Yönetimi, kurumların karmaşık süreçlerini görsel ve kural tabanlı iş akışlarıyla kolayca yönetmesini sağlar. Dinamik onay mekanizmaları, otomatik teknisyen atamaları ve özelleştirilebilir süreç tasarımları sayesinde hem hız hem de güvenilirlik kazanırsınız. Süreçleri otomatikleştirin, onay mekanizmalarınızı güçlendirin ve verimliliğinizi artırın."
+      },
+      {
+        "id": "dinamik-onay",
+        "icon": "CheckCircle2",
+        "question": "Dinamik onay süreçleri nasıl çalışır?",
+        "answer": "Dinamik Onaylar kural tabanlı, çok kademeli ve gerçek zamanlı izlenebilir onay süreçleridir. Kural tabanlı esneklik ile farklı senaryolara göre otomatik onay mekanizmaları tanımlanır; basit onaylardan karmaşık çoklu onay zincirlerine kadar esnek yapı kurulur. Onaycılar rol, departman, grup, kullanıcı veya koşul sonucuna göre dinamik atanır; manager approval gereken durumlarda otomatik devreye girer. Kullanıcılar portal, e-posta veya reply ile onay/red verebilir."
+      },
+      {
+        "id": "is-akisi-mimarisi",
+        "icon": "Network",
+        "question": "İş akışı mimarisi nasıl kurulur?",
+        "answer": "Servicecore iş akışları, onay akışı mimarisi üzerine kuruludur. Süreç dört adımda tasarlanır: (1) Amaç Belirleme — sürecin hedefi netleştirilir; (2) Akışı Tanımlama — başlangıçtan sona kadar tüm adımlar belirlenir; (3) Onay Sıralaması — onayların sıralı mı yoksa paralel mi ilerleyeceği tanımlanır; (4) İnceleme & Kalite Kontrol — süreç sonunda kalite kontrol yapılır. Bu yapı sayesinde iş akışları görsel diyagramlarla kolayca anlaşılır ve otomatikleştirilmiş süreçlerle hatalar minimize edilir."
+      },
+      {
+        "id": "otomatik-atama",
+        "icon": "Shuffle",
+        "question": "Otomatik teknisyen ataması nasıl yapılır?",
+        "answer": "Talepler ve değişiklikler için doğru kişiye otomatik yönlendirme yapılır. Katalogda tanımlı teknisyen gruplarına kayıtlar sıralı şekilde atanır; TicketAutoAssignAction sayesinde her yeni kayıt listedeki bir sonraki teknisyene yönlendirilir. Bu yapı, müşteri destek merkezlerinde yoğun talep akışını dengeleyerek iş yükünün boşa düşmesini engeller. Round-robin ve load balancing desteği sayesinde işler ekipler arasında eşit dağıtılır."
+      },
+      {
+        "id": "script-kosul",
+        "icon": "Code2",
+        "question": "Script ile özel koşul ve aksiyonlar nasıl yazılır?",
+        "answer": "Standart filtrelerin yetmediği yerde JavaScript veya C# benzeri script yapılarıyla özel koşullar yazılabilir. Gelişmiş Query Condition motoru ile çok katmanlı koşullar oluşturulur; AND/OR operatörleri ile kompleks karar ağaçları tasarlanır. True, False ve Fail ayrımları sayesinde koşul sonuçları detaylı yönetilir; hata durumunda alternatif aksiyonlarla süreç kesilmeden devam eder. Custom HTTP request, Run Workflow, Run JS ve Run Integration aksiyonları ile dış sistemler ve alt akışlar entegre olur."
+      }
+    ]
+  },
   "cta": {
     "title": "İş akışı disiplinini ServiceCore ile no-code kurun.",
     "description": "Merkezi tasarımdan dinamik koşula, çoklu onaydan paralel süreç ve entegrasyona kadar tüm workflow yetkinliklerini canlı demoda inceleyin.",

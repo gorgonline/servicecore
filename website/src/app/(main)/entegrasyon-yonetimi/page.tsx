@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import {
   Link as LinkIcon,
@@ -18,6 +17,13 @@ import {
   Database,
   Cpu,
   Globe,
+  Activity,
+  Zap,
+  Key,
+  Lock,
+  Clock,
+  Server,
+  Webhook,
 } from "lucide-react";
 import data from "@/data/entegrasyon-yonetimi.json";
 
@@ -89,16 +95,78 @@ export default function EntegrasyonYonetimiPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full max-h-125"
+            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full"
           >
-            <Image
-              src="/images/entegrasyon-modulu/api-1.avif"
-              alt={data.hero.imageAlt}
-              width={1250}
-              height={707}
-              className="block w-full h-auto rounded-2xl group-hover:scale-[1.01] transition-transform duration-700"
-              priority
-            />
+            <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid)/95 p-5 flex flex-col gap-4">
+              {/* Toolbar */}
+              <div className="flex items-center justify-between pb-3 border-b border-white/5">
+                <div className="flex items-center gap-3">
+                  <Globe className="w-4 h-4 text-(--color-accent-blue-light)" />
+                  <span className="text-sm font-semibold text-white">Integration Hub Console</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/15 text-(--color-accent-blue-light) border border-blue-500/30">REST · Webhook · Event</span>
+                </div>
+                <div className="flex items-center gap-2 text-[10px] font-mono text-(--color-text-muted)">
+                  <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.6)]" /> 18 bağlantı · canlı</span>
+                </div>
+              </div>
+
+              {/* KPI Strip */}
+              <div className="grid grid-cols-4 gap-2">
+                {[
+                  { label: "Aktif Endpoint", value: "120+", trend: "v2 API", c: "text-(--color-accent-blue-light) border-blue-500/30 bg-blue-500/10" },
+                  { label: "Günlük Çağrı", value: "4.2M", trend: "▲ 8%", c: "text-(--color-accent-emerald-light) border-emerald-500/30 bg-emerald-500/10" },
+                  { label: "P95 Yanıt", value: "142 ms", trend: "stabil", c: "text-(--color-accent-cyan-light) border-cyan-500/30 bg-cyan-500/10" },
+                  { label: "Hata Oranı", value: "0.06%", trend: "↓ iyileşti", c: "text-(--color-accent-purple-light) border-purple-500/30 bg-purple-500/10" },
+                ].map((k, i) => (
+                  <div key={i} className={`rounded-lg border ${k.c} p-2.5`}>
+                    <div className="text-[9px] uppercase tracking-wider opacity-80 mb-1">{k.label}</div>
+                    <div className="flex items-baseline gap-2">
+                      <div className="text-xl font-bold text-white font-mono leading-none">{k.value}</div>
+                      <div className="text-[9px] font-mono opacity-80">{k.trend}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Body — Connection table */}
+              <div className="rounded-xl border border-white/5 bg-white/2 overflow-hidden">
+                <div className="grid grid-cols-12 px-3 py-1.5 text-[9px] uppercase tracking-wider text-(--color-text-muted) bg-white/2 border-b border-white/5">
+                  <span className="col-span-3">Sistem</span>
+                  <span className="col-span-2">Tip</span>
+                  <span className="col-span-2">Yetki</span>
+                  <span className="col-span-2">Yön</span>
+                  <span className="col-span-2">Çağrı (24sa)</span>
+                  <span className="col-span-1">Durum</span>
+                </div>
+                {[
+                  { sys: "Salesforce CRM", icon: Users, type: "REST", auth: "OAuth 2", dir: "↔ çift", calls: "82.4K", c: "text-(--color-accent-emerald-light)" },
+                  { sys: "SAP ERP", icon: Wallet, type: "REST", auth: "Token", dir: "→ tek", calls: "14.2K", c: "text-(--color-accent-emerald-light)" },
+                  { sys: "Active Directory", icon: ShieldCheck, type: "LDAP", auth: "Kerberos", dir: "← tek", calls: "1.8M", c: "text-(--color-accent-emerald-light)" },
+                  { sys: "Slack Notify", icon: Webhook, type: "Webhook", auth: "HMAC", dir: "→ tek", calls: "9.6K", c: "text-(--color-accent-emerald-light)" },
+                ].map((r, i) => {
+                  const Icon = r.icon;
+                  return (
+                    <div key={i} className="grid grid-cols-12 px-3 py-2 text-[10px] border-b border-white/5 last:border-0 hover:bg-white/2 items-center">
+                      <span className="col-span-3 text-white font-medium truncate flex items-center gap-1.5">
+                        <Icon className="w-3 h-3 text-(--color-accent-blue-light)" />
+                        {r.sys}
+                      </span>
+                      <span className="col-span-2 font-mono text-(--color-text-secondary)">{r.type}</span>
+                      <span className="col-span-2 font-mono text-(--color-accent-purple-light)">{r.auth}</span>
+                      <span className="col-span-2 font-mono text-(--color-text-muted)">{r.dir}</span>
+                      <span className="col-span-2 font-mono text-(--color-accent-cyan-light)">{r.calls}</span>
+                      <span className={`col-span-1 ${r.c}`}>● ok</span>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Footer */}
+              <div className="flex items-center justify-between pt-2 border-t border-white/5 text-[10px] font-mono text-(--color-text-muted)">
+                <span>4 / 18 bağlantı · son senkron 14:32</span>
+                <span className="text-(--color-accent-blue-light)">JSON · TLS 1.3 · v2</span>
+              </div>
+            </div>
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
           </motion.div>
         </div>
@@ -118,14 +186,76 @@ export default function EntegrasyonYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/entegrasyon-modulu/api-1.avif"
-                    alt="REST API ve sistemler arası veri transferi"
-                    width={1250}
-                    height={707}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-(--color-surface-elevated-solid)/95 border border-white/10 shadow-2xl p-5 flex flex-col gap-3">
+                  <div className="flex items-center justify-between pb-2.5 border-b border-white/5">
+                    <div className="flex items-center gap-2">
+                      <ArrowLeftRight className="w-4 h-4 text-(--color-accent-blue-light)" />
+                      <span className="text-xs font-semibold text-white">Veri Transferi · Live Trace</span>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/15 text-(--color-accent-emerald-light) border border-emerald-500/30">200 OK · 142ms</span>
+                  </div>
+
+                  {/* Request → Response */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-3 space-y-1.5">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/15 text-(--color-accent-emerald-light) border border-emerald-500/30">POST</span>
+                        <span className="text-[9px] font-mono text-white">/api/v2/incidents</span>
+                      </div>
+                      <div className="font-mono text-[8.5px] text-(--color-text-secondary) leading-relaxed pt-1">
+                        <div>{`{`}</div>
+                        <div className="pl-2"><span className="text-(--color-accent-purple-light)">&quot;source&quot;</span>: <span className="text-(--color-accent-orange-light)">&quot;monitoring&quot;</span>,</div>
+                        <div className="pl-2"><span className="text-(--color-accent-purple-light)">&quot;severity&quot;</span>: <span className="text-(--color-accent-orange-light)">&quot;P1&quot;</span>,</div>
+                        <div className="pl-2"><span className="text-(--color-accent-purple-light)">&quot;ci&quot;</span>: <span className="text-(--color-accent-orange-light)">&quot;auth-svc&quot;</span></div>
+                        <div>{`}`}</div>
+                      </div>
+                    </div>
+                    <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-3 space-y-1.5">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[8px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-500/15 text-(--color-accent-blue-light) border border-blue-500/30">201</span>
+                        <span className="text-[9px] font-mono text-white">Created</span>
+                      </div>
+                      <div className="font-mono text-[8.5px] text-(--color-text-secondary) leading-relaxed pt-1">
+                        <div>{`{`}</div>
+                        <div className="pl-2"><span className="text-(--color-accent-purple-light)">&quot;id&quot;</span>: <span className="text-(--color-accent-orange-light)">&quot;INC-9214&quot;</span>,</div>
+                        <div className="pl-2"><span className="text-(--color-accent-purple-light)">&quot;assigned&quot;</span>: <span className="text-(--color-accent-orange-light)">&quot;L2&quot;</span>,</div>
+                        <div className="pl-2"><span className="text-(--color-accent-purple-light)">&quot;sla&quot;</span>: <span className="text-(--color-accent-orange-light)">&quot;1h&quot;</span></div>
+                        <div>{`}`}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Pipeline timeline */}
+                  <div className="rounded-xl border border-white/5 bg-white/2 p-3 flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Activity className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+                      <span className="text-[10px] font-semibold text-white">İşlem Hattı</span>
+                      <span className="ml-auto text-[9px] font-mono text-(--color-text-muted)">5 adım · 142 ms</span>
+                    </div>
+                    <div className="space-y-1.5">
+                      {[
+                        { step: "Webhook alındı", t: "0 ms", c: "bg-blue-400" },
+                        { step: "Şema doğrulama", t: "8 ms", c: "bg-blue-400" },
+                        { step: "Yetki kontrolü", t: "24 ms", c: "bg-blue-400" },
+                        { step: "Kayıt oluştur", t: "82 ms", c: "bg-blue-400" },
+                        { step: "Webhook tetikle", t: "142 ms", c: "bg-emerald-400" },
+                      ].map((s, i) => (
+                        <div key={i} className="grid grid-cols-12 items-center gap-2">
+                          <div className="col-span-1 flex justify-center">
+                            <div className={`w-1.5 h-1.5 rounded-full ${s.c} shadow-[0_0_4px_rgba(96,165,250,0.6)]`} />
+                          </div>
+                          <span className="col-span-7 text-[9px] text-white truncate">{s.step}</span>
+                          <span className="col-span-4 text-[9px] font-mono text-(--color-text-muted) text-right">{s.t}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-2 border-t border-white/5 text-[9px] font-mono text-(--color-text-muted)">
+                    <span className="flex items-center gap-1.5"><Zap className="w-3 h-3 text-(--color-accent-cyan-light)" /> idempotent · retry-safe</span>
+                    <span className="flex items-center gap-1.5"><Clock className="w-3 h-3" /> trace-id 7f1e2a</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -262,14 +392,81 @@ export default function EntegrasyonYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-purple-500/5 to-indigo-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-purple-500/10 blur-[50px] group-hover:bg-purple-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/entegrasyon-modulu/api-2.avif"
-                    alt="API yetkilendirme ve güvenli erişim"
-                    width={1250}
-                    height={707}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-(--color-surface-elevated-solid)/95 border border-white/10 shadow-2xl p-5 flex flex-col gap-3">
+                  <div className="flex items-center justify-between pb-2.5 border-b border-white/5">
+                    <div className="flex items-center gap-2">
+                      <Lock className="w-4 h-4 text-(--color-accent-purple-light)" />
+                      <span className="text-xs font-semibold text-white">API Güvenliği · Token Yönetimi</span>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/15 text-(--color-accent-purple-light) border border-purple-500/30">OAuth 2.0 + RBAC</span>
+                  </div>
+
+                  {/* Token preview */}
+                  <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-3 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <Key className="w-3 h-3 text-(--color-accent-purple-light)" />
+                        <span className="text-[10px] font-semibold text-white font-mono">Bearer Token</span>
+                      </div>
+                      <span className="text-[8px] font-mono text-(--color-accent-emerald-light)">geçerli · 47 dk</span>
+                    </div>
+                    <div className="font-mono text-[9px] text-(--color-text-muted) bg-(--color-surface-base) rounded px-2 py-1.5 truncate">
+                      eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzdmMtY3JtIn0.••••••
+                    </div>
+                  </div>
+
+                  {/* Scopes */}
+                  <div className="rounded-xl border border-white/5 bg-white/2 p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[10px] font-semibold text-white flex items-center gap-1.5"><ShieldCheck className="w-3 h-3 text-(--color-accent-purple-light)" /> Yetki Kapsamları</span>
+                      <span className="text-[9px] font-mono text-(--color-text-muted)">5 scope</span>
+                    </div>
+                    <div className="grid grid-cols-2 gap-1.5">
+                      {[
+                        { s: "incidents:read", on: true },
+                        { s: "incidents:write", on: true },
+                        { s: "users:read", on: true },
+                        { s: "users:write", on: false },
+                        { s: "assets:read", on: true },
+                        { s: "admin:*", on: false },
+                      ].map((sc, i) => (
+                        <div key={i} className={`flex items-center gap-1.5 px-2 py-1 rounded border text-[9px] font-mono ${sc.on ? "bg-emerald-500/10 border-emerald-500/30 text-(--color-accent-emerald-light)" : "bg-white/3 border-white/10 text-(--color-text-muted)"}`}>
+                          <span>{sc.on ? "✓" : "○"}</span>
+                          <span className="truncate">{sc.s}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Audit log */}
+                  <div className="rounded-xl border border-white/5 bg-white/2 p-3 flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Activity className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                      <span className="text-[10px] font-semibold text-white">Erişim Denetim Kaydı</span>
+                      <span className="ml-auto text-[9px] font-mono text-(--color-text-muted)">son 4 olay</span>
+                    </div>
+                    <div className="space-y-1">
+                      {[
+                        { actor: "svc-crm", action: "POST /incidents", time: "14:32:18", c: "text-(--color-accent-emerald-light)" },
+                        { actor: "svc-erp", action: "GET /assets", time: "14:31:54", c: "text-(--color-accent-emerald-light)" },
+                        { actor: "svc-mon", action: "POST /incidents", time: "14:30:09", c: "text-(--color-accent-emerald-light)" },
+                        { actor: "svc-bi", action: "GET /reports", time: "14:28:44", c: "text-amber-400" },
+                      ].map((e, i) => (
+                        <div key={i} className="grid grid-cols-12 items-center gap-2 px-2 py-1 rounded bg-white/2 border border-white/5">
+                          <span className="col-span-3 text-[8.5px] font-mono text-(--color-accent-purple-light) truncate">{e.actor}</span>
+                          <span className="col-span-6 text-[8.5px] font-mono text-white truncate">{e.action}</span>
+                          <span className={`col-span-2 text-[8.5px] font-mono ${e.c}`}>● 200</span>
+                          <span className="col-span-1 text-[7.5px] font-mono text-(--color-text-muted)">{e.time}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-2 border-t border-white/5 text-[9px] font-mono text-(--color-text-muted)">
+                    <span className="flex items-center gap-1.5"><Server className="w-3 h-3 text-(--color-accent-purple-light)" /> rate-limit · 1k/dk</span>
+                    <span className="text-(--color-accent-purple-light)">TLS 1.3 · IP allow-list</span>
+                  </div>
                 </div>
               </div>
             </div>

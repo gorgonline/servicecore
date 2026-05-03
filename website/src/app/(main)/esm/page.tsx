@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import {
   Building2,
@@ -24,6 +23,18 @@ import {
   HeadphonesIcon,
   UserSquare2,
   Globe,
+  BookOpen,
+  Scale,
+  LayoutGrid,
+  ChevronDown,
+  Activity,
+  TrendingUp,
+  Clock,
+  Grid3x3,
+  Settings,
+  Bell,
+  ChevronRight,
+  Search,
 } from "lucide-react";
 import data from "@/data/esm-kurumsal-servis-yonetimi.json";
 
@@ -95,17 +106,140 @@ export default function EsmPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full max-h-125"
+            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-6 lg:p-10 shadow-2xl overflow-hidden group w-full"
           >
-            <Image
-              src="/images/esm-modulu/esm-1.webp"
-              alt={data.hero.imageAlt}
-              width={1250}
-              height={707}
-              className="block w-full h-auto rounded-2xl group-hover:scale-[1.01] transition-transform duration-700"
-              priority
-            />
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
+            {/* Toolbar */}
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5 pb-5 border-b border-white/8">
+              <div className="flex flex-col gap-1">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-(--color-accent-blue-light)">
+                  ESM Operasyon Panosu
+                </span>
+                <span className="text-lg lg:text-xl font-bold text-white tracking-tight">
+                  Multitenant Servis Yönetimi
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-mono text-(--color-text-muted)">5 kiracı · 6 departman</span>
+                <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent-emerald-light) shadow-[0_0_8px_currentColor] animate-pulse" />
+                  <span className="text-[9px] font-mono uppercase tracking-widest text-(--color-accent-emerald-light)">canlı</span>
+                </div>
+              </div>
+            </div>
+
+            {/* KPI metric row */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-5">
+              {[
+                { icon: Activity, label: "Toplam Talep", value: "542", trend: "+8%", tone: "blue" },
+                { icon: Users, label: "Aktif Kullanıcı", value: "1.284", trend: "+124", tone: "purple" },
+                { icon: TrendingUp, label: "SLA Uyumu", value: "%94", trend: "+2.1", tone: "emerald" },
+                { icon: Clock, label: "Ort. Çözüm", value: "23dk", trend: "−6dk", tone: "amber", down: true },
+              ].map((m, i) => {
+                const Icon = m.icon;
+                const tone: Record<string, string> = {
+                  blue: "from-blue-500/15 to-blue-500/5 border-blue-500/25 text-(--color-accent-blue-light) shadow-[0_0_25px_rgba(59,130,246,0.12)]",
+                  purple: "from-purple-500/15 to-purple-500/5 border-purple-500/25 text-(--color-accent-purple-light) shadow-[0_0_25px_rgba(168,85,247,0.12)]",
+                  emerald: "from-emerald-500/15 to-emerald-500/5 border-emerald-500/25 text-(--color-accent-emerald-light) shadow-[0_0_25px_rgba(16,185,129,0.12)]",
+                  amber: "from-amber-500/15 to-amber-500/5 border-amber-500/25 text-amber-300 shadow-[0_0_25px_rgba(245,158,11,0.12)]",
+                };
+                const trendTone = m.down ? "text-(--color-accent-emerald-light)" : "text-(--color-accent-emerald-light)";
+                return (
+                  <div key={i} className={`rounded-2xl bg-linear-to-br ${tone[m.tone]} border p-3 lg:p-4 flex flex-col gap-2`}>
+                    <div className="flex items-center justify-between">
+                      <Icon className="w-4 h-4" />
+                      <span className={`text-[9px] font-mono font-semibold ${trendTone}`}>{m.trend}</span>
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[8px] font-medium uppercase tracking-wider text-(--color-text-muted)">{m.label}</span>
+                      <span className="text-2xl lg:text-3xl font-bold tracking-tight text-white">{m.value}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Multitenant departman grid */}
+            <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid) p-4 mb-5">
+              <div className="flex items-center justify-between pb-2 mb-3 border-b border-white/8">
+                <div className="flex items-center gap-1.5">
+                  <Building2 className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">Aktif Kiracılar (Departmanlar)</span>
+                </div>
+                <span className="text-[8px] font-mono text-(--color-text-muted)">tek panel · merkezi yönetim</span>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5">
+                {[
+                  { icon: Server, name: "BT", users: 124, sla: 96, tone: "blue" },
+                  { icon: Briefcase, name: "İK", users: 87, sla: 94, tone: "cyan" },
+                  { icon: Wallet, name: "Finans", users: 52, sla: 91, tone: "emerald" },
+                  { icon: Building2, name: "Tesis", users: 41, sla: 93, tone: "orange" },
+                  { icon: Truck, name: "Lojistik", users: 33, sla: 89, tone: "purple" },
+                  { icon: Megaphone, name: "Pazarlama", users: 18, sla: 95, tone: "indigo" },
+                ].map((d, i) => {
+                  const Icon = d.icon;
+                  const t: Record<string, string> = {
+                    blue: "from-blue-500/15 to-blue-500/5 border-blue-500/25 text-(--color-accent-blue-light)",
+                    cyan: "from-cyan-500/15 to-cyan-500/5 border-cyan-500/25 text-(--color-accent-cyan-light)",
+                    emerald: "from-emerald-500/15 to-emerald-500/5 border-emerald-500/25 text-(--color-accent-emerald-light)",
+                    orange: "from-orange-500/15 to-orange-500/5 border-orange-500/25 text-(--color-accent-orange-light)",
+                    purple: "from-purple-500/15 to-purple-500/5 border-purple-500/25 text-(--color-accent-purple-light)",
+                    indigo: "from-indigo-500/15 to-indigo-500/5 border-indigo-500/25 text-indigo-300",
+                  };
+                  return (
+                    <div
+                      key={i}
+                      className={`rounded-xl bg-linear-to-br ${t[d.tone]} border p-3 flex flex-col gap-2 hover:-translate-y-0.5 transition-transform`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <Icon className="w-4 h-4" />
+                        <span className="text-[7px] font-mono font-bold text-(--color-accent-emerald-light)">●</span>
+                      </div>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-xs font-bold text-white">{d.name}</span>
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">{d.users} kullanıcı</span>
+                        <span className="text-[8px] font-mono text-white">SLA %{d.sla}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* 3-katmanlı yapı şeması */}
+            <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid) p-4 flex flex-col gap-2">
+              <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                <div className="flex items-center gap-1.5">
+                  <Workflow className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">ESM 3-Katmanlı Mimari</span>
+                </div>
+                <span className="text-[8px] font-mono text-(--color-text-muted)">portal → center → departmanlar</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { icon: MonitorSmartphone, label: "Self-Servis Portal", desc: "Çalışan & Müşteri", tone: "cyan" },
+                  { icon: LayoutDashboard, label: "ESM Center", desc: "Multitenant Yönetim", tone: "blue" },
+                  { icon: Building2, label: "Departman Modülleri", desc: "BT · İK · Finans …", tone: "purple" },
+                ].map((s, i) => {
+                  const Icon = s.icon;
+                  const t: Record<string, string> = {
+                    cyan: "bg-cyan-500/10 border-cyan-500/25 text-(--color-accent-cyan-light)",
+                    blue: "bg-blue-500/10 border-blue-500/25 text-(--color-accent-blue-light)",
+                    purple: "bg-purple-500/10 border-purple-500/25 text-(--color-accent-purple-light)",
+                  };
+                  return (
+                    <div key={i} className={`flex items-center gap-2 px-3 py-2 rounded-lg border ${t[s.tone]}`}>
+                      <Icon className="w-4 h-4 shrink-0" />
+                      <div className="flex flex-col min-w-0">
+                        <span className="text-[10px] font-bold text-white truncate">{s.label}</span>
+                        <span className="text-[8px] font-mono text-(--color-text-muted) truncate">{s.desc}</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
           </motion.div>
         </div>
       </section>
@@ -124,14 +258,111 @@ export default function EsmPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/esm-modulu/esm-1.webp"
-                    alt="ESM kurumsal servis yönetimi panosu"
-                    width={1250}
-                    height={707}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-135 rounded-2xl overflow-hidden border border-white/5 shadow-2xl bg-(--color-surface-elevated-solid) flex items-center justify-center p-6">
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    {/* Decorative pulse rings */}
+                    <div className="absolute z-10 w-60 h-60 rounded-full border border-blue-500/15 pointer-events-none" />
+                    <div className="absolute z-10 w-90 h-90 rounded-full border border-blue-500/10 pointer-events-none" />
+
+                    {/* Center node — ESM Center */}
+                    <div className="absolute z-30 w-32 h-32 rounded-3xl bg-linear-to-br from-blue-500/35 to-cyan-500/25 border border-blue-500/45 flex flex-col items-center justify-center backdrop-blur-xl shadow-[0_0_60px_rgba(59,130,246,0.45)] gap-1">
+                      <Building2 className="w-7 h-7 text-(--color-accent-blue-light)" />
+                      <span className="text-[8px] font-semibold uppercase tracking-[0.2em] text-(--color-text-muted)">
+                        ESM
+                      </span>
+                      <span className="text-xs font-bold text-white tracking-tight">
+                        Center
+                      </span>
+                      <span className="text-[7px] font-mono text-(--color-accent-emerald-light)">
+                        ● aktif
+                      </span>
+                    </div>
+
+                    {/* Connection lines — 6 radial spokes */}
+                    <svg
+                      className="absolute inset-0 w-full h-full pointer-events-none z-0"
+                      viewBox="0 0 100 100"
+                      preserveAspectRatio="none"
+                    >
+                      {Array.from({ length: 6 }).map((_, i) => {
+                        const angle = (i / 6) * Math.PI * 2 - Math.PI / 2;
+                        const x = Number((50 + 40 * Math.cos(angle)).toFixed(3));
+                        const y = Number((50 + 40 * Math.sin(angle)).toFixed(3));
+                        return (
+                          <line
+                            key={i}
+                            x1={x}
+                            y1={y}
+                            x2={50}
+                            y2={50}
+                            stroke="url(#esmHubGradient)"
+                            strokeWidth="0.25"
+                            strokeDasharray="0.6 0.6"
+                            opacity="0.6"
+                            vectorEffect="non-scaling-stroke"
+                          />
+                        );
+                      })}
+                      <defs>
+                        <linearGradient id="esmHubGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.85" />
+                          <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.25" />
+                        </linearGradient>
+                      </defs>
+                    </svg>
+
+                    {/* Department nodes — 6 radial */}
+                    {[
+                      { icon: Server, label: "BT", users: 124, tone: "blue" },
+                      { icon: Wallet, label: "Finans", users: 52, tone: "emerald" },
+                      { icon: Truck, label: "Lojistik", users: 33, tone: "purple" },
+                      { icon: Megaphone, label: "Pazarlama", users: 18, tone: "indigo" },
+                      { icon: Building2, label: "Tesis", users: 41, tone: "orange" },
+                      { icon: Briefcase, label: "İK", users: 87, tone: "cyan" },
+                    ].map((node, i) => {
+                      const Icon = node.icon;
+                      const angle = (i / 6) * Math.PI * 2 - Math.PI / 2;
+                      const x = Number((50 + 40 * Math.cos(angle)).toFixed(3));
+                      const y = Number((50 + 40 * Math.sin(angle)).toFixed(3));
+                      const toneText: Record<string, string> = {
+                        blue: "text-(--color-accent-blue-light)",
+                        emerald: "text-(--color-accent-emerald-light)",
+                        purple: "text-(--color-accent-purple-light)",
+                        indigo: "text-indigo-300",
+                        orange: "text-(--color-accent-orange-light)",
+                        cyan: "text-(--color-accent-cyan-light)",
+                      };
+                      const toneIconBg: Record<string, string> = {
+                        blue: "bg-blue-500/20 border-blue-500/30",
+                        emerald: "bg-emerald-500/20 border-emerald-500/30",
+                        purple: "bg-purple-500/20 border-purple-500/30",
+                        indigo: "bg-indigo-500/20 border-indigo-500/30",
+                        orange: "bg-orange-500/20 border-orange-500/30",
+                        cyan: "bg-cyan-500/20 border-cyan-500/30",
+                      };
+                      return (
+                        <div
+                          key={i}
+                          className="absolute z-20 flex items-center gap-2 px-3 py-2 rounded-xl bg-(--color-surface-elevated-solid)/95 border border-white/15 backdrop-blur-xl shadow-xl hover:scale-105 transition-all duration-300"
+                          style={{
+                            top: `${y}%`,
+                            left: `${x}%`,
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          <div className={`w-7 h-7 rounded-lg ${toneIconBg[node.tone]} border ${toneText[node.tone]} flex items-center justify-center shrink-0`}>
+                            <Icon className="w-3.5 h-3.5" />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-[10px] font-bold text-white">{node.label}</span>
+                            <span className="text-[8px] font-mono text-(--color-text-muted)">
+                              {node.users} kullanıcı
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -174,14 +405,132 @@ export default function EsmPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-emerald-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-emerald-500/10 blur-[50px] group-hover:bg-emerald-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/esm-modulu/esm-2.webp"
-                    alt="ESM departman entegrasyonu ve self-servis"
-                    width={1250}
-                    height={707}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-135 rounded-2xl overflow-hidden border border-white/5 shadow-2xl bg-(--color-surface-elevated-solid) flex flex-col p-4 gap-3">
+                  {/* Top toolbar with 9-dot menu */}
+                  <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                        <Grid3x3 className="w-4 h-4 text-(--color-accent-emerald-light)" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[8px] font-mono uppercase tracking-widest text-(--color-text-muted)">9-Nokta Menü</span>
+                        <span className="text-[10px] font-bold text-white">ESM Center</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <Search className="w-3 h-3 text-(--color-text-muted)" />
+                      <Bell className="w-3 h-3 text-(--color-text-muted)" />
+                      <Settings className="w-3 h-3 text-(--color-text-muted)" />
+                    </div>
+                  </div>
+
+                  <div className="flex gap-3 flex-1 overflow-hidden">
+                    {/* Sidebar — kiracı listesi */}
+                    <div className="w-32 shrink-0 flex flex-col gap-1 border-r border-white/8 pr-3">
+                      <span className="text-[8px] font-semibold uppercase tracking-widest text-(--color-text-muted) mb-1 px-1">
+                        Kiracılar
+                      </span>
+                      {[
+                        { icon: Server, name: "BT", active: true, count: 124, tone: "blue" },
+                        { icon: Briefcase, name: "İK", count: 87, tone: "cyan" },
+                        { icon: Wallet, name: "Finans", count: 52, tone: "emerald" },
+                        { icon: Building2, name: "Tesis", count: 41, tone: "orange" },
+                        { icon: Truck, name: "Lojistik", count: 33, tone: "purple" },
+                      ].map((t, i) => {
+                        const Icon = t.icon;
+                        const dot: Record<string, string> = {
+                          blue: "bg-(--color-accent-blue-light)",
+                          cyan: "bg-(--color-accent-cyan-light)",
+                          emerald: "bg-(--color-accent-emerald-light)",
+                          orange: "bg-(--color-accent-orange-light)",
+                          purple: "bg-(--color-accent-purple-light)",
+                        };
+                        return (
+                          <div
+                            key={i}
+                            className={`flex items-center gap-2 px-2 py-1.5 rounded-lg ${
+                              t.active
+                                ? "bg-emerald-500/15 border border-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.15)]"
+                                : "border border-transparent hover:bg-white/3"
+                            }`}
+                          >
+                            <Icon className={`w-3 h-3 shrink-0 ${t.active ? "text-(--color-accent-emerald-light)" : "text-(--color-text-muted)"}`} />
+                            <span className={`text-[10px] font-medium truncate flex-1 ${t.active ? "text-white" : "text-(--color-text-secondary)"}`}>
+                              {t.name}
+                            </span>
+                            <span className={`w-1.5 h-1.5 rounded-full ${dot[t.tone]} shadow-[0_0_6px_currentColor]`} />
+                          </div>
+                        );
+                      })}
+                      <div className="mt-1 px-2 py-1 text-[8px] font-mono text-(--color-text-muted)">
+                        +9 kiracı daha
+                      </div>
+                    </div>
+
+                    {/* Active tenant detail */}
+                    <div className="flex-1 flex flex-col gap-2 min-w-0">
+                      {/* Tenant header */}
+                      <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-linear-to-r from-emerald-500/15 to-cyan-500/8 border border-emerald-500/30">
+                        <div className="flex items-center gap-2">
+                          <div className="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
+                            <Server className="w-3.5 h-3.5 text-(--color-accent-emerald-light)" />
+                          </div>
+                          <div className="flex flex-col">
+                            <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Aktif Kiracı</span>
+                            <span className="text-[11px] font-bold text-white">BT Departmanı</span>
+                          </div>
+                        </div>
+                        <span className="text-[8px] font-mono font-semibold text-(--color-accent-emerald-light) px-1.5 py-0.5 rounded-full bg-emerald-500/12 border border-emerald-500/25">
+                          AKTİF
+                        </span>
+                      </div>
+
+                      {/* Tenant metrics */}
+                      <div className="grid grid-cols-3 gap-1.5">
+                        {[
+                          { label: "Kullanıcı", value: 124 },
+                          { label: "Hizmet", value: 18 },
+                          { label: "Açık Talep", value: 42 },
+                        ].map((m, i) => (
+                          <div key={i} className="rounded-lg bg-white/3 border border-white/8 p-2 flex flex-col gap-0.5">
+                            <span className="text-[7px] font-medium uppercase tracking-wider text-(--color-text-muted)">{m.label}</span>
+                            <span className="text-base font-bold tracking-tight text-white">{m.value}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Tenant config rows */}
+                      <div className="flex flex-col gap-1.5 flex-1">
+                        <span className="text-[8px] font-semibold uppercase tracking-widest text-(--color-text-muted) px-1">
+                          Yapılandırma
+                        </span>
+                        {[
+                          { icon: ListChecks, label: "Hizmet Kataloğu", value: "18 hizmet", tone: "blue" },
+                          { icon: Workflow, label: "İş Akışları", value: "12 aktif", tone: "purple" },
+                          { icon: Users, label: "Roller & Yetkiler", value: "8 rol", tone: "cyan" },
+                          { icon: TrendingUp, label: "SLA Politikaları", value: "Premium · P1-P4", tone: "emerald" },
+                          { icon: MonitorSmartphone, label: "Self-Servis Portal", value: "etkin", tone: "indigo" },
+                        ].map((r, i) => {
+                          const Icon = r.icon;
+                          const t: Record<string, string> = {
+                            blue: "text-(--color-accent-blue-light)",
+                            purple: "text-(--color-accent-purple-light)",
+                            cyan: "text-(--color-accent-cyan-light)",
+                            emerald: "text-(--color-accent-emerald-light)",
+                            indigo: "text-indigo-300",
+                          };
+                          return (
+                            <div key={i} className="grid grid-cols-[auto_1fr_auto_auto] gap-2 items-center px-2 py-1.5 rounded-lg bg-white/2 border border-white/5">
+                              <Icon className={`w-3 h-3 ${t[r.tone]}`} />
+                              <span className="text-[10px] font-medium text-white truncate">{r.label}</span>
+                              <span className="text-[8px] font-mono text-(--color-text-secondary)">{r.value}</span>
+                              <ChevronRight className="w-2.5 h-2.5 text-(--color-text-muted)" />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -620,6 +969,68 @@ export default function EsmPage() {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 3.5 SSS / FAQ */}
+      <section className="py-24 relative z-20">
+        <div className="container mx-auto px-6 lg:px-12 w-full max-w-4xl">
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+              <BookOpen className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-(--color-accent-blue-light)">
+                ESM Bilgi Bankası
+              </span>
+            </div>
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+              {data.faq.sectionTitle}
+            </h2>
+            <p className="text-(--color-text-secondary) text-lg font-light leading-relaxed">
+              {data.faq.sectionSubtitle}
+            </p>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "100px" }}
+            className="flex flex-col gap-3"
+          >
+            {data.faq.items.map((item, i) => {
+              const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+                BookOpen,
+                Scale,
+                Users,
+                Sparkles,
+                LayoutGrid,
+              };
+              const Icon = iconMap[item.icon] || BookOpen;
+              return (
+                <motion.details
+                  key={item.id}
+                  variants={fadeUp}
+                  className="group rounded-2xl border border-white/10 bg-white/2 backdrop-blur-xl hover:bg-white/4 transition-colors overflow-hidden"
+                  open={i === 0}
+                >
+                  <summary className="flex items-center gap-4 px-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0 text-(--color-accent-blue-light)">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <h3 className="flex-1 text-base lg:text-lg font-semibold text-white">
+                      {item.question}
+                    </h3>
+                    <ChevronDown className="w-5 h-5 text-(--color-text-muted) shrink-0 transition-transform duration-300 group-open:rotate-180" />
+                  </summary>
+                  <div className="px-6 pb-6 pl-20">
+                    <p className="text-sm lg:text-base text-(--color-text-secondary) font-light leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </motion.details>
+              );
+            })}
           </motion.div>
         </div>
       </section>

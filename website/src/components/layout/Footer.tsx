@@ -103,7 +103,6 @@ const footerData = {
         { text: "Özellikler", href: "/ozellikler" },
         { text: "Planlar & Lisanslama", href: "/planlar" },
         { text: "Modüller", href: "/moduller" },
-        { text: "Pratikler", href: "/itil4-pratikleri" },
         { text: "Fark Var", href: "/fark-var" },
         { text: "Destek Kanalları", href: "/destek-kanallari" },
         { text: "İletişim", href: "/iletisim" },

@@ -1,0 +1,257 @@
+{
+  "slug": "asset-management",
+  "sourceUrl": "https://servicecore.app/tr/resources/asset-management",
+  "fetchedAt": "2026-05-03",
+  "docTitle": "Varlık Yönetimi - Servicecore",
+  "metaDescription": "Servicecore Enterprise Service Management Software",
+  "pageTitle": "🖥️ Tüm varlıklarınızı, hizmetlerinizi, lisanslarınızı ve aksesuarlarınızı tek bir merkezden yönetin.",
+  "hero": {
+    "paragraphs": [
+      "Servicecore’un Varlık ve Konfigürasyon Yönetimi (CMDB) modülü, kurumların IT ve non-IT tüm varlıklarını yaşam döngüsü boyunca takip etmesini, ilişkilerini haritalamasını ve finansal/operasyonel verilerini yönetmesini sağlar."
+    ],
+    "images": []
+  },
+  "sections": [
+    {
+      "heading": "Varlık ve Konfigürasyon Yönetimi",
+      "paragraphs": [],
+      "bullets": [],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "✨ Neden Servicecore CMDB?",
+      "paragraphs": [
+        "Merkezi Yönetim: Tüm varlık, hizmet, lisans ve aksesuarlar tek panelde.",
+        "Yaşam Döngüsü Takibi: Satın almadan kullanım dışına çıkana kadar tüm aşamalar kayıt altında.",
+        "İlişki Haritaları: Varlıklar arası bağımlılıklar ve hizmet haritaları görselleştirilebilir.",
+        "Finansal Şeffaflık: Maliyetler, sözleşmeler ve tedarikçi bilgileri entegre yönetilir.",
+        "Entegrasyon: Tüm Servicecore modülleriyle native entegre çalışır.",
+        "ITIL 4 Uyumlu: Konfigürasyon yönetimi süreçleri uluslararası standartlara göre tasarlanmıştır."
+      ],
+      "bullets": [
+        "Merkezi Yönetim: Tüm varlık, hizmet, lisans ve aksesuarlar tek panelde.",
+        "Yaşam Döngüsü Takibi: Satın almadan kullanım dışına çıkana kadar tüm aşamalar kayıt altında.",
+        "İlişki Haritaları: Varlıklar arası bağımlılıklar ve hizmet haritaları görselleştirilebilir.",
+        "Finansal Şeffaflık: Maliyetler, sözleşmeler ve tedarikçi bilgileri entegre yönetilir.",
+        "Entegrasyon: Tüm Servicecore modülleriyle native entegre çalışır.",
+        "ITIL 4 Uyumlu: Konfigürasyon yönetimi süreçleri uluslararası standartlara göre tasarlanmıştır."
+      ],
+      "images": [
+        {
+          "src": "https://servicecore.app/media/pages/resources/asset-management/5b751e4828-1738931757/asset-sc.png",
+          "alt": "Varlık Yönetimi"
+        },
+        {
+          "src": "https://servicecore.app/media/pages/resources/asset-management/5b751e4828-1738931757/asset-sc.png",
+          "alt": "Varlık Yönetimi"
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "heading": "🏗️ Yönetici Perspektifi: Varlık ve Konfigürasyon Ayarları",
+      "paragraphs": [
+        "Yöneticiler için CMDB modülü, varlıkların temel yapı taşlarını tanımlama ve yönetme imkânı sunar:",
+        "Üreticiler: Yeni üretici ekleme, düzenleme ve ürün/sözleşme modüllerinde kullanma.",
+        "Kullanım Modelleri: Varlıkların kullanım senaryolarını tanımlama.",
+        "Konumlar: Varlıkların fiziksel veya dijital konumlarını kaydetme.",
+        "Durumlar: Aktif, depoda, kullanım dışı gibi durumların yönetimi.",
+        "Varlık Şirketleri: Varlıkların bağlı olduğu şirketlerin kaydı.",
+        "İlişki Türleri: Varlıklar arası yukarı/aşağı yönlü ilişkilerin tanımlanması.",
+        "Sözleşme Türleri: İç destek (OLA), müşteri (SLA) ve tedarikçi sözleşmelerinin yönetimi.",
+        "Varlık Türleri: Donanım, yazılım, lisans, aksesuar gibi türlerin tanımlanması.",
+        "Tedarikçiler: Dış firmaların kaydı ve sözleşmelerle ilişkilendirilmesi.",
+        "Bu yapı sayesinde CMDB, yalnızca envanter değil, aynı zamanda hizmet haritalarının temelini oluşturur."
+      ],
+      "bullets": [
+        "Üreticiler: Yeni üretici ekleme, düzenleme ve ürün/sözleşme modüllerinde kullanma.",
+        "Kullanım Modelleri: Varlıkların kullanım senaryolarını tanımlama.",
+        "Konumlar: Varlıkların fiziksel veya dijital konumlarını kaydetme.",
+        "Durumlar: Aktif, depoda, kullanım dışı gibi durumların yönetimi.",
+        "Varlık Şirketleri: Varlıkların bağlı olduğu şirketlerin kaydı.",
+        "İlişki Türleri: Varlıklar arası yukarı/aşağı yönlü ilişkilerin tanımlanması.",
+        "Sözleşme Türleri: İç destek (OLA), müşteri (SLA) ve tedarikçi sözleşmelerinin yönetimi.",
+        "Varlık Türleri: Donanım, yazılım, lisans, aksesuar gibi türlerin tanımlanması.",
+        "Tedarikçiler: Dış firmaların kaydı ve sözleşmelerle ilişkilendirilmesi."
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "🔎 Kullanıcı Perspektifi: Varlık, Hizmet, Lisans, Aksesuar Yönetimi",
+      "paragraphs": [],
+      "bullets": [],
+      "images": [],
+      "subSections": [
+        {
+          "subheading": "Varlık Ekleme",
+          "paragraphs": [
+            "Ad, durum, konum, tür, şirket, kullanıcı bilgileri girilerek yeni varlık oluşturulur.",
+            "Varlık detayında tüm öznitelikler, ekler, notlar ve geçmiş kayıtları tutulur."
+          ],
+          "bullets": [
+            "Ad, durum, konum, tür, şirket, kullanıcı bilgileri girilerek yeni varlık oluşturulur.",
+            "Varlık detayında tüm öznitelikler, ekler, notlar ve geçmiş kayıtları tutulur."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "Hizmet Yönetimi",
+          "paragraphs": [
+            "Hizmet adı, açıklaması, iş etkisi, maliyet ve çözüm süresi tanımlanır.",
+            "Hizmetler varlıklarla ilişkilendirilir, SLA politikaları bağlanır.",
+            "Olay, istek, problem ve değişiklik kayıtlarıyla bağlantılar kurulur."
+          ],
+          "bullets": [
+            "Hizmet adı, açıklaması, iş etkisi, maliyet ve çözüm süresi tanımlanır.",
+            "Hizmetler varlıklarla ilişkilendirilir, SLA politikaları bağlanır.",
+            "Olay, istek, problem ve değişiklik kayıtlarıyla bağlantılar kurulur."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "Lisans Yönetimi",
+          "paragraphs": [
+            "Lisans bilgileri (ad, model, tedarikçi, şirket, tür) kaydedilir.",
+            "Lisans atamaları kullanıcı veya varlıklara yapılır.",
+            "Lisans geçmişi, maliyetleri ve sözleşmeleri takip edilir."
+          ],
+          "bullets": [
+            "Lisans bilgileri (ad, model, tedarikçi, şirket, tür) kaydedilir.",
+            "Lisans atamaları kullanıcı veya varlıklara yapılır.",
+            "Lisans geçmişi, maliyetleri ve sözleşmeleri takip edilir."
+          ],
+          "images": []
+        },
+        {
+          "subheading": "Aksesuar Yönetimi",
+          "paragraphs": [
+            "Yeni aksesuar eklenebilir, varlık veya kullanıcıya atanabilir.",
+            "Aksesuar geçmişi ve maliyetleri kayıt altında tutulur."
+          ],
+          "bullets": [
+            "Yeni aksesuar eklenebilir, varlık veya kullanıcıya atanabilir.",
+            "Aksesuar geçmişi ve maliyetleri kayıt altında tutulur."
+          ],
+          "images": []
+        }
+      ]
+    },
+    {
+      "heading": "📊 Detaylı Özellikler",
+      "paragraphs": [
+        "Filtreleme ve Arama: Varlık adı, türü, durumu, kullanıcı veya çalışan numarasına göre filtreleme.",
+        "İşlem Butonları: Düzenleme, silme, detay görüntüleme, klonlama.",
+        "İlişki Haritası: Varlıkların birbirleriyle olan bağımlılıklarını görsel olarak izleme.",
+        "Bağıntılar: Olay, istek, problem, değişiklik gibi süreçlerle bağlantı kurma.",
+        "Finansal Yönetim: Maliyet girişleri, evrak yükleme, tedarikçi sözleşmeleri.",
+        "Geçmiş Takibi: Varlıkların tüm durum değişiklikleri ve kullanıcı atamaları.",
+        "Raporlama: Excel’e aktarma, sayım modu, tam ekran görünüm."
+      ],
+      "bullets": [
+        "Filtreleme ve Arama: Varlık adı, türü, durumu, kullanıcı veya çalışan numarasına göre filtreleme.",
+        "İşlem Butonları: Düzenleme, silme, detay görüntüleme, klonlama.",
+        "İlişki Haritası: Varlıkların birbirleriyle olan bağımlılıklarını görsel olarak izleme.",
+        "Bağıntılar: Olay, istek, problem, değişiklik gibi süreçlerle bağlantı kurma.",
+        "Finansal Yönetim: Maliyet girişleri, evrak yükleme, tedarikçi sözleşmeleri.",
+        "Geçmiş Takibi: Varlıkların tüm durum değişiklikleri ve kullanıcı atamaları.",
+        "Raporlama: Excel’e aktarma, sayım modu, tam ekran görünüm."
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "🌐 CMDB’nin Stratejik Önemi [Kaynak: Genel Bakış]",
+      "paragraphs": [
+        "Hizmet Haritaları: Hangi hizmetin hangi varlıklardan oluştuğu ve hangi konfigürasyonda çalıştığı net şekilde görülebilir.",
+        "Olay ve Değişiklik Yönetimi: Bir hizmetin başına gelen tüm olaylar, istekler ve değişiklikler CMDB üzerinden takip edilir.",
+        "Sözleşme Yönetimi: Destek anlaşmaları, tedarikçi sözleşmeleri ve müşteri SLA’leri varlıklarla ilişkilendirilir.",
+        "Maliyet Yönetimi: Hizmetlerle ilgili tüm harcamalar kayıt altına alınır."
+      ],
+      "bullets": [
+        "Hizmet Haritaları: Hangi hizmetin hangi varlıklardan oluştuğu ve hangi konfigürasyonda çalıştığı net şekilde görülebilir.",
+        "Olay ve Değişiklik Yönetimi: Bir hizmetin başına gelen tüm olaylar, istekler ve değişiklikler CMDB üzerinden takip edilir.",
+        "Sözleşme Yönetimi: Destek anlaşmaları, tedarikçi sözleşmeleri ve müşteri SLA’leri varlıklarla ilişkilendirilir.",
+        "Maliyet Yönetimi: Hizmetlerle ilgili tüm harcamalar kayıt altına alınır."
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "🌟 Avantajlarınız",
+      "paragraphs": [
+        "Tam Görünürlük: Tüm varlık ve hizmet ilişkilerini tek ekranda görün.",
+        "Operasyonel Verimlilik: Olay, istek ve değişiklik süreçlerinde hız kazanın.",
+        "Risk Azaltma: Doğru konfigürasyon bilgisiyle hataları önleyin.",
+        "Finansal Kontrol: Maliyetleri, sözleşmeleri ve tedarikçileri entegre yönetin.",
+        "Uyumluluk: ITIL 4 standartlarına uygun yapı.",
+        "Servicecore A.Ş.",
+        "Çağrı Merkezi : 444CORE",
+        "Servicecore Destek",
+        "Copyright © 2025, Servicecore"
+      ],
+      "bullets": [
+        "Tam Görünürlük: Tüm varlık ve hizmet ilişkilerini tek ekranda görün.",
+        "Operasyonel Verimlilik: Olay, istek ve değişiklik süreçlerinde hız kazanın.",
+        "Risk Azaltma: Doğru konfigürasyon bilgisiyle hataları önleyin.",
+        "Finansal Kontrol: Maliyetleri, sözleşmeleri ve tedarikçileri entegre yönetin.",
+        "Uyumluluk: ITIL 4 standartlarına uygun yapı.",
+        "#ITIL4",
+        "#varlık yönetimi",
+        "#cmdb",
+        "#konfigürasyon yönetimi",
+        "#service maps",
+        "#asset lifecycle management",
+        "#zimmet yönetimi",
+        "Service Desk",
+        "Interaction Management",
+        "Incident Management",
+        "Problem Management",
+        "Request Management",
+        "Change Management",
+        "Asset Management",
+        "Configuration Management",
+        "Service Catalog Management",
+        "Workflow Management",
+        "Low-Code Design",
+        "Task Management",
+        "Service Level Management",
+        "Continual Improvement",
+        "Service Portal",
+        "Knowledge Management",
+        "Service Dashboards",
+        "Service Analytics",
+        "Service Automation",
+        "Project Management",
+        "Contract Management",
+        "Relations Management",
+        "Hakkımızda",
+        "ITSM Özellikleri",
+        "ESM Özellikleri",
+        "Modüller",
+        "Rehberler",
+        "Workshoplar",
+        "Eğitimler",
+        "Data Sheet",
+        "Specification Sheet",
+        "Demo Başvurusu",
+        "İletişim",
+        "Özellikler",
+        "Modules",
+        "Versions",
+        "Partners",
+        "Demo",
+        "Contact"
+      ],
+      "images": [],
+      "subSections": []
+    }
+  ],
+  "allContentImages": [
+    {
+      "src": "https://servicecore.app/media/pages/resources/asset-management/5b751e4828-1738931757/asset-sc.png",
+      "alt": "Varlık Yönetimi"
+    }
+  ]
+}

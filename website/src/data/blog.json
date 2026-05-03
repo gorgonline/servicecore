@@ -1,0 +1,251 @@
+{
+  "title": "ServiceCore Blog",
+  "subtitle": "ITSM, ITIL4 ve servis yönetimi üzerine derinlikli yazılar — uygulama rehberinden teknik mimariye, sürekli güncellemeden entegre süreç tasarımına.",
+  "posts": [
+    {
+      "slug": "itsm-uygulama-rehberi",
+      "title": "ITSM Uygulama Adımları",
+      "subtitle": "Kurumsal hizmet yönetimi sistemi kurmanın adım adım rehberi",
+      "category": "Rehber",
+      "icon": "BookOpen",
+      "tone": "blue",
+      "readTime": "12 dk",
+      "publishDate": "2026-04-20",
+      "tags": [
+        "ITIL4",
+        "Kurulum",
+        "Best Practice",
+        "Uygulama"
+      ],
+      "sourceUrl": "https://servicecore.app/tr/resources/itsm-uygulama-rehberi",
+      "pageTitle": "Servicecore ITSM Uygulama Adımları",
+      "excerpt": "Sağlıklı bir kurumsal hizmet yönetimi sistemi kurmanın adım adım ilerleyen şeması yukarıda tariflenen yol ile tarif edilebilir. Kurumda sağlıklı hizmet yönetimi pratiklerine ihtiyacın hem BT hem de diğer iş birimlerinde ortay açıkması sonrası mevcut durum ve hedefler tespit edilm…",
+      "content": [
+        {
+          "type": "intro",
+          "paragraphs": [
+            "Sağlıklı bir kurumsal hizmet yönetimi sistemi kurmanın adım adım ilerleyen şeması yukarıda tariflenen yol ile tarif edilebilir. Kurumda sağlıklı hizmet yönetimi pratiklerine ihtiyacın hem BT hem de diğer iş birimlerinde ortay açıkması sonrası mevcut durum ve hedefler tespit edilmelidir. Bu aşamda mevcut durumdaki pratikler ve kazanımlar kullanılmalı (Start Where You Are) ve hızlı ulaşılabilir sade hedefler tayin edilmelidir (Keep it Simple)",
+            "Öncelikli olarak hizmet yönetimi pratiklerinin ve en iyi örneklerinin öğrenilmesi, süreçlerin anlaşılması tavsiye edilir. Bu kapsamda temel bilinçlendirme eğitimleri faydalı olacaktır.",
+            "Akabinde bu konuda en iyi pratikleri içeren optimize edilmiş ve tüm temel süreçleri içeren kapsamlı bir çözümün tercih edilmesi ve bu çözümün önerdiği süreçlerin dijitalleştirilmesi yolundan hızlı şekilde ilerlenmesi tercih edilmelidir.",
+            "Kurumsal Hizmet Yönetimi (ESM) için hazır know how ve süreç dijital dönüşüm otomasyonunu çevik şekilde devreye alacak Servicecore ITSM Suite çözümü, devreye alma ve hedeflere ulaşmayı yüksek oranda hızlandıracaktır.",
+            "Servicecore ITSM Suite'in Kurulum, Devreye Alma aşamalarında önerdiği implementasyon adımları burada detaylandırıldığı gibidir.",
+            "Servicecore Kurulum ve Devreye Alma Adımları",
+            "1. Kurulum öncesi gerekli erişimlerin tanımlanması",
+            "Kurulum, konfigürasyon ve bakım amaçlı olarak Servicecore personeline uzaktan erişim için VPN hesaplarının tanımlanması gerekmektedir. Ayrıca uygulamanın Continuous Delivery metotlarıyla uzaktan ve otomatik güncellenmesi için gerekli Azure DevOps servislerinin izinlerinin tanımlanması gerekmektedir.",
+            "2. Sunucu ortamı hazırlığı",
+            "a. Standart Failover Kurulum Standart kurulum işlemleri için gerekli altyapı ekteki mimari şemasında belirtildiği gibidir. Tavsiye edilen yüksek erişilebilir modeldir.",
+            "b. Basic Kurulum Canlı kullanım dışı (demo, test vb.) temel seviye işlemler için aşağıdaki konfigürasyonda bir sunucunun müşteri tarafından temin edilmesi sonrası kurulum işlemleri Servicecore danışmanı tarafından uzaktan bağlantı ile müşteri ortamındaki sunucuda yapılacaktır.",
+            "OS : Microsoft Windows Server 2016 +",
+            "Server: Min 16 Core / 32 GB Ram",
+            "Disk size : Min. 150 GB",
+            "3. Continuous Delivery İzinleri",
+            "Uygulamanın Continuous Delivery metotlarıyla uzaktan ve otomatik güncellenmesi için gerekli Azure DevOps servislerinin izinlerinin tanımlanması gerekmektedir. Bu izin tanımlı olmayan kurumlarda güncellemeler manuel ve destek paketi kapsamında yapılacaktır.",
+            "4. Uygulama kurulum işlemleri",
+            "a. Standart Failover Kurulum Uzaktan erişim için gerekli VPN bilgilerinin temini sonrası ilk uygulama ve veritabanı kurulumları uzaktan yapılır. DB müşteri tarafından ekteki mimaride belirtildiği şekilde hazırlanır.",
+            "b. Basic Kurulum",
+            "Canlı kullanım dışı (demo, test vb.) temel seviye işlemler için, tercihe göre MSSQL Veritabanı ücretsiz versiyonu aynı sunucuya kurulumu tarafımızca yapılacaktır.",
+            "5. Uygulama DNS ve SSL konfigürasyonu",
+            "Uygulama müşteri lokasyonundan erişilebilir olarak teslim edilir. support.musteridomain.com vb. bir iç adresten çalışacak kurulum sonrası müşteri tarafında DNS yönlendirmesi ve SSL tanımlaması işlemleri, müşteri sistem yöneticisinin eşliğinde yapılır.",
+            "6. AD entegrasyon tanımlama",
+            "Müşteri Aktif dizininden kullanıcıları almak üzere gerekli ayarlamalar müşteri AD yetkilisinin eşliğinde Servicecore danışmanı tarafından yapılır ve kullanıcılar içeri alınır.",
+            "7. Eposta entegrasyon tanımlama",
+            "Müşteride kullanıcıların çağrılarını iletecekleri ve sistem bildirimlerini gönderirken kullanılacak eposta adresi (support@musteriadi.com vb) tanımlanmalıdır, tanımlanan bu eposta dışında bazı diğer iç destek birimleri için farklı eposta adresleri tanımlanabilir. Bir veya daha fazla eposta adresinden gelen çağrılar Interaction veya Incident modülüne otomatik fetch edilecek ve kayıtlar açılacaktır. Bu amaçla eposta adreslerinin Admin panelden tanımları müşteri eposta admini eşliğinde tanımlanıp auto fetch işlemi başlatılır.",
+            "8. Kullanıcıları ve kullanıcı grupları tanımlama",
+            "AD üzerinden otomatik sürekli sync ile alınan kullanıcılar öncelikle Users bölümünde kaydedilmektedir. Kullanıcıların yetki gruplarına, fonksiyonel dağılımına, hizmet kataloğuna erişimlerine göre gruplandırılması ile kullanıcı grupları tanımlanır.",
+            "9. Lisans tanımlama, teknisyenleri ve teknisyen gruplarını tanımlama",
+            "AD üzerinden otomatik sürekli sync ile alınan kullanıcılardan Teknisyen olarak çalışacak destek personelinin Agenta dönüştürme işlemleri yapılır. Teknisyen rollerinin atanması işlemleri Admin panelden Servicecore danışmanı ile birlikte yapılır. Tüm BT ve diğer destek personelleri fonksiyonel çalışma gruplarına göre (sistem, yazılım, network saha destek vb.) grup, rol ve lisans atamaları yapılarak aktif edilir.",
+            "10. ITSM Süreç rolleri belirleme, üründe rolleri düzenleme",
+            "Süreç ve Ürün Rolleri önden belirlenir ve kurumda gerekli ITSM süreç sahiplerinin belirlenmesi işlemi yapılır.",
+            "11. Süreç sahipleri, adminler ve teknisyenlere eğitimlerin verilmesi",
+            "a. Tüm ekibe ürün kullanımı temel eğitiminin verilmesi.",
+            "b. Süreç sahipleri, sorumluları ve teknisyenlere ITIL temel eğitiminin verilmesi.",
+            "c. Süreç sahipleri, sorumluları ve adminlere ürün administration ve maintenance eğitimlerinin verilmesi.",
+            "12. Öncelik, etki, aciliyet tanımlanması",
+            "Tüm süreçlerin belirleyici unsurları olan önceliklendirme ve etki skalalarının kurum ihtiyaçlarına göre düzenlenmesi yapılır. Kurulumda hazır gelen skalaların değiştirilmesi gerekli ise her süreç için işlemler yapılır.",
+            "13. Global statusların belirlenmesi",
+            "Tüm süreçlerde ve tasklarda durumların kurulumda gelenlerden farklılaştırılması bekleniyor ise güncellemeler yapılır.",
+            "14. Süreç ve Görev Kategorilerinin tanımlanması",
+            "Kuruma özgü kategorilerin her bir süreç ve görevler için tanımlanması işlemleri yapılır ve admin panelden girişleri yapılır.",
+            "15. Süreç şablonları tanımlama (Quick Create Templates)",
+            "Hızlı kayıt oluşturma amaçlı tüm ITSM süreçleri için sık kullanılacak şablon süreç formlarının hazırlanması için destek sunulur.",
+            "16. Görev şablonları tanımlama",
+            "Teknik Servis Kataloğu örneklerimizde yer alan görev kataloğu şablonunu da kullanarak kurumun teknik operasyon el kitabı hazırlığı yapılması, admin panelde her bir süreçte kullanılacak şablon görevlerin sisteme yüklenmesi için örneklemler yapılır. Tüm süreçlerde görevler şablonları kullanımı operasyonu hem hızlandırmak hem de doğru görev grupları ve süre belirlemeleri sağlayacak şekilde kullanılacaktır.",
+            "17. Worklog / Timesheet şablonları tanımlama (Quick Worklog Templates)",
+            "Tüm süreçlerde ve görevlerde kullanılan iş kaydı girişleri için şablonları önceden belirlemek ve kullanıma hazır şablonları devreye almak için gerekli girişler yapılır.",
+            "18. Hizmet kataloğu tanımlama",
+            "Implementasyonun en uzun süren bu adımında aşağıdaki faaliyetler yapılır.",
+            "a. Hizmet kategorileri ve kırılımları oluşturulması",
+            "b. Hizmet öğeleri belirlenir ve temel hizmet tanımları, yetkileri girilmesi",
+            "c. Hizmet onayları (gerekli ise) tanımlanması",
+            "d. Hizmet görevleri ve görev akışları tanımlanması",
+            "e. Hizmete özel ek alanlar için gerekli formları tasarlanması konularında örnekler yapılır.",
+            "19. Varlıkları içeri alma / ekleme , CMDB oluşturma",
+            "Kurum envanteri ve servisleri CMDB modülüne içeri aktarma, entegrasyon veya manuel giriş yoluyla eklenir. CI türleri, ilişki türleri ve kullanım modelleri tanımlanır, gerekli ek özniteliklerin girişi yapılır. Servislerin arka planında yer alan assetler ve assetler arası ilişkiler CMDB ortamında tanımlanması için örnekler yapılır. Kurumun öncelikli sürekli servisleri ve servislerin arka planında yer alan ilişkiler, topoloji/harita oluşturacak şekilde modellenmesi amacıyla örnekler yapılır, öğretilir.",
+            "20. Tedarikçileri tanımlama",
+            "Kurumun çalışmakta olduğu tedarikçiler admin panel üzerinden girilir. Tedarikçi bilgileri sözleşmelerde, olay, problem, istek vb. süreçlerde gerekli durumlarda destek alınacak temas ve koşullar için kullanılmak üzere sisteme yüklenir.",
+            "21. Sözleşmeleri tanımlama",
+            "Temin edilen assetler ve servisler için yapılan tedarikçi sözleşmeleri, (varsa) iç destek birimleri ile yapılan destek sözleşmeleri, (varsa) iç ve dış müşterilerle yapılan sözleşmeler sisteme yüklenmesi gösterilir ve örnekler yapılır.",
+            "22. SLA Policyler oluşturma",
+            "İç veya dış müşterilerle yapılan anlaşmalar baz alınarak, kategori-servis-departman özelinde belirlenen müdahale ve çözüm süreleri için SLA kuralları belirlenir.",
+            "23. Uyarı şablonlarını düzenleme",
+            "Tüm süreçlerin eposta bilgilendirme-uyarı şablonlarından kullanılmak istenenler seçilir, seçilen şablonlarda gerekli düzenlemeler yapılır.",
+            "24. Kapatma kuralları belirleme",
+            "Süreçlerin kapatma kuralları, doldurulması zorunlu alanlar admin panelde seçilerek belirlenir. Bu bölümde süreç yöneticilerinin detay görmek ve raporlamak için ihtiyaç duyacağı zorunlu alanlar belirlenir.",
+            "25. İş otomasyon kuralları tanımlama",
+            "Yönetim panelinden kolayca tanımlanabilen basit aksiyonlardan, çok ön koşullu, çok katmanlı ve çok aksiyonlu dinamik kurallara kadar pek çok otomatik süreç önceden tanımlanarak iş akışlarında daha fazla otomasyon ve servislerde daha yüksek hız sağlanmaktadır. Müşterinin tekrarlanan durumlarla ilgili taleplerine göre otomasyon kuralları tasarımları yapılır.",
+            "26. Teknisyen eğitimleri",
+            "Canlıya geçiş öncesi teknisyenlere son yapılan konfigürasyonla ilgili geliştirmelerin yer aldığı sürüm üzerinden bir hatırlatma eğitimi verilir.",
+            "27. Canlıya geçiş",
+            "Son kullanıcılar, müşteriler ve tüm ilgili taraflara destek sisteminin eposta ve web adresleri duyurulur. Teknisyenlerin görevlerini bu sistemden takip edecekleri şekilde ITSM sistemi tüm kurumun kullanımına açılır."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "integration",
+      "title": "ServiceCore Entegrasyon Sistemi",
+      "subtitle": "Dış sistemlerle bağlantı, REST API, webhook ve veri akışı",
+      "category": "Teknik",
+      "icon": "Globe",
+      "tone": "purple",
+      "readTime": "8 dk",
+      "publishDate": "2026-04-12",
+      "tags": [
+        "API",
+        "Entegrasyon",
+        "Webhook",
+        "REST"
+      ],
+      "sourceUrl": "https://servicecore.app/tr/resources/integration",
+      "pageTitle": "Servicecore Entegrasyon Sistemi",
+      "excerpt": "Servicecore API entegrasyonu, farklı yazılım uygulamaları arasında etkili iletişimi sağlayan ve veri alışverişi yapılmasını kolaylaştıran restAPI teknolojisini kullanan bir yapıdır. Bu entegrasyonlar, farklı platformlar arasında veri transferini hızlandırarak iş süreçlerini optim…",
+      "content": [
+        {
+          "type": "intro",
+          "paragraphs": [
+            "Servicecore API entegrasyonu, farklı yazılım uygulamaları arasında etkili iletişimi sağlayan ve veri alışverişi yapılmasını kolaylaştıran restAPI teknolojisini kullanan bir yapıdır. Bu entegrasyonlar, farklı platformlar arasında veri transferini hızlandırarak iş süreçlerini optimize etmeye ve verimliliği artırmaya yardımcı olmaktadır.",
+            "API'ler, yazılım geliştiricilerine, farklı sistemler arasında sorunsuz bir şekilde veri alışverişi yapma olanağı sunar ve bu da Servicecore ile daha esnek bir biçimde veri aktarabilmenize yarar. Ayrıca, Servicecore API entegrasyonları ile müşteri deneyimini iyileştirmek, veri doğruluğunu artırmak ve güncel bilgilere daha hızlı erişim sağlamak gibi avantajları elde edebilirsiniz."
+          ]
+        },
+        {
+          "type": "section",
+          "heading": "Entegrasyon Tasarımına Giriş",
+          "paragraphs": [
+            "Servicecore restapi kullanan tüm uygulamalarla tek yönlü veya karşılıklı entegre olabilme kabiliyetine sahiptir. Bu entegrasyonu sağlamak için belirli ayarların yapılması gerekir.",
+            "Servicecore Ayarlar ekranından \"Entegrasyonlar\" sayfasına gidilir.",
+            "Entegrasyonlar sayfasında Servicecore'un default entegre olabileceği uygulamalar arasından entegrasyon yapılacak uygulama seçilir.",
+            "Sağ üstte bulunan \"+ Yeni Entegrasyon\" butonu ile yeni entegrasyon ekleme sayfasına gidilir.",
+            "Açılan sayfada entegrasyon için isim, http metodu ve istek yapılacak Url ayarları girilir.",
+            "Yapılacak istek için kimlik doğrulama türü, entegrasyonun yapılacağı Servicecore modülü, basit doğrulama metodu seçildiyse kimlik bilgileri doldurulur.",
+            "URL ve başlık params alanlarında entegrasyonun url'sinde veya başlığında bir parametre kullanılacaksa key ile Servicecore değeri belirlenen bir değişkene eşitlenir.",
+            "Gövde paramsta ise istek ile gönderilecek gövde JSON formatında girilir. Bu alanda \"@\" işareti kullanılarak seçilen modüldeki alanlar gövdeye eklenilebilir.",
+            "Sonuç değer işaretleme alanında istek gönderildiğinde dönen cevaptaki alanların Servicecore alanlarıyla eşleştirilmesi yapılır.",
+            "Tüm adımlar tamamlandıktan sonra en sonda bulunan \"Kaydet\" butonu ile entegrasyon kaydedilir."
+          ],
+          "bullets": [],
+          "subSections": []
+        },
+        {
+          "type": "section",
+          "heading": "Entegrasyonu Aktifleştirme",
+          "paragraphs": [
+            "Servicecoreda çeşitli işlerleri kolay yapabilmek adına kodsuz yapıda bir otomasyon yönetimi bulunmaktadır. Entegrasyonlar da bu otomasyonlarla belirli kurallara göre çalışacaktır.",
+            "Otomasyon tasarlandıktan sonra aktif edebilmek için Servicecore ayarlar sayfasından \"Otomasyon Yönetimi\" sayfasına gidilir.",
+            "Otomasyon sayfasının sağ üstünde bulunan \"+ Yeni Kural\" butonu ile yeni bir kural oluşturma sayfasına gidilir.",
+            "Açılan sayfada iş otomasyon kuralına bir ad verilir.",
+            "1.Aşamada otomasyonun çalıştırılacağı modül kategorisi ve hangi durumda ilgili otomasyonun tetikleneceği ayarlanır.",
+            "2.Aşamada otomasyonun hangi koşullar altında gerçekleşeceği ayarlanır.",
+            "3.Aşamada hangi otomasyonun çalışacağı seçilir.",
+            "Tüm işlemler tamamlandıktan sonra \"Kaydet\" butonu ile otomasyon kaydedilir.",
+            "Entegrasyon çalışması burada anlatıldığı kadar basit ve sade işlemlerle yapılabilmektedir.",
+            "Sağlanan API dokümantasyonu ve rehberlik hizmeti ile tüm sistemlerle limitsiz entegrasyon kabiliyeti için siz de Servicecore API eklentisini kullanmak isterseniz lütfen bizimle iletişime geçiniz."
+          ],
+          "bullets": [],
+          "subSections": []
+        }
+      ]
+    },
+    {
+      "slug": "cd",
+      "title": "Sürekli Güncelleme Hizmeti",
+      "subtitle": "ServiceCore'un sürekli güncelleme modeli ve sürüm yaşam döngüsü",
+      "category": "Operasyon",
+      "icon": "RefreshCw",
+      "tone": "emerald",
+      "readTime": "10 dk",
+      "publishDate": "2026-04-05",
+      "tags": [
+        "CI/CD",
+        "Sürüm Yönetimi",
+        "Hizmet"
+      ],
+      "sourceUrl": "https://servicecore.app/tr/resources/cd",
+      "pageTitle": "Servicecore Sürekli Güncelleme Hizmeti",
+      "excerpt": "Günlerce süren ve ek ücretler ödemenize neden olan, manuel, hantal ve masraflı güncelleme süreçleri artık tarihe karıştı.",
+      "content": [
+        {
+          "type": "intro",
+          "paragraphs": [
+            "Günlerce süren ve ek ücretler ödemenize neden olan, manuel, hantal ve masraflı güncelleme süreçleri artık tarihe karıştı.",
+            "Servicecore otomatik sürekli dağıtım ve güncelleme servisi ile sunucularınızda kurulu sistemleriniz dahi her zaman güncel ve güvenli kalacaktır.",
+            "Servicecore Sürekli Dağıtım Aşamaları",
+            "Sürekli Dağıtım (Continuous Delivery), onpremises kurulu sistemlerde de kullanılabilen Servicecore güncelleme sürecinde hızlı, güvenli ve sürekli olarak Servicecore’un güncel sürümünün kullanıma sunulmasını sağlayan bir yaklaşımdır.",
+            "Servicecore’da sürekli dağıtım adımları şu şekildedir:",
+            "Versiyon Kontrolü:",
+            "Yazılımın sürüm numaralandırması ve sürüm geçişlerinin düzenli bir şekilde yapılması, sürekli dağıtım sürecinde bütünlüğü sağlar.",
+            "Otomatik Derleme",
+            "Servicecore otomatik olarak derlenerek kullanıcı hatası minimum düzeye indirilir.",
+            "Otomatik Testler",
+            "Dağıtım yapılmadan ya da yapıldıktan sonra çeşitli test scriptleriyle otomatik testler yapılır.",
+            "Otomatik Dağıtım",
+            "Yazılımın test aşamalarını başarıyla geçmesi durumunda, otomatik olarak canlı ortama dağıtım süreci başlar. Bu aşamada devops ile kullanıcı hatası minimum düzeye indirilir.",
+            "Ortam Bağımsız Yapılandırma",
+            "Sürekli dağıtım sayesinde test sunucusunuz ile canlı sunucunuz arasında paralellik sağlanır.",
+            "İzleme ve Geri Bildirim",
+            "Canlı ortama dağıtılan yazılımın performansını ve durumunu izlemek için sürekli dağıtım kullanılır.",
+            "Güvenlik Testleri",
+            "Yazılımın güvenliğini sağlamak adına düzenli güvenlik testleri gerçekleştirilir. Bu adım, yazılımın canlı ortama dağıtılmadan önce güvenlik açıklarının tespit edilmesine yardımcı olur."
+          ]
+        },
+        {
+          "type": "section",
+          "heading": "Servicecore yeni özelliklerini denemek ister misiniz?",
+          "paragraphs": [
+            "Uzman danışmanlarımız size bağlanarak ürünümüzün tüm yeteneklerini sunabilirler.",
+            "Size özel olarak düzenlenecek bu oturumda tüm ihtiyaçlarınızın ürünümüz tarafından nasıl karşılandığını görebilirsiniz.",
+            "Kayıt olduğunuzda online toplantınız otomatik olarak oluşturulup davetiye uzaktan oturum linkleri iletilecektir."
+          ],
+          "bullets": [],
+          "subSections": []
+        }
+      ]
+    },
+    {
+      "slug": "integrated-service-management",
+      "title": "Entegre Servis Yönetimi Süreçleri",
+      "subtitle": "ServiceCore modülleri arasındaki ITIL4 uyumlu süreç ilişkileri",
+      "category": "Mimari",
+      "icon": "Network",
+      "tone": "cyan",
+      "readTime": "5 dk",
+      "publishDate": "2026-03-28",
+      "tags": [
+        "ITIL4",
+        "Mimari",
+        "Süreç"
+      ],
+      "sourceUrl": "https://servicecore.app/tr/resources/integrated-service-management",
+      "pageTitle": "Entegre Servis Yönetimi Süreçleri",
+      "excerpt": "Servicecore modülleri arasındaki ilişkiler ITIL4 süreçleri ile uyumlu olarak tasarlanmıştır. Aşağıdaki şema özet olarak süreçler arasındaki bağıntıları ve akışı göstermektedir.",
+      "content": [
+        {
+          "type": "intro",
+          "paragraphs": [
+            "Servicecore modülleri arasındaki ilişkiler ITIL4 süreçleri ile uyumlu olarak tasarlanmıştır. Aşağıdaki şema özet olarak süreçler arasındaki bağıntıları ve akışı göstermektedir.",
+            "Süreçlerin detay bilgileri için şu linkteki dokümantasyon ve videoları inceleyebilirsiniz."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@
     "badge": "Self Servis Portal",
     "titleLead": "Olay, talep, onay, varlık —",
     "titleAccent": "tek noktadan, yetkiye göre.",
-    "description": "ServiceCore Son Kullanıcı Portalı; kullanıcıların olay, talep, iyileştirme, onay, varlık ve bilgi bankası süreçlerine tek bir noktadan erişmesini sağlar. Dinamik ve yetkiye bağlı arayüz yapısı sayesinde kullanıcıya yalnızca ihtiyaç duyduğu menü, işlem ve bilgiler gösterilir; self-service deneyimi güçlendirilirken gereksiz ticket açılması azaltılır.",
+    "description": "Profesyonel bir servis sağlayıcının olmazsa olmazı, müşteri ve kullanıcılarına sunacağı modern bir servis erişim ve takip ekranıdır. ServiceCore Self Servis Portal'ın kolay ve modern arayüzleriyle müşteri memnuniyetinizi artırın; kullanıcılar destek taleplerini, hizmet isteklerini kolayca iletir, mevcut taleplerinin durumunu takip eder, bilgi bankasından çözümlere ulaşır ve servis kataloğundan ihtiyaçlarını seçerek teknik ekiplere iletir.",
     "imageAlt": "Self servis portal ana ekranı — yetkiye göre kişiselleştirilmiş arayüz"
   },
   "zigzag": [
@@ -27,7 +27,7 @@
       "icon": "BookMarked",
       "titleLead": "Yetkili olduğun katalog,",
       "titleAccent": "kontrollü talep süreci.",
-      "description": "Kullanıcılar yalnızca yetkili oldukları servis kataloglarını görüntüleyebilir ve bu kataloglar üzerinden talep oluşturabilir. Talep süreçleri, kurumun hizmet yapısına uygun şekilde kontrollü biçimde sunulur; isteğe bağlı olarak teknisyen veya ekip bilgisi kullanıcıya gösterilmeyebilir, atamalar sistem tarafından yapılır.",
+      "description": "Kullanıcılar yalnızca yetkili oldukları servis kataloglarını görüntüleyebilir ve bu kataloglar üzerinden talep oluşturabilir. Sunulan tüm servisler SCM modülünde önceden hazırlanmış paketlerdir; kullanıcılar doğru servisi arama motoru ile veya katalog içerisinde gezerek bulur. İsteğe bağlı olarak teknisyen veya ekip bilgisi kullanıcıya gösterilmeyebilir, atamalar sistem tarafından yapılır.",
       "bullets": [
         "Kullanıcılar yalnızca yetkili oldukları servis kataloglarını görüntüleyebilir ve bu kataloglar üzerinden talep oluşturabilir; kurum hizmet yapısına uygun, kontrollü bir talep akışı kurulur.",
         "İsteğe bağlı olarak teknisyen veya ekip bilgisi kullanıcıya gösterilmez; atamalar tamamen sistem tarafından yapılır ve kullanıcı yalnızca kendi talep sürecine odaklanır.",
@@ -41,7 +41,7 @@
       "icon": "MessageSquare",
       "titleLead": "Takip, not ekleme,",
       "titleAccent": "şeffaf yazışma.",
-      "description": "Kullanıcılar kendi kayıtlarını listeleyebilir, detaylarını görüntüleyebilir ve durum, kategori, tarih gibi temel bilgileri takip edebilir. Yetkileri dahilinde kayıtlara not ekler, güncelleme yapar veya yeniden açar. Paylaşım listesine eklenen kişilerin ekranında da kayıt görüntülenerek ekip içi farkındalık sağlanır.",
+      "description": "Kullanıcılar kendi kayıtlarını listeleyebilir, detaylarını görüntüleyebilir ve durum, kategori, tarih gibi temel bilgileri takip edebilir. Detaylı istek ve olay takip ekranlarından durum izlenir, teknik ekiplerle yazışmalar aynı ortamdan yürütülür; paylaşım listesine eklenen kişilerin ekranında da kayıt görüntülenerek ekip içi farkındalık sağlanır.",
       "bullets": [
         "Kullanıcılar kendi kayıtlarını listeler, detaylarını görüntüler ve durum, kategori, tarih gibi temel bilgileri takip eder; destek süreçlerinde şeffaf ve izlenebilir bir deneyim sağlanır.",
         "Yetkileri dahilinde kayıtlara not ekler, güncelleme yapar veya yeniden açar; yeniden açılan kayıtlar için teknisyen ve ilgili ekiplere otomatik bildirim gönderilir.",
@@ -106,6 +106,92 @@
         "title": "Zamanlanmış duyuru yönetimi",
         "description": "Duyurular belirli tarih aralıklarında aktif olacak şekilde planlanır; kesinti, bakım ve bilgilendirme mesajları kullanıcıya doğru pencerede ulaşır. Otomasyon ve duyuru kombinasyonu sayesinde tekrarlayan kayıtların önüne geçilir.",
         "imageKey": "duyuru2"
+      }
+    ]
+  },
+  "flexy": {
+    "badge": "Yeni Nesil · React Tabanlı",
+    "titleLead": "Flexy Advanced Portal —",
+    "titleAccent": "esnek, hızlı, özelleştirilebilir.",
+    "description": "ServiceCore tarafından tasarlanan React temelli yeni portal çözümü, kullanıcı deneyimini bir üst seviyeye taşıyor. Modern yazılım geliştirme tekniklerini ve kullanıcı odaklı tasarımı ön planda tutan bu yenilikçi portal; yalnızca gelişmiş özellikler sunmakla kalmaz, aynı zamanda işletmelerin ve kullanıcıların ihtiyaçlarına göre özelleştirilebilen bir yapı da sağlar.",
+    "highlights": [
+      {
+        "id": "spa",
+        "icon": "Zap",
+        "title": "Tek Sayfa Uygulama (SPA)",
+        "description": "React'in sunduğu tek sayfalık uygulama yapısı, kullanıcıların daha hızlı ve kesintisiz bir deneyim yaşamasını sağlar. Dinamik ve hızlı arayüzler, hem görsel hem fonksiyonel açıdan tatmin edici bir yapı sunar.",
+        "tone": "blue"
+      },
+      {
+        "id": "esneklik",
+        "icon": "Layers",
+        "title": "Esneklik & Özelleştirilebilirlik",
+        "description": "İşletmeler ve kullanıcılar, portalda sundukları hizmetleri ihtiyaçlarına göre şekillendirebilir. React bileşenleri ve modüler yapılar sayesinde sadece arayüz öğeleri değil, işlevsellikler de istenildiği gibi özelleştirilebilir.",
+        "tone": "purple"
+      },
+      {
+        "id": "performans",
+        "icon": "Gauge",
+        "title": "Yüksek Performans",
+        "description": "React'in sanal DOM kullanımı sayesinde portal hızlı yüklenme sürelerine ve düşük gecikmelere sahiptir. Sayfa geçişleri ve içerik güncellemelerinde yaşanan yavaşlamalar en aza indirilir.",
+        "tone": "emerald"
+      },
+      {
+        "id": "mobil",
+        "icon": "Smartphone",
+        "title": "Mobil Uyumluluk",
+        "description": "Her türlü cihazla mükemmel uyum içinde çalışacak şekilde tasarlandı. Duyarlı tasarım sayesinde kullanıcılar bilgisayar ya da mobil cihazdan eşit kalitede erişim sağlar; sahada çalışan profesyoneller için büyük avantaj sunar.",
+        "tone": "cyan"
+      },
+      {
+        "id": "gelistirici-dostu",
+        "icon": "Code2",
+        "title": "Geliştirici Dostu, Kolay Bakım",
+        "description": "React'in modüler yapısı sayesinde portalda yapılacak herhangi bir geliştirme veya bakım işlemi hızlı ve verimli şekilde gerçekleştirilebilir. Önceden yazılmış bileşenler kullanılarak yeni özellikler hızla eklenir.",
+        "tone": "indigo"
+      },
+      {
+        "id": "kullanici-merkezli",
+        "icon": "Sparkles",
+        "title": "Kullanıcı Merkezli Çözüm",
+        "description": "Hem işletmelerin hem son kullanıcıların faydalanabileceği yenilikçi çözüm; modern teknolojiyle uyumlu olmasının yanı sıra ihtiyaçlara hızlı ve etkili cevap verir. Esneklik, hız, performans ve özelleştirilebilirlik temel ayırt edici özelliklerdir.",
+        "tone": "amber"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "Self Servis Portal'ın sunduğu yetenekler, Flexy Advanced Portal teknolojisi ve son kullanıcı deneyimi hakkında en sık merak edilenler.",
+    "items": [
+      {
+        "id": "self-servis-nedir",
+        "icon": "BookOpen",
+        "question": "ServiceCore Self Servis Portal nedir?",
+        "answer": "Profesyonel bir servis sağlayıcının olmazsa olmaz ihtiyaçlarından biri, müşterilerine ve kullanıcılarına sunacakları bir servis erişim ve takip ekranıdır. ServiceCore Self Service Portal'ın sunduğu kolay ve modern arayüzlerle müşteri memnuniyetinizi artırırsınız. Kullanıcılar self service portal üzerinden destek taleplerini, hizmet isteklerini kolayca iletir ve mevcut isteklerinin durumunu takip edebilir; detaylı istek ve olay takip ekranlarıyla teknik ekiplerle yazışmalarını aynı ortamdan yürütebilir."
+      },
+      {
+        "id": "katalog-varlik",
+        "icon": "BookMarked",
+        "question": "Servis kataloğu ve varlık erişimi nasıl çalışır?",
+        "answer": "Sunulan tüm servisler SCM modülünde önceden hazırlanmış paketlerdir ve kullanıcılar bu panelde doğru servisi arama motoru ile veya katalog içerisinde gezerek bulabilir. Açtıkları servis taleplerini yine aynı portal üzerinde takip edebilir ve detaylarını görebilir. Kullanıcılara atanmış varlıklar da bu portalda görülebilir; bir kullanıcı kendisine ait varlıkların durumunu buradan takip edebilir, zimmet kabul/red işlemlerini gerçekleştirir ve varlık üzerinden doğrudan arıza kaydı oluşturabilir."
+      },
+      {
+        "id": "flexy-react",
+        "icon": "Zap",
+        "question": "Flexy Advanced Portal nedir, React temelli yapı ne avantaj sağlar?",
+        "answer": "ServiceCore tarafından tasarlanan React temelli esnek yapıda portal, modern yazılım geliştirme tekniklerini ve kullanıcı odaklı tasarımı ön planda tutar. React'in sunduğu tek sayfa uygulama (SPA) yapısı sayesinde kullanıcılar daha hızlı ve kesintisiz bir deneyim yaşar; dinamik ve hızlı arayüzler hem görsel hem fonksiyonel açıdan tatmin edici bir yapı sunar. Bu yenilikçi portal, gelişmiş özelliklerin yanında işletmelerin ve kullanıcıların ihtiyaçlarına göre özelleştirilebilen bir yapı da sağlar."
+      },
+      {
+        "id": "esneklik-ozellestirme",
+        "icon": "Layers",
+        "question": "Esneklik ve özelleştirilebilirlik ne kadar derin?",
+        "answer": "Yeni portalın en büyük yeniliği, tamamen esnek ve özelleştirilebilir yapısına dayanır. İşletmeler ve kullanıcılar, portalda sundukları hizmetleri ihtiyaçlarına göre şekillendirebilir. React bileşenleri ve modüler yapılar sayesinde portal kullanıcıları sadece arayüzdeki görsel öğeleri değil, aynı zamanda işlevsellikleri de diledikleri gibi özelleştirebilir. Bu sayede portal, hem küçük işletmeler hem de büyük kuruluşlar için uygun çözümler sunar."
+      },
+      {
+        "id": "performans-mobil",
+        "icon": "Gauge",
+        "question": "Performans ve mobil uyumluluk nasıl?",
+        "answer": "React'in sunduğu sanal DOM kullanımı sayesinde portal hızlı yüklenme sürelerine ve düşük gecikmelere sahiptir. Kullanıcılar her girişte hızlı ve sorunsuz bir deneyimle karşılaşır; sayfa geçişlerinde veya içerik güncellemelerinde yaşanan yavaşlamalar en aza indirgenir. Mobil tarafta ise duyarlı tasarım sayesinde kullanıcılar bilgisayar ya da mobil cihaz üzerinden eşit kalitede erişim sağlar — bu uyumluluk, özellikle sahada çalışan profesyoneller ve dinamik bir şekilde gezinen kullanıcılar için büyük bir avantaj sunar."
       }
     ]
   },

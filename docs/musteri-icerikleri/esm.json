@@ -1,0 +1,391 @@
+{
+  "slug": "esm",
+  "sourceUrl": "https://servicecore.app/tr/features/esm",
+  "fetchedAt": "2026-05-03",
+  "docTitle": "ESM - Servicecore",
+  "metaDescription": "Servicecore Enterprise Service Management Software",
+  "pageTitle": "Servicecore Enterprise Service Management (ESM)",
+  "hero": {
+    "paragraphs": [
+      "BT’nin ötesinde, tüm organizasyon için hizmet yönetimi.",
+      "Servicecore ESM, klasik ITSM prensiplerini yalnızca BT süreçleriyle sınırlı bırakmaz; İnsan Kaynakları, Finans, Lojistik, Satış ve Pazarlama gibi tüm departmanları tek bir platformda buluşturur. Böylece kurum genelinde daha verimli, işbirlikçi ve şeffaf bir hizmet yönetimi sağlanır"
+    ],
+    "images": []
+  },
+  "sections": [
+    {
+      "heading": "Merkezi Multitenant Yapı",
+      "paragraphs": [
+        "Kurumsal Hizmet Yönetimi (ESM), çok sayıda iş kolundaki süreçleri tek bir uygulamadan yönetme becerisidir.",
+        "BT, İnsan Kaynakları, Lojistik, İdari İşler, Finans, Satış ve Pazarlama gibi tüm departmanları kapsar.",
+        "ITSM’in prensiplerini tüm organizasyona genişletir.",
+        "Tek portal üzerinden tüm hizmetlerin yönetilmesini sağlar."
+      ],
+      "bullets": [
+        "BT, İnsan Kaynakları, Lojistik, İdari İşler, Finans, Satış ve Pazarlama gibi tüm departmanları kapsar.",
+        "ITSM’in prensiplerini tüm organizasyona genişletir.",
+        "Tek portal üzerinden tüm hizmetlerin yönetilmesini sağlar."
+      ],
+      "images": [
+        {
+          "src": "https://servicecore.app/media/pages/features/esm/9e5b51399d-1760896053/esm.png",
+          "alt": ""
+        },
+        {
+          "src": "https://servicecore.app/media/pages/features/esm/9e5b51399d-1760896053/esm.png",
+          "alt": ""
+        },
+        {
+          "src": "https://servicecore.app/media/pages/features/esm/bd0de93b73-1760896245/esm3.png",
+          "alt": ""
+        },
+        {
+          "src": "https://servicecore.app/media/pages/features/esm/bd0de93b73-1760896245/esm3.png",
+          "alt": ""
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "heading": "Servicecore Multitenant ESM",
+      "paragraphs": [
+        "Hizmet Yönetimi: Tüm bölümlerde hizmet sağlama ve yönetme süreçlerini içerir.",
+        "Süreç Standardizasyonu: Farklı departmanlarda tutarlılık sağlar.",
+        "Otomasyon: Manuel işlemleri azaltır, hız ve doğruluk kazandırır.",
+        "Müşteri Odaklılık: İç ve dış müşteriler için daha iyi deneyim.",
+        "İş Sürekliliği ve Güvenlik: Kesintisiz ve güvenli hizmet yönetimi."
+      ],
+      "bullets": [
+        "Hizmet Yönetimi: Tüm bölümlerde hizmet sağlama ve yönetme süreçlerini içerir.",
+        "Süreç Standardizasyonu: Farklı departmanlarda tutarlılık sağlar.",
+        "Otomasyon: Manuel işlemleri azaltır, hız ve doğruluk kazandırır.",
+        "Müşteri Odaklılık: İç ve dış müşteriler için daha iyi deneyim.",
+        "İş Sürekliliği ve Güvenlik: Kesintisiz ve güvenli hizmet yönetimi."
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "ESM Yönetim Paneli",
+      "paragraphs": [
+        "Servicecore ESM Center, farklı birimlerin tek bir alan üzerinden yönetilebilmesi için oluşturulmuş yönetim panelidir.",
+        "Sol üstteki dokuz noktalı simgeden erişilir.",
+        "Tüm kiracı ve departman yönetimi buradan yapılır."
+      ],
+      "bullets": [
+        "Servicecore ESM Center, farklı birimlerin tek bir alan üzerinden yönetilebilmesi için oluşturulmuş yönetim panelidir. Sol üstteki dokuz noktalı simgeden erişilir. Tüm kiracı ve departman yönetimi buradan yapılır.",
+        "Sol üstteki dokuz noktalı simgeden erişilir.",
+        "Tüm kiracı ve departman yönetimi buradan yapılır."
+      ],
+      "images": [
+        {
+          "src": "https://servicecore.app/media/pages/features/esm/ec6195e6f3-1760896140/esm2.png",
+          "alt": ""
+        },
+        {
+          "src": "https://servicecore.app/media/pages/features/esm/ec6195e6f3-1760896140/esm2.png",
+          "alt": ""
+        }
+      ],
+      "subSections": []
+    },
+    {
+      "heading": "Neden Servicecore ESM?",
+      "paragraphs": [
+        "Kapsamlı Uygulama: ITSM’in ötesine geçerek tüm iş birimlerini kapsar.",
+        "Gelişmiş İşbirliği: Departmanlar arası bariyerleri kaldırır, ortak çalışma kültürü oluşturur.",
+        "Optimize Edilmiş İş Akışları: Otomasyon ve standart süreçlerle verimsizlikleri ortadan kaldırır.",
+        "Kullanıcı Dostu Tasarım: Çalışanlar ve müşteriler için sezgisel self-servis portallar.",
+        "Ölçeklenebilir ve Güvenli: Kurumsal düzeyde güvenlik ve büyümeye uyumlu altyapı.",
+        "ESM, çok sayıda iş kolundaki süreçleri, hepsini idare etme esnekliğine sahip tek bir uygulamadan yönetme becerisidir. Bu şunları içerebilir: BT, İnsan Kaynakları, Lojistik, İdari İşler, Finans ve Satış Pazarlama gibi gerçekten bir çeşit hizmet sunan herhangi bir departman. ESM, genellikle bu departmanların hizmetlerini kullanıcılarına kolaylaştırılmış ve uygun maliyetli bir şekilde sunmasını sağlayan bir kurumsal hizmet yönetimi yazılım platformu aracılığıyla sağlanır.",
+        "ITSM, genellikle bilgi teknolojisi departmanlarının hizmetlerini yönetmek için kullanılır. Teknoloji odaklıdır ve BT hizmetlerinin sağlanmasını, izlenmesini ve iyileştirilmesini içerir. ESM ise sadece bilgi teknolojisi değil, aynı zamanda İnsan Kaynakları, Tesis Yönetimi, Filo Yönetimi gibi farklı iş birimlerinin hizmetlerini de kapsar. Bu nedenle kapsamı daha geniştir ve tüm kurumsal hizmetlerin entegrasyonunu hedefler.",
+        "ITSM, genellikle BT departmanının ihtiyaçlarına yönelik süreçleri yönetir ve optimize eder. ESM ise farklı iş birimlerinin süreçlerini entegre eder ve işletmenin tüm hizmet süreçlerini koordine eder. Bu, işbirliğini ve verimliliği artırır. Sonuç olarak, ESM, işletmelerin genel hizmet yönetimini daha kapsamlı bir şekilde ele alırken, ITSM daha özelleşmiş bir odak sunar. Her ikisi de işletmenin verimliliğini artırmak için önemlidir, ancak ESM, işletmenin tüm hizmetlerini entegre bir şekilde yönetmek için daha geniş bir perspektif sunar.",
+        "Kurumsal Hizmet Yönetimi (ESM), geniş bir kitle için önemli avantajlar sağlayan bir çözümdür.",
+        "İşletme Liderleri ve Yöneticiler: ESM, işletme liderlerine ve yöneticilere, kurumsal hizmetlerin daha etkin bir şekilde yönetilmesi ve işletme performansının artırılması için gerekli araçları sunar. Bu, iş stratejilerinin daha iyi bir şekilde uygulanmasını sağlar.",
+        "Bilgi Teknolojisi (BT) Departmanı: BT departmanları, ESM aracılığıyla hem kendi iç süreçlerini optimize edebilirler hem de diğer iş birimlerinin hizmet yönetimine destek sağlayabilirler. Bu sayede BT departmanları, işletmenin diğer alanlarıyla daha iyi bir şekilde entegre olabilirler.",
+        "Diğer İş Birimleri ve Departmanlar: İnsan Kaynakları, Finans, Satış ve Pazarlama gibi diğer iş birimleri ve departmanlar, ESM sayesinde kendi hizmetlerini daha etkin bir şekilde yönetebilirler. Bu, süreçlerin optimize edilmesi, verimliliğin artırılması ve işbirliğinin güçlendirilmesi anlamına gelir.",
+        "Çalışanlar ve Kullanıcılar: ESM, çalışanlara ve kullanıcılara hizmet taleplerini kolayca iletebilecekleri, sorunlarını çözebilecekleri ve bilgiye erişebilecekleri bir platform sunar. Bu, kullanıcı memnuniyetinin artırılmasına ve iş süreçlerinin daha verimli bir şekilde yürütülmesine katkı sağlar.",
+        "Dış Paydaşlar ve Müşteriler: Bazı durumlarda, ESM, işletmenin dış paydaşları ve müşterileriyle de etkileşime geçebilir. Bu, müşteri hizmetlerinin iyileştirilmesi ve dış ilişkilerin yönetilmesi açısından önemli bir avantaj sağlar.",
+        "Sonuç olarak, ESM, işletmenin her seviyesindeki kişiler için değerli bir araçtır ve tüm paydaşların iş süreçlerinin daha etkin bir şekilde yönetilmesine katkı sağlar.",
+        "ESM’nin sağladığı faydalar oldukça çeşitlidir:",
+        "Operasyonel Görünürlük: ESM, işletmelere operasyonel görünürlük sağlar. Bu sayede her birimin işletmeye sağladığı değer netleşir. ESM, işletmelerin değer yaratma süreçlerini haritalayarak darboğazları ve verimsizlikleri tespit etmelerine ve ortadan kaldırmalarına olanak tanır.",
+        "Değer Dönüşümü: ESM ile iş birimleri, iç iş hizmetlerinin yürütülmesini kolaylaştırabilir, operasyonel giderleri azaltabilir ve daha fazla zaman ve kaynak ayırarak değişim ve iyileştirme projelerine odaklanabilirler. Bu, iş birimlerinin daha proaktif ve çevik olmalarını sağlar.",
+        "Etkileşim Yönetimi: ESM, iş birimleri arasındaki etkileşimleri kayıt altına alarak ölçülebilir, yönetilebilir ve optimize edilebilir hale getirir. Dijital arayüzler sayesinde talepler otomatik olarak doğru ekiplere yönlendirilir, bu da operasyonel yükleri azaltır ve son kullanıcı memnuniyetini artırır.",
+        "Şeffaflık ve Entegrasyon: ESM, işletmelerdeki siloları kırarak daha şeffaf, entegre ve işbirliğine dayalı bir zihniyet dönüşümü sağlar. Departmanlar arasındaki engeller azalır ve iş birimleri daha geniş bir iş ekosistemine daha uyumlu hale gelir.",
+        "Son Kullanıcı Memnuniyeti ve Üretkenlik: ESM, tüm hizmetlerin ve bilgi kaynaklarının tek noktadan erişilebilir olmasını sağlar. Bu, çalışanların daha hızlı ve verimli bir şekilde çalışmalarına olanak tanır, son kullanıcı memnuniyetini artırır ve üretkenliği destekler.",
+        "ESM’nin bu faydaları, işletmelerin daha verimli, etkili ve rekabetçi olmalarını sağlar. Ayrıca, kurumsal hizmet yönetimi stratejisinin başarıyla uygulanması, BT’nin işletme ve iş birimleriyle işbirliği içinde çalışarak işletmenin genel performansını artırmasına yardımcı olur.",
+        "Servicecore’un ESM (Kurumsal Hizmet Yönetimi) özelliği, şirket içindeki tüm hizmet süreçlerini kapsayan bir yaklaşım sunar. Bu, sadece IT (Bilgi Teknolojileri) departmanı için değil, aynı zamanda diğer departmanlar ve iş birimleri için de hizmet yönetimi uygulamalarını içerir. Servicecore ESM, bir organizasyonun genel hizmet verimliliğini artırmayı ve müşteri memnuniyetini sağlamayı hedefler.",
+        "Servicecore ESM’nin ana unsurları şunlardır:",
+        "Hizmet Yönetimi: Servicecore ESM, organizasyonun tüm bölümlerinde hizmet sağlama ve yönetme süreçlerini içerir. Bu, IT hizmet yönetimi, müşteri hizmetleri, insan kaynakları yönetimi ve diğer işlevleri kapsar. ESM, hizmet taleplerinin izlenmesi, atama ve yönetimi gibi süreçlerin entegre bir şekilde yürütülmesine olanak tanır.",
+        "Süreç Standardizasyonu: Servicecore ESM, farklı departmanlarda ve iş birimlerindeki hizmet süreçlerini standardize etmeyi amaçlar. Bu, hizmet kalitesinin artırılması, etkinlik ve verimlilik sağlamaya yönelik standart prosedürlerin uygulanmasını içerir. Bu standartlar, organizasyon içinde tutarlılık sağlar ve süreçlerin daha iyi yönetilmesine olanak tanır.",
+        "Otomasyon: Servicecore ESM, iş süreçlerini otomatize etmeye yarar. Otomatizasyon, manuel işlemlerin azaltılmasına ve hizmet süreçlerinin daha hızlı ve hatasız bir şekilde yürütülmesine olanak tanır. Bu, iş süreçlerinin verimliliğini artırır ve çalışanların daha stratejik görevlere odaklanmasını sağlar.",
+        "Müşteri Odaklılık: Servicecore ESM, iç ve dış müşterilere odaklanarak hizmetleri geliştirmeyi amaçlar. Bu, müşteri taleplerinin hızlı bir şekilde karşılanmasını ve müşteri memnuniyetinin artırılmasını sağlar. Ayrıca, müşteri geri bildirimlerinin dikkate alınması ve hizmetlerin sürekli olarak iyileştirilmesi önemlidir.",
+        "İş Sürekliliği ve Güvenlik: Servicecore ESM, iş süreçlerinin güvenli bir şekilde yürütülmesini sağlar. Bu, veri güvenliğinin sağlanması, iş süreçlerinin kesintisiz bir şekilde devam etmesi ve acil durumlar karşısında iş sürekliliğinin sağlanması anlamına gelir.",
+        "Servicecore ESM’nin temel amacı, bir işletmenin genel hizmet yönetimini optimize etmek ve iş süreçlerini daha etkin bir şekilde yönetmektir. Bu, departmanlar arasında işbirliğini artırır, hizmet kalitesini yükseltir ve organizasyonun rekabet avantajını güçlendirir."
+      ],
+      "bullets": [
+        "📘 ESM - Kurumsal Hizmet Yönetimi Nedir? ESM, çok sayıda iş kolundaki süreçleri, hepsini idare etme esnekliğine sahip tek bir uygulamadan yönetme becerisidir. Bu şunları içerebilir: BT, İnsan Kaynakları, Lojistik, İdari İşler, Finans ve Satış Pazarlama gibi gerçekten bir çeşit hizmet sunan herhangi bir departman. ESM, genellikle bu departmanların hizmetlerini kullanıcılarına kolaylaştırılmış ve uygun maliyetli bir şekilde sunmasını sağlayan bir kurumsal hizmet yönetimi yazılım platformu aracılığıyla sağlanır.",
+        "⚖️ ESM ve ITSM Farklılıkları Nelerdir? ITSM, genellikle bilgi teknolojisi departmanlarının hizmetlerini yönetmek için kullanılır. Teknoloji odaklıdır ve BT hizmetlerinin sağlanmasını, izlenmesini ve iyileştirilmesini içerir. ESM ise sadece bilgi teknolojisi değil, aynı zamanda İnsan Kaynakları, Tesis Yönetimi, Filo Yönetimi gibi farklı iş birimlerinin hizmetlerini de kapsar. Bu nedenle kapsamı daha geniştir ve tüm kurumsal hizmetlerin entegrasyonunu hedefler. ITSM, genellikle BT departmanının ihtiyaçlarına yönelik süreçleri yönetir ve optimize eder. ESM ise farklı iş birimlerinin süreçlerini entegre eder ve işletmenin tüm hizmet süreçlerini koordine eder. Bu, işbirliğini ve verimliliği artırır. Sonuç olarak, ESM, işletmelerin genel hizmet yönetimini daha kapsamlı bir şekilde ele alırken, ITSM daha özelleşmiş bir odak sunar. Her ikisi de işletmenin verimliliğini artırmak için önemlidir, ancak ESM, işletmenin tüm hizmetlerini entegre bir şekilde yönetmek için daha geniş bir perspektif sunar.",
+        "👥 ESM’den Kimler Faydalanır? Kurumsal Hizmet Yönetimi (ESM), geniş bir kitle için önemli avantajlar sağlayan bir çözümdür. İşletme Liderleri ve Yöneticiler: ESM, işletme liderlerine ve yöneticilere, kurumsal hizmetlerin daha etkin bir şekilde yönetilmesi ve işletme performansının artırılması için gerekli araçları sunar. Bu, iş stratejilerinin daha iyi bir şekilde uygulanmasını sağlar. Bilgi Teknolojisi (BT) Departmanı: BT departmanları, ESM aracılığıyla hem kendi iç süreçlerini optimize edebilirler hem de diğer iş birimlerinin hizmet yönetimine destek sağlayabilirler. Bu sayede BT departmanları, işletmenin diğer alanlarıyla daha iyi bir şekilde entegre olabilirler. Diğer İş Birimleri ve Departmanlar: İnsan Kaynakları, Finans, Satış ve Pazarlama gibi diğer iş birimleri ve departmanlar, ESM sayesinde kendi hizmetlerini daha etkin bir şekilde yönetebilirler. Bu, süreçlerin optimize edilmesi, verimliliğin artırılması ve işbirliğinin güçlendirilmesi anlamına gelir. Çalışanlar ve Kullanıcılar: ESM, çalışanlara ve kullanıcılara hizmet taleplerini kolayca iletebilecekleri, sorunlarını çözebilecekleri ve bilgiye erişebilecekleri bir platform sunar. Bu, kullanıcı memnuniyetinin artırılmasına ve iş süreçlerinin daha verimli bir şekilde yürütülmesine katkı sağlar. Dış Paydaşlar ve Müşteriler: Bazı durumlarda, ESM, işletmenin dış paydaşları ve müşterileriyle de etkileşime geçebilir. Bu, müşteri hizmetlerinin iyileştirilmesi ve dış ilişkilerin yönetilmesi açısından önemli bir avantaj sağlar. Sonuç olarak, ESM, işletmenin her seviyesindeki kişiler için değerli bir araçtır ve tüm paydaşların iş süreçlerinin daha etkin bir şekilde yönetilmesine katkı sağlar.",
+        "🌟 ESM’in Faydaları Nelerdir? ESM’nin sağladığı faydalar oldukça çeşitlidir: Operasyonel Görünürlük: ESM, işletmelere operasyonel görünürlük sağlar. Bu sayede her birimin işletmeye sağladığı değer netleşir. ESM, işletmelerin değer yaratma süreçlerini haritalayarak darboğazları ve verimsizlikleri tespit etmelerine ve ortadan kaldırmalarına olanak tanır. Değer Dönüşümü: ESM ile iş birimleri, iç iş hizmetlerinin yürütülmesini kolaylaştırabilir, operasyonel giderleri azaltabilir ve daha fazla zaman ve kaynak ayırarak değişim ve iyileştirme projelerine odaklanabilirler. Bu, iş birimlerinin daha proaktif ve çevik olmalarını sağlar. Etkileşim Yönetimi: ESM, iş birimleri arasındaki etkileşimleri kayıt altına alarak ölçülebilir, yönetilebilir ve optimize edilebilir hale getirir. Dijital arayüzler sayesinde talepler otomatik olarak doğru ekiplere yönlendirilir, bu da operasyonel yükleri azaltır ve son kullanıcı memnuniyetini artırır. Şeffaflık ve Entegrasyon: ESM, işletmelerdeki siloları kırarak daha şeffaf, entegre ve işbirliğine dayalı bir zihniyet dönüşümü sağlar. Departmanlar arasındaki engeller azalır ve iş birimleri daha geniş bir iş ekosistemine daha uyumlu hale gelir. Son Kullanıcı Memnuniyeti ve Üretkenlik: ESM, tüm hizmetlerin ve bilgi kaynaklarının tek noktadan erişilebilir olmasını sağlar. Bu, çalışanların daha hızlı ve verimli bir şekilde çalışmalarına olanak tanır, son kullanıcı memnuniyetini artırır ve üretkenliği destekler. ESM’nin bu faydaları, işletmelerin daha verimli, etkili ve rekabetçi olmalarını sağlar. Ayrıca, kurumsal hizmet yönetimi stratejisinin başarıyla uygulanması, BT’nin işletme ve iş birimleriyle işbirliği içinde çalışarak işletmenin genel performansını artırmasına yardımcı olur.",
+        "🏗️ Servicecore ESM Ana Unsurları Nelerdir? Servicecore’un ESM (Kurumsal Hizmet Yönetimi) özelliği, şirket içindeki tüm hizmet süreçlerini kapsayan bir yaklaşım sunar. Bu, sadece IT (Bilgi Teknolojileri) departmanı için değil, aynı zamanda diğer departmanlar ve iş birimleri için de hizmet yönetimi uygulamalarını içerir. Servicecore ESM, bir organizasyonun genel hizmet verimliliğini artırmayı ve müşteri memnuniyetini sağlamayı hedefler. Servicecore ESM’nin ana unsurları şunlardır: Hizmet Yönetimi: Servicecore ESM, organizasyonun tüm bölümlerinde hizmet sağlama ve yönetme süreçlerini içerir. Bu, IT hizmet yönetimi, müşteri hizmetleri, insan kaynakları yönetimi ve diğer işlevleri kapsar. ESM, hizmet taleplerinin izlenmesi, atama ve yönetimi gibi süreçlerin entegre bir şekilde yürütülmesine olanak tanır. Süreç Standardizasyonu: Servicecore ESM, farklı departmanlarda ve iş birimlerindeki hizmet süreçlerini standardize etmeyi amaçlar. Bu, hizmet kalitesinin artırılması, etkinlik ve verimlilik sağlamaya yönelik standart prosedürlerin uygulanmasını içerir. Bu standartlar, organizasyon içinde tutarlılık sağlar ve süreçlerin daha iyi yönetilmesine olanak tanır. Otomasyon: Servicecore ESM, iş süreçlerini otomatize etmeye yarar. Otomatizasyon, manuel işlemlerin azaltılmasına ve hizmet süreçlerinin daha hızlı ve hatasız bir şekilde yürütülmesine olanak tanır. Bu, iş süreçlerinin verimliliğini artırır ve çalışanların daha stratejik görevlere odaklanmasını sağlar. Müşteri Odaklılık: Servicecore ESM, iç ve dış müşterilere odaklanarak hizmetleri geliştirmeyi amaçlar. Bu, müşteri taleplerinin hızlı bir şekilde karşılanmasını ve müşteri memnuniyetinin artırılmasını sağlar. Ayrıca, müşteri geri bildirimlerinin dikkate alınması ve hizmetlerin sürekli olarak iyileştirilmesi önemlidir. İş Sürekliliği ve Güvenlik: Servicecore ESM, iş süreçlerinin güvenli bir şekilde yürütülmesini sağlar. Bu, veri güvenliğinin sağlanması, iş süreçlerinin kesintisiz bir şekilde devam etmesi ve acil durumlar karşısında iş sürekliliğinin sağlanması anlamına gelir. Servicecore ESM’nin temel amacı, bir işletmenin genel hizmet yönetimini optimize etmek ve iş süreçlerini daha etkin bir şekilde yönetmektir. Bu, departmanlar arasında işbirliğini artırır, hizmet kalitesini yükseltir ve organizasyonun rekabet avantajını güçlendirir."
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "Servicecore ESM ile tüm organizasyonunuzu tek platformda yönetin, işbirliğini ve verimliliği artırın.",
+      "paragraphs": [],
+      "bullets": [],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "Diğer Servicecore Modülleri",
+      "paragraphs": [],
+      "bullets": [],
+      "images": [],
+      "subSections": [
+        {
+          "subheading": "Servicecore Low-Code Geliştirme Modülü",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Mobile Service Management",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "ESM Enterprise Service Management",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Görev Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servicecore Gelişmiş Yönetim Paneli",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Olay Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "İstek Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Problem Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Etkileşim Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Sürekli İyileştirme",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Bilgi Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Değişiklik Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servis Seviye Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Proje Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servis Konfigürasyon Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Varlık Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servicecore İş Akışı Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servicecore Servis İlişkileri Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Self Servis Portal",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servicecore Sözleşme Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servis Katalog Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servis Otomasyonu",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Ölçüm ve Raporlama Yönetimi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Entegre Servis Yönetim Süreçleri",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "ITSM Uygulama Rehberi",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servicecore Güncellemeleri",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servicecore Migration Aşamaları",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servicecore Entegrasyonları",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Servicecore Sürekli Güncelleme",
+          "paragraphs": [],
+          "bullets": [],
+          "images": []
+        },
+        {
+          "subheading": "Fark Yaratan Özellikler",
+          "paragraphs": [
+            "Servicecore A.Ş.",
+            "Çağrı Merkezi : 444CORE",
+            "Servicecore Destek",
+            "Copyright © 2025, Servicecore"
+          ],
+          "bullets": [
+            "Service Desk",
+            "Interaction Management",
+            "Incident Management",
+            "Problem Management",
+            "Request Management",
+            "Change Management",
+            "Asset Management",
+            "Configuration Management",
+            "Service Catalog Management",
+            "Workflow Management",
+            "Low-Code Design",
+            "Task Management",
+            "Service Level Management",
+            "Continual Improvement",
+            "Service Portal",
+            "Knowledge Management",
+            "Service Dashboards",
+            "Service Analytics",
+            "Service Automation",
+            "Project Management",
+            "Contract Management",
+            "Relations Management",
+            "Hakkımızda",
+            "ITSM Özellikleri",
+            "ESM Özellikleri",
+            "Modüller",
+            "Rehberler",
+            "Workshoplar",
+            "Eğitimler",
+            "Data Sheet",
+            "Specification Sheet",
+            "Demo Başvurusu",
+            "İletişim",
+            "Özellikler",
+            "Modules",
+            "Versions",
+            "Partners",
+            "Demo",
+            "Contact"
+          ],
+          "images": []
+        }
+      ]
+    }
+  ],
+  "allContentImages": [
+    {
+      "src": "https://servicecore.app/media/pages/features/esm/9e5b51399d-1760896053/esm.png",
+      "alt": ""
+    },
+    {
+      "src": "https://servicecore.app/media/pages/features/esm/bd0de93b73-1760896245/esm3.png",
+      "alt": ""
+    },
+    {
+      "src": "https://servicecore.app/media/pages/features/esm/ec6195e6f3-1760896140/esm2.png",
+      "alt": ""
+    }
+  ]
+}

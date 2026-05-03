@@ -1,0 +1,193 @@
+{
+  "slug": "lowcode",
+  "sourceUrl": "https://servicecore.app/tr/resources/lowcode",
+  "fetchedAt": "2026-05-03",
+  "docTitle": "Servicecore Low-Code Geliştirme Modülü - Servicecore",
+  "metaDescription": "Servicecore Enterprise Service Management Software",
+  "pageTitle": "Kod yazmadan güçlü iş uygulamaları tasarlayın.",
+  "hero": {
+    "paragraphs": [
+      "Servicecore Low-Code Geliştirme Modülü, kurumların iş süreçlerini hızla dijitalleştirmesi için tasarlanmış modern bir geliştirme ortamıdır. Sürükle-bırak arayüzü, özelleştirilebilir form bileşenleri ve dinamik iş akışları sayesinde teknik uzmanlığa gerek kalmadan güçlü uygulamalar geliştirebilirsiniz."
+    ],
+    "images": []
+  },
+  "sections": [
+    {
+      "heading": "Servicecore Low-Code Geliştirme Modülü",
+      "paragraphs": [],
+      "bullets": [],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "✨ Neden Servicecore Low-Code?",
+      "paragraphs": [
+        "Hızlı Dijitalleşme: Kod yazmadan süreçlerinizi uygulamaya dönüştürün.",
+        "Esneklik: İş ihtiyaçlarınıza göre formları ve iş akışlarını anında özelleştirin.",
+        "Kullanıcı Dostu: Teknik olmayan kullanıcılar için bile kolay öğrenilebilir.",
+        "Entegrasyon: Mevcut sistemlerinizle sorunsuz bağlantı kurar.",
+        "Maliyet Avantajı: Yazılım geliştirme maliyetlerini düşürür, zaman kazandırır."
+      ],
+      "bullets": [
+        "Hızlı Dijitalleşme: Kod yazmadan süreçlerinizi uygulamaya dönüştürün.",
+        "Esneklik: İş ihtiyaçlarınıza göre formları ve iş akışlarını anında özelleştirin.",
+        "Kullanıcı Dostu: Teknik olmayan kullanıcılar için bile kolay öğrenilebilir.",
+        "Entegrasyon: Mevcut sistemlerinizle sorunsuz bağlantı kurar.",
+        "Maliyet Avantajı: Yazılım geliştirme maliyetlerini düşürür, zaman kazandırır."
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "🚀 Başlangıç: Özelleştirilebilir Formların Gücü",
+      "paragraphs": [
+        "Servicecore Low-Code’un kalbinde özelleştirilebilir formlar bulunur. Bu formlar:",
+        "Form Elemanları ve Alanlar: Metin kutuları, onay kutuları, açılır listeler, tarih seçiciler gibi bileşenlerle zenginleştirilebilir.",
+        "Koşullu Görünürlük: Belirli koşullara göre alanları görünür/görünmez yaparak dinamik deneyimler oluşturabilirsiniz.",
+        "Veri Doğrulama: Alanlara girilen veriler için kurallar tanımlayabilir, hataları en baştan önleyebilirsiniz.",
+        "Kişisel Temalar: Renk, stil ve düzenlemelerle kurumunuza özel görünümler yaratabilirsiniz.",
+        "Bu sayede her departman, kendi süreçlerine uygun formları hızla oluşturabilir ve iş akışlarını optimize edebilir."
+      ],
+      "bullets": [
+        "Form Elemanları ve Alanlar: Metin kutuları, onay kutuları, açılır listeler, tarih seçiciler gibi bileşenlerle zenginleştirilebilir.",
+        "Koşullu Görünürlük: Belirli koşullara göre alanları görünür/görünmez yaparak dinamik deneyimler oluşturabilirsiniz.",
+        "Veri Doğrulama: Alanlara girilen veriler için kurallar tanımlayabilir, hataları en baştan önleyebilirsiniz.",
+        "Kişisel Temalar: Renk, stil ve düzenlemelerle kurumunuza özel görünümler yaratabilirsiniz."
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "📝 Form Ekleme: İlk Adım",
+      "paragraphs": [
+        "Yeni bir form oluşturmak Servicecore Low-Code’da oldukça kolaydır:",
+        "İlgili modülü seçin.",
+        "Sol üstteki “Yeni Form” butonuna tıklayın.",
+        "Açılan pencerede form adı, modül ve kullanıcı bilgilerini girin.",
+        "Kaydet butonuna basarak formunuzu oluşturun.",
+        "Bu basit adımlar sayesinde dakikalar içinde yeni bir iş süreci formu hayata geçirebilirsiniz."
+      ],
+      "bullets": [
+        "İlgili modülü seçin.",
+        "Sol üstteki “Yeni Form” butonuna tıklayın.",
+        "Açılan pencerede form adı, modül ve kullanıcı bilgilerini girin.",
+        "Kaydet butonuna basarak formunuzu oluşturun."
+      ],
+      "images": [],
+      "subSections": []
+    },
+    {
+      "heading": "🛠️ Form Düzenleme: Esnek ve Güçlü Özelleştirme",
+      "paragraphs": [
+        "Oluşturduğunuz formları dilediğiniz gibi düzenleyebilirsiniz. Düzenleme ekranı üç ana bölümden oluşur:",
+        "Bileşenler: Sol tarafta sürükle-bırak yöntemiyle ekleyebileceğiniz alanlar (metin kutusu, seçim listesi, tarih alanı vb.).",
+        "Form Alanı: Ortada formun genel düzenini görebilir ve yapılandırabilirsiniz.",
+        "Bileşen Ayarları: Sağ tarafta seçilen alanın tüm özelliklerini (boyut, renk, doğrulama, görünürlük, varsayılan değer, koşullu mantık vb.) yönetebilirsiniz."
+      ],
+      "bullets": [
+        "Bileşenler: Sol tarafta sürükle-bırak yöntemiyle ekleyebileceğiniz alanlar (metin kutusu, seçim listesi, tarih alanı vb.).",
+        "Form Alanı: Ortada formun genel düzenini görebilir ve yapılandırabilirsiniz.",
+        "Bileşen Ayarları: Sağ tarafta seçilen alanın tüm özelliklerini (boyut, renk, doğrulama, görünürlük, varsayılan değer, koşullu mantık vb.) yönetebilirsiniz."
+      ],
+      "images": [],
+      "subSections": [
+        {
+          "subheading": "Detaylı Özellikler",
+          "paragraphs": [
+            "Alan Özellikleri: İsim, başlık, açıklama, varsayılan değer, zorunluluk, doğrulama kuralları.",
+            "Reactions (Bağlantılar): Alanlar arasında koşullu ilişkiler kurarak dinamik formlar oluşturma.",
+            "Dekorasyon: Tooltip, ikon, etiket genişliği, arka plan rengi, gölge, yazı tipi gibi görsel özelleştirmeler.",
+            "Stil Ayarları: Genişlik, yükseklik, margin, padding, border, opacity gibi detaylı tasarım seçenekleri.",
+            "Bu esneklik sayesinde formlarınız yalnızca işlevsel değil, aynı zamanda kullanıcı deneyimi açısından da güçlü hale gelir."
+          ],
+          "bullets": [
+            "Alan Özellikleri: İsim, başlık, açıklama, varsayılan değer, zorunluluk, doğrulama kuralları.",
+            "Reactions (Bağlantılar): Alanlar arasında koşullu ilişkiler kurarak dinamik formlar oluşturma.",
+            "Dekorasyon: Tooltip, ikon, etiket genişliği, arka plan rengi, gölge, yazı tipi gibi görsel özelleştirmeler.",
+            "Stil Ayarları: Genişlik, yükseklik, margin, padding, border, opacity gibi detaylı tasarım seçenekleri."
+          ],
+          "images": []
+        }
+      ]
+    },
+    {
+      "heading": "🌟 Kullanım Senaryoları",
+      "paragraphs": [
+        "İK Süreçleri: İşe alım, izin talepleri, performans değerlendirme formları.",
+        "Finans: Harcama onayları, bütçe talepleri, fatura süreçleri.",
+        "BT: Olay, değişiklik ve talep yönetimi formları.",
+        "Operasyon: Envanter takibi, bakım planlaması, saha raporları.",
+        "Servicecore A.Ş.",
+        "Çağrı Merkezi : 444CORE",
+        "Servicecore Destek",
+        "Copyright © 2025, Servicecore"
+      ],
+      "bullets": [
+        "İK Süreçleri: İşe alım, izin talepleri, performans değerlendirme formları.",
+        "Finans: Harcama onayları, bütçe talepleri, fatura süreçleri.",
+        "BT: Olay, değişiklik ve talep yönetimi formları.",
+        "Operasyon: Envanter takibi, bakım planlaması, saha raporları.",
+        "#Low-code",
+        "#Form design",
+        "#Kolay ekran tasarımı",
+        "#kolay form tasarımı",
+        "Service Desk",
+        "Interaction Management",
+        "Incident Management",
+        "Problem Management",
+        "Request Management",
+        "Change Management",
+        "Asset Management",
+        "Configuration Management",
+        "Service Catalog Management",
+        "Workflow Management",
+        "Low-Code Design",
+        "Task Management",
+        "Service Level Management",
+        "Continual Improvement",
+        "Service Portal",
+        "Knowledge Management",
+        "Service Dashboards",
+        "Service Analytics",
+        "Service Automation",
+        "Project Management",
+        "Contract Management",
+        "Relations Management",
+        "Hakkımızda",
+        "ITSM Özellikleri",
+        "ESM Özellikleri",
+        "Modüller",
+        "Rehberler",
+        "Workshoplar",
+        "Eğitimler",
+        "Data Sheet",
+        "Specification Sheet",
+        "Demo Başvurusu",
+        "İletişim",
+        "Özellikler",
+        "Modules",
+        "Versions",
+        "Partners",
+        "Demo",
+        "Contact"
+      ],
+      "images": [
+        {
+          "src": "https://servicecore.app/media/pages/resources/lowcode/20c96ce78c-1760815522/lowcode.png",
+          "alt": "Low-Code Geliştirme Ortamı"
+        },
+        {
+          "src": "https://servicecore.app/media/pages/resources/lowcode/20c96ce78c-1760815522/lowcode.png",
+          "alt": "Low-Code Geliştirme Ortamı"
+        }
+      ],
+      "subSections": []
+    }
+  ],
+  "allContentImages": [
+    {
+      "src": "https://servicecore.app/media/pages/resources/lowcode/20c96ce78c-1760815522/lowcode.png",
+      "alt": "Low-Code Geliştirme Ortamı"
+    }
+  ]
+}

@@ -104,6 +104,114 @@
       }
     ]
   },
+  "lifecycle": {
+    "badge": "Sözleşme Yaşam Döngüsü",
+    "titleLead": "8 aşamada uçtan uca,",
+    "titleAccent": "şeffaf ve denetlenebilir.",
+    "description": "Her sözleşme oluşturmadan geçmiş kayıtlarına kadar 8 aşamada disiplinli yürütülür. Otomatik bildirimler, onay süreçleri ve ilişki yönetimi sayesinde manuel takipten kurtulun.",
+    "stages": [
+      {
+        "id": "olusturma",
+        "icon": "Plus",
+        "step": "01",
+        "title": "Yeni Sözleşme Oluşturma",
+        "items": ["Model seçimi (kurum içi/tedarikçi/müşteri)", "Temel bilgiler (ad, açıklama, başlangıç/bitiş)", "Bildirim ayarları", "Otomatik yenileme periyodu"],
+        "tone": "blue"
+      },
+      {
+        "id": "detay",
+        "icon": "FileText",
+        "step": "02",
+        "title": "Sözleşme Detayları",
+        "items": ["Durum yönetimi (aktif/pasif)", "Dosya yükleme & görüntüleme", "CNR numarasıyla tek tıkla erişim", "Özellikler & detay güncelleme"],
+        "tone": "cyan"
+      },
+      {
+        "id": "onay",
+        "icon": "CheckCircle2",
+        "step": "03",
+        "title": "Onay Süreci",
+        "items": ["Kurul veya yetkili kişilere onaya gönderme", "Onay/Red süreç akışına otomatik yansır", "Onay zinciri tek panelde izlenir"],
+        "tone": "emerald"
+      },
+      {
+        "id": "varlik-hizmet",
+        "icon": "Boxes",
+        "step": "04",
+        "title": "Varlık & Hizmet İlişkileri",
+        "items": ["Sözleşmeye bağlı varlık girişleri", "Sözleşmeye bağlı hizmet tanımları", "Kapsam tek bakışta görünür"],
+        "tone": "purple"
+      },
+      {
+        "id": "finansal",
+        "icon": "Wallet",
+        "step": "05",
+        "title": "Finansal Bilgiler",
+        "items": ["Maliyet girişleri", "Bütçe ve harcama takibi", "Tedarikçi performans değerlendirmesi"],
+        "tone": "amber"
+      },
+      {
+        "id": "iliskili",
+        "icon": "GitBranch",
+        "step": "06",
+        "title": "İlişkili Sözleşmeler",
+        "items": ["Farklı sözleşmeler birbirine bağlanır", "Bütünsel görünürlük sağlanır", "Bağımlı/parent-child ilişki yönetimi"],
+        "tone": "indigo"
+      },
+      {
+        "id": "bildirim",
+        "icon": "Bell",
+        "step": "07",
+        "title": "Bildirimler",
+        "items": ["Kurum içi kullanıcılara otomatik bildirim", "Karşı taraf kullanıcılarına bildirim", "Yenileme/fesih ihbarı eskalasyonu"],
+        "tone": "rose"
+      },
+      {
+        "id": "gecmis",
+        "icon": "History",
+        "step": "08",
+        "title": "Geçmiş Kayıtları",
+        "items": ["Tüm işlemler geçmiş tabında izlenir", "Denetim için tam audit trail", "Versiyon karşılaştırmalı yenileme"],
+        "tone": "teal"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "Sözleşme türleri, yaşam döngüsü, finansal takip ve ilişki yönetimi hakkında en sık merak edilenler.",
+    "items": [
+      {
+        "id": "ne-saglar",
+        "icon": "FileSignature",
+        "question": "ServiceCore Sözleşme Yönetimi ne sağlar?",
+        "answer": "ServiceCore Sözleşme Yönetimi Modülü, kurum içi, tedarikçi ve müşteri hizmet sözleşmelerinizi tek bir merkezden yönetmenizi sağlar. Sözleşmelerin yaşam döngüsünü uçtan uca takip ederek hem operasyonel verimliliğinizi artırır hem de riskleri minimize eder. Öne çıkan yetenekler: kurum içi destek (OLA), tedarikçi sözleşmeleri, müşteri hizmet (SLA), otomatik bildirimler, yenileme & uzatma, dosya & ek yönetimi, onay süreçleri, finansal takip ve ilişkili sözleşmeler."
+      },
+      {
+        "id": "ola-sla-tedarikci",
+        "icon": "Tags",
+        "question": "OLA, SLA ve tedarikçi sözleşmesi farkları nedir?",
+        "answer": "Kurum İçi Destek Sözleşmeleri (OLA), BT birimi ile diğer departmanlar arasındaki hizmet anlaşmalarını düzenler ve iç süreçlerde şeffaflık sağlar. Tedarikçi Sözleşmeleri, malzeme/hizmet/lisans anlaşmalarını kaydeder ve tedarikçi performansını izler. Müşteri Hizmet Sözleşmeleri (SLA) ise iç ve dış müşteriler için hizmet seviyelerini tanımlar ve profesyonel bir yönetim standardı oluşturur. Üçü de aynı modülde standart sınıflandırma altında yönetilir."
+      },
+      {
+        "id": "yenileme",
+        "icon": "Repeat",
+        "question": "Sözleşme yenileme ve otomatik bildirim nasıl çalışır?",
+        "answer": "Sözleşme oluştururken bildirim ayarları girilir; süresi dolmadan önce/sonra kaç gün kala bilgilendirme yapılacağı belirlenir. Sözleşmeler belirli periyotlarla otomatik yenilenebilir veya manuel olarak uzatılabilir. Otomatik bildirimler hem kurum içi hem de karşı taraf kullanıcılara gönderilebilir. Süresi yaklaşan sözleşmeler için otomatik uyarılar risk yönetimini güçlendirir."
+      },
+      {
+        "id": "onay-finansal",
+        "icon": "CheckCircle2",
+        "question": "Onay süreci ve finansal takip nasıl yürür?",
+        "answer": "Sözleşmeler kurul veya belirlenen yetkili kişilere onaya gönderilebilir; onay/red durumları süreç akışına otomatik yansır. Finansal tarafta maliyet girişleri yapılabilir, bütçe ve harcama takibi sağlanır. Sözleşme başına maliyet kaydedilir; tedarikçi performansı ve müşteri SLA uyumu tek panelden raporlanır. Stratejik kararlar veriye dayandırılır."
+      },
+      {
+        "id": "iliskili-gecmis",
+        "icon": "GitBranch",
+        "question": "İlişkili sözleşmeler ve geçmiş kayıtları nasıl yönetilir?",
+        "answer": "Farklı sözleşmeler birbirine bağlanarak bütünsel görünürlük sağlanır; bir ana sözleşme altında tedarikçi ve OLA bağımlılıkları izlenir. Sözleşme üzerinde yapılan tüm işlemler — durum değişiklikleri, dosya yüklemeleri, onay aksiyonları, varlık ilişkileri — geçmiş tabında izlenebilir. Denetim için tam audit trail sunulur; uyumluluk ve şeffaflık aynı kayıtta kanıtlanır."
+      }
+    ]
+  },
   "cta": {
     "title": "İşinizi bir üst seviyeye taşıyın, sözleşmelerde tam kontrol kurun.",
     "description": "OLA, tedarikçi ve SLA sözleşmelerini tek platformda yöneten ServiceCore Sözleşme Yönetimi modülünü canlı demoda inceleyin; zamandan tasarruf edin, süreçlerinizde tam kontrol sağlayın.",

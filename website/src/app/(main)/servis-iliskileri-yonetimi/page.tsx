@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import {
   Users,
@@ -20,6 +19,16 @@ import {
   Briefcase,
   HeadphonesIcon,
   Crown,
+  Wallet,
+  Calculator,
+  Repeat,
+  Clock,
+  Tags,
+  Sparkles,
+  ChevronDown,
+  Search,
+  Building2,
+  Activity,
 } from "lucide-react";
 import data from "@/data/servis-iliskileri-yonetimi.json";
 
@@ -91,17 +100,148 @@ export default function ServisIliskileriYonetimiPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full max-h-125"
+            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-6 lg:p-10 shadow-2xl overflow-hidden group w-full"
           >
-            <Image
-              src="/images/servis-iliskileri-modulu/musteri-liste.webp"
-              alt={data.hero.imageAlt}
-              width={1250}
-              height={707}
-              className="block w-full h-auto rounded-2xl group-hover:scale-[1.01] transition-transform duration-700"
-              priority
-            />
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
+            {/* Toolbar */}
+            <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5 pb-5 border-b border-white/8">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                  <Users className="w-5 h-5 text-(--color-accent-blue-light)" />
+                </div>
+                <div className="flex flex-col gap-0.5">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-(--color-accent-blue-light)">
+                    SRM · Servis İlişkileri Yönetimi
+                  </span>
+                  <span className="text-lg lg:text-xl font-bold text-white tracking-tight">
+                    Müşteri Hesapları & Sözleşmeler
+                  </span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-mono text-(--color-text-muted)">42 müşteri · 86 sözleşme</span>
+                <div className="flex items-center gap-1.5 px-2 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20">
+                  <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent-emerald-light) shadow-[0_0_8px_currentColor] animate-pulse" />
+                  <span className="text-[9px] font-mono uppercase tracking-widest text-(--color-accent-emerald-light)">canlı</span>
+                </div>
+              </div>
+            </div>
+
+            {/* KPI metric row */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-5">
+              {[
+                { icon: Building2, label: "Aktif Müşteri", value: "42", trend: "+3", tone: "blue" },
+                { icon: FileSignature, label: "Aktif Sözleşme", value: "86", trend: "+12", tone: "emerald" },
+                { icon: Users, label: "Yetkili Kişi", value: "284", trend: "+18", tone: "purple" },
+                { icon: Bell, label: "Yenilenecek (30g)", value: "8", trend: "kritik", tone: "amber" },
+              ].map((m, i) => {
+                const Icon = m.icon;
+                const t: Record<string, string> = {
+                  blue: "from-blue-500/15 to-blue-500/5 border-blue-500/25 text-(--color-accent-blue-light) shadow-[0_0_25px_rgba(59,130,246,0.12)]",
+                  emerald: "from-emerald-500/15 to-emerald-500/5 border-emerald-500/25 text-(--color-accent-emerald-light) shadow-[0_0_25px_rgba(16,185,129,0.12)]",
+                  purple: "from-purple-500/15 to-purple-500/5 border-purple-500/25 text-(--color-accent-purple-light) shadow-[0_0_25px_rgba(168,85,247,0.12)]",
+                  amber: "from-amber-500/15 to-amber-500/5 border-amber-500/25 text-amber-300 shadow-[0_0_25px_rgba(245,158,11,0.12)]",
+                };
+                return (
+                  <div key={i} className={`rounded-2xl bg-linear-to-br ${t[m.tone]} border p-3 lg:p-4 flex flex-col gap-2`}>
+                    <div className="flex items-center justify-between">
+                      <Icon className="w-4 h-4" />
+                      <span className="text-[9px] font-mono font-semibold text-(--color-accent-emerald-light)">{m.trend}</span>
+                    </div>
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-[8px] font-medium uppercase tracking-wider text-(--color-text-muted)">{m.label}</span>
+                      <span className="text-2xl lg:text-3xl font-bold tracking-tight text-white">{m.value}</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Customer table */}
+            <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid) p-4 mb-5">
+              <div className="flex items-center justify-between pb-2 mb-3 border-b border-white/8">
+                <div className="flex items-center gap-1.5">
+                  <Users className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">Müşteri Hesapları</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Search className="w-2.5 h-2.5 text-(--color-text-muted)" />
+                  <span className="text-[8px] font-mono text-(--color-text-muted)">5 / 42 görüntüleniyor</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-[auto_1fr_auto_auto_auto_auto] gap-2 px-3 py-1.5 text-[8px] font-semibold uppercase tracking-widest text-(--color-text-muted) bg-white/2 border border-white/5 rounded-md">
+                <span className="w-3.5">Tip</span>
+                <span>Müşteri</span>
+                <span>Sözleşme</span>
+                <span>Plan</span>
+                <span>SLA</span>
+                <span>Bitiş</span>
+              </div>
+              <div className="flex flex-col gap-1.5 mt-1.5">
+                {[
+                  { icon: Crown, name: "Acme Corp", contract: "Premium", plan: "24/7 · Sınırsız", sla: 98, end: "12 Ara 2026", tone: "purple" },
+                  { icon: Building2, name: "Globex Ltd.", contract: "Standart", plan: "Mesai · 80sa/ay", sla: 94, end: "08 Eyl 2026", tone: "blue" },
+                  { icon: Briefcase, name: "Initech AŞ", contract: "Premium", plan: "24/7 · 200sa/ay", sla: 96, end: "21 Kas 2026", tone: "purple" },
+                  { icon: Building2, name: "Soylent Corp", contract: "Best-Effort", plan: "Saatlik fakture", sla: 87, end: "03 Eki 2026", tone: "emerald" },
+                  { icon: Building2, name: "Hooli Inc.", contract: "Standart", plan: "Mesai · 60sa/ay", sla: 91, end: "15 May 2026", tone: "amber" },
+                ].map((r, i) => {
+                  const Icon = r.icon;
+                  const tone: Record<string, string> = {
+                    purple: "text-(--color-accent-purple-light) bg-purple-500/12 border-purple-500/25",
+                    blue: "text-(--color-accent-blue-light) bg-blue-500/12 border-blue-500/25",
+                    emerald: "text-(--color-accent-emerald-light) bg-emerald-500/12 border-emerald-500/25",
+                    amber: "text-amber-300 bg-amber-500/12 border-amber-500/25",
+                  };
+                  const slaTone = r.sla >= 95 ? "text-(--color-accent-emerald-light)" : r.sla >= 90 ? "text-amber-300" : "text-(--color-accent-red-light)";
+                  return (
+                    <div key={i} className="grid grid-cols-[auto_1fr_auto_auto_auto_auto] gap-2 items-center px-3 py-2 rounded-lg bg-white/2 border border-white/5 hover:bg-white/4 transition-colors">
+                      <Icon className={`w-3 h-3 ${tone[r.tone].split(" ")[0]}`} />
+                      <span className="text-[10px] font-medium text-white truncate">{r.name}</span>
+                      <span className={`text-[8px] font-mono font-semibold px-1.5 py-0.5 rounded-full border ${tone[r.tone]}`}>{r.contract}</span>
+                      <span className="text-[9px] text-(--color-text-secondary) hidden sm:block">{r.plan}</span>
+                      <span className={`text-[10px] font-mono font-bold ${slaTone}`}>%{r.sla}</span>
+                      <span className="text-[8px] font-mono text-(--color-text-muted)">{r.end}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Footer chips */}
+            <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid) p-3 flex items-center justify-between gap-2 flex-wrap">
+              <div className="flex items-center gap-2">
+                <Activity className="w-3 h-3 text-(--color-text-muted)" />
+                <span className="text-[9px] font-mono uppercase tracking-widest text-(--color-text-muted)">SRM 360°:</span>
+              </div>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {[
+                  { label: "Hesap", icon: Building2, tone: "blue" },
+                  { label: "Kişiler", icon: Users, tone: "cyan" },
+                  { label: "Sözleşme", icon: FileSignature, tone: "emerald" },
+                  { label: "Plan", icon: Wallet, tone: "amber" },
+                  { label: "Varlık", icon: Briefcase, tone: "purple" },
+                  { label: "Kayıt", icon: Bell, tone: "rose" },
+                ].map((c, i) => {
+                  const Icon = c.icon;
+                  const t: Record<string, string> = {
+                    blue: "text-(--color-accent-blue-light) bg-blue-500/10 border-blue-500/20",
+                    cyan: "text-(--color-accent-cyan-light) bg-cyan-500/10 border-cyan-500/20",
+                    emerald: "text-(--color-accent-emerald-light) bg-emerald-500/10 border-emerald-500/20",
+                    amber: "text-amber-300 bg-amber-500/10 border-amber-500/20",
+                    purple: "text-(--color-accent-purple-light) bg-purple-500/10 border-purple-500/20",
+                    rose: "text-rose-300 bg-rose-500/10 border-rose-500/20",
+                  };
+                  return (
+                    <span key={i} className={`flex items-center gap-1 text-[9px] font-medium px-1.5 py-0.5 rounded-full border ${t[c.tone]}`}>
+                      <Icon className="w-2.5 h-2.5" />
+                      {c.label}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
           </motion.div>
         </div>
       </section>
@@ -120,14 +260,97 @@ export default function ServisIliskileriYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/servis-iliskileri-modulu/musteri-detay.webp"
-                    alt="Müşteri kayıt detay panosu"
-                    width={1250}
-                    height={707}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-135 rounded-2xl overflow-hidden border border-white/5 shadow-2xl bg-(--color-surface-elevated-solid) flex flex-col p-5 gap-3">
+                  {/* Customer header */}
+                  <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg bg-purple-500/15 border border-purple-500/30 flex items-center justify-center">
+                        <Crown className="w-4 h-4 text-(--color-accent-purple-light)" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Müşteri Hesabı · Premium</span>
+                        <span className="text-[12px] font-bold text-white">Acme Corporation</span>
+                      </div>
+                    </div>
+                    <span className="text-[8px] font-mono font-semibold text-(--color-accent-emerald-light) px-1.5 py-0.5 rounded-full bg-emerald-500/12 border border-emerald-500/25">
+                      AKTİF
+                    </span>
+                  </div>
+
+                  {/* 3 metric */}
+                  <div className="grid grid-cols-3 gap-1.5">
+                    {[
+                      { label: "Kişi", value: 12 },
+                      { label: "Açık Kayıt", value: 8 },
+                      { label: "Varlık", value: 24 },
+                    ].map((m, i) => (
+                      <div key={i} className="rounded-md bg-white/3 border border-white/8 p-2 flex flex-col gap-0.5">
+                        <span className="text-[7px] font-mono uppercase tracking-wider text-(--color-text-muted)">{m.label}</span>
+                        <span className="text-base font-bold tracking-tight text-white">{m.value}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tab navigation mock */}
+                  <div className="flex items-center gap-1 border-b border-white/8 pb-2">
+                    {[
+                      { label: "Kişiler", active: true, icon: Users },
+                      { label: "Sözleşmeler", icon: FileSignature },
+                      { label: "Varlıklar", icon: Briefcase },
+                      { label: "Kayıtlar", icon: Bell },
+                    ].map((t, i) => {
+                      const Icon = t.icon;
+                      return (
+                        <div
+                          key={i}
+                          className={`flex items-center gap-1 px-2 py-1 rounded-md text-[9px] font-medium ${
+                            t.active
+                              ? "bg-blue-500/15 border border-blue-500/30 text-(--color-accent-blue-light)"
+                              : "text-(--color-text-muted) border border-transparent"
+                          }`}
+                        >
+                          <Icon className="w-2.5 h-2.5" />
+                          <span>{t.label}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Contacts list */}
+                  <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+                    {[
+                      { name: "Mehmet Demir", role: "BT Müdürü", auth: "Yetkili Kullanıcı", tone: "purple" },
+                      { name: "Ayşe Kaya", role: "Satın Alma", auth: "Grup Yetkilisi", tone: "blue" },
+                      { name: "Can Yıldız", role: "Operasyon", auth: "Standart", tone: "emerald" },
+                      { name: "Selin Arda", role: "Finans", auth: "Standart", tone: "emerald" },
+                    ].map((c, i) => {
+                      const tone: Record<string, string> = {
+                        purple: "text-(--color-accent-purple-light) bg-purple-500/10 border-purple-500/20",
+                        blue: "text-(--color-accent-blue-light) bg-blue-500/10 border-blue-500/20",
+                        emerald: "text-(--color-accent-emerald-light) bg-emerald-500/10 border-emerald-500/20",
+                      };
+                      return (
+                        <div key={i} className="grid grid-cols-[auto_1fr_auto_auto] gap-2 items-center px-2.5 py-1.5 rounded-lg bg-white/2 border border-white/5">
+                          <div className="w-5 h-5 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
+                            <span className="text-[7px] font-bold text-(--color-accent-blue-light)">{c.name.split(" ").map(s => s[0]).join("")}</span>
+                          </div>
+                          <div className="flex flex-col min-w-0">
+                            <span className="text-[10px] font-medium text-white truncate">{c.name}</span>
+                            <span className="text-[8px] font-mono text-(--color-text-muted) truncate">{c.role}</span>
+                          </div>
+                          <span className={`text-[7px] font-mono font-semibold px-1.5 py-0.5 rounded-full border ${tone[c.tone]}`}>{c.auth}</span>
+                          <Mail className="w-2.5 h-2.5 text-(--color-text-muted)" />
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Yetkili teknisyen badge */}
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-amber-500/8 border border-amber-500/25 mt-auto">
+                    <ShieldCheck className="w-3 h-3 text-amber-300 shrink-0" />
+                    <span className="text-[9px] font-medium text-white flex-1">Yetkili Teknisyen: Ahmet Y. (Premium uzman)</span>
+                    <Crown className="w-2.5 h-2.5 text-amber-300" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -170,14 +393,100 @@ export default function ServisIliskileriYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-emerald-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-emerald-500/10 blur-[50px] group-hover:bg-emerald-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/servis-iliskileri-modulu/sozlesme.webp"
-                    alt="Sözleşme yönetimi panosu"
-                    width={1250}
-                    height={707}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-135 rounded-2xl overflow-hidden border border-white/5 shadow-2xl bg-(--color-surface-elevated-solid) flex flex-col p-5 gap-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                    <div className="flex items-center gap-1.5">
+                      <FileSignature className="w-3.5 h-3.5 text-(--color-accent-emerald-light)" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Yeni SLA / OLA Sözleşmesi</span>
+                    </div>
+                    <span className="text-[8px] font-mono text-(--color-text-muted)">SLM ile entegre</span>
+                  </div>
+
+                  {/* Form fields */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Müşteri Hesabı</span>
+                      <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-white/3 border border-white/8">
+                        <div className="flex items-center gap-1.5">
+                          <Crown className="w-3 h-3 text-(--color-accent-purple-light)" />
+                          <span className="text-[10px] text-white">Acme Corp</span>
+                        </div>
+                        <ChevronDown className="w-2.5 h-2.5 text-(--color-text-muted)" />
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Sözleşme Türü</span>
+                      <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/25">
+                        <span className="text-[10px] font-semibold text-(--color-accent-emerald-light)">SLA · Premium</span>
+                        <ChevronDown className="w-2.5 h-2.5 text-(--color-text-muted)" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-1">
+                    <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Sözleşme Adı</span>
+                    <div className="px-2.5 py-1.5 rounded-lg bg-white/3 border border-white/8">
+                      <span className="text-[10px] text-white">Acme Premium 7/24 Destek 2026</span>
+                    </div>
+                  </div>
+
+                  {/* Date range */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Başlangıç</span>
+                      <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/3 border border-white/8">
+                        <CalendarDays className="w-3 h-3 text-(--color-accent-blue-light)" />
+                        <span className="text-[10px] font-mono text-white">12 Ara 2025</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Bitiş</span>
+                      <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/3 border border-white/8">
+                        <CalendarDays className="w-3 h-3 text-(--color-accent-blue-light)" />
+                        <span className="text-[10px] font-mono text-white">12 Ara 2026</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Notification rules */}
+                  <div className="flex flex-col gap-1.5">
+                    <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Bilgilendirme Kuralları</span>
+                    {[
+                      { trigger: "Bitiş öncesi", days: "30 gün", target: "Müşteri + Yönetici", tone: "blue" },
+                      { trigger: "Bitiş öncesi", days: "7 gün", target: "Tüm yetkililer + e-posta", tone: "amber" },
+                      { trigger: "Bitiş sonrası", days: "1 gün", target: "Yenileme uyarısı", tone: "red" },
+                    ].map((n, i) => {
+                      const tone: Record<string, string> = {
+                        blue: "text-(--color-accent-blue-light)",
+                        amber: "text-amber-300",
+                        red: "text-(--color-accent-red-light)",
+                      };
+                      return (
+                        <div key={i} className="grid grid-cols-[auto_auto_1fr] gap-2 items-center px-2.5 py-1.5 rounded-md bg-white/2 border border-white/5">
+                          <Bell className={`w-2.5 h-2.5 ${tone[n.tone]}`} />
+                          <div className="flex flex-col">
+                            <span className="text-[9px] font-medium text-white">{n.trigger}</span>
+                            <span className={`text-[8px] font-mono font-bold ${tone[n.tone]}`}>{n.days}</span>
+                          </div>
+                          <span className="text-[9px] text-(--color-text-secondary) text-right truncate">{n.target}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Auto renewal toggle */}
+                  <div className="flex items-center justify-between px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/25 mt-auto">
+                    <div className="flex items-center gap-1.5">
+                      <Repeat className="w-3 h-3 text-(--color-accent-emerald-light)" />
+                      <span className="text-[9px] font-semibold text-white">Otomatik Yenileme</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="text-[8px] font-mono text-(--color-accent-emerald-light)">aktif</span>
+                      <div className="w-6 h-3 rounded-full bg-emerald-500/40 border border-emerald-500/60 relative">
+                        <div className="absolute right-0.5 top-0.5 w-2 h-2 rounded-full bg-(--color-accent-emerald-light)" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -631,6 +940,125 @@ export default function ServisIliskileriYonetimiPage() {
                 ))}
               </div>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 3.5 SERVICE PLANS */}
+      <section className="py-24 relative z-20 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-300 h-150 bg-purple-600/8 blur-[140px] rounded-full pointer-events-none" />
+        <div className="container mx-auto px-6 lg:px-12 w-full max-w-7xl relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+              <Wallet className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-(--color-accent-purple-light)">
+                {data.servicePlans.badge}
+              </span>
+            </div>
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+              {data.servicePlans.titleLead}
+              <br />
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-400 to-pink-400">
+                {data.servicePlans.titleAccent}
+              </span>
+            </h2>
+            <p className="text-(--color-text-secondary) text-lg font-light leading-relaxed">
+              {data.servicePlans.description}
+            </p>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6"
+          >
+            {data.servicePlans.highlights.map((h) => {
+              const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+                Wallet, Calculator, Repeat, Clock, Tags, Sparkles,
+              };
+              const Icon = iconMap[h.icon] || Wallet;
+              const t: Record<string, string> = {
+                blue: "from-blue-500/15 to-blue-500/5 border-blue-500/25 text-(--color-accent-blue-light) shadow-[0_0_25px_rgba(59,130,246,0.12)]",
+                emerald: "from-emerald-500/15 to-emerald-500/5 border-emerald-500/25 text-(--color-accent-emerald-light) shadow-[0_0_25px_rgba(16,185,129,0.12)]",
+                purple: "from-purple-500/15 to-purple-500/5 border-purple-500/25 text-(--color-accent-purple-light) shadow-[0_0_25px_rgba(168,85,247,0.12)]",
+                amber: "from-amber-500/15 to-amber-500/5 border-amber-500/25 text-amber-300 shadow-[0_0_25px_rgba(245,158,11,0.12)]",
+                cyan: "from-cyan-500/15 to-cyan-500/5 border-cyan-500/25 text-(--color-accent-cyan-light) shadow-[0_0_25px_rgba(6,182,212,0.12)]",
+                rose: "from-rose-500/15 to-rose-500/5 border-rose-500/25 text-rose-300 shadow-[0_0_25px_rgba(244,63,94,0.12)]",
+              };
+              return (
+                <motion.div
+                  key={h.id}
+                  variants={fadeUp}
+                  className={`rounded-3xl bg-linear-to-br ${t[h.tone]} border p-6 lg:p-7 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300`}
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white tracking-tight">{h.title}</h3>
+                  <p className="text-sm text-(--color-text-secondary) font-light leading-relaxed">{h.description}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 3.6 FAQ */}
+      <section className="py-24 relative z-20">
+        <div className="container mx-auto px-6 lg:px-12 w-full max-w-4xl">
+          <div className="text-center mb-16 lg:mb-20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6">
+              <Users className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-(--color-accent-blue-light)">
+                SRM Bilgi Bankası
+              </span>
+            </div>
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-white mb-6">
+              {data.faq.sectionTitle}
+            </h2>
+            <p className="text-(--color-text-secondary) text-lg font-light leading-relaxed">
+              {data.faq.sectionSubtitle}
+            </p>
+          </div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "100px" }}
+            className="flex flex-col gap-3"
+          >
+            {data.faq.items.map((item, i) => {
+              const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+                LayoutDashboard, UserSquare2, Users, FileSignature, ShieldCheck,
+              };
+              const Icon = iconMap[item.icon] || LayoutDashboard;
+              return (
+                <motion.details
+                  key={item.id}
+                  variants={fadeUp}
+                  className="group rounded-2xl border border-white/10 bg-white/2 backdrop-blur-xl hover:bg-white/4 transition-colors overflow-hidden"
+                  open={i === 0}
+                >
+                  <summary className="flex items-center gap-4 px-6 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0 text-(--color-accent-blue-light)">
+                      <Icon className="w-4 h-4" />
+                    </div>
+                    <h3 className="flex-1 text-base lg:text-lg font-semibold text-white">
+                      {item.question}
+                    </h3>
+                    <ChevronDown className="w-5 h-5 text-(--color-text-muted) shrink-0 transition-transform duration-300 group-open:rotate-180" />
+                  </summary>
+                  <div className="px-6 pb-6 pl-20">
+                    <p className="text-sm lg:text-base text-(--color-text-secondary) font-light leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                </motion.details>
+              );
+            })}
           </motion.div>
         </div>
       </section>

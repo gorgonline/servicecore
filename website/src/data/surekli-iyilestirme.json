@@ -105,6 +105,103 @@
       }
     ]
   },
+  "fiveQuestions": {
+    "sectionTitle": "Beş Soruluk Değerlendirme Çerçevesi",
+    "sectionSubtitle": "Standart dışı her gereksinim CI modülünde aşağıdaki başlıklara göre analiz ve değerlendirmeden geçirilir. Acil ve öncelikli denilen her ihtiyaç değer odaklılık ilkesiyle objektif olarak süzülür.",
+    "items": [
+      {
+        "id": "q1-hedef",
+        "icon": "Target",
+        "number": "01",
+        "title": "Kurum hedeflerine bu önerinin katkısı nedir?",
+        "answer": "Genellikle son kullanıcı veya bir departman tarafından \"acil ve öncelikli\" ihtiyaç olarak belirtilen gereksinimler kurumun amaç ve hedefleriyle ne kadar ilgili ve bunlara ne kadar katkısı var bunun sorulması gereklidir. ITIL4 ve servis yönetimi dünyasının bir numaralı kuralı \"değer odaklılık\" bağlamında tüm iyileştirmeler kurum hedeflerine bakarak değerlendirilmelidir.",
+        "tone": "blue"
+      },
+      {
+        "id": "q2-fayda",
+        "icon": "Sparkles",
+        "number": "02",
+        "title": "Önerilen iyileştirmenin faydaları somut olarak nelerdir?",
+        "answer": "Bu iyileştirme bir kullanıcıyı mı, iş birimini mi, tüm kurumu mu kapsamaktadır. Elde edilecek kazanımın mali açıdan, verimlilik açısından, kalite açısından getirileri nelerdir. Bu aşamada ikna edici, somut, erişilebilir bir hedef belirtiliyor olmalıdır.",
+        "tone": "emerald"
+      },
+      {
+        "id": "q3-efor",
+        "icon": "Clock",
+        "number": "03",
+        "title": "Bu iyileştirmenin gerçekleştirilmesi için gereken efor nedir?",
+        "answer": "Kullanıcı veya iç müşterilerin önerdiği iyileştirmenin arkasındaki gerekli eforu bilmesi beklenemez. Bu aşamada gerçekçi iş gücü hesaplanmalıdır.",
+        "tone": "amber"
+      },
+      {
+        "id": "q4-maliyet",
+        "icon": "Wallet",
+        "number": "04",
+        "title": "Maliyetler nelerdir?",
+        "answer": "İyileştirmenin faydalarını elde edebilmek için gerekli maliyet net olarak bilinmelidir. Maliyet bir iyileştirmenin 1 ve 2. sorularda sorulan kriterleriyle uyumlu ve yatırıma değecek bir seviyede olması beklenmektedir.",
+        "tone": "cyan"
+      },
+      {
+        "id": "q5-risk",
+        "icon": "AlertTriangle",
+        "number": "05",
+        "title": "Bu iyileştirmeyi yapmanın ve yapmamanın riskleri nelerdir?",
+        "answer": "Söz konusu iyileştirme fikrini uygulamama durumunda neler kaybedilecektir? Uygulanması durumunda ise yaşanacak değişiklikle hangi tehditler ve sistemsel etkiler olacaktır? Bu aşamada risk yönetimi sürecinin de katkısıyla tehdit ve olasılıklar hesaplanır.",
+        "tone": "red"
+      }
+    ]
+  },
+  "ciModel": {
+    "badge": "ITIL4 · Continual Improvement Model",
+    "titleLead": "ITIL4 CI Model'e",
+    "titleAccent": "birebir uyumlu yedi adım.",
+    "description": "ServiceCore CI modülü, ITIL4 Continual Improvement Practice'inde tanımlanan modele birebir uyumlu olarak geliştirilmiştir. \"Did we get there?\" sorusuyla kapanan döngü, her iyileştirmeyi ölçülebilir ve sürdürülebilir bir uygulama disiplini olarak yönetir.",
+    "steps": [
+      { "id": "vision", "icon": "Compass", "title": "Vizyon", "desc": "İş hedefleri ve stratejiyle uyum sağla" },
+      { "id": "where-now", "icon": "Eye", "title": "Şu an neredeyiz?", "desc": "Mevcut durumun objektif değerlendirmesi" },
+      { "id": "where-want", "icon": "Target", "title": "Nereye varmak istiyoruz?", "desc": "Ölçülebilir hedef tanımı" },
+      { "id": "how-get", "icon": "Map", "title": "Nasıl varacağız?", "desc": "Plan, kapsam ve aksiyon adımları" },
+      { "id": "take-action", "icon": "Zap", "title": "Aksiyon al", "desc": "Change veya Project ile devreye al" },
+      { "id": "did-we-get", "icon": "CheckCircle2", "title": "Vardık mı?", "desc": "Sonucu ölçü ve hedefe ulaşımı kontrol et" },
+      { "id": "keep-going", "icon": "RefreshCw", "title": "Momentumu sürdür", "desc": "Bir sonraki iyileştirmeye geç, döngü açık" }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "Sürekli iyileştirme metodolojisi, istek ile öneri farkı, üç aşamalı değerlendirme ve ITIL4 CI Model hakkında en sık sorulanlar.",
+    "items": [
+      {
+        "id": "ci-nedir",
+        "icon": "Sparkles",
+        "question": "Sürekli İyileştirme nedir, neden ITIL4'ün ana metodolojisi?",
+        "answer": "Sürekli iyileştirme servis yönetiminin esas uygulama metodudur. ITIL4'e göre servis yönetiminin bitmeyen bir sürekli iyileştirme metodu ile uygulanması gerekir; sürekli iyileştirme ITIL4'ün ana uygulama metodolojisidir. Her servis yönetimi sisteminin omurgasında sürekli iyileştirme pratikleri yer alır. Bir servis yönetimi süreç ve servis otomasyonu çalışmasının doğal bileşeni sürekli iyileştirme uygulamasıdır."
+      },
+      {
+        "id": "istek-vs-oneri",
+        "icon": "Scale",
+        "question": "İstek ile iyileştirme önerisi arasındaki fark nedir?",
+        "answer": "ITIL4 ve servis yönetimi pratiklerinde son kullanıcılarla etkileşimin üç temel türü vardır: olay, istek ve iyileştirme önerisi. Genellikle olay ve istek karıştırılır; ama daha sorunlu olan yaklaşım, iyileştirme önerilerini istek ile aynı kategoride veya aynı yazılım modülünde ele almaktır. Servis kataloğunda standartlaştırılmış isteklere yer verilir; önerilere, ek ihtiyaçlara, geliştirme-tasarım-üretim gerektiren konulara yer verilmemelidir. Bunlar birer CI kaydı olarak analiz edilmeli, değerlendirilmeli ve görüş toplanarak karar verilmelidir."
+      },
+      {
+        "id": "uc-asama",
+        "icon": "ListChecks",
+        "question": "Üç aşamalı değerlendirme süreci nasıl çalışır?",
+        "answer": "ServiceCore CI modülünde her insiyatif tam üç aşamalı işlenir: ilk aşamada \"Analiz\", ikinci aşamada \"Değerlendirme\", üçüncü aşamada \"İstişare-Danışma\". CI pratiğinin sahibi CI Yöneticisi liderliğinde bu üç aşamalı karar verme sürecine katkı sağlayan diğer süreçler şunlardır: iş analizi, servis seviye yönetimi, ilişki yönetimi, servis portföy yönetimi, risk yönetimi, servis finans yönetimi, servis katalog yönetimi ve istek yönetimi süreçleri."
+      },
+      {
+        "id": "interaction-ci-entegrasyon",
+        "icon": "MessageSquare",
+        "question": "Interaction ve CI ara katmanı entegrasyonu ne sağlar?",
+        "answer": "ServiceCore'u diğer tüm ürünlerden farklı kılan özelliklerden biri, standart dışı isteklerin e-posta ve portal aracılığı ile alınması sırasında Interaction ve CI ara katmanlarını entegre ederek sunabilmesidir. Genellikle BT yazılım ekiplerinin proje kültüründen kalma doğrudan sipariş alır gibi her tür gereksinimi backloglara değerlendirilmeden hızla girivermesi sorunlu bir yaklaşımdır. Standart dışı geliştirme talebi sıradan bir istek gibi alınmaz; iyileştirme insiyatifi olarak CI modülüne düşer."
+      },
+      {
+        "id": "engage-implementation",
+        "icon": "GitBranch",
+        "question": "Engage safhası ve implementation nasıl bağlanır?",
+        "answer": "ITIL4 Service Value System'de \"Engage\" katmanında hem standart istekler hem de geliştirme gerektiren durumlar müşteri ile yakın temasta bulunarak CI süreci tarafından liderliği yapılan bir çalışmadır. Engage safhasında karşılaşılan standart dışı her gereksinim bir iyileştirme fırsatıdır. Tüm aşamalardan geçen bir iyileştirmenin devreye alınıp alınmayacağı CI Details bölümünde kayıt altına alınır. Devreye alınacaksa Implementation safhasına geçilir; bir Değişiklik kaydı veya bir Proje kaydı açılarak iyileştirme devreye alınır ve takip edilir. Son aşamada \"Did we get there?\" sorusuyla gözden geçirme yapılır."
+      }
+    ]
+  },
   "cta": {
     "title": "Sürekli iyileştirme kültürünü ServiceCore ile kurun.",
     "description": "ITIL4'ün ana metodolojisi sürekli iyileştirmeyi; CI Register, üç aşamalı değerlendirme ve Interaction entegrasyonuyla yöneten ServiceCore CI modülünü canlı demoda inceleyin.",

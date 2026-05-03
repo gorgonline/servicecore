@@ -102,6 +102,140 @@
       }
     ]
   },
+  "editor": {
+    "badge": "Form Düzenleme Stüdyosu",
+    "titleLead": "3 panelli düzenleme,",
+    "titleAccent": "esnek ve güçlü özelleştirme.",
+    "description": "Oluşturduğunuz formları dilediğiniz gibi düzenleyebilirsiniz. Düzenleme ekranı üç ana bölümden oluşur: sol panelde sürükle-bırak bileşen kütüphanesi, ortada form alanı, sağda seçilen alanın detaylı ayarları.",
+    "panels": [
+      {
+        "id": "components",
+        "icon": "LayoutGrid",
+        "title": "Bileşenler",
+        "subtitle": "Sol panel · sürükle-bırak",
+        "description": "Sürükle-bırak yöntemiyle ekleyebileceğiniz alanlar — metin kutusu, seçim listesi, tarih alanı, sayı, dosya, onay kutusu, açılır liste ve özel bileşenler.",
+        "tone": "blue"
+      },
+      {
+        "id": "canvas",
+        "icon": "MousePointer2",
+        "title": "Form Alanı",
+        "subtitle": "Orta panel · görsel düzen",
+        "description": "Formun genel düzenini görsel olarak yönetirsiniz. Alanları sürükleyerek konumlandırır, gruplar oluşturur ve kullanıcı deneyimi açısından optimize edersiniz.",
+        "tone": "purple"
+      },
+      {
+        "id": "properties",
+        "icon": "Sliders",
+        "title": "Bileşen Ayarları",
+        "subtitle": "Sağ panel · detay yapılandırma",
+        "description": "Seçilen alanın tüm özelliklerini — boyut, renk, doğrulama, görünürlük, varsayılan değer, koşullu mantık — tek panelden yönetirsiniz.",
+        "tone": "emerald"
+      }
+    ],
+    "details": [
+      {
+        "id": "alan-ozellikleri",
+        "icon": "FileText",
+        "title": "Alan Özellikleri",
+        "items": ["İsim", "Başlık", "Açıklama", "Varsayılan değer", "Zorunluluk", "Doğrulama kuralları"]
+      },
+      {
+        "id": "reactions",
+        "icon": "GitBranch",
+        "title": "Reactions (Bağlantılar)",
+        "items": ["Alanlar arasında koşullu ilişki", "Dinamik form mantığı", "Tetikleyici tabanlı görünürlük", "Karşılıklı bağımlılık zinciri"]
+      },
+      {
+        "id": "dekorasyon",
+        "icon": "Palette",
+        "title": "Dekorasyon",
+        "items": ["Tooltip & ikon", "Etiket genişliği", "Arka plan rengi", "Gölge", "Yazı tipi", "Görsel özelleştirmeler"]
+      },
+      {
+        "id": "stil",
+        "icon": "Layers",
+        "title": "Stil Ayarları",
+        "items": ["Genişlik & yükseklik", "Margin & padding", "Border", "Opacity", "Detaylı tasarım seçenekleri", "Responsive davranış"]
+      }
+    ]
+  },
+  "useCases": {
+    "badge": "Kullanım Senaryoları",
+    "titleLead": "Her departman için",
+    "titleAccent": "kendi süreçlerine özel form.",
+    "description": "Low-Code modülü her departmanın kendi süreçlerini hızla dijitalleştirmesini sağlar. Teknik bağımlılık olmadan, departman içinde form üretilir; iş ihtiyaçları yazılım kuyruğuna düşmez.",
+    "items": [
+      {
+        "id": "ik",
+        "icon": "Users",
+        "title": "İnsan Kaynakları",
+        "description": "İşe alım, izin talepleri, performans değerlendirme formları. Adaylardan bilgi toplama ve onay zinciri tek formda yönetilir.",
+        "examples": ["İşe Alım Başvuru", "Yıllık İzin Talebi", "Performans Değerlendirme", "İstifa Süreci"],
+        "tone": "blue"
+      },
+      {
+        "id": "finans",
+        "icon": "Wallet",
+        "title": "Finans",
+        "description": "Harcama onayları, bütçe talepleri, fatura süreçleri. Kademeli onay zinciri ve maliyet doğrulamasıyla finansal disiplin korunur.",
+        "examples": ["Harcama Onayı", "Bütçe Talebi", "Fatura İşleme", "Avans Talebi"],
+        "tone": "emerald"
+      },
+      {
+        "id": "bt",
+        "icon": "Server",
+        "title": "Bilgi Teknolojileri",
+        "description": "Olay, değişiklik ve talep yönetimi formları. ITSM süreçlerinin tüm formları kuruma özgü alanlarla zenginleştirilir.",
+        "examples": ["Olay Bildirim", "Değişiklik Talebi", "Erişim Talebi", "Donanım Talebi"],
+        "tone": "purple"
+      },
+      {
+        "id": "operasyon",
+        "icon": "ClipboardList",
+        "title": "Operasyon",
+        "description": "Envanter takibi, bakım planlaması, saha raporları. Mobil uyumlu formlar sayesinde sahada da hızlı veri girişi sağlanır.",
+        "examples": ["Envanter Sayımı", "Bakım Planı", "Saha Denetim Raporu", "Stok Hareket"],
+        "tone": "amber"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "Form tasarımı, düzenleme stüdyosu, koşullu mantık ve kullanım senaryoları hakkında en sık merak edilenler.",
+    "items": [
+      {
+        "id": "ne-saglar",
+        "icon": "Code2",
+        "question": "Servicecore Low-Code Geliştirme Modülü ne sağlar?",
+        "answer": "Servicecore Low-Code Geliştirme Modülü, kurumların iş süreçlerini hızla dijitalleştirmesi için tasarlanmış modern bir geliştirme ortamıdır. Sürükle-bırak arayüzü, özelleştirilebilir form bileşenleri ve dinamik iş akışları sayesinde teknik uzmanlığa gerek kalmadan güçlü uygulamalar geliştirebilirsiniz. Hızlı dijitalleşme, esneklik, kullanıcı dostu yapı, mevcut sistemlerle entegrasyon ve maliyet avantajı temel faydalardır."
+      },
+      {
+        "id": "form-elemanlari",
+        "icon": "LayoutGrid",
+        "question": "Hangi form elemanları ve özellikleri kullanılabilir?",
+        "answer": "Servicecore Low-Code'un kalbinde özelleştirilebilir formlar bulunur. Form Elemanları ve Alanlar olarak metin kutuları, onay kutuları, açılır listeler, tarih seçiciler gibi bileşenlerle zenginleştirilebilir. Koşullu Görünürlük ile belirli koşullara göre alanlar görünür/görünmez yapılır; dinamik deneyimler oluşturulur. Veri Doğrulama ile alanlara girilen veriler için kurallar tanımlanır, hatalar en baştan önlenir. Kişisel Temalar ile renk, stil ve düzenlemelerle kurumunuza özel görünümler yaratırsınız."
+      },
+      {
+        "id": "form-ekleme",
+        "icon": "Plus",
+        "question": "Yeni bir form nasıl oluşturulur?",
+        "answer": "Yeni bir form oluşturmak Servicecore Low-Code'da oldukça kolaydır: önce ilgili modülü seçersiniz; sol üstteki \"Yeni Form\" butonuna tıklarsınız; açılan pencerede form adı, modül ve kullanıcı bilgilerini girersiniz; Kaydet butonuna basarak formunuzu oluşturursunuz. Bu basit adımlar sayesinde dakikalar içinde yeni bir iş süreci formu hayata geçirebilirsiniz."
+      },
+      {
+        "id": "form-duzenleme",
+        "icon": "Sliders",
+        "question": "Form düzenleme ekranı nasıl çalışır?",
+        "answer": "Düzenleme ekranı üç ana bölümden oluşur: (1) Bileşenler — sol tarafta sürükle-bırak yöntemiyle ekleyebileceğiniz alanlar; (2) Form Alanı — ortada formun genel düzenini görür ve yapılandırırsınız; (3) Bileşen Ayarları — sağ tarafta seçilen alanın tüm özelliklerini (boyut, renk, doğrulama, görünürlük, varsayılan değer, koşullu mantık) yönetirsiniz. Detaylı özellikler arasında Alan Özellikleri, Reactions (alanlar arası koşullu ilişkiler), Dekorasyon (tooltip, ikon, etiket genişliği) ve Stil Ayarları (genişlik, padding, border, opacity) bulunur."
+      },
+      {
+        "id": "kullanim-senaryolari",
+        "icon": "Sparkles",
+        "question": "Hangi departmanlar Low-Code'dan en çok faydalanır?",
+        "answer": "Her departman kendi süreçlerine uygun formları hızla oluşturur. İK Süreçleri için işe alım, izin talepleri, performans değerlendirme formları; Finans için harcama onayları, bütçe talepleri, fatura süreçleri; BT için olay, değişiklik ve talep yönetimi formları; Operasyon için envanter takibi, bakım planlaması ve saha raporları yapılır. Teknik uzmanlığa ihtiyaç duymadan iş süreçleri dijitalleştirilir."
+      }
+    ]
+  },
   "cta": {
     "title": "Dijital dönüşümünüzü Low Code ile bugün başlatın.",
     "description": "Sürükle-bırak ile dinamik formlar, gerçek zamanlı özelleştirme ve kolay entegrasyon avantajlarını canlı demoda inceleyin; iş süreçlerinizi bir adım ileri taşıyın.",

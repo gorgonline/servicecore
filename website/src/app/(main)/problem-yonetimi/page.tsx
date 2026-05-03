@@ -18,6 +18,17 @@ import {
   Layers,
   Users,
   Sparkles,
+  Activity,
+  TrendingUp,
+  AlertCircle,
+  ChevronRight,
+  ArrowDown,
+  Zap,
+  RefreshCw,
+  Eye,
+  Star,
+  Target,
+  CornerDownRight,
 } from "lucide-react";
 import data from "@/data/problem-yonetimi.json";
 
@@ -118,14 +129,120 @@ export default function ProblemYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/problem-modulu/donusturolay.png"
-                    alt="Olaydan probleme dönüşüm — reactive ve proaktif yaşam döngüsü"
-                    width={1197}
-                    height={440}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden border border-white/5 shadow-2xl bg-(--color-surface-elevated-solid) flex flex-col p-5 gap-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                    <div className="flex items-center gap-1.5">
+                      <RefreshCw className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">ITIL4 Yaşam Döngüsü</span>
+                    </div>
+                    <span className="text-[8px] font-mono text-(--color-text-muted)">tetikleyiciler</span>
+                  </div>
+
+                  {/* Two columns: Reactive vs Proactive */}
+                  <div className="grid grid-cols-2 gap-2.5 flex-1">
+                    {/* REACTIVE */}
+                    <div className="flex flex-col gap-2 rounded-xl bg-red-500/8 border border-red-500/25 p-3 shadow-[0_0_20px_rgba(239,68,68,0.1)]">
+                      <div className="flex items-center justify-between pb-1 border-b border-red-500/15">
+                        <div className="flex items-center gap-1.5">
+                          <AlertCircle className="w-3 h-3 text-(--color-accent-red-light)" />
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-(--color-accent-red-light)">Reactive</span>
+                        </div>
+                        <span className="text-[7px] font-mono text-(--color-text-muted)">olay sonrası</span>
+                      </div>
+                      {/* Stage 1: Olay grup */}
+                      <div className="flex flex-col gap-1">
+                        <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">5 olay tekrar</span>
+                        <div className="flex flex-col gap-0.5">
+                          {["#4218", "#4217", "#4214"].map((id, i) => (
+                            <div key={i} className="flex items-center gap-1 px-1.5 py-1 rounded-md bg-white/3 border border-white/8">
+                              <AlertCircle className="w-2.5 h-2.5 text-(--color-accent-red-light)" />
+                              <span className="text-[8px] font-mono text-(--color-text-muted)">{id}</span>
+                              <span className="text-[8px] text-white truncate flex-1">VPN sertifika</span>
+                            </div>
+                          ))}
+                          <span className="text-[7px] font-mono text-(--color-text-muted) text-center">+ 2 daha</span>
+                        </div>
+                      </div>
+                      {/* Arrow */}
+                      <div className="flex items-center justify-center gap-1 py-0.5">
+                        <ArrowDown className="w-3 h-3 text-(--color-accent-red-light)" />
+                        <span className="text-[7px] font-mono uppercase text-(--color-accent-red-light)">birleştir</span>
+                      </div>
+                      {/* Output */}
+                      <div className="rounded-lg bg-blue-500/12 border border-blue-500/30 p-2 flex flex-col gap-0.5">
+                        <span className="text-[7px] font-mono uppercase tracking-wider text-(--color-text-muted)">Problem oluştu</span>
+                        <div className="flex items-center gap-1.5">
+                          <HelpCircle className="w-3 h-3 text-(--color-accent-blue-light)" />
+                          <span className="text-[10px] font-bold text-white">P-018</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* PROACTIVE */}
+                    <div className="flex flex-col gap-2 rounded-xl bg-emerald-500/8 border border-emerald-500/25 p-3 shadow-[0_0_20px_rgba(16,185,129,0.1)]">
+                      <div className="flex items-center justify-between pb-1 border-b border-emerald-500/15">
+                        <div className="flex items-center gap-1.5">
+                          <TrendingUp className="w-3 h-3 text-(--color-accent-emerald-light)" />
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-(--color-accent-emerald-light)">Proaktif</span>
+                        </div>
+                        <span className="text-[7px] font-mono text-(--color-text-muted)">olay öncesi</span>
+                      </div>
+                      {/* Stage 1: Trend signal */}
+                      <div className="flex flex-col gap-1">
+                        <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">AI Trend</span>
+                        <div className="flex items-end gap-0.5 h-10">
+                          {[1, 2, 1, 3, 2, 4, 5].map((v, i) => (
+                            <div
+                              key={i}
+                              className={`flex-1 rounded-t bg-linear-to-t ${i >= 5 ? "from-emerald-500 to-emerald-400" : "from-emerald-500/40 to-emerald-400/60"} border border-emerald-500/30`}
+                              style={{ height: `${(v / 5) * 100}%` }}
+                            />
+                          ))}
+                        </div>
+                        <div className="flex items-center gap-1 px-1.5 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20">
+                          <Activity className="w-2.5 h-2.5 text-(--color-accent-emerald-light) animate-pulse" />
+                          <span className="text-[8px] font-medium text-white">CPU sürekli %85+</span>
+                        </div>
+                      </div>
+                      {/* Arrow */}
+                      <div className="flex items-center justify-center gap-1 py-0.5">
+                        <ArrowDown className="w-3 h-3 text-(--color-accent-emerald-light)" />
+                        <span className="text-[7px] font-mono uppercase text-(--color-accent-emerald-light)">öngör</span>
+                      </div>
+                      {/* Output */}
+                      <div className="rounded-lg bg-blue-500/12 border border-blue-500/30 p-2 flex flex-col gap-0.5">
+                        <span className="text-[7px] font-mono uppercase tracking-wider text-(--color-text-muted)">Önerilen Problem</span>
+                        <div className="flex items-center gap-1.5">
+                          <HelpCircle className="w-3 h-3 text-(--color-accent-blue-light)" />
+                          <span className="text-[10px] font-bold text-white">P-019</span>
+                          <Sparkles className="w-2.5 h-2.5 text-(--color-accent-purple-light) ml-auto" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Footer lifecycle bar */}
+                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-white/8">
+                    {[
+                      { label: "Tespit", icon: Eye },
+                      { label: "Analiz", icon: Search },
+                      { label: "Çözüm", icon: Zap },
+                      { label: "Kapanış", icon: CheckCircle2 },
+                    ].map((s, i, arr) => {
+                      const Icon = s.icon;
+                      return (
+                        <div key={i} className="flex items-center gap-1.5 flex-1">
+                          <div className="w-5 h-5 rounded-md bg-blue-500/15 border border-blue-500/30 flex items-center justify-center shrink-0">
+                            <Icon className="w-2.5 h-2.5 text-(--color-accent-blue-light)" />
+                          </div>
+                          <span className="text-[8px] font-semibold text-white">{s.label}</span>
+                          {i < arr.length - 1 && (
+                            <ChevronRight className="w-2.5 h-2.5 text-(--color-text-muted) ml-auto" />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -168,14 +285,85 @@ export default function ProblemYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-emerald-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-emerald-500/10 blur-[50px] group-hover:bg-emerald-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/problem-modulu/Analiz.png"
-                    alt="Kök neden analizi paneli — belirti, iş etkisi ve Known Error kayıtları"
-                    width={1246}
-                    height={747}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden border border-white/5 shadow-2xl bg-(--color-surface-elevated-solid) flex flex-col p-5 gap-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                    <div className="flex items-center gap-1.5">
+                      <Search className="w-3.5 h-3.5 text-(--color-accent-emerald-light)" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Kök Neden Analizi</span>
+                    </div>
+                    <span className="text-[8px] font-mono text-(--color-accent-emerald-light) px-1.5 py-0.5 rounded-full bg-emerald-500/12 border border-emerald-500/25">
+                      P-018
+                    </span>
+                  </div>
+
+                  {/* Symptom */}
+                  <div className="rounded-xl bg-red-500/10 border border-red-500/25 p-3 flex items-center gap-2 shadow-[0_0_15px_rgba(239,68,68,0.1)]">
+                    <AlertTriangle className="w-4 h-4 text-(--color-accent-red-light) shrink-0" />
+                    <div className="flex flex-col flex-1 min-w-0">
+                      <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Belirti</span>
+                      <span className="text-[11px] font-semibold text-white">VPN bağlantı kopması — 5 olay tekrar</span>
+                    </div>
+                  </div>
+
+                  {/* 5 Whys cascade */}
+                  <div className="flex flex-col gap-1.5 flex-1">
+                    <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted) mb-0.5">5 Neden Tekniği</span>
+                    {[
+                      { q: "Neden bağlantı kopuyor?", a: "Sertifika doğrulaması başarısız", tone: "amber" },
+                      { q: "Neden doğrulama başarısız?", a: "Sertifika süresi dolmuş", tone: "amber" },
+                      { q: "Neden süresi dolmuş?", a: "Otomatik yenileme job'u çalışmamış", tone: "amber" },
+                      { q: "Neden job çalışmadı?", a: "Cron servis durmuş, alarm kapalı", tone: "amber" },
+                      { q: "Kök neden", a: "Monitoring kuralı eksik · cron izlenmiyor", tone: "emerald", root: true },
+                    ].map((w, i) => {
+                      const tone: Record<string, string> = {
+                        amber: "border-amber-500/20 bg-amber-500/5",
+                        emerald: "border-emerald-500/35 bg-emerald-500/12 shadow-[0_0_15px_rgba(16,185,129,0.2)]",
+                      };
+                      return (
+                        <div
+                          key={i}
+                          className={`grid grid-cols-[auto_1fr_auto] gap-2 items-center px-2.5 py-1.5 rounded-lg border ${tone[w.tone]}`}
+                          style={{ marginLeft: `${i * 8}px` }}
+                        >
+                          <CornerDownRight className={`w-3 h-3 ${w.root ? "text-(--color-accent-emerald-light)" : "text-amber-300"}`} />
+                          <div className="flex flex-col min-w-0">
+                            <span className="text-[8px] font-mono uppercase text-(--color-text-muted)">
+                              {w.q}
+                            </span>
+                            <span className={`text-[10px] font-semibold ${w.root ? "text-white" : "text-(--color-text-secondary)"} truncate`}>
+                              {w.a}
+                            </span>
+                          </div>
+                          {w.root && (
+                            <Target className="w-3.5 h-3.5 text-(--color-accent-emerald-light) shrink-0" />
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Known Error + Etki */}
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="rounded-lg bg-purple-500/10 border border-purple-500/25 p-2 flex flex-col gap-0.5">
+                      <div className="flex items-center gap-1.5">
+                        <BookOpen className="w-3 h-3 text-(--color-accent-purple-light)" />
+                        <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Known Error</span>
+                      </div>
+                      <span className="text-[10px] font-bold text-white">KE-2034</span>
+                      <span className="text-[8px] text-(--color-text-secondary) truncate">Workaround: manuel cron tetikle</span>
+                    </div>
+                    <div className="rounded-lg bg-blue-500/10 border border-blue-500/25 p-2 flex flex-col gap-0.5">
+                      <div className="flex items-center gap-1.5">
+                        <Users className="w-3 h-3 text-(--color-accent-blue-light)" />
+                        <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">İş Etkisi</span>
+                      </div>
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-base font-bold text-white">42</span>
+                        <span className="text-[8px] text-(--color-text-muted)">kullanıcı</span>
+                      </div>
+                      <span className="text-[8px] text-(--color-text-secondary)">Kritik · saatlik</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -218,14 +406,97 @@ export default function ProblemYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-purple-500/5 to-indigo-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-purple-500/10 blur-[50px] group-hover:bg-purple-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/problem-modulu/donusturdegisiklik.png"
-                    alt="Problemden değişikliğe dönüşüm ve zincirleme olay kapatma"
-                    width={1066}
-                    height={718}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden border border-white/5 shadow-2xl bg-(--color-surface-elevated-solid) flex flex-col p-5 gap-3">
+                  <div className="flex items-center justify-between pb-2 border-b border-white/8">
+                    <div className="flex items-center gap-1.5">
+                      <GitBranch className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Kalıcı Çözüm Akışı</span>
+                    </div>
+                    <span className="text-[8px] font-mono text-(--color-text-muted)">otomatik · zincirleme</span>
+                  </div>
+
+                  {/* Stage 1: Problem */}
+                  <div className="rounded-xl bg-blue-500/10 border border-blue-500/30 p-2.5 flex items-center gap-2 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
+                    <div className="w-8 h-8 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center shrink-0">
+                      <HelpCircle className="w-4 h-4 text-(--color-accent-blue-light)" />
+                    </div>
+                    <div className="flex flex-col flex-1 min-w-0">
+                      <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Problem · kök neden tanımlandı</span>
+                      <span className="text-[11px] font-semibold text-white truncate">P-018 · VPN sertifika otomatik yenileme eksik</span>
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="flex items-center justify-center gap-2">
+                    <ArrowDown className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                    <span className="text-[8px] font-mono uppercase tracking-widest text-(--color-accent-purple-light)">değişikliğe dönüştür</span>
+                    <ArrowDown className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                  </div>
+
+                  {/* Stage 2: Change Request */}
+                  <div className="rounded-xl bg-purple-500/12 border border-purple-500/30 p-3 flex flex-col gap-2 shadow-[0_0_20px_rgba(168,85,247,0.15)]">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-1.5">
+                        <RefreshCw className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-(--color-accent-purple-light)">Change Request</span>
+                        <span className="text-[10px] font-mono font-bold text-white">CR-2451</span>
+                      </div>
+                      <span className="text-[8px] font-mono font-semibold text-(--color-accent-emerald-light) px-1.5 py-0.5 rounded-full bg-emerald-500/12 border border-emerald-500/25">
+                        ONAYLANDI
+                      </span>
+                    </div>
+                    <span className="text-[10px] text-(--color-text-secondary)">Cron monitoring kuralı + alarm + sertifika rotasyonu</span>
+                    {/* Approval steps */}
+                    <div className="grid grid-cols-3 gap-1.5">
+                      {[
+                        { role: "CAB", done: true },
+                        { role: "Yönetici", done: true },
+                        { role: "Uygulama", done: true, active: true },
+                      ].map((s, i) => (
+                        <div
+                          key={i}
+                          className={`flex items-center gap-1 px-2 py-1 rounded-md border ${s.active ? "bg-emerald-500/15 border-emerald-500/30" : "bg-white/3 border-white/8"}`}
+                        >
+                          <CheckCircle2 className={`w-2.5 h-2.5 ${s.done ? "text-(--color-accent-emerald-light)" : "text-(--color-text-muted)"}`} />
+                          <span className="text-[9px] font-medium text-white">{s.role}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="flex items-center justify-center gap-2">
+                    <ArrowDown className="w-3.5 h-3.5 text-(--color-accent-emerald-light)" />
+                    <span className="text-[8px] font-mono uppercase tracking-widest text-(--color-accent-emerald-light)">olayları otomatik kapat</span>
+                    <ArrowDown className="w-3.5 h-3.5 text-(--color-accent-emerald-light)" />
+                  </div>
+
+                  {/* Stage 3: Cascading incident close */}
+                  <div className="flex flex-col gap-1 flex-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Bağlı Olaylar (5)</span>
+                      <span className="text-[8px] font-mono font-bold text-(--color-accent-emerald-light)">5/5 kapatıldı</span>
+                    </div>
+                    {[
+                      { id: "#4218", title: "VPN bağlantı sorunu", time: "auto · 09:45" },
+                      { id: "#4217", title: "Mail server gecikmesi", time: "auto · 09:45" },
+                      { id: "#4214", title: "Disk %95 dolu", time: "auto · 09:46" },
+                      { id: "#4205", title: "AD parola sync hatası", time: "auto · 09:46" },
+                    ].map((r, i) => (
+                      <div
+                        key={i}
+                        className="grid grid-cols-[auto_auto_1fr_auto_auto] gap-2 items-center px-2 py-1.5 rounded-lg bg-emerald-500/5 border border-emerald-500/15"
+                      >
+                        <CheckCircle2 className="w-3 h-3 text-(--color-accent-emerald-light)" />
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">{r.id}</span>
+                        <span className="text-[10px] font-medium text-white truncate line-through opacity-60">{r.title}</span>
+                        <span className="text-[7px] font-mono font-bold text-(--color-accent-emerald-light) px-1 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/25">
+                          ÇÖZÜLDÜ
+                        </span>
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">{r.time}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -296,13 +567,99 @@ export default function ProblemYonetimiPage() {
                   {data.bento.items[0].description}
                 </p>
               </div>
-              <div className="w-full md:w-2/3 h-60 md:h-auto relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 group-hover:border-cyan-500/40 transition-colors">
-                <Image
-                  src="/images/problem-modulu/problemcozum.png"
-                  alt="Birden fazla olayın tek problem altında birleştirilmesi ve çözüm zinciri"
-                  fill
-                  className="object-cover object-top-left"
-                />
+              <div className="w-full md:w-2/3 h-60 md:h-auto relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 group-hover:border-cyan-500/40 transition-colors bg-(--color-surface-elevated-solid) p-4 flex flex-col md:flex-row gap-3 items-stretch">
+                {/* Left — incidents */}
+                <div className="flex-1 flex flex-col gap-2 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <AlertCircle className="w-3 h-3 text-(--color-accent-red-light)" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Çoklu Olay</span>
+                    </div>
+                    <span className="text-[8px] font-mono font-bold text-(--color-accent-red-light) px-1.5 py-0.5 rounded-full bg-red-500/12 border border-red-500/25">
+                      5 kayıt
+                    </span>
+                  </div>
+                  <div className="flex flex-col gap-1.5 flex-1 overflow-hidden">
+                    {[
+                      { id: "#4218", title: "VPN bağlantı sorunu", time: "09:14" },
+                      { id: "#4217", title: "VPN sertifika hatası", time: "09:08" },
+                      { id: "#4214", title: "Auth zaman aşımı", time: "08:57" },
+                      { id: "#4205", title: "VPN bağlantı düşmesi", time: "08:42" },
+                      { id: "#4198", title: "VPN sertifika kontrol", time: "08:30" },
+                    ].map((r, i) => (
+                      <div
+                        key={i}
+                        className="grid grid-cols-[auto_auto_1fr_auto] gap-2 items-center px-2 py-1.5 rounded-lg bg-red-500/8 border border-red-500/20"
+                      >
+                        <AlertCircle className="w-2.5 h-2.5 text-(--color-accent-red-light)" />
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">{r.id}</span>
+                        <span className="text-[10px] font-medium text-white truncate">{r.title}</span>
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">{r.time}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-1.5 pt-1 border-t border-white/8">
+                    <Activity className="w-2.5 h-2.5 text-(--color-accent-cyan-light)" />
+                    <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Aynı semptom · 30 dk</span>
+                  </div>
+                </div>
+
+                {/* Connector */}
+                <div className="hidden md:flex flex-col items-center justify-center gap-1 px-1">
+                  <Link2 className="w-4 h-4 text-(--color-accent-cyan-light)" />
+                  <ArrowRight className="w-4 h-4 text-(--color-accent-cyan-light)" />
+                  <span className="text-[8px] font-mono uppercase tracking-widest text-(--color-accent-cyan-light) writing-mode-vertical [writing-mode:vertical-rl] rotate-180">
+                    birleştir
+                  </span>
+                </div>
+                <div className="md:hidden flex items-center justify-center py-1">
+                  <ArrowDown className="w-4 h-4 text-(--color-accent-cyan-light)" />
+                  <span className="text-[8px] font-mono uppercase tracking-widest text-(--color-accent-cyan-light) ml-2">birleştir</span>
+                </div>
+
+                {/* Right — single problem */}
+                <div className="flex-1 flex flex-col gap-2 min-w-0">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      <HelpCircle className="w-3 h-3 text-(--color-accent-blue-light)" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Tek Problem</span>
+                    </div>
+                    <span className="text-[8px] font-mono font-bold text-(--color-accent-blue-light) px-1.5 py-0.5 rounded-full bg-blue-500/12 border border-blue-500/25">
+                      P-018
+                    </span>
+                  </div>
+                  {/* Problem card */}
+                  <div className="rounded-lg bg-blue-500/12 border border-blue-500/30 p-2.5 flex flex-col gap-1.5 shadow-[0_0_20px_rgba(59,130,246,0.15)]">
+                    <div className="flex items-center gap-1.5">
+                      <HelpCircle className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+                      <span className="text-[10px] font-bold text-white">VPN sertifika otomatik yenileme</span>
+                    </div>
+                    <span className="text-[9px] text-(--color-text-secondary)">Cron job durmuş, monitoring eksik</span>
+                    <div className="flex items-center gap-2 pt-1 border-t border-blue-500/15">
+                      <span className="text-[8px] font-mono text-(--color-text-muted)">Bağlı:</span>
+                      <span className="text-[8px] font-mono font-bold text-(--color-accent-blue-light)">5 olay</span>
+                      <Target className="w-2.5 h-2.5 text-(--color-accent-emerald-light) ml-auto" />
+                      <span className="text-[8px] font-mono font-semibold text-(--color-accent-emerald-light)">RCA tamam</span>
+                    </div>
+                  </div>
+                  {/* Linked metrics */}
+                  <div className="grid grid-cols-2 gap-1.5">
+                    <div className="rounded-md bg-white/3 border border-white/8 p-1.5 flex flex-col">
+                      <span className="text-[7px] font-mono uppercase tracking-wider text-(--color-text-muted)">Etki</span>
+                      <span className="text-[10px] font-bold text-white">42 kullanıcı</span>
+                    </div>
+                    <div className="rounded-md bg-white/3 border border-white/8 p-1.5 flex flex-col">
+                      <span className="text-[7px] font-mono uppercase tracking-wider text-(--color-text-muted)">Tekrar</span>
+                      <span className="text-[10px] font-bold text-white">12 kez · 30g</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg bg-purple-500/10 border border-purple-500/25 mt-auto">
+                    <BookOpen className="w-3 h-3 text-(--color-accent-purple-light)" />
+                    <span className="text-[9px] font-semibold text-white flex-1">Known Error</span>
+                    <span className="text-[9px] font-mono font-bold text-(--color-accent-purple-light)">KE-2034</span>
+                    <ChevronRight className="w-2.5 h-2.5 text-(--color-text-muted)" />
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -351,13 +708,82 @@ export default function ProblemYonetimiPage() {
               <p className="text-sm text-(--color-text-secondary) shrink-0 font-light mb-4">
                 {data.bento.items[2].description}
               </p>
-              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-white">
-                <Image
-                  src="/images/problem-modulu/index.png"
-                  alt="Gelişmiş filtreleme ve kayıtlı görünümlerle problem listeleme"
-                  fill
-                  className="object-cover object-top-left"
-                />
+              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-(--color-surface-elevated-solid) p-3 flex flex-col gap-2">
+                {/* Saved view tabs */}
+                <div className="flex items-center gap-1 border-b border-white/8 pb-2 overflow-hidden">
+                  {[
+                    { label: "Aktif", icon: Eye, active: false },
+                    { label: "Known Error", icon: Star, active: true },
+                    { label: "Yüksek", icon: AlertTriangle, active: false },
+                  ].map((t, i) => {
+                    const Icon = t.icon;
+                    return (
+                      <div
+                        key={i}
+                        className={`flex items-center gap-1 px-2 py-1 rounded-md text-[9px] font-medium ${
+                          t.active
+                            ? "bg-amber-500/15 border border-amber-500/30 text-amber-300"
+                            : "text-(--color-text-muted) border border-transparent"
+                        }`}
+                      >
+                        <Icon className="w-2.5 h-2.5" />
+                        <span>{t.label}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Filter chips */}
+                <div className="flex items-center gap-1 flex-wrap">
+                  <Filter className="w-2.5 h-2.5 text-(--color-text-muted)" />
+                  {[
+                    { label: "Durum: Açık", tone: "blue" },
+                    { label: "Etki: Yüksek", tone: "red" },
+                  ].map((c, i) => {
+                    const t: Record<string, string> = {
+                      blue: "bg-blue-500/12 border-blue-500/25 text-(--color-accent-blue-light)",
+                      red: "bg-red-500/12 border-red-500/25 text-(--color-accent-red-light)",
+                    };
+                    return (
+                      <span
+                        key={i}
+                        className={`text-[8px] font-medium px-1.5 py-0.5 rounded-full border ${t[c.tone]}`}
+                      >
+                        {c.label}
+                      </span>
+                    );
+                  })}
+                </div>
+
+                {/* Problem rows */}
+                <div className="flex-1 flex flex-col gap-1 overflow-hidden">
+                  {[
+                    { id: "P-018", title: "VPN sertifika yenileme cron eksik", linked: 5, status: "RCA Devam", tone: "amber" },
+                    { id: "P-017", title: "ERP raporlama timeout", linked: 3, status: "KE", tone: "purple" },
+                    { id: "P-016", title: "Mail server gecikme", linked: 8, status: "Çözüldü", tone: "emerald" },
+                    { id: "P-015", title: "Disk kapasite uyarısı yok", linked: 4, status: "RCA Devam", tone: "amber" },
+                    { id: "P-014", title: "AD parola sync hatası", linked: 2, status: "KE", tone: "purple" },
+                  ].map((r, i) => {
+                    const t: Record<string, string> = {
+                      amber: "text-amber-300 bg-amber-500/10 border-amber-500/20",
+                      purple: "text-(--color-accent-purple-light) bg-purple-500/10 border-purple-500/20",
+                      emerald: "text-(--color-accent-emerald-light) bg-emerald-500/10 border-emerald-500/20",
+                    };
+                    return (
+                      <div
+                        key={i}
+                        className="grid grid-cols-[auto_1fr_auto_auto] gap-1.5 items-center px-2 py-1.5 rounded-lg bg-white/2 border border-white/5"
+                      >
+                        <span className="text-[8px] font-mono font-bold text-(--color-accent-blue-light)">{r.id}</span>
+                        <span className="text-[10px] font-medium text-white truncate">{r.title}</span>
+                        <span className="text-[8px] font-mono text-(--color-text-muted)">↳{r.linked}</span>
+                        <span className={`text-[8px] font-mono font-semibold px-1 py-0.5 rounded-full border ${t[r.tone]}`}>
+                          {r.status}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </motion.div>
 

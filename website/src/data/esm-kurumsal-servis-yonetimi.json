@@ -2,38 +2,41 @@
   "hero": {
     "badge": "ESM · Enterprise Service Management",
     "titleLead": "BT'nin ötesinde,",
-    "titleAccent": "kurumun her departmanına servis disiplini.",
-    "description": "ESM, geleneksel BT Hizmet Yönetimi (ITSM) prensiplerini İnsan Kaynakları, Finans, Lojistik, Satış ve Pazarlama gibi her birime yayarak organizasyonun tamamına servis disiplini taşır. ServiceCore ESM; tek panelden yönetim, departmanlar arası işbirliği, otomasyonla optimize edilmiş iş akışları ve self-servis portallarla daha verimli, şeffaf ve etkili bir hizmet yönetimi sunar.",
-    "imageAlt": "ESM panosu — kurum geneli departmanlar arası servis yönetimi"
+    "titleAccent": "tüm organizasyona servis disiplini.",
+    "description": "ServiceCore ESM, klasik ITSM prensiplerini yalnızca BT süreçleriyle sınırlı bırakmaz; İnsan Kaynakları, Finans, Lojistik, Satış ve Pazarlama gibi tüm departmanları tek platformda buluşturur. Departmanlar arası bariyerler kalkar; otomasyonla optimize iş akışları ve self-servis portallar üzerinden kurum genelinde daha verimli, işbirlikçi ve şeffaf bir hizmet yönetimi sağlanır.",
+    "imageAlt": "ServiceCore ESM kurumsal panosu — multitenant departman yönetimi"
   },
   "zigzag": [
     {
-      "id": "esm-tanim",
+      "id": "merkezi-multitenant",
       "accent": "blue",
       "icon": "Building2",
-      "titleLead": "ITSM'in evrimi:",
-      "titleAccent": "kurumun her birimine servis.",
-      "description": "ESM, geleneksel BT Hizmet Yönetimi prensiplerini organizasyonun her alanına yayarak bir adım öteye taşır. İK, Finans, Lojistik, Satış ve Pazarlama gibi her birimin süreçlerini birleştirerek daha verimli, işbirlikçi ve etkili bir hizmet yönetimi sağlar — hem de tek bir platform üzerinden.",
+      "titleLead": "Merkezi multitenant yapı,",
+      "titleAccent": "ITSM'in tüm birimlere yayılımı.",
+      "description": "ESM, çok sayıda iş kolundaki süreçleri tek bir uygulamadan yönetme becerisidir. BT, İnsan Kaynakları, Lojistik, İdari İşler, Finans, Satış ve Pazarlama gibi her departmanı aynı veri modelinde toplar; ITSM'in prensiplerini tüm organizasyona genişletir ve tek portal üzerinden tüm hizmetlerin yönetilmesini sağlar.",
       "bullets": [
-        "ITSM'nin yalnızca BT süreçlerine odaklanmasının aksine, ESM birçok iş biriminin hizmetlerini aynı veri modelinde entegre eder.",
-        "İK, Finans, Lojistik, Satış-Pazarlama ve diğer birimlerin süreçleri tek platformda birleşir; her departman kendi katalog ve iş akışlarıyla servis sunar.",
-        "Departmanlar arası bariyerler ortadan kalkar; çalışanlar talep ne olursa olsun aynı kapıdan girer ve doğru ekibe disiplinli biçimde yönlendirilir."
+        "BT, İnsan Kaynakları, Lojistik, İdari İşler, Finans, Satış ve Pazarlama gibi tüm departmanları tek platformda kapsar.",
+        "ITSM'in prensiplerini tüm organizasyona genişletir; her birim kendi katalog ve iş akışıyla servis sunar.",
+        "Departmanlar arası bariyerler ortadan kalkar; çalışan tek kapıdan girer ve doğru ekibe disiplinli biçimde yönlendirilir.",
+        "Tek portal üzerinden tüm hizmetlerin merkezi olarak yönetilmesini sağlar."
       ],
-      "imageKey": "esm-1"
+      "imageKey": "esm-customer-3"
     },
     {
-      "id": "neden-esm",
+      "id": "yonetim-paneli",
       "accent": "emerald",
-      "icon": "Sparkles",
-      "titleLead": "Çeviklik, şeffaflık,",
-      "titleAccent": "üstün kullanıcı deneyimi.",
-      "description": "Bugünün hızlı iş dünyasında çeviklik, şeffaflık ve üstün kullanıcı deneyimi bir zorunluluktur. ESM bu ihtiyaçları kapsamlı uygulama, gelişmiş işbirliği, optimize edilmiş iş akışları ve kullanıcı dostu tasarımla karşılar; çalışan ve müşteri ihtiyaçları sezgisel self-servis portallar üzerinden hızla giderilir.",
+      "icon": "LayoutDashboard",
+      "titleLead": "Tek panelden,",
+      "titleAccent": "tüm departmanlara erişim.",
+      "description": "ServiceCore ESM Center, farklı birimlerin tek bir alan üzerinden yönetilebilmesi için oluşturulmuş yönetim panelidir. Sol üstteki dokuz noktalı simgeden erişilir; tüm kiracı ve departman yönetimi, hizmet katalogları ve otomasyon kuralları buradan yapılandırılır.",
       "bullets": [
-        "Kapsamlı uygulama: ITSM tek bir BT alanında değil, kurum genelindeki tüm hizmetlerde standart bir disiplinle yürütülür.",
-        "Gelişmiş işbirliği: Departmanlar arası bariyerleri ortadan kaldırır ve kusursuz bir takım çalışması kültürü yaratır.",
-        "Otomasyon ve standartlaştırma ile verimsizlikler ortadan kalkar; ekipler stratejik büyümeye odaklanır, kullanıcılar self-servis portallardan hızla çözüme ulaşır."
+        "Hizmet Yönetimi: Tüm bölümlerde hizmet sağlama ve yönetme süreçleri tek noktada toplanır.",
+        "Süreç Standardizasyonu: Farklı departmanlarda hizmet kalitesi ve tutarlılık sağlanır.",
+        "Otomasyon: Manuel işlemler azalır, süreçler hız ve doğruluk kazanır.",
+        "Müşteri Odaklılık: İç ve dış müşteriler için iyileştirilmiş deneyim sunulur.",
+        "İş Sürekliliği & Güvenlik: Kesintisiz, güvenli hizmet yönetimi garanti altına alınır."
       ],
-      "imageKey": "esm-2"
+      "imageKey": "esm-customer-2"
     },
     {
       "id": "kim-faydalanir",
@@ -41,17 +44,17 @@
       "icon": "Users",
       "titleLead": "Kim faydalanır?",
       "titleAccent": "Liderden son kullanıcıya, dış paydaştan ekibe.",
-      "description": "ESM'den; işletme liderleri ve yöneticiler, BT departmanları, diğer birimler (İK, Finans vb.), çalışanlar ve son kullanıcılar ile dış paydaşlar ve müşteriler birlikte faydalanır. Her rol kendi bakış açısıyla aynı veriden faydalanır; kararlar ortak zemine oturur, müşteri deneyimi entegre ve duyarlı kalır.",
+      "description": "ESM'den; işletme liderleri ve yöneticiler, BT departmanları, İK ve Finans gibi diğer birimler, çalışanlar ve son kullanıcılar ile dış paydaşlar ve müşteriler birlikte faydalanır. Her rol kendi bakış açısıyla aynı veriden faydalanır; kararlar ortak zemine oturur, müşteri deneyimi entegre ve duyarlı kalır.",
       "bullets": [
-        "İşletme liderleri ve yöneticiler, operasyonlar ile performans metrikleri hakkında daha fazla görünürlükle bilinçli kararlar alır.",
-        "BT departmanları kurum geneli girişimlerde ölçeklenebilir ve güçlü çözümler sunar; İK, Finans ve diğer birimler taleplerini aynı altyapıda yönetir.",
+        "İşletme liderleri ve yöneticiler operasyon ile performans metriklerinde daha fazla görünürlük elde eder; bilinçli kararlar alır.",
+        "BT departmanları kurum geneli girişimlerde ölçeklenebilir çözümler sunar; İK, Finans ve diğer birimler taleplerini aynı altyapıda yönetir.",
         "Çalışanlar ve son kullanıcılar tek portaldan talep iletir, sorunlarını hızla çözer; dış paydaşlar ve müşteriler entegre, duyarlı hizmetlerle güven kazanır."
       ]
     }
   ],
   "bento": {
     "sectionTitle": "ESM disiplinini güçlendiren temel avantajlar",
-    "sectionSubtitle": "Operasyonel şeffaflık, standart süreçler, otomasyon, merkezi portal ve veri tabanlı içgörüler tek modülde toplanır.",
+    "sectionSubtitle": "Kapsamlı uygulama, gelişmiş işbirliği, optimize iş akışları, sezgisel self-servis ve veri tabanlı içgörüler tek modülde toplanır.",
     "items": [
       {
         "id": "tek-panel",
@@ -67,7 +70,7 @@
         "accent": "orange",
         "icon": "Eye",
         "title": "Operasyonel şeffaflık",
-        "description": "Her departmanın işleyişine dair net bir görünürlük elde edilir. Tıkanıklıklar kolayca tespit edilir, ortadan kaldırılır ve yöneticiler ekiplerin gerçek zamanlı durumunu okur."
+        "description": "Her departmanın işleyişine dair net bir görünürlük elde edilir. Tıkanıklıklar kolayca tespit edilir, ortadan kaldırılır; yöneticiler ekiplerin gerçek zamanlı durumunu okur."
       },
       {
         "id": "standart-surec",
@@ -100,6 +103,42 @@
         "icon": "LineChart",
         "title": "Veri tabanlı içgörüler",
         "description": "Gerçek zamanlı verilerle sürekli iyileştirme sağlanır ve stratejik kararlar veriye dayandırılır. Liderler, operasyonun her noktasını ölçülebilir biçimde takip eder."
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "ESM nedir, ITSM'den nasıl ayrılır, kimler faydalanır ve gerçek faydaları nelerdir? Müşterilerimizden gelen en sık beş soruyu burada yanıtladık.",
+    "items": [
+      {
+        "id": "esm-nedir",
+        "icon": "BookOpen",
+        "question": "ESM (Kurumsal Hizmet Yönetimi) nedir?",
+        "answer": "ESM, çok sayıda iş kolundaki süreçleri, hepsini idare etme esnekliğine sahip tek bir uygulamadan yönetme becerisidir. Bu kapsam; BT, İnsan Kaynakları, Lojistik, İdari İşler, Finans ve Satış-Pazarlama gibi gerçekten bir çeşit hizmet sunan herhangi bir departmanı içerir. ESM, departmanların hizmetlerini kullanıcılarına kolaylaştırılmış ve uygun maliyetli bir şekilde sunmasını sağlayan bir kurumsal hizmet yönetimi yazılım platformu aracılığıyla gerçekleşir."
+      },
+      {
+        "id": "esm-vs-itsm",
+        "icon": "Scale",
+        "question": "ESM ile ITSM arasındaki farklılıklar nelerdir?",
+        "answer": "ITSM genellikle bilgi teknolojisi departmanlarının hizmetlerini yönetmek için kullanılır; teknoloji odaklıdır ve BT hizmetlerinin sağlanmasını, izlenmesini ve iyileştirilmesini içerir. ESM ise sadece bilgi teknolojisi değil, aynı zamanda İnsan Kaynakları, Tesis Yönetimi, Filo Yönetimi gibi farklı iş birimlerinin hizmetlerini de kapsar; kapsamı daha geniştir ve tüm kurumsal hizmetlerin entegrasyonunu hedefler. ITSM özelleşmiş bir odak sunarken, ESM işletmenin tüm hizmetlerini entegre bir şekilde yönetmek için daha geniş bir perspektif sunar. Her ikisi de işletmenin verimliliğini artırmak için önemlidir."
+      },
+      {
+        "id": "kim-faydalanir-faq",
+        "icon": "Users",
+        "question": "ESM'den kimler faydalanır?",
+        "answer": "ESM, geniş bir kitle için önemli avantajlar sağlar. İşletme liderleri ve yöneticiler kurumsal hizmetlerin daha etkin yönetilmesi için araçlara sahip olur; BT departmanları kendi iç süreçlerini optimize ederken diğer iş birimlerinin hizmet yönetimine destek sağlar; İK, Finans, Satış-Pazarlama gibi diğer birimler hizmetlerini daha etkin yönetir; çalışanlar ve son kullanıcılar talep iletme ve sorun çözme süreçlerini hızlandırır; dış paydaşlar ve müşteriler de entegre, duyarlı hizmetlerle güven kazanır."
+      },
+      {
+        "id": "esm-faydalari",
+        "icon": "Sparkles",
+        "question": "ESM'in faydaları nelerdir?",
+        "answer": "ESM operasyonel görünürlük sağlar; her birimin işletmeye sağladığı değeri netleştirir, darboğazları ve verimsizlikleri tespit edip ortadan kaldırmaya olanak tanır. Değer dönüşümü ile iş birimleri operasyonel giderleri azaltır ve değişim projelerine daha fazla zaman ayırır. Etkileşim yönetimi sayesinde iş birimleri arasındaki iletişimler ölçülebilir ve optimize edilebilir hale gelir. Şeffaflık ve entegrasyon ile silolar kırılır; departmanlar arası engeller azalır. Son kullanıcı memnuniyeti ve üretkenlik, tüm hizmet ve bilgi kaynaklarının tek noktadan erişilebilir olmasıyla artar."
+      },
+      {
+        "id": "ana-unsurlar",
+        "icon": "LayoutGrid",
+        "question": "ServiceCore ESM'in ana unsurları nelerdir?",
+        "answer": "ServiceCore ESM, organizasyonun tüm bölümlerinde hizmet sağlama ve yönetme süreçlerini kapsayan bir hizmet yönetimi katmanıdır. Süreç standardizasyonu ile farklı departmanlarda ve iş birimlerindeki hizmet süreçleri standart hale getirilir; tutarlılık sağlanır. Otomasyon manuel işlemleri azaltır ve süreçleri hız ile doğruluk kazandırır. Müşteri odaklılık iç ve dış müşteriler için deneyimi iyileştirir; geri bildirimler dikkate alınır. İş sürekliliği ve güvenlik veri güvenliği ile iş süreçlerinin kesintisiz yürütülmesini sağlar."
       }
     ]
   },

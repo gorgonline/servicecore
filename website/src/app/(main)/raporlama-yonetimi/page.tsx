@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import {
   LineChart,
@@ -19,6 +18,9 @@ import {
   PieChart,
   Activity,
   Users,
+  Clock,
+  RefreshCw,
+  Sparkles,
 } from "lucide-react";
 import data from "@/data/raporlama-yonetimi.json";
 
@@ -90,16 +92,119 @@ export default function RaporlamaYonetimiPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full max-h-125"
+            className="relative mx-auto rounded-4xl border border-white/10 bg-white/2 backdrop-blur-3xl p-4 lg:p-6 shadow-2xl overflow-hidden group w-full"
           >
-            <Image
-              src="/images/raporlama-modulu/dashboard.webp"
-              alt={data.hero.imageAlt}
-              width={1250}
-              height={707}
-              className="block w-full h-auto rounded-2xl group-hover:scale-[1.01] transition-transform duration-700"
-              priority
-            />
+            <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid)/95 p-5 flex flex-col gap-4">
+              {/* Toolbar */}
+              <div className="flex items-center justify-between pb-3 border-b border-white/5">
+                <div className="flex items-center gap-3">
+                  <LineChart className="w-4 h-4 text-(--color-accent-blue-light)" />
+                  <span className="text-sm font-semibold text-white">Service Analytics Console</span>
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/15 text-(--color-accent-blue-light) border border-blue-500/30">CIO Görünümü</span>
+                </div>
+                <div className="flex items-center gap-3 text-[10px] font-mono text-(--color-text-muted)">
+                  <span className="flex items-center gap-1"><Clock className="w-3 h-3" /> Son 30 gün</span>
+                  <span className="flex items-center gap-1"><RefreshCw className="w-3 h-3 text-(--color-accent-emerald-light)" /> 14:32</span>
+                </div>
+              </div>
+
+              {/* KPI Strip */}
+              <div className="grid grid-cols-4 gap-2">
+                {[
+                  { label: "SLA Uyum", value: "94.2%", trend: "▲ 1.6pp", c: "text-(--color-accent-emerald-light) border-emerald-500/30 bg-emerald-500/10" },
+                  { label: "MTTR", value: "2.4 sa", trend: "↓ 18 dk", c: "text-(--color-accent-blue-light) border-blue-500/30 bg-blue-500/10" },
+                  { label: "İlk Çağrı Çözümü", value: "76%", trend: "▲ 4pp", c: "text-(--color-accent-cyan-light) border-cyan-500/30 bg-cyan-500/10" },
+                  { label: "CSAT", value: "4.6 / 5", trend: "stabil", c: "text-(--color-accent-purple-light) border-purple-500/30 bg-purple-500/10" },
+                ].map((k, i) => (
+                  <div key={i} className={`rounded-lg border ${k.c} p-2.5`}>
+                    <div className="text-[9px] uppercase tracking-wider opacity-80 mb-1">{k.label}</div>
+                    <div className="flex items-baseline gap-2">
+                      <div className="text-xl font-bold text-white font-mono leading-none">{k.value}</div>
+                      <div className="text-[9px] font-mono opacity-80">{k.trend}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Body — 2 widgets */}
+              <div className="grid grid-cols-12 gap-2">
+                {/* Trend chart */}
+                <div className="col-span-8 rounded-xl border border-white/5 bg-white/2 p-3">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <TrendingUp className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
+                      <span className="text-[11px] font-semibold text-white">Olay Hacmi · Çözüm Süresi</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[9px] font-mono text-(--color-text-muted)">
+                      <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-sm bg-blue-400" /> Açılan</span>
+                      <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-sm bg-purple-400" /> Çözülen</span>
+                    </div>
+                  </div>
+                  <svg viewBox="0 0 320 80" className="w-full h-20">
+                    <defs>
+                      <linearGradient id="trendBlue" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.3" />
+                        <stop offset="100%" stopColor="#60a5fa" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                    {/* Grid */}
+                    {[20, 40, 60].map((y) => (
+                      <line key={y} x1="0" x2="320" y1={y} y2={y} stroke="rgba(255,255,255,0.04)" />
+                    ))}
+                    {/* Area */}
+                    <path d="M0,55 L40,48 L80,52 L120,38 L160,42 L200,28 L240,32 L280,22 L320,18 L320,80 L0,80 Z" fill="url(#trendBlue)" />
+                    {/* Line blue */}
+                    <polyline fill="none" stroke="#60a5fa" strokeWidth="1.5" points="0,55 40,48 80,52 120,38 160,42 200,28 240,32 280,22 320,18" />
+                    {/* Line purple */}
+                    <polyline fill="none" stroke="#c084fc" strokeWidth="1.5" strokeDasharray="2 2" points="0,62 40,58 80,55 120,48 160,45 200,38 240,35 280,28 320,24" />
+                  </svg>
+                  <div className="flex justify-between text-[8px] font-mono text-(--color-text-muted) mt-1">
+                    {["1.Hf", "2.Hf", "3.Hf", "4.Hf"].map((w) => <span key={w}>{w}</span>)}
+                  </div>
+                </div>
+
+                {/* Donut + legend */}
+                <div className="col-span-4 rounded-xl border border-white/5 bg-white/2 p-3">
+                  <div className="flex items-center gap-2 mb-2">
+                    <PieChart className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                    <span className="text-[11px] font-semibold text-white">Modül</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div
+                      className="relative w-16 h-16 rounded-full shrink-0"
+                      style={{
+                        background:
+                          "conic-gradient(#a855f7 0% 45%, #3b82f6 45% 75%, #06b6d4 75% 90%, #10b981 90% 100%)",
+                      }}
+                    >
+                      <div className="absolute inset-2 rounded-full bg-(--color-surface-elevated-solid) flex items-center justify-center">
+                        <span className="text-[9px] font-bold text-white font-mono">1.4k</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-col gap-1 text-[9px] flex-1">
+                      {[
+                        { l: "Olay", v: "45%", c: "bg-purple-400" },
+                        { l: "İstek", v: "30%", c: "bg-blue-400" },
+                        { l: "Problem", v: "15%", c: "bg-cyan-400" },
+                        { l: "Değişiklik", v: "10%", c: "bg-emerald-400" },
+                      ].map((s) => (
+                        <div key={s.l} className="flex items-center gap-1.5">
+                          <div className={`w-1.5 h-1.5 rounded-sm ${s.c}`} />
+                          <span className="text-(--color-text-secondary)">{s.l}</span>
+                          <span className="ml-auto font-mono text-white">{s.v}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Footer */}
+              <div className="flex items-center justify-between pt-2 border-t border-white/5 text-[10px] font-mono text-(--color-text-muted)">
+                <span>1.418 olay · 30g · 6 boyut</span>
+                <span className="text-(--color-accent-blue-light)">ITIL4 · MRM</span>
+              </div>
+            </div>
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-(--color-surface-base) to-transparent pointer-events-none" />
           </motion.div>
         </div>
@@ -119,14 +224,67 @@ export default function RaporlamaYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/raporlama-modulu/dashboard.webp"
-                    alt="ITIL4 MRM raporlama panosu"
-                    width={1250}
-                    height={707}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-135 rounded-2xl overflow-hidden bg-(--color-surface-elevated-solid)/95 border border-white/10 shadow-2xl p-5 flex flex-col gap-3">
+                  <div className="flex items-center justify-between pb-2.5 border-b border-white/5">
+                    <div className="flex items-center gap-2">
+                      <Gauge className="w-4 h-4 text-(--color-accent-blue-light)" />
+                      <span className="text-xs font-semibold text-white">ITIL4 · MRM Çatısı</span>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/15 text-(--color-accent-blue-light) border border-blue-500/30">4 Boyut · 7 Pratik</span>
+                  </div>
+
+                  {/* 4 ITIL4 Dimension cards */}
+                  <div className="grid grid-cols-2 gap-2">
+                    {[
+                      { d: "Organizasyon & İnsan", v: "82%", c: "from-blue-500/20 border-blue-500/30 text-(--color-accent-blue-light)" },
+                      { d: "Bilgi & Teknoloji", v: "94%", c: "from-cyan-500/20 border-cyan-500/30 text-(--color-accent-cyan-light)" },
+                      { d: "Ortaklar & Tedarikçi", v: "78%", c: "from-purple-500/20 border-purple-500/30 text-(--color-accent-purple-light)" },
+                      { d: "Değer Akışı & Süreç", v: "88%", c: "from-emerald-500/20 border-emerald-500/30 text-(--color-accent-emerald-light)" },
+                    ].map((dim, i) => (
+                      <div key={i} className={`rounded-lg bg-linear-to-br ${dim.c} border p-2.5`}>
+                        <div className="text-[8px] uppercase tracking-wider opacity-80 mb-0.5">{dim.d}</div>
+                        <div className="text-lg font-bold text-white font-mono leading-none">{dim.v}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Practice metrics */}
+                  <div className="rounded-xl border border-white/5 bg-white/2 p-3 flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-[10px] font-semibold text-white flex items-center gap-1.5"><BarChart3 className="w-3 h-3 text-(--color-accent-blue-light)" /> ITIL4 Pratikleri · Metrik Skoru</span>
+                      <span className="text-[9px] font-mono text-(--color-text-muted)">7 / 7</span>
+                    </div>
+                    <div className="space-y-1.5">
+                      {[
+                        { p: "Olay Yönetimi", s: 92 },
+                        { p: "İstek Karşılama", s: 88 },
+                        { p: "Problem Yönetimi", s: 76 },
+                        { p: "Değişiklik Etkinleştirme", s: 84 },
+                        { p: "Servis Seviye", s: 94 },
+                        { p: "Bilgi Yönetimi", s: 71 },
+                        { p: "Sürekli İyileştirme", s: 80 },
+                      ].map((p, i) => (
+                        <div key={i} className="space-y-0.5">
+                          <div className="flex items-center justify-between text-[9px]">
+                            <span className="text-white truncate">{p.p}</span>
+                            <span className="font-mono text-(--color-accent-blue-light)">{p.s}</span>
+                          </div>
+                          <div className="h-1 rounded-full bg-white/5 overflow-hidden">
+                            <div className={`h-full rounded-full ${p.s >= 85 ? "bg-emerald-400" : p.s >= 75 ? "bg-blue-400" : "bg-amber-400"}`} style={{ width: `${p.s}%` }} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Footer */}
+                  <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                    <div className="flex items-center gap-1.5 text-[9px] font-mono text-(--color-text-muted)">
+                      <Sparkles className="w-3 h-3 text-(--color-accent-blue-light)" />
+                      <span>Olgunluk skoru: <span className="text-(--color-accent-emerald-light) font-bold">85.6 / 100</span></span>
+                    </div>
+                    <span className="text-[9px] font-mono text-(--color-accent-blue-light)">v4 baseline</span>
+                  </div>
                 </div>
               </div>
             </div>

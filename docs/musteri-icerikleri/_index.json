@@ -1,0 +1,81 @@
+{
+  "fetchedAt": "2026-05-03",
+  "count": 15,
+  "pages": [
+    {
+      "slug": "esm",
+      "sections": 6,
+      "images": 3
+    },
+    {
+      "slug": "self-service-portal",
+      "sections": 2,
+      "images": 4
+    },
+    {
+      "slug": "task-management",
+      "sections": 0,
+      "images": 4
+    },
+    {
+      "slug": "asset-management",
+      "sections": 7,
+      "images": 1
+    },
+    {
+      "slug": "continual-improvement",
+      "sections": 0,
+      "images": 5
+    },
+    {
+      "slug": "contracts",
+      "sections": 4,
+      "images": 0
+    },
+    {
+      "slug": "srm",
+      "sections": 8,
+      "images": 0
+    },
+    {
+      "slug": "workflow",
+      "sections": 6,
+      "images": 0
+    },
+    {
+      "slug": "lowcode",
+      "sections": 6,
+      "images": 1
+    },
+    {
+      "slug": "yonetim-paneli",
+      "sections": 8,
+      "images": 4
+    },
+    {
+      "slug": "itsm-uygulama-rehberi",
+      "sections": 0,
+      "images": 1
+    },
+    {
+      "slug": "integration",
+      "sections": 2,
+      "images": 16
+    },
+    {
+      "slug": "cd",
+      "sections": 13,
+      "images": 1
+    },
+    {
+      "slug": "integrated-service-management",
+      "sections": 0,
+      "images": 1
+    },
+    {
+      "slug": "update",
+      "sections": 13,
+      "images": 1
+    }
+  ]
+}

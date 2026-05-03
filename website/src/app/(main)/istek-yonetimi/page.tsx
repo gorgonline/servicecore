@@ -15,6 +15,23 @@ import {
   Clock,
   Repeat,
   ArrowRight,
+  Search,
+  ChevronRight,
+  Mail,
+  Database,
+  Server,
+  Users,
+  Shield,
+  Boxes,
+  Calendar,
+  User,
+  AlertCircle,
+  TrendingUp,
+  Sparkles,
+  Building2,
+  Lock,
+  Workflow,
+  Hash,
 } from "lucide-react";
 import data from "@/data/istek-yonetimi.json";
 
@@ -115,14 +132,88 @@ export default function IstekYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-blue-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-blue-500/10 blur-[50px] group-hover:bg-blue-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/istek-modulu/katalog.png"
-                    alt="Servis kataloğu merkezi — çoklu kanal talep toplama omurgası"
-                    width={1405}
-                    height={812}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden bg-(--color-surface-elevated-solid)/95 border border-white/10 shadow-2xl p-5 flex flex-col gap-4">
+                  {/* Toolbar */}
+                  <div className="flex items-center justify-between gap-3 pb-3 border-b border-white/5">
+                    <div className="flex items-center gap-2">
+                      <BookOpen className="w-4 h-4 text-(--color-accent-blue-light)" />
+                      <span className="text-xs font-semibold text-white tracking-wide">Servis Kataloğu</span>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/15 text-(--color-accent-blue-light) border border-blue-500/30">v3.2</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-[10px] text-(--color-text-muted) min-w-50">
+                      <Search className="w-3 h-3" />
+                      <span className="font-mono">Hizmet ara…</span>
+                    </div>
+                  </div>
+
+                  {/* Channel ribbon */}
+                  <div className="grid grid-cols-4 gap-2">
+                    {[
+                      { label: "Portal", icon: BookOpen, count: "184" },
+                      { label: "E-posta", icon: Mail, count: "92" },
+                      { label: "Etkileşim", icon: MousePointerClick, count: "56" },
+                      { label: "API", icon: Plug, count: "28" },
+                    ].map((ch, i) => {
+                      const Icon = ch.icon;
+                      return (
+                        <div key={i} className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/3 border border-white/5">
+                          <div className="w-6 h-6 rounded-md bg-blue-500/15 flex items-center justify-center text-(--color-accent-blue-light) shrink-0">
+                            <Icon className="w-3 h-3" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <div className="text-[10px] text-(--color-text-muted) truncate">{ch.label}</div>
+                            <div className="text-xs font-bold text-white font-mono">{ch.count}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Body */}
+                  <div className="grid grid-cols-12 gap-3 flex-1 min-h-0">
+                    {/* Sidebar */}
+                    <div className="col-span-4 rounded-xl border border-white/5 bg-white/2 p-3 flex flex-col gap-1.5">
+                      <div className="text-[9px] font-bold uppercase tracking-widest text-(--color-text-muted) mb-1 px-1">Kategoriler</div>
+                      {[
+                        { name: "BT Hizmetleri", count: 42, active: true },
+                        { name: "İK & Onboarding", count: 18 },
+                        { name: "Tesis & Saha", count: 14 },
+                        { name: "Finans Talepleri", count: 9 },
+                        { name: "Erişim & Güvenlik", count: 24 },
+                      ].map((c, i) => (
+                        <div key={i} className={`flex items-center justify-between px-2.5 py-2 rounded-md text-[11px] ${c.active ? "bg-blue-500/15 border border-blue-500/30 text-white" : "text-(--color-text-secondary) hover:bg-white/3"}`}>
+                          <span className="truncate font-medium">{c.name}</span>
+                          <span className="font-mono text-[9px] text-(--color-text-muted)">{c.count}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Service grid */}
+                    <div className="col-span-8 grid grid-cols-2 gap-2 content-start">
+                      {[
+                        { name: "Yeni Çalışan Onboarding", sla: "P1", icon: User, color: "text-(--color-accent-blue-light) bg-blue-500/15 border-blue-500/30" },
+                        { name: "VPN Erişim Talebi", sla: "P2", icon: Shield, color: "text-(--color-accent-purple-light) bg-purple-500/15 border-purple-500/30" },
+                        { name: "Yazılım Kurulum", sla: "P2", icon: Boxes, color: "text-(--color-accent-emerald-light) bg-emerald-500/15 border-emerald-500/30" },
+                        { name: "Donanım Tedarik", sla: "P3", icon: Server, color: "text-(--color-accent-orange-light) bg-orange-500/15 border-orange-500/30" },
+                        { name: "Toplantı Odası", sla: "P3", icon: Calendar, color: "text-(--color-accent-cyan-light) bg-cyan-500/15 border-cyan-500/30" },
+                        { name: "Şifre Sıfırlama", sla: "P1", icon: Lock, color: "text-(--color-accent-red-light) bg-red-500/15 border-red-500/30" },
+                      ].map((s, i) => {
+                        const Icon = s.icon;
+                        return (
+                          <div key={i} className="rounded-lg border border-white/5 bg-white/2 p-2.5 flex items-center gap-2.5 hover:border-blue-500/30 transition-colors">
+                            <div className={`w-7 h-7 rounded-md border flex items-center justify-center shrink-0 ${s.color}`}>
+                              <Icon className="w-3.5 h-3.5" />
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <div className="text-[11px] font-semibold text-white truncate">{s.name}</div>
+                              <div className="text-[9px] text-(--color-text-muted) font-mono">SLA · {s.sla}</div>
+                            </div>
+                            <ChevronRight className="w-3 h-3 text-(--color-text-muted) shrink-0" />
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -165,14 +256,104 @@ export default function IstekYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-emerald-500/5 to-cyan-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-emerald-500/10 blur-[50px] group-hover:bg-emerald-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/istek-modulu/form.png"
-                    alt="Esnek ve özelleştirilebilir katalog formu — yönlendirici kullanıcı arayüzü"
-                    width={1908}
-                    height={766}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden bg-(--color-surface-elevated-solid)/95 border border-white/10 shadow-2xl p-5 flex flex-col gap-4">
+                  {/* Toolbar */}
+                  <div className="flex items-center justify-between pb-3 border-b border-white/5">
+                    <div className="flex items-center gap-2">
+                      <FileText className="w-4 h-4 text-(--color-accent-emerald-light)" />
+                      <span className="text-xs font-semibold text-white">Katalog Form Tasarımı</span>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/15 text-(--color-accent-emerald-light) border border-emerald-500/30">Sürüm 4 · Yayında</span>
+                  </div>
+
+                  <div className="grid grid-cols-12 gap-3 flex-1 min-h-0">
+                    {/* Tree */}
+                    <div className="col-span-4 rounded-xl border border-white/5 bg-white/2 p-3 flex flex-col gap-1">
+                      <div className="text-[9px] font-bold uppercase tracking-widest text-(--color-text-muted) mb-1 px-1">Servis Ağacı</div>
+                      <div className="flex items-center gap-1.5 px-2 py-1.5 text-[11px] text-white">
+                        <ChevronRight className="w-3 h-3 text-(--color-accent-emerald-light) rotate-90" />
+                        <Boxes className="w-3 h-3 text-(--color-accent-emerald-light)" />
+                        <span className="font-semibold">BT Hizmetleri</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 pl-6 py-1.5 text-[11px] text-(--color-text-secondary)">
+                        <ChevronRight className="w-3 h-3 rotate-90 text-(--color-text-muted)" />
+                        <span>Erişim Yönetimi</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 pl-10 py-1.5 text-[11px] bg-emerald-500/15 rounded-md border border-emerald-500/30 text-white">
+                        <Sparkles className="w-3 h-3 text-(--color-accent-emerald-light)" />
+                        <span className="font-semibold">VPN Erişim</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 pl-10 py-1.5 text-[11px] text-(--color-text-muted)">
+                        <span>Sistem Hesabı</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 pl-6 py-1.5 text-[11px] text-(--color-text-secondary)">
+                        <ChevronRight className="w-3 h-3 text-(--color-text-muted)" />
+                        <span>Donanım</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 pl-6 py-1.5 text-[11px] text-(--color-text-secondary)">
+                        <ChevronRight className="w-3 h-3 text-(--color-text-muted)" />
+                        <span>Yazılım Kurulumu</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 px-2 py-1.5 text-[11px] text-(--color-text-secondary) mt-1">
+                        <ChevronRight className="w-3 h-3 text-(--color-text-muted)" />
+                        <Boxes className="w-3 h-3 text-(--color-text-muted)" />
+                        <span>İK Hizmetleri</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 px-2 py-1.5 text-[11px] text-(--color-text-secondary)">
+                        <ChevronRight className="w-3 h-3 text-(--color-text-muted)" />
+                        <Boxes className="w-3 h-3 text-(--color-text-muted)" />
+                        <span>Tesis Yönetimi</span>
+                      </div>
+                    </div>
+
+                    {/* Form preview */}
+                    <div className="col-span-8 rounded-xl border border-white/5 bg-white/2 p-4 flex flex-col gap-3 overflow-hidden">
+                      <div className="flex items-center gap-2 pb-2 border-b border-white/5">
+                        <Shield className="w-3.5 h-3.5 text-(--color-accent-emerald-light)" />
+                        <span className="text-[11px] font-semibold text-white">VPN Erişim Talep Formu</span>
+                        <span className="ml-auto text-[9px] font-mono text-(--color-text-muted)">5 alan · 2 zorunlu</span>
+                      </div>
+
+                      <div className="space-y-2.5">
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-[10px] text-(--color-text-secondary) font-medium">Erişim Türü</span>
+                            <span className="text-[9px] text-(--color-accent-red-light)">*</span>
+                          </div>
+                          <div className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-md bg-(--color-surface-base) border border-emerald-500/30">
+                            <span className="text-[10px] text-white font-mono">Tam Tünel — Standart</span>
+                            <ChevronRight className="w-3 h-3 text-(--color-text-muted) rotate-90" />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-2">
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-1.5">
+                              <span className="text-[10px] text-(--color-text-secondary) font-medium">Süre</span>
+                              <span className="text-[9px] text-(--color-accent-red-light)">*</span>
+                            </div>
+                            <div className="px-3 py-1.5 rounded-md bg-(--color-surface-base) border border-white/10 text-[10px] text-white font-mono">90 gün</div>
+                          </div>
+                          <div className="space-y-1">
+                            <span className="text-[10px] text-(--color-text-secondary) font-medium">Lokasyon</span>
+                            <div className="px-3 py-1.5 rounded-md bg-(--color-surface-base) border border-white/10 text-[10px] text-(--color-text-muted) font-mono">Türkiye / İstanbul</div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-1">
+                          <span className="text-[10px] text-(--color-text-secondary) font-medium">Gerekçe</span>
+                          <div className="px-3 py-2 rounded-md bg-(--color-surface-base) border border-white/10 text-[10px] text-(--color-text-muted) leading-relaxed h-12">
+                            Saha ekibinin müşteri sistemlerine güvenli erişimi için…
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-2 px-3 py-2 rounded-md bg-emerald-500/10 border border-emerald-500/30">
+                          <CheckCircle2 className="w-3 h-3 text-(--color-accent-emerald-light)" />
+                          <span className="text-[10px] text-(--color-accent-emerald-light) font-medium">Doğrulama geçti — onay akışına hazır</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -215,14 +396,81 @@ export default function IstekYonetimiPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative rounded-[2.5rem] p-6 lg:p-8 border border-white/10 bg-linear-to-br from-purple-500/5 to-indigo-500/5 backdrop-blur-xl group overflow-hidden">
                 <div className="absolute -inset-10 bg-purple-500/10 blur-[50px] group-hover:bg-purple-500/20 transition-colors duration-700 pointer-events-none" />
-                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden bg-white border border-white/5 shadow-2xl">
-                  <Image
-                    src="/images/istek-modulu/sla.png"
-                    alt="Katalog bazlı SLA, otomatik atama kuralları ve yetki matrisi"
-                    width={1267}
-                    height={695}
-                    className="absolute inset-0 w-full h-full object-cover object-top-left group-hover:scale-[1.01] transition-transform duration-500"
-                  />
+                <div className="relative w-full h-112.5 rounded-2xl overflow-hidden bg-(--color-surface-elevated-solid)/95 border border-white/10 shadow-2xl p-5 flex flex-col gap-4">
+                  {/* Toolbar */}
+                  <div className="flex items-center justify-between pb-3 border-b border-white/5">
+                    <div className="flex items-center gap-2">
+                      <Gauge className="w-4 h-4 text-(--color-accent-purple-light)" />
+                      <span className="text-xs font-semibold text-white">SLA · Atama · Yetki Matrisi</span>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/15 text-(--color-accent-purple-light) border border-purple-500/30">12 kural aktif</span>
+                  </div>
+
+                  {/* Priority cards */}
+                  <div className="grid grid-cols-3 gap-2">
+                    {[
+                      { p: "P1", label: "Kritik", t: "1 sa", c: "border-red-500/30 bg-red-500/10 text-(--color-accent-red-light)" },
+                      { p: "P2", label: "Yüksek", t: "4 sa", c: "border-orange-500/30 bg-orange-500/10 text-(--color-accent-orange-light)" },
+                      { p: "P3", label: "Standart", t: "24 sa", c: "border-blue-500/30 bg-blue-500/10 text-(--color-accent-blue-light)" },
+                    ].map((s, i) => (
+                      <div key={i} className={`rounded-lg border ${s.c} p-2.5`}>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-[10px] font-bold font-mono">{s.p}</span>
+                          <AlertCircle className="w-3 h-3 opacity-70" />
+                        </div>
+                        <div className="text-[10px] text-(--color-text-secondary) mb-0.5">{s.label}</div>
+                        <div className="text-base font-bold text-white font-mono leading-none">{s.t}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Assignment rules table */}
+                  <div className="rounded-xl border border-white/5 bg-white/2 overflow-hidden">
+                    <div className="px-3 py-2 border-b border-white/5 flex items-center gap-2">
+                      <Workflow className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                      <span className="text-[11px] font-semibold text-white">Atama Kuralları</span>
+                    </div>
+                    <div className="grid grid-cols-12 px-3 py-1.5 text-[9px] uppercase tracking-wider text-(--color-text-muted) bg-white/2 border-b border-white/5">
+                      <span className="col-span-4">Hizmet</span>
+                      <span className="col-span-2">Öncelik</span>
+                      <span className="col-span-3">Grup</span>
+                      <span className="col-span-3">Yetki</span>
+                    </div>
+                    {[
+                      { svc: "VPN Erişim", pri: "P2", group: "Network Ops", role: "Onaycı + Yönetici" },
+                      { svc: "Yeni Çalışan", pri: "P1", group: "İK Servis Masası", role: "Tüm Departmanlar" },
+                      { svc: "Şifre Sıfırlama", pri: "P1", group: "Service Desk L1", role: "Self-Servis" },
+                      { svc: "Donanım Tedarik", pri: "P3", group: "Satınalma", role: "Bütçe Onayı" },
+                    ].map((r, i) => (
+                      <div key={i} className="grid grid-cols-12 px-3 py-2 text-[10px] border-b border-white/5 last:border-0 hover:bg-white/2">
+                        <span className="col-span-4 text-white font-medium truncate">{r.svc}</span>
+                        <span className="col-span-2 font-mono text-(--color-accent-purple-light)">{r.pri}</span>
+                        <span className="col-span-3 text-(--color-text-secondary) truncate">{r.group}</span>
+                        <span className="col-span-3 text-(--color-text-muted) truncate">{r.role}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Authority matrix */}
+                  <div className="rounded-xl border border-white/5 bg-white/2 p-3 flex-1">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Lock className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                      <span className="text-[11px] font-semibold text-white">Rol Bazlı Yetki Matrisi</span>
+                    </div>
+                    <div className="grid grid-cols-4 gap-1.5">
+                      {[
+                        { role: "Yönetici", access: "Tam Erişim", c: "bg-purple-500/15 text-(--color-accent-purple-light) border-purple-500/30" },
+                        { role: "Departman", access: "Sınırlı", c: "bg-blue-500/15 text-(--color-accent-blue-light) border-blue-500/30" },
+                        { role: "Çalışan", access: "Standart", c: "bg-emerald-500/15 text-(--color-accent-emerald-light) border-emerald-500/30" },
+                        { role: "Misafir", access: "Yalnız Görüntüle", c: "bg-white/5 text-(--color-text-muted) border-white/10" },
+                      ].map((m, i) => (
+                        <div key={i} className={`rounded-md border ${m.c} px-2 py-1.5`}>
+                          <div className="text-[9px] font-bold uppercase tracking-wider">{m.role}</div>
+                          <div className="text-[9px] mt-0.5 opacity-80">{m.access}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -293,13 +541,61 @@ export default function IstekYonetimiPage() {
                   {data.bento.items[0].description}
                 </p>
               </div>
-              <div className="w-full md:w-2/3 h-60 md:h-auto relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 group-hover:border-cyan-500/40 transition-colors">
-                <Image
-                  src="/images/istek-modulu/onayservis.png"
-                  alt="Çok aşamalı, dinamik ve organizasyon uyumlu onay akışı tasarımı"
-                  fill
-                  className="object-cover object-top-left"
-                />
+              <div className="w-full md:w-2/3 h-60 md:h-auto relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 group-hover:border-cyan-500/40 transition-colors bg-(--color-surface-elevated-solid)/95 p-4 flex flex-col gap-3">
+                <div className="flex items-center justify-between pb-2 border-b border-white/5">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-(--color-accent-cyan-light)" />
+                    <span className="text-[11px] font-semibold text-white">Onay Akışı · REQ-4827</span>
+                  </div>
+                  <span className="text-[9px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/15 text-(--color-accent-cyan-light) border border-cyan-500/30">2/4 onaylandı</span>
+                </div>
+
+                <div className="flex items-center justify-between gap-1 flex-1">
+                  {[
+                    { stage: "Yönetici", actor: "M. Demir", status: "ok" },
+                    { stage: "Bütçe", actor: "Finans", status: "ok" },
+                    { stage: "Güvenlik", actor: "InfoSec", status: "active" },
+                    { stage: "BT Direktör", actor: "G. Kaya", status: "wait" },
+                  ].map((s, i, arr) => (
+                    <div key={i} className="flex items-center gap-1 flex-1 min-w-0">
+                      <div className={`flex-1 rounded-lg border p-2 min-w-0 ${
+                        s.status === "ok" ? "bg-emerald-500/10 border-emerald-500/30" :
+                        s.status === "active" ? "bg-cyan-500/15 border-cyan-500/40 shadow-[0_0_15px_rgba(6,182,212,0.25)]" :
+                        "bg-white/3 border-white/10"
+                      }`}>
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <div className={`w-4 h-4 rounded-full flex items-center justify-center ${
+                            s.status === "ok" ? "bg-emerald-500/30 text-(--color-accent-emerald-light)" :
+                            s.status === "active" ? "bg-cyan-500/30 text-(--color-accent-cyan-light)" :
+                            "bg-white/5 text-(--color-text-muted)"
+                          }`}>
+                            {s.status === "ok" ? <CheckCircle2 className="w-2.5 h-2.5" /> : <Clock className="w-2.5 h-2.5" />}
+                          </div>
+                          <span className="text-[9px] font-bold text-white truncate">{s.stage}</span>
+                        </div>
+                        <div className="text-[8px] text-(--color-text-muted) truncate font-mono">{s.actor}</div>
+                      </div>
+                      {i < arr.length - 1 && (
+                        <ChevronRight className="w-3 h-3 text-(--color-text-muted) shrink-0" />
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-3 gap-2">
+                  <div className="rounded-md bg-white/3 border border-white/5 p-2">
+                    <div className="text-[8px] uppercase tracking-wider text-(--color-text-muted) mb-0.5">Tetikleyici</div>
+                    <div className="text-[10px] text-white font-mono">tutar &gt; 50.000 TL</div>
+                  </div>
+                  <div className="rounded-md bg-white/3 border border-white/5 p-2">
+                    <div className="text-[8px] uppercase tracking-wider text-(--color-text-muted) mb-0.5">Tip</div>
+                    <div className="text-[10px] text-white font-mono">Sıralı + Paralel</div>
+                  </div>
+                  <div className="rounded-md bg-white/3 border border-white/5 p-2">
+                    <div className="text-[8px] uppercase tracking-wider text-(--color-text-muted) mb-0.5">AD Senkron</div>
+                    <div className="text-[10px] text-(--color-accent-emerald-light) font-mono">aktif</div>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -319,13 +615,46 @@ export default function IstekYonetimiPage() {
                   {data.bento.items[1].description}
                 </p>
               </div>
-              <div className="w-full md:w-1/2 h-45 md:h-full relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 group-hover:border-indigo-500/40 transition-colors bg-white">
-                <Image
-                  src="/images/istek-modulu/gorev.png"
-                  alt="Otomatik görev üretimi, akıllı sıralama ve servis paketleme"
-                  fill
-                  className="object-cover object-top-left"
-                />
+              <div className="w-full md:w-1/2 h-45 md:h-full relative rounded-xl border border-white/10 overflow-hidden shadow-inner shrink-0 group-hover:border-indigo-500/40 transition-colors bg-(--color-surface-elevated-solid)/95 p-3 flex flex-col gap-2">
+                <div className="flex items-center justify-between pb-1.5 border-b border-white/5">
+                  <div className="flex items-center gap-1.5">
+                    <ListChecks className="w-3 h-3 text-indigo-400" />
+                    <span className="text-[10px] font-semibold text-white">Onboarding Paketi</span>
+                  </div>
+                  <span className="text-[9px] font-mono text-(--color-text-muted)">5 görev</span>
+                </div>
+                <div className="space-y-1 flex-1 overflow-hidden">
+                  {[
+                    { name: "AD hesabı oluştur", status: "ok", dep: null },
+                    { name: "E-posta provizyon", status: "ok", dep: "AD" },
+                    { name: "Donanım hazırla", status: "active", dep: null },
+                    { name: "VPN profili tanımla", status: "wait", dep: "Donanım" },
+                    { name: "Eğitim ataması", status: "wait", dep: null },
+                  ].map((t, i) => (
+                    <div key={i} className="flex items-center gap-2 px-2 py-1.5 rounded-md bg-white/2 border border-white/5">
+                      <div className={`w-3 h-3 rounded-sm border flex items-center justify-center shrink-0 ${
+                        t.status === "ok" ? "bg-emerald-500/30 border-emerald-500/50" :
+                        t.status === "active" ? "bg-indigo-500/30 border-indigo-500/50" :
+                        "border-white/15"
+                      }`}>
+                        {t.status === "ok" && <CheckCircle2 className="w-2 h-2 text-(--color-accent-emerald-light)" />}
+                      </div>
+                      <span className={`text-[9px] flex-1 truncate ${t.status === "wait" ? "text-(--color-text-muted)" : "text-white"}`}>{t.name}</span>
+                      {t.dep && (
+                        <span className="text-[8px] font-mono px-1.5 py-0.5 rounded bg-white/5 text-(--color-text-muted) border border-white/10">↳ {t.dep}</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-1.5 border-t border-white/5 text-[9px]">
+                  <span className="text-(--color-text-muted) font-mono">İlerleme</span>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-20 h-1 rounded-full bg-white/5 overflow-hidden">
+                      <div className="h-full w-2/5 bg-indigo-400 rounded-full" />
+                    </div>
+                    <span className="text-indigo-400 font-bold font-mono">40%</span>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -343,13 +672,40 @@ export default function IstekYonetimiPage() {
               <p className="text-sm text-(--color-text-secondary) shrink-0 font-light mb-4">
                 {data.bento.items[2].description}
               </p>
-              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-white">
-                <Image
-                  src="/images/istek-modulu/cmdb.png"
-                  alt="Modüller arası entegrasyon ve CMDB bağlantısı"
-                  fill
-                  className="object-cover object-top-left"
-                />
+              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-(--color-surface-elevated-solid)/95 p-3 flex flex-col gap-2">
+                <div className="flex items-center gap-1.5 pb-1.5 border-b border-white/5">
+                  <Plug className="w-3 h-3 text-(--color-accent-orange-light)" />
+                  <span className="text-[10px] font-semibold text-white">Entegrasyon Hub</span>
+                  <span className="ml-auto text-[8px] font-mono text-(--color-accent-emerald-light)">● senkron</span>
+                </div>
+                <div className="relative flex-1 flex items-center justify-center">
+                  {/* Center node */}
+                  <div className="relative z-10 w-14 h-14 rounded-full bg-orange-500/15 border border-orange-500/40 flex items-center justify-center text-(--color-accent-orange-light) shadow-[0_0_20px_rgba(251,146,60,0.25)]">
+                    <Sparkles className="w-5 h-5" />
+                  </div>
+                  {/* Spokes */}
+                  {[
+                    { icon: Database, label: "CMDB", pos: "top-0 left-1/2 -translate-x-1/2 -translate-y-1" },
+                    { icon: Building2, label: "ERP", pos: "top-1/2 right-0 -translate-y-1/2 translate-x-1" },
+                    { icon: Users, label: "AD", pos: "bottom-0 right-1/4 translate-y-1" },
+                    { icon: Mail, label: "CRM", pos: "bottom-0 left-1/4 translate-y-1" },
+                    { icon: Server, label: "Monitoring", pos: "top-1/2 left-0 -translate-y-1/2 -translate-x-1" },
+                  ].map((s, i) => {
+                    const Icon = s.icon;
+                    return (
+                      <div key={i} className={`absolute ${s.pos} flex flex-col items-center gap-0.5`}>
+                        <div className="w-7 h-7 rounded-md bg-white/5 border border-white/15 flex items-center justify-center text-(--color-text-secondary)">
+                          <Icon className="w-3 h-3" />
+                        </div>
+                        <span className="text-[7px] font-mono text-(--color-text-muted)">{s.label}</span>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="flex items-center justify-between pt-1.5 border-t border-white/5 text-[8px] font-mono">
+                  <span className="text-(--color-text-muted)">5 sistem · 12 webhook</span>
+                  <span className="text-(--color-accent-orange-light)">REST · Event</span>
+                </div>
               </div>
             </motion.div>
 
@@ -367,13 +723,34 @@ export default function IstekYonetimiPage() {
               <p className="text-sm text-(--color-text-secondary) shrink-0 font-light mb-4">
                 {data.bento.items[3].description}
               </p>
-              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-white">
-                <Image
-                  src="/images/istek-modulu/akis.png"
-                  alt="Uçtan uca izlenebilirlik ve değer akışı şeffaflığı"
-                  fill
-                  className="object-cover object-top-left"
-                />
+              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-(--color-surface-elevated-solid)/95 p-3 flex flex-col gap-2">
+                <div className="flex items-center gap-1.5 pb-1.5 border-b border-white/5">
+                  <Eye className="w-3 h-3 text-amber-400" />
+                  <span className="text-[10px] font-semibold text-white">Değer Akışı · REQ-4827</span>
+                </div>
+                <div className="relative flex-1 pl-3">
+                  <div className="absolute left-1.5 top-1 bottom-1 w-px bg-linear-to-b from-amber-500/40 via-amber-500/20 to-transparent" />
+                  {[
+                    { time: "09:14", label: "Talep açıldı", actor: "portal", c: "bg-amber-400" },
+                    { time: "09:18", label: "Triyaj — atama", actor: "otomatik", c: "bg-amber-400" },
+                    { time: "09:42", label: "Onay zinciri", actor: "yönetici", c: "bg-amber-400" },
+                    { time: "11:05", label: "Görev başladı", actor: "ops ekibi", c: "bg-amber-300" },
+                    { time: "—", label: "Teslimat", actor: "bekliyor", c: "bg-white/15" },
+                  ].map((s, i) => (
+                    <div key={i} className="relative pl-4 pb-2 last:pb-0">
+                      <div className={`absolute left-0 top-1 w-1.5 h-1.5 rounded-full ${s.c} ${s.c === "bg-white/15" ? "" : "shadow-[0_0_6px_rgba(251,191,36,0.6)]"}`} />
+                      <div className="flex items-center gap-2 text-[9px]">
+                        <span className="text-(--color-text-muted) font-mono w-10 shrink-0">{s.time}</span>
+                        <span className="text-white font-medium truncate flex-1">{s.label}</span>
+                      </div>
+                      <div className="text-[8px] text-(--color-text-muted) ml-12 font-mono">{s.actor}</div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex items-center justify-between pt-1.5 border-t border-white/5 text-[8px] font-mono">
+                  <span className="text-(--color-text-muted)">5 olay · 1 zaman ekseni</span>
+                  <span className="text-amber-400">SLA · 78%</span>
+                </div>
               </div>
             </motion.div>
 
@@ -391,13 +768,39 @@ export default function IstekYonetimiPage() {
               <p className="text-sm text-(--color-text-secondary) shrink-0 font-light mb-4">
                 {data.bento.items[4].description}
               </p>
-              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-white">
-                <Image
-                  src="/images/istek-modulu/gecmis.png"
-                  alt="Tarihçe takibi, efor ve iş günlüğü yönetimi"
-                  fill
-                  className="object-cover object-top-left"
-                />
+              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-(--color-surface-elevated-solid)/95 p-3 flex flex-col gap-2">
+                <div className="flex items-center gap-1.5 pb-1.5 border-b border-white/5">
+                  <Clock className="w-3 h-3 text-(--color-accent-red-light)" />
+                  <span className="text-[10px] font-semibold text-white">Activity Log</span>
+                  <span className="ml-auto text-[8px] font-mono text-(--color-text-muted)">14 olay</span>
+                </div>
+                <div className="space-y-1 flex-1 overflow-hidden text-[9px]">
+                  {[
+                    { actor: "M. Demir", action: "Onay verdi", target: "1. aşama", time: "09:42", c: "text-(--color-accent-emerald-light)" },
+                    { actor: "Otomasyon", action: "Görev üretti", target: "5 adım", time: "09:43", c: "text-(--color-accent-cyan-light)" },
+                    { actor: "G. Yıldız", action: "Atama aldı", target: "Network", time: "09:48", c: "text-(--color-accent-blue-light)" },
+                    { actor: "G. Yıldız", action: "Efor girdi", target: "45 dk", time: "10:33", c: "text-(--color-accent-orange-light)" },
+                    { actor: "InfoSec", action: "Güvenlik notu", target: "ek", time: "11:01", c: "text-(--color-accent-purple-light)" },
+                  ].map((e, i) => (
+                    <div key={i} className="flex items-center gap-2 px-2 py-1 rounded-md bg-white/2 border border-white/5">
+                      <Hash className={`w-2.5 h-2.5 shrink-0 ${e.c}`} />
+                      <span className="text-white font-medium truncate w-16">{e.actor}</span>
+                      <span className="text-(--color-text-secondary) truncate flex-1">{e.action}</span>
+                      <span className="text-(--color-text-muted) font-mono shrink-0">{e.target}</span>
+                      <span className="text-(--color-text-muted) font-mono shrink-0">{e.time}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 gap-1.5 pt-1.5 border-t border-white/5">
+                  <div className="rounded-md bg-red-500/10 border border-red-500/20 px-2 py-1">
+                    <div className="text-[8px] text-(--color-text-muted) uppercase tracking-wider">Toplam Efor</div>
+                    <div className="text-[11px] font-bold text-white font-mono">3 sa 12 dk</div>
+                  </div>
+                  <div className="rounded-md bg-white/2 border border-white/5 px-2 py-1">
+                    <div className="text-[8px] text-(--color-text-muted) uppercase tracking-wider">Aktör</div>
+                    <div className="text-[11px] font-bold text-white font-mono">5 kayıt</div>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
@@ -415,13 +818,39 @@ export default function IstekYonetimiPage() {
               <p className="text-sm text-(--color-text-secondary) shrink-0 font-light mb-4">
                 {data.bento.items[5].description}
               </p>
-              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-white">
-                <Image
-                  src="/images/istek-modulu/tekrarlananistek.png"
-                  alt="Tekrarlayan talep desenleri ve katalog iyileştirme içgörüleri"
-                  fill
-                  className="object-cover object-top-left"
-                />
+              <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-(--color-surface-elevated-solid)/95 p-3 flex flex-col gap-2">
+                <div className="flex items-center gap-1.5 pb-1.5 border-b border-white/5">
+                  <Repeat className="w-3 h-3 text-(--color-accent-purple-light)" />
+                  <span className="text-[10px] font-semibold text-white">En Sık Talepler · 30g</span>
+                  <TrendingUp className="ml-auto w-3 h-3 text-(--color-accent-purple-light)" />
+                </div>
+
+                <div className="space-y-1.5 flex-1">
+                  {[
+                    { name: "Şifre Sıfırlama", count: 184, w: "w-full" },
+                    { name: "VPN Erişim", count: 142, w: "w-4/5" },
+                    { name: "Yazılım Kurulum", count: 96, w: "w-3/5" },
+                    { name: "Toplantı Odası", count: 71, w: "w-2/5" },
+                    { name: "Donanım Tedarik", count: 38, w: "w-1/4" },
+                  ].map((b, i) => (
+                    <div key={i} className="space-y-0.5">
+                      <div className="flex items-center justify-between text-[9px]">
+                        <span className="text-white font-medium truncate">{b.name}</span>
+                        <span className="text-(--color-text-muted) font-mono">{b.count}</span>
+                      </div>
+                      <div className="w-full h-1.5 rounded-full bg-white/5 overflow-hidden">
+                        <div className={`${b.w} h-full bg-linear-to-r from-purple-500 to-purple-300 rounded-full`} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex items-center gap-1.5 px-2 py-1.5 rounded-md bg-purple-500/10 border border-purple-500/30">
+                  <Sparkles className="w-3 h-3 text-(--color-accent-purple-light) shrink-0" />
+                  <span className="text-[9px] text-(--color-accent-purple-light) leading-tight">
+                    <span className="font-bold">Otomasyon önerisi:</span> Şifre sıfırlama %62 oran, self-servise aday.
+                  </span>
+                </div>
               </div>
             </motion.div>
           </motion.div>

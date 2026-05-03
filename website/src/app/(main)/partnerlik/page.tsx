@@ -1,19 +1,52 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
-import { 
-  CheckCircle2, 
-  Send, 
-  Mail, 
-  Phone, 
-  Sparkles
+import {
+  CheckCircle2,
+  Send,
+  Mail,
+  Phone,
+  Sparkles,
+  Loader2,
+  AlertCircle,
 } from "lucide-react";
 import ServiceCoreHero from "@/components/ui/ServiceCoreHero";
 import partnershipData from "@/data/partnership.json";
+import { submitForm } from "@/lib/forms";
+
+type Status = "idle" | "loading" | "success" | "error";
 
 export default function PartnerlikPage() {
   const { partnership_program } = partnershipData;
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (status === "loading") return;
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = {
+      Ad: String(formData.get("ad") ?? ""),
+      Soyad: String(formData.get("soyad") ?? ""),
+      "E-posta": String(formData.get("eposta") ?? ""),
+      Telefon: String(formData.get("telefon") ?? ""),
+      Mesaj: String(formData.get("mesaj") ?? ""),
+    };
+
+    setStatus("loading");
+    setErrorMessage("");
+    const result = await submitForm("Partnerlik", data);
+    if (result.ok) {
+      setStatus("success");
+      form.reset();
+    } else {
+      setStatus("error");
+      setErrorMessage(result.error);
+    }
+  }
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -121,36 +154,58 @@ export default function PartnerlikPage() {
                   {partnership_program.form_title}
                 </h3>
 
-                <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Ad*</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                      <label htmlFor="ad" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Ad*</label>
+                      <input id="ad" name="ad" type="text" required disabled={status === "loading"} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                     </div>
                     <div className="space-y-2">
-                      <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Soyad*</label>
-                      <input type="text" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                      <label htmlFor="soyad" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Soyad*</label>
+                      <input id="soyad" name="soyad" type="text" required disabled={status === "loading"} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">E-Posta*</label>
-                    <input type="email" placeholder="jane@example.com" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                    <label htmlFor="eposta" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">E-Posta*</label>
+                    <input id="eposta" name="eposta" type="email" required disabled={status === "loading"} placeholder="jane@example.com" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Telefon*</label>
-                    <input type="tel" placeholder="05XX XXX XXXX" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium" />
+                    <label htmlFor="telefon" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Telefon*</label>
+                    <input id="telefon" name="telefon" type="tel" required disabled={status === "loading"} placeholder="05XX XXX XXXX" className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium disabled:opacity-60" />
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Mesaj</label>
-                    <textarea rows={4} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium resize-none" />
+                    <label htmlFor="mesaj" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Mesaj</label>
+                    <textarea id="mesaj" name="mesaj" rows={4} disabled={status === "loading"} className="w-full bg-white/5 border border-white/5 rounded-2xl py-4 px-6 outline-none focus:border-blue-500/50 focus:bg-white/8 transition-all font-medium resize-none disabled:opacity-60" />
                   </div>
 
-                  <button className="w-full py-5 rounded-2xl bg-(--color-accent-blue-base) hover:bg-blue-600 text-white font-black uppercase tracking-[0.2em] shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group/btn transition-all mt-8">
-                    <span>Gönder</span>
-                    <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  {status === "success" && (
+                    <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-(--color-accent-emerald-light)">
+                      <CheckCircle2 className="w-4 h-4 shrink-0" />
+                      <span className="text-sm font-medium">Başvurunuz alındı. Ekibimiz en kısa sürede iletişime geçecek.</span>
+                    </div>
+                  )}
+                  {status === "error" && (
+                    <div className="flex items-center gap-3 px-4 py-3 rounded-2xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span className="text-sm font-medium">Bir hata oluştu: {errorMessage || "Lütfen tekrar deneyin."}</span>
+                    </div>
+                  )}
+
+                  <button type="submit" disabled={status === "loading"} className="w-full py-5 rounded-2xl bg-(--color-accent-blue-base) hover:bg-blue-600 text-white font-black uppercase tracking-[0.2em] shadow-xl shadow-blue-500/20 flex items-center justify-center gap-3 group/btn transition-all mt-8 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer">
+                    {status === "loading" ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" />
+                        <span>Gönderiliyor…</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Gönder</span>
+                        <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </form>
               </div>

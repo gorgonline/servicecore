@@ -102,6 +102,121 @@
       }
     ]
   },
+  "perspectives": {
+    "badge": "İki Perspektif",
+    "titleLead": "Yöneticiden son kullanıcıya",
+    "titleAccent": "tek modül, iki farklı bakış.",
+    "description": "Servicecore CMDB modülü hem yönetici (yapı taşları yapılandırması) hem de kullanıcı (varlık/hizmet/lisans/aksesuar günlük operasyon) perspektifinden tasarlanmıştır. Her rol kendi ihtiyacına uygun arayüzde çalışır.",
+    "groups": [
+      {
+        "id": "admin",
+        "icon": "Settings",
+        "title": "Yönetici Perspektifi",
+        "subtitle": "Varlık ve Konfigürasyon Ayarları — yapı taşlarını tanımla",
+        "tone": "blue",
+        "items": [
+          { "icon": "Factory", "title": "Üreticiler", "desc": "Yeni üretici ekleme, düzenleme ve ürün/sözleşme modüllerinde kullanma" },
+          { "icon": "LayoutGrid", "title": "Kullanım Modelleri", "desc": "Varlıkların kullanım senaryolarını tanımlama" },
+          { "icon": "MapPin", "title": "Konumlar", "desc": "Varlıkların fiziksel veya dijital konumlarını kaydetme" },
+          { "icon": "ToggleRight", "title": "Durumlar", "desc": "Aktif, depoda, kullanım dışı gibi durumların yönetimi" },
+          { "icon": "Building2", "title": "Varlık Şirketleri", "desc": "Varlıkların bağlı olduğu şirketlerin kaydı" },
+          { "icon": "Network", "title": "İlişki Türleri", "desc": "Varlıklar arası yukarı/aşağı yönlü ilişkilerin tanımlanması" },
+          { "icon": "FileSignature", "title": "Sözleşme Türleri", "desc": "İç destek (OLA), müşteri (SLA) ve tedarikçi sözleşmelerinin yönetimi" },
+          { "icon": "Tags", "title": "Varlık Türleri", "desc": "Donanım, yazılım, lisans, aksesuar gibi türlerin tanımlanması" },
+          { "icon": "Truck", "title": "Tedarikçiler", "desc": "Dış firmaların kaydı ve sözleşmelerle ilişkilendirilmesi" }
+        ]
+      },
+      {
+        "id": "user",
+        "icon": "UserCircle",
+        "title": "Kullanıcı Perspektifi",
+        "subtitle": "Varlık, Hizmet, Lisans, Aksesuar — günlük operasyon",
+        "tone": "purple",
+        "items": [
+          { "icon": "Boxes", "title": "Varlık Ekleme", "desc": "Ad, durum, konum, tür, şirket, kullanıcı bilgileri girilerek yeni varlık oluşturulur" },
+          { "icon": "ScrollText", "title": "Varlık Detayı", "desc": "Tüm öznitelikler, ekler, notlar ve geçmiş kayıtları tek panelde tutulur" },
+          { "icon": "Server", "title": "Hizmet Yönetimi", "desc": "Hizmet adı, açıklaması, iş etkisi, maliyet ve çözüm süresi tanımlanır" },
+          { "icon": "GitBranch", "title": "Hizmet İlişkilendirme", "desc": "Hizmetler varlıklarla ilişkilendirilir, SLA politikaları bağlanır" },
+          { "icon": "Key", "title": "Lisans Yönetimi", "desc": "Lisans bilgileri (ad, model, tedarikçi, şirket, tür) kaydedilir" },
+          { "icon": "Users", "title": "Lisans Atamaları", "desc": "Lisanslar kullanıcı veya varlıklara atanır, geçmiş & maliyet izlenir" },
+          { "icon": "Headphones", "title": "Aksesuar Ekleme", "desc": "Yeni aksesuar eklenip varlık veya kullanıcıya atanabilir" },
+          { "icon": "History", "title": "Aksesuar Geçmişi", "desc": "Aksesuar geçmişi ve maliyetleri kayıt altında tutulur" }
+        ]
+      }
+    ]
+  },
+  "strategic": {
+    "badge": "Stratejik Değer",
+    "titleLead": "CMDB sadece envanter değil,",
+    "titleAccent": "hizmet haritalarının temelidir.",
+    "description": "Servicecore CMDB; envanter görevinin ötesine geçerek hizmet haritalarının, etki analizinin ve maliyet kontrolünün omurgasını kurar. Tüm servis süreçleri varlık verisinden beslenir.",
+    "items": [
+      {
+        "id": "service-maps",
+        "icon": "Network",
+        "title": "Hizmet Haritaları",
+        "description": "Hangi hizmetin hangi varlıklardan oluştuğu ve hangi konfigürasyonda çalıştığı net şekilde görülebilir. İş servisi, uygulama, sunucu ve ağ bileşenleri tek görsel haritada izlenir.",
+        "tone": "blue"
+      },
+      {
+        "id": "incident-change",
+        "icon": "AlertCircle",
+        "title": "Olay & Değişiklik Yönetimi",
+        "description": "Bir hizmetin başına gelen tüm olaylar, istekler ve değişiklikler CMDB üzerinden takip edilir. Bağlamlı bir kök neden ve etki analizi sağlanır.",
+        "tone": "purple"
+      },
+      {
+        "id": "contracts-link",
+        "icon": "FileSignature",
+        "title": "Sözleşme Yönetimi",
+        "description": "Destek anlaşmaları, tedarikçi sözleşmeleri ve müşteri SLA'leri varlıklarla ilişkilendirilir. Varlık bazlı kapsam ve sorumluluk net görünür.",
+        "tone": "emerald"
+      },
+      {
+        "id": "cost-mgmt",
+        "icon": "Wallet",
+        "title": "Maliyet Yönetimi",
+        "description": "Hizmetlerle ilgili tüm harcamalar kayıt altına alınır. Toplam sahip olma maliyeti (TCO), bütçe planlaması ve yenileme kararları veriye dayanır.",
+        "tone": "amber"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "Servicecore CMDB modülünün öne çıkan yetenekleri, yönetici-kullanıcı perspektifleri ve ITIL 4 uyumu hakkında en sık merak edilenler.",
+    "items": [
+      {
+        "id": "neden-cmdb",
+        "icon": "Boxes",
+        "question": "Neden Servicecore CMDB?",
+        "answer": "Servicecore CMDB modülü altı temel sebep sunar: Merkezi Yönetim (tüm varlık, hizmet, lisans ve aksesuarlar tek panelde); Yaşam Döngüsü Takibi (satın almadan kullanım dışına çıkana kadar tüm aşamalar kayıt altında); İlişki Haritaları (varlıklar arası bağımlılıklar ve hizmet haritaları görselleştirilebilir); Finansal Şeffaflık (maliyetler, sözleşmeler ve tedarikçi bilgileri entegre yönetilir); Entegrasyon (tüm Servicecore modülleriyle native entegre çalışır); ITIL 4 Uyumu (konfigürasyon yönetimi süreçleri uluslararası standartlara göre tasarlanmıştır)."
+      },
+      {
+        "id": "yonetici-yapi-tasi",
+        "icon": "Settings",
+        "question": "Yönetici perspektifinde hangi yapı taşları var?",
+        "answer": "Yöneticiler için CMDB modülü, varlıkların temel yapı taşlarını tanımlama ve yönetme imkânı sunar: Üreticiler, Kullanım Modelleri, Konumlar, Durumlar (aktif/depoda/kullanım dışı), Varlık Şirketleri, İlişki Türleri (yukarı/aşağı yönlü), Sözleşme Türleri (OLA/SLA/Tedarikçi), Varlık Türleri (donanım/yazılım/lisans/aksesuar) ve Tedarikçiler. Bu yapı sayesinde CMDB yalnızca envanter değil, aynı zamanda hizmet haritalarının temelini oluşturur."
+      },
+      {
+        "id": "kullanici-operasyon",
+        "icon": "UserCircle",
+        "question": "Kullanıcı tarafında günlük operasyon nasıl?",
+        "answer": "Kullanıcı perspektifinde varlık ekleme (ad, durum, konum, tür, şirket, kullanıcı bilgileri ile), varlık detay yönetimi (tüm öznitelikler, ekler, notlar, geçmiş), hizmet yönetimi (ad, açıklama, iş etkisi, maliyet, çözüm süresi + SLA bağlama), lisans yönetimi (ad, model, tedarikçi, atama, geçmiş, maliyet) ve aksesuar yönetimi (kullanıcı/varlığa atama, geçmiş takibi) yapılır. Olay, istek, problem ve değişiklik kayıtlarıyla bağlantılar otomatik kurulur."
+      },
+      {
+        "id": "detay-ozellikler",
+        "icon": "Filter",
+        "question": "Detaylı özellikler nelerdir?",
+        "answer": "Filtreleme ve Arama (varlık adı/türü/durumu/kullanıcı/çalışan numarası bazlı), İşlem Butonları (düzenle/sil/detay/klonla), İlişki Haritası (bağımlılıkları görsel izleme), Bağıntılar (olay/istek/problem/değişiklik bağlantıları), Finansal Yönetim (maliyet girişleri, evrak yükleme, tedarikçi sözleşmeleri), Geçmiş Takibi (tüm durum değişiklikleri ve kullanıcı atamaları), Raporlama (Excel'e aktarma, sayım modu, tam ekran görünüm)."
+      },
+      {
+        "id": "cmdb-stratejik",
+        "icon": "Network",
+        "question": "CMDB'nin stratejik önemi nedir?",
+        "answer": "CMDB stratejik açıdan dört kritik alanın omurgasıdır: Hizmet Haritaları (hangi hizmetin hangi varlıklardan oluştuğu net görülür); Olay ve Değişiklik Yönetimi (bir hizmetin tüm olay/istek/değişikliği CMDB üzerinden takip edilir); Sözleşme Yönetimi (destek anlaşmaları, tedarikçi sözleşmeleri ve müşteri SLA'leri varlıklarla ilişkilendirilir); Maliyet Yönetimi (hizmetlerle ilgili tüm harcamalar kayıt altına alınır). Bu sayede tam görünürlük, operasyonel verimlilik, risk azaltma, finansal kontrol ve ITIL 4 uyumu sağlanır."
+      }
+    ]
+  },
   "cta": {
     "title": "Varlık disiplinini ServiceCore ile kurun.",
     "description": "IT ve non-IT tüm varlıklarınızı yaşam döngüsü boyunca tek panelde yöneten entegre Asset Management modülünü canlı demoda inceleyin; finansal, sözleşmesel ve operasyonel veriyi tek kayıtta birleştirin.",

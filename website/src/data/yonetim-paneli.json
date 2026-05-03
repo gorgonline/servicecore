@@ -3,8 +3,14 @@
     "badge": "Yönetim Paneli",
     "titleLead": "Sistemin tüm parametreleri,",
     "titleAccent": "tek kontrol panelinde.",
-    "description": "ServiceCore Yönetim Paneli; Genel Yönetim, Organizasyon, Varlık & Konfigürasyon ve Gelişmiş Ayarlar başlıkları altında platformun her parametresini tek bir kontrol noktasından yönetir. Bildirim ve süreç şablonlarından kullanıcı/teknisyen rollerine, CMDB tanımlarından SLA politikaları ve otomasyona kadar ServiceCore'u kuruma uyarlayan tüm ayarlar bu panelde toplanır.",
-    "imageAlt": "Yönetim paneli ana ekranı — sistem ayarları ve genel yapılandırma"
+    "description": "ServiceCore Yönetim Paneli, kurumunuzun tüm yapı taşlarını tek noktadan kontrol etmenizi sağlar. Genel ayarlardan organizasyon şemasına, varlık yönetiminden gelişmiş otomasyonlara kadar her şey kullanıcı dostu bir arayüzde bir araya gelir; merkezi kontrol, esneklik, verimlilik ve şeffaflık aynı panelde buluşur.",
+    "imageAlt": "Yönetim paneli ana ekranı — sistem ayarları ve genel yapılandırma",
+    "pillars": [
+      { "icon": "LayoutDashboard", "title": "Merkezi Kontrol", "desc": "Tüm süreçler tek panelde", "tone": "blue" },
+      { "icon": "Layers", "title": "Esneklik", "desc": "Organizasyona göre özelleştirilebilir", "tone": "purple" },
+      { "icon": "Zap", "title": "Verimlilik", "desc": "Hazır şablonlar ve otomasyonlarla hız", "tone": "amber" },
+      { "icon": "Eye", "title": "Şeffaflık", "desc": "Varlık, kullanıcı ve süreçlerde tam görünürlük", "tone": "emerald" }
+    ]
   },
   "zigzag": [
     {
@@ -105,6 +111,142 @@
         "icon": "Tags",
         "title": "Global statüslerin belirlenmesi",
         "description": "Tüm organizasyon için geçerli olacak durum kodları (Beklemede, İşlemde, Tamamlandı vb.) yapılandırılır. Modüller arası ortak dil sağlanır, raporlama tutarlı kalır."
+      }
+    ]
+  },
+  "categories": {
+    "sectionTitle": "Tüm ayar kategorileri",
+    "sectionSubtitle": "Yönetim Paneli'nin altında 6 kategori, 40+ ayar başlığı toplanır. Genel ayarlardan organizasyona, varlık konfigürasyonundan gelişmiş otomasyona kadar tüm yapılandırma yetkinlikleri.",
+    "groups": [
+      {
+        "id": "genel",
+        "icon": "Settings",
+        "title": "Genel Yönetim Ayarları",
+        "subtitle": "İş süreçlerinizi hızlandıran ve standartlaştıran güçlü araçlar",
+        "tone": "blue",
+        "items": [
+          { "title": "Genel Uygulama Ayarları", "desc": "Tema, dil, saat dilimi, sistem konfigürasyonları" },
+          { "title": "Sistem & Instance Ayarları", "desc": "Genel sistem konfigürasyonları ve instance yönetimi" },
+          { "title": "Uyarı ve Bildirimler", "desc": "E-posta, SMS, Teams vb. kanallardan bildirim yönetimi" },
+          { "title": "Süreç Şablonları", "desc": "Modüller için hazır süreç şablonları" },
+          { "title": "Hazır Cevaplar", "desc": "Not ve e-postalar için hızlı yanıt şablonları" },
+          { "title": "Validasyon Ayarları", "desc": "Form alanları için doğrulama kuralları" },
+          { "title": "Duyurular", "desc": "Kullanıcı ve gruplara yönelik bilgilendirme mesajları" },
+          { "title": "İş Saatleri", "desc": "Kurum çalışma saatleri tanımları" },
+          { "title": "Kurum Konumları & Alt Şirketler", "desc": "Organizasyon yapınıza uygun konum ve alt şirket yönetimi" },
+          { "title": "Denetim Günlükleri", "desc": "Kullanıcı etkinlikleri ve sistem log kayıtları" },
+          { "title": "Son Kullanıcı Ayarları", "desc": "Son kullanıcı deneyimini özelleştirme" }
+        ]
+      },
+      {
+        "id": "organizasyon",
+        "icon": "Users",
+        "title": "Organizasyon Yönetimi",
+        "subtitle": "Kurum yapınızı dijital ortama taşıyın",
+        "tone": "emerald",
+        "items": [
+          { "title": "Teknisyenler & Teknisyen Grupları", "desc": "Destek/teknik hizmet sağlayıcı yönetimi" },
+          { "title": "Kullanıcılar & Kullanıcı Grupları", "desc": "Ekipler, departmanlar ve son kullanıcılar" },
+          { "title": "Onaylayanlar ve Danışmanlar", "desc": "CAB, advisory rolleri ve karar mercileri" },
+          { "title": "Departmanlar", "desc": "Kurumsal hiyerarşi tanımları" },
+          { "title": "Roller ve Yetkiler", "desc": "Kullanıcı erişim ve işlem yetkileri" },
+          { "title": "Organizasyon Şemaları", "desc": "Görsel hiyerarşi ve raporlama yapısı" }
+        ]
+      },
+      {
+        "id": "varlik",
+        "icon": "Boxes",
+        "title": "Varlık ve Konfigürasyon Yönetimi",
+        "subtitle": "Tüm varlıklarınızı uçtan uca yönetin",
+        "tone": "purple",
+        "items": [
+          { "title": "Üreticiler & Kullanım Modelleri", "desc": "Donanım/yazılım üretici ve model envanteri" },
+          { "title": "Varlık Konumları, Durumları ve Şirketleri", "desc": "Fiziksel ve mantıksal yerleşim" },
+          { "title": "İlişki Türleri (CMDB)", "desc": "Bağımlılık, host, runs-on, uses ilişkileri" },
+          { "title": "Sözleşme Türleri", "desc": "Destek, bakım, lisans sözleşme tipleri" },
+          { "title": "Varlık Türleri & Öznitelikleri", "desc": "Sınıflandırma ve kuruma özel alanlar" },
+          { "title": "Kurum İçi Destek Sözleşmeleri", "desc": "İç destek hizmet kapsamı yönetimi" },
+          { "title": "Tedarikçi Sözleşmeleri & Tedarikçiler", "desc": "Dış tedarikçi ilişki ve sözleşme yönetimi" }
+        ]
+      },
+      {
+        "id": "gelismis",
+        "icon": "Sliders",
+        "title": "Gelişmiş Ayarlar",
+        "subtitle": "Kurumsal ihtiyaçlarınıza göre özelleştirin",
+        "tone": "amber",
+        "items": [
+          { "title": "SLA Politikaları", "desc": "Performans ölçümü ve hizmet seviyesi yönetimi" },
+          { "title": "Kapatma Kuralları", "desc": "Kayıtların kapatılma koşulları" },
+          { "title": "Otomasyon Yönetimi", "desc": "Esnek otomasyon kuralları" },
+          { "title": "Ortak Alanlar & Özel Ek Alanlar", "desc": "Çağrı ve süreçlere özel alanlar" },
+          { "title": "Global Durumlar", "desc": "Tüm süreçlerde ortak durum yönetimi" },
+          { "title": "Anketler", "desc": "Kullanıcı geri bildirimleri için anket tasarımı" },
+          { "title": "Sisteme Genel Bakış", "desc": "Sistem ayarlarının özet görünümü" },
+          { "title": "Entegrasyonlar", "desc": "Dış sistemlerle entegrasyon yönetimi" },
+          { "title": "İş Akışı Yönetimi", "desc": "Süreçlere özel dinamik iş akışları" },
+          { "title": "Dil Kaynağı Ayarları", "desc": "Çok dilli kullanım için kaynak yönetimi" },
+          { "title": "Zamanlanmış Olaylar & İstekler", "desc": "Geleceğe yönelik otomatik işlemler" },
+          { "title": "Otomatik Teknisyen Atama", "desc": "Akıllı görev dağıtımı" }
+        ]
+      },
+      {
+        "id": "formlar",
+        "icon": "FileText",
+        "title": "Formlar",
+        "subtitle": "İş süreçlerine uygun özelleştirilebilir formlar",
+        "tone": "cyan",
+        "items": [
+          { "title": "Özel Form Düzenleme", "desc": "Drag & drop form tasarımı, şartlı alanlar, validasyon" }
+        ]
+      },
+      {
+        "id": "iliskiler",
+        "icon": "Handshake",
+        "title": "Hizmet İlişkileri Yönetimi",
+        "subtitle": "Müşteri ilişkilerinizi tek panelden yönetin",
+        "tone": "rose",
+        "items": [
+          { "title": "Müşteriler & Kişiler", "desc": "Dış müşteri hesapları ve yetkili kişiler" },
+          { "title": "Müşteri Hizmet Sözleşmeleri", "desc": "SLA ve hizmet kapsamı yönetimi" },
+          { "title": "Hizmet Planları", "desc": "Paket bazlı hizmet tanımları" }
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "Yönetim Paneli'nin kategorileri, kapsamı ve organizasyona uyarlanması hakkında en sık sorulanlar.",
+    "items": [
+      {
+        "id": "panel-nedir",
+        "icon": "LayoutDashboard",
+        "question": "ServiceCore Yönetim Paneli neye yarar?",
+        "answer": "ServiceCore Yönetim Paneli, kurumunuzun tüm yapı taşlarını tek noktadan kontrol etmenizi sağlar. Genel ayarlardan organizasyon şemasına, varlık yönetiminden gelişmiş otomasyonlara kadar her şey kullanıcı dostu bir arayüzde bir araya gelir. Merkezi kontrol (tüm süreçler tek panelde), esneklik (organizasyona göre özelleştirilebilir), verimlilik (hazır şablonlar ve otomasyonlarla hız) ve şeffaflık (varlık, kullanıcı ve süreçlerde tam görünürlük) aynı panelde sunulur."
+      },
+      {
+        "id": "genel-ayarlar",
+        "icon": "Settings",
+        "question": "Genel Yönetim Ayarları'nda neler var?",
+        "answer": "İş süreçlerinizi hızlandıran ve standartlaştıran güçlü araçlar bulunur: Genel Uygulama Ayarları (tema, dil, saat dilimi), Sistem & Instance Ayarları, Uyarı ve Bildirimler (e-posta/SMS/Teams), Süreç Şablonları, Hazır Cevaplar, Validasyon Ayarları, Duyurular, İş Saatleri, Kurum Konumları & Alt Şirketler, Denetim Günlükleri ve Son Kullanıcı Ayarları. Bu kategori altında 11 ayar başlığı toplanır."
+      },
+      {
+        "id": "organizasyon-ayar",
+        "icon": "Users",
+        "question": "Organizasyon yönetimi nasıl yapılandırılır?",
+        "answer": "Kurum yapınızı dijital ortama taşıyabileceğiniz başlıklar şunlardır: Teknisyenler & Teknisyen Grupları, Kullanıcılar & Kullanıcı Grupları, Onaylayanlar ve Danışmanlar, Departmanlar, Roller ve Yetkiler ve Organizasyon Şemaları. Her kullanıcı doğru gruba ve yetkiye eşleşir; CAB ve advisory kurulları süreçlerdeki karar verici/danışman rollerini kalibre eder; departmanlar kurumsal hiyerarşiye uygun biçimde sisteme yansıtılır."
+      },
+      {
+        "id": "cmdb-varlik",
+        "icon": "Boxes",
+        "question": "CMDB ve varlık konfigürasyonu nasıl çalışır?",
+        "answer": "Konfigürasyon Yönetimi Veri Tabanı (CMDB) aracılığıyla varlıklar ve aralarındaki ilişkiler tek doğruluk kaynağında izlenir. Üreticiler & Kullanım Modelleri, Varlık Konumları/Durumları/Şirketleri, İlişki Türleri (depends-on, runs-on, hosts gibi), Sözleşme Türleri, Varlık Türleri & Öznitelikleri, Kurum İçi Destek Sözleşmeleri ve Tedarikçi Sözleşmeleri & Tedarikçiler aynı panelden yönetilir."
+      },
+      {
+        "id": "sla-otomasyon",
+        "icon": "Zap",
+        "question": "SLA, otomasyon ve gelişmiş yetkinlikler neler?",
+        "answer": "Gelişmiş Ayarlar altında 12 başlık vardır: SLA Politikaları (performans ölçümü), Kapatma Kuralları, Otomasyon Yönetimi (esnek koşul-aksiyon), Ortak ve Özel Ek Alanlar, Global Durumlar (tüm süreçlerde ortak statü dili), Anketler (memnuniyet ölçümü), Sisteme Genel Bakış, Entegrasyonlar, İş Akışı Yönetimi, Dil Kaynağı Ayarları, Zamanlanmış Olaylar & İstekler ve Otomatik Teknisyen Atama. Bu yetkinlikler ServiceCore'u kuruma birebir uyarlar."
       }
     ]
   },

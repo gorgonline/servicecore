@@ -103,6 +103,92 @@
       }
     ]
   },
+  "servicePlans": {
+    "badge": "Hizmet Planları & Faturalama",
+    "titleLead": "Her müşteriye özel,",
+    "titleAccent": "esnek hizmet paketleri.",
+    "description": "Her müşteri için farklı servis planları tanımlayın. Faturalama, maliyetlendirme, fazla mesai kuralları ve esnek kredi yönetimi ile her müşteri için özel hizmet paketleri oluşturabilirsiniz.",
+    "highlights": [
+      {
+        "id": "ucretlendirme",
+        "icon": "Wallet",
+        "title": "Ücretlendirme & Faturalama",
+        "description": "Başlık, açıklama, ücretlendirme ve faturalama metodu, faturalama periyodu, sabit fatura ve fazla mesai davranışı tek formda yapılandırılır.",
+        "tone": "blue"
+      },
+      {
+        "id": "maliyetlendirme",
+        "icon": "Calculator",
+        "title": "Saatlik Maliyetlendirme",
+        "description": "Haftalık izin verilen maksimum saat, saatlik maliyetlendirme, sabit maliyet ve fark maliyeti tanımları ile karlılık analizi yapılır.",
+        "tone": "emerald"
+      },
+      {
+        "id": "kredi",
+        "icon": "Repeat",
+        "title": "Kredi Devri & Esnek Yapı",
+        "description": "Kullanılmayan kredileri ötele, teknisyenin ek maliyet girmesine izin ver, harcanan süreye ilave yapma seçenekleri sunulur.",
+        "tone": "purple"
+      },
+      {
+        "id": "fazla-mesai",
+        "icon": "Clock",
+        "title": "Fazla Mesai Davranışı",
+        "description": "Haftalık izin verilen maksimum saat üzerine yapılan çalışmalar farklı ücretlendirme kuralı ile fakture edilir; sözleşmeye uygun şeffaflık sağlanır.",
+        "tone": "amber"
+      },
+      {
+        "id": "sabit-fark",
+        "icon": "Tags",
+        "title": "Sabit & Fark Maliyet",
+        "description": "Sabit aylık maliyet üzerine değişen kullanım miktarına göre fark maliyet hesaplaması yapılır; öngörülebilir bütçe + adil değişken yapı bir arada.",
+        "tone": "cyan"
+      },
+      {
+        "id": "kuruma-ozel",
+        "icon": "Sparkles",
+        "title": "Kuruma Özel Paketler",
+        "description": "Premium müşterilerden best-effort destek alanlara kadar her müşteri için bağımsız plan; aynı altyapıda farklı ticari deneyimler sunulur.",
+        "tone": "rose"
+      }
+    ]
+  },
+  "faq": {
+    "sectionTitle": "Sıkça Sorulan Sorular",
+    "sectionSubtitle": "SRM modülünün öne çıkan özellikleri, yetkili kullanıcılar, sözleşme yönetimi ve hizmet planları hakkında en sık merak edilenler.",
+    "items": [
+      {
+        "id": "ne-saglar",
+        "icon": "LayoutDashboard",
+        "question": "Servicecore SRM ne sağlar?",
+        "answer": "Servicecore SRM, kurumların müşteri hesaplarını, yetkili kişilerini, hizmet sözleşmelerini ve servis planlarını tek bir merkezden yönetmesini sağlar. Bu modül sayesinde hem iç müşterileriniz hem de dış müşterileriniz için şeffaf, izlenebilir ve sürdürülebilir bir hizmet yönetimi deneyimi sunabilirsiniz. Öne çıkan özellikler şunlardır: Müşteri Hesap Yönetimi, Kişi Yönetimi, Yetkili Kullanıcılar, Grup Yetkilendirmesi, Müşteri Hizmet Sözleşmeleri, Hizmet Planları ve Yetkili Teknisyen Atama."
+      },
+      {
+        "id": "musteri-hesap",
+        "icon": "UserSquare2",
+        "question": "Müşteri hesabı nasıl oluşturulur ve neler bağlanır?",
+        "answer": "Yeni müşteri eklemek için \"Yeni Müşteri Hesabı\" butonuna tıklanır; açılan pencerede müşteri adı, iletişim bilgileri ve diğer alanlar doldurularak hesap oluşturulur. Hesap açıldıktan sonra: kişiler eklenebilir, yetkili teknisyenler atanabilir, sözleşmeler ilişkilendirilebilir, varlıklar ve hizmetler bağlanabilir, müşteriye açılmış tüm istek ve olay kayıtları görüntülenebilir. Tek hesap üzerinden müşteriye dair tam 360° görünüm sağlanır."
+      },
+      {
+        "id": "yetkili-grup",
+        "icon": "Users",
+        "question": "Yetkili kullanıcı ve grup yöneticisi farkı nedir?",
+        "answer": "Yetkili Kullanıcı, müşteri tarafında belirlenen kişidir; kendi şirketi tarafından açılan tüm kayıtları görebilir. Grup Yetkilisi ise grup üyeleri tarafından açılan tüm kayıtları izleyebilir. Bu yapının avantajı: müşteriler kendi iç süreçlerini şeffaf şekilde yönetir; hangi kayıtların açıldığını, kapandığını veya onaylandığını takip edebilir. Müşteri tarafı kendi süreçlerini etkin biçimde sahiplenir."
+      },
+      {
+        "id": "sla-ola-sozlesme",
+        "icon": "FileSignature",
+        "question": "SLA ve OLA sözleşmeleri nasıl yönetilir?",
+        "answer": "SLA (Service Level Agreement) ve OLA (Operational Level Agreement) sözleşmeleri SRM modülünde yönetilir. Yeni sözleşme eklerken: müşteri hesabı seçilir, sözleşme türü belirlenir, ad/açıklama/başlangıç ve bitiş tarihi girilir, bitiş tarihinden önce/sonra bilgilendirme günleri tanımlanır, otomatik yenileme ve destek planı seçenekleri eklenir. Bu sayede hem iç hem de dış müşteriler için hizmet seviyeleri net şekilde tanımlanır; kritik tarihler kaçırılmaz."
+      },
+      {
+        "id": "yetkili-teknisyen",
+        "icon": "ShieldCheck",
+        "question": "Yetkili teknisyen ataması nasıl çalışır?",
+        "answer": "Belirli müşterilere özel teknisyenler atanabilir. Teknisyen ataması için önce teknisyen kullanıcı olarak tanımlanır, organizasyon ayarlarından rol atanır, ardından hizmet ilişkileri yönetiminden müşteri detayına girilerek teknisyen seçilir. Bu sayede teknisyenler yalnızca yetkili oldukları müşteri kayıtlarını görebilir; veri güvenliği ve uzmanlık odağı korunur. Premium müşterilere özel ekip atamak ile destek süreçleri belirgin biçimde hızlanır."
+      }
+    ]
+  },
   "cta": {
     "title": "Dijital çağın müşteri yönetimini ServiceCore ile kurun.",
     "description": "Kayıt takibi, sözleşme yönetimi, IT hizmet talepleriyle entegre süreç ve raporlama yetkinliklerini canlı demoda inceleyin; müşteri ilişkilerinizi modern, güvenilir ve etkili bir şekilde yönetin.",
