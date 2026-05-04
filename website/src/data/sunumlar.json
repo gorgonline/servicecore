@@ -7,62 +7,80 @@
     {
       "id": "hakkimizda",
       "title": "Hakkımızda : Servis Yönetiminde Yeni Nesil Çözüm",
-      "url": "https://gamma.app/docs/Servicecore-Hakkmzda-Servis-Yonetiminde-Yeni-Nesil-Cozum-1k3vrii5yn5bmz6",
+      "url": "https://gamma.app/docs/Servicecore-Hakkmzda-Servis-Yonetiminde-Yeni-Nesil-Cozum-klv7y5z94lnvkb4",
       "icon": "user"
     },
     {
       "id": "firma-tanitim",
       "title": "Servicecore Firma Tanıtım Sunumu",
-      "url": "https://gamma.app/docs/Servicecore-Firma-Tantm-Sunumu-380cwoglssk79m2",
+      "url": "https://gamma.app/docs/Servicecore-Firma-Tantm-Sunumu-blc04jk0mmbmeb6",
       "icon": "building"
     },
     {
       "id": "urun-tanitim",
       "title": "Servicecore Ürün Tanıtım Sunumu",
-      "url": "https://gamma.app/docs/Servicecore-Urun-Tantm-Sunumu-x1ssel1iovzyiz4",
+      "url": "https://gamma.app/docs/Servicecore-Urun-Tantm-Sunumu-e66n8e4h7uj7598",
       "icon": "monitor"
     },
     {
       "id": "esm-itsm",
       "title": "Servicecore ESM-ITSM Suite Tanıtımı",
-      "url": "https://gamma.app/docs/ServiceCore-ESM-ITSM-Suite-Tantm-rxa8y7mquj88tny",
+      "url": "https://gamma.app/docs/ServiceCore-ESM-ITSM-Suite-Tantm-fz9ry2qwsenpcxq",
       "icon": "layers"
     },
     {
       "id": "launch-ready",
       "title": "Servicecore Launch Ready Implementasyon Hizmeti",
-      "url": "https://gamma.app/docs/Servicecore-Launch-Ready-Implementasyon-Hizmeti-sgumshab7xuo1u2",
+      "url": "https://gamma.app/docs/Servicecore-Launch-Ready-Implementasyon-Hizmeti-3mkearyc9auhd4w",
       "icon": "rocket"
     },
     {
       "id": "destek",
       "title": "Servicecore Profesyonel Destek Hizmetleri",
-      "url": "https://gamma.app/docs/Servicecore-Profesyonel-Destek-Hizmetleri-s88cxn5m3axq8h2",
+      "url": "https://gamma.app/docs/ServicecoreProfesyonel-Destek-Hizmetleri-a1ju5secoq6zwl1",
       "icon": "help-circle"
     },
     {
       "id": "referans",
       "title": "Servicecore Referansları",
-      "url": "https://gamma.app/docs/ServiceCore-Referanslar-Kurumsal-Hizmet-Yonetiminde-Turkiyenin--5d98pyv2o6fz2s6",
+      "url": "https://gamma.app/docs/ServiceCore-Referanslar-Kurumsal-Hizmet-Yonetiminde-Turkiyenin-Li-ys36m0944hurlun",
       "icon": "award"
     },
     {
       "id": "egitim",
       "title": "Servicecore Etkinlik ve Eğitimleri",
-      "url": "https://gamma.app/docs/Servicecore-Etkinlik-ve-Egitimleri-kb29m3q35iyq42h",
+      "url": "https://gamma.app/docs/Servicecore-Egitimleri-gn7bnf2ygbiulsh",
       "icon": "graduation-cap"
     },
     {
       "id": "lisans",
       "title": "Servicecore Lisans Türleri",
-      "url": "https://gamma.app/docs/ServiceCore-Kurumsal-Hizmet-Yonetimi-Platformu-Lisans-Turleri-bynw0xoxkift65j",
+      "url": "https://gamma.app/docs/ServiceCore-Kurumsal-Hizmet-Yonetimi-Platformu-Lisans-Turleri-sht4gkfekcqyb5y",
       "icon": "file-text"
     },
     {
       "id": "dokumantasyon",
       "title": "Servicecore Kapsamlı Dokümantasyon",
-      "url": "https://gamma.app/docs/ServiceCore-Docs-Kapsaml-Dokumantasyon-Rehberi-d7c9wn2hkvnrmhr",
+      "url": "https://gamma.app/docs/Servicecore-Kapsaml-Dokumantasyon-Sistemi-lp44ht7283yfvda",
       "icon": "book-open"
+    },
+    {
+      "id": "fark-yaratan",
+      "title": "Servicecore: Fark Yaratan Özellikler",
+      "url": "https://gamma.app/docs/Servicecore-Fark-Yaratan-Ozellikler-hfowlmla5bfn1ae",
+      "icon": "star"
+    },
+    {
+      "id": "bilgi-dokuman",
+      "title": "Servicecore Bilgi ve Döküman Yönetimi Modülü",
+      "url": "https://gamma.app/docs/Servicecore-Bilgi-ve-Dokuman-Yonetimi-Modulu-a53ja2ut67o9mlf",
+      "icon": "book-marked"
+    },
+    {
+      "id": "agile-sdlc",
+      "title": "Servicecore Agile Proje Yönetimi ve SDLC Platformu",
+      "url": "https://gamma.app/docs/Serviceco-Agile-Proje-Yonetimi-ve-SDLC-Platformu-pi7fetnn75z7oba",
+      "icon": "kanban-square"
     }
   ]
 }

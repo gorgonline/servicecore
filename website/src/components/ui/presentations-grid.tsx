@@ -1,17 +1,20 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { 
-  User, 
-  Building2, 
-  Monitor, 
-  Layers, 
-  Rocket, 
-  HelpCircle, 
-  Award, 
-  GraduationCap, 
-  FileText, 
+import {
+  User,
+  Building2,
+  Monitor,
+  Layers,
+  Rocket,
+  HelpCircle,
+  Award,
+  GraduationCap,
+  FileText,
   BookOpen,
+  Star,
+  BookMarked,
+  KanbanSquare,
   ArrowRight
 } from "lucide-react";
 import sunumlarData from "@/data/sunumlar.json";
@@ -27,6 +30,9 @@ const iconsMap: Record<string, React.ElementType> = {
   "graduation-cap": GraduationCap,
   "file-text": FileText,
   "book-open": BookOpen,
+  "star": Star,
+  "book-marked": BookMarked,
+  "kanban-square": KanbanSquare,
 };
 
 const accentColors = [
