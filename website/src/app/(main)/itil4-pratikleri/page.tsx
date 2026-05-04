@@ -66,6 +66,9 @@ export default function PratiklerPage() {
         {pratiklerData.sections.map((section) => {
           const Icon = sectionIcons[section.id] || ShieldCheck;
           const colorClass = sectionColors[section.id];
+          const visibleItems = section.items.filter((item) => item.link && item.link.length > 0);
+
+          if (visibleItems.length === 0) return null;
 
           return (
             <section key={section.id} className="mb-32">
@@ -94,30 +97,37 @@ export default function PratiklerPage() {
                 animate="visible"
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               >
-                {section.items.map((item, index) => (
+                {visibleItems.map((item, index) => (
                   <motion.div key={item.title} variants={itemVariants}>
-                    <Card className="group h-full bg-white/2 border-white/5 backdrop-blur-3xl hover:bg-white/6 hover:border-white/10 transition-all duration-500 overflow-hidden rounded-4xl">
-                      <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-primary)/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <CardContent className="p-8 relative z-10 flex flex-col h-full">
-                        <div className="mb-8 flex items-center justify-between">
-                          <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-(--color-text-muted) group-hover:text-(--color-accent-blue-light) group-hover:border-blue-500/30 transition-all duration-500 shadow-inner">
-                            <span className="text-xs font-black">{index + 1}</span>
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block h-full cursor-pointer"
+                    >
+                      <Card className="group h-full bg-white/2 border-white/5 backdrop-blur-3xl hover:bg-white/6 hover:border-white/10 transition-all duration-500 overflow-hidden rounded-4xl">
+                        <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-primary)/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <CardContent className="p-8 relative z-10 flex flex-col h-full">
+                          <div className="mb-8 flex items-center justify-between">
+                            <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-(--color-text-muted) group-hover:text-(--color-accent-blue-light) group-hover:border-blue-500/30 transition-all duration-500 shadow-inner">
+                              <span className="text-xs font-black">{index + 1}</span>
+                            </div>
+                            <Sparkles className="w-4 h-4 text-white/0 group-hover:text-blue-400/40 transition-colors duration-700" />
                           </div>
-                          <Sparkles className="w-4 h-4 text-white/0 group-hover:text-blue-400/40 transition-colors duration-700" />
-                        </div>
-                        <h3 className="text-xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors duration-300 tracking-tight">
-                          {item.title}
-                        </h3>
-                        <p className="text-(--color-text-secondary) group-hover:text-(--color-text-overline) leading-relaxed text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity">
-                          {item.desc}
-                        </p>
-                        <div className="mt-auto pt-10 flex items-center gap-2 text-[10px] font-black text-(--color-text-dim) group-hover:text-blue-500 transition-colors duration-300 tracking-widest">
-                          <div className="w-1 h-1 rounded-full bg-current" />
-                          <span>EĞİTİM & DANIŞMANLIK</span>
-                          <ArrowRight className="w-3 h-3 translate-x-0 group-hover:translate-x-1 transition-transform" />
-                        </div>
-                      </CardContent>
-                    </Card>
+                          <h3 className="text-xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors duration-300 tracking-tight">
+                            {item.title}
+                          </h3>
+                          <p className="text-(--color-text-secondary) group-hover:text-(--color-text-overline) leading-relaxed text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                            {item.desc}
+                          </p>
+                          <div className="mt-auto pt-10 flex items-center gap-2 text-[10px] font-black text-(--color-text-dim) group-hover:text-blue-500 transition-colors duration-300 tracking-widest">
+                            <div className="w-1 h-1 rounded-full bg-current" />
+                            <span>SUNUMU GÖRÜNTÜLE</span>
+                            <ArrowRight className="w-3 h-3 translate-x-0 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </a>
                   </motion.div>
                 ))}
               </motion.div>
