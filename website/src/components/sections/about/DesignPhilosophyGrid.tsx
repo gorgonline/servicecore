@@ -36,10 +36,7 @@ export default function DesignPhilosophyGrid({ title, principles }: DesignPhilos
     <section className="py-24 bg-(--color-surface-base) relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-3xl mb-16 text-center mx-auto md:text-left md:mx-0">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <motion.h2
             className="text-3xl lg:text-4xl font-bold text-white tracking-tight mb-6"
           >
             {title}
@@ -68,9 +65,6 @@ function PrincipleCard({ principle, index }: { principle: Principle; index: numb
   return (
     <motion.div
       ref={cardRef}
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
       className="group relative flex flex-col p-8 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/4 hover:border-white/10 transition-all duration-300 overflow-hidden"
     >

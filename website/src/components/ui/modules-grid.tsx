@@ -18,9 +18,6 @@ const IncidentModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "20px" }}
       transition={{ duration: 0.4, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -97,9 +94,6 @@ const ProblemModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -182,9 +176,6 @@ const ChangeModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -253,9 +244,6 @@ const KnowledgeModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -315,9 +303,6 @@ const RequestModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -373,9 +358,6 @@ const TaskModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -437,9 +419,6 @@ const AssetModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -495,9 +474,6 @@ const ConfigModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -557,9 +533,6 @@ const CatalogModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -617,9 +590,6 @@ const SLAModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -685,9 +655,6 @@ const AutomationModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -755,9 +722,6 @@ const ReportingModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -810,9 +774,6 @@ const PortalModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -874,9 +835,6 @@ const InteractionModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -936,9 +894,6 @@ const ProjectModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1001,9 +956,6 @@ const ImprovementModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1071,9 +1023,6 @@ const ReleaseModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1131,9 +1080,6 @@ const ContractModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1194,9 +1140,6 @@ const WorkflowModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1280,9 +1223,6 @@ const CustomerPortalModule = ({ title, description, delay = 0 }: ModuleProps) =>
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1347,9 +1287,6 @@ const LowCodeModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1416,9 +1353,6 @@ const IntegrationModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1477,9 +1411,6 @@ const MobileModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1545,9 +1476,6 @@ const AdminModule = ({ title, description, delay = 0 }: ModuleProps) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "50px" }}
       transition={{ duration: 0.5, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
@@ -1630,9 +1558,6 @@ export function ModulesGrid() {
         
         {/* Header Area */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "100px" }}
           transition={{ duration: 0.7 }}
           className="mb-16"
         >

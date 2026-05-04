@@ -105,7 +105,7 @@ export default function UpdatesPage() {
         </header>
 
         {/* CONTROLS */}
-        <div className="sticky top-8 z-[100] mb-12 flex flex-col md:flex-row gap-4 p-2 bg-(--color-surface-elevated-solid)/80 backdrop-blur-2xl border border-white/5 rounded-2xl shadow-2xl">
+        <div className="sticky top-8 z-100 mb-12 flex flex-col md:flex-row gap-4 p-2 bg-(--color-surface-elevated-solid)/80 backdrop-blur-2xl border border-white/5 rounded-2xl shadow-2xl">
           <div className="flex-1 relative group">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-(--color-text-muted) group-focus-within:text-(--color-accent-blue-light) transition-colors" size={18} />
             <input 
@@ -140,7 +140,7 @@ export default function UpdatesPage() {
         <div className="space-y-32 relative">
           
           {/* Vertical Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-[1px] bg-linear-to-b from-blue-500/50 via-white/5 to-transparent hidden md:block" />
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-blue-500/50 via-white/5 to-transparent hidden md:block" />
 
           {filteredUpdates.length === 0 ? (
             <div className="py-40 text-center">
@@ -152,11 +152,8 @@ export default function UpdatesPage() {
             </div>
           ) : (
             filteredUpdates.map((update, idx) => (
-              <motion.section 
+              <motion.section
                 key={`${update.month}-${update.year}`}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "100px" }}
                 className={`relative flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start gap-12`}
               >
                 
@@ -165,7 +162,7 @@ export default function UpdatesPage() {
                   <div className={`flex flex-col ${idx % 2 === 0 ? 'md:items-end' : 'md:items-start'} gap-2`}>
                     <div className="flex items-center gap-3">
                       <span className="text-xs font-black uppercase tracking-[0.4em] text-blue-500">{update.year}</span>
-                      <div className="h-[1px] w-8 bg-blue-500/30" />
+                      <div className="h-px w-8 bg-blue-500/30" />
                     </div>
                     <h2 className="text-4xl md:text-5xl font-black italic tracking-tighter text-white/90">
                       {update.month}
@@ -174,7 +171,7 @@ export default function UpdatesPage() {
                 </div>
 
                 {/* TIMELINE NODE */}
-                <div className="absolute left-[-12px] md:left-1/2 md:-ml-[12px] top-8 w-6 h-6 rounded-full bg-(--color-surface-base) border-4 border-(--color-accent-blue-base) z-20 hidden md:flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+                <div className="absolute -left-3 md:left-1/2 md:-ml-3 top-8 w-6 h-6 rounded-full bg-(--color-surface-base) border-4 border-(--color-accent-blue-base) z-20 hidden md:flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)]">
                   <div className="w-1 h-1 bg-white rounded-full animate-pulse" />
                 </div>
 
@@ -198,10 +195,8 @@ export default function UpdatesPage() {
 
                     <ul className="space-y-6 relative">
                       {update.items.map((item, i) => (
-                        <motion.li 
-                          key={i} 
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
+                        <motion.li
+                          key={i}
                           transition={{ delay: i * 0.05 }}
                           className="flex items-start gap-4 group/item"
                         >

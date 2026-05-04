@@ -124,10 +124,7 @@ export default function EgitimlerPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
                 
                 {/* Left: Main Program Card */}
-                <motion.div 
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                <motion.div
                   className="lg:col-span-7 relative group"
                 >
                   <div className="absolute -inset-1 bg-linear-to-br from-blue-500/10 to-transparent rounded-[3rem] blur-lg group-hover:from-blue-500/20 transition duration-1000" />
@@ -164,12 +161,9 @@ export default function EgitimlerPage() {
                   {program.info_cards.map((card, idx) => {
                     const Icon = iconMap[card.icon as keyof typeof iconMap] || Calendar;
                     return (
-                      <motion.div 
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                      <motion.div
                         transition={{ delay: idx * 0.1 }}
-                        key={idx} 
+                        key={idx}
                         className="bg-white/2 backdrop-blur-md border border-white/5 rounded-[2.5rem] p-8 flex flex-col justify-between hover:bg-white/4 hover:border-blue-500/30 transition-all duration-500 group relative overflow-hidden"
                       >
                          <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 blur-2xl rounded-full group-hover:bg-blue-500/10 transition-colors duration-500" />
@@ -190,10 +184,7 @@ export default function EgitimlerPage() {
               </div>
 
               {/* Curriculum Accordion (Below the cards, integrated smoothly) */}
-              <motion.div 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+              <motion.div
                 className="max-w-5xl mx-auto w-full mt-16"
               >
                 <div className="flex items-center gap-6 mb-10">
@@ -228,10 +219,7 @@ export default function EgitimlerPage() {
             
             {/* LEFT: INFO */}
             <div className="py-24 px-6 lg:px-12 xl:pr-24 flex flex-col justify-center relative z-10">
-              <motion.div 
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+              <motion.div
                 className="space-y-14"
               >
                 <div>
@@ -282,10 +270,7 @@ export default function EgitimlerPage() {
 
             {/* RIGHT: FORM */}
             <div className="py-24 px-6 lg:px-12 xl:pl-24 flex flex-col justify-center relative bg-(--color-surface-base)/50 border-t lg:border-t-0 lg:border-l border-white/5 backdrop-blur-2xl">
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+              <motion.div
                 className="w-full max-w-xl mx-auto lg:mr-auto lg:ml-0"
               >
                 <div className="relative p-10 lg:p-12 rounded-[3rem] bg-white/2 border border-white/10 shadow-2xl group focus-within:border-blue-500/40 transition-colors duration-500">

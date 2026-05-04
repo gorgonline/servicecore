@@ -62,9 +62,7 @@ export function ReferencesLogoGrid() {
           {/* Logo Cards Grid */}
           <motion.div
             variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "50px" }}
+            animate="visible"
             className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"
           >
             {category.references.map((ref) => (
@@ -75,7 +73,7 @@ export function ReferencesLogoGrid() {
               >
                 <div className="relative flex items-center justify-center h-24 rounded-2xl bg-white/90 backdrop-blur-md border border-white/20 shadow-xl transition-all duration-500 hover:bg-white hover:-translate-y-1 hover:shadow-white/10 overflow-hidden p-6">
                   {/* Hover glow */}
-                  <div className="absolute inset-0 bg-linear-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/[0.04] group-hover:to-purple-500/[0.04] transition-all duration-700" />
+                  <div className="absolute inset-0 bg-linear-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/4 group-hover:to-purple-500/4 transition-all duration-700" />
                   
                   <div className="relative z-10 w-full h-full flex items-center justify-center p-4">
                     <Image
@@ -127,9 +125,7 @@ export function ReferencesDetailGrid() {
       {/* Detail Cards */}
       <motion.div
         variants={detailContainerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "50px" }}
+        animate="visible"
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
         {referencesData.detailedReferences.map((ref, idx) => {
@@ -170,7 +166,7 @@ export function ReferencesDetailGrid() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-(--color-text-secondary) font-light leading-relaxed flex-grow">
+                  <p className="text-sm text-(--color-text-secondary) font-light leading-relaxed grow">
                     {ref.description}
                   </p>
                 </div>

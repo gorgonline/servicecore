@@ -279,9 +279,7 @@ export default function GorevYonetimiPage() {
         <div className="container mx-auto px-6 lg:px-12 w-full max-w-7xl flex flex-col gap-32">
           {/* Feature 1: Merkezi Koordinasyon */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             variants={fadeUp}
             className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24"
           >
@@ -397,9 +395,7 @@ export default function GorevYonetimiPage() {
 
           {/* Feature 2: WTE & STE */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             variants={fadeUp}
             className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24"
           >
@@ -515,9 +511,7 @@ export default function GorevYonetimiPage() {
 
           {/* Feature 3: Sürece Özel Kanban (mock kanban board) */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             variants={fadeUp}
             className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24"
           >
@@ -689,9 +683,7 @@ export default function GorevYonetimiPage() {
 
           <motion.div
             variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[420px]"
           >
             {/* Bento 1 - Kayıtsız işin maliyeti (wide, görselli) */}
@@ -996,9 +988,7 @@ export default function GorevYonetimiPage() {
 
           <motion.div
             variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 lg:gap-4"
           >
             {data.challenges.items.map((c, i) => {
@@ -1037,9 +1027,7 @@ export default function GorevYonetimiPage() {
           {/* Solution banner */}
           <motion.div
             variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            animate="visible"
             className="mt-12 max-w-3xl mx-auto rounded-2xl border border-emerald-500/30 bg-linear-to-r from-emerald-500/12 to-cyan-500/8 p-5 flex items-center gap-4 shadow-[0_0_30px_rgba(16,185,129,0.15)]"
           >
             <div className="w-12 h-12 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center shrink-0">
@@ -1075,9 +1063,7 @@ export default function GorevYonetimiPage() {
 
           <motion.div
             variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             className="flex flex-col gap-3"
           >
             {data.faq.items.map((item, i) => {
@@ -1118,9 +1104,6 @@ export default function GorevYonetimiPage() {
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="container mx-auto pb-20 max-w-7xl mt-32">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
             >

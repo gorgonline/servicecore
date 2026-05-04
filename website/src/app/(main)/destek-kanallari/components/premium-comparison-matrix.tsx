@@ -16,15 +16,12 @@ export function PremiumComparisonMatrix() {
     <section id="packages" className="relative w-full py-24 overflow-hidden bg-(--color-surface-base-dark)">
       {/* Background Ambience */}
       <div className="absolute top-0 inset-x-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-100 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/10 via-transparent to-transparent pointer-events-none blur-[100px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-(--color-brand-primary)/10 via-transparent to-transparent pointer-events-none blur-[100px]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Section Header */}
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true, margin: "100px" }}
            transition={{ duration: 0.7 }}
            className="text-center mb-16 max-w-3xl mx-auto"
         >
@@ -38,13 +35,10 @@ export function PremiumComparisonMatrix() {
 
         {/* The Matrix Container */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "50px" }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="w-full overflow-x-auto pb-6 custom-scrollbar"
         >
-          <div className="min-w-[900px] w-full rounded-2xl border border-white/10 bg-white/2 backdrop-blur-xl overflow-hidden relative shadow-2xl">
+          <div className="min-w-225 w-full rounded-2xl border border-white/10 bg-white/2 backdrop-blur-xl overflow-hidden relative shadow-2xl">
              
              {/* Table Header Row */}
              <div className="grid grid-cols-5 border-b border-white/10 bg-(--color-surface-elevated-dark)/80 backdrop-blur-md sticky top-0 z-20">
@@ -115,7 +109,7 @@ export function PremiumComparisonMatrix() {
                         <div 
                           key={valIndex} 
                           className={`col-span-1 p-4 md:p-5 flex items-center justify-center border-r border-white/5 last:border-r-0 ${
-                            isProColumn ? "bg-(--color-brand-primary)/[0.02]" : ""
+                            isProColumn ? "bg-(--color-brand-primary)/2" : ""
                           }`}
                         >
                           {isTrue && (

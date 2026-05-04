@@ -150,11 +150,9 @@ export default function Footer() {
       
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-blue-500/20 to-transparent" />
 
-      <motion.div 
+      <motion.div
         variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "50px" }}
+        animate="visible"
         className="container relative z-10 mx-auto px-6 lg:px-12 max-w-350"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">

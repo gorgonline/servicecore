@@ -178,11 +178,9 @@ export default function KurslarPage() {
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {kurslar.modules.map((module: KursModule, idx: number) => {
@@ -214,10 +212,7 @@ export default function KurslarPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           
           {/* PARTICIPATION INFO */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <motion.div
             className="space-y-12"
           >
             <div>
@@ -264,10 +259,7 @@ export default function KurslarPage() {
           </motion.div>
 
           {/* REGISTRATION FORM */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+          <motion.div
             className="sticky top-32"
           >
             <div className="relative p-10 rounded-[2.5rem] bg-(--color-surface-elevated-solid)/80 border border-white/10 backdrop-blur-3xl shadow-2xl overflow-hidden group">

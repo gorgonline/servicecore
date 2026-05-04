@@ -55,9 +55,6 @@ function ExperienceRow({
     >
       {/* Content Side */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "50px" }}
         transition={{ duration: 0.6 }}
         className="flex-1 space-y-6"
       >
@@ -95,9 +92,6 @@ function ExperienceRow({
 
       {/* Visual Side — Decorated Icon Showcase */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.98 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, margin: "50px" }}
         transition={{ duration: 0.6 }}
         className="flex-1 w-full aspect-video md:aspect-video relative group overflow-hidden rounded-2xl bg-white/2 border border-white/5"
       >
@@ -119,12 +113,12 @@ function ExperienceRow({
           <div className="relative w-32 h-32 flex items-center justify-center">
             {/* Outer rotating dashed ring */}
             <div
-              className="absolute inset-[-12px] rounded-full border border-dashed border-blue-500/15"
+              className="absolute -inset-3 rounded-full border border-dashed border-blue-500/15"
               style={{ animation: "rotate-ring 25s linear infinite" }}
             />
 
             {/* Middle static ring */}
-            <div className="absolute inset-[-4px] rounded-full border border-blue-500/8" />
+            <div className="absolute -inset-1 rounded-full border border-blue-500/8" />
 
             {/* Glow layer */}
             <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full scale-150" />
@@ -134,9 +128,6 @@ function ExperienceRow({
 
             {/* Icon with entrance animation */}
             <motion.div
-              initial={{ scale: 0.85, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
               transition={{
                 type: "spring",
                 stiffness: 200,

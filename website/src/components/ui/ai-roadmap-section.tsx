@@ -167,9 +167,6 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
       <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
         {/* Sticky CTA bar */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6 p-6 lg:p-8 rounded-4xl bg-linear-to-br from-(--color-brand-primary)/10 to-purple-500/10 border border-white/10 backdrop-blur-xl"
         >
@@ -201,9 +198,6 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
         {data.years.map((yearBlock, yi) => (
           <div key={yearBlock.year} className={yi > 0 ? "mt-20" : ""}>
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "50px" }}
               transition={{ duration: 0.5 }}
               className="flex items-end justify-between gap-4 pb-6 mb-10 border-b border-white/10"
             >
@@ -225,9 +219,6 @@ export function AIRoadmapSection({ data }: { data: AIRoadmapData }) {
                 return (
                   <motion.div
                     key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "30px" }}
                     transition={{ duration: 0.4, delay: (idx % 6) * 0.05 }}
                   >
                     <button

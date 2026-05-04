@@ -109,7 +109,7 @@ export default function SpecsheetPage() {
             </div>
 
             {/* TAB PANELS */}
-            <div className="p-6 lg:p-10 min-h-[400px]">
+            <div className="p-6 lg:p-10 min-h-100">
               <AnimatePresence mode="wait">
                 {/* TAB 1: GENEL */}
                 {activeTab === "genel" && (
@@ -375,9 +375,6 @@ export default function SpecsheetPage() {
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="container mx-auto pb-20 max-w-7xl">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
             >

@@ -52,7 +52,7 @@ export default function PratiklerPage() {
       {/* Background depth glows */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-[10%] -left-[5%] w-150 h-150 bg-blue-600/5 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[20%] -right-[5%] w-[500px] h-[500px] bg-emerald-600/5 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[20%] -right-[5%] w-125 h-125 bg-emerald-600/5 blur-[120px] rounded-full" />
       </div>
 
       <ServiceCoreHero 
@@ -70,10 +70,7 @@ export default function PratiklerPage() {
           return (
             <section key={section.id} className="mb-32">
               {/* Section Header */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+              <motion.div
                 className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8"
               >
                 <div className="max-w-3xl">
@@ -88,20 +85,18 @@ export default function PratiklerPage() {
                     {section.description}
                   </p>
                 </div>
-                <div className="hidden lg:block h-px flex-grow bg-linear-to-r from-white/10 to-transparent ml-16 mb-8" />
+                <div className="hidden lg:block h-px grow bg-linear-to-r from-white/10 to-transparent ml-16 mb-8" />
               </motion.div>
 
               {/* Items Grid */}
-              <motion.div 
+              <motion.div
                 variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "50px" }}
+                animate="visible"
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {section.items.map((item, index) => (
                   <motion.div key={item.title} variants={itemVariants}>
-                    <Card className="group h-full bg-white/2 border-white/5 backdrop-blur-3xl hover:bg-white/[0.06] hover:border-white/10 transition-all duration-500 overflow-hidden rounded-4xl">
+                    <Card className="group h-full bg-white/2 border-white/5 backdrop-blur-3xl hover:bg-white/6 hover:border-white/10 transition-all duration-500 overflow-hidden rounded-4xl">
                       <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-primary)/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                       <CardContent className="p-8 relative z-10 flex flex-col h-full">
                         <div className="mb-8 flex items-center justify-between">
@@ -132,10 +127,7 @@ export default function PratiklerPage() {
       </div>
 
       {/* Full-Width Footer CTA */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+      <motion.div
         transition={{ duration: 0.8 }}
         className="mt-20"
       >

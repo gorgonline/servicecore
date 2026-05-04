@@ -78,15 +78,12 @@ export function SupportTiersCards() {
     <section id="packages" className="relative w-full py-24 overflow-hidden bg-(--color-surface-base-dark)">
       {/* Background Gradients */}
       <div className="absolute top-0 inset-x-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute top-1/4 -right-[20%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/10 to-transparent pointer-events-none" />
+      <div className="absolute top-1/4 -right-[20%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-(--color-brand-primary)/10 to-transparent pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
         
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "100px" }}
           transition={{ duration: 0.7 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
@@ -108,13 +105,10 @@ export function SupportTiersCards() {
              return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={`flex flex-col rounded-4xl p-8 relative group transition-colors h-full ${
                   isPro 
-                    ? "bg-linear-to-b from-(--color-brand-primary)/[0.08] to-(--color-surface-base) border border-(--color-brand-primary)/30 shadow-(--shadow-glow-primary-card)" 
+                    ? "bg-linear-to-b from-(--color-brand-primary)/8 to-(--color-surface-base) border border-(--color-brand-primary)/30 shadow-(--shadow-glow-primary-card)"
                     : "bg-(--color-surface-elevated-dark) border border-white/10"
                 }`}
               >
@@ -149,7 +143,7 @@ export function SupportTiersCards() {
                 <div className={`w-full h-px mb-6 ${isPro ? "bg-linear-to-r from-(--color-brand-primary)/30 via-(--color-brand-primary)/20 to-transparent" : "bg-linear-to-r from-transparent via-white/10 to-transparent"}`} />
 
                 {/* Features Accordion List */}
-                <div className="flex flex-col gap-1 flex-grow">
+                <div className="flex flex-col gap-1 grow">
                    <h4 className={`text-[11px] font-semibold mb-3 px-1 uppercase tracking-wider ${isPro ? "text-(--color-brand-primary)" : "text-(--color-text-muted)"}`}>
                      Paket Kapsamı
                    </h4>

@@ -158,10 +158,7 @@ export default function MottoContent({ data }: { data: MottoData }) {
       {/* Sections */}
       {data.sections.map((section: MottoSection) => (
         <section key={section.id} className="mb-32">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <motion.div
             className="mb-12"
           >
             <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-2 text-white">
@@ -172,11 +169,9 @@ export default function MottoContent({ data }: { data: MottoData }) {
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
+            animate="show"
             className={`grid gap-6 ${section.id === 'design-principles' ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'}`}
           >
             {section.items.map((card: MottoItem, cardIdx: number) => {
@@ -243,15 +238,12 @@ export default function MottoContent({ data }: { data: MottoData }) {
 
       {/* Footer CTA */}
       <div className="mt-32 pb-40">
-        <motion.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ 
+        <motion.div
+          transition={{
             type: "spring",
             stiffness: 100,
             damping: 15
           }}
-          viewport={{ once: true }}
           className="group/cta relative flex flex-col justify-center overflow-hidden rounded-[2.5rem] bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
         >
           <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500" />

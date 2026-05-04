@@ -222,9 +222,6 @@ export default function BlogDetailPage() {
       <section className="py-12 lg:py-16 relative z-10">
         <div className="container mx-auto px-6 lg:px-12 w-full max-w-3xl">
           <motion.article
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="flex flex-col gap-10"
           >
@@ -347,9 +344,7 @@ export default function BlogDetailPage() {
 
           <motion.div
             variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            animate="visible"
             className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6"
           >
             {otherPosts.map((p) => {

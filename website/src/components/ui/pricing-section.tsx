@@ -148,15 +148,12 @@ export function PricingSection() {
       {/* Background Gradients */}
       <div className="absolute top-0 inset-x-0 h-px w-full bg-linear-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-1/4 -left-[20%] w-[60%] h-[60%] rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/3 -right-[20%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/10 to-transparent pointer-events-none" />
+      <div className="absolute top-1/3 -right-[20%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-(--color-brand-primary)/10 to-transparent pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-12 relative z-10">
         
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "100px" }}
           transition={{ duration: 0.7 }}
           className="text-center mb-20 max-w-3xl mx-auto"
         >
@@ -194,9 +191,6 @@ export function PricingSection() {
           
           {/* 1. Standart Versiyon */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "50px" }}
             transition={{ duration: 0.6 }}
             className="flex flex-col rounded-4xl bg-(--color-surface-elevated-dark) border border-white/10 p-8 md:p-10  relative group transition-colors"
           >
@@ -246,15 +240,12 @@ export function PricingSection() {
 
           {/* 2. Profesyonel Versiyon */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "50px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col rounded-4xl bg-linear-to-b from-(--color-brand-primary)/[0.08] to-(--color-surface-base-dark) border border-(--color-brand-primary)/30 p-8 md:p-10  relative group shadow-(--shadow-glow-primary-card)"
+            className="flex flex-col rounded-4xl bg-linear-to-b from-(--color-brand-primary)/8 to-(--color-surface-base-dark) border border-(--color-brand-primary)/30 p-8 md:p-10  relative group shadow-(--shadow-glow-primary-card)"
           >
              {/* Clipping Wrapper for Background Glow */}
             <div className="absolute inset-0 rounded-4xl overflow-hidden pointer-events-none">
-               <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/15 to-transparent rounded-full pointer-events-none" />
+               <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-(--color-brand-primary)/15 to-transparent rounded-full pointer-events-none" />
             </div>
 
             {/* Pro Highlight Label */}
@@ -295,7 +286,7 @@ export function PricingSection() {
             </div>
 
             {/* Scrollable Features Area */}
-            <div className="flex flex-col gap-6 pr-2 max-h-[500px] overflow-y-auto blue-scrollbar pb-4 relative z-10">
+            <div className="flex flex-col gap-6 pr-2 max-h-125 overflow-y-auto blue-scrollbar pb-4 relative z-10">
                
                {/* Ek Modüller */}
                <div>
@@ -333,9 +324,6 @@ export function PricingSection() {
 
         {/* Add-ons & Solutions Section (Bottom Row) */}
         <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true, margin: "50px" }}
            transition={{ duration: 0.6, delay: 0.4 }}
            className="w-full rounded-4xl bg-(--color-surface-addon) border border-white/5 p-8 md:p-12 relative overflow-hidden"
         >

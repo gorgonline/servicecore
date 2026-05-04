@@ -44,9 +44,7 @@ export function InteractiveSupportMetrics() {
         
         <motion.div
            variants={containerVariants}
-           initial="hidden"
-           whileInView="show"
-           viewport={{ once: true, margin: "100px" }}
+           animate="show"
            className="grid grid-cols-1 lg:grid-cols-12 gap-8"
         >
 
@@ -119,7 +117,7 @@ export function InteractiveSupportMetrics() {
                    </p>
                 </div>
 
-                <div className="flex flex-col gap-3 flex-grow">
+                <div className="flex flex-col gap-3 grow">
                   {supportChannels.items.map((channel, index) => (
                     <div 
                       key={index} 

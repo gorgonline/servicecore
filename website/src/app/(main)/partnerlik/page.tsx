@@ -80,10 +80,7 @@ export default function PartnerlikPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           
           {/* LEFT COLUMN: ADVANTAGES */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+          <motion.div
             className="space-y-12"
           >
             <div>
@@ -94,11 +91,9 @@ export default function PartnerlikPage() {
                 {partnership_program.advantages_description}
               </p>
 
-              <motion.ul 
+              <motion.ul
                 variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
+                animate="visible"
                 className="space-y-5"
               >
                 {partnership_program.benefits.map((benefit, idx) => (
@@ -138,10 +133,7 @@ export default function PartnerlikPage() {
           </motion.div>
 
           {/* RIGHT COLUMN: FORM */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+          <motion.div
             className="sticky top-32"
           >
             <div className="relative p-10 rounded-[2.5rem] bg-(--color-surface-elevated-solid)/50 border border-white/10 backdrop-blur-3xl shadow-2xl overflow-hidden group">

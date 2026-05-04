@@ -8,9 +8,6 @@ export default function PrivacyContact() {
   return (
     <div className="container mx-auto px-6 lg:px-12 pb-40 max-w-7xl">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
       >

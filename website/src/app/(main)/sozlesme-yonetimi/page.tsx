@@ -246,9 +246,7 @@ export default function SozlesmeYonetimiPage() {
         <div className="container mx-auto px-6 lg:px-12 w-full max-w-7xl flex flex-col gap-32">
           {/* Feature 1: OLA */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             variants={fadeUp}
             className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24"
           >
@@ -373,9 +371,7 @@ export default function SozlesmeYonetimiPage() {
 
           {/* Feature 2: Tedarikçi */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             variants={fadeUp}
             className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-24"
           >
@@ -467,9 +463,7 @@ export default function SozlesmeYonetimiPage() {
 
           {/* Feature 3: SLA Müşteri */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             variants={fadeUp}
             className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24"
           >
@@ -577,9 +571,7 @@ export default function SozlesmeYonetimiPage() {
 
           <motion.div
             variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[420px]"
           >
             {/* Bento 1 - Merkezi arşiv (wide, mock) */}
@@ -882,9 +874,7 @@ export default function SozlesmeYonetimiPage() {
 
           <motion.div
             variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5"
           >
             {data.lifecycle.stages.map((s) => {
@@ -950,9 +940,7 @@ export default function SozlesmeYonetimiPage() {
 
           <motion.div
             variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "100px" }}
+            animate="visible"
             className="flex flex-col gap-3"
           >
             {data.faq.items.map((item, i) => {
@@ -993,9 +981,6 @@ export default function SozlesmeYonetimiPage() {
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="container mx-auto pb-20 max-w-7xl mt-32">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
             >

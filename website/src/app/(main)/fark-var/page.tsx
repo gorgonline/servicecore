@@ -88,10 +88,7 @@ export default function FarkVarPage() {
           return (
             <section key={category.title} className="mb-32">
               {/* Category Header */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+              <motion.div
                 className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6"
               >
                 <div className="max-w-2xl">
@@ -110,11 +107,9 @@ export default function FarkVarPage() {
               </motion.div>
 
               {/* Items Grid */}
-              <motion.div 
+              <motion.div
                 variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "100px" }}
+                animate="visible"
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
               >
                 {category.items.map((item, index) => (
@@ -150,10 +145,7 @@ export default function FarkVarPage() {
       </div>
 
       {/* GLOBAL CTA - CONTAINER DIŞINDA VE FULL-WIDTH */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+      <motion.div
         transition={{ duration: 0.8 }}
         className="mt-20"
       >
