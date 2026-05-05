@@ -21,7 +21,7 @@ const IncidentModule = ({ title, description, delay = 0 }: ModuleProps) => {
       transition={{ duration: 0.4, delay }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-(--shadow-glow-primary-hover) hover:border-white/10 [transform:translateZ(0)]"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-(--shadow-glow-primary-hover) hover:border-white/10 transform-[translateZ(0)]"
     >
       {/* Background Gradient */}
       <div className="absolute -right-20 -top-20 h-40 w-40 rounded-full bg-red-500/10 blur-[50px] transition-all duration-500 group-hover:bg-(--color-brand-primary)/20" />
@@ -98,7 +98,7 @@ const ProblemModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.1)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.1)] hover:border-white/10 lg:col-span-2"
     >
       {/* Background Gradient */}
       <div className="absolute -left-20 -bottom-20 h-56 w-56 rounded-full bg-yellow-500/5 blur-[60px] transition-all duration-500 group-hover:bg-yellow-500/15" />
@@ -180,7 +180,7 @@ const ChangeModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(168,85,247,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(168,85,247,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-purple-500/10 blur-[50px] transition-all duration-500 group-hover:bg-purple-500/20" />
 
@@ -194,7 +194,7 @@ const ChangeModule = ({ title, description, delay = 0 }: ModuleProps) => {
             initial={{ width: "0%" }}
             animate={{ width: isHovered ? "100%" : "0%" }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="absolute left-0 h-[2px] bg-linear-to-r from-transparent via-purple-500/50 to-purple-400"
+            className="absolute left-0 h-0.5 bg-linear-to-r from-transparent via-purple-500/50 to-purple-400"
          />
 
          {/* Checkpoints */}
@@ -248,7 +248,7 @@ const KnowledgeModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(14,165,233,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(14,165,233,0.15)] hover:border-white/10"
     >
       <div className="absolute right-10 bottom-10 h-32 w-32 rounded-full bg-sky-500/10 blur-[50px] transition-all duration-500 group-hover:bg-sky-500/20" />
 
@@ -307,7 +307,7 @@ const RequestModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(244,63,94,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(244,63,94,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-rose-500/10 blur-[50px] transition-all duration-500 group-hover:bg-rose-500/20" />
 
@@ -362,7 +362,7 @@ const TaskModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(16,185,129,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(16,185,129,0.15)] hover:border-white/10 lg:col-span-2"
     >
       <div className="absolute right-20 top-10 h-32 w-32 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:bg-emerald-500/20" />
 
@@ -423,7 +423,7 @@ const AssetModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 -bottom-10 h-40 w-40 rounded-full bg-orange-500/10 blur-[50px] transition-all duration-500 group-hover:bg-orange-500/20" />
 
@@ -443,8 +443,8 @@ const AssetModule = ({ title, description, delay = 0 }: ModuleProps) => {
              >
                  <div className="w-1.5 h-1.5 rounded-full bg-white/20 animate-pulse" />
                  <div className="flex gap-0.5">
-                    <div className="w-2 h-1 rounded flex-shrink-0 bg-white/10" />
-                    <div className="w-2 h-1 rounded flex-shrink-0 bg-white/10" />
+                    <div className="w-2 h-1 rounded shrink-0 bg-white/10" />
+                    <div className="w-2 h-1 rounded shrink-0 bg-white/10" />
                  </div>
              </motion.div>
           ))}
@@ -478,7 +478,7 @@ const ConfigModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:bg-blue-500/20" />
 
@@ -537,7 +537,7 @@ const CatalogModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(236,72,153,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(236,72,153,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-pink-500/10 blur-[50px] transition-all duration-500 group-hover:bg-pink-500/20" />
 
@@ -594,7 +594,7 @@ const SLAModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(34,211,238,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(34,211,238,0.15)] hover:border-white/10 lg:col-span-2"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-[50px] transition-all duration-500 group-hover:bg-cyan-500/20" />
 
@@ -602,8 +602,8 @@ const SLAModule = ({ title, description, delay = 0 }: ModuleProps) => {
       <div className="mb-8 w-full max-w-sm h-16 relative flex items-center justify-center">
          
          {/* Limits Zones */}
-         <div className="absolute top-0 w-full h-[1px] bg-red-500/30 border-t border-dashed border-red-500/50" />
-         <div className="absolute bottom-0 w-full h-[1px] bg-red-500/30 border-t border-dashed border-red-500/50" />
+         <div className="absolute top-0 w-full h-px bg-red-500/30 border-t border-dashed border-red-500/50" />
+         <div className="absolute bottom-0 w-full h-px bg-red-500/30 border-t border-dashed border-red-500/50" />
          
          {/* Target Zone */}
          <div className="absolute inset-y-2 inset-x-0 bg-cyan-500/5 border-y border-cyan-500/20" />
@@ -664,7 +664,7 @@ const AutomationModule = ({ title, description, delay = 0 }: ModuleProps) => {
       <div className="absolute left-0 bottom-0 h-40 w-40 rounded-full bg-emerald-500/10 blur-[60px] transition-all duration-500 group-hover:bg-emerald-500/20" />
 
       {/* Animation Area: Terminal Window */}
-      <div className="mb-8 w-full max-w-[200px] h-24 rounded-lg bg-(--color-surface-base-dark) border border-white/10 overflow-hidden relative mx-auto lg:mx-0 shadow-inner">
+      <div className="mb-8 w-full max-w-50 h-24 rounded-lg bg-(--color-surface-base-dark) border border-white/10 overflow-hidden relative mx-auto lg:mx-0 shadow-inner">
           {/* Mac window dots */}
           <div className="w-full h-5 bg-white/5 flex items-center gap-1.5 px-2">
              <div className="w-2 h-2 rounded-full bg-red-500/50" />
@@ -726,7 +726,7 @@ const ReportingModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(139,92,246,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(139,92,246,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-violet-500/10 blur-[50px] transition-all duration-500 group-hover:bg-violet-500/20" />
 
@@ -778,7 +778,7 @@ const PortalModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(245,158,11,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(245,158,11,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-amber-500/10 blur-[50px] transition-all duration-500 group-hover:bg-amber-500/20" />
 
@@ -839,12 +839,12 @@ const InteractionModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:bg-blue-500/20" />
 
       {/* Animation Area: Chat Bubbles */}
-      <div className="mb-8 w-full max-w-[150px] mx-auto lg:mx-0 h-24 relative flex flex-col justify-center gap-2">
+      <div className="mb-8 w-full max-w-37.5 mx-auto lg:mx-0 h-24 relative flex flex-col justify-center gap-2">
          
          {/* Bubble 1 (User) */}
          <motion.div 
@@ -898,7 +898,7 @@ const ProjectModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10 lg:col-span-2"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-orange-500/10 blur-[50px] transition-all duration-500 group-hover:bg-orange-500/20" />
 
@@ -1027,7 +1027,7 @@ const ReleaseModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(168,85,247,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(168,85,247,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-purple-500/10 blur-[50px] transition-all duration-500 group-hover:bg-purple-500/20" />
 
@@ -1084,12 +1084,12 @@ const ContractModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(20,184,166,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(20,184,166,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-teal-500/10 blur-[50px] transition-all duration-500 group-hover:bg-teal-500/20" />
 
       {/* Animation Area: Document and Pen */}
-      <div className="mb-8 w-full max-w-[150px] mx-auto lg:mx-0 h-24 relative flex items-center justify-center">
+      <div className="mb-8 w-full max-w-37.5 mx-auto lg:mx-0 h-24 relative flex items-center justify-center">
          
          {/* Document */}
          <motion.div 
@@ -1105,7 +1105,7 @@ const ContractModule = ({ title, description, delay = 0 }: ModuleProps) => {
              
              {/* Signature Line */}
              <div className="mt-auto flex justify-end">
-                <div className="w-1/2 h-[1px] bg-slate-500/50" />
+                <div className="w-1/2 h-px bg-slate-500/50" />
              </div>
              
              {/* Animated Signature */}
@@ -1144,7 +1144,7 @@ const WorkflowModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(239,68,68,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(239,68,68,0.15)] hover:border-white/10 lg:col-span-2"
     >
       <div className="absolute left-0 bottom-0 h-40 w-40 rounded-full bg-red-500/10 blur-[50px] transition-all duration-500 group-hover:bg-red-500/20" />
 
@@ -1166,7 +1166,7 @@ const WorkflowModule = ({ title, description, delay = 0 }: ModuleProps) => {
          </div>
 
          {/* Connecting Line 1 */}
-         <div className="flex-1 h-[2px] bg-slate-800 relative mx-2">
+         <div className="flex-1 h-0.5 bg-slate-800 relative mx-2">
             <motion.div 
                 initial={{ width: 0 }}
                 animate={{ width: isHovered ? "100%" : 0 }}
@@ -1186,7 +1186,7 @@ const WorkflowModule = ({ title, description, delay = 0 }: ModuleProps) => {
          </div>
 
          {/* Connecting Line 2 */}
-         <div className="flex-1 h-[2px] bg-slate-800 relative mx-2">
+         <div className="flex-1 h-0.5 bg-slate-800 relative mx-2">
             <motion.div 
                 initial={{ width: 0 }}
                 animate={{ width: isHovered ? "100%" : 0 }}
@@ -1227,7 +1227,7 @@ const CustomerPortalModule = ({ title, description, delay = 0 }: ModuleProps) =>
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(56,189,248,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(56,189,248,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-sky-500/10 blur-[50px] transition-all duration-500 group-hover:bg-sky-500/20" />
 
@@ -1291,7 +1291,7 @@ const LowCodeModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.15)] hover:border-white/10"
     >
       <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-yellow-500/10 blur-[50px] transition-all duration-500 group-hover:bg-yellow-500/20" />
 
@@ -1357,7 +1357,7 @@ const IntegrationModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(236,72,153,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(236,72,153,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-pink-500/10 blur-[50px] transition-all duration-500 group-hover:bg-pink-500/20" />
 
@@ -1374,8 +1374,8 @@ const IntegrationModule = ({ title, description, delay = 0 }: ModuleProps) => {
           </div>
 
           {/* Connection Lines & Data Transfer */}
-          <div className="flex-1 px-2 relative h-[2px]">
-              <div className="w-full h-[1px] bg-slate-800 border-t border-dashed border-slate-700 absolute top-1/2 -translate-y-1/2 left-0" />
+          <div className="flex-1 px-2 relative h-0.5">
+              <div className="w-full h-px bg-slate-800 border-t border-dashed border-slate-700 absolute top-1/2 -translate-y-1/2 left-0" />
               
               {/* Moving Payload */}
               <motion.div
@@ -1415,7 +1415,7 @@ const MobileModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(59,130,246,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-blue-500/10 blur-[50px] transition-all duration-500 group-hover:bg-blue-500/20" />
 
@@ -1480,19 +1480,19 @@ const AdminModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) cursor-pointer hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(71,85,105,0.3)] hover:border-white/10 lg:col-span-2 md:col-span-2 xl:col-span-1"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(71,85,105,0.3)] hover:border-white/10 lg:col-span-2 md:col-span-2 xl:col-span-1"
     >
       <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-slate-500/10 blur-[50px] transition-all duration-500 group-hover:bg-slate-500/20" />
 
       {/* Animation Area: Settings Toggles */}
-      <div className="mb-8 w-full max-w-[100px] mx-auto lg:mx-0 h-24 relative flex flex-col justify-center gap-2">
+      <div className="mb-8 w-full max-w-25 mx-auto lg:mx-0 h-24 relative flex flex-col justify-center gap-2">
           
           <div className="absolute right-0 top-1/2 -translate-y-1/2 z-0 opacity-10 pointer-events-none">
               <Sliders className="w-8 h-8 text-(--color-text-secondary)" />
           </div>
 
           {/* Toggle 1 */}
-          <div className="flex items-center justify-between bg-(--color-surface-base-dark)/50 p-1 rounded-full border border-white/5 relative z-10 w-full max-w-[80px]">
+          <div className="flex items-center justify-between bg-(--color-surface-base-dark)/50 p-1 rounded-full border border-white/5 relative z-10 w-full max-w-20">
              <div className="w-8 h-1 rounded-full bg-slate-700 ml-1.5" />
              <div className="w-6 h-3 rounded-full bg-slate-600 relative overflow-hidden transition-colors duration-300">
                 <motion.div 
@@ -1501,13 +1501,13 @@ const AdminModule = ({ title, description, delay = 0 }: ModuleProps) => {
                        backgroundColor: isHovered ? runtimeTokens.colors.accent.emeraldLight : runtimeTokens.colors.text.secondary
                    }}
                    transition={{ duration: 0.3 }}
-                   className="absolute top-[1px] left-0 w-2.5 h-2.5 rounded-full bg-slate-400"
+                   className="absolute top-px left-0 w-2.5 h-2.5 rounded-full bg-slate-400"
                 />
              </div>
           </div>
 
           {/* Toggle 2 */}
-          <div className="flex items-center justify-between bg-(--color-surface-base-dark)/50 p-1 rounded-full border border-white/5 relative z-10 w-full max-w-[80px] ml-2">
+          <div className="flex items-center justify-between bg-(--color-surface-base-dark)/50 p-1 rounded-full border border-white/5 relative z-10 w-full max-w-20 ml-2">
              <div className="w-6 h-1 rounded-full bg-slate-700 ml-1.5" />
              <div className="w-6 h-3 rounded-full bg-slate-600 relative overflow-hidden">
                 <motion.div 
@@ -1516,13 +1516,13 @@ const AdminModule = ({ title, description, delay = 0 }: ModuleProps) => {
                        backgroundColor: isHovered ? runtimeTokens.colors.accent.redBase : runtimeTokens.colors.accent.skyBase
                    }}
                    transition={{ duration: 0.4, delay: 0.1 }}
-                   className="absolute top-[1px] left-0 w-2.5 h-2.5 rounded-full bg-sky-400"
+                   className="absolute top-px left-0 w-2.5 h-2.5 rounded-full bg-sky-400"
                 />
              </div>
           </div>
 
           {/* Toggle 3 */}
-          <div className="flex items-center justify-between bg-(--color-surface-base-dark)/50 p-1 rounded-full border border-white/5 relative z-10 w-full max-w-[80px]">
+          <div className="flex items-center justify-between bg-(--color-surface-base-dark)/50 p-1 rounded-full border border-white/5 relative z-10 w-full max-w-20">
              <div className="w-10 h-1 rounded-full bg-slate-700 ml-1.5" />
              <div className="w-6 h-3 rounded-full bg-slate-600 relative overflow-hidden">
                 <motion.div 
@@ -1531,7 +1531,7 @@ const AdminModule = ({ title, description, delay = 0 }: ModuleProps) => {
                        backgroundColor: isHovered ? runtimeTokens.colors.accent.purpleBase : runtimeTokens.colors.text.secondary
                    }}
                    transition={{ duration: 0.5, delay: 0.2 }}
-                   className="absolute top-[1px] left-0 w-2.5 h-2.5 rounded-full bg-slate-400"
+                   className="absolute top-px left-0 w-2.5 h-2.5 rounded-full bg-slate-400"
                 />
              </div>
           </div>
@@ -1606,19 +1606,19 @@ export function ModulesGrid() {
                 description="Tüm süreçlerle entegre bir şekilde kurum içi donanım ve yazılım varlıklarının yaşam döngüsünü modernleştirin." 
                 delay={0.5}
              />
-             <ConfigModule 
-                title="Servis Konfigürasyon" 
-                description="Hizmetlerin hangi varlıklardan oluşturulduğu ve hangi konfigürasyonda çalıştığını anlık olarak izleyin." 
+             <ConfigModule
+                title="Servis Konfigürasyon Yönetimi"
+                description="Hizmetlerin hangi varlıklardan oluşturulduğu ve hangi konfigürasyonda çalıştığını anlık olarak izleyin."
                 delay={0.6}
              />
-             <ReleaseModule 
-                title="Sürüm Yönetimi" 
-                description="Sürüm ve dağıtımların planlanmasını, test edilmesini destekleyerek hizmet değişikliklerini başarıyla yönetin." 
+             <ReleaseModule
+                title="Servis İlişkileri Yönetimi"
+                description="Müşteri ve servis ilişkilerini uçtan uca yönetin; sözleşme, talep ve etkileşim verilerini tek bağlamda birleştirin."
                 delay={0.7}
              />
-             <KnowledgeModule 
-                title="Bilgi Yönetimi" 
-                description="Hem aracılar hem de kullanıcılar için çözümleri ve makaleleri bulmayı ve ilişkilendirmeyi kolaylaştırır." 
+             <KnowledgeModule
+                title="Bilgi ve Doküman Yönetimi"
+                description="Hem aracılar hem de kullanıcılar için çözümleri ve makaleleri bulmayı ve ilişkilendirmeyi kolaylaştırır."
                 delay={0.8}
              />
 
@@ -1645,24 +1645,24 @@ export function ModulesGrid() {
              />
 
              {/* 4. Advanced Governance */}
-             <WorkflowModule 
-                title="İş Akış Yönetimi" 
-                description="Sürükle bırak mantığı ile kurgulanan diyagramlarla tüm işletme süreçlerinizi modelleyin." 
+             <WorkflowModule
+                title="İş Akışı Yönetimi"
+                description="Sürükle bırak mantığı ile kurgulanan diyagramlarla tüm işletme süreçlerinizi modelleyin."
                 delay={1.3}
              />
-             <ProjectModule 
-                title="Proje Yönetimi" 
-                description="Portföyler ve programların da izlenebildiği eksiksiz bir proje yönetimi deneyimi yaşayın." 
+             <ProjectModule
+                title="Agile Proje ve SDLC Yönetimi"
+                description="Agile, Scrum ve stratejik planlama; portföyler ve programların izlenebildiği eksiksiz proje deneyimi."
                 delay={1.4}
              />
-             <ReportingModule 
-                title="Ölçüm ve Raporlama" 
-                description="Gerçek zamanlı gösterge tabloları ve özel raporlar ile veriye dayalı kararlar alın." 
+             <ReportingModule
+                title="Raporlama Yönetimi"
+                description="Gerçek zamanlı gösterge tabloları ve özel raporlar ile veriye dayalı kararlar alın."
                 delay={1.5}
              />
-             <ImprovementModule 
-                title="Sürekli İyileştirme (CSI)" 
-                description="Tüm modüllerden gelen verileri kullanarak BT süreçlerinizi sürekli olarak iyileştirin." 
+             <ImprovementModule
+                title="Sürekli İyileştirme"
+                description="Tüm modüllerden gelen verileri kullanarak BT süreçlerinizi sürekli olarak iyileştirin."
                 delay={1.6}
              />
              
@@ -1672,14 +1672,14 @@ export function ModulesGrid() {
                 description="Hizmetlerin bir menüden seçilerek talep edilmesini sağlayıp, ilk temas maliyetini düşürün." 
                 delay={1.7}
              />
-             <CustomerPortalModule 
-                title="Müşteri Talep Portalı" 
-                description="Müşterilerin portal üzerinden talep iletebildiği ve memnuniyetlerinin ölçülebildiği platform." 
+             <CustomerPortalModule
+                title="ESM Kurumsal Servis Yönetimi"
+                description="BT dışı tüm departmanları (İK, mali işler, idari işler) aynı servis disiplinine taşıyın; kurum geneli istekleri tek platformdan yönetin."
                 delay={1.8}
              />
-             <InteractionModule 
-                title="Etkileşim Yönetimi" 
-                description="Çözüm merkezine gelen bütün çağrıları, sohbetleri ve e-postaları tek ekrandan yönetin." 
+             <InteractionModule
+                title="Hizmet Masası ve Etkileşim Yönetimi"
+                description="Çözüm merkezine gelen bütün çağrıları, sohbetleri ve e-postaları tek ekrandan yönetin."
                 delay={1.9}
              />
              <MobileModule 
@@ -1699,14 +1699,14 @@ export function ModulesGrid() {
                 description="Tüm veriler API aracılığıyla dışarı veri aktarabilir ve dışarıdan içeri veri alabilir yapıdadır." 
                 delay={2.2}
              />
-             <LowCodeModule 
-                title="Low Code Geliştirme" 
-                description="Form/Süreç Tasarım Aracı sayesinde organizasyon ihtiyaçlarına özel form tasarımları oluşturun." 
+             <LowCodeModule
+                title="Low Code Geliştirme Modülü"
+                description="Form/Süreç Tasarım Aracı sayesinde organizasyon ihtiyaçlarına özel form tasarımları oluşturun."
                 delay={2.3}
              />
-             <AdminModule 
-                title="Yönetici Paneli" 
-                description="Sistemin genel işleyişini optimize eden parametrik yapıya sahip merkezi kontrol paneli." 
+             <AdminModule
+                title="Yönetim Paneli"
+                description="Sistemin genel işleyişini optimize eden parametrik yapıya sahip merkezi kontrol paneli."
                 delay={2.4}
              />
         </div>

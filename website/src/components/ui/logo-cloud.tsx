@@ -80,9 +80,9 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
       <LogoCard
         className="border-r border-b border-white/10 bg-transparent"
         logo={{
-          src: "/logos/kazanci.png",
+          src: "/logos/kazanciV2.png",
           alt: "Kazancı",
-          className: "scale-[1.4] brightness-0 invert",
+          className: "scale-95 brightness-0 invert",
         }}
       />
 

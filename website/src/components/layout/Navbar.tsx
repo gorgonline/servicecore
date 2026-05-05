@@ -11,6 +11,7 @@ import {
   ScrollText,
   ShieldCheck,
   FileText,
+  Hammer,
   MousePointerClick,
   Activity,
   Box,
@@ -88,6 +89,7 @@ const resourcesSubmenu = [
   { name: "Güncellemeler", icon: BellRing, desc: "Sürüm notları ve inovasyon duyuruları.", href: "/guncellemeler" },
   { name: "Eğitimler", icon: GraduationCap, desc: "Sertifika ve eğitim programları.", href: "/egitimler" },
   { name: "ITIL4 Pratikleri", icon: ScrollText, desc: "ITIL4 yaşam döngüsü ve pratik uygulamaları.", href: "/itil4-pratikleri" },
+  { name: "Workshoplar", icon: Hammer, desc: "Uygulamalı atölye çalışmaları ve süreç workshopları.", href: "/workshoplar" },
 ];
 
 export default function Navbar() {
