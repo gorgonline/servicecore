@@ -1,0 +1,139 @@
+{
+  "page": {
+    "badge": "Lead Registration Form",
+    "title": "Müşteri Adayı",
+    "titleSuffix": "Kayıt Formu",
+    "description": "Lütfen müşteri adayı kayıt işlemi için aşağıdaki formu kullanınız. Aşağıdaki bilgilerin kayıt öncesi müşteriden temin edilmesi ve eksiksiz girilmesi önem arz etmektedir."
+  },
+  "intro": {
+    "title": "Form Hakkında",
+    "items": [
+      {
+        "title": "Erken kayıt",
+        "description": "Müşteri adayı erken kayıt edildiğinde iş ortağı önceliği korunur ve ekiplerimiz takip sürecini birlikte planlar."
+      },
+      {
+        "title": "Eksiksiz bilgi",
+        "description": "Bütçe, alım modeli ve mevcut çözüm bilgileri analiz görüşmesi öncesi en önemli girdilerdir."
+      },
+      {
+        "title": "Gizlilik",
+        "description": "Form yanıtları yalnızca ServiceCore iş geliştirme ekibiyle paylaşılır, üçüncü taraflara aktarılmaz."
+      },
+      {
+        "title": "Sonraki adım",
+        "description": "Form gönderildikten sonra 1 iş günü içinde iş ortağı yöneticisi ile iletişime geçilir."
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "is-ortagi",
+      "icon": "1",
+      "title": "İş Ortağı",
+      "description": "Kaydı gerçekleştiren iş ortağı bilgileri.",
+      "fields": [
+        { "id": "partner_adi", "label": "Register Edilecek Partnerin Adı", "type": "text", "required": true },
+        { "id": "partner_sorumlu", "label": "İş Ortağındaki Müşteri Sorumlusu", "type": "text", "required": true }
+      ]
+    },
+    {
+      "id": "musteri-adayi",
+      "icon": "2",
+      "title": "Müşteri Adayı",
+      "description": "Kayıt edilen müşteri adayının kurumsal ve iletişim bilgileri.",
+      "fields": [
+        { "id": "musteri_firma", "label": "Müşteri Firma Adı", "type": "text", "required": true },
+        { "id": "musteri_ad", "label": "Müşteri Adayı Adı", "type": "text", "required": true },
+        { "id": "musteri_soyad", "label": "Müşteri Adayı Soyadı", "type": "text", "required": true },
+        { "id": "musteri_gorev", "label": "Kurumdaki Görevi", "type": "text", "required": true },
+        { "id": "musteri_eposta", "label": "Müşteri Adayı E-postası", "type": "email", "required": true },
+        { "id": "musteri_telefon", "label": "Müşteri Adayı Telefonu", "type": "tel" }
+      ]
+    },
+    {
+      "id": "satin-alma",
+      "icon": "3",
+      "title": "Satın Alma & Karar",
+      "description": "Karar verici, ekip büyüklüğü ve geçiş planlaması.",
+      "fields": [
+        {
+          "id": "ekonomik_karar_verici",
+          "label": "Ekonomik karar verici kimdir?",
+          "hint": "Satın alma kararını veren kişinin pozisyonu veya departmanı.",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "bt_personel_sayisi",
+          "label": "BT Destek Personeli Sayısı",
+          "hint": "Müşteri firmasında BT destek ekibindeki toplam personel sayısı.",
+          "type": "number",
+          "required": true
+        },
+        {
+          "id": "gecis_tarihi",
+          "label": "Yeni bir ITSM ürününe geçiş için tarih hedefi",
+          "type": "text",
+          "placeholder": "Örn. Q3 2026, 2026 yıl sonu",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "mevcut-cozum",
+      "icon": "4",
+      "title": "Mevcut Çözüm & ITIL",
+      "description": "Var olan ITSM çözümü ve süreç olgunluğu.",
+      "fields": [
+        {
+          "id": "itil_surecleri",
+          "label": "ITIL süreçleri var mı? İşletiliyor mu?",
+          "type": "radio",
+          "options": ["Evet, tamamı işletiliyor", "Kısmen işletiliyor", "Yok"],
+          "required": true
+        },
+        {
+          "id": "mevcut_cozum",
+          "label": "Kullandıkları bir çözüm var mı? Varsa adı nedir?",
+          "type": "text",
+          "placeholder": "Örn. ServiceNow, Jira Service Management, çözüm yok"
+        },
+        {
+          "id": "alim_modeli",
+          "label": "Kullandıkları mevcut ürünün alım modeli",
+          "type": "radio",
+          "options": ["Lisans (Perpetual)", "Abonelik (Subscription)", "SaaS / Bulut", "Bilmiyorum"],
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "butce",
+      "icon": "5",
+      "title": "Bütçe & Notlar",
+      "description": "Alım bütçesi durumu ve ek bilgiler.",
+      "fields": [
+        {
+          "id": "butce_durumu",
+          "label": "Bu yıl için ürün alım bütçeleri var mı?",
+          "type": "radio",
+          "options": ["Evet, ayrılmış", "Bütçe planlanıyor", "Hayır", "Bilinmiyor"],
+          "required": true
+        },
+        {
+          "id": "diger_detaylar",
+          "label": "Diğer detaylar",
+          "type": "textarea",
+          "placeholder": "Müşteri adayıyla ilgili paylaşmak istediğiniz ek bilgileri yazabilirsiniz."
+        }
+      ]
+    }
+  ],
+  "submit": {
+    "label": "Kayıt Formunu Gönder",
+    "loading": "Gönderiliyor…",
+    "success": "Müşteri adayı kaydı alındı. ServiceCore iş ortağı yöneticisi 1 iş günü içinde sizinle iletişime geçecek.",
+    "errorPrefix": "Bir hata oluştu"
+  }
+}

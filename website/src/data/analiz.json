@@ -1,0 +1,282 @@
+{
+  "page": {
+    "badge": "Gereksinim Analizi",
+    "title": "ServiceCore",
+    "titleSuffix": "Gereksinim Analiz Formu",
+    "description": "Kurumunuzun ITSM ihtiyaçlarını anlamak için hazırladığımız detaylı analiz formu. Cevaplarınız doğrultusunda lisans, modül, eklenti ve hizmet kapsamı ekibimiz tarafından şekillendirilir."
+  },
+  "intro": {
+    "title": "Form Hakkında",
+    "items": [
+      {
+        "title": "İki ana bölüm",
+        "description": "Lisans & modül planı ile hizmet detayları olmak üzere iki bölümde toplam dokuz başlık bulunur."
+      },
+      {
+        "title": "Bilmediğiniz alanlar",
+        "description": "Cevap veremediğiniz soruları boş bırakabilir veya 'Bilmiyorum' yazabilirsiniz; analiz görüşmesinde birlikte tamamlarız."
+      },
+      {
+        "title": "Gizlilik",
+        "description": "Form yanıtları yalnızca ServiceCore analiz ekibiyle paylaşılır; üçüncü taraflara aktarılmaz."
+      },
+      {
+        "title": "Sonraki adım",
+        "description": "Form gönderildikten sonra 1 iş günü içinde teknik analiz toplantısı için iletişime geçilir."
+      }
+    ]
+  },
+  "contact": {
+    "title": "İletişim Bilgileri",
+    "subtitle": "Form analizi sonrası size ulaşabilmemiz için",
+    "fields": {
+      "firma": "Firma İsmi",
+      "adSoyad": "Ad Soyad",
+      "unvan": "Ünvan / Rol",
+      "eposta": "Kurumsal E-posta",
+      "telefon": "Telefon"
+    }
+  },
+  "sections": [
+    {
+      "id": "tenant-lisans",
+      "icon": "1",
+      "title": "Tenant & Lisans Yapısı",
+      "description": "Sistem mimarisi ve toplam lisans planlaması.",
+      "fields": [
+        {
+          "id": "tenant_yapisi",
+          "label": "Single tenant mı? Multitenant bir yapıya ihtiyaç var mı?",
+          "type": "radio",
+          "options": ["Single Tenant", "Multitenant", "Karar verilmedi"]
+        },
+        {
+          "id": "pro_lisans",
+          "label": "Kaç adet pro lisans kullanılacak?",
+          "hint": "Detaylı bilgi: servicecore.app/tr/pricing",
+          "type": "number",
+          "placeholder": "Örn. 25"
+        },
+        {
+          "id": "standart_lisans",
+          "label": "Kaç adet standart lisans kullanılacak?",
+          "hint": "Detaylı bilgi: servicecore.app/tr/pricing",
+          "type": "number",
+          "placeholder": "Örn. 100"
+        }
+      ]
+    },
+    {
+      "id": "moduller",
+      "icon": "2",
+      "title": "Modül Kullanımı",
+      "description": "Kullanılacak modüller ve adetleri.",
+      "fields": [
+        { "id": "modul_istek_servis_katalog", "label": "İstek & Servis Katalog Modülü", "type": "module" },
+        { "id": "modul_problem", "label": "Problem Yönetimi Modülü", "type": "module" },
+        { "id": "modul_degisiklik", "label": "Değişiklik Yönetimi Modülü", "type": "module" },
+        { "id": "modul_varlik_cmdb", "label": "Varlık Yönetimi ve CMDB Modülü", "type": "module" },
+        { "id": "modul_sozlesme", "label": "Sözleşme Yönetimi Modülü", "type": "module" },
+        { "id": "modul_surekli_iyilestirme", "label": "Sürekli İyileştirme Modülü", "type": "module" },
+        { "id": "modul_servis_otomasyon", "label": "Servis Otomasyon Modülü", "type": "module" },
+        { "id": "modul_api", "label": "Entegrasyonlar için API Modülü", "type": "yesno" },
+        { "id": "modul_proje", "label": "Proje Yönetimi Modülü", "type": "module" },
+        { "id": "modul_servis_iliskileri", "label": "Servis İlişkileri Yönetimi Modülü", "type": "module" }
+      ]
+    },
+    {
+      "id": "eklentiler",
+      "icon": "3",
+      "title": "Eklentiler & Add-on",
+      "description": "Yardımcı bileşenler ve altyapı eklentileri.",
+      "fields": [
+        { "id": "addon_vmware", "label": "VMware Varlık Keşif Eklentisi", "type": "yesno" },
+        { "id": "addon_msteams", "label": "MS Teams Eklentisi", "type": "yesno" },
+        { "id": "addon_calendar", "label": "Task Calendar Sync Eklentisi", "type": "yesno" },
+        {
+          "id": "addon_failover",
+          "label": "Failover / Cluster Sistem Add-on",
+          "type": "yesno_count",
+          "countLabel": "Kaç sunucu üzerinden planlanacak?"
+        },
+        {
+          "id": "addon_disaster",
+          "label": "Disaster Center Add-on",
+          "type": "yesno_count",
+          "countLabel": "Kaç sunucu şeklinde planlanacak?"
+        },
+        {
+          "id": "addon_sandbox",
+          "label": "Sandbox / Test Sistem Add-on",
+          "type": "yesno_count",
+          "countLabel": "Kaç adet test ortamına ihtiyaç olacaktır?"
+        }
+      ]
+    },
+    {
+      "id": "mevcut-yapi",
+      "icon": "4",
+      "title": "Mevcut Yapı",
+      "description": "Halihazırda bir ITSM ürünü kullanılıyorsa mevcut durum.",
+      "fields": [
+        {
+          "id": "mevcut_urun",
+          "label": "Kullanılan Ürün",
+          "type": "text",
+          "placeholder": "Örn. ServiceNow, BMC Remedy, Jira Service Management"
+        },
+        {
+          "id": "mevcut_moduller",
+          "label": "Kullanılan modüller nelerdir?",
+          "hint": "Olay, Problem, Değişiklik, CMDB vb.",
+          "type": "textarea"
+        },
+        { "id": "mevcut_kullanici", "label": "Toplam kullanıcı sayısı", "type": "number" },
+        { "id": "mevcut_teknisyen", "label": "Toplam teknisyen sayısı", "type": "number" },
+        {
+          "id": "mevcut_gecis_suresi",
+          "label": "Geçiş için belirlenen bir süre var mı?",
+          "type": "text",
+          "placeholder": "Örn. 3 ay, Q3 2026"
+        },
+        {
+          "id": "mevcut_surec_sahipleri",
+          "label": "ITSM süreç sahipleri ve roller belirlendi mi?",
+          "type": "radio",
+          "options": ["Evet, tamamı belirlendi", "Kısmen belirlendi", "Henüz belirlenmedi"]
+        }
+      ]
+    },
+    {
+      "id": "entegrasyon",
+      "icon": "5",
+      "title": "Entegrasyon & Altyapı",
+      "description": "Dış sistem bağlantıları ve kimlik altyapısı.",
+      "fields": [
+        {
+          "id": "entegrasyon_sistemler",
+          "label": "Hangi sistemlerle entegrasyon yapılacaktır?",
+          "type": "textarea",
+          "placeholder": "Örn. AD, LDAP, SAP, Office365, izleme sistemleri…"
+        },
+        {
+          "id": "azure_cd_izinleri",
+          "label": "Azure ve Continuous Delivery izinleri sağlanacak mı?",
+          "type": "radio",
+          "options": ["Evet", "Hayır", "Değerlendiriliyor"]
+        },
+        { "id": "ad_baglanti_sayisi", "label": "Kaç adet AD bağlantısı olacak?", "type": "number" },
+        { "id": "eposta_tanim_sayisi", "label": "Kaç adet e-posta tanımlaması yapılacak?", "type": "number" }
+      ]
+    },
+    {
+      "id": "migration",
+      "icon": "6",
+      "title": "Migration",
+      "description": "Mevcut sistemden veri taşıma kapsamı.",
+      "fields": [
+        {
+          "id": "migration_kapsam",
+          "label": "Migration yapılacak mı? Hangi modüller için?",
+          "type": "textarea",
+          "placeholder": "Örn. Olay ve Değişiklik kayıtları, son 2 yıl"
+        },
+        { "id": "migration_yil", "label": "Kaç yıllık veri aktarılacak?", "type": "number" },
+        {
+          "id": "migration_konfig",
+          "label": "Konfigürasyonlar dahil mi?",
+          "type": "radio",
+          "options": ["Evet", "Hayır", "Kısmen"]
+        },
+        {
+          "id": "migration_boyut",
+          "label": "Toplam veri büyüklüğü nedir?",
+          "type": "text",
+          "placeholder": "Örn. 250 GB, 1.2 milyon kayıt"
+        }
+      ]
+    },
+    {
+      "id": "surec-operasyon",
+      "icon": "7",
+      "title": "Süreç & Operasyon",
+      "description": "Kataloglar, SLA'lar ve onay iş akışları.",
+      "fields": [
+        { "id": "katalog_oge_sayisi", "label": "Servis kataloğu öğe sayısı", "type": "number" },
+        { "id": "sla_sayisi", "label": "Kaç adet SLA tanımı vardır?", "type": "number" },
+        {
+          "id": "sla_eskalasyon",
+          "label": "SLA eskalasyonları belirlendi mi?",
+          "type": "radio",
+          "options": ["Evet", "Kısmen", "Hayır"]
+        },
+        {
+          "id": "onay_akisi_var",
+          "label": "Onay iş akışlarınız bulunuyor mu?",
+          "type": "radio",
+          "options": ["Evet", "Hayır"]
+        },
+        { "id": "onay_akisi_sayisi", "label": "Toplam kaç adet onay iş akışı bulunmaktadır?", "type": "number" }
+      ]
+    },
+    {
+      "id": "cmdb-varlik",
+      "icon": "8",
+      "title": "CMDB & Varlık",
+      "description": "Varlık envanteri ve zimmet süreçleri.",
+      "fields": [
+        { "id": "varlik_sayisi", "label": "Toplam varlık sayısı", "type": "number" },
+        {
+          "id": "zimmet_formu",
+          "label": "Özelleştirilmiş bir zimmet formu bulunmakta mıdır?",
+          "type": "radio",
+          "options": ["Evet", "Hayır"]
+        },
+        {
+          "id": "varlik_entegrasyon",
+          "label": "Varlıkların tutulduğu mevcut bir uygulama varsa entegrasyon yapılacak mı?",
+          "type": "textarea",
+          "placeholder": "Uygulama adı ve entegrasyon beklentiniz"
+        }
+      ]
+    },
+    {
+      "id": "egitim-destek",
+      "icon": "9",
+      "title": "Eğitim & Destek",
+      "description": "Kurulum kaynakları, eğitim ve destek seviyesi.",
+      "fields": [
+        {
+          "id": "proje_kaynaklari",
+          "label": "Kurulum sürecinde projeye sizler tarafından katılacak kaynaklar kimlerdir?",
+          "type": "textarea",
+          "placeholder": "Örn. 1 PMO, 2 sistem yöneticisi, 1 süreç sahibi"
+        },
+        {
+          "id": "egitim_admin",
+          "label": "Kaç admin, yönetici ve teknisyen eğitim alacak?",
+          "type": "text",
+          "placeholder": "Örn. 2 admin / 3 yönetici / 12 teknisyen"
+        },
+        { "id": "egitim_son_kullanici", "label": "Son kullanıcı için toplam eğitim alacak kullanıcı sayısı", "type": "number" },
+        {
+          "id": "destek_seviyesi",
+          "label": "Tercih edilen destek seviyesi nedir?",
+          "type": "radio",
+          "options": ["Standart (8x5)", "Genişletilmiş (12x5)", "Premium (7x24)", "Karar verilmedi"]
+        }
+      ]
+    }
+  ],
+  "notes": {
+    "label": "Ek Notlar",
+    "placeholder": "Yukarıda yer almayan ihtiyaç, kısıt veya beklentilerinizi paylaşabilirsiniz.",
+    "type": "textarea"
+  },
+  "submit": {
+    "label": "Analiz Formunu Gönder",
+    "loading": "Gönderiliyor…",
+    "success": "Form başarıyla alındı. ServiceCore analiz ekibi 1 iş günü içinde sizinle iletişime geçecek.",
+    "errorPrefix": "Bir hata oluştu"
+  }
+}

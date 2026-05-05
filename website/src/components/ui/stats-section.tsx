@@ -41,8 +41,8 @@ const STATS_DATA = [
   {
     id: 1,
     icon: <Users className="w-6 h-6 text-(--color-accent-blue-light)" />,
-    number: 600000,
-    suffix: "+",
+    number: 4,
+    suffix: "M+",
     label: "Aktif Kullanıcı",
     accent: "bg-blue-500/10 border-blue-500/20"
   },
@@ -57,8 +57,8 @@ const STATS_DATA = [
   {
     id: 3,
     icon: <Server className="w-6 h-6 text-(--color-accent-emerald-light)" />,
-    number: 1000000,
-    suffix: "+",
+    number: 1,
+    suffix: "M+",
     label: "Yönetilen Varlık",
     accent: "bg-emerald-500/10 border-emerald-500/20"
   },
@@ -73,8 +73,8 @@ const STATS_DATA = [
   {
     id: 5,
     icon: <Activity className="w-6 h-6 text-amber-400" />,
-    number: 300000,
-    suffix: "+",
+    number: 10,
+    suffix: "M+",
     label: "Aylık İşlem",
     accent: "bg-amber-500/10 border-amber-500/20"
   }

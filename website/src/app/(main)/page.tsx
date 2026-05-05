@@ -15,7 +15,7 @@ export default function Home() {
       {/* Trusted By / Logo Cloud Section */}
       <section className="relative mx-auto pt-16 max-w-7xl px-6 lg:px-12 w-full">
         <h2 className="mb-12 text-center font-medium text-lg text-(--color-text-secondary) tracking-tight md:text-xl">
-          Başarılı müşterilerimiz ve <span className="font-semibold text-white">mutlu kullanıcılarımız.</span>
+          Başarılı projelerimiz ve <span className="font-semibold text-white">bazı mutlu müşterilerimiz.</span>
         </h2>
         <LogoCloud className="mx-auto" />
         <div className="mt-12 flex justify-center">
@@ -23,7 +23,7 @@ export default function Home() {
             href="/referanslar"
             className="group inline-flex h-11 items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 font-medium text-sm text-white transition-all duration-300 hover:border-white/20 hover:bg-white/10 cursor-pointer"
           >
-            Tüm Referanslar
+            Diğer Referans Müşterilerimiz
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>

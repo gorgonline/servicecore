@@ -14,7 +14,9 @@ export type FormSheet =
   | "AI Yol Haritası"
   | "Eğitim"
   | "Kurs"
-  | "Partnerlik";
+  | "Partnerlik"
+  | "Analiz"
+  | "Partner Kayıt";
 
 export type FormSubmitResult =
   | { ok: true; sheet: FormSheet }

@@ -2,7 +2,7 @@
   "intro": {
     "title": "Başarı Öyküleri ve Referanslar",
     "subtitle": "REFERANSLAR",
-    "description": "Başarılı müşteri referanslarımız arasında siz de yer alın. Servicecore'a güvenen kurumların müşteri sayısı 600.000'i aşmıştır.",
+    "description": "Başarılı müşteri referanslarımız arasında siz de yer alın. Servicecore'a güvenen kurumların müşteri sayısı 4M'i aşmıştır.",
     "subDescription": "Bazı müşteri referanslarımıza göz atın."
   },
   "categories": [
@@ -10,224 +10,69 @@
       "id": "itsm-esm",
       "title": "ITSM / ESM",
       "references": [
-        {
-          "name": "AKSA Jeneratör",
-          "logo": "/logos/aksa-jenerator.png"
-        },
-        {
-          "name": "Roketsan",
-          "logo": "/logos/roketsan.png"
-        },
-        {
-          "name": "Türk Kızılay",
-          "logo": "/logos/tks.png"
-        },
-        {
-          "name": "Savunma Sanayii",
-          "logo": "/logos/savunma.png"
-        },
-        {
-          "name": "Toyota",
-          "logo": "/logos/toyota.png"
-        },
-        {
-          "name": "Boyner",
-          "logo": "/logos/boyner.png"
-        },
-        {
-          "name": "Data Platform",
-          "logo": "/logos/data-platform.png"
-        },
-        {
-          "name": "Aydınlı",
-          "logo": "/logos/aydinli.png"
-        },
-        {
-          "name": "Misyon",
-          "logo": "/logos/misyon.png"
-        },
-        {
-          "name": "QNB",
-          "logo": "/logos/qnb.png"
-        },
-        {
-          "name": "Golden",
-          "logo": "/logos/golden.png"
-        },
-        {
-          "name": "ASAŞ",
-          "logo": "/logos/asas.png"
-        },
-        {
-          "name": "Uludağ Enerji",
-          "logo": "/logos/uludag-enerji.png"
-        },
-        {
-          "name": "ALJ Finans",
-          "logo": "/logos/alj.png"
-        },
-        {
-          "name": "TurkishBank",
-          "logo": "/logos/turkishbank.png"
-        },
-        {
-          "name": "AKSA Yedek Parça",
-          "logo": "/logos/aksa.png"
-        },
-        {
-          "name": "Marport",
-          "logo": "/logos/marport.png"
-        },
-        {
-          "name": "TGS",
-          "logo": "/logos/tgs.png"
-        },
-        {
-          "name": "Turanlar",
-          "logo": "/logos/turanlar.png"
-        },
-        {
-          "name": "İş Factoring",
-          "logo": "/logos/is-factoring.png"
-        },
-        {
-          "name": "Tatko",
-          "logo": "/logos/tatko.png"
-        },
-        {
-          "name": "TürkKep",
-          "logo": "/logos/turkkep.png"
-        },
-        {
-          "name": "Yeşim",
-          "logo": "/logos/yesim.png"
-        },
-        {
-          "name": "Yıldızlar Yatırım",
-          "logo": "/logos/yildizlar-yatirim.png"
-        },
-        {
-          "name": "Başbuğ",
-          "logo": "/logos/basbug.png"
-        },
-        {
-          "name": "TCI",
-          "logo": "/logos/tci.png"
-        },
-        {
-          "name": "Hasel",
-          "logo": "/logos/hasel.png"
-        },
-        {
-          "name": "Saat&Saat",
-          "logo": "/logos/saat-saat.png"
-        },
-        {
-          "name": "Aktaş",
-          "logo": "/logos/aktas.png"
-        },
-        {
-          "name": "Aytemiz",
-          "logo": "/logos/aytemiz.png"
-        },
-        {
-          "name": "Almatext",
-          "logo": "/logos/almatext.png"
-        },
-        {
-          "name": "Petro Yağ",
-          "logo": "/logos/petro-yag.png"
-        },
-        {
-          "name": "İntegral Yatırım",
-          "logo": "/logos/integral-yatirim.png"
-        },
-        {
-          "name": "MEFA",
-          "logo": "/logos/mefa.png"
-        },
-        {
-          "name": "Katılım Evim",
-          "logo": "/logos/katilim-evim.png"
-        },
-        {
-          "name": "Sabancı DX",
-          "logo": "/logos/sabanci.png"
-        },
-        {
-          "name": "Bulutistan",
-          "logo": "/logos/bulutistan.png"
-        },
-        {
-          "name": "Diyanet",
-          "logo": "/logos/diyanet.png"
-        },
-        {
-          "name": "Kazancı",
-          "logo": "/logos/kazanci.png"
-        },
-        {
-          "name": "Wildcats",
-          "logo": "/logos/wildcats.png"
-        },
-        {
-          "name": "TDT",
-          "logo": "/logos/tdt.png"
-        }
+        { "name": "AKSA", "logo": "/logos/aksa.png" },
+        { "name": "Roketsan", "logo": "/logos/roketsan.png" },
+        { "name": "T.C. Cumhurbaşkanlığı Savunma Sanayii Başkanlığı", "logo": "/logos/savunma.png" },
+        { "name": "T.C. Cumhurbaşkanlığı Diyanet İşleri Başkanlığı", "logo": "/logos/diyanet.png" },
+        { "name": "Toyota", "logo": "/logos/toyota.png" },
+        { "name": "Boyner", "logo": "/logos/boyner.png" },
+        { "name": "Kazancı Holding", "logo": "/logos/kazanci.png" },
+        { "name": "Aydınlı", "logo": "/logos/aydinli.png" },
+        { "name": "Misyon", "logo": "/logos/misyon.png" },
+        { "name": "QNB", "logo": "/logos/qnb.png" },
+        { "name": "Golden Global Bank", "logo": "/logos/golden.png" },
+        { "name": "ASAŞ", "logo": "/logos/asas.png" },
+        { "name": "Uludağ Enerji", "logo": "/logos/uludag-enerji.png" },
+        { "name": "ALJ Finans", "logo": "/logos/alj.png" },
+        { "name": "TurkishBank", "logo": "/logos/turkishbank.png" },
+        { "name": "AKSA Jeneratör", "logo": "/logos/aksa-jenerator.png" },
+        { "name": "Marport", "logo": "/logos/marport.png" },
+        { "name": "TGS", "logo": "/logos/tgs.png" },
+        { "name": "Turanlar Group", "logo": "/logos/turanlar.png" },
+        { "name": "İş Faktoring", "logo": "/logos/is-factoring.png" },
+        { "name": "Tatko", "logo": "/logos/tatko.png" },
+        { "name": "TürkKep", "logo": "/logos/turkkep.png" },
+        { "name": "Yeşim", "logo": "/logos/yesim.png" },
+        { "name": "Yıldızlar Yatırım Holding", "logo": "/logos/yildizlar-yatirim.png" },
+        { "name": "Başbuğ Oto Yedek Parça", "logo": "/logos/basbug.png" },
+        { "name": "TCI Aircraft Interiors", "logo": "/logos/tci.png" },
+        { "name": "Hasel", "logo": "/logos/hasel.png" },
+        { "name": "Saat&Saat", "logo": "/logos/saat-saat.png" },
+        { "name": "Ak-Taş", "logo": "/logos/aktas.png" },
+        { "name": "Aytemiz Yatırım Bankası", "logo": "/logos/aytemiz.png" },
+        { "name": "Almaxtex Tekstil", "logo": "/logos/almatext.png" },
+        { "name": "Petroyağ Lubricants", "logo": "/logos/petro-yag.png" },
+        { "name": "İntegral Yatırım", "logo": "/logos/integral-yatirim.png" },
+        { "name": "MEFA Group", "logo": "/logos/mefa.png" },
+        { "name": "Katılımevim", "logo": "/logos/katilim-evim.png" },
+        { "name": "İktisat Katılım Bankası", "logo": "/logos/iktisat-katilim.png" },
+        { "name": "Profen", "logo": "/logos/profen.png" },
+        { "name": "Kuveyttürk Yatırım", "logo": "/logos/kuveyt-turk-yatirim.png" },
+        { "name": "Tatçelik", "logo": "/logos/tatcelik.png" },
+        { "name": "Stablex", "logo": "/logos/stablex.webp" },
+        { "name": "Türk Kızılay", "logo": "/logos/tks.png" }
       ]
     },
     {
       "id": "itsm-esm-servis-entegrasyonu",
-      "title": "ITSM / ESM Servis Entegrasyonu",
+      "title": "ITSM / ESM Service Integrators",
       "references": [
-        {
-          "name": "Logo Yazılım",
-          "logo": "/logos/logo.png"
-        },
-        {
-          "name": "Fino Tech",
-          "logo": "/logos/fino-tech.png"
-        },
-        {
-          "name": "Mayasoft",
-          "logo": "/logos/mayasoft.png"
-        },
-        {
-          "name": "Bulutistan",
-          "logo": "/logos/bulutistan.png"
-        },
-        {
-          "name": "Servicepark",
-          "logo": "/logos/servicepark.png"
-        },
-        {
-          "name": "Idea",
-          "logo": "/logos/idea.png"
-        },
-        {
-          "name": "Platin",
-          "logo": "/logos/platin.png"
-        },
-        {
-          "name": "Planet",
-          "logo": "/logos/planet.png"
-        },
-        {
-          "name": "Pure7",
-          "logo": "/logos/pure7.png"
-        },
-        {
-          "name": "Çözümtek",
-          "logo": "/logos/cozumtek.png"
-        },
-        {
-          "name": "Novus",
-          "logo": "/logos/novus.png"
-        },
-        {
-          "name": "ZED Tech",
-          "logo": "/logos/zed-tech.png"
-        }
+        { "name": "Sabancı DX", "logo": "/logos/sabanci.png" },
+        { "name": "Bulutistan", "logo": "/logos/bulutistan.png" },
+        { "name": "Logo Yazılım", "logo": "/logos/logo.png" },
+        { "name": "Findex Tech", "logo": "/logos/fino-tech.png" },
+        { "name": "Mayasoft", "logo": "/logos/mayasoft.png" },
+        { "name": "Data Platform", "logo": "/logos/data-platform.png" },
+        { "name": "Servicepark", "logo": "/logos/servicepark.png" },
+        { "name": "Idea", "logo": "/logos/idea.png" },
+        { "name": "Platin", "logo": "/logos/platin.png" },
+        { "name": "Planet", "logo": "/logos/planet.png" },
+        { "name": "Pure7", "logo": "/logos/pure7.png" },
+        { "name": "Çözümtek", "logo": "/logos/cozumtek.png" },
+        { "name": "Novus", "logo": "/logos/novus.png" },
+        { "name": "ZED Tech", "logo": "/logos/zed-tech.png" },
+        { "name": "WildCats Teknoloji", "logo": "/logos/wildcats.png" },
+        { "name": "TDT Turkish Dijital Teknolojiler", "logo": "/logos/tdt.png" }
       ]
     }
   ],
@@ -255,6 +100,12 @@
       "name": "Boyner",
       "logo": "/logos/boyner.png",
       "description": "Boyner'in 120+ perakende mağazası olan Servicecore ITSM ile donanım, yazılım ve altyapı taleplerinin merkezi yönetimini sağlamaktadır. SLA tabanlı çağrı yönetimi ve operasyonel raporlama süreçleri etkin biçimde yürütülmektedir."
+    },
+    {
+      "id": "aksa",
+      "name": "Aksa",
+      "logo": "/logos/aksa.png",
+      "description": "Holding şirketlerinin tamamı tek platformda Servicecore süreçleriyle kullanılmakta; 16 modül üzerinden merkezi servis yönetimi ile uçtan uca tüm BT süreçleri otomatize edilerek kurumun tüm operasyonlarının yönetimi sağlanmıştır."
     },
     {
       "id": "roketsan",

@@ -12,7 +12,7 @@ export default function DemoPage() {
   return (
     <main className="relative min-h-screen bg-(--color-surface-base) pb-32 pt-24 overflow-hidden">
       {/* Background Decor */}
-      <div className="absolute top-0 inset-x-0 h-[500px] bg-linear-to-b from-(--color-brand-primary)/10 via-(--color-brand-primary)/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 inset-x-0 h-125 bg-linear-to-b from-(--color-brand-primary)/10 via-(--color-brand-primary)/5 to-transparent pointer-events-none" />
       <div className="absolute top-1/4 -right-64 w-96 h-96 bg-(--color-brand-accent)/10 rounded-full blur-[128px] pointer-events-none" />
       <div className="absolute bottom-1/4 -left-64 w-96 h-96 bg-(--color-brand-primary)/10 rounded-full blur-[128px] pointer-events-none" />
 

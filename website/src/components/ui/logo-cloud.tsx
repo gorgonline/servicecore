@@ -60,7 +60,7 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
 
       {/* Row 2 */}
       <LogoCard
-        className="relative border-r border-b border-white/10 bg-white/5 md:border-b-0 md:bg-transparent"
+        className="relative border-r border-b border-white/10 bg-white/5 md:bg-transparent"
         logo={{
           src: "/logos/logo.png",
           alt: "Logo Yazılım",
@@ -69,7 +69,7 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
       />
 
       <LogoCard
-        className="border-b border-white/10 bg-transparent md:border-r md:border-b-0 md:bg-white/5"
+        className="border-b border-white/10 bg-transparent md:border-r md:bg-white/5"
         logo={{
           src: "/logos/qnb.png",
           alt: "QNB",
@@ -78,20 +78,57 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
       />
 
       <LogoCard
+        className="border-r border-b border-white/10 bg-transparent"
+        logo={{
+          src: "/logos/kazanci.png",
+          alt: "Kazancı",
+          className: "scale-[1.4] brightness-0 invert",
+        }}
+      />
+
+      <LogoCard
+        className="border-b border-white/10 bg-white/5"
+        logo={{
+          src: "/logos/misyon.png",
+          alt: "Misyon Bank",
+          className: "scale-[0.85] brightness-0 invert",
+        }}
+      />
+
+      {/* Row 3 */}
+      <LogoCard
+        className="relative border-r border-b border-white/10 bg-white/5 md:border-b-0 md:bg-transparent"
+        logo={{
+          src: "/logos/bulutistan.png",
+          alt: "Bulutistan",
+          className: "scale-[1.05] brightness-0 invert",
+        }}
+      />
+
+      <LogoCard
+        className="border-b border-white/10 bg-transparent md:border-r md:border-b-0 md:bg-white/5"
+        logo={{
+          src: "/logos/aydinli.png",
+          alt: "Aydınlı",
+          className: "scale-[1.05] brightness-0 invert",
+        }}
+      />
+
+      <LogoCard
         className="border-r border-white/10 bg-transparent"
         logo={{
-          src: "/logos/aksa-beyaz.png",
-          alt: "Aksa",
-          className: "scale-[1.4] brightness-0 invert",
+          src: "/logos/uludag-enerji.png",
+          alt: "Uludağ Enerji",
+          className: "scale-[1.05] brightness-0 invert",
         }}
       />
 
       <LogoCard
         className="bg-white/5"
         logo={{
-          src: "/logos/misyon.png",
-          alt: "Misyon Bank",
-          className: "scale-[0.85] brightness-0 invert",
+          src: "/logos/diyanet.png",
+          alt: "T.C. Cumhurbaşkanlığı Diyanet İşleri Başkanlığı",
+          className: "scale-[0.95] brightness-0 invert",
         }}
       />
 

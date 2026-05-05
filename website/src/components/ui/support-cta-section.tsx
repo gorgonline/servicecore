@@ -89,7 +89,7 @@ export function SupportCtaSection() {
               </Link>
               
               <p className="mt-6 text-xs text-(--color-text-muted) font-semibold tracking-[0.2em] uppercase">
-                Kredi Kartı Gerekmez • Ücretsiz Ön Görüşme
+                Ücretsiz Online Canlı Danışman Sunumu
               </p>
             </div>
           </motion.div>
