@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, MessageSquare, ShieldCheck, Zap } from "lucide-react";
+import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, MessageSquare, ShieldCheck, Zap, ArrowUpRight } from "lucide-react";
 
 // --- Data Models ---
 interface PricingFeature {
@@ -49,23 +49,26 @@ const proExtraModules: PricingFeature[] = [
 ];
 
 const proOnlyFeatures: PricingFeature[] = [
-  { title: "İş Akışları ve Onay Akışları Yönetimi", description: "Servicecore onay iş akışları, akış şemaları ve diyagramlar aracılığıyla oluşturulur ve görsel olarak temsil edilir. Bu iş akışları, onay süreçlerini otomatikleştirmek ve optimize etmek için sıkça kullanılır." },
-  { title: "Onay ve Danışma Kurulları (CAB)", description: "ServiceCore, işletmelerin onay süreçlerini daha düzenli ve hızlı yönetebilmeleri için Onay Grupları özelliğini sunar. Bu yapı, belirli süreçler için onay veren ve danışmanlık sağlayan kişileri tanımlayıp, onay mekanizmalarında kullanmayı kolaylaştırır." },
-  { title: "Özel Ek Alanlar ve Custom Formlar", description: "Her işletmenin kendine özgü süreçleri ve ihtiyaçları vardır. ServiceCore, bu ihtiyaçlara tam uyum sağlayabilmeniz için Özel Ek Alanlar özelliğini sunar. Bu özellik sayesinde, standart formları geliştirerek işletmenize özel kayıt formları oluşturabilirsiniz." },
-  { title: "Low Code Form Design", description: "ServiceCore, yenilikçi Low-Code Form Oluşturma özelliği ile işletmenizin ihtiyaçlarına uygun özel formlar oluşturmanızı kolaylaştırır. Teknik bilgiye ihtiyaç duymadan, sürükle-bırak yöntemiyle hızlı ve etkili çözümler üretebilirsiniz." },
-  { title: "Azure AD / SAML / SSO", description: "Platform, Azure Active Directory (Azure AD), SAML (Security Assertion Markup Language) ve Single Sign-On (SSO) teknolojileriyle sorunsuz entegrasyon sağlar." },
-  { title: "Validasyonlar ve Süreç Doğrulama", description: "İş süreçlerinizin düzenli ve eksiksiz bir şekilde yürütülmesini sağlamak için güçlü Zorunlu Alan Validasyonu özellikleri sunar. Farklı modüllerde belirli alanların doldurulmasını zorunlu hale getirebilirsiniz." },
-  { title: "Kapsamlı Süreç Şablonları", description: "ServiceCore, iş süreçlerinizi daha şeffaf ve verimli hale getirmek için kapsamlı bir Worklog Yönetimi sunar. Kayıtlar içerisine eklenen iş günlüklerini detaylı takip etmenizi sağlar." },
-  { title: "Zamanlanmış ve Dinamik Raporlar", description: "Kullanıcıların raporları belirli zaman dilimlerinde otomatik olarak almasını sağlayan Zamanlanmış Rapor ve özelleştirilmiş raporlar için Dinamik Raporlar özelliği sunar." },
-  { title: "Döküm Raporları", description: "Tüm modüller üzerinden kapsamlı raporlar almanızı sağlayan Döküm Raporları özelliği sunar. Her modülde yer alan verileri detaylı bir şekilde döküm formatında çıkarır." },
-  { title: "Zimmet Formları ve Onay Sistemi", description: "BT ve BT dışı fiziksel/yazılımsal donanımların kullanıcılara güvenli devrini form ve e-imza ile yürütme." },
+  { title: "İş Akışları ve Onay Akışları Yönetimi", description: "Servicecore onay iş akışları, akış şemaları ve diyagramlar aracılığıyla oluşturulur ve görsel olarak temsil edilir. Bu iş akışları, onay süreçlerini otomatikleştirmek ve optimize etmek için sıkça kullanılır. Böylece sistem onaylarını yönetmek ve izlemek daha kolay hale gelir. Onay iş akışları, verimliliği artırmak, hataları azaltmak ve karmaşık süreçleri iyi organize etmek için kullanışlı bir araçtır." },
+  { title: "Onay ve Danışma Kurulları Yönetimi", description: "ServiceCore, işletmelerin onay süreçlerini daha düzenli ve hızlı yönetebilmeleri için Onay Grupları özelliğini sunar. Bu yapı, belirli süreçler için onay veren ve danışmanlık sağlayan kişileri tanımlayıp, onay mekanizmalarında kullanmayı kolaylaştırır." },
+  { title: "Özel Ek Alanlar ve Custom Formlar", description: "Her işletmenin kendine özgü süreçleri ve ihtiyaçları vardır. ServiceCore, bu ihtiyaçlara tam uyum sağlayabilmeniz için Özel Ek Alanlar özelliğini sunar. Bu özellik sayesinde, standart formları geliştirerek işletmenize özel kayıt formları oluşturabilir ve süreçlerinizi daha verimli hale getirebilirsiniz." },
+  { title: "Low Code Form Design ve Yönetimi", description: "ServiceCore, yenilikçi Low-Code Form Oluşturma özelliği ile işletmenizin ihtiyaçlarına uygun özel formlar oluşturmanızı kolaylaştırır. Teknik bilgiye ihtiyaç duymadan, sürükle-bırak yöntemiyle hızlı ve etkili çözümler üretebilirsiniz." },
+  { title: "Mobile ITSM Modülü Kullanımı", description: "ServiceCore, mobil native uygulaması ile tüm teknisyen ve end user işlemleri yapılabilmektedir." },
+  { title: "Azure AD / SAML / SSO", description: "ServiceCore, modern iş gereksinimlerine uygun olarak geliştirilmiş bir platformdur ve güçlü kimlik doğrulama yöntemlerini destekler. Platform, Azure Active Directory (Azure AD), SAML (Security Assertion Markup Language) ve Single Sign-On (SSO) teknolojileriyle sorunsuz entegrasyon sağlar." },
+  { title: "Validasyonlar/Süreç Doğrulama Kontrolleri", description: "ServiceCore, iş süreçlerinizin düzenli ve eksiksiz bir şekilde yürütülmesini sağlamak için güçlü Zorunlu Alan Validasyonu özellikleri sunar. Bu özellik sayesinde, farklı modüllerde (varlık, değişiklik, olay, problem, iyileştirme, görev, işbirlikleri, proje gibi) belirli alanların doldurulmasını zorunlu hale getirebilirsiniz." },
+  { title: "Olay, Problem, Değişiklik, Proje, CI, Görev, İş Günlüğü Şablonları", description: "ServiceCore, iş süreçlerinizi daha şeffaf ve verimli hale getirmek için kapsamlı bir Worklog Yönetimi sunar. Bu özellik, kayıtlar içerisine eklenen iş günlüklerini detaylı bir şekilde takip etmenizi ve bu verilerden yola çıkarak efor hesaplamaları yapmanızı sağlar." },
+  { title: "Zamanlanmış Raporlar", description: "ServiceCore, kullanıcıların raporları belirli zaman dilimlerinde otomatik olarak almasını sağlayan Zamanlanmış Rapor özelliği sunar. Bu özellik, raporlama sürecini daha verimli hale getirir ve verilerin düzenli aralıklarla toplanmasını sağlar." },
+  { title: "Döküm Raporları", description: "ServiceCore, tüm modüller üzerinden kapsamlı raporlar almanızı sağlayan Döküm Raporları özelliği sunar. Bu özellik, her modülde yer alan verileri detaylı bir şekilde döküm formatında çıkararak, işletmenizin analiz ve raporlama ihtiyaçlarını karşılar." },
+  { title: "Dinamik Raporlar", description: "ServiceCore, kullanıcıların farklı filtreler ve kolon yapıları kullanarak tamamen özelleştirilmiş raporlar oluşturabilmesini sağlayan Dinamik Raporlar özelliği sunar. Bu özellik, kullanıcıların ihtiyaçlarına göre veri analizini kişiselleştirmelerini ve daha detaylı, anlamlı raporlar elde etmelerini sağlar." },
+  { title: "Zimmet Formları ve Onay Sistemi", description: "ServiceCore, zimmetli varlıkları yönetmek ve bu varlıklar üzerinden kabul onaylarını almak için Zimmet Formları oluşturmanıza olanak tanır. Bu özellik, varlıkların doğru bir şekilde izlenmesini sağlar ve işletmeniz içindeki eşyaların kabul ve onay süreçlerini düzenler." },
   { title: "Zamanlanmış İstekler", description: "Periyodik olarak oluşan istek kayıtları yaratabilir ve düzenli müdahalede bulunabilirsiniz." },
-  { title: "Çoklu Dil Desteği", description: "ServiceCore, global kullanıcılar için Çoklu Dil Desteği sunarak, farklı dillerde çalışma imkanı sağlar. Kullanıcılar platformu kendi tercihlerine göre farklı dillerde kullanabilirler." },
-  { title: "Vardiya Yönetimi Modülü", description: "Teknisyen gruplarına bağlı olarak santral aramalarının yönetimini sağlar ve kritik kayıtlar için otomatik telefon bilgilendirmesi yapar." },
-  { title: "Multi Company / Holding Yapısı (ESM)", description: "Alt şirketlerin, iştiraklerin veya departmanların tek şemsiye altında fakat özelleşmiş şekilde yönetimi." }
+  { title: "Çoklu Dil Desteği", description: "ServiceCore, global kullanıcılar için Çoklu Dil Desteği sunarak, farklı dillerde çalışma imkanı sağlar. Bu özellik, kullanıcıların kendi tercihlerine göre platformu farklı dillerde kullanabilmelerini ve daha verimli bir deneyim elde etmelerini mümkün kılar." },
+  { title: "Vardiya Yönetimi Modülü", description: "Vardiya Yönetimi Modülü, mevcut olay ve servis talebi kayıtlarının atandığı teknisyen gruplarına bağlı olarak, belirlenen koşullar çerçevesinde santral aramalarının yönetimini sağlayan bir çözümdür. Bu modül sayesinde kritik kayıtlar için teknisyenlerin telefonla otomatik olarak bilgilendirilmesi ve operasyonel süreçlerin aksamadan ilerlemesi hedeflenir." },
+  { title: "Multitenant Yapı (ESM versiyon ile)", description: "Servicecore'un içindeki tüm hizmet süreçlerini ve bu süreçlere odaklanan bir yaklaşımı ifade eder. Bu, Servicecore'un sadece IT (Bilgi Teknolojileri) departmanı için değil, aynı zamanda diğer departmanlar ve iş birimleri için de hizmet yönetimi uygulamalarını içerir. Servicecore ESM yaklaşımı, bir şirketin genel hizmet verimliliğini ve müşteri memnuniyetini artırmayı amaçlar. ESM versiyonda alt tenantlarda üye olan her bir teknisyen tenant bazında ayrı lisanslanmaktadır." },
+  { title: "Multi Company / Holding Yapısı (ESM versiyon ile)", description: "ServiceCore ESM (Enterprise Service Management), şirket içindeki tüm hizmet süreçlerini yönetmek için entegre bir yaklaşım sunar. Bu, sadece IT (Bilgi Teknolojileri) departmanı ile sınırlı kalmaz, aynı zamanda diğer departmanlar ve iş birimlerinin hizmet yönetimi uygulamalarını da kapsar. ServiceCore'un ESM yaklaşımı, organizasyonun genel verimliliğini artırmayı ve müşteri memnuniyetini yükseltmeyi hedefler. ESM versiyonda alt tenantlarda üye olan her bir teknisyen tenant bazında ayrı lisanslanmaktadır." }
 ];
 
-type AddonItem = { name: string; desc?: string };
+type AddonItem = { name: string; desc?: string; link?: string };
 type AddonCategory = { title: string; items: AddonItem[] };
 
 const addonCategories: AddonCategory[] = [
@@ -79,6 +82,7 @@ const addonCategories: AddonCategory[] = [
   {
     title: "Eklentiler (Add-ons)",
     items: [
+      { name: "Asset Discovery Add-on", desc: "Ağ üzerindeki tüm BT varlıklarını otomatik keşfeder; envanteri ve CMDB'yi sürekli güncel tutar. Detaylı bilgi için Discovery modülü sayfasını inceleyin.", link: "/discovery" },
       { name: "VMware Varlık Keşif Eklentisi", desc: "VMware ortamındaki sanal makineleri ve altyapıyı otomatik keşfetmenize olanak tanır. IT varlık yönetimini verimli hale getirir ve yapılandırma yönetimini güçlendirir." },
       { name: "MS Teams Eklentisi", desc: "Microsoft Teams ile entegre olarak, hizmet yönetimi ve işbirliği süreçlerini daha verimli hale getirir." },
       { name: "Task Calendar Sync Eklentisi", desc: "Kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli hizmet yönetimi yapmalarını sağlar." },
@@ -90,7 +94,6 @@ const addonCategories: AddonCategory[] = [
   {
     title: "Entegrasyonlarla Sunulan Çözümler",
     items: [
-      { name: "Varlık Keşif Çözümleri", desc: "Discovery Entegre Add-on." },
       { name: "Servis Analitiği Çözümleri", desc: "PowerBI Entegre Add-on." },
       { name: "Event Yönetimi Çözümleri", desc: "IT Monitoring Entegre Add-on." },
       { name: "Sürüm Yönetimi Çözümleri", desc: "SDLC ve DevOps Entegrasyonları." },
@@ -346,23 +349,41 @@ export function PricingSection() {
                   <div key={idx} className="flex flex-col">
                      <h4 className="text-sm font-semibold text-white mb-6 border-b border-white/10 pb-4 uppercase tracking-wider">{category.title}</h4>
                      <ul className="flex flex-col gap-4">
-                        {category.items.map((item, itemIdx) => (
-                           <li key={itemIdx} className="group relative pr-4">
-                              <div className="flex items-start gap-3">
-                                 <div className="mt-1.5 w-1 h-1 rounded-full bg-fuchsia-500/50 group-hover:bg-fuchsia-400 transition-colors shrink-0" />
-                                 <div>
-                                    <span className="text-[13px] font-medium text-(--color-text-overline) group-hover:text-white transition-colors block">
-                                       {item.name}
-                                    </span>
-                                    {item.desc && (
-                                       <span className="text-xs text-(--color-text-muted) mt-1.5 block leading-relaxed group-hover:text-(--color-text-secondary) transition-colors">
-                                          {item.desc}
-                                       </span>
-                                    )}
-                                 </div>
+                        {category.items.map((item, itemIdx) => {
+                          const link = "link" in item ? (item as { link?: string }).link : undefined;
+                          const inner = (
+                            <div className="flex items-start gap-3">
+                              <div className="mt-1.5 w-1 h-1 rounded-full bg-fuchsia-500/50 group-hover:bg-fuchsia-400 transition-colors shrink-0" />
+                              <div className="flex-1">
+                                <span className="text-[13px] font-medium text-(--color-text-overline) group-hover:text-white transition-colors flex items-center gap-1.5">
+                                  {item.name}
+                                  {link && <ArrowUpRight className="w-3.5 h-3.5 text-fuchsia-400 opacity-70 group-hover:opacity-100 transition-opacity" aria-hidden="true" />}
+                                </span>
+                                {item.desc && (
+                                  <span className="text-xs text-(--color-text-muted) mt-1.5 block leading-relaxed group-hover:text-(--color-text-secondary) transition-colors">
+                                    {item.desc}
+                                  </span>
+                                )}
                               </div>
-                           </li>
-                        ))}
+                            </div>
+                          );
+                          return (
+                            <li key={itemIdx} className="group relative pr-4">
+                              {link ? (
+                                <a
+                                  href={link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block cursor-pointer"
+                                >
+                                  {inner}
+                                </a>
+                              ) : (
+                                inner
+                              )}
+                            </li>
+                          );
+                        })}
                      </ul>
                   </div>
                ))}

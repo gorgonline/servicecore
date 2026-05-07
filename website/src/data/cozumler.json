@@ -1,0 +1,96 @@
+{
+  "intro": {
+    "title": "ServiceCore Çözümleri",
+    "description": "ITIL4 uyumlu modüllerimizi farklı kurumsal ihtiyaçlara göre paketlenmiş çözümler halinde sunuyoruz."
+  },
+  "solutions": [
+    {
+      "slug": "esm",
+      "abbr": "ESM",
+      "name": "Enterprise Service Management",
+      "name_tr": "Kurumsal Servis Yönetimi",
+      "tagline": "BT dışı tüm departmanları (İK, mali işler, idari işler) aynı servis disiplinine taşıyın.",
+      "description": "ESM ile kurumun tüm hizmet süreçleri tek bir platformda toplanır. BT bölümü için geliştirilen servis yönetimi disiplini, kurumun her birimine taşınarak uçtan uca dijital dönüşüm sağlanır.",
+      "icon": "Building2",
+      "accent": "purple",
+      "modules": ["esm", "self-service-portal", "service-catalog-management", "service-level-management", "request-management"]
+    },
+    {
+      "slug": "itsm",
+      "abbr": "ITSM",
+      "name": "IT Service Management",
+      "name_tr": "BT Servis Yönetimi",
+      "tagline": "ITIL4 uyumlu 22 modülle BT operasyonlarını uçtan uca yönetin.",
+      "description": "Olay, problem, değişiklik, talep, varlık ve konfigürasyon süreçlerinin tamamını ITIL4 prensipleriyle dijitalleştirin. Mevcut 24 modülün 22'si bu çözüm paketinin parçasıdır.",
+      "icon": "Settings",
+      "accent": "blue",
+      "modules": ["etkilesim-yonetimi", "olay-yonetimi", "problem-yonetimi", "istek-yonetimi", "degisiklik-yonetimi", "varlik-yonetimi", "servis-konfigurasyon-yonetimi", "bilgi-bankasi", "servis-katalog-yonetimi", "servis-seviye-yonetimi", "servis-otomasyonu", "raporlama-yonetimi", "gorev-yonetimi", "is-akisi-yonetimi"]
+    },
+    {
+      "slug": "css",
+      "abbr": "CSS",
+      "name": "Customer Service Support",
+      "name_tr": "Müşteri Hizmetleri Yönetimi",
+      "tagline": "Müşteri taleplerini, iletişim kanallarını ve memnuniyet süreçlerini tek panelde yönetin.",
+      "description": "Çağrı, e-posta, sohbet ve sosyal medya kanallarından gelen müşteri etkileşimlerini birleştirin. Self-servis portal, bilgi bankası ve SLA takibi ile müşteri deneyimini standartlaştırın.",
+      "icon": "Headphones",
+      "accent": "cyan",
+      "modules": ["etkilesim-yonetimi", "self-servis-portal", "bilgi-bankasi", "servis-katalog-yonetimi", "servis-seviye-yonetimi"]
+    },
+    {
+      "slug": "apm",
+      "abbr": "APM",
+      "name": "Agile Project Management",
+      "name_tr": "Agile Proje Yönetimi",
+      "tagline": "Backlog, sprint, kanban ve roadmap'i tek platformda — ITIL4 değer akışıyla entegre.",
+      "description": "Story point planlamadan velocity analizine, kanban panolarından gantt zaman çizelgesine kadar tüm agile süreçleri yönetin. Projeler ITIL4 değer akışı boyunca diğer modüllerle senkron çalışır.",
+      "icon": "Layers",
+      "accent": "orange",
+      "modules": ["proje-yonetimi", "gorev-yonetimi", "is-akisi-yonetimi", "raporlama-yonetimi"]
+    },
+    {
+      "slug": "sdlc",
+      "abbr": "SDLC",
+      "name": "Software Development Lifecycle",
+      "name_tr": "Yazılım Geliştirme Yönetimi",
+      "tagline": "Gereksinimden devreye almaya kadar tüm yazılım geliştirme yaşam döngüsü.",
+      "description": "Backlog ve gereksinim toplamadan tasarım, geliştirme, test ve devreye alma adımlarına kadar SDLC disiplinini dijitalleştirin. Değişiklik yönetimi ve sürekli iyileştirme süreçleriyle entegre çalışır.",
+      "icon": "Code",
+      "accent": "emerald",
+      "modules": ["proje-yonetimi", "degisiklik-yonetimi", "surekli-iyilestirme", "is-akisi-yonetimi", "gorev-yonetimi"]
+    },
+    {
+      "slug": "itam",
+      "abbr": "ITAM",
+      "name": "IT Asset Management",
+      "name_tr": "BT Varlık Yönetimi",
+      "tagline": "Donanım, yazılım ve lisans varlıklarının tüm yaşam döngüsü.",
+      "description": "BT varlıklarını satın alımdan emekliliğe kadar tek envanterde yönetin. Sözleşme, garanti, lisans ve maliyet bilgileri varlık kaydıyla bütünleşik tutulur; CMDB ile servis haritalarına bağlanır.",
+      "icon": "Box",
+      "accent": "indigo",
+      "modules": ["varlik-yonetimi", "servis-konfigurasyon-yonetimi", "sozlesme-yonetimi", "servis-iliskileri-yonetimi"]
+    },
+    {
+      "slug": "eam",
+      "abbr": "EAM",
+      "name": "Enterprise Asset Management",
+      "name_tr": "Kurumsal Varlık Yönetimi",
+      "tagline": "BT dışı fiziksel varlıkların (taşıt, mobilya, ekipman, tesisat) merkezi yönetimi.",
+      "description": "Lojistik araçlarından üretim ekipmanlarına, ofis mobilyasından tesisat altyapısına kadar tüm fiziksel kurumsal varlıkları tek envanterde yönetin. Bakım takvimi, sözleşme ve maliyet izleme dahil.",
+      "icon": "Boxes",
+      "accent": "amber",
+      "modules": ["varlik-yonetimi", "servis-konfigurasyon-yonetimi", "sozlesme-yonetimi", "gorev-yonetimi"]
+    },
+    {
+      "slug": "fsm",
+      "abbr": "FSM",
+      "name": "Field Service Management",
+      "name_tr": "Saha Servis Yönetimi",
+      "tagline": "Saha ekiplerine mobil iş emri, rota ve gerçek zamanlı görev takibi.",
+      "description": "Mobil uygulama ile saha teknisyenlerine iş emri atayın, GPS ile rotayı optimize edin, müşteri imzasıyla işi kapatın. Stok, sözleşme ve SLA takibi mobil ve masaüstü arasında senkron çalışır.",
+      "icon": "Truck",
+      "accent": "pink",
+      "modules": ["mobil-servis-yonetimi", "gorev-yonetimi", "varlik-yonetimi", "sozlesme-yonetimi", "servis-seviye-yonetimi"]
+    }
+  ]
+}

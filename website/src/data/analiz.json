@@ -263,7 +263,7 @@
           "id": "destek_seviyesi",
           "label": "Tercih edilen destek seviyesi nedir?",
           "type": "radio",
-          "options": ["Standart (8x5)", "Genişletilmiş (12x5)", "Premium (7x24)", "Karar verilmedi"]
+          "options": ["Silver", "Gold", "Platinum", "Mission Critical"]
         }
       ]
     }

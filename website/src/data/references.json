@@ -34,7 +34,6 @@
         { "name": "TürkKep", "logo": "/logos/turkkep.png" },
         { "name": "Yeşim", "logo": "/logos/yesim.png" },
         { "name": "Yıldızlar Yatırım Holding", "logo": "/logos/yildizlar-yatirim.png" },
-        { "name": "Başbuğ Oto Yedek Parça", "logo": "/logos/basbug.png" },
         { "name": "TCI Aircraft Interiors", "logo": "/logos/tci.png" },
         { "name": "Hasel", "logo": "/logos/hasel.png" },
         { "name": "Saat&Saat", "logo": "/logos/saat-saat.png" },
@@ -70,7 +69,6 @@
         { "name": "Pure7", "logo": "/logos/pure7.png" },
         { "name": "Çözümtek", "logo": "/logos/cozumtek.png" },
         { "name": "Novus", "logo": "/logos/novus.png" },
-        { "name": "ZED Tech", "logo": "/logos/zed-tech.png" },
         { "name": "WildCats Teknoloji", "logo": "/logos/wildcats.png" },
         { "name": "TDT Turkish Dijital Teknolojiler", "logo": "/logos/tdt.png" }
       ]

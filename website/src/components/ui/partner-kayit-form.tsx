@@ -54,7 +54,7 @@ export function PartnerKayitForm() {
 
     setStatus("loading");
     setErrorMessage("");
-    const result = await submitForm("Partner Kayıt", data);
+    const result = await submitForm("Register", data);
     if (result.ok) {
       setStatus("success");
       setFieldState({});

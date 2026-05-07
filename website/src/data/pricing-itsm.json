@@ -113,6 +113,7 @@
       {
         "title": "Eklentiler (Add-ons)",
         "items": [
+          { "name": "Asset Discovery Add-on", "desc": "Ağ üzerindeki tüm BT varlıklarını otomatik keşfeder; envanteri ve CMDB'yi sürekli güncel tutar. Detaylı bilgi için Discovery modülü sayfasını inceleyin.", "link": "/discovery" },
           { "name": "VMware Varlık Keşif Eklentisi", "desc": "ServiceCore VMware Varlık Keşif Eklentisi, VMware ortamındaki sanal makineleri ve altyapıyı otomatik olarak keşfetmenize olanak tanır. Bu özellik, IT varlık yönetimini daha verimli hale getirir ve sanal altyapınızdaki varlıkları doğru bir şekilde izleyerek, yapılandırma yönetimini güçlendirir." },
           { "name": "MS Teams Eklentisi", "desc": "ServiceCore MS Teams Eklentisi, Microsoft Teams ile entegre olarak, hizmet yönetimi ve işbirliği süreçlerini daha verimli hale getirir." },
           { "name": "Task Calendar Sync Eklentisi", "desc": "ServiceCore kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli bir şekilde hizmet yönetimi yapmalarını sağlar." },
@@ -124,7 +125,6 @@
       {
         "title": "Entegrasyonlarla Sunulan Çözümler",
         "items": [
-          { "name": "Varlık Keşif Çözümleri", "desc": "Discovery Entegre Add-on" },
           { "name": "Servis Analitiği Çözümleri", "desc": "PowerBI Entegre Add-on" },
           { "name": "Event Yönetimi Çözümleri", "desc": "IT Monitoring Entegre Add-on" },
           { "name": "Sürüm Yönetimi Çözümleri", "desc": "SDLC ve DevOps Entegrasyonları" },

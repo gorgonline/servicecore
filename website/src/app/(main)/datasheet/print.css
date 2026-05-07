@@ -1,0 +1,105 @@
+/* ============================================================================
+ * Datasheet Print Stylesheet
+ * Koyu tema PDF içinde korunur. Light fallback YOK.
+ * Tailwind print: utilities (print:break-before-page vb.) bileşenlerin kendisinde.
+ * Bu dosya yalnızca @page kuralları, sayfa numarası ve global koyu zemin override'ı.
+ * ========================================================================== */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+
+    @bottom-right {
+      content: counter(page) " / " counter(pages);
+      font-family: var(--font-geist-mono), monospace;
+      font-size: 8.5pt;
+      color: #94a3b8;
+    }
+
+    @bottom-left {
+      content: "Servicecore Datasheet · v2026.05";
+      font-family: var(--font-geist-mono), monospace;
+      font-size: 8.5pt;
+      color: #94a3b8;
+      letter-spacing: 0.08em;
+    }
+  }
+
+  /* Koyu tema PDF'te de korunsun */
+  html,
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background: #010E21 !important;
+    color: #ffffff !important;
+  }
+
+  body * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Site şablonu (navbar, footer) yazdırmada gizlensin */
+  body > nav,
+  body > header,
+  body > footer,
+  nav[role="navigation"],
+  header[role="banner"],
+  footer[role="contentinfo"] {
+    display: none !important;
+  }
+
+  /* Datasheet kök */
+  .datasheet-root {
+    min-height: 0 !important;
+    background: #010E21 !important;
+  }
+
+  /* Print tipografi ölçek */
+  body {
+    font-size: 11pt !important;
+    line-height: 1.65 !important;
+  }
+
+  .datasheet-h1 {
+    font-size: 38pt !important;
+    line-height: 1.05 !important;
+  }
+  .datasheet-h2-large {
+    font-size: 22pt !important;
+    line-height: 1.1 !important;
+  }
+  .datasheet-body {
+    font-size: 11pt !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Backdrop-blur Firefox/PDF render fallback */
+  [class*="backdrop-blur"] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Linkler — koyu zeminde okunabilir kalsın */
+  .datasheet-root a {
+    color: #38bdf8 !important;
+    text-decoration: none !important;
+  }
+
+  /* Parça-bütünlüğü ipuçları */
+  [data-ds-module] header,
+  [data-ds-module] ol,
+  [data-ds-module] li,
+  [data-ds-module] p,
+  [data-ds-module] h3,
+  [data-ds-closing] {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Modül içeriğini biraz daraltıp okunaklı tut */
+  [data-ds-module] .max-w-prose {
+    max-width: 64ch !important;
+  }
+}

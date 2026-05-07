@@ -42,7 +42,25 @@ import {
   Layers,
   Target,
   Building2,
-  Sparkles
+  Sparkles,
+  Headphones,
+  Boxes,
+  Truck,
+  Search,
+  Mic,
+  Languages,
+  Radar,
+  Filter,
+  BarChart3,
+  Network,
+  Merge,
+  CalendarClock,
+  Eye,
+  Heart,
+  FileCheck,
+  ShieldAlert,
+  Clock,
+  Package
 } from "lucide-react";
 
 // Sıralama ve isimler canli siteyle birebir. Href'ler korundu.
@@ -54,6 +72,7 @@ const modules = [
   { name: "Bilgi ve Doküman Yönetimi", icon: FileText, desc: "Kurumsal hafızayı merkezileştirin.", href: "/bilgi-bankasi" },
   { name: "Değişiklik Yönetimi", icon: RefreshCw, desc: "Riskleri minimize ederek yenilik yapın.", href: "/degisiklik-yonetimi" },
   { name: "Varlık Yönetimi", icon: Box, desc: "Donanım ve yazılım envanterini takip edin.", href: "/varlik-yonetimi" },
+  { name: "Discovery", icon: Radar, desc: "Ağ ve varlık keşfi ile envanteri otomatik güncelleyin.", href: "/discovery" },
   { name: "Servis Konfigürasyon Yönetimi", icon: Settings, desc: "Sistem bileşenlerinin haritasını çıkarın.", href: "/servis-konfigurasyon-yonetimi" },
   { name: "Sürekli İyileştirme", icon: TrendingUp, desc: "Hizmet kalitesini her adımda artırın.", href: "/surekli-iyilestirme" },
   { name: "Servis Katalog Yönetimi", icon: BookOpen, desc: "Kullanıcılara hizmet menüsü sunun.", href: "/servis-katalog-yonetimi" },
@@ -74,8 +93,46 @@ const modules = [
   { name: "AI Yol Haritası", icon: Sparkles, desc: "Yapay zeka destekli otomasyon ve asistanlar.", href: "/ai-yol-haritasi" },
 ];
 
+const solutionsSubmenu = [
+  { name: "ESM", title: "Enterprise Service Management", icon: Building2, desc: "Tüm departmanları aynı servis disiplinine taşıyın.", href: "/cozumler/esm" },
+  { name: "ITSM", title: "IT Service Management", icon: Settings, desc: "ITIL4 uyumlu BT operasyon yönetimi.", href: "/cozumler/itsm" },
+  { name: "CSS", title: "Customer Service Support", icon: Headphones, desc: "Müşteri taleplerini ve etkileşimi tek panelde.", href: "/cozumler/css" },
+  { name: "APM", title: "Agile Project Management", icon: Layers, desc: "Backlog, sprint, kanban ve roadmap yönetimi.", href: "/cozumler/apm" },
+  { name: "SDLC", title: "Software Development Lifecycle", icon: Code, desc: "Yazılım yaşam döngüsünün uçtan uca yönetimi.", href: "/cozumler/sdlc" },
+  { name: "ITAM", title: "IT Asset Management", icon: Box, desc: "BT varlık ve lisanslarının yaşam döngüsü.", href: "/cozumler/itam" },
+  { name: "EAM", title: "Enterprise Asset Management", icon: Boxes, desc: "BT dışı fiziksel varlıkların merkezi yönetimi.", href: "/cozumler/eam" },
+  { name: "FSM", title: "Field Service Management", icon: Truck, desc: "Saha ekiplerine mobil iş emri ve rota.", href: "/cozumler/fsm" },
+];
+
+const aicoreSubmenu = [
+  { name: "Replycore SolveAI", icon: FileText, desc: "Karmaşık ticket konuşmalarını saniyeler içinde özetler.", href: "/aicore/replycore-solve" },
+  { name: "Chatcore-SelfAI", icon: MessageSquare, desc: "Doğal dilde son kullanıcı asistanı.", href: "/aicore/chatcore-self" },
+  { name: "Classificore ManageAI", icon: Filter, desc: "Otomatik ticket sınıflandırma ve yönlendirme.", href: "/aicore/classificore-manage" },
+  { name: "PrioritycoreAI", icon: Target, desc: "Önceliklendiren akıllı karar motoru.", href: "/aicore/prioritycore" },
+  { name: "RootCoreAI", icon: Search, desc: "Kayıt ve alarmları akıllıca gruplar.", href: "/aicore/rootcore" },
+  { name: "PredicticoreAI", icon: TrendingUp, desc: "SLA ihlallerini önceden tahmin eder.", href: "/aicore/predicticore" },
+  { name: "ScoreAI", icon: BarChart3, desc: "Doğal dil ile rapor ve dashboard.", href: "/aicore/score" },
+  { name: "KnowCoreAI", icon: BookOpen, desc: "Bilgi bankası içeriği otomatik üretimi.", href: "/aicore/knowcore" },
+  { name: "FlowCoreAI", icon: GitBranch, desc: "Metin komutlarıyla iş akışı şeması.", href: "/aicore/flowcore" },
+  { name: "DiscoreAI", icon: Network, desc: "Akıllı keşif ve CMDB haritaları.", href: "/aicore/discore" },
+  { name: "TranslateAI", icon: Languages, desc: "Anlık çoklu dil çevirisi.", href: "/aicore/translate" },
+  { name: "MergeAI", icon: Merge, desc: "Benzer ticket'ları birleştirir.", href: "/aicore/merge" },
+  { name: "ProjectplanpredictAI", icon: CalendarClock, desc: "Proje gecikme tahmini.", href: "/aicore/projectplanpredict" },
+  { name: "VisicoreAI", icon: Eye, desc: "Ekran görüntülerinden hata tespiti.", href: "/aicore/visicore" },
+  { name: "SentimentAI", icon: Heart, desc: "Mesajlardan duygu analizi.", href: "/aicore/sentiment" },
+  { name: "KnowcoreAI (Şablon)", icon: FileCheck, desc: "Bilgi bankası içeriklerini şablona uyarlar.", href: "/aicore/knowcore-template" },
+  { name: "ToneAI", icon: Mic, desc: "Kurumsal dil standardı denetimi.", href: "/aicore/tone" },
+  { name: "ImpacticoreAI", icon: ShieldAlert, desc: "Değişiklik risk seviyesi analizi.", href: "/aicore/impacticore" },
+  { name: "ShiftAI", icon: Clock, desc: "Otomatik vardiya planlama.", href: "/aicore/shift" },
+  { name: "AuditAI", icon: ShieldCheck, desc: "ITIL ve ISO uyumluluk denetimi.", href: "/aicore/audit" },
+  { name: "AssetLifecycleAI", icon: Package, desc: "Cihaz yaşam döngüsü yönetimi.", href: "/aicore/asset-lifecycle" },
+];
+
 const plansSubmenu = [
   { name: "ITSM Lisans Seçenekleri", icon: ShieldCheck, desc: "Service Desk, ITIL4 ve ESM için lisans ve modül seçenekleri.", href: "/planlar" },
+  { name: "ESM Lisans Seçenekleri", icon: Building2, desc: "Enterprise Service Management lisans ve modül seçenekleri.", href: "/planlar-esm" },
+  { name: "CSS Lisans Seçenekleri", icon: Headphones, desc: "Customer Service Support lisans ve modül seçenekleri.", href: "/planlar-css" },
+  { name: "FSM Lisans Seçenekleri", icon: Truck, desc: "Field Service Management lisans ve modül seçenekleri.", href: "/planlar-fsm" },
   { name: "Proje Yönetimi Lisans Seçenekleri", icon: Target, desc: "Agile, hibrit ve stratejik proje yönetimi lisans seçenekleri.", href: "/planlar-pm" },
   { name: "Abonelik ve Lisanslama Rehberi", icon: ScrollText, desc: "Roller, edition kuralları, ESM ve add-on lisanslama detayları.", href: "/planlar/lisanslama-rehberi" },
 ];
@@ -211,6 +268,129 @@ export default function Navbar() {
                         Tüm Modülleri İncele
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                      </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Solutions Mega Menu Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveMenu("solutions")}
+            onMouseLeave={() => setActiveMenu(null)}
+          >
+            <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
+              Çözümler
+              <motion.div
+                animate={{ rotate: activeMenu === "solutions" ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </motion.div>
+            </button>
+
+            <AnimatePresence>
+              {activeMenu === "solutions" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className={`fixed left-0 right-0 w-screen bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-y border-white/10 px-6 lg:px-12 py-8 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  onMouseEnter={() => setActiveMenu("solutions")}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <div className="mx-auto max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+                    {solutionsSubmenu.map((sol, idx) => {
+                      const Icon = sol.icon;
+                      return (
+                        <Link
+                          key={idx}
+                          href={sol.href}
+                          onClick={() => setActiveMenu(null)}
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+                        >
+                          <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-purple-light) group-hover:bg-(--color-brand-primary) group-hover:text-white transition-colors">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div className="min-w-0">
+                            <div className="flex items-baseline gap-2 mb-0.5">
+                              <h4 className="text-sm font-semibold text-white group-hover:text-(--color-brand-primary) transition-colors">{sol.name}</h4>
+                              <span className="text-[10px] font-mono text-(--color-text-muted) tracking-wider uppercase truncate">{sol.title}</span>
+                            </div>
+                            <p className="text-xs text-(--color-text-secondary) leading-snug">{sol.desc}</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* AICORE Mega Menu Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveMenu("aicore")}
+            onMouseLeave={() => setActiveMenu(null)}
+          >
+            <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
+              AICORE
+              <motion.div
+                animate={{ rotate: activeMenu === "aicore" ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </motion.div>
+            </button>
+
+            <AnimatePresence>
+              {activeMenu === "aicore" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className={`fixed left-0 right-0 w-screen bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-y border-white/10 px-6 lg:px-12 py-8 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  onMouseEnter={() => setActiveMenu("aicore")}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <div className="mx-auto max-w-7xl">
+                    <div className="mb-6 flex items-end justify-between gap-4">
+                      <div>
+                        <div className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light) mb-1">
+                          AICORE
+                        </div>
+                        <h3 className="text-lg font-semibold text-white">Servicecore Yapay Zeka Araç Ailesi</h3>
+                      </div>
+                      <Link href="/aicore" onClick={() => setActiveMenu(null)} className="text-xs font-medium text-(--color-brand-accent) hover:text-white transition-colors flex items-center gap-1 cursor-pointer">
+                        Tümünü gör
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+                      {aicoreSubmenu.map((tool, idx) => {
+                        const Icon = tool.icon;
+                        return (
+                          <Link
+                            key={idx}
+                            href={tool.href}
+                            onClick={() => setActiveMenu(null)}
+                            className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+                          >
+                            <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-purple-light) group-hover:bg-(--color-accent-purple-base) group-hover:text-white transition-colors">
+                              <Icon className="w-5 h-5" />
+                            </div>
+                            <div className="min-w-0">
+                              <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-accent-purple-light) transition-colors">{tool.name}</h4>
+                              <p className="text-xs text-(--color-text-secondary) leading-snug">{tool.desc}</p>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
                 </motion.div>
               )}
@@ -432,6 +612,78 @@ export default function Navbar() {
                           >
                             <mod.icon className="w-5 h-5 text-(--color-brand-primary) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
                             <span className="text-sm font-medium transition-colors">{mod.name}</span>
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Çözümler Accordion */}
+                <div className="flex flex-col gap-3">
+                  <button
+                    onClick={() => setActiveMenu(activeMenu === "solutions" ? null : "solutions")}
+                    className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors w-full cursor-pointer"
+                  >
+                    Çözümler
+                    <motion.div animate={{ rotate: activeMenu === "solutions" ? 180 : 0 }}>
+                      <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {activeMenu === "solutions" && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden flex flex-col gap-2 pt-3"
+                      >
+                        {solutionsSubmenu.map((sol, idx) => (
+                          <Link
+                            key={idx}
+                            href={sol.href}
+                            className="flex items-center gap-3 text-(--color-text-overline) hover:text-white py-2 group cursor-pointer"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <sol.icon className="w-5 h-5 text-(--color-accent-purple-light) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
+                            <span className="text-sm font-medium transition-colors">
+                              {sol.name} <span className="text-xs text-(--color-text-muted) ml-1 font-normal">— {sol.title}</span>
+                            </span>
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* AICORE Accordion */}
+                <div className="flex flex-col gap-3">
+                  <button
+                    onClick={() => setActiveMenu(activeMenu === "aicore" ? null : "aicore")}
+                    className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors w-full cursor-pointer"
+                  >
+                    AICORE
+                    <motion.div animate={{ rotate: activeMenu === "aicore" ? 180 : 0 }}>
+                      <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {activeMenu === "aicore" && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden flex flex-col gap-2 pt-3"
+                      >
+                        {aicoreSubmenu.map((tool, idx) => (
+                          <Link
+                            key={idx}
+                            href={tool.href}
+                            className="flex items-center gap-3 text-(--color-text-overline) hover:text-white py-2 group cursor-pointer"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <tool.icon className="w-5 h-5 text-(--color-accent-purple-light) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
+                            <span className="text-sm font-medium transition-colors">{tool.name}</span>
                           </Link>
                         ))}
                       </motion.div>

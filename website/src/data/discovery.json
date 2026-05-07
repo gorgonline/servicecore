@@ -1,0 +1,272 @@
+{
+  "hero": {
+    "eyebrow": "MODÜL · DISCOVERY",
+    "title_main": "ServiceCore",
+    "title_accent": "Discovery",
+    "lede": "Tüm BT varlıklarınız tek bir yerde, otomatik keşfedilmiş, güncel ve aksiyon alınabilir halde.",
+    "description": "Ağ üzerindeki sunucu, PC, switch, router, yazıcı, IoT cihazları ve sanal makineleri otomatik keşfedin. ServiceCore CMDB'si her tarama sonrası kendiliğinden güncellenir; manuel envanter tutma derdine son verir."
+  },
+  "promise": [
+    { "value": "9", "label": "Tarama yöntemi", "detail": "Network, SNMP, WMI, SSH, Cloud, AD, Agent, Distributed, Remote Probe" },
+    { "value": "30", "suffix": " dk", "label": "İlk sonuç", "detail": "Yeni müşteri için onboarding wizard ile" },
+    { "value": "24", "suffix": " saat", "label": "Yeni cihaz", "detail": "Eklenen cihaz envanterinize girer" },
+    { "value": "AES-256", "label": "Şifreleme", "detail": "Credential'lar HSM/KMS korumasında" }
+  ],
+  "value_table": [
+    { "problem": "Envanterim güncel mi?", "solution": "Otomatik keşif → Her tarama sonrası tazelenir ve güncellenir." },
+    { "problem": "Hangi cihazda ne kuruluyor bilmiyorum.", "solution": "Software inventory + asset detay panelinde tek bakışta görünür." },
+    { "problem": "Lisans uyumum tehlikede.", "solution": "Otomatik lisans takibi + aylık compliance raporu." },
+    { "problem": "Eski cihazlar hâlâ envanterde duruyor.", "solution": "Akıllı cleanup kuralları + 'pasife al' alternatifi." },
+    { "problem": "Şubelerimi nasıl tarayacağım?", "solution": "Distributed probe mimarisi — her lokasyona kendi probe'u." },
+    { "problem": "Her tarama için VPN açamam.", "solution": "Outbound probe + endpoint agent modeli ile firewall delik açma yok." },
+    { "problem": "Cloud ve on-prem'i ayrı yönetiyorum.", "solution": "Tek panelde her ikisi — AWS, Azure, GCP, VMware, on-prem." },
+    { "problem": "Birden fazla müşterim var.", "solution": "MSP modu — müşteri bazlı izolasyon + konsolide görünüm." },
+    { "problem": "Yöneticim rapor istiyor.", "solution": "Otomatik aylık PDF / Excel raporlar, e-posta ile gönderim." },
+    { "problem": "Yeni cihazları manuel eklemekten yoruldum.", "solution": "Otomatik keşif + ticket entegrasyonu." }
+  ],
+  "features": [
+    {
+      "id": 1,
+      "title": "Otomatik Varlık Keşfi",
+      "tagline": "Manuel envanter tutma derdine son.",
+      "bullets": [
+        "Ağınızdaki tüm cihazları (sunucu, PC, switch, router, yazıcı, IoT, sanal makine) keşfeder",
+        "Keşif sonrası varlıklar ServiceCore CMDB'sine otomatik düşer",
+        "Yeni cihaz eklendiğinde 24 saat içinde envanterinize girer"
+      ],
+      "image": "/images/discovery/01.jpg",
+      "imageAlt": "Discovery Jobs — 8 job tanımlı, 2 tanesi çalışıyor"
+    },
+    {
+      "id": 2,
+      "title": "9 Farklı Tarama Yöntemi",
+      "tagline": "Tek üründe tüm keşif tipleri.",
+      "bullets": [
+        "Network Discovery — IP/CIDR aralığı taraması",
+        "SNMP — switch / router / yazıcı bilgisi",
+        "WMI / WinRM — Windows sunucu envanteri",
+        "SSH — Linux / Unix sunucu envanteri",
+        "Cloud — AWS, Azure, GCP, VMware kaynakları",
+        "Active Directory — kullanıcı / bilgisayar / grup",
+        "Agent-Based — endpoint'lere kurulan hafif ajan",
+        "Distributed — birden fazla lokasyonu paralel tarar",
+        "Remote Probe — VPN açmadan uzak ofisleri keşfet"
+      ],
+      "image": "/images/discovery/02.jpg",
+      "imageAlt": "Yeni Discovery job — tarama tipi seçimi"
+    },
+    {
+      "id": 3,
+      "title": "Bulut Sistemleri Dahil",
+      "tagline": "Cloud asset'leriniz on-prem ile aynı CMDB'de.",
+      "bullets": [
+        "AWS EC2, RDS, S3",
+        "Azure VM, Storage, Subscription",
+        "GCP Compute, Storage",
+        "VMware vCenter sanal sunucuları"
+      ],
+      "image": "/images/discovery/03.jpg",
+      "imageAlt": "Cloud discovery konfigürasyonu"
+    },
+    {
+      "id": 4,
+      "title": "Güvenli Credential Yönetimi",
+      "tagline": "Şifreleriniz AES-256 ile, dış sistemlere çıkmaz.",
+      "bullets": [
+        "Tüm şifreler AES-256 ile şifreli saklanır",
+        "Master key HSM/KMS korumasında",
+        "Hangi tarama hangi credential'ı ne zaman kullandı → audit log",
+        "Credential rotation desteği",
+        "Dış sistemlere şifre çıkarmak yok"
+      ],
+      "image": "/images/discovery/05.jpg",
+      "imageAlt": "Discovery Credentials yönetim ekranı"
+    },
+    {
+      "id": 5,
+      "title": "Esnek Zamanlama",
+      "tagline": "Manuel, periyodik veya cron — siz seçin.",
+      "bullets": [
+        "Manuel — istediğinizde tek tıkla başlat",
+        "Günlük / Haftalık / Aylık — basit drop-down",
+        "Cron Expression — hassas kontrol isteyenler için",
+        "Bir sonraki çalışma zamanı önizleme"
+      ],
+      "image": "/images/discovery/06.jpg",
+      "imageAlt": "Discovery zamanlama ekranı"
+    },
+    {
+      "id": 6,
+      "title": "Çok Lokasyonlu Yapı",
+      "tagline": "Merkez + şubeler + DR + üretim ağı tek panelden.",
+      "bullets": [
+        "Merkez ofis + şubeler tek panelden yönetilir",
+        "Her lokasyona kendi probe'u kurulur",
+        "Probe → ServiceCore'a tek yönlü güvenli bağlantı (firewall delik açma yok)",
+        "Şubeler, DR sitesi, üretim ağı, test ağı izole keşif"
+      ],
+      "image": "/images/discovery/04.jpg",
+      "imageAlt": "Discovery Probes — 4 probe, topology görünümü"
+    },
+    {
+      "id": 7,
+      "title": "Canlı Dashboard",
+      "tagline": "Tek bakışta sağlık özeti.",
+      "bullets": [
+        "Çalışan tarama sayısı, hatalı job'lar",
+        "Yeni keşfedilen ve güncellenen varlıklar",
+        "Credential hata sayısı",
+        "Toplam asset / başarı oranı / aktif job"
+      ],
+      "image": "/images/discovery/07.jpg",
+      "imageAlt": "Discovery Dashboard — canlı metrikler"
+    },
+    {
+      "id": 8,
+      "title": "Sihirbazla Kolay Kurulum",
+      "tagline": "7 adımlı wizard — teknik bilgi gerektirmez.",
+      "bullets": [
+        "7 adımlı Discovery Wizard, adım adım yönlendirir",
+        "Her adımda anlık doğrulama",
+        "Wizard sonunda otomatik test: credential, port, DNS, LDAP",
+        "Hatada \"neyi düzeltmen lazım\" önerisi"
+      ],
+      "image": "/images/discovery/08.jpg",
+      "imageAlt": "Discovery Wizard — adım adım kurulum"
+    },
+    {
+      "id": 9,
+      "title": "Canlı Tarama İzleme",
+      "tagline": "Tarama çalışırken neler oluyor anlık görün.",
+      "bullets": [
+        "Canlı progress bar",
+        "Anlık log akışı (kim taranıyor, ne bulundu)",
+        "Bulunan / Yeni / Güncellenen / Başarısız metrikler",
+        "Tarama bittiğinde anında bildirim"
+      ],
+      "image": "/images/discovery/09.jpg",
+      "imageAlt": "Çalışan tarama — canlı progress ve loglar"
+    },
+    {
+      "id": 10,
+      "title": "Akıllı Tekrar Önleme",
+      "tagline": "Aynı cihaz iki kez kayıt oluşturmaz.",
+      "bullets": [
+        "Eşleşme önceliği: Hostname > MAC > Serial Number",
+        "Cihaz IP değiştirse de kayıp olmaz, otomatik günceller",
+        "Eski/silinmiş cihazlar belirli süre sonra otomatik temizlenir",
+        "\"Pasife al\" alternatifi — kayıt korunur, ihtiyaç olursa erişilir"
+      ],
+      "image": "/images/discovery/10.jpg",
+      "imageAlt": "Asset eşleşme ve cleanup kuralları"
+    },
+    {
+      "id": 11,
+      "title": "Endpoint Agent",
+      "tagline": "Network erişimi olmayan cihazlar için ideal.",
+      "bullets": [
+        "Windows / Linux / macOS desteği",
+        "Hafif (~30MB), CPU/RAM tüketimi minimum",
+        "Tek satır kurulum komutu",
+        "Auto-upgrade — agent'lar otomatik güncellenir",
+        "Heartbeat ile sağlık takibi"
+      ],
+      "image": "/images/discovery/11.jpg",
+      "imageAlt": "Discovery Agents yönetimi"
+    },
+    {
+      "id": 12,
+      "title": "Ticket Entegrasyonu",
+      "tagline": "Discovery → ServiceCore Ticket akışı tek tıkla.",
+      "bullets": [
+        "Yeni cihaz keşfedildi → otomatik ticket aç",
+        "Anormallik tespit edildi → ticket",
+        "Credential hatası → ticket (sorumluya atanır)",
+        "Ticket'tan asset'e tek tıkla erişim",
+        "Asset'tan ticket geçmişine tek tıkla erişim"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Düzenli Raporlama",
+      "tagline": "Yönetime özet, IT ekibe detay.",
+      "bullets": [
+        "Aylık asset değişim raporu",
+        "Compliance / lisans uyumu raporu",
+        "Discovery performans raporu",
+        "PDF / Excel export",
+        "Otomatik e-posta gönderimi (örn. her ayın 1'i 09:00)"
+      ],
+      "image": "/images/discovery/12.jpg",
+      "imageAlt": "Discovery raporları"
+    },
+    {
+      "id": 14,
+      "title": "Müşteri Bazlı İzolasyon (MSP)",
+      "tagline": "Birden fazla müşteriye hizmet veriyorsanız.",
+      "bullets": [
+        "Her müşterinin asset / job / credential'ı izole",
+        "Müşteri bazlı dashboard",
+        "Müşteriler arası veri sızıntısı yok",
+        "Konsolide MSP görünümü"
+      ],
+      "image": "/images/discovery/13.jpg",
+      "imageAlt": "MSP modu — müşteri bazlı izolasyon"
+    },
+    {
+      "id": 15,
+      "title": "Güvenlik & Uyumluluk",
+      "tagline": "KVKK / GDPR uyumlu, audit log'lu.",
+      "bullets": [
+        "Tüm credential erişimleri audit log'a yazılır",
+        "KVKK / GDPR uyumlu veri saklama",
+        "Müşteri \"verilerimi sil\" hakkı",
+        "Tarama saatleri / kapsam müşteri tarafından kısıtlanabilir",
+        "Kritik aksiyonlar için onay akışı"
+      ],
+      "image": "/images/discovery/14.jpg",
+      "imageAlt": "Audit Log ve güvenlik kontrolleri"
+    },
+    {
+      "id": 16,
+      "title": "Açık API ve Webhook",
+      "tagline": "Mevcut SIEM / ITAM araçlarınızla entegre.",
+      "bullets": [
+        "Tüm fonksiyonlar REST API üzerinden erişilebilir",
+        "Webhook desteği (yeni asset → kendi sisteminize)",
+        "Mevcut SIEM / ITAM araçlarınızla entegrasyon",
+        "Custom raporlama için veri export"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Sözlük & Yardım",
+      "tagline": "45 maddelik in-app sözlük.",
+      "bullets": [
+        "Modülün içinde 45 maddelik sözlük",
+        "Her terim hakkında açıklama (SNMP, Probe, CIDR vb.)",
+        "Wizard içinde context-sensitive yardım",
+        "Eğitim videoları & dokümantasyon"
+      ],
+      "image": "/images/discovery/15.jpg",
+      "imageAlt": "Discovery sözlük — terim açıklamaları"
+    },
+    {
+      "id": 18,
+      "title": "Hızlı Başlama",
+      "tagline": "30 dakikada ilk tarama sonucu.",
+      "bullets": [
+        "Yeni müşteri için onboarding wizard",
+        "30 dakikada ilk tarama sonucu",
+        "Default şablonlarla hazır job'lar",
+        "\"Best practice\" önerileri otomatik"
+      ]
+    }
+  ],
+  "packages": [
+    { "name": "Starter", "summary": "1 probe, 100 asset, network + SNMP" },
+    { "name": "Pro", "summary": "5 probe, 1.000 asset, tüm tarama tipleri, agent dahil" },
+    { "name": "Enterprise", "summary": "Sınırsız probe, sınırsız asset, MSP modu, SLA, özel destek" }
+  ],
+  "version": "2.1.7"
+}

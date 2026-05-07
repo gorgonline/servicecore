@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, MessageSquare, ShieldCheck, Zap } from "lucide-react";
+import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, MessageSquare, ShieldCheck, Zap, ArrowUpRight } from "lucide-react";
 
 // --- Data Models ---
 export interface PricingFeature {
@@ -13,6 +13,7 @@ export interface PricingFeature {
 export interface AddonItem {
   name: string;
   desc?: string;
+  link?: string;
 }
 
 export interface AddonCategory {
@@ -308,23 +309,46 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
                   <div key={idx} className="flex flex-col">
                      <h4 className="text-sm font-semibold text-white mb-6 border-b border-white/10 pb-4 uppercase tracking-wider">{category.title}</h4>
                      <ul className="flex flex-col gap-4">
-                        {category.items.map((item, itemIdx) => (
-                           <li key={itemIdx} className="group relative pr-4">
-                              <div className="flex items-start gap-3">
-                                 <div className="mt-1.5 w-1 h-1 rounded-full bg-fuchsia-500/50 group-hover:bg-fuchsia-400 transition-colors shrink-0" />
-                                 <div>
-                                    <span className="text-[13px] font-medium text-(--color-text-overline) group-hover:text-white transition-colors block">
-                                       {item.name}
-                                    </span>
-                                    {item.desc && (
-                                       <span className="text-xs text-(--color-text-muted) mt-1.5 block leading-relaxed group-hover:text-(--color-text-secondary) transition-colors">
-                                          {item.desc}
-                                       </span>
-                                    )}
-                                 </div>
+                        {category.items.map((item, itemIdx) => {
+                          const link = "link" in item ? (item as { link?: string }).link : undefined;
+                          const inner = (
+                            <div className="flex items-start gap-3">
+                              <div className="mt-1.5 w-1 h-1 rounded-full bg-fuchsia-500/50 group-hover:bg-fuchsia-400 transition-colors shrink-0" />
+                              <div className="flex-1">
+                                <span className="text-[13px] font-medium text-(--color-text-overline) group-hover:text-white transition-colors flex items-center gap-1.5">
+                                  {item.name}
+                                  {link && (
+                                    <ArrowUpRight
+                                      className="w-3.5 h-3.5 text-fuchsia-400 opacity-70 group-hover:opacity-100 transition-opacity"
+                                      aria-hidden="true"
+                                    />
+                                  )}
+                                </span>
+                                {item.desc && (
+                                  <span className="text-xs text-(--color-text-muted) mt-1.5 block leading-relaxed group-hover:text-(--color-text-secondary) transition-colors">
+                                    {item.desc}
+                                  </span>
+                                )}
                               </div>
-                           </li>
-                        ))}
+                            </div>
+                          );
+                          return (
+                            <li key={itemIdx} className="group relative pr-4">
+                              {link ? (
+                                <a
+                                  href={link}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="block cursor-pointer"
+                                >
+                                  {inner}
+                                </a>
+                              ) : (
+                                inner
+                              )}
+                            </li>
+                          );
+                        })}
                      </ul>
                   </div>
                ))}

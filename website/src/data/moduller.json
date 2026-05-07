@@ -13,6 +13,7 @@
     { "name": "Bilgi ve Doküman Yönetimi", "icon": "FileText", "desc": "Kurumsal hafızayı merkezileştirin.", "href": "/bilgi-bankasi", "tone": "emerald", "category": "ITSM" },
     { "name": "Değişiklik Yönetimi", "icon": "RefreshCw", "desc": "Riskleri minimize ederek yenilik yapın.", "href": "/degisiklik-yonetimi", "tone": "blue", "category": "ITSM" },
     { "name": "Varlık Yönetimi", "icon": "Box", "desc": "Donanım ve yazılım envanterini takip edin.", "href": "/varlik-yonetimi", "tone": "indigo", "category": "ITAM" },
+    { "name": "Discovery", "icon": "Radar", "desc": "Ağ ve varlık keşfi ile envanteri otomatik güncelleyin.", "href": "/discovery", "tone": "cyan", "category": "ITAM" },
     { "name": "Servis Konfigürasyon Yönetimi", "icon": "Settings", "desc": "Sistem bileşenlerinin haritasını çıkarın.", "href": "/servis-konfigurasyon-yonetimi", "tone": "cyan", "category": "ITAM" },
     { "name": "Sürekli İyileştirme", "icon": "TrendingUp", "desc": "Hizmet kalitesini her adımda artırın.", "href": "/surekli-iyilestirme", "tone": "emerald", "category": "ITIL4" },
     { "name": "Servis Katalog Yönetimi", "icon": "BookOpen", "desc": "Kullanıcılara hizmet menüsü sunun.", "href": "/servis-katalog-yonetimi", "tone": "blue", "category": "ITSM" },

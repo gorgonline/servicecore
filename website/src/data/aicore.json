@@ -1,0 +1,219 @@
+{
+  "intro": {
+    "title": "AICORE",
+    "subtitle": "Servicecore'un Yapay Zeka Araç Ailesi",
+    "description": "ServiceCore platformunun her modülüne entegre çalışan yapay zeka odaklı araç ailesi. 2026 ve 2027 yol haritasında planlanan ...AI eklentileri."
+  },
+  "tools": [
+    {
+      "slug": "replycore-solve",
+      "name": "Replycore SolveAI",
+      "tagline": "Uzun ve karmaşık ticket konuşmalarını saniyeler içinde analiz ederek özetler.",
+      "description": "Uzun ve karmaşık ticket konuşmalarını saniyeler içinde analiz ederek özetler. Yol haritasında Eylül 2026 sürümünde planlanmıştır.",
+      "icon": "FileText",
+      "accent": "purple",
+      "year": 2026,
+      "release": "Eylül 2026"
+    },
+    {
+      "slug": "chatcore-self",
+      "name": "Chatcore-SelfAI",
+      "tagline": "Son kullanıcılar için doğal dilde etkileşim kuran akıllı sanal asistan.",
+      "description": "Son kullanıcıların IT ekiplerine ticket açma ihtiyacını azaltmak için doğal dilde etkileşim kuran akıllı bir sanal asistan sunar. Yol haritasında Eylül 2026 sürümünde planlanmıştır.",
+      "icon": "MessageSquare",
+      "accent": "cyan",
+      "year": 2026,
+      "release": "Eylül 2026"
+    },
+    {
+      "slug": "classificore-manage",
+      "name": "Classificore ManageAI",
+      "tagline": "Ticket içeriklerini analiz ederek otomatik sınıflandırma ve yönlendirme.",
+      "description": "Gelen ticket içeriklerini analiz ederek otomatik sınıflandırma ve yönlendirme yapar. Yol haritasında Ekim 2026 sürümünde planlanmıştır.",
+      "icon": "Filter",
+      "accent": "emerald",
+      "year": 2026,
+      "release": "Ekim 2026"
+    },
+    {
+      "slug": "prioritycore",
+      "name": "PrioritycoreAI",
+      "tagline": "Kayıtları içerik, etki ve aciliyet sinyalleriyle önceliklendiren karar motoru.",
+      "description": "Gelen kayıtları içerik, etki, aciliyet ve servis kritikliği gibi sinyalleri analiz ederek otomatik olarak önceliklendiren akıllı bir karar motoru sunar. Yol haritasında Ekim 2026 sürümünde planlanmıştır.",
+      "icon": "Target",
+      "accent": "red",
+      "year": 2026,
+      "release": "Ekim 2026"
+    },
+    {
+      "slug": "rootcore",
+      "name": "RootCoreAI",
+      "tagline": "Kayıt, log ve alarmları analiz ederek olayları akıllıca gruplar.",
+      "description": "Sistemdeki tüm kayıtları, logları ve alarmları analiz ederek ilişkili olayları akıllı şekilde gruplar. Yol haritasında Kasım 2026 sürümünde planlanmıştır.",
+      "icon": "Search",
+      "accent": "blue",
+      "year": 2026,
+      "release": "Kasım 2026"
+    },
+    {
+      "slug": "predicticore",
+      "name": "PredicticoreAI",
+      "tagline": "Geçmiş veriden SLA ihlallerini önceden tahmin eder.",
+      "description": "Geçmiş verileri analiz ederek SLA ihlallerini önceden tahmin eder. Yol haritasında Kasım 2026 sürümünde planlanmıştır.",
+      "icon": "TrendingUp",
+      "accent": "orange",
+      "year": 2026,
+      "release": "Kasım 2026"
+    },
+    {
+      "slug": "score",
+      "name": "ScoreAI",
+      "tagline": "Doğal dil ile rapor ve dashboard üretimi.",
+      "description": "Doğal dil ile rapor ve dashboard oluşturmayı mümkün kılar. Yol haritasında Kasım 2026 sürümünde planlanmıştır.",
+      "icon": "BarChart3",
+      "accent": "indigo",
+      "year": 2026,
+      "release": "Kasım 2026"
+    },
+    {
+      "slug": "knowcore",
+      "name": "KnowCoreAI",
+      "tagline": "Çözülmüş kayıtlardan otomatik bilgi bankası içeriği üretir.",
+      "description": "Çözülmüş olay, istek, problem ve yazışma kayıtlarını analiz ederek otomatik bilgi bankası içerikleri üretir. Yol haritasında Aralık 2026 sürümünde planlanmıştır.",
+      "icon": "BookOpen",
+      "accent": "sky",
+      "year": 2026,
+      "release": "Aralık 2026"
+    },
+    {
+      "slug": "flowcore",
+      "name": "FlowCoreAI",
+      "tagline": "Metin komutlarıyla iş akışı şemaları otomatik oluşur.",
+      "description": "Metin komutları ile iş akışlarının şemalarını otomatik oluşturur. Yol haritasında Aralık 2026 sürümünde planlanmıştır.",
+      "icon": "GitBranch",
+      "accent": "purple",
+      "year": 2026,
+      "release": "Aralık 2026"
+    },
+    {
+      "slug": "discore",
+      "name": "DiscoreAI",
+      "tagline": "Akıllı keşif ve CMDB haritaları yaratır.",
+      "description": "Akıllı keşif ve CMDB haritaları yaratır. Yol haritasında Aralık 2026 sürümünde planlanmıştır.",
+      "icon": "Network",
+      "accent": "cyan",
+      "year": 2026,
+      "release": "Aralık 2026"
+    },
+    {
+      "slug": "translate",
+      "name": "TranslateAI",
+      "tagline": "Kullanıcı ve teknisyen iletişimini farklı dillerde anlık çevirir.",
+      "description": "Farklı dillerdeki kullanıcı ve teknisyen iletişimini anlık olarak çevirir. Yol haritasında Mart 2027 sürümünde planlanmıştır.",
+      "icon": "Languages",
+      "accent": "cyan",
+      "year": 2027,
+      "release": "Mart 2027"
+    },
+    {
+      "slug": "merge",
+      "name": "MergeAI",
+      "tagline": "Benzer ticket'ları aynı problem altında birleştirir.",
+      "description": "Benzer içerikteki ticket'ları tespit ederek aynı problem altında birleştirir. Yol haritasında Nisan 2027 sürümünde planlanmıştır.",
+      "icon": "Merge",
+      "accent": "emerald",
+      "year": 2027,
+      "release": "Nisan 2027"
+    },
+    {
+      "slug": "projectplanpredict",
+      "name": "ProjectplanpredictAI",
+      "tagline": "Proje ilerlemesini analiz ederek gecikmeleri tahmin eder.",
+      "description": "Projelerin ilerleme durumunu analiz ederek gecikmeleri tahmin eder. Yol haritasında Mayıs 2027 sürümünde planlanmıştır.",
+      "icon": "CalendarClock",
+      "accent": "orange",
+      "year": 2027,
+      "release": "Mayıs 2027"
+    },
+    {
+      "slug": "visicore",
+      "name": "VisicoreAI",
+      "tagline": "Yüklenen ekran görüntülerinden hataları otomatik tespit eder.",
+      "description": "Kullanıcıların yüklediği ekran görüntülerini analiz ederek hataları otomatik olarak tespit eder. Yol haritasında Haziran 2027 sürümünde planlanmıştır.",
+      "icon": "Eye",
+      "accent": "purple",
+      "year": 2027,
+      "release": "Haziran 2027"
+    },
+    {
+      "slug": "sentiment",
+      "name": "SentimentAI",
+      "tagline": "Kullanıcı mesajlarından duygu durumunu tespit eder.",
+      "description": "Kullanıcı mesajlarını analiz ederek duygu durumunu tespit eder. Yol haritasında Ağustos 2027 sürümünde planlanmıştır.",
+      "icon": "Heart",
+      "accent": "pink",
+      "year": 2027,
+      "release": "Ağustos 2027"
+    },
+    {
+      "slug": "knowcore-template",
+      "name": "KnowcoreAI (Şablon)",
+      "tagline": "Eksik bilgi bankası içeriklerini kurumsal şablonlara göre düzenler.",
+      "description": "Eksik bilgi bankası içeriklerini kurumsal şablonlara göre düzenler. Yol haritasında Eylül 2027 sürümünde planlanmıştır.",
+      "icon": "FileCheck",
+      "accent": "sky",
+      "year": 2027,
+      "release": "Eylül 2027"
+    },
+    {
+      "slug": "tone",
+      "name": "ToneAI",
+      "tagline": "Teknisyen iletişimlerini analiz ederek kurumsal dil standardı sağlar.",
+      "description": "Teknisyen iletişimlerini analiz ederek kurumsal dil standardı sağlar. Yol haritasında Ekim 2027 sürümünde planlanmıştır.",
+      "icon": "Mic",
+      "accent": "indigo",
+      "year": 2027,
+      "release": "Ekim 2027"
+    },
+    {
+      "slug": "impacticore",
+      "name": "ImpacticoreAI",
+      "tagline": "Değişikliklerin risk seviyesini analiz eder.",
+      "description": "Değişikliklerin risk seviyesini analiz eder. Yol haritasında Kasım 2027 sürümünde planlanmıştır.",
+      "icon": "ShieldAlert",
+      "accent": "red",
+      "year": 2027,
+      "release": "Kasım 2027"
+    },
+    {
+      "slug": "shift",
+      "name": "ShiftAI",
+      "tagline": "İş yükünü analiz ederek vardiya planlamasını yapar.",
+      "description": "İş yükünü analiz ederek Servicecore'un vardiya planlamasını yapar. Yol haritasında Aralık 2027 sürümünde planlanmıştır.",
+      "icon": "Clock",
+      "accent": "amber",
+      "year": 2027,
+      "release": "Aralık 2027"
+    },
+    {
+      "slug": "audit",
+      "name": "AuditAI",
+      "tagline": "ITIL ve ISO uyumluluğunu sürekli denetler.",
+      "description": "ITIL ve ISO uyumluluğunu sürekli denetler. Yol haritasında Aralık 2027 sürümünde planlanmıştır.",
+      "icon": "ShieldCheck",
+      "accent": "emerald",
+      "year": 2027,
+      "release": "Aralık 2027"
+    },
+    {
+      "slug": "asset-lifecycle",
+      "name": "AssetLifecycleAI",
+      "tagline": "Cihaz performansını analiz ederek yaşam döngüsünü yönetir.",
+      "description": "Cihaz performansını analiz ederek yaşam döngüsünü yönetir. Yol haritasında Aralık 2027 sürümünde planlanmıştır.",
+      "icon": "Package",
+      "accent": "orange",
+      "year": 2027,
+      "release": "Aralık 2027"
+    }
+  ]
+}

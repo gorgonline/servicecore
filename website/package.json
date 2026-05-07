@@ -19,7 +19,8 @@
     "cleanup": "node .gemini/scripts/checkpoint-manager.js",
     "consolidate": "npm run compress && npm run cleanup && npm run audit:external",
     "simulate": "bash .gemini/scripts/simulate-merge.sh",
-    "prepare": "husky"
+    "prepare": "husky",
+    "pdf": "node scripts/generate-datasheet-pdf.mjs"
   },
   "dependencies": {
     "@paper-design/shaders-react": "^0.0.71",
