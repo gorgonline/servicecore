@@ -38,14 +38,12 @@ export function DatasheetContent() {
     >
       <DatasheetHero cover={cover} meta={meta} />
       <KpiStrip kpis={kpis} />
-      <ExecutiveSummary summary={executive_summary} modules={modules} />
+      <ExecutiveSummary summary={executive_summary} />
       <TableOfContents modules={modules} />
 
-      <div className="space-y-0">
-        {modules.map((m, i) => (
-          <ModuleSection key={m.id} module={m} index={i} />
-        ))}
-      </div>
+      {modules.map((m, i) => (
+        <ModuleSection key={m.id} module={m} index={i} />
+      ))}
 
       <ClosingCTA closing={closing} contact={contact} />
     </main>

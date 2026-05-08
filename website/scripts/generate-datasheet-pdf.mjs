@@ -23,7 +23,7 @@ const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, "..");
 const OUT_PATH = path.join(ROOT, "public", "datasheet.pdf");
 const PORT = 3030;
-const URL = `http://localhost:${PORT}/datasheet`;
+const URL = `http://localhost:${PORT}/datasheet-pdf`;
 const STARTUP_TIMEOUT_MS = 60_000;
 
 async function waitForServer(url, timeoutMs) {
@@ -68,13 +68,10 @@ async function generate() {
     });
     const page = await context.newPage();
 
-    console.log("→ /datasheet açılıyor...");
+    console.log("→ /datasheet-pdf açılıyor...");
     await page.goto(URL, { waitUntil: "networkidle", timeout: 60_000 });
 
-    // Animasyonların yerleşmesi için kısa bekleme
-    await page.waitForTimeout(1500);
-
-    // Print medya emülasyonu — @media print stillerini devreye al
+    // Print medya emülasyonu — @page kuralı print modunda devreye girer
     await page.emulateMedia({ media: "print" });
 
     console.log("→ PDF üretiliyor...");
@@ -83,7 +80,7 @@ async function generate() {
       format: "A4",
       printBackground: true,
       preferCSSPageSize: true,
-      margin: { top: "15mm", right: "14mm", bottom: "15mm", left: "14mm" },
+      margin: { top: "0", right: "0", bottom: "0", left: "0" },
     });
 
     await browser.close();
