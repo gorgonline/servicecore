@@ -51,7 +51,7 @@ export default async function SolutionPage({ params }: PageProps) {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-12 pt-32">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 pt-32">
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/8 mb-10">
           <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light)">
