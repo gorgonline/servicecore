@@ -104,7 +104,6 @@ const solutionsSubmenu = [
   { name: "ITSM", title: "IT Service Management", icon: Settings, desc: "ITIL4 uyumlu BT operasyon yönetimi.", href: "/cozumler/itsm" },
   { name: "CSS", title: "Customer Service Support", icon: Headphones, desc: "Müşteri taleplerini ve etkileşimi tek panelde.", href: "/cozumler/css" },
   { name: "APM", title: "Agile Project Management", icon: Layers, desc: "Backlog, sprint, kanban ve roadmap yönetimi.", href: "/cozumler/apm" },
-  { name: "SDLC", title: "Software Development Lifecycle", icon: Code, desc: "Yazılım yaşam döngüsünün uçtan uca yönetimi.", href: "/cozumler/sdlc" },
   { name: "ITAM", title: "IT Asset Management", icon: Box, desc: "BT varlık ve lisanslarının yaşam döngüsü.", href: "/cozumler/itam" },
   { name: "EAM", title: "Enterprise Asset Management", icon: Boxes, desc: "BT dışı fiziksel varlıkların merkezi yönetimi.", href: "/cozumler/eam" },
   { name: "FSM", title: "Field Service Management", icon: Truck, desc: "Saha ekiplerine mobil iş emri ve rota.", href: "/cozumler/fsm" },
@@ -257,6 +256,7 @@ export default function Navbar() {
               </motion.div>
             </button>
 
+            {/* Urunler Dropdown — Planlar tarzi dikey */}
             <AnimatePresence>
               {activeMenu === "solutions" && (
                 <motion.div
@@ -264,11 +264,11 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-0 right-0 w-screen bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-y border-white/10 px-6 lg:px-12 py-8 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top"
                   onMouseEnter={() => setActiveMenu("solutions")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
-                  <div className="mx-auto max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+                  <div className="flex flex-col gap-2">
                     {solutionsSubmenu.map((sol, idx) => {
                       const Icon = sol.icon;
                       return (
