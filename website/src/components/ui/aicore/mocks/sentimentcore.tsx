@@ -171,7 +171,7 @@ export function SentimentCoreMock({ accent: accentName }: { accent: string }) {
                 2
               </span>
               <p className="text-xs text-white/85 leading-snug">
-                Ara yanıt taslağı hazırla — empatik dil, ETA içersin (Replycore).
+                Ara yanıt taslağı hazırla — empatik dil, ETA içersin (ReplyCore).
               </p>
             </div>
             <div className="flex items-start gap-2.5">
