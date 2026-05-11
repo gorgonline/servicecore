@@ -97,7 +97,6 @@ const modules = [
   { name: "Entegrasyon Modülü", icon: LinkIcon, desc: "API aracılığıyla veri alışverişi yapın.", href: "/entegrasyon-yonetimi" },
   { name: "Low Code Geliştirme Modülü", icon: Code, desc: "Özel formlar ve süreç tasarımları oluşturun.", href: "/low-code-gelistirme" },
   { name: "Sözleşme Yönetimi", icon: FileSignature, desc: "SLA'leri ve sözleşmeleri yönetin.", href: "/sozlesme-yonetimi" },
-  { name: "AI Yol Haritası", icon: Sparkles, desc: "Yapay zeka destekli otomasyon ve asistanlar.", href: "/ai-yol-haritasi" },
 ];
 
 const solutionsSubmenu = [

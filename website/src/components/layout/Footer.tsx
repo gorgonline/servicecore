@@ -98,7 +98,6 @@ const footerData = {
         { text: "Entegrasyon Modülü", href: "/entegrasyon-yonetimi" },
         { text: "Low Code Geliştirme Modülü", href: "/low-code-gelistirme" },
         { text: "Sözleşme Yönetimi", href: "/sozlesme-yonetimi" },
-        { text: "AI Yol Haritası", href: "/ai-yol-haritasi" },
       ],
     },
     {
