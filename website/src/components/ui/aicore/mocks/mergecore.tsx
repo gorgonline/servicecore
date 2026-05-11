@@ -83,7 +83,7 @@ function highlightTitle(title: string, keywords: string[]): React.ReactNode {
 
 const KEYWORDS = ["posta", "mail", "outlook", "sunucu", "kuyruk", "bağlan", "açılmıyor", "çalışmıyor"];
 
-export function MergeMock({ accent: accentName }: { accent: string }) {
+export function MergeCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
   const selectedCount = CANDIDATES.filter((c) => c.selected).length;
 
@@ -92,7 +92,7 @@ export function MergeMock({ accent: accentName }: { accent: string }) {
       <MockFrame className={accent.glow}>
         <TitleBar
           icon={<Merge className="w-3.5 h-3.5" />}
-          title="MergeAI · Aday Birleştirme"
+          title="MergeCoreAI · Aday Birleştirme"
           meta="Birikim · 09:30"
           accent={accent}
         />

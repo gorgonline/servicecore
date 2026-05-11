@@ -124,7 +124,7 @@ const SEV_TONE = {
   medium: { chip: "info", color: "text-blue-300", dot: "bg-blue-400", bg: "bg-blue-500/10", border: "border-blue-400/30" },
 } as const;
 
-export function AuditMock({ accent: accentName }: { accent: string }) {
+export function AuditCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
   const totalCritical = PRACTICES.reduce((s, p) => s + p.findings.critical, 0);
   const totalHigh = PRACTICES.reduce((s, p) => s + p.findings.high, 0);
@@ -135,7 +135,7 @@ export function AuditMock({ accent: accentName }: { accent: string }) {
       <MockFrame className={accent.glow}>
         <TitleBar
           icon={<ShieldCheck className="w-3.5 h-3.5" />}
-          title="AuditAI · Uyumluluk Konsolu"
+          title="AuditCoreAI · Uyumluluk Konsolu"
           meta="Birikim · sürekli izleme"
           accent={accent}
         />
@@ -228,7 +228,7 @@ export function AuditMock({ accent: accentName }: { accent: string }) {
               accent={accent}
               icon={<Target className="w-3 h-3" />}
               title="Müşteri bilgilendirme şablonu zorunluya al"
-              link="AUD-2117 → CallcenterAI iz"
+              link="AUD-2117 → CallCoreAI iz"
               effort="iş akışı ek adımı"
               impact="kanıtlanabilir kapanış"
             />

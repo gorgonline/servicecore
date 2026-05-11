@@ -76,7 +76,7 @@ const SIGNALS: Signal[] = [
     time: "09:16",
     source: "incident",
     asset: "+6 dublike",
-    title: "MergeAI 6 kaydı INC-2847'ye bağladı",
+    title: "MergeCoreAI 6 kaydı INC-2847'ye bağladı",
     detail: "13 dk içinde 7 şube",
   },
 ];

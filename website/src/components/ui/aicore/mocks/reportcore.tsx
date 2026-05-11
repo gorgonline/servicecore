@@ -38,7 +38,7 @@ const PIVOT_ROWS: Array<{ branch: string; cells: number[] }> = [
   { branch: "Ankara", cells: [1, 2, 1, 1, 1] },
 ];
 
-export function ScoreMock({ accent: accentName }: { accent: string }) {
+export function ReportCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
   const maxBar = Math.max(...BARS.map((b) => b.value));
 
@@ -47,7 +47,7 @@ export function ScoreMock({ accent: accentName }: { accent: string }) {
       <MockFrame className={accent.glow}>
         <TitleBar
           icon={<BarChart3 className="w-3.5 h-3.5" />}
-          title="ScoreAI · Üretilen Dashboard"
+          title="ReportCoreAI · Üretilen Dashboard"
           meta="Birikim · son 90 gün"
           accent={accent}
         />

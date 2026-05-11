@@ -1,66 +1,66 @@
 import type { ReactNode } from "react";
-import { AssetLifecycleMock } from "./mocks/asset-lifecycle";
-import { AuditMock } from "./mocks/audit";
-import { BudgetMock } from "./mocks/budget";
-import { CallcenterMock } from "./mocks/callcenter";
-import { ChatcoreSelfMock } from "./mocks/chatcore-self";
-import { ClassificoreManageMock } from "./mocks/classificore-manage";
-import { CoachMock } from "./mocks/coach";
-import { ContractMock } from "./mocks/contract";
-import { DiscoreMock } from "./mocks/discore";
+import { AssetCoreMock } from "./mocks/assetcore";
+import { AuditCoreMock } from "./mocks/auditcore";
+import { BudgetCoreMock } from "./mocks/budgetcore";
+import { CallCoreMock } from "./mocks/callcore";
+import { ChatCoreMock } from "./mocks/chatcore";
+import { ClassifyCoreMock } from "./mocks/classifycore";
+import { CoachCoreMock } from "./mocks/coachcore";
+import { ContractCoreMock } from "./mocks/contractcore";
+import { DiscoverCoreMock } from "./mocks/discovercore";
 import { FlowCoreMock } from "./mocks/flowcore";
-import { ImpacticoreMock } from "./mocks/impacticore";
+import { ImpactCoreMock } from "./mocks/impactcore";
 import { KBCoreMock } from "./mocks/kbcore";
 import { KnowCoreMock } from "./mocks/knowcore";
-import { MergeMock } from "./mocks/merge";
-import { PredicticoreMock } from "./mocks/predicticore";
-import { PrioritycoreMock } from "./mocks/prioritycore";
-import { ProjectplanpredictMock } from "./mocks/projectplanpredict";
-import { ReplycoreSolveMock } from "./mocks/replycore-solve";
+import { MergeCoreMock } from "./mocks/mergecore";
+import { PredictCoreMock } from "./mocks/predictcore";
+import { PriorityCoreMock } from "./mocks/prioritycore";
+import { ProjectCoreMock } from "./mocks/projectcore";
+import { ReplyCoreMock } from "./mocks/replycore";
+import { ReportCoreMock } from "./mocks/reportcore";
 import { RootCoreMock } from "./mocks/rootcore";
-import { ScoreMock } from "./mocks/score";
-import { SentimentMock } from "./mocks/sentiment";
-import { ShiftMock } from "./mocks/shift";
-import { StormMock } from "./mocks/storm";
-import { ToneMock } from "./mocks/tone";
-import { TranslateMock } from "./mocks/translate";
-import { VendorMock } from "./mocks/vendor";
-import { VisicoreMock } from "./mocks/visicore";
-import { VoiceMock } from "./mocks/voice";
+import { SentimentCoreMock } from "./mocks/sentimentcore";
+import { ShiftCoreMock } from "./mocks/shiftcore";
+import { StormCoreMock } from "./mocks/stormcore";
+import { ToneCoreMock } from "./mocks/tonecore";
+import { TranslateCoreMock } from "./mocks/translatecore";
+import { VendorCoreMock } from "./mocks/vendorcore";
+import { VisionCoreMock } from "./mocks/visioncore";
+import { VoiceCoreMock } from "./mocks/voicecore";
 
 interface MockProps {
   accent: string;
 }
 
 const REGISTRY: Record<string, (props: MockProps) => ReactNode> = {
-  "chatcore-self": ChatcoreSelfMock,
-  "classificore-manage": ClassificoreManageMock,
-  prioritycore: PrioritycoreMock,
-  impacticore: ImpacticoreMock,
-  merge: MergeMock,
+  chatcore: ChatCoreMock,
+  replycore: ReplyCoreMock,
+  classifycore: ClassifyCoreMock,
+  prioritycore: PriorityCoreMock,
+  impactcore: ImpactCoreMock,
+  predictcore: PredictCoreMock,
+  mergecore: MergeCoreMock,
   knowcore: KnowCoreMock,
+  reportcore: ReportCoreMock,
+  sentimentcore: SentimentCoreMock,
   kbcore: KBCoreMock,
-  score: ScoreMock,
-  sentiment: SentimentMock,
-  tone: ToneMock,
-  "replycore-solve": ReplycoreSolveMock,
-  predicticore: PredicticoreMock,
-  discore: DiscoreMock,
+  tonecore: ToneCoreMock,
   rootcore: RootCoreMock,
-  storm: StormMock,
+  stormcore: StormCoreMock,
   flowcore: FlowCoreMock,
-  translate: TranslateMock,
-  voice: VoiceMock,
-  callcenter: CallcenterMock,
-  visicore: VisicoreMock,
-  shift: ShiftMock,
-  audit: AuditMock,
-  "asset-lifecycle": AssetLifecycleMock,
-  vendor: VendorMock,
-  contract: ContractMock,
-  budget: BudgetMock,
-  coach: CoachMock,
-  projectplanpredict: ProjectplanpredictMock,
+  discovercore: DiscoverCoreMock,
+  translatecore: TranslateCoreMock,
+  voicecore: VoiceCoreMock,
+  callcore: CallCoreMock,
+  visioncore: VisionCoreMock,
+  shiftcore: ShiftCoreMock,
+  auditcore: AuditCoreMock,
+  assetcore: AssetCoreMock,
+  vendorcore: VendorCoreMock,
+  contractcore: ContractCoreMock,
+  budgetcore: BudgetCoreMock,
+  coachcore: CoachCoreMock,
+  projectcore: ProjectCoreMock,
 };
 
 export function hasMock(slug: string): boolean {

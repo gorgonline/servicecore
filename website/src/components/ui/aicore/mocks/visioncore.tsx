@@ -112,7 +112,7 @@ const REGION_TYPE_ICON: Record<DetectedRegion["type"], ReactNode> = {
   app: <Mail className="w-3 h-3" />,
 };
 
-export function VisicoreMock({ accent: accentName }: { accent: string }) {
+export function VisionCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
@@ -120,7 +120,7 @@ export function VisicoreMock({ accent: accentName }: { accent: string }) {
       <MockFrame className={accent.glow}>
         <TitleBar
           icon={<Eye className="w-3.5 h-3.5" />}
-          title="VisicoreAI · Görsel Analiz"
+          title="VisionCoreAI · Görsel Analiz"
           meta="LYR · screenshot.png"
           accent={accent}
         />
@@ -261,7 +261,7 @@ export function VisicoreMock({ accent: accentName }: { accent: string }) {
         <MockFrame>
           <TitleBar
             icon={<Camera className="w-3.5 h-3.5" />}
-            title="Bu Çeyrek · Visicore"
+            title="Bu Çeyrek · VisionCore"
             accent={accent}
           />
           <div className="px-4 py-3 grid grid-cols-2 gap-2">

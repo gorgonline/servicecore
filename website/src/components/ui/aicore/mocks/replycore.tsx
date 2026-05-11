@@ -7,7 +7,7 @@ import {
   resolveAccent,
 } from "../primitives";
 
-export function ReplycoreSolveMock({ accent: accentName }: { accent: string }) {
+export function ReplyCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
@@ -76,7 +76,7 @@ export function ReplycoreSolveMock({ accent: accentName }: { accent: string }) {
       <MockFrame className={accent.glow}>
         <TitleBar
           icon={<Wand2 className="w-3.5 h-3.5" />}
-          title="Replycore SolveAI · Yanıt Taslağı"
+          title="ReplyCoreAI · Yanıt Taslağı"
           meta="2.4s'de üretildi"
           accent={accent}
         />

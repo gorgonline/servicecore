@@ -76,7 +76,7 @@ const KB_HITS = [
   { id: "KB-0871", title: "Müşteriye eskalasyon iletişimi", match: 62 },
 ];
 
-export function CallcenterMock({ accent: accentName }: { accent: string }) {
+export function CallCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
@@ -145,7 +145,7 @@ export function CallcenterMock({ accent: accentName }: { accent: string }) {
           <TitleBar
             icon={<Heart className="w-3.5 h-3.5" />}
             title="Canlı Sinyal"
-            meta="SentimentAI ile"
+            meta="SentimentCoreAI ile"
             accent={accent}
           />
           <div className="px-5 py-4 space-y-3.5">
@@ -188,7 +188,7 @@ export function CallcenterMock({ accent: accentName }: { accent: string }) {
           />
           <div className="px-5 py-4">
             <div className="mb-2 flex items-center gap-2">
-              <Chip tone="info">Replycore eşleşti</Chip>
+              <Chip tone="info">ReplyCore eşleşti</Chip>
               <span className="text-[10px] font-mono text-(--color-text-muted)">
                 INC-2847 bağlı
               </span>

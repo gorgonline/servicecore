@@ -12,7 +12,7 @@ import {
   trUpper,
 } from "../primitives";
 
-export function PredicticoreMock({ accent: accentName }: { accent: string }) {
+export function PredictCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
@@ -20,7 +20,7 @@ export function PredicticoreMock({ accent: accentName }: { accent: string }) {
       <MockFrame className={accent.glow}>
         <TitleBar
           icon={<AlertTriangle className="w-3.5 h-3.5" />}
-          title="PredicticoreAI · SLA İhlal Riski"
+          title="PredictCoreAI · SLA İhlal Riski"
           meta="11 Mar · canlı"
           accent={accent}
         />

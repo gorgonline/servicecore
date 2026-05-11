@@ -19,7 +19,7 @@ import {
   trUpper,
 } from "../primitives";
 
-export function ChatcoreSelfMock({ accent: accentName }: { accent: string }) {
+export function ChatCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
@@ -144,7 +144,7 @@ export function ChatcoreSelfMock({ accent: accentName }: { accent: string }) {
         <MockFrame>
           <TitleBar
             icon={<Sparkles className="w-3.5 h-3.5" />}
-            title="ChatcoreSelf · Bu Konuşma"
+            title="ChatCore · Bu Konuşma"
             meta="3 etkileşim"
             accent={accent}
           />

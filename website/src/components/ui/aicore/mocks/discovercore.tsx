@@ -85,7 +85,7 @@ function GraphEdge({ x1, y1, x2, y2, variant = "solid", highlight = false }: Edg
   );
 }
 
-export function DiscoreMock({ accent: accentName }: { accent: string }) {
+export function DiscoverCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
   const W = 720;
   const H = 420;
@@ -94,7 +94,7 @@ export function DiscoreMock({ accent: accentName }: { accent: string }) {
     <MockFrame className={accent.glow}>
       <TitleBar
         icon={<Network className="w-3.5 h-3.5" />}
-        title="DiscoreAI · CMDB Keşif Haritası"
+        title="DiscoverCoreAI · CMDB Keşif Haritası"
         meta="Birikim Holding · 14 dk önce tarandı"
         accent={accent}
       />

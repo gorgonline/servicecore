@@ -112,7 +112,7 @@ function loadText(pct: number, warn?: boolean): string {
   return "text-white/65";
 }
 
-export function ShiftMock({ accent: accentName }: { accent: string }) {
+export function ShiftCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (

@@ -116,7 +116,7 @@ const RISK_SIGNALS = [
   },
 ];
 
-export function VendorMock({ accent: accentName }: { accent: string }) {
+export function VendorCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
   const active = VENDORS.find((v) => v.active) ?? VENDORS[0];
   const sparklineData = [82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 63, 62];

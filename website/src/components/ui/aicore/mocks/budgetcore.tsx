@@ -96,7 +96,7 @@ const SAVINGS: Saving[] = [
     title: "Microsoft 365 lisans temizliği",
     detail: "340 atıl lisans · 90 günde 0 oturum",
     amount: "₺ 840K",
-    link: "ScoreAI: kullanım raporu",
+    link: "ReportCoreAI: kullanım raporu",
     selected: true,
   },
   {
@@ -104,14 +104,14 @@ const SAVINGS: Saving[] = [
     title: "Cloud egress optimize",
     detail: "Stratos · cross-region trafik %38 ↑",
     amount: "₺ 620K",
-    link: "DiscoreAI: bağımlılık haritası",
+    link: "DiscoverCoreAI: bağımlılık haritası",
   },
   {
     icon: <Server className="w-3 h-3" />,
     title: "SRV-MAIL-01 değiştirme öncesi bakım",
     detail: "8 ay erken yenileme yerine bakım pencere",
     amount: "₺ 410K",
-    link: "AssetLifecycleAI: ömür tahmini",
+    link: "AssetCoreAI: ömür tahmini",
   },
 ];
 
@@ -138,7 +138,7 @@ const BUDGET_TOTAL = 28.0; // ₺M
 const BUDGET_SPENT = 9.8;
 const BUDGET_FORECAST = 31.2;
 
-export function BudgetMock({ accent: accentName }: { accent: string }) {
+export function BudgetCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
   const spentPct = (BUDGET_SPENT / BUDGET_TOTAL) * 100;
   const forecastPct = (BUDGET_FORECAST / BUDGET_TOTAL) * 100;

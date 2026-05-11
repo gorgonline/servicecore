@@ -107,7 +107,7 @@ const RISK_CLAUSES = [
   },
 ];
 
-export function ContractMock({ accent: accentName }: { accent: string }) {
+export function ContractCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (

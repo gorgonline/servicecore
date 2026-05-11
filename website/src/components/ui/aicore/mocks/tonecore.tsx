@@ -17,7 +17,7 @@ import {
   resolveAccent,
 } from "../primitives";
 
-export function ToneMock({ accent: accentName }: { accent: string }) {
+export function ToneCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (

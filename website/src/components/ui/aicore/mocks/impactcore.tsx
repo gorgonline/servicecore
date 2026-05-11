@@ -21,7 +21,7 @@ import {
   trUpper,
 } from "../primitives";
 
-export function ImpacticoreMock({ accent: accentName }: { accent: string }) {
+export function ImpactCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
@@ -165,7 +165,7 @@ export function ImpacticoreMock({ accent: accentName }: { accent: string }) {
         <MockFrame className="border border-red-500/30">
           <TitleBar
             icon={<AlertTriangle className="w-3.5 h-3.5" />}
-            title="Impacticore · CAB Önerisi"
+            title="ImpactCore · CAB Önerisi"
             accent={accent}
           />
           <div className="px-5 py-4">

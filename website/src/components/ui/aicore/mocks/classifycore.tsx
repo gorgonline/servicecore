@@ -87,7 +87,7 @@ const QUEUE: QueueItem[] = [
   },
 ];
 
-export function ClassificoreManageMock({ accent: accentName }: { accent: string }) {
+export function ClassifyCoreManageMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
   const active = QUEUE.find((q) => q.active) ?? QUEUE[0];
 
@@ -166,7 +166,7 @@ export function ClassificoreManageMock({ accent: accentName }: { accent: string 
         <MockFrame>
           <TitleBar
             icon={<Layers className="w-3.5 h-3.5" />}
-            title="Classificore · Karar Akışı"
+            title="ClassifyCore · Karar Akışı"
             meta={active.id}
             accent={accent}
           />

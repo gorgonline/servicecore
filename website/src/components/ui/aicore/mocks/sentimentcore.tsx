@@ -11,7 +11,7 @@ import {
   trUpper,
 } from "../primitives";
 
-export function SentimentMock({ accent: accentName }: { accent: string }) {
+export function SentimentCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
@@ -94,7 +94,7 @@ export function SentimentMock({ accent: accentName }: { accent: string }) {
         <MockFrame>
           <TitleBar
             icon={<Heart className="w-3.5 h-3.5" />}
-            title="SentimentAI · Konuşma Sinyali"
+            title="SentimentCoreAI · Konuşma Sinyali"
             meta="3 mesaj"
             accent={accent}
           />

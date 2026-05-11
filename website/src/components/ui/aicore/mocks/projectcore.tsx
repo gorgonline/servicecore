@@ -124,7 +124,7 @@ const PAST: PastProject[] = [
   { id: "PRJ-0142", name: "Çağrı merkezi modernleşme", outcome: "iptal", delta: "kapsam değişti" },
 ];
 
-export function ProjectplanpredictMock({ accent: accentName }: { accent: string }) {
+export function ProjectCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (

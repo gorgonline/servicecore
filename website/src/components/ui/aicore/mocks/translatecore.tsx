@@ -102,7 +102,7 @@ function flagLabel(lang: "DE" | "TR" | string): string {
   return lang;
 }
 
-export function TranslateMock({ accent: accentName }: { accent: string }) {
+export function TranslateCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (

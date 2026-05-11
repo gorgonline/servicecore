@@ -80,7 +80,7 @@ interface PlanItem {
 const PLAN: PlanItem[] = [
   {
     icon: <Sparkles className="w-3 h-3" />,
-    title: "Her yanıt taslağında ToneAI'yi açık tut",
+    title: "Her yanıt taslağında ToneCoreAI'yi açık tut",
     cadence: "günlük · arka plan",
   },
   {
@@ -100,7 +100,7 @@ const PLAN: PlanItem[] = [
   },
 ];
 
-export function CoachMock({ accent: accentName }: { accent: string }) {
+export function CoachCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
@@ -209,7 +209,7 @@ export function CoachMock({ accent: accentName }: { accent: string }) {
               <div>
                 <div className="text-xs font-medium text-white/85">İletişim Tonu</div>
                 <div className="text-[10px] font-mono text-(--color-text-muted)">
-                  ToneAI sinyali ile ölçülecek
+                  ToneCoreAI sinyali ile ölçülecek
                 </div>
               </div>
               <div className="text-right">
@@ -294,7 +294,7 @@ export function CoachMock({ accent: accentName }: { accent: string }) {
             <KpiTile label="Plan" value="38" trend="aktif" trendTone="up" />
             <KpiTile label="Tamamlanan" value="142" trend="modül" trendTone="up" />
             <KpiTile label="Skor artışı" value="+0.7" trend="ortalama" trendTone="up" />
-            <KpiTile label="Tükenme" value="−26%" trend="CoachAI hedefi" trendTone="down" />
+            <KpiTile label="Tükenme" value="−26%" trend="CoachCoreAI hedefi" trendTone="down" />
           </div>
         </MockFrame>
       </div>

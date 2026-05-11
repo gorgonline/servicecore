@@ -98,7 +98,7 @@ const SIMILAR: SimilarAsset[] = [
   { id: "SRV-LOG-02", name: "Log toplayıcı · DR", health: 84, remaining: "30 ay" },
 ];
 
-export function AssetLifecycleMock({ accent: accentName }: { accent: string }) {
+export function AssetCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (

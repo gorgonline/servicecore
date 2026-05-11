@@ -51,7 +51,7 @@ function priorityTone(p: MatrixSlot["priority"]): {
   return { bg: "bg-white/4", border: "border-white/10", text: "text-white/60" };
 }
 
-export function PrioritycoreMock({ accent: accentName }: { accent: string }) {
+export function PriorityCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
@@ -59,7 +59,7 @@ export function PrioritycoreMock({ accent: accentName }: { accent: string }) {
       <MockFrame className={accent.glow}>
         <TitleBar
           icon={<Crosshair className="w-3.5 h-3.5" />}
-          title="Prioritycore · Etki × Aciliyet Matriksi"
+          title="PriorityCore · Etki × Aciliyet Matriksi"
           meta="Birikim · 84 açık kayıt"
           accent={accent}
         />

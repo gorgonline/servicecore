@@ -94,7 +94,7 @@ function heatColor(v: number): string {
   return "bg-red-500/75";
 }
 
-export function StormMock({ accent: accentName }: { accent: string }) {
+export function StormCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
   const totalAlarms = CLUSTERS.reduce((sum, c) => sum + c.alarmCount, 0);
   const totalSuppressed = SUPPRESSED.reduce((sum, s) => sum + s.correlated, 0);
@@ -104,7 +104,7 @@ export function StormMock({ accent: accentName }: { accent: string }) {
       <MockFrame className={accent.glow}>
         <TitleBar
           icon={<CloudLightning className="w-3.5 h-3.5" />}
-          title="StormAI · Operasyon Konsolu"
+          title="StormCoreAI · Operasyon Konsolu"
           meta="Birikim · son 12 dk"
           accent={accent}
         />

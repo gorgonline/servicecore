@@ -43,7 +43,7 @@ const FIELDS: FieldSlot[] = [
     icon: <Tag className="w-3 h-3" />,
     label: "Kategori",
     value: "Saha · El Terminali",
-    detail: "AICORE: Classificore eşleşti %96",
+    detail: "AICORE: ClassifyCore eşleşti %96",
     status: "filled",
   },
   {
@@ -82,7 +82,7 @@ const FIELDS: FieldSlot[] = [
   },
 ];
 
-export function VoiceMock({ accent: accentName }: { accent: string }) {
+export function VoiceCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
 
   return (
