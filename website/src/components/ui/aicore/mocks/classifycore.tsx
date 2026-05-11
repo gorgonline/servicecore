@@ -87,7 +87,7 @@ const QUEUE: QueueItem[] = [
   },
 ];
 
-export function ClassifyCoreManageMock({ accent: accentName }: { accent: string }) {
+export function ClassifyCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
   const active = QUEUE.find((q) => q.active) ?? QUEUE[0];
 
