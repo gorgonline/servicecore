@@ -1,0 +1,161 @@
+{
+  "companies": {
+    "birikim": {
+      "name": "Birikim Holding",
+      "industry": "Finans / Sigorta",
+      "size": "12.400 çalışan",
+      "code": "BRK",
+      "tone": "Kurumsal, P1/P2 incident yoğunluklu, SLA cezaları kritik."
+    },
+    "vento": {
+      "name": "Vento Lojistik",
+      "industry": "Lojistik / Operasyon",
+      "size": "3.800 çalışan",
+      "code": "VNT",
+      "tone": "Saha cihazı, varlık hareket halinde, vardiyalı ekipler."
+    },
+    "lyra": {
+      "name": "Lyra Üniversitesi",
+      "industry": "Eğitim / Kamu",
+      "size": "62.000 kullanıcı",
+      "code": "LYR",
+      "tone": "Yüksek hacimli self-service istek, çeşitli dil/profil."
+    }
+  },
+  "people": [
+    { "name": "Ayşe Demir", "role": "Servis Yöneticisi", "company": "birikim" },
+    { "name": "Mert Kaya", "role": "L2 Teknisyen", "company": "birikim" },
+    { "name": "Selin Yıldız", "role": "L1 Çağrı Karşılayıcı", "company": "birikim" },
+    { "name": "Burak Aslan", "role": "Saha Mühendisi", "company": "vento" },
+    { "name": "Deniz Aydın", "role": "Operasyon Şefi", "company": "vento" },
+    { "name": "Cem Polat", "role": "Filo Sorumlusu", "company": "vento" },
+    { "name": "Elif Şahin", "role": "BT Destek", "company": "lyra" },
+    { "name": "Kerem Doğan", "role": "Ağ Yöneticisi", "company": "lyra" },
+    { "name": "Naz Aksoy", "role": "Akademisyen", "company": "lyra" }
+  ],
+  "tickets": {
+    "birikim": [
+      {
+        "id": "INC-2847",
+        "title": "Posta sunucusu yanıt vermiyor — şube ekipleri etkilendi",
+        "priority": "P1",
+        "status": "Atandı",
+        "category": "Altyapı / E-posta",
+        "openedBy": "Selin Yıldız",
+        "openedAt": "09:14",
+        "slaMinutes": 240,
+        "elapsedMinutes": 134,
+        "snippet": "Bu sorun üçüncü kez bu ay yaşanıyor, çözümün ne zaman geleceğini öğrenmek istiyoruz."
+      },
+      {
+        "id": "INC-2851",
+        "title": "Çekirdek bankacılık ekranı 502 hatası veriyor",
+        "priority": "P1",
+        "status": "Soruşturuluyor",
+        "category": "Çekirdek Bankacılık",
+        "openedBy": "Mert Kaya",
+        "openedAt": "10:02",
+        "slaMinutes": 240,
+        "elapsedMinutes": 56,
+        "snippet": "Şubelerden gelen tüm sorgulama uçları zaman aşımına düşüyor."
+      },
+      {
+        "id": "REQ-9132",
+        "title": "Yeni başlayan kullanıcı için VPN erişim talebi",
+        "priority": "P3",
+        "status": "Onay bekliyor",
+        "category": "Erişim / VPN",
+        "openedBy": "Ayşe Demir",
+        "openedAt": "08:45",
+        "slaMinutes": 1440,
+        "elapsedMinutes": 95,
+        "snippet": "Bireysel emeklilik biriminde 3 yeni kayıt için onaylı VPN erişimi."
+      }
+    ],
+    "vento": [
+      {
+        "id": "INC-7104",
+        "title": "Gebze deposu el terminalleri kablosuz ağda kalmıyor",
+        "priority": "P2",
+        "status": "Saha kontrolünde",
+        "category": "Saha / Network",
+        "openedBy": "Burak Aslan",
+        "openedAt": "07:30",
+        "slaMinutes": 480,
+        "elapsedMinutes": 210,
+        "snippet": "Sevkiyat kuyruğu birikiyor, iki saatten fazladır kayıp bağlantı yaşıyoruz."
+      },
+      {
+        "id": "INC-7115",
+        "title": "Soğuk zincir aracı GPS sinyali kayboldu",
+        "priority": "P2",
+        "status": "Atandı",
+        "category": "Saha / IoT",
+        "openedBy": "Cem Polat",
+        "openedAt": "11:18",
+        "slaMinutes": 240,
+        "elapsedMinutes": 22,
+        "snippet": "Plaka 34 VNT 217, son sinyal Adapazarı çıkışı. Müşteri aramaları başladı."
+      }
+    ],
+    "lyra": [
+      {
+        "id": "REQ-1442",
+        "title": "Online sınav portalı şifre sıfırlama akışı çalışmıyor",
+        "priority": "P2",
+        "status": "Yeni",
+        "category": "Self-Service / Kimlik",
+        "openedBy": "Naz Aksoy",
+        "openedAt": "13:22",
+        "slaMinutes": 480,
+        "elapsedMinutes": 18,
+        "snippet": "Yarınki ara sınava 200'e yakın öğrenci giremeyebilir, acil bir çözüm lazım."
+      },
+      {
+        "id": "INC-1487",
+        "title": "Kütüphane Wi-Fi yoğun saatlerde kopuyor",
+        "priority": "P3",
+        "status": "Tekrarlayan",
+        "category": "Network",
+        "openedBy": "Kerem Doğan",
+        "openedAt": "Dün 16:08",
+        "slaMinutes": 2880,
+        "elapsedMinutes": 980,
+        "snippet": "Bu hafta üçüncü kez aynı bina, kalıcı çözüm bekleniyor."
+      }
+    ]
+  },
+  "kpis": {
+    "birikim": {
+      "openIncidents": 84,
+      "p1Count": 3,
+      "slaCompliance": 92.4,
+      "avgResolutionMin": 186,
+      "csat": 4.1
+    },
+    "vento": {
+      "openIncidents": 47,
+      "p1Count": 1,
+      "slaCompliance": 88.1,
+      "avgResolutionMin": 132,
+      "csat": 4.3
+    },
+    "lyra": {
+      "openIncidents": 312,
+      "p1Count": 0,
+      "slaCompliance": 95.7,
+      "avgResolutionMin": 64,
+      "csat": 4.6
+    }
+  },
+  "assets": {
+    "birikim": [
+      { "id": "SRV-MAIL-01", "name": "Posta Sunucusu Birincil", "type": "Sunucu", "criticality": "Kritik" },
+      { "id": "SRV-MAIL-02", "name": "Posta Sunucusu İkincil", "type": "Sunucu", "criticality": "Kritik" },
+      { "id": "DB-CORE-01", "name": "Çekirdek Bankacılık DB", "type": "Veritabanı", "criticality": "Kritik" },
+      { "id": "FW-EDGE-03", "name": "Edge Firewall İstanbul", "type": "Güvenlik Duvarı", "criticality": "Yüksek" },
+      { "id": "LB-WEB-02", "name": "Web Load Balancer", "type": "Yük Dengeleyici", "criticality": "Yüksek" },
+      { "id": "AD-CTRL-01", "name": "Active Directory PDC", "type": "Kimlik", "criticality": "Kritik" }
+    ]
+  }
+}

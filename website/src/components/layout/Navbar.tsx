@@ -604,9 +604,9 @@ export default function Navbar() {
                         className="overflow-hidden grid grid-cols-2 gap-x-2 gap-y-2 pt-3"
                       >
                         {modules.map((mod, idx) => (
-                          <Link 
-                            key={idx} 
-                            href="#" 
+                          <Link
+                            key={idx}
+                            href={mod.href || "#"}
                             className="flex items-center gap-3 text-(--color-text-overline) hover:text-white py-2 group cursor-pointer"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >

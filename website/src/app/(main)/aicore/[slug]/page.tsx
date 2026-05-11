@@ -1,19 +1,47 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Building2, CheckCircle2, Sparkles } from "lucide-react";
 import aicoreData from "@/data/aicore.json";
+import modullerData from "@/data/moduller.json";
+import { AicoreMock, hasMock } from "@/components/ui/aicore/mock-registry";
+
+interface HowItWorksStep {
+  label: string;
+  detail: string;
+}
+
+interface Scenario {
+  company: string;
+  situation: string;
+  outcome: string;
+}
 
 interface ToolData {
   slug: string;
   name: string;
+  tier: string;
   tagline: string;
   description: string;
   icon: string;
   accent: string;
+  whatItDoes?: string[];
+  howItWorks?: HowItWorksStep[];
+  modules?: string[];
+  scenario?: Scenario;
+}
+
+interface ModuleEntry {
+  name: string;
+  href: string;
+  icon: string;
+  desc: string;
+  tone: string;
+  category: string;
 }
 
 const TOOLS = aicoreData.tools as ToolData[];
+const MODULES = (modullerData as { modules: ModuleEntry[] }).modules;
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -33,10 +61,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+function resolveModules(hrefs: string[]): ModuleEntry[] {
+  return hrefs
+    .map((href) => MODULES.find((m) => m.href === href))
+    .filter((m): m is ModuleEntry => m !== undefined);
+}
+
 export default async function AicoreToolPage({ params }: PageProps) {
   const { slug } = await params;
   const tool = TOOLS.find((t) => t.slug === slug);
   if (!tool) notFound();
+
+  const isBeta = tool.tier === "beta";
+  const showMock = hasMock(tool.slug);
+  const linkedModules = tool.modules ? resolveModules(tool.modules) : [];
 
   return (
     <main className="relative min-h-screen bg-(--color-surface-base) overflow-hidden pb-32">
@@ -48,12 +86,22 @@ export default async function AicoreToolPage({ params }: PageProps) {
         }}
       />
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-12 pt-32">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/8 mb-10">
-          <Sparkles className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
-          <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light)">
-            AICORE · ARAÇ
-          </span>
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 pt-32">
+        <div className="flex flex-wrap items-center gap-2 mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/8">
+            <Sparkles className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+            <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light)">
+              AICORE · ARAÇ
+            </span>
+          </div>
+          {isBeta && (
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/8">
+              <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-light) animate-pulse" />
+              <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light)">
+                Beta · Yol Haritası
+              </span>
+            </div>
+          )}
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-white">
@@ -70,20 +118,140 @@ export default async function AicoreToolPage({ params }: PageProps) {
           {tool.description}
         </p>
 
-        <div className="mt-12 rounded-2xl border border-(--color-brand-primary)/20 bg-(--color-brand-primary)/5 p-6">
-          <div className="flex items-start gap-3">
-            <div className="w-2 h-2 rounded-full bg-(--color-brand-primary) mt-2 animate-pulse shrink-0" />
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-1">Sayfa Yapım Aşamasında</h3>
-              <p className="text-sm font-light text-(--color-text-secondary) leading-relaxed">
-                {tool.name} eklentisinin detaylı içerik ve örnek senaryoları kısa süre içinde
-                eklenecek.
-              </p>
+        {tool.whatItDoes && tool.whatItDoes.length > 0 && (
+          <section className="mt-20">
+            <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+              NE YAPAR
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {tool.whatItDoes.map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-white/8 bg-white/2 p-6"
+                >
+                  <div className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-accent-purple-light) mb-3">
+                    {(i + 1).toString().padStart(2, "0")}
+                  </div>
+                  <p className="text-sm text-white/85 leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {showMock && (
+          <section className="mt-20">
+            <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+              {tool.name} · ÇALIŞIRKEN
+            </div>
+            <AicoreMock slug={tool.slug} accent={tool.accent} />
+            <p className="mt-3 text-[11px] font-mono text-(--color-text-muted)">
+              Sahnede sentetik kurum ve kayıt verisi kullanılmıştır.
+            </p>
+          </section>
+        )}
+
+        {tool.howItWorks && tool.howItWorks.length > 0 && (
+          <section className="mt-20">
+            <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+              NASIL ÇALIŞIR
+            </div>
+            <div className="space-y-3">
+              {tool.howItWorks.map((step, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-5 rounded-2xl border border-white/8 bg-white/2 p-6"
+                >
+                  <div className="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-xl border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/10 text-(--color-accent-purple-light) text-sm font-mono font-semibold tabular-nums">
+                    {(i + 1).toString().padStart(2, "0")}
+                  </div>
+                  <div className="min-w-0 flex-1 pt-1">
+                    <div className="text-sm font-semibold text-white tracking-tight">
+                      {step.label}
+                    </div>
+                    <p className="mt-1 text-sm font-light text-(--color-text-secondary) leading-relaxed">
+                      {step.detail}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {linkedModules.length > 0 && (
+          <section className="mt-20">
+            <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+              HANGİ MODÜLLERDE ÇALIŞIR
+            </div>
+            <div className="flex flex-wrap gap-3">
+              {linkedModules.map((m) => (
+                <Link
+                  key={m.href}
+                  href={m.href}
+                  className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-white/10 bg-white/3 hover:bg-white/6 hover:border-(--color-accent-purple-base)/40 transition-all cursor-pointer"
+                >
+                  <span className="text-sm font-medium text-white/85 group-hover:text-(--color-accent-purple-light) transition-colors">
+                    {m.name}
+                  </span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-(--color-text-muted) group-hover:text-(--color-accent-purple-light) transition-colors" />
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {tool.scenario && (
+          <section className="mt-20">
+            <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+              SAHADAN SENARYO
+            </div>
+            <div className="rounded-3xl border border-white/8 bg-white/2 p-8 md:p-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/4 mb-6">
+                <Building2 className="w-3.5 h-3.5 text-(--color-text-muted)" />
+                <span className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-white/85">
+                  {tool.scenario.company}
+                </span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <div className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-2">
+                    DURUM
+                  </div>
+                  <p className="text-base font-light text-white/85 leading-relaxed">
+                    {tool.scenario.situation}
+                  </p>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light) mb-2">
+                    <CheckCircle2 className="w-3 h-3" />
+                    SONUÇ
+                  </div>
+                  <p className="text-base font-light text-white/85 leading-relaxed">
+                    {tool.scenario.outcome}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {!showMock && !tool.whatItDoes && (
+          <div className="mt-12 rounded-2xl border border-(--color-brand-primary)/20 bg-(--color-brand-primary)/5 p-6">
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 rounded-full bg-(--color-brand-primary) mt-2 animate-pulse shrink-0" />
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-1">Sayfa Yapım Aşamasında</h3>
+                <p className="text-sm font-light text-(--color-text-secondary) leading-relaxed">
+                  {tool.name} eklentisinin detaylı içerik ve örnek senaryoları kısa süre içinde
+                  eklenecek.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
-        <div className="mt-16 flex flex-wrap items-center gap-3">
+        <div className="mt-20 flex flex-wrap items-center gap-3">
           <Link
             href="/demo"
             className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-(--color-brand-primary) text-white font-medium text-sm shadow-(--shadow-glow-primary) hover:shadow-(--shadow-glow-primary-strong) transition-all cursor-pointer"
@@ -102,7 +270,7 @@ export default async function AicoreToolPage({ params }: PageProps) {
 
         <div className="mt-32 pt-12 border-t border-white/8">
           <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
-            Diğer AICORE Araçları
+            DİĞER AICORE ARAÇLARI
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {TOOLS.filter((t) => t.slug !== tool.slug)
@@ -111,7 +279,7 @@ export default async function AicoreToolPage({ params }: PageProps) {
                 <Link
                   key={t.slug}
                   href={`/aicore/${t.slug}`}
-                  className="group rounded-xl border border-white/8 bg-white/2 hover:bg-white/5 hover:border-white/15 px-4 py-3 transition-all"
+                  className="group rounded-xl border border-white/8 bg-white/2 hover:bg-white/5 hover:border-white/15 px-4 py-3 transition-all cursor-pointer"
                 >
                   <div className="text-sm font-semibold text-white group-hover:text-(--color-accent-purple-light) transition-colors">
                     {t.name}
