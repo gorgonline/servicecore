@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import cozumlerData from "@/data/cozumler.json";
+import { FeaturesGrid } from "@/components/ui/features-grid";
 
 interface SolutionData {
   slug: string;
@@ -81,18 +82,24 @@ export default async function SolutionPage({ params }: PageProps) {
           {solution.description}
         </p>
 
-        {/* Placeholder banner */}
-        <div className="mt-12 rounded-2xl border border-(--color-brand-primary)/20 bg-(--color-brand-primary)/5 p-6">
-          <div className="flex items-start gap-3">
-            <div className="w-2 h-2 rounded-full bg-(--color-brand-primary) mt-2 animate-pulse shrink-0" />
-            <div>
-              <h3 className="text-sm font-semibold text-white mb-1">Sayfa Yapım Aşamasında</h3>
-              <p className="text-sm font-light text-(--color-text-secondary) leading-relaxed">
-                Bu çözüm sayfası detaylandırma sürecinde. Aşağıda paketin kapsamındaki modülleri inceleyebilir, demo talep edebilirsiniz.
-              </p>
+        {/* ITSM: zenginlestirilmis ozellikler grid'i. Diger cozumler icin yapim asamasi banner'i. */}
+        {solution.slug === "itsm" ? (
+          <div className="mt-16">
+            <FeaturesGrid />
+          </div>
+        ) : (
+          <div className="mt-12 rounded-2xl border border-(--color-brand-primary)/20 bg-(--color-brand-primary)/5 p-6">
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 rounded-full bg-(--color-brand-primary) mt-2 animate-pulse shrink-0" />
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-1">Sayfa Yapım Aşamasında</h3>
+                <p className="text-sm font-light text-(--color-text-secondary) leading-relaxed">
+                  Bu çözüm sayfası detaylandırma sürecinde. Aşağıda paketin kapsamındaki modülleri inceleyebilir, demo talep edebilirsiniz.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Related modules */}
         {solution.modules.length > 0 && (
