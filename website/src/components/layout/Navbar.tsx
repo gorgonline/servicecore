@@ -60,8 +60,15 @@ import {
   FileCheck,
   ShieldAlert,
   Clock,
-  Package
+  Package,
+  Zap,
+  AudioLines,
+  PhoneCall,
+  Wallet,
+  type LucideIcon
 } from "lucide-react";
+
+import aicoreData from "@/data/aicore.json";
 
 // Sıralama ve isimler canli siteyle birebir. Href'ler korundu.
 const modules = [
@@ -104,29 +111,53 @@ const solutionsSubmenu = [
   { name: "FSM", title: "Field Service Management", icon: Truck, desc: "Saha ekiplerine mobil iş emri ve rota.", href: "/cozumler/fsm" },
 ];
 
-const aicoreSubmenu = [
-  { name: "Replycore SolveAI", icon: FileText, desc: "Karmaşık ticket konuşmalarını saniyeler içinde özetler.", href: "/aicore/replycore-solve" },
-  { name: "Chatcore-SelfAI", icon: MessageSquare, desc: "Doğal dilde son kullanıcı asistanı.", href: "/aicore/chatcore-self" },
-  { name: "Classificore ManageAI", icon: Filter, desc: "Otomatik ticket sınıflandırma ve yönlendirme.", href: "/aicore/classificore-manage" },
-  { name: "PrioritycoreAI", icon: Target, desc: "Önceliklendiren akıllı karar motoru.", href: "/aicore/prioritycore" },
-  { name: "RootCoreAI", icon: Search, desc: "Kayıt ve alarmları akıllıca gruplar.", href: "/aicore/rootcore" },
-  { name: "PredicticoreAI", icon: TrendingUp, desc: "SLA ihlallerini önceden tahmin eder.", href: "/aicore/predicticore" },
-  { name: "ScoreAI", icon: BarChart3, desc: "Doğal dil ile rapor ve dashboard.", href: "/aicore/score" },
-  { name: "KnowCoreAI", icon: BookOpen, desc: "Bilgi bankası içeriği otomatik üretimi.", href: "/aicore/knowcore" },
-  { name: "FlowCoreAI", icon: GitBranch, desc: "Metin komutlarıyla iş akışı şeması.", href: "/aicore/flowcore" },
-  { name: "DiscoreAI", icon: Network, desc: "Akıllı keşif ve CMDB haritaları.", href: "/aicore/discore" },
-  { name: "TranslateAI", icon: Languages, desc: "Anlık çoklu dil çevirisi.", href: "/aicore/translate" },
-  { name: "MergeAI", icon: Merge, desc: "Benzer ticket'ları birleştirir.", href: "/aicore/merge" },
-  { name: "ProjectplanpredictAI", icon: CalendarClock, desc: "Proje gecikme tahmini.", href: "/aicore/projectplanpredict" },
-  { name: "VisicoreAI", icon: Eye, desc: "Ekran görüntülerinden hata tespiti.", href: "/aicore/visicore" },
-  { name: "SentimentAI", icon: Heart, desc: "Mesajlardan duygu analizi.", href: "/aicore/sentiment" },
-  { name: "KnowcoreAI (Şablon)", icon: FileCheck, desc: "Bilgi bankası içeriklerini şablona uyarlar.", href: "/aicore/knowcore-template" },
-  { name: "ToneAI", icon: Mic, desc: "Kurumsal dil standardı denetimi.", href: "/aicore/tone" },
-  { name: "ImpacticoreAI", icon: ShieldAlert, desc: "Değişiklik risk seviyesi analizi.", href: "/aicore/impacticore" },
-  { name: "ShiftAI", icon: Clock, desc: "Otomatik vardiya planlama.", href: "/aicore/shift" },
-  { name: "AuditAI", icon: ShieldCheck, desc: "ITIL ve ISO uyumluluk denetimi.", href: "/aicore/audit" },
-  { name: "AssetLifecycleAI", icon: Package, desc: "Cihaz yaşam döngüsü yönetimi.", href: "/aicore/asset-lifecycle" },
-];
+// AICORE araclari: aicore.json'dan dinamik turetilir, beta rozeti tier alanindan gelir.
+const AICORE_ICON_MAP: Record<string, LucideIcon> = {
+  MessageSquare,
+  FileText,
+  Filter,
+  Target,
+  Search,
+  TrendingUp,
+  BarChart3,
+  BookOpen,
+  GitBranch,
+  Network,
+  Languages,
+  Merge,
+  CalendarClock,
+  Eye,
+  Heart,
+  FileCheck,
+  Mic,
+  ShieldAlert,
+  Clock,
+  ShieldCheck,
+  Package,
+  Zap,
+  AudioLines,
+  PhoneCall,
+  Building2,
+  FileSignature,
+  Wallet,
+  GraduationCap,
+};
+
+interface AicoreToolEntry {
+  slug: string;
+  name: string;
+  tier: string;
+  tagline: string;
+  icon: string;
+}
+
+const aicoreSubmenu = (aicoreData.tools as AicoreToolEntry[]).map((tool) => ({
+  name: tool.name,
+  icon: AICORE_ICON_MAP[tool.icon] ?? Sparkles,
+  desc: tool.tagline,
+  href: `/aicore/${tool.slug}`,
+  isBeta: tool.tier === "beta",
+}));
 
 const plansSubmenu = [
   { name: "ITSM Lisans Seçenekleri", icon: ShieldCheck, desc: "Service Desk, ITIL4 ve ESM için lisans ve modül seçenekleri.", href: "/planlar" },
@@ -378,15 +409,21 @@ export default function Navbar() {
                             key={idx}
                             href={tool.href}
                             onClick={() => setActiveMenu(null)}
-                            className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+                            className="relative flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
                           >
                             <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-purple-light) group-hover:bg-(--color-accent-purple-base) group-hover:text-white transition-colors">
                               <Icon className="w-5 h-5" />
                             </div>
-                            <div className="min-w-0">
+                            <div className="min-w-0 flex-1 pr-10">
                               <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-accent-purple-light) transition-colors">{tool.name}</h4>
                               <p className="text-xs text-(--color-text-secondary) leading-snug">{tool.desc}</p>
                             </div>
+                            {tool.isBeta && (
+                              <span className="absolute top-2 right-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/12 text-[9px] font-mono font-semibold tracking-[0.14em] uppercase text-(--color-accent-purple-light)">
+                                <span className="w-1 h-1 rounded-full bg-(--color-accent-purple-light)" />
+                                beta
+                              </span>
+                            )}
                           </Link>
                         );
                       })}
@@ -683,7 +720,13 @@ export default function Navbar() {
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
                             <tool.icon className="w-5 h-5 text-(--color-accent-purple-light) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
-                            <span className="text-sm font-medium transition-colors">{tool.name}</span>
+                            <span className="text-sm font-medium transition-colors flex-1 truncate">{tool.name}</span>
+                            {tool.isBeta && (
+                              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/12 text-[9px] font-mono font-semibold tracking-[0.14em] uppercase text-(--color-accent-purple-light) shrink-0">
+                                <span className="w-1 h-1 rounded-full bg-(--color-accent-purple-light)" />
+                                beta
+                              </span>
+                            )}
                           </Link>
                         ))}
                       </motion.div>
