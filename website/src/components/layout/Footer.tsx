@@ -4,6 +4,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { MapPin, Phone, Printer, HeadphonesIcon, Linkedin, Youtube } from "lucide-react";
+import aicoreData from "@/data/aicore.json";
+
+interface AicoreToolEntry {
+  slug: string;
+  name: string;
+  tier: string;
+}
+
+// AICORE: aicore.json'dan production tier'lari dinamik turetilir, beta'lar dislanir.
+const aicoreProductionLinks = (aicoreData.tools as AicoreToolEntry[])
+  .filter((tool) => tool.tier === "production")
+  .map((tool) => ({ text: tool.name, href: `/aicore/${tool.slug}` }));
 
 const footerData = {
 
@@ -91,29 +103,7 @@ const footerData = {
     },
     {
       title: "AICORE",
-      links: [
-        { text: "ReplyCoreAI", href: "/aicore/replycore" },
-        { text: "ChatCoreAI", href: "/aicore/chatcore" },
-        { text: "ClassifyCoreAI", href: "/aicore/classifycore" },
-        { text: "PriorityCoreAI", href: "/aicore/prioritycore" },
-        { text: "RootCoreAI", href: "/aicore/rootcore" },
-        { text: "PredictCoreAI", href: "/aicore/predictcore" },
-        { text: "ReportCoreAI", href: "/aicore/reportcore" },
-        { text: "KnowCoreAI", href: "/aicore/knowcore" },
-        { text: "FlowCoreAI", href: "/aicore/flowcore" },
-        { text: "DiscoverCoreAI", href: "/aicore/discovercore" },
-        { text: "TranslateCoreAI", href: "/aicore/translatecore" },
-        { text: "MergeCoreAI", href: "/aicore/mergecore" },
-        { text: "ProjectCoreAI", href: "/aicore/projectcore" },
-        { text: "VisionCoreAI", href: "/aicore/visioncore" },
-        { text: "SentimentCoreAI", href: "/aicore/sentimentcore" },
-        { text: "KnowcoreAI (Şablon)", href: "/aicore/knowcore-template" },
-        { text: "ToneCoreAI", href: "/aicore/tonecore" },
-        { text: "ImpactCoreAI", href: "/aicore/impactcore" },
-        { text: "ShiftCoreAI", href: "/aicore/shiftcore" },
-        { text: "AuditCoreAI", href: "/aicore/auditcore" },
-        { text: "AssetCoreAI", href: "/aicore/assetcore" },
-      ],
+      links: aicoreProductionLinks,
     },
     {
       title: "ÇÖZÜMLER",
