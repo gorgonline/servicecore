@@ -240,7 +240,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
-          <Link href="/ozellikler" className="text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors cursor-pointer">
+          <Link href="/cozumler/itsm" className="text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors cursor-pointer">
             Özellikler
           </Link>
 
@@ -616,7 +616,7 @@ export default function Navbar() {
 
                 <div className="flex flex-col gap-6">
                   
-                  <Link href="/ozellikler" className="text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/cozumler/itsm" className="text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                     Özellikler
                   </Link>
 

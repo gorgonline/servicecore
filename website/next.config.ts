@@ -20,6 +20,14 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  redirects: async () => [
+    {
+      source: "/ozellikler",
+      destination: "/cozumler/itsm",
+      permanent: true,
+    },
+  ],
+
   headers: async () => [
     {
       source: "/(.*)",

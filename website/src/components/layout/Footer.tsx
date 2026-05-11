@@ -128,7 +128,7 @@ const footerData = {
         { text: "Specsheet", href: "/specsheet" },
         { text: "Demo", href: "/demo" },
         { text: "İş Ortaklığı", href: "/partnerlik" },
-        { text: "Özellikler", href: "/ozellikler" },
+        { text: "Özellikler", href: "/cozumler/itsm" },
         { text: "Planlar & Lisanslama", href: "/planlar" },
         { text: "Modüller", href: "/moduller" },
         { text: "Fark Var", href: "/fark-var" },

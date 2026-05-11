@@ -130,7 +130,7 @@ export default function HeroSection() {
                 </motion.div>
               </motion.button>
             </Link>
-            <Link href="/ozellikler">
+            <Link href="/cozumler/itsm">
               <motion.button
                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
                 whileTap={{ scale: 0.95 }}
