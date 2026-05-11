@@ -240,9 +240,62 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
-          <Link href="/cozumler/itsm" className="text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors cursor-pointer">
-            Özellikler
-          </Link>
+
+          {/* Urunler (eski Cozumler) Mega Menu Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveMenu("solutions")}
+            onMouseLeave={() => setActiveMenu(null)}
+          >
+            <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
+              Ürünler
+              <motion.div
+                animate={{ rotate: activeMenu === "solutions" ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </motion.div>
+            </button>
+
+            <AnimatePresence>
+              {activeMenu === "solutions" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className={`fixed left-0 right-0 w-screen bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-y border-white/10 px-6 lg:px-12 py-8 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  onMouseEnter={() => setActiveMenu("solutions")}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <div className="mx-auto max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+                    {solutionsSubmenu.map((sol, idx) => {
+                      const Icon = sol.icon;
+                      return (
+                        <Link
+                          key={idx}
+                          href={sol.href}
+                          onClick={() => setActiveMenu(null)}
+                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+                        >
+                          <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-purple-light) group-hover:bg-(--color-brand-primary) group-hover:text-white transition-colors">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div className="min-w-0">
+                            <div className="flex items-baseline gap-2 mb-0.5">
+                              <h4 className="text-sm font-semibold text-white group-hover:text-(--color-brand-primary) transition-colors">{sol.name}</h4>
+                              <span className="text-[10px] font-mono text-(--color-text-muted) tracking-wider uppercase truncate">{sol.title}</span>
+                            </div>
+                            <p className="text-xs text-(--color-text-secondary) leading-snug">{sol.desc}</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
 
           {/* Mega Menu Trigger */}
           <div 
@@ -298,62 +351,6 @@ export default function Navbar() {
                         Tüm Modülleri İncele
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                      </Link>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Solutions Mega Menu Trigger */}
-          <div
-            className="relative"
-            onMouseEnter={() => setActiveMenu("solutions")}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
-            <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
-              Çözümler
-              <motion.div
-                animate={{ rotate: activeMenu === "solutions" ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronDown className="w-4 h-4" />
-              </motion.div>
-            </button>
-
-            <AnimatePresence>
-              {activeMenu === "solutions" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-0 right-0 w-screen bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-y border-white/10 px-6 lg:px-12 py-8 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
-                  onMouseEnter={() => setActiveMenu("solutions")}
-                  onMouseLeave={() => setActiveMenu(null)}
-                >
-                  <div className="mx-auto max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
-                    {solutionsSubmenu.map((sol, idx) => {
-                      const Icon = sol.icon;
-                      return (
-                        <Link
-                          key={idx}
-                          href={sol.href}
-                          onClick={() => setActiveMenu(null)}
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
-                        >
-                          <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-purple-light) group-hover:bg-(--color-brand-primary) group-hover:text-white transition-colors">
-                            <Icon className="w-5 h-5" />
-                          </div>
-                          <div className="min-w-0">
-                            <div className="flex items-baseline gap-2 mb-0.5">
-                              <h4 className="text-sm font-semibold text-white group-hover:text-(--color-brand-primary) transition-colors">{sol.name}</h4>
-                              <span className="text-[10px] font-mono text-(--color-text-muted) tracking-wider uppercase truncate">{sol.title}</span>
-                            </div>
-                            <p className="text-xs text-(--color-text-secondary) leading-snug">{sol.desc}</p>
-                          </div>
-                        </Link>
-                      );
-                    })}
                   </div>
                 </motion.div>
               )}
@@ -615,10 +612,43 @@ export default function Navbar() {
                 </Link>
 
                 <div className="flex flex-col gap-6">
-                  
-                  <Link href="/cozumler/itsm" className="text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
-                    Özellikler
-                  </Link>
+
+                  {/* Urunler (eski Cozumler) Accordion */}
+                  <div className="flex flex-col gap-3">
+                    <button
+                      onClick={() => setActiveMenu(activeMenu === "solutions" ? null : "solutions")}
+                      className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors w-full cursor-pointer"
+                    >
+                      Ürünler
+                      <motion.div animate={{ rotate: activeMenu === "solutions" ? 180 : 0 }}>
+                        <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {activeMenu === "solutions" && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="overflow-hidden flex flex-col gap-2 pt-3"
+                        >
+                          {solutionsSubmenu.map((sol, idx) => (
+                            <Link
+                              key={idx}
+                              href={sol.href}
+                              className="flex items-center gap-3 text-(--color-text-overline) hover:text-white py-2 group cursor-pointer"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              <sol.icon className="w-5 h-5 text-(--color-accent-purple-light) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
+                              <span className="text-sm font-medium transition-colors">
+                                {sol.name} <span className="text-xs text-(--color-text-muted) ml-1 font-normal">— {sol.title}</span>
+                              </span>
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
 
                   {/* Modüller Accordion */}
                 <div className="flex flex-col gap-3">
@@ -648,43 +678,6 @@ export default function Navbar() {
                           >
                             <mod.icon className="w-5 h-5 text-(--color-brand-primary) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
                             <span className="text-sm font-medium transition-colors">{mod.name}</span>
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-
-                {/* Çözümler Accordion */}
-                <div className="flex flex-col gap-3">
-                  <button
-                    onClick={() => setActiveMenu(activeMenu === "solutions" ? null : "solutions")}
-                    className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors w-full cursor-pointer"
-                  >
-                    Çözümler
-                    <motion.div animate={{ rotate: activeMenu === "solutions" ? 180 : 0 }}>
-                      <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
-                    </motion.div>
-                  </button>
-                  <AnimatePresence>
-                    {activeMenu === "solutions" && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden flex flex-col gap-2 pt-3"
-                      >
-                        {solutionsSubmenu.map((sol, idx) => (
-                          <Link
-                            key={idx}
-                            href={sol.href}
-                            className="flex items-center gap-3 text-(--color-text-overline) hover:text-white py-2 group cursor-pointer"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                          >
-                            <sol.icon className="w-5 h-5 text-(--color-accent-purple-light) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
-                            <span className="text-sm font-medium transition-colors">
-                              {sol.name} <span className="text-xs text-(--color-text-muted) ml-1 font-normal">— {sol.title}</span>
-                            </span>
                           </Link>
                         ))}
                       </motion.div>
