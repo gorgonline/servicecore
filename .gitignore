@@ -28,3 +28,18 @@ Thumbs.db
 .env
 .env.local
 .env.*.local
+
+# Buyuk kaynak/asset dosyalari (Drive/Dropbox'ta tutulur)
+/Discovery/
+/ikonlar/
+/itil4practices/
+/sesler/
+/social/
+/referanslar.png
+/Servicecore ITSM Gereksinim Analiz Dokumani V2.xlsx
+/Servicecore ITSM Gereksinim Analiz Dokümanı V2.xlsx
+
+# Datasheet uretim ciktilari ve debug
+/datasheet.pdf
+/datasheet-debug.txt
+/datasheet-raw.json
