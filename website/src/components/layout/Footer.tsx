@@ -80,12 +80,12 @@ const footerData = {
         { text: "Sürekli İyileştirme", href: "/surekli-iyilestirme" },
         { text: "Servis Katalog Yönetimi", href: "/servis-katalog-yonetimi" },
         { text: "Servis Seviye Yönetimi", href: "/servis-seviye-yonetimi" },
-        { text: "Servis Otomasyonu", href: "/servis-otomasyonu" },
         { text: "Raporlama Yönetimi", href: "/raporlama-yonetimi" },
       ],
     },
     {
       title: "DİĞER MODÜLLER",
+      hideTitle: true,
       links: [
         { text: "Görev Yönetimi", href: "/gorev-yonetimi" },
         { text: "Servis İlişkileri Yönetimi", href: "/servis-iliskileri-yonetimi" },
@@ -94,6 +94,7 @@ const footerData = {
         { text: "Self Servis Portal", href: "/self-servis-portal" },
         { text: "Yönetim Paneli", href: "/yonetim-paneli" },
         { text: "Mobil Servis Yönetimi", href: "/mobil-servis-yonetimi" },
+        { text: "Servis Otomasyonu", href: "/servis-otomasyonu" },
         { text: "İş Akışı Yönetimi", href: "/is-akisi-yonetimi" },
         { text: "Entegrasyon Modülü", href: "/entegrasyon-yonetimi" },
         { text: "Low Code Geliştirme Modülü", href: "/low-code-gelistirme" },
@@ -248,7 +249,12 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-12 mb-14">
           {footerData.columns.map((col, idx) => (
             <motion.div key={idx} variants={itemVariants} className="flex flex-col">
-              <h3 className="text-[11px] font-semibold text-slate-200 uppercase tracking-[0.18em] mb-5">
+              <h3
+                className={`text-[11px] font-semibold text-slate-200 uppercase tracking-[0.18em] mb-5 ${
+                  "hideTitle" in col && col.hideTitle ? "invisible" : ""
+                }`}
+                aria-hidden={"hideTitle" in col && col.hideTitle ? true : undefined}
+              >
                 {col.title}
               </h3>
               <ul className="space-y-2.5">
