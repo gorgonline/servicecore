@@ -118,10 +118,5 @@
     "title": "Sözleşme Yönetimi",
     "description": "Kurum içi (OLA), tedarikçi ve müşteri sözleşmelerini tek platformda yönetin; yenileme uyarıları ve kapsam takibiyle tam kontrol kurun.",
     "link": "/sozlesme-yonetimi"
-  },
-  {
-    "title": "AI Yol Haritası",
-    "description": "Yapay zeka destekli otomasyon, akıllı sınıflandırma ve asistan deneyimleriyle ServiceCore'un bir sonraki nesil yetkinlikleri.",
-    "link": "/ai-yol-haritasi"
   }
 ]

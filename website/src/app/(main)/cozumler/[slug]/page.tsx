@@ -146,63 +146,37 @@ export default async function SolutionPage({ params }: PageProps) {
         {/* Rich content: zenginlestirilmis cozum icerigi */}
         {richContent ? (
           <SolutionSections content={richContent} />
-        ) : solution.slug === "itsm" ? (
-          <div className="mt-32">
-            <div className="mb-12 max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/3 mb-6">
-                <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
-                  Modüller · Modules
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-                ITIL4 uyumlu 22 modül
-              </h2>
-            </div>
-            <FeaturesGrid />
-          </div>
-        ) : (
+        ) : solution.slug === "sdlc" ? (
           <div className="mt-16 rounded-2xl border border-(--color-brand-primary)/20 bg-(--color-brand-primary)/5 p-6">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 rounded-full bg-(--color-brand-primary) mt-2 animate-pulse shrink-0" />
               <div>
                 <h3 className="text-sm font-semibold text-white mb-1">Sayfa Yapım Aşamasında</h3>
                 <p className="text-sm font-light text-(--color-text-secondary) leading-relaxed">
-                  Bu çözüm sayfası detaylandırma sürecinde. Aşağıda paketin kapsamındaki modülleri inceleyebilir, demo talep edebilirsiniz.
+                  Bu çözüm sayfası detaylandırma sürecinde. Aşağıda platformdaki tüm modülleri inceleyebilir, demo talep edebilirsiniz.
                 </p>
               </div>
             </div>
           </div>
-        )}
+        ) : null}
 
-        {/* Pakete dahil moduller */}
-        {solution.modules.length > 0 && (
-          <div className="mt-32">
-            <div className="mb-8 max-w-3xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/3 mb-6">
-                <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
-                  Pakete Dahil Modüller
-                </span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
-                {solution.abbr} paketindeki tüm modüller
-              </h2>
+        {/* Pakete dahil tum moduller — her urun sayfasinda ayni 24 modul */}
+        <div className="mt-32">
+          <div className="mb-12 max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/3 mb-6">
+              <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
+                Modüller · Modules
+              </span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {solution.modules.map((moduleSlug) => (
-                <Link
-                  key={moduleSlug}
-                  href={`/${moduleSlug}`}
-                  className="group flex items-center justify-between gap-3 rounded-xl border border-white/8 bg-white/2 hover:bg-white/5 hover:border-white/15 px-4 py-3 transition-all"
-                >
-                  <span className="text-sm font-medium text-white/90 group-hover:text-(--color-brand-accent) transition-colors capitalize">
-                    {moduleSlug.replaceAll("-", " ")}
-                  </span>
-                  <ArrowUpRight className="w-4 h-4 text-(--color-text-muted) group-hover:text-(--color-brand-accent) shrink-0" />
-                </Link>
-              ))}
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              {solution.abbr} paketindeki tüm modüller
+            </h2>
+            <p className="text-base font-light leading-relaxed text-(--color-text-secondary)">
+              ServiceCore platformundaki 24 entegre modülün tamamı her çözüm paketi içinde native olarak çalışır. {solution.name_tr} kullanıcıları aşağıdaki tüm modüllere erişebilir.
+            </p>
           </div>
-        )}
+          <FeaturesGrid />
+        </div>
 
         {/* CTAs */}
         <div className="mt-20 flex flex-wrap items-center gap-3">
