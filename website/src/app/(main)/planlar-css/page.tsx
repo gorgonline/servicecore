@@ -4,7 +4,7 @@ import pricingData from "@/data/pricing-css.json";
 import { HelpCircle } from "lucide-react";
 
 export const metadata = {
-  title: "CSS Planları | ServiceCore",
+  title: "CSM Planları | ServiceCore",
   description: pricingData.hero.description,
 };
 

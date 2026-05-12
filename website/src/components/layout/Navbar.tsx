@@ -101,13 +101,13 @@ const modules = [
 ];
 
 const solutionsSubmenu = [
-  { name: "ESM", title: "Enterprise Service Management", icon: Building2, desc: "Tüm departmanları aynı servis disiplinine taşıyın.", href: "/cozumler/esm" },
   { name: "ITSM", title: "IT Service Management", icon: Settings, desc: "ITIL4 uyumlu BT operasyon yönetimi.", href: "/cozumler/itsm" },
-  { name: "CSS", title: "Customer Service Support", icon: Headphones, desc: "Müşteri taleplerini ve etkileşimi tek panelde.", href: "/cozumler/css" },
+  { name: "ESM", title: "Enterprise Service Management", icon: Building2, desc: "Tüm departmanları aynı servis disiplinine taşıyın.", href: "/cozumler/esm" },
   { name: "AgilePM", title: "Agile Project Management", icon: Layers, desc: "Backlog, sprint, kanban ve roadmap yönetimi.", href: "/cozumler/apm" },
+  { name: "CSM", title: "Customer Service Management", icon: Headphones, desc: "Müşteri taleplerini ve etkileşimi tek panelde.", href: "/cozumler/css" },
+  { name: "FSM", title: "Field Service Management", icon: Truck, desc: "Saha ekiplerine mobil iş emri ve rota.", href: "/cozumler/fsm" },
   { name: "ITAM", title: "IT Asset Management", icon: Box, desc: "BT varlık ve lisanslarının yaşam döngüsü.", href: "/cozumler/itam" },
   { name: "EAM", title: "Enterprise Asset Management", icon: Boxes, desc: "BT dışı fiziksel varlıkların merkezi yönetimi.", href: "/cozumler/eam" },
-  { name: "FSM", title: "Field Service Management", icon: Truck, desc: "Saha ekiplerine mobil iş emri ve rota.", href: "/cozumler/fsm" },
 ];
 
 // AICORE araclari: aicore.json'dan dinamik turetilir, beta rozeti tier alanindan gelir.
@@ -161,7 +161,7 @@ const aicoreSubmenu = (aicoreData.tools as AicoreToolEntry[]).map((tool) => ({
 const plansSubmenu = [
   { name: "ITSM Lisans Seçenekleri", icon: ShieldCheck, desc: "Service Desk, ITIL4 ve ESM için lisans ve modül seçenekleri.", href: "/planlar" },
   { name: "ESM Lisans Seçenekleri", icon: Building2, desc: "Enterprise Service Management lisans ve modül seçenekleri.", href: "/planlar-esm" },
-  { name: "CSS Lisans Seçenekleri", icon: Headphones, desc: "Customer Service Support lisans ve modül seçenekleri.", href: "/planlar-css" },
+  { name: "CSM Lisans Seçenekleri", icon: Headphones, desc: "Customer Service Management lisans ve modül seçenekleri.", href: "/planlar-css" },
   { name: "FSM Lisans Seçenekleri", icon: Truck, desc: "Field Service Management lisans ve modül seçenekleri.", href: "/planlar-fsm" },
   { name: "AgilePM Lisans Seçenekleri", icon: Target, desc: "Agile, hibrit ve stratejik proje yönetimi lisans seçenekleri.", href: "/planlar-pm" },
   { name: "Abonelik ve Lisanslama Rehberi", icon: ScrollText, desc: "Roller, edition kuralları, ESM ve add-on lisanslama detayları.", href: "/planlar/lisanslama-rehberi" },

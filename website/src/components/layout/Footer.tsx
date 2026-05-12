@@ -108,13 +108,13 @@ const footerData = {
     {
       title: "ÇÖZÜMLER",
       links: [
-        { text: "ESM — Enterprise Service Management", href: "/cozumler/esm" },
         { text: "ITSM — IT Service Management", href: "/cozumler/itsm" },
-        { text: "CSS — Customer Service Support", href: "/cozumler/css" },
+        { text: "ESM — Enterprise Service Management", href: "/cozumler/esm" },
         { text: "AgilePM — Agile Project Management", href: "/cozumler/apm" },
+        { text: "CSM — Customer Service Management", href: "/cozumler/css" },
+        { text: "FSM — Field Service Management", href: "/cozumler/fsm" },
         { text: "ITAM — IT Asset Management", href: "/cozumler/itam" },
         { text: "EAM — Enterprise Asset Management", href: "/cozumler/eam" },
-        { text: "FSM — Field Service Management", href: "/cozumler/fsm" },
       ],
     },
     {
