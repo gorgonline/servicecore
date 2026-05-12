@@ -230,7 +230,7 @@ export default async function SolutionPage({ params }: PageProps) {
             Diğer Çözümler
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {SOLUTIONS.filter((s) => s.slug !== solution.slug).map((s) => (
+            {SOLUTIONS.filter((s) => s.slug !== solution.slug && s.slug !== "sdlc").map((s) => (
               <Link
                 key={s.slug}
                 href={`/cozumler/${s.slug}`}
