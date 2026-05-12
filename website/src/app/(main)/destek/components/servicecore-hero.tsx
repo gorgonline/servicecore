@@ -12,7 +12,7 @@ export function ServiceCoreHero() {
     <section className="relative w-full pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-(--color-surface-base)">
       {/* Brand Aligned Dynamic Background Glares */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-(--color-brand-primary)/20 to-transparent opacity-60 rounded-full blur-[100px]" />
+        <div className="absolute top-0 right-0 w-200 h-200 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-(--color-brand-primary)/20 to-transparent opacity-60 rounded-full blur-[100px]" />
         <div className="absolute bottom-[-20%] left-[-10%] w-150 h-150 bg-emerald-500/10 rounded-full blur-[120px] opacity-40" />
       </div>
 
@@ -61,7 +61,7 @@ export function ServiceCoreHero() {
               href="#packages"
               className="rounded-full h-14 px-8 inline-flex items-center justify-center bg-(--color-brand-primary) hover:bg-(--color-brand-primary-hover) text-white font-semibold cursor-pointer transition-all duration-300 shadow-(--shadow-glow-primary) hover:shadow-(--shadow-glow-primary-strong)"
             >
-              SLA Paketlerini İnceleyin
+              Destek Paketlerini İnceleyin
             </a>
             <a 
                href="#channels"

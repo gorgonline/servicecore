@@ -165,7 +165,7 @@ export function PriorityCoreMock({ accent: accentName }: { accent: string }) {
               icon={<Zap className="w-3 h-3" />}
               label="Aciliyet"
               value={9.2}
-              note="SLA 1s 46d · mali risk"
+              note="Hizmet Seviyesi 1s 46d · mali risk"
               tier="Kritik"
             />
             <ScoreRow

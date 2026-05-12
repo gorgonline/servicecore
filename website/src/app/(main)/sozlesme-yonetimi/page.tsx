@@ -129,7 +129,7 @@ export default function SozlesmeYonetimiPage() {
               {[
                 { icon: Building2, label: "OLA (İç Destek)", value: "24", trend: "aktif", tone: "blue" },
                 { icon: Truck, label: "Tedarikçi", value: "32", trend: "aktif", tone: "emerald" },
-                { icon: ShieldCheck, label: "SLA (Müşteri)", value: "30", trend: "aktif", tone: "purple" },
+                { icon: ShieldCheck, label: "Hizmet Seviyesi (Müşteri)", value: "30", trend: "aktif", tone: "purple" },
                 { icon: Bell, label: "30g İçinde Yenileme", value: "8", trend: "uyarı", tone: "amber" },
               ].map((m, i) => {
                 const Icon = m.icon;
@@ -178,7 +178,7 @@ export default function SozlesmeYonetimiPage() {
               <div className="flex flex-col gap-1.5 mt-1.5">
                 {[
                   { cnr: "CNR-218", type: "OLA", typeIcon: Building2, name: "BT → İK Servis Sözleşmesi", cost: "—", end: "08 May 2026", status: "yaklaşıyor", typeTone: "blue", statusTone: "amber" },
-                  { cnr: "CNR-217", type: "SLA", typeIcon: ShieldCheck, name: "Acme Premium 7/24", cost: "240k₺", end: "12 Ara 2026", status: "aktif", typeTone: "purple", statusTone: "emerald" },
+                  { cnr: "CNR-217", type: "Hizmet Seviyesi", typeIcon: ShieldCheck, name: "Acme Premium 7/24", cost: "240k₺", end: "12 Ara 2026", status: "aktif", typeTone: "purple", statusTone: "emerald" },
                   { cnr: "CNR-215", type: "Tedarikçi", typeIcon: Truck, name: "Microsoft 365 Lisans", cost: "180k₺", end: "21 May 2026", status: "yaklaşıyor", typeTone: "emerald", statusTone: "amber" },
                   { cnr: "CNR-212", type: "Tedarikçi", typeIcon: Truck, name: "Cisco Network Bakım", cost: "92k₺", end: "03 Haz 2026", status: "yaklaşıyor", typeTone: "emerald", statusTone: "amber" },
                   { cnr: "CNR-208", type: "OLA", typeIcon: Building2, name: "BT → Finans Destek", cost: "—", end: "15 May 2026", status: "kritik", typeTone: "blue", statusTone: "red" },
@@ -289,9 +289,9 @@ export default function SozlesmeYonetimiPage() {
                     </div>
                   </div>
 
-                  {/* SLA targets */}
+                  {/* Hizmet Seviyesi targets */}
                   <div className="flex flex-col gap-1.5">
-                    <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Kapsam & SLA Hedefleri</span>
+                    <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Kapsam & Hizmet Seviyesi Hedefleri</span>
                     {[
                       { label: "Yanıt Süresi (P1)", target: "15 dk", percent: 96, tone: "emerald" },
                       { label: "Çözüm Süresi (P2)", target: "4 saat", percent: 92, tone: "emerald" },
@@ -461,7 +461,7 @@ export default function SozlesmeYonetimiPage() {
             </div>
           </motion.div>
 
-          {/* Feature 3: SLA Müşteri */}
+          {/* Feature 3: Hizmet Seviyesi Müşteri */}
           <motion.div
             animate="visible"
             variants={fadeUp}
@@ -474,12 +474,12 @@ export default function SozlesmeYonetimiPage() {
                   <div className="flex items-center justify-between pb-2 border-b border-white/8">
                     <div className="flex items-center gap-1.5">
                       <ShieldCheck className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">SLA · Müşteri Hizmet Sözleşmeleri</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Hizmet Seviyesi · Müşteri Hizmet Sözleşmeleri</span>
                     </div>
                     <span className="text-[8px] font-mono text-(--color-text-muted)">3 katman · 30 müşteri</span>
                   </div>
 
-                  {/* SLA tier matrix */}
+                  {/* Hizmet Seviyesi tier matrix */}
                   <div className="flex flex-col gap-2 flex-1">
                     {[
                       { tier: "Premium · 7/24", customers: 8, sla: 98, response: "15dk", resolve: "2sa", tone: "purple" },
@@ -499,7 +499,7 @@ export default function SozlesmeYonetimiPage() {
                           </div>
                           <div className="grid grid-cols-3 gap-2">
                             <div className="flex flex-col gap-0.5">
-                              <span className="text-[7px] font-mono uppercase text-(--color-text-muted)">SLA Uyum</span>
+                              <span className="text-[7px] font-mono uppercase text-(--color-text-muted)">Hizmet Seviyesi Uyum</span>
                               <span className="text-base font-bold text-white">%{s.sla}</span>
                             </div>
                             <div className="flex flex-col gap-0.5">
@@ -519,7 +519,7 @@ export default function SozlesmeYonetimiPage() {
                   {/* Eskalasyon banner */}
                   <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-amber-500/10 border border-amber-500/25 mt-auto">
                     <AlertCircle className="w-3 h-3 text-amber-300 shrink-0" />
-                    <span className="text-[9px] font-medium text-white flex-1">Bu ay 3 SLA ihlali · 1 eskalasyon</span>
+                    <span className="text-[9px] font-medium text-white flex-1">Bu ay 3 Hizmet Seviyesi ihlali · 1 eskalasyon</span>
                     <Activity className="w-2.5 h-2.5 text-amber-300" />
                   </div>
                 </div>
@@ -594,7 +594,7 @@ export default function SozlesmeYonetimiPage() {
                 {[
                   { name: "Yıllık Bakım Sözleşmesi", type: "OLA", tone: "blue" },
                   { name: "Donanım Tedarik Anlaşması", type: "Tedarikçi", tone: "emerald" },
-                  { name: "Premium Destek SLA", type: "SLA", tone: "purple" },
+                  { name: "Premium Destek Hizmet Seviyesi", type: "Hizmet Seviyesi", tone: "purple" },
                   { name: "Yazılım Lisans Sözleşmesi", type: "Tedarikçi", tone: "emerald" },
                 ].map((row, i) => (
                   <div
@@ -677,7 +677,7 @@ export default function SozlesmeYonetimiPage() {
               </div>
             </motion.div>
 
-            {/* Bento 3 - Kapsam & SLA hedefleri (normal, mock) */}
+            {/* Bento 3 - Kapsam & Hizmet Seviyesi hedefleri (normal, mock) */}
             <motion.div
               variants={fadeUp}
               className="col-span-1 rounded-4xl bg-white/2 border border-white/10 p-8 hover:bg-white/4 transition-colors flex flex-col"
@@ -793,7 +793,7 @@ export default function SozlesmeYonetimiPage() {
                 {[
                   { type: "OLA", count: 18, tone: "blue" },
                   { type: "Tedarikçi", count: 42, tone: "emerald" },
-                  { type: "SLA (Müşteri)", count: 64, tone: "purple" },
+                  { type: "Hizmet Seviyesi (Müşteri)", count: 64, tone: "purple" },
                 ].map((row, i) => (
                   <div
                     key={i}
@@ -1032,7 +1032,7 @@ export default function SozlesmeYonetimiPage() {
                       </div>
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
-                        SLA
+                        Hizmet Seviyesi
                       </div>
                     </div>
                   </div>

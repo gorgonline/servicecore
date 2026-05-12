@@ -44,7 +44,7 @@
       "description": "Kayıt ve sözleşme bilgilerini IT hizmet talepleriyle entegre ederek uçtan uca bir müşteri yönetim deneyimi sağlayın. Sözleşme kapsamında verilen hizmetlerin takibini kolayca gerçekleştirin; raporlama ve analizle stratejik kararları veriye dayandırın.",
       "bullets": [
         "Kayıt ve sözleşme bilgileri IT hizmet talepleriyle entegre edilerek uçtan uca müşteri yönetim deneyimi sağlanır; her talepte sözleşme kapsamı ve müşteri geçmişi anında görünür.",
-        "Sözleşme kapsamında verilen hizmetler tek panelden takip edilir; SLA, hizmet kapsamı ve sorumluluk sınırı ekipler arasında tutarlı kalır.",
+        "Sözleşme kapsamında verilen hizmetler tek panelden takip edilir; Hizmet Seviyesi, hizmet kapsamı ve sorumluluk sınırı ekipler arasında tutarlı kalır.",
         "Sözleşme durumları, müşteri kayıtları ve hizmet geçmişi hakkında detaylı raporlarla verilerle desteklenen stratejik kararlar alarak müşteri memnuniyeti arttırılır."
       ]
     }
@@ -83,7 +83,7 @@
         "accent": "purple",
         "icon": "Share2",
         "title": "IT hizmet talepleriyle entegre akış",
-        "description": "Müşteri kaydı ve sözleşme bilgisi açılan her olay/istek/değişiklik kaydında otomatik bağlanır. Sözleşme kapsamı, SLA ve servis hakları ekipler için anında görünür hale gelir; kapsam dışı talepler ayrı kanaldan yönetilir."
+        "description": "Müşteri kaydı ve sözleşme bilgisi açılan her olay/istek/değişiklik kaydında otomatik bağlanır. Sözleşme kapsamı, Hizmet Seviyesi ve servis hakları ekipler için anında görünür hale gelir; kapsam dışı talepler ayrı kanaldan yönetilir."
       },
       {
         "id": "kim-icin",
@@ -178,8 +178,8 @@
       {
         "id": "sla-ola-sozlesme",
         "icon": "FileSignature",
-        "question": "SLA ve OLA sözleşmeleri nasıl yönetilir?",
-        "answer": "SLA (Service Level Agreement) ve OLA (Operational Level Agreement) sözleşmeleri SRM modülünde yönetilir. Yeni sözleşme eklerken: müşteri hesabı seçilir, sözleşme türü belirlenir, ad/açıklama/başlangıç ve bitiş tarihi girilir, bitiş tarihinden önce/sonra bilgilendirme günleri tanımlanır, otomatik yenileme ve destek planı seçenekleri eklenir. Bu sayede hem iç hem de dış müşteriler için hizmet seviyeleri net şekilde tanımlanır; kritik tarihler kaçırılmaz."
+        "question": "Hizmet Seviyesi ve OLA sözleşmeleri nasıl yönetilir?",
+        "answer": "Hizmet Seviyesi ve OLA (Operational Level Agreement) sözleşmeleri SRM modülünde yönetilir. Yeni sözleşme eklerken: müşteri hesabı seçilir, sözleşme türü belirlenir, ad/açıklama/başlangıç ve bitiş tarihi girilir, bitiş tarihinden önce/sonra bilgilendirme günleri tanımlanır, otomatik yenileme ve destek planı seçenekleri eklenir. Bu sayede hem iç hem de dış müşteriler için hizmet seviyeleri net şekilde tanımlanır; kritik tarihler kaçırılmaz."
       },
       {
         "id": "yetkili-teknisyen",

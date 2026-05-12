@@ -3,7 +3,7 @@
     "badge": "Sözleşme Yönetimi",
     "titleLead": "Tüm sözleşmeleriniz",
     "titleAccent": "tek platformda, tam kontrol altında.",
-    "description": "Global iş dünyasında düzenli ve şeffaf bir sözleşme yönetimi, başarılı bir operasyonun temel taşlarından biridir. ServiceCore Sözleşmeler Modülü; kurum içi destek (OLA), tedarikçi ve müşteri hizmet (SLA) sözleşmelerinizi etkin bir şekilde yönetmenize olanak tanır. Tek platformdan kolayca erişilebilir, düzenli ve sürdürülebilir bir yapı kurarken zamandan tasarruf eder, süreçlerinizde tam kontrol sağlarsınız.",
+    "description": "Global iş dünyasında düzenli ve şeffaf bir sözleşme yönetimi, başarılı bir operasyonun temel taşlarından biridir. ServiceCore Sözleşmeler Modülü; kurum içi destek (OLA), tedarikçi ve müşteri hizmet sözleşmelerinizi etkin bir şekilde yönetmenize olanak tanır. Tek platformdan kolayca erişilebilir, düzenli ve sürdürülebilir bir yapı kurarken zamandan tasarruf eder, süreçlerinizde tam kontrol sağlarsınız.",
     "imageAlt": "Sözleşme yönetimi panosu — OLA, tedarikçi ve müşteri sözleşmeleri"
   },
   "zigzag": [
@@ -40,12 +40,12 @@
       "accent": "purple",
       "icon": "ShieldCheck",
       "titleLead": "Müşteri hizmet sözleşmeleri",
-      "titleAccent": "(Service Level Agreement).",
-      "description": "İç müşterilerden global müşterilere kadar her seviyede sunulan hizmet anlaşmalarını (SLA) detaylandırın ve profesyonel bir yönetim standardı oluşturun. SLA hedefleri operasyonel süreçlerle entegre işler; uyum, ihlal ve eskalasyon verisi kararlara veri zemini sunar.",
+      "titleAccent": "ile profesyonel standart.",
+      "description": "İç müşterilerden global müşterilere kadar her seviyede sunulan hizmet anlaşmalarını detaylandırın ve profesyonel bir yönetim standardı oluşturun. Hizmet Seviyesi hedefleri operasyonel süreçlerle entegre işler; uyum, ihlal ve eskalasyon verisi kararlara veri zemini sunar.",
       "bullets": [
-        "İç müşterilerden global müşterilere kadar her seviyede sunulan hizmet anlaşmaları (SLA) detaylandırılır.",
+        "İç müşterilerden global müşterilere kadar her seviyede sunulan hizmet anlaşmaları detaylandırılır.",
         "Profesyonel bir yönetim standardı oluşur; aynı disiplin tüm müşteri katmanlarında uygulanır.",
-        "SLA hedefleri operasyonel süreçlerle entegre işler; uyum, ihlal ve eskalasyon verisi kararlara veri zemini sunar."
+        "Hizmet Seviyesi hedefleri operasyonel süreçlerle entegre işler; uyum, ihlal ve eskalasyon verisi kararlara veri zemini sunar."
       ],
       "imageKey": "sozlesme-3"
     }
@@ -75,8 +75,8 @@
         "size": "normal",
         "accent": "cyan",
         "icon": "ShieldCheck",
-        "title": "Kapsam ve SLA hedefleri",
-        "description": "Sözleşme başına kapsam, kapsam dışı durumlar ve SLA hedefleri standart bir yapıda tutulur. Bir olay/talep açıldığında ilgili sözleşme kapsamı anında görünür."
+        "title": "Kapsam ve Hizmet Seviyesi hedefleri",
+        "description": "Sözleşme başına kapsam, kapsam dışı durumlar ve Hizmet Seviyesi hedefleri standart bir yapıda tutulur. Bir olay/talep açıldığında ilgili sözleşme kapsamı anında görünür."
       },
       {
         "id": "iliski-yonetimi",
@@ -92,7 +92,7 @@
         "accent": "indigo",
         "icon": "Tags",
         "title": "Sözleşme tipi sınıflandırması",
-        "description": "OLA, tedarikçi ve SLA gibi farklı sözleşme türleri standart sınıflandırma altında yönetilir. Raporlama ve filtreleme tutarlı, tek bir yapı üzerinden yapılır."
+        "description": "OLA, tedarikçi ve Hizmet Seviyesi gibi farklı sözleşme türleri standart sınıflandırma altında yönetilir. Raporlama ve filtreleme tutarlı, tek bir yapı üzerinden yapılır."
       },
       {
         "id": "rapor",
@@ -100,7 +100,7 @@
         "accent": "emerald",
         "icon": "LineChart",
         "title": "Sözleşme raporları",
-        "description": "Aktif/pasif sözleşme sayıları, yaklaşan yenilemeler, tedarikçi performansı ve SLA uyumu tek panelden raporlanır. Stratejik kararlar veriye dayandırılır."
+        "description": "Aktif/pasif sözleşme sayıları, yaklaşan yenilemeler, tedarikçi performansı ve Hizmet Seviyesi uyumu tek panelden raporlanır. Stratejik kararlar veriye dayandırılır."
       }
     ]
   },
@@ -184,13 +184,13 @@
         "id": "ne-saglar",
         "icon": "FileSignature",
         "question": "ServiceCore Sözleşme Yönetimi ne sağlar?",
-        "answer": "ServiceCore Sözleşme Yönetimi Modülü, kurum içi, tedarikçi ve müşteri hizmet sözleşmelerinizi tek bir merkezden yönetmenizi sağlar. Sözleşmelerin yaşam döngüsünü uçtan uca takip ederek hem operasyonel verimliliğinizi artırır hem de riskleri minimize eder. Öne çıkan yetenekler: kurum içi destek (OLA), tedarikçi sözleşmeleri, müşteri hizmet (SLA), otomatik bildirimler, yenileme & uzatma, dosya & ek yönetimi, onay süreçleri, finansal takip ve ilişkili sözleşmeler."
+        "answer": "ServiceCore Sözleşme Yönetimi Modülü, kurum içi, tedarikçi ve müşteri hizmet sözleşmelerinizi tek bir merkezden yönetmenizi sağlar. Sözleşmelerin yaşam döngüsünü uçtan uca takip ederek hem operasyonel verimliliğinizi artırır hem de riskleri minimize eder. Öne çıkan yetenekler: kurum içi destek (OLA), tedarikçi sözleşmeleri, müşteri hizmet, otomatik bildirimler, yenileme & uzatma, dosya & ek yönetimi, onay süreçleri, finansal takip ve ilişkili sözleşmeler."
       },
       {
         "id": "ola-sla-tedarikci",
         "icon": "Tags",
-        "question": "OLA, SLA ve tedarikçi sözleşmesi farkları nedir?",
-        "answer": "Kurum İçi Destek Sözleşmeleri (OLA), BT birimi ile diğer departmanlar arasındaki hizmet anlaşmalarını düzenler ve iç süreçlerde şeffaflık sağlar. Tedarikçi Sözleşmeleri, malzeme/hizmet/lisans anlaşmalarını kaydeder ve tedarikçi performansını izler. Müşteri Hizmet Sözleşmeleri (SLA) ise iç ve dış müşteriler için hizmet seviyelerini tanımlar ve profesyonel bir yönetim standardı oluşturur. Üçü de aynı modülde standart sınıflandırma altında yönetilir."
+        "question": "OLA, Hizmet Seviyesi ve tedarikçi sözleşmesi farkları nedir?",
+        "answer": "Kurum İçi Destek Sözleşmeleri (OLA), BT birimi ile diğer departmanlar arasındaki hizmet anlaşmalarını düzenler ve iç süreçlerde şeffaflık sağlar. Tedarikçi Sözleşmeleri, malzeme/hizmet/lisans anlaşmalarını kaydeder ve tedarikçi performansını izler. Müşteri Hizmet Sözleşmeleri ise iç ve dış müşteriler için hizmet seviyelerini tanımlar ve profesyonel bir yönetim standardı oluşturur. Üçü de aynı modülde standart sınıflandırma altında yönetilir."
       },
       {
         "id": "yenileme",
@@ -202,7 +202,7 @@
         "id": "onay-finansal",
         "icon": "CheckCircle2",
         "question": "Onay süreci ve finansal takip nasıl yürür?",
-        "answer": "Sözleşmeler kurul veya belirlenen yetkili kişilere onaya gönderilebilir; onay/red durumları süreç akışına otomatik yansır. Finansal tarafta maliyet girişleri yapılabilir, bütçe ve harcama takibi sağlanır. Sözleşme başına maliyet kaydedilir; tedarikçi performansı ve müşteri SLA uyumu tek panelden raporlanır. Stratejik kararlar veriye dayandırılır."
+        "answer": "Sözleşmeler kurul veya belirlenen yetkili kişilere onaya gönderilebilir; onay/red durumları süreç akışına otomatik yansır. Finansal tarafta maliyet girişleri yapılabilir, bütçe ve harcama takibi sağlanır. Sözleşme başına maliyet kaydedilir; tedarikçi performansı ve müşteri Hizmet Seviyesi uyumu tek panelden raporlanır. Stratejik kararlar veriye dayandırılır."
       },
       {
         "id": "iliskili-gecmis",
@@ -214,7 +214,7 @@
   },
   "cta": {
     "title": "İşinizi bir üst seviyeye taşıyın, sözleşmelerde tam kontrol kurun.",
-    "description": "OLA, tedarikçi ve SLA sözleşmelerini tek platformda yöneten ServiceCore Sözleşme Yönetimi modülünü canlı demoda inceleyin; zamandan tasarruf edin, süreçlerinizde tam kontrol sağlayın.",
+    "description": "OLA, tedarikçi ve Hizmet Seviyesi sözleşmelerini tek platformda yöneten ServiceCore Sözleşme Yönetimi modülünü canlı demoda inceleyin; zamandan tasarruf edin, süreçlerinizde tam kontrol sağlayın.",
     "primaryLabel": "Hemen Demo Alın",
     "primaryHref": "/demo",
     "secondaryLabel": "Bize Ulaşın",

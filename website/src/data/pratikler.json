@@ -41,7 +41,7 @@
         { "title": "Problem Yönetimi", "desc": "Olayların kök nedenlerini belirleyerek tekrarlayan sorunların önlenmesini sağlar.", "link": "https://gamma.app/docs/Problem-Yonetimi-Pratigi-30gha5mimnc69rx" },
         { "title": "Sürüm Yönetimi", "desc": "Yeni veya değişen hizmet bileşenlerinin kontrollü ve güvenli canlıya alınmasını sağlar.", "link": "" },
         { "title": "Hizmet Katalog Yönetimi", "desc": "Sunulan hizmetlerin anlaşılır biçimde tanımlanmasını ve erişilebilir olmasını sağlar.", "link": "https://gamma.app/docs/Servis-Katalogu-Yonetimi-3eihdf9i639i7h4" },
-        { "title": "Hizmet Seviyesi Yönetimi", "desc": "Hizmet performansının anlaşılan seviyelerde (SLA) sunulmasını ve izlenmesini sağlar.", "link": "https://gamma.app/docs/Servis-Seviye-Yonetimi-tyr3wf4d39rtopb" },
+        { "title": "Hizmet Seviyesi Yönetimi", "desc": "Hizmet performansının anlaşılan seviyelerde sunulmasını ve izlenmesini sağlar.", "link": "https://gamma.app/docs/Servis-Seviye-Yonetimi-tyr3wf4d39rtopb" },
         { "title": "Hizmet Talep Yönetimi", "desc": "Standart kullanıcı taleplerinin etkin ve hızlı bir şekilde karşılanmasını sağlar.", "link": "https://gamma.app/docs/ITIL4-Servis-Talep-Yonetimi-uhxh9uoin3wbhxw" },
         { "title": "Hizmet Doğrulama ve Test", "desc": "Hizmetlerin gereksinimleri karşıladığını canlıya alınmadan önce doğrular.", "link": "" },
         { "title": "Hizmet Konfigürasyon Yönetimi", "desc": "Hizmet bileşenleri arasındaki ilişkilerin CMDB üzerinden yönetimini sağlar.", "link": "https://gamma.app/docs/Servis-Konfigurasyon-Yonetimi-Uygulamas-bz4eyj3x4in3dze" },

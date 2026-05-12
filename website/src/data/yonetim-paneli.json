@@ -61,15 +61,15 @@
   ],
   "bento": {
     "sectionTitle": "Gelişmiş Ayarlar — operasyonu kalibre eden yetkinlikler",
-    "sectionSubtitle": "SLA politikalarından otomasyona, anketten zamanlanmış olaylara ve global statüslere kadar ServiceCore'u kuruma uyarlayan ileri yapılandırma yetenekleri.",
+    "sectionSubtitle": "Hizmet Seviyesi politikalarından otomasyona, anketten zamanlanmış olaylara ve global statüslere kadar ServiceCore'u kuruma uyarlayan ileri yapılandırma yetenekleri.",
     "items": [
       {
         "id": "sla-kapatma",
         "size": "wide",
         "accent": "blue",
         "icon": "Gauge",
-        "title": "SLA politikaları ve kapatma kuralları",
-        "description": "Hizmet düzeyi anlaşmaları (SLA) için politikalar oluşturulur; olayların ve kayıtların nasıl, ne zaman kapatılacağı kurallarla belirlenir. Servis bazında kalibre edilen SLA'lar, otomatik kapatma kurallarıyla birleşince operasyonel disiplin standart hale gelir.",
+        "title": "Hizmet Seviyesi politikaları ve kapatma kuralları",
+        "description": "Hizmet düzeyi anlaşmaları için politikalar oluşturulur; olayların ve kayıtların nasıl, ne zaman kapatılacağı kurallarla belirlenir. Servis bazında kalibre edilen Hizmet Seviyeleri, otomatik kapatma kurallarıyla birleşince operasyonel disiplin standart hale gelir.",
         "imageKey": "panel-4"
       },
       {
@@ -176,7 +176,7 @@
         "subtitle": "Kurumsal ihtiyaçlarınıza göre özelleştirin",
         "tone": "amber",
         "items": [
-          { "title": "SLA Politikaları", "desc": "Performans ölçümü ve hizmet seviyesi yönetimi" },
+          { "title": "Hizmet Seviyesi Politikaları", "desc": "Performans ölçümü ve hizmet seviyesi yönetimi" },
           { "title": "Kapatma Kuralları", "desc": "Kayıtların kapatılma koşulları" },
           { "title": "Otomasyon Yönetimi", "desc": "Esnek otomasyon kuralları" },
           { "title": "Ortak Alanlar & Özel Ek Alanlar", "desc": "Çağrı ve süreçlere özel alanlar" },
@@ -208,7 +208,7 @@
         "tone": "rose",
         "items": [
           { "title": "Müşteriler & Kişiler", "desc": "Dış müşteri hesapları ve yetkili kişiler" },
-          { "title": "Müşteri Hizmet Sözleşmeleri", "desc": "SLA ve hizmet kapsamı yönetimi" },
+          { "title": "Müşteri Hizmet Sözleşmeleri", "desc": "Hizmet Seviyesi ve hizmet kapsamı yönetimi" },
           { "title": "Hizmet Planları", "desc": "Paket bazlı hizmet tanımları" }
         ]
       }
@@ -245,14 +245,14 @@
       {
         "id": "sla-otomasyon",
         "icon": "Zap",
-        "question": "SLA, otomasyon ve gelişmiş yetkinlikler neler?",
-        "answer": "Gelişmiş Ayarlar altında 12 başlık vardır: SLA Politikaları (performans ölçümü), Kapatma Kuralları, Otomasyon Yönetimi (esnek koşul-aksiyon), Ortak ve Özel Ek Alanlar, Global Durumlar (tüm süreçlerde ortak statü dili), Anketler (memnuniyet ölçümü), Sisteme Genel Bakış, Entegrasyonlar, İş Akışı Yönetimi, Dil Kaynağı Ayarları, Zamanlanmış Olaylar & İstekler ve Otomatik Teknisyen Atama. Bu yetkinlikler ServiceCore'u kuruma birebir uyarlar."
+        "question": "Hizmet Seviyesi, otomasyon ve gelişmiş yetkinlikler neler?",
+        "answer": "Gelişmiş Ayarlar altında 12 başlık vardır: Hizmet Seviyesi Politikaları (performans ölçümü), Kapatma Kuralları, Otomasyon Yönetimi (esnek koşul-aksiyon), Ortak ve Özel Ek Alanlar, Global Durumlar (tüm süreçlerde ortak statü dili), Anketler (memnuniyet ölçümü), Sisteme Genel Bakış, Entegrasyonlar, İş Akışı Yönetimi, Dil Kaynağı Ayarları, Zamanlanmış Olaylar & İstekler ve Otomatik Teknisyen Atama. Bu yetkinlikler ServiceCore'u kuruma birebir uyarlar."
       }
     ]
   },
   "cta": {
     "title": "ServiceCore'u kurumunuza Yönetim Paneli ile uyarlayın.",
-    "description": "Genel ayarlardan organizasyona, varlık konfigürasyonundan SLA politikaları ve otomasyona kadar tüm yapılandırma yetkinliklerini canlı demoda inceleyin.",
+    "description": "Genel ayarlardan organizasyona, varlık konfigürasyonundan Hizmet Seviyesi politikaları ve otomasyona kadar tüm yapılandırma yetkinliklerini canlı demoda inceleyin.",
     "primaryLabel": "Hemen Demo Alın",
     "primaryHref": "/demo",
     "secondaryLabel": "Bize Ulaşın",

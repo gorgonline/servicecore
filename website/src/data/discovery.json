@@ -266,7 +266,7 @@
   "packages": [
     { "name": "Starter", "summary": "1 probe, 100 asset, network + SNMP" },
     { "name": "Pro", "summary": "5 probe, 1.000 asset, tüm tarama tipleri, agent dahil" },
-    { "name": "Enterprise", "summary": "Sınırsız probe, sınırsız asset, MSP modu, SLA, özel destek" }
+    { "name": "Enterprise", "summary": "Sınırsız probe, sınırsız asset, MSP modu, Hizmet Seviyesi, özel destek" }
   ],
   "version": "2.1.7"
 }

@@ -139,7 +139,7 @@ export default function ServisOtomasyonuPage() {
                 </div>
                 {[
                   { id: "R042", name: "Kritik öncelik → L2 ata", mod: "Olay", action: "Atama + SMS", time: "120 ms", c: "text-(--color-accent-emerald-light)" },
-                  { id: "R028", name: "SLA &lt; 30dk → eskalasyon", mod: "İstek", action: "Webhook + Bildirim", time: "84 ms", c: "text-(--color-accent-emerald-light)" },
+                  { id: "R028", name: "Hizmet Seviyesi &lt; 30dk → eskalasyon", mod: "İstek", action: "Webhook + Bildirim", time: "84 ms", c: "text-(--color-accent-emerald-light)" },
                   { id: "R017", name: "Kategori = VIP → öncelik+1", mod: "Etkileşim", action: "Alan güncelle", time: "45 ms", c: "text-(--color-accent-emerald-light)" },
                   { id: "R009", name: "Mesai dışı → nöbetçi", mod: "Olay", action: "Atama + Mail", time: "98 ms", c: "text-(--color-accent-emerald-light)" },
                 ].map((r, i) => (
@@ -195,7 +195,7 @@ export default function ServisOtomasyonuPage() {
                       {[
                         { id: "R042", name: "Kritik öncelik atama", on: true, sel: true },
                         { id: "R038", name: "VIP otomatik etiket", on: true },
-                        { id: "R028", name: "SLA eşik eskalasyon", on: true },
+                        { id: "R028", name: "Hizmet Seviyesi eşik eskalasyon", on: true },
                         { id: "R024", name: "Tekrar talep birleştir", on: true },
                         { id: "R017", name: "Kategori → grup yönlendir", on: true },
                         { id: "R012", name: "Mesai dışı nöbetçi", on: true },
@@ -494,7 +494,7 @@ export default function ServisOtomasyonuPage() {
                         VEYA
                       </span>
                       <span className="text-[11px] text-white flex-1">
-                        SLA &lt; 1sa
+                        Hizmet Seviyesi &lt; 1sa
                       </span>
                     </div>
                     <div className="flex flex-col gap-1.5 pl-5 border-l border-cyan-500/20 ml-3">
@@ -621,7 +621,7 @@ export default function ServisOtomasyonuPage() {
                   { label: "Kayıt oluşturuldu", icon: Plus },
                   { label: "Alan değişti", icon: RefreshCw },
                   { label: "Durum güncellendi", icon: GitBranch },
-                  { label: "SLA eşiği aşıldı", icon: Bell },
+                  { label: "Hizmet Seviyesi eşiği aşıldı", icon: Bell },
                   { label: "Zaman bazlı koşul", icon: Workflow },
                 ].map((row, i) => {
                   const Icon = row.icon;
@@ -798,7 +798,7 @@ export default function ServisOtomasyonuPage() {
                 {[
                   "Kritik olay eskalasyonu",
                   "Otomatik atama",
-                  "SLA ihlal uyarısı",
+                  "Hizmet Seviyesi ihlal uyarısı",
                   "Kategori bazlı yönlendirme",
                   "Durum geçiş bildirimi",
                 ].map((rule, i) => (

@@ -204,7 +204,7 @@ export function ReportCoreMock({ accent: accentName }: { accent: string }) {
               <div className="mt-2 space-y-1.5">
                 <DataSource label="Olay Yönetimi · 9.482 kayıt" />
                 <DataSource label="CMDB · servis kataloğu" />
-                <DataSource label="SLA · çözüm süreleri" />
+                <DataSource label="Hizmet Seviyesi · çözüm süreleri" />
               </div>
             </div>
           </div>

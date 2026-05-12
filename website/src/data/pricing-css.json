@@ -29,8 +29,8 @@
         "description": "Olay Yönetimi,hizmetlerinin kesintiye uğradığı ya da performansının düştüğü durumları ele alır ve bu olayların en kısa sürede çözülmesini hedefler. Kullanıcılar veya sistemler tarafından bildirilen olaylar kaydedilir, sınıflandırılır, önceliklendirilir ve çözüm süreci başlatılır. Amaç, hizmetlerin normale döndürülerek iş üzerindeki olumsuz etkilerin en aza indirilmesidir."
       },
       {
-        "title": "SLA / Servis Seviye Yönetim Modülü",
-        "description": "Geliştiricilerimiz tarafından icat edilen önceliklendirme kural motoru tarafından sağlanan yüksek düzeyde özelleştirilebilir ve gelişmiş SLA otomasyon yetenekleri."
+        "title": "Servis Seviye Yönetim Modülü",
+        "description": "Geliştiricilerimiz tarafından icat edilen önceliklendirme kural motoru tarafından sağlanan yüksek düzeyde özelleştirilebilir ve gelişmiş Hizmet Seviyesi otomasyon yetenekleri."
       },
       {
         "title": "Görev Yönetim Modülü",
@@ -82,7 +82,7 @@
       },
       {
         "title": "Genel Yönetim Modülü",
-        "description": "Servicecore'un esnek ve kapsamlı ayar seçenekleriyle iş süreçlerinizi kolaylaştırın! Genel ayarlardan SLA politikalarına, varlık yönetiminden hizmet kataloglarına kadar her detayı özelleştirerek operasyonlarınızı optimize edin ve üstün kullanıcı deneyimi sunun. Tüm departmanlar için entegre, otomatik ve etkili bir çözümle tanışın!"
+        "description": "Servicecore'un esnek ve kapsamlı ayar seçenekleriyle iş süreçlerinizi kolaylaştırın! Genel ayarlardan Hizmet Seviyesi politikalarına, varlık yönetiminden hizmet kataloglarına kadar her detayı özelleştirerek operasyonlarınızı optimize edin ve üstün kullanıcı deneyimi sunun. Tüm departmanlar için entegre, otomatik ve etkili bir çözümle tanışın!"
       },
       {
         "title": "Sınırsız AD Senkronizasyonu",
@@ -94,7 +94,7 @@
       },
       {
         "title": "İş Saatleri Yönetimi",
-        "description": "İş saatleri ile sistemde SLA'leri yönetebilir. İş saatlerine göre gruplar oluşturabilirsiniz."
+        "description": "İş saatleri ile sistemde Hizmet Seviyeleri yönetebilir. İş saatlerine göre gruplar oluşturabilirsiniz."
       },
       {
         "title": "Hazır Cevaplar",

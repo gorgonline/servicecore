@@ -31,7 +31,7 @@
       "bullets": [
         "Ön tanımlı talep formları servise göre özelleştirilir; her servis için yalnızca gerekli alanlar sorulur, kullanıcı deneyimi sade ve hızlı kalır.",
         "Onay aşamaları ön tanımlı olarak kurgulanır; kim, hangi koşulda, hangi sıra ile onaylayacak ilk baştan netleşir ve manuel hatırlatma yükü ortadan kalkar.",
-        "Servis seviye anlaşmaları (SLA) servis bazında düzenlenir; her servisin yanıt ve çözüm süresi kendi kritikliğine göre yönetilir."
+        "Servis seviye anlaşmaları servis bazında düzenlenir; her servisin yanıt ve çözüm süresi kendi kritikliğine göre yönetilir."
       ]
     },
     {
@@ -50,7 +50,7 @@
   ],
   "bento": {
     "sectionTitle": "Servis katalog disiplinini güçlendiren yetkinlikler",
-    "sectionSubtitle": "Gelişmiş otomasyon, çok katmanlı kataloglar ve servise özel SLA ile uçtan uca dijital servis sunumunu mümkün kılan entegre yetenekler.",
+    "sectionSubtitle": "Gelişmiş otomasyon, çok katmanlı kataloglar ve servise özel Hizmet Seviyesi ile uçtan uca dijital servis sunumunu mümkün kılan entegre yetenekler.",
     "items": [
       {
         "id": "talep-formu",
@@ -73,8 +73,8 @@
         "size": "normal",
         "accent": "cyan",
         "icon": "Clock",
-        "title": "Servis bazında SLA",
-        "description": "Servis seviye anlaşmaları her servis için ayrı ayrı düzenlenir; yanıt süresi, çözüm süresi ve eskalasyon kuralları servisin kritikliğine göre kalibre edilir. Tek tip SLA dayatması yerine gerçeğe uyan taahhütler kurulur."
+        "title": "Servis bazında Hizmet Seviyesi",
+        "description": "Servis seviye anlaşmaları her servis için ayrı ayrı düzenlenir; yanıt süresi, çözüm süresi ve eskalasyon kuralları servisin kritikliğine göre kalibre edilir. Tek tip Hizmet Seviyesi dayatması yerine gerçeğe uyan taahhütler kurulur."
       },
       {
         "id": "is-akisi",

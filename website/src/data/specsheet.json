@@ -29,7 +29,7 @@
       { "no": 9, "title": "Sürekli İyileştirme Yönetimi", "desc": "Hizmet ve süreç iyileştirme taleplerinin kaydı ve takibi bu modülde yönetilir." },
       { "no": 10, "title": "Ölçme ve Raporlama", "desc": "KPI, dashboard ve raporlama araçları ile performans ölçümü bu modülde sunulur." },
       { "no": 11, "title": "Hizmet Katalog Yönetimi", "desc": "Sunulan hizmetlerin kataloğu, tanımları ve talep süreçleri bu modülde yönetilir." },
-      { "no": 12, "title": "Hizmet Seviye Yönetimi", "desc": "SLA tanımları, hedefler ve eskalasyon kuralları bu modülde yapılandırılır." },
+      { "no": 12, "title": "Hizmet Seviye Yönetimi", "desc": "Hizmet Seviyesi tanımları, hedefler ve eskalasyon kuralları bu modülde yapılandırılır." },
       { "no": 13, "title": "Hizmet Otomasyonu", "desc": "Kod yazmadan otomasyon kuralları oluşturulabilir; tetikleyiciler ve aksiyonlar bu modülde tanımlanır." },
       { "no": 14, "title": "Hizmet İlişkileri Yönetimi", "desc": "Müşteri ve tedarikçi ilişkileri, sözleşmeler ve hizmet bağlantıları bu modülde takip edilir." },
       { "no": 15, "title": "Görev Yönetimi", "desc": "Görev oluşturma, atama, Kanban/Gantt görünümleri ve kuyruk yönetimi bu modülde sunulur." },
@@ -136,7 +136,7 @@
         "Olaylarla ilgili ileri tarihli tekrarlanan kayıtlar açılabilmekte, otomatik üretilen ve atanan olaylar belli frekanslarda tekrarlanacak şekilde planlanabilmektedir.",
         "Olay kategorilerinde alt kırılım limiti bulunmamaktadır; sınırsız sayıda alt kırılım kontrol panelinden tanımlanabilmektedir.",
         "Olaylar içerisinden diğer teknisyen ve kullanıcılarla yazışma yapılabilmekte; teknisyenler arası yazışmalar görünür veya gizli notlar olarak kaydedilebilmektedir.",
-        "Olaylar SLA ve iş kuralları otomasyonundan gelen otomatik tetikleyicilerle entegredir."
+        "Olaylar Hizmet Seviyesi ve iş kuralları otomasyonundan gelen otomatik tetikleyicilerle entegredir."
       ]
     },
     {
@@ -285,7 +285,7 @@
         "Çok katmanlı hizmet katalogları kolayca oluşturulabilmektedir.",
         "Her hizmet için ön tanımlı talep formları ve özel alanlar tanımlanabilmektedir.",
         "Onay aşamaları hizmet bazında yapılandırılabilmektedir.",
-        "SLA hedefleri hizmet bazında düzenlenebilmektedir.",
+        "Hizmet Seviyesi hedefleri hizmet bazında düzenlenebilmektedir.",
         "Her hizmetin arkasında ön tanımlı iş akışları tanımlanabilmektedir.",
         "Otomatik görev dağıtımı ile servis kalitesi standardize edilmektedir.",
         "Yetki bazlı katalog görüntüleme son kullanıcı portalında sunulmaktadır.",
@@ -296,13 +296,13 @@
       "id": "modul-sla",
       "title": "Hizmet Seviye Yönetimi (SLM)",
       "items": [
-        "SLA Policy nesneleri tanımlanabilmektedir.",
-        "Çok katmanlı SLA (yanıt, ara hedef, çözüm) yapısı desteklidir.",
+        "Hizmet Seviyesi Policy nesneleri tanımlanabilmektedir.",
+        "Çok katmanlı Hizmet Seviyesi (yanıt, ara hedef, çözüm) yapısı desteklidir.",
         "Olay ve istek modülleriyle entegre kural bazlı önceliklendirme yapılmaktadır.",
-        "Çalışma saatleri, tatiller ve mesai saatleri SLA hesaplamasında dikkate alınmaktadır.",
+        "Çalışma saatleri, tatiller ve mesai saatleri Hizmet Seviyesi hesaplamasında dikkate alınmaktadır.",
         "Due Date otomatik hesaplanarak ilgili kayıtın alanına yazılmaktadır.",
-        "SLA ihlali yaklaşan kayıtlar için eskalasyon kuralları çalıştırılmaktadır.",
-        "SLA uyum, ihlal ve eskalasyon raporları alınabilmektedir."
+        "Hizmet Seviyesi ihlali yaklaşan kayıtlar için eskalasyon kuralları çalıştırılmaktadır.",
+        "Hizmet Seviyesi uyum, ihlal ve eskalasyon raporları alınabilmektedir."
       ]
     },
     {
@@ -363,7 +363,7 @@
   "bakim": [
     "Üretici, ürünün canlı kullanım sırasında ortaya çıkabilecek hata, arıza ve çözüm gerektiren tüm konularda destek vermektedir.",
     "Destek hizmetleri 7/24 e-posta, telefon ve ServiceCore destek portalı üzerinden sunulmaktadır.",
-    "Kritik öncelikli olay ve arızalar için hızlı müdahale (SLA tabanlı) çözüm taahhüdü verilmektedir.",
+    "Kritik öncelikli olay ve arızalar için hızlı müdahale (Hizmet Seviyesi tabanlı) çözüm taahhüdü verilmektedir.",
     "Sürüm güncellemeleri sürekli dağıtım (Continuous Delivery) ile uzaktan otomatik yapılmaktadır.",
     "Yamalar ve hata düzeltmeleri kurum onayıyla planlı bakım pencerelerinde uygulanabilmektedir.",
     "Yıllık bakım anlaşması kapsamında tüm yeni özellikler, sürüm yükseltmeleri ve teknik destek hizmetleri sağlanmaktadır.",

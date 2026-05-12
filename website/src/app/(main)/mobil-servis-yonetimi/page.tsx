@@ -144,7 +144,7 @@ export default function MobilServisYonetimiPage() {
             <div className="relative h-full hidden md:flex flex-col justify-center gap-3 max-w-xs">
               {[
                 { label: "Açık olaylar", value: "12", tone: "blue" },
-                { label: "SLA uyumu", value: "94%", tone: "emerald" },
+                { label: "Hizmet Seviyesi uyumu", value: "94%", tone: "emerald" },
                 { label: "Bekleyen onay", value: "3", tone: "orange" },
               ].map((row, i) => (
                 <div
@@ -247,7 +247,7 @@ export default function MobilServisYonetimiPage() {
                 },
                 {
                   icon: Clock,
-                  title: "SLA uyarısı",
+                  title: "Hizmet Seviyesi uyarısı",
                   desc: "30dk kaldı",
                   tone: "orange",
                 },
@@ -402,7 +402,7 @@ export default function MobilServisYonetimiPage() {
                         <Bell className="w-3 h-3 text-red-400 mt-0.5 shrink-0 animate-pulse" />
                         <div className="flex flex-col flex-1 min-w-0">
                           <span className="text-[9px] font-bold text-white">
-                            SLA ihlali yakın
+                            Hizmet Seviyesi ihlali yakın
                           </span>
                           <span className="text-[8px] text-(--color-text-muted)">
                             #INC-2401 · 12dk kaldı
@@ -738,7 +738,7 @@ export default function MobilServisYonetimiPage() {
                 <div className="grid grid-cols-2 gap-2">
                   <div className="flex flex-col gap-1 px-3 py-2.5 rounded-lg bg-purple-500/10 border border-purple-500/20">
                     <span className="text-[9px] font-medium uppercase tracking-wider text-(--color-text-muted)">
-                      SLA Uyumu
+                      Hizmet Seviyesi Uyumu
                     </span>
                     <span className="text-lg font-bold text-(--color-accent-purple-light)">
                       94%

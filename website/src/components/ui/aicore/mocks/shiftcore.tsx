@@ -320,7 +320,7 @@ export function ShiftCoreMock({ accent: accentName }: { accent: string }) {
           <TitleBar icon={<Clock className="w-3.5 h-3.5" />} title="Bu Çeyrek · Shift" accent={accent} />
           <div className="px-4 py-3 grid grid-cols-2 gap-2">
             <KpiTile label="Plan" value="36" trend="hafta · otomatik" trendTone="up" />
-            <KpiTile label="SLA uyum" value="+8%" trend="vardiya bazlı" trendTone="up" />
+            <KpiTile label="Hizmet Seviyesi uyum" value="+8%" trend="vardiya bazlı" trendTone="up" />
             <KpiTile label="Tükenme" value="−42%" trend="uyarı sonrası" trendTone="down" />
             <KpiTile label="Fazla mesai" value="−24%" trend="çeyrek" trendTone="down" />
           </div>

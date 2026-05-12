@@ -65,6 +65,7 @@ import {
   AudioLines,
   PhoneCall,
   Wallet,
+  LifeBuoy,
   type LucideIcon
 } from "lucide-react";
 
@@ -83,7 +84,7 @@ const modules = [
   { name: "Servis Konfigürasyon Yönetimi", icon: Settings, desc: "Sistem bileşenlerinin haritasını çıkarın.", href: "/servis-konfigurasyon-yonetimi" },
   { name: "Sürekli İyileştirme", icon: TrendingUp, desc: "Hizmet kalitesini her adımda artırın.", href: "/surekli-iyilestirme" },
   { name: "Servis Katalog Yönetimi", icon: BookOpen, desc: "Kullanıcılara hizmet menüsü sunun.", href: "/servis-katalog-yonetimi" },
-  { name: "Servis Seviye Yönetimi", icon: Activity, desc: "SLA taahhütlerinizi güvenceye alın.", href: "/servis-seviye-yonetimi" },
+  { name: "Servis Seviye Yönetimi", icon: Activity, desc: "Hizmet Seviyesi taahhütlerinizi güvenceye alın.", href: "/servis-seviye-yonetimi" },
   { name: "Servis Otomasyonu", icon: Terminal, desc: "Tekrarlayan işleri makinelere devredin.", href: "/servis-otomasyonu" },
   { name: "Raporlama Yönetimi", icon: LineChart, desc: "Veriye dayalı kararlar alın.", href: "/raporlama-yonetimi" },
   { name: "Görev Yönetimi", icon: CheckCircle2, desc: "Ekipler arası iş atamalarını izleyin.", href: "/gorev-yonetimi" },
@@ -96,7 +97,7 @@ const modules = [
   { name: "İş Akışı Yönetimi", icon: GitBranch, desc: "Süreçlerinizi sürükle bırak diyagramlarla modelleyin.", href: "/is-akisi-yonetimi" },
   { name: "Entegrasyon Modülü", icon: LinkIcon, desc: "API aracılığıyla veri alışverişi yapın.", href: "/entegrasyon-yonetimi" },
   { name: "Low Code Geliştirme Modülü", icon: Code, desc: "Özel formlar ve süreç tasarımları oluşturun.", href: "/low-code-gelistirme" },
-  { name: "Sözleşme Yönetimi", icon: FileSignature, desc: "SLA'leri ve sözleşmeleri yönetin.", href: "/sozlesme-yonetimi" },
+  { name: "Sözleşme Yönetimi", icon: FileSignature, desc: "Hizmet Seviyeleri ve sözleşmeleri yönetin.", href: "/sozlesme-yonetimi" },
 ];
 
 const solutionsSubmenu = [
@@ -176,6 +177,7 @@ const resourcesSubmenu = [
   { name: "Eğitimler", icon: GraduationCap, desc: "Sertifika ve eğitim programları.", href: "/egitimler" },
   { name: "ITIL4 Pratikleri", icon: ScrollText, desc: "ITIL4 yaşam döngüsü ve pratik uygulamaları.", href: "/itil4-pratikleri" },
   { name: "Workshoplar", icon: Hammer, desc: "Uygulamalı atölye çalışmaları ve süreç workshopları.", href: "/workshoplar" },
+  { name: "Destek Kanalları", icon: LifeBuoy, desc: "Premium, kurumsal ve global destek seviyeleri.", href: "/destek" },
 ];
 
 export default function Navbar() {

@@ -32,7 +32,7 @@
       "name": "Customer Service Support",
       "name_tr": "Müşteri Hizmetleri Yönetimi",
       "tagline": "Müşteri taleplerini, iletişim kanallarını ve memnuniyet süreçlerini tek panelde yönetin.",
-      "description": "Çağrı, e-posta, sohbet ve sosyal medya kanallarından gelen müşteri etkileşimlerini birleştirin. Self-servis portal, bilgi bankası ve SLA takibi ile müşteri deneyimini standartlaştırın.",
+      "description": "Çağrı, e-posta, sohbet ve sosyal medya kanallarından gelen müşteri etkileşimlerini birleştirin. Self-servis portal, bilgi bankası ve Hizmet Seviyesi takibi ile müşteri deneyimini standartlaştırın.",
       "icon": "Headphones",
       "accent": "cyan",
       "modules": ["etkilesim-yonetimi", "self-servis-portal", "bilgi-bankasi", "servis-katalog-yonetimi", "servis-seviye-yonetimi"]
@@ -87,7 +87,7 @@
       "name": "Field Service Management",
       "name_tr": "Saha Servis Yönetimi",
       "tagline": "Saha ekiplerine mobil iş emri, rota ve gerçek zamanlı görev takibi.",
-      "description": "Mobil uygulama ile saha teknisyenlerine iş emri atayın, GPS ile rotayı optimize edin, müşteri imzasıyla işi kapatın. Stok, sözleşme ve SLA takibi mobil ve masaüstü arasında senkron çalışır.",
+      "description": "Mobil uygulama ile saha teknisyenlerine iş emri atayın, GPS ile rotayı optimize edin, müşteri imzasıyla işi kapatın. Stok, sözleşme ve Hizmet Seviyesi takibi mobil ve masaüstü arasında senkron çalışır.",
       "icon": "Truck",
       "accent": "pink",
       "modules": ["mobil-servis-yonetimi", "gorev-yonetimi", "varlik-yonetimi", "sozlesme-yonetimi", "servis-seviye-yonetimi"]

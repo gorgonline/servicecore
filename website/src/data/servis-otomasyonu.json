@@ -66,7 +66,7 @@
         "accent": "orange",
         "icon": "Zap",
         "title": "Çoklu tetikleyici desteği",
-        "description": "Kayıt oluşturulduğunda, alan değiştiğinde, durum güncellendiğinde, SLA eşiği aşıldığında veya zaman bazlı koşul karşılandığında SARE devreye girer. Aynı kural birden fazla tetikleyici ile tanımlanabilir."
+        "description": "Kayıt oluşturulduğunda, alan değiştiğinde, durum güncellendiğinde, Hizmet Seviyesi eşiği aşıldığında veya zaman bazlı koşul karşılandığında SARE devreye girer. Aynı kural birden fazla tetikleyici ile tanımlanabilir."
       },
       {
         "id": "aksiyon-paleti",

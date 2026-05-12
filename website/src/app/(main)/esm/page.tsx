@@ -132,7 +132,7 @@ export default function EsmPage() {
               {[
                 { icon: Activity, label: "Toplam Talep", value: "542", trend: "+8%", tone: "blue" },
                 { icon: Users, label: "Aktif Kullanıcı", value: "1.284", trend: "+124", tone: "purple" },
-                { icon: TrendingUp, label: "SLA Uyumu", value: "%94", trend: "+2.1", tone: "emerald" },
+                { icon: TrendingUp, label: "Hizmet Seviyesi Uyumu", value: "%94", trend: "+2.1", tone: "emerald" },
                 { icon: Clock, label: "Ort. Çözüm", value: "23dk", trend: "−6dk", tone: "amber", down: true },
               ].map((m, i) => {
                 const Icon = m.icon;
@@ -197,7 +197,7 @@ export default function EsmPage() {
                       <div className="flex flex-col gap-0.5">
                         <span className="text-xs font-bold text-white">{d.name}</span>
                         <span className="text-[8px] font-mono text-(--color-text-muted)">{d.users} kullanıcı</span>
-                        <span className="text-[8px] font-mono text-white">SLA %{d.sla}</span>
+                        <span className="text-[8px] font-mono text-white">Hizmet Seviyesi %{d.sla}</span>
                       </div>
                     </div>
                   );
@@ -504,7 +504,7 @@ export default function EsmPage() {
                           { icon: ListChecks, label: "Hizmet Kataloğu", value: "18 hizmet", tone: "blue" },
                           { icon: Workflow, label: "İş Akışları", value: "12 aktif", tone: "purple" },
                           { icon: Users, label: "Roller & Yetkiler", value: "8 rol", tone: "cyan" },
-                          { icon: TrendingUp, label: "SLA Politikaları", value: "Premium · P1-P4", tone: "emerald" },
+                          { icon: TrendingUp, label: "Hizmet Seviyesi Politikaları", value: "Premium · P1-P4", tone: "emerald" },
                           { icon: MonitorSmartphone, label: "Self-Servis Portal", value: "etkin", tone: "indigo" },
                         ].map((r, i) => {
                           const Icon = r.icon;

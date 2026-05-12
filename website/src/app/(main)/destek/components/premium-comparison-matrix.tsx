@@ -26,7 +26,7 @@ export function PremiumComparisonMatrix() {
            className="text-center mb-16 max-w-3xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            SLA <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light)">Paket Karşılaştırması</span>
+            Destek <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light)">Paket Karşılaştırması</span>
           </h2>
           <p className="text-base md:text-lg text-(--color-text-secondary) font-light leading-relaxed">
             İhtiyacınıza uygun destek seviyesini seçin. Mission Critical ve Platinum paketlerimizle en üst düzey ayrıcalıklara sahip olun.

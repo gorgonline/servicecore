@@ -96,7 +96,7 @@ export default function ServisSeviyeYonetimiPage() {
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5 pb-5 border-b border-white/8">
               <div className="flex flex-col gap-1">
                 <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-(--color-accent-blue-light)">
-                  SLA Operasyon Panosu
+                  Hizmet Seviyesi Operasyon Panosu
                 </span>
                 <span className="text-lg lg:text-xl font-bold text-white tracking-tight">
                   Servis Seviye Yönetimi
@@ -114,7 +114,7 @@ export default function ServisSeviyeYonetimiPage() {
             {/* KPI metric row */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mb-5">
               {[
-                { icon: TrendingUp, label: "SLA Uyumu", value: "%94", trend: "+2.1", tone: "emerald" },
+                { icon: TrendingUp, label: "Hizmet Seviyesi Uyumu", value: "%94", trend: "+2.1", tone: "emerald" },
                 { icon: AlertTriangle, label: "İhlal Sayısı", value: "8", trend: "-3", tone: "red", down: true },
                 { icon: AlertCircle, label: "Aktif Olay", value: "42", trend: "+5", tone: "blue" },
                 { icon: Clock, label: "Ortalama MTTR", value: "17dk", trend: "-4dk", tone: "purple", down: true },
@@ -259,12 +259,12 @@ export default function ServisSeviyeYonetimiPage() {
               </div>
             </div>
 
-            {/* Bottom — Multi-level SLA targets */}
+            {/* Bottom — Multi-level Hizmet Seviyesi targets */}
             <div className="rounded-2xl border border-white/10 bg-(--color-surface-elevated-solid) p-4 flex flex-col gap-2">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-1.5">
                   <Layers className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">Multi-Level SLA Hedefleri · Aktif Kayıt</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">Çok Katmanlı Hizmet Seviyesi Hedefleri · Aktif Kayıt</span>
                 </div>
                 <span className="text-[8px] font-mono text-(--color-text-muted)">3 paralel hedef</span>
               </div>
@@ -307,7 +307,7 @@ export default function ServisSeviyeYonetimiPage() {
       {/* 2. ZIG-ZAG FEATURE BLOCKS */}
       <section className="py-24 relative z-20">
         <div className="container mx-auto px-6 lg:px-12 w-full max-w-7xl flex flex-col gap-32">
-          {/* Feature 1: SLA Policy */}
+          {/* Feature 1: Hizmet Seviyesi Policy */}
           <motion.div
             animate="visible"
             variants={fadeUp}
@@ -321,7 +321,7 @@ export default function ServisSeviyeYonetimiPage() {
                   <div className="flex items-center justify-between pb-2 border-b border-white/8">
                     <div className="flex items-center gap-1.5">
                       <Gauge className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">SLA Policy Yönetimi</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Hizmet Seviyesi Policy Yönetimi</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <span className="text-[8px] font-mono text-(--color-text-muted)">3 policy</span>
@@ -403,7 +403,7 @@ export default function ServisSeviyeYonetimiPage() {
                         </span>
                       </div>
 
-                      {/* SLA matrix */}
+                      {/* Hizmet Seviyesi matrix */}
                       <div className="flex flex-col gap-1">
                         <span className="text-[8px] font-semibold uppercase tracking-widest text-(--color-text-muted) mb-0.5">
                           Öncelik Matrisi
@@ -509,7 +509,7 @@ export default function ServisSeviyeYonetimiPage() {
                   {/* SLM center node */}
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-[9px] font-semibold uppercase tracking-widest text-(--color-text-muted)">
-                      SLA Policy Eşleşmesi
+                      Hizmet Seviyesi Policy Eşleşmesi
                     </span>
                     <span className="text-[10px] font-mono text-(--color-accent-emerald-light)">
                       otomatik
@@ -541,7 +541,7 @@ export default function ServisSeviyeYonetimiPage() {
                       </div>
                       <div className="flex items-center justify-between text-[10px]">
                         <span className="text-(--color-text-muted)">
-                          SLA Policy → Premium-P1
+                          Hizmet Seviyesi Policy → Premium-P1
                         </span>
                         <span className="font-mono text-white">2sa kaldı</span>
                       </div>
@@ -567,7 +567,7 @@ export default function ServisSeviyeYonetimiPage() {
                       </div>
                       <div className="flex items-center justify-between text-[10px]">
                         <span className="text-(--color-text-muted)">
-                          SLA Policy → Standart-P3
+                          Hizmet Seviyesi Policy → Standart-P3
                         </span>
                         <span className="font-mono text-white">
                           1 gün 4sa kaldı
@@ -650,7 +650,7 @@ export default function ServisSeviyeYonetimiPage() {
                     </div>
                     <div className="flex flex-col gap-1 px-3 py-2.5 rounded-lg bg-blue-500/10 border border-blue-500/20">
                       <span className="text-[9px] font-medium uppercase tracking-wider text-(--color-text-muted)">
-                        SLA Hedefi
+                        Hizmet Seviyesi Hedefi
                       </span>
                       <span className="text-xs font-mono font-bold text-(--color-accent-blue-light)">
                         8 saat
@@ -753,7 +753,7 @@ export default function ServisSeviyeYonetimiPage() {
             animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[420px]"
           >
-            {/* Bento 1 - Multi-Level SLA (wide) */}
+            {/* Bento 1 - Çok Katmanlı Hizmet Seviyesi (wide) */}
             <motion.div
               variants={fadeUp}
               className="col-span-1 lg:col-span-2 row-span-1 rounded-4xl bg-linear-to-br from-blue-500/10 to-transparent border border-white/10 p-8 hover:bg-white/4 transition-colors relative overflow-hidden group flex flex-col md:flex-row gap-6 items-center"
@@ -803,7 +803,7 @@ export default function ServisSeviyeYonetimiPage() {
               </div>
             </motion.div>
 
-            {/* Bento 2 - Kolay SLA Girişi (normal) */}
+            {/* Bento 2 - Kolay Hizmet Seviyesi Girişi (normal) */}
             <motion.div
               variants={fadeUp}
               className="col-span-1 rounded-4xl bg-white/2 border border-white/10 p-8 hover:bg-white/4 transition-colors flex flex-col"
@@ -989,7 +989,7 @@ export default function ServisSeviyeYonetimiPage() {
                   <div className="flex items-center gap-2">
                     <TrendingUp className="w-3.5 h-3.5 text-(--color-accent-emerald-light)" />
                     <span className="text-[11px] font-medium text-white">
-                      SLA uyumu
+                      Hizmet Seviyesi uyumu
                     </span>
                   </div>
                   <span className="text-sm font-mono font-bold text-(--color-accent-emerald-light)">
@@ -1046,7 +1046,7 @@ export default function ServisSeviyeYonetimiPage() {
                 </div>
                 <div className="flex items-center justify-between px-3 py-2 rounded-lg bg-white/3 border border-white/5">
                   <span className="text-[10px] font-medium text-(--color-text-muted)">
-                    SLA
+                    Hizmet Seviyesi
                   </span>
                   <span className="text-[11px] font-mono text-white">4 sa</span>
                 </div>
@@ -1120,7 +1120,7 @@ export default function ServisSeviyeYonetimiPage() {
                     <div className="flex flex-wrap justify-center gap-8 text-(--color-text-muted)">
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-                        Multi-Level SLA
+                        Çok Katmanlı Hizmet Seviyesi
                       </div>
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-blue-base) shadow-[0_0_8px_rgba(59,130,246,0.6)]" />

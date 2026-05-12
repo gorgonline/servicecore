@@ -677,7 +677,7 @@ export default function YonetimPaneliPage() {
             animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[420px]"
           >
-            {/* Bento 1 - SLA & Kapatma (wide, görselli) */}
+            {/* Bento 1 - Hizmet Seviyesi & Kapatma (wide, görselli) */}
             <motion.div
               variants={fadeUp}
               className="col-span-1 lg:col-span-2 row-span-1 rounded-4xl bg-linear-to-br from-blue-500/10 to-transparent border border-white/10 p-8 hover:bg-white/4 transition-colors relative overflow-hidden group flex flex-col md:flex-row gap-6 items-center"
@@ -697,7 +697,7 @@ export default function YonetimPaneliPage() {
                 <div className="flex items-center justify-between pb-2 border-b border-white/8">
                   <div className="flex items-center gap-1.5">
                     <Gauge className="w-3 h-3 text-(--color-accent-blue-light)" />
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-white">SLA Politikaları</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-white">Hizmet Seviyesi Politikaları</span>
                   </div>
                   <span className="text-[8px] font-mono text-(--color-text-muted)">3 policy</span>
                 </div>
@@ -1182,7 +1182,7 @@ export default function YonetimPaneliPage() {
                       </div>
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
-                        CMDB & SLA
+                        CMDB & Hizmet Seviyesi
                       </div>
                     </div>
                   </div>

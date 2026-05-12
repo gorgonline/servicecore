@@ -204,7 +204,7 @@ export default function IstekYonetimiPage() {
                             </div>
                             <div className="min-w-0 flex-1">
                               <div className="text-[11px] font-semibold text-white truncate">{s.name}</div>
-                              <div className="text-[9px] text-(--color-text-muted) font-mono">SLA · {s.sla}</div>
+                              <div className="text-[9px] text-(--color-text-muted) font-mono">Hizmet Seviyesi · {s.sla}</div>
                             </div>
                             <ChevronRight className="w-3 h-3 text-(--color-text-muted) shrink-0" />
                           </div>
@@ -381,7 +381,7 @@ export default function IstekYonetimiPage() {
             </div>
           </motion.div>
 
-          {/* Feature 3: SLA, Atama, Yetki — purple */}
+          {/* Feature 3: Hizmet Seviyesi, Atama, Yetki — purple */}
           <motion.div
             animate="visible"
             variants={fadeUp}
@@ -395,7 +395,7 @@ export default function IstekYonetimiPage() {
                   <div className="flex items-center justify-between pb-3 border-b border-white/5">
                     <div className="flex items-center gap-2">
                       <Gauge className="w-4 h-4 text-(--color-accent-purple-light)" />
-                      <span className="text-xs font-semibold text-white">SLA · Atama · Yetki Matrisi</span>
+                      <span className="text-xs font-semibold text-white">Hizmet Seviyesi · Atama · Yetki Matrisi</span>
                     </div>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/15 text-(--color-accent-purple-light) border border-purple-500/30">12 kural aktif</span>
                   </div>
@@ -741,7 +741,7 @@ export default function IstekYonetimiPage() {
                 </div>
                 <div className="flex items-center justify-between pt-1.5 border-t border-white/5 text-[8px] font-mono">
                   <span className="text-(--color-text-muted)">5 olay · 1 zaman ekseni</span>
-                  <span className="text-amber-400">SLA · 78%</span>
+                  <span className="text-amber-400">Hizmet Seviyesi · 78%</span>
                 </div>
               </div>
             </motion.div>

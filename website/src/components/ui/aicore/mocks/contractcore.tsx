@@ -34,7 +34,7 @@ const HIGHLIGHT_TONE: Record<HighlightKind, string> = {
 };
 
 const HIGHLIGHT_LABEL: Record<HighlightKind, string> = {
-  sla: "SLA",
+  sla: "Hizmet Seviyesi",
   penalty: "Ceza",
   renewal: "Yenileme",
   risk: "Risk",
@@ -211,7 +211,7 @@ export function ContractCoreMock({ accent: accentName }: { accent: string }) {
         <MockFrame>
           <TitleBar
             icon={<Scale className="w-3.5 h-3.5" />}
-            title="Ayıklanan SLA Maddeleri"
+            title="Ayıklanan Hizmet Seviyesi Maddeleri"
             meta="3 madde"
             accent={accent}
           />

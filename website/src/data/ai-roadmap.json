@@ -16,7 +16,7 @@
         { "id": "classificore-manage", "name": "ClassifyCoreAI", "description": "Gelen ticket içeriklerini analiz ederek otomatik sınıflandırma ve yönlendirme yapar.", "release": "Ekim 2026", "icon": "Filter" },
         { "id": "prioritycore", "name": "PriorityCoreAI", "description": "Gelen kayıtları içerik, etki, aciliyet ve servis kritikliği gibi sinyalleri analiz ederek otomatik olarak önceliklendiren akıllı bir karar motoru sunar.", "release": "Ekim 2026", "icon": "Target" },
         { "id": "rootcore", "name": "RootCoreAI", "description": "Sistemdeki tüm kayıtları, logları ve alarmları analiz ederek ilişkili olayları akıllı şekilde gruplar.", "release": "Kasım 2026", "icon": "Search" },
-        { "id": "predicticore", "name": "PredictCoreAI", "description": "Geçmiş verileri analiz ederek SLA ihlallerini önceden tahmin eder.", "release": "Kasım 2026", "icon": "TrendingUp" },
+        { "id": "predicticore", "name": "PredictCoreAI", "description": "Geçmiş verileri analiz ederek Hizmet Seviyesi ihlallerini önceden tahmin eder.", "release": "Kasım 2026", "icon": "TrendingUp" },
         { "id": "score", "name": "ReportCoreAI", "description": "Doğal dil ile rapor ve dashboard oluşturmayı mümkün kılar.", "release": "Kasım 2026", "icon": "BarChart3" },
         { "id": "knowcore", "name": "KnowCoreAI", "description": "Çözülmüş olay, istek, problem ve yazışma kayıtlarını analiz ederek otomatik bilgi bankası içerikleri üretir.", "release": "Aralık 2026", "icon": "BookOpen" },
         { "id": "flowcore", "name": "FlowCoreAI", "description": "Metin komutları ile iş akışlarının şemalarını otomatik oluşturur.", "release": "Aralık 2026", "icon": "GitBranch" },

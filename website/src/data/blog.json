@@ -33,7 +33,7 @@
           "type": "section",
           "heading": "ITIL4'e Göre Süreç Tanımı ve Amacı",
           "paragraphs": [
-            "ITIL4, olayı (incident) hizmetin planlanmamış kesintiye uğraması veya hizmet kalitesinin azalması olarak tanımlar. Bu tanımın iki kritik vurgusu vardır: planlanmamışlık ve kalite ihlali. Yani sadece tamamen erişilemez hâle gelen sistemler değil; yavaşlayan, beklenen kalite ölçütlerini karşılayamayan veya SLA dışına çıkan tüm hizmetler de Olay Yönetimi kapsamına girer. Pratik, normal operasyonu olabildiğince hızlı şekilde geri getirerek hem son kullanıcı memnuniyetini hem hizmet sağlayıcısının kredibilitesini korur.",
+            "ITIL4, olayı (incident) hizmetin planlanmamış kesintiye uğraması veya hizmet kalitesinin azalması olarak tanımlar. Bu tanımın iki kritik vurgusu vardır: planlanmamışlık ve kalite ihlali. Yani sadece tamamen erişilemez hâle gelen sistemler değil; yavaşlayan, beklenen kalite ölçütlerini karşılayamayan veya Hizmet Seviyesi dışına çıkan tüm hizmetler de Olay Yönetimi kapsamına girer. Pratik, normal operasyonu olabildiğince hızlı şekilde geri getirerek hem son kullanıcı memnuniyetini hem hizmet sağlayıcısının kredibilitesini korur.",
             "Pratiğin etkili çalışması, ITIL4'ün dört boyutuna (organizasyon ve insan, bilgi ve teknoloji, iş ortakları ve tedarikçiler, değer akışları ve süreçler) bütünsel bakmayı gerektirir. Erken tespit ve hızlı çözüm iki temel başarı faktörüdür; bu nedenle olayın kayda alınmasından, kategorizasyonuna, önceliklendirilmesine ve çözümüne kadar her adım yapılandırılmış bir model üzerinde yürür. Tekrarlayan olaylar için tanımlanan incident model'ler, ekibin proven ve test edilmiş çözümleri tutarlı biçimde uygulamasını sağlar."
           ],
           "bullets": [],
@@ -61,8 +61,8 @@
           "type": "section",
           "heading": "ServiceCore ile Süreci Uygulamak",
           "paragraphs": [
-            "ServiceCore Incident Management modülü, ITIL4 yaşam döngüsünü tek bir merkezi platformda buluşturur. E-posta, sistem alarmları, monitoring araçları ve omnichannel kanallardan gelen tüm sinyaller otomatik olarak olay kaydına dönüştürülür; Interaction Management ile entegre çalışan akış sayesinde çağrılar tek tıkla olay kaydına çevrilir. Kart tabanlı modern operasyon ekranı, açık, beklemede, çözüldü veya SLA ihlali durumlarını tutarlı renk paletiyle kodlayarak ekibin önceliği metin okumadan ayırt etmesini sağlar.",
-            "AMF® ile tek platformda iletişim ve iş birliği yönetimi, dahili teşhis adımları ile son kullanıcıya giden açıklamaları ayrı akışlarda korur. ATS® otomatik zaman takibi manuel hata ile unutulan süre girişlerini ortadan kaldırır; STE® öncelik, SLA kalan süre ve ekip yükü kurallarını birleştirerek iş sırasını dinamik dengeler. CMDB ve CI ilişkilendirmesi sayesinde etkilenen kullanıcı sayısı, bağımlılık zinciri ve sözleşme kapsamı tek yüzeyde özetlenir; tekrarlayan olaylar tek tıkla Problem ve Change kayıtlarına bağlanarak ITIL4'ün collaborate and promote visibility prensibini güçlendirir."
+            "ServiceCore Incident Management modülü, ITIL4 yaşam döngüsünü tek bir merkezi platformda buluşturur. E-posta, sistem alarmları, monitoring araçları ve omnichannel kanallardan gelen tüm sinyaller otomatik olarak olay kaydına dönüştürülür; Interaction Management ile entegre çalışan akış sayesinde çağrılar tek tıkla olay kaydına çevrilir. Kart tabanlı modern operasyon ekranı, açık, beklemede, çözüldü veya Hizmet Seviyesi ihlali durumlarını tutarlı renk paletiyle kodlayarak ekibin önceliği metin okumadan ayırt etmesini sağlar.",
+            "AMF® ile tek platformda iletişim ve iş birliği yönetimi, dahili teşhis adımları ile son kullanıcıya giden açıklamaları ayrı akışlarda korur. ATS® otomatik zaman takibi manuel hata ile unutulan süre girişlerini ortadan kaldırır; STE® öncelik, Hizmet Seviyesi kalan süre ve ekip yükü kurallarını birleştirerek iş sırasını dinamik dengeler. CMDB ve CI ilişkilendirmesi sayesinde etkilenen kullanıcı sayısı, bağımlılık zinciri ve sözleşme kapsamı tek yüzeyde özetlenir; tekrarlayan olaylar tek tıkla Problem ve Change kayıtlarına bağlanarak ITIL4'ün collaborate and promote visibility prensibini güçlendirir."
           ],
           "bullets": [
             "Omnichannel girişler ve e-posta yakalayıcı ile manuel kayıt yükünü kaldırın",
@@ -84,7 +84,7 @@
             "Olay verisinin kalitesini ilk dakikadan itibaren yüksek tutun, eksik kayıt atmayın",
             "Major incident kriterlerini, MIM rolünü ve özel iletişim modelini önceden tanımlayın",
             "Workaround uygulanan olayları Problem Management ile mutlaka ilişkilendirin",
-            "SLA duraklatma kurallarını net belirleyin ve denetim için zaman damgası saklayın",
+            "Hizmet Seviyesi duraklatma kurallarını net belirleyin ve denetim için zaman damgası saklayın",
             "Otomatik tespit ile manuel kayıt arasında dengeli bir hibrit yapı kurun"
           ],
           "subSections": []
@@ -93,7 +93,7 @@
           "type": "section",
           "heading": "Başarı Göstergeleri ve Sürekli İyileştirme",
           "paragraphs": [
-            "Olay Yönetimi'nin başarısı tek bir oranla ölçülmez; ITIL4 metriklerin değer akışı bağlamında değerlendirilmesini önerir. MTTR (mean time to restore), ilk temas çözüm oranı, SLA uyum trendi, tekrarlayan olay oranı, otomatik tespit edilen olay payı ve kullanıcı memnuniyeti birlikte ele alındığında pratiğin gerçek olgunluğu görünür hâle gelir. Sayılar yerine eğilimleri okumak; rakamların aralıklarına ve kıyas çizgilerine bakmak, ham yüzdelerden çok daha sağlıklı bir karar zemini sunar.",
+            "Olay Yönetimi'nin başarısı tek bir oranla ölçülmez; ITIL4 metriklerin değer akışı bağlamında değerlendirilmesini önerir. MTTR (mean time to restore), ilk temas çözüm oranı, Hizmet Seviyesi uyum trendi, tekrarlayan olay oranı, otomatik tespit edilen olay payı ve kullanıcı memnuniyeti birlikte ele alındığında pratiğin gerçek olgunluğu görünür hâle gelir. Sayılar yerine eğilimleri okumak; rakamların aralıklarına ve kıyas çizgilerine bakmak, ham yüzdelerden çok daha sağlıklı bir karar zemini sunar.",
             "Sürekli iyileştirme döngüsü için her major olay sonrası post-incident review yapılmalı, öğrenilen dersler bilgi bankasına ve incident model'lere yansıtılmalıdır. ServiceCore'un raporlama yüzeyi; durum, kategori, müşteri ve hizmet kırılımında geçmişe dönük analiz üreterek hangi hizmetlerde otomasyona aday rutin olayların biriktiğini, hangi alanlarda eğitim ihtiyacı olduğunu ve hangi CI gruplarının kararsızlık ürettiğini açığa çıkarır. Böylece Incident Management; ITIL4'ün progress iteratively with feedback ve optimize and automate prensipleriyle her döngüde olgunlaşan bir disiplin hâline gelir."
           ],
           "bullets": [],
@@ -360,7 +360,7 @@
             "Gelişmiş, organizasyon uyumlu ve dinamik onay akışları; tek veya çok aşamalı, paralel veya sıralı ve rol bazlı onaycıları destekler. Active Directory entegrasyonu sayesinde yönetici hiyerarşisi otomatik kullanılır; onaycılar e-posta üzerinden tek tıkla onay/red verebilir. Otomatik görev üretimi, akıllı akış ve servis paketleme, talep kaydı açıldığı anda standart yürütme planını devreye sokar. ATS® zaman takibi ve history tracking ile her aksiyon kaydedilir; uçtan uca izlenebilirlik talebin açılışından kapanışına kadar tüm değer akışını şeffaf kılar."
           ],
           "bullets": [
-            "Katalog bazlı SLA ve eskalasyon eşikleri ile beklentileri kullanıcıya şeffaf yansıtın",
+            "Katalog bazlı Hizmet Seviyesi ve eskalasyon eşikleri ile beklentileri kullanıcıya şeffaf yansıtın",
             "Rol ve kapsam bazlı yetkilendirme ile sadece ilgili hizmetleri görünür kılın",
             "Modüller arası entegrasyon ile çoklu disiplin gerektiren talepleri kopuksuz yürütün",
             "Tekrarlayan talep desenlerini içgörü olarak okuyup katalog optimizasyonunu sürekli iyileştirin"
@@ -387,8 +387,8 @@
           "type": "section",
           "heading": "Başarı Göstergeleri ve Sürekli İyileştirme",
           "paragraphs": [
-            "Service Request Management başarısı; SLA uyum trendi, kullanıcı memnuniyeti, ortalama fulfilment süresi, otomatik karşılanan talep oranı, anlaşmalı prosedürlerden sapma sayısı ve katalog kapsama yeterliliği gibi metriklerin birlikte değerlendirilmesiyle ölçülür. ITIL4 metriklerin değer akışı bağlamında ele alınmasını önerir; bu nedenle tek bir oran üzerinden değil, eğilim ve karşılaştırma çizgileri üzerinden okuma yapılmalıdır.",
-            "Sürekli iyileştirme için tekrarlayan talep desenleri analiz edilmeli; otomasyona aday rutin talepler belirlenmelidir. ServiceCore'un raporlama ekranı; hangi hizmetlerin daha sık talep edildiğini, hangi kategorilerde SLA baskısı oluştuğunu ve hangi onay aşamalarının darboğaz yarattığını gün yüzüne çıkarır. Form alanları, onay akışları ve katalog yapısı bu içgörülere göre optimize edilir; otomasyon olgunluğu artırılır. Böylece İstek Yönetimi; ITIL4'ün progress iteratively with feedback ve optimize and automate prensipleriyle her döngüde gelişen, kullanıcı deneyimi merkezli stratejik bir yetkinliğe dönüşür."
+            "Service Request Management başarısı; Hizmet Seviyesi uyum trendi, kullanıcı memnuniyeti, ortalama fulfilment süresi, otomatik karşılanan talep oranı, anlaşmalı prosedürlerden sapma sayısı ve katalog kapsama yeterliliği gibi metriklerin birlikte değerlendirilmesiyle ölçülür. ITIL4 metriklerin değer akışı bağlamında ele alınmasını önerir; bu nedenle tek bir oran üzerinden değil, eğilim ve karşılaştırma çizgileri üzerinden okuma yapılmalıdır.",
+            "Sürekli iyileştirme için tekrarlayan talep desenleri analiz edilmeli; otomasyona aday rutin talepler belirlenmelidir. ServiceCore'un raporlama ekranı; hangi hizmetlerin daha sık talep edildiğini, hangi kategorilerde Hizmet Seviyesi baskısı oluştuğunu ve hangi onay aşamalarının darboğaz yarattığını gün yüzüne çıkarır. Form alanları, onay akışları ve katalog yapısı bu içgörülere göre optimize edilir; otomasyon olgunluğu artırılır. Böylece İstek Yönetimi; ITIL4'ün progress iteratively with feedback ve optimize and automate prensipleriyle her döngüde gelişen, kullanıcı deneyimi merkezli stratejik bir yetkinliğe dönüşür."
           ],
           "bullets": [],
           "subSections": []
@@ -751,7 +751,7 @@
           "bullets": [
             "Hizmet–varlık ve varlık–varlık ilişkileri görsel haritada düzenlenir, anlık güncellenir.",
             "Olay, Problem ve Değişiklik kayıtları ilgili CI'lara otomatik bağlanır; etki kapsamı tek panelde özetlenir.",
-            "Destek, tedarikçi ve müşteri anlaşmaları aynı CI üzerinde yönetilir; SLA kapsamı tek bakışta görülür.",
+            "Destek, tedarikçi ve müşteri anlaşmaları aynı CI üzerinde yönetilir; Hizmet Seviyesi kapsamı tek bakışta görülür.",
             "Hizmet bazlı harcama ve masraf takibi CI üzerinde tutulur; bütçe analizleri tek doğruluk kaynağından üretilir."
           ],
           "subSections": []
@@ -902,8 +902,8 @@
           "type": "intro",
           "paragraphs": [
             "Servis katalog yönetimi (Service Catalogue Management — SCM), ITIL4'ün servis yönetim pratikleri arasında müşteriye dokunan en kritik halkalardan biridir. Pratiğin amacı; tüm servisler ve servis sunumları (service offerings) hakkında tutarlı bilginin tek kaynaktan, ilgili paydaşa, doğru görünümde ulaştırılmasıdır. İç ekipler, müşteriler, kullanıcılar, tedarikçi yöneticileri ve ürün ekipleri; aynı veriyi farklı kapsamda görmek ister.",
-            "Türkiye'deki kurumlarda servis kataloğu çoğu zaman bir intranet sayfası, bir yardım masası formu listesi veya birkaç PDF dosyasından ibarettir. Bu yaklaşım; tutarsız bilgi, eski form tasarımları, yanlış SLA atamaları ve kullanıcının kaybolduğu uzun listelerle sonuçlanır. ITIL4 SCM pratiği bu kaosu çok katmanlı, paydaş odaklı ve sürekli güncellenen bir dijital katalog disiplinine dönüştürür.",
-            "ServiceCore SCM modülü, gelişmiş otomasyon özellikleriyle servisleri standartlaştırarak müşteri hizmetlerini uçtan uca dijitalleştirir. Çok katmanlı kataloglar, servise özel formlar, ön tanımlı onay aşamaları, servis bazında SLA ve otomatik iş akışları aynı modelde yönetilir. Bu rehberde, ITIL4 SCM sürecinin nasıl uygulanacağını ve ServiceCore ile pratikte nasıl hayata geçirileceğini ele alıyoruz."
+            "Türkiye'deki kurumlarda servis kataloğu çoğu zaman bir intranet sayfası, bir yardım masası formu listesi veya birkaç PDF dosyasından ibarettir. Bu yaklaşım; tutarsız bilgi, eski form tasarımları, yanlış Hizmet Seviyesi atamaları ve kullanıcının kaybolduğu uzun listelerle sonuçlanır. ITIL4 SCM pratiği bu kaosu çok katmanlı, paydaş odaklı ve sürekli güncellenen bir dijital katalog disiplinine dönüştürür.",
+            "ServiceCore SCM modülü, gelişmiş otomasyon özellikleriyle servisleri standartlaştırarak müşteri hizmetlerini uçtan uca dijitalleştirir. Çok katmanlı kataloglar, servise özel formlar, ön tanımlı onay aşamaları, servis bazında Hizmet Seviyesi ve otomatik iş akışları aynı modelde yönetilir. Bu rehberde, ITIL4 SCM sürecinin nasıl uygulanacağını ve ServiceCore ile pratikte nasıl hayata geçirileceğini ele alıyoruz."
           ]
         },
         {
@@ -938,12 +938,12 @@
           "heading": "ServiceCore ile Süreci Uygulamak",
           "paragraphs": [
             "ServiceCore SCM modülü ile çok katmanlı servis katalogları kolay kullanımlı arayüzler üzerinden hızlıca geliştirilir; kategori, alt kategori ve servis hiyerarşisi sürükle-bırak hızında düzenlenir. İstek yönetiminin arka planındaki tüm servis aktiviteleri standartlaştırılarak modern kullanıcı istek yönetimi için sürdürülebilir bir zemin oluşur.",
-            "Her servis için ön tanımlı talep formu, onay aşamaları, SLA tanımı ve iş akışı tek modelde yönetilir. Form değişikliği yayınlandığı an tüm yeni isteklerde geçerli hale gelir; eski formdan açılmış istekler kaybolmaz. Onay aşamaları sıralı, paralel veya koşullu senaryolar olarak ön tanımlı kurgulanır; kullanıcı isteği gönderdiği an doğru onaycıya disiplinli biçimde ilerler."
+            "Her servis için ön tanımlı talep formu, onay aşamaları, Hizmet Seviyesi tanımı ve iş akışı tek modelde yönetilir. Form değişikliği yayınlandığı an tüm yeni isteklerde geçerli hale gelir; eski formdan açılmış istekler kaybolmaz. Onay aşamaları sıralı, paralel veya koşullu senaryolar olarak ön tanımlı kurgulanır; kullanıcı isteği gönderdiği an doğru onaycıya disiplinli biçimde ilerler."
           ],
           "bullets": [
             "Çok katmanlı katalog hiyerarşisi servis sahipleri tarafından doğrudan yönetilir, yayın disiplini korunur.",
             "Servise özel ön tanımlı talep formları yalnızca gerekli alanları sorar; kullanıcı deneyimi sade kalır.",
-            "Servis bazında SLA — yanıt, ara hedef, çözüm — servisin kritikliğine göre ayrı ayrı kalibre edilir.",
+            "Servis bazında Hizmet Seviyesi — yanıt, ara hedef, çözüm — servisin kritikliğine göre ayrı ayrı kalibre edilir.",
             "Ön tanımlı iş akışları her tekrarda otomatik tetiklenir; görev dağıtımı sistem tarafından yapılır."
           ],
           "subSections": []
@@ -986,20 +986,20 @@
       "publishDate": "2026-04-05",
       "tags": [
         "ITIL4",
-        "SLA Yönetimi",
+        "Hizmet Seviyesi Yönetimi",
         "Süreç",
         "Uygulama Rehberi"
       ],
       "sourceUrl": "https://gamma.app/docs/Servis-Seviye-Yonetimi-tyr3wf4d39rtopb",
       "pageTitle": "ServiceCore Servis Seviye Yönetimi | ITIL4 Süreç Uygulama Rehberi",
-      "excerpt": "ITIL4 Service Level Management pratiği; net iş tabanlı hedefler tanımlar ve servis sunumunu bu hedeflere göre değerlendirip yönetir. ServiceCore SLA Policy ile bu disiplin otomasyonla buluşur.",
+      "excerpt": "ITIL4 Service Level Management pratiği; net iş tabanlı hedefler tanımlar ve servis sunumunu bu hedeflere göre değerlendirip yönetir. ServiceCore Hizmet Seviyesi Policy ile bu disiplin otomasyonla buluşur.",
       "content": [
         {
           "type": "intro",
           "paragraphs": [
             "Servis seviye yönetimi (Service Level Management — SLM), ITIL4'ün servis sağlayıcı ile servis tüketicisi arasındaki ortak servis kalitesi anlayışını kuran pratiktir. Pratiğin amacı; servis seviyeleri için net, iş tabanlı hedefler tanımlamak ve servis sunumunun bu hedeflere göre uygun biçimde değerlendirilip izlenip yönetilmesini sağlamaktır. SLM hem beklenen hem de gerçekleşen servis kalitesini kapsar.",
-            "Türkiye'deki kurumlarda SLA tanımları çoğu zaman belirsiz, ölçülemez veya çalışma takvimine duyarsızdır. 'Acil olaylar 4 saatte çözülür' tipi cümleler; mesai dışı, tatil ve farklı servis kritikliklerini hesaba katmaz. Sonuç; teknisyenin manuel takvim hesabı, ihlal sürprizleri ve müşteri ile sağlayıcı arasında kalibre edilmemiş beklentiler. ITIL4 SLM pratiği bu kaosu kural bazlı, ölçülebilir ve otomatik bir disipline dönüştürür.",
-            "ServiceCore SLM modülü, müşterilere sunulan hizmet süre hedeflerini SLA Policy nesneleri olarak yönetir. Olay ve İstek modülleriyle entegre çalışan SLA tanımları önceliklendirme yükünü otomatikleştirir; çalışma saatleri, tatiller ve mesai dahil hedef çözüm tarihi otomatik hesaplanarak Due Date alanına yazılır. Bu rehberde, ITIL4 SLM sürecinin nasıl uygulanacağını ele alıyoruz."
+            "Türkiye'deki kurumlarda Hizmet Seviyesi tanımları çoğu zaman belirsiz, ölçülemez veya çalışma takvimine duyarsızdır. 'Acil olaylar 4 saatte çözülür' tipi cümleler; mesai dışı, tatil ve farklı servis kritikliklerini hesaba katmaz. Sonuç; teknisyenin manuel takvim hesabı, ihlal sürprizleri ve müşteri ile sağlayıcı arasında kalibre edilmemiş beklentiler. ITIL4 SLM pratiği bu kaosu kural bazlı, ölçülebilir ve otomatik bir disipline dönüştürür.",
+            "ServiceCore SLM modülü, müşterilere sunulan hizmet süre hedeflerini Hizmet Seviyesi Policy nesneleri olarak yönetir. Olay ve İstek modülleriyle entegre çalışan Hizmet Seviyesi tanımları önceliklendirme yükünü otomatikleştirir; çalışma saatleri, tatiller ve mesai dahil hedef çözüm tarihi otomatik hesaplanarak Due Date alanına yazılır. Bu rehberde, ITIL4 SLM sürecinin nasıl uygulanacağını ele alıyoruz."
           ]
         },
         {
@@ -1007,7 +1007,7 @@
           "heading": "ITIL4'e Göre Süreç Tanımı ve Amacı",
           "paragraphs": [
             "ITIL4 Service Level Management pratiğinin amacı; servis seviyeleri için net iş tabanlı hedefler belirlemek ve servis sunumunun bu hedeflere göre değerlendirilmesini, izlenmesini ve yönetilmesini sağlamaktır. Pratik; servis sağlayıcı ile tüketici arasındaki paylaşılan servis kalitesi görüşünü; anlaşma, izleme, raporlama ve sürekli iyileştirme süreçleriyle yönetir.",
-            "Servis seviyesi (service level), beklenen veya elde edilen servis kalitesini tanımlayan bir veya daha fazla metrikle ifade edilir. SLA (Service Level Agreement); servis sağlayıcı ve müşteri arasında, gereken servisleri ve beklenen servis seviyesini tanımlayan dokümante edilmiş anlaşmadır. SLM; utility (ne yapar) ve warranty (nasıl yapar) boyutlarını birlikte gözetir; sadece kullanılabilirlik değil, fonksiyonellik, performans, zamanlılık, doğruluk ve kullanıcı deneyimi de kapsamdadır."
+            "Servis seviyesi (service level), beklenen veya elde edilen servis kalitesini tanımlayan bir veya daha fazla metrikle ifade edilir. Hizmet Seviyesi; servis sağlayıcı ve müşteri arasında, gereken servisleri ve beklenen servis seviyesini tanımlayan dokümante edilmiş anlaşmadır. SLM; utility (ne yapar) ve warranty (nasıl yapar) boyutlarını birlikte gözetir; sadece kullanılabilirlik değil, fonksiyonellik, performans, zamanlılık, doğruluk ve kullanıcı deneyimi de kapsamdadır."
           ],
           "bullets": [],
           "subSections": []
@@ -1017,12 +1017,12 @@
           "heading": "Sürecin Temel Adımları",
           "paragraphs": [
             "SLM pratiği altı temel aktiviteden oluşur: anlamak (understand), müzakere etmek (negotiate), anlaşmak (agree), izlemek (monitor), raporlamak (report) ve iyileştirmek (improve). Bu aktiviteler döngüsel biçimde işler; izleme ve raporlama bulguları yeni anlama–müzakere etme döngülerini besler.",
-            "ITIL4; tailored (uyarlanmış) ve out-of-the-box (önceden tanımlı) servis modellerini ayırır. Uyarlanmış servislerde hedef seviyeler müşteriyle tartışılarak belirlenir; out-of-the-box servislerde ise sağlayıcı önceden tanımlı seviyelerden seçim sunar. Her iki durumda da metrikler ve ölçüm yaklaşımı SLA'da netleştirilmeli; 'watermelon effect' (dışı yeşil, içi kırmızı) tehlikesi tüketici geri bildirimiyle dengelenmelidir."
+            "ITIL4; tailored (uyarlanmış) ve out-of-the-box (önceden tanımlı) servis modellerini ayırır. Uyarlanmış servislerde hedef seviyeler müşteriyle tartışılarak belirlenir; out-of-the-box servislerde ise sağlayıcı önceden tanımlı seviyelerden seçim sunar. Her iki durumda da metrikler ve ölçüm yaklaşımı Hizmet Seviyesinde netleştirilmeli; 'watermelon effect' (dışı yeşil, içi kırmızı) tehlikesi tüketici geri bildirimiyle dengelenmelidir."
           ],
           "bullets": [
             "Servis kalitesi gereksinimi anlaşılır; tüketici beklentileri ve sponsor ihtiyaçları kapsamlı toplanır.",
             "Hedef servis seviyeleri müzakere edilir; metrik, eşik ve tolerans değerleri kararlaştırılır.",
-            "SLA dokümanı yazılır ve karşılıklı imzalanır; hem utility hem warranty boyutları kapsanır.",
+            "Hizmet Seviyesi dokümanı yazılır ve karşılıklı imzalanır; hem utility hem warranty boyutları kapsanır.",
             "Servis sunumu izlenir; gerçekleşen seviye ölçülür, kullanıcı tatmini ve müşteri tatmini ayrı ayrı toplanır.",
             "Raporlama paydaşlara değer–performans ilişkisini şeffaf biçimde sunar.",
             "İyileştirme döngüsü servis seviyelerini, anlaşmaları ve izleme yöntemlerini düzenli güncelleştirir."
@@ -1033,14 +1033,14 @@
           "type": "section",
           "heading": "ServiceCore ile Süreci Uygulamak",
           "paragraphs": [
-            "ServiceCore SLA Policy nesneleri; müşterilere sunulan hizmetlerle ilgili süre hedeflerinin hangi koşullarda çalışacağının tanımlarıdır. Olay ve istek tarafındaki müşteri beklentileri parametrik olarak ayrı ayrı yönetilir; tek tip dayatma yerine her senaryoya özel kural kurulur. Erişilebilirlik ve servis sunum süreleri ile ilgili beklentiler doğru tanımlandığında SLA hedefleri servis kalitesinin ana metriği haline gelir.",
-            "SLM, Incident ve Request modülleriyle entegre çalışır. Olay ve istek yönetiminin en zorlu faaliyetlerinden olan önceliklendirme, kural bazlı SLA'lerle otomatikleştirilir; teknisyen kararı yerine sistem yönlendirmesi devreye girer. Çözüme ulaşması için gerekli hedef tarih bilgisi sistem tarafından otomatik hesaplanarak kaydın Due Date alanına yazılır; çalışma saatleri, tatiller ve mesai bu hesaplamada dikkate alınır."
+            "ServiceCore Hizmet Seviyesi Policy nesneleri; müşterilere sunulan hizmetlerle ilgili süre hedeflerinin hangi koşullarda çalışacağının tanımlarıdır. Olay ve istek tarafındaki müşteri beklentileri parametrik olarak ayrı ayrı yönetilir; tek tip dayatma yerine her senaryoya özel kural kurulur. Erişilebilirlik ve servis sunum süreleri ile ilgili beklentiler doğru tanımlandığında Hizmet Seviyesi hedefleri servis kalitesinin ana metriği haline gelir.",
+            "SLM, Incident ve Request modülleriyle entegre çalışır. Olay ve istek yönetiminin en zorlu faaliyetlerinden olan önceliklendirme, kural bazlı Hizmet Seviyeleriyle otomatikleştirilir; teknisyen kararı yerine sistem yönlendirmesi devreye girer. Çözüme ulaşması için gerekli hedef tarih bilgisi sistem tarafından otomatik hesaplanarak kaydın Due Date alanına yazılır; çalışma saatleri, tatiller ve mesai bu hesaplamada dikkate alınır."
           ],
           "bullets": [
-            "SLA Policy nesneleri parametrik tanımlanır; olay ve istek senaryoları ayrı ayrı yönetilir.",
-            "Çok katmanlı SLA (Multi-Level SLA) ile yanıt, ara hedef ve çözüm süreleri paralel takip edilir.",
+            "Hizmet Seviyesi Policy nesneleri parametrik tanımlanır; olay ve istek senaryoları ayrı ayrı yönetilir.",
+            "Çok katmanlı Hizmet Seviyesi (Multi-Level) ile yanıt, ara hedef ve çözüm süreleri paralel takip edilir.",
             "Çalışma takvimi hassas Due Date hesaplaması manuel takvim hatalarını ortadan kaldırır.",
-            "SLA ihlal sayısı, eskalasyon ve uyum oranı panodan takip edilerek performans yönetilebilir hale gelir."
+            "Hizmet Seviyesi ihlal sayısı, eskalasyon ve uyum oranı panodan takip edilerek performans yönetilebilir hale gelir."
           ],
           "subSections": []
         },
@@ -1048,14 +1048,14 @@
           "type": "section",
           "heading": "Nelere Dikkat Edilmelidir",
           "paragraphs": [
-            "SLM pratiğinin en sık karşılaşılan hatası, çok az servis kalite karakteristiğine odaklanılmasıdır. ITIL4 'think and work holistically' prensibi gereği SLA hem utility hem warranty boyutlarını kapsamalı; sadece kullanılabilirlik değil fonksiyonellik, performans, zamanlılık, doğruluk ve kullanıcı deneyimi de izlenmelidir. Tek boyutlu SLA'ler yanıltıcı bir yeşil görünüm üretir.",
-            "Diğer kritik nokta; SLM'in bir defa yapılan anlaşma değil, sürekli yönetilen ilişki olmasıdır. ITIL4 'progress iteratively with feedback' prensibi gereği müşteri tatmini ve kullanıcı tatmini düzenli toplanmalı, sosyal medyadaki müşteri sentiment'ı bile izlenmelidir. SLA'lara körü körüne sıkı bağlanmak yerine değer odaklılık prensibiyle servis kalitesi bütüncül yönetilmelidir."
+            "SLM pratiğinin en sık karşılaşılan hatası, çok az servis kalite karakteristiğine odaklanılmasıdır. ITIL4 'think and work holistically' prensibi gereği Hizmet Seviyesi hem utility hem warranty boyutlarını kapsamalı; sadece kullanılabilirlik değil fonksiyonellik, performans, zamanlılık, doğruluk ve kullanıcı deneyimi de izlenmelidir. Tek boyutlu Hizmet Seviyeleri yanıltıcı bir yeşil görünüm üretir.",
+            "Diğer kritik nokta; SLM'in bir defa yapılan anlaşma değil, sürekli yönetilen ilişki olmasıdır. ITIL4 'progress iteratively with feedback' prensibi gereği müşteri tatmini ve kullanıcı tatmini düzenli toplanmalı, sosyal medyadaki müşteri sentiment'ı bile izlenmelidir. Hizmet Seviyeleria körü körüne sıkı bağlanmak yerine değer odaklılık prensibiyle servis kalitesi bütüncül yönetilmelidir."
           ],
           "bullets": [
-            "SLA hedefleri ölçülebilir ve müşteri için anlamlı olmalı; teknik metrikler iş çıktılarına bağlanmalıdır.",
-            "Çalışma takvimi, tatil ve farklı zaman dilimleri SLA hesaplamasına dahil edilmelidir.",
-            "Tek tip SLA dayatması yerine servis kritikliğine göre kalibre edilmiş hedefler kurulmalıdır.",
-            "Periyodik SLA gözden geçirme toplantıları yapılmalı; ihlaller ve eğilimler müşteri ile paylaşılmalıdır."
+            "Hizmet Seviyesi hedefleri ölçülebilir ve müşteri için anlamlı olmalı; teknik metrikler iş çıktılarına bağlanmalıdır.",
+            "Çalışma takvimi, tatil ve farklı zaman dilimleri Hizmet Seviyesi hesaplamasına dahil edilmelidir.",
+            "Tek tip Hizmet Seviyesi dayatması yerine servis kritikliğine göre kalibre edilmiş hedefler kurulmalıdır.",
+            "Periyodik Hizmet Seviyesi gözden geçirme toplantıları yapılmalı; ihlaller ve eğilimler müşteri ile paylaşılmalıdır."
           ],
           "subSections": []
         },
@@ -1063,8 +1063,8 @@
           "type": "section",
           "heading": "Başarı Göstergeleri ve Sürekli İyileştirme",
           "paragraphs": [
-            "SLM pratiğinin başarısı; SLA uyum oranı, ihlal sayısı, müşteri ve kullanıcı tatmini, raporlama zamanlılığı ve iyileştirme insiyatiflerinin sayısı ile ölçülür. ITIL4; gerçekleşen servis seviyesi, kullanıcı tatmini ve müşteri tatmini olmak üzere üç ayrı perspektiften kontrolü önerir. Bu üç perspektifin birlikte izlenmesi yüzeysel ölçümün önüne geçer.",
-            "Sürekli iyileştirme; SLM'in canlı kalmasının tek yoludur. SLA içerikleri, izleme metotları, raporlama araçları ve müşteri etkileşim akışları düzenli gözden geçirilmelidir. ITIL4 'optimize and automate' prensibi gereği SLA dashboard'ları ve otomatik raporlama mekanizmaları kurularak manuel raporlama yükü asgariye indirilmelidir. Müşterinin gerçek değer algısı her ölçümün üzerinde tutulmalıdır."
+            "SLM pratiğinin başarısı; Hizmet Seviyesi uyum oranı, ihlal sayısı, müşteri ve kullanıcı tatmini, raporlama zamanlılığı ve iyileştirme insiyatiflerinin sayısı ile ölçülür. ITIL4; gerçekleşen servis seviyesi, kullanıcı tatmini ve müşteri tatmini olmak üzere üç ayrı perspektiften kontrolü önerir. Bu üç perspektifin birlikte izlenmesi yüzeysel ölçümün önüne geçer.",
+            "Sürekli iyileştirme; SLM'in canlı kalmasının tek yoludur. Hizmet Seviyesi içerikleri, izleme metotları, raporlama araçları ve müşteri etkileşim akışları düzenli gözden geçirilmelidir. ITIL4 'optimize and automate' prensibi gereği Hizmet Seviyesi dashboard'ları ve otomatik raporlama mekanizmaları kurularak manuel raporlama yükü asgariye indirilmelidir. Müşterinin gerçek değer algısı her ölçümün üzerinde tutulmalıdır."
           ],
           "bullets": [],
           "subSections": []
@@ -1228,7 +1228,7 @@
           "heading": "ServiceCore ile Süreci Uygulamak",
           "paragraphs": [
             "ServiceCore Servis İlişkileri Yönetimi modülü; müşteri kayıtları, hizmet sözleşmeleri, yetkili kullanıcılar, grup yetkilendirmesi, hizmet planları ve yetkili teknisyen ataması yetkinliklerini tek panelde birleştirir. Müşteri ile yapılan tüm etkileşimler, talepler ve iletişim notları aynı zaman çizelgesinde toplanır; ekipler 'kim, ne zaman, hangi konuda görüştü' sorusuna anında cevap üretir.",
-            "Sözleşme bağlama, hizmet planı tanımlama ve IT hizmet talepleriyle entegre akış sayesinde ITIL4'ün öngördüğü uçtan uca ilişki yönetimi platforma taşınır. Yetkili kullanıcı ve grup yöneticisi yapısı, müşterinin kendi süreçlerini şeffaf biçimde sahiplenmesine olanak tanır. SLA ve OLA sözleşmelerinin yenileme, ihbar süresi ve kritik milestone'ları otomatik bildirimlerle takip edilir; manuel takibin yerini denetlenebilir bir sistem alır."
+            "Sözleşme bağlama, hizmet planı tanımlama ve IT hizmet talepleriyle entegre akış sayesinde ITIL4'ün öngördüğü uçtan uca ilişki yönetimi platforma taşınır. Yetkili kullanıcı ve grup yöneticisi yapısı, müşterinin kendi süreçlerini şeffaf biçimde sahiplenmesine olanak tanır. Hizmet Seviyesi ve OLA sözleşmelerinin yenileme, ihbar süresi ve kritik milestone'ları otomatik bildirimlerle takip edilir; manuel takibin yerini denetlenebilir bir sistem alır."
           ],
           "bullets": [
             "Tüm müşteri bilgileri standart veri modelinde merkezi olarak yönetilir ve 360° görünüm sağlanır",
@@ -1380,14 +1380,14 @@
       ],
       "sourceUrl": "/sozlesme-yonetimi",
       "pageTitle": "ServiceCore Sözleşme Yönetimi | ITIL4 Süreç Uygulama Rehberi",
-      "excerpt": "Sözleşme Yönetimi, kurum içi (OLA), tedarikçi ve müşteri (SLA) anlaşmalarının dijital, denetlenebilir ve sürekli güncel bir kayıtla yönetilmesini sağlar. ITIL4 Supplier Management pratiği, üçüncü taraf hizmetlerin organizasyonun değer akışına sorunsuz entegre olmasını mümkün kılar.",
+      "excerpt": "Sözleşme Yönetimi, kurum içi (OLA), tedarikçi ve müşteri anlaşmalarının dijital, denetlenebilir ve sürekli güncel bir kayıtla yönetilmesini sağlar. ITIL4 Supplier Management pratiği, üçüncü taraf hizmetlerin organizasyonun değer akışına sorunsuz entegre olmasını mümkün kılar.",
       "content": [
         {
           "type": "intro",
           "paragraphs": [
-            "Sözleşme Yönetimi, kurum içi (OLA), tedarikçi ve müşteri (SLA) anlaşmalarının dijital, denetlenebilir ve sürekli güncel bir kayıtla yönetilmesini sağlar. Hiçbir kurum bugün tek başına yetkin değildir; her organizasyon iş hedeflerine ulaşmak için ekosistemindeki tedarikçi, ortak ve iç birim sözleşmelerine bağımlıdır. Bu sözleşmelerin disiplinli yönetimi, hizmet kalitesinin doğrudan belirleyicisidir.",
-            "ITIL4 Supplier Management pratiği, kurumların kaynak stratejisini (sourcing strategy) belirlemesini, doğru tedarikçiyi seçmesini, sözleşme yaşam döngüsünü uçtan uca yönetmesini ve performansı ölçmesini kapsar. Pratik, sadece dış tedarikçi değil, organizasyonun servis tüketicisi olarak yer aldığı her ilişkide uygulanır. Sözleşme dilinde tanımlanan SLA, fayda paylaşımı ve ceza maddeleri, ilişkinin sınırlarını belirleyen yasal ve operasyonel çerçevedir.",
-            "ServiceCore Sözleşme Yönetimi modülü; OLA, tedarikçi ve SLA sözleşmelerini tek platformda yönetir. Yenileme uyarısından kapsam takibine, taraf yönetiminden raporlamaya kadar uçtan uca bir yapı sunar. 8 aşamalı sözleşme yaşam döngüsü ile süreç şeffaf ve denetlenebilir hale gelir; manuel takiplerin yerini disiplinli bir aksiyon zinciri alır."
+            "Sözleşme Yönetimi, kurum içi (OLA), tedarikçi ve müşteri anlaşmalarının dijital, denetlenebilir ve sürekli güncel bir kayıtla yönetilmesini sağlar. Hiçbir kurum bugün tek başına yetkin değildir; her organizasyon iş hedeflerine ulaşmak için ekosistemindeki tedarikçi, ortak ve iç birim sözleşmelerine bağımlıdır. Bu sözleşmelerin disiplinli yönetimi, hizmet kalitesinin doğrudan belirleyicisidir.",
+            "ITIL4 Supplier Management pratiği, kurumların kaynak stratejisini (sourcing strategy) belirlemesini, doğru tedarikçiyi seçmesini, sözleşme yaşam döngüsünü uçtan uca yönetmesini ve performansı ölçmesini kapsar. Pratik, sadece dış tedarikçi değil, organizasyonun servis tüketicisi olarak yer aldığı her ilişkide uygulanır. Sözleşme dilinde tanımlanan Hizmet Seviyesi, fayda paylaşımı ve ceza maddeleri, ilişkinin sınırlarını belirleyen yasal ve operasyonel çerçevedir.",
+            "ServiceCore Sözleşme Yönetimi modülü; OLA, tedarikçi ve Hizmet Seviyesi sözleşmelerini tek platformda yönetir. Yenileme uyarısından kapsam takibine, taraf yönetiminden raporlamaya kadar uçtan uca bir yapı sunar. 8 aşamalı sözleşme yaşam döngüsü ile süreç şeffaf ve denetlenebilir hale gelir; manuel takiplerin yerini disiplinli bir aksiyon zinciri alır."
           ]
         },
         {
@@ -1405,12 +1405,12 @@
           "heading": "Sürecin Temel Adımları",
           "paragraphs": [
             "Sözleşme yaşam döngüsü; oluşturma, detay tanımlama, onay, varlık ve hizmet ilişkilendirme, finansal bilgilerin işlenmesi, ilişkili sözleşmelerin bağlanması, otomatik bildirim ve geçmiş kaydı olmak üzere sekiz adımda işler. ITIL4 servis ilişkisi yolculuğu (explore, engage, offer, agree, onboard, co-create, realize) bu adımları daha geniş bir çerçevede ele alır.",
-            "Kontrat yapısı; SLA, KPI'lar, ödül-ceza maddeleri, ödeme planı, sorumluluklar ve teslim edilecek çıktıları içermelidir. Sourcing stratejisinin temelinde 'hangi kaynak içeride yönetilecek, hangisi dışarıdan alınacak' kararı yatar; bu karar tedarikçi kategorizasyonunu doğrudan etkiler."
+            "Kontrat yapısı; Hizmet Seviyesi, KPI'lar, ödül-ceza maddeleri, ödeme planı, sorumluluklar ve teslim edilecek çıktıları içermelidir. Sourcing stratejisinin temelinde 'hangi kaynak içeride yönetilecek, hangisi dışarıdan alınacak' kararı yatar; bu karar tedarikçi kategorizasyonunu doğrudan etkiler."
           ],
           "bullets": [
             "Sourcing stratejisini ve tedarikçi kategorizasyonunu organizasyon stratejisi ile uyumla belirle",
             "RfX süreciyle pazardaki tedarikçileri değerlendir; performans ve uyum kriterlerini önceden paylaş",
-            "Sözleşmeyi standart şablon üzerinden müzakere et; SLA, ödeme ve cezai şartları netleştir",
+            "Sözleşmeyi standart şablon üzerinden müzakere et; Hizmet Seviyesi, ödeme ve cezai şartları netleştir",
             "Onay zincirini tanımla ve dijital olarak yürüt; yetkili kişilerin imzasını kayıt altına al",
             "Yenileme, fesih ihbar süresi ve kritik milestone'ları otomatik bildirimle takip et",
             "Tedarikçi performansını periyodik olarak ölç; ödül veya ceza maddelerini tetikle",
@@ -1423,11 +1423,11 @@
           "type": "section",
           "heading": "ServiceCore ile Süreci Uygulamak",
           "paragraphs": [
-            "ServiceCore Sözleşme Yönetimi modülü; OLA, tedarikçi ve SLA sözleşmelerini standart sınıflandırma altında tek panelde yönetir. Sözleşme detayları, durum yönetimi, dosya yükleme, CNR numarasıyla erişim, kurul onay süreci, varlık ve hizmet ilişkilendirme, finansal bilgiler ve ilişkili sözleşmeler aynı kayıt yapısı içinde işlenir.",
-            "Yenileme ve fesih uyarıları otomatik üretilir; süre dolmadan önce/sonra kaç gün kala bilgilendirme yapılacağı tanımlanır. Hem kurum içi kullanıcılar hem karşı taraf bildirim alabilir. Tedarikçi performans değerlendirmesi, bütçe ve harcama takibi tek panelden raporlanır; sözleşme başına maliyet, müşteri SLA uyumu ve kapsam dışı durumlar veriye dönüşür."
+            "ServiceCore Sözleşme Yönetimi modülü; OLA, tedarikçi ve Hizmet Seviyesi sözleşmelerini standart sınıflandırma altında tek panelde yönetir. Sözleşme detayları, durum yönetimi, dosya yükleme, CNR numarasıyla erişim, kurul onay süreci, varlık ve hizmet ilişkilendirme, finansal bilgiler ve ilişkili sözleşmeler aynı kayıt yapısı içinde işlenir.",
+            "Yenileme ve fesih uyarıları otomatik üretilir; süre dolmadan önce/sonra kaç gün kala bilgilendirme yapılacağı tanımlanır. Hem kurum içi kullanıcılar hem karşı taraf bildirim alabilir. Tedarikçi performans değerlendirmesi, bütçe ve harcama takibi tek panelden raporlanır; sözleşme başına maliyet, müşteri Hizmet Seviyesi uyumu ve kapsam dışı durumlar veriye dönüşür."
           ],
           "bullets": [
-            "OLA, tedarikçi ve SLA sözleşmeleri standart sınıflandırma altında merkezi olarak yönetilir",
+            "OLA, tedarikçi ve Hizmet Seviyesi sözleşmeleri standart sınıflandırma altında merkezi olarak yönetilir",
             "8 aşamalı yaşam döngüsü onay, varlık-hizmet ilişkilendirmesi ve finansal takiple disiplinli işler",
             "Otomatik bildirimler yenileme ve fesih ihbar sürelerinin unutulma riskini ortadan kaldırır",
             "İlişkili sözleşmeler bağlanarak ana-bağımlı yapısı bütünsel görünürlük sağlar"
@@ -1438,8 +1438,8 @@
           "type": "section",
           "heading": "Nelere Dikkat Edilmelidir",
           "paragraphs": [
-            "Sözleşme yönetiminde en yaygın hata, sözleşmeyi imzaladıktan sonra kayıt sistemine eklemeyi unutmak veya sadece arşivlemek üzere taramaktır. ITIL4 yaklaşımı sözleşmenin canlı bir kayıt olarak yönetilmesini gerektirir; SLA hedefleri, ihbar süreleri ve ilişkili varlıklar her zaman güncel tutulmalıdır. Sözleşme veri modelinde standart alanların eksik bırakılması raporlamayı tutarsız hale getirir.",
-            "İkinci risk tedarikçi performansının ölçülmemesidir. ITIL4 contractual compliance, SLA performance, innovation commitments ve value co-creation gibi göstergeleri ödül-ceza mekanizması ile birleştirir. Ölçülmeyen tedarikçi yönetilemez; periyodik gözden geçirme oturumları ihmal edildiğinde kapsam kayması ve maliyet artışı kaçınılmaz olur."
+            "Sözleşme yönetiminde en yaygın hata, sözleşmeyi imzaladıktan sonra kayıt sistemine eklemeyi unutmak veya sadece arşivlemek üzere taramaktır. ITIL4 yaklaşımı sözleşmenin canlı bir kayıt olarak yönetilmesini gerektirir; Hizmet Seviyesi hedefleri, ihbar süreleri ve ilişkili varlıklar her zaman güncel tutulmalıdır. Sözleşme veri modelinde standart alanların eksik bırakılması raporlamayı tutarsız hale getirir.",
+            "İkinci risk tedarikçi performansının ölçülmemesidir. ITIL4 contractual compliance, Hizmet Seviyesi performance, innovation commitments ve value co-creation gibi göstergeleri ödül-ceza mekanizması ile birleştirir. Ölçülmeyen tedarikçi yönetilemez; periyodik gözden geçirme oturumları ihmal edildiğinde kapsam kayması ve maliyet artışı kaçınılmaz olur."
           ],
           "bullets": [
             "Sözleşmeyi imzaladıktan sonra 'arşivledim, bitti' tuzağına düşme; canlı kayıt olarak yönet",
@@ -1453,7 +1453,7 @@
           "type": "section",
           "heading": "Başarı Göstergeleri ve Sürekli İyileştirme",
           "paragraphs": [
-            "Pratiğin başarı göstergeleri arasında üçüncü taraflarla ilişki memnuniyeti, sözleşme uyumsuzluk vakalarının sayısı ve etkisi, tedarikçi kaynaklı SLA ihlalleri, üçüncü taraf entegrasyonundan doğan kayıplar, yenilenen sözleşmelerin getirdiği değer ve maliyet tasarrufu yer alır. Bu metrikler değer akışı bağlamında okunduğunda anlamlı içgörüler üretir.",
+            "Pratiğin başarı göstergeleri arasında üçüncü taraflarla ilişki memnuniyeti, sözleşme uyumsuzluk vakalarının sayısı ve etkisi, tedarikçi kaynaklı Hizmet Seviyesi ihlalleri, üçüncü taraf entegrasyonundan doğan kayıplar, yenilenen sözleşmelerin getirdiği değer ve maliyet tasarrufu yer alır. Bu metrikler değer akışı bağlamında okunduğunda anlamlı içgörüler üretir.",
             "ServiceCore üzerindeki sözleşme verisi, raporlama ve audit trail sürekli iyileştirme döngüsünü besler. 'Continual Improvement' pratiğiyle birlikte çalıştırılan sözleşme yönetimi, tedarikçi havuzunun olgunluğunu kademeli olarak artırır; ödül-ceza tetikleyicileri, yenileme stratejileri ve kategori bazlı yaklaşımlar veriye dayalı olarak güncellenir."
           ],
           "bullets": [],
@@ -1521,8 +1521,8 @@
           "type": "section",
           "heading": "ServiceCore ile Süreci Uygulamak",
           "paragraphs": [
-            "ServiceCore SARE motoru, otomasyon kurallarını WHEN-IF-THEN-ELSE mantığıyla görsel bir tasarımcıda kurmanıza olanak tanır. Aktif kural sayısı, tetiklenen olay sayısı, manuel tasarruf süresi ve hata oranı yöneticilerin tek bakışta gördüğü temel KPI'lardır. Kayıt oluşturma, alan değişimi, durum güncelleme, SLA eşiği ve zaman bazlı koşullar standart tetikleyicilerdir.",
-            "Aksiyon paleti; alan güncelleme, atama, e-posta, görev oluşturma, eskalasyon ve webhook'ları içerir. Çok katmanlı kural ağacı kök koşul + alt koşul + istisna kombinasyonlarını destekler; paralel ve sıralı aksiyon kurguları aynı kural altında çalışır. Hazır kural kütüphanesi 'kritik olay eskalasyonu, otomatik atama, SLA ihlal uyarısı, kategori bazlı yönlendirme' gibi yaygın senaryoları başlangıç noktası olarak sunar."
+            "ServiceCore SARE motoru, otomasyon kurallarını WHEN-IF-THEN-ELSE mantığıyla görsel bir tasarımcıda kurmanıza olanak tanır. Aktif kural sayısı, tetiklenen olay sayısı, manuel tasarruf süresi ve hata oranı yöneticilerin tek bakışta gördüğü temel KPI'lardır. Kayıt oluşturma, alan değişimi, durum güncelleme, Hizmet Seviyesi eşiği ve zaman bazlı koşullar standart tetikleyicilerdir.",
+            "Aksiyon paleti; alan güncelleme, atama, e-posta, görev oluşturma, eskalasyon ve webhook'ları içerir. Çok katmanlı kural ağacı kök koşul + alt koşul + istisna kombinasyonlarını destekler; paralel ve sıralı aksiyon kurguları aynı kural altında çalışır. Hazır kural kütüphanesi 'kritik olay eskalasyonu, otomatik atama, Hizmet Seviyesi ihlal uyarısı, kategori bazlı yönlendirme' gibi yaygın senaryoları başlangıç noktası olarak sunar."
           ],
           "bullets": [
             "Görsel kural tasarımcısı kod yazmadan IF-THEN-ELSE akışını kurmanıza olanak tanır",
@@ -1551,7 +1551,7 @@
           "type": "section",
           "heading": "Başarı Göstergeleri ve Sürekli İyileştirme",
           "paragraphs": [
-            "Servis otomasyonunun başarı göstergeleri; tetiklenen kural sayısı, otomasyon kapsamındaki süreç oranı, manuel tasarruf süresi, hata oranı, SLA uyumundaki iyileşme ve müşteri memnuniyeti olarak özetlenebilir. ITIL4 'Number of audit findings caused by deployments' ve 'Percentage of successful deployments' gibi metrikleri öneri olarak sunar.",
+            "Servis otomasyonunun başarı göstergeleri; tetiklenen kural sayısı, otomasyon kapsamındaki süreç oranı, manuel tasarruf süresi, hata oranı, Hizmet Seviyesi uyumundaki iyileşme ve müşteri memnuniyeti olarak özetlenebilir. ITIL4 'Number of audit findings caused by deployments' ve 'Percentage of successful deployments' gibi metrikleri öneri olarak sunar.",
             "Continual Improvement pratiği bağlamında otomasyon, asla bitmeyen bir alandır. Improvement register'da biriken fikirler, retrospektive çıktıları ve operasyonel bulgular yeni kural ihtiyaçlarına dönüşür. ServiceCore'un sürüm geçmişi ve performans verisi bu döngünün ölçülebilir omurgasıdır; her yeni kural geçmiş kuralların etkisini de yeniden değerlendirmek için fırsattır."
           ],
           "bullets": [],
@@ -1699,7 +1699,7 @@
           "heading": "Sürecin Temel Adımları",
           "paragraphs": [
             "ESM kurulumunda ilk adım, organizasyonun strateji dokümanına bakarak hangi departmanların hizmet sağlayıcı rolünde yer alacağını belirlemektir. Strateji yön verir; her departmanın değer önerisi, hedef paydaşları ve hizmet tanımları stratejik hedeflerle hizalanır. Sonrasında her departman için hizmet kataloğu hazırlanır; user, customer ve provider görünümleri ayrı ayrı tasarlanır.",
-            "İkinci adım, talep akışlarını standartlaştırmaktır. Self-servis portal arayüzü kullanıcı dostu olmalı; intuitive, familiar ve smooth bir deneyim sunmalıdır. İş akışları otomasyon kurallarıyla beslenir, onay zincirleri tanımlanır, SLA hedefleri belirlenir. Operasyonel görünürlük; tıkanıklıkları erken tespit etmeyi, sürekli iyileştirme döngüsünü beslemeyi sağlar."
+            "İkinci adım, talep akışlarını standartlaştırmaktır. Self-servis portal arayüzü kullanıcı dostu olmalı; intuitive, familiar ve smooth bir deneyim sunmalıdır. İş akışları otomasyon kurallarıyla beslenir, onay zincirleri tanımlanır, Hizmet Seviyesi hedefleri belirlenir. Operasyonel görünürlük; tıkanıklıkları erken tespit etmeyi, sürekli iyileştirme döngüsünü beslemeyi sağlar."
           ],
           "bullets": [
             "Stratejik hedeflerle hizmet kataloğu yapısını hizala; ESM stratejiden değil, ikincilikten doğamaz",
@@ -1707,7 +1707,7 @@
             "User, customer ve provider görünümlerini farklı tasarla; her paydaş kendi penceresinden görsün",
             "Self-servis portal arayüzünü intuitive ve familiar tasarla; benimseme oranı kullanılabilirliğe bağlıdır",
             "Talep akışlarını otomasyon kurallarıyla besle; manuel adımları minimuma indir",
-            "Onay zincirleri ve SLA hedefleri her hizmet teklifi için netleştir",
+            "Onay zincirleri ve Hizmet Seviyesi hedefleri her hizmet teklifi için netleştir",
             "Operasyonel şeffaflığı sağla; her departmanın gerçek zamanlı durumu yöneticilere açık olsun",
             "Veri tabanlı içgörülerle sürekli iyileştirme yap; raporlama stratejik karara dönüşmeli"
           ],
@@ -1747,7 +1747,7 @@
           "type": "section",
           "heading": "Başarı Göstergeleri ve Sürekli İyileştirme",
           "paragraphs": [
-            "ESM başarısı; talep çözüm süresi, self-servis portal benimseme oranı, otomasyon kapsam yüzdesi, departmanlar arası işbirliği skoru, çalışan ve müşteri memnuniyeti, operasyonel görünürlük seviyesi, SLA uyum oranı ve stratejik içgörü üretimi gibi göstergelerle ölçülür. Service Catalogue Management metrikleri (catalogue completeness, user satisfaction, error rate) doğrudan ESM kalitesine yansır.",
+            "ESM başarısı; talep çözüm süresi, self-servis portal benimseme oranı, otomasyon kapsam yüzdesi, departmanlar arası işbirliği skoru, çalışan ve müşteri memnuniyeti, operasyonel görünürlük seviyesi, Hizmet Seviyesi uyum oranı ve stratejik içgörü üretimi gibi göstergelerle ölçülür. Service Catalogue Management metrikleri (catalogue completeness, user satisfaction, error rate) doğrudan ESM kalitesine yansır.",
             "ITIL4 Continual Improvement pratiği bağlamında ESM, asla bitmeyen bir dönüşüm yolculuğudur. Strateji düzenli olarak gözden geçirilir; karmaşıklık seviyesine göre yaklaşım uyarlanır. ServiceCore üzerindeki gerçek zamanlı veriler, departmanların değer üretimini ölçülebilir kılar; liderler operasyonun her noktasını şeffaf biçimde takip eder ve veriye dayalı stratejik kararlar alır."
           ],
           "bullets": [],
@@ -1875,7 +1875,7 @@
           "type": "intro",
           "paragraphs": [
             "Yönetim paneli, bir ITSM platformunun yapı taşlarının bir araya getirildiği merkezi kontrol katmanıdır. ITIL4 perspektifinden bakıldığında bu panel, hem Architecture Management pratiğinin somut yansıması hem de Measurement and Reporting Management pratiğinin işlemsel zeminidir. Genel ayarlardan organizasyon şemasına, varlık konfigürasyonundan otomasyon kurallarına kadar tüm yapılandırma kararları burada toplanır.",
-            "ITIL4 Architecture Management pratiği; kurumun mevcut mimarisinin anlaşılması, hedef mimarisinin tanımlanması ve sürekli optimize edilmesini kapsar. Yönetim paneli, bu mimari kararlarının operasyonel araca dönüştüğü yerdir; hangi kullanıcı hangi gruba dahil, hangi varlık türü hangi sözleşmeyle ilişkili, hangi süreç hangi SLA altında çalışıyor — tüm bu sorular panel üzerinden yanıtlanır.",
+            "ITIL4 Architecture Management pratiği; kurumun mevcut mimarisinin anlaşılması, hedef mimarisinin tanımlanması ve sürekli optimize edilmesini kapsar. Yönetim paneli, bu mimari kararlarının operasyonel araca dönüştüğü yerdir; hangi kullanıcı hangi gruba dahil, hangi varlık türü hangi sözleşmeyle ilişkili, hangi süreç hangi Hizmet Seviyesi altında çalışıyor — tüm bu sorular panel üzerinden yanıtlanır.",
             "ServiceCore Yönetim Paneli; merkezi kontrol, esneklik, verimlilik ve şeffaflık dört temel ilkesi etrafında inşa edilmiştir. Bu rehber; panelin ITIL4 prensipleriyle nasıl yapılandırılacağını, hangi adımlarla devreye alınacağını ve uygulama sürecinde nelere dikkat edilmesi gerektiğini ele alır."
           ]
         },
@@ -1883,9 +1883,9 @@
           "type": "section",
           "heading": "ITIL4'e Göre Süreç Tanımı ve Amacı",
           "paragraphs": [
-            "ITIL4 Measurement and Reporting Management pratiğinin amacı, ilgili veriyi toplayıp uygun bağlamda değerlendirerek belirsizliği azaltmak ve iyi karar alma ile sürekli iyileştirmeyi desteklemektir. Yönetim Paneli; ölçüm yapılacak managed objects'in (varlıklar, kullanıcılar, sözleşmeler, SLA'lar, süreçler) tanımlandığı zeminidir. Panel doğru kurulmadan, raporlama ve KPI'lar anlamlı olmaz.",
+            "ITIL4 Measurement and Reporting Management pratiğinin amacı, ilgili veriyi toplayıp uygun bağlamda değerlendirerek belirsizliği azaltmak ve iyi karar alma ile sürekli iyileştirmeyi desteklemektir. Yönetim Paneli; ölçüm yapılacak managed objects'in (varlıklar, kullanıcılar, sözleşmeler, Hizmet Seviyeleri, süreçler) tanımlandığı zeminidir. Panel doğru kurulmadan, raporlama ve KPI'lar anlamlı olmaz.",
             "ITIL4 Architecture Management pratiği ise organizasyonu oluşturan farklı unsurları (iş, ürün-hizmet, bilgi sistemleri, teknoloji ve çevre mimarisi) ve aralarındaki ilişkileri açıklamayı amaçlar. Pratiğin başarı faktörleri arasında 'organizasyonun mimarisinin sürekli olarak hedef duruma evrilmesini sağlamak' yer alır. Yönetim Paneli; bu mimari evrimin günlük operasyona yansıdığı kontrol noktasıdır.",
-            "İki pratik birlikte ele alındığında ortaya çıkan tablo nettir: yönetim paneli, kurumun mimari kararlarını ölçülebilir parametrelere indiren ve süreçleri sürdürülebilir biçimde işleten platform katmanıdır. ITIL4'ün 'think and work holistically' prensibi, panelin tek başına bir bileşen olarak değil; rol, varlık, sözleşme, SLA, süreç ve raporlamanın birleştiği bütüncül kontrol merkezi olarak konumlanmasını gerektirir."
+            "İki pratik birlikte ele alındığında ortaya çıkan tablo nettir: yönetim paneli, kurumun mimari kararlarını ölçülebilir parametrelere indiren ve süreçleri sürdürülebilir biçimde işleten platform katmanıdır. ITIL4'ün 'think and work holistically' prensibi, panelin tek başına bir bileşen olarak değil; rol, varlık, sözleşme, Hizmet Seviyesi, süreç ve raporlamanın birleştiği bütüncül kontrol merkezi olarak konumlanmasını gerektirir."
           ],
           "bullets": [],
           "subSections": []
@@ -1902,7 +1902,7 @@
             "Organizasyon hiyerarşisini panele yansıtın; departmanlar, kullanıcı grupları, teknisyen grupları, onay ve danışma kurullarını belirleyin.",
             "Varlık ve konfigürasyon yapısını CMDB temelinde inşa edin; üretici, model, konum, ilişki türü ve sözleşmeleri sınıflandırın.",
             "Roller ve yetkiler matrisini netleştirin; her kullanıcının hangi modüle, hangi kayıt türüne ve hangi aksiyonlara erişeceğini tanımlayın.",
-            "SLA politikalarını ve global statüsleri kurun; tüm modüllerde ortak süreç dili ve ölçüm zemini sağlayın.",
+            "Hizmet Seviyesi politikalarını ve global statüsleri kurun; tüm modüllerde ortak süreç dili ve ölçüm zemini sağlayın.",
             "Otomasyon, anket ve zamanlanmış olay kurallarıyla operasyonel disiplini standartlaştırın; tekrar eden işleri sistemden işletin."
           ],
           "subSections": []
@@ -1916,7 +1916,7 @@
           ],
           "bullets": [
             "Süreç şablonları, hazır cevaplar, görev ve worklog şablonları sayesinde tekrar eden işlemler standartlaşır.",
-            "SLA politikaları ve kapatma kuralları; servis bazında kalibre edilen anlaşmalar otomatik kurallarla disipline döner.",
+            "Hizmet Seviyesi politikaları ve kapatma kuralları; servis bazında kalibre edilen anlaşmalar otomatik kurallarla disipline döner.",
             "Otomasyon yönetimi; koşul-aksiyon kurallarıyla operasyonel yük azalır, tutarlılık artar.",
             "Global statüsler; tüm modüllerde ortak durum kodları (Beklemede, İşlemde, Tamamlandı) ile raporlama tutarlı kalır."
           ],
@@ -1942,7 +1942,7 @@
           "heading": "Başarı Göstergeleri ve Sürekli İyileştirme",
           "paragraphs": [
             "Yönetim panelinin başarısı; doğrudan ölçülebilir bir aksiyon değil, üzerine inşa edilen tüm süreçlerin ne kadar tutarlı çalıştığıyla anlaşılır. ITIL4 Measurement and Reporting Management pratiğinin önerdiği üzere, etkililik, verimlilik, uyumluluk ve olgunluk metrikleri birlikte ele alınmalıdır.",
-            "Anlamlı göstergeler; SLA politikalarının kapsamı, otomasyon kurallarının kapsadığı işlem oranı, CMDB veri kalitesi (eksik öznitelik oranı, doğrulanmamış kayıt sayısı), rol-yetki uyumsuzluğu vakaları ve global statüs tutarlılığını birleştirir. Architecture Management pratiğinin önerdiği gibi mimari yol haritası ilerlemesi de panel üzerinde takip edilebilir; panel sadece operasyonel değil, stratejik bir kontrol noktasıdır. Sürekli iyileştirme döngüsü panelin yapılandırma kararlarını da kapsar — değişen iş ihtiyaçları, panele zamanında yansıtılmadığında platform stratejiden kopar."
+            "Anlamlı göstergeler; Hizmet Seviyesi politikalarının kapsamı, otomasyon kurallarının kapsadığı işlem oranı, CMDB veri kalitesi (eksik öznitelik oranı, doğrulanmamış kayıt sayısı), rol-yetki uyumsuzluğu vakaları ve global statüs tutarlılığını birleştirir. Architecture Management pratiğinin önerdiği gibi mimari yol haritası ilerlemesi de panel üzerinde takip edilebilir; panel sadece operasyonel değil, stratejik bir kontrol noktasıdır. Sürekli iyileştirme döngüsü panelin yapılandırma kararlarını da kapsar — değişen iş ihtiyaçları, panele zamanında yansıtılmadığında platform stratejiden kopar."
           ],
           "bullets": [],
           "subSections": []
@@ -1972,7 +1972,7 @@
           "type": "intro",
           "paragraphs": [
             "Mobil servis yönetimi, ITSM süreçlerinin masa başından sahaya, ofisten yola taşınmasıdır. ITIL4 Service Desk pratiği, hizmet sağlayıcı ile kullanıcılar arasındaki iletişim kanallarının erişilebilir, kullanışlı ve duruma uygun olması gerektiğini vurgular; mobil kanal bu erişilebilirliğin modern karşılığıdır.",
-            "Saha teknisyenleri, gezici operasyon yöneticileri ve uzaktan çalışan ekipler için ofis tabanlı arayüzler artık yeterli değildir. Bir SLA ihlal alarmı geldiğinde, bir kritik olay açıldığında veya bir onayın hızla verilmesi gerektiğinde; karar vericinin ve yürütücünün bilgisayar başında olması beklenemez. Mobil yetkinlik, ITIL4'ün 'availability' karakterini self-servis kanalları için işletmenin temel koşuludur.",
+            "Saha teknisyenleri, gezici operasyon yöneticileri ve uzaktan çalışan ekipler için ofis tabanlı arayüzler artık yeterli değildir. Bir Hizmet Seviyesi ihlal alarmı geldiğinde, bir kritik olay açıldığında veya bir onayın hızla verilmesi gerektiğinde; karar vericinin ve yürütücünün bilgisayar başında olması beklenemez. Mobil yetkinlik, ITIL4'ün 'availability' karakterini self-servis kanalları için işletmenin temel koşuludur.",
             "ServiceCore Mobil Servis Uygulaması; ITIL4 ile uyumlu süreç altyapısını, gerçek zamanlı izlemeyi, anlık bildirimleri ve mevcut sistemlerle kolay entegrasyonu cep boyutuna indirir. Bu rehber; mobil servis yönetiminin ITIL4 prensipleriyle nasıl uyarlanacağını, hangi adımlarla devreye alınacağını ve uygulama sürecinde nelere dikkat edilmesi gerektiğini ele alır."
           ]
         },
@@ -1997,7 +1997,7 @@
           "bullets": [
             "Hangi rolün mobilde hangi süreçleri yürüteceğini netleştirin; sahadaki teknisyenle CIO'nun mobil ihtiyacı aynı değildir.",
             "Push bildirim kuralları için kritiklik eşikleri tanımlayın; her olayı bildirmek bildirim körlüğüne yol açar.",
-            "SLA ihlal alarmlarını mobile özel önceliklendirin; hareket halindeyken yalnızca aksiyon gerektirenler ekrana düşmelidir.",
+            "Hizmet Seviyesi ihlal alarmlarını mobile özel önceliklendirin; hareket halindeyken yalnızca aksiyon gerektirenler ekrana düşmelidir.",
             "Onay süreçlerini mobil deneyime uygun sadeleştirin; çoklu ekran isteyen onay zincirleri mobilde kullanışsızdır.",
             "Çevrimdışı senaryoları planlayın; sahada ağ bağlantısı zayıf olduğunda veri kaybı yaşanmamalıdır.",
             "Pilot grup ile sahada test edin; gerçek koşullar (güneş yansıması, eldivenle dokunmatik kullanımı, batarya tüketimi) lab ortamında görülmez."
@@ -2039,7 +2039,7 @@
           "heading": "Başarı Göstergeleri ve Sürekli İyileştirme",
           "paragraphs": [
             "Mobil servis yönetiminin başarısı; sadece indirme sayısıyla ölçülmez. ITIL4 Continual Improvement döngüsü içinde, mobil kanalın hizmet masası genel performansına katkısı izlenmelidir. Service Desk pratiğinin başarı faktörleri olan 'kullanıcılar ile etkili iletişim' ve 'value stream'lere entegrasyon' mobil bağlamda da geçerlidir.",
-            "Anlamlı göstergeler; mobilden açılan/güncellenen kayıt oranı, mobil onay tamamlanma süresi, push bildirim açma oranı, SLA ihlal alarmlarında ortalama tepki süresi ve saha teknisyenlerinin ilk seferde çözüm oranını birleştirir. Architecture Management pratiğinin işaret ettiği 'mimari evrim' bağlamında mobil yetkinlik, hizmet ekosisteminin omnichannel olgunluğunun temel göstergelerinden biridir. Sürekli iyileştirme döngüsü; gelen kullanıcı geri bildirimlerini, kullanım analitiğini ve yeni cihaz/işletim sistemi gelişmelerini düzenli olarak işleyerek mobil deneyimi olgunlaştırır."
+            "Anlamlı göstergeler; mobilden açılan/güncellenen kayıt oranı, mobil onay tamamlanma süresi, push bildirim açma oranı, Hizmet Seviyesi ihlal alarmlarında ortalama tepki süresi ve saha teknisyenlerinin ilk seferde çözüm oranını birleştirir. Architecture Management pratiğinin işaret ettiği 'mimari evrim' bağlamında mobil yetkinlik, hizmet ekosisteminin omnichannel olgunluğunun temel göstergelerinden biridir. Sürekli iyileştirme döngüsü; gelen kullanıcı geri bildirimlerini, kullanım analitiğini ve yeni cihaz/işletim sistemi gelişmelerini düzenli olarak işleyerek mobil deneyimi olgunlaştırır."
           ],
           "bullets": [],
           "subSections": []
@@ -2420,8 +2420,8 @@
             "Kurumun çalışmakta olduğu tedarikçiler admin panel üzerinden girilir. Tedarikçi bilgileri sözleşmelerde, olay, problem, istek vb. süreçlerde gerekli durumlarda destek alınacak temas ve koşullar için kullanılmak üzere sisteme yüklenir.",
             "21. Sözleşmeleri tanımlama",
             "Temin edilen assetler ve servisler için yapılan tedarikçi sözleşmeleri, (varsa) iç destek birimleri ile yapılan destek sözleşmeleri, (varsa) iç ve dış müşterilerle yapılan sözleşmeler sisteme yüklenmesi gösterilir ve örnekler yapılır.",
-            "22. SLA Policyler oluşturma",
-            "İç veya dış müşterilerle yapılan anlaşmalar baz alınarak, kategori-servis-departman özelinde belirlenen müdahale ve çözüm süreleri için SLA kuralları belirlenir.",
+            "22. Hizmet Seviyesi Policyler oluşturma",
+            "İç veya dış müşterilerle yapılan anlaşmalar baz alınarak, kategori-servis-departman özelinde belirlenen müdahale ve çözüm süreleri için Hizmet Seviyesi kuralları belirlenir.",
             "23. Uyarı şablonlarını düzenleme",
             "Tüm süreçlerin eposta bilgilendirme-uyarı şablonlarından kullanılmak istenenler seçilir, seçilen şablonlarda gerekli düzenlemeler yapılır.",
             "24. Kapatma kuralları belirleme",

@@ -438,7 +438,7 @@ export default function SelfServisPortalPage() {
                             <span className="text-[10px] font-bold text-white">{s.name}</span>
                             <div className="flex items-center gap-1">
                               <Clock className="w-2 h-2 text-(--color-text-muted)" />
-                              <span className="text-[8px] font-mono text-(--color-text-muted)">SLA {s.sla}</span>
+                              <span className="text-[8px] font-mono text-(--color-text-muted)">Hizmet Seviyesi {s.sla}</span>
                             </div>
                           </div>
                         </div>

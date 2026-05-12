@@ -366,26 +366,26 @@
         {
           "kind": "para",
           "number": null,
-          "text": "Çok katmanlı servis seviye anlaşması (Multi-Level SLA) tanımlama yetenekleri donatılan bu modülde müşteri servis süre beklentilerini doğru belirleme ve tüm faaliyetleri doğru zamanlama ile sunabilme ihtiyacı otomatikleştirilmiştir."
+          "text": "Çok katmanlı servis seviye anlaşması (Multi-Level) tanımlama yetenekleri donatılan bu modülde müşteri servis süre beklentilerini doğru belirleme ve tüm faaliyetleri doğru zamanlama ile sunabilme ihtiyacı otomatikleştirilmiştir."
         },
         {
           "kind": "para",
           "number": null,
-          "text": "Kolay SLA girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanmaktadır."
+          "text": "Kolay Hizmet Seviyesi girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanmaktadır."
         }
       ],
       "paragraphs": [
         "Entegre servis seviye yönetimi ile tüm servis yönetimi süreçlerinizin performansını arttırın.. Müşteri beklentilerinin hem olay hem de isteklerle ilgili tanımlarını kolayca yönetebileceğiniz, parametrik servis seviye anlaşmaları uygulaması ile performans sizin kontrolünüzde.",
         "Erişilebilirlik ve servis sunum süreleri ile ilgili beklentilerin doğru tanımlanması ile önceliklendirme yükünü otomatikleştirin.",
         "Olay ve istek yönetimi süreçlerinin öncelikli ve zorlu faaliyetlerinden olan önceliklendirme çalışmasını otomatikleştiren servis seviye yönetimi modülü ile hizmet kalitesini arttırın.",
-        "Çok katmanlı servis seviye anlaşması (Multi-Level SLA) tanımlama yetenekleri donatılan bu modülde müşteri servis süre beklentilerini doğru belirleme ve tüm faaliyetleri doğru zamanlama ile sunabilme ihtiyacı otomatikleştirilmiştir.",
-        "Kolay SLA girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanmaktadır."
+        "Çok katmanlı servis seviye anlaşması (Multi-Level) tanımlama yetenekleri donatılan bu modülde müşteri servis süre beklentilerini doğru belirleme ve tüm faaliyetleri doğru zamanlama ile sunabilme ihtiyacı otomatikleştirilmiştir.",
+        "Kolay Hizmet Seviyesi girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanmaktadır."
       ],
       "bullets": [],
       "accent": "cyan",
       "icon": "Activity",
       "title_tr": "Servis Seviye Yönetimi",
-      "tagline": "Çok katmanlı SLA ile öncelik ve zamanlama otomasyonu."
+      "tagline": "Çok katmanlı Hizmet Seviyesi ile öncelik ve zamanlama otomasyonu."
     },
     {
       "id": "measurement-and-reporting-management",

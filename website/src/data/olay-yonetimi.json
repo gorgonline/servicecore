@@ -3,7 +3,7 @@
     "badge": "Olay Yönetimi",
     "titleLead": "Kesintiye hızlı yanıt,",
     "titleAccent": "ITIL4 ile ölçülebilir operasyon.",
-    "description": "ServiceCore Incident Management, iş sürekliliğini tehdit eden kesinti, hata ve servis aksaklıklarına hızlı ve kontrollü müdahale için tüm olayları tek platformda birleştirir; kayıt, sınıflandırma, önceliklendirme ve çözüm adımları ITIL4 prensiplerine uygun şekilde yürütülür. Dağınık süreçler yerini merkezi bir operasyon yapısına bırakır; SLA izleme, bilgi bankası ve CMDB entegrasyonu ile her müdahale ölçülebilir, denetlenebilir ve sürdürülebilir hale gelir.",
+    "description": "ServiceCore Incident Management, iş sürekliliğini tehdit eden kesinti, hata ve servis aksaklıklarına hızlı ve kontrollü müdahale için tüm olayları tek platformda birleştirir; kayıt, sınıflandırma, önceliklendirme ve çözüm adımları ITIL4 prensiplerine uygun şekilde yürütülür. Dağınık süreçler yerini merkezi bir operasyon yapısına bırakır; Hizmet Seviyesi izleme, bilgi bankası ve CMDB entegrasyonu ile her müdahale ölçülebilir, denetlenebilir ve sürdürülebilir hale gelir.",
     "imageAlt": "Merkezi olay yönetimi panosu — olay listesi ve çoklu kaynak entegrasyonu"
   },
   "zigzag": [
@@ -26,11 +26,11 @@
       "accent": "emerald",
       "icon": "Zap",
       "titleLead": "Anlık tespit,",
-      "titleAccent": "dinamik SLA yönetimi.",
-      "description": "Sistem, oluşan olayları gerçek zamanlı algılar, etki ve aciliyete göre otomatik önceliklendirir ve SLA süreçlerini anında başlatır. Omnichannel bildirimler ile ilgili ekipler ve paydaşlar aynı anda devreye girer; müdahale süresi minimuma iner, iş kaybı azalır.",
+      "titleAccent": "dinamik Hizmet Seviyesi yönetimi.",
+      "description": "Sistem, oluşan olayları gerçek zamanlı algılar, etki ve aciliyete göre otomatik önceliklendirir ve Hizmet Seviyesi süreçlerini anında başlatır. Omnichannel bildirimler ile ilgili ekipler ve paydaşlar aynı anda devreye girer; müdahale süresi minimuma iner, iş kaybı azalır.",
       "bullets": [
         "Sistem oluşan olayları anlık olarak algılar ve ilgili ekipleri bilgilendirir; müdahale süresi minimuma indirilir ve iş kaybı azaltılır.",
-        "Olaylar etki ve aciliyet kriterlerine göre otomatik önceliklendirilir; SLA süreçleri anında başlatılır ve farklı müşteri, hizmet veya öncelik seviyelerine göre dinamik SLA politikaları uygulanır.",
+        "Olaylar etki ve aciliyet kriterlerine göre otomatik önceliklendirilir; Hizmet Seviyesi süreçleri anında başlatılır ve farklı müşteri, hizmet veya öncelik seviyelerine göre dinamik Hizmet Seviyesi politikaları uygulanır.",
         "E-posta, SMS, web bildirimleri ve Teams entegrasyonu ile tüm paydaşlar anlık olarak bilgilendirilir; bildirimler rol bazlı ve senaryoya özel olarak kurgulanabilir."
       ],
       "imageKey": "sla"
@@ -41,10 +41,10 @@
       "icon": "LayoutGrid",
       "titleLead": "Kart tabanlı",
       "titleAccent": "modern operasyon ekranı.",
-      "description": "Olay kayıtları görsel kart yapısı ile listelenir; açık, beklemede, çözüldü veya SLA ihlali gibi durumlar tutarlı renk paletiyle kodlanır. Bildirim içerikleri expression yapılarıyla dinamik olarak şekillendirilerek ekip, yoğun iş yükünde bile önceliği metin okumadan ayırt eder.",
+      "description": "Olay kayıtları görsel kart yapısı ile listelenir; açık, beklemede, çözüldü veya Hizmet Seviyesi ihlali gibi durumlar tutarlı renk paletiyle kodlanır. Bildirim içerikleri expression yapılarıyla dinamik olarak şekillendirilerek ekip, yoğun iş yükünde bile önceliği metin okumadan ayırt eder.",
       "bullets": [
         "Olay kayıtları görsel kart yapısı ile listelenir; kullanıcılar kayıtları hızlıca analiz edebilir ve aksiyon alabilir.",
-        "Açık, beklemede, çözüldü veya SLA ihlali gibi durumlar tutarlı bir renk paletiyle kodlanır; liste veya pano görünümünde ekip, öncelik gerektiren kayıtları metin okumadan ayırt ederek tarama süresini kısaltır.",
+        "Açık, beklemede, çözüldü veya Hizmet Seviyesi ihlali gibi durumlar tutarlı bir renk paletiyle kodlanır; liste veya pano görünümünde ekip, öncelik gerektiren kayıtları metin okumadan ayırt ederek tarama süresini kısaltır.",
         "Bildirim içerikleri expression yapıları ile özelleştirilebilir; her bildirim ilgili olayın detaylarına göre dinamik olarak şekillenir ve iletişim kalitesi artar."
       ],
       "imageKey": "gorev"
@@ -87,7 +87,7 @@
         "accent": "indigo",
         "icon": "CheckSquare",
         "title": "Görev yönetimi, worklog ve ATS® ile efor takibi",
-        "description": "Karmaşık olaylar tek bir ana kayıt altında alt görevlere ayrılır; ağ, uygulama ve saha ekipleri kendi iş paketleri üzerinden ilerlerken ana olayın genel durumu tek yerden izlenir. Görev bağımlılıkları ile hatalı kapatma veya eksik doğrulama riski düşer; her müdahale için süre, aktivite tipi ve açıklama satırı içeren iş günlüğü oluşturulur ve ATS® otomatik zaman takibi manuel hata ile unutulan süre girişlerini ortadan kaldırarak SLA hesapları için tutarlı bir zaman ekseni üretir.",
+        "description": "Karmaşık olaylar tek bir ana kayıt altında alt görevlere ayrılır; ağ, uygulama ve saha ekipleri kendi iş paketleri üzerinden ilerlerken ana olayın genel durumu tek yerden izlenir. Görev bağımlılıkları ile hatalı kapatma veya eksik doğrulama riski düşer; her müdahale için süre, aktivite tipi ve açıklama satırı içeren iş günlüğü oluşturulur ve ATS® otomatik zaman takibi manuel hata ile unutulan süre girişlerini ortadan kaldırarak Hizmet Seviyesi hesapları için tutarlı bir zaman ekseni üretir.",
         "imageKey": "worklog"
       },
       {
@@ -96,7 +96,7 @@
         "accent": "purple",
         "icon": "Sparkles",
         "title": "STE® ve bilgi bankası destekli çözüm",
-        "description": "ServiceCore Time Engine (STE®) öncelik, SLA kalan süre ve ekip yükü kurallarını birleştirerek iş sırasını dinamik olarak dengeler. Bilgi bankası, açıklama ve kategoriye göre ilgili makale ve çözüm adımlarını önerir; geçici çözüm, uygulanan düzeltme ve doğrulanmış kalıcı çözüm ayrı katmanlarda tutularak yanlış kapama gerekçeleri önlenir ve MTTR iyileşir.",
+        "description": "ServiceCore Time Engine (STE®) öncelik, Hizmet Seviyesi kalan süre ve ekip yükü kurallarını birleştirerek iş sırasını dinamik olarak dengeler. Bilgi bankası, açıklama ve kategoriye göre ilgili makale ve çözüm adımlarını önerir; geçici çözüm, uygulanan düzeltme ve doğrulanmış kalıcı çözüm ayrı katmanlarda tutularak yanlış kapama gerekçeleri önlenir ve MTTR iyileşir.",
         "imageKey": "cozum"
       },
       {
@@ -122,15 +122,15 @@
         "size": "normal",
         "accent": "emerald",
         "icon": "ShieldCheck",
-        "title": "History tracking, kapatma kuralları ve SLA/OLA uyumu",
-        "description": "Alan güncellemeleri, atama değişiklikleri, SLA duraklatmaları ve sistem yorumları zaman damgası ve kullanıcı bilgisiyle saklanır; denetim ve müşteri itirazında ne zaman kim ne yaptı şeffaf biçimde kanıtlanır. Kategori, öncelik veya müşteri segmentine göre kapatma öncesi zorunlu alanlar ve onay adımları tanımlanır; müşteri sözleşmesi, iç OLA ve öncelik matrisi olaya otomatik uygulanarak yanıt ve çözüm süreleri anlık izlenir.",
+        "title": "History tracking, kapatma kuralları ve Hizmet Seviyesi/OLA uyumu",
+        "description": "Alan güncellemeleri, atama değişiklikleri, Hizmet Seviyesi duraklatmaları ve sistem yorumları zaman damgası ve kullanıcı bilgisiyle saklanır; denetim ve müşteri itirazında ne zaman kim ne yaptı şeffaf biçimde kanıtlanır. Kategori, öncelik veya müşteri segmentine göre kapatma öncesi zorunlu alanlar ve onay adımları tanımlanır; müşteri sözleşmesi, iç OLA ve öncelik matrisi olaya otomatik uygulanarak yanıt ve çözüm süreleri anlık izlenir.",
         "imageKey": "kapatmakurallari"
       }
     ]
   },
   "cta": {
     "title": "Kesintiyi öngörülebilir operasyona çevirin.",
-    "description": "ITIL4 uyumlu Incident Management süreçlerini, AMF®, ATS® ve STE® ile güçlenen tek platformda canlı demoda inceleyin; ölçülebilir SLA ve sürdürülebilir kalite sizinle olsun.",
+    "description": "ITIL4 uyumlu Incident Management süreçlerini, AMF®, ATS® ve STE® ile güçlenen tek platformda canlı demoda inceleyin; ölçülebilir Hizmet Seviyesi ve sürdürülebilir kalite sizinle olsun.",
     "primaryLabel": "Hemen Demo Alın",
     "primaryHref": "/demo",
     "secondaryLabel": "Bize Ulaşın",

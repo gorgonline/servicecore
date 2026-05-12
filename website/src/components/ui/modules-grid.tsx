@@ -584,7 +584,7 @@ const CatalogModule = ({ title, description, delay = 0 }: ModuleProps) => {
   );
 };
 
-// 10. Servis Seviye Yönetimi (Service Level - SLA) - Activity heartbeat staying in bounds
+// 10. Servis Seviye Yönetimi (Service Level - Hizmet Seviyesi) - Activity heartbeat staying in bounds
 const SLAModule = ({ title, description, delay = 0 }: ModuleProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -624,7 +624,7 @@ const SLAModule = ({ title, description, delay = 0 }: ModuleProps) => {
              </motion.svg>
          </div>
          
-         {/* Green SLA Badge */}
+         {/* Green Hizmet Seviyesi Badge */}
          <motion.div 
             animate={{ scale: isHovered ? 1.1 : 1, y: isHovered ? -5 : 0 }}
             className="absolute -top-4 right-0 px-2 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-(--color-accent-cyan-light) border border-cyan-500/30 "
@@ -1630,12 +1630,12 @@ export function ModulesGrid() {
              />
              <SLAModule 
                 title="Servis Seviye Yönetimi" 
-                description="SLA taahhütlerinizi güvence altına alın, iş kesintilerini ve sözleşme ihlallerini önleyin." 
+                description="Hizmet Seviyesi taahhütlerinizi güvence altına alın, iş kesintilerini ve sözleşme ihlallerini önleyin." 
                 delay={1.0}
              />
              <ContractModule 
                 title="Sözleşme Yönetimi" 
-                description="Ekipmanlara ait destek sürelerini, SLA'leri, müşteri ve tedarikçi sözleşmelerini yönetin." 
+                description="Ekipmanlara ait destek sürelerini, Hizmet Seviyeleri, müşteri ve tedarikçi sözleşmelerini yönetin." 
                 delay={1.1}
              />
              <TaskModule 

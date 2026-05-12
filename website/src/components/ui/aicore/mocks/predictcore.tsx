@@ -20,7 +20,7 @@ export function PredictCoreMock({ accent: accentName }: { accent: string }) {
       <MockFrame className={accent.glow}>
         <TitleBar
           icon={<AlertTriangle className="w-3.5 h-3.5" />}
-          title="PredictCoreAI · SLA İhlal Riski"
+          title="PredictCoreAI · Hizmet Seviyesi İhlal Riski"
           meta="11 Mar · canlı"
           accent={accent}
         />
@@ -31,7 +31,7 @@ export function PredictCoreMock({ accent: accentName }: { accent: string }) {
             <span className="text-[11px] font-mono text-(--color-text-muted) tabular-nums">
               INC-2847
             </span>
-            <Chip tone="warn">SLA · 1s 46d kaldı</Chip>
+            <Chip tone="warn">Hizmet Seviyesi · 1s 46d kaldı</Chip>
           </div>
           <h4 className="text-sm font-semibold text-white tracking-tight leading-snug mb-3">
             Posta sunucusu yanıt vermiyor — şube ekipleri etkilendi
@@ -58,7 +58,7 @@ export function PredictCoreMock({ accent: accentName }: { accent: string }) {
                   <span className="text-base text-(--color-text-muted)">dk</span>
                 </div>
                 <div className="mt-1 text-[11px] font-mono text-red-300">
-                  SLA&apos;yı 1s 26dk aşıyor
+                  Hizmet Seviyesi&apos;yı 1s 26dk aşıyor
                 </div>
               </div>
             </div>

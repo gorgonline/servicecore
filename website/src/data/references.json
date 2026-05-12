@@ -91,13 +91,13 @@
       "id": "sabanci",
       "name": "Sabancı DX",
       "logo": "/logos/sabanci.png",
-      "description": "Sabancı DX bünyesindeki kurumsal BT destek süreçlerinin verimli yönetimi için ITSM platformu kullanılmaktadır. Çağrı yönetimi, SLA takibi ve raporlama gibi kritik alanlar entegre biçimde yürütülmektedir."
+      "description": "Sabancı DX bünyesindeki kurumsal BT destek süreçlerinin verimli yönetimi için ITSM platformu kullanılmaktadır. Çağrı yönetimi, Hizmet Seviyesi takibi ve raporlama gibi kritik alanlar entegre biçimde yürütülmektedir."
     },
     {
       "id": "boyner",
       "name": "Boyner",
       "logo": "/logos/boyner.png",
-      "description": "Boyner'in 120+ perakende mağazası olan Servicecore ITSM ile donanım, yazılım ve altyapı taleplerinin merkezi yönetimini sağlamaktadır. SLA tabanlı çağrı yönetimi ve operasyonel raporlama süreçleri etkin biçimde yürütülmektedir."
+      "description": "Boyner'in 120+ perakende mağazası olan Servicecore ITSM ile donanım, yazılım ve altyapı taleplerinin merkezi yönetimini sağlamaktadır. Hizmet Seviyesi tabanlı çağrı yönetimi ve operasyonel raporlama süreçleri etkin biçimde yürütülmektedir."
     },
     {
       "id": "aksa",
@@ -109,7 +109,7 @@
       "id": "roketsan",
       "name": "Roketsan",
       "logo": "/logos/roketsan.png",
-      "description": "Roketsan'ın kurumsal IT destek süreçlerinin etkili yönetimi için ITSM platformu kullanılmaktadır. Çağrı yönetimi, SLA takibi ve raporlama gibi kritik alanlar entegre biçimde yürütülmektedir."
+      "description": "Roketsan'ın kurumsal IT destek süreçlerinin etkili yönetimi için ITSM platformu kullanılmaktadır. Çağrı yönetimi, Hizmet Seviyesi takibi ve raporlama gibi kritik alanlar entegre biçimde yürütülmektedir."
     },
     {
       "id": "alj",

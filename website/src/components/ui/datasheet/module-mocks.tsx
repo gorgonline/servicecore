@@ -297,7 +297,7 @@ function IncidentMock({ accent }: { accent: AccentClasses }) {
         <span>Başlık</span>
         <span>Atanan</span>
         <span>Önc.</span>
-        <span>SLA</span>
+        <span>Hizmet Seviyesi</span>
       </div>
 
       {/* Incident rows */}
@@ -838,7 +838,7 @@ function CatalogMock({ accent }: { accent: AccentClasses }) {
 }
 
 // ============================================================
-// 10. Service Level Management — SLA dashboard
+// 10. Service Level Management — Hizmet Seviyesi dashboard
 // ============================================================
 
 function SlaMock({ accent }: { accent: AccentClasses }) {
@@ -858,7 +858,7 @@ function SlaMock({ accent }: { accent: AccentClasses }) {
     <Frame>
       <TitleBar
         icon={<Gauge className="w-[3mm] h-[3mm]" />}
-        title="SLA Performans Paneli"
+        title="Hizmet Seviyesi Performans Paneli"
         meta="Mayıs 2026"
         accent={accent}
       />
@@ -1002,7 +1002,7 @@ function ReportingMock({ accent }: { accent: AccentClasses }) {
         {/* Card 3: Donut */}
         <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
           <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
-            SLA Uyum
+            Hizmet Seviyesi Uyum
           </span>
           <span className="text-[14pt] font-mono font-bold text-white leading-none">
             %92
@@ -1293,7 +1293,7 @@ function AutomationMock({ accent }: { accent: AccentClasses }) {
             </div>
             <div className="flex items-center gap-[1mm] px-[1.5mm] py-[1mm] rounded-md bg-emerald-500/10 border border-emerald-500/25">
               <Flag className="w-[2.5mm] h-[2.5mm] text-emerald-400" />
-              <span className="text-[8pt] text-white">SLA P1 ata</span>
+              <span className="text-[8pt] text-white">Hizmet Seviyesi P1 ata</span>
             </div>
           </div>
         </div>

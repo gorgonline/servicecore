@@ -132,7 +132,7 @@ const footerData = {
         { text: "Planlar & Lisanslama", href: "/planlar" },
         { text: "Modüller", href: "/moduller" },
         { text: "Fark Var", href: "/fark-var" },
-        { text: "Destek Kanalları", href: "/destek-kanallari" },
+        { text: "Destek Kanalları", href: "/destek" },
         { text: "İletişim", href: "/iletisim" },
       ],
     },
@@ -141,7 +141,7 @@ const footerData = {
     links: [
       { text: "Motto", href: "/motto" },
       { text: "Fark Var!", href: "/fark-var" },
-      { text: "Destek Kanalları", href: "/destek-kanallari" },
+      { text: "Destek Kanalları", href: "/destek" },
       { text: "Dökümanlar", href: "/dokumanlar" },
       { text: "Sunumlar", href: "/sunumlar" },
       { text: "Güncellemeler", href: "/guncellemeler" },

@@ -121,7 +121,7 @@
           { "icon": "ToggleRight", "title": "Durumlar", "desc": "Aktif, depoda, kullanım dışı gibi durumların yönetimi" },
           { "icon": "Building2", "title": "Varlık Şirketleri", "desc": "Varlıkların bağlı olduğu şirketlerin kaydı" },
           { "icon": "Network", "title": "İlişki Türleri", "desc": "Varlıklar arası yukarı/aşağı yönlü ilişkilerin tanımlanması" },
-          { "icon": "FileSignature", "title": "Sözleşme Türleri", "desc": "İç destek (OLA), müşteri (SLA) ve tedarikçi sözleşmelerinin yönetimi" },
+          { "icon": "FileSignature", "title": "Sözleşme Türleri", "desc": "İç destek (OLA), müşteri ve tedarikçi sözleşmelerinin yönetimi" },
           { "icon": "Tags", "title": "Varlık Türleri", "desc": "Donanım, yazılım, lisans, aksesuar gibi türlerin tanımlanması" },
           { "icon": "Truck", "title": "Tedarikçiler", "desc": "Dış firmaların kaydı ve sözleşmelerle ilişkilendirilmesi" }
         ]
@@ -136,7 +136,7 @@
           { "icon": "Boxes", "title": "Varlık Ekleme", "desc": "Ad, durum, konum, tür, şirket, kullanıcı bilgileri girilerek yeni varlık oluşturulur" },
           { "icon": "ScrollText", "title": "Varlık Detayı", "desc": "Tüm öznitelikler, ekler, notlar ve geçmiş kayıtları tek panelde tutulur" },
           { "icon": "Server", "title": "Hizmet Yönetimi", "desc": "Hizmet adı, açıklaması, iş etkisi, maliyet ve çözüm süresi tanımlanır" },
-          { "icon": "GitBranch", "title": "Hizmet İlişkilendirme", "desc": "Hizmetler varlıklarla ilişkilendirilir, SLA politikaları bağlanır" },
+          { "icon": "GitBranch", "title": "Hizmet İlişkilendirme", "desc": "Hizmetler varlıklarla ilişkilendirilir, Hizmet Seviyesi politikaları bağlanır" },
           { "icon": "Key", "title": "Lisans Yönetimi", "desc": "Lisans bilgileri (ad, model, tedarikçi, şirket, tür) kaydedilir" },
           { "icon": "Users", "title": "Lisans Atamaları", "desc": "Lisanslar kullanıcı veya varlıklara atanır, geçmiş & maliyet izlenir" },
           { "icon": "Headphones", "title": "Aksesuar Ekleme", "desc": "Yeni aksesuar eklenip varlık veya kullanıcıya atanabilir" },
@@ -169,7 +169,7 @@
         "id": "contracts-link",
         "icon": "FileSignature",
         "title": "Sözleşme Yönetimi",
-        "description": "Destek anlaşmaları, tedarikçi sözleşmeleri ve müşteri SLA'leri varlıklarla ilişkilendirilir. Varlık bazlı kapsam ve sorumluluk net görünür.",
+        "description": "Destek anlaşmaları, tedarikçi sözleşmeleri ve müşteri Hizmet Seviyeleri varlıklarla ilişkilendirilir. Varlık bazlı kapsam ve sorumluluk net görünür.",
         "tone": "emerald"
       },
       {
@@ -195,13 +195,13 @@
         "id": "yonetici-yapi-tasi",
         "icon": "Settings",
         "question": "Yönetici perspektifinde hangi yapı taşları var?",
-        "answer": "Yöneticiler için CMDB modülü, varlıkların temel yapı taşlarını tanımlama ve yönetme imkânı sunar: Üreticiler, Kullanım Modelleri, Konumlar, Durumlar (aktif/depoda/kullanım dışı), Varlık Şirketleri, İlişki Türleri (yukarı/aşağı yönlü), Sözleşme Türleri (OLA/SLA/Tedarikçi), Varlık Türleri (donanım/yazılım/lisans/aksesuar) ve Tedarikçiler. Bu yapı sayesinde CMDB yalnızca envanter değil, aynı zamanda hizmet haritalarının temelini oluşturur."
+        "answer": "Yöneticiler için CMDB modülü, varlıkların temel yapı taşlarını tanımlama ve yönetme imkânı sunar: Üreticiler, Kullanım Modelleri, Konumlar, Durumlar (aktif/depoda/kullanım dışı), Varlık Şirketleri, İlişki Türleri (yukarı/aşağı yönlü), Sözleşme Türleri (OLA/Hizmet Seviyesi/Tedarikçi), Varlık Türleri (donanım/yazılım/lisans/aksesuar) ve Tedarikçiler. Bu yapı sayesinde CMDB yalnızca envanter değil, aynı zamanda hizmet haritalarının temelini oluşturur."
       },
       {
         "id": "kullanici-operasyon",
         "icon": "UserCircle",
         "question": "Kullanıcı tarafında günlük operasyon nasıl?",
-        "answer": "Kullanıcı perspektifinde varlık ekleme (ad, durum, konum, tür, şirket, kullanıcı bilgileri ile), varlık detay yönetimi (tüm öznitelikler, ekler, notlar, geçmiş), hizmet yönetimi (ad, açıklama, iş etkisi, maliyet, çözüm süresi + SLA bağlama), lisans yönetimi (ad, model, tedarikçi, atama, geçmiş, maliyet) ve aksesuar yönetimi (kullanıcı/varlığa atama, geçmiş takibi) yapılır. Olay, istek, problem ve değişiklik kayıtlarıyla bağlantılar otomatik kurulur."
+        "answer": "Kullanıcı perspektifinde varlık ekleme (ad, durum, konum, tür, şirket, kullanıcı bilgileri ile), varlık detay yönetimi (tüm öznitelikler, ekler, notlar, geçmiş), hizmet yönetimi (ad, açıklama, iş etkisi, maliyet, çözüm süresi + Hizmet Seviyesi bağlama), lisans yönetimi (ad, model, tedarikçi, atama, geçmiş, maliyet) ve aksesuar yönetimi (kullanıcı/varlığa atama, geçmiş takibi) yapılır. Olay, istek, problem ve değişiklik kayıtlarıyla bağlantılar otomatik kurulur."
       },
       {
         "id": "detay-ozellikler",
@@ -213,7 +213,7 @@
         "id": "cmdb-stratejik",
         "icon": "Network",
         "question": "CMDB'nin stratejik önemi nedir?",
-        "answer": "CMDB stratejik açıdan dört kritik alanın omurgasıdır: Hizmet Haritaları (hangi hizmetin hangi varlıklardan oluştuğu net görülür); Olay ve Değişiklik Yönetimi (bir hizmetin tüm olay/istek/değişikliği CMDB üzerinden takip edilir); Sözleşme Yönetimi (destek anlaşmaları, tedarikçi sözleşmeleri ve müşteri SLA'leri varlıklarla ilişkilendirilir); Maliyet Yönetimi (hizmetlerle ilgili tüm harcamalar kayıt altına alınır). Bu sayede tam görünürlük, operasyonel verimlilik, risk azaltma, finansal kontrol ve ITIL 4 uyumu sağlanır."
+        "answer": "CMDB stratejik açıdan dört kritik alanın omurgasıdır: Hizmet Haritaları (hangi hizmetin hangi varlıklardan oluştuğu net görülür); Olay ve Değişiklik Yönetimi (bir hizmetin tüm olay/istek/değişikliği CMDB üzerinden takip edilir); Sözleşme Yönetimi (destek anlaşmaları, tedarikçi sözleşmeleri ve müşteri Hizmet Seviyeleri varlıklarla ilişkilendirilir); Maliyet Yönetimi (hizmetlerle ilgili tüm harcamalar kayıt altına alınır). Bu sayede tam görünürlük, operasyonel verimlilik, risk azaltma, finansal kontrol ve ITIL 4 uyumu sağlanır."
       }
     ]
   },

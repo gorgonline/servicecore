@@ -30,7 +30,7 @@ export function SentimentCoreMock({ accent: accentName }: { accent: string }) {
             <span className="text-[11px] font-mono text-(--color-text-muted) tabular-nums">
               INC-2847
             </span>
-            <Chip tone="warn">SLA · 1s 46d kaldı</Chip>
+            <Chip tone="warn">Hizmet Seviyesi · 1s 46d kaldı</Chip>
             <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-mono text-(--color-text-muted)">
               <span className={`w-1.5 h-1.5 rounded-full ${accent.dot} animate-pulse`} />
               Canlı

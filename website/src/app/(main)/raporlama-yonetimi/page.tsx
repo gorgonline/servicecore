@@ -111,7 +111,7 @@ export default function RaporlamaYonetimiPage() {
               {/* KPI Strip */}
               <div className="grid grid-cols-4 gap-2">
                 {[
-                  { label: "SLA Uyum", value: "94.2%", trend: "▲ 1.6pp", c: "text-(--color-accent-emerald-light) border-emerald-500/30 bg-emerald-500/10" },
+                  { label: "Hizmet Seviyesi Uyum", value: "94.2%", trend: "▲ 1.6pp", c: "text-(--color-accent-emerald-light) border-emerald-500/30 bg-emerald-500/10" },
                   { label: "MTTR", value: "2.4 sa", trend: "↓ 18 dk", c: "text-(--color-accent-blue-light) border-blue-500/30 bg-blue-500/10" },
                   { label: "İlk Çağrı Çözümü", value: "76%", trend: "▲ 4pp", c: "text-(--color-accent-cyan-light) border-cyan-500/30 bg-cyan-500/10" },
                   { label: "CSAT", value: "4.6 / 5", trend: "stabil", c: "text-(--color-accent-purple-light) border-purple-500/30 bg-purple-500/10" },
@@ -336,7 +336,7 @@ export default function RaporlamaYonetimiPage() {
                   {[
                     {
                       icon: Activity,
-                      name: "Olay SLA Uyum Raporu",
+                      name: "Olay Hizmet Seviyesi Uyum Raporu",
                       cat: "Operasyonel",
                       tone: "blue",
                     },
@@ -442,7 +442,7 @@ export default function RaporlamaYonetimiPage() {
                   <div className="rounded-xl bg-white/3 border border-white/8 p-3 flex flex-col gap-1.5 hover:border-purple-500/30 transition-colors">
                     <div className="flex items-center justify-between">
                       <span className="text-[9px] font-semibold uppercase tracking-wider text-(--color-text-muted)">
-                        SLA Uyumu
+                        Hizmet Seviyesi Uyumu
                       </span>
                       <Target className="w-3 h-3 text-(--color-accent-emerald-light)" />
                     </div>
@@ -727,7 +727,7 @@ export default function RaporlamaYonetimiPage() {
               </p>
               <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-(--color-surface-elevated-solid) p-4 flex flex-col gap-2 justify-center">
                 {[
-                  { kpi: "SLA Uyumu", target: 95, actual: 94 },
+                  { kpi: "Hizmet Seviyesi Uyumu", target: 95, actual: 94 },
                   { kpi: "İlk Çağrı Çözümü", target: 70, actual: 76 },
                   { kpi: "Memnuniyet", target: 85, actual: 82 },
                 ].map((row, i) => (

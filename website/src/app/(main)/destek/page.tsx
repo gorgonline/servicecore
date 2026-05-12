@@ -4,8 +4,8 @@ import { InteractiveSupportMetrics } from "./components/interactive-support-metr
 import { PremiumComparisonMatrix } from "./components/premium-comparison-matrix";
 
 export const metadata = {
-  title: "Premium BT Destek Kanalları ve SLA Paketleri | ServiceCore",
-  description: "ServiceCore'un kurumsal BT destek kanallarını keşfedin. Kesintisiz operasyonlar için Onpremises ve Bulut uyumlu yenilikçi SLA paketlerimizi inceleyin.",
+  title: "Premium BT Destek Kanalları ve Destek Paketleri | ServiceCore",
+  description: "ServiceCore'un kurumsal BT destek kanallarını keşfedin. Kesintisiz operasyonlar için Onpremises ve Bulut uyumlu yenilikçi destek paketlerimizi inceleyin.",
 };
 
 export default function DestekKanallariPage() {

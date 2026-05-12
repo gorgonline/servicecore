@@ -59,7 +59,7 @@
         "accent": "blue",
         "icon": "FileSignature",
         "title": "Destek, tedarikçi ve müşteri anlaşmaları",
-        "description": "Hizmetle ilişkili tüm destek anlaşmaları, tedarikçi anlaşmaları ve müşteri anlaşmaları ayrı ayrı tanımlanır ve aynı CI üzerinde yönetilir. Bir olay veya değişiklik açıldığında ilgili anlaşma kapsamı, SLA ve sorumluluk sınırı tek bakışta görülerek doğru tarafa hızla yönlendirilir."
+        "description": "Hizmetle ilişkili tüm destek anlaşmaları, tedarikçi anlaşmaları ve müşteri anlaşmaları ayrı ayrı tanımlanır ve aynı CI üzerinde yönetilir. Bir olay veya değişiklik açıldığında ilgili anlaşma kapsamı, Hizmet Seviyesi ve sorumluluk sınırı tek bakışta görülerek doğru tarafa hızla yönlendirilir."
       },
       {
         "id": "harcama",

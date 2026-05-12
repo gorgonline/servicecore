@@ -41,7 +41,7 @@
       "icon": "Workflow",
       "titleLead": "Dinamik iş akışı,",
       "titleAccent": "uçtan uca otomasyon.",
-      "description": "Değişiklik türüne göre iş akışı otomatik tetiklenir, görev bazlı yönetimle sorumluluklar ve teslim tarihleri netleşir. Manuel hatırlatma yükü azalır, süreç tutarlılığı ve ölçülebilir SLA'lar güçlenir.",
+      "description": "Değişiklik türüne göre iş akışı otomatik tetiklenir, görev bazlı yönetimle sorumluluklar ve teslim tarihleri netleşir. Manuel hatırlatma yükü azalır, süreç tutarlılığı ve ölçülebilir Hizmet Seviyeleri güçlenir.",
       "bullets": [
         "Değişiklik uygulama süreci görev bazlı yönetilerek adım adım ilerletilir; ekipler arası el değiştirme sistem üzerinden düzenli biçimde yürütülür.",
         "Değişiklik süreçleri tür bazlı veya manuel seçilen iş akışları ile uçtan uca otomatik olarak işletilir; adımlar ve koşullar yapılandırılabilir kalır.",

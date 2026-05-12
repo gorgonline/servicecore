@@ -191,7 +191,7 @@ export default function OlayYonetimiPage() {
                     <span>Başlık</span>
                     <span>Atanan</span>
                     <span>Önc.</span>
-                    <span>SLA</span>
+                    <span>Hizmet Seviyesi</span>
                   </div>
 
                   {/* Incident rows */}
@@ -260,7 +260,7 @@ export default function OlayYonetimiPage() {
             </div>
           </motion.div>
 
-          {/* Feature 2: Tespit & SLA — emerald */}
+          {/* Feature 2: Tespit & Hizmet Seviyesi — emerald */}
           <motion.div
             animate="visible"
             variants={fadeUp}
@@ -274,7 +274,7 @@ export default function OlayYonetimiPage() {
                   <div className="grid grid-cols-3 gap-2">
                     {[
                       { label: "Aktif Olay", value: 42, icon: AlertCircle, tone: "blue" },
-                      { label: "SLA İçinde", value: "%87", icon: CheckCircle2, tone: "emerald" },
+                      { label: "Hizmet Seviyesi İçinde", value: "%87", icon: CheckCircle2, tone: "emerald" },
                       { label: "İhlal Riski", value: 5, icon: AlertTriangle, tone: "red", pulse: true },
                     ].map((m, i) => {
                       const Icon = m.icon;
@@ -300,15 +300,15 @@ export default function OlayYonetimiPage() {
                     })}
                   </div>
 
-                  {/* SLA list header */}
+                  {/* Hizmet Seviyesi list header */}
                   <div className="flex items-center justify-between pt-1">
                     <span className="text-[9px] font-semibold uppercase tracking-widest text-white">
-                      SLA Geri Sayım
+                      Hizmet Seviyesi Geri Sayım
                     </span>
                     <Clock className="w-3 h-3 text-(--color-text-muted)" />
                   </div>
 
-                  {/* SLA countdown rows */}
+                  {/* Hizmet Seviyesi countdown rows */}
                   <div className="flex flex-col gap-2 flex-1 overflow-hidden">
                     {[
                       { id: "#4217", title: "Mail sunucu gecikmesi", remaining: "0s 18d", percent: 92, tone: "red", risk: "İHLAL YAKIN" },
@@ -1057,7 +1057,7 @@ export default function OlayYonetimiPage() {
               </div>
             </motion.div>
 
-            {/* Bento Item 8 - Kapatma & SLA (normal, emerald) — kapatmakurallari.png, object-contain */}
+            {/* Bento Item 8 - Kapatma & Hizmet Seviyesi (normal, emerald) — kapatmakurallari.png, object-contain */}
             <motion.div
               variants={fadeUp}
               className="col-span-1 rounded-4xl bg-white/2 border border-white/10 p-8 hover:bg-white/4 transition-colors flex flex-col"
@@ -1087,7 +1087,7 @@ export default function OlayYonetimiPage() {
                   {[
                     { label: "Çözüm dökümante edildi", done: true },
                     { label: "Müşteri onayı alındı", done: true },
-                    { label: "SLA içinde tamamlandı", done: true, badge: "00:17 / 04:00" },
+                    { label: "Hizmet Seviyesi içinde tamamlandı", done: true, badge: "00:17 / 04:00" },
                     { label: "OLA hedefi karşılandı", done: true },
                     { label: "KB makalesi güncellendi", done: false },
                   ].map((c, i) => (
@@ -1191,7 +1191,7 @@ export default function OlayYonetimiPage() {
                       </div>
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
-                        SLA Garantisi
+                        Hizmet Seviyesi Garantisi
                       </div>
                     </div>
                   </div>

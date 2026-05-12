@@ -174,7 +174,7 @@ export default function ServisIliskileriYonetimiPage() {
                 <span>Müşteri</span>
                 <span>Sözleşme</span>
                 <span>Plan</span>
-                <span>SLA</span>
+                <span>Hizmet Seviyesi</span>
                 <span>Bitiş</span>
               </div>
               <div className="flex flex-col gap-1.5 mt-1.5">
@@ -393,7 +393,7 @@ export default function ServisIliskileriYonetimiPage() {
                   <div className="flex items-center justify-between pb-2 border-b border-white/8">
                     <div className="flex items-center gap-1.5">
                       <FileSignature className="w-3.5 h-3.5 text-(--color-accent-emerald-light)" />
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Yeni SLA / OLA Sözleşmesi</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Yeni Hizmet Seviyesi / OLA Sözleşmesi</span>
                     </div>
                     <span className="text-[8px] font-mono text-(--color-text-muted)">SLM ile entegre</span>
                   </div>
@@ -413,7 +413,7 @@ export default function ServisIliskileriYonetimiPage() {
                     <div className="flex flex-col gap-1">
                       <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Sözleşme Türü</span>
                       <div className="flex items-center justify-between px-2.5 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/25">
-                        <span className="text-[10px] font-semibold text-(--color-accent-emerald-light)">SLA · Premium</span>
+                        <span className="text-[10px] font-semibold text-(--color-accent-emerald-light)">Hizmet Seviyesi · Premium</span>
                         <ChevronDown className="w-2.5 h-2.5 text-(--color-text-muted)" />
                       </div>
                     </div>
@@ -838,7 +838,7 @@ export default function ServisIliskileriYonetimiPage() {
                   <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/3 border border-white/8 flex-1">
                     <FileSignature className="w-3.5 h-3.5 text-(--color-accent-emerald-light)" />
                     <span className="text-[11px] font-medium text-white">
-                      Sözleşme & SLA
+                      Sözleşme & Hizmet Seviyesi
                     </span>
                     <span className="ml-auto text-[9px] font-mono text-(--color-text-muted)">
                       kapsam

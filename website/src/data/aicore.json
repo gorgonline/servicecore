@@ -196,14 +196,14 @@
       "slug": "predictcore",
       "name": "PredictCoreAI",
       "tier": "production",
-      "tagline": "Geçmiş veriden SLA ihlallerini önceden tahmin eder.",
-      "description": "Geçmiş verileri analiz ederek SLA ihlallerini önceden tahmin eder.",
+      "tagline": "Geçmiş veriden Hizmet Seviyesi ihlallerini önceden tahmin eder.",
+      "description": "Geçmiş verileri analiz ederek Hizmet Seviyesi ihlallerini önceden tahmin eder.",
       "icon": "TrendingUp",
       "accent": "orange",
       "year": 2026,
       "release": "Kasım 2026",
       "whatItDoes": [
-        "Açık her ticket'a canlı bir SLA ihlal olasılığı yüzdesi atar.",
+        "Açık her ticket'a canlı bir Hizmet Seviyesi ihlal olasılığı yüzdesi atar.",
         "Tahmin gerekçesini açıklanabilir biçimde sunar — benzer olaylar, kapasite, atama yükü.",
         "Risk düşürücü 1-2 somut aksiyon önerir; uygulanırsa risk yeniden hesaplanır."
       ],
@@ -226,8 +226,8 @@
       ],
       "scenario": {
         "company": "Birikim Holding",
-        "situation": "INC-2847'nin SLA'sı dolmadan 1 saat 46 dakika kalmıştı, atanan teknisyen Mert Kaya 6 P1 üzerinde paralel çalışıyordu, etkilenen şube sayısı her saat artıyordu.",
-        "outcome": "PredictCoreAI %78 ihlal riski uyarısı verip vardiya yöneticisine eskalasyonu ve trafiği yedek sunucuya yönlendirmeyi önerdi; iki aksiyon uygulanınca risk %34'e düştü ve SLA 22 dakikalık boşlukla yakalandı."
+        "situation": "INC-2847'nin Hizmet Seviyesi dolmadan 1 saat 46 dakika kalmıştı, atanan teknisyen Mert Kaya 6 P1 üzerinde paralel çalışıyordu, etkilenen şube sayısı her saat artıyordu.",
+        "outcome": "PredictCoreAI %78 ihlal riski uyarısı verip vardiya yöneticisine eskalasyonu ve trafiği yedek sunucuya yönlendirmeyi önerdi; iki aksiyon uygulanınca risk %34'e düştü ve Hizmet Seviyesi 22 dakikalık boşlukla yakalandı."
       }
     },
     {
@@ -243,7 +243,7 @@
       "whatItDoes": [
         "Aynı kök sorundan açılmış kayıtları semantik benzerlik + zaman + servis sinyaliyle kümeler.",
         "Ana kayıt önerisi sunar; alt kayıtları otomatik olarak ona bağlar, tek raporlama ekseni yaratır.",
-        "Etki ölçümünü tek olay üzerinden net hesaplatır — CSAT ve SLA çift saymaz."
+        "Etki ölçümünü tek olay üzerinden net hesaplatır — CSAT ve Hizmet Seviyesi çift saymaz."
       ],
       "howItWorks": [
         { "label": "Semantik kümeleme", "detail": "Yeni kayıt geldikçe içerik vektör uzayında en yakın açık kayıtlarla karşılaştırılır." },
@@ -321,7 +321,7 @@
       ],
       "howItWorks": [
         { "label": "Niyet çözümleme", "detail": "Türkçe soru, metrik / boyut / aralık / filtre dörtlüsüne ayrıştırılır." },
-        { "label": "Veri kaynağı bağlama", "detail": "Olay, CMDB, SLA, varlık ve katalog tablolarından gerekli olanlar dinamik birleştirilir." },
+        { "label": "Veri kaynağı bağlama", "detail": "Olay, CMDB, Hizmet Seviyesi, varlık ve katalog tablolarından gerekli olanlar dinamik birleştirilir." },
         { "label": "Görsel seçimi", "detail": "Boyut sayısı ve veri tipine göre bar / alan / pivot / KPI bileşeni otomatik seçilir." },
         { "label": "Açıklanabilir çıktı", "detail": "Yorumlama paneli filtreleri, kaynakları ve güven skorunu kullanıcıya birlikte sunar." }
       ],
@@ -630,7 +630,7 @@
       ],
       "howItWorks": [
         { "label": "Otomatik dil tespiti", "detail": "Mesaj geldiğinde kaynak dil yüksek güvenle tespit edilir; istisna profillerde manuel kilit konabilir." },
-        { "label": "Terim koruma", "detail": "INC kodları, kuruluş ve ürün adları, kısaltmalar (TMS, POD, SLA) glossary üzerinden işaretlenir, çevrilmez." },
+        { "label": "Terim koruma", "detail": "INC kodları, kuruluş ve ürün adları, kısaltmalar (TMS, POD, Hizmet Seviyesi) glossary üzerinden işaretlenir, çevrilmez." },
         { "label": "Çift kanal görünüm", "detail": "Konuşma her iki tarafta hem orijinal hem çeviri olarak görünür; ekipler ne dendiğine güvenir." },
         { "label": "Kalite raporu", "detail": "Her çeviri için anlam/terim/ton/akıcılık skoru tutulur; düşük skorlu çeviriler editöre düşer." }
       ],
@@ -806,7 +806,7 @@
       "scenario": {
         "company": "Birikim Holding",
         "situation": "L1/L2 ekibinin haftalık vardiya planı manuel hazırlanıyordu; pazartesi gece kuyrukları salı sabahları patlatıyor, gündüz vardiyası ortalama %92 yük altında ezilirken Cuma gecesi atıl kapasite vardı. Servis yöneticisi Ayşe Demir her hafta saatlerce taşıma yapıyordu.",
-        "outcome": "ShiftCoreAI Salı gündüz için %92 yük uyarısı verdi, Cuma gece düşük yüklü Kerem Doğan'ın o vardiyaya kaydırılmasını önerdi — yasal sınırlar ve beceri eşleşmesi otomatik kontrol edildi. Tek tıkla uygulandı, salı yük %92'den %78'e indi; çeyrek sonu SLA uyumu +8%, fazla mesai −24% kazanım sağladı."
+        "outcome": "ShiftCoreAI Salı gündüz için %92 yük uyarısı verdi, Cuma gece düşük yüklü Kerem Doğan'ın o vardiyaya kaydırılmasını önerdi — yasal sınırlar ve beceri eşleşmesi otomatik kontrol edildi. Tek tıkla uygulandı, salı yük %92'den %78'e indi; çeyrek sonu Hizmet Seviyesi uyumu +8%, fazla mesai −24% kazanım sağladı."
       }
     },
     {
@@ -893,20 +893,20 @@
       "name": "VendorCoreAI",
       "tier": "beta",
       "tagline": "Tedarikçi performansını skorlar ve risk uyarıları üretir.",
-      "description": "Sözleşme, SLA ve geçmiş hizmet verisini birlikte analiz ederek tedarikçi skorları, risk sinyalleri ve sözleşme yenileme önerileri sunar.",
+      "description": "Sözleşme, Hizmet Seviyesi ve geçmiş hizmet verisini birlikte analiz ederek tedarikçi skorları, risk sinyalleri ve sözleşme yenileme önerileri sunar.",
       "icon": "Building2",
       "accent": "emerald",
       "year": 2027,
       "release": "Beta — Yol Haritası",
       "whatItDoes": [
-        "SLA uyumu, yanıt süresi, maliyet tutarlılığı ve iletişim kalitesini birleştirerek tedarikçi başına canlı skor üretir.",
+        "Hizmet Seviyesi uyumu, yanıt süresi, maliyet tutarlılığı ve iletişim kalitesini birleştirerek tedarikçi başına canlı skor üretir.",
         "Düşen skorları, tek temas noktası gibi yapısal riskleri ve yenileme penceresini erken uyarı olarak gösterir.",
         "Yenileme önerisi üretir: madde revize, alternatif RFP, üst yönetici görüşmesi gibi somut aksiyonlarla beraber."
       ],
       "howItWorks": [
-        { "label": "Çok kaynaklı skor", "detail": "Sözleşme metni, SLA raporları, ticket geçmişi ve finans kayıtları birlikte tartılır." },
+        { "label": "Çok kaynaklı skor", "detail": "Sözleşme metni, Hizmet Seviyesi raporları, ticket geçmişi ve finans kayıtları birlikte tartılır." },
         { "label": "Trend izleme", "detail": "Çeyrek başına skor değişimi ve sparkline ile yön belirgin hâle getirilir." },
-        { "label": "Risk işaretleme", "detail": "SLA tırmanışı, ceza eşiği aşımı, tek temas noktası gibi yapısal sinyaller etiketlenir." },
+        { "label": "Risk işaretleme", "detail": "Hizmet Seviyesi tırmanışı, ceza eşiği aşımı, tek temas noktası gibi yapısal sinyaller etiketlenir." },
         { "label": "Aksiyon önerisi", "detail": "Madde revize, alternatif RFP veya eskalasyon adımları somut çıktı olarak üretilir." }
       ],
       "modules": [
@@ -923,7 +923,7 @@
       ],
       "scenario": {
         "company": "Birikim Holding",
-        "situation": "Network/datacom tedarikçisi Aurora Datacom'un performansı son 12 ayda kademeli olarak düştü; SLA ihlal ceza kalemleri çeyrekte %52 arttı, Account Manager 6 hafta önce değişti ve sözleşme 4 ay sonra yenileme penceresine girecekti. Tedarik ekibi manuel takiple bunu sezmemişti.",
+        "situation": "Network/datacom tedarikçisi Aurora Datacom'un performansı son 12 ayda kademeli olarak düştü; Hizmet Seviyesi ihlal ceza kalemleri çeyrekte %52 arttı, Account Manager 6 hafta önce değişti ve sözleşme 4 ay sonra yenileme penceresine girecekti. Tedarik ekibi manuel takiple bunu sezmemişti.",
         "outcome": "VendorCoreAI Aurora'nın skorunu 62/100 olarak hesapladı (12 ayda −14 puan), risk seviyesini 'yüksek' işaretledi ve 3 yapısal risk sinyalini açıkladı. Yenileme önerisi olarak madde revize + alternatif RFP + üst yönetici görüşmesi üretti. Tedarik ekibi 4 ay öncesinden alternatif tedarikçi keşfi başlattı; çeyrek sonu yenileme pazarlığında ₺ 1.8M tasarruf sağlandı."
       }
     },
@@ -932,20 +932,20 @@
       "name": "ContractCoreAI",
       "tier": "beta",
       "tagline": "Sözleşme metinlerinden yenileme ve risk uyarıları çıkarır.",
-      "description": "Sözleşme metinlerinden SLA cümleleri, ceza kalemleri ve yenileme tarihlerini ayıklayarak proaktif uyarı üretir; hukuk ve satınalma ekiplerine özetli görünüm sağlar.",
+      "description": "Sözleşme metinlerinden Hizmet Seviyesi cümleleri, ceza kalemleri ve yenileme tarihlerini ayıklayarak proaktif uyarı üretir; hukuk ve satınalma ekiplerine özetli görünüm sağlar.",
       "icon": "FileSignature",
       "accent": "indigo",
       "year": 2027,
       "release": "Beta — Yol Haritası",
       "whatItDoes": [
-        "Sözleşme metnini SLA, ceza, yenileme, risk ve taraf maddesi olarak renkli ayıklar; sayfa numarasıyla atıf tutar.",
-        "SLA metrikleri, ceza kalemleri ve önemli tarihleri yapılandırılmış tablolarda hukuk + satınalma ekibine sunar.",
+        "Sözleşme metnini Hizmet Seviyesi, ceza, yenileme, risk ve taraf maddesi olarak renkli ayıklar; sayfa numarasıyla atıf tutar.",
+        "Hizmet Seviyesi metrikleri, ceza kalemleri ve önemli tarihleri yapılandırılmış tablolarda hukuk + satınalma ekibine sunar.",
         "Otomatik yenileme klozu, ceza üst sınırı gibi yapısal riskleri açıkça işaretler ve ihbar takvimini hatırlatır."
       ],
       "howItWorks": [
         { "label": "OCR + Türkçe NLP", "detail": "PDF veya taranmış metin OCR ile metne dönüştürülür; Türkçe hukuk dili modeliyle çözümlenir." },
-        { "label": "Madde sınıflama", "detail": "Cümleler SLA, ceza, yenileme, risk ve taraf etiketleriyle ayrılır." },
-        { "label": "Yapılandırılmış çıktı", "detail": "SLA tablosu, ceza tablosu, tarih timeline'ı ve risk listesi tek görünümde derlenir." },
+        { "label": "Madde sınıflama", "detail": "Cümleler Hizmet Seviyesi, ceza, yenileme, risk ve taraf etiketleriyle ayrılır." },
+        { "label": "Yapılandırılmış çıktı", "detail": "Hizmet Seviyesi tablosu, ceza tablosu, tarih timeline'ı ve risk listesi tek görünümde derlenir." },
         { "label": "Proaktif hatırlatma", "detail": "Yenileme penceresi yaklaşırken hukuk ve satınalma ekibine otomatik uyarı gönderilir." }
       ],
       "modules": [
@@ -963,7 +963,7 @@
       "scenario": {
         "company": "Birikim Holding",
         "situation": "Aurora Datacom sözleşmesi 24 sayfaydı; Madde 14.3'te 30 günden az ihbar verilmezse otomatik 12 ay uzayan bir kloz vardı, Madde 11.7'de ceza üst sınırı %15 olarak gizliydi. Hukuk ekibi her yenilemede manuel tarama yapıyor, ihbar son gününü kaçırma riski büyüktü.",
-        "outcome": "ContractCoreAI sözleşmeyi 42 madde halinde ayıkladı; 3 SLA, 2 aktif ceza kalemi, 3 önemli tarih ve 2 riskli madde çıkardı. Otomatik yenileme klozu kırmızı işaretlendi, 31 Temmuz ihbar son günü hukuk ve satınalma takvimine işlendi. Çeyrek sonu ihbar kaçırma sıfıra düştü, yenileme hazırlık süresi −%61 kazandı."
+        "outcome": "ContractCoreAI sözleşmeyi 42 madde halinde ayıkladı; 3 Hizmet Seviyesi, 2 aktif ceza kalemi, 3 önemli tarih ve 2 riskli madde çıkardı. Otomatik yenileme klozu kırmızı işaretlendi, 31 Temmuz ihbar son günü hukuk ve satınalma takvimine işlendi. Çeyrek sonu ihbar kaçırma sıfıra düştü, yenileme hazırlık süresi −%61 kazandı."
       }
     },
     {

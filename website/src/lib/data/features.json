@@ -46,12 +46,12 @@
   },
   {
     "title": "Servis Katalog Yönetimi",
-    "description": "Hızlı hizmet sunumu için önceden tanımlanmış hizmet yapıları, ön tanımlı onay akışları ve servise özel SLA ile süreçlerinizi kurumsallaştırın.",
+    "description": "Hızlı hizmet sunumu için önceden tanımlanmış hizmet yapıları, ön tanımlı onay akışları ve servise özel Hizmet Seviyesi ile süreçlerinizi kurumsallaştırın.",
     "link": "/servis-katalog-yonetimi"
   },
   {
     "title": "Servis Seviye Yönetimi",
-    "description": "Geliştiricilerimiz tarafından icat edilen kurumsal sınıf önceliklendirme kural motoruyla yüksek düzeyde özelleştirilebilir ve gelişmiş SLA otomasyon yetenekleri.",
+    "description": "Geliştiricilerimiz tarafından icat edilen kurumsal sınıf önceliklendirme kural motoruyla yüksek düzeyde özelleştirilebilir ve gelişmiş Hizmet Seviyesi otomasyon yetenekleri.",
     "link": "/servis-seviye-yonetimi"
   },
   {
@@ -116,7 +116,7 @@
   },
   {
     "title": "Sözleşme Yönetimi",
-    "description": "Kurum içi (OLA), tedarikçi ve müşteri (SLA) sözleşmelerini tek platformda yönetin; yenileme uyarıları ve kapsam takibiyle tam kontrol kurun.",
+    "description": "Kurum içi (OLA), tedarikçi ve müşteri sözleşmelerini tek platformda yönetin; yenileme uyarıları ve kapsam takibiyle tam kontrol kurun.",
     "link": "/sozlesme-yonetimi"
   },
   {

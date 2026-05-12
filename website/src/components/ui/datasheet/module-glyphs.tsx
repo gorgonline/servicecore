@@ -200,7 +200,7 @@ const MODULE_GLYPHS: Record<string, (props: GlyphProps) => ReactNode> = {
       <line x1="58" y1="24" x2="78" y2="24" stroke={stroke} strokeWidth="1.2" />
     </svg>
   ),
-  // SLA -> gauge clock
+  // Hizmet Seviyesi -> gauge clock
   "service-level-management": ({ stroke, fill }) => (
     <svg width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true">
       <path

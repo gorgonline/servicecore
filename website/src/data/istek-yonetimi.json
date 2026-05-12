@@ -17,7 +17,7 @@
       "bullets": [
         "Tüm kullanıcı talepleri merkezi servis kataloğu üzerinden başlatılır; \"ne talep edildi?\" sorusu her zaman net, tek tip ve iş kurallarıyla uyumlu bir kayıtla yanıtlanır. Standart giriş noktası karşılama sürelerini öngörülebilir kılar, yanlış yönlendirmeleri azaltır ve raporlama ile hizmet seviyesi yönetiminde tutarlı bir veri tabanı oluşturur.",
         "Portal, e-posta, entegrasyonlar veya diğer kanallardan gelen tüm istekler tek platformda toplanır; dağınık Excel veya e-posta zincirleri yerine uçtan uca izlenebilir bir kayıt modeli sayesinde operasyonel görünürlük artar, mükerrer iş yükü ve iletişim kopuklukları azalır.",
-        "Kullanıcılar self-servis portal, e-posta veya Interaction Management gibi modüller üzerinden aynı hizmet tanımlarıyla talep oluşturabilir; omnichannel giriş yapısı sayesinde kullanıcı tercih ettiği kanaldan hızlıca iletişim kurarken kurum, tek bir istek kaydı üzerinden SLA, onay ve görev akışlarını kesintisiz yürütür."
+        "Kullanıcılar self-servis portal, e-posta veya Interaction Management gibi modüller üzerinden aynı hizmet tanımlarıyla talep oluşturabilir; omnichannel giriş yapısı sayesinde kullanıcı tercih ettiği kanaldan hızlıca iletişim kurarken kurum, tek bir istek kaydı üzerinden Hizmet Seviyesi, onay ve görev akışlarını kesintisiz yürütür."
       ],
       "imageKey": "katalog"
     },
@@ -39,9 +39,9 @@
       "id": "sla-atama-yetki",
       "accent": "purple",
       "icon": "Gauge",
-      "titleLead": "Katalog bazlı SLA,",
+      "titleLead": "Katalog bazlı Hizmet Seviyesi,",
       "titleAccent": "otomatik atama ve yetkili erişim.",
-      "description": "Her hizmet veya hizmet paketi için ayrı SLA, öncelik ve eskalasyon eşikleri tanımlanır; kurallara dayalı otomatik atama ile talepler açılır açılmaz doğru destek grubuna yönlendirilir. Rol ve kapsam bazlı yetkilendirme, kullanıcının yalnızca erişim hakkı olan hizmetleri görmesini sağlayarak güvenlik ve odak bir arada korunur.",
+      "description": "Her hizmet veya hizmet paketi için ayrı Hizmet Seviyesi, öncelik ve eskalasyon eşikleri tanımlanır; kurallara dayalı otomatik atama ile talepler açılır açılmaz doğru destek grubuna yönlendirilir. Rol ve kapsam bazlı yetkilendirme, kullanıcının yalnızca erişim hakkı olan hizmetleri görmesini sağlayarak güvenlik ve odak bir arada korunur.",
       "bullets": [
         "Her hizmet veya hizmet paketi için yanıt ve çözüm hedefleri, öncelik seviyeleri ve eskalasyon eşikleri ayrı ayrı tanımlanabilir; beklentiler kullanıcıya şeffaf biçimde yansır, operasyon tarafında ölçülebilir KPI'lar üretilir ve kritik iş süreçlerinde öncelik ayrımı kaynakları doğru kayda yönlendirerek hem riski hem de gecikme maliyetini düşürür.",
         "Önceden tanımlanan kurallar (hizmet türü, lokasyon, çalışma saatleri, yük dağılımı) ile talepler açılır açılmaz doğru destek grubuna veya uygun teknisyene yönlendirilir; manuel triyaj yükü azalır, ilk temas kalitesi artar ve organizasyon değiştiğinde atama mantığı hızlıca güncellenerek süreklilik ile ölçeklenebilirlik korunur.",
@@ -105,7 +105,7 @@
         "accent": "purple",
         "icon": "Repeat",
         "title": "Tekrarlayan talep desenleri ve katalog iyileştirme içgörüleri",
-        "description": "Uçtan uca izlenebilirlik verisinin raporlama yüzü; hangi hizmetlerin daha sık talep edildiğini, hangi kategorilerde SLA baskısı oluştuğunu ve tekrarlayan talep desenlerini gün yüzüne çıkarır. ITIL4 sürekli iyileştirme prensibi doğrultusunda katalog yapısı, form alanları ve onay akışları bu içgörülere göre optimize edilir; otomasyona aday rutin talepler belirlenerek kapasite planlaması ve hizmet portföyü kararları veriyle desteklenir.",
+        "description": "Uçtan uca izlenebilirlik verisinin raporlama yüzü; hangi hizmetlerin daha sık talep edildiğini, hangi kategorilerde Hizmet Seviyesi baskısı oluştuğunu ve tekrarlayan talep desenlerini gün yüzüne çıkarır. ITIL4 sürekli iyileştirme prensibi doğrultusunda katalog yapısı, form alanları ve onay akışları bu içgörülere göre optimize edilir; otomasyona aday rutin talepler belirlenerek kapasite planlaması ve hizmet portföyü kararları veriyle desteklenir.",
         "imageKey": "tekrarlananistek"
       }
     ]

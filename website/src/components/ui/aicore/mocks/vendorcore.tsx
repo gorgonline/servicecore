@@ -92,7 +92,7 @@ const VENDORS: VendorEntry[] = [
 ];
 
 const DIMENSIONS = [
-  { label: "SLA Uyumu", value: 58, tone: "danger" as const },
+  { label: "Hizmet Seviyesi Uyumu", value: 58, tone: "danger" as const },
   { label: "Yanıt Süresi", value: 64, tone: "warn" as const },
   { label: "Maliyet Tutarlılığı", value: 71, tone: "warn" as const },
   { label: "İletişim Kalitesi", value: 56, tone: "danger" as const },
@@ -100,7 +100,7 @@ const DIMENSIONS = [
 
 const RISK_SIGNALS = [
   {
-    label: "SLA ihlali tırmanıyor",
+    label: "Hizmet Seviyesi ihlali tırmanıyor",
     detail: "Son 90 günde 12 P1 ihlali · 3'ünde ceza kaleminin sınırı aşıldı.",
     tone: "danger" as const,
   },

@@ -50,7 +50,7 @@
           { "title": "Genel Yönetim Ayarları", "content": "Sistem parametreleri, logo ve tema özelleştirmeleri." },
           { "title": "Organizasyon Ayarları", "content": "Şirket yapısı, departmanlar, lokasyonlar ve ekipler." },
           { "title": "Varlık ve Konfigürasyon Ayarları", "content": "Varlık türleri, nitelikleri ve CMDB ilişkileri." },
-          { "title": "Gelişmiş Ayarlar", "content": "SLA politikaları, iş saatleri ve otomasyon kuralları." },
+          { "title": "Gelişmiş Ayarlar", "content": "Hizmet Seviyesi politikaları, iş saatleri ve otomasyon kuralları." },
           { "title": "Hizmet Kataloğu Ayarları", "content": "Katalog yapısı, form tasarımı ve onay akışları." },
           { "title": "Ortak Alan Ayarları", "content": "Ekran tasarımları ve özel alan yönetimi." },
           { "title": "SRM Ayarları", "content": "Servis İlişki Yönetimi yapılandırması." },

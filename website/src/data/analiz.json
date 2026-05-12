@@ -200,13 +200,13 @@
       "id": "surec-operasyon",
       "icon": "7",
       "title": "Süreç & Operasyon",
-      "description": "Kataloglar, SLA'lar ve onay iş akışları.",
+      "description": "Kataloglar, Hizmet Seviyeleri ve onay iş akışları.",
       "fields": [
         { "id": "katalog_oge_sayisi", "label": "Servis kataloğu öğe sayısı", "type": "number" },
-        { "id": "sla_sayisi", "label": "Kaç adet SLA tanımı vardır?", "type": "number" },
+        { "id": "sla_sayisi", "label": "Kaç adet Hizmet Seviyesi tanımı vardır?", "type": "number" },
         {
           "id": "sla_eskalasyon",
-          "label": "SLA eskalasyonları belirlendi mi?",
+          "label": "Hizmet Seviyesi eskalasyonları belirlendi mi?",
           "type": "radio",
           "options": ["Evet", "Kısmen", "Hayır"]
         },

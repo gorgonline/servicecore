@@ -56,7 +56,7 @@ const FeatureAccordion = ({ featureName, value, isProHighlight }: { featureName:
             className="overflow-hidden"
           >
             <p className="pb-4 pl-7 text-[13px] text-(--color-text-muted) font-light leading-relaxed">
-              {featureName} süreçlerinizi ServiceCore SLA taahhütleri ile optimize edin.
+              {featureName} süreçlerinizi ServiceCore destek taahhütleri ile optimize edin.
             </p>
           </motion.div>
         )}
@@ -88,7 +88,7 @@ export function SupportTiersCards() {
           className="text-center mb-16 max-w-3xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Performans <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light)">SLA Paketleri</span>
+            Performans <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light)">Destek Paketleri</span>
           </h2>
           <p className="text-base md:text-lg text-(--color-text-secondary) font-light leading-relaxed">
             Operasyonel kritiklik derecenize göre optimize edilmiş, esnek müdahale ve çözüm sürelerini barındıran lisans bazlı hizmet paketlerimizi karşılaştırın.

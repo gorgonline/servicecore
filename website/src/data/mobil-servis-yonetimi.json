@@ -26,10 +26,10 @@
       "icon": "Activity",
       "titleLead": "Gerçek zamanlı izleme,",
       "titleAccent": "anında aksiyon.",
-      "description": "Talep durumları, olay çözümleri ve hizmet seviyeleri anlık olarak takip edilir; daha hızlı aksiyon alınması sağlanır. Kritik durumlar ve SLA ihlalleri hakkında push, e-posta ve uygulama içi bildirimlerle ekipler anında bilgilendirilir, kesintisiz hizmet korunur.",
+      "description": "Talep durumları, olay çözümleri ve hizmet seviyeleri anlık olarak takip edilir; daha hızlı aksiyon alınması sağlanır. Kritik durumlar ve Hizmet Seviyesi ihlalleri hakkında push, e-posta ve uygulama içi bildirimlerle ekipler anında bilgilendirilir, kesintisiz hizmet korunur.",
       "bullets": [
         "Talep durumları, olay çözümleri ve hizmet seviyeleri anlık takip edilir; karar süresi saatlerden saniyelere iner.",
-        "Kritik durumlar ve SLA ihlalleri için anlık bildirimler push, e-posta ve uygulama içi kanallardan ekiplere ulaşır.",
+        "Kritik durumlar ve Hizmet Seviyesi ihlalleri için anlık bildirimler push, e-posta ve uygulama içi kanallardan ekiplere ulaşır.",
         "Hatırlatmalar ve eskalasyon uyarıları sayesinde unutulan adım kalmaz; kesintisiz hizmet sunumu mümkün olur."
       ]
     },
@@ -89,7 +89,7 @@
         "accent": "indigo",
         "icon": "Bell",
         "title": "Bildirimler ve hatırlatmalar",
-        "description": "Kritik durumlar ve SLA ihlalleri hakkında anında bilgilendirilirsiniz. Hatırlatmalar görevlerin kaçırılmasını engeller, kesintisiz hizmet sürdürülür."
+        "description": "Kritik durumlar ve Hizmet Seviyesi ihlalleri hakkında anında bilgilendirilirsiniz. Hatırlatmalar görevlerin kaçırılmasını engeller, kesintisiz hizmet sürdürülür."
       },
       {
         "id": "entegrasyon",

@@ -168,7 +168,7 @@ export default function ServisKatalogYonetimiPage() {
                       </span>
                       <div className="flex items-center gap-1.5 text-[9px] text-(--color-text-muted)">
                         <Clock className="w-2.5 h-2.5" />
-                        <span className="font-mono">SLA {item.sla}</span>
+                        <span className="font-mono">Hizmet Seviyesi {item.sla}</span>
                       </div>
                     </div>
                   </div>
@@ -395,13 +395,13 @@ export default function ServisKatalogYonetimiPage() {
                     </div>
                   </div>
 
-                  {/* SLA + Approval summary */}
+                  {/* Hizmet Seviyesi + Approval summary */}
                   <div className="grid grid-cols-2 gap-2 mt-auto">
                     <div className="flex flex-col gap-1 px-3 py-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
                       <div className="flex items-center gap-1.5">
                         <Clock className="w-3 h-3 text-(--color-accent-emerald-light)" />
                         <span className="text-[9px] font-semibold uppercase tracking-wider text-(--color-text-muted)">
-                          SLA
+                          Hizmet Seviyesi
                         </span>
                       </div>
                       <span className="text-xs font-bold text-white">
@@ -685,7 +685,7 @@ export default function ServisKatalogYonetimiPage() {
               </div>
             </motion.div>
 
-            {/* Bento 3 - SLA (normal, mock) */}
+            {/* Bento 3 - Hizmet Seviyesi (normal, mock) */}
             <motion.div
               variants={fadeUp}
               className="col-span-1 rounded-4xl bg-white/2 border border-white/10 p-8 hover:bg-white/4 transition-colors flex flex-col"
@@ -857,7 +857,7 @@ export default function ServisKatalogYonetimiPage() {
               <div className="relative w-full flex-1 rounded-xl border border-white/10 overflow-hidden bg-(--color-surface-elevated-solid) p-4 flex flex-col gap-2 justify-center">
                 {[
                   { v: "v2.4", date: "29 Nis", note: "Yeni alan eklendi" },
-                  { v: "v2.3", date: "21 Nis", note: "SLA güncellendi" },
+                  { v: "v2.3", date: "21 Nis", note: "Hizmet Seviyesi güncellendi" },
                   { v: "v2.2", date: "12 Nis", note: "Onaycı revize edildi" },
                 ].map((row, i) => (
                   <div
@@ -939,7 +939,7 @@ export default function ServisKatalogYonetimiPage() {
                       </div>
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
-                        Servise Özel SLA
+                        Servise Özel Hizmet Seviyesi
                       </div>
                     </div>
                   </div>

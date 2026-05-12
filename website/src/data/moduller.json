@@ -17,7 +17,7 @@
     { "name": "Servis Konfigürasyon Yönetimi", "icon": "Settings", "desc": "Sistem bileşenlerinin haritasını çıkarın.", "href": "/servis-konfigurasyon-yonetimi", "tone": "cyan", "category": "ITAM" },
     { "name": "Sürekli İyileştirme", "icon": "TrendingUp", "desc": "Hizmet kalitesini her adımda artırın.", "href": "/surekli-iyilestirme", "tone": "emerald", "category": "ITIL4" },
     { "name": "Servis Katalog Yönetimi", "icon": "BookOpen", "desc": "Kullanıcılara hizmet menüsü sunun.", "href": "/servis-katalog-yonetimi", "tone": "blue", "category": "ITSM" },
-    { "name": "Servis Seviye Yönetimi", "icon": "Activity", "desc": "SLA taahhütlerinizi güvenceye alın.", "href": "/servis-seviye-yonetimi", "tone": "purple", "category": "ITSM" },
+    { "name": "Servis Seviye Yönetimi", "icon": "Activity", "desc": "Hizmet Seviyesi taahhütlerinizi güvenceye alın.", "href": "/servis-seviye-yonetimi", "tone": "purple", "category": "ITSM" },
     { "name": "Servis Otomasyonu", "icon": "Terminal", "desc": "Tekrarlayan işleri makinelere devredin.", "href": "/servis-otomasyonu", "tone": "orange", "category": "Otomasyon" },
     { "name": "Raporlama Yönetimi", "icon": "LineChart", "desc": "Veriye dayalı kararlar alın.", "href": "/raporlama-yonetimi", "tone": "emerald", "category": "Analiz" },
     { "name": "Görev Yönetimi", "icon": "CheckCircle2", "desc": "Ekipler arası iş atamalarını izleyin.", "href": "/gorev-yonetimi", "tone": "blue", "category": "İş Gücü" },
@@ -30,7 +30,7 @@
     { "name": "İş Akışı Yönetimi", "icon": "GitBranch", "desc": "Süreçlerinizi sürükle bırak diyagramlarla modelleyin.", "href": "/is-akisi-yonetimi", "tone": "cyan", "category": "Otomasyon" },
     { "name": "Entegrasyon Modülü", "icon": "Link2", "desc": "API aracılığıyla veri alışverişi yapın.", "href": "/entegrasyon-yonetimi", "tone": "orange", "category": "Entegrasyon" },
     { "name": "Low Code Geliştirme Modülü", "icon": "Code", "desc": "Özel formlar ve süreç tasarımları oluşturun.", "href": "/low-code-gelistirme", "tone": "blue", "category": "Geliştirme" },
-    { "name": "Sözleşme Yönetimi", "icon": "FileSignature", "desc": "SLA'leri ve sözleşmeleri yönetin.", "href": "/sozlesme-yonetimi", "tone": "emerald", "category": "Sözleşme" },
+    { "name": "Sözleşme Yönetimi", "icon": "FileSignature", "desc": "Hizmet Seviyeleri ve sözleşmeleri yönetin.", "href": "/sozlesme-yonetimi", "tone": "emerald", "category": "Sözleşme" },
     { "name": "AI Yol Haritası", "icon": "Sparkles", "desc": "Yapay zeka destekli otomasyon ve asistanlar.", "href": "/ai-yol-haritasi", "tone": "purple", "category": "AI" }
   ],
   "cta": {

@@ -54,7 +54,7 @@ export function SupportCtaSection() {
             </div>
 
             <div className="relative z-10 mt-auto pt-6 border-t border-white/10">
-              <Link href="/destek-kanallari" className="inline-flex items-center text-sm font-semibold text-white group/link hover:text-(--color-accent-cyan-light) transition-colors">
+              <Link href="/destek" className="inline-flex items-center text-sm font-semibold text-white group/link hover:text-(--color-accent-cyan-light) transition-colors">
                 Profesyonel Destek Kanalları
                 <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
               </Link>
