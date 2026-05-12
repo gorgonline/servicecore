@@ -104,7 +104,7 @@ const solutionsSubmenu = [
   { name: "ESM", title: "Enterprise Service Management", icon: Building2, desc: "Tüm departmanları aynı servis disiplinine taşıyın.", href: "/cozumler/esm" },
   { name: "ITSM", title: "IT Service Management", icon: Settings, desc: "ITIL4 uyumlu BT operasyon yönetimi.", href: "/cozumler/itsm" },
   { name: "CSS", title: "Customer Service Support", icon: Headphones, desc: "Müşteri taleplerini ve etkileşimi tek panelde.", href: "/cozumler/css" },
-  { name: "APM", title: "Agile Project Management", icon: Layers, desc: "Backlog, sprint, kanban ve roadmap yönetimi.", href: "/cozumler/apm" },
+  { name: "AgilePM", title: "Agile Project Management", icon: Layers, desc: "Backlog, sprint, kanban ve roadmap yönetimi.", href: "/cozumler/apm" },
   { name: "ITAM", title: "IT Asset Management", icon: Box, desc: "BT varlık ve lisanslarının yaşam döngüsü.", href: "/cozumler/itam" },
   { name: "EAM", title: "Enterprise Asset Management", icon: Boxes, desc: "BT dışı fiziksel varlıkların merkezi yönetimi.", href: "/cozumler/eam" },
   { name: "FSM", title: "Field Service Management", icon: Truck, desc: "Saha ekiplerine mobil iş emri ve rota.", href: "/cozumler/fsm" },
@@ -163,7 +163,7 @@ const plansSubmenu = [
   { name: "ESM Lisans Seçenekleri", icon: Building2, desc: "Enterprise Service Management lisans ve modül seçenekleri.", href: "/planlar-esm" },
   { name: "CSS Lisans Seçenekleri", icon: Headphones, desc: "Customer Service Support lisans ve modül seçenekleri.", href: "/planlar-css" },
   { name: "FSM Lisans Seçenekleri", icon: Truck, desc: "Field Service Management lisans ve modül seçenekleri.", href: "/planlar-fsm" },
-  { name: "Proje Yönetimi Lisans Seçenekleri", icon: Target, desc: "Agile, hibrit ve stratejik proje yönetimi lisans seçenekleri.", href: "/planlar-pm" },
+  { name: "AgilePM Lisans Seçenekleri", icon: Target, desc: "Agile, hibrit ve stratejik proje yönetimi lisans seçenekleri.", href: "/planlar-pm" },
   { name: "Abonelik ve Lisanslama Rehberi", icon: ScrollText, desc: "Roller, edition kuralları, ESM ve add-on lisanslama detayları.", href: "/planlar/lisanslama-rehberi" },
 ];
 
