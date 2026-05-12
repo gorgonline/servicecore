@@ -36,13 +36,21 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+interface SectionModule {
+  name: string;
+  desc: string;
+}
+
 interface Section {
   eyebrow: string;
   title: string;
   description: string;
   icon: string;
   accent: string;
-  items: string[];
+  items?: string[];
+  intro?: string[];
+  notes?: string[];
+  moduleList?: SectionModule[];
 }
 
 interface EditionTier {
@@ -244,17 +252,53 @@ export function SolutionCapabilities({ sections }: { sections: Section[] }) {
                   </p>
                 </div>
 
-                <div className="lg:col-span-7">
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
-                    {section.items.map((item, itemIdx) => (
-                      <li key={itemIdx} className="flex items-start gap-2.5">
-                        <Check className={`w-4 h-4 mt-1 shrink-0 ${accent.text}`} strokeWidth={2.5} />
-                        <span className="text-sm font-light text-(--color-text-secondary) leading-snug">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="lg:col-span-7 space-y-5">
+                  {section.intro && section.intro.length > 0 && (
+                    <div className="space-y-3">
+                      {section.intro.map((paragraph, i) => (
+                        <p key={i} className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                  {section.moduleList && section.moduleList.length > 0 && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {section.moduleList.map((mod, modIdx) => (
+                        <div
+                          key={modIdx}
+                          className="rounded-xl border border-white/8 bg-white/3 p-4 hover:bg-white/5 hover:border-white/12 transition-colors"
+                        >
+                          <h4 className={`text-sm font-semibold mb-1 ${accent.text}`}>{mod.name}</h4>
+                          <p className="text-xs font-light text-(--color-text-secondary) leading-snug">{mod.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {section.items && section.items.length > 0 && (
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3">
+                      {section.items.map((item, itemIdx) => (
+                        <li key={itemIdx} className="flex items-start gap-2.5">
+                          <Check className={`w-4 h-4 mt-1 shrink-0 ${accent.text}`} strokeWidth={2.5} />
+                          <span className="text-sm font-light text-(--color-text-secondary) leading-snug">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {section.notes && section.notes.length > 0 && (
+                    <div className="space-y-2 pt-2 border-t border-white/8">
+                      {section.notes.map((note, i) => (
+                        <p key={i} className="text-sm font-light leading-relaxed text-(--color-text-muted)">
+                          {note}
+                        </p>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             </article>

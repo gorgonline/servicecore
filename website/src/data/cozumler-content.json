@@ -1,122 +1,225 @@
 {
   "esm": {
     "narrative": [
-      "Modern kurumlar yalnızca BT süreçlerini değil; tüm operasyonlarını merkezi, izlenebilir ve yönetilebilir hale getirmek ister. ServiceCore ESM; holdingler, grup şirketleri, paylaşımlı hizmet merkezleri ve çok departmanlı yapılar için tasarlanmış birleşik bir Enterprise Service Management platformudur.",
-      "BT operasyonlarından insan kaynaklarına, satın almadan idari işlere, grup şirketlerinden dış müşteri operasyonlarına kadar tüm servis süreçleri tek platform üzerinde birleşir."
+      "ServiceCore ESM; kurumsal hizmet yönetimi, operasyon koordinasyonu, süreç otomasyonu ve çoklu şirket yapılarının merkezi olarak yönetilmesi için tasarlanmış birleşik bir Enterprise Service Management platformudur.",
+      "BT operasyonlarından insan kaynaklarına, satın almadan idari işlere, grup şirketlerinden dış müşteri operasyonlarına kadar tüm servis süreçleri tek platform üzerinde birleşir.",
+      "Modern kurumlar yalnızca BT süreçlerini değil; tüm kurumsal operasyonlarını merkezi, izlenebilir ve yönetilebilir hale getirmek ister. ServiceCore ESM bu ihtiyaca yönelik olarak çoklu şirket yapıları, holding ve iştirak operasyonları, paylaşımlı hizmet merkezleri, çok departmanlı kurumsal yapılar, merkezi operasyon ekipleri, iç ve dış müşteri hizmet yönetimi, kurumsal workflow otomasyonu senaryoları için tasarlanmıştır."
     ],
     "sections": [
       {
-        "eyebrow": "Multi-Company Architecture",
-        "title": "Holding ve grup şirketleri için izole operasyon yapısı",
-        "description": "Holdingler, iştirakler ve çoklu organizasyon operasyonları için gelişmiş multi-tenant mimari. Her şirket bağımsız yönetilir; merkez tüm grubu tek platformda izler.",
+        "eyebrow": "Multi-Company & Holding Architecture",
+        "title": "Grup şirketlerinizi tek merkezden yönetin",
+        "description": "ServiceCore ESM; holdingler, grup şirketleri, iştirak yapıları ve çoklu organizasyon operasyonları için gelişmiş multi-tenant mimari sunar.",
+        "intro": ["Her şirket aşağıdaki alanları bağımsız şekilde yönetebilir:"],
+        "items": [
+          "Kendi süreçlerini",
+          "Kendi kullanıcılarını",
+          "Kendi SLA yapılarını",
+          "Kendi servis kataloglarını",
+          "Kendi operasyon ekiplerini",
+          "Kendi raporlamalarını"
+        ],
+        "notes": ["Aynı zamanda merkezi yönetim ekipleri tüm grup operasyonlarını tek platform üzerinden izleyebilir."],
         "icon": "Building2",
-        "accent": "blue",
-        "items": [
-          "Bağımsız kullanıcı, süreç ve servis katalogu yapısı",
-          "Şirket bazlı SLA, raporlama ve operasyon ekipleri",
-          "Merkezi holding görünürlüğü ve konsolide raporlama",
-          "Grup çapında standart süreçler ve workflow şablonları",
-          "Ortak hizmet operasyonları ve merkezi servis katalogları",
-          "Kurumsal yönetişim ve kontrollü erişim hiyerarşisi"
-        ]
+        "accent": "blue"
       },
       {
-        "eyebrow": "Core Service Modules",
-        "title": "Tüm servis süreçleri tek platformda",
-        "description": "Çağrı, olay, talep, problem ve değişiklik yönetiminden bilgi bankasına kadar kurumsal servis disiplininin tüm modülleri birleşik bir yapı altında çalışır.",
-        "icon": "Layers",
-        "accent": "purple",
+        "eyebrow": "Merkezi Holding Yönetimi",
+        "title": "Holding merkezleri için konsolide görünürlük",
+        "description": "Holding merkezleri için merkezi operasyon görünürlüğü, standart süreçler ve konsolide raporlama tek platformda sunulur.",
         "items": [
-          "Call Management — kurumsal kullanıcı taleplerinin ilk temas kaydı",
-          "Incident Management — kesinti ve arızaların uçtan uca izlenmesi",
-          "Request Management — standartlaştırılmış servis talep süreçleri",
-          "Problem Management — kök neden analizi ve tekrarlayan sorunlar",
-          "Change Management — kontrollü altyapı ve süreç değişiklikleri",
-          "Service Catalog Management — merkezi kurumsal hizmet katalogu",
-          "Service Level Management — SLA performansı ve operasyonel kalite",
-          "Knowledge Management — kurumsal bilgi birikimi",
-          "Continuous Improvement — iyileştirme önerileri ve dönüşüm"
-        ]
-      },
-      {
-        "eyebrow": "Cross-Department Operations",
-        "title": "BT'nin ötesinde, tüm departmanlara aynı disiplin",
-        "description": "İnsan Kaynakları, Satın Alma, İdari İşler, Finans, Hukuk, Güvenlik ve Paylaşımlı Hizmet Merkezleri tek platform üzerinde çalışır. Her departman kendi modeline göre yönetir.",
+          "Merkezi operasyon görünürlüğü",
+          "Grup şirketleri arası standart süreçler",
+          "Merkezi SLA yönetimi",
+          "Konsolide raporlama",
+          "Ortak hizmet operasyonları",
+          "Merkezi servis katalogları",
+          "Kurumsal yönetişim",
+          "Grup çapında workflow standartları"
+        ],
+        "notes": ["Tüm bu yetenekler tek platform üzerinden yönetilebilir."],
         "icon": "Network",
-        "accent": "emerald",
-        "items": [
-          "Departman bazlı servis katalogları ve workflow yapıları",
-          "Bağımsız SLA kuralları ve onay süreçleri",
-          "Rol bazlı operasyon ekranları ve yetki yönetimi",
-          "İK, Finans, Hukuk, Satın Alma ve İdari işler için hazır şablonlar",
-          "Paylaşımlı hizmet merkezleri için merkezi kuyruk yönetimi",
-          "Çapraz departman görev koordinasyonu"
-        ]
+        "accent": "purple"
       },
       {
-        "eyebrow": "Asset & Configuration",
-        "title": "Servis ilişkileri ve konfigürasyon görünürlüğü",
+        "eyebrow": "İzole Operasyon Yapısı",
+        "title": "Grup şirketleri için bağımsız operasyon",
+        "description": "Her iştirak veya alt şirket kendi yapısıyla bağımsız çalışırken merkezi kontrol de korunur.",
+        "intro": ["Her iştirak veya alt şirket aşağıdaki yapılarla çalışabilir:"],
+        "items": [
+          "Bağımsız kullanıcı yapısı",
+          "Bağımsız süreç yönetimi",
+          "Bağımsız servis katalogları",
+          "Bağımsız raporlama",
+          "Bağımsız SLA yönetimi",
+          "Bağımsız operasyon ekipleri"
+        ],
+        "notes": ["Bu sayede hem merkezi kontrol hem operasyonel bağımsızlık aynı anda sağlanır."],
+        "icon": "Layers",
+        "accent": "emerald"
+      },
+      {
+        "eyebrow": "Core Enterprise Service Modules",
+        "title": "Tüm servis operasyonları tek platform altında",
+        "description": "ServiceCore ESM; farklı ekiplerin ayrı sistemler kullanmasına gerek bırakmadan tüm servis süreçlerini birleşik bir yapı altında yönetir.",
+        "moduleList": [
+          { "name": "Call Management", "desc": "Kurumsal kullanıcı taleplerini ve ilk temas kayıtlarını merkezi olarak yönetin." },
+          { "name": "Incident Management", "desc": "Kesinti, arıza ve operasyonel sorunları uçtan uca izleyin." },
+          { "name": "Request Management", "desc": "Kurumsal servis taleplerini standartlaştırılmış süreçlerle yönetin." },
+          { "name": "Problem Management", "desc": "Tekrarlayan sorunları ve kök neden analizlerini merkezi olarak takip edin." },
+          { "name": "Change Management", "desc": "Sistem, altyapı ve operasyon değişikliklerini kontrollü şekilde yönetin." },
+          { "name": "Service Catalog Management", "desc": "Tüm kurumsal hizmetleri merkezi katalog yapısında sunun." },
+          { "name": "Service Level Management", "desc": "Hizmet seviyesi hedeflerini, servis performansını ve operasyonel kaliteyi izleyin." },
+          { "name": "Task Management", "desc": "Operasyonel görevleri ekipler arasında koordine edin." },
+          { "name": "Workflow Automation", "desc": "Kurumsal süreçleri otomatikleştirin ve operasyonel verimliliği artırın." },
+          { "name": "Knowledge Management", "desc": "Kurumsal bilgi birikimini merkezi bilgi bankasında yönetin." },
+          { "name": "Continuous Improvement Management", "desc": "İyileştirme önerilerini, operasyonel geliştirmeleri ve dönüşüm süreçlerini takip edin." },
+          { "name": "Project Management", "desc": "Kurumsal projeleri ve ilişkili operasyon görevlerini yönetin." }
+        ],
+        "icon": "Settings",
+        "accent": "blue"
+      },
+      {
+        "eyebrow": "Asset Management",
+        "title": "Kurumsal varlıkların merkezi yönetimi",
         "description": "ServiceCore ESM yalnızca ticket süreçlerini değil, operasyonların arkasındaki tüm servis ilişkilerini görünür hale getirir.",
+        "items": [
+          "Varlık yaşam döngüsü yönetimi",
+          "Zimmet ve sahiplik yönetimi",
+          "Finansal takip",
+          "Tedarikçi ilişkileri",
+          "Sözleşme ilişkileri",
+          "Lokasyon bazlı varlık yönetimi",
+          "Varlık geçmişi görünürlüğü",
+          "Sayım operasyonları"
+        ],
+        "icon": "Box",
+        "accent": "orange"
+      },
+      {
+        "eyebrow": "Configuration & Service Relationship Management",
+        "title": "Servis ilişkileri ve konfigürasyon görünürlüğü",
+        "description": "Servisler, altyapılar ve operasyonel bağımlılıklar merkezi olarak yönetilebilir.",
+        "items": [
+          "Service relationship mapping",
+          "Servis topolojileri",
+          "Bağımlılık yönetimi",
+          "Hizmet ilişkileri",
+          "Service impact visibility",
+          "Konfigürasyon yönetimi",
+          "Relationship-aware operations",
+          "Merkezi servis görünürlüğü"
+        ],
         "icon": "GitBranch",
-        "accent": "cyan",
-        "items": [
-          "Varlık yaşam döngüsü, zimmet ve finansal takip",
-          "Tedarikçi ve sözleşme ilişkileri",
-          "Lokasyon bazlı varlık yönetimi ve sayım operasyonları",
-          "Service relationship mapping ve servis topolojileri",
-          "Bağımlılık yönetimi ve service impact analysis",
-          "Relationship-aware operations — ilişkili olay, değişiklik ve talepler"
-        ]
+        "accent": "cyan"
       },
       {
-        "eyebrow": "Workflow & Approval",
+        "eyebrow": "Cross-Department Enterprise Operations",
+        "title": "Tüm departman operasyonları tek platform altında",
+        "description": "ServiceCore ESM yalnızca BT ekipleri için değil; tüm departmanların servis operasyonlarını da yönetir.",
+        "intro": ["ServiceCore ESM aşağıdaki ekiplerin servis operasyonlarını birleştirir:"],
+        "items": [
+          "İnsan Kaynakları",
+          "Satın Alma",
+          "İdari İşler",
+          "Finans",
+          "Hukuk",
+          "Operasyon",
+          "Güvenlik",
+          "Destek Hizmetleri",
+          "Paylaşımlı Hizmet Merkezleri"
+        ],
+        "icon": "Users",
+        "accent": "pink"
+      },
+      {
+        "eyebrow": "Department-Based Service Operations",
+        "title": "Departman bazlı servis operasyonları",
+        "description": "Her departman kendi kurallarıyla, kendi servis yapısıyla çalışabilir.",
+        "intro": ["Her departman aşağıdaki yapıları kendisi yönetebilir:"],
+        "items": [
+          "Kendi servis kataloglarını",
+          "Kendi workflow yapılarını",
+          "Kendi SLA kurallarını",
+          "Kendi onay süreçlerini",
+          "Kendi operasyon ekranlarını"
+        ],
+        "icon": "Layers",
+        "accent": "indigo"
+      },
+      {
+        "eyebrow": "Enterprise Workflow & Approval Platform",
         "title": "Kurumsal süreçleri standartlaştırın ve otomatikleştirin",
-        "description": "Karmaşık operasyon süreçlerini merkezi hale getiren dynamic workflow engine. Çok adımlı onaylar, organizasyonel hiyerarşi ve low-code süreç tasarımı.",
+        "description": "ServiceCore ESM gelişmiş workflow ve onay altyapısı sayesinde karmaşık operasyon süreçlerini merkezi hale getirir.",
+        "items": [
+          "Dynamic workflow engine",
+          "Multi-step approval flows",
+          "Organizational approval hierarchy",
+          "Role-based authorization",
+          "Conditional process flows",
+          "Escalation workflows",
+          "Cross-department workflows",
+          "Low-code / no-code workflow tasarımı"
+        ],
         "icon": "Workflow",
-        "accent": "orange",
-        "items": [
-          "Dynamic workflow engine ve görsel süreç tasarımı",
-          "Multi-step approval flows ve organizasyonel hiyerarşi",
-          "Rol bazlı yetkilendirme ve koşullu süreç akışları",
-          "Eskalasyon kuralları ve cross-department onaylar",
-          "Low-code / no-code süreç tasarımcısı",
-          "Süreç versiyonlama ve audit izleri"
-        ]
+        "accent": "purple"
       },
       {
-        "eyebrow": "Self-Service & Visibility",
-        "title": "Modern self-service deneyimi ve gerçek zamanlı görünürlük",
-        "description": "Çalışanlar tek portal üzerinden talep oluşturur, onay süreçlerini takip eder, bilgi bankasına ulaşır. Yöneticiler operasyonu canlı dashboard'lardan izler.",
+        "eyebrow": "Enterprise Self-Service Experience",
+        "title": "Çalışanlara modern self-service deneyimi",
+        "description": "Kurum çalışanlarına modern self-service deneyimi sunun.",
+        "intro": ["Çalışanlar tek portal üzerinden aşağıdaki işlemleri yapabilir:"],
+        "items": [
+          "Servis talepleri oluşturabilir",
+          "Hizmet kataloglarına erişebilir",
+          "Onay süreçlerini takip edebilir",
+          "Bilgi bankasına ulaşabilir",
+          "Operasyon durumlarını görüntüleyebilir",
+          "Kendi kayıt geçmişlerini yönetebilir"
+        ],
         "icon": "MonitorSmartphone",
-        "accent": "indigo",
-        "items": [
-          "Tek noktadan servis talebi ve hizmet katalogu erişimi",
-          "Onay süreç takibi ve kayıt geçmişi yönetimi",
-          "Bilgi bankası entegrasyonu ve akıllı çözüm önerileri",
-          "SLA performansı ve operasyon yoğunlukları",
-          "Şirket ve departman bazlı operasyon raporları",
-          "İş yükü dağılımı ve hizmet performans trendleri"
-        ]
+        "accent": "emerald"
       },
       {
-        "eyebrow": "Enterprise Integration",
-        "title": "Kurumsal sistemlerle native entegrasyon",
-        "description": "REST API, SSO, Active Directory ve e-posta entegrasyonları. Low-code genişletilebilirlik, çoklu dil ve on-premise / hybrid deployment seçenekleri.",
-        "icon": "Plug",
-        "accent": "pink",
+        "eyebrow": "Operational Visibility & Reporting",
+        "title": "Veriye dayalı kurumsal operasyon",
+        "description": "Gerçek zamanlı dashboard ve operasyon raporları sayesinde tüm operasyonel veriler merkezi olarak izlenir.",
+        "intro": ["Gerçek zamanlı dashboard ve operasyon raporları sayesinde aşağıdaki veriler izlenir:"],
         "items": [
-          "REST API altyapısı ve webhook desteği",
-          "SSO, Azure AD ve SAML entegrasyonu",
-          "Active Directory ve e-posta entegrasyonları",
+          "Hizmet seviyesi performansları",
+          "Operasyon yoğunlukları",
+          "Departman performansları",
+          "Şirket bazlı operasyon verileri",
+          "İş yükü dağılımları",
+          "Hizmet performansları",
+          "Operasyon trendleri"
+        ],
+        "notes": ["Tüm bu veriler merkezi olarak izlenebilir."],
+        "icon": "BarChart3",
+        "accent": "cyan"
+      },
+      {
+        "eyebrow": "Enterprise Integration & Extensibility",
+        "title": "Kurumsal sistemlerle kolayca entegre olun",
+        "description": "REST API, SSO, Active Directory ve e-posta entegrasyonları. Low-code genişletilebilirlik ve çoklu deployment seçenekleri.",
+        "items": [
+          "REST API altyapısı",
+          "SSO entegrasyonu",
+          "Active Directory entegrasyonu",
+          "E-posta entegrasyonları",
           "Low-code / no-code genişletilebilir yapı",
-          "Çoklu dil ve çoklu zaman dilimi",
-          "On-premise, cloud veya hybrid mimari desteği"
-        ]
+          "Çoklu dil desteği",
+          "On-premise deployment",
+          "Hybrid architecture",
+          "Merkezi yönetim paneli"
+        ],
+        "icon": "Plug",
+        "accent": "amber"
       }
     ],
     "closing": {
       "title": "Holdingler ve büyük kurumlar için tasarlandı",
-      "description": "ServiceCore ESM; çoklu operasyon yapıları, paylaşımlı hizmet merkezleri ve grup şirketleri için ölçeklenebilir, standart ve yönetilebilir bir hizmet platformu sunar.",
+      "description": "ServiceCore ESM; holdingler, büyük kurumlar, grup şirketleri ve çoklu operasyon yapıları için tasarlanmış modern bir Enterprise Service Management platformudur. Kurumsal operasyonlarınızı daha görünür, daha standart ve daha yönetilebilir hale getirin.",
       "highlights": [
         "Enterprise Service Management",
         "Shared Service Operations",
@@ -136,138 +239,177 @@
     ],
     "sections": [
       {
-        "eyebrow": "Omnichannel Conversations",
-        "title": "Tüm müşteri iletişimleri tek ekranda",
-        "description": "E-posta, portal, canlı destek, servis kayıtları ve müşteri görüşmeleri tek bir birleşik müşteri zaman akışında toplanır. Destek ekipleri müşterinin tüm geçmişine tek noktadan erişir.",
-        "icon": "Inbox",
-        "accent": "blue",
+        "eyebrow": "Omnichannel Customer Conversations",
+        "title": "Tüm müşteri iletişimlerini tek ekranda yönetin",
+        "description": "E-posta, portal, canlı destek, servis kayıtları ve müşteri görüşmeleri tek bir birleşik müşteri zaman akışında toplanır.",
+        "intro": ["E-posta, portal, canlı destek, servis kayıtları ve müşteri görüşmeleri tek bir birleşik müşteri zaman akışında toplanır. Destek ekipleri müşterinin tüm geçmişine tek noktadan erişebilir."],
         "items": [
-          "Unified customer inbox ve omnichannel destek",
-          "Customer timeline görünümü ve etkileşim geçmişi",
+          "Unified customer inbox",
+          "Omnichannel support operations",
+          "Customer timeline görünümü",
           "E-posta tabanlı otomatik ticket oluşturma",
-          "Shared team inbox ve dahili iş birliği notları",
-          "SLA-aware destek workflow'ları",
-          "Smart routing ve otomatik atama",
-          "Multi-brand / multi-company destek yapısı",
-          "Otomatik ticket sınıflandırma ve gruplama"
-        ]
+          "Multi-channel conversation management",
+          "Shared team inbox",
+          "Internal & external collaboration",
+          "Hizmet seviyesi farkındalıklı (SLA-aware) destek workflow'ları",
+          "Smart routing ve assignment",
+          "Multi-brand / multi-company support yapısı",
+          "Otomatik ticket sınıflandırma ve yönlendirme",
+          "Benzer ticket kayıtlarını gruplayabilme",
+          "Yoğun destek anlarında operasyonel görünürlük"
+        ],
+        "icon": "Inbox",
+        "accent": "blue"
       },
       {
-        "eyebrow": "Agent Workspace",
-        "title": "Daha hızlı ve daha verimli agent deneyimi",
-        "description": "Modern agent console sayesinde destek ekipleri müşteri geçmişine, ilişkili kayıt ve varlıklara, SLA bilgilerine ve tüm iletişim geçmişine tek ekrandan erişir.",
+        "eyebrow": "Agent Workspace & Support Operations",
+        "title": "Destek ekiplerinin daha hızlı ve daha verimli çalışmasını sağlayın",
+        "description": "Modern agent workspace ekranları sayesinde destek ekipleri müşteri geçmişine, ilişkili kayıt ve varlıklara, SLA bilgilerine ve tüm iletişim geçmişine tek ekrandan erişebilir.",
+        "items": [
+          "Unified agent console",
+          "Customer history timeline",
+          "Asset-aware support ekranları",
+          "Related services & contracts görünümü",
+          "Workflow-driven support operations",
+          "Internal collaboration notes",
+          "Time tracking",
+          "Escalation management",
+          "Hizmet seviyesi (SLA) izleme",
+          "Smart task orchestration",
+          "Ticket özetleme ve operasyon görünürlüğü",
+          "Operasyonel önceliklendirme desteği",
+          "Destek ekipleri için standart iletişim şablonları"
+        ],
         "icon": "UserCog",
-        "accent": "purple",
-        "items": [
-          "Unified agent console ve müşteri zaman çizelgesi",
-          "Asset-aware destek ekranları",
-          "İlişkili servis ve sözleşme görünümü",
-          "Workflow-driven destek operasyonları",
-          "Internal collaboration notes ve mention sistemi",
-          "Time tracking ve eskalasyon yönetimi",
-          "SLA monitoring ve operasyonel önceliklendirme",
-          "Standart iletişim ve cevap şablonları"
-        ]
+        "accent": "purple"
       },
       {
-        "eyebrow": "Self-Service Experience",
-        "title": "Müşterilere modern self-servis deneyimi",
-        "description": "Self-service portal sayesinde kullanıcılar destek kayıtlarını oluşturur, servis geçmişlerini görüntüler, ekiplerle iletişim kurar ve çözümlere hızlıca erişir.",
-        "icon": "MonitorSmartphone",
-        "accent": "emerald",
+        "eyebrow": "Self-Service Customer Experience",
+        "title": "Müşterilere modern self-service deneyimi",
+        "description": "Self-service portal sayesinde kullanıcılar destek kayıtlarını oluşturabilir, servis geçmişlerini görüntüleyebilir, destek ekipleriyle iletişim kurabilir ve çözümlere hızlıca erişebilir.",
         "items": [
-          "Modern self-service portal ve mobile-friendly tasarım",
-          "Customer knowledge center ve akıllı arama",
-          "Servis geçmişi ve live status görünürlüğü",
-          "Onay süreçleri ve smart request formları",
+          "Modern self-service portal",
+          "Customer knowledge center",
+          "Service history tracking",
+          "Live status visibility",
+          "Approval workflows",
+          "Smart request forms",
           "Chat tabanlı destek deneyimi",
-          "Multi-language destek altyapısı",
-          "Bilgi bankası arama ve akıllı çözüm önerileri"
-        ]
+          "Mobile-friendly customer portal",
+          "Multi-language support",
+          "Akıllı çözüm önerileri",
+          "Bilgi bankası arama",
+          "Self-service destek deneyimi"
+        ],
+        "icon": "MonitorSmartphone",
+        "accent": "emerald"
       },
       {
-        "eyebrow": "Service Operations",
-        "title": "Destek operasyonları için workflow automation",
+        "eyebrow": "Service Operations & Workflow Automation",
+        "title": "Destek operasyonlarını merkezi olarak yönetin",
         "description": "ServiceCore CX yalnızca ticket yönetimi değil; uçtan uca müşteri operasyon görünürlüğü sağlayan gelişmiş bir servis operasyon platformudur.",
+        "items": [
+          "Workflow automation",
+          "Dynamic escalation flows",
+          "Service orchestration",
+          "Hizmet seviyesi ve operasyonel yönetişim (SLA & operational governance)",
+          "Multi-team coordination",
+          "Approval orchestration",
+          "Service impact visibility",
+          "Role-based operations",
+          "Low-code workflow tasarımı",
+          "Süreç bazlı görev otomasyonu",
+          "Operasyonel kural motoru",
+          "Dinamik onay süreçleri"
+        ],
         "icon": "Workflow",
-        "accent": "orange",
-        "items": [
-          "Workflow automation ve dynamic escalation flows",
-          "Service orchestration ve multi-team coordination",
-          "SLA ve operational governance",
-          "Approval orchestration ve dinamik onay süreçleri",
-          "Service impact visibility ve rol bazlı operasyonlar",
-          "Low-code workflow tasarımcısı",
-          "Operasyonel kural motoru ve süreç otomasyonu"
-        ]
+        "accent": "orange"
       },
       {
-        "eyebrow": "Knowledge Management",
-        "title": "Kurumsal bilgi birikimi ve çözüm kütüphanesi",
-        "description": "Bilgi bankası, çözüm kayıtları ve geçmiş müşteri görüşmeleri merkezi bir yapıda yönetilir. Ekipler benzer çözüm önerilerine hızlıca ulaşır.",
-        "icon": "BookOpen",
-        "accent": "cyan",
+        "eyebrow": "Knowledge & Resolution Management",
+        "title": "Kurumsal bilgi birikiminizi merkezi hale getirin",
+        "description": "Bilgi bankası, çözüm kayıtları ve geçmiş müşteri görüşmeleri merkezi bir yapıda yönetilebilir. Destek ekipleri benzer çözüm önerilerine hızlıca ulaşabilir.",
         "items": [
-          "Enterprise knowledge management ve smart search",
-          "Resolution library ve çözüm makalesi yönetimi",
-          "Knowledge workflows ve sürüm yönetimi",
-          "Context-aware destek kayıtları",
-          "Searchable destek geçmişi ve geçmiş çözüm önerileri",
+          "Enterprise knowledge management",
+          "Smart search",
+          "Resolution library",
+          "Knowledge workflows",
+          "Context-aware support records",
+          "Searchable support history",
+          "Çözüm makalesi yönetimi",
           "Kategorik bilgi bankası yapısı",
-          "Self-service knowledge access"
-        ]
+          "Self-service knowledge access",
+          "Geçmiş çözüm önerileri",
+          "Kurumsal çözüm arşivi"
+        ],
+        "icon": "BookOpen",
+        "accent": "cyan"
       },
       {
-        "eyebrow": "Voice & Contact Center",
-        "title": "Sesli iletişim ve çağrı merkezi entegrasyonu",
-        "description": "Voice ve contact center entegrasyonları sayesinde müşteri görüşmeleri destek operasyonları ile birleşik çalışır.",
-        "icon": "PhoneCall",
-        "accent": "pink",
+        "eyebrow": "Voice & Contact Center Operations",
+        "title": "Çağrı merkezi operasyonlarını destek süreçleri ile birleştirin",
+        "description": "Voice ve contact center entegrasyonları sayesinde müşteri görüşmeleri destek operasyonları ile birleşik çalışabilir.",
         "items": [
-          "Voice-to-ticket workflows ve çağrı geçmişi",
-          "Call tracking ve contact center integrations",
+          "Voice-to-ticket workflows",
+          "Call tracking",
+          "Contact center integrations",
           "Voice support operations",
-          "Customer interaction history ve unified communication records",
+          "Customer interaction history",
+          "Unified communication records",
           "Sesli çağrı kayıt yönetimi",
+          "Çağrı geçmişi görünürlüğü",
+          "Müşteri iletişim geçmişi",
           "Gerçek zamanlı çağrı operasyon desteği"
-        ]
+        ],
+        "icon": "PhoneCall",
+        "accent": "pink"
       },
       {
-        "eyebrow": "Analytics & Insights",
-        "title": "Veriye dayalı müşteri operasyonu",
+        "eyebrow": "Analytics & Customer Insights",
+        "title": "Destek operasyonlarını veriye dayalı yönetin",
         "description": "Gerçek zamanlı dashboard ve operasyon analizleri sayesinde müşteri deneyimi, ekip performansı ve servis kalitesi ölçülebilir hale gelir.",
-        "icon": "BarChart3",
-        "accent": "indigo",
         "items": [
-          "Real-time destek dashboard'ları ve KPI ekranları",
-          "SLA analytics ve agent performance metrics",
-          "Resolution analytics ve ticket trends",
-          "Operational visibility ve executive reporting",
-          "Multi-dimensional reporting altyapısı",
-          "Ticket hacim analizi ve müşteri operasyon trendleri",
-          "Ekip performansı ve servis kalitesi raporları"
-        ]
+          "Real-time support dashboards",
+          "Hizmet seviyesi (SLA) analitiği",
+          "Agent performance metrics",
+          "Resolution analytics",
+          "Ticket trends",
+          "Operational visibility",
+          "Executive reporting",
+          "Multi-dimensional reporting",
+          "Operasyon KPI ekranları",
+          "Ticket hacim analizi",
+          "Destek ekip performansı",
+          "Müşteri operasyon trendleri"
+        ],
+        "icon": "BarChart3",
+        "accent": "indigo"
       },
       {
-        "eyebrow": "Enterprise-Ready",
-        "title": "Kurumsal ölçek için tasarlandı",
-        "description": "Multi-tenant mimari, enterprise-grade workflow engine, REST API, SSO ve on-premise / hybrid deployment seçenekleri.",
-        "icon": "ShieldCheck",
-        "accent": "amber",
+        "eyebrow": "Enterprise-Ready Platform",
+        "title": "Kurumsal ölçekli müşteri operasyonları için tasarlandı",
+        "description": "Multi-tenant mimari, enterprise-grade workflow engine, REST API entegrasyonları ve on-premise / hybrid deployment desteği.",
         "items": [
           "Multi-tenant architecture",
-          "REST API integrations ve low-code automation",
-          "SSO ve enterprise authentication",
-          "Flexible data model ve genişletilebilir süreç altyapısı",
-          "On-premise ve hybrid deployment desteği",
-          "Multi-language operations ve rol bazlı yetkilendirme",
+          "Enterprise-grade workflow engine",
+          "REST API integrations",
+          "Low-code / no-code automation",
+          "SSO & enterprise authentication",
+          "Flexible data model",
+          "On-premise deployment support",
+          "Hybrid deployment architecture",
+          "Multi-language operations",
+          "Role-based authorization",
+          "Genişletilebilir süreç altyapısı",
           "Merkezi yönetim paneli"
-        ]
+        ],
+        "icon": "ShieldCheck",
+        "accent": "amber"
       }
     ],
     "closing": {
       "title": "Klasik helpdesk yaklaşımının ötesine geçin",
-      "description": "ServiceCore CX; müşteri destek operasyonlarını, servis süreçlerini ve ekip koordinasyonunu tek platform altında birleştirir.",
+      "description": "ServiceCore CX; klasik helpdesk yaklaşımının ötesine geçerek müşteri destek operasyonlarını, servis süreçlerini ve ekip koordinasyonunu tek platform altında birleştirir. Müşteri destek operasyonlarınızı daha hızlı, daha görünür ve daha yönetilebilir hale getirin.",
       "highlights": [
         "Omnichannel Customer Support",
         "Enterprise Service Operations",
@@ -283,137 +425,251 @@
   "apm": {
     "narrative": [
       "ServiceCore Projects; Agile proje yönetimi, Scrum & Kanban operasyonları, yazılım yaşam döngüsü yönetimi, ekip koordinasyonu ve kurumsal proje operasyonları için tasarlanmış modern bir Project Management platformudur.",
-      "Klasik proje yönetimi araçlarının ötesine geçerek; Agile ekipleri, PMO operasyonlarını, servis süreçlerini, DevOps koordinasyonunu ve kurumsal operasyon görünürlüğünü birleşik yapı altında toplar."
+      "Klasik proje yönetimi araçlarının ötesine geçerek; Agile ekipleri, PMO operasyonlarını, servis süreçlerini, DevOps koordinasyonunu ve kurumsal operasyon görünürlüğünü birleşik yapı altında toplar.",
+      "Modern yazılım ekipleri yalnızca board yönetimi istemiyor. Daha fazlasına ihtiyaç duyuyor: Sprint görünürlüğü, gerçek zamanlı kapasite analizi, workload yönetimi, agile governance, SDLC görünürlüğü, cross-team koordinasyonu, workflow otomasyonu ve kurumsal proje operasyon yönetimi. ServiceCore Projects tam olarak bunun için tasarlandı."
     ],
     "sections": [
       {
-        "eyebrow": "Agile & Scrum",
-        "title": "Sprint, backlog ve Scrum operasyonları",
-        "description": "Scrum ve Agile proje operasyonlarını merkezi olarak yönetin. Sprint kapasitesi, ekip yoğunluğu ve workload dağılımları gerçek zamanlı izlenebilir.",
+        "eyebrow": "Unified Agile & SDLC Platform",
+        "title": "Agile operasyonları ve SDLC tek platform altında",
+        "description": "Agile operasyonları, görev yönetimini, sprint süreçlerini ve proje görünürlüğünü tek platform üzerinden yönetin.",
+        "items": [
+          "Scrum operasyonları",
+          "Kanban board yönetimi",
+          "Sprint planlama",
+          "Backlog orchestration",
+          "SDLC yönetimi",
+          "Release koordinasyonu",
+          "Worklog & timesheet yönetimi",
+          "Resource & capacity tracking",
+          "Roadmap & timeline planning",
+          "Workflow orchestration",
+          "Project governance"
+        ],
+        "notes": ["Tüm bu yetenekler tek platform altında birleşir."],
         "icon": "Sparkles",
-        "accent": "blue",
-        "items": [
-          "Sprint planning ve sprint backlog management",
-          "Story point tracking ve velocity monitoring",
-          "Burndown visibility ve sprint retrospective workflows",
-          "Sprint capacity planning ve ekip koordinasyonu",
-          "Açık görevler, workload ve kapasite görünürlüğü",
-          "Multi-board sprint yapıları"
-        ]
+        "accent": "blue"
       },
       {
-        "eyebrow": "Kanban Boards",
-        "title": "Görsel iş akışı yönetimi",
-        "description": "Drag & drop Kanban board'lar, custom workflow'lar ve WIP limitleri ile darboğazları görsel olarak tespit edin. Her takım kendi operasyon modeline göre çalışır.",
-        "icon": "KanbanSquare",
-        "accent": "purple",
+        "eyebrow": "Agile & Scrum Project Management",
+        "title": "Scrum ve Agile proje operasyonları",
+        "description": "Scrum ve Agile proje operasyonlarını merkezi olarak yönetin.",
         "items": [
-          "Drag & drop Kanban boards ve Scrum boards",
-          "Custom workflows ve WIP limits",
-          "Swimlane management ve board-based operations",
-          "Status-driven workflows ve multi-board architecture",
-          "Görsel darboğaz tespiti",
-          "Stand-up ve sprint operasyonları için yapılandırılabilir boardlar"
-        ]
-      },
-      {
-        "eyebrow": "Enterprise SDLC",
-        "title": "Yazılım yaşam döngüsünü uçtan uca yönetin",
-        "description": "Epic, story, task, bug ve sub-task yapıları ile projeler hiyerarşik şekilde yönetilir. Workflow diyagramları sayesinde süreç akışları görsel olarak yönetilir.",
-        "icon": "Code",
-        "accent": "emerald",
-        "items": [
-          "SDLC orchestration ve release coordination",
-          "Requirement tracking ve development workflows",
-          "QA coordination ve deployment readiness",
-          "Cross-team delivery visibility",
-          "Agile release planning ve epic management",
-          "Kontrollü durum geçiş kuralları"
-        ]
-      },
-      {
-        "eyebrow": "Workload & Capacity",
-        "title": "Ekip kapasitesi ve iş yükü görünürlüğü",
-        "description": "Yoğunluk haritaları sayesinde ekiplerin kapasite kullanımı gerçek zamanlı analiz edilir. Aşırı yüklenen ekip üyeleri ve boş kapasite görsel olarak tespit edilir.",
+          "Sprint planning",
+          "Sprint backlog management",
+          "Story point tracking",
+          "Velocity monitoring",
+          "Burndown visibility",
+          "Sprint retrospective workflows",
+          "Sprint capacity planning",
+          "Agile team coordination"
+        ],
+        "notes": [
+          "Story point, sprint progress, açık görevler, workload ve kapasite verileri tek ekranda gerçek zamanlı izlenebilir.",
+          "Sprint kapasitesi, ekip yoğunluğu ve workload dağılımları merkezi olarak takip edilebilir."
+        ],
         "icon": "Activity",
-        "accent": "orange",
-        "items": [
-          "Team workload tracking ve capacity management",
-          "Utilization analytics ve heatmap visibility",
-          "Resource balancing ve cross-team workload orchestration",
-          "Günlük, haftalık ve aylık iş yükü analizleri",
-          "Operational workload visibility",
-          "Kontrollü operasyonel planlama"
-        ]
+        "accent": "purple"
       },
       {
-        "eyebrow": "Roadmap & Release",
-        "title": "Gantt tabanlı roadmap ve release planlaması",
-        "description": "Backlog, sprint ve roadmap planları aynı zaman çizelgesinde birlikte yönetilir. Görev bağımlılıkları ve kritik teslim zincirleri merkezi olarak görüntülenir.",
-        "icon": "CalendarRange",
-        "accent": "cyan",
+        "eyebrow": "Kanban Boards & Visual Workflow Management",
+        "title": "Görsel iş akışlarıyla operasyon yönetimi",
+        "description": "Kanban ve Scrum uyumlu görsel iş akışları ile operasyonları yönetin.",
+        "items": [
+          "Drag & drop Kanban boards",
+          "Scrum boards",
+          "Custom workflows",
+          "WIP limits",
+          "Swimlane management",
+          "Board-based operations",
+          "Status-driven workflows",
+          "Multi-board architecture"
+        ],
+        "notes": [
+          "Farklı ekipler için bağımsız board yapıları oluşturularak her takım kendi operasyon modeline göre çalışabilir.",
+          "Kolon bazlı WIP limitleri sayesinde darboğazlar görsel olarak tespit edilebilir.",
+          "Board yapıları günlük stand-up ve sprint operasyonlarını destekleyecek şekilde yapılandırılabilir."
+        ],
+        "icon": "KanbanSquare",
+        "accent": "emerald"
+      },
+      {
+        "eyebrow": "Enterprise SDLC Management",
+        "title": "Yazılım yaşam döngüsünü uçtan uca yönetin",
+        "description": "Yazılım yaşam döngüsünü uçtan uca yönetin.",
+        "items": [
+          "SDLC orchestration",
+          "Release coordination",
+          "Requirement tracking",
+          "Development workflows",
+          "QA coordination",
+          "Deployment readiness",
+          "Cross-team delivery visibility",
+          "Agile release planning"
+        ],
+        "notes": [
+          "Epic, story, task, bug ve sub-task yapıları ile projeler hiyerarşik şekilde yönetilebilir.",
+          "Görev tipleri proje bazlı özelleştirilebilir ve kontrollü durum geçiş kuralları tanımlanabilir.",
+          "Workflow diyagramları sayesinde süreç akışları görsel olarak yönetilebilir."
+        ],
+        "icon": "Code",
+        "accent": "orange"
+      },
+      {
+        "eyebrow": "Workload, Capacity & Utilization Management",
+        "title": "Gerçek zamanlı ekip kapasitesi ve iş yükü",
+        "description": "Gerçek zamanlı ekip kapasitesi ve iş yükü görünürlüğü sağlayın.",
+        "items": [
+          "Team workload tracking",
+          "Capacity management",
+          "Utilization analytics",
+          "Heatmap visibility",
+          "Resource balancing",
+          "Team utilization monitoring",
+          "Cross-team workload orchestration",
+          "Operational workload visibility"
+        ],
+        "notes": [
+          "Yoğunluk haritaları sayesinde ekiplerin kapasite kullanımı gerçek zamanlı analiz edilebilir.",
+          "Aşırı yüklenen ekip üyeleri ve boş kapasite alanları görsel olarak tespit edilebilir.",
+          "Günlük, haftalık ve aylık iş yükü analizleri sayesinde operasyonel planlama daha kontrollü yapılabilir."
+        ],
+        "icon": "BarChart3",
+        "accent": "cyan"
+      },
+      {
+        "eyebrow": "Advanced Roadmap & Release Planning",
+        "title": "Uzun vadeli roadmap ve release planlama",
+        "description": "Uzun vadeli roadmap ve release planlamasını merkezi olarak yönetin.",
         "items": [
           "Gantt-based roadmap visibility",
-          "Release planning ve sprint-roadmap alignment",
-          "Milestone tracking ve dependency management",
-          "Timeline orchestration ve delivery forecasting",
-          "Cross-project coordination",
-          "Uzun vadeli planlama ekranları"
-        ]
+          "Release planning",
+          "Sprint-roadmap alignment",
+          "Milestone tracking",
+          "Dependency management",
+          "Timeline orchestration",
+          "Delivery forecasting",
+          "Cross-project coordination"
+        ],
+        "notes": [
+          "Backlog, sprint ve roadmap planları aynı zaman çizelgesinde birlikte yönetilebilir.",
+          "Görev bağımlılıkları ve kritik teslim zincirleri merkezi olarak görüntülenebilir.",
+          "Epic ve görevler Gantt benzeri roadmap ekranlarında uzun vadeli olarak planlanabilir."
+        ],
+        "icon": "CalendarRange",
+        "accent": "pink"
       },
       {
-        "eyebrow": "Task Engine",
+        "eyebrow": "Intelligent Task & Workflow Engine",
         "title": "Enterprise workflow ile güçlendirilmiş görev yönetimi",
-        "description": "Projeye özel görev tipleri ve durum akışları tanımlanabilir. Kontrollü durum geçiş kuralları ile süreç standartları uygulanır.",
+        "description": "Görev yönetimini enterprise workflow altyapısı ile güçlendirin.",
+        "items": [
+          "Task hierarchy management",
+          "Epic / Story / Task / Bug structures",
+          "Workflow-driven operations",
+          "Custom task types",
+          "Status transition rules",
+          "Approval workflows",
+          "Workflow diagrams",
+          "Cross-team task orchestration"
+        ],
+        "notes": [
+          "Projeye özel görev tipleri ve durum akışları tanımlanabilir.",
+          "Kontrollü durum geçiş kuralları ile süreç standartları uygulanabilir.",
+          "Workflow diyagramları sayesinde ekipler süreçleri daha şeffaf yönetebilir."
+        ],
         "icon": "GitBranch",
-        "accent": "pink",
-        "items": [
-          "Task hierarchy ve Epic / Story / Task / Bug yapıları",
-          "Workflow-driven operations ve custom task types",
-          "Status transition rules ve approval workflows",
-          "Workflow diyagramları ve görsel süreç yönetimi",
-          "Cross-team task orchestration",
-          "Süreç standartları ve kontrollü geçişler"
-        ]
+        "accent": "indigo"
       },
       {
-        "eyebrow": "Worklog & Time",
-        "title": "Worklog ve zaman takibi",
-        "description": "Kullanıcı bazlı zaman kayıtları sayesinde sprint retrospektifleri ve kapasite analizleri merkezi olarak yönetilir. Worklog verileri faturalandırma süreçlerinde kullanılır.",
+        "eyebrow": "Advanced Worklog & Time Tracking",
+        "title": "Zaman yönetimi ve operasyonel görünürlük",
+        "description": "Zaman yönetimini ve operasyonel görünürlüğü merkezi hale getirin.",
+        "items": [
+          "Worklog management",
+          "Detailed time tracking",
+          "Sprint effort analytics",
+          "Team effort visibility",
+          "Billing-ready worklogs",
+          "Resource cost visibility",
+          "User-based reporting",
+          "Historical workload analytics"
+        ],
+        "notes": [
+          "Kullanıcı bazlı zaman kayıtları sayesinde sprint retrospektifleri ve kapasite analizleri merkezi olarak yönetilebilir.",
+          "Worklog verileri müşteri faturalandırma süreçlerinde kullanılabilir.",
+          "Gelişmiş filtreleme, kayıtlı görünümler ve toplu işlemler ile operasyon yönetimi hızlandırılabilir."
+        ],
         "icon": "Clock",
-        "accent": "indigo",
-        "items": [
-          "Worklog management ve detailed time tracking",
-          "Sprint effort analytics ve team effort visibility",
-          "Billing-ready worklogs ve resource cost visibility",
-          "User-based reporting ve historical workload analytics",
-          "Gelişmiş filtreleme ve kayıtlı görünümler",
-          "Toplu işlemler ile operasyon hızlandırma"
-        ]
+        "accent": "amber"
       },
       {
-        "eyebrow": "Analytics & Reporting",
+        "eyebrow": "Agile Analytics & Project Visibility",
         "title": "Veriye dayalı proje yönetimi",
-        "description": "Dashboard yapıları sayesinde sprint performansı, ekip yoğunluğu, kapasite kullanımı ve proje sağlığı merkezi olarak izlenir.",
-        "icon": "BarChart3",
-        "accent": "amber",
+        "description": "Projelerinizi veriye dayalı yönetin.",
         "items": [
-          "Sprint analytics ve velocity analysis",
-          "Burndown tracking ve workload reporting",
-          "Capacity forecasting ve utilization dashboards",
-          "Delivery analytics ve executive project reporting",
-          "Operasyon KPI'ları ve proje trendleri",
-          "Gerçek zamanlı performans görünümü"
-        ]
+          "Sprint analytics",
+          "Velocity analysis",
+          "Burndown tracking",
+          "Workload reporting",
+          "Capacity forecasting",
+          "Utilization dashboards",
+          "Delivery analytics",
+          "Executive project reporting"
+        ],
+        "notes": [
+          "Dashboard yapıları sayesinde sprint performansı, ekip yoğunluğu, kapasite kullanımı ve proje sağlığı merkezi olarak izlenebilir.",
+          "Operasyon KPI'ları ve proje trendleri gerçek zamanlı olarak görüntülenebilir."
+        ],
+        "icon": "BarChart3",
+        "accent": "blue"
+      },
+      {
+        "eyebrow": "Enterprise Workflow & Governance",
+        "title": "Kurumsal ölçekli proje operasyonları",
+        "description": "Kurumsal ölçekli proje operasyonları için tasarlandı.",
+        "items": [
+          "Workflow automation",
+          "Approval orchestration",
+          "Governance controls",
+          "Review boards",
+          "Validation rules",
+          "Custom forms",
+          "Dynamic process management",
+          "Low-code workflow design"
+        ],
+        "notes": [
+          "Kurumsal operasyon standartları workflow kuralları ile merkezi olarak uygulanabilir.",
+          "Onay süreçleri, danışma kurulları ve süreç validasyonları merkezi olarak yönetilebilir."
+        ],
+        "icon": "Workflow",
+        "accent": "purple"
+      },
+      {
+        "eyebrow": "Knowledge & Collaboration Platform",
+        "title": "Ekip bilgisini merkezi hale getirin",
+        "description": "Ekip bilgisini merkezi hale getirin.",
+        "items": [
+          "Knowledge management",
+          "Documentation platform",
+          "Reusable templates",
+          "Sprint documentation",
+          "Project knowledge base",
+          "Collaborative workspaces",
+          "Team documentation visibility"
+        ],
+        "notes": ["Görev şablonları, iş günlüğü şablonları ve doküman yapıları merkezi olarak yönetilebilir."],
+        "icon": "BookOpen",
+        "accent": "emerald"
       }
     ],
     "editions": {
-      "title": "Edition seçenekleri",
-      "description": "Standard edition Agile temelleri için, Premium edition kurumsal ölçek ve governance için tasarlandı.",
+      "title": "Edition seçenekleri — Built for Enterprise Scale",
+      "description": "ServiceCore Projects yalnızca Agile board yönetimi değil; enterprise-scale proje operasyonlarını merkezi hale getiren birleşik bir Agile Operations platformudur. Standard edition Agile temelleri için, Premium edition kurumsal ölçek ve governance için tasarlandı.",
       "tiers": [
         {
           "name": "Standard Edition",
-          "tagline": "Agile temelleri ve SDLC için ihtiyacınız olan her şey",
+          "tagline": "Standart versiyon ile aşağıdaki yetenekler tek platform altında sunulur:",
           "accent": "blue",
           "items": [
             "Agile project management",
@@ -435,11 +691,10 @@
         },
         {
           "name": "Premium Edition",
-          "tagline": "Kurumsal governance ve çoklu şirket operasyonları",
+          "tagline": "Premium versiyon ile ek olarak aşağıdaki yetenekler aktif hale gelir:",
           "accent": "purple",
           "highlight": true,
           "items": [
-            "Standard'daki her şey, ek olarak:",
             "Change request management",
             "Improvement request management",
             "Stakeholder relationship management",
@@ -461,7 +716,7 @@
     },
     "closing": {
       "title": "Klasik Agile araçlarının ötesine geçin",
-      "description": "ServiceCore Projects; proje yönetimini, SDLC operasyonlarını, workflow orchestration süreçlerini ve enterprise governance yapısını tek platform altında birleştirir.",
+      "description": "ServiceCore Projects; klasik Agile board yaklaşımının ötesine geçerek proje yönetimini, SDLC operasyonlarını, workflow orchestration süreçlerini ve enterprise governance yapısını tek platform altında birleştirir. Agile operasyonlarınızı daha görünür, daha kontrollü ve daha ölçeklenebilir hale getirin.",
       "highlights": [
         "Enterprise Agile Project Management",
         "Enterprise SDLC Platform",
@@ -477,179 +732,308 @@
   "itam": {
     "narrative": [
       "ServiceCore ITAM; IT Asset Management, CMDB, servis konfigürasyon yönetimi, discovery, sözleşme yönetimi, envanter operasyonları ve yaşam döngüsü yönetimini birleşik mimari altında sunan enterprise-grade bir ITAM platformudur.",
-      "Fiziksel cihazlardan sanal altyapılara, lisanslardan servis bağımlılıklarına kadar tüm BT ekosistemi merkezi olarak görünür hale gelir."
+      "Fiziksel cihazlardan sanal altyapılara, lisanslardan servis bağımlılıklarına kadar tüm BT ekosistemi merkezi olarak görünür hale gelir.",
+      "Modern ITAM yalnızca cihaz listesi tutmak değildir. Kurumlar artık gerçek zamanlı keşif, servis bağımlılık görünürlüğü, CMDB orchestration, configuration intelligence, lifecycle governance, asset relationship mapping, financial asset visibility ve operational dependency management bekliyor. ServiceCore ITAM tam olarak bunun için tasarlandı."
     ],
     "sections": [
       {
-        "eyebrow": "Asset Lifecycle",
-        "title": "BT varlıklarının uçtan uca yaşam döngüsü",
-        "description": "Tüm IT ve non-IT varlıklarınızı satın alma aşamasından kullanım dışına çıkarılmasına kadar merkezi olarak yönetin.",
-        "icon": "Layers",
-        "accent": "blue",
+        "eyebrow": "Unified ITAM + CMDB + Discovery",
+        "title": "Tek platform altında birleşik mimari",
+        "description": "Varlık yönetimi, konfigürasyon yönetimi ve discovery operasyonlarını tek platform altında birleştirin.",
+        "intro": ["ServiceCore ITAM aşağıdaki yetenekleri birleşik mimari altında sunar:"],
         "items": [
-          "Asset lifecycle management ve ownership tracking",
-          "Financial asset visibility ve garanti yönetimi",
-          "Assignment management ve asset history tracking",
-          "Supplier management ve asset relationship management",
-          "Location-based asset operations",
-          "Asset categorization ve usage tracking",
-          "Operational asset visibility"
-        ]
+          "IT Asset Management",
+          "Enterprise CMDB",
+          "Service Configuration Management",
+          "Discovery & Inventory",
+          "Contract Management",
+          "License Visibility",
+          "Financial Asset Tracking",
+          "Relationship Mapping",
+          "Mobile Asset Operations",
+          "Barcode & QR Operations",
+          "Asset Lifecycle Governance",
+          "Dependency Management"
+        ],
+        "icon": "Layers",
+        "accent": "blue"
       },
       {
-        "eyebrow": "Enterprise CMDB",
-        "title": "Servisler ve altyapı ilişkilerini görünür yapın",
-        "description": "ServiceCore CMDB modülü sayesinde varlıklar arası bağımlılıklar ve hizmet ilişkileri görsel olarak haritalanır.",
-        "icon": "Network",
-        "accent": "purple",
+        "eyebrow": "Enterprise IT Asset Management",
+        "title": "BT varlıklarının uçtan uca yaşam döngüsü",
+        "description": "Tüm IT ve non-IT varlıklarınızı yaşam döngüsü boyunca yönetin.",
+        "items": [
+          "Asset lifecycle management",
+          "Ownership tracking",
+          "Financial asset visibility",
+          "Assignment management",
+          "Asset history tracking",
+          "Warranty visibility",
+          "Supplier management",
+          "Asset relationship management",
+          "Location-based asset operations",
+          "Asset categorization",
+          "Usage tracking",
+          "Operational asset visibility"
+        ],
+        "notes": ["Varlıkların satın alma aşamasından kullanım dışına çıkarılmasına kadar tüm yaşam döngüsü merkezi olarak izlenebilir."],
+        "icon": "Box",
+        "accent": "purple"
+      },
+      {
+        "eyebrow": "Enterprise CMDB Management",
+        "title": "Servisler ve altyapı ilişkilerini görünür hale getirin",
+        "description": "ServiceCore CMDB modülü sayesinde servis bağımlılıkları, altyapı ilişkileri ve hizmet topolojileri tek platform üzerinden yönetilir.",
+        "intro": ["ServiceCore CMDB modülü sayesinde aşağıdaki yetenekler tek platform üzerinden yönetilebilir:"],
         "items": [
           "Configuration item management",
-          "Dependency mapping ve service relationship visibility",
+          "Dependency mapping",
+          "Service relationship visibility",
           "Configuration lifecycle management",
           "Relationship-aware operations",
           "Service topology visibility",
           "Service dependency tracking",
           "Infrastructure relationship mapping"
-        ]
+        ],
+        "notes": ["Varlıklar arası bağımlılıklar ve hizmet ilişkileri görsel olarak haritalanabilir."],
+        "icon": "Network",
+        "accent": "emerald"
       },
       {
-        "eyebrow": "Service Configuration",
+        "eyebrow": "Service Configuration Management",
         "title": "BT servislerinin konfigürasyon yönetimi",
-        "description": "Servislerin ilişkili olaylar, değişiklikler, talepler ve operasyon kayıtları ile olan bağlantıları merkezi olarak izlenir.",
-        "icon": "Settings",
-        "accent": "emerald",
+        "description": "BT servislerinin hangi konfigürasyonlarla çalıştığını merkezi olarak yönetin.",
         "items": [
           "Service configuration visibility",
-          "Infrastructure mapping ve CI relationship tracking",
+          "Infrastructure mapping",
           "Relationship-aware change management",
           "Service dependency governance",
-          "Environment visibility ve service lifecycle tracking",
+          "CI relationship tracking",
+          "Environment visibility",
+          "Service lifecycle tracking",
           "Configuration governance"
-        ]
+        ],
+        "notes": ["Servislerin ilişkili olaylar, değişiklikler, talepler ve operasyon kayıtları ile olan bağlantıları merkezi olarak izlenebilir."],
+        "icon": "Settings",
+        "accent": "orange"
       },
       {
-        "eyebrow": "Discovery & Inventory",
-        "title": "Otomatik keşif ve envanter platformu",
-        "description": "ServiceCore Discovery altyapısı sayesinde ağ üzerindeki cihazlar, ilişkiler ve servis bileşenleri merkezi olarak görünür hale gelir.",
-        "icon": "Radar",
-        "accent": "orange",
+        "eyebrow": "Advanced Discovery & Inventory Platform",
+        "title": "Kurumsal keşif operasyonlarını merkezi hale getirin",
+        "description": "ServiceCore Discovery altyapısı sayesinde kurumsal BT altyapıları otomatik olarak keşfedilebilir.",
+        "intro": ["ServiceCore Discovery altyapısı sayesinde aşağıdaki yetenekler aktif hale gelir:"],
         "items": [
-          "Automatic asset discovery ve network discovery",
+          "Automatic asset discovery",
+          "Network discovery",
           "Device inventory collection",
-          "Infrastructure visibility ve topology discovery",
-          "Configuration discovery ve dependency discovery",
-          "Continuous inventory updates",
-          "Otomatik envanter senkronizasyonu"
-        ]
+          "Infrastructure visibility",
+          "Topology discovery",
+          "Configuration discovery",
+          "Dependency discovery",
+          "Continuous inventory updates"
+        ],
+        "notes": [
+          "Kurumsal BT altyapıları otomatik olarak keşfedilebilir.",
+          "Discovery altyapısı sayesinde ağ üzerindeki cihazlar, ilişkiler ve servis bileşenleri merkezi olarak görünür hale gelir."
+        ],
+        "icon": "Radar",
+        "accent": "cyan"
       },
       {
-        "eyebrow": "Lifecycle Governance",
+        "eyebrow": "Asset Lifecycle Governance",
         "title": "Varlık yaşam döngülerinin kontrollü yönetimi",
-        "description": "Varlıkların tüm durum değişiklikleri ve history kayıtları ayrıntılı olarak saklanır.",
+        "description": "Varlık yaşam döngülerini kontrollü şekilde yönetin.",
+        "items": [
+          "Procurement lifecycle",
+          "Assignment lifecycle",
+          "Maintenance operations",
+          "Warranty tracking",
+          "Retirement workflows",
+          "Disposal management",
+          "Audit visibility",
+          "Asset state tracking"
+        ],
+        "notes": ["Varlıkların tüm durum değişiklikleri ve history kayıtları ayrıntılı olarak saklanabilir."],
         "icon": "ShieldCheck",
-        "accent": "cyan",
-        "items": [
-          "Procurement lifecycle ve assignment lifecycle",
-          "Maintenance operations ve warranty tracking",
-          "Retirement workflows ve disposal management",
-          "Audit visibility ve asset state tracking",
-          "Operational asset governance"
-        ]
+        "accent": "pink"
       },
       {
-        "eyebrow": "Mobile & Barcode",
-        "title": "Mobil varlık operasyonları ve barkod yönetimi",
-        "description": "Mobil uygulama üzerinden varlık sorgulama, zimmetleme, sayım ve durum güncelleme. QR ve barkod destekli operasyonlar.",
+        "eyebrow": "Mobile Asset Operations",
+        "title": "Saha ve mobil varlık operasyonları",
+        "description": "Saha ve mobil varlık operasyonlarını kolaylaştırın.",
+        "items": [
+          "Mobile asset management",
+          "Mobile inventory operations",
+          "Field asset visibility",
+          "Mobile approval workflows",
+          "Asset lookup",
+          "Mobile assignment operations",
+          "Mobile status tracking",
+          "Mobile barcode operations"
+        ],
+        "notes": ["Mobil uygulama üzerinden varlık sorgulama, zimmetleme, sayım ve durum güncelleme işlemleri gerçekleştirilebilir."],
         "icon": "Smartphone",
-        "accent": "pink",
-        "items": [
-          "Mobile asset management ve mobile inventory operations",
-          "Field asset visibility ve mobile approval workflows",
-          "QR asset tracking ve barcode asset management",
-          "Mobile barcode scanning ve fast inventory operations",
-          "Asset identification workflows",
-          "Rapid assignment operations"
-        ]
+        "accent": "indigo"
       },
       {
-        "eyebrow": "Counting & Audit",
-        "title": "Sayım ve denetim operasyonları",
-        "description": "Depo, lokasyon ve organizasyon bazlı sayım operasyonları merkezi olarak yürütülür.",
-        "icon": "ClipboardCheck",
-        "accent": "indigo",
+        "eyebrow": "Barcode & QR Asset Management",
+        "title": "Varlık operasyonlarını hızlandırın",
+        "description": "QR ve barkod destekli operasyonlar sayesinde envanter süreçleri hızlandırılır.",
+        "items": [
+          "QR asset tracking",
+          "Barcode asset management",
+          "Fast inventory operations",
+          "Mobile barcode scanning",
+          "Asset identification workflows",
+          "Rapid assignment operations",
+          "Warehouse visibility",
+          "Field inventory tracking"
+        ],
+        "notes": ["QR ve barkod destekli operasyonlar sayesinde envanter süreçleri hızlandırılabilir."],
+        "icon": "QrCode",
+        "accent": "amber"
+      },
+      {
+        "eyebrow": "Inventory & Counting Management",
+        "title": "Sayım operasyonlarının merkezi yönetimi",
+        "description": "Sayım operasyonlarını merkezi olarak yönetin.",
         "items": [
           "Inventory counting workflows",
           "Warehouse inventory visibility",
           "Physical inventory operations",
-          "Location-based counting ve asset verification",
+          "Location-based counting",
+          "Asset verification",
           "Inventory audit tracking",
-          "Reconciliation operations"
-        ]
+          "Reconciliation operations",
+          "Stock visibility"
+        ],
+        "notes": ["Depo, lokasyon ve organizasyon bazlı sayım operasyonları merkezi olarak yürütülebilir."],
+        "icon": "ClipboardCheck",
+        "accent": "blue"
       },
       {
-        "eyebrow": "Assignment & Ownership",
+        "eyebrow": "Assignment & Ownership Management",
         "title": "Zimmet süreçlerinin merkezi yönetimi",
-        "description": "Tüm zimmet geçmişi ve kullanıcı-varlık ilişkileri detaylı şekilde izlenir.",
-        "icon": "UserCheck",
-        "accent": "amber",
+        "description": "Zimmet süreçlerini merkezi olarak yönetin.",
         "items": [
           "User assignment tracking",
           "Ownership lifecycle management",
           "Device-user relationships",
           "Department assignment visibility",
           "Assignment history",
+          "Role-based ownership management",
           "Temporary assignment operations",
-          "Role-based ownership management"
-        ]
+          "Organizational asset visibility"
+        ],
+        "notes": ["Tüm zimmet geçmişi ve kullanıcı-varlık ilişkileri detaylı şekilde izlenebilir."],
+        "icon": "UserCheck",
+        "accent": "purple"
       },
       {
-        "eyebrow": "Contract & Supplier",
-        "title": "Sözleşme ve tedarikçi yönetimi",
-        "description": "Kurum içi, müşteri ve tedarikçi sözleşmeleri merkezi olarak yönetilir.",
-        "icon": "FileSignature",
-        "accent": "blue",
+        "eyebrow": "Contract & Supplier Management",
+        "title": "Sözleşme ve tedarikçi operasyonları",
+        "description": "Sözleşme ve tedarikçi operasyonlarını tek platform altında yönetin.",
         "items": [
           "Contract lifecycle management",
-          "Supplier visibility ve vendor relationships",
-          "Warranty ve procurement visibility",
-          "Financial tracking ve renewal tracking",
-          "SLA-linked contracts",
-          "Tedarikçi performans takibi"
-        ]
+          "Supplier visibility",
+          "Warranty tracking",
+          "Vendor relationships",
+          "Procurement visibility",
+          "Financial tracking",
+          "Renewal tracking",
+          "Hizmet seviyesi bağlantılı sözleşmeler (SLA-linked contracts)"
+        ],
+        "notes": ["Kurum içi, müşteri ve tedarikçi sözleşmeleri merkezi olarak yönetilebilir."],
+        "icon": "FileSignature",
+        "accent": "emerald"
       },
       {
-        "eyebrow": "Native ITSM Integration",
-        "title": "Native entegre BT operasyonları",
-        "description": "ITAM platformu; Incident, Problem, Change, Request, Service Catalog ve Workflow modülleri ile native entegre çalışır.",
-        "icon": "Plug",
-        "accent": "purple",
+        "eyebrow": "Customer & Service Relationship Management",
+        "title": "Müşteri ve hizmet ilişkileri varlık ile entegre",
+        "description": "Müşteri ve hizmet ilişkilerini varlık yönetimi ile entegre yönetin.",
         "items": [
-          "Incident'ların ilişkili cihazları",
-          "Değişikliklerin etkilenen servisleri",
-          "Varlıkların operasyon geçmişleri",
-          "Servis bağımlılıkları",
-          "Lifecycle operasyonları ve servis kayıtları",
-          "Sözleşme ve SLA ilişkileri"
-        ]
+          "Customer relationship visibility",
+          "Service-linked asset tracking",
+          "Customer contract management",
+          "Service ownership visibility",
+          "Asset-service relationships",
+          "Customer asset visibility"
+        ],
+        "notes": ["Müşteri kayıtları, hizmet sözleşmeleri ve ilişkili varlıklar tek platform üzerinden takip edilebilir."],
+        "icon": "Users",
+        "accent": "orange"
       },
       {
-        "eyebrow": "Analytics & Reporting",
+        "eyebrow": "ITAM Analytics & Reporting",
         "title": "BT varlık analitiği",
-        "description": "Gerçek zamanlı dashboard ve raporlar sayesinde BT varlık operasyonları merkezi olarak analiz edilir.",
-        "icon": "BarChart3",
-        "accent": "emerald",
+        "description": "BT varlık operasyonlarınızı veriye dayalı yönetin.",
         "items": [
-          "Asset analytics ve lifecycle reporting",
-          "Inventory ve financial asset reports",
-          "Utilization ve warranty reporting",
-          "Supplier analytics ve CMDB reporting",
-          "Operational dashboards ve scheduled reports"
-        ]
+          "Asset analytics",
+          "Lifecycle reporting",
+          "Inventory reporting",
+          "Financial asset reports",
+          "Utilization reporting",
+          "Warranty reporting",
+          "Supplier analytics",
+          "CMDB reporting",
+          "Operational dashboards",
+          "Scheduled reports"
+        ],
+        "notes": ["Gerçek zamanlı dashboard ve raporlar sayesinde BT varlık operasyonları merkezi olarak analiz edilebilir."],
+        "icon": "BarChart3",
+        "accent": "cyan"
+      },
+      {
+        "eyebrow": "Native Integrated IT Operations",
+        "title": "Native entegre BT operasyonları",
+        "description": "ServiceCore ITAM yalnızca bağımsız bir asset tracking sistemi değildir.",
+        "intro": ["Platform aşağıdaki modüller ile native entegre çalışır:"],
+        "items": [
+          "Incident Management",
+          "Problem Management",
+          "Change Management",
+          "Request Management",
+          "Service Catalog",
+          "Project Management",
+          "Workflow Automation",
+          "Service Level Management"
+        ],
+        "notes": [
+          "Bu sayede aşağıdaki süreçler tek platform üzerinden yönetilebilir:",
+          "• Incident'ların ilişkili cihazları",
+          "• Değişikliklerin etkilenen servisleri",
+          "• Varlıkların operasyon geçmişleri",
+          "• Servis bağımlılıkları",
+          "• Lifecycle operasyonları"
+        ],
+        "icon": "Plug",
+        "accent": "pink"
+      },
+      {
+        "eyebrow": "Enterprise Administration & Governance",
+        "title": "Kurumsal ölçekli ITAM operasyonları",
+        "description": "Kurumsal ölçekli ITAM operasyonları için tasarlandı.",
+        "items": [
+          "Multi-company architecture",
+          "Multi-tenant structure",
+          "Centralized administration",
+          "Flexible asset models",
+          "Low-code extensibility",
+          "Workflow governance",
+          "Approval orchestration",
+          "Dynamic forms",
+          "Role-based authorization",
+          "Multi-language support",
+          "On-premise & cloud deployment"
+        ],
+        "notes": ["ServiceCore'un gelişmiş yönetim paneli sayesinde tüm organizasyon yapısı tek merkezden yönetilebilir."],
+        "icon": "ShieldCheck",
+        "accent": "indigo"
       }
     ],
     "closing": {
-      "title": "Yalnızca envanter takibi değil, entegre BT operasyonları",
-      "description": "ServiceCore ITAM; kurumsal BT varlıklarının, servis ilişkilerinin ve konfigürasyon yapılarının merkezi olarak yönetildiği birleşik bir IT Operations platformudur.",
+      "title": "Yalnızca envanter takibi değil — entegre BT operasyonları",
+      "description": "ServiceCore ITAM; yalnızca envanter takibi değil, kurumsal BT varlıklarının, servis ilişkilerinin ve konfigürasyon yapılarının merkezi olarak yönetildiği birleşik bir IT Operations platformudur. BT varlık operasyonlarınızı daha görünür, daha kontrollü ve daha yönetilebilir hale getirin.",
       "highlights": [
         "Enterprise IT Asset Management",
         "Enterprise CMDB",
@@ -665,198 +1049,324 @@
   "eam": {
     "narrative": [
       "ServiceCore EAM; kurumsal varlık yönetimi, bakım operasyonları, sözleşme yönetimi, envanter süreçleri, mobil saha operasyonları, lifecycle governance ve operasyonel görünürlük süreçlerini birleşik mimari altında sunan enterprise-grade bir Enterprise Asset Management platformudur.",
-      "BT varlıklarından saha ekipmanlarına, üretim ekipmanlarından depo envanterlerine, sözleşmelerden bakım operasyonlarına kadar tüm kurumsal varlık ekosistemi merkezi olarak yönetilir."
+      "BT varlıklarından saha ekipmanlarına, üretim ekipmanlarından depo envanterlerine, sözleşmelerden bakım operasyonlarına kadar tüm kurumsal varlık ekosistemi merkezi olarak yönetilebilir.",
+      "Modern Enterprise Asset Management yalnızca envanter listesi tutmak değildir. Kuruluşlar artık operasyonel görünürlük, bakım planlama, lifecycle governance, finansal varlık görünürlüğü, lokasyon bazlı operasyon yönetimi, bakım ve servis koordinasyonu, mobil saha operasyonları, sözleşme ve tedarikçi yönetimi, varlık ilişki yönetimi ve merkezi operasyon yönetimi bekliyor. ServiceCore EAM tam olarak bunun için tasarlandı."
     ],
     "sections": [
       {
-        "eyebrow": "Asset Lifecycle",
-        "title": "Kurumsal varlıkların uçtan uca yaşam döngüsü",
-        "description": "Varlıkların satın alma aşamasından kullanım dışına çıkarılmasına kadar tüm yaşam döngüsü merkezi olarak izlenir.",
-        "icon": "Layers",
-        "accent": "blue",
+        "eyebrow": "Unified Enterprise Asset Operations Platform",
+        "title": "Birleşik mimari altında tüm yetenekler",
+        "description": "Kurumsal varlık operasyonlarını tek platform altında birleştirin.",
+        "intro": ["ServiceCore EAM aşağıdaki capability'leri birleşik mimari altında sunar:"],
         "items": [
-          "Asset lifecycle ve procurement lifecycle",
-          "Ownership tracking ve asset history management",
-          "Warranty visibility ve usage tracking",
-          "Asset categorization ve financial asset visibility",
-          "Asset relationship management",
-          "Operational asset governance"
-        ]
+          "Enterprise Asset Management",
+          "Asset Lifecycle Management",
+          "Maintenance Operations",
+          "Mobile Asset Management",
+          "Barcode & QR Operations",
+          "Inventory & Warehouse Management",
+          "Contract Management",
+          "Supplier Management",
+          "Asset Relationship Management",
+          "Asset Counting Operations",
+          "Assignment & Ownership Management",
+          "Operational Reporting & Analytics"
+        ],
+        "icon": "Layers",
+        "accent": "blue"
       },
       {
-        "eyebrow": "Maintenance Operations",
-        "title": "Bakım ve servis operasyonları",
-        "description": "Planlı bakım süreçleri takvim bazlı veya kullanım bazlı olarak otomatik yönetilir. Bakım geçmişleri varlık yaşam döngüsü ile birlikte izlenir.",
-        "icon": "Wrench",
-        "accent": "purple",
+        "eyebrow": "Enterprise Asset Lifecycle Management",
+        "title": "Kurumsal varlıkların uçtan uca yaşam döngüsü",
+        "description": "Tüm kurumsal varlıklarınızı yaşam döngüsü boyunca yönetin.",
+        "items": [
+          "Asset lifecycle management",
+          "Procurement lifecycle",
+          "Ownership tracking",
+          "Asset history management",
+          "Warranty visibility",
+          "Usage tracking",
+          "Asset categorization",
+          "Financial asset visibility",
+          "Asset relationship management",
+          "Operational asset governance"
+        ],
+        "notes": ["Varlıkların satın alma aşamasından kullanım dışına çıkarılmasına kadar tüm yaşam döngüsü merkezi olarak izlenebilir."],
+        "icon": "Box",
+        "accent": "purple"
+      },
+      {
+        "eyebrow": "Maintenance & Service Operations",
+        "title": "Bakım ve servis operasyonlarının merkezi yönetimi",
+        "description": "Bakım ve servis operasyonlarını merkezi olarak yönetin.",
         "items": [
           "Preventive maintenance management",
           "Planned maintenance operations",
           "Corrective maintenance workflows",
-          "Maintenance scheduling ve service work orders",
-          "Technician coordination ve downtime tracking",
+          "Maintenance scheduling",
+          "Service work orders",
+          "Technician coordination",
           "Maintenance history tracking",
-          "Asset service visibility ve maintenance SLA"
-        ]
+          "Asset service visibility",
+          "Downtime tracking",
+          "Maintenance hizmet seviyesi (SLA) yönetimi"
+        ],
+        "notes": [
+          "Planlı bakım süreçleri takvim bazlı veya kullanım bazlı olarak otomatik yönetilebilir.",
+          "Bakım geçmişleri ve servis operasyonları tüm varlık yaşam döngüsü ile birlikte izlenebilir."
+        ],
+        "icon": "Wrench",
+        "accent": "emerald"
       },
       {
-        "eyebrow": "Work Orders",
-        "title": "İş emri yönetimi ve saha koordinasyonu",
-        "description": "Bakım ekipleri ve saha operasyonları tek platform üzerinden koordine edilir.",
-        "icon": "ClipboardList",
-        "accent": "emerald",
+        "eyebrow": "Work Order Management",
+        "title": "Saha ve bakım operasyonlarının merkezi yönetimi",
+        "description": "Saha ve bakım operasyonlarını merkezi hale getirin.",
         "items": [
           "Work order management",
           "Service task orchestration",
           "Field operation coordination",
-          "Technician assignment ve maintenance workflow tracking",
+          "Technician assignment",
+          "Maintenance workflow tracking",
           "Operational approval workflows",
           "Mobile work order operations",
           "Service status visibility"
-        ]
+        ],
+        "notes": ["Bakım ekipleri ve saha operasyonları tek platform üzerinden koordine edilebilir."],
+        "icon": "ClipboardList",
+        "accent": "orange"
       },
       {
-        "eyebrow": "Mobile Operations",
+        "eyebrow": "Mobile Asset Operations",
         "title": "Mobil saha operasyonları",
-        "description": "Mobil uygulama üzerinden varlık sorgulama, bakım kaydı, durum güncelleme, zimmetleme ve sayım işlemleri gerçekleştirilir.",
-        "icon": "Smartphone",
-        "accent": "orange",
+        "description": "Mobil saha operasyonlarını kolaylaştırın.",
         "items": [
-          "Mobile asset management ve mobile inventory operations",
-          "Mobile approval workflows ve field asset visibility",
+          "Mobile asset management",
+          "Mobile inventory operations",
+          "Mobile approval workflows",
+          "Field asset visibility",
           "Mobile maintenance operations",
-          "Mobile assignment workflows ve mobile status tracking",
-          "Mobile service operations",
-          "Offline destekli mobil çalışma"
-        ]
+          "Mobile assignment workflows",
+          "Mobile status tracking",
+          "Mobile service operations"
+        ],
+        "notes": ["Mobil uygulama üzerinden varlık sorgulama, bakım kaydı, durum güncelleme, zimmetleme ve sayım işlemleri gerçekleştirilebilir."],
+        "icon": "Smartphone",
+        "accent": "cyan"
       },
       {
-        "eyebrow": "Barcode & QR",
-        "title": "Barkod ve QR varlık yönetimi",
-        "description": "QR ve barkod destekli operasyonlar sayesinde saha ve depo süreçleri hızlandırılır.",
-        "icon": "QrCode",
-        "accent": "cyan",
+        "eyebrow": "Barcode & QR Asset Management",
+        "title": "Varlık operasyonlarını hızlandırın",
+        "description": "Varlık operasyonlarını hızlandırın.",
         "items": [
-          "QR asset tracking ve barcode asset management",
+          "QR asset tracking",
+          "Barcode asset management",
           "Mobile barcode scanning",
           "Asset identification workflows",
           "Rapid inventory operations",
-          "Warehouse visibility ve field inventory tracking",
+          "Warehouse visibility",
+          "Field inventory tracking",
           "Fast assignment operations"
-        ]
+        ],
+        "notes": ["QR ve barkod destekli operasyonlar sayesinde saha ve depo süreçleri hızlandırılabilir."],
+        "icon": "QrCode",
+        "accent": "pink"
       },
       {
-        "eyebrow": "Warehouse",
+        "eyebrow": "Inventory & Warehouse Management",
         "title": "Depo ve envanter operasyonları",
-        "description": "Depo, lokasyon ve organizasyon bazlı envanter süreçleri merkezi olarak yönetilir.",
-        "icon": "Warehouse",
-        "accent": "pink",
+        "description": "Depo ve envanter operasyonlarını merkezi olarak yönetin.",
         "items": [
           "Warehouse inventory visibility",
-          "Stock tracking ve inventory counting workflows",
+          "Stock tracking",
+          "Inventory counting workflows",
           "Physical inventory operations",
           "Spare part visibility",
           "Warehouse transfer operations",
           "Inventory reconciliation",
           "Multi-location inventory management"
-        ]
+        ],
+        "notes": ["Depo, lokasyon ve organizasyon bazlı envanter süreçleri merkezi olarak yönetilebilir."],
+        "icon": "Warehouse",
+        "accent": "indigo"
       },
       {
-        "eyebrow": "Spare Parts",
-        "title": "Yedek parça ve sarf malzeme yönetimi",
-        "description": "Bakım operasyonlarında kullanılan parçalar ve sarf malzemeleri merkezi olarak takip edilir.",
-        "icon": "Boxes",
-        "accent": "indigo",
+        "eyebrow": "Spare Parts & Consumable Management",
+        "title": "Yedek parça ve sarf malzeme operasyonları",
+        "description": "Yedek parça ve sarf malzeme operasyonlarını yönetin.",
         "items": [
           "Spare part lifecycle management",
           "Consumable tracking",
           "Warehouse stock visibility",
-          "Minimum stock thresholds ve reorder visibility",
+          "Minimum stock thresholds",
+          "Reorder visibility",
           "Spare part usage tracking",
           "Service-linked consumables",
           "Operational inventory governance"
-        ]
+        ],
+        "notes": ["Bakım operasyonlarında kullanılan parçalar ve sarf malzemeleri merkezi olarak takip edilebilir."],
+        "icon": "Boxes",
+        "accent": "amber"
       },
       {
-        "eyebrow": "Assignment",
-        "title": "Zimmet ve sahiplik yönetimi",
-        "description": "Tüm zimmet geçmişi ve kullanıcı-varlık ilişkileri detaylı şekilde izlenir.",
-        "icon": "UserCheck",
-        "accent": "amber",
+        "eyebrow": "Assignment & Ownership Management",
+        "title": "Zimmet süreçlerinin merkezi yönetimi",
+        "description": "Zimmet süreçlerini merkezi olarak yönetin.",
         "items": [
           "User assignment tracking",
           "Department ownership visibility",
           "Device-user relationships",
           "Temporary assignment workflows",
-          "Assignment history ve role-based ownership",
+          "Assignment history",
+          "Role-based ownership management",
           "Organizational asset visibility",
           "Ownership lifecycle management"
-        ]
+        ],
+        "notes": ["Tüm zimmet geçmişi ve kullanıcı-varlık ilişkileri detaylı şekilde izlenebilir."],
+        "icon": "UserCheck",
+        "accent": "blue"
       },
       {
-        "eyebrow": "Contract & Supplier",
-        "title": "Sözleşme ve tedarikçi yönetimi",
-        "description": "Kurum içi, müşteri ve tedarikçi sözleşmeleri merkezi olarak yönetilir.",
-        "icon": "FileSignature",
-        "accent": "blue",
+        "eyebrow": "Contract & Supplier Management",
+        "title": "Sözleşme ve tedarikçi operasyonları",
+        "description": "Sözleşme ve tedarikçi operasyonlarını tek platform altında yönetin.",
         "items": [
           "Contract lifecycle management",
-          "Supplier visibility ve vendor relationship management",
-          "Procurement visibility ve financial tracking",
-          "Renewal management ve warranty tracking",
-          "SLA-linked contracts"
-        ]
+          "Supplier visibility",
+          "Vendor relationship management",
+          "Procurement visibility",
+          "Financial tracking",
+          "Renewal management",
+          "Warranty tracking",
+          "Hizmet seviyesi bağlantılı sözleşmeler (SLA-linked contracts)"
+        ],
+        "notes": ["Kurum içi, müşteri ve tedarikçi sözleşmeleri merkezi olarak yönetilebilir."],
+        "icon": "FileSignature",
+        "accent": "purple"
       },
       {
-        "eyebrow": "Relationship",
-        "title": "Varlık ilişkileri ve konfigürasyon görünürlüğü",
-        "description": "Varlıklar arası ilişkiler ve operasyonel bağımlılıklar merkezi olarak haritalanır.",
-        "icon": "Network",
-        "accent": "purple",
+        "eyebrow": "Customer & Operational Relationship Management",
+        "title": "Müşteri ve operasyon ilişkileri varlık yönetimi ile entegre",
+        "description": "Müşteri ve operasyon ilişkilerini varlık yönetimi ile entegre yönetin.",
+        "items": [
+          "Customer asset visibility",
+          "Service-linked asset tracking",
+          "Customer contract management",
+          "Asset-service relationships",
+          "Operational ownership visibility",
+          "Customer operation visibility"
+        ],
+        "notes": ["Müşteri kayıtları, operasyonel hizmetler ve ilişkili varlıklar tek platform üzerinden takip edilebilir."],
+        "icon": "Users",
+        "accent": "emerald"
+      },
+      {
+        "eyebrow": "Asset Relationship & Configuration Visibility",
+        "title": "Kurumsal varlık ilişkilerini görünür yapın",
+        "description": "Kurumsal varlık ilişkilerini görünür hale getirin.",
         "items": [
           "Asset relationship mapping",
           "Dependency visibility",
           "Infrastructure relationship tracking",
           "Service-linked assets",
           "Operational dependency visibility",
+          "Relationship-aware operations",
           "Asset topology visibility",
           "Configuration governance"
-        ]
+        ],
+        "notes": ["Varlıklar arası ilişkiler ve operasyonel bağımlılıklar merkezi olarak haritalanabilir."],
+        "icon": "Network",
+        "accent": "orange"
       },
       {
-        "eyebrow": "Inspection & Audit",
-        "title": "Denetim ve kontrol operasyonları",
-        "description": "Saha kontrolleri ve denetim operasyonları standart süreçlerle yönetilir.",
-        "icon": "ShieldCheck",
-        "accent": "emerald",
+        "eyebrow": "Inspection & Audit Operations",
+        "title": "Denetim ve kontrol süreçleri",
+        "description": "Denetim ve kontrol süreçlerini yönetin.",
         "items": [
-          "Inspection workflows ve audit tracking",
+          "Inspection workflows",
+          "Audit tracking",
           "Compliance visibility",
           "Checklist management",
           "Verification workflows",
           "Operational control records",
-          "Regulatory tracking ve inspection reporting"
-        ]
+          "Regulatory tracking",
+          "Inspection reporting"
+        ],
+        "notes": ["Saha kontrolleri ve denetim operasyonları standart süreçlerle yönetilebilir."],
+        "icon": "ClipboardCheck",
+        "accent": "cyan"
       },
       {
-        "eyebrow": "Analytics",
-        "title": "Operasyonel analitik ve raporlama",
-        "description": "Gerçek zamanlı dashboard ve raporlar sayesinde kurumsal varlık operasyonları merkezi olarak analiz edilir.",
-        "icon": "BarChart3",
-        "accent": "cyan",
+        "eyebrow": "Reporting & Operational Analytics",
+        "title": "Veriye dayalı varlık operasyonu",
+        "description": "Kurumsal varlık operasyonlarınızı veriye dayalı yönetin.",
         "items": [
-          "Asset analytics ve lifecycle reporting",
+          "Asset analytics",
+          "Lifecycle reporting",
           "Maintenance reporting",
           "Financial asset reports",
-          "Inventory analytics ve supplier reporting",
-          "Operational dashboards ve scheduled reports",
-          "Utilization reporting ve maintenance KPI visibility"
-        ]
+          "Inventory analytics",
+          "Supplier reporting",
+          "Operational dashboards",
+          "Scheduled reports",
+          "Utilization reporting",
+          "Maintenance KPI visibility"
+        ],
+        "notes": ["Gerçek zamanlı dashboard ve raporlar sayesinde kurumsal varlık operasyonları merkezi olarak analiz edilebilir."],
+        "icon": "BarChart3",
+        "accent": "pink"
+      },
+      {
+        "eyebrow": "Enterprise Administration & Governance",
+        "title": "Kurumsal ölçek için tasarlandı",
+        "description": "Kurumsal ölçekli operasyonlar için tasarlandı.",
+        "items": [
+          "Multi-company architecture",
+          "Multi-tenant structure",
+          "Centralized administration",
+          "Dynamic asset models",
+          "Workflow governance",
+          "Approval orchestration",
+          "Role-based authorization",
+          "Multi-language support",
+          "Low-code extensibility",
+          "On-premise & cloud deployment"
+        ],
+        "notes": ["Holding yapıları, grup şirketleri ve çok lokasyonlu organizasyonlar merkezi olarak yönetilebilir."],
+        "icon": "ShieldCheck",
+        "accent": "indigo"
+      },
+      {
+        "eyebrow": "Native Integrated Enterprise Operations",
+        "title": "Native entegre kurumsal operasyonlar",
+        "description": "ServiceCore EAM yalnızca bağımsız bir varlık takip sistemi değildir.",
+        "intro": ["Platform aşağıdaki modüller ile native entegre çalışır:"],
+        "items": [
+          "Service Management",
+          "Maintenance Operations",
+          "Workflow Automation",
+          "Project Management",
+          "Request Management",
+          "Contract Management",
+          "Supplier Operations",
+          "Reporting & Governance"
+        ],
+        "notes": [
+          "Bu sayede aşağıdaki süreçler tek platform üzerinden yönetilebilir:",
+          "• Bakım operasyonları",
+          "• Servis süreçleri",
+          "• Varlık geçmişleri",
+          "• Operasyonel bağımlılıklar",
+          "• Sözleşme ilişkileri",
+          "• Envanter hareketleri"
+        ],
+        "icon": "Plug",
+        "accent": "amber"
       }
     ],
     "closing": {
       "title": "Kurumsal ölçek için tasarlandı",
-      "description": "ServiceCore EAM; envanter takibinin ötesinde — kurumsal varlıkların, bakım operasyonlarının, saha süreçlerinin ve operasyonel ilişkilerin merkezi olarak yönetildiği birleşik bir Enterprise Operations platformudur.",
+      "description": "ServiceCore EAM; yalnızca envanter takibi değil, kurumsal varlıkların, bakım operasyonlarının, saha süreçlerinin ve operasyonel ilişkilerin merkezi olarak yönetildiği birleşik bir Enterprise Operations platformudur. Kurumsal varlık operasyonlarınızı daha görünür, daha kontrollü ve daha yönetilebilir hale getirin.",
       "highlights": [
         "Enterprise Asset Management",
         "Maintenance & Service Operations",
@@ -878,137 +1388,190 @@
       {
         "eyebrow": "Work Order Management",
         "title": "Tüm saha işleri tek merkezden",
-        "description": "Çağrı, arıza, destek, bakım, kurulum, keşif, değişim, kontrol, servis ve müşteri talepleri farklı kayıt türlerinde planlanır, atanır, takip edilir ve raporlanır.",
-        "icon": "ClipboardList",
-        "accent": "blue",
+        "description": "Tüm saha işleri tek merkezden yönetilir.",
+        "intro": ["Çağrı, arıza, destek, bakım, kurulum, keşif, değişim, kontrol, servis ve müşteri talepleri farklı kayıt türlerinde planlanabilir, atanabilir, takip edilebilir ve raporlanabilir."],
         "items": [
           "Multi-step work order yapısı",
-          "Checklist / tasklist destekli saha görevleri",
-          "Worklog ve görev süresi giriş sistemi",
-          "SLA ve öncelik yönetimi",
-          "İş emri şablonları ve teknisyen otomatik atama",
-          "Otomatik sınıflandırma ve önceliklendirme",
+          "Checklist/Tasklist destekli saha görevleri",
+          "Worklog / İş Günlüğü / Görev süresi giriş sistemi",
+          "Hizmet seviyesi (SLA) ve öncelik yönetimi",
+          "İş emri şablonları",
+          "Teknisyen otomatik atama",
+          "Otomasyonla otomatik sınıflandırma",
+          "Otomatik önceliklendirme",
+          "İş geçmişi ve servis geçmişi",
           "Fotoğraf, not ve dosya ekleri",
-          "Tekrarlayan bakım planları ve preventive maintenance"
-        ]
+          "Time tracking ve iş kayıtları",
+          "Tekrarlayan bakım planları",
+          "Preventive maintenance süreçleri"
+        ],
+        "icon": "ClipboardList",
+        "accent": "blue"
       },
       {
-        "eyebrow": "AI Dispatcher",
+        "eyebrow": "AI Destekli Dispatcher & Scheduling Console",
         "title": "AI destekli dispatcher ve planlama konsolu",
-        "description": "Dispatcher ekipleri günlük saha operasyonunu canlı olarak yönetir. Sürükle-bırak planlama ile işler teknisyenlere hızlıca atanır, yoğunluk dengelenir.",
-        "icon": "Brain",
-        "accent": "purple",
+        "description": "Dispatcher ekipleri günlük saha operasyonunu canlı olarak yönetebilir. Tüm dispatch işlemleri AI destekli ve kendiliğinden çalışabilir.",
+        "intro": ["Sürükle-bırak planlama ekranları ile işler teknisyenlere hızlıca atanabilir, yoğunluk dengelenebilir ve operasyon gerçek zamanlı yönetilebilir."],
         "items": [
           "AI destekli akıllı atama",
           "Günlük teknisyen planlama ekranı",
           "Ajanda ve timeline görünümü",
-          "Skills-based assignment ve yetenek havuzu",
-          "İş yükü dengeleme ve öncelik bazlı atama",
-          "SLA-aware scheduling",
+          "Skills-based assignment",
+          "Teknisyen yetenek havuzu",
+          "İş yükü dengeleme",
+          "Öncelik bazlı atama",
+          "Hizmet seviyesi farkındalıklı planlama (SLA-aware scheduling)",
           "Bölge bazlı operasyon yönetimi",
-          "Google Maps tabanlı rota planlama"
-        ]
+          "Dinamik görev atamaları",
+          "Google Maps tabanlı rota planlama",
+          "Günlük rota yönetimi"
+        ],
+        "icon": "Brain",
+        "accent": "purple"
       },
       {
-        "eyebrow": "Mobile Technician",
+        "eyebrow": "Mobile Field Technician App",
         "title": "Saha teknisyenleri için mobil uygulama",
-        "description": "Offline destekli mobil uygulama sayesinde teknisyenler internet erişimi olmasa bile iş emirlerine erişir, servis formlarını doldurur ve operasyonu kesintisiz sürdürür.",
-        "icon": "Smartphone",
-        "accent": "emerald",
+        "description": "Saha ekipleri tüm operasyonu mobil uygulama üzerinden yönetebilir.",
+        "intro": ["Offline destekli mobil uygulama sayesinde teknisyenler internet erişimi olmasa bile iş emirlerine erişebilir, servis formlarını doldurabilir ve operasyonu kesintisiz sürdürebilir."],
         "items": [
-          "Mobil görev, ticket, talep ve varlık yönetimi",
-          "Check-in / check-out ve GPS destekli operasyon",
-          "QR / barkod okutma ve imza alma",
+          "Mobil görev, ticket, talep, varlık yönetimi",
+          "Check-in / check-out",
+          "GPS destekli saha operasyonu",
+          "QR / barkod okutma",
+          "İmza alma",
           "Fotoğraf ve servis kanıtı yükleme",
           "Checklist tabanlı saha adımları",
-          "Notlar, saha yorumları ve varlık geçmişi erişimi",
+          "Görev ajandası görünümü",
+          "Notlar ve saha yorumları",
+          "Varlık geçmişine erişim",
           "Mobil dashboard ve KPI ekranları"
-        ]
+        ],
+        "icon": "Smartphone",
+        "accent": "emerald"
       },
       {
-        "eyebrow": "Asset & Service History",
-        "title": "Müşteri ekipmanları ve servis geçmişi",
-        "description": "Teknisyenler sahaya gitmeden önce cihaz geçmişini, önceki arızaları, yapılan işlemleri ve ilişkili servis kayıtlarını görüntüler.",
-        "icon": "Box",
-        "accent": "orange",
+        "eyebrow": "Asset & Service History Management",
+        "title": "Müşteri ekipmanları ve servis geçmişi tek noktada",
+        "description": "Tüm müşteri ekipmanları ve servis geçmişi tek noktada.",
+        "intro": ["Teknisyenler sahaya gitmeden önce cihaz geçmişini, önceki arızaları, yapılan işlemleri ve ilişkili servis kayıtlarını görüntüleyebilir."],
         "items": [
           "Asset lifecycle tracking",
-          "Servis geçmişi ve bakım geçmişi",
+          "Servis geçmişi",
+          "Bakım geçmişi",
           "İlişkili work order kayıtları",
-          "Kontrat ve SLA ilişkileri",
+          "Kontrat ve hizmet seviyesi (SLA) ilişkileri",
           "QR / barkod tabanlı hızlı erişim",
           "Ekipman ilişkileri ve topoloji görünümü",
           "Lokasyon bazlı varlık yönetimi"
-        ]
+        ],
+        "icon": "Box",
+        "accent": "orange"
       },
       {
-        "eyebrow": "Customer Experience",
+        "eyebrow": "AI Tabanlı Customer Communication & Service Experience",
         "title": "AI tabanlı müşteri iletişimi ve servis deneyimi",
-        "description": "Modern müşteri deneyimi araçları sayesinde müşteriler servis süreçlerini canlı takip eder, randevularını yönetir ve teknik ekiplerle etkileşim kurar.",
-        "icon": "MessageCircle",
-        "accent": "cyan",
+        "description": "Müşterilerinizi servis süreci boyunca bilgilendirin.",
+        "intro": ["Modern müşteri deneyimi araçları sayesinde müşteriler servis süreçlerini canlı takip edebilir, randevularını yönetebilir ve teknik ekiplerle etkileşim kurabilir."],
         "items": [
-          "AI tabanlı chatbot desteği (ChatcoreAI Add-on)",
-          "E-posta, SMS ve web bildirimleri",
-          "Appointment reminder ve ETA bildirimi",
+          "AI tabanlı Chatbot desteği (ChatcoreAI Add-on)",
+          "E-posta bildirimleri",
+          "SMS bildirimleri",
+          "Web bildirimleri",
+          "Appointment reminder",
+          "ETA bildirimi",
           "Live technician tracking",
-          "Customer portal ve randevu seçme",
-          "Reschedule işlemleri ve teknisyen takip ekranı",
-          "Geçmiş servis kayıtları ve quote approval"
-        ]
+          "Customer portal",
+          "Randevu seçme",
+          "Reschedule işlemleri",
+          "Teknisyen takip ekranı",
+          "Geçmiş servis kayıtları",
+          "Quote approval süreçleri"
+        ],
+        "icon": "MessageCircle",
+        "accent": "cyan"
       },
       {
-        "eyebrow": "Service Analytics",
+        "eyebrow": "AI Tabanlı Service Analytics & Operational KPIs",
         "title": "AI tabanlı servis analitiği ve operasyonel KPI'lar",
-        "description": "Gerçek zamanlı dashboard ve operasyon raporları sayesinde ekip performansını, servis kalitesini ve operasyonel verimliliği merkezi olarak yönetin.",
-        "icon": "BarChart3",
-        "accent": "pink",
+        "description": "Saha operasyon performansınızı ölçün.",
+        "intro": ["Gerçek zamanlı dashboard ve operasyon raporları sayesinde ekip performansını, servis kalitesini ve operasyonel verimliliği merkezi olarak yönetin."],
         "items": [
           "First-time-fix oranı",
           "Technician utilization",
           "Mean time to repair (MTTR)",
-          "SLA breach takibi ve travel time analizi",
-          "Cost per ticket, labor ve parts cost yönetimi",
+          "Hizmet seviyesi (SLA) ihlal takibi",
+          "Travel time analizi",
+          "Cost per ticket",
+          "Labor cost yönetimi",
+          "Parts cost takibi",
+          "Time tracking",
           "Operasyon dashboard'ları",
-          "Servis trend analizleri ve ekip performans raporları"
-        ]
+          "Servis trend analizleri",
+          "Ekip performans raporları"
+        ],
+        "icon": "BarChart3",
+        "accent": "pink"
       },
       {
-        "eyebrow": "Live Visibility",
+        "eyebrow": "Live Field Operations Visibility",
         "title": "Canlı saha operasyon görünürlüğü",
-        "description": "Canlı teknisyen haritası sayesinde operasyon ekipleri tüm saha aktivitelerini tek ekrandan takip eder.",
-        "icon": "MapPin",
-        "accent": "indigo",
+        "description": "Saha operasyonlarını gerçek zamanlı izleyin.",
+        "intro": ["Canlı teknisyen haritası sayesinde operasyon ekipleri tüm saha aktivitelerini tek ekrandan takip edebilir."],
         "items": [
           "Canlı teknisyen konumları",
           "Harita üzerinden iş takibi",
           "Yakındaki ekipleri görüntüleme",
           "ETA hesaplama",
           "Canlı operasyon görünürlüğü",
-          "İş durumu takibi ve lokasyon bazlı servis yönetimi"
-        ]
+          "İş durumu takibi",
+          "Lokasyon bazlı servis yönetimi"
+        ],
+        "icon": "MapPin",
+        "accent": "indigo"
       },
       {
-        "eyebrow": "Enterprise-Ready",
-        "title": "Kurumsal saha operasyonları için tasarlandı",
-        "description": "Multi-company / multi-tenant yapı, low-code workflow altyapısı, REST API, SSO ve on-premise / özel kurulum desteği.",
-        "icon": "ShieldCheck",
-        "accent": "amber",
+        "eyebrow": "Built for Modern Service Operations",
+        "title": "Modern saha operasyonları için tasarlandı",
+        "description": "ServiceCore FSM; klasik ticketing yaklaşımının ötesine geçerek modern saha operasyonlarını tek platform altında birleştirir.",
+        "items": [
+          "Field Service Management",
+          "Technical Service Operations",
+          "Maintenance Operations",
+          "Preventive Maintenance",
+          "Multi-site Service Operations",
+          "External Customer Support",
+          "Service Workflow Automation",
+          "Enterprise Service Operations"
+        ],
+        "notes": ["Tüm bu yetenekler tek bir birleşik platform üzerinden yönetilebilir."],
+        "icon": "Sparkles",
+        "accent": "amber"
+      },
+      {
+        "eyebrow": "Enterprise-Ready Architecture",
+        "title": "Kurumsal operasyonlar için tasarlandı",
+        "description": "Kurumsal operasyonlar için tasarlandı.",
         "items": [
           "Multi-company / multi-tenant yapı",
           "Role-based access control",
           "Low-code / no-code workflow altyapısı",
-          "REST API desteği ve SSO entegrasyonu",
-          "SLA yönetimi ve workflow automation",
+          "REST API desteği",
+          "SSO entegrasyonu",
+          "Hizmet seviyesi (SLA) yönetimi",
+          "Workflow automation",
           "Genişletilebilir veri modeli",
           "On-premise veya özel kurulum desteği",
           "Çoklu dil desteği"
-        ]
+        ],
+        "icon": "ShieldCheck",
+        "accent": "blue"
       }
     ],
     "closing": {
-      "title": "Klasik ticketing yaklaşımının ötesinde",
-      "description": "ServiceCore FSM; dispatcher ekipleri, saha teknisyenleri, operasyon yöneticileri ve müşterileri aynı platformda buluşturarak uçtan uca servis operasyon görünürlüğü sağlar.",
+      "title": "End-to-End Service Operations Platform",
+      "description": "ServiceCore FSM; dispatcher ekipleri, saha teknisyenleri, operasyon yöneticileri ve müşterileri aynı platformda buluşturarak uçtan uca servis operasyon görünürlüğü sağlar. Saha operasyonlarınızı daha hızlı, daha görünür ve daha ölçülebilir hale getirin.",
       "highlights": [
         "Field Service Management",
         "Technical Service Operations",
