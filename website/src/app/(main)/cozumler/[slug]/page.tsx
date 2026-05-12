@@ -3,7 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import cozumlerData from "@/data/cozumler.json";
+import cozumlerContent from "@/data/cozumler-content.json";
 import { FeaturesGrid } from "@/components/ui/features-grid";
+import { SolutionSections } from "@/components/sections/solution-sections";
 
 interface SolutionData {
   slug: string;
@@ -17,7 +19,38 @@ interface SolutionData {
   modules: string[];
 }
 
+interface SolutionContentSection {
+  eyebrow: string;
+  title: string;
+  description: string;
+  icon: string;
+  accent: string;
+  items: string[];
+}
+
+interface SolutionContentEntry {
+  narrative: string[];
+  sections: SolutionContentSection[];
+  editions?: {
+    title: string;
+    description: string;
+    tiers: Array<{
+      name: string;
+      tagline: string;
+      accent: string;
+      highlight?: boolean;
+      items: string[];
+    }>;
+  };
+  closing: {
+    title: string;
+    description: string;
+    highlights: string[];
+  };
+}
+
 const SOLUTIONS = cozumlerData.solutions as SolutionData[];
+const CONTENT = cozumlerContent as Record<string, SolutionContentEntry>;
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -42,11 +75,21 @@ export default async function SolutionPage({ params }: PageProps) {
   const solution = SOLUTIONS.find((s) => s.slug === slug);
   if (!solution) notFound();
 
+  const richContent = CONTENT[solution.slug];
+
   return (
     <main className="relative min-h-screen bg-(--color-surface-base) overflow-hidden pb-32">
-      <div className="absolute -top-40 -left-40 w-130 h-130 rounded-full pointer-events-none"
+      <div
+        className="absolute -top-40 -left-40 w-130 h-130 rounded-full pointer-events-none"
         style={{
           background: "radial-gradient(circle, rgba(168,85,247,0.16), transparent 70%)",
+          filter: "blur(100px)",
+        }}
+      />
+      <div
+        className="absolute top-130 -right-40 w-130 h-130 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(0,112,243,0.12), transparent 70%)",
           filter: "blur(100px)",
         }}
       />
@@ -82,13 +125,43 @@ export default async function SolutionPage({ params }: PageProps) {
           {solution.description}
         </p>
 
-        {/* ITSM: zenginlestirilmis ozellikler grid'i. Diger cozumler icin yapim asamasi banner'i. */}
-        {solution.slug === "itsm" ? (
-          <div className="mt-16">
+        {/* Hero CTAs */}
+        <div className="mt-10 flex flex-wrap items-center gap-3">
+          <Link
+            href="/demo"
+            className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-(--color-brand-primary) text-white font-medium text-sm shadow-(--shadow-glow-primary) hover:shadow-(--shadow-glow-primary-strong) transition-all cursor-pointer"
+          >
+            Demo İste
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+          <Link
+            href="/iletisim"
+            className="inline-flex items-center gap-2 h-12 px-6 rounded-full text-white/80 hover:text-white font-medium text-sm transition-colors cursor-pointer"
+          >
+            Bize Ulaşın
+            <ArrowUpRight className="w-4 h-4" />
+          </Link>
+        </div>
+
+        {/* Rich content: zenginlestirilmis cozum icerigi */}
+        {richContent ? (
+          <SolutionSections content={richContent} />
+        ) : solution.slug === "itsm" ? (
+          <div className="mt-32">
+            <div className="mb-12 max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/3 mb-6">
+                <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
+                  Modüller · Modules
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+                ITIL4 uyumlu 22 modül
+              </h2>
+            </div>
             <FeaturesGrid />
           </div>
         ) : (
-          <div className="mt-12 rounded-2xl border border-(--color-brand-primary)/20 bg-(--color-brand-primary)/5 p-6">
+          <div className="mt-16 rounded-2xl border border-(--color-brand-primary)/20 bg-(--color-brand-primary)/5 p-6">
             <div className="flex items-start gap-3">
               <div className="w-2 h-2 rounded-full bg-(--color-brand-primary) mt-2 animate-pulse shrink-0" />
               <div>
@@ -101,12 +174,19 @@ export default async function SolutionPage({ params }: PageProps) {
           </div>
         )}
 
-        {/* Related modules */}
+        {/* Pakete dahil moduller */}
         {solution.modules.length > 0 && (
-          <div className="mt-16">
-            <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
-              Pakete Dahil Modüller
-            </h2>
+          <div className="mt-32">
+            <div className="mb-8 max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/3 mb-6">
+                <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
+                  Pakete Dahil Modüller
+                </span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+                {solution.abbr} paketindeki tüm modüller
+              </h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {solution.modules.map((moduleSlug) => (
                 <Link
@@ -125,7 +205,7 @@ export default async function SolutionPage({ params }: PageProps) {
         )}
 
         {/* CTAs */}
-        <div className="mt-16 flex flex-wrap items-center gap-3">
+        <div className="mt-20 flex flex-wrap items-center gap-3">
           <Link
             href="/demo"
             className="inline-flex items-center gap-2 h-12 px-6 rounded-full bg-(--color-brand-primary) text-white font-medium text-sm shadow-(--shadow-glow-primary) hover:shadow-(--shadow-glow-primary-strong) transition-all cursor-pointer"
