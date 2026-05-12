@@ -78,7 +78,14 @@ const hoverGradients = [
   "from-cyan-500/20 via-transparent to-transparent",
 ];
 
-export function FeaturesGrid() {
+interface FeaturesGridProps {
+  filterLinks?: string[];
+}
+
+export function FeaturesGrid({ filterLinks }: FeaturesGridProps = {}) {
+  const visibleFeatures = filterLinks
+    ? featuresData.filter((f) => filterLinks.includes(f.link))
+    : featuresData;
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -109,7 +116,7 @@ export function FeaturesGrid() {
       animate="visible"
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
     >
-      {featuresData.map((feature, idx) => {
+      {visibleFeatures.map((feature, idx) => {
         const Icon = iconsMap[feature.title] || Settings; // Fallback icon
         const colorSet = accentColors[idx % accentColors.length];
         const hoverGrad = hoverGradients[idx % hoverGradients.length];

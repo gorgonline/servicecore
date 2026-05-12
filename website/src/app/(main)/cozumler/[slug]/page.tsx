@@ -160,23 +160,51 @@ export default async function SolutionPage({ params }: PageProps) {
           </div>
         ) : null}
 
-        {/* Pakete dahil tum moduller — her urun sayfasinda ayni 24 modul */}
-        <div className="mt-32">
-          <div className="mb-12 max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/3 mb-6">
-              <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
-                Modüller · Modules
-              </span>
+        {/* Pakete dahil moduller — varsayilan 24, AgilePM icin filtrelenmis 18 */}
+        {(() => {
+          const APM_MODULE_LINKS = [
+            "/etkilesim-yonetimi",
+            "/istek-yonetimi",
+            "/bilgi-bankasi",
+            "/degisiklik-yonetimi",
+            "/surekli-iyilestirme",
+            "/servis-otomasyonu",
+            "/raporlama-yonetimi",
+            "/gorev-yonetimi",
+            "/servis-iliskileri-yonetimi",
+            "/proje-yonetimi",
+            "/esm",
+            "/self-servis-portal",
+            "/yonetim-paneli",
+            "/mobil-servis-yonetimi",
+            "/is-akisi-yonetimi",
+            "/entegrasyon-yonetimi",
+            "/low-code-gelistirme",
+            "/sozlesme-yonetimi",
+          ];
+          const isFiltered = solution.slug === "apm";
+          const moduleCount = isFiltered ? APM_MODULE_LINKS.length : 24;
+          return (
+            <div className="mt-32">
+              <div className="mb-12 max-w-3xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/3 mb-6">
+                  <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
+                    Modüller · Modules
+                  </span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+                  {solution.abbr} paketindeki tüm modüller
+                </h2>
+                <p className="text-base font-light leading-relaxed text-(--color-text-secondary)">
+                  {isFiltered
+                    ? `${solution.name_tr} paketi, ${moduleCount} odaklı modülü tek lisans altında sunar. ${solution.name_tr} planlama, sprint, SDLC ve workflow operasyonları için aşağıdaki modüller paketin parçasıdır.`
+                    : `ServiceCore platformundaki 24 entegre modülün tamamı her çözüm paketi içinde native olarak çalışır. ${solution.name_tr} kullanıcıları aşağıdaki tüm modüllere erişebilir.`}
+                </p>
+              </div>
+              <FeaturesGrid filterLinks={isFiltered ? APM_MODULE_LINKS : undefined} />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              {solution.abbr} paketindeki tüm modüller
-            </h2>
-            <p className="text-base font-light leading-relaxed text-(--color-text-secondary)">
-              ServiceCore platformundaki 24 entegre modülün tamamı her çözüm paketi içinde native olarak çalışır. {solution.name_tr} kullanıcıları aşağıdaki tüm modüllere erişebilir.
-            </p>
-          </div>
-          <FeaturesGrid />
-        </div>
+          );
+        })()}
 
         {/* CTAs */}
         <div className="mt-20 flex flex-wrap items-center gap-3">
