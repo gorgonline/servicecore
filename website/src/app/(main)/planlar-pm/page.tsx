@@ -1,6 +1,9 @@
 import { ExpandedPricingSection } from "@/components/ui/expanded-pricing";
 import AboutHero from "@/components/ui/AboutHero";
 import pricingData from "@/data/pricing-pm.json";
+import { pageMetadata } from "@/lib/page-metadata";
+
+export const metadata = pageMetadata("planlar-pm");
 
 export default function PlanlarPmPage() {
   return (

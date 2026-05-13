@@ -1,0 +1,158 @@
+{
+  "etkilesim-yonetimi": {
+    "title": "Hizmet Masası ve Etkileşim Yönetimi | ServiceCore",
+    "description": "Tüm iletişim kanallarını birleştiren omnichannel hizmet masası ve etkileşim yönetimi modülü."
+  },
+  "olay-yonetimi": {
+    "title": "Olay Yönetimi | ServiceCore",
+    "description": "ITIL4 Incident Management pratiğiyle hizmet kesintilerini hızla çözün."
+  },
+  "problem-yonetimi": {
+    "title": "Problem Yönetimi | ServiceCore",
+    "description": "Tekrarlayan olayların kök nedenlerini analiz edin, kalıcı çözümler üretin."
+  },
+  "istek-yonetimi": {
+    "title": "İstek Yönetimi | ServiceCore",
+    "description": "Kullanıcı taleplerini standart formlarla yönetin, hizmet katalogu üzerinden otomatize edin."
+  },
+  "bilgi-bankasi": {
+    "title": "Bilgi ve Doküman Yönetimi | ServiceCore",
+    "description": "Kurumsal hafızayı merkezileştiren bilgi bankası ve doküman yönetimi modülü."
+  },
+  "degisiklik-yonetimi": {
+    "title": "Değişiklik Yönetimi | ServiceCore",
+    "description": "Riskleri minimize ederek üretim ortamında öngörülebilir değişiklikler uygulayın."
+  },
+  "varlik-yonetimi": {
+    "title": "Varlık Yönetimi | ServiceCore",
+    "description": "Donanım, yazılım ve lisans envanterini yaşam döngüsü boyunca takip edin."
+  },
+  "discovery": {
+    "title": "Discovery — Otomatik BT Varlık Keşfi | ServiceCore",
+    "description": "Ağ ve uç nokta keşfiyle envanteri otomatik güncelleyen, CMDB'yi besleyen modül."
+  },
+  "servis-konfigurasyon-yonetimi": {
+    "title": "Servis Konfigürasyon Yönetimi | ServiceCore",
+    "description": "CMDB üzerinde servis bileşenlerinin ilişkilerini ve bağımlılıklarını haritalandırın."
+  },
+  "surekli-iyilestirme": {
+    "title": "Sürekli İyileştirme | ServiceCore",
+    "description": "ITIL4 Continual Improvement pratiğiyle hizmet kalitesini her adımda artırın."
+  },
+  "servis-katalog-yonetimi": {
+    "title": "Servis Katalog Yönetimi | ServiceCore",
+    "description": "Kullanıcılara sunulan hizmet menüsünü tanımlayın, talep formlarını standartlaştırın."
+  },
+  "servis-seviye-yonetimi": {
+    "title": "Servis Seviye Yönetimi | ServiceCore",
+    "description": "SLA, OLA ve UC taahhütlerinizi izleyin, hizmet seviyesini güvenceye alın."
+  },
+  "servis-otomasyonu": {
+    "title": "Servis Otomasyonu | ServiceCore",
+    "description": "Tekrarlayan operasyonel işleri kural tabanlı otomasyonla makinelere devredin."
+  },
+  "raporlama-yonetimi": {
+    "title": "Raporlama Yönetimi | ServiceCore",
+    "description": "Veriye dayalı kararlar için panel, rapor ve KPI yönetimi modülü."
+  },
+  "gorev-yonetimi": {
+    "title": "Görev Yönetimi | ServiceCore",
+    "description": "Ekipler arası iş atamalarını planlayın, takip edin ve raporlayın."
+  },
+  "servis-iliskileri-yonetimi": {
+    "title": "Servis İlişkileri Yönetimi | ServiceCore",
+    "description": "Müşteri ve servis ilişkilerini uçtan uca yöneten Service Relationship modülü."
+  },
+  "proje-yonetimi": {
+    "title": "Agile Proje ve SDLC Yönetimi | ServiceCore",
+    "description": "Agile, Scrum, Kanban ve stratejik planlama için entegre proje yönetimi modülü."
+  },
+  "esm": {
+    "title": "ESM Kurumsal Servis Yönetimi | ServiceCore",
+    "description": "İK, finans, tesis gibi departmanların hizmet süreçlerini tek platformda yönetin."
+  },
+  "self-servis-portal": {
+    "title": "Self Servis Portal | ServiceCore",
+    "description": "Kullanıcıların kendi çözümünü bulmasını sağlayan portal ve katalog deneyimi."
+  },
+  "yonetim-paneli": {
+    "title": "Yönetim Paneli | ServiceCore",
+    "description": "Sistemin genel işleyişini optimize eden merkezi kontrol paneli."
+  },
+  "mobil-servis-yonetimi": {
+    "title": "Mobil Servis Yönetimi | ServiceCore",
+    "description": "Saha ekipleri için mobil ITOM uygulaması, iş emri ve onay deneyimi."
+  },
+  "is-akisi-yonetimi": {
+    "title": "İş Akışı Yönetimi | ServiceCore",
+    "description": "Süreçleri sürükle-bırak diyagramlarla modelleyen workflow tasarımcısı."
+  },
+  "entegrasyon-yonetimi": {
+    "title": "Entegrasyon Modülü | ServiceCore",
+    "description": "API, webhook ve bağlayıcılarla dış sistemlerle veri alışverişi yapın."
+  },
+  "low-code-gelistirme": {
+    "title": "Low Code Geliştirme Modülü | ServiceCore",
+    "description": "Özel formlar, alanlar ve süreç tasarımları için low-code geliştirme platformu."
+  },
+  "sozlesme-yonetimi": {
+    "title": "Sözleşme Yönetimi | ServiceCore",
+    "description": "Hizmet seviyeleri, tedarikçi sözleşmeleri ve renewals süreçlerini yönetin."
+  },
+  "moduller": {
+    "title": "Modüller | ServiceCore",
+    "description": "ServiceCore platformundaki tüm ITSM, ESM ve operasyon modüllerinin genel görünümü."
+  },
+  "cozumler": {
+    "title": "Çözümler | ServiceCore",
+    "description": "ITSM, ESM, AgilePM, CSM, FSM, ITAM ve EAM için uçtan uca çözüm hatları."
+  },
+  "planlar": {
+    "title": "ITSM Lisans Seçenekleri | ServiceCore",
+    "description": "Service Desk, ITIL4 ve ESM için lisans ve modül seçeneklerini karşılaştırın."
+  },
+  "planlar-pm": {
+    "title": "AgilePM Lisans Seçenekleri | ServiceCore",
+    "description": "Agile, hibrit ve stratejik proje yönetimi için lisans seçenekleri."
+  },
+  "blog": {
+    "title": "Blog | ServiceCore",
+    "description": "ITIL4, ITSM ve servis yönetimi üzerine derinlikli yazılar ve uygulama rehberleri."
+  },
+  "dokumanlar": {
+    "title": "Dökümanlar | ServiceCore",
+    "description": "Teknik dökümanlar, kullanım kılavuzları ve mimari referansları."
+  },
+  "egitimler": {
+    "title": "Eğitimler | ServiceCore",
+    "description": "Sertifika programları ve ServiceCore kullanıcı eğitimleri."
+  },
+  "kurslar": {
+    "title": "Kurslar | ServiceCore",
+    "description": "ITSM ve servis yönetimi alanında kısa süreli uzmanlık kursları."
+  },
+  "videolar": {
+    "title": "Videolar | ServiceCore",
+    "description": "Eğitici ve tanıtıcı video içerikler, ürün demoları."
+  },
+  "guncellemeler": {
+    "title": "Güncellemeler | ServiceCore",
+    "description": "Sürüm notları, yeni özellikler ve inovasyon duyuruları."
+  },
+  "itil4-pratikleri": {
+    "title": "ITIL4 Pratikleri | ServiceCore",
+    "description": "ITIL4 yaşam döngüsü ve pratik uygulamalarının ServiceCore üzerinde karşılığı."
+  },
+  "partnerlik": {
+    "title": "Partnerlik | ServiceCore",
+    "description": "ServiceCore iş ortaklığı, reseller ve sistem entegratörü programı."
+  },
+  "specsheet": {
+    "title": "Specsheet | ServiceCore",
+    "description": "ServiceCore platformunun teknik özellik ve mimari özet kartı."
+  },
+  "fark-var": {
+    "title": "Fark Var | ServiceCore",
+    "description": "ServiceCore'u diğer ITSM platformlarından ayıran tasarım ve mimari farklılıklar."
+  }
+}
