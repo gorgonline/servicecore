@@ -30,6 +30,10 @@ import {
   Code,
   FileSignature,
   Sparkles,
+  Waypoints,
+  Combine,
+  CalendarClock,
+  Plug,
   type LucideIcon,
 } from "lucide-react";
 import data from "@/data/moduller.json";
@@ -60,6 +64,10 @@ const iconMap: Record<string, LucideIcon> = {
   Code,
   FileSignature,
   Sparkles,
+  Waypoints,
+  Combine,
+  CalendarClock,
+  Plug,
 };
 
 const toneMap: Record<

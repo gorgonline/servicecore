@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Vardiya Yönetimi",
+    "titleLead": "Vardiya, nöbet ve kapasite",
+    "titleAccent": "tek panelde planlanır.",
+    "description": "ServiceCore Vardiya Yönetimi; çok ekipli, 7/24 destek operasyonlarında vardiya planlamayı, on-call rotasyonu, yetkinlik bazlı atamayı ve vardiya devri akışlarını tek panelde yönetir. İzin entegrasyonu, kapsam boşluğu uyarıları ve mesai takibi ile operasyon liderlerinin günlük kararlarını veriye dayandırır.",
+    "imageAlt": "Vardiya Yönetimi panosu — haftalık çizelge, ekip seviyeleri, on-call rotation ve kapsam göstergesi"
+  },
+  "zigzag": [
+    {
+      "id": "haftalik-plan",
+      "accent": "emerald",
+      "icon": "CalendarClock",
+      "titleLead": "Haftalık plan,",
+      "titleAccent": "sürükle-bırak yetkinlikle eşleşir.",
+      "description": "Vardiya çizelgesi yetkinlik, sertifika ve mevcut iş yükü dikkate alınarak otomatik öneri çıkarır; operasyon lideri öneriyi onaylar veya elle ince ayar yapar. Bir kaydırma ile günü kapatmak yerine ekibin gerçek kapasitesine göre hızlı plan yapılır.",
+      "bullets": [
+        "Yetkinlik, sertifika ve dil kombinasyonuna göre otomatik atama önerisi; uygun olmayan kişiler vardiyaya sürüklenmeye çalışıldığında sistem engelleyici uyarı gösterir.",
+        "Sürükle-bırak ile günlük plan; çakışmalar, izinler ve fazla mesai eşiği anlık olarak çizelge üzerinde kırmızıya döner.",
+        "Şablon kütüphanesinden tek tıkla hafta planı; tekrarlayan vardiya desenleri (3+1, 2+2, 4+2) hazır kalıpla uygulanır."
+      ],
+      "imageKey": "plan"
+    },
+    {
+      "id": "on-call-rotation",
+      "accent": "cyan",
+      "icon": "BellRing",
+      "titleLead": "On-call rotasyonu,",
+      "titleAccent": "adil ve şeffaf döner.",
+      "description": "Nöbet listeleri haftalık, iki haftalık veya özel desenlerle döner. Ekip yükü dağılımı, en son nöbet ve izin durumu rotasyon önerisinde otomatik göz önüne alınır. Devir saatleri uyarıyla başlar, vardiya devri kaydedilir.",
+      "bullets": [
+        "Birincil ve ikincil nöbetçi her vardiya için ayrı atanır; izin veya hastalık durumunda otomatik yedek devreye girer ve ekibe bildirim yapılır.",
+        "Rotasyon adaleti panelde görünür: kim kaç kez birincil oldu, kim haftasonu nöbetlerinde geride kaldı — atama kararlarında yan yana görülür.",
+        "Eskalasyon zinciri vardiyaya bağlanır; çağrı yanıtsız kaldığında ikinciye, ardından operasyon liderine otomatik tırmanır."
+      ],
+      "imageKey": "rotation"
+    },
+    {
+      "id": "vardiya-devri",
+      "accent": "blue",
+      "icon": "ArrowRightLeft",
+      "titleLead": "Vardiya devri,",
+      "titleAccent": "tek tıkla okunur not.",
+      "description": "Devir saati geldiğinde sistem, biten ekibin notlarını ve açık konuları yapılandırılmış bir devir kartında özetler. Gelen ekip; açık olaylar, planlı değişiklikler ve dikkat edilmesi gereken müşteriler için yapılandırılmış kontrol listesini ilk dakikada okur.",
+      "bullets": [
+        "Devir kartı; açık olaylar, planlı değişiklikler, eskalasyonlar ve ekibe iletilmesi gereken VIP/kritik müşteri notlarını tek sayfada toparlar.",
+        "Devir alan ekip her maddeyi okuduğunu işaretler; eksik kalan veya itiraz edilen maddeler operasyon liderine raporlanır.",
+        "Devir notları biletlerle bağlı tutulur; bir konunun hangi vardiyada nasıl yönetildiği geriye dönük denetlenebilir biçimde belgelenir."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Operasyon liderine günlük karar veren yetenekler",
+    "sectionSubtitle": "Şablon kütüphanesinden kapsam boşluğu uyarısına, fazla mesai takibinden takas akışına kadar Vardiya Yönetimi'ni 7/24 ekiplerin günlük aracına dönüştüren işlevler.",
+    "items": [
+      {
+        "id": "sablon-kutuphane",
+        "size": "wide",
+        "accent": "emerald",
+        "icon": "LayoutTemplate",
+        "title": "Şablon kütüphanesi ve tekrar deseni",
+        "description": "3+1, 2+2, 4+2, sürekli gece, hafta sonu yoğunlaştırması gibi yaygın vardiya desenleri hazır şablonla gelir. Şablon uygulandığında izinler, fazla mesai eşikleri ve yetkinlik kuralları otomatik kontrol edilir; lider yalnızca istisnalara odaklanır."
+      },
+      {
+        "id": "kapsam-bosluk",
+        "size": "normal",
+        "accent": "amber",
+        "icon": "AlertTriangle",
+        "title": "Kapsam boşluğu uyarısı",
+        "description": "Bir saat diliminde yetkinlik, dil veya ekip eksiği oluştuğunda çizelge üzerinde sarı/kırmızı boşluk işareti çıkar. 'Kim eksik?' sorusu plan onaylanmadan cevaplanır."
+      },
+      {
+        "id": "fazla-mesai",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "Timer",
+        "title": "Mesai ve fazla mesai takibi",
+        "description": "Haftalık ve aylık fazla mesai eşiklerine yaklaşan kişiler vurgulanır. Operasyon lideri planı onaylamadan önce kimin yorgunluk riskinde olduğunu görür; yasal mesai sınırı uyarısı engelleyici çalışır."
+      },
+      {
+        "id": "yetkinlik-atama",
+        "size": "wide",
+        "accent": "cyan",
+        "icon": "Sparkles",
+        "title": "Yetkinlik bazlı otomatik atama",
+        "description": "SAP, Active Directory, ağ veya saha kategorilerine göre yetkinlik etiketleri her ekip üyesinde tutulur. Sistem; açık olay yoğunluğu, sertifika geçerliliği ve son atama sayısına göre en uygun kişiyi öne çıkarır."
+      },
+      {
+        "id": "izin-entegrasyon",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "CalendarDays",
+        "title": "İzin ve tatil entegrasyonu",
+        "description": "Onaylı izinler, resmi tatiller ve hastalık raporları otomatik olarak çizelgeye düşer. Lider plan yaparken izinli kişiyi sürüklemek istediğinde sistem engelleyici uyarı gösterir."
+      },
+      {
+        "id": "takas",
+        "size": "normal",
+        "accent": "purple",
+        "icon": "ArrowLeftRight",
+        "title": "Takas ve değişiklik talepleri",
+        "description": "Ekip üyeleri belirli vardiyalar için takas talebi açar; eşleşen yetkinliği olan müsait arkadaşlardan onay alındığında lidere tek tıkla onay düşer. Tüm değişiklik kayıt altında tutulur."
+      }
+    ]
+  },
+  "cta": {
+    "title": "7/24 ekiplerinizi tek panelden planlayın.",
+    "description": "Vardiya Yönetimi ile vardiya, nöbet, izin ve kapasiteyi tek panelde yönetin; yetkinlik bazlı atama ve vardiya devri akışlarıyla operasyonu öngörülebilir kılın. ServiceCore demosunda kendi ekibinizin haftalık planını sizin için kurgulayalım.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

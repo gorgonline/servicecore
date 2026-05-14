@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Federation Engine",
+    "titleLead": "Bağımsız servis organizasyonları,",
+    "titleAccent": "tek orkestratörde buluşur.",
+    "description": "ServiceCore Federation Engine; holding ve iştirakler, MSP ile müşteri tenant'ları veya departman federasyonu gibi senaryolarda birden çok bağımsız ServiceCore kurulumunu tek bir orkestratör katmanı altında birleştirir. Bilet, talep ve politikalar tenant sınırlarını koruyarak akar; konsolide raporlama, kimlik federasyonu ve veri ikametgâhı kuralları merkezden yönetilir.",
+    "imageAlt": "Federation Engine konsolu — federe tenant ağı, cross-tenant bilet akışı ve politika dağıtımı"
+  },
+  "zigzag": [
+    {
+      "id": "tenant-orkestrasyon",
+      "accent": "purple",
+      "icon": "Combine",
+      "titleLead": "Hub ve spoke,",
+      "titleAccent": "tek panelden orkestrasyon.",
+      "description": "Federation Engine; bağımsız tenant'ları (iştirak, müşteri, bölge, departman) bir orkestratör hub'a bağlar. Her tenant kendi veri sınırını, ekibini ve süreçlerini korurken hub; politika dağıtımı, escalation yönlendirmesi ve konsolide görünürlük sağlar.",
+      "bullets": [
+        "Her tenant kendi veri sınırını, ekibini ve Hizmet Seviyesi kurallarını koruyarak bağımsız çalışır; hub yalnızca politika ve federe akışları yönetir.",
+        "Hub üzerinden tüm tenant'ların açık olay, talep ve değişikliklerini konsolide ekranda izleyin; her satırdan ilgili tenant'a tek tıkla geçin.",
+        "Tenant ekleme dakikalar içinde tamamlanır; yeni iştirak veya müşteri kurulumu federasyona katıldığında politika, katalog ve roller otomatik senkronlanır."
+      ],
+      "imageKey": "orkestrasyon"
+    },
+    {
+      "id": "cross-tenant-akis",
+      "accent": "indigo",
+      "icon": "GitBranch",
+      "titleLead": "Bilet tenant sınırını",
+      "titleAccent": "veriyi bölmeden geçer.",
+      "description": "Bir tenant'ta açılan bilet, federasyon kuralları gereği başka bir tenant'a devredilebilir. Devir akışı denetim izi bırakır, kaynak tenant'taki veri görünürlüğü kuralları korunur ve müşteri/kullanıcı tek bir bağlantı üzerinden takip eder.",
+      "bullets": [
+        "Federasyon yönlendirme kuralları (skill, lokasyon, müşteri, kategori) bileti otomatik olarak doğru tenant'a iletir; manuel atama gerekmez.",
+        "Cross-tenant devirde paylaşılan ve gizli alanlar ayrı politika ile yönetilir; KVKK/GDPR uyumu için veri kapsamı satır bazında belgelenir.",
+        "Bilet zinciri tek bir takip numarası ile uçtan uca izlenir; hangi tenant'ta ne kadar süre kaldığı Hizmet Seviyesi raporlarına yansır."
+      ],
+      "imageKey": "akis"
+    },
+    {
+      "id": "politika-katalog-federasyonu",
+      "accent": "cyan",
+      "icon": "ShieldCheck",
+      "titleLead": "Politika ve katalog,",
+      "titleAccent": "merkezde yazılır, yerelde uygulanır.",
+      "description": "Federasyon hub'ında tanımlanan politikalar (öncelik matrisleri, onay zincirleri, gizlilik kuralları, Hizmet Seviyesi şablonları) federe tenant'lara yayılır. Yerel ekipler kendi katalog uzantılarını koruyabilir; merkez ve yerel arasında tutarlı bir çekirdek garanti edilir.",
+      "bullets": [
+        "Politika sürümleri merkezde sürüm kontrolü altında yayınlanır; her tenant'a hangi sürümün uygulandığı denetim izinde tek satırda görünür.",
+        "Servis kataloğu federe yayınlanır: merkez çekirdek kalemleri sahiplenir, tenant'lar yerel uzantılarını ekler; sürüm çakışmaları hub'da çözümlenir.",
+        "İstisna yönetimi merkezi: belirli bir tenant için politika muafiyeti, gerekçesi ve süresiyle birlikte kayda alınır, otomatik hatırlatma ile yenilenir."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Federasyonu işletilebilir kılan yetenekler",
+    "sectionSubtitle": "Tenant dizininden veri ikametgâhına, kimlik federasyonundan konsolide raporlamaya kadar Federation Engine'i çok şirketli yapılarda günlük operasyon aracına dönüştüren işlevler.",
+    "items": [
+      {
+        "id": "realm-dizini",
+        "size": "wide",
+        "accent": "purple",
+        "icon": "Boxes",
+        "title": "Realm / tenant dizini",
+        "description": "Federasyondaki tüm tenant'lar tek dizinde listelenir: tip (iştirak, müşteri, bölge), sürüm, sözleşme, sahip ekip ve sağlık durumu kolonlarıyla. Tek satırdan tenant özetine, kullanıcı sayısına ve son senkronizasyon zamanına ulaşılır."
+      },
+      {
+        "id": "politika-yayini",
+        "size": "normal",
+        "accent": "indigo",
+        "icon": "Send",
+        "title": "Politika yayını",
+        "description": "Merkez bir politikayı düzenlediğinde hangi tenant'ların hangi sürümde olduğu, kimin hangi anda alacağı ve istisna kapsamı tek panelde özetlenir. Yayın zamanlanmış veya anlık yapılabilir."
+      },
+      {
+        "id": "kimlik-federasyonu",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "KeyRound",
+        "title": "Kimlik federasyonu",
+        "description": "SAML, OIDC ve SCIM ile merkezi kimlik sağlayıcı tüm tenant'lara yansır; kullanıcılar tek oturumla yetkili oldukları tenant'lara erişir, rol değişiklikleri merkezden uygulanır."
+      },
+      {
+        "id": "konsolide-rapor",
+        "size": "wide",
+        "accent": "emerald",
+        "icon": "LineChart",
+        "title": "Konsolide raporlama ve Hizmet Seviyesi roll-up",
+        "description": "Tüm tenant'ların kritik metrikleri (açık olay sayısı, Hizmet Seviyesi performansı, ortalama çözüm süresi, müşteri memnuniyeti) merkez panoda toplanır. Tenant kıyaslaması, bölge çapraz kesiti ve trend analizleri tek bakışta alınır."
+      },
+      {
+        "id": "veri-ikametgahi",
+        "size": "normal",
+        "accent": "blue",
+        "icon": "Globe2",
+        "title": "Veri ikametgâhı ve bölge eşleme",
+        "description": "Her tenant'ın verisi hangi bölgede tutulduğu açıkça etiketlenir. Cross-tenant akışlarda bölge sınırı denetlenir; uyumluluk gereken senaryolarda veri yalnızca politika izin verirse hub'a taşınır."
+      },
+      {
+        "id": "denetim-izi",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "FileCheck",
+        "title": "Federasyon denetim izi",
+        "description": "Politika yayını, tenant devri, istisna kararı ve bilet aktarımı dahil tüm federasyon işlemleri değişmez bir denetim defterinde tutulur. Dış denetim ve sertifikasyon süreçleri için kanıt zinciri tek tıkla dışa aktarılır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Çoklu organizasyonu tek motorla yönetin.",
+    "description": "Federation Engine ile holding-iştirak, MSP-müşteri ya da departman federasyonu senaryolarınızı tek orkestratör altında yönetin; veri sınırlarını koruyarak konsolide görünürlük kazanın. ServiceCore demosunda kendi federasyon haritanızı sizin için kurgulayalım.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

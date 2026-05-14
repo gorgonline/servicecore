@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Integration System",
+    "titleLead": "Connector katalogundan canlı çalıştırmaya,",
+    "titleAccent": "uçtan uca entegrasyon motoru.",
+    "description": "ServiceCore Integration System; başlangıçta hazır connector katalogu, sonrasında görsel akış tasarımı, son olarak da denetim ve gözlemle çalıştırma katmanını tek modülde toplar. ITSM süreçleriniz; ERP, CRM, izleme, kimlik ve sohbet platformlarıyla kod yazmadan birbirine bağlanır; her çalıştırma denetlenebilir kayıt bırakır.",
+    "imageAlt": "Integration System konsolu — connector kütüphanesi, görsel akış canvas'ı ve canlı çalıştırma izleme paneli"
+  },
+  "zigzag": [
+    {
+      "id": "baslangic",
+      "accent": "orange",
+      "icon": "Boxes",
+      "titleLead": "Başlangıç,",
+      "titleAccent": "connector katalogundan tek tıkla.",
+      "description": "Yeni bir entegrasyona ERP, CRM, izleme, sohbet veya kimlik connector'larını seçerek başlarsınız. Her connector için kimlik doğrulama şablonları, varsayılan eylemler ve veri şemaları hazır gelir; dakikalar içinde ilk akış ayağa kalkar.",
+      "bullets": [
+        "Hazır connector kataloğu: SAP, Oracle EBS, Salesforce, Dynamics 365, Jira, Slack, Microsoft Teams, Azure AD, ServiceCore yerel modüller ve genel HTTP/REST.",
+        "Connector kurulumunda kimlik doğrulama (API key, OAuth 2.0, basic auth, mTLS) yapılandırılır; secret'lar şifreli kasada saklanır.",
+        "Her connector için örnek tetikleyiciler ve eylemler hazır şablonla gelir; ilk akışa boş canvas yerine örnek desenle başlarsınız."
+      ],
+      "imageKey": "katalog"
+    },
+    {
+      "id": "tasarlama",
+      "accent": "amber",
+      "icon": "Workflow",
+      "titleLead": "Tasarlama,",
+      "titleAccent": "görsel akış + alan eşleme.",
+      "description": "Görsel canvas üzerinde tetikleyici, dönüşüm ve hedef adımları sürükle-bırak ile bağlanır. Alan eşleme paneli, kaynak ve hedef şemalarını yan yana açar; ifadelerle dönüşüm, koşullu dallanma ve hata akışı tek ekranda kurulur.",
+      "bullets": [
+        "Tetikleyici tipleri: zamanlı (cron), olay (record created/updated), webhook ve manuel — her akış birden fazla tetikleyiciyle çalışabilir.",
+        "Alan eşleme; kaynak şema → hedef şema arasında bire bir, ifadeli (concat, format, lookup) veya koşullu eşleme destekler; örnek yük üzerinde anlık önizleme verir.",
+        "Koşullu dallanma, hata yakalama, paralel dallar ve toplu (batch) işleme blokları; gerçek dünya akışlarını canvas'ta okunabilir biçimde modeller."
+      ],
+      "imageKey": "canvas"
+    },
+    {
+      "id": "calistirma",
+      "accent": "red",
+      "icon": "Activity",
+      "titleLead": "Çalıştırma,",
+      "titleAccent": "canlı izlenir ve denetlenir.",
+      "description": "Yayına alınan akışlar canlı izleme panelinden takip edilir. Her çalıştırma adımı, yük ve süresi kayıt altındadır; başarısız adımlar otomatik yeniden denemeye girer veya manuel onarımla yeniden tetiklenir. Denetim için tam izlenebilirlik standart gelir.",
+      "bullets": [
+        "Canlı çalıştırma paneli; başarılı, başarısız ve yeniden deneyen akışları zaman çizelgesinde gösterir; tıklayınca adım adım yük ve hata mesajları açılır.",
+        "Otomatik yeniden deneme politikaları (sabit, üstel, çevrim dışı kuyruk) connector veya akış bazında tanımlanır; çözülemeyenler ölü mektup kuyruğuna düşer.",
+        "Her çalıştırma için değişmez denetim izi tutulur; kim ne zaman hangi akışı yayınladı, hangi sürüm çalıştırıldı, hangi veri taşındı — dış denetim için tek tıkla dışa aktarılır."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Entegrasyon yaşam döngüsünü işletilebilir kılan yetenekler",
+    "sectionSubtitle": "Connector kütüphanesinden secret kasasına, tetikleyici tipinden versiyonlamaya kadar Integration System'i kurumsal yapılarda günlük operasyon aracına dönüştüren işlevler.",
+    "items": [
+      {
+        "id": "connector-katalog",
+        "size": "wide",
+        "accent": "orange",
+        "icon": "Boxes",
+        "title": "Connector kataloğu ve hazır şablonlar",
+        "description": "Yaygın kurumsal sistemler için 40+ hazır connector ve onlarca akış şablonu kütüphanede beklenir. Her connector için sürüm bilgisi, sertifikasyon durumu ve kullanım sayısı görülür; topluluk veya kurum içi paylaşılan akışlar tek katalogdan dağıtılır."
+      },
+      {
+        "id": "trigger-tipleri",
+        "size": "normal",
+        "accent": "amber",
+        "icon": "Bell",
+        "title": "Tetikleyici tipleri",
+        "description": "Zamanlı (cron), olay tabanlı (record event), webhook ve manuel tetikleyiciler tek akışta birleştirilebilir. Tetikleyici hata aldığında uyarı politikası canvas üzerinden tanımlanır."
+      },
+      {
+        "id": "alan-esleme",
+        "size": "normal",
+        "accent": "yellow",
+        "icon": "ArrowRightLeft",
+        "title": "Alan eşleme stüdyosu",
+        "description": "Kaynak ve hedef şemalar yan yana açılır; sürükle-bırak ile bire bir eşleme veya formül (concat, format, lookup) ile dönüşüm tanımlanır. Örnek yük anlık önizleme verir."
+      },
+      {
+        "id": "calistirma-zaman",
+        "size": "wide",
+        "accent": "red",
+        "icon": "Activity",
+        "title": "Çalıştırma zaman çizelgesi ve yeniden deneme",
+        "description": "Son 24 saatin çalıştırmaları zaman çizelgesinde başarılı/başarısız/yeniden deneme renk kodlarıyla görünür. Bir çalıştırma seçildiğinde adım adım yük, hata mesajı ve süre detayları açılır; yeniden deneme politikası satır içinde değiştirilebilir."
+      },
+      {
+        "id": "secret-kasa",
+        "size": "normal",
+        "accent": "blue",
+        "icon": "KeyRound",
+        "title": "Secret kasası ve kimlik doğrulama",
+        "description": "API anahtarları, OAuth token'ları ve sertifikalar şifreli kasada saklanır. Akış tasarımında secret referansı yapılır; gerçek değer asla canvas'ta veya logda görünmez. Erişim denetimi rol bazlı yönetilir."
+      },
+      {
+        "id": "versiyonlama",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "GitBranch",
+        "title": "Versiyonlama ve geri alma",
+        "description": "Her yayın bir sürüm üretir; sürümler arası fark görünür biçimde karşılaştırılır. Sorunlu yayın saniyeler içinde önceki kararlı sürüme geri alınabilir; tüm akışlar değişmez sürüm geçmişine sahiptir."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Entegrasyon yaşam döngüsünü tek motorla yönetin.",
+    "description": "Integration System ile connector katalogundan canlı çalıştırmaya kadar tüm entegrasyon yaşam döngüsünü tek modülde işletin; kurumsal sistemlerinizle ServiceCore'u denetlenebilir biçimde konuşturun. Demoda kendi senaryonuzu sizin için kurgulayalım.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

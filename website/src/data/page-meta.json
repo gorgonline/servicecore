@@ -35,6 +35,22 @@
     "title": "Servis Konfigürasyon Yönetimi | ServiceCore",
     "description": "CMDB üzerinde servis bileşenlerinin ilişkilerini ve bağımlılıklarını haritalandırın."
   },
+  "servis-topoloji-kesif": {
+    "title": "Service Topologies Explorer | ServiceCore",
+    "description": "Hizmet-varlık ilişkilerini canlı haritada keşfedin; etkiyi anlık görün, kök nedeni saniyeler içinde bulun."
+  },
+  "federasyon-motoru": {
+    "title": "Federation Engine | ServiceCore",
+    "description": "Çoklu tenant, iştirak ve müşteri organizasyonunu tek orkestratörle bağlayan federasyon motoru — bilet, politika, katalog ve kimlik federasyonu."
+  },
+  "vardiya-yonetimi": {
+    "title": "Vardiya Yönetimi | ServiceCore",
+    "description": "Vardiya, nöbet ve kapasiteyi tek panelde planlayın. Yetkinlik bazlı atama, on-call rotation ve vardiya devri akışlarıyla 7/24 destek operasyonu."
+  },
+  "entegrasyon-sistemi": {
+    "title": "Integration System | ServiceCore",
+    "description": "Connector katalogu, görsel akış tasarımı ve canlı çalıştırma izleme — başlangıçtan tasarlamaya, çalıştırmadan denetime entegrasyon yaşam döngüsü."
+  },
   "surekli-iyilestirme": {
     "title": "Sürekli İyileştirme | ServiceCore",
     "description": "ITIL4 Continual Improvement pratiğiyle hizmet kalitesini her adımda artırın."

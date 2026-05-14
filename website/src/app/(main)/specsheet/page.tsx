@@ -397,7 +397,7 @@ export default function SpecsheetPage() {
                   </h2>
 
                   <p className="text-lg text-(--color-text-overline) font-light leading-relaxed mb-10 max-w-xl mx-auto">
-                    25 entegre modül, kurumsal güvenlik, REST API ve uçtan uca otomasyon — her özelliği uzman ekibimizle keşfedin.
+                    29 entegre modül, kurumsal güvenlik, REST API ve uçtan uca otomasyon — her özelliği uzman ekibimizle keşfedin.
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

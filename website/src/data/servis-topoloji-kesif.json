@@ -1,0 +1,114 @@
+{
+  "hero": {
+    "badge": "Service Topologies Explorer",
+    "titleLead": "Karmaşık servislerin haritası,",
+    "titleAccent": "tek tıkla keşfedilebilir.",
+    "description": "ServiceCore Service Topologies Explorer, hizmet ve varlık ilişkilerini canlı, etkileşimli haritalarda keşfetmenizi sağlar. Üst-alt bağımlılık zincirlerini açıp kapatın, iki düğüm arasındaki yolu izleyin, geçmiş topolojiyi yeniden oynatın; olay önceliklendirme, değişiklik kapsam analizi ve kök neden tespitini saniyeler içinde tamamlayın.",
+    "imageAlt": "Topology Explorer panosu — çok katmanlı servis haritası, etkileşimli düğümler ve etki halkası"
+  },
+  "zigzag": [
+    {
+      "id": "etkilesimli-harita",
+      "accent": "indigo",
+      "icon": "Waypoints",
+      "titleLead": "Etkileşimli harita,",
+      "titleAccent": "tek tıkla derinleşir.",
+      "description": "Hizmet düğümünün üzerine geldiğinizde bağlı varlıklar, sözleşmeler, açık olaylar ve planlı değişiklikler haritada anlık vurgulanır. İlişkileri açıp kapatabilir, gürültüyü filtreleyebilir, sadece kritik yola odaklanabilirsiniz.",
+      "bullets": [
+        "Tek tıkla katmanları açın veya kapatın; iş servisi, uygulama, altyapı ve ağ katmanlarını ayrı ayrı veya birlikte inceleyin.",
+        "Düğümlere tıklayarak ilgili olay, istek, değişiklik ve sözleşme kayıtlarına anında geçiş yapın; bağlamı kaybetmeden derinleşin.",
+        "Etiket, ekip, kritiklik ve sahip filtreleriyle haritayı odaklayın; büyük ortamlarda ilgili bölgeyi saniyeler içinde izole edin."
+      ],
+      "imageKey": "harita"
+    },
+    {
+      "id": "katmanli-gorunum",
+      "accent": "cyan",
+      "icon": "Layers",
+      "titleLead": "Üstte iş servisi,",
+      "titleAccent": "altta altyapı.",
+      "description": "Topoloji birden çok katmanda kurgulanır: iş hizmeti, uygulama, mantıksal bileşen, fiziksel altyapı ve ağ. Her katman ayrı renk, ikon ve mesafe ile gösterilir; bağımlılık yönü oklarla netleşir, karışıklık azalır.",
+      "bullets": [
+        "İş servisi, uygulama bileşeni, sunucu, depolama ve ağ ayrı katmanlarda görselleştirilir; her katman bağımsız açılıp kapanabilir.",
+        "Bağımlılık yönü (depends-on, hosts, runs-on, uses) oklarla gösterilir; üst yönlü etki ve alt yönlü bağımlılık ayrı ayrı sorgulanır.",
+        "Standart CI tipleri için hazır şablonlar gelir; karmaşık ortamlar dakikalar içinde tutarlı topoloji şeması üzerinde çalışmaya başlar."
+      ],
+      "imageKey": "katmanlar"
+    },
+    {
+      "id": "yol-bulma",
+      "accent": "purple",
+      "icon": "Route",
+      "titleLead": "İki düğüm arası",
+      "titleAccent": "en kısa yolu bulun.",
+      "description": "Bir kullanıcının yaşadığı sorunun arkasındaki altyapı bileşenini bulmak için iki CI seçip aralarındaki tüm bağımlılık yolunu listeleyebilirsiniz. Etki zinciri görsel olarak vurgulanır; kök neden ve kritik tek-noktada-arıza yerleri öne çıkar.",
+      "bullets": [
+        "İki düğüm seçildiğinde aralarındaki tüm bağımlılık yolları sıralı listeyle çıkarılır; en kısa ve en kritik yol vurgulanır.",
+        "Tek nokta arıza (single point of failure) konumları otomatik tespit edilir; alternatif yol bulunmadığında uyarı verilir.",
+        "Yol üzerindeki açık olay, planlı değişiklik ve Hizmet Seviyesi riski tek satırda özetlenir; karar saniyeler içinde verilir."
+      ]
+    }
+  ],
+  "bento": {
+    "sectionTitle": "Topolojiyi keşfedilebilir hale getiren yetenekler",
+    "sectionSubtitle": "Filtreden zaman yolculuğuna, etki halkasından sunum modu paylaşımına kadar Service Topologies Explorer'ı operasyon ekibinin günlük aracına dönüştüren işlevler.",
+    "items": [
+      {
+        "id": "lens-filtre",
+        "size": "wide",
+        "accent": "indigo",
+        "icon": "Filter",
+        "title": "Lens ve filtre profilleri",
+        "description": "Ekip, etiket, kritiklik, lokasyon ve servis sahibine göre topolojiyi farklı bakış açılarından görüntüleyin. Üretim, geliştirme veya sadece kritik servisler için kaydedilmiş lens profilleri ile haritayı bir tıkla ilgili kapsama daraltın."
+      },
+      {
+        "id": "etki-halkasi",
+        "size": "normal",
+        "accent": "purple",
+        "icon": "Target",
+        "title": "Etki halkası — kim etkilenir?",
+        "description": "Bir düğümün etrafındaki etki halkası, bağımlı servisleri ve etkilenebilecek kullanıcı sayısını anlık gösterir. Olay açıldığında veya değişiklik onaylanırken kapsam tek bakışta görünür."
+      },
+      {
+        "id": "zaman-yolculugu",
+        "size": "normal",
+        "accent": "cyan",
+        "icon": "History",
+        "title": "Zaman yolculuğu",
+        "description": "Topolojiyi geçmiş tarihler için yeniden oynatın. Hangi CI ne zaman eklendi, hangi bağımlılık değişti, hangi servis hangi tarihten itibaren riskli hale geldi — kronolojiyi haritada izleyin."
+      },
+      {
+        "id": "snapshot-paylasim",
+        "size": "wide",
+        "accent": "emerald",
+        "icon": "Share2",
+        "title": "Snapshot ve sunum paylaşımı",
+        "description": "Mevcut harita görünümünü kilitleyin, yetkili paydaşlarla paylaşılabilir bağlantı oluşturun. Yorum ekleyin, dikkat çekilmesi gereken bölgeyi işaretleyin; teknik olmayan paydaşlar da konuya odaklanır."
+      },
+      {
+        "id": "tek-nokta-uyari",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "AlertTriangle",
+        "title": "Tek nokta arıza uyarısı",
+        "description": "Yedeği bulunmayan, alternatif yolu olmayan CI'lar haritada otomatik vurgulanır. Kritik servisin tek noktaya bağımlılığı raporlanır; mimari riskler erkenden gündeme gelir."
+      },
+      {
+        "id": "sunum-modu",
+        "size": "normal",
+        "accent": "blue",
+        "icon": "Presentation",
+        "title": "Sunum modu",
+        "description": "Toplantılar veya iç değerlendirme için tam ekran sunum modu açın; karmaşık haritayı adım adım anlatın. Önceden tanımlanmış kameralarla harita üzerinde yönlendirilmiş tur sunun."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Karmaşık servisleri keşfedilebilir kılın.",
+    "description": "Service Topologies Explorer ile hizmet-varlık ilişkilerini canlı haritada keşfedin; etkiyi anlık görün, kök nedeni saniyeler içinde bulun. ServiceCore demosunda kendi servisinizin haritasını sizin için canlandıralım.",
+    "primaryLabel": "Hemen Demo Alın",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}
