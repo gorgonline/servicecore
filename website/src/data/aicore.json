@@ -575,7 +575,7 @@
     },
     {
       "slug": "discovercore",
-      "name": "DiscoverCoreAI",
+      "name": "DisCoreAI",
       "tier": "beta",
       "tagline": "Akıllı keşif ve CMDB haritaları yaratır.",
       "description": "Akıllı varlık keşfi yaparak ağdaki tüm bileşenleri otomatik tespit eder; varlıklar arasındaki bağımlılıkları ve servis ilişkilerini çıkararak CMDB'yi sürekli ve otomatik şekilde doldurur. Manuel envanter güncellemesini sıfırlar, yeni veya kayıp bağımlılıkları gerçek zamanlı işaretler.",
@@ -610,7 +610,7 @@
       "scenario": {
         "company": "Birikim Holding",
         "situation": "Posta servisi yedek sunucusunun gerçekten izole olup olmadığı CMDB'de belirsizdi; manuel envanter altı ay boyunca güncellenmemişti.",
-        "outcome": "DiscoverCoreAI 7 yeni düğüm keşfetti ve STORE-IST-14 üzerinden iki posta sunucusunun aynı depolamayı paylaştığını işaretledi. Yedek izolasyon eksiği 3 gün içinde kapatıldı, bir sonraki incident'ta ikinci sunucu sorunsuz devraldı."
+        "outcome": "DisCoreAI 7 yeni düğüm keşfetti ve STORE-IST-14 üzerinden iki posta sunucusunun aynı depolamayı paylaştığını işaretledi. Yedek izolasyon eksiği 3 gün içinde kapatıldı, bir sonraki incident'ta ikinci sunucu sorunsuz devraldı."
       }
     },
     {
@@ -978,13 +978,13 @@
       "release": "Beta — Yol Haritası",
       "whatItDoes": [
         "Lisans, cloud, donanım, bakım ve operasyon kalemlerinin yıl sonu tahmini ve sapmasını canlı çıkarır.",
-        "AICORE araç verisiyle (ReportCoreAI kullanım, DiscoverCoreAI bağımlılık, AssetCoreAI ömür) somut tasarruf senaryoları üretir.",
+        "AICORE araç verisiyle (ReportCoreAI kullanım, DisCoreAI bağımlılık, AssetCoreAI ömür) somut tasarruf senaryoları üretir.",
         "Anormal harcama, çift satınalma ve kullanılmayan lisans gibi kalemleri otomatik tespit edip uyarır."
       ],
       "howItWorks": [
         { "label": "Kalem birleştirme", "detail": "Lisans envanteri, cloud fatura kalemleri, satınalma istekleri ve sözleşme ödemeleri tek tabloda toplanır." },
         { "label": "Yıl sonu tahmini", "detail": "Gerçekleşen + kalan ay tahmini ile yıl sonu bütçe sapması canlı hesaplanır." },
-        { "label": "Senaryo üretimi", "detail": "ReportCoreAI kullanım, DiscoverCoreAI bağımlılık ve AssetLifecycle ömür verisiyle tasarruf alternatifleri çıkar." },
+        { "label": "Senaryo üretimi", "detail": "ReportCoreAI kullanım, DisCoreAI bağımlılık ve AssetLifecycle ömür verisiyle tasarruf alternatifleri çıkar." },
         { "label": "Anormallik uyarısı", "detail": "Tek günlük cloud sıçraması, çift satınalma, atıl lisans gibi kalemler erken işaretlenir." }
       ],
       "modules": [

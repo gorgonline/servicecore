@@ -104,7 +104,7 @@ const SAVINGS: Saving[] = [
     title: "Cloud egress optimize",
     detail: "Stratos · cross-region trafik %38 ↑",
     amount: "₺ 620K",
-    link: "DiscoverCoreAI: bağımlılık haritası",
+    link: "DisCoreAI: bağımlılık haritası",
   },
   {
     icon: <Server className="w-3 h-3" />,

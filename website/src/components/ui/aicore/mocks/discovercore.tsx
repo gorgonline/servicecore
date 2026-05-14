@@ -94,7 +94,7 @@ export function DiscoverCoreMock({ accent: accentName }: { accent: string }) {
     <MockFrame className={accent.glow}>
       <TitleBar
         icon={<Network className="w-3.5 h-3.5" />}
-        title="DiscoverCoreAI · CMDB Keşif Haritası"
+        title="DisCoreAI · CMDB Keşif Haritası"
         meta="Birikim Holding · 14 dk önce tarandı"
         accent={accent}
       />

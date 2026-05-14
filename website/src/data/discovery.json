@@ -153,8 +153,9 @@
       "tagline": "Aynı cihaz iki kez kayıt oluşturmaz.",
       "bullets": [
         "Eşleşme önceliği: Hostname > MAC > Serial Number",
+        "veya Serial Number > MAC > Hostname",
         "Cihaz IP değiştirse de kayıp olmaz, otomatik günceller",
-        "Eski/silinmiş cihazlar belirli süre sonra otomatik temizlenir",
+        "Eski/silinmiş (SoftDelete) cihazlar belirli süre sonra otomatik temizlenir",
         "\"Pasife al\" alternatifi — kayıt korunur, ihtiyaç olursa erişilir"
       ],
       "image": "/images/discovery/10.jpg",
