@@ -11,7 +11,6 @@ const ENDPOINT = process.env.NEXT_PUBLIC_FORMS_ENDPOINT ?? "";
 export type FormSheet =
   | "Demo"
   | "İletişim"
-  | "AI Yol Haritası"
   | "Eğitim"
   | "Kurs"
   | "Partnerlik"

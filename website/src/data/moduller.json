@@ -3,7 +3,7 @@
     "badge": "Modüller",
     "titleLead": "ServiceCore'un",
     "titleAccent": "entegre modül ailesi.",
-    "description": "ITSM ve ESM süreçlerinizi uçtan uca yöneten, native entegre çalışan 25 modül. Hizmet masasından varlık yönetimine, raporlamadan AI yol haritasına kadar tüm yetenekler tek platformda."
+    "description": "ITSM ve ESM süreçlerinizi uçtan uca yöneten, native entegre çalışan 24 modül. Hizmet masasından varlık yönetimine, otomasyondan raporlamaya kadar tüm yetenekler tek platformda."
   },
   "modules": [
     { "name": "Hizmet Masası ve Etkileşim Yönetimi", "icon": "MessageSquare", "desc": "Tüm iletişim kanallarını birleştirin.", "href": "/etkilesim-yonetimi", "tone": "blue", "category": "ITSM" },
@@ -30,11 +30,10 @@
     { "name": "İş Akışı Yönetimi", "icon": "GitBranch", "desc": "Süreçlerinizi sürükle bırak diyagramlarla modelleyin.", "href": "/is-akisi-yonetimi", "tone": "cyan", "category": "Otomasyon" },
     { "name": "Entegrasyon Modülü", "icon": "Link2", "desc": "API aracılığıyla veri alışverişi yapın.", "href": "/entegrasyon-yonetimi", "tone": "orange", "category": "Entegrasyon" },
     { "name": "Low Code Geliştirme Modülü", "icon": "Code", "desc": "Özel formlar ve süreç tasarımları oluşturun.", "href": "/low-code-gelistirme", "tone": "blue", "category": "Geliştirme" },
-    { "name": "Sözleşme Yönetimi", "icon": "FileSignature", "desc": "Hizmet Seviyeleri ve sözleşmeleri yönetin.", "href": "/sozlesme-yonetimi", "tone": "emerald", "category": "Sözleşme" },
-    { "name": "AI Yol Haritası", "icon": "Sparkles", "desc": "Yapay zeka destekli otomasyon ve asistanlar.", "href": "/ai-yol-haritasi", "tone": "purple", "category": "AI" }
+    { "name": "Sözleşme Yönetimi", "icon": "FileSignature", "desc": "Hizmet Seviyeleri ve sözleşmeleri yönetin.", "href": "/sozlesme-yonetimi", "tone": "emerald", "category": "Sözleşme" }
   ],
   "cta": {
-    "title": "Tek platformda 25 entegre modül, sınırsız operasyon.",
+    "title": "Tek platformda 24 entegre modül, sınırsız operasyon.",
     "description": "ServiceCore modüllerinin native entegre çalışmasını canlı demoda inceleyin; ITSM, ESM ve AI yetkinliklerini bir arada deneyimleyin.",
     "primaryLabel": "Hemen Demo Alın",
     "primaryHref": "/demo",

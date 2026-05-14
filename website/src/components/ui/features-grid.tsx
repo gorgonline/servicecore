@@ -26,7 +26,6 @@ import {
   MousePointerClick,
   FileText,
   Settings,
-  Sparkles,
 } from "lucide-react";
 import featuresData from "@/lib/data/features.json";
 import LinkWrapper from "next/link";
@@ -56,7 +55,6 @@ const iconsMap: Record<string, React.ElementType> = {
   "Entegrasyon Modülü": LinkIcon,
   "Low Code Geliştirme Modülü": Code,
   "Sözleşme Yönetimi": FileSignature,
-  "AI Yol Haritası": Sparkles,
 };
 
 // Colors mapping for slightly varied accents based on index
