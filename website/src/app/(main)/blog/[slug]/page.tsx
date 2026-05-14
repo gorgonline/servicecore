@@ -359,7 +359,7 @@ export default function BlogDetailPage() {
                 className={`inline-flex items-center gap-2 text-sm font-medium ${tone.accent} hover:gap-3 transition-all`}
               >
                 <ExternalLink className="w-4 h-4" />
-                <span>Orijinal kaynağı görüntüle (servicecore.app)</span>
+                <span>İlgili ServiceCore modülünü görüntülemek için tıklayınız</span>
               </a>
             </div>
           </motion.article>
