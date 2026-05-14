@@ -28,12 +28,12 @@
   ],
   "links": [
     { "title": "Servicecore Demo ve Sunum Talebi", "url": "/demo" },
-    { "title": "Servicecore Teklif Talebi", "url": "#" },
-    { "title": "Servicecore Destek Hizmetleri", "url": "#" },
+    { "title": "Servicecore Teklif Talebi", "url": "/iletisim" },
+    { "title": "Servicecore Destek Hizmetleri", "url": "/destek" },
     { "title": "Servicecore Canlı Destek Rezervasyonu", "url": "https://outlook.office365.com/owa/calendar/Servicecore1@servicecore.com.tr/bookings/" },
     { "title": "Bizimle çalışmak ister misiniz?", "url": "https://servicecore.zohorecruit.com/jobs/Careers" },
-    { "title": "Servicecore Sayfası", "url": "#" },
-    { "title": "Servicecore Videoları", "url": "#" }
+    { "title": "Servicecore Sayfası", "url": "/" },
+    { "title": "Servicecore Videoları", "url": "/videolar" }
   ],
   "supportSystem": {
     "title": "Servicecore Destek Sistemine Erişim",

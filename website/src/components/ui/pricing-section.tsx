@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, MessageSquare, ShieldCheck, Zap, ArrowUpRight } from "lucide-react";
 
@@ -210,10 +211,13 @@ export function PricingSection() {
                 Service Desk ve ITIL4 temel süreçlerine ihtiyaç duyan organizasyonlar için en uygun başlangıç paketi.
               </p>
               
-              <button className="w-full inline-flex items-center justify-center gap-2 h-14 px-6 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium transition-all focus:outline-none focus:ring-2 focus:ring-white/20 cursor-pointer">
+              <Link
+                href="/iletisim"
+                className="w-full inline-flex items-center justify-center gap-2 h-14 px-6 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium transition-all focus:outline-none focus:ring-2 focus:ring-white/20 cursor-pointer"
+              >
                  <MessageSquare className="w-4 h-4" />
                  Teklif İsteyin
-              </button>
+              </Link>
             </div>
 
             <div className="w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-8" />
@@ -274,10 +278,13 @@ export function PricingSection() {
                 Enterprise ESM/ITSM özelliklerine ve gelişmiş pratiklere ihtiyaç duyan kuruluşlar için kurumsal paket.
               </p>
               
-              <button className="w-full inline-flex items-center justify-center gap-2 h-14 px-6 rounded-full bg-(--color-brand-primary) hover:bg-(--color-brand-primary-hover) text-white font-semibold transition-all duration-300 shadow-(--shadow-glow-primary) hover:shadow-(--shadow-glow-primary-strong) focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer">
+              <Link
+                href="/iletisim"
+                className="w-full inline-flex items-center justify-center gap-2 h-14 px-6 rounded-full bg-(--color-brand-primary) hover:bg-(--color-brand-primary-hover) text-white font-semibold transition-all duration-300 shadow-(--shadow-glow-primary) hover:shadow-(--shadow-glow-primary-strong) focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer"
+              >
                  <MessageSquare className="w-4 h-4" />
                  Teklif İsteyin
-              </button>
+              </Link>
             </div>
 
             <div className="w-full h-px bg-linear-to-r from-(--color-brand-primary)/30 via-(--color-brand-primary)/20 to-transparent mb-8" />
