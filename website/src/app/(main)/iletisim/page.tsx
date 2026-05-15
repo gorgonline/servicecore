@@ -121,30 +121,40 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <div className="mt-32">
+      <div className="mt-24 lg:mt-32">
         <OfficeShowcase
           image="/ofisler/zaim-teknoparkA.jpg"
           alt="ArGe Merkezi — Zaim Teknopark"
           label="ArGe Merkezi"
+          address="Zaim Teknopark / Halkalı Cad No:281/23 Ofis No:118 Küçükçekmece/İstanbul"
+          phone="444 CORE"
           mapQuery="Zaim Teknopark Küçükçekmece İstanbul"
         />
         <OfficeShowcase
           image="/ofisler/metropol-istanbul.jpg"
           alt="İstanbul Ofisi — Metropol Istanbul"
           label="İstanbul Ofisi"
+          address="Metropol Istanbul A Blok 2E Kat: 21 Daire: 331 Ataşehir/İstanbul"
+          phone="0216 599 07 72"
           mapQuery="Metropol Istanbul A Blok Ataşehir İstanbul"
+          reverse
         />
         <OfficeShowcase
           image="/ofisler/canakkale-ofis.avif"
           alt="Çanakkale Ofisi"
           label="Çanakkale Ofisi"
+          address="Hamidiye Mah. Cihangir Sk. No:7/1 Terrace Ay Premium B Blok No:1 Kepez/Çanakkale"
+          phone="0286 247 07 41"
           mapQuery="Hamidiye Mah Cihangir Sk Terrace Ay Premium Kepez Çanakkale"
         />
         <OfficeShowcase
           image="/ofisler/ankara-ofis.jpg"
           alt="Ankara Ofisi — Next Level Çankaya"
           label="Ankara Ofisi"
+          address="Kızılırmak Mah. Dumlupınar Bulvarı Next Level Kat: 4 Çankaya/Ankara"
+          phone=""
           mapQuery="Next Level Kızılırmak Dumlupınar Bulvarı Çankaya Ankara"
+          reverse
         />
       </div>
     </main>
