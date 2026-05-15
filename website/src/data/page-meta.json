@@ -87,6 +87,10 @@
     "title": "ESM Kurumsal Servis Yönetimi | ServiceCore",
     "description": "İK, finans, tesis gibi departmanların hizmet süreçlerini tek platformda yönetin."
   },
+  "multi-csm": {
+    "title": "Multi-CSM | Federated Customer Service Management - ServiceCore",
+    "description": "Bayi, distribütör ve franchise ağları için cross-tenant ticket paylaşımı, federated yetki ve merkezi performans yönetimi. CSM'in federe katmanı."
+  },
   "self-servis-portal": {
     "title": "Self Servis Portal | ServiceCore",
     "description": "Kullanıcıların kendi çözümünü bulmasını sağlayan portal ve katalog deneyimi."
