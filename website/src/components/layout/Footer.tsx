@@ -206,7 +206,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {footerData.companyInfo.addresses.map((addr) => (
               <div
                 key={addr.label}
@@ -221,7 +221,7 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="md:col-span-3 flex flex-col gap-2">
+          <div className="md:col-span-4 flex flex-col gap-2">
             {footerData.companyInfo.contact.map((contact) => {
               const Icon = contact.icon;
               const isClickable = contact.label === "Tel" || contact.label === "Çağrı Merkezi" || contact.label === "Fax";
@@ -234,7 +234,7 @@ export default function Footer() {
                     <span>{contact.label}</span>
                     <span>:</span>
                   </span>
-                  <span className="ml-auto text-sm text-(--color-text-overline) font-medium">{contact.value}</span>
+                  <span className="ml-auto text-sm text-(--color-text-overline) font-medium whitespace-nowrap">{contact.value}</span>
                 </>
               );
 
