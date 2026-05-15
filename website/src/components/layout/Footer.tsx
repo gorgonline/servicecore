@@ -114,7 +114,7 @@ const footerData = {
       links: aicoreProductionLinks,
     },
     {
-      title: "ÇÖZÜMLER",
+      title: "ÜRÜNLER",
       links: [
         { text: "ITSM — IT Service Management", href: "/cozumler/itsm" },
         { text: "ESM — Enterprise Service Management", href: "/cozumler/esm" },
