@@ -6,11 +6,19 @@
     "locations": [
       {
         "type": "Merkez",
-        "address": "Metropol İstanbul A Blok 2E Kat: 21 Daire: 331 Ataşehir İstanbul"
+        "address": "Metropol İstanbul A Blok 2E Kat: 21 Daire: 331 Ataşehir/İstanbul"
       },
       {
-        "type": "ArGe",
+        "type": "ArGe Merkezi",
         "address": "Zaim Teknopark / Halkalı Cad No:281/23 K:1 Ofis No:118 Küçükçekmece/İstanbul"
+      },
+      {
+        "type": "Çanakkale Ofisi",
+        "address": "Hamidiye Mah. Cihangir Sk. No:7/1 Terrace Ay Premium B Blok No:1 Kepez/Çanakkale"
+      },
+      {
+        "type": "Ankara Ofisi",
+        "address": "Kızılırmak Mah. Dumlupınar Bulvarı Next Level Kat: 4 Çankaya/Ankara"
       }
     ],
     "callCenter": "444 CORE"
