@@ -1,6 +1,8 @@
 import { Metadata } from "next";
+import { ExternalLink, LifeBuoy, PhoneCall, Mail } from "lucide-react";
 import { ContactInfoCards } from "@/components/ui/contact-info-cards";
 import { ContactForm } from "@/components/ui/contact-form";
+import { OfficeShowcase } from "@/components/ui/office-showcase";
 import contactData from "@/data/contact.json";
 
 export const metadata: Metadata = {
@@ -39,72 +41,111 @@ export default function ContactPage() {
           {/* Left Column: Contact Cards & Info */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <ContactInfoCards />
-            
-            {/* Quick Support Links - "Servicecore Destek Sistemine Erişim" */}
+          </div>
+
+          {/* Right Column: Contact Form + Support Portal */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
+            <ContactForm />
+
+            {/* Support Portal Card */}
             <div className="rounded-3xl bg-white/2 border border-white/5 p-8 relative overflow-hidden group hover:border-(--color-brand-primary)/30 transition-colors">
-              <div className="absolute inset-0 bg-linear-to-r from-(--color-brand-primary)/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-linear-to-br from-(--color-brand-primary)/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
-                <h3 className="text-xl font-semibold text-white mb-3 tracking-tight">
-                  {contactData.supportSystem.title}
-                </h3>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="h-12 w-12 rounded-xl bg-(--color-brand-primary)/10 border border-(--color-brand-primary)/20 flex items-center justify-center text-(--color-brand-accent)">
+                    <LifeBuoy className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white tracking-tight">
+                    {contactData.supportSystem.title}
+                  </h3>
+                </div>
+
                 <p className="text-(--color-text-secondary) font-light mb-6 text-sm leading-relaxed">
                   {contactData.supportSystem.description}
                 </p>
-                <a 
+
+                <a
                   href={`https://${contactData.supportSystem.url}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-(--color-brand-accent) font-medium hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-(--color-brand-primary)/10 border border-(--color-brand-primary)/20 text-(--color-brand-accent) hover:bg-(--color-brand-primary)/20 hover:text-white transition-colors font-medium text-sm cursor-pointer"
                 >
-                  <span>Müşteri Portalına Git</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                  <span>{contactData.supportSystem.url}</span>
+                  <ExternalLink className="w-4 h-4" />
                 </a>
               </div>
             </div>
-          </div>
 
-          {/* Right Column: Contact Form */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <ContactForm />
-            
-            {/* Maps */}
-            <div className="grid grid-cols-1 gap-6">
-               <div className="rounded-3xl bg-white/2 border border-white/5 h-64 relative overflow-hidden group">
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }}
-                    loading="lazy" 
-                    allowFullScreen 
-                    src="https://maps.google.com/maps?q=Metropol+Istanbul+A+Blok+Ataşehir+İstanbul&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                    className="grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                  ></iframe>
-                  {/* Overlay for aesthetic */}
-                  <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay pointer-events-none"></div>
-                  <div className="absolute bottom-4 left-4 bg-(--color-surface-base)/80 backdrop-blur border border-white/10 px-3 py-1.5 rounded-lg pointer-events-none">
-                    <span className="text-white text-xs font-semibold tracking-[0.2em]">Merkez Ofisi</span>
-                  </div>
-               </div>
-               
-               <div className="rounded-3xl bg-white/2 border border-white/5 h-64 relative overflow-hidden group">
-                  <iframe 
-                    width="100%" 
-                    height="100%" 
-                    style={{ border: 0 }}
-                    loading="lazy" 
-                    allowFullScreen 
-                    src="https://maps.google.com/maps?q=Zaim+Teknopark+Küçükçekmece+İstanbul&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                    className="grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
-                  ></iframe>
-                  {/* Overlay for aesthetic */}
-                  <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay pointer-events-none"></div>
-                  <div className="absolute bottom-4 left-4 bg-(--color-surface-base)/80 backdrop-blur border border-white/10 px-3 py-1.5 rounded-lg pointer-events-none">
-                    <span className="text-white text-xs font-semibold tracking-[0.2em]">Teknopark Ofisi</span>
-                  </div>
-               </div>
+            {/* Quick Reach Card - Çağrı Merkezi + Destek E-postası */}
+            <div className="rounded-3xl bg-white/2 border border-white/5 p-8 relative overflow-hidden group hover:border-(--color-accent-emerald-light)/30 transition-colors">
+              <div className="absolute inset-0 bg-linear-to-br from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative z-10">
+                <span className="text-xs font-semibold text-(--color-text-overline) tracking-[0.2em] uppercase block mb-5">
+                  Hızlı Erişim
+                </span>
+
+                <div className="flex flex-col gap-4">
+                  <a
+                    href="tel:4442673"
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/4 hover:border-(--color-brand-primary)/30 transition-all group/item"
+                  >
+                    <div className="h-11 w-11 rounded-xl bg-(--color-brand-primary)/10 border border-(--color-brand-primary)/20 flex items-center justify-center text-(--color-brand-accent) shrink-0">
+                      <PhoneCall className="w-4 h-4" />
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="text-xs font-medium text-(--color-text-muted) mb-0.5">Çağrı Merkezi</span>
+                      <span className="text-white font-semibold tracking-tight">
+                        {contactData.company.callCenter}
+                      </span>
+                    </div>
+                  </a>
+
+                  <a
+                    href={`mailto:${contactData.support.email}`}
+                    className="flex items-center gap-4 p-4 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/4 hover:border-(--color-accent-emerald-light)/30 transition-all group/item"
+                  >
+                    <div className="h-11 w-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-(--color-accent-emerald-light) shrink-0">
+                      <Mail className="w-4 h-4" />
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="text-xs font-medium text-(--color-text-muted) mb-0.5">Destek E-postası</span>
+                      <span className="text-white font-semibold tracking-tight truncate">
+                        {contactData.support.email}
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="mt-32">
+        <OfficeShowcase
+          image="/ofisler/zaim-teknoparkA.jpg"
+          alt="ArGe Merkezi — Zaim Teknopark"
+          label="ArGe Merkezi"
+          mapQuery="Zaim Teknopark Küçükçekmece İstanbul"
+        />
+        <OfficeShowcase
+          image="/ofisler/metropol-istanbul.jpg"
+          alt="İstanbul Ofisi — Metropol Istanbul"
+          label="İstanbul Ofisi"
+          mapQuery="Metropol Istanbul A Blok Ataşehir İstanbul"
+        />
+        <OfficeShowcase
+          image="/ofisler/canakkale-ofis.avif"
+          alt="Çanakkale Ofisi"
+          label="Çanakkale Ofisi"
+          mapQuery="Hamidiye Mah Cihangir Sk Terrace Ay Premium Kepez Çanakkale"
+        />
+        <OfficeShowcase
+          image="/ofisler/ankara-ofis.jpg"
+          alt="Ankara Ofisi — Next Level Çankaya"
+          label="Ankara Ofisi"
+          mapQuery="Next Level Kızılırmak Dumlupınar Bulvarı Çankaya Ankara"
+        />
       </div>
     </main>
   );

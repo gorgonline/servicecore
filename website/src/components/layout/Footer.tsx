@@ -23,12 +23,20 @@ const footerData = {
     name: "Servicecore Bilgi Teknolojileri A.Ş.",
     addresses: [
       {
-        label: "Merkez",
-        value: "Metropol Istanbul A Blok 2E Kat: 21 Daire: 331 Ataşehir Istanbul",
+        label: "ArGe Merkezi",
+        value: "Zaim Teknopark / Halkalı Cad No:281/23 Ofis No:118 Küçükçekmece/İstanbul",
       },
       {
-        label: "ArGe",
-        value: "Zaim Teknopark / Halkalı Cad No:281/23 Ofis No:118 Küçükçekmece/İstanbul",
+        label: "İstanbul Ofisi",
+        value: "Metropol Istanbul A Blok 2E Kat: 21 Daire: 331 Ataşehir/İstanbul",
+      },
+      {
+        label: "Çanakkale Ofisi",
+        value: "Hamidiye Mah. Cihangir Sk. No:7/1 Terrace Ay Premium B Blok No:1 Kepez/Çanakkale",
+      },
+      {
+        label: "Ankara Ofisi",
+        value: "Kızılırmak Mah. Dumlupınar Bulvarı Next Level Kat: 4 Çankaya/Ankara",
       },
     ],
     contact: [
@@ -102,7 +110,7 @@ const footerData = {
       ],
     },
     {
-      title: "AICORE",
+      title: "AICore",
       links: aicoreProductionLinks,
     },
     {
@@ -184,7 +192,7 @@ export default function Footer() {
           variants={itemVariants}
           className="grid grid-cols-1 md:grid-cols-12 gap-x-10 gap-y-8 pb-12 mb-12 border-b border-white/10"
         >
-          <div className="md:col-span-4 flex flex-col">
+          <div className="md:col-span-1 flex flex-col">
             <Link href="/" className="flex items-center group cursor-pointer w-fit">
               <div className="w-11 h-11 bg-white/5 border border-white/10 backdrop-blur-md rounded-xl flex items-center justify-center group-hover:drop-shadow-[0_0_20px_rgba(0,112,243,0.5)] transition-all">
                 <Image
@@ -198,19 +206,22 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="md:col-span-4 flex flex-col gap-4">
+          <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {footerData.companyInfo.addresses.map((addr) => (
-              <div key={addr.label} className="flex items-start gap-3">
+              <div
+                key={addr.label}
+                className="flex items-start gap-3 px-4 py-3 rounded-lg bg-white/5 border border-white/10 hover:border-blue-500/30 hover:bg-blue-500/5 transition-colors"
+              >
                 <MapPin className="shrink-0 w-4 h-4 mt-0.5 text-(--color-accent-blue-light)" />
-                <div>
-                  <span className="text-[11px] font-semibold text-slate-200 uppercase tracking-[0.15em] mr-2">{addr.label}</span>
+                <div className="flex flex-col gap-1">
+                  <span className="text-[11px] font-semibold text-slate-200 uppercase tracking-[0.15em]">{addr.label}</span>
                   <span className="text-sm text-(--color-text-secondary) leading-relaxed">{addr.value}</span>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="md:col-span-4 flex flex-col gap-2">
+          <div className="md:col-span-3 flex flex-col gap-2">
             {footerData.companyInfo.contact.map((contact) => {
               const Icon = contact.icon;
               const isClickable = contact.label === "Tel" || contact.label === "Çağrı Merkezi" || contact.label === "Fax";
@@ -249,7 +260,7 @@ export default function Footer() {
           {footerData.columns.map((col, idx) => (
             <motion.div key={idx} variants={itemVariants} className="flex flex-col">
               <h3
-                className={`text-[11px] font-semibold text-slate-200 uppercase tracking-[0.18em] mb-5 ${
+                className={`text-[11px] font-semibold text-slate-200 tracking-[0.18em] mb-5 ${
                   "hideTitle" in col && col.hideTitle ? "invisible" : ""
                 }`}
                 aria-hidden={"hideTitle" in col && col.hideTitle ? true : undefined}
