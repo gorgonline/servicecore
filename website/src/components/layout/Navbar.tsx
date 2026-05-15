@@ -112,6 +112,7 @@ const solutionsSubmenu = [
   { name: "ESM", title: "Enterprise Service Management", icon: Building2, desc: "Tüm departmanları aynı servis disiplinine taşıyın.", href: "/cozumler/esm" },
   { name: "AgilePM", title: "Agile Project Management", icon: Layers, desc: "Backlog, sprint, kanban ve roadmap yönetimi.", href: "/cozumler/apm" },
   { name: "CSM", title: "Customer Service Management", icon: Headphones, desc: "Müşteri taleplerini ve etkileşimi tek panelde.", href: "/cozumler/css" },
+  { name: "Multi-CSM", title: "Federated Customer Service Management", icon: Network, desc: "Bayi ağlarında cross-tenant ticket paylaşımı ve federe yetki.", href: "/multi-csm" },
   { name: "FSM", title: "Field Service Management", icon: Truck, desc: "Saha ekiplerine mobil iş emri ve rota.", href: "/cozumler/fsm" },
   { name: "ITAM", title: "IT Asset Management", icon: Box, desc: "BT varlık ve lisanslarının yaşam döngüsü.", href: "/cozumler/itam" },
   { name: "EAM", title: "Enterprise Asset Management", icon: Boxes, desc: "BT dışı fiziksel varlıkların merkezi yönetimi.", href: "/cozumler/eam" },

@@ -1,0 +1,439 @@
+{
+  "hero": {
+    "badge": "Federated CSM · Multi-Tenant Servis Yönetimi",
+    "titleLead": "Bayi, distribütör ve franchise ağları için",
+    "titleAccent": "federe müşteri hizmetleri yönetimi.",
+    "description": "ServiceCore Multi-CSM, mevcut Müşteri Hizmetleri Yönetimi çözümünün cross-tenant ve federe versiyonudur. Bayiler arası kontrollü kayıt paylaşımı, tenant bazlı veri izolasyonu, RBAC ve ABAC ile çok katmanlı yetkilendirme ile büyük destek ağlarını tek merkezden orkestre eder. Ana bayi alt bayilerin hizmet kalitesini ölçer; alt bayiler ticari sırlarını koruyarak iş birliği yapar; teknik uzmanlık merkezi havuza taşınır.",
+    "imageAlt": "ServiceCore Multi-CSM merkezi konsol — federe bayi ağı, cross-tenant kayıt paylaşımı ve performans panoları"
+  },
+  "zigzag": [
+    {
+      "id": "uzmanlik-dagilimi",
+      "accent": "blue",
+      "icon": "Network",
+      "titleLead": "Teknik uzmanlık her bayide eşit dağılmaz,",
+      "titleAccent": "Multi-CSM merkezi havuzu kurar.",
+      "description": "Bayi ağlarında uzmanlık seviyesi şubeden şubeye değişir. Multi-CSM, paylaşılan kayıt mimarisi ile bir bayinin çözüm üretemediği durumda başka bir bayideki uzmanlık grubundan destek almasını sağlar. Doğrudan teknisyen seçimi yerine grup bazlı paylaşım benimsenir; ana bayi veya hedef bayi grubundan uygun teknisyeni atar. Süreç ilk temas anından kapanışa kadar şeffaf ve denetlenebilir biçimde kayıt altındadır.",
+      "bullets": [
+        "Bayi, çözüm üretemediği kaydı başka bir bayinin teknisyen grubuyla paylaşır; doğrudan teknisyen seçimi zorunluluğu kaldırılır ve operasyonel gerçeklik korunur.",
+        "Hedef bayi veya ana bayi grup içinden uzmanlık, müsaitlik ve iş yüküne göre uygun teknisyeni atar; vardiya, lokasyon ve yetkinlik gibi atribütler dikkate alınır.",
+        "Tüm paylaşım, onay, kabul ve atama hareketleri merkezi denetim izinde tutulur; tek tıkla kim ne zaman hangi kayıt üzerinde ne yaptı raporlanır."
+      ],
+      "imageKey": "multi-csm-uzmanlik"
+    },
+    {
+      "id": "cross-bayi-destek",
+      "accent": "emerald",
+      "icon": "GitBranch",
+      "titleLead": "Bayiler arası destek akışı,",
+      "titleAccent": "onay, kabul ve iş yükü tek panelde.",
+      "description": "Paylaşılan destek talepleri için onay ve ret mekanizması, kabul süreci, teknik ekip yönetimi ve iş yükü takibi tamamen sistem üzerinden yürütülür. Hedef teknisyen kaydı kendi panosunda görür; kayıt üzerinde yalnızca kendi adına görev ve worklog ekler, sadece kendi oluşturduğu kayıtları günceller veya siler. Bu kısıtlar görev, worklog, not, açıklama ve iç yorum alanlarının tamamında geçerlidir.",
+      "bullets": [
+        "Paylaşım kaydı SourceTenant, TargetTenant, TicketId, TargetGroup, SharedTechnician, Pending/Approved/Rejected durumu, talep ve cevap tarihleri ile tutulur; onay süreci eksiksiz izlenir.",
+        "Hedef teknisyen kendi panosunda paylaşılan kayıtlar, bekleyen ve kabul edilen talepler, reddedilen işler ile aktif iş yükünü tek ekrandan yönetir; tenant arası geçiş gerekmez.",
+        "Worklog ve görev ekleme yetkisi hedef teknisyene kısıtlanır; tüm aksiyonlar audit altyapısı ile kim, ne zaman, hangi alanı gördü düzeyinde kayıt altına alınır."
+      ],
+      "imageKey": "multi-csm-cross-akis"
+    },
+    {
+      "id": "kalite-olcumu",
+      "accent": "purple",
+      "icon": "BarChart3",
+      "titleLead": "Ana bayi tek panelden",
+      "titleAccent": "tüm alt bayi performansını ölçer.",
+      "description": "Distribütör ve ana bayiler için merkezi izleme paneli; bayi başına Hizmet Seviyesi başarı oranlarını, ortalama çözüm ve ilk cevap sürelerini, açık talep yoğunluğunu, teknisyen verimliliğini, müşteri memnuniyet skorlarını ve worklog bazlı maliyet dökümünü konsolide gösterir. Birden fazla alt bayi aynı panoda kıyaslanır; darboğazlar ve yüksek performans örnekleri merkezde okunur, en iyi pratikler ağa yayılır.",
+      "bullets": [
+        "SLA cevap ve SLA çözüm raporları bayi bazında ve karşılaştırmalı olarak alınır; hedeflenen ve gerçekleşen seviye sapması renk skalası ile gösterilir.",
+        "Worklog dökümü bayi, ticket, teknisyen ve müşteri kırılımında üretilir; çalışılan süre teknisyenin saatlik ücreti ile çarpılarak maliyet ve karlılık hesabı doğrudan raporda yer alır.",
+        "Müşteri memnuniyet skorları, açık talep yoğunluğu, tekrarlayan kayıtlar ve eskalasyon oranları tek panoda izlenir; ana bayi alt bayi başarısını ölçülebilir biçimde takip eder."
+      ],
+      "imageKey": "multi-csm-kalite"
+    },
+    {
+      "id": "veri-gizliligi",
+      "accent": "cyan",
+      "icon": "ShieldCheck",
+      "titleLead": "Alt bayiler ticari sırlarını korur,",
+      "titleAccent": "ana bayi yine de hizmet kalitesini ölçer.",
+      "description": "Multi-CSM'in en kritik tasarım kararı veri izolasyonudur. Her alt bayi müşteri sözleşmelerini, fiyat listelerini, iç notlarını ve finansal bilgilerini ana bayiden veya diğer bayilerden gizleyebilir. Alan bazlı yetki kontrolü ile hangi alanın kim tarafından görüntülenebileceği ya da düzenlenebileceği rol ve atribüt seviyesinde tanımlanır. Ana bayi yalnızca hizmet kalitesi metriklerine erişir; hassas ticari veri tenant sınırının dışına çıkmaz.",
+      "bullets": [
+        "Tenant bazlı veri izolasyonu shared database üzerinde filtresiz sorgu, tam tenant erişimi ve tenant bypass'a izin vermeyen permission middleware ile uygulanır.",
+        "Alan bazlı erişim kontrolü (ABAC) ile müşteri sözleşmesi, fiyat, iç not, finansal alan gibi her saha için kim görür, kim düzenler ayrı ayrı tanımlanır.",
+        "Alt bayi, ana bayinin bir teknisyenini kendi tenantında yetkilendirebilir; lisans atar, rol tanımlar ve yalnızca açık olduğu alanların yetkisini verir, mahremiyet kontrolü kendi elinde kalır."
+      ],
+      "imageKey": "multi-csm-gizlilik"
+    }
+  ],
+  "csmTemeli": {
+    "sectionTitle": "Multi-CSM, CSM'in beş çekirdek modülü üzerine federe katmanı ekler",
+    "sectionSubtitle": "Customer Service Management çözümünün etkileşim yönetimi, self-servis portal, bilgi bankası, servis katalog ve Hizmet Seviyesi modülleri Multi-CSM'in temelini oluşturur; üzerine cross-tenant paylaşım, federe yetki ve merkezi performans yönetimi katmanları eklenir.",
+    "items": [
+      {
+        "id": "etkilesim-yonetimi",
+        "icon": "MessageSquare",
+        "accent": "blue",
+        "slug": "etkilesim-yonetimi",
+        "title": "Etkileşim Yönetimi",
+        "description": "Bayi ağına gelen tüm müşteri etkileşimleri (e-posta, telefon, chat, SMS, web) tekil iletişim noktasında karşılanır. Multi-CSM ile aynı omnichannel disiplini her bayi tenantında çalışır; cross-tenant paylaşım ile başka bir bayinin uzmanlığına ihtiyaç duyulduğunda kayıt sınır geçer.",
+        "href": "/etkilesim-yonetimi"
+      },
+      {
+        "id": "self-servis-portal",
+        "icon": "MonitorSmartphone",
+        "accent": "cyan",
+        "slug": "self-servis-portal",
+        "title": "Self-Servis Portal",
+        "description": "Bayi müşterileri kendi portalı üzerinden talep iletir, sözleşmesini ve geçmiş kayıtlarını görüntüler. Her bayi kendi marka deneyimini koruyarak portalı yapılandırır; ana bayi merkezde kapsama, içerik standartları ve şablonları federe biçimde yönetir.",
+        "href": "/self-servis-portal"
+      },
+      {
+        "id": "bilgi-bankasi",
+        "icon": "BookOpen",
+        "accent": "emerald",
+        "slug": "bilgi-bankasi",
+        "title": "Bilgi ve Doküman Yönetimi",
+        "description": "Bayi ağı için ortak bilgi kütüphanesi; çözüm makaleleri, kurulum kılavuzları ve sıkça sorulan sorular tek havuzda toplanır. Görünürlük tenant ve role göre kontrol edilir; ana bayi merkez içerikleri yayınlarken alt bayiler kendi iç notlarını gizli tutabilir.",
+        "href": "/bilgi-bankasi"
+      },
+      {
+        "id": "servis-katalog-yonetimi",
+        "icon": "LayoutGrid",
+        "accent": "purple",
+        "slug": "servis-katalog-yonetimi",
+        "title": "Servis Katalog Yönetimi",
+        "description": "Ana bayi merkez katalog kalemlerini sahiplenir; alt bayiler bölgesel veya ürün spesifik uzantıları kendi katalogunda yönetir. Katalog federe yayın ile dağıtılır; sürüm çakışmaları merkezde çözümlenir, hizmet standartları ağ genelinde tutarlı kalır.",
+        "href": "/servis-katalog-yonetimi"
+      },
+      {
+        "id": "servis-seviye-yonetimi",
+        "icon": "Gauge",
+        "accent": "orange",
+        "slug": "servis-seviye-yonetimi",
+        "title": "Hizmet Seviyesi Yönetimi",
+        "description": "Hizmet Seviyesi şablonları ana bayide tanımlanır ve alt bayilere yayılır; her bayinin SLA cevap ve çözüm performansı merkezde ölçülür. Cross-tenant paylaşılan kayıtlarda SLA saati doğru tenant'a yazılır; eskalasyonlar federe kurallarla yönetilir.",
+        "href": "/servis-seviye-yonetimi"
+      }
+    ]
+  },
+  "crossTenant": {
+    "sectionTitle": "Cross-tenant katmanı — Multi-CSM'in farkı tam burada başlar",
+    "sectionSubtitle": "Mevcut CSM modülleri tek bayi içindeki müşteri hizmetlerini kusursuz yönetir. Multi-CSM, bu çekirdeğin üzerine bayiler arası kontrollü iş birliği, federe yetki ve merkezi performans yönetimi katmanlarını ekler.",
+    "items": [
+      {
+        "id": "ticket-paylasimi",
+        "size": "wide",
+        "accent": "blue",
+        "icon": "Share2",
+        "title": "Merkezi kayıt paylaşım altyapısı",
+        "description": "Bir bayi çözüm üretemediği kaydı başka bir bayinin teknisyen grubuna paylaşır. Doğrudan teknisyen seçimi yerine grup bazlı paylaşım benimsenir; uzmanlık, müsaitlik ve vardiya hedef bayide değerlendirilir. Süreç onay, kabul, atama, çözüm ve kapanış adımlarıyla tek akışta işler."
+      },
+      {
+        "id": "onay-mekanizmasi",
+        "size": "normal",
+        "accent": "emerald",
+        "icon": "CheckCircle2",
+        "title": "Onay ve ret mekanizması",
+        "description": "Paylaşılan destek talebi hedef teknisyene bildirim ile düşer; teknisyen onaylar veya gerekçesiyle reddeder. Onay durumu kayıt altında tutulur, ana bayi reddedilen talepleri başka bir gruba veya bayiye yönlendirir."
+      },
+      {
+        "id": "is-yuku",
+        "size": "normal",
+        "accent": "purple",
+        "icon": "ListChecks",
+        "title": "Destek talepleri panosu",
+        "description": "Teknisyen kendi panosunda paylaşılan kayıtlar, bekleyen talepler, kabul ettiği ve reddettiği işleri tek ekranda görür. Başka tenant'a geçmesi gerekmez; iş yükü, öncelik ve SLA sayacı aynı görünümde okunur."
+      },
+      {
+        "id": "saha-yetki",
+        "size": "wide",
+        "accent": "cyan",
+        "icon": "Lock",
+        "title": "Alan ve modül bazlı görünürlük yönetimi",
+        "description": "Müşteri sözleşmesi, fiyat, iç not, finansal alan ve özel kategoriler için tenant ve rol bazında ayrı izinler tanımlanır. Paylaşılan kayıtta hangi alanın hangi tarafça görüleceği saha düzeyinde kontrol edilir; ticari sırlar tenant sınırının dışına çıkmaz."
+      },
+      {
+        "id": "audit-izi",
+        "size": "normal",
+        "accent": "orange",
+        "icon": "FileSearch",
+        "title": "Merkezi audit altyapısı",
+        "description": "Kim hangi kaydı görüntüledi, hangi alana baktı, hangi paylaşımı yaptı, kim onayladı, hangi worklog güncellendi — her hareket merkezi audit izinde tutulur. Denetim ve veri güvenliği uyumu için tek tıkla rapor üretilir."
+      }
+    ]
+  },
+  "mimari": {
+    "sectionTitle": "Hybrid Tenant Access Model üzerine kurulu federe mimari",
+    "sectionSubtitle": "Multi-CSM klasik helpdesk'lerin ötesinde, multi-tenant ITSM, federated support architecture ve cross-tenant collaboration yaklaşımlarını birleştiren bir referans mimari sunar.",
+    "items": [
+      {
+        "id": "hybrid-erisim",
+        "icon": "Layers",
+        "accent": "blue",
+        "title": "Hybrid Tenant Access Model",
+        "description": "Normal kullanıcılar yalnızca kendi tenant verisini görür. Cross-tenant destek kullanıcıları ise sadece paylaşılan kayıt, açık alan ve izin verilen modül kadarına erişir. Erişim sınırı middleware seviyesinde uygulanır; full tenant erişimi, shared DB'de filtresiz sorgu ve tenant bypass mimari olarak yasaklıdır.",
+        "items": [
+          "Normal kullanıcı: yalnızca kendi tenant verisi",
+          "Cross-tenant destek kullanıcısı: paylaşılan kayıt + izinli alan + izinli modül",
+          "Permission middleware: tenant bypass'ı sistem düzeyinde engeller"
+        ]
+      },
+      {
+        "id": "rbac-abac",
+        "icon": "KeyRound",
+        "accent": "emerald",
+        "title": "RBAC + ABAC hibrit yetki sistemi",
+        "description": "Rol bazlı yetki (RBAC) ile Admin, Technician, Supervisor gibi temel sorumluluklar tanımlanır. Atribüt bazlı kontrol (ABAC) ise bu kayıt görülebilir mi, bu müşteri açık mı, bu alan düzenlenebilir mi, bu tenant'ın hangi modüllerine erişim var sorularını saha ve atribüt seviyesinde yanıtlar. İki katman birlikte çalışır; karmaşık bayi ağları için ölçeklenebilir bir izin yapısı kurulur.",
+        "items": [
+          "RBAC: Admin, Technician, Supervisor rolleri",
+          "ABAC: kayıt, müşteri, alan, modül atribütleri",
+          "Dynamic menu ve dynamic field authorization frontend tarafında uygulanır"
+        ]
+      },
+      {
+        "id": "federated-itsm",
+        "icon": "Combine",
+        "accent": "purple",
+        "title": "Federated ITSM yaklaşımı",
+        "description": "Multi-CSM bağımsız bayi tenant'larını bir orkestratör katmana bağlar. Her tenant kendi veri sınırını, ekibini ve süreçlerini korurken merkez politika dağıtımı, yönlendirme ve konsolide görünürlük sağlar. Yeni bir bayi federasyona katıldığında politika, katalog ve roller otomatik senkronlanır; kurulum dakikalar içinde tamamlanır.",
+        "items": [
+          "Hub ve spoke orkestrasyon: merkez politika, yerel uygulama",
+          "Multi-tenant architecture: tenant izolasyonu DB seviyesinde",
+          "SaaS uyumlu, yüksek ölçeklenebilir, modüler genişletilebilir"
+        ]
+      },
+      {
+        "id": "super-tenant",
+        "icon": "Crown",
+        "accent": "amber",
+        "title": "Süper tenant ve ana bayi rolü",
+        "description": "Federasyondaki bayilerden biri ana bayi veya süper tenant olarak işaretlenir. IsMasterTenant, IsSuperTenant ve TenantType gibi atribütlerle hiyerarşik yapı tanımlanır. Ana bayi alt bayilerin performansını izler, politikaları yayınlar ve grup atamalarında merkezi rol üstlenir; alt bayiler operasyonel bağımsızlığını korur.",
+        "items": [
+          "IsMasterTenant, IsSuperTenant, TenantType atribütleri",
+          "Ana bayi merkezde performans izler, politika yayınlar",
+          "Alt bayi tenant izolasyonu içinde operasyonel bağımsızlığını korur"
+        ]
+      }
+    ]
+  },
+  "performansKpi": {
+    "sectionTitle": "Bayi Performans Yönetimi — yedi temel metrik ve maliyet hesabı",
+    "sectionSubtitle": "Multi-CSM merkezi izleme paneli, distribütör ve ana bayilere alt bayi hizmet kalitesini ölçülebilir biçimde sunar. Her metrik bayi bazında, teknisyen bazında ve karşılaştırmalı olarak raporlanır.",
+    "metrics": [
+      {
+        "id": "sla-basari",
+        "icon": "Target",
+        "accent": "emerald",
+        "title": "SLA başarı oranları",
+        "description": "Hizmet Seviyesi cevap ve çözüm hedeflerinin gerçekleşme yüzdesi bayi başına ve karşılaştırmalı olarak raporlanır; sapma renk skalası ile gösterilir."
+      },
+      {
+        "id": "cozum-suresi",
+        "icon": "Timer",
+        "accent": "blue",
+        "title": "Ortalama çözüm süreleri",
+        "description": "Bayi, kategori ve teknisyen kırılımında ortalama çözüm süresi takip edilir; eskalasyon ve cross-tenant paylaşım süreleri ayrı kolonlarda görünür."
+      },
+      {
+        "id": "ilk-cevap",
+        "icon": "Clock",
+        "accent": "cyan",
+        "title": "İlk cevap süreleri",
+        "description": "Müşteri etkileşiminin sisteme düşmesinden ilk müdahaleye kadar geçen süre raporlanır; SLA cevap hedefi ile karşılaştırılır."
+      },
+      {
+        "id": "acik-talep",
+        "icon": "Inbox",
+        "accent": "orange",
+        "title": "Açık talep yoğunluğu",
+        "description": "Aktif, bekleyen ve eskale edilmiş kayıtlar bayi başına, durum bazında ve öncelik bazında izlenir; yoğunluk eşiği aşıldığında bildirim üretilir."
+      },
+      {
+        "id": "teknisyen-perf",
+        "icon": "UserCheck",
+        "accent": "purple",
+        "title": "Teknisyen performansı",
+        "description": "Çözülen kayıt sayısı, ortalama çözüm süresi, müşteri memnuniyet skoru ve worklog yoğunluğu teknisyen bazında raporlanır; en iyi pratikler tespit edilir."
+      },
+      {
+        "id": "memnuniyet",
+        "icon": "Smile",
+        "accent": "pink",
+        "title": "Müşteri memnuniyet skorları",
+        "description": "Kapanış sonrası anketler ve geri bildirimler bayi, müşteri ve teknisyen bazında toplulaştırılır; trend grafikleri ana bayiye sunulur."
+      },
+      {
+        "id": "kalite-skoru",
+        "icon": "Award",
+        "accent": "amber",
+        "title": "Bayi bazlı hizmet kalitesi skoru",
+        "description": "SLA, memnuniyet, tekrarlayan kayıt oranı ve çözüm süresi metrikleri birleştirilerek ağırlıklı bir bayi başarı skoru üretilir; ana bayi sıralama ve karşılaştırma yapar."
+      }
+    ],
+    "maliyet": {
+      "title": "Worklog tabanlı maliyet hesabı",
+      "description": "Multi-CSM her teknisyenin saatlik ücretini ve çalışılan süreyi kayıt altında tutar. Maliyet hesabı doğrudan worklog üzerinden yapılır; bayi, ticket ve teknisyen bazında toplam maliyet ve karlılık tek raporda görünür.",
+      "formula": "Çalışılan Saat × Teknisyen Saatlik Ücret = Toplam Maliyet",
+      "ornekTablo": {
+        "basliklar": ["Teknisyen", "Süre", "Saatlik Ücret", "Toplam Maliyet"],
+        "satirlar": [
+          { "teknisyen": "Ahmet Y.", "sure": "5 saat", "saatlikUcret": "800 TL", "toplam": "4.000 TL" },
+          { "teknisyen": "Burcu K.", "sure": "3 saat", "saatlikUcret": "950 TL", "toplam": "2.850 TL" },
+          { "teknisyen": "Cem A.", "sure": "8 saat", "saatlikUcret": "750 TL", "toplam": "6.000 TL" }
+        ],
+        "toplamSatiri": { "etiket": "Toplam", "deger": "16 saat / 12.850 TL" }
+      }
+    }
+  },
+  "hedefOrganizasyonlar": {
+    "sectionTitle": "Multi-CSM hangi organizasyonlar için tasarlandı?",
+    "sectionSubtitle": "Çok tenantlı, hiyerarşik destek yapılarında çalışan tüm büyük ölçekli organizasyonlar için. Klasik tek tenantlı helpdesk yapılarının yetersiz kaldığı her senaryo Multi-CSM'in hedef pazarıdır.",
+    "items": [
+      {
+        "id": "distributor",
+        "icon": "Truck",
+        "accent": "blue",
+        "title": "Distribütör ağları",
+        "description": "Ana distribütörün altında yüzlerce alt bayi bulunan organizasyonlar. Ana distribütör hizmet kalitesini ölçer, politikaları yayar, performansı kıyaslar; alt bayiler kendi müşteri ilişkilerinin gizliliğini korur."
+      },
+      {
+        "id": "yetkili-servis",
+        "icon": "Wrench",
+        "accent": "emerald",
+        "title": "Yetkili servis organizasyonları",
+        "description": "Marka veya üretici firmanın bağlı yetkili servisler ağı. Marka merkez teknik bilgi tabanını yayınlar, eskalasyon politikalarını tanımlar; yetkili servisler kendi operasyonlarını yürütür."
+      },
+      {
+        "id": "franchise",
+        "icon": "Building2",
+        "accent": "purple",
+        "title": "Franchise yapıları",
+        "description": "Franchise verenin standartlarını korurken her bayinin kendi müşteri portföyünü gizli tuttuğu yapılar. Marka tutarlılığı merkezde sağlanır, operasyonel bağımsızlık alt birimlerde kalır."
+      },
+      {
+        "id": "holding",
+        "icon": "Layers",
+        "accent": "cyan",
+        "title": "Holding şirketleri",
+        "description": "İştirakleri arasında destek ekiplerini paylaşan holding yapıları. Holding merkezi standardı belirler, iştirakler kendi müşteri ve sözleşme verilerini korur; uzmanlık çapraz iştiraklere paylaşılır."
+      },
+      {
+        "id": "cok-subeli",
+        "icon": "MapPin",
+        "accent": "orange",
+        "title": "Çok şubeli teknik destek operasyonları",
+        "description": "Coğrafi olarak yayılmış teknik destek ekiplerine sahip kurumlar. Şube uzmanlıkları birbirine paylaşılır, müşteri tek noktadan hizmet alır; bölge yöneticileri kendi şubelerinin metriklerini izler."
+      },
+      {
+        "id": "buyuk-itsm",
+        "icon": "Server",
+        "accent": "indigo",
+        "title": "Büyük ölçekli ITSM operasyonları",
+        "description": "Federe yapıda çalışan, departman veya iştirak başına ayrı tenantlar barındıran büyük kurumsal ITSM operasyonları. Çoklu tenant gerçeği bir gereklilik olduğunda Multi-CSM standart helpdesk'in yerini alır."
+      }
+    ]
+  },
+  "fazlandirma": {
+    "sectionTitle": "Fazlandırılmış kurulum — değer ilk fazda başlar",
+    "sectionSubtitle": "Multi-CSM dört faz halinde devreye alınır. İlk faz operasyonel iş birliğini açar; sonraki fazlar veri gizliliği, raporlama derinliği ve yapay zeka katmanını sırasıyla ekler. Her faz bağımsız çalışır, üst üste birikir.",
+    "phases": [
+      {
+        "id": "faz-1",
+        "label": "Faz 1",
+        "icon": "Share2",
+        "accent": "blue",
+        "title": "Cross-tenant kayıt paylaşımı",
+        "description": "Bayiler arası ticket paylaşımı, grup bazlı atama ve destek talebi onay sistemi devreye alınır. Bayilere ait teknisyenler kendi panolarında paylaşılan kayıtları yönetir; ilk değer operasyonel iş birliğinde elde edilir.",
+        "items": [
+          "Ticket paylaşımı altyapısı",
+          "Grup bazlı atama akışı",
+          "Onay ve ret mekanizması",
+          "Paylaşılan kayıt panosu"
+        ]
+      },
+      {
+        "id": "faz-2",
+        "label": "Faz 2",
+        "icon": "BarChart3",
+        "accent": "emerald",
+        "title": "Bayi performans panosu ve raporlama",
+        "description": "Ana bayinin alt bayi performansını izlediği merkezi pano kurulur. SLA cevap ve çözüm raporları, worklog dökümü, teknisyen ve müşteri bazlı performans metrikleri yayına alınır.",
+        "items": [
+          "Bayi dashboard",
+          "SLA cevap ve çözüm raporları",
+          "Worklog dökümü ve maliyet raporları",
+          "Teknisyen performans karneleri"
+        ]
+      },
+      {
+        "id": "faz-3",
+        "label": "Faz 3",
+        "icon": "ShieldCheck",
+        "accent": "purple",
+        "title": "Alan bazlı yetki ve veri gizliliği",
+        "description": "ABAC katmanı devreye alınır; alt bayilerin müşteri sözleşmesi, fiyat, iç not gibi alanları ana bayiden gizleme kapasitesi açılır. Cross-tenant erişim kontrolü saha düzeyinde uygulanır.",
+        "items": [
+          "Alan bazlı yetkilendirme (ABAC)",
+          "Tenant bazlı gizlilik sistemi",
+          "Cross-tenant erişim kontrolü",
+          "Merkezi audit altyapısı"
+        ]
+      },
+      {
+        "id": "faz-4",
+        "label": "Faz 4",
+        "icon": "Sparkles",
+        "accent": "cyan",
+        "title": "Yapay zeka ve akıllı yönlendirme",
+        "description": "Geçmiş kayıtlar, teknisyen uzmanlığı ve müsaitlik verisiyle eğitilmiş yapay zeka katmanı devreye alınır. Akıllı teknisyen önerisi, iş yükü dengeleme ve SLA risk tahmini operasyona katılır.",
+        "items": [
+          "AI destekli teknisyen önerisi",
+          "Akıllı iş yükü dağıtımı",
+          "SLA risk tahminleme",
+          "Otomatik yönlendirme algoritmaları"
+        ]
+      }
+    ]
+  },
+  "aiYolHaritasi": {
+    "sectionTitle": "AICore yol haritası — Multi-CSM'in akıllı katmanı",
+    "sectionSubtitle": "ServiceCore'un yapay zeka altyapısı AICore, Multi-CSM operasyonlarına dört temel yetenekle entegre olur. Veri büyüdükçe öğrenir, kararlar bilgiye dayanır, operasyon kendini optimize eder.",
+    "items": [
+      {
+        "id": "teknisyen-onerisi",
+        "icon": "UserPlus",
+        "accent": "blue",
+        "title": "AI destekli teknisyen önerisi",
+        "description": "Sistem, kaydın kategorisine, geçmiş çözüm verisine ve teknisyenlerin uzmanlık atribütlerine bakarak en uygun teknisyeni veya grubu önerir. Cross-tenant paylaşımda ana bayi tek tıkla AI önerisini onaylar."
+      },
+      {
+        "id": "is-yuku-dengeleme",
+        "icon": "Scale",
+        "accent": "emerald",
+        "title": "Akıllı iş yükü dağıtımı",
+        "description": "Teknisyen yoğunluğu gerçek zamanlı izlenir; vardiya, müsaitlik ve aktif iş yükü göz önüne alınarak otomatik dengeleme yapılır. Yoğunluk eşiği aşan bayide takım dışından destek önerilir."
+      },
+      {
+        "id": "sla-risk",
+        "icon": "AlertTriangle",
+        "accent": "orange",
+        "title": "SLA risk tahminleme",
+        "description": "Henüz SLA ihlali oluşmadan, geçmiş davranış örüntüleriyle risk altındaki kayıtlar önceden işaretlenir. Ana bayi proaktif aksiyon alır, alt bayide yöneticiye uyarı düşer."
+      },
+      {
+        "id": "bayi-skoru",
+        "icon": "TrendingUp",
+        "accent": "purple",
+        "title": "Bayi skor ve başarı sistemi",
+        "description": "Çoklu metrik (SLA, memnuniyet, çözüm süresi, tekrarlayan kayıt oranı) ağırlıklandırılarak bayi başına dinamik bir başarı skoru hesaplanır. Skor kıyaslanır, en iyi pratikler ağa yayılır."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Multi-CSM ile bayi ağınızı federe servis disipliniyle yönetin.",
+    "description": "Bayiler arası iş birliği, merkezi performans yönetimi ve veri gizliliği aynı platformda. Mevcut CSM modüllerinin üzerine inşa edilen federe katman, distribütör ve franchise ağlarınızı yeni nesil destek organizasyonuna dönüştürür. 22 Mayıs öncesinde canlı demo planlayalım.",
+    "primaryLabel": "Demo Talep Et",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Çözüm Mimarıyla Görüş",
+    "secondaryHref": "/iletisim"
+  }
+}

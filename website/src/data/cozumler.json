@@ -10,7 +10,7 @@
       "name": "IT Service Management",
       "name_tr": "BT Servis Yönetimi",
       "tagline": "ITIL4 uyumlu 22 modülle BT operasyonlarını uçtan uca yönetin.",
-      "description": "Olay, problem, değişiklik, talep, varlık ve konfigürasyon süreçlerinin tamamını ITIL4 prensipleriyle dijitalleştirin. Mevcut 24 modülün 22'si bu çözüm paketinin parçasıdır.",
+      "description": "Olay, problem, değişiklik, talep, varlık ve konfigürasyon süreçlerinin tamamını ITIL4 prensipleriyle dijitalleştirin. Mevcut 25 modülün 22'si bu çözüm paketinin parçasıdır.",
       "icon": "Settings",
       "accent": "blue",
       "modules": ["etkilesim-yonetimi", "olay-yonetimi", "problem-yonetimi", "istek-yonetimi", "degisiklik-yonetimi", "varlik-yonetimi", "servis-konfigurasyon-yonetimi", "bilgi-bankasi", "servis-katalog-yonetimi", "servis-seviye-yonetimi", "servis-otomasyonu", "raporlama-yonetimi", "gorev-yonetimi", "is-akisi-yonetimi"]
@@ -46,6 +46,17 @@
       "description": "Çağrı, e-posta, sohbet ve sosyal medya kanallarından gelen müşteri etkileşimlerini birleştirin. Self-servis portal, bilgi bankası ve Hizmet Seviyesi takibi ile müşteri deneyimini standartlaştırın.",
       "icon": "Headphones",
       "accent": "cyan",
+      "modules": ["etkilesim-yonetimi", "self-servis-portal", "bilgi-bankasi", "servis-katalog-yonetimi", "servis-seviye-yonetimi"]
+    },
+    {
+      "slug": "multi-csm",
+      "abbr": "Multi-CSM",
+      "name": "Federated Customer Service Management",
+      "name_tr": "Bayiler Arası Müşteri Hizmetleri Yönetimi",
+      "tagline": "Bayi ağlarında cross-tenant ticket paylaşımı, federated yetki ve merkezi performans yönetimi.",
+      "description": "CSM'in tüm yeteneklerini distribütör, bayi ve franchise organizasyonlarına taşıyan federated katman. Ticket paylaşımı, RBAC+ABAC yetkilendirme, bayi performans KPI ve merkezi audit ile cross-tenant servis yönetimini güvenli hale getirir.",
+      "icon": "Network",
+      "accent": "teal",
       "modules": ["etkilesim-yonetimi", "self-servis-portal", "bilgi-bankasi", "servis-katalog-yonetimi", "servis-seviye-yonetimi"]
     },
     {
