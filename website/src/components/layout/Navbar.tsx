@@ -330,9 +330,11 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-0 right-0 w-screen bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-y border-white/10 px-6 lg:px-12 py-8 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  onMouseEnter={() => setActiveMenu("modules")}
+                  onMouseLeave={() => setActiveMenu(null)}
                 >
-                  <div className="mx-auto max-w-7xl grid grid-cols-4 gap-x-6 gap-y-4">
+                  <div className="grid grid-cols-4 gap-x-6 gap-y-2">
                     {modules.map((mod, idx) => {
                       const Icon = mod.icon;
                       return (
@@ -340,21 +342,21 @@ export default function Navbar() {
                           key={idx}
                           href={mod.href || "#"}
                           onClick={() => setActiveMenu(null)}
-                          className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+                          className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
                         >
                           <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-blue-light) group-hover:bg-(--color-brand-primary) group-hover:text-white transition-colors">
                             <Icon className="w-5 h-5" />
                           </div>
-                          <div>
+                          <div className="min-w-0">
                             <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-brand-primary) transition-colors">{mod.name}</h4>
-                            <p className="text-xs text-(--color-text-secondary) leading-snug">{mod.desc}</p>
+                            <p className="text-[11px] font-mono text-(--color-text-secondary) leading-tight line-clamp-1">{mod.desc}</p>
                           </div>
                         </Link>
                       );
                     })}
                   </div>
-                  
-                  <div className="mt-6 pt-4 border-t border-white/10 flex justify-between items-center">
+
+                  <div className="mt-4 pt-3 border-t border-white/10 flex justify-between items-center">
                      <p className="text-sm text-(--color-text-secondary)">Tüm ekosistemi tek bir platformda yönetin.</p>
                      <Link href="/moduller" className="text-sm font-medium text-(--color-brand-primary) hover:text-(--color-accent-blue-light) flex items-center gap-1 group cursor-pointer">
                         Tüm Modülleri İncele
@@ -373,7 +375,7 @@ export default function Navbar() {
             onMouseLeave={() => setActiveMenu(null)}
           >
             <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
-              AICORE
+              AICore
               <motion.div
                 animate={{ rotate: activeMenu === "aicore" ? 180 : 0 }}
                 transition={{ duration: 0.2 }}
@@ -389,15 +391,15 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-0 right-0 w-screen bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-y border-white/10 px-6 lg:px-12 py-8 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-8 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
                   onMouseEnter={() => setActiveMenu("aicore")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
-                  <div className="mx-auto max-w-7xl">
+                  <div>
                     <div className="mb-6 flex items-end justify-between gap-4">
                       <div>
-                        <div className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light) mb-1">
-                          AICORE
+                        <div className="text-[10px] font-mono font-semibold tracking-[0.22em] text-(--color-accent-purple-light) mb-1">
+                          AICore
                         </div>
                         <h3 className="text-lg font-semibold text-white">Servicecore Yapay Zeka Araç Ailesi</h3>
                       </div>
@@ -406,7 +408,7 @@ export default function Navbar() {
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-4">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-2">
                       {aicoreSubmenu.map((tool, idx) => {
                         const Icon = tool.icon;
                         return (
@@ -421,7 +423,7 @@ export default function Navbar() {
                             </div>
                             <div className="min-w-0 flex-1 pr-10">
                               <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-accent-purple-light) transition-colors">{tool.name}</h4>
-                              <p className="text-xs text-(--color-text-secondary) leading-snug">{tool.desc}</p>
+                              <p className="text-[11px] font-mono text-(--color-text-secondary) leading-snug line-clamp-2">{tool.desc}</p>
                             </div>
                             {tool.isBeta && (
                               <span className="absolute top-2 right-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/12 text-[9px] font-mono font-semibold tracking-[0.14em] uppercase text-(--color-accent-purple-light)">
@@ -700,7 +702,7 @@ export default function Navbar() {
                     onClick={() => setActiveMenu(activeMenu === "aicore" ? null : "aicore")}
                     className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors w-full cursor-pointer"
                   >
-                    AICORE
+                    AICore
                     <motion.div animate={{ rotate: activeMenu === "aicore" ? 180 : 0 }}>
                       <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
                     </motion.div>

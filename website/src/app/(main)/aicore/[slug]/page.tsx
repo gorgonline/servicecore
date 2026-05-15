@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const tool = TOOLS.find((t) => t.slug === slug);
   if (!tool) return { title: "Araç Bulunamadı | ServiceCore" };
   return {
-    title: `${tool.name} — AICORE | ServiceCore`,
+    title: `${tool.name} — AICore | ServiceCore`,
     description: tool.tagline,
   };
 }
@@ -90,8 +90,8 @@ export default async function AicoreToolPage({ params }: PageProps) {
         <div className="flex flex-wrap items-center gap-2 mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/8">
             <Sparkles className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
-            <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light)">
-              AICORE · ARAÇ
+            <span className="text-[10px] font-mono font-semibold tracking-[0.22em] text-(--color-accent-purple-light)">
+              AICore · Araç
             </span>
           </div>
           {isBeta && (
@@ -263,14 +263,14 @@ export default async function AicoreToolPage({ params }: PageProps) {
             href="/aicore"
             className="inline-flex items-center gap-2 h-12 px-6 rounded-full text-white/80 hover:text-white font-medium text-sm transition-colors cursor-pointer"
           >
-            Tüm AICORE Ailesi
+            Tüm AICore Ailesi
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
 
         <div className="mt-32 pt-12 border-t border-white/8">
-          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
-            DİĞER AICORE ARAÇLARI
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] text-(--color-text-muted) mb-6">
+            Diğer AICore Araçları
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {TOOLS.filter((t) => t.slug !== tool.slug)

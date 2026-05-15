@@ -1,8 +1,8 @@
 {
   "intro": {
-    "title": "AICORE",
+    "title": "AICore",
     "subtitle": "Servicecore'un Yapay Zeka Araç Ailesi",
-    "description": "ServiceCore platformunun her modülüne entegre çalışan yapay zeka odaklı araç ailesi. Üretim hattındaki ürünler ve yol haritasındaki beta eklentileriyle AICORE, ITSM/ESM süreçlerinin her katmanında devreye giriyor."
+    "description": "ServiceCore platformunun her modülüne entegre çalışan yapay zeka odaklı araç ailesi. Üretim hattındaki ürünler ve yol haritasındaki beta eklentileriyle AICore, ITSM/ESM süreçlerinin her katmanında devreye giriyor."
   },
   "tools": [
     {
@@ -822,13 +822,13 @@
       "whatItDoes": [
         "ITIL4 practice'leri ve ISO 20000-1 / ISO 27001 maddelerini her ticket, change ve KB makalesinde sürekli denetler.",
         "Bulguları kritik / yüksek / orta olarak sınıflar, hangi standart maddesini ihlal ettiğini gerekçeyle gösterir.",
-        "Önerilen düzeltmeleri ilgili AICORE aracına (KnowCore, KBCore, RootCore) bağlı çalışma planı olarak üretir."
+        "Önerilen düzeltmeleri ilgili AICore aracına (KnowCore, KBCore, RootCore) bağlı çalışma planı olarak üretir."
       ],
       "howItWorks": [
         { "label": "Standart haritalama", "detail": "ITIL4 ve ISO maddeleri ServiceCore süreç eylemlerine bire bir bağlanır." },
         { "label": "Sürekli izleme", "detail": "Her ticket kapanışı, change onayı ve KB yayını gerçek zamanlı denetlenir." },
         { "label": "Açıklanabilir bulgu", "detail": "İhlal hangi madde, hangi kayıt, hangi tarih — kanıtla birlikte raporlanır." },
-        { "label": "Düzeltme yönlendirme", "detail": "Bulguya uygun AICORE aracı (KnowCore taslağı, KBCore güncelleme, vb.) önerilir." }
+        { "label": "Düzeltme yönlendirme", "detail": "Bulguya uygun AICore aracı (KnowCore taslağı, KBCore güncelleme, vb.) önerilir." }
       ],
       "modules": [
         "/surekli-iyilestirme",
@@ -978,7 +978,7 @@
       "release": "Beta — Yol Haritası",
       "whatItDoes": [
         "Lisans, cloud, donanım, bakım ve operasyon kalemlerinin yıl sonu tahmini ve sapmasını canlı çıkarır.",
-        "AICORE araç verisiyle (ReportCoreAI kullanım, DisCoreAI bağımlılık, AssetCoreAI ömür) somut tasarruf senaryoları üretir.",
+        "AICore araç verisiyle (ReportCoreAI kullanım, DisCoreAI bağımlılık, AssetCoreAI ömür) somut tasarruf senaryoları üretir.",
         "Anormal harcama, çift satınalma ve kullanılmayan lisans gibi kalemleri otomatik tespit edip uyarır."
       ],
       "howItWorks": [

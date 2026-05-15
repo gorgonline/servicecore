@@ -4,7 +4,7 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 import aicoreData from "@/data/aicore.json";
 
 export const metadata: Metadata = {
-  title: "AICORE — Yapay Zeka Araç Ailesi | ServiceCore",
+  title: "AICore — Yapay Zeka Araç Ailesi | ServiceCore",
   description: aicoreData.intro.description,
 };
 
@@ -38,7 +38,7 @@ export default function AicoreIndexPage() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 pt-32">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/8 mb-10">
           <Sparkles className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
-          <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light)">
+          <span className="text-[10px] font-mono font-semibold tracking-[0.22em] text-(--color-accent-purple-light)">
             {intro.title}
           </span>
         </div>
@@ -65,7 +65,7 @@ export default function AicoreIndexPage() {
                 ÜRETİM HATTINDA
               </h2>
               <p className="mt-3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
-                AICORE araçları
+                AICore araçları
               </p>
             </div>
             <span className="text-xs font-mono text-(--color-text-muted) shrink-0">
@@ -101,7 +101,7 @@ export default function AicoreIndexPage() {
                 BETA · YOL HARİTASI
               </h2>
               <p className="mt-3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
-                Yakında AICORE ailesine katılacak araçlar
+                Yakında AICore ailesine katılacak araçlar
               </p>
             </div>
             <span className="text-xs font-mono text-(--color-text-muted) shrink-0">

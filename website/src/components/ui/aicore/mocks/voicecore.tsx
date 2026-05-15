@@ -43,7 +43,7 @@ const FIELDS: FieldSlot[] = [
     icon: <Tag className="w-3 h-3" />,
     label: "Kategori",
     value: "Saha · El Terminali",
-    detail: "AICORE: ClassifyCore eşleşti %96",
+    detail: "AICore: ClassifyCore eşleşti %96",
     status: "filled",
   },
   {
