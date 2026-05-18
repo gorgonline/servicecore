@@ -101,7 +101,7 @@ export default function HeroSection() {
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8 w-full max-w-225">
-            ITSM ve Proje Yönetimini tek platformda{" "}
+            Servis, Proje ve Varlık Yönetimini tek platformda{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-brand-accent)">
               kusursuzca birleştirin.
             </span>
@@ -204,7 +204,7 @@ export default function HeroSection() {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">BT Hizmet Yönetimi</h3>
+                  <h3 className="font-semibold text-white">Hizmet Yönetimi</h3>
                   <p className="text-xs text-(--color-text-secondary)">Aktif Olaylar: 12</p>
                 </div>
               </div>
