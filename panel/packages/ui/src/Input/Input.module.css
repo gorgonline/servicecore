@@ -1,0 +1,219 @@
+/* AntD Input wrap — ServiceCore styling.
+ * AntD 5.7'de @layer desteği yok, çoğu override !important gerek. */
+
+/* ── Border, font, radius — hem plain hem affix wrapper ─────── */
+
+.input :global(.ant-input),
+.input:global(.ant-input),
+.input :global(.ant-input-affix-wrapper),
+.input:global(.ant-input-affix-wrapper) {
+  font-family: var(--sc-font-sans) !important;
+  border-radius: var(--sc-radius-md) !important;
+  border-color: var(--sc-color-neutral-300) !important;
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default) !important;
+}
+
+/* Placeholder rengi */
+.input :global(.ant-input)::placeholder,
+.input:global(.ant-input)::placeholder,
+.input :global(.ant-input-affix-wrapper) :global(input)::placeholder {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* Hover */
+.input :global(.ant-input):hover,
+.input:global(.ant-input):hover,
+.input :global(.ant-input-affix-wrapper):hover,
+.input:global(.ant-input-affix-wrapper):hover {
+  border-color: var(--sc-color-neutral-500) !important;
+}
+
+/* Focus */
+.input :global(.ant-input):focus,
+.input:global(.ant-input):focus,
+.input :global(.ant-input-affix-wrapper-focused),
+.input:global(.ant-input-affix-wrapper-focused) {
+  border-color: var(--sc-color-border-focus) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+/* Inner input (affix içinde) — border kaldır, height 100% */
+.input :global(.ant-input-affix-wrapper) :global(.ant-input) {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  height: 100% !important;
+  font-size: inherit !important;
+}
+
+/* Prefix/Suffix container styling */
+.input :global(.ant-input-prefix) {
+  color: var(--sc-color-text-tertiary);
+  display: inline-flex;
+  align-items: center;
+  margin-inline-end: var(--sc-space-2);
+  flex-shrink: 0;
+}
+
+.input :global(.ant-input-suffix) {
+  color: var(--sc-color-text-tertiary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  margin-inline-start: var(--sc-space-2);
+  flex-shrink: 0;
+}
+
+/* Carbon icon boyutu */
+.input :global(.ant-input-prefix) :global(svg),
+.input :global(.ant-input-suffix) :global(svg) {
+  width: 16px !important;
+  height: 16px !important;
+  display: block;
+}
+
+/* Clear icon (X) — circle olmadan sade */
+.input :global(.ant-input-clear-icon) {
+  color: var(--sc-color-text-tertiary) !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+}
+
+.input :global(.ant-input-clear-icon):hover {
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Count display — küçük gri, baseline'a hizalı */
+.input :global(.ant-input-show-count-suffix),
+.textArea :global(.ant-input-show-count-suffix) {
+  font-size: var(--sc-font-size-xs) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  line-height: 1 !important;
+}
+
+/* ── SIZES — plain input height vs affix wrapper min-height ── */
+
+/* Plain (.input.ant-input — class doğrudan input element'inde) */
+.sizeSmall:global(.ant-input) {
+  height: var(--sc-control-height-sm) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  padding-inline: var(--sc-space-3) !important;
+}
+
+.sizeMiddle:global(.ant-input) {
+  height: var(--sc-control-height-md) !important;
+  font-size: var(--sc-font-size-md) !important;
+  padding-inline: var(--sc-space-3) !important;
+}
+
+.sizeLarge:global(.ant-input) {
+  height: var(--sc-control-height-lg) !important;
+  font-size: var(--sc-font-size-md) !important;
+  padding-inline: var(--sc-space-3) !important;
+}
+
+/* Affix wrapper (.input.ant-input-affix-wrapper — min-height + padding) */
+.sizeSmall:global(.ant-input-affix-wrapper) {
+  min-height: var(--sc-control-height-sm) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  padding: 0 var(--sc-space-3) !important;
+}
+
+.sizeMiddle:global(.ant-input-affix-wrapper) {
+  min-height: var(--sc-control-height-md) !important;
+  font-size: var(--sc-font-size-md) !important;
+  padding: 0 var(--sc-space-3) !important;
+}
+
+.sizeLarge:global(.ant-input-affix-wrapper) {
+  min-height: var(--sc-control-height-lg) !important;
+  font-size: var(--sc-font-size-md) !important;
+  padding: 0 var(--sc-space-4) !important;
+}
+
+/* ── TextArea ──────────────────────────────────
+ * AntD iki farklı DOM üretiyor:
+ *   1. showCount/maxLength YOK → <textarea class="ant-input Input_textArea">
+ *   2. showCount/maxLength VAR → <span class="ant-input-affix-wrapper Input_textArea ..."><textarea/><span.ant-input-data-count/></span>
+ * Class'ımız (.textArea) iki yere de geliyor, CSS iki durumu da hallediyor. */
+
+/* Common: border, font, radius — hangi elementte ise */
+.textArea {
+  font-family: var(--sc-font-sans) !important;
+  border-radius: var(--sc-radius-md) !important;
+  border-color: var(--sc-color-neutral-300) !important;
+}
+
+.textArea:hover {
+  border-color: var(--sc-color-neutral-500) !important;
+}
+
+.textArea:focus,
+.textArea:global(.ant-input-affix-wrapper-focused) {
+  border-color: var(--sc-color-border-focus) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+/* Case 1: Plain textarea (showCount yok) — padding direkt textarea'da */
+.textArea:global(.ant-input) {
+  padding: var(--sc-space-3) !important;
+  line-height: var(--sc-line-height-relaxed) !important;
+  font-size: var(--sc-font-size-md) !important;
+}
+
+/* Case 2: Wrapped textarea (showCount/maxLength var) — padding wrapper'da, count için alt boşluk */
+.textArea:global(.ant-input-textarea-affix-wrapper) {
+  padding: var(--sc-space-3) var(--sc-space-3) var(--sc-space-6) !important;
+  position: relative;
+}
+
+/* Inner textarea (wrapper içinde) — border ve padding sıfır */
+.textArea:global(.ant-input-textarea-affix-wrapper) :global(.ant-input) {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  line-height: var(--sc-line-height-relaxed) !important;
+  font-size: var(--sc-font-size-md) !important;
+}
+
+/* Count sağ-altta absolute */
+.textArea :global(.ant-input-data-count) {
+  position: absolute !important;
+  bottom: var(--sc-space-2) !important;
+  right: var(--sc-space-3) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  line-height: 1 !important;
+}
+
+/* ── Status (error / warning) ───────────────── */
+
+.statusError :global(.ant-input),
+.statusError :global(.ant-input-affix-wrapper) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.statusError :global(.ant-input):focus,
+.statusError :global(.ant-input-affix-wrapper-focused) {
+  box-shadow: 0 0 0 3px var(--sc-color-state-danger-bg) !important;
+}
+
+.statusWarning :global(.ant-input),
+.statusWarning :global(.ant-input-affix-wrapper) {
+  border-color: var(--sc-color-state-warning-fg) !important;
+}
+
+.statusWarning :global(.ant-input):focus,
+.statusWarning :global(.ant-input-affix-wrapper-focused) {
+  box-shadow: 0 0 0 3px var(--sc-color-state-warning-bg) !important;
+}
+
+/* ── Search button — gölge sil ──────────────── */
+
+.search :global(.ant-input-search-button) {
+  box-shadow: none !important;
+}

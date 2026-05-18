@@ -1,0 +1,128 @@
+/* AntD Card wrap — ServiceCore'a uyarlı görsel kat. */
+
+.card {
+  font-family: var(--sc-font-sans);
+  background: var(--sc-color-bg-base);
+  border-radius: var(--sc-radius-lg) !important;
+  box-shadow: none !important;
+}
+
+.card :global(.ant-card-head) {
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+  padding: 0 var(--sc-space-5);
+  min-height: 52px;
+}
+
+.card :global(.ant-card-head-title) {
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-md);
+  font-weight: var(--sc-font-weight-semibold);
+  color: var(--sc-color-text-primary);
+  letter-spacing: var(--sc-letter-spacing-tight);
+  padding: var(--sc-space-3) 0;
+}
+
+.card :global(.ant-card-extra) {
+  padding: var(--sc-space-3) 0;
+}
+
+.card :global(.ant-card-body) {
+  padding: var(--sc-space-5);
+}
+
+.card :global(.ant-card-actions) {
+  background: var(--sc-color-bg-subtle);
+  border-top: 1px solid var(--sc-color-border-subtle);
+}
+
+/* ── Variants ─────────────────────────────────────── */
+
+.bordered {
+  border: 1px solid var(--sc-color-border-default) !important;
+}
+
+.borderless {
+  border: 1px solid transparent !important;
+}
+
+.subtle {
+  background: var(--sc-color-bg-subtle);
+  border: 1px solid var(--sc-color-border-subtle) !important;
+}
+
+/* ── Sizes ───────────────────────────────────────── */
+
+.sizeSmall :global(.ant-card-head) {
+  min-height: 40px;
+  padding: 0 var(--sc-space-4);
+}
+
+.sizeSmall :global(.ant-card-head-title) {
+  font-size: var(--sc-font-size-sm);
+  padding: var(--sc-space-2) 0;
+}
+
+.sizeSmall :global(.ant-card-body) {
+  padding: var(--sc-space-4);
+}
+
+/* ── Clickable ───────────────────────────────────── */
+
+.clickable {
+  cursor: pointer;
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.clickable:hover {
+  border-color: var(--sc-color-border-strong) !important;
+  background: var(--sc-color-bg-subtle);
+}
+
+.clickable:active {
+  background: var(--sc-color-bg-muted);
+}
+
+/* ── type="inner" — Carbon layering kuralı: dış beyazsa iç gray 10 ─── */
+
+.card:global(.ant-card-type-inner) {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.card:global(.ant-card-type-inner) :global(.ant-card-head) {
+  background: transparent;
+  border-bottom-color: var(--sc-color-border-default);
+}
+
+.card:global(.ant-card-type-inner) :global(.ant-card-body) {
+  background: var(--sc-color-bg-muted);
+}
+
+/* ── Loading state — AntD'nin skeleton'unu yumuşat ─── */
+
+.card :global(.ant-card-loading-content) {
+  padding: var(--sc-space-3) 0;
+}
+
+/* ── Title row layout (Carbon icon + metin) ───────── */
+
+.titleRow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+}
+
+.titleIcon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--sc-color-text-tertiary);
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.titleIcon :global(svg) {
+  width: 16px;
+  height: 16px;
+  display: block;
+}

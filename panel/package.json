@@ -1,0 +1,21 @@
+{
+  "name": "servicecore-panel",
+  "version": "0.0.0",
+  "private": true,
+  "description": "ServiceCore panel design system — AntD 5.7 wrap library + playground",
+  "scripts": {
+    "dev": "pnpm --filter playground dev",
+    "build": "pnpm -r build",
+    "build:ui": "pnpm --filter @servicecore/ui build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r exec rm -rf dist .next node_modules .turbo"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

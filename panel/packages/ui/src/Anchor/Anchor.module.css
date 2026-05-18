@@ -1,0 +1,85 @@
+/* AntD Anchor wrap — ServiceCore styling.
+ *
+ * AntD 5.7 class yapısı:
+ *   .ant-anchor-wrapper                  → outer (className buraya gelir)
+ *   .ant-anchor-wrapper-horizontal       → horizontal mode flag
+ *   .ant-anchor                          → inner, scrollable
+ *   .ant-anchor-link                     → her bir link
+ *   .ant-anchor-link-active              → aktif link parent class'ı
+ *   .ant-anchor-link-title               → link metni
+ *   .ant-anchor-ink                      → hareket eden indicator
+ *   .ant-anchor-ink-visible              → indicator görünür state
+ *   .ant-anchor-fixed                    → affix aktif iken inner'a eklenir
+ *
+ * AntD 5.7 @layer kullanmıyor, runtime CSS-in-JS daha yüksek specificity'de —
+ * override'lar için !important gerek.
+ */
+
+.anchor {
+  font-family: var(--sc-font-sans) !important;
+}
+
+/* ── Link (item) ───────────────────────────────────── */
+
+.anchor :global(.ant-anchor-link) {
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  border-radius: var(--sc-radius-md);
+  transition: background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.anchor :global(.ant-anchor-link-title) {
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-secondary) !important;
+  line-height: 1.4 !important;
+  padding: 0 !important;
+  transition: color var(--sc-duration-fast) var(--sc-easing-default) !important;
+}
+
+/* Hover — non-aktif item */
+.anchor :global(.ant-anchor-link):hover :global(.ant-anchor-link-title) {
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Aktif state — AntD 5.7: `.ant-anchor-link-active > .ant-anchor-link-title` */
+.anchor :global(.ant-anchor-link-active) > :global(.ant-anchor-link-title) {
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+}
+
+.anchor :global(.ant-anchor-link-active):hover > :global(.ant-anchor-link-title) {
+  color: var(--sc-color-accent) !important;
+}
+
+/* Nested link — alt seviye padding'i azalt (AntD default'u küçük tutuyor zaten) */
+.anchor :global(.ant-anchor-link) :global(.ant-anchor-link) {
+  padding-block: var(--sc-space-1) !important;
+}
+
+/* ── Vertical mode (default) ───────────────────────── */
+/* Wrapper'da `wrapper-horizontal` YOKSA vertical kabul et. */
+
+.anchor:global(.ant-anchor-wrapper):not(:global(.ant-anchor-wrapper-horizontal))
+  :global(.ant-anchor)::before {
+  border-inline-start-color: var(--sc-color-border-default) !important;
+}
+
+.anchor:global(.ant-anchor-wrapper):not(:global(.ant-anchor-wrapper-horizontal))
+  :global(.ant-anchor-ink) {
+  background-color: var(--sc-color-accent) !important;
+}
+
+/* ── Horizontal mode ───────────────────────────────── */
+
+.anchor:global(.ant-anchor-wrapper-horizontal)::before {
+  border-bottom-color: var(--sc-color-border-subtle) !important;
+}
+
+.anchor:global(.ant-anchor-wrapper-horizontal) :global(.ant-anchor-ink) {
+  background-color: var(--sc-color-accent) !important;
+  height: 2px !important;
+}
+
+.anchor:global(.ant-anchor-wrapper-horizontal) :global(.ant-anchor-link) {
+  padding-block: var(--sc-space-3) !important;
+}

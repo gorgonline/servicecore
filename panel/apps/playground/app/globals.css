@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  /* L1 — sayfa zemini gray 10. Card'lar (L2 beyaz) bunun üstünde net görünür.
+   * Carbon layering kuralı: alt-üst katmanlar arasında alternasyon. */
+  background: var(--sc-color-bg-muted);
+  color: var(--sc-color-text-primary);
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-md);
+  line-height: var(--sc-line-height-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--sc-color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--sc-color-accent-hover);
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--sc-font-mono);
+}

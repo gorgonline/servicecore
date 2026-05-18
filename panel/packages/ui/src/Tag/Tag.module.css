@@ -1,0 +1,141 @@
+/* AntD Tag wrap — ServiceCore semantic tone'ları + sade görünüm.
+ * AntD'nin renkli preset'leri yerine biz aliase'leri kullanıyoruz. */
+
+.tag {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 4px !important;
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-medium);
+  letter-spacing: var(--sc-letter-spacing-wide);
+  line-height: 1 !important;
+  padding: 4px var(--sc-space-2) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  border: 1px solid transparent !important;
+  margin-inline-end: 0 !important;
+}
+
+/* ── Tones (anlamlı renkler) ─────────────────────── */
+
+.toneNeutral {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-text-secondary) !important;
+  border-color: var(--sc-color-border-default) !important;
+}
+
+.toneInfo {
+  background: var(--sc-color-state-info-bg) !important;
+  color: var(--sc-color-state-info-fg) !important;
+  border-color: var(--sc-color-primary-200) !important;
+}
+
+.toneSuccess {
+  background: var(--sc-color-state-success-bg) !important;
+  color: var(--sc-color-state-success-fg) !important;
+  border-color: var(--sc-color-success-500) !important;
+}
+
+.toneWarning {
+  background: var(--sc-color-state-warning-bg) !important;
+  color: var(--sc-color-state-warning-fg) !important;
+  border-color: var(--sc-color-warning-500) !important;
+}
+
+.toneDanger {
+  background: var(--sc-color-state-danger-bg) !important;
+  color: var(--sc-color-state-danger-fg) !important;
+  border-color: var(--sc-color-danger-500) !important;
+}
+
+.toneAccent {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-primary-200) !important;
+}
+
+/* ── Subtle (solid yerine açık background, border'sız) ── */
+
+.subtle {
+  border-color: transparent !important;
+}
+
+/* ── Solid (yoğun, vurgulu — high-attention) ──────── */
+
+.solid.toneNeutral {
+  background: var(--sc-color-neutral-800) !important;
+  color: var(--sc-color-neutral-0) !important;
+}
+
+.solid.toneInfo {
+  background: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+}
+
+.solid.toneSuccess {
+  background: var(--sc-color-success-500) !important;
+  color: var(--sc-color-neutral-0) !important;
+}
+
+.solid.toneWarning {
+  background: var(--sc-color-warning-500) !important;
+  color: var(--sc-color-neutral-900) !important;
+}
+
+.solid.toneDanger {
+  background: var(--sc-color-danger-500) !important;
+  color: var(--sc-color-neutral-0) !important;
+}
+
+/* ── Dot (önündeki yuvarlak nokta) ────────────────── */
+
+.withDot::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--sc-radius-full);
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Size — small variant ─────────────────────────── */
+
+.sizeSmall {
+  font-size: var(--sc-font-size-2xs) !important;
+  padding: 2px var(--sc-space-2) !important;
+}
+
+/* ── Icon slot (Carbon) ───────────────────────────── */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.icon :global(svg) {
+  width: 12px;
+  height: 12px;
+  display: block;
+}
+
+/* ── Close icon override ──────────────────────────── */
+
+.tag :global(.ant-tag-close-icon) {
+  margin-inline-start: 4px !important;
+  color: currentColor !important;
+  opacity: 0.6;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tag :global(.ant-tag-close-icon) :global(svg) {
+  width: 12px;
+  height: 12px;
+}
+
+.tag :global(.ant-tag-close-icon):hover {
+  opacity: 1;
+}

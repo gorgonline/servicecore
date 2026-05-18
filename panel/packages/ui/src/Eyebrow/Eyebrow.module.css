@@ -1,0 +1,18 @@
+.eyebrow {
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-xs);
+  font-weight: var(--sc-font-weight-medium);
+  color: var(--sc-color-text-tertiary);
+  letter-spacing: var(--sc-letter-spacing-wider);
+  text-transform: uppercase;
+  line-height: var(--sc-line-height-tight);
+  margin: 0;
+  display: inline-block;
+}
+
+.tonePrimary   { color: var(--sc-color-text-primary); }
+.toneSecondary { color: var(--sc-color-text-secondary); }
+.toneAccent    { color: var(--sc-color-text-accent); }
+.toneSuccess   { color: var(--sc-color-state-success-fg); }
+.toneWarning   { color: var(--sc-color-state-warning-fg); }
+.toneDanger    { color: var(--sc-color-state-danger-fg); }

@@ -1,0 +1,180 @@
+/* AntD Select wrap — ServiceCore styling.
+ * AntD 5.7'de @layer desteği yok, override !important. */
+
+/* ── Selector (input görünüm) ───────────────────────── */
+
+.select :global(.ant-select-selector) {
+  font-family: var(--sc-font-sans) !important;
+  border-radius: var(--sc-radius-md) !important;
+  border-color: var(--sc-color-neutral-300) !important;
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default) !important;
+}
+
+.select:hover :global(.ant-select-selector) {
+  border-color: var(--sc-color-neutral-500) !important;
+}
+
+.select:global(.ant-select-focused) :global(.ant-select-selector) {
+  border-color: var(--sc-color-border-focus) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+/* Disabled */
+.select:global(.ant-select-disabled) :global(.ant-select-selector) {
+  background: var(--sc-color-bg-subtle) !important;
+  color: var(--sc-color-text-disabled) !important;
+}
+
+/* Placeholder */
+.select :global(.ant-select-selection-placeholder) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* Suffix (caret/icon) */
+.select :global(.ant-select-arrow) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.select :global(.ant-select-arrow) :global(svg) {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--sc-duration-normal) var(--sc-easing-default);
+}
+
+/* Dropdown açıldığında caret 180° döner — AntD default davranışı,
+ * Carbon icon için manuel yapıyoruz (AntD'nin selector'ı .anticon'a bağlı). */
+.select:global(.ant-select-open) :global(.ant-select-arrow) :global(svg) {
+  transform: rotate(180deg);
+}
+
+/* Clear icon */
+.select :global(.ant-select-clear) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.select :global(.ant-select-clear):hover {
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* ── Sizes — control heights ────────────────────────── */
+
+.sizeSmall :global(.ant-select-selector) {
+  height: var(--sc-control-height-sm) !important;
+  font-size: var(--sc-font-size-sm) !important;
+}
+
+.sizeSmall:global(.ant-select-single) :global(.ant-select-selection-item),
+.sizeSmall:global(.ant-select-single) :global(.ant-select-selection-placeholder) {
+  line-height: calc(var(--sc-control-height-sm) - 2px) !important;
+}
+
+.sizeMiddle :global(.ant-select-selector) {
+  height: var(--sc-control-height-md) !important;
+  font-size: var(--sc-font-size-md) !important;
+}
+
+.sizeMiddle:global(.ant-select-single) :global(.ant-select-selection-item),
+.sizeMiddle:global(.ant-select-single) :global(.ant-select-selection-placeholder) {
+  line-height: calc(var(--sc-control-height-md) - 2px) !important;
+}
+
+.sizeLarge :global(.ant-select-selector) {
+  height: var(--sc-control-height-lg) !important;
+  font-size: var(--sc-font-size-md) !important;
+}
+
+.sizeLarge:global(.ant-select-single) :global(.ant-select-selection-item),
+.sizeLarge:global(.ant-select-single) :global(.ant-select-selection-placeholder) {
+  line-height: calc(var(--sc-control-height-lg) - 2px) !important;
+}
+
+/* ── Status renkleri ────────────────────────────────── */
+
+.statusError :global(.ant-select-selector) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.statusError:global(.ant-select-focused) :global(.ant-select-selector) {
+  box-shadow: 0 0 0 3px var(--sc-color-state-danger-bg) !important;
+}
+
+.statusWarning :global(.ant-select-selector) {
+  border-color: var(--sc-color-state-warning-fg) !important;
+}
+
+.statusWarning:global(.ant-select-focused) :global(.ant-select-selector) {
+  box-shadow: 0 0 0 3px var(--sc-color-state-warning-bg) !important;
+}
+
+/* ── Multiple/tags mode — tag stilini ServiceCore'a uyar ── */
+
+.select:global(.ant-select-multiple) :global(.ant-select-selection-item) {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  border: 1px solid var(--sc-color-primary-200) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  padding-inline: var(--sc-space-2) !important;
+}
+
+.select:global(.ant-select-multiple) :global(.ant-select-selection-item-remove) {
+  color: var(--sc-color-accent) !important;
+  margin-inline-start: 4px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.select:global(.ant-select-multiple) :global(.ant-select-selection-item-remove) :global(svg) {
+  width: 12px;
+  height: 12px;
+}
+
+.select:global(.ant-select-multiple) :global(.ant-select-selection-item-remove):hover {
+  color: var(--sc-color-accent-active) !important;
+}
+
+/* Selected option ✓ icon (Carbon Checkmark) */
+.dropdown :global(.ant-select-item-option-state) :global(svg) {
+  width: 14px;
+  height: 14px;
+  color: var(--sc-color-accent);
+}
+
+/* ── Dropdown popup ─────────────────────────────────── */
+
+.dropdown {
+  font-family: var(--sc-font-sans) !important;
+  border-radius: var(--sc-radius-md) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+}
+
+.dropdown :global(.ant-select-item) {
+  font-size: var(--sc-font-size-sm) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  margin: 2px var(--sc-space-1) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+}
+
+.dropdown :global(.ant-select-item-option-selected) {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+}
+
+.dropdown :global(.ant-select-item-option-active) {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* OptGroup başlığı */
+.dropdown :global(.ant-select-item-group) {
+  font-size: var(--sc-font-size-2xs) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wider);
+  color: var(--sc-color-text-tertiary) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) var(--sc-space-1) !important;
+}

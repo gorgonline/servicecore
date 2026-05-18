@@ -1,0 +1,67 @@
+{
+  "name": "@servicecore/ui",
+  "version": "0.0.1",
+  "description": "ServiceCore UI library — AntD 5.7 wrapped components with CSS Modules",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./wraps": {
+      "types": "./dist/wraps.d.ts",
+      "import": "./dist/wraps.js",
+      "require": "./dist/wraps.cjs"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "import": "./dist/theme/index.js",
+      "require": "./dist/theme/index.cjs"
+    },
+    "./theme/tokens.css": "./dist/theme/tokens.css",
+    "./tokens.css": "./dist/theme/tokens.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs && tsc -p tsconfig.build.json",
+    "build:js": "node build.mjs",
+    "build:dts": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'lint placeholder'"
+  },
+  "peerDependencies": {
+    "@carbon/icons-react": ">=11.0.0",
+    "antd": ">=5.7.0",
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1"
+  },
+  "devDependencies": {
+    "@carbon/icons-react": "^11.50.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "antd": "5.7.0",
+    "esbuild": "^0.27.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

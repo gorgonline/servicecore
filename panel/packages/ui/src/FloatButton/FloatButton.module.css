@@ -1,0 +1,76 @@
+/* AntD FloatButton wrap — ServiceCore styling.
+ * Default button: white bg, accent on hover.
+ * Primary: accent bg + white text. */
+
+.button {
+  font-family: var(--sc-font-sans) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+}
+
+.button:hover {
+  box-shadow: var(--sc-shadow-lg) !important;
+}
+
+/* Default type — beyaz, accent vurgu */
+.button:global(.ant-float-btn-default) :global(.ant-float-btn-body) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+}
+
+.button:global(.ant-float-btn-default):hover :global(.ant-float-btn-body) {
+  background: var(--sc-color-bg-base) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+.button:global(.ant-float-btn-default) :global(.ant-float-btn-icon),
+.button:global(.ant-float-btn-default) :global(.ant-float-btn-description) {
+  color: var(--sc-color-text-primary) !important;
+}
+
+.button:global(.ant-float-btn-default):hover :global(.ant-float-btn-icon),
+.button:global(.ant-float-btn-default):hover :global(.ant-float-btn-description) {
+  color: var(--sc-color-accent) !important;
+}
+
+/* Primary type — accent bg */
+.button:global(.ant-float-btn-primary) :global(.ant-float-btn-body) {
+  background: var(--sc-color-accent) !important;
+}
+
+.button:global(.ant-float-btn-primary):hover :global(.ant-float-btn-body) {
+  background: var(--sc-color-accent-hover) !important;
+}
+
+.button:global(.ant-float-btn-primary) :global(.ant-float-btn-icon),
+.button:global(.ant-float-btn-primary) :global(.ant-float-btn-description) {
+  color: var(--sc-color-accent-on-accent) !important;
+}
+
+/* Icon size */
+.button :global(.ant-float-btn-icon) :global(svg) {
+  width: 18px;
+  height: 18px;
+}
+
+/* Description (text content) */
+.button :global(.ant-float-btn-description) {
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+}
+
+/* Group close icon (Carbon) */
+.group :global(.ant-float-btn-group-trigger):global(.ant-float-btn-open) :global(.ant-float-btn-icon) :global(svg) {
+  transition: transform var(--sc-duration-normal) var(--sc-easing-default);
+  transform: rotate(45deg);
+}
+
+/* Group içindeki butonlar arası boşluğu sıkı tut (default fazla geniş) */
+.group :global(.ant-float-btn-group-wrap) {
+  padding: var(--sc-space-1) 0 !important;
+  gap: var(--sc-space-1) !important;
+}
+
+.group :global(.ant-float-btn-group-wrap) :global(.ant-float-btn) {
+  margin: 0 !important;
+}
+

@@ -1,6 +1,6 @@
 ---
 name: verifier
-description: "Degisiklik dogrulama — build calistir, hata kontrol et, VERDICT ver."
+description: "Degisiklik dogrulama — lint + typecheck + build calistir, hata kontrol et, VERDICT ver."
 tools:
   - Read
   - Grep
@@ -17,18 +17,54 @@ effort: high
 maxTurns: 20
 ---
 
-Yapilan degisiklikleri dogrula:
+Yapilan degisiklikleri dogrula. Calistir ve sonucu goster — manuel kontrol yetmez.
 
-1. Build calistir: npm run build veya tsc --noEmit
-2. Degisen dosyalari oku, mantik kontrolu yap
-3. Varsa test calistir: npm test
-4. Lint calistir: npm run lint
+## Calisma Dizini
+
+`website/` icinden calis. `cd website` ile gir veya `--cwd` kullan.
+
+## Sirali Adimlar
+
+### 1. Lint
+```bash
+npm run lint
+```
+- Sifir hata zorunlu
+- Warning'leri de raporla ama PASS engelleme
+
+### 2. Typecheck
+```bash
+npx tsc --noEmit
+```
+- Sifir hata zorunlu
+- **Stale cache farkindaligi:** Hata `.next/types/` icindeki dosyalardan geliyorsa, `git stash` ile degisiklikleri kaldirip tekrar calistir. Hata hala duruyorsa preexisting → kapsam disi, isaretle ama FAIL etme.
+
+### 3. Build (opsiyonel — kullanici istediyse)
+```bash
+npm run build
+```
+- Sadece `--build` flag'i ile cagrildiysa veya gorev acikca build istiyorsa
+- Aksi takdirde lint+typecheck yeterli
+
+### 4. Test (varsa)
+```bash
+npm test
+```
+- Test dosyasi varsa calistir
+- Yoksa atla, "test yok" raporla
+
+### 5. Degisen Dosya Kontrolu
+- `git diff --name-only HEAD` ile degisen dosyalari listele
+- Her birini oku, kaba mantik kontrolu yap
+- Yorum: "syntax OK", "import dogru", "tip uyumlu"
 
 ## Kurallar
 
 - Dosya ASLA degistirme
-- Bagimlilik kurma, git islemi yapma
-- "Kod dogru gorunuyor" yeterli DEGIL — calistir ve sonucu goster
+- `npm install` veya bagimlilik kurma YASAK
+- Git islemi yapma (sadece `git diff`, `git stash` read-only)
+- "Kod dogru gorunuyor" yeterli DEGIL — calistir ve cikti goster
+- Build/dev calistirip biraktirma — sona erdir
 
 ## Cikti Formati
 
@@ -36,10 +72,11 @@ Sonuc JSON formatinda:
 ```json
 {
   "verdict": "PASS | FAIL | PARTIAL",
-  "build": {"basarili": true, "hata": null},
-  "lint": {"basarili": true, "hata": null},
-  "test": {"basarili": true, "hata": null},
-  "kontrol_edilen_dosyalar": ["src/x.ts", "src/y.ts"],
+  "lint": {"basarili": true, "hata_sayisi": 0, "warning_sayisi": 0, "detay": null},
+  "typecheck": {"basarili": true, "hata_sayisi": 0, "stale_cache_hatasi": false, "detay": null},
+  "build": {"calistirildi": false, "basarili": null, "detay": "kullanici istemedikce calismaz"},
+  "test": {"varsa_calistirildi": false, "basarili": null, "detay": null},
+  "degisen_dosyalar": ["website/src/components/ui/En.tsx"],
   "sorunlar": [],
   "ozet": "1 cumle ozet"
 }

@@ -1,0 +1,107 @@
+/* AntD Button wrap — bizim class'ımız .ant-btn üstüne eklenir.
+ * AntD 5.7'de @layer desteği yok, bazı override'larda !important gerek. */
+
+.button {
+  /* AntD 5.7 kendi gap'ini set etmiyor — !important ile garantile (CSS-in-JS specificity yüzünden) */
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sc-space-2) !important;
+  font-family: var(--sc-font-sans);
+  font-weight: var(--sc-font-weight-medium);
+  letter-spacing: 0;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* ── Type overrides (AntD type 1:1) ───────────────────── */
+
+.typeDefault:hover {
+  border-color: var(--sc-color-border-strong) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.typePrimary,
+.typePrimary:hover,
+.typePrimary:active,
+.typePrimary:focus {
+  box-shadow: none !important;
+}
+
+.typeDashed:hover {
+  color: var(--sc-color-accent) !important;
+}
+
+.typeText {
+  color: var(--sc-color-text-primary);
+}
+
+.typeText:hover {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.typeText:active {
+  background: var(--sc-color-bg-subtle) !important;
+}
+
+.typeLink {
+  color: var(--sc-color-text-accent);
+  padding: 0 !important;
+  height: auto !important;
+}
+
+.typeLink:hover {
+  color: var(--sc-color-accent-hover) !important;
+}
+
+/* ── Danger flag — herhangi bir type ile kombine ────── */
+
+.danger,
+.danger:hover,
+.danger:active,
+.danger:focus {
+  box-shadow: none !important;
+}
+
+/* ── Size overrides ──────────────────────────────────── */
+
+.sizeSmall {
+  font-size: var(--sc-font-size-sm);
+  padding-inline: var(--sc-space-3);
+}
+
+.sizeMiddle {
+  font-size: var(--sc-font-size-md);
+  padding-inline: var(--sc-space-4);
+}
+
+.sizeLarge {
+  font-size: var(--sc-font-size-md);
+  padding-inline: var(--sc-space-5);
+}
+
+/* ── Icon slots ──────────────────────────────────────── */
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.icon :global(svg) {
+  display: block;
+}
+
+.sizeSmall .icon :global(svg)  { width: 14px; height: 14px; }
+.sizeMiddle .icon :global(svg) { width: 16px; height: 16px; }
+.sizeLarge .icon :global(svg)  { width: 18px; height: 18px; }
+
+/* Icon-only — kare boyut */
+.iconOnly.sizeSmall  { width: var(--sc-control-height-sm); padding: 0; }
+.iconOnly.sizeMiddle { width: var(--sc-control-height-md); padding: 0; }
+.iconOnly.sizeLarge  { width: var(--sc-control-height-lg); padding: 0; }

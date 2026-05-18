@@ -37,6 +37,7 @@ import {
   Search,
 } from "lucide-react";
 import data from "@/data/esm-kurumsal-servis-yonetimi.json";
+import { En } from "@/components/ui/En";
 
 export default function EsmPage() {
   const fadeUp: Variants = {
@@ -210,7 +211,7 @@ export default function EsmPage() {
               <div className="flex items-center justify-between pb-2 border-b border-white/8">
                 <div className="flex items-center gap-1.5">
                   <Workflow className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-white">ESM 3-Katmanlı Mimari</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-white"><En>ESM</En> 3-Katmanlı Mimari</span>
                 </div>
                 <span className="text-[8px] font-mono text-(--color-text-muted)">portal → center → departmanlar</span>
               </div>

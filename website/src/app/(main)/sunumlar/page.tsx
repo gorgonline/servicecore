@@ -28,7 +28,7 @@ export default function SunumlarPage() {
         <PresentationsGrid />
       </div>
 
-      <PrivacyContact />
+      <PrivacyContact sheet="Soru" />
     </main>
   );
 }

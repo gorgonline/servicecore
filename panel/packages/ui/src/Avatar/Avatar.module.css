@@ -1,0 +1,73 @@
+/* AntD Avatar wrap — ServiceCore styling.
+ * Default: accent-subtle background, accent text (initials için).
+ * Image avatarlarda görsel tam doldurur, background görünmez. */
+
+/* Avatar wrapper'ı flex container'a çevir — content (initials/icon/img) tam ortalansın.
+ * AntD'nin default absolute+transform centering'i Geist font metrics ile drift ediyor. */
+.avatar {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--sc-font-sans) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  letter-spacing: 0 !important;
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-bg-base) !important;
+}
+
+/* Square avatarda radius'u md yap (default tamamen kare olur, çok keskin) */
+.avatar:global(.ant-avatar-square) {
+  border-radius: var(--sc-radius-md) !important;
+}
+
+/* String span — absolute+transform yerine static, flex centering kullanılsın */
+.avatar :global(.ant-avatar-string) {
+  position: static !important;
+  transform: none !important;
+  line-height: 1 !important;
+}
+
+.avatar :global(svg) {
+  display: block;
+}
+
+/* ── Tone variants (semantic background renkleri) ─────── */
+
+.toneAccent {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+}
+
+.toneNeutral {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-text-secondary) !important;
+}
+
+.toneSuccess {
+  background: var(--sc-color-state-success-bg) !important;
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+.toneWarning {
+  background: var(--sc-color-state-warning-bg) !important;
+  color: var(--sc-color-state-warning-fg) !important;
+}
+
+.toneDanger {
+  background: var(--sc-color-state-danger-bg) !important;
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+/* Image avatar — content cover */
+.avatar :global(img) {
+  object-fit: cover;
+}
+
+/* ── Group ──────────────────────────────────────────────
+ * AntD'nin Avatar.Group'u kendi negatif margin'lerini kullanır.
+ * Border ile separation gerekiyor — bizim bg-base ile beyaz halka. */
+
+.group :global(.ant-avatar) {
+  border: 2px solid var(--sc-color-bg-base) !important;
+}

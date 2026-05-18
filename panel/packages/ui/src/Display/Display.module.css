@@ -1,0 +1,21 @@
+.display {
+  font-family: var(--sc-font-sans);
+  font-weight: var(--sc-font-weight-semibold);
+  color: var(--sc-color-text-primary);
+  letter-spacing: var(--sc-letter-spacing-tighter);
+  line-height: var(--sc-line-height-tight);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.sizeSm {
+  font-size: var(--sc-font-size-4xl);
+}
+
+.sizeMd {
+  font-size: var(--sc-font-size-5xl);
+}
+
+.sizeLg {
+  font-size: var(--sc-font-size-6xl);
+}

@@ -5,12 +5,12 @@
     "name": "Servicecore Bilgi Teknolojileri A.Ş.",
     "locations": [
       {
-        "type": "Merkez",
-        "address": "Metropol İstanbul A Blok 2E Kat: 21 Daire: 331 Ataşehir/İstanbul"
+        "type": "ArGe Merkezi",
+        "address": "Zaim Teknopark / Halkalı Cad No:281/23 Ofis No:118 Küçükçekmece/İstanbul"
       },
       {
-        "type": "ArGe Merkezi",
-        "address": "Zaim Teknopark / Halkalı Cad No:281/23 K:1 Ofis No:118 Küçükçekmece/İstanbul"
+        "type": "İstanbul Ofisi",
+        "address": "Metropol Istanbul A Blok 2E Kat: 21 Daire: 331 Ataşehir/İstanbul"
       },
       {
         "type": "Çanakkale Ofisi",

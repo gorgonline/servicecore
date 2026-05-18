@@ -4,11 +4,11 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Mail, Send, MessageSquare, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
-import { submitForm } from "@/lib/forms";
+import { submitForm, type FormSheet } from "@/lib/forms";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-export default function PrivacyContact() {
+export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormSheet }) {
   const pathname = usePathname();
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -22,7 +22,7 @@ export default function PrivacyContact() {
 
     setStatus("loading");
     setErrorMessage("");
-    const result = await submitForm("İletişim", {
+    const result = await submitForm(sheet, {
       "E-posta": email.trim(),
       Mesaj: message.trim(),
       "Sayfa Kaynağı": pathname || "/",
@@ -68,30 +68,35 @@ export default function PrivacyContact() {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4 text-left">
-              {/* E-posta */}
-              <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-(--color-text-muted) pointer-events-none" />
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  disabled={disabled}
-                  placeholder="İş e-postanız"
-                  className="w-full bg-black/20 border border-white/10 rounded-xl pl-11 pr-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-border-active) transition-all disabled:opacity-60"
-                />
-              </div>
+              <div className="flex flex-col md:flex-row gap-3">
+                {/* E-posta */}
+                <div className="relative flex-1">
+                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-(--color-text-muted) pointer-events-none" />
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={disabled}
+                    placeholder="İş e-postanız"
+                    className="w-full bg-black/30 border border-white/15 rounded-xl pl-11 pr-4 h-12 text-white placeholder:text-(--color-text-secondary) focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-border-active) transition-all disabled:opacity-60"
+                  />
+                </div>
 
-              {/* Mesaj */}
-              <textarea
-                rows={4}
-                required
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                disabled={disabled}
-                placeholder="Sorunuzu buraya yazın…"
-                className="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-border-active) transition-all disabled:opacity-60 resize-none"
-              />
+                {/* Mesaj */}
+                <div className="relative flex-1">
+                  <MessageSquare className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-(--color-text-muted) pointer-events-none" />
+                  <input
+                    type="text"
+                    required
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    disabled={disabled}
+                    placeholder="Mesajınız"
+                    className="w-full bg-black/30 border border-white/15 rounded-xl pl-11 pr-4 h-12 text-white placeholder:text-(--color-text-secondary) focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-border-active) transition-all disabled:opacity-60"
+                  />
+                </div>
+              </div>
 
               {status === "success" && (
                 <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-(--color-accent-emerald-light)">

@@ -1,0 +1,207 @@
+/* AntD Dropdown wrap — ServiceCore styling.
+ *
+ * Tasarım kuralları:
+ * - Beyaz background, ince border, md shadow — Card ile aynı dil
+ * - Hover state: bg-muted (Carbon/Linear sade pattern)
+ * - Selected/active: accent subtle + accent text
+ * - Danger item: state-danger renkler
+ * - Divider: hairline border
+ * - Group title: 2xs uppercase, tertiary text
+ * - Submenu arrow: Carbon ChevronRight tarzı caret
+ *
+ * AntD 5.7'de @layer desteği yok — override !important.
+ */
+
+/* ── Popup root (overlayClassName) ─────────────────── */
+
+.dropdown {
+  font-family: var(--sc-font-sans) !important;
+}
+
+/* ── Menu container ────────────────────────────────── */
+
+.dropdown :global(.ant-dropdown-menu) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-md) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+  padding: var(--sc-space-1) !important;
+  min-width: 180px;
+}
+
+/* ── Menu item ─────────────────────────────────────── */
+
+.dropdown :global(.ant-dropdown-menu-item),
+.dropdown :global(.ant-dropdown-menu-submenu-title) {
+  font-size: var(--sc-font-size-sm) !important;
+  line-height: var(--sc-line-height-normal) !important;
+  color: var(--sc-color-text-primary) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  margin: 1px 0 !important;
+  transition:
+    background-color var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default) !important;
+}
+
+.dropdown :global(.ant-dropdown-menu-item:hover),
+.dropdown :global(.ant-dropdown-menu-submenu-title:hover),
+.dropdown :global(.ant-dropdown-menu-item-active),
+.dropdown :global(.ant-dropdown-menu-submenu-title-active) {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Selected (selectable menu) */
+.dropdown :global(.ant-dropdown-menu-item-selected) {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+}
+
+/* Disabled */
+.dropdown :global(.ant-dropdown-menu-item-disabled),
+.dropdown :global(.ant-dropdown-menu-submenu-title-disabled) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+  background: transparent !important;
+}
+
+.dropdown :global(.ant-dropdown-menu-item-disabled:hover),
+.dropdown :global(.ant-dropdown-menu-submenu-title-disabled:hover) {
+  background: transparent !important;
+}
+
+/* Danger */
+.dropdown :global(.ant-dropdown-menu-item-danger) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+.dropdown :global(.ant-dropdown-menu-item-danger:hover) {
+  background: var(--sc-color-state-danger-bg) !important;
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+/* ── Title content (icon + label flex) ─────────────── */
+
+.dropdown :global(.ant-dropdown-menu-title-content) {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+}
+
+/* Carbon icon slot — item içindeki leading icon */
+.dropdown :global(.ant-dropdown-menu-item) :global(.anticon),
+.dropdown :global(.ant-dropdown-menu-submenu-title) :global(.anticon),
+.dropdown :global(.ant-dropdown-menu-item) > :global(svg),
+.dropdown :global(.ant-dropdown-menu-title-content) > :global(svg) {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.dropdown :global(.ant-dropdown-menu-item) :global(.anticon) :global(svg),
+.dropdown :global(.ant-dropdown-menu-submenu-title) :global(.anticon) :global(svg),
+.dropdown :global(.ant-dropdown-menu-item) > :global(svg),
+.dropdown :global(.ant-dropdown-menu-title-content) > :global(svg) {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Divider ───────────────────────────────────────── */
+
+.dropdown :global(.ant-dropdown-menu-item-divider) {
+  background: var(--sc-color-border-subtle) !important;
+  margin: var(--sc-space-1) 0 !important;
+  height: 1px;
+}
+
+/* ── Group title ───────────────────────────────────── */
+
+.dropdown :global(.ant-dropdown-menu-item-group-title) {
+  font-size: var(--sc-font-size-2xs) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wider);
+  color: var(--sc-color-text-tertiary) !important;
+  padding: var(--sc-space-3) var(--sc-space-3) var(--sc-space-1) !important;
+}
+
+.dropdown :global(.ant-dropdown-menu-item-group-list) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ── Submenu (cascading) ───────────────────────────── */
+
+/* Submenu trigger'in sağ arrow'u — Carbon ChevronRight'a benzer */
+.dropdown :global(.ant-dropdown-menu-submenu-arrow),
+.dropdown :global(.ant-dropdown-menu-submenu-expand-icon) {
+  color: var(--sc-color-text-tertiary) !important;
+  font-size: 10px !important;
+}
+
+.dropdown :global(.ant-dropdown-menu-submenu-title) {
+  padding-inline-end: var(--sc-space-6) !important;
+}
+
+/* ── Arrow (popup arrow indicator) ─────────────────── */
+
+.dropdown :global(.ant-dropdown-arrow) {
+  --antd-arrow-background-color: var(--sc-color-bg-base);
+}
+
+.dropdown :global(.ant-dropdown-arrow)::before {
+  background: var(--sc-color-bg-base) !important;
+}
+
+/* ── Extra node (shortcut keys gibi) ──────────────── */
+
+.dropdown :global(.ant-dropdown-menu-item-extra) {
+  margin-inline-start: auto;
+  padding-inline-start: var(--sc-space-6);
+  font-family: var(--sc-font-mono);
+  font-size: var(--sc-font-size-2xs) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  font-weight: var(--sc-font-weight-medium);
+}
+
+/* ── Selected icon (selectable mode tick) ──────────── */
+
+.dropdown :global(.ant-dropdown-menu-item-icon) {
+  margin-inline-end: var(--sc-space-2);
+}
+
+/* ── Dropdown.Button — split button alignment ──────────
+ * AntD .ant-btn default: inline-block + line-height. Sol butonda
+ * "icon + text" yan yana verilince ikon baseline'a oturuyor, görsel
+ * olarak yukarı kayık duruyor. inline-flex + gap ile her iki butonu
+ * dikey ortala. Loading spinner, Carbon icon ve text aynı eksende.
+ */
+
+.button :global(.ant-btn) {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sc-space-2);
+}
+
+/* Caret butonu (sağdaki icon-only) — gap'a ihtiyaç yok */
+.button :global(.ant-btn-icon-only) {
+  gap: 0;
+}
+
+/* Icon SVG'leri (Carbon/loading spinner) — sabit boyut */
+.button :global(.ant-btn) > :global(svg),
+.button :global(.ant-btn) :global(.anticon) {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.button :global(.ant-btn) > :global(svg) {
+  width: 16px;
+  height: 16px;
+}

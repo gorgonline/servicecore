@@ -1,0 +1,21 @@
+.code {
+  font-family: var(--sc-font-mono);
+  font-size: 0.875em;
+  background: var(--sc-color-bg-muted);
+  color: var(--sc-color-text-primary);
+  border-radius: var(--sc-radius-sm);
+  padding: 0.15em 0.4em;
+}
+
+.block {
+  display: block;
+  padding: var(--sc-space-4);
+  font-size: var(--sc-font-size-sm);
+  line-height: var(--sc-line-height-relaxed);
+  border-radius: var(--sc-radius-md);
+  background: var(--sc-color-bg-subtle);
+  border: 1px solid var(--sc-color-border-subtle);
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+}

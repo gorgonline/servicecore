@@ -1,0 +1,193 @@
+/* AntD Alert wrap — sade, kurumsal görünüm.
+ *
+ * Tasarım kuralları:
+ * - Beyaz background, bg tint YOK (Carbon/Linear/Stripe tarzı sade)
+ * - Tüm 4 kenarda subtle gri border + sol kenarda 3px renkli bar (type sinyali)
+ * - Icon type rengiyle vurgulu, başlık nötr koyu (okunaklı)
+ * - Description ikincil gri
+ * - Action sağda, close ile arasında nefes
+ */
+
+.alert {
+  font-family: var(--sc-font-sans) !important;
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-md) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  align-items: flex-start !important;
+}
+
+/* Tüm type'lara: sol kenarda 3px bar */
+.alert:global(.ant-alert-success),
+.alert:global(.ant-alert-info),
+.alert:global(.ant-alert-warning),
+.alert:global(.ant-alert-error) {
+  border-left-width: 3px !important;
+}
+
+/* ── Title (message) — koyu primary, semibold ──────── */
+
+.alert :global(.ant-alert-message) {
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-primary) !important;
+  line-height: var(--sc-line-height-normal) !important;
+}
+
+.alert :global(.ant-alert-description) {
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-secondary) !important;
+  line-height: var(--sc-line-height-relaxed) !important;
+}
+
+/* Description ile birlikte — başlık daha büyük/bold + grid layout
+ * Layout (3 col × 2 row):
+ *   ┌────┬──────────┬──────┐
+ *   │icon│ content  │ close│
+ *   │    │ action   │      │   ← action altta, content col'da
+ *   └────┴──────────┴──────┘ */
+.alert:global(.ant-alert-with-description) {
+  display: grid !important;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    "icon content close"
+    ".    action  .";
+  column-gap: var(--sc-space-3);
+  padding: var(--sc-space-4) var(--sc-space-5) !important;
+}
+
+.alert:global(.ant-alert-with-description) :global(.ant-alert-icon) {
+  grid-area: icon;
+}
+
+.alert:global(.ant-alert-with-description) :global(.ant-alert-content) {
+  grid-area: content;
+}
+
+.alert:global(.ant-alert-with-description) :global(.ant-alert-close-icon) {
+  grid-area: close;
+}
+
+.alert:global(.ant-alert-with-description) :global(.ant-alert-action) {
+  grid-area: action;
+  margin: var(--sc-space-2) 0 0 0 !important;
+  align-self: start;
+  justify-self: start;
+}
+
+.alert:global(.ant-alert-with-description) :global(.ant-alert-message) {
+  font-size: var(--sc-font-size-md) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  margin-bottom: var(--sc-space-1) !important;
+}
+
+/* ── Icon — type rengiyle ───────────────────────────── */
+
+.alert :global(.ant-alert-icon) {
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+  margin-inline-end: var(--sc-space-3) !important;
+  margin-top: 2px;
+}
+
+.alert :global(.ant-alert-icon) :global(svg) {
+  width: 16px;
+  height: 16px;
+}
+
+.alert:global(.ant-alert-with-description) :global(.ant-alert-icon) :global(svg) {
+  width: 20px;
+  height: 20px;
+}
+
+.alert:global(.ant-alert-with-description) :global(.ant-alert-icon) {
+  margin-top: 4px;
+}
+
+/* ── Type left-bar color + icon color ───────────────── */
+
+.alert:global(.ant-alert-success) {
+  background: var(--sc-color-state-success-bg) !important;
+  border-left-color: var(--sc-color-state-success-fg) !important;
+}
+
+.alert:global(.ant-alert-success) :global(.ant-alert-icon),
+.alert:global(.ant-alert-success) :global(.ant-alert-message) {
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+.alert:global(.ant-alert-info) {
+  background: var(--sc-color-state-info-bg) !important;
+  border-left-color: var(--sc-color-accent) !important;
+}
+
+.alert:global(.ant-alert-info) :global(.ant-alert-icon),
+.alert:global(.ant-alert-info) :global(.ant-alert-message) {
+  color: var(--sc-color-state-info-fg) !important;
+}
+
+.alert:global(.ant-alert-warning) {
+  background: var(--sc-color-state-warning-bg) !important;
+  border-left-color: var(--sc-color-state-warning-fg) !important;
+}
+
+.alert:global(.ant-alert-warning) :global(.ant-alert-icon),
+.alert:global(.ant-alert-warning) :global(.ant-alert-message) {
+  color: var(--sc-color-state-warning-fg) !important;
+}
+
+.alert:global(.ant-alert-error) {
+  background: var(--sc-color-state-danger-bg) !important;
+  border-left-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.alert:global(.ant-alert-error) :global(.ant-alert-icon),
+.alert:global(.ant-alert-error) :global(.ant-alert-message) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+/* ── Action + close — sağda, boşluk var ─────────────── */
+
+.alert :global(.ant-alert-action) {
+  margin-inline-end: var(--sc-space-4) !important;
+  align-self: center;
+}
+
+.alert:global(.ant-alert-with-description) :global(.ant-alert-action) {
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.alert :global(.ant-alert-close-icon) {
+  color: var(--sc-color-text-tertiary) !important;
+  margin-top: 4px;
+  opacity: 0.6;
+  transition: opacity var(--sc-duration-fast) var(--sc-easing-default);
+  display: inline-flex;
+  align-items: center;
+}
+
+.alert :global(.ant-alert-close-icon) :global(svg) {
+  width: 14px;
+  height: 14px;
+}
+
+.alert :global(.ant-alert-close-icon):hover {
+  color: var(--sc-color-text-primary) !important;
+  opacity: 1;
+}
+
+.alert:global(.ant-alert-with-description) :global(.ant-alert-close-icon) {
+  margin-top: 4px;
+}
+
+/* ── Banner mode ── */
+
+.alert:global(.ant-alert-banner) {
+  border-radius: 0 !important;
+  border-inline: none !important;
+  border-top: none !important;
+  border-left-width: 0 !important;
+  border-bottom-width: 1px !important;
+}

@@ -1,0 +1,61 @@
+/* AntD Breadcrumb wrap — ServiceCore styling. */
+
+.breadcrumb {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  line-height: var(--sc-line-height-normal) !important;
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* Link item */
+.breadcrumb :global(.ant-breadcrumb-link) {
+  color: var(--sc-color-text-secondary) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  transition: color var(--sc-duration-fast) var(--sc-easing-default) !important;
+}
+
+.breadcrumb a:global(.ant-breadcrumb-link):hover,
+.breadcrumb :global(.ant-breadcrumb-link):hover {
+  color: var(--sc-color-accent) !important;
+  background: transparent !important;
+}
+
+/* Last item (current page) — koyu, link değil */
+.breadcrumb :global(.ant-breadcrumb) > :global(span):last-child :global(.ant-breadcrumb-link),
+.breadcrumb :global(li):last-child :global(.ant-breadcrumb-link) {
+  color: var(--sc-color-text-primary) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  cursor: default !important;
+}
+
+/* Separator */
+.breadcrumb :global(.ant-breadcrumb-separator) {
+  color: var(--sc-color-text-tertiary) !important;
+  margin: 0 var(--sc-space-2) !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb :global(.ant-breadcrumb-separator) :global(svg) {
+  width: 14px;
+  height: 14px;
+}
+
+/* Leading icon (link içinde) */
+.breadcrumb :global(.ant-breadcrumb-link) :global(svg) {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  margin-inline-end: 4px;
+}
+
+/* Dropdown overlay (menu için) — caret */
+.breadcrumb :global(.ant-breadcrumb-overlay-link) {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.breadcrumb :global(.ant-breadcrumb-overlay-link) :global(.anticon-down) {
+  font-size: 10px;
+}

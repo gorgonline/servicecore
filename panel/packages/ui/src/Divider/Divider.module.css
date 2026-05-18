@@ -1,0 +1,33 @@
+/* AntD Divider wrap — ServiceCore border rengi.
+ * Default colorBorderSecondary çok açık (neutral-200), bg-muted body'de görünmüyor.
+ * Bizim neutral-300 ile net çizgi. */
+
+.divider:global(.ant-divider) {
+  border-block-start-color: var(--sc-color-neutral-300) !important;
+  border-inline-start-color: var(--sc-color-neutral-300) !important;
+}
+
+/* Dashed varyantı */
+.divider:global(.ant-divider-dashed) {
+  border-block-start-style: dashed !important;
+  border-inline-start-style: dashed !important;
+}
+
+/* Başlıklı divider — text */
+.divider :global(.ant-divider-inner-text) {
+  font-family: var(--sc-font-sans);
+  color: var(--sc-color-text-secondary);
+  font-size: var(--sc-font-size-sm);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+/* Plain text mode */
+.divider:global(.ant-divider-with-text) :global(.ant-divider-inner-text) {
+  font-weight: var(--sc-font-weight-medium);
+}
+
+/* Vertical divider */
+.divider:global(.ant-divider-vertical) {
+  height: 1em;
+  margin-inline: var(--sc-space-2);
+}

@@ -1,0 +1,91 @@
+/* AntD Badge wrap — ServiceCore renk uyumu.
+ * Default count badge'i ve dot'u state-danger ile uyumlu. */
+
+/* Count badge — sayılı kırmızı pill */
+.badge :global(.ant-badge-count) {
+  background: var(--sc-color-state-danger-fg) !important;
+  color: var(--sc-color-neutral-0) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  font-size: var(--sc-font-size-2xs) !important;
+  box-shadow: 0 0 0 1px var(--sc-color-bg-base) !important;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 6px;
+  border-radius: 9px;
+}
+
+.badge :global(.ant-badge-count-sm) {
+  min-width: 14px;
+  height: 14px;
+  line-height: 14px;
+  font-size: 10px !important;
+  padding: 0 4px;
+  border-radius: 7px;
+}
+
+/* Standalone dot (children'sız) */
+.badge :global(.ant-badge-status-dot) {
+  width: 8px !important;
+  height: 8px !important;
+  vertical-align: middle;
+}
+
+.badge :global(.ant-badge-status-text) {
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-sm);
+  color: var(--sc-color-text-primary);
+  margin-inline-start: var(--sc-space-2);
+}
+
+/* Status renk override — ServiceCore tonları */
+.badge :global(.ant-badge-status-success) :global(.ant-badge-status-dot),
+.badge :global(.ant-badge-status-dot.ant-badge-status-success) {
+  background: var(--sc-color-state-success-fg) !important;
+}
+
+.badge :global(.ant-badge-status-warning) :global(.ant-badge-status-dot),
+.badge :global(.ant-badge-status-dot.ant-badge-status-warning) {
+  background: var(--sc-color-state-warning-fg) !important;
+}
+
+.badge :global(.ant-badge-status-error) :global(.ant-badge-status-dot),
+.badge :global(.ant-badge-status-dot.ant-badge-status-error) {
+  background: var(--sc-color-state-danger-fg) !important;
+}
+
+.badge :global(.ant-badge-status-processing) :global(.ant-badge-status-dot),
+.badge :global(.ant-badge-status-dot.ant-badge-status-processing) {
+  background: var(--sc-color-accent) !important;
+}
+
+.badge :global(.ant-badge-status-default) :global(.ant-badge-status-dot),
+.badge :global(.ant-badge-status-dot.ant-badge-status-default) {
+  background: var(--sc-color-text-tertiary) !important;
+}
+
+/* Overlay dot (children üstünde tek nokta — count yok) */
+.badge :global(.ant-badge-dot) {
+  background: var(--sc-color-state-danger-fg) !important;
+  box-shadow: 0 0 0 1px var(--sc-color-bg-base) !important;
+  width: 8px;
+  height: 8px;
+}
+
+/* ── Ribbon — Card üstünde köşe etiketi ────────────────── */
+
+.ribbon :global(.ant-ribbon) {
+  background: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-2xs) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  letter-spacing: var(--sc-letter-spacing-wide);
+  text-transform: uppercase;
+  border-radius: var(--sc-radius-sm) 0 0 var(--sc-radius-sm);
+}
+
+.ribbon :global(.ant-ribbon-corner) {
+  color: var(--sc-color-accent-active) !important;
+}
