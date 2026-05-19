@@ -93,6 +93,13 @@
       "secondary": "#94A3B8",
       "muted": "#64748B",
       "brand": "#0070F3"
+    },
+    "accent": {
+      "amber": {
+        "light": "#FCD34D",
+        "base": "#F59E0B",
+        "dark": "#D97706"
+      }
     }
   },
 

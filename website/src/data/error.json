@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Bir hata oluştu | ServiceCore",
+    "description": "Beklenmedik bir sunucu hatasıyla karşılaştık. Hata otomatik olarak ekibimize bildirildi."
+  },
+  "hero": {
+    "ticketCode": "INC-500",
+    "ticketStatus": "İncelemede",
+    "overline": "Sistem Olay Kaydı",
+    "title": "Beklenmedik bir hatayla karşılaştık.",
+    "titleHighlight": "hatayla karşılaştık",
+    "description": "Hata otomatik olarak ekibimize bildirildi. Lütfen birkaç saniye sonra tekrar deneyin veya anasayfaya dönün.",
+    "primaryCta": {
+      "label": "Tekrar Dene"
+    },
+    "secondaryCta": {
+      "label": "Anasayfaya Dön",
+      "href": "/"
+    },
+    "supportLink": {
+      "label": "Destek ekibine yaz",
+      "href": "/iletisim"
+    }
+  },
+  "diagnostics": {
+    "overline": "Olay Analizi",
+    "title": "Kayıt Detayları",
+    "items": [
+      {
+        "label": "Olay Tipi",
+        "value": "Sunucu Hatası"
+      },
+      {
+        "label": "Durum Kodu",
+        "value": "HTTP 500"
+      },
+      {
+        "label": "Etki",
+        "value": "Yüksek"
+      },
+      {
+        "label": "Çözüm",
+        "value": "Ekibe Bildirildi"
+      }
+    ]
+  },
+  "globalError": {
+    "title": "Kritik bir hata oluştu",
+    "description": "Uygulama beklenmedik şekilde durdu. Sayfayı yeniden yüklemeyi deneyin.",
+    "primaryCta": "Tekrar Dene",
+    "secondaryCta": "Anasayfaya Dön"
+  }
+}
