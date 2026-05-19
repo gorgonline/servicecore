@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Mail, Send, MessageSquare, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { submitForm, type FormSheet } from "@/lib/forms";
+import { runtimeTokens } from "@/lib/tokens";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormSheet }) {
   const pathname = usePathname();
+  const reduced = useReducedMotion();
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -43,7 +45,10 @@ export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormS
   return (
     <div className="container mx-auto px-6 lg:px-12 pb-40 max-w-7xl">
       <motion.div
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        initial={reduced ? false : { opacity: 0, y: 24 }}
+        whileInView={reduced ? undefined : { opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+        transition={{ type: "spring", stiffness: 200, damping: 28 }}
         className="group relative flex flex-col justify-center overflow-hidden rounded-3xl bg-linear-to-br from-(--color-brand-primary) to-(--color-brand-purple) p-1 md:p-px"
       >
         <div className="absolute inset-0 bg-linear-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -132,15 +137,33 @@ export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormS
 
             <div className="flex flex-wrap justify-center gap-8 text-(--color-text-muted) mt-8">
               <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
-                <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                <div
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{
+                    backgroundColor: runtimeTokens.colors.brand.secondary,
+                    boxShadow: `0 0 8px ${runtimeTokens.colors.brand.secondary}99`,
+                  }}
+                />
                 Hızlı Yanıt
               </div>
               <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
-                <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-blue-base) shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
+                <div
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{
+                    backgroundColor: runtimeTokens.colors.brand.primary,
+                    boxShadow: `0 0 8px ${runtimeTokens.colors.brand.primary}99`,
+                  }}
+                />
                 Uzman Destek
               </div>
               <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
-                <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
+                <div
+                  className="w-1.5 h-1.5 rounded-full"
+                  style={{
+                    backgroundColor: runtimeTokens.colors.brand.purple,
+                    boxShadow: `0 0 8px ${runtimeTokens.colors.brand.purple}99`,
+                  }}
+                />
                 7/24 Erişim
               </div>
             </div>

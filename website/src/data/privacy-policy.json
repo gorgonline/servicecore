@@ -1,15 +1,30 @@
 {
-  "title": "Servicecore Gizlilik Politikası ve KVKK Metni",
+  "meta": {
+    "kind": "legal",
+    "slug": "gizlilik",
+    "eyebrow": "HUKUKİ METİNLER",
+    "title": "Servicecore Gizlilik Politikası ve KVKK Metni",
+    "description": "Verilerinizin güvenliği ve gizliliği bizim için en üst önceliktir.",
+    "lastUpdated": "2025-01-10",
+    "lastUpdatedLabel": "Son güncelleme: 10 Ocak 2025",
+    "version": "v2.1",
+    "reading_time_minutes": 8
+  },
   "intro": "Servicecore Bilgi Teknolojileri A.Ş. (\"Şirket\"), internet sitesini ziyaret eden kişilerin paylaşmış olduğu bilgilerin gizliliğini sağlamayı ilke olarak kabul etmiştir. Bu nedenle işbu \"Gizlilik Politikası\" kişilerin hangi bilgilerinin, hangi yollarla işlendiğini, bu bilgilerin hukuka uygun olarak ve vermiş olduğunuz izin kapsamında hangi üçüncü kişiler ile paylaşıldığını ve Şirket tarafından ne şekilde korunduğunu açıklayarak sizi bilgilendirmek amacı ile oluşturulmuştur. Ayrıca işbu Gizlilik Politikası çerçevesinde bu bilgilerin doğruluğunun sizler tarafından nasıl denetlenebileceği ve istendiğinde Şirketin internet sitesine başvurarak bu bilgilerin silinmesini nasıl sağlayabileceğiniz belirtilmiştir. Şirket Tarafından kişilere her türlü kanaldan sunulan tüm hizmetler kısaca \"Hizmet\" olarak anılacaktır.",
+  "title": "Servicecore Gizlilik Politikası ve KVKK Metni",
   "sections": [
     {
       "id": "veri-sorumlusu",
       "title": "Veri Sorumlusu",
+      "accent": "blue",
+      "icon": "shield-check",
       "content": "Kişisel verileriniz, veri sorumlusu sıfatıyla İstanbul Ticaret Sicil Müdürlüğü nezdinde 0764077726200001 sicil numarası ile kayıtlı ve şirket merkezi Atatürk Mah. Ertuğrul Gazi Sok. Metropol İstanbul A Blok 2E Kat: 21 Daire: 331 34758 Ataşehir / İstanbul adresinde bulunan Servicecore Bilgi Teknolojileri A.Ş. (Şirket) tarafından 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) başta olmak üzere, ilgili mevzuat düzenlemeleri ve yetkili otorite kararları/duyuruları ile işbu Gizlilik Politikası çerçevesinde işlenmektedir.\n\nŞirket, gizliliğinizin ve kişisel verilerinizin korunmasına ilişkin endişelerinize saygı duymaktadır. Bu kapsamda Şirket, kişisel verilerinizi KVKK başta olmak üzere kişisel verilerin korunmasına ilişkin tüm mevzuat hükümlerine uygun şekilde işlemekte, verilerinizin güvenli şekilde barındırılmasını sağlamakta ve olası hukuka aykırı erişimlere karşı gerekli tüm güvenlik tedbirlerini almaktadır."
     },
     {
       "id": "kapsam-ve-toplanan-veriler",
       "title": "Gizlilik Politikasının Kapsamı ve Toplanan Veriler",
+      "accent": "cyan",
+      "icon": "database",
       "content": "Belirli bir kişiye ait kullanılacak ve işlenecek bilgiler, yalnızca bu kişinin kendi istemiyle veri girmesi veya bu hususta açıkça muvafakat vermesi halinde mümkündür. Veri girilmesi veya bu konuda açıkça muvafakat verilmesi, kişinin aşağıda belirtilen şartlar ile mutabık olduğunun göstergesidir. İnternet sitesi ziyaret edildiğinde bazı bilgiler internet sitesi sunucularında depolanır.\n\nBu veriler şu şekilde olabilir:\n- İsim\n- Soyisim\n- E-mail\n- Telefon/Fax numarası\n\nBu veriler doğrultusunda site kullanıcısı hakkında birtakım sonuçlar çıkarılır. Ancak bu kişisel veriler sadece anonim olarak kullanılabilir. Bu verilerin dışarıdan bir hizmet sağlayıcısına aktarılması durumunda veri güvenliğine ilişkin mevcut yasal düzenlemeler çerçevesinde aktarılması için gerekli işlemler gerçekleştirilir.",
       "purposes": [
         "Kullanıcılarla iletişimin sağlanması",
@@ -20,31 +35,43 @@
     {
       "id": "ucuncu-taraflar",
       "title": "Üçüncü Şahıslarla Paylaşım",
+      "accent": "purple",
+      "icon": "share-2",
       "content": "Sunulan hizmetin bir parçası olarak Şirket, hizmet alan kişilere ilişkin bilgileri işbu Gizlilik Politikası kapsamında elde edilebilir ve aktarabilir. Bu tür bilgi aktarımları, üçüncü kişiler tarafından belirlenen şartlara ve üçüncü kişiler ile mevcut sözleşmelere ve yürürlükteki mevcut yasal mevzuata uygun olarak yapılır. Bu Gizlilik Politikası, bilgi aktarımı yapılan üçüncü kişilerin gizlilik uygulamalarını yansıtmamaktadır ve onların gizlilik politikalarından veya uygulamalarından Şirket sorumlu değildir."
     },
     {
       "id": "cocuklarin-gizliligi",
       "title": "Çocukların Gizliliği",
+      "accent": "emerald",
+      "icon": "users",
       "content": "İnternet sitemizde 18 yaşının altındaki çocuklardan bilerek veri toplamamaktadır. Eğer 18 yaşının altındaysanız lütfen Hizmetleri kullanarak herhangi bir kişisel verinizi paylaşmayınız. Bu noktada çocukların veli veya vasilerinin işbu Gizlilik Politikasının uygulanması konusunda çocuklarını kişisel verilerini paylaşmamaları konusunda eğiterek yardımları beklenmektedir."
     },
     {
       "id": "cerez-kullanimi",
       "title": "Çerez Kullanımı",
+      "accent": "amber",
+      "icon": "cookie",
       "content": "Şirket, anılan kişisel verilerden bazılarını teknik bir iletişim dosyasını (Çerez-cookie) kullanarak elde edebilir. Bahsi geçen teknik iletişim dosyaları, ana bellekte saklanmak üzere bir internet sitesinin kullanıcının tarayıcısına gönderdiği küçük metin dosyalarıdır. Teknik iletişim dosyası bir internet sitesi hakkında durum ve tercihleri saklayarak İnternet'in kullanımını kolaylaştırır.\n\nTeknik iletişim dosyası, internet sitesini kaç kişinin kullandığını, bir kişinin internet sitesini hangi amaçla, kaç kez ziyaret ettiğini ve ne kadar kaldıklarını belirten istatistiksel bilgileri elde etmeye ve kullanıcılar için özel tasarlanmış kullanıcı sayfalarından dinamik olarak reklam ve içerik üretilmesine yardımcı olur. Teknik iletişim dosyası, ana bellekte veya e-postalardan veri veya başka herhangi bir kişisel veri almak için tasarlanmamıştır."
     },
     {
       "id": "isleme-amaclar",
       "title": "İşlenen Kişisel Veri Kategorileri ve Kişisel Verilerin İşlenme Amaçları",
+      "accent": "sky",
+      "icon": "list-checks",
       "content": "Paylaşılan kişisel veriler müşterilere verilen hizmetlerin gereklerini, sözleşmenin ve teknolojinin gereklerine uygun şekilde yapabilmek, sunulan ürün ve hizmetlerimizi geliştirebilmek için; kamu güvenliğine ilişkin hususlarda ve hukuki uyuşmazlıklarda, talep halinde ve mevzuat gereği savcılıklara, mahkemelere ve ilgili kamu görevlilerine bilgi verebilmek için; üyelerimize geniş kapsamda çeşitli imkanlar sunabilmek için veya bu imkanları sunabilecek kişi ve kurumlarla yasal çerçevede paylaşabilmek için; reklam tercihlerini analiz etmek için 6698 sayılı KVKK ve ilgili ikincil düzenlemelere uygun olarak işlenecektir."
     },
     {
       "id": "saklama-suresi",
       "title": "Verileri Saklama Süresi",
+      "accent": "pink",
+      "icon": "clock",
       "content": "Sitede herhangi bir şekilde doğrudan paylaşılan veriler etkileşim süresinin devamı boyunca saklanmaktadır."
     },
     {
       "id": "veri-sahibi-haklari",
       "title": "Veri Sahibinin Hakları",
+      "accent": "blue",
+      "icon": "scale",
       "content": "Veri sahibi verilerine erişim hakkını her zaman kullanabilir. Buna ek olarak ilgili şartların yerine getirilmesi durumunda KVKK madde 11'de düzenlenen haklar ve aşağıda belirtilen haklar kullanılabilir:",
       "rights": [
         "Düzeltme hakkı",
@@ -57,6 +84,8 @@
     {
       "id": "iletisim",
       "title": "İletişim",
+      "accent": "cyan",
+      "icon": "mail",
       "content": "Kanun kapsamında, kişisel verileriniz ile ilgili her türlü talep, şikayet ve önerilerinizi, kimliğinizi tevsik edici belgeler ve talebinizi içeren dilekçeniz ile aşağıdaki adresimize ulaştırabilir veya güvenli elektronik imza kullanmak suretiyle Şirketimizin info@servicecore.com.tr kayıtlı elektronik posta adresine gönderebilirsiniz.\n\n**Adresimiz:**\nAtatürk Mah. Ertuğrul Gazi Sok. Metropol İstanbul A Blok 2E Kat: 21 Daire: 331 34758 Ataşehir / İstanbul"
     }
   ]
