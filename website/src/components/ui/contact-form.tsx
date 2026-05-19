@@ -1,14 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Send, AlertCircle, Loader2 } from "lucide-react";
 import contactData from "@/data/contact.json";
 import { submitForm } from "@/lib/forms";
 
-type Status = "idle" | "loading" | "success" | "error";
+// Basari durumu artik /tesekkurler?from=iletisim redirect ile yonetiliyor — "success" stati state'te yok.
+type Status = "idle" | "loading" | "error";
 
 export function ContactForm() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
 
@@ -30,8 +33,7 @@ export function ContactForm() {
     setErrorMessage("");
     const result = await submitForm("İletişim", data);
     if (result.ok) {
-      setStatus("success");
-      form.reset();
+      router.push("/tesekkurler?from=iletisim");
     } else {
       setStatus("error");
       setErrorMessage(result.error);
@@ -127,12 +129,6 @@ export function ContactForm() {
             ></textarea>
           </div>
 
-          {status === "success" && (
-            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-(--color-accent-emerald-light)">
-              <CheckCircle2 className="w-4 h-4 shrink-0" />
-              <span className="text-sm font-medium">Mesajınız ulaştı. En kısa sürede dönüş yapacağız.</span>
-            </div>
-          )}
           {status === "error" && (
             <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)">
               <AlertCircle className="w-4 h-4 shrink-0" />

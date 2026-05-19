@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Send, AlertCircle, Loader2 } from "lucide-react";
 import demoData from "@/data/demo.json";
 import { submitForm } from "@/lib/forms";
 
-type Status = "idle" | "loading" | "success" | "error";
+// Basari durumu artik /tesekkurler?from=demo redirect ile yonetiliyor — "success" stati state'te yok.
+type Status = "idle" | "loading" | "error";
 
 export function DemoForm() {
   const { form_section } = demoData;
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
 
@@ -32,8 +35,7 @@ export function DemoForm() {
     setErrorMessage("");
     const result = await submitForm("Demo", data);
     if (result.ok) {
-      setStatus("success");
-      form.reset();
+      router.push("/tesekkurler?from=demo");
     } else {
       setStatus("error");
       setErrorMessage(result.error);
@@ -152,12 +154,6 @@ export function DemoForm() {
             </div>
           </div>
 
-          {status === "success" && (
-            <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-(--color-accent-emerald-light)">
-              <CheckCircle2 className="w-4 h-4 shrink-0" />
-              <span className="text-sm font-medium">Demo talebiniz alındı. En kısa sürede iletişime geçeceğiz.</span>
-            </div>
-          )}
           {status === "error" && (
             <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)">
               <AlertCircle className="w-4 h-4 shrink-0" />

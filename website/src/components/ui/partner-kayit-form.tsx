@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Send, AlertCircle, Loader2 } from "lucide-react";
 import partnerData from "@/data/partner-kayit.json";
 import { submitForm } from "@/lib/forms";
 
-type Status = "idle" | "loading" | "success" | "error";
+// Basari durumu artik /tesekkurler?from=partner redirect ile yonetiliyor — "success" stati state'te yok.
+type Status = "idle" | "loading" | "error";
 
 interface PartnerField {
   id: string;
@@ -33,6 +35,7 @@ export function PartnerKayitForm() {
   const { submit } = partnerData;
   const sections = partnerData.sections as PartnerSection[];
 
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [fieldState, setFieldState] = useState<Record<string, string>>({});
@@ -56,9 +59,7 @@ export function PartnerKayitForm() {
     setErrorMessage("");
     const result = await submitForm("Register", data);
     if (result.ok) {
-      setStatus("success");
-      setFieldState({});
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      router.push("/tesekkurler?from=partner");
     } else {
       setStatus("error");
       setErrorMessage(result.error);
@@ -207,12 +208,6 @@ export function PartnerKayitForm() {
       ))}
 
       <div className="space-y-4">
-        {status === "success" && (
-          <div className="flex items-start gap-3 px-5 py-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-(--color-accent-emerald-light)">
-            <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" />
-            <span className="text-sm font-medium leading-relaxed">{submit.success}</span>
-          </div>
-        )}
         {status === "error" && (
           <div className="flex items-start gap-3 px-5 py-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)">
             <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />

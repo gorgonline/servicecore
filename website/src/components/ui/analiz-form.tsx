@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Send, AlertCircle, Loader2 } from "lucide-react";
 import analizData from "@/data/analiz.json";
 import { submitForm } from "@/lib/forms";
 
-type Status = "idle" | "loading" | "success" | "error";
+// Basari durumu artik /tesekkurler?from=analiz redirect ile yonetiliyor — "success" stati state'te yok.
+type Status = "idle" | "loading" | "error";
 
 type ContactState = {
   firma: string;
@@ -46,6 +48,7 @@ export function AnalizForm() {
   const { contact, notes, submit, page } = analizData;
   const sections = analizData.sections as AnalizSection[];
 
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
 
@@ -119,13 +122,7 @@ export function AnalizForm() {
     setErrorMessage("");
     const result = await submitForm("Analiz", data);
     if (result.ok) {
-      setStatus("success");
-      setContactState({ firma: "", adSoyad: "", unvan: "", eposta: "", telefon: "" });
-      setFieldState({});
-      setModuleState({});
-      setAddonState({});
-      setNotesValue("");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      router.push("/tesekkurler?from=analiz");
     } else {
       setStatus("error");
       setErrorMessage(result.error);
@@ -509,12 +506,6 @@ export function AnalizForm() {
 
       {/* Status & Submit */}
       <div className="space-y-4">
-        {status === "success" && (
-          <div className="flex items-start gap-3 px-5 py-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-(--color-accent-emerald-light)">
-            <CheckCircle2 className="w-5 h-5 shrink-0 mt-0.5" />
-            <span className="text-sm font-medium leading-relaxed">{submit.success}</span>
-          </div>
-        )}
         {status === "error" && (
           <div className="flex items-start gap-3 px-5 py-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)">
             <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />

@@ -1,0 +1,438 @@
+{
+  "meta": {
+    "title": "Teşekkürler | ServiceCore",
+    "description": "Talebiniz başarıyla alındı. ServiceCore ekibi en kısa sürede sizinle iletişime geçecek."
+  },
+  "page": {
+    "badge": "Talebiniz Alındı",
+    "fallbackContextKey": "default"
+  },
+  "allowedContexts": ["demo", "iletisim", "partner", "analiz"],
+  "contexts": {
+    "demo": {
+      "ticketCode": "REQ-DEMO",
+      "ticketStatusLabel": "Açıldı",
+      "overline": "Hizmet Masası Kaydı",
+      "title": "Demo talebiniz başarıyla alındı.",
+      "titleHighlight": "başarıyla alındı",
+      "lead": "Satış ekibimiz talebinizi inceledi ve 1 iş günü içinde size dönüş yapacak. Bu süre içinde demo senaryomuzu sektörünüze göre uyarlayacağız.",
+      "description": "Demoda, talep ettiğiniz tarih ve saatte ServiceCore ekibinden bir uzman size canlı sunum yapacak. Sunum yaklaşık 45 dakika sürer; sonrasında soru-cevap için ek 15 dakika ayrılır.",
+      "timeline": {
+        "overline": "Sıradaki Adımlar",
+        "title": "Bundan sonra ne olacak?",
+        "steps": [
+          {
+            "step": "01",
+            "icon": "Inbox",
+            "title": "Talebiniz kaydedildi",
+            "description": "Talebiniz sistemimize düştü; satış ekibimize otomatik bildirim gitti."
+          },
+          {
+            "step": "02",
+            "icon": "Phone",
+            "title": "İletişim doğrulama",
+            "description": "1 iş günü içinde sizi arayıp toplantı detaylarını netleştireceğiz."
+          },
+          {
+            "step": "03",
+            "icon": "CalendarCheck",
+            "title": "Demo takvimi onayı",
+            "description": "Belirttiğiniz tarih-saat uygunsa toplantı linki e-postanıza gönderilir."
+          },
+          {
+            "step": "04",
+            "icon": "Presentation",
+            "title": "Canlı sunum",
+            "description": "Senaryo ihtiyacınıza göre uyarlanmış ServiceCore demosu sunulur."
+          }
+        ]
+      },
+      "primaryCta": {
+        "label": "Çözümleri İncele",
+        "href": "/cozumler",
+        "icon": "ArrowRight"
+      },
+      "secondaryCta": {
+        "label": "Bloga Göz At",
+        "href": "/blog",
+        "icon": "BookOpen"
+      },
+      "explore": {
+        "overline": "Bekleme Süresinde",
+        "title": "Demoya hazırlanmak için",
+        "description": "ServiceCore'u daha yakından tanımak isterseniz aşağıdaki kaynaklar yardımcı olur.",
+        "cards": [
+          {
+            "id": "moduller",
+            "icon": "Boxes",
+            "iconAccent": "primary",
+            "title": "Modüller",
+            "description": "Platformdaki tüm ITIL4 ve operasyon modüllerinin görünümü.",
+            "href": "/moduller"
+          },
+          {
+            "id": "specsheet",
+            "icon": "FileText",
+            "iconAccent": "accent",
+            "title": "Teknik Özet",
+            "description": "Mimari, ölçeklendirme ve güvenlik başlıklarını içeren specsheet.",
+            "href": "/specsheet"
+          },
+          {
+            "id": "itil4",
+            "icon": "GraduationCap",
+            "iconAccent": "purple",
+            "title": "ITIL4 Pratikleri",
+            "description": "ServiceCore'un ITIL4 pratikleriyle nasıl örtüştüğünü görün.",
+            "href": "/itil4-pratikleri"
+          }
+        ]
+      }
+    },
+    "iletisim": {
+      "ticketCode": "REQ-MSG",
+      "ticketStatusLabel": "Açıldı",
+      "overline": "Hizmet Masası Kaydı",
+      "title": "Mesajınız bize ulaştı.",
+      "titleHighlight": "ulaştı",
+      "lead": "Mesajınız kayıt altına alındı. İletişim ekibimiz mesai saatleri içinde, en geç 24 saat içinde size geri dönecek.",
+      "description": "Acil teknik destek talepleriniz için support.servicecore.app üzerindeki destek portalını veya 444CORE hattını kullanabilirsiniz. Mesai dışı sorularınız için bilgi bankası ve dokümanlar 7/24 erişilebilirdir.",
+      "timeline": {
+        "overline": "Sıradaki Adımlar",
+        "title": "Mesajınız sonrası süreç",
+        "steps": [
+          {
+            "step": "01",
+            "icon": "Inbox",
+            "title": "Mesaj kaydedildi",
+            "description": "Mesajınız iletişim ekibine yönlendirildi ve önceliklendirme yapıldı."
+          },
+          {
+            "step": "02",
+            "icon": "Users",
+            "title": "Doğru uzmana yönlendirme",
+            "description": "İçeriğinize göre satış, destek veya teknik ekipten ilgili kişi atandı."
+          },
+          {
+            "step": "03",
+            "icon": "Mail",
+            "title": "Geri dönüş",
+            "description": "24 saat içinde e-posta veya telefonla size yanıt verilecek."
+          },
+          {
+            "step": "04",
+            "icon": "Handshake",
+            "title": "Çözüm veya görüşme",
+            "description": "Talebiniz çözüme bağlanır ya da detaylı görüşme planlanır."
+          }
+        ]
+      },
+      "primaryCta": {
+        "label": "Anasayfaya Dön",
+        "href": "/",
+        "icon": "Home"
+      },
+      "secondaryCta": {
+        "label": "Çözümleri İncele",
+        "href": "/cozumler",
+        "icon": "LayoutGrid"
+      },
+      "explore": {
+        "overline": "Beklerken",
+        "title": "Yararlı olabilecek kaynaklar",
+        "description": "Mesajınıza yanıt beklerken aşağıdaki sayfalar sorularınızın bir kısmına ışık tutabilir.",
+        "cards": [
+          {
+            "id": "cozumler",
+            "icon": "LayoutGrid",
+            "iconAccent": "primary",
+            "title": "Çözümler",
+            "description": "ITSM, ESM, CSM, ITAM ve EAM çözüm hatları bir arada.",
+            "href": "/cozumler"
+          },
+          {
+            "id": "moduller",
+            "icon": "Boxes",
+            "iconAccent": "accent",
+            "title": "Modüller",
+            "description": "Platformdaki 24+ modülün listesi ve ITIL4 örtüşmesi.",
+            "href": "/moduller"
+          },
+          {
+            "id": "blog",
+            "icon": "BookOpen",
+            "iconAccent": "purple",
+            "title": "Blog",
+            "description": "ITIL4, ITSM ve servis yönetimi üzerine derinlikli yazılar.",
+            "href": "/blog"
+          }
+        ]
+      }
+    },
+    "partner": {
+      "ticketCode": "REQ-PARTNER",
+      "ticketStatusLabel": "İncelemede",
+      "overline": "Partner Programı",
+      "title": "Partner başvurunuz alındı.",
+      "titleHighlight": "alındı",
+      "lead": "Partner ekibimiz başvurunuzu inceleyecek ve uygunluk değerlendirmesi sonrası sizinle iletişime geçecek. İlk değerlendirme genellikle 3 iş günü içinde tamamlanır.",
+      "description": "Başvurunuzu sektör, kapasite ve hizmet alanı kriterlerine göre değerlendireceğiz. Uygun bulunması halinde teknik ekibimiz onboarding sürecini başlatacak ve partner portal erişiminiz açılacak.",
+      "timeline": {
+        "overline": "Onboarding Süreci",
+        "title": "Partner yolculuğunun adımları",
+        "steps": [
+          {
+            "step": "01",
+            "icon": "FileCheck",
+            "title": "Başvuru incelemesi",
+            "description": "Form bilgileri kontrol edilir, eksik bilgi olması halinde size ulaşılır."
+          },
+          {
+            "step": "02",
+            "icon": "Users",
+            "title": "Ön görüşme",
+            "description": "Partner ekibimiz 3 iş günü içinde tanışma toplantısı önerir."
+          },
+          {
+            "step": "03",
+            "icon": "ShieldCheck",
+            "title": "Sözleşme ve onay",
+            "description": "Karşılıklı uygunluk halinde partner sözleşmesi imzalanır."
+          },
+          {
+            "step": "04",
+            "icon": "Rocket",
+            "title": "Onboarding ve portal",
+            "description": "Eğitim, sertifikasyon ve partner portal erişimi başlatılır."
+          }
+        ]
+      },
+      "primaryCta": {
+        "label": "Partner Programını İncele",
+        "href": "/partnerlik",
+        "icon": "ArrowRight"
+      },
+      "secondaryCta": {
+        "label": "Anasayfaya Dön",
+        "href": "/",
+        "icon": "Home"
+      },
+      "explore": {
+        "overline": "Partnerliğe Hazırlık",
+        "title": "ServiceCore ekosistemini tanıyın",
+        "description": "Onboarding sürecini hızlandırmak için aşağıdaki kaynakları gözden geçirebilirsiniz.",
+        "cards": [
+          {
+            "id": "cozumler",
+            "icon": "LayoutGrid",
+            "iconAccent": "primary",
+            "title": "Çözüm Hatları",
+            "description": "ITSM, ESM, CSM, ITAM ve EAM çözümlerinin kapsamlı görünümü.",
+            "href": "/cozumler"
+          },
+          {
+            "id": "moduller",
+            "icon": "Boxes",
+            "iconAccent": "purple",
+            "title": "Modül Kütüphanesi",
+            "description": "Müşterilerinize sunabileceğiniz 24+ modülün listesi.",
+            "href": "/moduller"
+          },
+          {
+            "id": "hizmetler",
+            "icon": "Briefcase",
+            "iconAccent": "accent",
+            "title": "Profesyonel Hizmetler",
+            "description": "Kurulum, destek, eğitim ve danışmanlık hizmet portfoyü.",
+            "href": "/hizmetler"
+          }
+        ]
+      }
+    },
+    "analiz": {
+      "ticketCode": "REQ-ANALYSIS",
+      "ticketStatusLabel": "Hazırlanıyor",
+      "overline": "Gereksinim Analizi",
+      "title": "Analiz talebiniz alındı.",
+      "titleHighlight": "alındı",
+      "lead": "Çözüm mühendisliği ekibimiz formdaki bilgileri inceleyip size özel bir gereksinim analiz raporu hazırlayacak. Rapor genellikle 3 iş günü içinde teslim edilir.",
+      "description": "Raporda; mevcut süreçlerinize uygun modül kombinasyonu, kapsam önerisi, kurulum yol haritası ve tahmini lisanslama özet tablosu yer alacak. Hazırlık tamamlandığında çözüm mimarımız sizinle paylaşmak için bir görüşme planlayacak.",
+      "timeline": {
+        "overline": "Analiz Süreci",
+        "title": "Analiz raporunuz hazırlanırken",
+        "steps": [
+          {
+            "step": "01",
+            "icon": "ClipboardList",
+            "title": "Form verisi inceleniyor",
+            "description": "Modül, kullanıcı sayısı ve süreç ihtiyaçlarınız uzman ekibe iletildi."
+          },
+          {
+            "step": "02",
+            "icon": "Search",
+            "title": "Kapsam haritalandırma",
+            "description": "İhtiyaçlarınız ServiceCore modülleriyle eşleştiriliyor."
+          },
+          {
+            "step": "03",
+            "icon": "FileText",
+            "title": "Rapor hazırlığı",
+            "description": "Kapsam, mimari önerisi ve lisanslama tablosu raporda derleniyor."
+          },
+          {
+            "step": "04",
+            "icon": "PresentationChart",
+            "title": "Sunum görüşmesi",
+            "description": "Çözüm mimarımız raporu sunmak için sizinle görüşme planlar."
+          }
+        ]
+      },
+      "primaryCta": {
+        "label": "Çözümleri İncele",
+        "href": "/cozumler",
+        "icon": "ArrowRight"
+      },
+      "secondaryCta": {
+        "label": "Anasayfaya Dön",
+        "href": "/",
+        "icon": "Home"
+      },
+      "explore": {
+        "overline": "Beklerken İncelenebilir",
+        "title": "Analize destek olacak içerikler",
+        "description": "Rapor hazırlanırken ekibinizle birlikte gözden geçirebileceğiniz kaynaklar.",
+        "cards": [
+          {
+            "id": "moduller",
+            "icon": "Boxes",
+            "iconAccent": "primary",
+            "title": "Modüller",
+            "description": "Analizde önereceğimiz modüllerin teknik açıklamaları.",
+            "href": "/moduller"
+          },
+          {
+            "id": "itil4",
+            "icon": "GraduationCap",
+            "iconAccent": "purple",
+            "title": "ITIL4 Pratikleri",
+            "description": "Süreçlerinizi ITIL4 referans modeliyle hizalayın.",
+            "href": "/itil4-pratikleri"
+          },
+          {
+            "id": "specsheet",
+            "icon": "FileText",
+            "iconAccent": "accent",
+            "title": "Teknik Özet",
+            "description": "Mimari ve güvenlik başlıklarını içeren özet kart.",
+            "href": "/specsheet"
+          }
+        ]
+      }
+    },
+    "default": {
+      "ticketCode": "REQ-OK",
+      "ticketStatusLabel": "Açıldı",
+      "overline": "Talebiniz Alındı",
+      "title": "Teşekkür ederiz.",
+      "titleHighlight": "Teşekkür ederiz",
+      "lead": "Talebiniz başarıyla bize ulaştı. İlgili ekibimiz en kısa sürede sizinle iletişime geçecek.",
+      "description": "Bu süre içinde ServiceCore platformunu daha yakından tanımak için modüller ve çözümler bölümümüzü ziyaret edebilirsiniz. Sorularınız için iletişim sayfasından bize ulaşabilirsiniz.",
+      "timeline": {
+        "overline": "Sıradaki Adımlar",
+        "title": "Bundan sonra ne olacak?",
+        "steps": [
+          {
+            "step": "01",
+            "icon": "Inbox",
+            "title": "Talebiniz kaydedildi",
+            "description": "Talebiniz sistemimize düştü ve ilgili ekibe iletildi."
+          },
+          {
+            "step": "02",
+            "icon": "Users",
+            "title": "Ekip incelemesi",
+            "description": "Uzman ekibimiz talebinizi en kısa sürede değerlendirecek."
+          },
+          {
+            "step": "03",
+            "icon": "Mail",
+            "title": "Geri dönüş",
+            "description": "Belirttiğiniz iletişim kanalı üzerinden sizinle iletişime geçilecek."
+          },
+          {
+            "step": "04",
+            "icon": "Handshake",
+            "title": "Birlikte ilerleyiş",
+            "description": "İhtiyacınıza uygun ServiceCore çözümü için yol haritası çıkarılır."
+          }
+        ]
+      },
+      "primaryCta": {
+        "label": "Anasayfaya Dön",
+        "href": "/",
+        "icon": "Home"
+      },
+      "secondaryCta": {
+        "label": "Çözümleri İncele",
+        "href": "/cozumler",
+        "icon": "LayoutGrid"
+      },
+      "explore": {
+        "overline": "Keşfet",
+        "title": "ServiceCore'u tanımaya devam edin",
+        "description": "Talebinize yanıt verilirken aşağıdaki kaynakları inceleyebilirsiniz.",
+        "cards": [
+          {
+            "id": "cozumler",
+            "icon": "LayoutGrid",
+            "iconAccent": "primary",
+            "title": "Çözümler",
+            "description": "ITSM, ESM, CSM, ITAM ve EAM çözüm hatları.",
+            "href": "/cozumler"
+          },
+          {
+            "id": "moduller",
+            "icon": "Boxes",
+            "iconAccent": "accent",
+            "title": "Modüller",
+            "description": "Platformdaki tüm ITIL4 ve operasyon modüllerinin listesi.",
+            "href": "/moduller"
+          },
+          {
+            "id": "blog",
+            "icon": "BookOpen",
+            "iconAccent": "purple",
+            "title": "Blog",
+            "description": "ITIL4, ITSM ve servis yönetimi üzerine yazılar.",
+            "href": "/blog"
+          }
+        ]
+      }
+    }
+  },
+  "support": {
+    "overline": "Acil Durum",
+    "title": "Acil teknik destek mi gerekiyor?",
+    "description": "Üretim ortamında etkili bir sorun yaşıyorsanız destek portalı veya 444CORE hattı üzerinden 7/24 ekibimize ulaşabilirsiniz.",
+    "channels": [
+      {
+        "icon": "LifeBuoy",
+        "label": "Destek Portalı",
+        "value": "support.servicecore.app",
+        "href": "https://support.servicecore.app"
+      },
+      {
+        "icon": "Phone",
+        "label": "Çağrı Merkezi",
+        "value": "444CORE",
+        "href": "tel:444CORE"
+      },
+      {
+        "icon": "Mail",
+        "label": "E-posta",
+        "value": "support@servicecore.app",
+        "href": "mailto:support@servicecore.app"
+      }
+    ]
+  }
+}
