@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "title": "Sayfa Bulunamadı | ServiceCore",
+    "description": "Aradığınız sayfa kayıtlarımızda yer almıyor. ServiceCore platformunda yolunuzu kaybetmemeniz için yönlendirme önerileri."
+  },
+  "hero": {
+    "ticketCode": "INC-404",
+    "ticketStatus": "Çözülmedi",
+    "overline": "Hizmet Masası Kaydı",
+    "title": "Bu kayıt sistemimizde bulunamadı.",
+    "titleHighlight": "bulunamadı",
+    "description": "Aradığınız sayfa taşınmış, kaldırılmış ya da hiç var olmamış olabilir. Endişelenmeyin — sizi platformun doğru yerine yönlendirelim.",
+    "primaryCta": {
+      "label": "Anasayfaya Dön",
+      "href": "/"
+    },
+    "secondaryCta": {
+      "label": "Destek Ekibine Yaz",
+      "href": "/iletisim"
+    }
+  },
+  "diagnostics": {
+    "overline": "Olay Analizi",
+    "title": "Kayıt Detayları",
+    "items": [
+      {
+        "label": "Olay Tipi",
+        "value": "Sayfa Bulunamadı"
+      },
+      {
+        "label": "Durum Kodu",
+        "value": "HTTP 404"
+      },
+      {
+        "label": "Etki",
+        "value": "Düşük"
+      },
+      {
+        "label": "Çözüm",
+        "value": "Yönlendirme Önerildi"
+      }
+    ]
+  },
+  "suggestions": {
+    "overline": "Önerilen Rotalar",
+    "title": "Belki bunlardan birini arıyordunuz",
+    "description": "Sıkça ziyaret edilen sayfalardan birkaç başlangıç noktası:",
+    "items": [
+      {
+        "id": "anasayfa",
+        "icon": "Home",
+        "iconAccent": "primary",
+        "title": "Anasayfa",
+        "description": "ServiceCore platformunun genel görünümü ve öne çıkan modüller.",
+        "href": "/"
+      },
+      {
+        "id": "cozumler",
+        "icon": "LayoutGrid",
+        "iconAccent": "accent",
+        "title": "Çözümler",
+        "description": "ITSM, ESM, CSM, ITAM ve EAM için uçtan uca çözüm hatları.",
+        "href": "/cozumler"
+      },
+      {
+        "id": "moduller",
+        "icon": "Boxes",
+        "iconAccent": "purple",
+        "title": "Modüller",
+        "description": "Platformdaki tüm ITIL4 ve operasyon modüllerinin listesi.",
+        "href": "/moduller"
+      },
+      {
+        "id": "iletisim",
+        "icon": "LifeBuoy",
+        "iconAccent": "secondary",
+        "title": "İletişim",
+        "description": "Demo talebi, satış öncesi soru veya teknik destek için bize ulaşın.",
+        "href": "/iletisim"
+      }
+    ]
+  },
+  "search": {
+    "overline": "Modül Kütüphanesi",
+    "title": "Platformun tüm modülleri",
+    "description": "Aradığınız modüle doğrudan ulaşın.",
+    "quickLinks": [
+      { "label": "Hizmet Masası", "href": "/etkilesim-yonetimi" },
+      { "label": "Olay Yönetimi", "href": "/olay-yonetimi" },
+      { "label": "Problem Yönetimi", "href": "/problem-yonetimi" },
+      { "label": "İstek Yönetimi", "href": "/istek-yonetimi" },
+      { "label": "Değişiklik Yönetimi", "href": "/degisiklik-yonetimi" },
+      { "label": "Bilgi Bankası", "href": "/bilgi-bankasi" },
+      { "label": "Servis Kataloğu", "href": "/servis-katalog-yonetimi" },
+      { "label": "Self Servis Portal", "href": "/self-servis-portal" },
+      { "label": "Servis Seviye Yönetimi", "href": "/servis-seviye-yonetimi" },
+      { "label": "Sözleşme Yönetimi", "href": "/sozlesme-yonetimi" },
+      { "label": "Varlık Yönetimi", "href": "/varlik-yonetimi" },
+      { "label": "Discovery", "href": "/discovery" },
+      { "label": "Servis Konfigürasyon", "href": "/servis-konfigurasyon-yonetimi" },
+      { "label": "Servis Topoloji", "href": "/servis-topoloji-kesif" },
+      { "label": "Servis Otomasyonu", "href": "/servis-otomasyonu" },
+      { "label": "İş Akışı Yönetimi", "href": "/is-akisi-yonetimi" },
+      { "label": "Low-Code Geliştirme", "href": "/low-code-gelistirme" },
+      { "label": "Görev Yönetimi", "href": "/gorev-yonetimi" },
+      { "label": "Vardiya Yönetimi", "href": "/vardiya-yonetimi" },
+      { "label": "Mobil Servis Yönetimi", "href": "/mobil-servis-yonetimi" },
+      { "label": "Entegrasyon Sistemi", "href": "/entegrasyon-sistemi" },
+      { "label": "Entegrasyon Yönetimi", "href": "/entegrasyon-yonetimi" },
+      { "label": "Federasyon Motoru", "href": "/federasyon-motoru" },
+      { "label": "ESM", "href": "/esm" },
+      { "label": "Multi-CSM", "href": "/multi-csm" },
+      { "label": "Servis İlişkileri Yönetimi", "href": "/servis-iliskileri-yonetimi" },
+      { "label": "Proje Yönetimi", "href": "/proje-yonetimi" },
+      { "label": "Sürekli İyileştirme", "href": "/surekli-iyilestirme" },
+      { "label": "Raporlama Yönetimi", "href": "/raporlama-yonetimi" },
+      { "label": "Yönetim Paneli", "href": "/yonetim-paneli" }
+    ]
+  }
+}
