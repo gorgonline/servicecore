@@ -51,7 +51,12 @@
       "title": "Çerez Kullanımı",
       "accent": "amber",
       "icon": "cookie",
-      "content": "Şirket, anılan kişisel verilerden bazılarını teknik bir iletişim dosyasını (Çerez-cookie) kullanarak elde edebilir. Bahsi geçen teknik iletişim dosyaları, ana bellekte saklanmak üzere bir internet sitesinin kullanıcının tarayıcısına gönderdiği küçük metin dosyalarıdır. Teknik iletişim dosyası bir internet sitesi hakkında durum ve tercihleri saklayarak İnternet'in kullanımını kolaylaştırır.\n\nTeknik iletişim dosyası, internet sitesini kaç kişinin kullandığını, bir kişinin internet sitesini hangi amaçla, kaç kez ziyaret ettiğini ve ne kadar kaldıklarını belirten istatistiksel bilgileri elde etmeye ve kullanıcılar için özel tasarlanmış kullanıcı sayfalarından dinamik olarak reklam ve içerik üretilmesine yardımcı olur. Teknik iletişim dosyası, ana bellekte veya e-postalardan veri veya başka herhangi bir kişisel veri almak için tasarlanmamıştır."
+      "content": "Şirket, anılan kişisel verilerden bazılarını teknik bir iletişim dosyasını (Çerez-cookie) kullanarak elde edebilir. Bahsi geçen teknik iletişim dosyaları, ana bellekte saklanmak üzere bir internet sitesinin kullanıcının tarayıcısına gönderdiği küçük metin dosyalarıdır.\n\nServicecore üç tür çerez kullanır: (1) Zorunlu çerezler — sitenin temel işleyişi (oturum, güvenlik, form gönderimi) için gereklidir ve devre dışı bırakılamaz. (2) Analitik çerezler — Google Analytics 4 üzerinden anonimleştirilmiş ziyaret istatistikleri toplar; sayfa görüntüleme, kaynak/ortam ve davranış akışı gibi verileri ölçer. (3) Pazarlama çerezleri — Google Ads üzerinden reklam etkinliğini ölçmek (conversion takibi), ilgi alanlarına uygun reklam göstermek ve remarketing kitleleri oluşturmak için kullanılır.\n\nGoogle Consent Mode v2 standardına uygun olarak, siteye ilk girişte tüm analitik ve pazarlama çerezleri varsayılan olarak reddedilmiş durumdadır. Sayfa altında çıkan çerez tercih bandı üzerinden \"Tümünü Kabul Et\" diyerek analitik ve pazarlama çerezlerine onay verebilir, \"Reddet\" diyerek yalnızca zorunlu çerezlerle gezebilirsiniz. Tercihiniz tarayıcınızda saklanır ve gizlilik sayfasından dilediğiniz zaman tarayıcı çerezlerini temizleyerek banner'ı yeniden çağırabilirsiniz.",
+      "purposes": [
+        "Zorunlu — oturum yönetimi, güvenlik, form gönderim akışı",
+        "Analitik — Google Analytics 4 ile anonim ziyaret istatistikleri",
+        "Pazarlama — Google Ads conversion ölçümü ve remarketing"
+      ]
     },
     {
       "id": "isleme-amaclar",
