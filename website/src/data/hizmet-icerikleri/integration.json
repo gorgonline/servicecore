@@ -1,0 +1,91 @@
+{
+  "slug": "integration",
+  "code": "SCINTS",
+  "name": "Entegrasyon Konfigürasyon Paketi",
+  "nameEn": "Integration Configuration Pack",
+  "category": "support",
+  "categoryLabel": "Destek Hizmetleri",
+  "paymentTerm": "one-time",
+  "paymentTermLabel": "Tek seferlik",
+  "accent": "cyan",
+  "icon": "Plug",
+  "hero": {
+    "eyebrow": "Support · Integration",
+    "title": "REST API ile uçtan uca entegrasyon hizmeti",
+    "subtitle": "ServiceCore'un müşterinin diğer yazılım platformları ile tek yönlü veya çift yönlü olarak entegre çalışmasını sağlayan profesyonel hizmet.",
+    "intro": "Entegrasyon Konfigürasyon Paketi, ServiceCore'un REST API teknolojisi üzerinden farklı sistemlerle birlikte çalışmasını sağlayan uçtan uca hizmettir. Entegrasyon tasarımı, kimlik doğrulama, URL ve gövde parametrelerinin tanımlanması, sonuç eşleştirmesi ve otomasyon kuralı ile aktive etme adımlarını kapsar."
+  },
+  "sections": [
+    {
+      "id": "entegrasyon-mimarisi",
+      "title": "Entegrasyon Mimarisi",
+      "type": "text",
+      "content": "ServiceCore API entegrasyonu, farklı yazılım uygulamaları arasında etkili iletişimi sağlayan ve veri alışverişi yapılmasını kolaylaştıran REST API teknolojisini kullanan bir yapıdır."
+    },
+    {
+      "id": "temel-faydalar",
+      "title": "Temel Faydalar",
+      "type": "list",
+      "items": [
+        "Farklı platformlar arasında veri transferini hızlandırma",
+        "İş süreçlerini optimize etme",
+        "Verimliliği artırma",
+        "Sorunsuz veri alışverişi imkânı",
+        "Esnek veri aktarım yeteneği",
+        "Müşteri deneyimini iyileştirme",
+        "Veri doğruluğunu artırma",
+        "Güncel bilgilere daha hızlı erişim sağlama"
+      ]
+    },
+    {
+      "id": "entegrasyon-tasarlama",
+      "title": "Entegrasyon Tasarlama",
+      "type": "text",
+      "content": "ServiceCore, REST API kullanan tüm uygulamalarla tek yönlü veya karşılıklı entegrasyon yapabilir."
+    },
+    {
+      "id": "tasarim-adimlari",
+      "title": "Entegrasyon Tasarım Adımları",
+      "type": "steps",
+      "items": [
+        { "label": "Entegrasyonlar menüsü", "detail": "Sistem ayarlarından Entegrasyonlar bölümüne gidilir." },
+        { "label": "Yeni entegrasyon", "detail": "Sağ üstte + Yeni Entegrasyon düğmesi tıklanır." },
+        { "label": "Temel yapılandırma", "detail": "Entegrasyon Adı, HTTP Metodu (GET, POST, PUT vb.), URL bilgileri tanımlanır." },
+        { "label": "Kimlik doğrulama", "detail": "Kullanıcı adı ve şifre veya seçilen doğrulama türüne göre kriterler girilir." },
+        { "label": "Modül seçimi", "detail": "Hangi ServiceCore modülü ile çalışacağı seçilir." },
+        { "label": "URL ve başlık parametreleri", "detail": "Key/Value ile harici değişkenlere bağlanılır." },
+        { "label": "Gövde parametreleri", "detail": "JSON yapısı tanımlanır, @ sembolü ile dinamik alan ekleme yapılır." },
+        { "label": "Sonuç eşleştirme", "detail": "Harici sistemden dönen yanıt alanları ServiceCore alanlarıyla ilişkilendirilir." },
+        { "label": "Kaydet", "detail": "Kaydet butonu ile tamamlanır." }
+      ]
+    },
+    {
+      "id": "entegrasyon-aktif",
+      "title": "Entegrasyonu Aktifleştirme",
+      "type": "text",
+      "content": "Otomasyonlar Otomasyon Yönetimi sayfasından yapılandırılır. Aşağıdaki 6 adımda kural tasarlanır ve aktive edilir."
+    },
+    {
+      "id": "otomasyon-adimlari",
+      "title": "Otomasyon Tasarım Adımları",
+      "type": "steps",
+      "items": [
+        { "label": "Otomasyon Yönetimi", "detail": "Ayarlar > Otomasyon Yönetimi > +Yeni Kural menüsüne gidilir." },
+        { "label": "Kural adı", "detail": "Kurala anlamlı bir ad verilir." },
+        { "label": "Aşama 1", "detail": "Modül ve Tetikleyici Koşullar tanımlanır." },
+        { "label": "Aşama 2", "detail": "Gerçekleşme Koşulları tanımlanır." },
+        { "label": "Aşama 3", "detail": "Otomasyon Seçimi yapılır; entegrasyon eylemi tetiklenir." },
+        { "label": "Kaydet", "detail": "Kural kaydedilir ve aktifleşir." }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Entegrasyon paketi ile sistemlerinizi tek çatıya alın",
+    "description": "Monitoring, ITAM, HR, ERP ve CRM platformlarının tamamıyla native çalışan, sürdürülebilir entegrasyon mimarisi.",
+    "primaryLabel": "Demo İste",
+    "primaryHref": "/demo",
+    "secondaryLabel": "İletişime Geç",
+    "secondaryHref": "/iletisim"
+  },
+  "docsLink": "https://docs.servicecore.app/docs/category/entegrasyon-kilavuzu"
+}

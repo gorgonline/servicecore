@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants, useInView, useReducedMotion } from "framer-motion";
-import { ArrowRight, Workflow, Layers, ShieldCheck } from "lucide-react";
+import { ArrowRight, Workflow, Layers, ShieldCheck, Server } from "lucide-react";
 import { MeshGradient } from "@paper-design/shaders-react";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
@@ -90,7 +90,7 @@ export default function HeroSection() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col gap-6 lg:col-span-7 xl:col-span-8"
+          className="flex flex-col gap-6 lg:col-span-6 xl:col-span-7"
         >
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 w-fit backdrop-blur-md">
             <span 
@@ -100,7 +100,7 @@ export default function HeroSection() {
             <span className="text-xs font-semibold tracking-[0.2em] uppercase text-(--color-text-overline)">Kurumsal Orkestrasyon Platformu</span>
           </motion.div>
           
-          <motion.h1 variants={itemVariants} className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-8 w-full max-w-225">
+          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 w-full max-w-200">
             Servis, Proje ve Varlık Yönetimini tek platformda{" "}
             <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-brand-accent)">
               kusursuzca birleştirin.
@@ -147,201 +147,215 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="w-full hidden lg:flex items-center justify-center lg:justify-end xl:col-span-4 lg:col-span-5 relative mt-10 lg:mt-0"
+          className="w-full hidden lg:flex items-center justify-center lg:justify-end xl:col-span-5 lg:col-span-6 relative mt-10 lg:mt-0"
         >
-          <div className="relative w-full max-w-125 h-125 flex flex-col justify-between">
-            
-            {/* Background Connection Lines */}
-            <motion.svg 
+          <div className="relative w-full max-w-125 h-128">
+
+            {/* Background Connection Lines — Triangle: top-left, top-right, bottom-center */}
+            <motion.svg
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1.2 }}
-              className="absolute inset-0 w-full h-full pointer-events-none -z-10" 
-              viewBox="0 0 500 500" 
+              className="absolute inset-0 w-full h-full pointer-events-none -z-10"
+              viewBox="0 0 500 500"
               preserveAspectRatio="none"
             >
-              {/* Path from ITSM (top-right) to Center */}
-              <path d="M 380 120 L 250 250" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
-              {/* Animated Flow ITSM -> Center */}
-              <motion.path 
-                d="M 380 120 L 250 250" 
-                stroke={tokens.colors.brand.primary} 
-                strokeWidth="4" 
+              {/* Path from ITSM (top-left) to Center */}
+              <path d="M 110 110 L 250 250" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
+              <motion.path
+                d="M 110 110 L 250 250"
+                stroke={tokens.colors.brand.primary}
+                strokeWidth="4"
                 strokeDasharray="10 10"
                 animate={{ strokeDashoffset: [0, -40] }}
                 transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
               />
 
-              {/* Path from PM (bottom-left) to Center */}
-              <path d="M 120 380 L 250 250" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
-              {/* Animated Flow Center -> PM */}
-              <motion.path 
-                d="M 250 250 L 120 380" 
-                stroke={tokens.colors.brand.secondary} 
-                strokeWidth="4" 
+              {/* Path from Asset (top-right) to Center */}
+              <path d="M 390 110 L 250 250" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
+              <motion.path
+                d="M 250 250 L 390 110"
+                stroke={tokens.colors.brand.accent}
+                strokeWidth="4"
+                strokeDasharray="10 10"
+                animate={{ strokeDashoffset: [0, -40] }}
+                transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+              />
+
+              {/* Path from PM (bottom-center) to Center */}
+              <path d="M 250 400 L 250 250" stroke="rgba(255,255,255,0.15)" strokeWidth="3" />
+              <motion.path
+                d="M 250 250 L 250 400"
+                stroke={tokens.colors.brand.secondary}
+                strokeWidth="4"
                 strokeDasharray="10 10"
                 animate={{ strokeDashoffset: [0, -40] }}
                 transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
               />
             </motion.svg>
 
-            {/* Main Glass Card (ITSM) - Top Right */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
+            {/* Card 1: Hizmet Yönetimi (ITSM) — Top Left */}
+            <motion.div
+              initial={{ opacity: 0, x: -30, y: -20 }}
               animate={{ opacity: 1, x: 0, y: [0, -10, 0] }}
-              transition={{ 
+              transition={{
                 opacity: { duration: 0.8, delay: 0.4 },
                 x: { duration: 0.8, delay: 0.4 },
                 y: { duration: 6, repeat: Infinity, ease: "easeInOut" }
               }}
-              className="w-80 self-end p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl relative z-10"
+              className="absolute top-0 left-0 w-56 p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl z-10"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div 
-                  className="p-3 rounded-xl"
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="p-2.5 rounded-xl"
                   style={{ backgroundColor: `${tokens.colors.brand.primary}33`, color: tokens.colors.brand.primary }}
                 >
-                  <ShieldCheck className="w-6 h-6" />
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">Hizmet Yönetimi</h3>
-                  <p className="text-xs text-(--color-text-secondary)">Aktif Olaylar: 12</p>
+                  <h3 className="text-sm font-semibold text-white">Hizmet Yönetimi</h3>
+                  <p className="text-[10px] text-(--color-text-secondary)">Aktif Olaylar: 12</p>
                 </div>
               </div>
-              
-              {/* Skeletal Activity UI (ITSM Service Queue) */}
-              <div className="w-full h-24 rounded-lg bg-white/5 border border-white/5 p-3 flex flex-col justify-between overflow-hidden relative">
-                <div className="flex items-center gap-2 mb-2">
-                   <div 
-                     className="w-2 h-2 rounded-full animate-pulse" 
-                     style={{ backgroundColor: tokens.colors.brand.primary }}
-                   />
-                   <div className="h-2 w-16 bg-white/20 rounded-full" />
-                </div>
-                
-                {/* Animated Ticket Queue Flow */}
-                <div className="flex flex-col gap-3 relative h-full w-full justify-center">
-                  {/* Row 1 - Incoming */}
-                  <div className="flex items-center gap-2 w-full">
-                    <motion.div 
-                      key="incoming-dot"
-                      animate={{ scale: [0, 1, 1], opacity: [0, 1, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                      className="w-1.5 h-1.5 rounded-full shrink-0" 
-                      style={{ backgroundColor: tokens.colors.brand.primary }}
-                    />
-                    <motion.div 
-                      key="incoming-line1"
-                      animate={{ opacity: [0, 1, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                      className="h-1.5 w-10 bg-white/10 rounded-full" 
-                    />
-                    <motion.div 
-                      key="incoming-line2"
-                      animate={{ opacity: [0, 1, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                      className="h-1.5 w-5/6 bg-white/20 rounded-full" 
-                    />
-                  </div>
-                  
-                  {/* Row 2 - Processing (Changes color) */}
-                   <div className="flex items-center gap-2 w-full">
-                    <motion.div 
-                      key="processing-dot"
-                      animate={{ backgroundColor: [tokens.colors.brand.primary, tokens.colors.brand.secondary, tokens.colors.brand.secondary] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
-                      className="w-1.5 h-1.5 rounded-full shrink-0" 
-                    />
-                    <div className="h-1.5 w-8 bg-white/10 rounded-full" />
-                    <div className="h-1.5 w-full bg-white/20 rounded-full" />
-                  </div>
 
-                  {/* Row 3 - Resolved (Fades out) */}
-                  <div className="flex items-center gap-2 w-full">
-                    <motion.div 
-                      key="resolved-dot"
-                      animate={{ scale: [1, 1, 0], opacity: [1, 1, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
-                      className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" 
-                    />
-                    <motion.div 
-                      key="resolved-line1"
-                      animate={{ opacity: [1, 1, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
-                      className="h-1.5 w-12 bg-white/10 rounded-full" 
-                    />
-                    <motion.div 
-                      key="resolved-line2"
-                      animate={{ opacity: [1, 1, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
-                      className="h-1.5 w-3/4 bg-white/20 rounded-full" 
-                    />
-                  </div>
+              {/* Compact Ticket Queue */}
+              <div className="w-full rounded-lg bg-white/5 border border-white/5 p-2.5 flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <motion.div
+                    animate={{ scale: [0, 1, 1], opacity: [0, 1, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                    className="w-1.5 h-1.5 rounded-full shrink-0"
+                    style={{ backgroundColor: tokens.colors.brand.primary }}
+                  />
+                  <motion.div
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                    className="h-1.5 flex-1 bg-white/20 rounded-full"
+                  />
+                </div>
+                <div className="flex items-center gap-2">
+                  <motion.div
+                    animate={{ backgroundColor: [tokens.colors.brand.primary, tokens.colors.brand.secondary, tokens.colors.brand.secondary] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 1 }}
+                    className="w-1.5 h-1.5 rounded-full shrink-0"
+                  />
+                  <div className="h-1.5 flex-1 bg-white/20 rounded-full" />
+                </div>
+                <div className="flex items-center gap-2">
+                  <motion.div
+                    animate={{ scale: [1, 1, 0], opacity: [1, 1, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
+                    className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0"
+                  />
+                  <motion.div
+                    animate={{ opacity: [1, 1, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: 2 }}
+                    className="h-1.5 flex-1 bg-white/20 rounded-full"
+                  />
                 </div>
               </div>
             </motion.div>
 
-            {/* Exact Center Node - Absolute Positioned within the Flex Parent */}
+            {/* Card 2: Varlık Yönetimi — Top Right */}
             <motion.div
-               initial={{ scale: 0 }}
-               animate={{ scale: 1 }}
-               transition={{ duration: 0.5, delay: 0.8, type: "spring", bounce: 0.5 }}
-               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 rounded-full shadow-[0_0_40px_rgba(0,112,243,0.8)] z-20"
-               style={{ backgroundColor: tokens.colors.brand.primary }}
+              initial={{ opacity: 0, x: 30, y: -20 }}
+              animate={{ opacity: 1, x: 0, y: [0, -8, 0] }}
+              transition={{
+                opacity: { duration: 0.8, delay: 0.5 },
+                x: { duration: 0.8, delay: 0.5 },
+                y: { duration: 6.5, delay: 0.5, repeat: Infinity, ease: "easeInOut" }
+              }}
+              className="absolute top-0 right-0 w-56 p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl z-10"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="p-2.5 rounded-xl"
+                  style={{ backgroundColor: `${tokens.colors.brand.accent}33`, color: tokens.colors.brand.accent }}
+                >
+                  <Server className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-semibold text-white">Varlık Yönetimi</h3>
+                  <p className="text-[10px] text-(--color-text-secondary)">Aktif: 248</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-1.5">
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="flex items-center gap-2 px-2 py-1.5 rounded-md bg-white/5">
+                    <motion.div
+                      animate={{ opacity: [0.4, 1, 0.4] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.4, ease: "easeInOut" }}
+                      className="w-1.5 h-1.5 rounded-full shrink-0"
+                      style={{ backgroundColor: tokens.colors.brand.accent }}
+                    />
+                    <div className="h-1.5 flex-1 bg-white/15 rounded-full" />
+                    <div className="h-1.5 w-4 bg-white/10 rounded-full" />
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Center Node — geometric apex of the triangle */}
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5, delay: 0.8, type: "spring", bounce: 0.5 }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 rounded-full shadow-[0_0_40px_rgba(0,112,243,0.8)] z-20"
+              style={{ backgroundColor: tokens.colors.brand.primary }}
             >
               <Workflow className="w-8 h-8 text-white" />
             </motion.div>
 
-            {/* Secondary Glass Card (Project Management) - Bottom Left */}
-            <motion.div 
-              initial={{ opacity: 0, y: 50 }}
+            {/* Card 3: Proje Yönetimi — Bottom Center (triangle apex) */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: [0, 10, 0] }}
-              transition={{ 
+              transition={{
                 opacity: { duration: 0.8, delay: 0.6 },
                 y: { duration: 7, delay: 1, repeat: Infinity, ease: "easeInOut" }
               }}
-              className="w-80 self-start p-6 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl relative z-10"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl z-10"
             >
-               <div className="flex items-center gap-4 mb-4">
-                <div 
-                  className="p-3 rounded-xl"
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="p-2.5 rounded-xl"
                   style={{ backgroundColor: `${tokens.colors.brand.secondary}33`, color: tokens.colors.brand.secondary }}
                 >
-                  <Layers className="w-6 h-6" />
+                  <Layers className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white">Proje Yönetimi</h3>
-                  <p className="text-xs text-(--color-text-secondary)">Sprint 42 - Yolunda</p>
+                  <h3 className="text-sm font-semibold text-white">Proje Yönetimi</h3>
+                  <p className="text-[10px] text-(--color-text-secondary)">Sprint 42 - Yolunda</p>
                 </div>
               </div>
-              
-              {/* Project Management Animated Gantt Chart UI */}
-              <div className="w-full flex flex-col gap-3 mt-4">
-                <div className="w-full h-4 rounded-full bg-white/10 relative overflow-hidden">
-                  <motion.div 
-                     initial={{ width: "20%" }}
-                     animate={{ width: "80%" }}
-                     transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-                     className="absolute left-0 top-0 h-full rounded-full"
-                     style={{ backgroundColor: tokens.colors.brand.secondary }}
+
+              <div className="w-full flex flex-col gap-2">
+                <div className="w-full h-3 rounded-full bg-white/10 relative overflow-hidden">
+                  <motion.div
+                    initial={{ width: "20%" }}
+                    animate={{ width: "80%" }}
+                    transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                    className="absolute left-0 top-0 h-full rounded-full"
+                    style={{ backgroundColor: tokens.colors.brand.secondary }}
                   />
                 </div>
-                <div className="w-full h-4 rounded-full bg-white/10 relative overflow-hidden">
-                  <motion.div 
-                     initial={{ left: "10%", width: "40%" }}
-                     animate={{ left: "40%", width: "50%" }}
-                     transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-                     className="absolute top-0 h-full rounded-full"
-                     style={{ backgroundColor: tokens.colors.brand.secondary }}
+                <div className="w-full h-3 rounded-full bg-white/10 relative overflow-hidden">
+                  <motion.div
+                    initial={{ left: "10%", width: "40%" }}
+                    animate={{ left: "40%", width: "50%" }}
+                    transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                    className="absolute top-0 h-full rounded-full"
+                    style={{ backgroundColor: tokens.colors.brand.secondary }}
                   />
                 </div>
-                <div className="w-full h-4 rounded-full bg-white/10 relative overflow-hidden">
-                  <motion.div 
-                     initial={{ width: "10%" }}
-                     animate={{ width: "95%" }}
-                     transition={{ duration: 5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-                     className="absolute left-0 top-0 h-full rounded-full"
-                     style={{ backgroundColor: tokens.colors.brand.secondary }}
+                <div className="w-full h-3 rounded-full bg-white/10 relative overflow-hidden">
+                  <motion.div
+                    initial={{ width: "10%" }}
+                    animate={{ width: "95%" }}
+                    transition={{ duration: 5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                    className="absolute left-0 top-0 h-full rounded-full"
+                    style={{ backgroundColor: tokens.colors.brand.secondary }}
                   />
                 </div>
               </div>

@@ -1,0 +1,180 @@
+{
+  "slug": "launch-ready",
+  "code": "SCLRCP",
+  "name": "Launch Ready Konfigürasyon Paketi",
+  "nameEn": "Launch Ready - Configuration Pack",
+  "category": "setup",
+  "categoryLabel": "Kurulum Hizmetleri",
+  "paymentTerm": "one-time",
+  "paymentTermLabel": "Tek seferlik",
+  "accent": "blue",
+  "icon": "Rocket",
+  "hero": {
+    "eyebrow": "Setup · Launch Ready",
+    "title": "Anahtar teslim ServiceCore implementasyonu",
+    "subtitle": "Standart uygulama devreye alma işlemlerinin tamamını içeren, uygulamalı konfigürasyon gösterimleri ile yürütülen detaylı implementasyon hizmeti.",
+    "intro": "Launch Ready Konfigürasyon Paketi, ServiceCore tarafından sunulan standart implementasyon hizmetidir. Müşterilere uygulamalı gösterimler yapılarak konfigürasyon süreci yönetilir; kullanıcı tanımlamadan ITSM süreç rollerine, SLA poliçelerinden iş otomasyon kurallarına kadar 18 ana iskelet adımını kapsar."
+  },
+  "sections": [
+    {
+      "id": "giris",
+      "title": "Giriş",
+      "type": "text",
+      "content": "ServiceCore tarafından sunulan implementasyon hizmeti, standart uygulama devreye alma işlemlerini içerir ve müşterilere uygulamalı gösterimler yaparak konfigürasyon süreci yönetilir."
+    },
+    {
+      "id": "implementasyon-adimlari",
+      "title": "Başlıca İmplementasyon Adımları",
+      "type": "text",
+      "content": "Launch Ready paketi, ServiceCore'un yaşayan bir servis yönetim ortamı olarak konumlandırılması için gerekli tüm konfigürasyon disiplinlerini kapsayan 18 ana iskelet adımı üzerinden yürütülür. Her adım danışman eşliğinde uygulamalı olarak gerçekleştirilir ve sahiplenme müşteri ekibine devredilir."
+    },
+    {
+      "id": "kullanici-gruplari",
+      "title": "Kullanıcıları ve Kullanıcı Grupları Tanımlama",
+      "type": "text",
+      "content": "Active Directory'den otomatik senkronize edilen kullanıcılar, yetki grupları ve fonksiyonel dağılımlara göre gruplandırılır."
+    },
+    {
+      "id": "lisans-teknisyen",
+      "title": "Lisans ve Teknisyen Tanımlama",
+      "type": "list",
+      "items": [
+        "AD'den alınan destek personeli Teknisyen (Agent) rolüne dönüştürülür",
+        "BT ve diğer destek personeli fonksiyonel çalışma gruplarına göre sınıflandırılır",
+        "Grup, rol ve lisans atamaları yapılır"
+      ]
+    },
+    {
+      "id": "itsm-surec-rolleri",
+      "title": "ITSM Süreç Rolleri Belirleme",
+      "type": "text",
+      "content": "Gerekli ITSM süreç sahipleri belirlenerek yönetim yapısı tanımlanır."
+    },
+    {
+      "id": "egitim-cssm-a",
+      "title": "Eğitim Programları",
+      "type": "text",
+      "content": "CSSM-A Certified Servicecore Service Management Administrator eğitimi sistem yöneticilerine, ürün sahiplerine ve süreç sahiplerine sunulur."
+    },
+    {
+      "id": "oncelik-etki-aciliyet",
+      "title": "Öncelik, Etki ve Aciliyet Tanımlaması",
+      "type": "text",
+      "content": "Tüm süreçlerin belirleyici unsurları olan önceliklendirme ve etki skalalarının kurum ihtiyaçlarına göre düzenlenmesi gerçekleştirilir."
+    },
+    {
+      "id": "global-statuslar",
+      "title": "Global Statüsler",
+      "type": "text",
+      "content": "Süreçler ve görevlerdeki durum tanımlamaları kuruma özel düzenlenir."
+    },
+    {
+      "id": "surec-gorev-kategori",
+      "title": "Süreç ve Görev Kategorileri",
+      "type": "text",
+      "content": "Kuruma özgü kategoriler her süreç ve görev için tanımlanır."
+    },
+    {
+      "id": "sablon-tanimlama",
+      "title": "Şablon Tanımlaması",
+      "type": "list",
+      "items": [
+        "Süreç Şablonları (Quick Create Templates): ITSM süreçleri için hızlı kayıt oluşturma şablonları hazırlanır.",
+        "Görev Şablonları: Teknik operasyon el kitabı hazırlanarak şablon görevler sisteme yüklenir.",
+        "Worklog/Timesheet Şablonları: İş kaydı girişleri için ön tanımlanmış şablonlar kullanıma hazır hale getirilir."
+      ]
+    },
+    {
+      "id": "hizmet-katalogu",
+      "title": "Hizmet Kataloğu Tanımlama",
+      "type": "list",
+      "items": [
+        "Hizmet kategorileri ve alt kategorilerinin oluşturulması",
+        "Hizmet öğelerinin belirlenmesi ve temel tanımlarının girilmesi",
+        "Gerekli durumlarda hizmet onaylarının tanımlanması",
+        "Hizmet görevleri ve görev akışlarının tanımlanması",
+        "Hizmete özel ek alanlar için formların tasarlanması"
+      ]
+    },
+    {
+      "id": "varlik-yonetimi",
+      "title": "Varlık Yönetimi (CMDB)",
+      "type": "list",
+      "intro": "Kurum envanteri ve servisleri CMDB modülüne aktarılır:",
+      "items": [
+        "CI (Configuration Item) türleri tanımlanır",
+        "İlişki türleri ve kullanım modelleri belirlenir",
+        "Ek öznitelikler girilir",
+        "Servisler ve assetler arasındaki ilişkiler modellenir",
+        "Topoloji/harita oluşturulur"
+      ]
+    },
+    {
+      "id": "tedarikci",
+      "title": "Tedarikçi Tanımlama",
+      "type": "text",
+      "content": "Kurumun çalışmakta olduğu tedarikçiler sisteme yüklenerek, sözleşme ve iletişim bilgileri kaydedilir."
+    },
+    {
+      "id": "sozlesme",
+      "title": "Sözleşme Tanımlama",
+      "type": "text",
+      "content": "Tedarikçi sözleşmeleri, iç destek birim sözleşmeleri ve müşteri sözleşmeleri sisteme aktarılır."
+    },
+    {
+      "id": "sla-policeleri",
+      "title": "SLA Poliçeleri Oluşturma",
+      "type": "text",
+      "content": "Kategori-servis-departman özelinde belirlenen müdahale ve çözüm süreleri için SLA kuralları belirlenir."
+    },
+    {
+      "id": "uyari-sablonlari",
+      "title": "Uyarı Şablonları",
+      "type": "text",
+      "content": "E-posta bilgilendirme ve uyarı şablonları seçilir ve kuruma göre düzenlenir."
+    },
+    {
+      "id": "kapatma-kurallari",
+      "title": "Kapatma Kuralları",
+      "type": "text",
+      "content": "Süreçlerin kapatma kuralları ve zorunlu alanlar admin panelde belirlenir."
+    },
+    {
+      "id": "is-otomasyon",
+      "title": "İş Otomasyon Kuralları",
+      "type": "text",
+      "content": "Basit aksiyonlardan, çok ön koşullu, çok katmanlı ve çok aksiyonlu dinamik kurallara kadar otomasyon kuralları tasarlanır."
+    },
+    {
+      "id": "teknisyen-egitim",
+      "title": "Teknisyen Eğitimleri",
+      "type": "text",
+      "content": "CSSM-P Certified Servicecore Service Management Practitioner eğitimi uygulamalı olarak sunulur ve servis yönetimi süreçlerinin pratik kullanımı öğretilir."
+    },
+    {
+      "id": "kullanima-baslama",
+      "title": "Kullanıma Başlama ve Erken Dönem Destek",
+      "type": "list",
+      "items": [
+        "Admin ayarları tamamlanır",
+        "Son kullanıcılara ve ilgili taraflara sistem duyurulması yapılır",
+        "Teknisyenlere 1 ay boyunca yakın destek sağlanır"
+      ]
+    },
+    {
+      "id": "devam-eden-destek",
+      "title": "Devam Eden Destek",
+      "type": "text",
+      "content": "Canlıya geçiş sonrası destek paketi bulunan müşterilerimiz tüm administration işlemleri için destek almaya devam edebilirler. Destek paketi kapsamı dışındaki hizmetler için ek teklifler sunulabilir."
+    }
+  ],
+  "cta": {
+    "title": "Launch Ready ile anahtar teslim implementasyon",
+    "description": "Servis yönetim ortamınızı sıfırdan kurmak veya kapsamlı yeniden konumlandırmak isteyen kurumlar için uçtan uca rehberli implementasyon.",
+    "primaryLabel": "Demo İste",
+    "primaryHref": "/demo",
+    "secondaryLabel": "İletişime Geç",
+    "secondaryHref": "/iletisim"
+  },
+  "docsLink": "https://docs.servicecore.app/docs/kurulumkilavuzu/implementasyonadimlari/"
+}

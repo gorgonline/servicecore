@@ -69,10 +69,19 @@ import {
   Waypoints,
   Combine,
   Plug,
+  Star,
+  Compass,
   type LucideIcon
 } from "lucide-react";
 
 import aicoreData from "@/data/aicore.json";
+import {
+  HIZMET_CATEGORIES,
+  HIZMET_SERVICES,
+  buildServiceHref,
+  type HizmetCategory,
+  type HizmetService,
+} from "@/lib/hizmetler";
 
 // Sıralama ve isimler canli siteyle birebir. Href'ler korundu.
 const modules = [
@@ -188,6 +197,58 @@ const resourcesSubmenu = [
   { name: "Destek Kanalları", icon: LifeBuoy, desc: "Premium, kurumsal ve global destek seviyeleri.", href: "/destek" },
 ];
 
+// Hizmetler mega menu — JSON kaynagindan turetilmis 4 kategori + altlarinda hizmet listesi
+const HIZMETLER_CATEGORY_ICONS: Record<string, LucideIcon> = {
+  Hammer,
+  LifeBuoy,
+  GraduationCap,
+  Compass,
+};
+
+const HIZMETLER_TONE_MAP: Record<
+  string,
+  { iconBg: string; iconBorder: string; iconText: string; headerText: string; headerHover: string }
+> = {
+  blue: {
+    iconBg: "bg-blue-500/15",
+    iconBorder: "border-blue-500/25",
+    iconText: "text-(--color-accent-blue-light)",
+    headerText: "text-(--color-accent-blue-light)",
+    headerHover: "group-hover:text-(--color-accent-blue-light)",
+  },
+  cyan: {
+    iconBg: "bg-cyan-500/15",
+    iconBorder: "border-cyan-500/25",
+    iconText: "text-(--color-accent-cyan-light)",
+    headerText: "text-(--color-accent-cyan-light)",
+    headerHover: "group-hover:text-(--color-accent-cyan-light)",
+  },
+  emerald: {
+    iconBg: "bg-emerald-500/15",
+    iconBorder: "border-emerald-500/25",
+    iconText: "text-(--color-accent-emerald-light)",
+    headerText: "text-(--color-accent-emerald-light)",
+    headerHover: "group-hover:text-(--color-accent-emerald-light)",
+  },
+  purple: {
+    iconBg: "bg-purple-500/15",
+    iconBorder: "border-purple-500/25",
+    iconText: "text-(--color-accent-purple-light)",
+    headerText: "text-(--color-accent-purple-light)",
+    headerHover: "group-hover:text-(--color-accent-purple-light)",
+  },
+};
+
+interface HizmetlerColumn {
+  category: HizmetCategory;
+  services: HizmetService[];
+}
+
+const hizmetlerColumns: HizmetlerColumn[] = HIZMET_CATEGORIES.map((category) => ({
+  category,
+  services: HIZMET_SERVICES.filter((s) => s.category === category.slug),
+}));
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -250,6 +311,68 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-8">
 
+          {/* Mega Menu Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveMenu("modules")}
+            onMouseLeave={() => setActiveMenu(null)}
+          >
+            <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
+              Modüller
+              <motion.div
+                animate={{ rotate: activeMenu === "modules" ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </motion.div>
+            </button>
+
+            {/* Mega Menu Dropdown */}
+            <AnimatePresence>
+              {activeMenu === "modules" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  onMouseEnter={() => setActiveMenu("modules")}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <div className="grid grid-cols-4 gap-x-6 gap-y-2">
+                    {modules.map((mod, idx) => {
+                      const Icon = mod.icon;
+                      return (
+                        <Link
+                          key={idx}
+                          href={mod.href || "#"}
+                          onClick={() => setActiveMenu(null)}
+                          className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
+                        >
+                          <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-blue-light) group-hover:bg-(--color-brand-primary) group-hover:text-white transition-colors">
+                            <Icon className="w-5 h-5" />
+                          </div>
+                          <div className="min-w-0">
+                            <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-brand-primary) transition-colors">{mod.name}</h4>
+                            <p className="text-[11px] text-(--color-text-secondary) leading-tight line-clamp-1">{mod.desc}</p>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+
+                  <div className="mt-4 pt-3 border-t border-white/10 flex justify-between items-center">
+                     <p className="text-sm text-(--color-text-secondary)">Tüm ekosistemi tek bir platformda yönetin.</p>
+                     <Link href="/moduller" className="text-sm font-medium text-(--color-brand-primary) hover:text-(--color-accent-blue-light) flex items-center gap-1 group cursor-pointer">
+                        Tüm Modülleri İncele
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                     </Link>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           {/* Urunler (eski Cozumler) Mega Menu Trigger */}
           <div
             className="relative"
@@ -257,7 +380,7 @@ export default function Navbar() {
             onMouseLeave={() => setActiveMenu(null)}
           >
             <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
-              Ürünler
+              Çözümler
               <motion.div
                 animate={{ rotate: activeMenu === "solutions" ? 180 : 0 }}
                 transition={{ duration: 0.2 }}
@@ -301,68 +424,6 @@ export default function Navbar() {
                         </Link>
                       );
                     })}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          {/* Mega Menu Trigger */}
-          <div 
-            className="relative"
-            onMouseEnter={() => setActiveMenu("modules")}
-            onMouseLeave={() => setActiveMenu(null)}
-          >
-            <button className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer">
-              Modüller
-              <motion.div
-                animate={{ rotate: activeMenu === "modules" ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ChevronDown className="w-4 h-4" />
-              </motion.div>
-            </button>
-
-            {/* Mega Menu Dropdown */}
-            <AnimatePresence>
-              {activeMenu === "modules" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
-                  onMouseEnter={() => setActiveMenu("modules")}
-                  onMouseLeave={() => setActiveMenu(null)}
-                >
-                  <div className="grid grid-cols-4 gap-x-6 gap-y-2">
-                    {modules.map((mod, idx) => {
-                      const Icon = mod.icon;
-                      return (
-                        <Link
-                          key={idx}
-                          href={mod.href || "#"}
-                          onClick={() => setActiveMenu(null)}
-                          className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-white/5 transition-colors group cursor-pointer"
-                        >
-                          <div className="mt-0.5 p-2 rounded-lg bg-white/5 text-(--color-accent-blue-light) group-hover:bg-(--color-brand-primary) group-hover:text-white transition-colors">
-                            <Icon className="w-5 h-5" />
-                          </div>
-                          <div className="min-w-0">
-                            <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-brand-primary) transition-colors">{mod.name}</h4>
-                            <p className="text-[11px] font-mono text-(--color-text-secondary) leading-tight line-clamp-1">{mod.desc}</p>
-                          </div>
-                        </Link>
-                      );
-                    })}
-                  </div>
-
-                  <div className="mt-4 pt-3 border-t border-white/10 flex justify-between items-center">
-                     <p className="text-sm text-(--color-text-secondary)">Tüm ekosistemi tek bir platformda yönetin.</p>
-                     <Link href="/moduller" className="text-sm font-medium text-(--color-brand-primary) hover:text-(--color-accent-blue-light) flex items-center gap-1 group cursor-pointer">
-                        Tüm Modülleri İncele
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                     </Link>
                   </div>
                 </motion.div>
               )}
@@ -424,7 +485,7 @@ export default function Navbar() {
                             </div>
                             <div className="min-w-0 flex-1 pr-10">
                               <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-accent-purple-light) transition-colors">{tool.name}</h4>
-                              <p className="text-[11px] font-mono text-(--color-text-secondary) leading-snug line-clamp-2">{tool.desc}</p>
+                              <p className="text-[11px] text-(--color-text-secondary) leading-snug line-clamp-2">{tool.desc}</p>
                             </div>
                             {tool.isBeta && (
                               <span className="absolute top-2 right-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/12 text-[9px] font-mono font-semibold tracking-[0.14em] uppercase text-(--color-accent-purple-light)">
@@ -436,6 +497,124 @@ export default function Navbar() {
                         );
                       })}
                     </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Hizmetler Mega Menu Trigger */}
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveMenu("hizmetler")}
+            onMouseLeave={() => setActiveMenu(null)}
+          >
+            <Link
+              href="/hizmetler"
+              className="flex items-center gap-1 text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors py-2 cursor-pointer"
+            >
+              Hizmetler
+              <motion.div
+                animate={{ rotate: activeMenu === "hizmetler" ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </motion.div>
+            </Link>
+
+            {/* Hizmetler Mega Menu Dropdown */}
+            <AnimatePresence>
+              {activeMenu === "hizmetler" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  onMouseEnter={() => setActiveMenu("hizmetler")}
+                  onMouseLeave={() => setActiveMenu(null)}
+                >
+                  <div className="grid grid-cols-4 gap-x-6">
+                    {hizmetlerColumns.map((column) => {
+                      const CatIcon = HIZMETLER_CATEGORY_ICONS[column.category.icon] ?? Hammer;
+                      const tone = HIZMETLER_TONE_MAP[column.category.accent] ?? HIZMETLER_TONE_MAP.blue;
+                      return (
+                        <div key={column.category.slug} className="flex flex-col gap-3">
+                          <Link
+                            href={column.category.href}
+                            onClick={() => setActiveMenu(null)}
+                            className="flex items-center gap-2.5 pb-3 border-b border-white/8 group cursor-pointer"
+                          >
+                            <div
+                              className={`w-8 h-8 rounded-lg ${tone.iconBg} border ${tone.iconBorder} flex items-center justify-center ${tone.iconText} shrink-0`}
+                            >
+                              <CatIcon className="w-4 h-4" />
+                            </div>
+                            <h4
+                              className={`text-sm font-semibold ${tone.headerText} tracking-tight transition-colors`}
+                            >
+                              {column.category.name}
+                            </h4>
+                          </Link>
+
+                          <ul className="flex flex-col gap-0.5">
+                            {column.services.map((service) => {
+                              const href = buildServiceHref(service);
+                              const isAnnual = service.paymentTerm === "annual";
+                              return (
+                                <li key={service.slug}>
+                                  <Link
+                                    href={href}
+                                    onClick={() => setActiveMenu(null)}
+                                    className={`flex items-start justify-between gap-2 px-2 py-1.5 rounded-md text-xs text-(--color-text-secondary) hover:bg-white/5 hover:text-white transition-colors group cursor-pointer`}
+                                  >
+                                    <span className="flex items-center gap-1.5 leading-snug">
+                                      <span className={`${tone.headerHover} transition-colors`}>{service.name}</span>
+                                      {service.featured && (
+                                        <Star
+                                          className={`w-3 h-3 ${tone.iconText} shrink-0`}
+                                          aria-label="Öne çıkan hizmet"
+                                          fill="currentColor"
+                                        />
+                                      )}
+                                    </span>
+                                    {isAnnual && (
+                                      <span className="text-[9px] font-mono text-(--color-text-muted) shrink-0 mt-0.5">
+                                        Yıllık
+                                      </span>
+                                    )}
+                                  </Link>
+                                </li>
+                              );
+                            })}
+                          </ul>
+
+                          <Link
+                            href={column.category.href}
+                            onClick={() => setActiveMenu(null)}
+                            className={`mt-1 inline-flex items-center gap-1 px-2 text-[11px] font-medium ${tone.headerText} hover:text-white transition-colors cursor-pointer`}
+                          >
+                            Tüm {column.category.name}
+                            <ArrowRight className="w-3 h-3" />
+                          </Link>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="mt-5 pt-4 border-t border-white/10 flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center">
+                    <p className="text-xs text-(--color-text-secondary)">
+                      <span className="text-white font-semibold">{HIZMET_SERVICES.length}</span> profesyonel hizmet ·
+                      <span className="text-white font-semibold"> {HIZMET_CATEGORIES.length}</span> kategori · uçtan uca
+                    </p>
+                    <Link
+                      href="/hizmetler"
+                      onClick={() => setActiveMenu(null)}
+                      className="text-sm font-medium text-(--color-brand-primary) hover:text-(--color-accent-blue-light) flex items-center gap-1 group cursor-pointer"
+                    >
+                      Tüm Hizmetleri Keşfet
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </div>
                 </motion.div>
               )}
@@ -625,36 +804,34 @@ export default function Navbar() {
 
                 <div className="flex flex-col gap-6">
 
-                  {/* Urunler (eski Cozumler) Accordion */}
+                  {/* Modüller Accordion */}
                   <div className="flex flex-col gap-3">
                     <button
-                      onClick={() => setActiveMenu(activeMenu === "solutions" ? null : "solutions")}
+                      onClick={() => setActiveMenu(activeMenu === "modules" ? null : "modules")}
                       className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors w-full cursor-pointer"
                     >
-                      Ürünler
-                      <motion.div animate={{ rotate: activeMenu === "solutions" ? 180 : 0 }}>
+                      Modüller
+                      <motion.div animate={{ rotate: activeMenu === "modules" ? 180 : 0 }}>
                         <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
                       </motion.div>
                     </button>
                     <AnimatePresence>
-                      {activeMenu === "solutions" && (
+                      {activeMenu === "modules" && (
                         <motion.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          className="overflow-hidden flex flex-col gap-2 pt-3"
+                          className="overflow-hidden grid grid-cols-2 gap-x-2 gap-y-2 pt-3"
                         >
-                          {solutionsSubmenu.map((sol, idx) => (
+                          {modules.map((mod, idx) => (
                             <Link
                               key={idx}
-                              href={sol.href}
+                              href={mod.href || "#"}
                               className="flex items-center gap-3 text-(--color-text-overline) hover:text-white py-2 group cursor-pointer"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
-                              <sol.icon className="w-5 h-5 text-(--color-accent-purple-light) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
-                              <span className="text-sm font-medium transition-colors">
-                                {sol.name} <span className="text-xs text-(--color-text-muted) ml-1 font-normal">— {sol.title}</span>
-                              </span>
+                              <mod.icon className="w-5 h-5 text-(--color-brand-primary) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
+                              <span className="text-sm font-medium transition-colors">{mod.name}</span>
                             </Link>
                           ))}
                         </motion.div>
@@ -662,34 +839,36 @@ export default function Navbar() {
                     </AnimatePresence>
                   </div>
 
-                  {/* Modüller Accordion */}
+                  {/* Urunler (eski Cozumler) Accordion */}
                 <div className="flex flex-col gap-3">
-                  <button 
-                    onClick={() => setActiveMenu(activeMenu === "modules" ? null : "modules")}
+                  <button
+                    onClick={() => setActiveMenu(activeMenu === "solutions" ? null : "solutions")}
                     className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors w-full cursor-pointer"
                   >
-                    Modüller
-                    <motion.div animate={{ rotate: activeMenu === "modules" ? 180 : 0 }}>
+                    Çözümler
+                    <motion.div animate={{ rotate: activeMenu === "solutions" ? 180 : 0 }}>
                       <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
                     </motion.div>
                   </button>
                   <AnimatePresence>
-                    {activeMenu === "modules" && (
+                    {activeMenu === "solutions" && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden grid grid-cols-2 gap-x-2 gap-y-2 pt-3"
+                        className="overflow-hidden flex flex-col gap-2 pt-3"
                       >
-                        {modules.map((mod, idx) => (
+                        {solutionsSubmenu.map((sol, idx) => (
                           <Link
                             key={idx}
-                            href={mod.href || "#"}
+                            href={sol.href}
                             className="flex items-center gap-3 text-(--color-text-overline) hover:text-white py-2 group cursor-pointer"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
-                            <mod.icon className="w-5 h-5 text-(--color-brand-primary) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
-                            <span className="text-sm font-medium transition-colors">{mod.name}</span>
+                            <sol.icon className="w-5 h-5 text-(--color-accent-purple-light) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
+                            <span className="text-sm font-medium transition-colors">
+                              {sol.name} <span className="text-xs text-(--color-text-muted) ml-1 font-normal">— {sol.title}</span>
+                            </span>
                           </Link>
                         ))}
                       </motion.div>
@@ -733,6 +912,82 @@ export default function Navbar() {
                             )}
                           </Link>
                         ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
+                {/* Hizmetler Accordion */}
+                <div className="flex flex-col gap-3">
+                  <button
+                    onClick={() => setActiveMenu(activeMenu === "hizmetler" ? null : "hizmetler")}
+                    className="flex items-center justify-between text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors w-full cursor-pointer"
+                  >
+                    Hizmetler
+                    <motion.div animate={{ rotate: activeMenu === "hizmetler" ? 180 : 0 }}>
+                      <ChevronDown className="w-5 h-5 text-(--color-text-secondary)" />
+                    </motion.div>
+                  </button>
+                  <AnimatePresence>
+                    {activeMenu === "hizmetler" && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden flex flex-col gap-4 pt-3"
+                      >
+                        {hizmetlerColumns.map((column) => {
+                          const CatIcon = HIZMETLER_CATEGORY_ICONS[column.category.icon] ?? Hammer;
+                          const tone = HIZMETLER_TONE_MAP[column.category.accent] ?? HIZMETLER_TONE_MAP.blue;
+                          return (
+                            <div key={column.category.slug} className="flex flex-col gap-1.5">
+                              <Link
+                                href={column.category.href}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="flex items-center gap-2.5 py-1 cursor-pointer"
+                              >
+                                <div
+                                  className={`w-7 h-7 rounded-md ${tone.iconBg} border ${tone.iconBorder} flex items-center justify-center ${tone.iconText} shrink-0`}
+                                >
+                                  <CatIcon className="w-3.5 h-3.5" />
+                                </div>
+                                <span className={`text-sm font-semibold ${tone.headerText}`}>
+                                  {column.category.name}
+                                </span>
+                              </Link>
+                              <ul className="flex flex-col pl-9">
+                                {column.services.map((service) => {
+                                  const href = buildServiceHref(service);
+                                  const isAnnual = service.paymentTerm === "annual";
+                                  return (
+                                    <li key={service.slug}>
+                                      <Link
+                                        href={href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="flex items-start gap-1.5 py-1 text-xs text-(--color-text-overline) hover:text-white cursor-pointer"
+                                      >
+                                        <span className="font-light leading-snug flex items-center gap-1">
+                                          {service.name}
+                                          {service.featured && (
+                                            <Star
+                                              className={`w-2.5 h-2.5 ${tone.iconText} shrink-0`}
+                                              fill="currentColor"
+                                            />
+                                          )}
+                                        </span>
+                                        {isAnnual && (
+                                          <span className="text-[9px] font-mono text-(--color-text-muted) shrink-0 mt-0.5">
+                                            · Yıllık
+                                          </span>
+                                        )}
+                                      </Link>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </div>
+                          );
+                        })}
                       </motion.div>
                     )}
                   </AnimatePresence>

@@ -1,0 +1,595 @@
+{
+  "hero": {
+    "badge": "Hizmetler",
+    "titleLead": "ServiceCore",
+    "titleAccent": "profesyonel hizmetleri.",
+    "description": "Konfigürasyon, devreye alma, entegrasyon, göçüm, eğitim ve danışmanlık başlıklarını tek çatıda toplayan, ITIL4 disiplinine sadık 26 profesyonel hizmet. Yerli mühendislik kadrosu, sertifikalı danışman ekibi ve uçtan uca yaşam döngüsü sahipliği ile servis yönetiminizi güvenle sağlamlaştırın."
+  },
+  "categories": [
+    {
+      "slug": "setup",
+      "name": "Kurulum Hizmetleri",
+      "nameEn": "Setup Services",
+      "tagline": "Sıfırdan canlıya hazır ServiceCore kurulumu.",
+      "description": "Sunucu hazırlığından AD entegrasyonuna, süreç şablonlarından SLA poliçelerine kadar tüm başlangıç işlerini içine alan kurulum paketleri. Standart konfigürasyondan felaket kurtarmaya kadar her ölçekli kurumun ihtiyacını karşılar.",
+      "icon": "Hammer",
+      "accent": "blue",
+      "count": 6,
+      "href": "/hizmetler/setup"
+    },
+    {
+      "slug": "support",
+      "name": "Destek Hizmetleri",
+      "nameEn": "Support Services",
+      "tagline": "Canlı sistemler için uzman müdahale ve geliştirme.",
+      "description": "Entegrasyon, göçüm, analiz ve geliştirme operasyonlarından yıllık Silver-Gold-Platinum-Mission Critical destek paketlerine kadar sürekliliği güvence altına alan hizmet portföyü. Continuous Delivery ile her sürüm aksayışmaksızın sahaya iner.",
+      "icon": "LifeBuoy",
+      "accent": "cyan",
+      "count": 10,
+      "href": "/hizmetler/support"
+    },
+    {
+      "slug": "training",
+      "name": "Eğitim Hizmetleri",
+      "nameEn": "Training Services",
+      "tagline": "Sertifikalı ServiceCore ve ITIL4 yetkinliği.",
+      "description": "CSSM-A yönetici, CSSM-P teknisyen, ITIL4 Foundation ve raporlama-dashboard tasarımı gibi sertifikalı programlar. Eğitim, sınav ve uygulamalı atölye uyumu ile takımlarınızın servis yönetimi vukufunu kalıcı hale getirir.",
+      "icon": "GraduationCap",
+      "accent": "emerald",
+      "count": 5,
+      "href": "/hizmetler/training"
+    },
+    {
+      "slug": "consultancy",
+      "name": "Danışmanlık Hizmetleri",
+      "nameEn": "Consultancy Services",
+      "tagline": "ITIL4 süreç ve proje yönetimi danışmanlığı.",
+      "description": "Süreç mimarisinden özel modül tasarımına, proje yönetiminden hızlı teslim sprintlerine kadar uzman danışman kadrosu ile yürütülen, sonuç odaklı profesyonel hizmetler. Karmaşık kararları netleştirir, dönüşüm hızını artırır.",
+      "icon": "Compass",
+      "accent": "purple",
+      "count": 4,
+      "href": "/hizmetler/consultancy"
+    }
+  ],
+  "services": [
+    {
+      "slug": "launch-ready",
+      "code": "SCLRCP",
+      "name": "Launch Ready Konfigürasyon Paketi",
+      "nameEn": "Launch Ready - Configuration Pack",
+      "category": "setup",
+      "paymentTerm": "one-time",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Anahtar teslim ServiceCore devreye alma.",
+      "shortDescription": "ServiceCore standart uygulama devreye alma işlemlerinin tamamını içeren, uygulamalı konfigürasyon gösterimleri ile yürütülen detaylı implementasyon hizmetidir. Kullanıcı tanımlamadan ITSM süreç rollerine, SLA poliçelerinden iş otomasyon kurallarına kadar 18 ana iskelet adımını kapsar.",
+      "valueProps": [
+        "AD senkronizasyonu ve teknisyen rol atamaları uçtan uca yapılandırılır",
+        "Hizmet kataloğu, CMDB ilişkileri, SLA ve uyarı şablonları kuruma özel kurulur",
+        "CSSM-A yönetici ve CSSM-P teknisyen eğitimleri ile birlikte teslim edilir",
+        "Canlıya geçiş sonrası 1 ay yakın destek ile gerçekleştirilir"
+      ],
+      "whoFor": "Servis yönetimini sıfırdan veya bütün kapsamıyla yeniden kurmak isteyen, anahtar teslim devreye alma talep eden orta ve büyük ölçekli kurumlar.",
+      "icon": "Rocket",
+      "accentColor": "blue"
+    },
+    {
+      "slug": "quickstart",
+      "code": "SCQSSMP",
+      "name": "Quickstart Konfigürasyon Paketi",
+      "nameEn": "Quickstart - Configuration Pack",
+      "category": "setup",
+      "paymentTerm": "one-time",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Hızlı başlangıç için temel kurulum paketi.",
+      "shortDescription": "Müşteri sunucuları üzerinde ServiceCore'un kurulması ve temel ürün konfigürasyonlarının yapılmasını içeren hızlı başlangıç paketidir. Sunucu hazırlığından DNS ve SSL ayarlarına, AD ve e-posta entegrasyonundan teknisyen ve admin eğitimlerine kadar zorunlu kurulum adımlarını kapsar.",
+      "valueProps": [
+        "Standart, API'li veya failover topolojide sunucu hazırlığı yapılır",
+        "AD, giden e-posta ve e-posta ayrıştırıcı (POP, IMAP, Exchange, O365, EWS, MS Graph) entegrasyonu kurulur",
+        "Continuous Delivery izinleri ile uzaktan ve otomatik güncelleme imkanı sağlanır",
+        "CSSM-A ve CSSM-P eğitimleri sonrası 1 ay yakın destek ile kullanıma alınır"
+      ],
+      "whoFor": "Çekirdek modüllerle hızlı canlı yayına çıkmak isteyen, sonraki dönemlerde kapsam genişletecek BT ekipleri.",
+      "icon": "Zap",
+      "accentColor": "blue"
+    },
+    {
+      "slug": "disaster-recovery",
+      "code": "DRCCP",
+      "name": "Felaket Kurtarma Merkezi Konfigürasyon Paketi",
+      "nameEn": "Disaster Recovery Center - Configuration Pack",
+      "category": "setup",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Felaket senaryoları için DRC kurulum hizmeti.",
+      "shortDescription": "Birincil merkezde oluşabilecek kesinti senaryolarına karşı felaket kurtarma merkezi yedek sisteminin kurulumu ve konfigürasyonu hizmetidir. Veri senkronizasyonu, devralma kurgusu ve yedeklilik testleri dahil olmak üzere DRC mimarisini uçtan uca devreye alır.",
+      "valueProps": [
+        "Birincil sistemle veri ve konfigürasyon senkronizasyonu kurulur",
+        "Devralma (failback) prosedürleri tanımlanır ve test edilir",
+        "İş sürekliliği planlarına uygun yedek mimari teslim edilir",
+        "Olay anında hızlı devreye alma ile RPO/RTO hedefleri korunur"
+      ],
+      "whoFor": "İş sürekliliği yükümlülükleri olan, BDDK, KVKK veya kurum içi politika gerektiren kurumlar.",
+      "icon": "ShieldCheck",
+      "accentColor": "blue"
+    },
+    {
+      "slug": "dmz",
+      "code": "SCDMZCP",
+      "name": "DMZ Konfigürasyon Paketi",
+      "nameEn": "DMZ - Configuration Pack",
+      "category": "setup",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "DMZ üzerinde ServiceCore mirror kurulumu.",
+      "shortDescription": "Internet üzerinden dış kullanıcıların erişeceği self servis portal ve ticket akışları için DMZ bölgesinde ServiceCore mirror kurulumudur. İç ağdaki ana uygulama ile güvenli kanal üzerinden iletişim kurar, ağ güvenliği politikalarına uyum sağlar.",
+      "valueProps": [
+        "DMZ üzerinde yansıma (mirror) ortamı kurulur ve sertifikalandırılır",
+        "İç ağ ile DMZ arasında kontrollü trafik akışı tasarlanır",
+        "Dış müşteri, bayi ve son kullanıcı portal trafiği izole edilir",
+        "Sürekli güncellenebilirliği olan bir DMZ mimarisi teslim edilir"
+      ],
+      "whoFor": "Dış kullanıcılara hizmet sunan, ağ segmentasyonu kuralları sebebiyle ana uygulamasını Internet'e açmak istemeyen kurumlar.",
+      "icon": "Globe",
+      "accentColor": "blue"
+    },
+    {
+      "slug": "failover-system",
+      "code": "FSCP",
+      "name": "Yedekli Sistem Konfigürasyon Paketi",
+      "nameEn": "Failover System - Configuration Pack",
+      "category": "setup",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Yüksek erişilebilirlik için failover topolojisi.",
+      "shortDescription": "Sunucu arıza senaryolarında hizmetin kesintisiz devam etmesi için ikincil sunucuların failover modunda kurulması ve test edilmesi hizmetidir. Yüksek erişilebilirlik mimarisi ile üretim ortamının tek nokta arızalarına karşı dayanıklılığı sağlanır.",
+      "valueProps": [
+        "Aktif-pasif veya aktif-aktif failover mimarisi tasarlanır",
+        "Otomatik devralma ve geri dönüş senaryoları kurulur",
+        "Yedekli veritabanı ve uygulama katmanı konfigürasyonu yapılır",
+        "Saha testleri ile RTO hedeflerine uyum doğrulanır"
+      ],
+      "whoFor": "7x24 servis sunan, kesintinin maliyetinin yüksek olduğu kurumlar.",
+      "icon": "Layers",
+      "accentColor": "blue"
+    },
+    {
+      "slug": "test-system",
+      "code": "TSCP",
+      "name": "Test Sistemi Konfigürasyon Paketi",
+      "nameEn": "Test System - Configuration Pack",
+      "category": "setup",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Preprod test ortamı kurulumu.",
+      "shortDescription": "Üretim öncesi denemeler, yeni modül testleri ve eğitim amacıyla kullanılacak ayrı bir test sisteminin preprod ortamda kurulumu hizmetidir. Yapılandırma karşılaştırmaları, sürüm geçişlerinin denenmesi ve teknisyen alıştırma çalışmaları için üretimden bağımsız bir alan sağlar.",
+      "valueProps": [
+        "Üretim ortamının lisans ve veri kapsamı dışında bağımsız test ortamı kurulur",
+        "Sürüm geçişi ve regresyon testleri için güvenli alan sağlanır",
+        "Eğitim ve sertifikasyon senaryoları için sanal kullanıcı yapılandırması yapılır",
+        "Üretim verisinin maskeleme ile aktarım olanağı tanımlanır"
+      ],
+      "whoFor": "Sürüm yönetimi disiplinini sahip çıkmak isteyen, eğitim ve değişiklik testlerini ayrı alanda yürütmek isteyen kurumlar.",
+      "icon": "FlaskConical",
+      "accentColor": "blue"
+    },
+    {
+      "slug": "integration",
+      "code": "SCINTS",
+      "name": "Entegrasyon Konfigürasyon Paketi",
+      "nameEn": "Integration Configuration Pack",
+      "category": "support",
+      "paymentTerm": "one-time",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Diğer platformlarla REST API entegrasyonu.",
+      "shortDescription": "ServiceCore'un müşterinin diğer yazılım platformları ile REST API tabanlı entegre edilmesini sağlayan hizmettir. Tek yönlü veya çift yönlü entegrasyon mimarisi, kimlik doğrulama, gövde parametreleri ve sonuç eşleştirme adımları dahil uçtan uca tasarlanır ve aktive edilir.",
+      "valueProps": [
+        "Sistem ayarlarından yeni entegrasyon tasarımı yapılandırılır",
+        "Kimlik doğrulama, URL/başlık ve gövde parametreleri tanımlanır",
+        "Sonuç değer eşleştirmeleri ile harici sistem yanıtları işlenir",
+        "Otomasyon kuralı ile entegrasyon koşullu olarak tetiklenir"
+      ],
+      "whoFor": "BT operasyonunu monitoring, ITAM, HR, ERP ve CRM platformları ile birlikte çalıştırması gereken kurumlar.",
+      "icon": "Plug",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "migration",
+      "code": "SCMS",
+      "name": "Göçüş Konfigürasyon Paketi",
+      "nameEn": "Migration Configuration Pack",
+      "category": "support",
+      "paymentTerm": "one-time",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Veri haritalama ve göçüm süreç yönetimi.",
+      "shortDescription": "Diğer servis yönetimi ve varlık yönetimi platformlarından ServiceCore'a yapılandırılmış veri göçümü hizmetidir. Veri analizi, haritalama, strateji, yedekleme, göçüm, doğrulama ve iyileştirme adımlarını içeren 7 aşamalı metodoloji ile yürütülür.",
+      "valueProps": [
+        "Kaynak sistemde veri yapısının analizi ve uyum kontrolü yapılır",
+        "Eski sistem alanları ServiceCore alanlarıyla detaylı haritalanır",
+        "Veritabanı, API veya dosya transferi yöntemleri seçilir, aşamalı strateji uygulanır",
+        "Test senaryoları ile veri doğruluğu teyit edilir"
+      ],
+      "whoFor": "Eski ServiceDesk, ITSM veya CMDB platformundan ServiceCore'a geçmek isteyen kurumlar.",
+      "icon": "ArrowLeftRight",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "analysis-customization-deployment",
+      "code": "ACDCP",
+      "name": "Analiz, Özelleştirme ve Devreye Alma Paketi",
+      "nameEn": "Analysis, Customization and Deployment Configuration Pack",
+      "category": "support",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Fonksiyonel ihtiyaç analizi ve özelleştirme.",
+      "shortDescription": "Müşterinin fonksiyonel ihtiyaçları, acil iyileştirme istekleri ve diğer özellik geliştirme talepleri için yürütülen analiz, tasarım, özelleştirme ve devreye alma hizmetidir. Standart ürünün karşılamadığı senaryolarda üretime hazır çözümler teslim eder.",
+      "valueProps": [
+        "İş birimleri ile ihtiyaç keşfi ve fonksiyonel analiz yapılır",
+        "Standart ürün yetenekleriyle uyumlu özelleştirme tasarlanır",
+        "Test, regresyon ve UAT süreçlerinin tamamı yönetilir",
+        "Sürüm paketleme ve canlıya geçiş ile birlikte teslim edilir"
+      ],
+      "whoFor": "Standart ürünün ötesinde fonksiyonel özelleştirmeye ihtiyaç duyan veya hızlı iyileştirme talep eden kurumlar.",
+      "icon": "Pencil",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "reporting",
+      "code": "SCREPS",
+      "name": "Raporlama Hizmetleri",
+      "nameEn": "Reporting Services",
+      "category": "support",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Özel rapor ve dashboard geliştirme.",
+      "shortDescription": "Kurum ihtiyaçlarına özel detaylı rapor ve dashboard geliştirme hizmetidir. Dinamik rapor sihirbazları, özelleştirilmiş widget'lar ve yönetim panellerini tasarlama ve devreye alma çalışmalarını içerir.",
+      "valueProps": [
+        "Yönetim ihtiyaçlarına göre dashboard tasarımları yapılır",
+        "Dinamik ve düm rapor sihirbazları kuruma uyarlanır",
+        "İskelet veri modeli üzerinde performanslı sorgular kurulur",
+        "PDF, Excel ve canlı rapor çıktıları standart hale getirilir"
+      ],
+      "whoFor": "BT ve iş birimi yöneticilerine zenginleştirilmiş raporlar sunmak isteyen organizasyonlar.",
+      "icon": "LineChart",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "support-onsite",
+      "code": "SCSO",
+      "name": "Saha Destek Hizmeti",
+      "nameEn": "Support On-Site",
+      "category": "support",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Müşteri lokasyonunda uzman destek.",
+      "shortDescription": "Müşterinin çalışma ortamında görev yapan destek uzmanıyla yürütülen yerinde destek hizmetidir. Vardiyalı model ile sahaya yerleşik teknik destek sağlar, kritik operasyonlarda hızlı müdahale için kullanılır.",
+      "valueProps": [
+        "Müşteri sahasında sertifikalı ServiceCore uzmanı görevlendirilir",
+        "Vardiya bazlı sürekli yerinde destek modeli kurulur",
+        "Kurum içi teknisyen ekibine bilgi aktarımı yapılır",
+        "Yerinde acil müdahale ile servis seviyesinde güven sağlanır"
+      ],
+      "whoFor": "Kritik operasyonel dönemlerde sahaya yerleşik destek isteyen büyük ölçekli kurumlar.",
+      "icon": "UserCheck",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "feature-enhancement",
+      "code": "SCFEP",
+      "name": "Özellik Geliştirme Paketi",
+      "nameEn": "Feature Enhancement Package",
+      "category": "support",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Adam-gün bazlı özellik geliştirme.",
+      "shortDescription": "Yeni özellik geliştirme ve devreye alma çalışmalarının adam-gün fiyatlandırma modeliyle yürütüldüğü, esnek kapsamlı hizmet paketidir. Süreç olgunluk planlaması doğrultusunda iteratif özellik teslimini destekler.",
+      "valueProps": [
+        "Adam-gün bazlı esnek kapsam yönetimi sağlanır",
+        "Yol haritası ile uyumlu iteratif teslim modeli kurulur",
+        "Standart ürüne entegre, sürdürülebilir geliştirmeler yapılır",
+        "Backlog önceliklendirme iş birliği ile yürütülür"
+      ],
+      "whoFor": "Yıl boyunca özellik talebi olan, bütçe planlamasını efor bazlı yapan kurumlar.",
+      "icon": "PackagePlus",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "silver",
+      "code": "SCSSP",
+      "name": "Silver Destek Paketi",
+      "nameEn": "Annual Silver Support Package",
+      "category": "support",
+      "paymentTerm": "annual",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Yıllık 15 ticket, 5x8 çalışma saatleri.",
+      "shortDescription": "Yıllık 15 ticket hakkı ve 5x8 çalışma saatleri ile temel BT destek paketidir. E-posta üzerinden destek açma, service portal erişimi, uzak masaüstü, bilgi bankası kullanımı ve hata log takibi gibi çekirdek kanalları kapsar. Continuous Delivery ile sürekli güncellemeler dahildir.",
+      "valueProps": [
+        "Yıllık 15 ticket ve 5x8 çalışma saatleri",
+        "E-posta, web portal, uzak masaüstü ve bilgi bankası kanalları",
+        "Continuous Delivery ile sürekli sürüm güncellemesi",
+        "2 ücretsiz ServiceCore seminer/event katılımı"
+      ],
+      "whoFor": "Temel destek ihtiyaçları olan, başlangıç seviyesinde paket arayan kurumlar.",
+      "icon": "ShieldCheck",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "gold",
+      "code": "SCGSP",
+      "name": "Gold Destek Paketi",
+      "nameEn": "Annual Gold Support Package",
+      "category": "support",
+      "paymentTerm": "annual",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Yıllık 30 ticket, telefon ve health-check.",
+      "shortDescription": "Yıllık 30 ticket hakkı ve 5x8 çalışma saatleri ile geliştirilmiş BT destek paketidir. E-posta, 444 CORE telefon hattı, service portal, uzak masaüstü ve bilgi bankası kanallarının yanı sıra health-check ve ürün konfigürasyon yönetimi hizmetlerini de içerir.",
+      "valueProps": [
+        "Yıllık 30 ticket ve 5x8 çalışma saatleri",
+        "444 CORE telefon hattı ile çağrı desteği",
+        "Sağlık kontrolü (health-check) ve ürün konfigürasyon yönetimi",
+        "5 ücretsiz seminer/event katılımı"
+      ],
+      "whoFor": "Çağrı desteği ve düzenli sağlık kontrolü isteyen, orta ölçekli BT operasyonu yöneten kurumlar.",
+      "icon": "Award",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "platinum",
+      "code": "SCPSP",
+      "name": "Platinum Destek Paketi",
+      "nameEn": "Annual Platinum Support Package",
+      "category": "support",
+      "paymentTerm": "annual",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Yıllık 60 ticket, 7x8, dedicated teknisyen.",
+      "shortDescription": "Yıllık 60 ticket hakkı ve 7x8 çalışma saatleri ile uzun çalışmaya hazır BT destek paketidir. Online anlık mesaj, e-posta, telefon, service portal, uzak masaüstü ve bilgi bankası kanallarının tümünü kapsar; health-check, ürün konfigürasyon yönetimi, yüksek öncelikli müdahale, dedicated teknisyen ve uygulama performans izleme dahildir. Tavsiye edilen pakettir.",
+      "valueProps": [
+        "Yıllık 60 ticket ve 7x8 çalışma saatleri",
+        "Online anlık mesaj ile gerçek zamanlı iletişim",
+        "Dedicated teknisyen ve yüksek öncelikli müdahale",
+        "Uygulama performans izleme ve sınırsız seminer/event"
+      ],
+      "whoFor": "BT servis yönetimini kritik günlük operasyonun parçası olarak gören, dedicated kaynak talep eden kurumlar.",
+      "icon": "Gem",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "mission-critical",
+      "code": "SCMCSP",
+      "name": "Mission Critical Destek Paketi",
+      "nameEn": "Annual Mission Critical Support Package",
+      "category": "support",
+      "paymentTerm": "annual",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Yıllık 60 ticket, 7x24 kapsamlı destek.",
+      "shortDescription": "Yıllık 60 ticket hakkı ve 7x24 çalışma saatleri ile ServiceCore'un en kapsamlı destek paketidir. Tüm kanalların açık olduğu, tüm ek hizmetlerin tam dahil edildiği mission critical operasyonlar için tasarlanan üst seviye destek modelidir. Tanımlı kanallar dışındaki iletişim kanallarından da destek talebi kabul edilir.",
+      "valueProps": [
+        "Yıllık 60 ticket ve 7x24 çalışma saatleri",
+        "Tüm destek kanalları aktif, sınırlandırma yok",
+        "Tüm ek hizmetler dahil: health-check, konfigürasyon yönetimi, dedicated teknisyen, performans izleme",
+        "Tanımlı kanallar haricinden de talep kabul edilir"
+      ],
+      "whoFor": "Hizmet kesintisinin kabul edilemez olduğu, 7x24 sürekli izleme ve müdahale gereksinimi olan kurumlar.",
+      "icon": "Crown",
+      "accentColor": "cyan"
+    },
+    {
+      "slug": "product-itil-training",
+      "code": "SCPT",
+      "name": "Ürün ve ITIL Pratikleri Eğitimi",
+      "nameEn": "Product and ITIL Practices Training",
+      "category": "training",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Ürün ve ITIL pratiklerinin uygulamalı eğitimi.",
+      "shortDescription": "ServiceCore ürünü üzerinde ITIL pratiklerinin nasıl hayata geçirildiğini gösteren, uygulamalı eğitim programıdır. Süreç sahipleri, takım liderleri ve teknisyenler için orta seviye ITIL ve ServiceCore bilgisini kalıcı hale getirir.",
+      "valueProps": [
+        "Ürün + ITIL pratiklerinin entegre eğitimi",
+        "Vaka çalışmaları ve atölye senaryoları ile pekiştirme",
+        "Yatay süreç sahibi yetkinliği geliştirme",
+        "Kurum içindeki kullanım olgunluğunu artırma"
+      ],
+      "whoFor": "ITIL pratiklerini ServiceCore üzerinde uygulamak isteyen takım liderleri ve süreç sahipleri.",
+      "icon": "Presentation",
+      "accentColor": "emerald"
+    },
+    {
+      "slug": "itil4-foundation",
+      "code": "ITIL4 FND",
+      "name": "ITIL4 Foundation Eğitimi",
+      "nameEn": "ITIL4 Foundation Training",
+      "category": "training",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Akredite ITIL4 Foundation sertifika programı.",
+      "shortDescription": "Resmi akredite kurum ortaklığı ile yürütülen ITIL4 Foundation eğitimi ve sınav hizmetidir. ITIL4 yaşam döngüsü, dört boyut modeli, hizmet değer sistemi ve 34 pratik ana hatlarıyla ele alınır; sertifikasyon sınavı ile sonuçlandırılır.",
+      "valueProps": [
+        "Akredite eğitmen kadrosu ile yürütülür",
+        "Resmi sınav ve sertifika hakkı dahil",
+        "ITIL4 yaşam döngüsü ve 34 pratik kapsama dahil",
+        "Hibrit (online + sınıf) format seçeneği"
+      ],
+      "whoFor": "Servis yönetimi alanında kariyer planlaması yapan profesyoneller ve takımlar.",
+      "icon": "BookCheck",
+      "accentColor": "emerald"
+    },
+    {
+      "slug": "cssm-p",
+      "code": "CSSM-P",
+      "name": "CSSM-P Teknisyen Eğitimi",
+      "nameEn": "CSSM-P Servicecore Technician Training",
+      "category": "training",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "ServiceCore modüllerinin teknisyen kullanım sertifikası.",
+      "shortDescription": "Certified Servicecore Service Management Practitioner (CSSM-P) programıdır. Teknisyenler, süreç yöneticileri ve servis yöneticileri için sunulan online kurs ve sınav hizmetidir; modül konfigürasyonu, yönetim ve teknisyen destek takımı kullanımını uygulamalı aktarır.",
+      "valueProps": [
+        "Online kurs ve sınav formatında yürütülür",
+        "Modül konfigürasyonu ve günlük teknisyen kullanım akışları",
+        "Süreç yöneticisi ve servis yöneticisi perspektifi",
+        "Resmi CSSM-P sertifikası"
+      ],
+      "whoFor": "ServiceCore ürününü aktif kullanan teknisyenler, süreç ve servis yöneticileri.",
+      "icon": "Wrench",
+      "accentColor": "emerald"
+    },
+    {
+      "slug": "cssm-a",
+      "code": "CSSM-A",
+      "name": "CSSM-A Yönetici Eğitimi",
+      "nameEn": "CSSM-A Servicecore Administrator Training",
+      "category": "training",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "ServiceCore yönetim ve konfigürasyon sertifikası.",
+      "shortDescription": "Certified Servicecore Service Management Administrator (CSSM-A) programıdır. ServiceCore'un tüm ürün yönetim konfigürasyonu, bakım ve yönetim işlemlerini içeren online kurs ve sınav hizmetidir. Sistem yöneticileri, ürün sahipleri ve süreç sahipleri için tasarlanmıştır.",
+      "valueProps": [
+        "Yönetim ayarları, konfigürasyon ve özelleştirme işlemleri",
+        "Süreç sahibi ve ürün yöneticisi gözlük ile aktarım",
+        "Sistem yönetimi ve bakım akışları",
+        "Resmi CSSM-A sertifikası"
+      ],
+      "whoFor": "ServiceCore sistem yöneticileri, ürün sahipleri ve süreç yönetimi sorumluları.",
+      "icon": "ShieldCheck",
+      "accentColor": "emerald"
+    },
+    {
+      "slug": "reporting-dashboard-training",
+      "code": "SRDT",
+      "name": "ServiceCore Raporlama ve Dashboard Eğitimi",
+      "nameEn": "Servicecore Reporting & Dashboard Training",
+      "category": "training",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Dashboard ve dinamik rapor sihirbazı eğitimi.",
+      "shortDescription": "Dashboard tasarımı, widget sihirbazları, dinamik rapor sihirbazları ve düm rapor sihirbazlarının detaylı kullanım eğitimidir. BT yönetiminin gözlemlemek istediği göstergeleri kendi oluşturabileceği yetkinliği kazandırır.",
+      "valueProps": [
+        "Widget ve dashboard tasarım metodolojisi",
+        "Dinamik rapor sihirbazı kullanım akışları",
+        "Düm rapor sihirbazı ile esnek raporlama",
+        "Kurum içi raporlama özerkliği"
+      ],
+      "whoFor": "Raporlama ve dashboard tasarımını kendi takımına devretmek isteyen BT yöneticileri ve analistleri.",
+      "icon": "BarChart3",
+      "accentColor": "emerald"
+    },
+    {
+      "slug": "process-consultancy",
+      "code": "SCPCS",
+      "name": "Süreç Danışmanlığı Hizmeti",
+      "nameEn": "Process Consultancy Service",
+      "category": "consultancy",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "ITIL4 pratiklerinin uygulanması danışmanlığı.",
+      "shortDescription": "ITIL4 süreçlerinin kurum ihtiyaçları doğrultusunda hayata geçirilmesi danışmanlığı hizmetidir. Modül bazlı (her ITIL4 modülü için ayrı olarak) yürütülen çalışmalarda süreç mimarisi, KPI tasarımı ve olgunluk planlaması yapılır.",
+      "valueProps": [
+        "Her ITIL4 modülü için bağımsız danışmanlık",
+        "Süreç mimarisi, akış ve sorumluluk tanımları",
+        "KPI ve olgunluk ölçümü yapılandırması",
+        "Kurumun mevcut durumundan hedefe yol haritası"
+      ],
+      "whoFor": "ITIL4 süreçlerinde olgunluk artırmak veya yeni süreç hayata geçirmek isteyen kurumlar.",
+      "icon": "Compass",
+      "accentColor": "purple"
+    },
+    {
+      "slug": "project-management",
+      "code": "SCPMP",
+      "name": "Proje Yönetimi Hizmeti",
+      "nameEn": "Project Management Service",
+      "category": "consultancy",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "ServiceCore proje yönetimi danışmanlığı.",
+      "shortDescription": "ServiceCore implementasyon, göçüm, entegrasyon veya özelleştirme projelerinin uçtan uca yönetimi hizmetidir. Sertifikalı proje yöneticisi ile kapsam, takvim, bütçe ve risk yönetimi uçtan uca yürütülür; paydaş iletişimi merkezi yönetilir.",
+      "valueProps": [
+        "Sertifikalı proje yöneticisi ile uçtan uca yönetim",
+        "Kapsam, takvim, bütçe ve risk disiplini",
+        "Paydaş iletişimi ve haftalık raporlama akışı",
+        "Proje kapanış ve geçiş dokümantasyonu"
+      ],
+      "whoFor": "Büyük ölçekli, çok paydaşlı ServiceCore projelerini disiplin altında yürütmek isteyen kurumlar.",
+      "icon": "ClipboardList",
+      "accentColor": "purple"
+    },
+    {
+      "slug": "professional-customizer",
+      "code": "SCPCDP",
+      "name": "Profesyonel Özelleştirme Modül Paketi",
+      "nameEn": "Professional Customizer Module Package",
+      "category": "consultancy",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Özel form, akış, rapor ve entegrasyon tasarımı.",
+      "shortDescription": "Özel formlar, akışlar, raporlar ve entegrasyonlar için analiz, tasarım, geliştirme ve test süreçlerini kapsayan kapsamlı özelleştirme paketidir. Standart ürünün ötesinde, kurum ihtiyacına özel çıktı üretir.",
+      "valueProps": [
+        "Form, alan ve workflow tasarım atölyesi",
+        "Rapor ve dashboard özelleştirmesi",
+        "Entegrasyon analizi ve geliştirmesi",
+        "UAT ve canlıya geçiş ile birlikte teslim"
+      ],
+      "whoFor": "Standart ürünün ötesinde, kuruma özel kompleks işlevsel ihtiyaçları olan organizasyonlar.",
+      "icon": "Settings2",
+      "accentColor": "purple"
+    },
+    {
+      "slug": "fast-track-vip-sprint",
+      "code": "SCFTVIPSP",
+      "name": "Fast Track VIP Sprint Paketi",
+      "nameEn": "Fast Track VIP Sprint Package",
+      "category": "consultancy",
+      "paymentTerm": "one-time",
+      "featured": false,
+      "hasDetailPage": false,
+      "tagline": "Standart kuyruğu atlatıp öncelikli teslim.",
+      "shortDescription": "Standart geliştirme kuyruğunu atlamak için tasarlanan, sabit fiyatlı premium hizmet paketidir. Anlık önceliklendirme (8-10 sprint bekleme süresini bypass eder), garantili slot (bir sonraki sprint döngüden başlar), sabit fiyat güvencesi ve kıdemli mimar takımı ile akıştan teslim sunar.",
+      "valueProps": [
+        "Anlık önceliklendirme: 8-10 sprintlik bekleme atlatılır",
+        "Garantili slot: sonraki sprint döngüsünde başla",
+        "Sabit fiyat güvencesi ile bütçe belirsizliği yok",
+        "Senior mimarlar ile akıştan teslim"
+      ],
+      "whoFor": "Acil özellik talep eden, hızlı sonuç ve bütçe kesinliği arayan kurumlar.",
+      "icon": "Rocket",
+      "accentColor": "purple"
+    }
+  ],
+  "featuredCallout": {
+    "title": "Öne çıkan 8 hizmet",
+    "description": "ServiceCore'un en çok talep gören, dokümantasyonu ile birlikte detaylandırılan profesyonel hizmetleri. Anahtar teslim implementasyondan yıllık destek paketlerine kadar işletmenizi güvenle ileri taşıyacak ana hatlar burada buluşur.",
+    "ctaLabel": "Hizmet kataloğunu indir",
+    "ctaHref": "/iletisim"
+  },
+  "cta": {
+    "title": "Hizmet portföyümüzü birlikte planlayalım.",
+    "description": "Profesyonel hizmet ekibimiz ihtiyaçlarınızı dinler, doğru paketleme önerir ve uçtan uca planlamayı sizinle birlikte yürütür. Uzman ekibimizle ön görüşme için bir randevu oluşturun.",
+    "primaryLabel": "Demo İste",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}

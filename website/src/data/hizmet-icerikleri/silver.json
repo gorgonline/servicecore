@@ -1,0 +1,104 @@
+{
+  "slug": "silver",
+  "code": "SCSSP",
+  "name": "Silver Destek Paketi",
+  "nameEn": "Annual Silver Support Package",
+  "category": "support",
+  "categoryLabel": "Destek Hizmetleri",
+  "paymentTerm": "annual",
+  "paymentTermLabel": "Yıllık abonelik",
+  "accent": "cyan",
+  "icon": "ShieldCheck",
+  "tier": "silver",
+  "hero": {
+    "eyebrow": "Support · Silver",
+    "title": "Silver yıllık destek paketi",
+    "subtitle": "Temel BT operasyonları için yıllık 15 ticket ve 5x8 çalışma saatleri.",
+    "intro": "Silver Destek Paketi, yıllık 15 ticket hakkı ve 5x8 çalışma saatleri ile ServiceCore'un başlangıç seviyesindeki destek paketidir. E-posta, service portal, uzak masaüstü, bilgi bankası ve hata log takibi kanallarını içerir. Continuous Delivery ile sistem her zaman güncel kalır."
+  },
+  "summary": {
+    "ticketCount": "15",
+    "workingHours": "5x8",
+    "responseChannels": ["E-posta", "Service Portal", "Uzak Masaüstü", "Knowledge Base"]
+  },
+  "sections": [
+    {
+      "id": "paket-ozeti",
+      "title": "Silver Paket Özeti",
+      "type": "text",
+      "content": "Yıllık 15 ticket destek hakkı sunan, 5x8 çalışma saatleri kapsamında hizmet veren temel BT destek paketidir. Küçük ve orta ölçekli BT operasyonları için başlangıç seviyesinde tasarlanmıştır."
+    },
+    {
+      "id": "dahil-olanlar",
+      "title": "Pakete Dahil Olanlar",
+      "type": "list",
+      "items": [
+        "Yıllık 15 ticket hakkı",
+        "5x8 çalışma saatleri kapsamı",
+        "E-posta ile destek açma",
+        "Service Portal erişimi",
+        "Uzak masaüstü desteği",
+        "Knowledge Base kullanımı",
+        "Ürün hata log takibi",
+        "Continuous Delivery ile sürekli sistem güncellemesi",
+        "2 ücretsiz ServiceCore seminer/event katılım hakkı"
+      ]
+    },
+    {
+      "id": "dahil-olmayan",
+      "title": "Pakete Dahil Olmayan Hizmetler",
+      "type": "list",
+      "items": [
+        "Online anlık mesaj desteği",
+        "Telefon desteği (444 CORE)",
+        "Health-Check hizmeti",
+        "Ürün konfigürasyon yönetimi",
+        "Yüksek öncelikli müdahale",
+        "Dedicated teknisyen",
+        "Uygulama performansı izleme"
+      ]
+    },
+    {
+      "id": "destek-kanallari",
+      "title": "Destek Kanalları",
+      "type": "steps",
+      "items": [
+        { "label": "E-posta", "detail": "support@servicecore.app adresine gönderilen e-postalar otomatik çağrı kaydı oluşturur." },
+        { "label": "Web Portal", "detail": "support.servicecore.app üzerinden destek taleplerinin durumu izlenir, yazışmalar takip edilir." },
+        { "label": "Uzak Masaüstü", "detail": "Gerektiğinde teknisyen uzak masaüstü ile müşteriye bağlanır." },
+        { "label": "Knowledge Base", "detail": "Bilgi bankası, rehberler, eğitim videoları ve dokümantasyona erişim sunulur." },
+        { "label": "Ürün İçi Form", "detail": "Yönetim panelindeki destek formu ile doğrudan talep iletilir." }
+      ]
+    },
+    {
+      "id": "ek-hizmetler",
+      "title": "Paket Dışındaki Ek Destek Hizmetleri",
+      "type": "list",
+      "intro": "Aşağıdaki kapsam paket dışıdır, ek ücrete tabidir:",
+      "items": [
+        "Proje kapsamı dışında geliştirme, uyarlama ve entegrasyon faaliyetleri",
+        "ServiceCore'a bildirilmemiş ortam değişikliklerinden kaynaklanan sorunların çözümü",
+        "AD, e-posta sunucusu, veritabanı gibi veri kaynakları yapısındaki değişikliklerin ürüne yansıtılması",
+        "Proje kapsamı dışında kalan çözüm eğitimleri",
+        "Ortamlar arası taşıma, yedekleme, failover yapılandırma işlemleri",
+        "Uzaktan erişim verilmemesi durumunda manuel versiyon/paket geçişi",
+        "Ek rapor geliştirme istekleri"
+      ]
+    },
+    {
+      "id": "ust-paketler",
+      "title": "Üst Paketlere Geçiş",
+      "type": "text",
+      "content": "İhtiyaç olması durumunda yıl içinde Gold, Platinum veya Mission Critical paketlerine yükseltme yapılabilir. Yeni paket avantajlarının kapsamı, yeni paketin başlangıç tarihinden itibaren geçerlilik kazanır."
+    }
+  ],
+  "cta": {
+    "title": "Silver paketi ile temel BT desteği",
+    "description": "Standart çalışma saatleri içinde belirli bir ticket hacmiyle ServiceCore desteği alacak kurumlar için uygundur.",
+    "primaryLabel": "Bize Ulaşın",
+    "primaryHref": "/iletisim",
+    "secondaryLabel": "Paketleri Karşılaştır",
+    "secondaryHref": "/destek"
+  },
+  "docsLink": "https://www.servicecore.tr/destek"
+}

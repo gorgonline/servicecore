@@ -1,0 +1,105 @@
+{
+  "slug": "gold",
+  "code": "SCGSP",
+  "name": "Gold Destek Paketi",
+  "nameEn": "Annual Gold Support Package",
+  "category": "support",
+  "categoryLabel": "Destek Hizmetleri",
+  "paymentTerm": "annual",
+  "paymentTermLabel": "Yıllık abonelik",
+  "accent": "cyan",
+  "icon": "Award",
+  "tier": "gold",
+  "hero": {
+    "eyebrow": "Support · Gold",
+    "title": "Gold yıllık destek paketi",
+    "subtitle": "30 ticket, telefon desteği ve health-check ile geliştirilmiş BT destek paketi.",
+    "intro": "Gold Destek Paketi, yıllık 30 ticket hakkı ve 5x8 çalışma saatleri ile orta ölçekli BT operasyonları için geliştirilmiş destek paketidir. Silver paketindeki tüm hizmetlerin yanı sıra 444 CORE telefon desteği, health-check ve ürün konfigürasyon yönetimi hizmetlerini içerir."
+  },
+  "summary": {
+    "ticketCount": "30",
+    "workingHours": "5x8",
+    "responseChannels": ["E-posta", "Telefon (444 CORE)", "Service Portal", "Uzak Masaüstü", "Knowledge Base"]
+  },
+  "sections": [
+    {
+      "id": "paket-ozeti",
+      "title": "Gold Paket Özeti",
+      "type": "text",
+      "content": "Yıllık 30 ticket destek hakkı sunan, 5x8 çalışma saatleri kapsamında hizmet veren geliştirilmiş BT destek paketidir. Çağrı desteği, health-check ve ürün konfigürasyon yönetimi ile orta ölçekli kurumsal operasyonlar için uygundur."
+    },
+    {
+      "id": "dahil-olanlar",
+      "title": "Pakete Dahil Olanlar",
+      "type": "list",
+      "items": [
+        "Yıllık 30 ticket hakkı",
+        "5x8 çalışma saatleri kapsamı",
+        "E-posta ile destek açma",
+        "Telefon desteği (444 CORE)",
+        "Service Portal erişimi",
+        "Uzak masaüstü desteği",
+        "Knowledge Base kullanımı",
+        "Ürün hata log takibi",
+        "Continuous Delivery ile sürekli sistem güncellemesi",
+        "5 ücretsiz ServiceCore seminer/event katılım hakkı",
+        "Health-Check hizmeti",
+        "Ürün konfigürasyon yönetimi"
+      ]
+    },
+    {
+      "id": "dahil-olmayan",
+      "title": "Pakete Dahil Olmayan Hizmetler",
+      "type": "list",
+      "items": [
+        "Online anlık mesaj desteği",
+        "Yüksek öncelikli müdahale",
+        "Dedicated teknisyen",
+        "Uygulama performansı izleme"
+      ]
+    },
+    {
+      "id": "destek-kanallari",
+      "title": "Destek Kanalları",
+      "type": "steps",
+      "items": [
+        { "label": "E-posta", "detail": "support@servicecore.app adresine gönderilen e-postalar otomatik çağrı kaydı oluşturur." },
+        { "label": "Telefon", "detail": "0216 599 07 72 veya 444 CORE çağrı merkezi hattından doğrudan iletişim kurulur." },
+        { "label": "Web Portal", "detail": "support.servicecore.app üzerinden destek taleplerinin durumu izlenir, yazışmalar takip edilir." },
+        { "label": "Uzak Masaüstü", "detail": "Gerektiğinde teknisyen uzak masaüstü ile müşteriye bağlanır." },
+        { "label": "Knowledge Base", "detail": "Bilgi bankası, rehberler, eğitim videoları ve dokümantasyona erişim sunulur." },
+        { "label": "Ürün İçi Form", "detail": "Yönetim panelindeki destek formu ile doğrudan talep iletilir." }
+      ]
+    },
+    {
+      "id": "health-check",
+      "title": "Health-Check ve Konfigürasyon Yönetimi",
+      "type": "text",
+      "content": "Gold paketi kapsamındaki health-check hizmeti ile sistemin sağlık durumu periyodik olarak gözden geçirilir. Ürün konfigürasyon yönetimi hizmeti ise ServiceCore yapılandırma parametrelerinin destek ekibi tarafından yönetilmesini sağlar."
+    },
+    {
+      "id": "ek-hizmetler",
+      "title": "Paket Dışındaki Ek Destek Hizmetleri",
+      "type": "list",
+      "intro": "Aşağıdaki kapsam paket dışıdır, ek ücrete tabidir:",
+      "items": [
+        "Proje kapsamı dışında geliştirme, uyarlama ve entegrasyon faaliyetleri",
+        "ServiceCore'a bildirilmemiş ortam değişikliklerinden kaynaklanan sorunların çözümü",
+        "AD, e-posta sunucusu, veritabanı gibi veri kaynakları yapısındaki değişikliklerin ürüne yansıtılması",
+        "Proje kapsamı dışında kalan çözüm eğitimleri",
+        "Ortamlar arası taşıma, yedekleme, failover yapılandırma işlemleri",
+        "Uzaktan erişim verilmemesi durumunda manuel versiyon/paket geçişi",
+        "Ek rapor geliştirme istekleri"
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Gold paketi ile geliştirilmiş BT desteği",
+    "description": "Telefon desteği ve düzenli sağlık kontrolü isteyen, orta ölçekli BT operasyonu yöneten kurumlar için uygundur.",
+    "primaryLabel": "Bize Ulaşın",
+    "primaryHref": "/iletisim",
+    "secondaryLabel": "Paketleri Karşılaştır",
+    "secondaryHref": "/destek"
+  },
+  "docsLink": "https://www.servicecore.tr/destek"
+}

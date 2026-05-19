@@ -1,0 +1,70 @@
+{
+  "slug": "migration",
+  "code": "SCMS",
+  "name": "Göçüm Konfigürasyon Paketi",
+  "nameEn": "Migration Configuration Pack",
+  "category": "support",
+  "categoryLabel": "Destek Hizmetleri",
+  "paymentTerm": "one-time",
+  "paymentTermLabel": "Tek seferlik",
+  "accent": "cyan",
+  "icon": "ArrowLeftRight",
+  "hero": {
+    "eyebrow": "Support · Migration",
+    "title": "7 aşamalı yapılandırılmış veri göçüm hizmeti",
+    "subtitle": "Eski servis yönetimi ve varlık yönetimi platformlarından ServiceCore'a planlanmış veri taşıma.",
+    "intro": "Göçüm Konfigürasyon Paketi, eski kayıtları yeni ServiceCore ortamına yapılandırılmış ve güvenli şekilde taşımak için tasarlanmış profesyonel hizmettir. Veri analizinden geri bildirim ve iyileştirmeye kadar 7 aşamalı metodoloji ile yürütülür."
+  },
+  "sections": [
+    {
+      "id": "giris",
+      "title": "Giriş",
+      "type": "text",
+      "content": "ServiceCore, eski kayıtları yeni bir uygulamaya taşımak için yapılandırılmış bir veri geçirme süreci sunmaktadır."
+    },
+    {
+      "id": "yedi-asama",
+      "title": "Göçüm Süreci · 7 Aşama",
+      "type": "steps",
+      "items": [
+        {
+          "label": "1. Veri Analizi",
+          "detail": "Eski uygulamadaki verilerin formatını ve yapısını inceleme, ServiceCore gereksinimlerine uygunluk kontrolü."
+        },
+        {
+          "label": "2. Veri Haritalama",
+          "detail": "Eski uygulamadaki veri alanlarını ServiceCore'daki karşılıklarıyla eşleştirme, uyumsuzlukları çözme planı."
+        },
+        {
+          "label": "3. Migration Stratejisi Belirleme",
+          "detail": "Taşıma yöntemini seçme (veritabanı bağlantısı, API veya dosya transferi), büyük veri setleri için aşamalı strateji."
+        },
+        {
+          "label": "4. Yedekleme",
+          "detail": "Migration öncesi eski veritabanında yedek alma, olası veri kaybını önleme."
+        },
+        {
+          "label": "5. Migration Gerçekleştirme",
+          "detail": "Veri taşıma işlemini başlatma, hataları izleme mekanizması."
+        },
+        {
+          "label": "6. Veri Kontrolü ve Doğrulama",
+          "detail": "Verilerin doğru aktarıldığını teyit etme, test senaryoları çalıştırma."
+        },
+        {
+          "label": "7. Geri Bildirim ve İyileştirme",
+          "detail": "Kullanıcı geri bildirimlerini inceleme, gerekli düzeltmeler."
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "ServiceCore'a güvenli veri göçümü",
+    "description": "Eski ServiceDesk, ITSM veya CMDB platformundan ServiceCore'a geçişi planlayalım. Yedeklemeden doğrulamaya kadar 7 aşamalı profesyonel metodoloji.",
+    "primaryLabel": "Demo İste",
+    "primaryHref": "/demo",
+    "secondaryLabel": "İletişime Geç",
+    "secondaryHref": "/iletisim"
+  },
+  "docsLink": "https://docs.servicecore.app/docs/migration/"
+}

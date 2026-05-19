@@ -171,8 +171,64 @@
     "title": "Specsheet | ServiceCore",
     "description": "ServiceCore platformunun teknik özellik ve mimari özet kartı."
   },
-  "fark-var": {
+  "farkvar": {
     "title": "Fark Var | ServiceCore",
     "description": "ServiceCore'u diğer ITSM platformlarından ayıran tasarım ve mimari farklılıklar."
+  },
+  "gizlilik": {
+    "title": "Gizlilik Politikası ve KVKK Metni | ServiceCore",
+    "description": "ServiceCore Bilgi Teknolojileri A.Ş. gizlilik politikası ve KVKK kapsamında veri işleme, saklama ve veri sahibi hakları."
+  },
+  "hizmetler": {
+    "title": "Hizmetler | ServiceCore",
+    "description": "Kurulum, destek, eğitim ve danışmanlık başlıklarını kapsayan 26 profesyonel ServiceCore hizmeti. Anahtar teslim implementasyondan yıllık destek paketlerine uzanan portfoy."
+  },
+  "hizmetler-setup": {
+    "title": "Kurulum Hizmetleri | ServiceCore",
+    "description": "Launch Ready, Quickstart, felaket kurtarma, DMZ, failover ve test sistemi konfigürasyon paketleri ile sıfırdan canlıya ServiceCore kurulumu."
+  },
+  "hizmetler-support": {
+    "title": "Destek Hizmetleri | ServiceCore",
+    "description": "Entegrasyon, göçüm, analiz-özelleştirme, raporlama ve dört yıllık destek paketi: Silver, Gold, Platinum, Mission Critical."
+  },
+  "hizmetler-training": {
+    "title": "Eğitim Hizmetleri | ServiceCore",
+    "description": "ITIL4 Foundation, CSSM-A yönetici, CSSM-P teknisyen ve raporlama-dashboard eğitimleri ile sertifikalı ServiceCore yetkinliği."
+  },
+  "hizmetler-consultancy": {
+    "title": "Danışmanlık Hizmetleri | ServiceCore",
+    "description": "Süreç danışmanlığı, proje yönetimi, profesyonel özelleştirme modül paketi ve Fast Track VIP Sprint ile uzman destekli dönüşüm."
+  },
+  "hizmetler-setup-launch-ready": {
+    "title": "Launch Ready Konfigürasyon Paketi | ServiceCore",
+    "description": "Anahtar teslim ServiceCore implementasyon hizmeti — kullanıcı tanımlamadan SLA policelerine, CMDB'den iş otomasyon kurallarına kadar 18 ana iskelet adımı."
+  },
+  "hizmetler-setup-quickstart": {
+    "title": "Quickstart Konfigürasyon Paketi | ServiceCore",
+    "description": "Hızlı başlangıç kurulum paketi — sunucu hazırlığı, DNS-SSL konfigürasyonu, AD ve e-posta entegrasyonu, CSSM eğitimleri ve 1 ay yakın destek."
+  },
+  "hizmetler-support-integration": {
+    "title": "Entegrasyon Konfigürasyon Paketi | ServiceCore",
+    "description": "ServiceCore'un diğer platformlarla REST API üzerinden entegrasyonu — tek yönlü veya çift yönlü mimari, kimlik doğrulama ve sonuç eşleştirme."
+  },
+  "hizmetler-support-migration": {
+    "title": "Göçüm Konfigürasyon Paketi | ServiceCore",
+    "description": "Eski servis yönetimi ve varlık yönetimi platformlarından ServiceCore'a 7 aşamalı yapılandırılmış veri göçüm hizmeti."
+  },
+  "hizmetler-support-silver": {
+    "title": "Silver Destek Paketi | ServiceCore",
+    "description": "Yıllık 15 ticket, 5x8 çalışma saatleri, e-posta ve service portal kanalları — temel BT operasyonları için ServiceCore destek paketi."
+  },
+  "hizmetler-support-gold": {
+    "title": "Gold Destek Paketi | ServiceCore",
+    "description": "Yıllık 30 ticket, 5x8 çalışma saatleri, telefon desteği, health-check ve ürün konfigürasyon yönetimi dahil gelişmiş destek paketi."
+  },
+  "hizmetler-support-platinum": {
+    "title": "Platinum Destek Paketi | ServiceCore",
+    "description": "Yıllık 60 ticket, 7x8 çalışma saatleri, online anlık mesaj, dedicated teknisyen ve uygulama performans izleme — tavsiye edilen premium paket."
+  },
+  "hizmetler-support-mission-critical": {
+    "title": "Mission Critical Destek Paketi | ServiceCore",
+    "description": "Yıllık 60 ticket, 7x24 kesintisiz destek, tüm kanallar ve tüm ek hizmetler dahil — ServiceCore'un en kapsamlı destek paketi."
   }
 }

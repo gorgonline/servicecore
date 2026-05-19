@@ -1,0 +1,165 @@
+{
+  "slug": "quickstart",
+  "code": "SCQSSMP",
+  "name": "Quickstart Konfigürasyon Paketi",
+  "nameEn": "Quickstart - Configuration Pack",
+  "category": "setup",
+  "categoryLabel": "Kurulum Hizmetleri",
+  "paymentTerm": "one-time",
+  "paymentTermLabel": "Tek seferlik",
+  "accent": "blue",
+  "icon": "Zap",
+  "hero": {
+    "eyebrow": "Setup · Quickstart",
+    "title": "Hızlı başlangıç kurulum paketi",
+    "subtitle": "Müşteri sunucuları üzerinde ServiceCore'un kurulması ve temel ürün konfigürasyonlarının uçtan uca yapıldığı hızlı başlangıç paketi.",
+    "intro": "Quickstart Konfigürasyon Paketi, ServiceCore'un sunucu hazırlığından DNS ve SSL konfigürasyonuna, AD ve e-posta entegrasyonundan kullanıcı-teknisyen tanımlamasına kadar zorunlu başlangıç adımlarını kapsayan profesyonel kurulum hizmetidir. Continuous Delivery izinleri, CSSM eğitimleri ve canlıya geçişin ardından 1 ay yakın destek paket içeriğine dahildir."
+  },
+  "sections": [
+    {
+      "id": "erisim-tanimi",
+      "title": "Kurulum Öncesi Gerekli Erişimlerin Tanımlanması",
+      "type": "text",
+      "content": "Kurulum, konfigürasyon ve bakım amaçlı olarak Servicecore personeline uzaktan erişim için VPN hesaplarının tanımlanması gerekmektedir."
+    },
+    {
+      "id": "continuous-delivery-izinleri",
+      "title": "Continuous Delivery İzinleri",
+      "type": "text",
+      "content": "Uygulamanın Continuous Delivery metodlarıyla uzaktan ve otomatik güncellenmesi için gerekli Azure DevOps servislerinin izinlerinin tanımlanması gerekmektedir. Bu izin tanımlı olmayan kurumlarda güncellemeler manuel olarak yapılması gerekir. Platin ve üstü destek paketi olan müşterilerde yapılabilmektedir."
+    },
+    {
+      "id": "sunucu-ortami",
+      "title": "Sunucu Ortamı Hazırlığı",
+      "type": "table",
+      "intro": "Standart kurulum mimarisi ve ek opsiyonel topolojiler aşağıdaki şekilde tanımlanır.",
+      "tableTitle": "Standart Kurulum Gereksinimleri",
+      "headers": ["Bileşen", "Gereksinim"],
+      "rows": [
+        ["OS", "Microsoft Windows Server 2016 +"],
+        ["Server", "Min 16 Core / 64 GB Ram"],
+        ["Disk size", "Min. 300 GB"]
+      ],
+      "footer": [
+        "a. API Servisleri kurulumu (Ek API Lisansı alınması durumunda) — Standart Kurulum + API Mimarisi",
+        "b. Failover Kurulum (Ek Failover Lisansı alınması durumunda) — Failover Kurulum Mimarisi",
+        "c. Failover + API Mimarisi (Ek Failover ve Ek API lisansı alınması durumunda)"
+      ]
+    },
+    {
+      "id": "uygulama-kurulum",
+      "title": "Uygulama Kurulum İşlemleri",
+      "type": "text",
+      "content": "Uzaktan erişim için gerekli VPN bilgilerinin temini sonrası ilk uygulama ve veritabanı kurulumları uzaktan yapılır. DB müşteri tarafından temin edilebilir ya da tercihe göre MSSQL Veritabanı kurulumu tarafımızca yapılacaktır."
+    },
+    {
+      "id": "dns-ssl",
+      "title": "Uygulama DNS ve SSL Konfigürasyonu",
+      "type": "text",
+      "content": "Uygulama müşteri lokasyonundan erişilebilir olarak teslim edilir. support.musteridomain.com vb. bir iç adresten çalışacak kurulum sonrası müşteri tarafında DNS yönlendirmesi ve SSL tanımlaması işlemleri, müşteri sistem yöneticisinin eşliğinde yapılır."
+    },
+    {
+      "id": "ad-entegrasyon",
+      "title": "AD Entegrasyon Tanımlama",
+      "type": "text",
+      "content": "Müşteri Aktif dizininden kullanıcıları almak üzere gerekli ayarlamalar müşteri AD yetkilisinin eşliğinde Servicecore danışmanı tarafından yapılacaktır. Ad girişi için Servicecore'a bir ad kullanıcısı oluşturulmalıdır. İlgili ayara admin panelinden Yönetim Ayarları -> Sistem Ayarları -> Ad Senk. menüsünden ulaşılır."
+    },
+    {
+      "id": "ad-bilgileri",
+      "title": "AD Bilgisi İçin Gerekli Bilgiler",
+      "type": "steps",
+      "items": [
+        { "label": "Domain Adı", "detail": "Ad bilginizde yer alan domain bilginizdir. Örnek: servicecore.local" },
+        { "label": "Etki Alanı Denetleyicisi", "detail": "Domain controller bilginizdir. Ip veya isim olarak girilebilir." },
+        { "label": "Giriş Adı", "detail": "Servicecore için oluşturulan ad kullanıcısının kullanıcı adıdır." },
+        { "label": "Parola", "detail": "Servicecore için oluşturulan ad kullanıcısının şifresidir." },
+        { "label": "Port", "detail": "Domain kontrollere bağlanılacak port bilgisidir. Default: 389'dur." },
+        { "label": "SSL Portu", "detail": "Güvenli bağlantı portudur. Default: 636'dır." },
+        { "label": "Cron Saat ve Cron Dakika", "detail": "Sistemin ad ile periyodik olarak ne kadar sürede bir eşitleyeceğini belirten süre ayarıdır." },
+        { "label": "Senkronize Edilecekler", "detail": "Senkronize edilecek bilgilerin belirlendiği alandır." },
+        { "label": "OU Listesi", "detail": "Sisteme eşitlenecek adnın Ou listelerinin girileceği alandır. Örnek: DC=servicecore,DC=local" }
+      ]
+    },
+    {
+      "id": "eposta-entegrasyon",
+      "title": "E-Posta Entegrasyon Tanımlama",
+      "type": "text",
+      "content": "Kullanıcıların çağrılarını iletecekleri ve sistem bildirimlerini gönderirken kullanılacak eposta adresi (support@musteriadi.com vb) tanımlanmalıdır. Yol: Yönetim Ayarları -> Sistem Ayarları -> Giden E-Posta Sunucusu ve E-Posta Ayrıştırıcısı."
+    },
+    {
+      "id": "giden-eposta",
+      "title": "Giden Eposta Ayarları",
+      "type": "steps",
+      "items": [
+        { "label": "Adı", "detail": "Girilen değer mail gönderildiğinde karşı tarafa mail göndericinin adı olarak gözükecektir." },
+        { "label": "Sunucu İsmi", "detail": "Mail sunucunuzun gönderim yapacağı sunucu adresidir." },
+        { "label": "Port", "detail": "Sunucu isminde girilen sunucu adresine Servicecore kurulumundan ulaşılacak port bilgisidir." },
+        { "label": "Kullanıcı Adı", "detail": "Gönderim yapılacak mail adresidir." },
+        { "label": "Parola", "detail": "Gönderim yapılacak mailin parolasıdır." },
+        { "label": "TLS Kullan", "detail": "İşaretlendiğinde TLS iletişim protokolünü kullanarak gönderimi yapacaktır." },
+        { "label": "SSL Kullan", "detail": "İşaretlendiğinde SSL iletişim protokolünü kullanarak gönderimi yapacaktır." },
+        { "label": "Senkronize Edilecekler", "detail": "Senkronize edilecek bilgilerin belirlendiği alandır." },
+        { "label": "Test E-Postası Gönder", "detail": "Girilen bilgiler kaydedildikten sonra test e-postası ile gönderim doğrulanır." }
+      ]
+    },
+    {
+      "id": "eposta-yakalayici",
+      "title": "Eposta Yakalayıcı Ayarları",
+      "type": "steps",
+      "items": [
+        { "label": "E-Posta Hizmet Türü", "detail": "Servicecore POP, IMAP, Exchange, Office 365, EWS ve Microsoft Graph hizmet türlerini destekler." },
+        { "label": "E-Posta Sunucusunun Adresi", "detail": "Mailin yakalanacağı eposta sunucusunun adresidir." },
+        { "label": "Port", "detail": "Sunucu adresine Servicecore kurulumundan ulaşılırken kullanılacak port bilgisidir." },
+        { "label": "SSL Kullanılıyor", "detail": "İşaretlendiğinde SSL iletişim protokolünü kullanarak gönderimi yapacaktır." },
+        { "label": "Kullanıcı Kaydı", "detail": "İşaretlendiğinde sistemde olmayan bir kullanıcıdan mail gelirse sistem bu kullanıcının kaydını otomatik olarak yapacaktır." },
+        { "label": "E-Posta Adresi", "detail": "Gönderim yapılacak mail adresidir." },
+        { "label": "Kullanıcı Adı", "detail": "Ekstra bir kullanıcı bilgisi bulunuyorsa bu bilgi yok ise gönderim yapılacak mail adresiyle aynı girilecektir." },
+        { "label": "Parola", "detail": "Gönderim yapılacak mailin parolasıdır." },
+        { "label": "Tip", "detail": "Yakalanacak mailin ekleneceği modülü belirler. Çağrı veya olay seçimleri mevcuttur." },
+        { "label": "Etkileşim Kategorisi", "detail": "Gelen mailin kayıt kategorisidir." }
+      ]
+    },
+    {
+      "id": "kullanici-gruplari",
+      "title": "Kullanıcıları ve Kullanıcı Grupları Tanımlama",
+      "type": "text",
+      "content": "AD üzerinden otomatik sürekli sync ile alınan kullanıcılar öncelikle Users bölümünde kaydedilmektedir. Kullanıcıların yetki gruplarına, fonksiyonel dağılımına, hizmet kataloğuna erişimlerine göre gruplandırılması ile kullanıcı grupları tanımlanır."
+    },
+    {
+      "id": "lisans-teknisyen",
+      "title": "Lisans Tanımlama, Teknisyenleri ve Teknisyen Gruplarını Tanımlama",
+      "type": "text",
+      "content": "AD üzerinden otomatik sürekli sync ile alınan kullanıcılardan Teknisyen olarak çalışacak destek personelinin Agent'a dönüştürme işlemleri yapılır. Teknisyen rollerinin atanması işlemleri Admin panelden Servicecore danışmanı ile birlikte yapılır. Tüm BT ve diğer destek personelleri fonksiyonel çalışma gruplarına göre (sistem, yazılım, network saha destek vb.) grup, rol ve lisans atamaları yapılarak aktif edilir."
+    },
+    {
+      "id": "cssm-egitim",
+      "title": "Admin ve Teknisyenlerin Eğitimlere Katılması",
+      "type": "comparison",
+      "items": [
+        {
+          "title": "CSSM-A Certified Servicecore Service Management Administrator",
+          "description": "Servicecore SM ürün sahipleri, ITSM admin-ürün yöneticileri, süreç sahipleri, servis sahipleri için sunulan bu eğitim, servis yönetim sisteminin tüm yönetim ayarları, konfigürasyonu ve özelleştirilmesi işlemlerini içerir."
+        },
+        {
+          "title": "CSSM-P Certified Servicecore Service Management Practitioner",
+          "description": "Teknisyenler, süreç yöneticileri ve servis yöneticileri için sunulan; Servis yönetimi süreçlerinin ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir."
+        }
+      ]
+    },
+    {
+      "id": "kullanima-baslama",
+      "title": "Kullanıma Başlama ve Erken Dönem Yakın Destek",
+      "type": "text",
+      "content": "Eğitim sonrası Admin ayarlarının ve kuruma özel detayların tamamlanması ve ardından son kullanıcılar, müşteriler ve tüm ilgili taraflara destek sisteminin eposta ve web adresleri duyurulması, Teknisyenlerin ürünü kullanımı sırasında 1 ay yakın destek sağlanması."
+    }
+  ],
+  "cta": {
+    "title": "Hızlı başlangıç için Quickstart paketi",
+    "description": "Çekirdek modüllerle hızlı canlıya geçmek isteyen, sonraki dönemlerde kapsamını genişletecek BT ekipleri için uygundur.",
+    "primaryLabel": "Demo İste",
+    "primaryHref": "/demo",
+    "secondaryLabel": "İletişime Geç",
+    "secondaryHref": "/iletisim"
+  },
+  "docsLink": "https://docs.servicecore.app/docs/kurulumkilavuzu/setupadimlari/"
+}
