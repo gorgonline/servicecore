@@ -23,6 +23,7 @@
     "pdf": "node scripts/generate-datasheet-pdf.mjs"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.6",
     "@paper-design/shaders-react": "^0.0.71",
     "@radix-ui/react-slot": "^1.2.4",
     "@superdesign/cli": "^0.3.3",

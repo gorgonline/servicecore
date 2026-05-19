@@ -187,6 +187,19 @@ function TesekkurlerContent() {
   const support = tesekkurlerData.support;
   const page = tesekkurlerData.page;
 
+  // Conversion event firing — mount'ta context'e gore tek sefer fire et.
+  // "default" durumunda (whitelist disindaki ?from degerleri) hicbir event atilmaz.
+  // Demo + Google Ads conversion: NEXT_PUBLIC_GADS_DEMO_CONVERSION_LABEL tanimliysa ek ping.
+  useEffect(() => {
+    if (context === "default") return;
+    const formType: FormConversionType = context;
+    trackFormSubmit(formType);
+    if (context === "demo") {
+      const demoLabel = process.env.NEXT_PUBLIC_GADS_DEMO_CONVERSION_LABEL;
+      if (demoLabel) trackAdsConversion(demoLabel);
+    }
+  }, [context]);
+
   // Timeline, Explore, Support viewport'a girince animasyon basliyor (once: true).
   const timelineRef = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);

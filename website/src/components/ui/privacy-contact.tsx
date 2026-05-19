@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 import { Mail, Send, MessageSquare, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { submitForm, type FormSheet } from "@/lib/forms";
+import { trackFormSubmit } from "@/lib/analytics";
 import { runtimeTokens } from "@/lib/tokens";
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -34,6 +35,8 @@ export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormS
       setStatus("success");
       setEmail("");
       setMessage("");
+      // Inline form — redirect yok, conversion event burada fire edilir.
+      trackFormSubmit("iletisim");
     } else {
       setStatus("error");
       setErrorMessage(result.error);

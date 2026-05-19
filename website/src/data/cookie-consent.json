@@ -1,0 +1,9 @@
+{
+  "badge": "ÇEREZ TERCİHLERİ",
+  "title": "Çerezleri kullanıyoruz",
+  "description": "Sitemizdeki deneyiminizi iyileştirmek, ziyaret istatistiklerini ölçmek ve ilgi alanlarınıza uygun reklamlar göstermek için çerezler kullanıyoruz. \"Tümünü Kabul Et\" diyerek analitik ve pazarlama çerezlerine onay verebilir, ya da reddederek yalnızca zorunlu çerezlerle gezebilirsiniz.",
+  "acceptLabel": "Tümünü Kabul Et",
+  "rejectLabel": "Reddet",
+  "detailsLabel": "Detaylı bilgi",
+  "detailsHref": "/gizlilik#cerez-kullanimi"
+}
