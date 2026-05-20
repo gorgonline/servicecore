@@ -3,7 +3,7 @@
     "badge": "Hizmetler",
     "titleLead": "ServiceCore",
     "titleAccent": "profesyonel hizmetleri.",
-    "description": "Konfigürasyon, devreye alma, entegrasyon, göçüm, eğitim ve danışmanlık başlıklarını tek çatıda toplayan, ITIL4 disiplinine sadık 26 profesyonel hizmet. Yerli mühendislik kadrosu, sertifikalı danışman ekibi ve uçtan uca yaşam döngüsü sahipliği ile servis yönetiminizi güvenle sağlamlaştırın."
+    "description": "Konfigürasyon, devreye alma, entegrasyon, göçüm, eğitim ve danışmanlık başlıklarını tek çatıda toplayan, ITIL4 disiplinine sadık 23 profesyonel hizmet. Yerli mühendislik kadrosu, sertifikalı danışman ekibi ve uçtan uca yaşam döngüsü sahipliği ile servis yönetiminizi güvenle sağlamlaştırın."
   },
   "categories": [
     {
@@ -14,7 +14,7 @@
       "description": "Sunucu hazırlığından AD entegrasyonuna, süreç şablonlarından SLA poliçelerine kadar tüm başlangıç işlerini içine alan kurulum paketleri. Standart konfigürasyondan felaket kurtarmaya kadar her ölçekli kurumun ihtiyacını karşılar.",
       "icon": "Hammer",
       "accent": "blue",
-      "count": 6,
+      "count": 5,
       "href": "/hizmetler/setup"
     },
     {
@@ -25,7 +25,7 @@
       "description": "Entegrasyon, göçüm, analiz ve geliştirme operasyonlarından yıllık Silver-Gold-Platinum-Mission Critical destek paketlerine kadar sürekliliği güvence altına alan hizmet portföyü. Continuous Delivery ile her sürüm aksayışmaksızın sahaya iner.",
       "icon": "LifeBuoy",
       "accent": "cyan",
-      "count": 10,
+      "count": 8,
       "href": "/hizmetler/support"
     },
     {
@@ -116,27 +116,6 @@
       "accentColor": "blue"
     },
     {
-      "slug": "dmz",
-      "code": "SCDMZCP",
-      "name": "DMZ Konfigürasyon Paketi",
-      "nameEn": "DMZ - Configuration Pack",
-      "category": "setup",
-      "paymentTerm": "one-time",
-      "featured": false,
-      "hasDetailPage": false,
-      "tagline": "DMZ üzerinde ServiceCore mirror kurulumu.",
-      "shortDescription": "Internet üzerinden dış kullanıcıların erişeceği self servis portal ve ticket akışları için DMZ bölgesinde ServiceCore mirror kurulumudur. İç ağdaki ana uygulama ile güvenli kanal üzerinden iletişim kurar, ağ güvenliği politikalarına uyum sağlar.",
-      "valueProps": [
-        "DMZ üzerinde yansıma (mirror) ortamı kurulur ve sertifikalandırılır",
-        "İç ağ ile DMZ arasında kontrollü trafik akışı tasarlanır",
-        "Dış müşteri, bayi ve son kullanıcı portal trafiği izole edilir",
-        "Sürekli güncellenebilirliği olan bir DMZ mimarisi teslim edilir"
-      ],
-      "whoFor": "Dış kullanıcılara hizmet sunan, ağ segmentasyonu kuralları sebebiyle ana uygulamasını Internet'e açmak istemeyen kurumlar.",
-      "icon": "Globe",
-      "accentColor": "blue"
-    },
-    {
       "slug": "failover-system",
       "code": "FSCP",
       "name": "Yedekli Sistem Konfigürasyon Paketi",
@@ -221,27 +200,6 @@
       "accentColor": "cyan"
     },
     {
-      "slug": "analysis-customization-deployment",
-      "code": "ACDCP",
-      "name": "Analiz, Özelleştirme ve Devreye Alma Paketi",
-      "nameEn": "Analysis, Customization and Deployment Configuration Pack",
-      "category": "support",
-      "paymentTerm": "one-time",
-      "featured": false,
-      "hasDetailPage": false,
-      "tagline": "Fonksiyonel ihtiyaç analizi ve özelleştirme.",
-      "shortDescription": "Müşterinin fonksiyonel ihtiyaçları, acil iyileştirme istekleri ve diğer özellik geliştirme talepleri için yürütülen analiz, tasarım, özelleştirme ve devreye alma hizmetidir. Standart ürünün karşılamadığı senaryolarda üretime hazır çözümler teslim eder.",
-      "valueProps": [
-        "İş birimleri ile ihtiyaç keşfi ve fonksiyonel analiz yapılır",
-        "Standart ürün yetenekleriyle uyumlu özelleştirme tasarlanır",
-        "Test, regresyon ve UAT süreçlerinin tamamı yönetilir",
-        "Sürüm paketleme ve canlıya geçiş ile birlikte teslim edilir"
-      ],
-      "whoFor": "Standart ürünün ötesinde fonksiyonel özelleştirmeye ihtiyaç duyan veya hızlı iyileştirme talep eden kurumlar.",
-      "icon": "Pencil",
-      "accentColor": "cyan"
-    },
-    {
       "slug": "reporting",
       "code": "SCREPS",
       "name": "Raporlama Hizmetleri",
@@ -281,27 +239,6 @@
       ],
       "whoFor": "Kritik operasyonel dönemlerde sahaya yerleşik destek isteyen büyük ölçekli kurumlar.",
       "icon": "UserCheck",
-      "accentColor": "cyan"
-    },
-    {
-      "slug": "feature-enhancement",
-      "code": "SCFEP",
-      "name": "Özellik Geliştirme Paketi",
-      "nameEn": "Feature Enhancement Package",
-      "category": "support",
-      "paymentTerm": "one-time",
-      "featured": false,
-      "hasDetailPage": false,
-      "tagline": "Adam-gün bazlı özellik geliştirme.",
-      "shortDescription": "Yeni özellik geliştirme ve devreye alma çalışmalarının adam-gün fiyatlandırma modeliyle yürütüldüğü, esnek kapsamlı hizmet paketidir. Süreç olgunluk planlaması doğrultusunda iteratif özellik teslimini destekler.",
-      "valueProps": [
-        "Adam-gün bazlı esnek kapsam yönetimi sağlanır",
-        "Yol haritası ile uyumlu iteratif teslim modeli kurulur",
-        "Standart ürüne entegre, sürdürülebilir geliştirmeler yapılır",
-        "Backlog önceliklendirme iş birliği ile yürütülür"
-      ],
-      "whoFor": "Yıl boyunca özellik talebi olan, bütçe planlamasını efor bazlı yapan kurumlar.",
-      "icon": "PackagePlus",
       "accentColor": "cyan"
     },
     {

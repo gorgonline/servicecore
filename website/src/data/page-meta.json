@@ -181,15 +181,15 @@
   },
   "hizmetler": {
     "title": "Hizmetler | ServiceCore",
-    "description": "Kurulum, destek, eğitim ve danışmanlık başlıklarını kapsayan 26 profesyonel ServiceCore hizmeti. Anahtar teslim implementasyondan yıllık destek paketlerine uzanan portfoy."
+    "description": "Kurulum, destek, eğitim ve danışmanlık başlıklarını kapsayan 23 profesyonel ServiceCore hizmeti. Anahtar teslim implementasyondan yıllık destek paketlerine uzanan portfoy."
   },
   "hizmetler-setup": {
     "title": "Kurulum Hizmetleri | ServiceCore",
-    "description": "Launch Ready, Quickstart, felaket kurtarma, DMZ, failover ve test sistemi konfigürasyon paketleri ile sıfırdan canlıya ServiceCore kurulumu."
+    "description": "Launch Ready, Quickstart, felaket kurtarma, failover ve test sistemi konfigürasyon paketleri ile sıfırdan canlıya ServiceCore kurulumu."
   },
   "hizmetler-support": {
     "title": "Destek Hizmetleri | ServiceCore",
-    "description": "Entegrasyon, göçüm, analiz-özelleştirme, raporlama ve dört yıllık destek paketi: Silver, Gold, Platinum, Mission Critical."
+    "description": "Entegrasyon, göçüm, raporlama, saha destek ve dört yıllık destek paketi: Silver, Gold, Platinum, Mission Critical."
   },
   "hizmetler-training": {
     "title": "Eğitim Hizmetleri | ServiceCore",

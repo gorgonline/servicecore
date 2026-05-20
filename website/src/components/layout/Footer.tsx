@@ -125,6 +125,7 @@ const footerData = {
         { text: "ESM — Enterprise Service Management", href: "/cozumler/esm" },
         { text: "AgilePM — Agile Project Management", href: "/cozumler/apm" },
         { text: "CSM — Customer Service Management", href: "/cozumler/css" },
+        { text: "Multi-CSM — Federated Customer Service Management", href: "/multi-csm" },
         { text: "FSM — Field Service Management", href: "/cozumler/fsm" },
         { text: "ITAM — IT Asset Management", href: "/cozumler/itam" },
         { text: "EAM — Enterprise Asset Management", href: "/cozumler/eam" },

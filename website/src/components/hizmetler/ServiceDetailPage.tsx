@@ -6,10 +6,8 @@ import {
   ArrowRight,
   ArrowUpRight,
   Award,
-  BookOpen,
   Check,
   ChevronRight,
-  ExternalLink,
   LifeBuoy,
   Sparkles,
   Star,
@@ -119,7 +117,6 @@ export interface ServiceDetailData {
   summary?: Summary;
   sections: Section[];
   cta: CTA;
-  docsLink?: string;
 }
 
 interface ServiceDetailPageProps {
@@ -514,36 +511,6 @@ export function ServiceDetailPage({ data }: ServiceDetailPageProps) {
             </motion.section>
           ))}
         </div>
-
-        {/* Docs link */}
-        {data.docsLink && (
-          <div className="mt-20 rounded-3xl border border-white/10 bg-white/2 backdrop-blur-xl p-6 md:p-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div className="flex items-start gap-4">
-              <div
-                className={`w-10 h-10 rounded-xl ${tone.iconBg} border ${tone.iconBorder} ${tone.iconText} flex items-center justify-center shrink-0`}
-              >
-                <BookOpen className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-[11px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-text-muted) mb-1">
-                  Resmi dokümantasyon
-                </div>
-                <p className="text-sm text-white/85 font-light leading-snug break-all">
-                  {data.docsLink}
-                </p>
-              </div>
-            </div>
-            <Link
-              href={data.docsLink}
-              target="_blank"
-              rel="noreferrer noopener"
-              className={`inline-flex items-center gap-2 px-4 h-10 rounded-full border ${tone.iconBorder} ${tone.iconBg} ${tone.iconText} text-xs font-semibold hover:brightness-125 transition-all cursor-pointer shrink-0`}
-            >
-              Dokümana Git
-              <ExternalLink className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-        )}
 
         {/* Other detail services */}
         {otherDetails.length > 0 && (

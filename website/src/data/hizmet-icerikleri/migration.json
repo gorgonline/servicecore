@@ -65,6 +65,5 @@
     "primaryHref": "/demo",
     "secondaryLabel": "İletişime Geç",
     "secondaryHref": "/iletisim"
-  },
-  "docsLink": "https://docs.servicecore.app/docs/migration/"
+  }
 }
