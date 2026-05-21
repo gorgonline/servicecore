@@ -155,7 +155,7 @@
             "icon": "Boxes",
             "iconAccent": "accent",
             "title": "Modüller",
-            "description": "Platformdaki 24+ modülün listesi ve ITIL4 örtüşmesi.",
+            "description": "Platformdaki 30+ modülün listesi ve ITIL4 örtüşmesi.",
             "href": "/moduller"
           },
           {
@@ -235,7 +235,7 @@
             "icon": "Boxes",
             "iconAccent": "purple",
             "title": "Modül Kütüphanesi",
-            "description": "Müşterilerinize sunabileceğiniz 24+ modülün listesi.",
+            "description": "Müşterilerinize sunabileceğiniz 30+ modülün listesi.",
             "href": "/moduller"
           },
           {

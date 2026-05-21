@@ -269,7 +269,7 @@
         },
         "servicecore": {
           "status": "available",
-          "note": "24+ modül tek lisans paketinde"
+          "note": "30+ modül tek lisans paketinde"
         }
       }
     ],
@@ -457,18 +457,18 @@
   "trust": {
     "badge": "GUVEN GOSTERGELERI",
     "title": "Türkiye'nin kurumsal hafızası ServiceCore'a güveniyor",
-    "subtitle": "600.000+ kullanıcı, finans, üretim, savunma ve perakende sektöründe yıllık migration deneyimi.",
+    "subtitle": "4M+ kullanıcı, finans, üretim, savunma ve perakende sektöründe yıllık migration deneyimi.",
     "stats": [
       {
         "value": "25+",
         "label": "Yıl ITSM ve proje yönetimi deneyimi"
       },
       {
-        "value": "600K+",
+        "value": "4M+",
         "label": "Aktif kullanıcı"
       },
       {
-        "value": "24+",
+        "value": "30+",
         "label": "Native modül, tek lisansta"
       },
       {
@@ -495,7 +495,7 @@
       },
       {
         "question": "Migration süresi tipik olarak ne kadar?",
-        "answer": "Proje sayısı, kullanıcı hacmi ve attachment büyüklüğüne bağlı olarak küçük-orta ölçekli kurulumlar 4–6 hafta, kurumsal ölçekli geçişler 8–12 hafta sürer. Plan, kick-off toplantısında müşteri takvimine göre netleştirilir."
+        "answer": "Proje sayısı, kullanıcı hacmi ve attachment büyüklüğüne bağlı olarak küçük-orta ölçekli kurulumlar birkaç gün, kurumsal ölçekli geçişler ise en fazla 3-4 gün sürer. Plan, kick-off toplantısında müşteri takvimine göre netleştirilir."
       }
     ]
   },

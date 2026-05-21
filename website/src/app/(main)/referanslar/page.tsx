@@ -10,7 +10,7 @@ export const revalidate = 0;
 export const metadata: Metadata = {
   title: "Referanslar ve Başarı Öyküleri | ServiceCore",
   description:
-    "Servicecore ITSM ve ESM çözümlerini kullanan 600.000+ müşteriye ulaşan kurumsal referanslarımız. Toyota, Roketsan, Boyner ve daha fazlası.",
+    "Servicecore ITSM ve ESM çözümlerini kullanan 4M+ müşteriye ulaşan kurumsal referanslarımız. Toyota, Roketsan, Boyner ve daha fazlası.",
 };
 
 export default function ReferanslarPage() {
