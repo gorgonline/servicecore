@@ -288,10 +288,10 @@
     "items": [
       {
         "id": "kontrol-paneli",
-        "image": "/images/project/resources-dashboard.png",
-        "imageWidth": 1857,
-        "imageHeight": 738,
-        "imageAlt": "ServiceCore proje kontrol paneli",
+        "image": "/images/project/agile-proje.png",
+        "imageWidth": 3052,
+        "imageHeight": 946,
+        "imageAlt": "ServiceCore portföy ve program yönetimi paneli",
         "accent": "blue",
         "icon": "LayoutDashboard",
         "eyebrow": "Portfolyo & Program",
