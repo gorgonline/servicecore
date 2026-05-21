@@ -161,7 +161,7 @@
         },
         "servicecore": {
           "status": "available",
-          "note": "Olay, problem, istek modülleri native"
+          "note": "3 ayrı Talep Yönetimi modülü bulunuyor"
         }
       },
       {
@@ -197,7 +197,7 @@
         },
         "servicecore": {
           "status": "available",
-          "note": "iOS ve Android native uygulama"
+          "note": "Native mobil uygulama"
         }
       },
       {
@@ -450,8 +450,8 @@
       }
     ],
     "killerStat": {
-      "value": "Jira Data Center'da 500 kullanıcılı kurumsal lisans yıllık 59.000 USD'den başlıyor; ServiceCore, tüm modüller dahil TL bazlı yıllık abonelikle sunulur.",
-      "highlight": "Kur riski yok, gizli add-on maliyeti yok, tek lisans tek fatura."
+      "value": "Atlassian Jira'nın görünen lisans fiyatı buzdağının ucudur. Confluence, Tempo Timesheets, Advanced Roadmaps, AD Sync ve onlarca zorunlu add-on satınalması; üzerine yüksek danışman adam.gün ücretleri ve kesintisiz entegrasyon projeleriyle birleşince toplam sahip olma maliyeti çoğu kurumda 3-4 katına çıkar.",
+      "highlight": "ServiceCore'da tüm modüller tek lisansa dahildir; gizli maliyet, add-on baskısı ve sürpriz danışmanlık faturası yoktur."
     }
   },
   "trust": {
