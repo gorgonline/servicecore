@@ -1,0 +1,525 @@
+{
+  "meta": {
+    "title": "Jira Alternatifi | Türkiye'nin Tek On-Prem Çözümü — ServiceCore",
+    "description": "Atlassian Jira Data Center 2026 Mart'ta yeni satışa kapanıyor. ServiceCore; Türkçe arayüz, KVKK uyumlu on-prem kurulum ve sıfır veri kaybı garantili migration ile agile dönüşümünüze kesintisiz devam ettirir."
+  },
+  "hero": {
+    "badge": "JIRA ALTERNATIFI",
+    "titleLead": "Türkiye'nin",
+    "titleHighlight": "tek on-prem Jira alternatifi",
+    "titleTrail": "ile agile dönüşümünüze devam edin.",
+    "lead": "Atlassian Jira Server kapandı, Data Center 30 Mart 2026'da yeni satışlara kapanıyor ve 2029'da read-only moda geçiyor. ServiceCore; tüm Jira verilerinizi eksiksiz alır, Türkçe arayüzde, kendi sunucunuzda kurumsal proje yönetimini kesintisiz sürdürür.",
+    "primaryCta": {
+      "label": "Migration Demosu İste",
+      "href": "/demo"
+    },
+    "secondaryCta": {
+      "label": "Karşılaştır",
+      "href": "#karsilastirma"
+    },
+    "heroStats": [
+      { "label": "Migration Garantisi", "value": "Sıfır Veri Kaybı" },
+      { "label": "Kurulum Modeli", "value": "On-Prem & Bulut" },
+      { "label": "Arayüz", "value": "Tam Türkçe" },
+      { "label": "Lisanslama", "value": "TL Bazlı Yıllık" }
+    ],
+    "heroImage": {
+      "src": "/images/project/resources-dashboard.png",
+      "alt": "ServiceCore proje yönetimi kontrol paneli",
+      "width": 1857,
+      "height": 738
+    }
+  },
+  "urgency": {
+    "badge": "ATLASSIAN TAKVIMI",
+    "title": "Jira Data Center geri sayımı",
+    "subtitle": "Atlassian'ın açıkladığı resmi geçiş takvimi, on-prem Jira kullanan kurumlar için kritik tarihler içeriyor.",
+    "milestones": [
+      {
+        "date": "Şubat 2024",
+        "title": "Jira Server tamamen sonlandırıldı",
+        "description": "Atlassian, Jira Server ürün ailesini End-of-Life olarak ilan etti. Sunucu kurulumlu Jira artık güncelleme ve güvenlik yaması almıyor.",
+        "tone": "past"
+      },
+      {
+        "date": "17 Şubat 2026",
+        "title": "Yüzde 15 fiyat zammı yürürlüğe girdi",
+        "description": "Data Center lisans ücretlerine küresel ölçekte yüzde 15 zam uygulandı. USD bazlı fiyatlama Türkiye'deki kurumlar için ek kur riski yaratıyor.",
+        "tone": "past"
+      },
+      {
+        "date": "30 Mart 2026",
+        "title": "Data Center yeni satışları kapanıyor",
+        "description": "Atlassian, Jira Data Center için yeni müşteri kabulünü durduruyor. Bu tarihten sonra Data Center lisansı satın alma seçeneği bulunmuyor.",
+        "tone": "imminent"
+      },
+      {
+        "date": "30 Mart 2028",
+        "title": "Mevcut müşteriler için son lisans alımı",
+        "description": "Mevcut Data Center müşterileri yalnızca bu tarihe kadar lisans yenileyebilir ya da kullanıcı eklemesi yapabilir.",
+        "tone": "future"
+      },
+      {
+        "date": "28 Mart 2029",
+        "title": "Data Center read-only moda geçiyor",
+        "description": "Tüm Data Center kurulumları salt-okunur hale geliyor. Yeni issue açma, workflow güncelleme ve operasyonel kullanım sona eriyor.",
+        "tone": "future"
+      }
+    ],
+    "footnote": "Kaynak: Atlassian resmi ürün yaşam döngüsü duyuruları (Cloud Migration Strategy 2024–2029)."
+  },
+  "comparison": {
+    "id": "karsilastirma",
+    "badge": "OZELLIK MATRISI",
+    "title": "Jira vs ServiceCore",
+    "subtitle": "16 kritik kurumsal yetenekte Jira ekosistemi ve ServiceCore platformunun karşılaştırması. Add-on'lar, ayrı satın almalar ve yerel uyum kalemleri dahil edilmiştir.",
+    "headers": ["Özellik", "Atlassian Jira", "ServiceCore"],
+    "legend": [
+      { "symbol": "available", "label": "Native, lisansa dahil" },
+      { "symbol": "partial", "label": "Kısmi destek veya ek satın alma" },
+      { "symbol": "unavailable", "label": "Yok ya da kapsam dışı" }
+    ],
+    "rows": [
+      {
+        "feature": "Bilgi ve Doküman Yönetimi",
+        "category": "Platform",
+        "jira": {
+          "status": "unavailable",
+          "note": "Confluence ayrı ürün, ayrı lisans"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Native modül, tek lisansa dahil"
+        }
+      },
+      {
+        "feature": "Portfolyo Yönetimi",
+        "category": "Platform",
+        "jira": {
+          "status": "unavailable",
+          "note": "Advanced Roadmaps add-on gerektirir"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Native portföy ve program konsolidasyonu"
+        }
+      },
+      {
+        "feature": "Program Yönetimi",
+        "category": "Platform",
+        "jira": {
+          "status": "unavailable",
+          "note": "Ek pazaryeri uygulaması zorunlu"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Çok projeli program kurgusu native"
+        }
+      },
+      {
+        "feature": "Timesheet Yönetimi",
+        "category": "Operasyon",
+        "jira": {
+          "status": "unavailable",
+          "note": "Tempo Timesheets gibi 3. taraf add-on"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Worklog ve onay akışı yerleşik"
+        }
+      },
+      {
+        "feature": "Bağımsız Task Yönetimi",
+        "category": "Operasyon",
+        "jira": {
+          "status": "unavailable",
+          "note": "Jira Work Management ayrı ürün hattı"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Proje, ITSM ve görev modülleri birleşik"
+        }
+      },
+      {
+        "feature": "Sınırsız Active Directory Senkronizasyonu",
+        "category": "Kurumsal",
+        "jira": {
+          "status": "unavailable",
+          "note": "Crowd / SAML add-on'ları gerekli"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Sınırsız AD/LDAP, otomatik senkronizasyon"
+        }
+      },
+      {
+        "feature": "Talep Yönetimi",
+        "category": "ITSM",
+        "jira": {
+          "status": "unavailable",
+          "note": "JSM ayrı ürün, talep modülü kapsam dışı"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Olay, problem, istek modülleri native"
+        }
+      },
+      {
+        "feature": "Sözleşme Yönetimi",
+        "category": "Kurumsal",
+        "jira": {
+          "status": "unavailable",
+          "note": "Atlassian ekosisteminde karşılığı yok"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Sözleşme yaşam döngüsü modülü dahil"
+        }
+      },
+      {
+        "feature": "Tüm Verinin Migration'ı",
+        "category": "Migration",
+        "jira": {
+          "status": "partial",
+          "note": "JSM Assets, custom field ve attachment limitleri"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Sıfır veri kaybı taahhüdü ile yedi aşamalı süreç"
+        }
+      },
+      {
+        "feature": "Mobil Proje Yönetimi",
+        "category": "Operasyon",
+        "jira": {
+          "status": "partial",
+          "note": "Cloud-merkezli, on-prem mobil eksik"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "iOS ve Android native uygulama"
+        }
+      },
+      {
+        "feature": "On-Prem (Kendi Sunucunuzda) Kurulum",
+        "category": "Mimari",
+        "jira": {
+          "status": "unavailable",
+          "note": "Server EOL, Data Center 2029'da kapanıyor"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Standart on-prem ve bulut kurulum seçenekleri"
+        }
+      },
+      {
+        "feature": "Tam Türkçe Arayüz",
+        "category": "Yerel Uyum",
+        "jira": {
+          "status": "partial",
+          "note": "Kısmi çeviri, admin alanları İngilizce"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Uçtan uca Türkçe arayüz ve dokümantasyon"
+        }
+      },
+      {
+        "feature": "KVKK ve Yerel Veri İkametgâhı",
+        "category": "Yerel Uyum",
+        "jira": {
+          "status": "unavailable",
+          "note": "Cloud verisi EEA/ABD bölgelerinde tutulur"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Türkiye veri merkezi veya müşteri sunucusu"
+        }
+      },
+      {
+        "feature": "Yerel Türkçe Destek",
+        "category": "Destek",
+        "jira": {
+          "status": "partial",
+          "note": "Atlassian Solution Partner ağı üzerinden"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "Direkt üretici desteği, Türkiye merkezli"
+        }
+      },
+      {
+        "feature": "TL Bazlı Yıllık Lisans",
+        "category": "Ticari",
+        "jira": {
+          "status": "unavailable",
+          "note": "USD bazlı, kur dalgalanmasına bağlı"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "TL bazlı sabit yıllık abonelik"
+        }
+      },
+      {
+        "feature": "Tek Lisans Altında Tüm Modüller",
+        "category": "Ticari",
+        "jira": {
+          "status": "unavailable",
+          "note": "Her kabiliyet ayrı add-on veya ürün"
+        },
+        "servicecore": {
+          "status": "available",
+          "note": "24+ modül tek lisans paketinde"
+        }
+      }
+    ],
+    "summary": {
+      "jiraNativeCount": 0,
+      "jiraPartialCount": 4,
+      "jiraGapCount": 12,
+      "serviceCoreNativeCount": 16,
+      "note": "ServiceCore, karşılaştırılan 16 yetenekte de native ve tek lisansa dahil çözüm sunar."
+    }
+  },
+  "modules": {
+    "badge": "NATIVE MODÜLLER",
+    "title": "Jira'da olmayan, ServiceCore'da native gelen yetenekler",
+    "subtitle": "Jira ekosisteminde add-on ya da ayrı ürün gerektiren dört temel kabiliyet, ServiceCore'da tek lisansla yerleşik gelir.",
+    "items": [
+      {
+        "id": "kontrol-paneli",
+        "image": "/images/project/resources-dashboard.png",
+        "imageWidth": 1857,
+        "imageHeight": 738,
+        "imageAlt": "ServiceCore proje kontrol paneli",
+        "accent": "blue",
+        "icon": "LayoutDashboard",
+        "eyebrow": "Portfolyo & Program",
+        "title": "Portföy ve Program Yönetimi",
+        "titleHighlight": "tek panelde",
+        "description": "Story point ilerlemesi, sprint performansı, bütçe kullanımı ve risk durumunu portföy ölçeğinde tek bakışta görün. Jira'da Advanced Roadmaps add-on'u olmadan ulaşamadığınız portföy görünürlüğü, ServiceCore'da lisansa dahildir.",
+        "bullets": [
+          "Çok projeli program ve portföy konsolidasyonu",
+          "Story point, bütçe ve efor KPI'ları aynı ekranda",
+          "Risk ve bağımlılıkların yöneticiye anlık raporlanması"
+        ],
+        "jiraBadge": "Jira'da Advanced Roadmaps add-on'u zorunlu"
+      },
+      {
+        "id": "backlog",
+        "image": "/images/project/backlog2.png",
+        "imageWidth": 1833,
+        "imageHeight": 890,
+        "imageAlt": "ServiceCore backlog ve sprint planlama",
+        "accent": "purple",
+        "icon": "ListChecks",
+        "eyebrow": "Backlog & Sprint",
+        "title": "Backlog ve Sprint Planlamasında",
+        "titleHighlight": "tam kapsam",
+        "description": "Epic'ten göreve uzanan hiyerarşi, sürükle-bırak sprint dağıtımı ve kapasite-uyumlu taahhüt yönetimi ServiceCore içinde yerleşik. Jira Work Management'ı ayrı satın almadan tüm görev tipleriyle çalışın.",
+        "bullets": [
+          "Epic, story, task ve özel iş kalemleri",
+          "Sprint backlog sürükle-bırak önceliklendirme",
+          "Velocity ve kapasite uyumlu taahhüt önerileri"
+        ],
+        "jiraBadge": "Jira'da Work Management ayrı ürün"
+      },
+      {
+        "id": "kanban-scrum",
+        "image": "/images/project/board2.png",
+        "imageWidth": 1852,
+        "imageHeight": 437,
+        "imageAlt": "ServiceCore Kanban ve Scrum board",
+        "accent": "emerald",
+        "icon": "KanbanSquare",
+        "eyebrow": "Akış Yönetimi",
+        "title": "Kanban ve Scrum Akışları",
+        "titleHighlight": "yerleşik",
+        "description": "Görsel akışlar, WIP limitleri ve özelleştirilebilir kolon kuralları tek bir görünümde çalışır. Jira'nın ayrı satın alınan portföy ve görev yönetimi ürünlerinden gelen kabiliyetler ServiceCore'da standart.",
+        "bullets": [
+          "Scrum ve Kanban panoları tek görünümde",
+          "WIP limitleri ve özel iş akışı geçiş kuralları",
+          "Günlük stand-up için filtre kayıtlı görünümler"
+        ],
+        "jiraBadge": "Jira'da pano şablonları sürüm bazlı"
+      },
+      {
+        "id": "roadmap-gantt",
+        "image": "/images/project/Roadmap.png",
+        "imageWidth": 1845,
+        "imageHeight": 822,
+        "imageAlt": "ServiceCore yol haritası ve Gantt görünümü",
+        "accent": "cyan",
+        "icon": "Route",
+        "eyebrow": "Yol Haritası",
+        "title": "Stratejik Yol Haritası ve",
+        "titleHighlight": "Gantt zaman çizelgesi",
+        "description": "Epic'leri ve görevleri sürükle-bırak Gantt görünümünde planlayın, çok projeli bağımlılıkları gözlemleyin. Jira'nın Cloud-only roadmap deneyiminden bağımsız, on-prem ortamda native olarak çalışır.",
+        "bullets": [
+          "Sürükle-bırak Gantt ile çoklu proje planlama",
+          "Çapraz proje bağımlılık ve kritik yol analizi",
+          "Strateji-uygulama hizalaması için yönetici raporu"
+        ],
+        "jiraBadge": "Jira'da Advanced Roadmaps gerektirir"
+      }
+    ]
+  },
+  "migration": {
+    "badge": "MIGRATION GARANTISI",
+    "title": "Jira'dan ServiceCore'a sıfır veri kaybı",
+    "subtitle": "Atlassian'ın kendi Server'dan Cloud'a geçiş aracında attachment ve özel alan kayıpları yaşanıyor. ServiceCore migration metodolojisi yedi aşamalı altyapısını üç müşteri kilometre taşına indirir.",
+    "intro": "ServiceCore Migration Configuration Pack (SCMS), 25 yıllık veri taşıma deneyimine dayanan, yedi aşamalı yapılandırılmış metodolojidir. Jira projelerinizi, kullanıcı kayıtlarınızı, yorumlarınızı ve eklerinizi eksiksiz biçimde ServiceCore ortamına taşıyacak şekilde tasarlanmıştır.",
+    "steps": [
+      {
+        "step": 1,
+        "icon": "ScanSearch",
+        "title": "Veri Envanteri ve Haritalama",
+        "description": "Jira projeleriniz, custom field'larınız, workflow'larınız ve attachment hacmi detaylı şekilde analiz edilir. ServiceCore karşılıkları belirlenir, uyumsuz alanlar için dönüşüm kuralları kurgulanır.",
+        "deliverables": [
+          "Veri envanteri raporu",
+          "Alan eşleme matrisi",
+          "Risk ve bağımlılık değerlendirmesi"
+        ]
+      },
+      {
+        "step": 2,
+        "icon": "ArrowLeftRight",
+        "title": "Yedekleme ve Migration Yürütümü",
+        "description": "Eski Jira veritabanı yedeklenir, taşıma stratejisi (API, dosya ya da veritabanı bağlantısı) seçilir. Büyük veri setleri aşamalı şekilde taşınır, transfer hataları gerçek zamanlı izlenir.",
+        "deliverables": [
+          "Tam yedek ve geri dönüş planı",
+          "Aşamalı migration yürütümü",
+          "Hata izleme ve oto-yeniden deneme"
+        ]
+      },
+      {
+        "step": 3,
+        "icon": "ShieldCheck",
+        "title": "Doğrulama ve Canlıya Geçiş",
+        "description": "Veriler ServiceCore tarafında doğrulanır, kullanıcılarla kabul testleri yapılır. Eski Jira ortamı paralel çalıştırılır, onay sonrası canlı geçiş gerçekleştirilir ve geri bildirimle ince ayar tamamlanır.",
+        "deliverables": [
+          "Veri tutarlılığı raporu",
+          "Kullanıcı kabul test sonuçları",
+          "Canlıya geçiş ve hyper-care desteği"
+        ]
+      }
+    ],
+    "guaranteeChecklist": {
+      "title": "Migration kapsamında taşınanlar",
+      "items": [
+        "Tüm issue kayıtları (görev, hata, hikaye, epic)",
+        "Yorumlar, mention'lar ve değişiklik geçmişi",
+        "Tüm attachment dosyaları, boyut sınırı olmadan",
+        "Custom field tanımları ve veri tipleri",
+        "Workflow durumları ve geçiş kuralları",
+        "Kullanıcılar, gruplar ve yetkilendirme yapısı",
+        "Sprint, board ve velocity geçmişi",
+        "Worklog ve zaman kaydı bilgileri"
+      ]
+    },
+    "killerStat": {
+      "value": "Jira'nın kendi Server → Cloud aracında bile attachment, JSM Assets ve özelleştirilmiş alan tip dönüşümleri eksik kalıyor.",
+      "highlight": "ServiceCore, taşıma kapsamını yazılı taahhütle garanti eder."
+    }
+  },
+  "onPrem": {
+    "badge": "ON-PREM AVANTAJI",
+    "title": "On-prem ekosisteminizde",
+    "titleHighlight": "yerinizde kalın",
+    "subtitle": "Atlassian Data Center 28 Mart 2029'da read-only moda geçiyor. ServiceCore, kurumların on-prem stratejisini sürdürmesi için tasarlanmış kurumsal sınıf bir çözümdür.",
+    "advantages": [
+      {
+        "icon": "ShieldCheck",
+        "accent": "blue",
+        "title": "KVKK Uyumu",
+        "description": "Tüm proje verisi, kullanıcı kayıtları ve doküman ekleri Türkiye sınırlarında, kurum sunucularında kalır. KVKK ve sektörel düzenleyici denetimlerin gerektirdiği veri ikametgâhı şartlarını doğal olarak sağlar."
+      },
+      {
+        "icon": "Server",
+        "accent": "purple",
+        "title": "Veri Egemenliği",
+        "description": "ServiceCore tamamen kendi altyapınızda çalışır. Üçüncü taraf bulut sağlayıcıların erişim politikalarına, anlık fiyat değişikliklerine ya da bölgesel kesintilere bağımlılık ortadan kalkar."
+      },
+      {
+        "icon": "Settings",
+        "accent": "emerald",
+        "title": "Tam Özelleştirme",
+        "description": "Workflow, ekran, rol ve raporlar kurum içi gereksinimlere göre derinlemesine özelleştirilebilir. Bulut Jira'da kısıtlı kalan derin entegrasyonlar (SAP, AD, custom DB) ServiceCore'da standart şekilde devreye alınır."
+      },
+      {
+        "icon": "WifiOff",
+        "accent": "cyan",
+        "title": "Çevrimdışı Çalışabilirlik",
+        "description": "Hava boşluğu (air-gapped) ortamlar, savunma ve kamu projeleri için kritik öneme sahip çevrimdışı operasyon ServiceCore on-prem kurulumda desteklenir. Lisans aktivasyonu ve güncelleme paketleri offline yürütülebilir."
+      }
+    ],
+    "killerStat": {
+      "value": "Jira Data Center'da 500 kullanıcılı kurumsal lisans yıllık 59.000 USD'den başlıyor; ServiceCore, tüm modüller dahil TL bazlı yıllık abonelikle sunulur.",
+      "highlight": "Kur riski yok, gizli add-on maliyeti yok, tek lisans tek fatura."
+    }
+  },
+  "trust": {
+    "badge": "GUVEN GOSTERGELERI",
+    "title": "Türkiye'nin kurumsal hafızası ServiceCore'a güveniyor",
+    "subtitle": "600.000+ kullanıcı, finans, üretim, savunma ve perakende sektöründe yıllık migration deneyimi.",
+    "stats": [
+      {
+        "value": "25+",
+        "label": "Yıl ITSM ve proje yönetimi deneyimi"
+      },
+      {
+        "value": "600K+",
+        "label": "Aktif kullanıcı"
+      },
+      {
+        "value": "24+",
+        "label": "Native modül, tek lisansta"
+      },
+      {
+        "value": "0",
+        "label": "Migration veri kaybı taahhüdü"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "SIKCA SORULAN",
+    "title": "Jira'dan geçişte sık sorulan sorular",
+    "items": [
+      {
+        "question": "Mevcut Jira lisansım devam ederken paralel olarak ServiceCore'a geçebilir miyim?",
+        "answer": "Evet. Migration sürecinin doğrulama aşamasında Jira ve ServiceCore paralel çalıştırılır. Ekipler ServiceCore'a aşamalı olarak alınır, son onayda Jira ortamı arşive geçirilir. Geri dönüş planı her aşamada hazırdır."
+      },
+      {
+        "question": "JSM Assets ve özel alanlar taşınabiliyor mu?",
+        "answer": "Atlassian'ın kendi Server → Cloud aracı JSM Assets migration'ını henüz desteklemiyor. ServiceCore migration metodolojisi, alan eşleme matrisiyle Assets, custom field ve attachment'ları eksiksiz taşır."
+      },
+      {
+        "question": "On-prem kurulumda destek modeli nasıl işliyor?",
+        "answer": "ServiceCore on-prem kurulumlar üretici destek paketleriyle (Silver, Gold, Platinum, Mission Critical) sunulur. Yerel Türkçe destek ekibi, 444CORE çağrı merkezi ve uzak masaüstü desteğiyle 7x24 müdahale kapsamı sağlar."
+      },
+      {
+        "question": "Migration süresi tipik olarak ne kadar?",
+        "answer": "Proje sayısı, kullanıcı hacmi ve attachment büyüklüğüne bağlı olarak küçük-orta ölçekli kurulumlar 4–6 hafta, kurumsal ölçekli geçişler 8–12 hafta sürer. Plan, kick-off toplantısında müşteri takvimine göre netleştirilir."
+      }
+    ]
+  },
+  "cta": {
+    "badge": "MIGRATION",
+    "title": "Migration sürecinizi planlamak için demo isteyin",
+    "description": "Mevcut Jira ortamınızı analiz eden ücretsiz keşif görüşmesinde; veri envanteri, taşıma riskleri ve ServiceCore'da kazanacağınız native modüller hakkında özelleştirilmiş yol haritası sunalım.",
+    "primaryCta": {
+      "label": "Migration Demosu",
+      "href": "/demo"
+    },
+    "secondaryCta": {
+      "label": "Uzmanla Görüş",
+      "href": "/iletisim"
+    },
+    "tags": [
+      "Sıfır Veri Kaybı",
+      "Türkçe Destek",
+      "On-Prem",
+      "TL Bazlı Lisans"
+    ]
+  }
+}

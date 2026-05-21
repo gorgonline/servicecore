@@ -230,5 +230,9 @@
   "hizmetler-support-mission-critical": {
     "title": "Mission Critical Destek Paketi | ServiceCore",
     "description": "Yıllık 60 ticket, 7x24 kesintisiz destek, tüm kanallar ve tüm ek hizmetler dahil — ServiceCore'un en kapsamlı destek paketi."
+  },
+  "jira-alternatifi": {
+    "title": "Jira Alternatifi | Türkiye'nin Tek On-Prem Çözümü — ServiceCore",
+    "description": "Atlassian Jira Data Center 2026 Mart'ta yeni satışa kapanıyor. ServiceCore; Türkçe arayüz, KVKK uyumlu on-prem kurulum ve sıfır veri kaybı garantili migration ile agile dönüşümünüze kesintisiz devam ettirir."
   }
 }
