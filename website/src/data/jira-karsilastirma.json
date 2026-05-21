@@ -416,10 +416,6 @@
         "Sprint, board ve velocity geçmişi",
         "Worklog ve zaman kaydı bilgileri"
       ]
-    },
-    "killerStat": {
-      "value": "Jira'nın kendi Server → Cloud aracında bile attachment, JSM Assets ve özelleştirilmiş alan tip dönüşümleri eksik kalıyor.",
-      "highlight": "ServiceCore, taşıma kapsamını yazılı taahhütle garanti eder."
     }
   },
   "onPrem": {

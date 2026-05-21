@@ -20,7 +20,6 @@ import {
   ScanSearch,
   ArrowLeftRight,
   ShieldCheck,
-  Quote,
   Server,
   Settings,
   WifiOff,
@@ -592,28 +591,6 @@ export default function JiraAlternatifiPage() {
                 </li>
               ))}
             </ul>
-          </motion.div>
-
-          {/* Killer stat */}
-          <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="relative rounded-3xl border border-emerald-500/25 bg-linear-to-br from-emerald-500/10 via-cyan-500/5 to-transparent p-8 lg:p-10 backdrop-blur-xl overflow-hidden"
-          >
-            <Quote className="absolute top-6 right-6 w-12 h-12 text-emerald-500/15" />
-            <div className="relative z-10 flex flex-col gap-3 max-w-3xl">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-(--color-accent-emerald-light)">
-                Migration garantisi
-              </span>
-              <p className="text-lg lg:text-xl text-white font-light leading-relaxed">
-                {data.migration.killerStat.value}
-              </p>
-              <p className="text-base lg:text-lg text-(--color-accent-emerald-light) font-semibold leading-relaxed">
-                {data.migration.killerStat.highlight}
-              </p>
-            </div>
           </motion.div>
         </div>
       </section>
