@@ -1,0 +1,175 @@
+/* AntD ColorPicker wrap — ServiceCore görsel diline çek.
+ *
+ * Strateji: AntD 5.7 .ant-color-picker-* class'larını yakalayıp theme
+ * token'larıyla over-ride et. Popup AntD portal'ında render edilir —
+ * rootClassName ile bizim scope'umuza al, sonra :global selector'larla çek.
+ *
+ * Görsel kararlar:
+ * - Trigger button: ServiceCore Input/Button ile aynı height (md=36px), radius md
+ * - Border default-strong; hover ve focus'ta accent
+ * - Color block: 16px (md), inset 1px subtle shadow → transparan/açık renk görünsün
+ * - showText: mono font + secondary metin (HEX value gibi)
+ * - Disabled: bg muted, border default, cursor not-allowed
+ * - Popup panel: radius lg, shadow md, border subtle, padding sane
+ */
+
+/* ───────────────────────────────────────────────────────────────
+ * Trigger (kapalı durumdaki buton)
+ * ─────────────────────────────────────────────────────────────── */
+
+.colorPicker {
+  font-family: var(--sc-font-sans) !important;
+  border: 1px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-md) !important;
+  background: var(--sc-color-bg-base) !important;
+  padding: 0 var(--sc-space-2) !important;
+  min-height: var(--sc-control-height-md);
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.colorPicker:hover {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.colorPicker:global(.ant-color-picker-open),
+.colorPicker:focus-within {
+  border-color: var(--sc-color-accent) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+/* Disabled */
+.colorPicker:global(.ant-color-picker-disabled) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+.colorPicker:global(.ant-color-picker-disabled):hover {
+  border-color: var(--sc-color-border-default) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Color block — renk önizleme karesi
+ * ─────────────────────────────────────────────────────────────── */
+
+.colorPicker :global(.ant-color-picker-color-block) {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: var(--sc-radius-sm) !important;
+  /* Inset border — açık/şeffaf renk de görünsün */
+  box-shadow: inset 0 0 0 1px oklch(0 0 0 / 0.08) !important;
+  overflow: hidden;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Trigger text (showText=true)
+ * ─────────────────────────────────────────────────────────────── */
+
+.colorPicker :global(.ant-color-picker-trigger-text) {
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-secondary) !important;
+  padding-inline-start: var(--sc-space-2) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size — small / large
+ * ─────────────────────────────────────────────────────────────── */
+
+.colorPicker:global(.ant-color-picker-sm) {
+  min-height: var(--sc-control-height-sm);
+  padding: 0 var(--sc-space-2) !important;
+}
+
+.colorPicker:global(.ant-color-picker-sm) :global(.ant-color-picker-color-block) {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.colorPicker:global(.ant-color-picker-lg) {
+  min-height: var(--sc-control-height-lg);
+  padding: 0 var(--sc-space-3) !important;
+}
+
+.colorPicker:global(.ant-color-picker-lg) :global(.ant-color-picker-color-block) {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Popup panel — AntD portal'da render edildiği için rootClassName ile
+ * bizim .popup scope'una alıyoruz
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup {
+  font-family: var(--sc-font-sans) !important;
+}
+
+.popup :global(.ant-color-picker-inner) {
+  border-radius: var(--sc-radius-lg) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  background: var(--sc-color-bg-base) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+  padding: var(--sc-space-4) !important;
+}
+
+/* Format select dropdown'u */
+.popup :global(.ant-color-picker-format-select) :global(.ant-select-selector) {
+  border-radius: var(--sc-radius-sm) !important;
+  border-color: var(--sc-color-border-default) !important;
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-xs) !important;
+}
+
+/* HEX / RGB / HSB input alanları */
+.popup :global(.ant-color-picker-input) input,
+.popup :global(.ant-color-picker-hex-input) input,
+.popup :global(.ant-color-picker-alpha-input) input {
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  border-radius: var(--sc-radius-sm) !important;
+}
+
+/* Preset color grupları */
+.popup :global(.ant-color-picker-presets-label) {
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wide);
+  margin-bottom: var(--sc-space-2) !important;
+}
+
+.popup :global(.ant-color-picker-presets-color) {
+  border-radius: var(--sc-radius-sm) !important;
+  box-shadow: inset 0 0 0 1px oklch(0 0 0 / 0.08) !important;
+  transition:
+    transform var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.popup :global(.ant-color-picker-presets-color):hover {
+  transform: scale(1.08);
+  box-shadow:
+    inset 0 0 0 1px oklch(0 0 0 / 0.08),
+    0 0 0 2px var(--sc-color-accent-subtle) !important;
+}
+
+.popup :global(.ant-color-picker-presets-color-checked) {
+  box-shadow:
+    inset 0 0 0 1px oklch(0 0 0 / 0.08),
+    0 0 0 2px var(--sc-color-accent) !important;
+}
+
+/* Clear butonu (allowClear=true) */
+.popup :global(.ant-color-picker-clear) {
+  border-radius: var(--sc-radius-sm) !important;
+  border-color: var(--sc-color-border-default) !important;
+}
+
+.popup :global(.ant-color-picker-clear):hover {
+  border-color: var(--sc-color-accent) !important;
+}

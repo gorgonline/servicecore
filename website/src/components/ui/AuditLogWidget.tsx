@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ShieldCheck, CheckCircle2, AlertCircle, XCircle, Terminal } from "lucide-react";
+import { En } from "@/components/ui/En";
 
 interface LogEntry {
   id: string;
@@ -26,7 +27,7 @@ const statusIcons = {
 
 export default function AuditLogWidget() {
   return (
-    <div className="p-8 rounded-4xl bg-white/[0.03] border border-white/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden group">
+    <div className="p-8 rounded-4xl bg-white/3 border border-white/10 backdrop-blur-2xl shadow-2xl relative overflow-hidden group">
       <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
       
       <div className="flex items-center justify-between mb-8 relative z-10">
@@ -34,11 +35,11 @@ export default function AuditLogWidget() {
           <div className="p-2 rounded-xl bg-blue-500/10 text-(--color-accent-blue-light) border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.3)]">
             <ShieldCheck size={20} />
           </div>
-          <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white/90">Live Audit Feed</h2>
+          <h2 className="text-xs font-black uppercase tracking-[0.2em] text-white/90"><En>Live Audit Feed</En></h2>
         </div>
         <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/5 border border-emerald-500/20 text-[9px] font-black text-(--color-accent-emerald-light) uppercase tracking-widest">
           <div className="w-1 h-1 rounded-full bg-emerald-400 animate-pulse" />
-          System Verified
+          <En>System Verified</En>
         </div>
       </div>
 

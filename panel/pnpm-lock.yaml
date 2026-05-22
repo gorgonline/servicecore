@@ -26,6 +26,9 @@ importers:
       antd:
         specifier: 5.7.0
         version: 5.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      dayjs:
+        specifier: ^1.11.20
+        version: 1.11.20
       geist:
         specifier: ^1.7.0
         version: 1.7.0(next@15.5.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -70,6 +73,9 @@ importers:
       antd:
         specifier: 5.7.0
         version: 5.7.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      dayjs:
+        specifier: ^1.11.20
+        version: 1.11.20
       esbuild:
         specifier: ^0.27.0
         version: 0.27.7

@@ -1,0 +1,189 @@
+/* AntD Upload wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Trigger area: AntD'nin button'unu Button wrap stilinin manuel kopyası
+ *   (içerde ServiceCore Button kullanılırsa wrap o işi yapar)
+ * - File list item: subtle bg + radius sm, hover bg-muted
+ * - Status renkleri: uploading=accent, done=success, error=danger
+ * - Picture-card: square 96px, radius md, border-default, hover accent
+ * - Dragger: dashed border-default, hover accent, drag-over accent-subtle bg
+ */
+
+.upload {
+  font-family: var(--sc-font-sans);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * File list — her uploaded item satırı
+ * ─────────────────────────────────────────────────────────────── */
+
+.upload :global(.ant-upload-list-item) {
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  margin-top: var(--sc-space-2) !important;
+  background: var(--sc-color-bg-subtle) !important;
+  border: 1px solid var(--sc-color-border-subtle) !important;
+  transition: background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.upload :global(.ant-upload-list-item):hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.upload :global(.ant-upload-list-item-name) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.upload :global(.ant-upload-list-item) :global(.anticon),
+.upload :global(.ant-upload-list-item) :global(svg) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.upload :global(.ant-upload-list-item-action):hover :global(svg),
+.upload :global(.ant-upload-list-item-action):hover :global(.anticon) {
+  color: var(--sc-color-accent) !important;
+}
+
+/* Remove action — danger renk hover'da */
+.upload :global(.ant-upload-list-item-action) :global([aria-label="Remove file"]):hover {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Status — uploading (in progress) / done / error
+ * ─────────────────────────────────────────────────────────────── */
+
+.upload :global(.ant-upload-list-item-uploading) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.upload :global(.ant-upload-list-item-done) :global(.ant-upload-list-item-name) {
+  color: var(--sc-color-text-primary) !important;
+}
+
+.upload :global(.ant-upload-list-item-error) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.upload :global(.ant-upload-list-item-error) :global(.ant-upload-list-item-name),
+.upload :global(.ant-upload-list-item-error) :global(.ant-upload-text-icon) :global(svg) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+/* Progress bar */
+.upload :global(.ant-upload-list-item) :global(.ant-progress-bg) {
+  background: var(--sc-color-accent) !important;
+  height: 2px !important;
+}
+
+.upload :global(.ant-upload-list-item) :global(.ant-progress-inner) {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Picture / picture-card / picture-circle
+ * ─────────────────────────────────────────────────────────────── */
+
+.upload :global(.ant-upload-list-picture-card-container),
+.upload :global(.ant-upload-list-picture-card) :global(.ant-upload-list-item) {
+  width: 96px !important;
+  height: 96px !important;
+  border-radius: var(--sc-radius-md) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  background: var(--sc-color-bg-subtle) !important;
+  padding: var(--sc-space-1) !important;
+  margin-inline-end: var(--sc-space-2);
+  margin-bottom: var(--sc-space-2);
+}
+
+.upload :global(.ant-upload-list-picture-card) :global(.ant-upload-list-item):hover {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.upload :global(.ant-upload-list-picture-circle) :global(.ant-upload-list-item),
+.upload :global(.ant-upload-list-picture-circle-container) {
+  border-radius: var(--sc-radius-full) !important;
+}
+
+/* Picture-card trigger (+ Yeni dosya kutusu) */
+.upload :global(.ant-upload.ant-upload-select-picture-card),
+.upload :global(.ant-upload.ant-upload-select):global(.ant-upload-select-picture-card) {
+  width: 96px !important;
+  height: 96px !important;
+  border-radius: var(--sc-radius-md) !important;
+  border: 1px dashed var(--sc-color-border-strong) !important;
+  background: var(--sc-color-bg-subtle) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.upload :global(.ant-upload.ant-upload-select-picture-card):hover,
+.upload :global(.ant-upload.ant-upload-select):global(.ant-upload-select-picture-card):hover {
+  border-color: var(--sc-color-accent) !important;
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Dragger — drag & drop alanı
+ * ─────────────────────────────────────────────────────────────── */
+
+.dragger {
+  font-family: var(--sc-font-sans);
+}
+
+.dragger :global(.ant-upload-drag) {
+  background: var(--sc-color-bg-subtle) !important;
+  border: 2px dashed var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-lg) !important;
+  padding: var(--sc-space-8) var(--sc-space-6) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.dragger :global(.ant-upload-drag):hover {
+  border-color: var(--sc-color-accent) !important;
+  background: var(--sc-color-accent-subtle) !important;
+}
+
+.dragger :global(.ant-upload-drag-hover) :global(.ant-upload-drag),
+.dragger:hover :global(.ant-upload-drag) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* Dragger içerikleri */
+.dragger :global(.ant-upload-drag-icon) :global(svg),
+.dragger :global(.ant-upload-drag-icon) :global(.anticon) {
+  color: var(--sc-color-accent) !important;
+  font-size: 36px;
+}
+
+.dragger :global(.ant-upload-text) {
+  color: var(--sc-color-text-primary) !important;
+  font-size: var(--sc-font-size-lg) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  margin: var(--sc-space-3) 0 var(--sc-space-1) !important;
+}
+
+.dragger :global(.ant-upload-hint) {
+  color: var(--sc-color-text-tertiary) !important;
+  font-size: var(--sc-font-size-sm) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Disabled
+ * ─────────────────────────────────────────────────────────────── */
+
+.upload:global(.ant-upload-disabled),
+.upload :global(.ant-upload-disabled),
+.dragger:global(.ant-upload-disabled),
+.dragger :global(.ant-upload-disabled) :global(.ant-upload-drag) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}

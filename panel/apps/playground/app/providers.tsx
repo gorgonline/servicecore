@@ -3,7 +3,14 @@
 import type { ReactNode } from "react";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { ConfigProvider } from "antd";
+import trTR from "antd/locale/tr_TR";
+import dayjs from "dayjs";
+import "dayjs/locale/tr";
 import { servicecoreTheme } from "@servicecore/ui/theme";
+
+// dayjs için global Türkçe locale — DatePicker, Calendar, RangePicker
+// hepsi bu locale'i kullanır. Pazartesi haftanın ilk günü olur.
+dayjs.locale("tr");
 
 // AntD 5.7 + React 18.3 dev mode'da `element.ref` deprecation warning'i tetikler.
 // Library bug'ı değil — AntD'nin içindeki cloneElement çağrısı. Prod'da yok.
@@ -24,7 +31,9 @@ import { servicecoreTheme } from "@servicecore/ui/theme";
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <AntdRegistry>
-      <ConfigProvider theme={servicecoreTheme}>{children}</ConfigProvider>
+      <ConfigProvider theme={servicecoreTheme} locale={trTR}>
+        {children}
+      </ConfigProvider>
     </AntdRegistry>
   );
 }

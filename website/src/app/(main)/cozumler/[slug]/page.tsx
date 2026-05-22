@@ -6,6 +6,7 @@ import cozumlerData from "@/data/cozumler.json";
 import cozumlerContent from "@/data/cozumler-content.json";
 import { FeaturesGrid } from "@/components/ui/features-grid";
 import { SolutionSections } from "@/components/sections/solution-sections";
+import { En } from "@/components/ui/En";
 
 interface SolutionData {
   slug: string;
@@ -111,9 +112,9 @@ export default async function SolutionPage({ params }: PageProps) {
         </h1>
 
         {/* English subtitle */}
-        <div className="mt-4 text-sm font-mono uppercase tracking-[0.18em] text-(--color-text-muted)">
+        <En className="mt-4 block text-sm font-mono uppercase tracking-[0.18em] text-(--color-text-muted)">
           {solution.name}
-        </div>
+        </En>
 
         {/* Tagline */}
         <p className="mt-8 text-xl md:text-2xl font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
@@ -189,7 +190,7 @@ export default async function SolutionPage({ params }: PageProps) {
               <div className="mb-12 max-w-3xl">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/3 mb-6">
                   <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
-                    Modüller · Modules
+                    Modüller · <En>Modules</En>
                   </span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">

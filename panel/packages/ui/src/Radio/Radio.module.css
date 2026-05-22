@@ -1,0 +1,289 @@
+/* AntD Radio wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Daire (radio dot): 16px, border-strong (1.5px), bg base
+ * - Hover (unchecked): border accent
+ * - Focus: 3px focus ring (--sc-shadow-focus-ring)
+ * - Checked: border accent, içte 8px accent dot
+ * - Disabled: bg muted, border default, text disabled
+ * - Label: sans, primary, --sc-font-size-md
+ *
+ * Button mode (segmented):
+ * - Default: bg base, border default, primary text
+ * - Hover: border accent, accent text
+ * - Checked outline: border accent, accent text, accent-subtle bg
+ * - Checked solid: bg accent, on-accent text
+ * - Disabled: bg muted, border default, text disabled
+ */
+
+/* ───────────────────────────────────────────────────────────────
+ * Single Radio (wrapper)
+ * ─────────────────────────────────────────────────────────────── */
+
+.radio {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  color: var(--sc-color-text-primary) !important;
+  align-items: center !important;
+}
+
+/* Outer circle */
+.radio :global(.ant-radio-inner) {
+  width: 16px !important;
+  height: 16px !important;
+  border: 1.5px solid var(--sc-color-border-strong) !important;
+  background: var(--sc-color-bg-base) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default) !important;
+}
+
+/* Inner dot (checked'te accent ile dolu) */
+.radio :global(.ant-radio-inner)::after {
+  background: var(--sc-color-accent) !important;
+  width: 32px;
+  height: 32px;
+  margin-block-start: -16px;
+  margin-inline-start: -16px;
+  transform: scale(0.3); /* Default scale; ant-radio-checked'te scale(0.5) tarzı oluyor */
+}
+
+.radio:hover :global(.ant-radio-inner),
+.radio :global(.ant-radio):hover :global(.ant-radio-inner) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* Checked */
+.radio :global(.ant-radio-checked) :global(.ant-radio-inner) {
+  border-color: var(--sc-color-accent) !important;
+  background: var(--sc-color-bg-base) !important;
+}
+
+.radio :global(.ant-radio-checked) :global(.ant-radio-inner)::after {
+  transform: scale(0.5);
+}
+
+/* Focus ring */
+.radio :global(.ant-radio-input):focus-visible + :global(.ant-radio-inner) {
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+  outline: none;
+}
+
+/* Disabled */
+.radio :global(.ant-radio-disabled) :global(.ant-radio-inner) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+}
+
+.radio :global(.ant-radio-disabled) :global(.ant-radio-inner)::after {
+  background: var(--sc-color-text-disabled) !important;
+}
+
+.radio :global(.ant-radio-disabled) + span,
+.radio:global(.ant-radio-wrapper-disabled) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+/* Label spacing */
+.radio > span:last-child,
+.radio > span + span {
+  padding-inline-start: var(--sc-space-2) !important;
+  padding-inline-end: 0 !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Group (default — radio dots stacked horizontal/vertical)
+ * ─────────────────────────────────────────────────────────────── */
+
+.group {
+  font-family: var(--sc-font-sans) !important;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--sc-space-2) var(--sc-space-4);
+}
+
+.group:global(.ant-radio-group-rtl) {
+  direction: rtl;
+}
+
+/* Vertical layout */
+.group:global(.ant-radio-group-vertical),
+.group :global(.ant-space-vertical) {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Her wrapper'a aynı görsel kuralları (group içindeki radio'lar için) */
+.group :global(.ant-radio-wrapper) {
+  margin-inline-start: 0 !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  color: var(--sc-color-text-primary) !important;
+  align-items: center;
+}
+
+.group :global(.ant-radio-inner) {
+  width: 16px !important;
+  height: 16px !important;
+  border: 1.5px solid var(--sc-color-border-strong) !important;
+  background: var(--sc-color-bg-base) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default) !important;
+}
+
+.group :global(.ant-radio-inner)::after {
+  background: var(--sc-color-accent) !important;
+  width: 32px;
+  height: 32px;
+  margin-block-start: -16px;
+  margin-inline-start: -16px;
+  transform: scale(0.3);
+}
+
+.group :global(.ant-radio):hover :global(.ant-radio-inner) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.group :global(.ant-radio-checked) :global(.ant-radio-inner) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.group :global(.ant-radio-checked) :global(.ant-radio-inner)::after {
+  transform: scale(0.5);
+}
+
+.group :global(.ant-radio-disabled) :global(.ant-radio-inner) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+}
+
+.group :global(.ant-radio-disabled) :global(.ant-radio-inner)::after {
+  background: var(--sc-color-text-disabled) !important;
+}
+
+.group :global(.ant-radio-input):focus-visible + :global(.ant-radio-inner) {
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+  outline: none;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Button mode (segmented) — Radio.Button veya optionType="button"
+ * ─────────────────────────────────────────────────────────────── */
+
+/* Bu group artık segmented; gap kapat, bordered'lar yan yana yapışsın */
+.group :global(.ant-radio-button-wrapper) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-secondary) !important;
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-strong) !important;
+  height: var(--sc-control-height-md) !important;
+  line-height: calc(var(--sc-control-height-md) - 2px) !important;
+  padding: 0 var(--sc-space-4) !important;
+  /* Komşu button'ın border'ı üst üste binsin — çift çizgi yok */
+  margin-inline-start: -1px !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* İlk button'da negatif margin yok */
+.group :global(.ant-radio-button-wrapper:first-child) {
+  margin-inline-start: 0 !important;
+}
+
+.button {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-secondary) !important;
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-strong) !important;
+  height: var(--sc-control-height-md) !important;
+  line-height: calc(var(--sc-control-height-md) - 2px) !important;
+  padding: 0 var(--sc-space-4) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* Hover (unchecked button) */
+.group :global(.ant-radio-button-wrapper):not(:global(.ant-radio-button-wrapper-checked)):not(:global(.ant-radio-button-wrapper-disabled)):hover,
+.button:not(:global(.ant-radio-button-wrapper-checked)):not(:global(.ant-radio-button-wrapper-disabled)):hover {
+  color: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* Checked — outline (default) */
+.group :global(.ant-radio-button-wrapper-checked),
+.button:global(.ant-radio-button-wrapper-checked) {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+  z-index: 1;
+}
+
+/* Checked — solid (buttonStyle="solid") */
+.group:global(.ant-radio-group-solid) :global(.ant-radio-button-wrapper-checked) {
+  background: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+.group:global(.ant-radio-group-solid)
+  :global(.ant-radio-button-wrapper-checked):hover {
+  background: var(--sc-color-accent-hover) !important;
+  border-color: var(--sc-color-accent-hover) !important;
+}
+
+/* Disabled (button mode) */
+.group :global(.ant-radio-button-wrapper-disabled),
+.button:global(.ant-radio-button-wrapper-disabled) {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-text-disabled) !important;
+  border-color: var(--sc-color-border-default) !important;
+  cursor: not-allowed !important;
+}
+
+/* AntD'nin default ::before pseudo ayracını kapat — biz negatif margin ile
+ * border yapışıklığı kuruyoruz, ekstra çizgi gereksiz */
+.group :global(.ant-radio-button-wrapper)::before {
+  display: none !important;
+}
+
+/* İlk button — sol radius */
+.group :global(.ant-radio-button-wrapper:first-child) {
+  border-start-start-radius: var(--sc-radius-md) !important;
+  border-end-start-radius: var(--sc-radius-md) !important;
+}
+
+/* Son button — sağ radius */
+.group :global(.ant-radio-button-wrapper:last-child) {
+  border-start-end-radius: var(--sc-radius-md) !important;
+  border-end-end-radius: var(--sc-radius-md) !important;
+}
+
+/* Sizes (button mode) */
+.group:global(.ant-radio-group-small) :global(.ant-radio-button-wrapper) {
+  height: var(--sc-control-height-sm) !important;
+  line-height: calc(var(--sc-control-height-sm) - 2px) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  padding: 0 var(--sc-space-3) !important;
+}
+
+.group:global(.ant-radio-group-large) :global(.ant-radio-button-wrapper) {
+  height: var(--sc-control-height-lg) !important;
+  line-height: calc(var(--sc-control-height-lg) - 2px) !important;
+  font-size: var(--sc-font-size-md) !important;
+  padding: 0 var(--sc-space-5) !important;
+}
+
+/* Button mode'da gap kapat (bordered'lar yan yana yapışsın) */
+.group:has(:global(.ant-radio-button-wrapper)) {
+  gap: 0;
+}

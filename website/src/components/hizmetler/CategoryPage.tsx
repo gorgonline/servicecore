@@ -76,7 +76,7 @@ export function CategoryPage({
   return (
     <div className="min-h-screen bg-(--color-surface-base) selection:bg-(--color-brand-primary)/30 text-(--color-text-overline)">
       <CategoryHero
-        badge={category.nameEn.toUpperCase()}
+        badge={<En>{category.nameEn}</En>}
         badgeIcon={HeroIcon}
         titleLead={getTitleLead(category.slug)}
         titleAccent={getTitleAccent(category.slug)}

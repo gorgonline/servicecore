@@ -1,0 +1,109 @@
+/* AntD Switch wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Track off: bg muted (gri), border yok
+ * - Track on (checked): accent dolu
+ * - Handle: beyaz, subtle shadow
+ * - Hover: track hafif accent
+ * - Focus: 3px focus ring
+ * - Disabled: opacity 0.6, cursor not-allowed
+ * - Loading: spinner accent renkte
+ */
+
+.switch {
+  background: var(--sc-color-bg-muted) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* Hover (off state) */
+.switch:hover:not(:global(.ant-switch-disabled)):not(:global(.ant-switch-checked)) {
+  background: var(--sc-color-border-strong) !important;
+}
+
+/* Checked — track accent */
+.switch:global(.ant-switch-checked) {
+  background: var(--sc-color-accent) !important;
+}
+
+.switch:global(.ant-switch-checked):hover:not(:global(.ant-switch-disabled)) {
+  background: var(--sc-color-accent-hover) !important;
+}
+
+/* Focus ring (klavye erişimi) */
+.switch:focus-visible {
+  outline: none;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Handle (içerideki yuvarlak)
+ * ─────────────────────────────────────────────────────────────── */
+
+.switch :global(.ant-switch-handle)::before {
+  background: var(--sc-color-bg-base) !important;
+  box-shadow: 0 1px 2px oklch(0.15 0 0 / 0.15) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Inner label (checkedChildren / unCheckedChildren)
+ * ─────────────────────────────────────────────────────────────── */
+
+.switch :global(.ant-switch-inner) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+}
+
+.switch :global(.ant-switch-inner-checked),
+.switch :global(.ant-switch-inner-unchecked) {
+  color: var(--sc-color-accent-on-accent) !important;
+}
+
+.switch:not(:global(.ant-switch-checked)) :global(.ant-switch-inner-unchecked) {
+  color: var(--sc-color-text-secondary) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Disabled — soluk renk, cursor not-allowed
+ * ─────────────────────────────────────────────────────────────── */
+
+.switch:global(.ant-switch-disabled) {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+.switch:global(.ant-switch-disabled):hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.switch:global(.ant-switch-checked.ant-switch-disabled) {
+  background: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Loading — spinner accent renkli
+ * ─────────────────────────────────────────────────────────────── */
+
+.switch:global(.ant-switch-loading) :global(.ant-switch-loading-icon) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.switch:global(.ant-switch-checked.ant-switch-loading) :global(.ant-switch-loading-icon) {
+  color: var(--sc-color-accent-on-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size: small
+ * ─────────────────────────────────────────────────────────────── */
+
+.switch:global(.ant-switch-small) {
+  min-width: 28px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.switch:global(.ant-switch-small) :global(.ant-switch-inner) {
+  font-size: var(--sc-font-size-2xs) !important;
+}

@@ -1,0 +1,433 @@
+/* AntD DatePicker wrap — ServiceCore görsel diline çek.
+ *
+ * Strateji: AntD 5.7 .ant-picker-* class'larını yakalayıp theme token'larıyla
+ * over-ride et. Popup AntD portal'ında render edilir — popupClassName ile
+ * bizim .popup scope'una alıyoruz, sonra :global selector'larla çek.
+ *
+ * Görsel kararlar:
+ * - Input: Input wrap ile birebir aynı stil (border-strong, radius md, padding,
+ *   focus ring) → form'da uyumlu sıra
+ * - Aktif/focus: accent border + focus ring
+ * - Cell selected: bg accent, text on-accent
+ * - Cell today: border accent (in-range içinde de görünsün)
+ * - Cell in-range: bg accent-subtle, end'ler tam accent
+ * - Cell hover: bg muted
+ * - Cell disabled: text-disabled
+ * - Panel: radius lg, shadow md, border default
+ */
+
+/* ───────────────────────────────────────────────────────────────
+ * Trigger input (kapalı/açık)
+ * ─────────────────────────────────────────────────────────────── */
+
+.picker {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  border: 1px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-md) !important;
+  background: var(--sc-color-bg-base) !important;
+  padding: 0 var(--sc-space-3) !important;
+  min-height: var(--sc-control-height-md);
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.picker:hover {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.picker:global(.ant-picker-focused),
+.picker:focus-within {
+  border-color: var(--sc-color-accent) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+/* Disabled */
+.picker:global(.ant-picker-disabled) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  cursor: not-allowed !important;
+}
+
+.picker:global(.ant-picker-disabled):hover {
+  border-color: var(--sc-color-border-default) !important;
+}
+
+/* Status: error / warning */
+.picker:global(.ant-picker-status-error) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.picker:global(.ant-picker-status-error):focus-within {
+  box-shadow: 0 0 0 3px var(--sc-color-state-danger-bg) !important;
+}
+
+.picker:global(.ant-picker-status-warning) {
+  border-color: var(--sc-color-state-warning-fg) !important;
+}
+
+.picker:global(.ant-picker-status-warning):focus-within {
+  box-shadow: 0 0 0 3px var(--sc-color-state-warning-bg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Input içi text + placeholder
+ * ─────────────────────────────────────────────────────────────── */
+
+.picker :global(.ant-picker-input) > input {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.picker :global(.ant-picker-input) > input::placeholder {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.picker :global(.ant-picker-suffix),
+.picker :global(.ant-picker-clear) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.picker :global(.ant-picker-clear):hover {
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Range separator */
+.picker :global(.ant-picker-range-separator) :global(.ant-picker-separator) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* Range active highlight (hangi input aktif) */
+.picker :global(.ant-picker-active-bar) {
+  background: var(--sc-color-accent) !important;
+  height: 2px !important;
+  bottom: -1px !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size: small / large
+ * ─────────────────────────────────────────────────────────────── */
+
+.picker:global(.ant-picker-small) {
+  min-height: var(--sc-control-height-sm);
+  padding: 0 var(--sc-space-2) !important;
+}
+
+.picker:global(.ant-picker-small) :global(.ant-picker-input) > input {
+  font-size: var(--sc-font-size-sm) !important;
+}
+
+.picker:global(.ant-picker-large) {
+  min-height: var(--sc-control-height-lg);
+  padding: 0 var(--sc-space-4) !important;
+}
+
+.picker:global(.ant-picker-large) :global(.ant-picker-input) > input {
+  font-size: var(--sc-font-size-lg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Popup panel — AntD portal, popupClassName ile bizim scope'umuza alındı
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup {
+  font-family: var(--sc-font-sans) !important;
+}
+
+.popup :global(.ant-picker-panel-container) {
+  border-radius: var(--sc-radius-lg) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  background: var(--sc-color-bg-base) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+}
+
+.popup :global(.ant-picker-panel) {
+  border-bottom: none !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Panel header — yıl/ay navigasyonu
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-picker-header) {
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.popup :global(.ant-picker-header-view) {
+  font-weight: var(--sc-font-weight-semibold) !important;
+  font-size: var(--sc-font-size-md) !important;
+}
+
+.popup :global(.ant-picker-header-view) button {
+  color: var(--sc-color-text-primary) !important;
+  transition: color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.popup :global(.ant-picker-header-view) button:hover {
+  color: var(--sc-color-accent) !important;
+}
+
+.popup :global(.ant-picker-header-prev-btn),
+.popup :global(.ant-picker-header-next-btn),
+.popup :global(.ant-picker-header-super-prev-btn),
+.popup :global(.ant-picker-header-super-next-btn) {
+  color: var(--sc-color-text-secondary) !important;
+  transition: color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.popup :global(.ant-picker-header-prev-btn):hover,
+.popup :global(.ant-picker-header-next-btn):hover,
+.popup :global(.ant-picker-header-super-prev-btn):hover,
+.popup :global(.ant-picker-header-super-next-btn):hover {
+  color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Day-of-week başlıkları (Pzt, Sal, ...)
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-picker-content) th {
+  color: var(--sc-color-text-tertiary) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wide);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Cell (gün/ay/yıl hücresi)
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-picker-cell) {
+  color: var(--sc-color-text-secondary) !important;
+  padding: 2px !important;
+}
+
+/* Sadece bu ay görünen hücreler — diğer ay'lar daha solgun */
+.popup :global(.ant-picker-cell-in-view) {
+  color: var(--sc-color-text-primary) !important;
+}
+
+.popup :global(.ant-picker-cell) :global(.ant-picker-cell-inner) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  min-width: 28px !important;
+  height: 28px !important;
+  line-height: 28px !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* Hover */
+.popup :global(.ant-picker-cell-in-view):not(:global(.ant-picker-cell-disabled)):hover :global(.ant-picker-cell-inner) {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Bugün — border accent */
+.popup :global(.ant-picker-cell-today) :global(.ant-picker-cell-inner)::before {
+  border: 1px solid var(--sc-color-accent) !important;
+  border-radius: var(--sc-radius-sm) !important;
+}
+
+/* Seçili — dolu accent */
+.popup :global(.ant-picker-cell-selected) :global(.ant-picker-cell-inner),
+.popup :global(.ant-picker-cell-range-start) :global(.ant-picker-cell-inner),
+.popup :global(.ant-picker-cell-range-end) :global(.ant-picker-cell-inner) {
+  background: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+  font-weight: var(--sc-font-weight-semibold);
+}
+
+/* Range arası — accent-subtle */
+.popup :global(.ant-picker-cell-in-range) :global(.ant-picker-cell-inner) {
+  background: transparent !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.popup :global(.ant-picker-cell-in-range)::before,
+.popup :global(.ant-picker-cell-range-start)::before,
+.popup :global(.ant-picker-cell-range-end)::before {
+  background: var(--sc-color-accent-subtle) !important;
+}
+
+.popup :global(.ant-picker-cell-range-hover)::after,
+.popup :global(.ant-picker-cell-range-hover-start)::after,
+.popup :global(.ant-picker-cell-range-hover-end)::after {
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* Disabled */
+.popup :global(.ant-picker-cell-disabled) :global(.ant-picker-cell-inner) {
+  color: var(--sc-color-text-disabled) !important;
+  background: transparent !important;
+}
+
+.popup :global(.ant-picker-cell-disabled)::before {
+  background: var(--sc-color-bg-subtle) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Footer (OK butonu, today butonu)
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-picker-footer) {
+  border-top: 1px solid var(--sc-color-border-subtle) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--sc-space-3);
+  line-height: 1 !important;
+}
+
+.popup :global(.ant-picker-now) {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+.popup :global(.ant-picker-ranges) {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  line-height: 1 !important;
+}
+
+.popup :global(.ant-picker-ok) {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  list-style: none !important;
+}
+
+.popup :global(.ant-picker-today-btn),
+.popup :global(.ant-picker-now-btn) {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: var(--sc-control-height-sm) !important;
+  padding: 0 var(--sc-space-1) !important;
+  color: var(--sc-color-accent) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  line-height: 1 !important;
+  text-transform: none;
+}
+
+.popup :global(.ant-picker-today-btn):hover,
+.popup :global(.ant-picker-now-btn):hover {
+  color: var(--sc-color-accent-hover) !important;
+}
+
+/* OK / Tamam button — ServiceCore primary stili */
+.popup :global(.ant-picker-ok) {
+  display: inline-flex;
+  align-items: center;
+}
+
+.popup :global(.ant-picker-ok) :global(button) {
+  background: var(--sc-color-accent) !important;
+  border: 1px solid var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+  border-radius: var(--sc-radius-md) !important;
+  height: var(--sc-control-height-sm) !important;
+  padding: 0 var(--sc-space-4) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  line-height: 1 !important;
+  text-transform: none;
+  box-shadow: none !important;
+}
+
+.popup :global(.ant-picker-ok) :global(button):hover {
+  background: var(--sc-color-accent-hover) !important;
+  border-color: var(--sc-color-accent-hover) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+}
+
+.popup :global(.ant-picker-ok) :global(button):disabled,
+.popup :global(.ant-picker-ok) :global(button)[disabled] {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+/* Time-panel cell — DatePicker showTime modunda */
+.popup :global(.ant-picker-time-panel-cell) {
+  margin: 0 !important;
+  padding: 2px 0 !important;
+  text-align: center !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Presets sidebar
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-picker-presets) {
+  border-inline-end: 1px solid var(--sc-color-border-subtle) !important;
+  background: var(--sc-color-bg-subtle) !important;
+  min-width: 140px;
+  padding: var(--sc-space-2) !important;
+}
+
+.popup :global(.ant-picker-presets) ul li {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  transition: background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.popup :global(.ant-picker-presets) ul li:hover {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Time panel (showTime için)
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-picker-time-panel) {
+  border-inline-start: 1px solid var(--sc-color-border-subtle) !important;
+}
+
+.popup :global(.ant-picker-time-panel-cell-inner) {
+  display: inline-block !important;
+  min-width: 32px !important;
+  width: auto !important;
+  height: 26px !important;
+  line-height: 26px !important;
+  padding: 0 var(--sc-space-2) !important;
+  margin: 0 !important;
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  background: transparent !important;
+  border-radius: var(--sc-radius-sm) !important;
+}
+
+.popup :global(.ant-picker-time-panel-cell-inner):hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.popup :global(.ant-picker-time-panel-cell-selected) :global(.ant-picker-time-panel-cell-inner) {
+  background: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+}

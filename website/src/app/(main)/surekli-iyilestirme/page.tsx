@@ -34,6 +34,7 @@ import {
   Plus,
 } from "lucide-react";
 import data from "@/data/surekli-iyilestirme.json";
+import { En } from "@/components/ui/En";
 
 export default function SurekliIyilestirmePage() {
   const fadeUp: Variants = {
@@ -526,7 +527,7 @@ export default function SurekliIyilestirmePage() {
                   <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-linear-to-r from-purple-500/12 to-indigo-500/8 border border-purple-500/30 mt-auto shadow-[0_0_20px_rgba(168,85,247,0.12)]">
                     <Layers className="w-3.5 h-3.5 text-(--color-accent-purple-light) shrink-0" />
                     <div className="flex flex-col flex-1 min-w-0">
-                      <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">ITIL4 Service Value System</span>
+                      <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)"><En>ITIL4 Service Value System</En></span>
                       <span className="text-[10px] font-bold text-white">Engage katmanı · CI sürecinin liderliği</span>
                     </div>
                   </div>

@@ -1,0 +1,196 @@
+/* AntD TreeSelect wrap — ServiceCore görsel diline çek.
+ *
+ * NOT: TreeSelect, Select'in altyapısını kullanır (.ant-select-*). Bizim Select
+ * wrap'ımız da varsa burada çakışma olabilir. TreeSelect'e özgü görsel için
+ * sadece .ant-select-tree-* class'larını override ediyoruz.
+ *
+ * Görsel kararlar:
+ * - Selector: Select wrap ile aynı stil (border-strong, radius md, focus ring)
+ * - Popup tree: radius lg, shadow md, padding sane
+ * - Tree node: hover bg-muted, selected bg accent-subtle
+ * - Checkbox: accent (Checkbox wrap stiliyle uyumlu)
+ * - Switcher (expand/collapse): text-tertiary, hover accent
+ */
+
+/* ───────────────────────────────────────────────────────────────
+ * Selector — Select ile aynı dil
+ * ─────────────────────────────────────────────────────────────── */
+
+.treeSelect :global(.ant-select-selector) {
+  border: 1px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-md) !important;
+  background: var(--sc-color-bg-base) !important;
+  font-family: var(--sc-font-sans) !important;
+  min-height: var(--sc-control-height-md) !important;
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.treeSelect:hover :global(.ant-select-selector) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.treeSelect:global(.ant-select-focused) :global(.ant-select-selector) {
+  border-color: var(--sc-color-accent) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+.treeSelect:global(.ant-select-disabled) :global(.ant-select-selector) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  cursor: not-allowed !important;
+}
+
+.treeSelect:global(.ant-select-status-error) :global(.ant-select-selector) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.treeSelect:global(.ant-select-status-warning) :global(.ant-select-selector) {
+  border-color: var(--sc-color-state-warning-fg) !important;
+}
+
+/* Placeholder + selection text */
+.treeSelect :global(.ant-select-selection-placeholder) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.treeSelect :global(.ant-select-selection-item) {
+  color: var(--sc-color-text-primary) !important;
+  font-size: var(--sc-font-size-md);
+}
+
+/* Multi tag (multiple/treeCheckable) */
+.treeSelect :global(.ant-select-selection-overflow-item) :global(.ant-select-selection-item) {
+  background: var(--sc-color-accent-subtle) !important;
+  border: 1px solid var(--sc-color-accent) !important;
+  color: var(--sc-color-accent) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  font-size: var(--sc-font-size-xs);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Popup — dropdown tree
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup {
+  font-family: var(--sc-font-sans) !important;
+}
+
+.popup :global(.ant-select-tree) {
+  border-radius: var(--sc-radius-lg) !important;
+  background: var(--sc-color-bg-base) !important;
+  padding: var(--sc-space-2) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Tree node
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-select-tree-treenode) {
+  padding: 2px 0 !important;
+}
+
+.popup :global(.ant-select-tree-node-content-wrapper) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  padding: var(--sc-space-1) var(--sc-space-2) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.popup :global(.ant-select-tree-node-content-wrapper):hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.popup :global(.ant-select-tree-node-selected) {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-medium);
+}
+
+.popup :global(.ant-select-tree-node-content-wrapper-active),
+.popup :global(.ant-select-tree-node-content-wrapper):active {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* Disabled node */
+.popup :global(.ant-select-tree-treenode-disabled) :global(.ant-select-tree-node-content-wrapper) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.popup :global(.ant-select-tree-treenode-disabled) :global(.ant-select-tree-node-content-wrapper):hover {
+  background: transparent !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Switcher (▶/▼ expand/collapse)
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-select-tree-switcher) {
+  color: var(--sc-color-text-tertiary) !important;
+  transition: color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.popup :global(.ant-select-tree-switcher):not(:global(.ant-select-tree-switcher-noop)):hover {
+  color: var(--sc-color-accent) !important;
+}
+
+.popup :global(.ant-select-tree-switcher-noop) {
+  cursor: default;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Checkbox (treeCheckable)
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-select-tree-checkbox) :global(.ant-select-tree-checkbox-inner) {
+  border: 1.5px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  width: 16px !important;
+  height: 16px !important;
+  background: var(--sc-color-bg-base) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.popup :global(.ant-select-tree-checkbox-checked) :global(.ant-select-tree-checkbox-inner),
+.popup :global(.ant-select-tree-checkbox-indeterminate) :global(.ant-select-tree-checkbox-inner) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+.popup :global(.ant-select-tree-checkbox-disabled) :global(.ant-select-tree-checkbox-inner) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Empty state
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-select-empty),
+.popup :global(.ant-empty) {
+  color: var(--sc-color-text-tertiary) !important;
+  padding: var(--sc-space-6) var(--sc-space-3) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Tree-line (treeLine prop'u)
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-select-tree-show-line) :global(.ant-select-tree-switcher) {
+  background: var(--sc-color-bg-base) !important;
+}
+
+.popup :global(.ant-select-tree-indent-unit-end)::before,
+.popup :global(.ant-select-tree-indent-unit)::before {
+  border-color: var(--sc-color-border-default) !important;
+}

@@ -1,0 +1,220 @@
+/* ── Layout ─────────────────────────────────────── */
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--sc-space-12) var(--sc-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-20);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-3);
+  padding-bottom: var(--sc-space-6);
+  border-bottom: 1px solid var(--sc-color-border-default);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-6);
+  scroll-margin-top: var(--sc-space-8);
+}
+
+.subgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sc-space-5);
+}
+
+@media (max-width: 768px) {
+  .subgrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Mock canvas ────────────────────────────────── */
+
+.mock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+}
+
+.mockCaption {
+  font-size: var(--sc-font-size-2xs);
+  color: var(--sc-color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wide);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+.mockFrame {
+  border: 1px solid var(--sc-color-border-default);
+  border-radius: var(--sc-radius-lg);
+  background: var(--sc-color-bg-base);
+  padding: var(--sc-space-6);
+}
+
+/* ── Row helpers ────────────────────────────────── */
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-4);
+  flex-wrap: wrap;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-3);
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+}
+
+.formLabel {
+  font-size: var(--sc-font-size-sm);
+  font-weight: var(--sc-font-weight-medium);
+  color: var(--sc-color-text-primary);
+}
+
+.formHint {
+  font-size: var(--sc-font-size-xs);
+  color: var(--sc-color-text-tertiary);
+}
+
+/* ── Live preview tag (kategori önizleme) ───────── */
+
+.previewTag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  padding: var(--sc-space-1) var(--sc-space-3);
+  border-radius: var(--sc-radius-full);
+  font-size: var(--sc-font-size-xs);
+  font-weight: var(--sc-font-weight-medium);
+  border: 1px solid currentColor;
+  width: fit-content;
+}
+
+.previewDot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--sc-radius-full);
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Category form mock ─────────────────────────── */
+
+.categoryForm {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: var(--sc-space-4);
+  align-items: end;
+}
+
+@media (max-width: 600px) {
+  .categoryForm {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Custom trigger sample ──────────────────────── */
+
+.customTrigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  padding: var(--sc-space-2) var(--sc-space-3);
+  border-radius: var(--sc-radius-md);
+  background: var(--sc-color-bg-subtle);
+  border: 1px solid var(--sc-color-border-default);
+  cursor: pointer;
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-sm);
+  font-weight: var(--sc-font-weight-medium);
+  color: var(--sc-color-text-primary);
+  transition: border-color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.customTrigger:hover {
+  border-color: var(--sc-color-accent);
+}
+
+.customSwatch {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--sc-radius-sm);
+  box-shadow: inset 0 0 0 1px oklch(0 0 0 / 0.1);
+}
+
+/* ── Type heading ───────────────────────────────── */
+
+.typeHeader {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sc-space-3);
+  padding-bottom: var(--sc-space-3);
+  border-bottom: 1px solid var(--sc-color-border-default);
+}
+
+.typeBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--sc-space-2);
+  border-radius: var(--sc-radius-sm);
+  background: var(--sc-color-bg-muted);
+  color: var(--sc-color-text-primary);
+  font-family: var(--sc-font-mono);
+  font-size: var(--sc-font-size-xs);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+/* ── Back link ─────────────────────────────────── */
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  color: var(--sc-color-text-secondary);
+  font-size: var(--sc-font-size-sm);
+  width: fit-content;
+}
+
+.backLink:hover {
+  color: var(--sc-color-accent);
+}
+
+/* ── TOC ─────────────────────────────────────── */
+
+.toc {
+  position: sticky;
+  top: 0;
+  background: var(--sc-color-bg-base);
+  z-index: 10;
+  padding: var(--sc-space-3) var(--sc-space-6);
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+  display: flex;
+  justify-content: center;
+  gap: var(--sc-space-5);
+  flex-wrap: wrap;
+  font-size: var(--sc-font-size-sm);
+}
+
+.toc a {
+  color: var(--sc-color-text-secondary);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+.toc a:hover {
+  color: var(--sc-color-accent);
+}

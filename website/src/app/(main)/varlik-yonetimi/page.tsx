@@ -41,6 +41,7 @@ import {
   Database,
 } from "lucide-react";
 import data from "@/data/varlik-yonetimi.json";
+import { En } from "@/components/ui/En";
 
 export default function VarlikYonetimiPage() {
   const fadeUp: Variants = {
@@ -1148,7 +1149,7 @@ export default function VarlikYonetimiPage() {
                       </div>
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-blue-base) shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
-                        Native Entegrasyon
+                        <En>Native</En> Entegrasyon
                       </div>
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shadow-[0_0_8px_rgba(168,85,247,0.6)]" />

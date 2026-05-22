@@ -1,0 +1,235 @@
+/* AntD Tabs wrap — ServiceCore görsel diline çek.
+ *
+ * Strateji: AntD 5.7 .ant-tabs-* class'larını :global() ile yakalayıp
+ * theme token'larıyla over-ride et.
+ *
+ * Görsel kararlar:
+ * - Line type: 2px accent ink bar, tab font medium 14px, secondary→primary→accent
+ * - Card type: kart radius md, aktif kart üst kenarda 2px accent, alt kenarda bağlantı
+ * - Editable-card: dashed border'lı add butonu, hover'da accent
+ * - Hover: text-primary (subtle); Active: text-accent + semibold
+ * - Disabled: text-disabled, cursor not-allowed
+ * - Tab bar alt çizgisi: border-default
+ */
+
+.tabs {
+  font-family: var(--sc-font-sans) !important;
+  color: var(--sc-color-text-primary);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Nav (tab bar)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs :global(.ant-tabs-nav) {
+  margin-bottom: var(--sc-space-5) !important;
+}
+
+/* Alt çizgi (line type) */
+.tabs :global(.ant-tabs-nav)::before {
+  border-bottom-color: var(--sc-color-border-default) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Tab item — base
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs :global(.ant-tabs-tab) {
+  font-size: var(--sc-font-size-md) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  margin: 0 var(--sc-space-1) 0 0 !important;
+  transition:
+    color var(--sc-duration-fast) var(--sc-easing-default),
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.tabs :global(.ant-tabs-tab) :global(.ant-tabs-tab-btn) {
+  color: var(--sc-color-text-secondary) !important;
+  transition: color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.tabs :global(.ant-tabs-tab):hover :global(.ant-tabs-tab-btn) {
+  color: var(--sc-color-text-primary) !important;
+}
+
+.tabs :global(.ant-tabs-tab-active) :global(.ant-tabs-tab-btn) {
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+}
+
+.tabs :global(.ant-tabs-tab-disabled),
+.tabs :global(.ant-tabs-tab-disabled) :global(.ant-tabs-tab-btn) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.tabs :global(.ant-tabs-tab-disabled):hover :global(.ant-tabs-tab-btn) {
+  color: var(--sc-color-text-disabled) !important;
+}
+
+/* Tab btn içindeki icon (label'da inline SVG için ortalama) */
+.tabs :global(.ant-tabs-tab) :global(.ant-tabs-tab-btn) :global(svg) {
+  vertical-align: -2px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Ink bar (line type — aktif alt çizgi)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs :global(.ant-tabs-ink-bar) {
+  background: var(--sc-color-accent) !important;
+  height: 2px !important;
+  border-radius: 2px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Card type — kartlı sekmeler
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs:global(.ant-tabs-card) :global(.ant-tabs-tab) {
+  background: var(--sc-color-bg-subtle) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-md) var(--sc-radius-md) 0 0 !important;
+  padding: var(--sc-space-2) var(--sc-space-4) !important;
+  margin: 0 2px 0 0 !important;
+}
+
+.tabs:global(.ant-tabs-card) :global(.ant-tabs-tab):hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.tabs:global(.ant-tabs-card) :global(.ant-tabs-tab-active) {
+  background: var(--sc-color-bg-base) !important;
+  border-bottom-color: var(--sc-color-bg-base) !important;
+  /* Aktif kart üst kenarında 2px accent çizgi (ink-bar yerine geçer) */
+  box-shadow: inset 0 2px 0 0 var(--sc-color-accent);
+}
+
+/* Card mode'da ink-bar'ı gizle */
+.tabs:global(.ant-tabs-card) :global(.ant-tabs-ink-bar) {
+  display: none !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Editable card — remove + add butonları
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs :global(.ant-tabs-tab-remove) {
+  color: var(--sc-color-text-tertiary) !important;
+  margin-inline-start: var(--sc-space-2) !important;
+  line-height: 0;
+  padding: 0 4px;
+  border-radius: var(--sc-radius-sm);
+  transition:
+    color var(--sc-duration-fast) var(--sc-easing-default),
+    background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.tabs :global(.ant-tabs-tab-remove):hover {
+  color: var(--sc-color-state-danger-fg) !important;
+  background: var(--sc-color-state-danger-bg) !important;
+}
+
+/* Add butonu (editable-card için "+") */
+.tabs :global(.ant-tabs-nav-add) {
+  background: transparent !important;
+  border: 1px dashed var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-md) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  padding: 0 var(--sc-space-3) !important;
+  margin-inline-start: var(--sc-space-2) !important;
+  transition:
+    color var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.tabs :global(.ant-tabs-nav-add):hover {
+  color: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size: small / large
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs:global(.ant-tabs-small) :global(.ant-tabs-tab) {
+  font-size: var(--sc-font-size-sm) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+}
+
+.tabs:global(.ant-tabs-large) :global(.ant-tabs-tab) {
+  font-size: var(--sc-font-size-lg) !important;
+  padding: var(--sc-space-4) var(--sc-space-5) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Vertical (left/right) — yan tab
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs:global(.ant-tabs-left) :global(.ant-tabs-nav),
+.tabs:global(.ant-tabs-right) :global(.ant-tabs-nav) {
+  min-width: 180px;
+}
+
+.tabs:global(.ant-tabs-left) :global(.ant-tabs-tab),
+.tabs:global(.ant-tabs-right) :global(.ant-tabs-tab) {
+  justify-content: flex-start !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  margin: 0 0 2px 0 !important;
+}
+
+.tabs:global(.ant-tabs-left) :global(.ant-tabs-ink-bar),
+.tabs:global(.ant-tabs-right) :global(.ant-tabs-ink-bar) {
+  width: 2px !important;
+}
+
+/* Vertical mode'da line type — tab bar yanına dikey border-default çiz */
+.tabs:global(.ant-tabs-left) > :global(.ant-tabs-nav)::before {
+  border-inline-end-color: var(--sc-color-border-default) !important;
+}
+
+.tabs:global(.ant-tabs-right) > :global(.ant-tabs-nav)::before {
+  border-inline-start-color: var(--sc-color-border-default) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Extra content (tab bar'ın sağında/solunda action area)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs :global(.ant-tabs-extra-content) {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * More icon (taşan sekmeler için ⋯ dropdown)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs :global(.ant-tabs-nav-more) {
+  color: var(--sc-color-text-secondary) !important;
+  padding: var(--sc-space-2) !important;
+  border-radius: var(--sc-radius-sm);
+  transition:
+    color var(--sc-duration-fast) var(--sc-easing-default),
+    background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.tabs :global(.ant-tabs-nav-more):hover {
+  color: var(--sc-color-accent) !important;
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Tab content (panel area)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tabs :global(.ant-tabs-content-holder) {
+  color: var(--sc-color-text-primary);
+}
+
+.tabs :global(.ant-tabs-tabpane) {
+  outline: none !important;
+}

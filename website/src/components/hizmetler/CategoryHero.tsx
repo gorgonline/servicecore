@@ -3,10 +3,11 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronRight, type LucideIcon } from "lucide-react";
+import type { ReactNode } from "react";
 import { getAccentTone } from "./icon-map";
 
 interface CategoryHeroProps {
-  badge: string;
+  badge: ReactNode;
   badgeIcon: LucideIcon;
   titleLead: string;
   titleAccent: string;

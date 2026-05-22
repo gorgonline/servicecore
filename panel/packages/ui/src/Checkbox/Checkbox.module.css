@@ -1,0 +1,214 @@
+/* AntD Checkbox wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Inner box: 16px, --sc-radius-sm, border --sc-color-border-strong (1.5px)
+ * - Checked: bg + border --sc-color-accent, checkmark beyaz
+ * - Indeterminate: aynı bg, ortada beyaz yatay çizgi
+ * - Hover (unchecked): border --sc-color-accent
+ * - Focus: 3px focus ring (--sc-shadow-focus-ring)
+ * - Disabled: bg --sc-color-bg-muted, border --sc-color-border-default,
+ *             label --sc-color-text-disabled, cursor not-allowed
+ * - Label: --sc-color-text-primary, font sans 14px
+ * - Group: 12px row gap default (custom layout için override edilebilir)
+ */
+
+.checkbox {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  color: var(--sc-color-text-primary) !important;
+  align-items: center !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Inner box (kare)
+ * ─────────────────────────────────────────────────────────────── */
+
+.checkbox :global(.ant-checkbox-inner) {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: var(--sc-radius-sm) !important;
+  border: 1.5px solid var(--sc-color-border-strong) !important;
+  background: var(--sc-color-bg-base) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default) !important;
+}
+
+/* Hover (unchecked) — border accent */
+.checkbox:hover :global(.ant-checkbox-inner),
+.checkbox :global(.ant-checkbox):hover :global(.ant-checkbox-inner) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Checked state — bg + checkmark accent
+ * ─────────────────────────────────────────────────────────────── */
+
+.checkbox :global(.ant-checkbox-checked) :global(.ant-checkbox-inner) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+.checkbox :global(.ant-checkbox-checked) :global(.ant-checkbox-inner)::after {
+  border-color: var(--sc-color-accent-on-accent) !important;
+  border-width: 1.5px !important;
+}
+
+/* Checked + hover — hafif koyulaşır */
+.checkbox:hover :global(.ant-checkbox-checked) :global(.ant-checkbox-inner),
+.checkbox :global(.ant-checkbox-checked):hover :global(.ant-checkbox-inner) {
+  background: var(--sc-color-accent-hover) !important;
+  border-color: var(--sc-color-accent-hover) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Indeterminate — partial selection state
+ * ─────────────────────────────────────────────────────────────── */
+
+.checkbox :global(.ant-checkbox-indeterminate) :global(.ant-checkbox-inner) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* Indeterminate'in iç çizgisi — beyaz minus */
+.checkbox :global(.ant-checkbox-indeterminate) :global(.ant-checkbox-inner)::after {
+  background: var(--sc-color-accent-on-accent) !important;
+  width: 8px !important;
+  height: 1.5px !important;
+  border: none !important;
+  border-radius: 1px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Focus ring (klavye erişimi)
+ * ─────────────────────────────────────────────────────────────── */
+
+.checkbox :global(.ant-checkbox-input):focus-visible + :global(.ant-checkbox-inner) {
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+  outline: none;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Disabled
+ * ─────────────────────────────────────────────────────────────── */
+
+.checkbox :global(.ant-checkbox-disabled) :global(.ant-checkbox-inner) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+}
+
+.checkbox :global(.ant-checkbox-disabled) :global(.ant-checkbox-inner)::after {
+  border-color: var(--sc-color-text-disabled) !important;
+}
+
+.checkbox :global(.ant-checkbox-disabled) + span,
+.checkbox:global(.ant-checkbox-wrapper-disabled) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.checkbox :global(.ant-checkbox-disabled) {
+  cursor: not-allowed !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Label spacing — checkbox ile metin arası
+ * ─────────────────────────────────────────────────────────────── */
+
+.checkbox > span:last-child,
+.checkbox > span + span {
+  padding-inline-start: var(--sc-space-2) !important;
+  padding-inline-end: 0 !important;
+  line-height: var(--sc-line-height-normal);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Group — birden fazla checkbox bir arada
+ * ─────────────────────────────────────────────────────────────── */
+
+.group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--sc-space-3) var(--sc-space-4);
+}
+
+/* Group içindeki her checkbox-wrapper'ın kendi margin'ini eziyoruz —
+ * gap üzerinden tutarlı boşluk veriyoruz */
+.group :global(.ant-checkbox-wrapper) {
+  margin-inline-start: 0 !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  color: var(--sc-color-text-primary) !important;
+  align-items: center;
+}
+
+/* Group içindeki inner box'lar da .checkbox kuralına uymalı — :global ile
+ * tüm wrapper'lara aynı kuralı uygula */
+.group :global(.ant-checkbox-inner) {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: var(--sc-radius-sm) !important;
+  border: 1.5px solid var(--sc-color-border-strong) !important;
+  background: var(--sc-color-bg-base) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default) !important;
+}
+
+.group :global(.ant-checkbox):hover :global(.ant-checkbox-inner) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.group :global(.ant-checkbox-checked) :global(.ant-checkbox-inner) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+.group :global(.ant-checkbox-checked) :global(.ant-checkbox-inner)::after {
+  border-color: var(--sc-color-accent-on-accent) !important;
+  border-width: 1.5px !important;
+}
+
+.group :global(.ant-checkbox-checked):hover :global(.ant-checkbox-inner) {
+  background: var(--sc-color-accent-hover) !important;
+  border-color: var(--sc-color-accent-hover) !important;
+}
+
+.group :global(.ant-checkbox-indeterminate) :global(.ant-checkbox-inner) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+.group :global(.ant-checkbox-indeterminate) :global(.ant-checkbox-inner)::after {
+  background: var(--sc-color-accent-on-accent) !important;
+  width: 8px !important;
+  height: 1.5px !important;
+  border: none !important;
+  border-radius: 1px;
+}
+
+.group :global(.ant-checkbox-disabled) :global(.ant-checkbox-inner) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+}
+
+.group :global(.ant-checkbox-disabled) :global(.ant-checkbox-inner)::after {
+  border-color: var(--sc-color-text-disabled) !important;
+}
+
+.group :global(.ant-checkbox-wrapper-disabled),
+.group :global(.ant-checkbox-disabled) + span {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.group :global(.ant-checkbox-input):focus-visible + :global(.ant-checkbox-inner) {
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+  outline: none;
+}
+
+.group :global(.ant-checkbox-wrapper) > span:last-child,
+.group :global(.ant-checkbox-wrapper) > span + span {
+  padding-inline-start: var(--sc-space-2) !important;
+  padding-inline-end: 0 !important;
+}

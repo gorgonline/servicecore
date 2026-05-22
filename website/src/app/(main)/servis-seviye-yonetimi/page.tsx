@@ -21,6 +21,7 @@ import {
   Bell,
 } from "lucide-react";
 import data from "@/data/servis-seviye-yonetimi.json";
+import { En } from "@/components/ui/En";
 
 export default function ServisSeviyeYonetimiPage() {
   const fadeUp: Variants = {
@@ -394,7 +395,7 @@ export default function ServisSeviyeYonetimiPage() {
                             <Gauge className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Aktif Policy</span>
+                            <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Aktif <En>Policy</En></span>
                             <span className="text-[11px] font-bold text-white">Premium · 12 kayıt</span>
                           </div>
                         </div>

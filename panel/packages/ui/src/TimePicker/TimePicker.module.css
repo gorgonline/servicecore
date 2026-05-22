@@ -1,0 +1,286 @@
+/* AntD TimePicker wrap — ServiceCore görsel diline çek.
+ *
+ * NOT: TimePicker, DatePicker ile aynı .ant-picker- class altyapısını kullanır.
+ * DatePicker module'ümüz zaten trigger + time-panel kuralları içerir; biz burada
+ * sadece TimePicker'a özgü override'lar tutuyoruz. Aynı görsel kuralları yine
+ * scope'a aldığımız için CSS çakışması yok.
+ *
+ * Görsel kararlar:
+ * - Trigger: Input ile aynı stil (border-strong, radius md, focus ring)
+ * - Popup time panel: 3 kolon (saat/dakika/saniye), her hücre tıklanabilir
+ * - Cell selected: accent bg + on-accent text
+ * - Cell hover: bg-muted
+ * - Cell disabled: text-disabled
+ */
+
+.picker {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  border: 1px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-md) !important;
+  background: var(--sc-color-bg-base) !important;
+  padding: 0 var(--sc-space-3) !important;
+  min-height: var(--sc-control-height-md);
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.picker:hover {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.picker:global(.ant-picker-focused),
+.picker:focus-within {
+  border-color: var(--sc-color-accent) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+.picker:global(.ant-picker-disabled) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  cursor: not-allowed !important;
+}
+
+.picker:global(.ant-picker-status-error) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.picker:global(.ant-picker-status-error):focus-within {
+  box-shadow: 0 0 0 3px var(--sc-color-state-danger-bg) !important;
+}
+
+.picker:global(.ant-picker-status-warning) {
+  border-color: var(--sc-color-state-warning-fg) !important;
+}
+
+.picker:global(.ant-picker-status-warning):focus-within {
+  box-shadow: 0 0 0 3px var(--sc-color-state-warning-bg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Input içi text + placeholder + suffix
+ * ─────────────────────────────────────────────────────────────── */
+
+.picker :global(.ant-picker-input) > input {
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-md) !important;
+  color: var(--sc-color-text-primary) !important;
+  letter-spacing: 0.02em;
+}
+
+.picker :global(.ant-picker-input) > input::placeholder {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.picker :global(.ant-picker-suffix),
+.picker :global(.ant-picker-clear) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.picker :global(.ant-picker-clear):hover {
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Range separator */
+.picker :global(.ant-picker-range-separator) :global(.ant-picker-separator) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.picker :global(.ant-picker-active-bar) {
+  background: var(--sc-color-accent) !important;
+  height: 2px !important;
+  bottom: -1px !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size: small / large
+ * ─────────────────────────────────────────────────────────────── */
+
+.picker:global(.ant-picker-small) {
+  min-height: var(--sc-control-height-sm);
+  padding: 0 var(--sc-space-2) !important;
+}
+
+.picker:global(.ant-picker-small) :global(.ant-picker-input) > input {
+  font-size: var(--sc-font-size-sm) !important;
+}
+
+.picker:global(.ant-picker-large) {
+  min-height: var(--sc-control-height-lg);
+  padding: 0 var(--sc-space-4) !important;
+}
+
+.picker:global(.ant-picker-large) :global(.ant-picker-input) > input {
+  font-size: var(--sc-font-size-lg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Popup time panel
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup {
+  font-family: var(--sc-font-sans) !important;
+}
+
+.popup :global(.ant-picker-panel-container) {
+  border-radius: var(--sc-radius-lg) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  background: var(--sc-color-bg-base) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+}
+
+.popup :global(.ant-picker-time-panel) {
+  border-inline-start: none !important;
+}
+
+.popup :global(.ant-picker-time-panel-column) {
+  border-inline-start: 1px solid var(--sc-color-border-subtle) !important;
+  scrollbar-width: thin;
+}
+
+.popup :global(.ant-picker-time-panel-column):first-child {
+  border-inline-start: none !important;
+}
+
+/* Cell wrapper — center align ki inner chip ortalansın */
+.popup :global(.ant-picker-time-panel-cell) {
+  margin: 0 !important;
+  padding: 2px 0 !important;
+  text-align: center !important;
+}
+
+/* Cell-inner — inline-block chip; accent dolgu sadece sayı civarında */
+.popup :global(.ant-picker-time-panel-cell-inner) {
+  display: inline-block !important;
+  min-width: 32px !important;
+  width: auto !important;
+  height: 26px !important;
+  line-height: 26px !important;
+  padding: 0 var(--sc-space-2) !important;
+  margin: 0 !important;
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  background: transparent !important;
+  border-radius: var(--sc-radius-sm) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.popup :global(.ant-picker-time-panel-cell-inner):hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.popup :global(.ant-picker-time-panel-cell-selected) :global(.ant-picker-time-panel-cell-inner) {
+  background: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+}
+
+.popup :global(.ant-picker-time-panel-cell-disabled) :global(.ant-picker-time-panel-cell-inner) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.popup :global(.ant-picker-time-panel-cell-disabled) :global(.ant-picker-time-panel-cell-inner):hover {
+  background: transparent !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Footer (OK, Now butonu)
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup :global(.ant-picker-footer) {
+  border-top: 1px solid var(--sc-color-border-subtle) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--sc-space-3);
+  line-height: 1 !important;
+}
+
+/* "Şimdi" wrapper — span — reset margin/padding/line-height */
+.popup :global(.ant-picker-now) {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+}
+
+/* "Tamam" wrapper — UL → li (.ant-picker-ranges > .ant-picker-ok) — list reset */
+.popup :global(.ant-picker-ranges) {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  line-height: 1 !important;
+}
+
+.popup :global(.ant-picker-ok) {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  list-style: none !important;
+}
+
+.popup :global(.ant-picker-now-btn) {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: var(--sc-control-height-sm) !important;
+  padding: 0 var(--sc-space-1) !important;
+  color: var(--sc-color-accent) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  line-height: 1 !important;
+  text-transform: none;
+}
+
+.popup :global(.ant-picker-now-btn):hover {
+  color: var(--sc-color-accent-hover) !important;
+}
+
+/* OK / Tamam button — ServiceCore primary stili */
+.popup :global(.ant-picker-ok) {
+  display: inline-flex;
+  align-items: center;
+}
+
+.popup :global(.ant-picker-ok) :global(button) {
+  background: var(--sc-color-accent) !important;
+  border: 1px solid var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+  border-radius: var(--sc-radius-md) !important;
+  height: var(--sc-control-height-sm) !important;
+  padding: 0 var(--sc-space-4) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  line-height: 1 !important;
+  text-transform: none;
+  box-shadow: none !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.popup :global(.ant-picker-ok) :global(button):hover {
+  background: var(--sc-color-accent-hover) !important;
+  border-color: var(--sc-color-accent-hover) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+}
+
+.popup :global(.ant-picker-ok) :global(button):disabled,
+.popup :global(.ant-picker-ok) :global(button)[disabled] {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}

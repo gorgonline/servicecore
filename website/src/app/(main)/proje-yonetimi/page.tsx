@@ -3,15 +3,15 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  Layers, 
-  ArrowRight, 
-  CheckCircle2, 
-  PieChart, 
-  Users, 
-  KanbanSquare, 
-  GitPullRequestDraft, 
-  Route, 
+import {
+  Layers,
+  ArrowRight,
+  CheckCircle2,
+  PieChart,
+  Users,
+  KanbanSquare,
+  GitPullRequestDraft,
+  Route,
   CalendarDays,
   Settings,
   Workflow,
@@ -19,6 +19,7 @@ import {
   Clock,
   Tags
 } from "lucide-react";
+import { En } from "@/components/ui/En";
 
 export default function ProjeYonetimiPage() {
   const fadeUp: Variants = {
@@ -504,7 +505,7 @@ export default function ProjeYonetimiPage() {
                   <div className="flex flex-wrap justify-center gap-8 text-(--color-text-muted)">
                     <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                       <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-                      Agile & Scrum
+                      <En>Agile & Scrum</En>
                     </div>
                     <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                       <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-blue-base) shadow-[0_0_8px_rgba(59,130,246,0.6)]" />

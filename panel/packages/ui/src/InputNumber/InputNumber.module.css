@@ -1,0 +1,225 @@
+/* AntD InputNumber wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Border + radius: Input wrap ile birebir (border-strong, radius md, 36px md height)
+ * - Hover/focus: accent border + focus ring
+ * - Handler (up/down): sağda dikey 2 buton, hover'da accent
+ * - Disabled: bg muted, cursor not-allowed
+ * - Status error/warning: border + ring renkleri token state'ten
+ * - Prefix: text-tertiary, mono font (sayı bağlamı için)
+ */
+
+.inputNumber {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  border: 1px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-md) !important;
+  background: var(--sc-color-bg-base) !important;
+  /* Sabit yükseklik + flex → içerik dikey ortalansın */
+  height: var(--sc-control-height-md) !important;
+  display: inline-flex !important;
+  align-items: stretch !important;
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* Input-wrap (input'u saran AntD container) — flex child olsun */
+.inputNumber :global(.ant-input-number-input-wrap) {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-width: 0;
+}
+
+.inputNumber:hover {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.inputNumber:global(.ant-input-number-focused),
+.inputNumber:focus-within {
+  border-color: var(--sc-color-accent) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Inner input (sayı yazılan kısım)
+ * ─────────────────────────────────────────────────────────────── */
+
+.inputNumber :global(.ant-input-number-input) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  color: var(--sc-color-text-primary) !important;
+  padding: 0 var(--sc-space-3) !important;
+  height: 100% !important;
+  line-height: 1 !important;
+  width: 100% !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+}
+
+.inputNumber :global(.ant-input-number-input)::placeholder {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Affix wrapper (prefix varken)
+ * ─────────────────────────────────────────────────────────────── */
+
+.inputNumber:global(.ant-input-number-affix-wrapper),
+:global(.ant-input-number-affix-wrapper).inputNumber {
+  padding: 0 0 0 var(--sc-space-3) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  height: var(--sc-control-height-md) !important;
+}
+
+/* Affix wrapper içindeki gerçek input — padding 0 (wrapper hallediyor) */
+.inputNumber:global(.ant-input-number-affix-wrapper) :global(.ant-input-number-input) {
+  padding: 0 var(--sc-space-2) !important;
+}
+
+.inputNumber:global(.ant-input-number-affix-wrapper) :global(.ant-input-number) {
+  border: 0 !important;
+  background: transparent !important;
+  height: 100% !important;
+  flex: 1;
+  min-width: 0;
+}
+
+.inputNumber :global(.ant-input-number-prefix) {
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  margin-inline-end: var(--sc-space-2) !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Stepper handlers (up/down arrows)
+ * ─────────────────────────────────────────────────────────────── */
+
+.inputNumber :global(.ant-input-number-handler-wrap) {
+  background: var(--sc-color-bg-base) !important;
+  border-inline-start: 1px solid var(--sc-color-border-subtle) !important;
+  border-start-end-radius: var(--sc-radius-md) !important;
+  border-end-end-radius: var(--sc-radius-md) !important;
+  opacity: 1 !important; /* Default'ta hover ile geliyor — biz hep göster */
+  transition: opacity var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.inputNumber :global(.ant-input-number-handler) {
+  border-inline-start: none !important;
+  color: var(--sc-color-text-tertiary) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.inputNumber :global(.ant-input-number-handler):hover {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-accent) !important;
+}
+
+.inputNumber :global(.ant-input-number-handler-up-inner),
+.inputNumber :global(.ant-input-number-handler-down-inner) {
+  color: inherit !important;
+  font-size: 10px;
+}
+
+.inputNumber :global(.ant-input-number-handler-up) {
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+}
+
+/* controls=false ile gizlemek */
+.inputNumber:global(.ant-input-number-borderless) {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Disabled
+ * ─────────────────────────────────────────────────────────────── */
+
+.inputNumber:global(.ant-input-number-disabled) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+.inputNumber:global(.ant-input-number-disabled) :global(.ant-input-number-input) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.inputNumber:global(.ant-input-number-disabled) :global(.ant-input-number-handler-wrap) {
+  display: none !important;
+}
+
+/* readOnly */
+.inputNumber:global(.ant-input-number-readonly) {
+  background: var(--sc-color-bg-subtle) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Status — error / warning
+ * ─────────────────────────────────────────────────────────────── */
+
+.inputNumber:global(.ant-input-number-status-error) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.inputNumber:global(.ant-input-number-status-error):focus-within {
+  box-shadow: 0 0 0 3px var(--sc-color-state-danger-bg) !important;
+}
+
+.inputNumber:global(.ant-input-number-status-warning) {
+  border-color: var(--sc-color-state-warning-fg) !important;
+}
+
+.inputNumber:global(.ant-input-number-status-warning):focus-within {
+  box-shadow: 0 0 0 3px var(--sc-color-state-warning-bg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size: small / large
+ * ─────────────────────────────────────────────────────────────── */
+
+.inputNumber:global(.ant-input-number-sm),
+.inputNumber:global(.ant-input-number-affix-wrapper-sm) {
+  height: var(--sc-control-height-sm) !important;
+  font-size: var(--sc-font-size-sm) !important;
+}
+
+.inputNumber:global(.ant-input-number-sm) :global(.ant-input-number-input) {
+  font-size: var(--sc-font-size-sm) !important;
+  padding: 0 var(--sc-space-2) !important;
+}
+
+.inputNumber:global(.ant-input-number-lg),
+.inputNumber:global(.ant-input-number-affix-wrapper-lg) {
+  height: var(--sc-control-height-lg) !important;
+  font-size: var(--sc-font-size-lg) !important;
+}
+
+.inputNumber:global(.ant-input-number-lg) :global(.ant-input-number-input) {
+  font-size: var(--sc-font-size-lg) !important;
+  padding: 0 var(--sc-space-4) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Addon (deprecated ama runtime'da çalışır)
+ * ─────────────────────────────────────────────────────────────── */
+
+.inputNumber :global(.ant-input-number-group-addon) {
+  background: var(--sc-color-bg-subtle) !important;
+  border-color: var(--sc-color-border-strong) !important;
+  color: var(--sc-color-text-secondary) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  padding: 0 var(--sc-space-3) !important;
+}

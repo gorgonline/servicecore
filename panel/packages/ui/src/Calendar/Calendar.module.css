@@ -1,0 +1,224 @@
+/* AntD Calendar wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Container: bg-base, radius lg, border default
+ * - Header: padding sane, sage/year switcher Radio.Group stiline yakın
+ * - Date header (Pzt/Sal/...): text-tertiary caps eyebrow
+ * - Cell: hover bg-muted, today border accent, selected bg accent-subtle
+ * - Cell-value: medium font sans
+ * - Cell-content: custom render alanı (Event badge'leri için)
+ * - Out-of-view (diğer ay'lar): solgun text-tertiary
+ * - Compact (fullscreen=false): daha küçük cell padding
+ */
+
+.calendar {
+  font-family: var(--sc-font-sans) !important;
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-lg) !important;
+  overflow: hidden;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Header (üst bar — Ay/Yıl select + mode switcher)
+ * ─────────────────────────────────────────────────────────────── */
+
+.calendar :global(.ant-picker-calendar-header) {
+  padding: var(--sc-space-4) var(--sc-space-5) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+  background: var(--sc-color-bg-base) !important;
+  gap: var(--sc-space-2);
+}
+
+.calendar :global(.ant-picker-calendar-header) :global(.ant-select-selector) {
+  border: 1px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-md) !important;
+  font-family: var(--sc-font-sans) !important;
+}
+
+.calendar :global(.ant-picker-calendar-header) :global(.ant-select-focused) :global(.ant-select-selector) {
+  border-color: var(--sc-color-accent) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+.calendar :global(.ant-picker-calendar-mode-switch) :global(.ant-radio-button-wrapper) {
+  border-color: var(--sc-color-border-strong) !important;
+  background: var(--sc-color-bg-base) !important;
+  color: var(--sc-color-text-secondary) !important;
+  height: var(--sc-control-height-md) !important;
+  line-height: calc(var(--sc-control-height-md) - 2px) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+}
+
+.calendar :global(.ant-picker-calendar-mode-switch) :global(.ant-radio-button-wrapper-checked) {
+  background: var(--sc-color-accent-subtle) !important;
+  border-color: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Day-of-week başlıkları (Pzt Sal Çar ... )
+ * ─────────────────────────────────────────────────────────────── */
+
+.calendar :global(.ant-picker-content) thead th {
+  padding: var(--sc-space-2) var(--sc-space-2) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wide);
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Date cells (gün hücreleri — fullscreen mode)
+ * ─────────────────────────────────────────────────────────────── */
+
+.calendar :global(.ant-picker-cell) {
+  padding: 0 !important;
+  color: var(--sc-color-text-tertiary);
+}
+
+.calendar :global(.ant-picker-cell-in-view) {
+  color: var(--sc-color-text-primary);
+}
+
+.calendar :global(.ant-picker-calendar-date) {
+  border-top: 2px solid var(--sc-color-border-subtle) !important;
+  padding: var(--sc-space-2) var(--sc-space-2) var(--sc-space-1) !important;
+  background: transparent !important;
+  margin: 0 !important;
+  min-height: 92px;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.calendar :global(.ant-picker-cell):not(:global(.ant-picker-cell-disabled)):hover :global(.ant-picker-calendar-date) {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* Bugün — top border accent */
+.calendar :global(.ant-picker-cell-today) :global(.ant-picker-calendar-date) {
+  border-top-color: var(--sc-color-accent) !important;
+}
+
+/* Seçili — bg accent-subtle, top border accent kalın */
+.calendar :global(.ant-picker-cell-selected) :global(.ant-picker-calendar-date) {
+  background: var(--sc-color-accent-subtle) !important;
+  border-top-color: var(--sc-color-accent) !important;
+}
+
+/* Diğer ay (out of view) — daha solgun */
+.calendar :global(.ant-picker-cell):not(:global(.ant-picker-cell-in-view)) :global(.ant-picker-calendar-date-value) {
+  color: var(--sc-color-text-tertiary) !important;
+  opacity: 0.6;
+}
+
+/* Disabled */
+.calendar :global(.ant-picker-cell-disabled) :global(.ant-picker-calendar-date) {
+  background: var(--sc-color-bg-subtle) !important;
+  cursor: not-allowed !important;
+}
+
+.calendar :global(.ant-picker-cell-disabled) :global(.ant-picker-calendar-date-value) {
+  color: var(--sc-color-text-disabled) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Date value (gün sayısı)
+ * ─────────────────────────────────────────────────────────────── */
+
+.calendar :global(.ant-picker-calendar-date-value) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: inherit !important;
+  text-align: end;
+  display: block;
+  line-height: 1.4;
+}
+
+.calendar :global(.ant-picker-cell-today) :global(.ant-picker-calendar-date-value) {
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+}
+
+.calendar :global(.ant-picker-cell-selected) :global(.ant-picker-calendar-date-value) {
+  color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Date content (cellRender custom area)
+ * ─────────────────────────────────────────────────────────────── */
+
+.calendar :global(.ant-picker-calendar-date-content) {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--sc-space-1);
+  height: auto;
+  min-height: 50px;
+  overflow: hidden;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Compact mode (fullscreen=false)
+ * ─────────────────────────────────────────────────────────────── */
+
+.calendar:global(.ant-picker-calendar-mini) {
+  border-radius: var(--sc-radius-lg) !important;
+}
+
+.calendar:global(.ant-picker-calendar-mini) :global(.ant-picker-calendar-header) {
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+}
+
+.calendar:global(.ant-picker-calendar-mini) :global(.ant-picker-content) th {
+  font-size: 10px !important;
+  padding: var(--sc-space-1) !important;
+}
+
+.calendar:global(.ant-picker-calendar-mini) :global(.ant-picker-cell) {
+  padding: 0 !important;
+}
+
+.calendar:global(.ant-picker-calendar-mini) :global(.ant-picker-cell-inner) {
+  height: 28px !important;
+  line-height: 28px !important;
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  margin: 2px;
+  background: transparent !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.calendar:global(.ant-picker-calendar-mini) :global(.ant-picker-cell):not(:global(.ant-picker-cell-disabled)):hover :global(.ant-picker-cell-inner) {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.calendar:global(.ant-picker-calendar-mini) :global(.ant-picker-cell-today) :global(.ant-picker-cell-inner) {
+  border: 1px solid var(--sc-color-accent) !important;
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+}
+
+.calendar:global(.ant-picker-calendar-mini) :global(.ant-picker-cell-selected) :global(.ant-picker-cell-inner) {
+  background: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Year mode (mode="year" — 12 ay grid)
+ * ─────────────────────────────────────────────────────────────── */
+
+.calendar :global(.ant-picker-calendar-date-month) :global(.ant-picker-calendar-date-value),
+.calendar :global(.ant-picker-calendar-month-panel) :global(.ant-picker-cell-inner) {
+  font-weight: var(--sc-font-weight-medium) !important;
+}

@@ -31,6 +31,7 @@ import {
   Activity,
 } from "lucide-react";
 import data from "@/data/servis-iliskileri-yonetimi.json";
+import { En } from "@/components/ui/En";
 
 export default function ServisIliskileriYonetimiPage() {
   const fadeUp: Variants = {
@@ -266,7 +267,7 @@ export default function ServisIliskileriYonetimiPage() {
                         <Crown className="w-4 h-4 text-(--color-accent-purple-light)" />
                       </div>
                       <div className="flex flex-col">
-                        <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Müşteri Hesabı · Premium</span>
+                        <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Müşteri Hesabı · <En>Premium</En></span>
                         <span className="text-[12px] font-bold text-white">Acme Corporation</span>
                       </div>
                     </div>

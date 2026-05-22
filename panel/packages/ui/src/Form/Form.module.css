@@ -1,0 +1,165 @@
+/* AntD Form wrap — ServiceCore görsel diline çek.
+ *
+ * Form bileşeni başlı başına visual element değil — sadece label/item/error
+ * spacing'leri ve typography'yi standartlaştırır. Asıl görsel yük input
+ * wrap'larında (Input, Select, DatePicker, ...).
+ *
+ * Görsel kararlar:
+ * - Item alt margin: --sc-space-5 (default ant 24px → bizim 20px)
+ * - Label: font-weight medium, text-primary, --sc-font-size-sm
+ * - Required mark (*): --sc-color-state-danger-fg, 4px sol boşluk
+ * - "Optional" rozet (requiredMark="optional"): text-tertiary, 8px sol
+ * - Error mesajı: --sc-color-state-danger-fg, --sc-font-size-sm, 4px üst
+ * - Warning mesajı: --sc-color-state-warning-fg
+ * - Extra (yardım metni): --sc-color-text-tertiary, --sc-font-size-xs
+ * - Vertical layout label margin-bottom: --sc-space-1
+ */
+
+.form {
+  font-family: var(--sc-font-sans) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Item — her form alanının wrapper'ı
+ * ─────────────────────────────────────────────────────────────── */
+
+.item {
+  margin-bottom: var(--sc-space-5) !important;
+}
+
+/* Help/error mesajı varsa alt margin biraz daha az olsun (mesaj yer kapladı) */
+.item:global(.ant-form-item-with-help) {
+  margin-bottom: var(--sc-space-3) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Label
+ * ─────────────────────────────────────────────────────────────── */
+
+.item :global(.ant-form-item-label) {
+  padding-bottom: var(--sc-space-1) !important;
+}
+
+.item :global(.ant-form-item-label) > label {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-primary) !important;
+  height: auto !important;
+  line-height: var(--sc-line-height-snug) !important;
+}
+
+/* Required mark (*) — danger renk, label'dan ufak sola */
+.item :global(.ant-form-item-label) > label:global(.ant-form-item-required)::before {
+  color: var(--sc-color-state-danger-fg) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  margin-inline-end: var(--sc-space-1) !important;
+}
+
+/* "Optional" rozeti (requiredMark="optional") */
+.item :global(.ant-form-item-label) > label :global(.ant-form-item-optional) {
+  color: var(--sc-color-text-tertiary) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-regular) !important;
+  margin-inline-start: var(--sc-space-2) !important;
+}
+
+/* Tooltip ikonu (Form.Item tooltip prop'u) */
+.item :global(.ant-form-item-label) > label :global(.ant-form-item-tooltip) {
+  color: var(--sc-color-text-tertiary) !important;
+  margin-inline-start: var(--sc-space-1) !important;
+}
+
+.item :global(.ant-form-item-label) > label :global(.ant-form-item-tooltip):hover {
+  color: var(--sc-color-accent) !important;
+}
+
+/* Colon (label sonundaki ":") — gizli tut, kurumsal formda gerekmez */
+.item :global(.ant-form-item-label) > label::after {
+  display: none !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Error / Warning mesajları (item altında çıkar)
+ * ─────────────────────────────────────────────────────────────── */
+
+.item :global(.ant-form-item-explain) {
+  margin-top: var(--sc-space-1) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  line-height: var(--sc-line-height-normal) !important;
+  min-height: auto !important;
+}
+
+.item :global(.ant-form-item-explain-error) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+.item :global(.ant-form-item-explain-warning) {
+  color: var(--sc-color-state-warning-fg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Extra — alanın altında yardım/açıklama metni
+ * ─────────────────────────────────────────────────────────────── */
+
+.item :global(.ant-form-item-extra) {
+  margin-top: var(--sc-space-1) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  line-height: var(--sc-line-height-normal) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Layout — vertical / horizontal / inline
+ * ─────────────────────────────────────────────────────────────── */
+
+/* Vertical: label üstte, alt margin küçük */
+.form:global(.ant-form-vertical) .item :global(.ant-form-item-label),
+.form:global(.ant-form-vertical) :global(.ant-form-item-label) {
+  padding-bottom: var(--sc-space-1) !important;
+}
+
+/* Inline: item'lar yan yana, alt margin yok */
+.form:global(.ant-form-inline) .item,
+.form:global(.ant-form-inline) :global(.ant-form-item) {
+  margin-bottom: 0 !important;
+  margin-inline-end: var(--sc-space-3) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Item content area — child input/select/datepicker
+ * ─────────────────────────────────────────────────────────────── */
+
+.item :global(.ant-form-item-control-input) {
+  min-height: auto !important;
+}
+
+/* hasFeedback ikonu (success/error/warning/validating çiçeği) */
+.item :global(.ant-form-item-feedback-icon) {
+  font-size: var(--sc-font-size-md) !important;
+}
+
+.item :global(.ant-form-item-feedback-icon-success) {
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+.item :global(.ant-form-item-feedback-icon-error) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+.item :global(.ant-form-item-feedback-icon-warning) {
+  color: var(--sc-color-state-warning-fg) !important;
+}
+
+.item :global(.ant-form-item-feedback-icon-validating) {
+  color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Form.List dinamik items — list rules error
+ * ─────────────────────────────────────────────────────────────── */
+
+.form :global(.ant-form-item-control) :global(.ant-form-item-explain-error) {
+  font-size: var(--sc-font-size-sm) !important;
+}

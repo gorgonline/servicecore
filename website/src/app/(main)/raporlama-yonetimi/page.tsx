@@ -23,6 +23,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import data from "@/data/raporlama-yonetimi.json";
+import { En } from "@/components/ui/En";
 
 export default function RaporlamaYonetimiPage() {
   const fadeUp: Variants = {
@@ -968,7 +969,7 @@ export default function RaporlamaYonetimiPage() {
                       </div>
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-blue-base) shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
-                        Service Report Wizard
+                        <En>Service Report Wizard</En>
                       </div>
                       <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shadow-[0_0_8px_rgba(168,85,247,0.6)]" />

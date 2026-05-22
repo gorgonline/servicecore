@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "spell": "cspell \"src/**/*.{ts,tsx,mdx,json}\" --no-progress --gitignore",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "@carbon/icons": "^11.80.0",
+    "@cspell/dict-tr-tr": "^3.0.6",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
@@ -49,6 +51,7 @@
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/ui": "^4.1.0",
+    "cspell": "^10.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "husky": "^9.1.7",

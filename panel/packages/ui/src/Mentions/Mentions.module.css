@@ -1,0 +1,195 @@
+/* AntD Mentions wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Trigger: Input.TextArea ile aynı görsel dil (border-strong, radius md,
+ *   padding, focus ring) → form'da uyumlu
+ * - Inner textarea: font sans, primary color, transparent bg (parent border'ı kullan)
+ * - Popup: radius lg, shadow md, padding sane
+ * - Item: hover bg-muted, active (klavye nav) bg-muted + text accent,
+ *         selected accent-subtle bg + accent text
+ * - Disabled: bg muted, cursor not-allowed
+ * - Status error/warning: state token'lar
+ */
+
+.mentions {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  border: 1px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-md) !important;
+  background: var(--sc-color-bg-base) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  min-height: var(--sc-control-height-md) !important;
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.mentions:hover {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.mentions:global(.ant-mentions-focused),
+.mentions:focus-within {
+  border-color: var(--sc-color-accent) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Inner textarea
+ * ─────────────────────────────────────────────────────────────── */
+
+.mentions > textarea,
+.mentions :global(textarea) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  color: var(--sc-color-text-primary) !important;
+  line-height: var(--sc-line-height-normal) !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  resize: vertical;
+}
+
+.mentions > textarea::placeholder,
+.mentions :global(textarea)::placeholder {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Disabled / readOnly
+ * ─────────────────────────────────────────────────────────────── */
+
+.mentions:global(.ant-mentions-disabled) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+.mentions:global(.ant-mentions-disabled) > textarea,
+.mentions:global(.ant-mentions-disabled) :global(textarea) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.mentions:global(.ant-mentions-readonly) {
+  background: var(--sc-color-bg-subtle) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Status — error / warning
+ * ─────────────────────────────────────────────────────────────── */
+
+.mentions:global(.ant-mentions-status-error) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.mentions:global(.ant-mentions-status-error):focus-within {
+  box-shadow: 0 0 0 3px var(--sc-color-state-danger-bg) !important;
+}
+
+.mentions:global(.ant-mentions-status-warning) {
+  border-color: var(--sc-color-state-warning-fg) !important;
+}
+
+.mentions:global(.ant-mentions-status-warning):focus-within {
+  box-shadow: 0 0 0 3px var(--sc-color-state-warning-bg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size variants — small / large
+ * ─────────────────────────────────────────────────────────────── */
+
+.mentions:global(.ant-mentions-sm) {
+  padding: var(--sc-space-1) var(--sc-space-2) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  min-height: var(--sc-control-height-sm) !important;
+}
+
+.mentions:global(.ant-mentions-sm) > textarea,
+.mentions:global(.ant-mentions-sm) :global(textarea) {
+  font-size: var(--sc-font-size-sm) !important;
+}
+
+.mentions:global(.ant-mentions-lg) {
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  font-size: var(--sc-font-size-lg) !important;
+  min-height: var(--sc-control-height-lg) !important;
+}
+
+.mentions:global(.ant-mentions-lg) > textarea,
+.mentions:global(.ant-mentions-lg) :global(textarea) {
+  font-size: var(--sc-font-size-lg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Popup dropdown — AntD portal, popupClassName ile bizim scope'a
+ * ─────────────────────────────────────────────────────────────── */
+
+.popup {
+  font-family: var(--sc-font-sans) !important;
+}
+
+.popup :global(.ant-mentions-dropdown-menu) {
+  border-radius: var(--sc-radius-lg) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  background: var(--sc-color-bg-base) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+  padding: var(--sc-space-1) !important;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* Item base */
+.popup :global(.ant-mentions-dropdown-menu-item) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  margin: 1px 0;
+  line-height: var(--sc-line-height-normal) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* Hover */
+.popup :global(.ant-mentions-dropdown-menu-item):hover {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Active (klavye ile gezilen item) */
+.popup :global(.ant-mentions-dropdown-menu-item-active) {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+}
+
+/* Selected */
+.popup :global(.ant-mentions-dropdown-menu-item-selected) {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+}
+
+/* Disabled */
+.popup :global(.ant-mentions-dropdown-menu-item-disabled) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.popup :global(.ant-mentions-dropdown-menu-item-disabled):hover {
+  background: transparent !important;
+  color: var(--sc-color-text-disabled) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Inline mention text (input içinde işaretlenmiş kısım)
+ * ─────────────────────────────────────────────────────────────── */
+
+.mentions :global(.ant-mentions-measure) {
+  color: var(--sc-color-text-primary) !important;
+}

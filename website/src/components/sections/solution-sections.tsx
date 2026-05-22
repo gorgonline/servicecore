@@ -35,6 +35,11 @@ import {
   Workflow,
   type LucideIcon,
 } from "lucide-react";
+import { En } from "@/components/ui/En";
+
+const TURKISH_CHAR = /[çÇşŞğĞüÜöÖıİ]/;
+const MaybeEn = ({ children }: { children: string }) =>
+  TURKISH_CHAR.test(children) ? <>{children}</> : <En>{children}</En>;
 
 interface SectionModule {
   name: string;
@@ -205,7 +210,7 @@ export function SolutionCapabilities({ sections }: { sections: Section[] }) {
       <div className="mb-12 max-w-3xl">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/3 mb-6">
           <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
-            Yetenekler · Capabilities
+            Yetenekler · <En>Capabilities</En>
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
@@ -232,7 +237,7 @@ export function SolutionCapabilities({ sections }: { sections: Section[] }) {
                 <div className="lg:col-span-5">
                   <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border ${accent.border} ${accent.bg} mb-5`}>
                     <span className={`text-[10px] font-mono font-semibold tracking-[0.22em] uppercase ${accent.text}`}>
-                      {num} · {section.eyebrow}
+                      {num} · <MaybeEn>{section.eyebrow}</MaybeEn>
                     </span>
                   </div>
 
@@ -315,7 +320,7 @@ export function SolutionEditions({ editions }: { editions: Editions }) {
       <div className="mb-12 max-w-3xl">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-brand-primary)/30 bg-(--color-brand-primary)/8 mb-6">
           <span className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-brand-accent)">
-            Edition · Lisans
+            <En>Edition</En> · Lisans
           </span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">{editions.title}</h2>
@@ -347,7 +352,7 @@ export function SolutionEditions({ editions }: { editions: Editions }) {
 
               <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border ${accent.border} ${accent.bg} mb-5`}>
                 <span className={`text-[10px] font-mono font-semibold tracking-[0.22em] uppercase ${accent.text}`}>
-                  {tier.name}
+                  <MaybeEn>{tier.name}</MaybeEn>
                 </span>
               </div>
 

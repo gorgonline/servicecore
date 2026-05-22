@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { AlertCircle, HelpCircle, RefreshCw, FileText, MousePointerClick, CheckCircle2, Box, Settings, BookOpen, Activity, Terminal, LineChart, Store, MessageSquare, Briefcase, TrendingUp, GitMerge, FileSignature, GitBranch, Users, Code, Link, Smartphone, Sliders } from "lucide-react";
+import { AlertCircle, HelpCircle, RefreshCw, FileText, MousePointerClick, CheckCircle2, Box, Settings, BookOpen, Activity, Terminal, LineChart, Store, MessageSquare, Briefcase, TrendingUp, GitMerge, FileSignature, GitBranch, Users, Code, Link as LinkIcon, Smartphone, Sliders } from "lucide-react";
+import NextLink from "next/link";
 import { useState } from "react";
 import { tokens as runtimeTokens } from "@/lib/tokens";
 
@@ -98,7 +99,7 @@ const ProblemModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.1)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(234,179,8,0.1)] hover:border-white/10"
     >
       {/* Background Gradient */}
       <div className="absolute -left-20 -bottom-20 h-56 w-56 rounded-full bg-yellow-500/5 blur-[60px] transition-all duration-500 group-hover:bg-yellow-500/15" />
@@ -362,7 +363,7 @@ const TaskModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(16,185,129,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(16,185,129,0.15)] hover:border-white/10"
     >
       <div className="absolute right-20 top-10 h-32 w-32 rounded-full bg-emerald-500/10 blur-[50px] transition-all duration-500 group-hover:bg-emerald-500/20" />
 
@@ -594,7 +595,7 @@ const SLAModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(34,211,238,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(34,211,238,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 bottom-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-[50px] transition-all duration-500 group-hover:bg-cyan-500/20" />
 
@@ -898,7 +899,7 @@ const ProjectModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(249,115,22,0.15)] hover:border-white/10"
     >
       <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-orange-500/10 blur-[50px] transition-all duration-500 group-hover:bg-orange-500/20" />
 
@@ -1144,7 +1145,7 @@ const WorkflowModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(239,68,68,0.15)] hover:border-white/10 lg:col-span-2"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(239,68,68,0.15)] hover:border-white/10"
     >
       <div className="absolute left-0 bottom-0 h-40 w-40 rounded-full bg-red-500/10 blur-[50px] transition-all duration-500 group-hover:bg-red-500/20" />
 
@@ -1365,7 +1366,7 @@ const IntegrationModule = ({ title, description, delay = 0 }: ModuleProps) => {
       <div className="mb-8 w-full h-24 relative flex items-center justify-between px-6">
           
           <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-             <Link className="w-16 h-16 text-pink-500" />
+             <LinkIcon className="w-16 h-16 text-pink-500" />
           </div>
 
           {/* System A */}
@@ -1480,7 +1481,7 @@ const AdminModule = ({ title, description, delay = 0 }: ModuleProps) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       tabIndex={0}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(71,85,105,0.3)] hover:border-white/10 lg:col-span-2 md:col-span-2 xl:col-span-1"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-white/2 border border-white/5 p-8  transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-brand-primary) hover:bg-white/4 hover:shadow-[0_0_30px_-5px_...a(71,85,105,0.3)] hover:border-white/10"
     >
       <div className="absolute left-0 top-0 h-40 w-40 rounded-full bg-slate-500/10 blur-[50px] transition-all duration-500 group-hover:bg-slate-500/20" />
 
@@ -1577,138 +1578,186 @@ export function ModulesGrid() {
 
         {/* Bento Grid - 24 Modules Packed Densely */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left place-content-center grid-flow-row-dense">
-             
+
              {/* 1. Core ITSM */}
-             <IncidentModule 
-                title="Olay Yönetimi" 
-                description="Tüm olayların kaydedildiği, kategorize edildiği, önceliklendirildiği bu katmanda hızlıca çözüm otomatize edilir." 
-                delay={0.1}
-             />
-             <RequestModule 
-                title="İstek Yönetimi" 
-                description="Modern ve sezgisel kullanıcı arayüzü ile BT ve BT dışı ihtiyaçlara göre özelleştirilebilir talep yönetimi." 
-                delay={0.2}
-             />
-             <ProblemModule 
-                title="Problem Yönetimi" 
-                description="Kullanımı kolay yönetim panellerimiz ile Problem Yönetimi sizin için çok kolay olacaktır." 
-                delay={0.3}
-             />
-             <ChangeModule 
-                title="Değişiklik Yönetimi" 
-                description="Talepler farklı modüllerden entegre edilerek alınmakta ve geriye dönük ilişkiler takip edilebilmektedir." 
-                delay={0.4}
-             />
+             <NextLink href="/olay-yonetimi" className="block focus:outline-none">
+               <IncidentModule
+                  title="Olay Yönetimi"
+                  description="Tüm olayların kaydedildiği, kategorize edildiği, önceliklendirildiği bu katmanda hızlıca çözüm otomatize edilir."
+                  delay={0.1}
+               />
+             </NextLink>
+             <NextLink href="/istek-yonetimi" className="block focus:outline-none">
+               <RequestModule
+                  title="İstek Yönetimi"
+                  description="Modern ve sezgisel kullanıcı arayüzü ile BT ve BT dışı ihtiyaçlara göre özelleştirilebilir talep yönetimi."
+                  delay={0.2}
+               />
+             </NextLink>
+             <NextLink href="/problem-yonetimi" className="block focus:outline-none lg:col-span-2">
+               <ProblemModule
+                  title="Problem Yönetimi"
+                  description="Kullanımı kolay yönetim panellerimiz ile Problem Yönetimi sizin için çok kolay olacaktır."
+                  delay={0.3}
+               />
+             </NextLink>
+             <NextLink href="/degisiklik-yonetimi" className="block focus:outline-none">
+               <ChangeModule
+                  title="Değişiklik Yönetimi"
+                  description="Talepler farklı modüllerden entegre edilerek alınmakta ve geriye dönük ilişkiler takip edilebilmektedir."
+                  delay={0.4}
+               />
+             </NextLink>
 
              {/* 2. ITOM & Configuration */}
-             <AssetModule 
-                title="Varlık Yönetimi" 
-                description="Tüm süreçlerle entegre bir şekilde kurum içi donanım ve yazılım varlıklarının yaşam döngüsünü modernleştirin." 
-                delay={0.5}
-             />
-             <ConfigModule
-                title="Servis Konfigürasyon Yönetimi"
-                description="Hizmetlerin hangi varlıklardan oluşturulduğu ve hangi konfigürasyonda çalıştığını anlık olarak izleyin."
-                delay={0.6}
-             />
-             <ReleaseModule
-                title="Servis İlişkileri Yönetimi"
-                description="Müşteri ve servis ilişkilerini uçtan uca yönetin; sözleşme, talep ve etkileşim verilerini tek bağlamda birleştirin."
-                delay={0.7}
-             />
-             <KnowledgeModule
-                title="Bilgi ve Doküman Yönetimi"
-                description="Hem aracılar hem de kullanıcılar için çözümleri ve makaleleri bulmayı ve ilişkilendirmeyi kolaylaştırır."
-                delay={0.8}
-             />
+             <NextLink href="/varlik-yonetimi" className="block focus:outline-none">
+               <AssetModule
+                  title="Varlık Yönetimi"
+                  description="Tüm süreçlerle entegre bir şekilde kurum içi donanım ve yazılım varlıklarının yaşam döngüsünü modernleştirin."
+                  delay={0.5}
+               />
+             </NextLink>
+             <NextLink href="/servis-konfigurasyon-yonetimi" className="block focus:outline-none">
+               <ConfigModule
+                  title="Servis Konfigürasyon Yönetimi"
+                  description="Hizmetlerin hangi varlıklardan oluşturulduğu ve hangi konfigürasyonda çalıştığını anlık olarak izleyin."
+                  delay={0.6}
+               />
+             </NextLink>
+             <NextLink href="/servis-iliskileri-yonetimi" className="block focus:outline-none">
+               <ReleaseModule
+                  title="Servis İlişkileri Yönetimi"
+                  description="Müşteri ve servis ilişkilerini uçtan uca yönetin; sözleşme, talep ve etkileşim verilerini tek bağlamda birleştirin."
+                  delay={0.7}
+               />
+             </NextLink>
+             <NextLink href="/bilgi-bankasi" className="block focus:outline-none">
+               <KnowledgeModule
+                  title="Bilgi ve Doküman Yönetimi"
+                  description="Hem aracılar hem de kullanıcılar için çözümleri ve makaleleri bulmayı ve ilişkilendirmeyi kolaylaştırır."
+                  delay={0.8}
+               />
+             </NextLink>
 
              {/* 3. Service Delivery & Quality */}
-             <CatalogModule 
-                title="Servis Katalog Yönetimi" 
-                description="Kullanıcılarınıza birleştirilmiş bir hizmet menüsü sunarak BT tüketimini basitleştirin." 
-                delay={0.9}
-             />
-             <SLAModule 
-                title="Servis Seviye Yönetimi" 
-                description="Hizmet Seviyesi taahhütlerinizi güvence altına alın, iş kesintilerini ve sözleşme ihlallerini önleyin." 
-                delay={1.0}
-             />
-             <ContractModule 
-                title="Sözleşme Yönetimi" 
-                description="Ekipmanlara ait destek sürelerini, Hizmet Seviyeleri, müşteri ve tedarikçi sözleşmelerini yönetin." 
-                delay={1.1}
-             />
-             <TaskModule 
-                title="Görev Yönetimi" 
-                description="Farklı ekipler arası görev aktarımlarını ve iş takibini şeffaf bir şekilde yönetin." 
-                delay={1.2}
-             />
+             <NextLink href="/servis-katalog-yonetimi" className="block focus:outline-none">
+               <CatalogModule
+                  title="Servis Katalog Yönetimi"
+                  description="Kullanıcılarınıza birleştirilmiş bir hizmet menüsü sunarak BT tüketimini basitleştirin."
+                  delay={0.9}
+               />
+             </NextLink>
+             <NextLink href="/servis-seviye-yonetimi" className="block focus:outline-none lg:col-span-2">
+               <SLAModule
+                  title="Servis Seviye Yönetimi"
+                  description="Hizmet Seviyesi taahhütlerinizi güvence altına alın, iş kesintilerini ve sözleşme ihlallerini önleyin."
+                  delay={1.0}
+               />
+             </NextLink>
+             <NextLink href="/sozlesme-yonetimi" className="block focus:outline-none">
+               <ContractModule
+                  title="Sözleşme Yönetimi"
+                  description="Ekipmanlara ait destek sürelerini, Hizmet Seviyeleri, müşteri ve tedarikçi sözleşmelerini yönetin."
+                  delay={1.1}
+               />
+             </NextLink>
+             <NextLink href="/gorev-yonetimi" className="block focus:outline-none lg:col-span-2">
+               <TaskModule
+                  title="Görev Yönetimi"
+                  description="Farklı ekipler arası görev aktarımlarını ve iş takibini şeffaf bir şekilde yönetin."
+                  delay={1.2}
+               />
+             </NextLink>
 
              {/* 4. Advanced Governance */}
-             <WorkflowModule
-                title="İş Akışı Yönetimi"
-                description="Sürükle bırak mantığı ile kurgulanan diyagramlarla tüm işletme süreçlerinizi modelleyin."
-                delay={1.3}
-             />
-             <ProjectModule
-                title="Agile Proje ve SDLC Yönetimi"
-                description="Agile, Scrum ve stratejik planlama; portföyler ve programların izlenebildiği eksiksiz proje deneyimi."
-                delay={1.4}
-             />
-             <ReportingModule
-                title="Raporlama Yönetimi"
-                description="Gerçek zamanlı gösterge tabloları ve özel raporlar ile veriye dayalı kararlar alın."
-                delay={1.5}
-             />
-             <ImprovementModule
-                title="Sürekli İyileştirme"
-                description="Tüm modüllerden gelen verileri kullanarak BT süreçlerinizi sürekli olarak iyileştirin."
-                delay={1.6}
-             />
-             
+             <NextLink href="/is-akisi-yonetimi" className="block focus:outline-none lg:col-span-2">
+               <WorkflowModule
+                  title="İş Akışı Yönetimi"
+                  description="Sürükle bırak mantığı ile kurgulanan diyagramlarla tüm işletme süreçlerinizi modelleyin."
+                  delay={1.3}
+               />
+             </NextLink>
+             <NextLink href="/proje-yonetimi" className="block focus:outline-none lg:col-span-2">
+               <ProjectModule
+                  title="Agile Proje ve SDLC Yönetimi"
+                  description="Agile, Scrum ve stratejik planlama; portföyler ve programların izlenebildiği eksiksiz proje deneyimi."
+                  delay={1.4}
+               />
+             </NextLink>
+             <NextLink href="/raporlama-yonetimi" className="block focus:outline-none">
+               <ReportingModule
+                  title="Raporlama Yönetimi"
+                  description="Gerçek zamanlı gösterge tabloları ve özel raporlar ile veriye dayalı kararlar alın."
+                  delay={1.5}
+               />
+             </NextLink>
+             <NextLink href="/surekli-iyilestirme" className="block focus:outline-none">
+               <ImprovementModule
+                  title="Sürekli İyileştirme"
+                  description="Tüm modüllerden gelen verileri kullanarak BT süreçlerinizi sürekli olarak iyileştirin."
+                  delay={1.6}
+               />
+             </NextLink>
+
              {/* 5. Portals & Communication */}
-             <PortalModule 
-                title="Self Servis Portal" 
-                description="Hizmetlerin bir menüden seçilerek talep edilmesini sağlayıp, ilk temas maliyetini düşürün." 
-                delay={1.7}
-             />
-             <CustomerPortalModule
-                title="ESM Kurumsal Servis Yönetimi"
-                description="BT dışı tüm departmanları (İK, mali işler, idari işler) aynı servis disiplinine taşıyın; kurum geneli istekleri tek platformdan yönetin."
-                delay={1.8}
-             />
-             <InteractionModule
-                title="Hizmet Masası ve Etkileşim Yönetimi"
-                description="Çözüm merkezine gelen bütün çağrıları, sohbetleri ve e-postaları tek ekrandan yönetin."
-                delay={1.9}
-             />
-             <MobileModule 
-                title="Mobil Servis Yönetimi" 
-                description="Tüm süreçleri saha ekiplerine sunabilen mobil ITOM uygulaması deneyimi." 
-                delay={2.0}
-             />
+             <NextLink href="/self-servis-portal" className="block focus:outline-none">
+               <PortalModule
+                  title="Self Servis Portal"
+                  description="Hizmetlerin bir menüden seçilerek talep edilmesini sağlayıp, ilk temas maliyetini düşürün."
+                  delay={1.7}
+               />
+             </NextLink>
+             <NextLink href="/esm" className="block focus:outline-none">
+               <CustomerPortalModule
+                  title="ESM Kurumsal Servis Yönetimi"
+                  description="BT dışı tüm departmanları (İK, mali işler, idari işler) aynı servis disiplinine taşıyın; kurum geneli istekleri tek platformdan yönetin."
+                  delay={1.8}
+               />
+             </NextLink>
+             <NextLink href="/etkilesim-yonetimi" className="block focus:outline-none">
+               <InteractionModule
+                  title="Hizmet Masası ve Etkileşim Yönetimi"
+                  description="Çözüm merkezine gelen bütün çağrıları, sohbetleri ve e-postaları tek ekrandan yönetin."
+                  delay={1.9}
+               />
+             </NextLink>
+             <NextLink href="/mobil-servis-yonetimi" className="block focus:outline-none">
+               <MobileModule
+                  title="Mobil Servis Yönetimi"
+                  description="Tüm süreçleri saha ekiplerine sunabilen mobil ITOM uygulaması deneyimi."
+                  delay={2.0}
+               />
+             </NextLink>
 
              {/* 6. Automation & Platform Tools */}
-             <AutomationModule 
-                title="Servis Otomasyonu" 
-                description="Kritik öneme sahip olmayan, operasyonel ve tekrarlayan işleri makinelere devredin." 
-                delay={2.1}
-             />
-             <IntegrationModule 
-                title="Entegrasyon Modülü" 
-                description="Tüm veriler API aracılığıyla dışarı veri aktarabilir ve dışarıdan içeri veri alabilir yapıdadır." 
-                delay={2.2}
-             />
-             <LowCodeModule
-                title="Low Code Geliştirme Modülü"
-                description="Form/Süreç Tasarım Aracı sayesinde organizasyon ihtiyaçlarına özel form tasarımları oluşturun."
-                delay={2.3}
-             />
-             <AdminModule
-                title="Yönetim Paneli"
-                description="Sistemin genel işleyişini optimize eden parametrik yapıya sahip merkezi kontrol paneli."
-                delay={2.4}
-             />
+             <NextLink href="/servis-otomasyonu" className="block focus:outline-none">
+               <AutomationModule
+                  title="Servis Otomasyonu"
+                  description="Kritik öneme sahip olmayan, operasyonel ve tekrarlayan işleri makinelere devredin."
+                  delay={2.1}
+               />
+             </NextLink>
+             <NextLink href="/entegrasyon-yonetimi" className="block focus:outline-none">
+               <IntegrationModule
+                  title="Entegrasyon Modülü"
+                  description="Tüm veriler API aracılığıyla dışarı veri aktarabilir ve dışarıdan içeri veri alabilir yapıdadır."
+                  delay={2.2}
+               />
+             </NextLink>
+             <NextLink href="/low-code-gelistirme" className="block focus:outline-none">
+               <LowCodeModule
+                  title="Low Code Geliştirme Modülü"
+                  description="Form/Süreç Tasarım Aracı sayesinde organizasyon ihtiyaçlarına özel form tasarımları oluşturun."
+                  delay={2.3}
+               />
+             </NextLink>
+             <NextLink href="/yonetim-paneli" className="block focus:outline-none lg:col-span-2 md:col-span-2 xl:col-span-1">
+               <AdminModule
+                  title="Yönetim Paneli"
+                  description="Sistemin genel işleyişini optimize eden parametrik yapıya sahip merkezi kontrol paneli."
+                  delay={2.4}
+               />
+             </NextLink>
         </div>
 
       </div>

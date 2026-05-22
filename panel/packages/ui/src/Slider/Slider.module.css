@@ -1,0 +1,175 @@
+/* AntD Slider wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Rail (boş çizgi): bg-muted, 4px
+ * - Track (dolu çizgi): accent, 4px
+ * - Handle (kürsör): 14px daire, accent border (2px), beyaz iç
+ * - Hover: handle scale + accent
+ * - Focus: 3px focus ring
+ * - Disabled: gri
+ * - Marks: text-tertiary, sm font
+ * - Dots: border-default circle
+ */
+
+.slider {
+  font-family: var(--sc-font-sans) !important;
+  margin: var(--sc-space-3) 0 !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Rail (boş çizgi)
+ * ─────────────────────────────────────────────────────────────── */
+
+.slider :global(.ant-slider-rail) {
+  background: var(--sc-color-bg-muted) !important;
+  border-radius: var(--sc-radius-full) !important;
+  height: 4px !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Track (dolu çizgi)
+ * ─────────────────────────────────────────────────────────────── */
+
+.slider :global(.ant-slider-track) {
+  background: var(--sc-color-accent) !important;
+  border-radius: var(--sc-radius-full) !important;
+  height: 4px !important;
+  transition: background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.slider:hover :global(.ant-slider-track) {
+  background: var(--sc-color-accent-hover) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Handle (kürsörü kavrayan top)
+ * ─────────────────────────────────────────────────────────────── */
+
+/* Handle boyutunu AntD'nin default'unda (10px) bırak — pozisyon hesabını
+ * AntD halletsin. Biz sadece renk + shadow override ediyoruz. */
+.slider :global(.ant-slider-handle) {
+  transition:
+    transform var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.slider :global(.ant-slider-handle)::after {
+  background: var(--sc-color-bg-base) !important;
+  box-shadow: 0 0 0 2px var(--sc-color-accent) !important;
+}
+
+/* Hover */
+.slider :global(.ant-slider-handle):hover::after,
+.slider :global(.ant-slider-handle):focus::after,
+.slider :global(.ant-slider-handle-dragging)::after {
+  box-shadow: 0 0 0 2px var(--sc-color-accent-hover) !important;
+}
+
+/* Focus / dragging — accent ring */
+.slider :global(.ant-slider-handle):focus-visible::after {
+  box-shadow:
+    0 0 0 2px var(--sc-color-accent),
+    var(--sc-shadow-focus-ring) !important;
+  outline: none;
+}
+
+/* Dragging — daha belirgin shadow */
+.slider :global(.ant-slider-handle-dragging)::after {
+  box-shadow:
+    0 0 0 2px var(--sc-color-accent),
+    0 0 0 6px var(--sc-color-accent-subtle) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Step dots (her step'te küçük nokta — dots=true)
+ * ─────────────────────────────────────────────────────────────── */
+
+.slider :global(.ant-slider-step) {
+  height: 4px !important;
+}
+
+.slider :global(.ant-slider-dot) {
+  width: 8px;
+  height: 8px;
+  background: var(--sc-color-bg-base) !important;
+  border: 2px solid var(--sc-color-border-default) !important;
+  inset-block-start: -2px;
+  border-radius: var(--sc-radius-full);
+}
+
+.slider :global(.ant-slider-dot-active) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Marks (numerik etiketler)
+ * ─────────────────────────────────────────────────────────────── */
+
+.slider :global(.ant-slider-mark) {
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-xs);
+  color: var(--sc-color-text-tertiary);
+  margin-top: var(--sc-space-2);
+}
+
+.slider :global(.ant-slider-mark-text) {
+  color: var(--sc-color-text-tertiary) !important;
+  font-size: var(--sc-font-size-xs) !important;
+}
+
+.slider :global(.ant-slider-mark-text-active) {
+  color: var(--sc-color-text-primary) !important;
+  font-weight: var(--sc-font-weight-medium);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Disabled
+ * ─────────────────────────────────────────────────────────────── */
+
+.slider:global(.ant-slider-disabled) :global(.ant-slider-track) {
+  background: var(--sc-color-text-disabled) !important;
+}
+
+.slider:global(.ant-slider-disabled) :global(.ant-slider-handle)::after {
+  box-shadow: 0 0 0 2px var(--sc-color-text-disabled) !important;
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.slider:global(.ant-slider-disabled) :global(.ant-slider-dot) {
+  border-color: var(--sc-color-border-default) !important;
+}
+
+.slider:global(.ant-slider-disabled) :global(.ant-slider-mark-text) {
+  color: var(--sc-color-text-disabled) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Vertical mode
+ * ─────────────────────────────────────────────────────────────── */
+
+.slider:global(.ant-slider-vertical) {
+  margin: 0 var(--sc-space-3) !important;
+  height: 200px;
+}
+
+.slider:global(.ant-slider-vertical) :global(.ant-slider-rail),
+.slider:global(.ant-slider-vertical) :global(.ant-slider-track) {
+  width: 4px !important;
+  height: 100%;
+}
+
+/* Vertical mode için pozisyon override yok — AntD halleder */
+
+.slider:global(.ant-slider-vertical) :global(.ant-slider-mark) {
+  margin-top: 0;
+  margin-left: var(--sc-space-2);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Tooltip override (rc-tooltip ile aynı görsel)
+ * ─────────────────────────────────────────────────────────────── */
+
+/* Tooltip popup AntD portal'ında — global olarak değil sadece
+ * slider'ın tetiklediği tooltip için override gerek. AntD'nin
+ * tooltip'i .ant-tooltip class'ı kullanır; biz bunu Tooltip wrap'ında
+ * ayrı handle edeceğiz. Burada slider'ın kendi class'ı yok. */

@@ -1,0 +1,114 @@
+/* AntD Rate wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Boş yıldız: text-tertiary (subtle gri)
+ * - Dolu/yarım yıldız: --sc-color-accent (ServiceCore mavisi)
+ *   → AntD default sarı; biz tek accent felsefesi gereği mavi
+ * - Hover: scale 1.1 + accent hover renk
+ * - Disabled: cursor not-allowed, opacity yok (skor gösterilir)
+ * - Font size: 22px (default — küçük rating için size="small" 14px)
+ * - Tooltip default AntD tooltip'i kullanır
+ */
+
+.rate {
+  font-family: var(--sc-font-sans) !important;
+  font-size: 22px !important;
+  color: var(--sc-color-text-tertiary) !important; /* Boş yıldız rengi */
+  line-height: 1 !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Star (each star container)
+ * ─────────────────────────────────────────────────────────────── */
+
+.rate :global(.ant-rate-star) {
+  margin-inline-end: var(--sc-space-1) !important;
+  transition:
+    transform var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* Boş yıldız hover'da subtle vurgu */
+.rate :global(.ant-rate-star):not(:global(.ant-rate-star-full)):not(:global(.ant-rate-star-half)):hover {
+  transform: scale(1.1);
+}
+
+/* Hover'da yıldız büyür */
+.rate :global(.ant-rate-star-active),
+.rate :global(.ant-rate-star):hover {
+  transform: scale(1.1);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Star states — empty / half / full
+ * ─────────────────────────────────────────────────────────────── */
+
+/* Boş yıldız (zero) */
+.rate :global(.ant-rate-star-zero) :global(.ant-rate-star-second),
+.rate :global(.ant-rate-star-zero) :global(.ant-rate-star-first) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* Yarım yıldız — ilk yarı dolu (accent), ikinci yarı boş */
+.rate :global(.ant-rate-star-half) :global(.ant-rate-star-first) {
+  color: var(--sc-color-accent) !important;
+}
+
+.rate :global(.ant-rate-star-half) :global(.ant-rate-star-second) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* Tam dolu */
+.rate :global(.ant-rate-star-full) :global(.ant-rate-star-second),
+.rate :global(.ant-rate-star-full) :global(.ant-rate-star-first) {
+  color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Hover state — yıldızlara hover'da accent hover rengi
+ * ─────────────────────────────────────────────────────────────── */
+
+.rate:not(:global(.ant-rate-disabled)) :global(.ant-rate-star-full):hover :global(.ant-rate-star-second),
+.rate:not(:global(.ant-rate-disabled)) :global(.ant-rate-star-full):hover :global(.ant-rate-star-first),
+.rate:not(:global(.ant-rate-disabled)) :global(.ant-rate-star-half):hover :global(.ant-rate-star-first) {
+  color: var(--sc-color-accent-hover) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Disabled
+ * ─────────────────────────────────────────────────────────────── */
+
+.rate:global(.ant-rate-disabled) {
+  cursor: default !important;
+}
+
+.rate:global(.ant-rate-disabled) :global(.ant-rate-star) {
+  cursor: default !important;
+}
+
+.rate:global(.ant-rate-disabled) :global(.ant-rate-star):hover {
+  transform: scale(1);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Focus ring (klavye erişimi)
+ * ─────────────────────────────────────────────────────────────── */
+
+.rate :global(.ant-rate-star) :global(.ant-rate-star-first),
+.rate :global(.ant-rate-star) :global(.ant-rate-star-second) {
+  outline: none !important;
+}
+
+.rate:focus-visible {
+  outline: none;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Custom character — Carbon icon veya text
+ * ─────────────────────────────────────────────────────────────── */
+
+.rate :global(.ant-rate-star) :global(svg) {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+}

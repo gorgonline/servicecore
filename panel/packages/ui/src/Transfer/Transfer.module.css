@@ -1,0 +1,233 @@
+/* AntD Transfer wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Liste: border-default, radius md, beyaz bg
+ * - Header: bg-subtle, padding, alt çizgi border-subtle
+ * - Title: medium weight 14px primary
+ * - Search: Input wrap stiline yakın
+ * - Item: padding, hover bg-muted, checked bg accent-subtle
+ * - Operations (orta kolondaki butonlar): accent primary stili
+ * - Disabled item: text-disabled
+ */
+
+.transfer {
+  font-family: var(--sc-font-sans) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Liste (her iki kolon — left + right)
+ * ─────────────────────────────────────────────────────────────── */
+
+.transfer :global(.ant-transfer-list) {
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-md) !important;
+  background: var(--sc-color-bg-base) !important;
+  min-height: 280px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Header (title + count)
+ * ─────────────────────────────────────────────────────────────── */
+
+.transfer :global(.ant-transfer-list-header) {
+  background: var(--sc-color-bg-subtle) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  color: var(--sc-color-text-primary) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  border-radius: var(--sc-radius-md) var(--sc-radius-md) 0 0 !important;
+}
+
+.transfer :global(.ant-transfer-list-header-title) {
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.transfer :global(.ant-transfer-list-header-selected) {
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* Master checkbox — Checkbox wrap stiline */
+.transfer :global(.ant-transfer-list-header) :global(.ant-checkbox-inner) {
+  border-color: var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.transfer :global(.ant-transfer-list-header) :global(.ant-checkbox-checked) :global(.ant-checkbox-inner),
+.transfer :global(.ant-transfer-list-header) :global(.ant-checkbox-indeterminate) :global(.ant-checkbox-inner) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Search bar
+ * ─────────────────────────────────────────────────────────────── */
+
+.transfer :global(.ant-transfer-list-body-search-wrapper) {
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  background: var(--sc-color-bg-base);
+}
+
+.transfer :global(.ant-transfer-list-body-search-wrapper) :global(.ant-input-affix-wrapper),
+.transfer :global(.ant-transfer-list-body-search-wrapper) :global(.ant-input) {
+  border: 1px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  background: var(--sc-color-bg-base) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+}
+
+.transfer :global(.ant-transfer-list-body-search-wrapper) :global(.ant-input-affix-wrapper):hover,
+.transfer :global(.ant-transfer-list-body-search-wrapper) :global(.ant-input):hover {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.transfer :global(.ant-transfer-list-body-search-wrapper) :global(.ant-input-affix-wrapper):focus-within {
+  border-color: var(--sc-color-accent) !important;
+  box-shadow: var(--sc-shadow-focus-ring) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Item (her bir satır)
+ * ─────────────────────────────────────────────────────────────── */
+
+.transfer :global(.ant-transfer-list-content-item) {
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  transition: background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.transfer :global(.ant-transfer-list-content-item):hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+.transfer :global(.ant-transfer-list-content-item-checked) {
+  background: var(--sc-color-accent-subtle) !important;
+}
+
+.transfer :global(.ant-transfer-list-content-item-checked):hover {
+  background: var(--sc-color-accent-subtle) !important;
+}
+
+.transfer :global(.ant-transfer-list-content-item-disabled) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+.transfer :global(.ant-transfer-list-content-item-disabled):hover {
+  background: transparent !important;
+}
+
+/* Item içindeki checkbox */
+.transfer :global(.ant-transfer-list-content-item) :global(.ant-checkbox-inner) {
+  border-color: var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.transfer :global(.ant-transfer-list-content-item) :global(.ant-checkbox-checked) :global(.ant-checkbox-inner) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Operations (orta kolondaki ok butonları)
+ * ─────────────────────────────────────────────────────────────── */
+
+.transfer :global(.ant-transfer-operation) {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+  margin: 0 var(--sc-space-3);
+}
+
+.transfer :global(.ant-transfer-operation) :global(.ant-btn) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-strong) !important;
+  color: var(--sc-color-text-secondary) !important;
+  border-radius: var(--sc-radius-md) !important;
+  height: var(--sc-control-height-sm) !important;
+  min-width: var(--sc-control-height-sm);
+  padding: 0 var(--sc-space-2) !important;
+  box-shadow: none !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.transfer :global(.ant-transfer-operation) :global(.ant-btn):not(:disabled):hover {
+  background: var(--sc-color-accent-subtle) !important;
+  border-color: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent) !important;
+}
+
+/* Active (taşınmaya hazır) — primary accent */
+.transfer :global(.ant-transfer-operation) :global(.ant-btn-primary) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+}
+
+.transfer :global(.ant-transfer-operation) :global(.ant-btn-primary):not(:disabled):hover {
+  background: var(--sc-color-accent-hover) !important;
+  border-color: var(--sc-color-accent-hover) !important;
+  color: var(--sc-color-accent-on-accent) !important;
+}
+
+.transfer :global(.ant-transfer-operation) :global(.ant-btn):disabled {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Footer (custom footer render)
+ * ─────────────────────────────────────────────────────────────── */
+
+.transfer :global(.ant-transfer-list-footer) {
+  border-top: 1px solid var(--sc-color-border-subtle) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  background: var(--sc-color-bg-subtle) !important;
+  border-radius: 0 0 var(--sc-radius-md) var(--sc-radius-md) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Empty (boş liste)
+ * ─────────────────────────────────────────────────────────────── */
+
+.transfer :global(.ant-transfer-list-body-not-found) {
+  color: var(--sc-color-text-tertiary) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  padding: var(--sc-space-6) var(--sc-space-3) !important;
+  text-align: center;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Status — error / warning
+ * ─────────────────────────────────────────────────────────────── */
+
+.transfer:global(.ant-transfer-status-error) :global(.ant-transfer-list) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.transfer:global(.ant-transfer-status-warning) :global(.ant-transfer-list) {
+  border-color: var(--sc-color-state-warning-fg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Disabled
+ * ─────────────────────────────────────────────────────────────── */
+
+.transfer:global(.ant-transfer-disabled) :global(.ant-transfer-list) {
+  background: var(--sc-color-bg-muted) !important;
+}
