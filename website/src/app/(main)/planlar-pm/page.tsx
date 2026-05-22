@@ -2,6 +2,7 @@ import { ExpandedPricingSection } from "@/components/ui/expanded-pricing";
 import AboutHero from "@/components/ui/AboutHero";
 import pricingData from "@/data/pricing-pm.json";
 import { pageMetadata } from "@/lib/page-metadata";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export const metadata = pageMetadata("planlar-pm");
 
@@ -17,6 +18,8 @@ export default function PlanlarPmPage() {
 
       {/* Expanded Pricing Grid */}
       <ExpandedPricingSection data={pricingData} />
+
+      <PrivacyContact />
     </div>
   );
 }

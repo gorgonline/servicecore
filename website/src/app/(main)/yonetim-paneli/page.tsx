@@ -46,6 +46,7 @@ import {
   Handshake,
 } from "lucide-react";
 import data from "@/data/yonetim-paneli.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function YonetimPaneliPage() {
   const fadeUp: Variants = {
@@ -1192,6 +1193,8 @@ export default function YonetimPaneliPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

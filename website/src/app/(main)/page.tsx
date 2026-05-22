@@ -6,6 +6,7 @@ import { ModulesGrid } from "@/components/ui/modules-grid";
 import { StatsSection } from "@/components/ui/stats-section";
 import { PricingSection } from "@/components/ui/pricing-section";
 import { SupportCtaSection } from "@/components/ui/support-cta-section";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function Home() {
   return (
@@ -40,6 +41,8 @@ export default function Home() {
 
       {/* Support & Demo CTA Section */}
       <SupportCtaSection />
+
+      <PrivacyContact />
     </main>
   );
 }

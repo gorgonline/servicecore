@@ -23,6 +23,7 @@ import {
   type HizmetService,
 } from "@/lib/hizmetler";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 interface BaseSection {
   id: string;
@@ -649,6 +650,8 @@ export function ServiceDetailPage({ data }: ServiceDetailPageProps) {
           </Link>
         </div>
       </div>
+
+      <PrivacyContact />
     </main>
   );
 }

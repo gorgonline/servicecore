@@ -14,6 +14,7 @@ import {
   ExternalLink,
   ChevronRight
 } from "lucide-react";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 const docsData = {
   header: {
@@ -231,6 +232,8 @@ export default function DokumanlarPage() {
           </motion.div>
         </div>
       </div>
+
+      <PrivacyContact />
     </main>
   );
 }

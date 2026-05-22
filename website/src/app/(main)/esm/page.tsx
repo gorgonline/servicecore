@@ -38,6 +38,7 @@ import {
 } from "lucide-react";
 import data from "@/data/esm-kurumsal-servis-yonetimi.json";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function EsmPage() {
   const fadeUp: Variants = {
@@ -1092,6 +1093,8 @@ export default function EsmPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

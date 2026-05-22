@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import updatesData from "@/data/updates.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function UpdatesPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -234,6 +235,8 @@ export default function UpdatesPage() {
           <p className="text-(--color-text-muted) text-sm font-medium">© 2026 Servicecore Orkestra. Tüm hakları saklıdır.</p>
         </footer>
       </div>
+
+      <PrivacyContact />
     </div>
   );
 }

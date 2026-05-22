@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import { JiraComparisonTable } from "@/components/ui/jira-comparison-table";
 import data from "@/data/jira-karsilastirma.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 type Tone = "past" | "imminent" | "future";
 
@@ -897,6 +898,8 @@ export default function JiraAlternatifiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

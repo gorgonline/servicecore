@@ -4,7 +4,7 @@
     "title": "ServiceCore Datasheet",
     "subtitle": "Kurumsal Servis Yönetimi (ESM) ve ServiceCore ITSM Modülleri",
     "platform_label": "BT Servis Yönetimi (ITSM) Platformu",
-    "extracted_modules": 17,
+    "extracted_modules": 29,
     "version": "v2026.05",
     "release_date": "Mayıs 2026",
     "release_date_iso": "2026-05",
@@ -142,6 +142,64 @@
       "tagline": "Servis kataloğu odaklı uçtan uca istek karşılama."
     },
     {
+      "id": "knowledge-management",
+      "title": "Knowledge Management",
+      "pages": [
+        13
+      ],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Kolay kullanımlı ve entegre bilgi bankası ile servis yönetimi bilgilerinizi kayıt altına alın.."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Tüm servis yönetimi süreçlerinin ihtiyaç duyduğu ve kurumsal sürekliliği sağlayacak olan bilgileri kayıt altına alma ve tüm süreçlerden kolayca erişilebilme imkanı.."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Çözümlerin kategoriler halinde kayıt altına alınmasını sağlayan bu modülde, gerekli durumlarda çözümlere olay, istek, problem gibi modüllerden doğrudan erişim sağlanmaktadır. Bu sayede isteklerin ve olayların çözümlenmesi hızlandırılmakta, tekrarlanan olay ve isteklerle ilgili bilgiler kayıt altına alınarak çözüm süreleri kısaltılabilmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Olay ve istek kayıtları içerisinden otomatik çözüm ve bilgi aramanın yanı sıra çözümleri istek ve olay modüllerinden otomatik toplama imkanları da sağlanmaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Merkezi bir servis bilgi yönetimi sistemi (SKMS) olarak tasarlanan bu modülde tüm süreçlerde ve modüllerde üretilen bilgiler tekrar kullanım için saklanmaktadır. Yetkilendirme mekanizması ile hem teknisyenler hem de kullanıcılar için bilgiye sürekli erişim imkanı sağlanmaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Teknisyen modüllerinden doğrudan erişimin yanı sıra son kullanıcı portalından da self- servis modeliyle bilgi bankasına erişim sağlanmaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Kullanıcıların self-servis olarak kullanacakları bilgilerin de girilmesi ve yayınlanması ile servis çağrı sayısının azaltılması sağlanmaktadır."
+        }
+      ],
+      "paragraphs": [
+        "Kolay kullanımlı ve entegre bilgi bankası ile servis yönetimi bilgilerinizi kayıt altına alın..",
+        "Tüm servis yönetimi süreçlerinin ihtiyaç duyduğu ve kurumsal sürekliliği sağlayacak olan bilgileri kayıt altına alma ve tüm süreçlerden kolayca erişilebilme imkanı..",
+        "Çözümlerin kategoriler halinde kayıt altına alınmasını sağlayan bu modülde, gerekli durumlarda çözümlere olay, istek, problem gibi modüllerden doğrudan erişim sağlanmaktadır. Bu sayede isteklerin ve olayların çözümlenmesi hızlandırılmakta, tekrarlanan olay ve isteklerle ilgili bilgiler kayıt altına alınarak çözüm süreleri kısaltılabilmektedir.",
+        "Olay ve istek kayıtları içerisinden otomatik çözüm ve bilgi aramanın yanı sıra çözümleri istek ve olay modüllerinden otomatik toplama imkanları da sağlanmaktadır.",
+        "Merkezi bir servis bilgi yönetimi sistemi (SKMS) olarak tasarlanan bu modülde tüm süreçlerde ve modüllerde üretilen bilgiler tekrar kullanım için saklanmaktadır. Yetkilendirme mekanizması ile hem teknisyenler hem de kullanıcılar için bilgiye sürekli erişim imkanı sağlanmaktadır.",
+        "Teknisyen modüllerinden doğrudan erişimin yanı sıra son kullanıcı portalından da self- servis modeliyle bilgi bankasına erişim sağlanmaktadır.",
+        "Kullanıcıların self-servis olarak kullanacakları bilgilerin de girilmesi ve yayınlanması ile servis çağrı sayısının azaltılması sağlanmaktadır."
+      ],
+      "bullets": [],
+      "accent": "sky",
+      "icon": "BookOpen",
+      "title_tr": "Bilgi Yönetimi",
+      "tagline": "Merkezi servis bilgi yönetim sistemi (SKMS)."
+    },
+    {
       "id": "change-management",
       "title": "Change Management",
       "pages": [
@@ -204,6 +262,32 @@
       "tagline": "Tüm varlıkların yaşam döngüsü boyunca proaktif yönetimi."
     },
     {
+      "id": "discovery",
+      "title": "Discovery",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Modern bir servis yönetimi platformunun en kritik gereksinimi, hizmetlerin üretildiği varlıkların ve konfigürasyon öğelerinin (CI) gerçek zamanlı, doğru ve güncel envanterine sahip olmaktır. ServiceCore Discovery modülü, kurumun BT altyapısındaki tüm fiziksel ve sanal varlıkları otomatik olarak keşfeden, sınıflandıran ve ServiceCore CMDB modülüne aktaran agentless ve agent tabanlı bir keşif motorudur. Network keşfi, SNMP, WMI, SSH, Cloud (AWS, Azure, GCP, VMware), Active Directory, agent-based, distributed probe ve remote probe olmak üzere dokuz farklı tarama yöntemi tek modülde toplandığı için sunucudan PC'ye, switch'ten yazıcıya, IoT cihazından sanal makineye kadar her tür varlık aynı disiplin altında envantere düşürülebilmektedir. Geleneksel ITSM araçlarında manuel olarak tutulan ve hızla güncelliğini yitiren envanter veritabanlarının aksine, ServiceCore Discovery her tarama sonrasında CMDB'yi otomatik tazelemekte; yeni cihazlar 24 saat içinde envanterinize girmekte, kaldırılan cihazlar akıllı cleanup kuralları ya da \"pasife al\" alternatifi ile tutarlı biçimde yönetilmektedir. ITIL4'ün vurguladığı Service Configuration Management pratiğinin tek doğruluk kaynağı (single source of truth) ilkesi, Discovery modülü ile kurum genelinde garanti altına alınmaktadır. Çok lokasyonlu yapılarda merkez, şube, DR sitesi, üretim ve test ağları kendi probe'larıyla izole biçimde taranmakta; probe'lar ServiceCore'a tek yönlü güvenli bağlantı kurduğu için firewall'da delik açma ihtiyacı ortadan kalkmaktadır. Bulut sistemleri ve on-premise altyapı aynı CMDB'de yan yana durmakta, hibrit ortamlar tutarlı bir görünüm altında yönetilebilmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Discovery modülü güvenlik tarafında da kurumsal standartları karşılamak üzere geliştirilmiştir. Tüm credential'lar AES-256 ile şifrelenmiş biçimde saklanmakta, master key HSM/KMS koruması altında tutulmakta, hangi tarama hangi credential'ı ne zaman kullandı sorusu audit log üzerinden geriye yönelik denetlenebilmektedir. KVKK ve GDPR uyumlu veri saklama, müşteri tarafından kısıtlanabilen tarama saatleri/kapsamı ve kritik aksiyonlar için onay akışı ile kurumsal uyumluluk gereksinimleri karşılanmaktadır. Akıllı tekrar önleme algoritması; hostname, MAC ve serial number önceliklendirmesiyle aynı cihazın iki kez kayıt oluşturmasını engellemekte, IP değişimi yaşansa bile varlık kaybı yaşanmamasını sağlamaktadır. Canlı tarama izleme paneli ile çalışan tarama sayısı, hatalı job'lar, yeni keşfedilen ve güncellenen varlıklar ile credential hata sayısı tek bakışta görülebilmekte, anlık log akışı ile hangi cihazın taranıp ne bulunduğu izlenebilmektedir. Discovery modülünde yer alan endpoint agent çözümü; Windows, Linux ve macOS desteğiyle network erişimi olmayan cihazlar için ideal bir kapsama sağlamakta, ~30MB hafif kurulum boyutu ve auto-upgrade altyapısıyla operasyonel yük getirmemektedir. Discovery → ServiceCore Ticket akışı sayesinde yeni cihaz keşfi, anormallik tespiti veya credential hatası gibi olaylar otomatik olarak Olay yönetimi modülünde kayda alınmakta, sorumlu teknisyene atanmaktadır. MSP modunda her müşterinin asset/job/credential kayıtları izole tutulmakta; müşteri bazlı dashboard'lar ve konsolide MSP görünümüyle birden fazla müşteriye hizmet veren kurumlar tek altyapı üzerinden operasyonlarını sürdürebilmektedir."
+        }
+      ],
+      "paragraphs": [
+        "Modern bir servis yönetimi platformunun en kritik gereksinimi, hizmetlerin üretildiği varlıkların ve konfigürasyon öğelerinin (CI) gerçek zamanlı, doğru ve güncel envanterine sahip olmaktır. ServiceCore Discovery modülü, kurumun BT altyapısındaki tüm fiziksel ve sanal varlıkları otomatik olarak keşfeden, sınıflandıran ve ServiceCore CMDB modülüne aktaran agentless ve agent tabanlı bir keşif motorudur. Network keşfi, SNMP, WMI, SSH, Cloud (AWS, Azure, GCP, VMware), Active Directory, agent-based, distributed probe ve remote probe olmak üzere dokuz farklı tarama yöntemi tek modülde toplandığı için sunucudan PC'ye, switch'ten yazıcıya, IoT cihazından sanal makineye kadar her tür varlık aynı disiplin altında envantere düşürülebilmektedir. Geleneksel ITSM araçlarında manuel olarak tutulan ve hızla güncelliğini yitiren envanter veritabanlarının aksine, ServiceCore Discovery her tarama sonrasında CMDB'yi otomatik tazelemekte; yeni cihazlar 24 saat içinde envanterinize girmekte, kaldırılan cihazlar akıllı cleanup kuralları ya da \"pasife al\" alternatifi ile tutarlı biçimde yönetilmektedir. ITIL4'ün vurguladığı Service Configuration Management pratiğinin tek doğruluk kaynağı (single source of truth) ilkesi, Discovery modülü ile kurum genelinde garanti altına alınmaktadır. Çok lokasyonlu yapılarda merkez, şube, DR sitesi, üretim ve test ağları kendi probe'larıyla izole biçimde taranmakta; probe'lar ServiceCore'a tek yönlü güvenli bağlantı kurduğu için firewall'da delik açma ihtiyacı ortadan kalkmaktadır. Bulut sistemleri ve on-premise altyapı aynı CMDB'de yan yana durmakta, hibrit ortamlar tutarlı bir görünüm altında yönetilebilmektedir.",
+        "ServiceCore Discovery modülü güvenlik tarafında da kurumsal standartları karşılamak üzere geliştirilmiştir. Tüm credential'lar AES-256 ile şifrelenmiş biçimde saklanmakta, master key HSM/KMS koruması altında tutulmakta, hangi tarama hangi credential'ı ne zaman kullandı sorusu audit log üzerinden geriye yönelik denetlenebilmektedir. KVKK ve GDPR uyumlu veri saklama, müşteri tarafından kısıtlanabilen tarama saatleri/kapsamı ve kritik aksiyonlar için onay akışı ile kurumsal uyumluluk gereksinimleri karşılanmaktadır. Akıllı tekrar önleme algoritması; hostname, MAC ve serial number önceliklendirmesiyle aynı cihazın iki kez kayıt oluşturmasını engellemekte, IP değişimi yaşansa bile varlık kaybı yaşanmamasını sağlamaktadır. Canlı tarama izleme paneli ile çalışan tarama sayısı, hatalı job'lar, yeni keşfedilen ve güncellenen varlıklar ile credential hata sayısı tek bakışta görülebilmekte, anlık log akışı ile hangi cihazın taranıp ne bulunduğu izlenebilmektedir. Discovery modülünde yer alan endpoint agent çözümü; Windows, Linux ve macOS desteğiyle network erişimi olmayan cihazlar için ideal bir kapsama sağlamakta, ~30MB hafif kurulum boyutu ve auto-upgrade altyapısıyla operasyonel yük getirmemektedir. Discovery → ServiceCore Ticket akışı sayesinde yeni cihaz keşfi, anormallik tespiti veya credential hatası gibi olaylar otomatik olarak Olay yönetimi modülünde kayda alınmakta, sorumlu teknisyene atanmaktadır. MSP modunda her müşterinin asset/job/credential kayıtları izole tutulmakta; müşteri bazlı dashboard'lar ve konsolide MSP görünümüyle birden fazla müşteriye hizmet veren kurumlar tek altyapı üzerinden operasyonlarını sürdürebilmektedir."
+      ],
+      "bullets": [],
+      "accent": "cyan",
+      "icon": "Radar",
+      "title_tr": "Discovery — Ağ ve Varlık Keşfi",
+      "tagline": "Tüm BT varlıkları otomatik keşfedilmiş, güncel ve aksiyon alınabilir."
+    },
+    {
       "id": "configuration-management-and-cmdb",
       "title": "Configuration Management & CMDB",
       "pages": [
@@ -232,264 +316,30 @@
       "tagline": "Hizmet haritaları ve varlık ilişkileri tek doğruluk kaynağında."
     },
     {
-      "id": "knowledge-management",
-      "title": "Knowledge Management",
-      "pages": [
-        13
-      ],
+      "id": "service-topologies-explorer",
+      "title": "Service Topologies Explorer",
+      "pages": [],
       "items": [
         {
           "kind": "para",
           "number": null,
-          "text": "Kolay kullanımlı ve entegre bilgi bankası ile servis yönetimi bilgilerinizi kayıt altına alın.."
+          "text": "ITIL4'ün Service Configuration Management ve Service Value Stream pratiklerinin doğru işletilebilmesi için hizmetler, uygulamalar, bileşenler ve altyapı arasındaki bağımlılık ilişkilerinin sadece kayıt altında olması yeterli değildir; bu ilişkilerin kararı veren ekip tarafından keşfedilebilir, görsel olarak okunabilir ve etkisi anlık değerlendirilebilir olması gerekir. ServiceCore Service Topologies Explorer modülü, hizmet ve varlık ilişkilerini canlı, etkileşimli haritalarda keşfetmek üzere tasarlanmış bir topoloji keşif katmanıdır. Bir iş hizmetinin üzerine tıklandığında bağlı uygulamalar, mantıksal bileşenler, fiziksel altyapı ve ağ katmanı ayrı katmanlarda görselleştirilmekte; depends-on, hosts, runs-on, uses gibi bağımlılık ilişkileri yön oklarıyla netleştirilmektedir. Üst yönlü etki (impact) ve alt yönlü bağımlılık (dependency) ayrı ayrı sorgulanabildiği için bir olay açıldığında \"kim etkilenir?\" sorusu, bir değişiklik planlandığında \"kapsam neresi?\" sorusu saniyeler içinde cevaplanmaktadır. Geleneksel CMDB araçlarında ilişki verisi yalnızca tablo formunda tutulmakta ve gerçek zamanlı keşfedilebilir olmadığı için olay önceliklendirme, değişiklik kapsam analizi ve kök neden tespiti süreçlerinde aktif bir karar destek aracı haline gelememektedir. ServiceCore Service Topologies Explorer; lens ve filtre profilleriyle ekip, etiket, kritiklik ve servis sahibi bazında topolojiyi farklı bakış açılarından inceleme imkanı sunmakta, etki halkası özelliğiyle bir düğümün etrafındaki bağımlı servisleri ve etkilenebilecek kullanıcı sayısını anlık göstermektedir."
         },
         {
           "kind": "para",
           "number": null,
-          "text": "Tüm servis yönetimi süreçlerinin ihtiyaç duyduğu ve kurumsal sürekliliği sağlayacak olan bilgileri kayıt altına alma ve tüm süreçlerden kolayca erişilebilme imkanı.."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Çözümlerin kategoriler halinde kayıt altına alınmasını sağlayan bu modülde, gerekli durumlarda çözümlere olay, istek, problem gibi modüllerden doğrudan erişim sağlanmaktadır. Bu sayede isteklerin ve olayların çözümlenmesi hızlandırılmakta, tekrarlanan olay ve isteklerle ilgili bilgiler kayıt altına alınarak çözüm süreleri kısaltılabilmektedir."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Olay ve istek kayıtları içerisinden otomatik çözüm ve bilgi aramanın yanı sıra çözümleri istek ve olay modüllerinden otomatik toplama imkanları da sağlanmaktadır."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Merkezi bir servis bilgi yönetimi sistemi (SKMS) olarak tasarlanan bu modülde tüm süreçlerde ve modüllerde üretilen bilgiler tekrar kullanım için saklanmaktadır. Yetkilendirme mekanizması ile hem teknisyenler hem de kullanıcılar için bilgiye sürekli erişim imkanı sağlanmaktadır."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Teknisyen modüllerinden doğrudan erişimin yanı sıra son kullanıcı portalından da self- servis modeliyle bilgi bankasına erişim sağlanmaktadır."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Kullanıcıların self-servis olarak kullanacakları bilgilerin de girilmesi ve yayınlanması ile servis çağrı sayısının azaltılması sağlanmaktadır."
+          "text": "ServiceCore Service Topologies Explorer modülünde yer alan zaman yolculuğu özelliği, topolojiyi geçmiş tarihler için yeniden oynatma imkanı sağlamaktadır. Hangi CI ne zaman eklendi, hangi bağımlılık değişti, hangi servis hangi tarihten itibaren riskli hale geldi sorularına haritayı kronolojik olarak izleyerek cevap verilebilmektedir. Bu özellik özellikle olay sonrası analiz (Post-Incident Review), değişiklik etki analizi (Change Impact Analysis) ve kök neden araştırması (Root Cause Analysis) süreçlerinde kararı veriye dayandırmak için kullanılmaktadır. İki düğüm arası en kısa yol bulma fonksiyonu sayesinde bir kullanıcının yaşadığı sorunun arkasındaki altyapı bileşenini bulmak için iki CI seçildiğinde aralarındaki tüm bağımlılık yolları sıralı listeyle çıkarılmakta, en kısa ve en kritik yol vurgulanmaktadır. Tek nokta arıza (single point of failure) konumları otomatik tespit edilmekte; alternatif yol bulunmadığında mimari risk uyarısı verilerek proaktif kararlar alınmasını sağlamaktadır. Snapshot ve sunum paylaşımı özelliği, mevcut harita görünümünü kilitleyip yetkili paydaşlarla paylaşılabilir bağlantı oluşturmaya, sunum modu özelliği ise toplantılar veya değerlendirme oturumları için tam ekran rehberli tur sunmaya imkan tanımaktadır. ServiceCore Olay, Değişiklik, Problem ve Servis Konfigürasyon modülleriyle native entegre çalışan Service Topologies Explorer; topolojiyi pasif bir görselleştirme aracı olmaktan çıkararak günlük operasyon kararlarının verildiği aktif bir karar destek katmanına dönüştürmektedir."
         }
       ],
       "paragraphs": [
-        "Kolay kullanımlı ve entegre bilgi bankası ile servis yönetimi bilgilerinizi kayıt altına alın..",
-        "Tüm servis yönetimi süreçlerinin ihtiyaç duyduğu ve kurumsal sürekliliği sağlayacak olan bilgileri kayıt altına alma ve tüm süreçlerden kolayca erişilebilme imkanı..",
-        "Çözümlerin kategoriler halinde kayıt altına alınmasını sağlayan bu modülde, gerekli durumlarda çözümlere olay, istek, problem gibi modüllerden doğrudan erişim sağlanmaktadır. Bu sayede isteklerin ve olayların çözümlenmesi hızlandırılmakta, tekrarlanan olay ve isteklerle ilgili bilgiler kayıt altına alınarak çözüm süreleri kısaltılabilmektedir.",
-        "Olay ve istek kayıtları içerisinden otomatik çözüm ve bilgi aramanın yanı sıra çözümleri istek ve olay modüllerinden otomatik toplama imkanları da sağlanmaktadır.",
-        "Merkezi bir servis bilgi yönetimi sistemi (SKMS) olarak tasarlanan bu modülde tüm süreçlerde ve modüllerde üretilen bilgiler tekrar kullanım için saklanmaktadır. Yetkilendirme mekanizması ile hem teknisyenler hem de kullanıcılar için bilgiye sürekli erişim imkanı sağlanmaktadır.",
-        "Teknisyen modüllerinden doğrudan erişimin yanı sıra son kullanıcı portalından da self- servis modeliyle bilgi bankasına erişim sağlanmaktadır.",
-        "Kullanıcıların self-servis olarak kullanacakları bilgilerin de girilmesi ve yayınlanması ile servis çağrı sayısının azaltılması sağlanmaktadır."
+        "ITIL4'ün Service Configuration Management ve Service Value Stream pratiklerinin doğru işletilebilmesi için hizmetler, uygulamalar, bileşenler ve altyapı arasındaki bağımlılık ilişkilerinin sadece kayıt altında olması yeterli değildir; bu ilişkilerin kararı veren ekip tarafından keşfedilebilir, görsel olarak okunabilir ve etkisi anlık değerlendirilebilir olması gerekir. ServiceCore Service Topologies Explorer modülü, hizmet ve varlık ilişkilerini canlı, etkileşimli haritalarda keşfetmek üzere tasarlanmış bir topoloji keşif katmanıdır. Bir iş hizmetinin üzerine tıklandığında bağlı uygulamalar, mantıksal bileşenler, fiziksel altyapı ve ağ katmanı ayrı katmanlarda görselleştirilmekte; depends-on, hosts, runs-on, uses gibi bağımlılık ilişkileri yön oklarıyla netleştirilmektedir. Üst yönlü etki (impact) ve alt yönlü bağımlılık (dependency) ayrı ayrı sorgulanabildiği için bir olay açıldığında \"kim etkilenir?\" sorusu, bir değişiklik planlandığında \"kapsam neresi?\" sorusu saniyeler içinde cevaplanmaktadır. Geleneksel CMDB araçlarında ilişki verisi yalnızca tablo formunda tutulmakta ve gerçek zamanlı keşfedilebilir olmadığı için olay önceliklendirme, değişiklik kapsam analizi ve kök neden tespiti süreçlerinde aktif bir karar destek aracı haline gelememektedir. ServiceCore Service Topologies Explorer; lens ve filtre profilleriyle ekip, etiket, kritiklik ve servis sahibi bazında topolojiyi farklı bakış açılarından inceleme imkanı sunmakta, etki halkası özelliğiyle bir düğümün etrafındaki bağımlı servisleri ve etkilenebilecek kullanıcı sayısını anlık göstermektedir.",
+        "ServiceCore Service Topologies Explorer modülünde yer alan zaman yolculuğu özelliği, topolojiyi geçmiş tarihler için yeniden oynatma imkanı sağlamaktadır. Hangi CI ne zaman eklendi, hangi bağımlılık değişti, hangi servis hangi tarihten itibaren riskli hale geldi sorularına haritayı kronolojik olarak izleyerek cevap verilebilmektedir. Bu özellik özellikle olay sonrası analiz (Post-Incident Review), değişiklik etki analizi (Change Impact Analysis) ve kök neden araştırması (Root Cause Analysis) süreçlerinde kararı veriye dayandırmak için kullanılmaktadır. İki düğüm arası en kısa yol bulma fonksiyonu sayesinde bir kullanıcının yaşadığı sorunun arkasındaki altyapı bileşenini bulmak için iki CI seçildiğinde aralarındaki tüm bağımlılık yolları sıralı listeyle çıkarılmakta, en kısa ve en kritik yol vurgulanmaktadır. Tek nokta arıza (single point of failure) konumları otomatik tespit edilmekte; alternatif yol bulunmadığında mimari risk uyarısı verilerek proaktif kararlar alınmasını sağlamaktadır. Snapshot ve sunum paylaşımı özelliği, mevcut harita görünümünü kilitleyip yetkili paydaşlarla paylaşılabilir bağlantı oluşturmaya, sunum modu özelliği ise toplantılar veya değerlendirme oturumları için tam ekran rehberli tur sunmaya imkan tanımaktadır. ServiceCore Olay, Değişiklik, Problem ve Servis Konfigürasyon modülleriyle native entegre çalışan Service Topologies Explorer; topolojiyi pasif bir görselleştirme aracı olmaktan çıkararak günlük operasyon kararlarının verildiği aktif bir karar destek katmanına dönüştürmektedir."
       ],
       "bullets": [],
-      "accent": "sky",
-      "icon": "BookOpen",
-      "title_tr": "Bilgi Yönetimi",
-      "tagline": "Merkezi servis bilgi yönetim sistemi (SKMS)."
-    },
-    {
-      "id": "service-catalog-management",
-      "title": "Service Catalog Management",
-      "pages": [
-        14
-      ],
-      "items": [
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Gelişmiş otomasyon özellikleri ile servislerinizi standartlaştırın ve müşteri hizmetlerinizi uçtan uca dijitalleştirin.."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "ServiceCore SCM modülü ile çok katmanlı servis kataloglarınızı kolay kullanımlı ara yüzler ile hızlıca geliştirin ve sürekli güncel tutun."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "İstek yönetiminin arka planında yer alan tüm servis yönetimi aktivitelerini standartlaştırma ve sürdürülebilir hizmet kalitesini sağlamak amacıyla geliştirilen SCM modülü modern bir kullanıcı istek yönetimi için gerekli zemini sunmaktadır."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Ön tanımlı talep formlarını servise göre özelleştirebilme, onay aşamalarını ön tanımlı kurgulayabilme, servis seviye anlaşmalarını servis bazında düzenleyebilme özellikleri ile tüm servisleri özelleştirin."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Her servisin arkasında yer alan ön tanımlı iş akışlarını tanımlayabilme ve servisin her tekrarında otomatik görev dağıtımı yapabilme özellikleri ile servis yönetiminin kalite güvencesi sağlanmaktadır."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Standartlaştırılmış iş akışları sayesinde servis yönetilebilirliği ve kullanıcı memnuniyeti sağlanmaktadır."
-        }
-      ],
-      "paragraphs": [
-        "Gelişmiş otomasyon özellikleri ile servislerinizi standartlaştırın ve müşteri hizmetlerinizi uçtan uca dijitalleştirin..",
-        "ServiceCore SCM modülü ile çok katmanlı servis kataloglarınızı kolay kullanımlı ara yüzler ile hızlıca geliştirin ve sürekli güncel tutun.",
-        "İstek yönetiminin arka planında yer alan tüm servis yönetimi aktivitelerini standartlaştırma ve sürdürülebilir hizmet kalitesini sağlamak amacıyla geliştirilen SCM modülü modern bir kullanıcı istek yönetimi için gerekli zemini sunmaktadır.",
-        "Ön tanımlı talep formlarını servise göre özelleştirebilme, onay aşamalarını ön tanımlı kurgulayabilme, servis seviye anlaşmalarını servis bazında düzenleyebilme özellikleri ile tüm servisleri özelleştirin.",
-        "Her servisin arkasında yer alan ön tanımlı iş akışlarını tanımlayabilme ve servisin her tekrarında otomatik görev dağıtımı yapabilme özellikleri ile servis yönetiminin kalite güvencesi sağlanmaktadır.",
-        "Standartlaştırılmış iş akışları sayesinde servis yönetilebilirliği ve kullanıcı memnuniyeti sağlanmaktadır."
-      ],
-      "bullets": [],
-      "accent": "pink",
-      "icon": "Store",
-      "title_tr": "Servis Katalog Yönetimi",
-      "tagline": "Servisleri standartlaştırın ve müşteri hizmetlerini dijitalleştirin."
-    },
-    {
-      "id": "service-level-management",
-      "title": "Service Level Management",
-      "pages": [
-        15
-      ],
-      "items": [
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Entegre servis seviye yönetimi ile tüm servis yönetimi süreçlerinizin performansını arttırın.. Müşteri beklentilerinin hem olay hem de isteklerle ilgili tanımlarını kolayca yönetebileceğiniz, parametrik servis seviye anlaşmaları uygulaması ile performans sizin kontrolünüzde."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Erişilebilirlik ve servis sunum süreleri ile ilgili beklentilerin doğru tanımlanması ile önceliklendirme yükünü otomatikleştirin."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Olay ve istek yönetimi süreçlerinin öncelikli ve zorlu faaliyetlerinden olan önceliklendirme çalışmasını otomatikleştiren servis seviye yönetimi modülü ile hizmet kalitesini arttırın."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Çok katmanlı servis seviye anlaşması (Multi-Level) tanımlama yetenekleri donatılan bu modülde müşteri servis süre beklentilerini doğru belirleme ve tüm faaliyetleri doğru zamanlama ile sunabilme ihtiyacı otomatikleştirilmiştir."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Kolay Hizmet Seviyesi girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanmaktadır."
-        }
-      ],
-      "paragraphs": [
-        "Entegre servis seviye yönetimi ile tüm servis yönetimi süreçlerinizin performansını arttırın.. Müşteri beklentilerinin hem olay hem de isteklerle ilgili tanımlarını kolayca yönetebileceğiniz, parametrik servis seviye anlaşmaları uygulaması ile performans sizin kontrolünüzde.",
-        "Erişilebilirlik ve servis sunum süreleri ile ilgili beklentilerin doğru tanımlanması ile önceliklendirme yükünü otomatikleştirin.",
-        "Olay ve istek yönetimi süreçlerinin öncelikli ve zorlu faaliyetlerinden olan önceliklendirme çalışmasını otomatikleştiren servis seviye yönetimi modülü ile hizmet kalitesini arttırın.",
-        "Çok katmanlı servis seviye anlaşması (Multi-Level) tanımlama yetenekleri donatılan bu modülde müşteri servis süre beklentilerini doğru belirleme ve tüm faaliyetleri doğru zamanlama ile sunabilme ihtiyacı otomatikleştirilmiştir.",
-        "Kolay Hizmet Seviyesi girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanmaktadır."
-      ],
-      "bullets": [],
-      "accent": "cyan",
-      "icon": "Activity",
-      "title_tr": "Servis Seviye Yönetimi",
-      "tagline": "Çok katmanlı Hizmet Seviyesi ile öncelik ve zamanlama otomasyonu."
-    },
-    {
-      "id": "measurement-and-reporting-management",
-      "title": "Measurement & Reporting Management",
-      "pages": [
-        16
-      ],
-      "items": [
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Ölçemediğimiz şeyi yönetemeyiz. ServiceCore entegre suite kapsamında yer alan tüm yönetim süreçlerinden gelen veriler anlamlı bilgilere raporlar sayesinde dönüştürülmektedir."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "ITIL4 ile birlikte başlı başına önemli bir pratik olarak tanımlanan MRM süreci ServiceCore üzerinde gerekli ölçüm ve raporlama araçları ile çalışacak şekilde modellenmiştir. Servis yönetiminde gerekli ve yaygın kullanılan raporlar önceden rapor kitaplığında hazırlanmış ve kullanıma sunulmuştur. Klasik raporlamadan farklı olarak ITIL4’te tanımlandığı şekliyle hedeflerden yola çıkan bir ölçümleme metodu oluşturulmuştur. Operasyonel raporların yanısıra, stratejik ve analitik raporlar da geliştirilebilmektedir. Süreç ve servis kalitesini ölçmeye yönelik performans göstergeleri ve bunların farklı bileşenlere göre dinamik görünümleri detaylı raporlar halinde yöneticilerin erişimine sunulmuştur."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "İhtiyaç duyulan yeni raporların tasarımı da servis rapor sihirbazı (SRW – Service Report Wizard) aracılığı ile kolayca yapılabilmektedir."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Bu raporlar farklı bakış açılarında süreç ve servislere bakan farklı yönetim kademelerine göre özelleştirilen panolarda (Dashboard) bileşenler (widget) halinde gösterilebilmektedir."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Sürekli iyileştirmenin ilk adımı süreç ve servislerdeki sorunlu ve performansı düşük alanların tespitine dayanmaktadır. ITIL4’e göre servis yönetimi uygulamasının başlangıç noktası tam da bu süreç ve servis zafiyetlerinin olduğu bölgelerdir. Bu nedenle raporlama modülü tüm diğer süreçlerin denetiminin ve iyileştirilmesinin takibi anlamında sürekli iyileştirme sürecinin de vazgeçilmez aracıdır."
-        }
-      ],
-      "paragraphs": [
-        "Ölçemediğimiz şeyi yönetemeyiz. ServiceCore entegre suite kapsamında yer alan tüm yönetim süreçlerinden gelen veriler anlamlı bilgilere raporlar sayesinde dönüştürülmektedir.",
-        "ITIL4 ile birlikte başlı başına önemli bir pratik olarak tanımlanan MRM süreci ServiceCore üzerinde gerekli ölçüm ve raporlama araçları ile çalışacak şekilde modellenmiştir. Servis yönetiminde gerekli ve yaygın kullanılan raporlar önceden rapor kitaplığında hazırlanmış ve kullanıma sunulmuştur. Klasik raporlamadan farklı olarak ITIL4’te tanımlandığı şekliyle hedeflerden yola çıkan bir ölçümleme metodu oluşturulmuştur. Operasyonel raporların yanısıra, stratejik ve analitik raporlar da geliştirilebilmektedir. Süreç ve servis kalitesini ölçmeye yönelik performans göstergeleri ve bunların farklı bileşenlere göre dinamik görünümleri detaylı raporlar halinde yöneticilerin erişimine sunulmuştur.",
-        "İhtiyaç duyulan yeni raporların tasarımı da servis rapor sihirbazı (SRW – Service Report Wizard) aracılığı ile kolayca yapılabilmektedir.",
-        "Bu raporlar farklı bakış açılarında süreç ve servislere bakan farklı yönetim kademelerine göre özelleştirilen panolarda (Dashboard) bileşenler (widget) halinde gösterilebilmektedir.",
-        "Sürekli iyileştirmenin ilk adımı süreç ve servislerdeki sorunlu ve performansı düşük alanların tespitine dayanmaktadır. ITIL4’e göre servis yönetimi uygulamasının başlangıç noktası tam da bu süreç ve servis zafiyetlerinin olduğu bölgelerdir. Bu nedenle raporlama modülü tüm diğer süreçlerin denetiminin ve iyileştirilmesinin takibi anlamında sürekli iyileştirme sürecinin de vazgeçilmez aracıdır."
-      ],
-      "bullets": [],
-      "accent": "cyan",
-      "icon": "LineChart",
-      "title_tr": "Ölçüm ve Raporlama Yönetimi",
-      "tagline": "Veriye dayalı kararlar için entegre raporlama ve KPI."
-    },
-    {
-      "id": "self-service-portal",
-      "title": "Self Service Portal",
-      "pages": [
-        17
-      ],
-      "items": [
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Müşterilerinize ve kullanıcılarınıza eşsiz bir servis talep ve takip deneyimi yaşatın!"
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Profesyonel bir servis sağlayıcının olmazsa olmaz ihtiyaçlarından biri de müşterilerine ve kullanıcılarına sunacakları bir servis erişim ve takip ekranıdır."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "ServiceCore Self Service Portal’ın sunduğu kolay ve modern ara yüzlerle müşteri memnuniyetinizi arttırın."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Kullanıcılar self service portal üzerinden destek taleplerini, hizmet isteklerini kolayca iletebilir ve mevcut isteklerinin durumunu takip edebilirler. Detaylı istek ve olay takip ekranları ile hem durum takibi yapabilir hem de teknik ekiplerle yazışmalarını aynı ortamdan yürütebilir."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Kullanıcılar bilgi bankası üzerinden olay ve isteklerle ilgili bilgilere kolayca erişebilir ve self- servis çözümlere hızlıca erişebilir."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Kullanıcılar servis kataloğunu portal üzerinde görebilir ve isteklerini katalogdan seçerek teknik ekiplere iletebilir. Sunulan tüm servisler SCM modülünde önceden hazırlanmış paketlerdir ve kullanıcılar bu panelde doğru servisi arama motoru ile veya katalog içerisinde gezerek bulabilir. Açtıkları servis taleplerini yine aynı portal üzerinde takip edebilir ve detaylarını görebilir."
-        },
-        {
-          "kind": "para",
-          "number": null,
-          "text": "Kullanıcılara atanmış projeler, varlıklar ve hizmetler de keza bu portalda görülebilir ve bir kullanıcı kendisine ait varlıkların, hizmetlerin, projelerin durumunu buradan takip edebilir."
-        }
-      ],
-      "paragraphs": [
-        "Müşterilerinize ve kullanıcılarınıza eşsiz bir servis talep ve takip deneyimi yaşatın!",
-        "Profesyonel bir servis sağlayıcının olmazsa olmaz ihtiyaçlarından biri de müşterilerine ve kullanıcılarına sunacakları bir servis erişim ve takip ekranıdır.",
-        "ServiceCore Self Service Portal’ın sunduğu kolay ve modern ara yüzlerle müşteri memnuniyetinizi arttırın.",
-        "Kullanıcılar self service portal üzerinden destek taleplerini, hizmet isteklerini kolayca iletebilir ve mevcut isteklerinin durumunu takip edebilirler. Detaylı istek ve olay takip ekranları ile hem durum takibi yapabilir hem de teknik ekiplerle yazışmalarını aynı ortamdan yürütebilir.",
-        "Kullanıcılar bilgi bankası üzerinden olay ve isteklerle ilgili bilgilere kolayca erişebilir ve self- servis çözümlere hızlıca erişebilir.",
-        "Kullanıcılar servis kataloğunu portal üzerinde görebilir ve isteklerini katalogdan seçerek teknik ekiplere iletebilir. Sunulan tüm servisler SCM modülünde önceden hazırlanmış paketlerdir ve kullanıcılar bu panelde doğru servisi arama motoru ile veya katalog içerisinde gezerek bulabilir. Açtıkları servis taleplerini yine aynı portal üzerinde takip edebilir ve detaylarını görebilir.",
-        "Kullanıcılara atanmış projeler, varlıklar ve hizmetler de keza bu portalda görülebilir ve bir kullanıcı kendisine ait varlıkların, hizmetlerin, projelerin durumunu buradan takip edebilir."
-      ],
-      "bullets": [],
-      "accent": "amber",
-      "icon": "Smartphone",
-      "title_tr": "Self Servis Portal",
-      "tagline": "Eşsiz servis talep ve takip deneyimi."
+      "accent": "indigo",
+      "icon": "Waypoints",
+      "title_tr": "Servis Topoloji Keşfi",
+      "tagline": "Hizmet-varlık ilişkilerini canlı haritada keşfedin, etkiyi anlık görün."
     },
     {
       "id": "continual-improvement",
@@ -647,6 +497,104 @@
       "tagline": "ITIL4'ün ana uygulama metodolojisi: CI Register."
     },
     {
+      "id": "service-catalog-management",
+      "title": "Service Catalog Management",
+      "pages": [
+        14
+      ],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Gelişmiş otomasyon özellikleri ile servislerinizi standartlaştırın ve müşteri hizmetlerinizi uçtan uca dijitalleştirin.."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore SCM modülü ile çok katmanlı servis kataloglarınızı kolay kullanımlı ara yüzler ile hızlıca geliştirin ve sürekli güncel tutun."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "İstek yönetiminin arka planında yer alan tüm servis yönetimi aktivitelerini standartlaştırma ve sürdürülebilir hizmet kalitesini sağlamak amacıyla geliştirilen SCM modülü modern bir kullanıcı istek yönetimi için gerekli zemini sunmaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Ön tanımlı talep formlarını servise göre özelleştirebilme, onay aşamalarını ön tanımlı kurgulayabilme, servis seviye anlaşmalarını servis bazında düzenleyebilme özellikleri ile tüm servisleri özelleştirin."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Her servisin arkasında yer alan ön tanımlı iş akışlarını tanımlayabilme ve servisin her tekrarında otomatik görev dağıtımı yapabilme özellikleri ile servis yönetiminin kalite güvencesi sağlanmaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Standartlaştırılmış iş akışları sayesinde servis yönetilebilirliği ve kullanıcı memnuniyeti sağlanmaktadır."
+        }
+      ],
+      "paragraphs": [
+        "Gelişmiş otomasyon özellikleri ile servislerinizi standartlaştırın ve müşteri hizmetlerinizi uçtan uca dijitalleştirin..",
+        "ServiceCore SCM modülü ile çok katmanlı servis kataloglarınızı kolay kullanımlı ara yüzler ile hızlıca geliştirin ve sürekli güncel tutun.",
+        "İstek yönetiminin arka planında yer alan tüm servis yönetimi aktivitelerini standartlaştırma ve sürdürülebilir hizmet kalitesini sağlamak amacıyla geliştirilen SCM modülü modern bir kullanıcı istek yönetimi için gerekli zemini sunmaktadır.",
+        "Ön tanımlı talep formlarını servise göre özelleştirebilme, onay aşamalarını ön tanımlı kurgulayabilme, servis seviye anlaşmalarını servis bazında düzenleyebilme özellikleri ile tüm servisleri özelleştirin.",
+        "Her servisin arkasında yer alan ön tanımlı iş akışlarını tanımlayabilme ve servisin her tekrarında otomatik görev dağıtımı yapabilme özellikleri ile servis yönetiminin kalite güvencesi sağlanmaktadır.",
+        "Standartlaştırılmış iş akışları sayesinde servis yönetilebilirliği ve kullanıcı memnuniyeti sağlanmaktadır."
+      ],
+      "bullets": [],
+      "accent": "pink",
+      "icon": "Store",
+      "title_tr": "Servis Katalog Yönetimi",
+      "tagline": "Servisleri standartlaştırın ve müşteri hizmetlerini dijitalleştirin."
+    },
+    {
+      "id": "service-level-management",
+      "title": "Service Level Management",
+      "pages": [
+        15
+      ],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Entegre servis seviye yönetimi ile tüm servis yönetimi süreçlerinizin performansını arttırın.. Müşteri beklentilerinin hem olay hem de isteklerle ilgili tanımlarını kolayca yönetebileceğiniz, parametrik servis seviye anlaşmaları uygulaması ile performans sizin kontrolünüzde."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Erişilebilirlik ve servis sunum süreleri ile ilgili beklentilerin doğru tanımlanması ile önceliklendirme yükünü otomatikleştirin."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Olay ve istek yönetimi süreçlerinin öncelikli ve zorlu faaliyetlerinden olan önceliklendirme çalışmasını otomatikleştiren servis seviye yönetimi modülü ile hizmet kalitesini arttırın."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Çok katmanlı servis seviye anlaşması (Multi-Level) tanımlama yetenekleri donatılan bu modülde müşteri servis süre beklentilerini doğru belirleme ve tüm faaliyetleri doğru zamanlama ile sunabilme ihtiyacı otomatikleştirilmiştir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Kolay Hizmet Seviyesi girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanmaktadır."
+        }
+      ],
+      "paragraphs": [
+        "Entegre servis seviye yönetimi ile tüm servis yönetimi süreçlerinizin performansını arttırın.. Müşteri beklentilerinin hem olay hem de isteklerle ilgili tanımlarını kolayca yönetebileceğiniz, parametrik servis seviye anlaşmaları uygulaması ile performans sizin kontrolünüzde.",
+        "Erişilebilirlik ve servis sunum süreleri ile ilgili beklentilerin doğru tanımlanması ile önceliklendirme yükünü otomatikleştirin.",
+        "Olay ve istek yönetimi süreçlerinin öncelikli ve zorlu faaliyetlerinden olan önceliklendirme çalışmasını otomatikleştiren servis seviye yönetimi modülü ile hizmet kalitesini arttırın.",
+        "Çok katmanlı servis seviye anlaşması (Multi-Level) tanımlama yetenekleri donatılan bu modülde müşteri servis süre beklentilerini doğru belirleme ve tüm faaliyetleri doğru zamanlama ile sunabilme ihtiyacı otomatikleştirilmiştir.",
+        "Kolay Hizmet Seviyesi girişleri ile hem olay hem de istekler için doğru sıralama ve zamanında müdahale imkanı sağlanmaktadır."
+      ],
+      "bullets": [],
+      "accent": "cyan",
+      "icon": "Activity",
+      "title_tr": "Servis Seviye Yönetimi",
+      "tagline": "Çok katmanlı Hizmet Seviyesi ile öncelik ve zamanlama otomasyonu."
+    },
+    {
       "id": "service-automation",
       "title": "Service Automation",
       "pages": [
@@ -685,6 +633,52 @@
       "icon": "Terminal",
       "title_tr": "Servis Otomasyonu",
       "tagline": "Olay ve istekleri dinamik kurallarla otomatize edin."
+    },
+    {
+      "id": "measurement-and-reporting-management",
+      "title": "Measurement & Reporting Management",
+      "pages": [
+        16
+      ],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Ölçemediğimiz şeyi yönetemeyiz. ServiceCore entegre suite kapsamında yer alan tüm yönetim süreçlerinden gelen veriler anlamlı bilgilere raporlar sayesinde dönüştürülmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ITIL4 ile birlikte başlı başına önemli bir pratik olarak tanımlanan MRM süreci ServiceCore üzerinde gerekli ölçüm ve raporlama araçları ile çalışacak şekilde modellenmiştir. Servis yönetiminde gerekli ve yaygın kullanılan raporlar önceden rapor kitaplığında hazırlanmış ve kullanıma sunulmuştur. Klasik raporlamadan farklı olarak ITIL4’te tanımlandığı şekliyle hedeflerden yola çıkan bir ölçümleme metodu oluşturulmuştur. Operasyonel raporların yanısıra, stratejik ve analitik raporlar da geliştirilebilmektedir. Süreç ve servis kalitesini ölçmeye yönelik performans göstergeleri ve bunların farklı bileşenlere göre dinamik görünümleri detaylı raporlar halinde yöneticilerin erişimine sunulmuştur."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "İhtiyaç duyulan yeni raporların tasarımı da servis rapor sihirbazı (SRW – Service Report Wizard) aracılığı ile kolayca yapılabilmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Bu raporlar farklı bakış açılarında süreç ve servislere bakan farklı yönetim kademelerine göre özelleştirilen panolarda (Dashboard) bileşenler (widget) halinde gösterilebilmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Sürekli iyileştirmenin ilk adımı süreç ve servislerdeki sorunlu ve performansı düşük alanların tespitine dayanmaktadır. ITIL4’e göre servis yönetimi uygulamasının başlangıç noktası tam da bu süreç ve servis zafiyetlerinin olduğu bölgelerdir. Bu nedenle raporlama modülü tüm diğer süreçlerin denetiminin ve iyileştirilmesinin takibi anlamında sürekli iyileştirme sürecinin de vazgeçilmez aracıdır."
+        }
+      ],
+      "paragraphs": [
+        "Ölçemediğimiz şeyi yönetemeyiz. ServiceCore entegre suite kapsamında yer alan tüm yönetim süreçlerinden gelen veriler anlamlı bilgilere raporlar sayesinde dönüştürülmektedir.",
+        "ITIL4 ile birlikte başlı başına önemli bir pratik olarak tanımlanan MRM süreci ServiceCore üzerinde gerekli ölçüm ve raporlama araçları ile çalışacak şekilde modellenmiştir. Servis yönetiminde gerekli ve yaygın kullanılan raporlar önceden rapor kitaplığında hazırlanmış ve kullanıma sunulmuştur. Klasik raporlamadan farklı olarak ITIL4’te tanımlandığı şekliyle hedeflerden yola çıkan bir ölçümleme metodu oluşturulmuştur. Operasyonel raporların yanısıra, stratejik ve analitik raporlar da geliştirilebilmektedir. Süreç ve servis kalitesini ölçmeye yönelik performans göstergeleri ve bunların farklı bileşenlere göre dinamik görünümleri detaylı raporlar halinde yöneticilerin erişimine sunulmuştur.",
+        "İhtiyaç duyulan yeni raporların tasarımı da servis rapor sihirbazı (SRW – Service Report Wizard) aracılığı ile kolayca yapılabilmektedir.",
+        "Bu raporlar farklı bakış açılarında süreç ve servislere bakan farklı yönetim kademelerine göre özelleştirilen panolarda (Dashboard) bileşenler (widget) halinde gösterilebilmektedir.",
+        "Sürekli iyileştirmenin ilk adımı süreç ve servislerdeki sorunlu ve performansı düşük alanların tespitine dayanmaktadır. ITIL4’e göre servis yönetimi uygulamasının başlangıç noktası tam da bu süreç ve servis zafiyetlerinin olduğu bölgelerdir. Bu nedenle raporlama modülü tüm diğer süreçlerin denetiminin ve iyileştirilmesinin takibi anlamında sürekli iyileştirme sürecinin de vazgeçilmez aracıdır."
+      ],
+      "bullets": [],
+      "accent": "cyan",
+      "icon": "LineChart",
+      "title_tr": "Ölçüm ve Raporlama Yönetimi",
+      "tagline": "Veriye dayalı kararlar için entegre raporlama ve KPI."
     },
     {
       "id": "task-management-workforce-and-talent-management",
@@ -768,6 +762,58 @@
       "icon": "ListTodo",
       "title_tr": "Görev Yönetimi (Workforce & Talent)",
       "tagline": "Teknisyen iş yükü, yetenek ve takvim yönetimi."
+    },
+    {
+      "id": "shift-management",
+      "title": "Shift Management",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ITIL4'ün Workforce and Talent Management pratiği kapsamında 7/24 destek operasyonlarını yönetmek isteyen kurumların en kritik gereksinimi, vardiya planlama, on-call rotasyonu, yetkinlik bazlı atama ve vardiya devri akışlarını tek panelden yönetebilmektir. ServiceCore Shift Management modülü, çok ekipli destek operasyonlarında vardiya çizelgesini yetkinlik, sertifika ve mevcut iş yükü dikkate alarak otomatik öneren; operasyon liderinin öneriyi onaylayıp veya elle ince ayar yapmasına imkan tanıyan kapsamlı bir vardiya yönetim katmanıdır. Yetkinlik, sertifika ve dil kombinasyonuna göre otomatik atama önerisi üretilmekte; uygun olmayan kişiler vardiyaya sürüklenmeye çalışıldığında sistem engelleyici uyarı göstermektedir. Sürükle-bırak ile günlük plan yapılırken çakışmalar, izinler ve fazla mesai eşiği anlık olarak çizelge üzerinde kırmızıya dönmekte; lider operasyonel kararı görsel sinyaller eşliğinde almaktadır. 3+1, 2+2, 4+2, sürekli gece ve hafta sonu yoğunlaştırması gibi yaygın vardiya desenleri şablon kütüphanesinden tek tıkla uygulanmakta, tekrarlayan iş üzerinde harcanan zaman ortadan kalkmaktadır. On-call rotasyonu haftalık, iki haftalık veya özel desenlerle adil ve şeffaf biçimde döndürülmekte; ekip yükü dağılımı, en son nöbet ve izin durumu otomatik göz önüne alınmaktadır. Birincil ve ikincil nöbetçiler her vardiya için ayrı atanmakta; izin veya hastalık durumunda otomatik yedek devreye girmekte ve ekibe bildirim yapılmaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Shift Management modülünün vardiya devri akışı, destek operasyonlarındaki en kritik bilgi kayıp anlarını disipline etmektedir. Devir saati geldiğinde sistem, biten ekibin notlarını ve açık konuları yapılandırılmış bir devir kartında özetlemekte; gelen ekip açık olaylar, planlı değişiklikler ve dikkat edilmesi gereken müşteriler için yapılandırılmış kontrol listesini ilk dakikada okumaktadır. Devir kartı; açık olaylar, planlı değişiklikler, eskalasyonlar ve ekibe iletilmesi gereken VIP/kritik müşteri notlarını tek sayfada toparlamakta; devir alan ekip her maddeyi okuduğunu işaretlemekte, eksik kalan veya itiraz edilen maddeler operasyon liderine raporlanmaktadır. İzin entegrasyonu sayesinde onaylı izinler, resmi tatiller ve hastalık raporları otomatik olarak çizelgeye düşmekte; lider plan yaparken izinli kişiyi sürüklemek istediğinde engelleyici uyarı görmektedir. Kapsam boşluğu uyarısı bir saat diliminde yetkinlik, dil veya ekip eksiği oluştuğunda çizelge üzerinde sarı/kırmızı boşluk işareti çıkarmakta; plan onaylanmadan önce \"kim eksik?\" sorusu cevaplanmaktadır. Haftalık ve aylık fazla mesai eşiklerine yaklaşan kişiler vurgulanmakta, yasal mesai sınırı uyarısı engelleyici çalışmakta; operasyon lideri yorgunluk riskini görsel olarak okuyabilmektedir. Takas ve değişiklik talepleri ekip üyeleri tarafından açıldığında eşleşen yetkinliği olan müsait arkadaşlardan onay alındıktan sonra lidere tek tıkla onay düşmekte, tüm değişiklikler kayıt altında tutulmaktadır. Eskalasyon zinciri vardiyaya bağlandığı için çağrı yanıtsız kaldığında ikinciye, ardından operasyon liderine otomatik tırmanmakta; ITIL4'ün Service Continuity ve Incident Management pratikleri vardiya disiplini ile doğrudan birleşmektedir."
+        }
+      ],
+      "paragraphs": [
+        "ITIL4'ün Workforce and Talent Management pratiği kapsamında 7/24 destek operasyonlarını yönetmek isteyen kurumların en kritik gereksinimi, vardiya planlama, on-call rotasyonu, yetkinlik bazlı atama ve vardiya devri akışlarını tek panelden yönetebilmektir. ServiceCore Shift Management modülü, çok ekipli destek operasyonlarında vardiya çizelgesini yetkinlik, sertifika ve mevcut iş yükü dikkate alarak otomatik öneren; operasyon liderinin öneriyi onaylayıp veya elle ince ayar yapmasına imkan tanıyan kapsamlı bir vardiya yönetim katmanıdır. Yetkinlik, sertifika ve dil kombinasyonuna göre otomatik atama önerisi üretilmekte; uygun olmayan kişiler vardiyaya sürüklenmeye çalışıldığında sistem engelleyici uyarı göstermektedir. Sürükle-bırak ile günlük plan yapılırken çakışmalar, izinler ve fazla mesai eşiği anlık olarak çizelge üzerinde kırmızıya dönmekte; lider operasyonel kararı görsel sinyaller eşliğinde almaktadır. 3+1, 2+2, 4+2, sürekli gece ve hafta sonu yoğunlaştırması gibi yaygın vardiya desenleri şablon kütüphanesinden tek tıkla uygulanmakta, tekrarlayan iş üzerinde harcanan zaman ortadan kalkmaktadır. On-call rotasyonu haftalık, iki haftalık veya özel desenlerle adil ve şeffaf biçimde döndürülmekte; ekip yükü dağılımı, en son nöbet ve izin durumu otomatik göz önüne alınmaktadır. Birincil ve ikincil nöbetçiler her vardiya için ayrı atanmakta; izin veya hastalık durumunda otomatik yedek devreye girmekte ve ekibe bildirim yapılmaktadır.",
+        "ServiceCore Shift Management modülünün vardiya devri akışı, destek operasyonlarındaki en kritik bilgi kayıp anlarını disipline etmektedir. Devir saati geldiğinde sistem, biten ekibin notlarını ve açık konuları yapılandırılmış bir devir kartında özetlemekte; gelen ekip açık olaylar, planlı değişiklikler ve dikkat edilmesi gereken müşteriler için yapılandırılmış kontrol listesini ilk dakikada okumaktadır. Devir kartı; açık olaylar, planlı değişiklikler, eskalasyonlar ve ekibe iletilmesi gereken VIP/kritik müşteri notlarını tek sayfada toparlamakta; devir alan ekip her maddeyi okuduğunu işaretlemekte, eksik kalan veya itiraz edilen maddeler operasyon liderine raporlanmaktadır. İzin entegrasyonu sayesinde onaylı izinler, resmi tatiller ve hastalık raporları otomatik olarak çizelgeye düşmekte; lider plan yaparken izinli kişiyi sürüklemek istediğinde engelleyici uyarı görmektedir. Kapsam boşluğu uyarısı bir saat diliminde yetkinlik, dil veya ekip eksiği oluştuğunda çizelge üzerinde sarı/kırmızı boşluk işareti çıkarmakta; plan onaylanmadan önce \"kim eksik?\" sorusu cevaplanmaktadır. Haftalık ve aylık fazla mesai eşiklerine yaklaşan kişiler vurgulanmakta, yasal mesai sınırı uyarısı engelleyici çalışmakta; operasyon lideri yorgunluk riskini görsel olarak okuyabilmektedir. Takas ve değişiklik talepleri ekip üyeleri tarafından açıldığında eşleşen yetkinliği olan müsait arkadaşlardan onay alındıktan sonra lidere tek tıkla onay düşmekte, tüm değişiklikler kayıt altında tutulmaktadır. Eskalasyon zinciri vardiyaya bağlandığı için çağrı yanıtsız kaldığında ikinciye, ardından operasyon liderine otomatik tırmanmakta; ITIL4'ün Service Continuity ve Incident Management pratikleri vardiya disiplini ile doğrudan birleşmektedir."
+      ],
+      "bullets": [],
+      "accent": "emerald",
+      "icon": "CalendarClock",
+      "title_tr": "Vardiya Yönetimi",
+      "tagline": "Vardiya, nöbet ve kapasite tek panelde planlanır."
+    },
+    {
+      "id": "service-relations-management",
+      "title": "Service Relations Management",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ITIL4 Service Value System'in temel taşlarından biri olan Relationship Management pratiği, hizmet sağlayıcı ile müşteri/kullanıcı arasındaki ilişkilerin sadece bir CRM verisi olarak değil; sözleşme, hizmet kapsamı, Hizmet Seviyesi taahhüdü, yetkili kullanıcı tanımı ve servis hakları gibi tüm operasyonel öznitelikleriyle birlikte tek doğruluk kaynağında yönetilmesini gerektirir. ServiceCore Service Relations Management (SRM) modülü, kurumun hem iç hem dış müşterilerine ait tüm bilgileri detaylı ve düzenli biçimde kaydeden; etkileşim geçmişini, açılmış talep ve olay kayıtlarını, sözleşmeleri ve hizmet planlarını aynı kayıt yapısı altında yöneten kapsamlı bir müşteri ilişkileri katmanıdır. Müşteri hesabı açıldıktan sonra kişiler eklenmekte, yetkili kullanıcılar ve grup yöneticileri tanımlanmakta, yetkili teknisyenler atanmakta, sözleşmeler ilişkilendirilmekte, varlıklar ve hizmetler bağlanmakta ve müşteriye açılmış tüm istek/olay kayıtları tek panelden görüntülenmektedir. Bu sayede her müşteri için 360 derece tam görünüm sağlanmakta; satış-pazarlama ekipleri, BT destek ekipleri ve işletme yöneticileri aynı kayıt yapısı üzerinde çalışmaktadır. Yetkili Kullanıcı tanımı müşteri tarafında belirlenen kişinin kendi şirketi tarafından açılan tüm kayıtları görmesini sağlarken Grup Yetkilisi grup üyeleri tarafından açılan tüm kayıtları izleyebilmektedir; müşteri tarafı kendi iç süreçlerini şeffaf biçimde yönetebilmekte, hangi kayıtların açıldığını, kapandığını veya onaylandığını takip edebilmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore SRM modülünde sözleşme yönetimi tarafında Hizmet Seviyesi ve OLA (Operational Level Agreement) sözleşmeleri detaylı biçimde yönetilebilmektedir. Yeni sözleşme eklenirken müşteri hesabı seçilmekte, sözleşme türü belirlenmekte, ad/açıklama/başlangıç ve bitiş tarihi girilmekte, bitiş tarihinden önce/sonra bilgilendirme günleri tanımlanmakta, otomatik yenileme ve destek planı seçenekleri eklenmektedir. Bu sayede hem iç hem de dış müşteriler için hizmet seviyeleri net şekilde tanımlanmakta, kritik tarihler kaçırılmamaktadır. Yetkili teknisyen ataması özelliği belirli müşterilere özel teknisyenler atanmasına imkan tanımakta; teknisyenler yalnızca yetkili oldukları müşteri kayıtlarını görebilmekte, veri güvenliği ve uzmanlık odağı korunmaktadır. Premium müşterilere özel ekip atamakla destek süreçleri belirgin biçimde hızlanmaktadır. Hizmet planları ve faturalama tarafında her müşteri için ücretlendirme, faturalama metodu, faturalama periyodu, sabit fatura ve fazla mesai davranışı tek formda yapılandırılmaktadır. Haftalık izin verilen maksimum saat, saatlik maliyetlendirme, sabit maliyet ve fark maliyeti tanımları ile karlılık analizi yapılmaktadır. Kullanılmayan kredilerin ötelenmesi, teknisyenin ek maliyet girmesine izin verme, harcanan süreye ilave yapma gibi esnek yapılarla her müşteri için bağımsız ticari deneyim sunulabilmektedir. Geleneksel servis yönetimi yazılımları müşteri yönetimini ya bir CRM modülüne devretmekte ya da yalnızca temel iletişim verisi düzeyinde tutmaktadır. ServiceCore SRM modülü; müşteri kaydını, sözleşmeyi ve hizmet planını ITSM süreçleriyle birinci sınıf entegre çalışan tek yapıya dönüştürerek hem iç hem dış müşteriler için şeffaf, izlenebilir ve sürdürülebilir bir hizmet yönetimi deneyimi sunmaktadır."
+        }
+      ],
+      "paragraphs": [
+        "ITIL4 Service Value System'in temel taşlarından biri olan Relationship Management pratiği, hizmet sağlayıcı ile müşteri/kullanıcı arasındaki ilişkilerin sadece bir CRM verisi olarak değil; sözleşme, hizmet kapsamı, Hizmet Seviyesi taahhüdü, yetkili kullanıcı tanımı ve servis hakları gibi tüm operasyonel öznitelikleriyle birlikte tek doğruluk kaynağında yönetilmesini gerektirir. ServiceCore Service Relations Management (SRM) modülü, kurumun hem iç hem dış müşterilerine ait tüm bilgileri detaylı ve düzenli biçimde kaydeden; etkileşim geçmişini, açılmış talep ve olay kayıtlarını, sözleşmeleri ve hizmet planlarını aynı kayıt yapısı altında yöneten kapsamlı bir müşteri ilişkileri katmanıdır. Müşteri hesabı açıldıktan sonra kişiler eklenmekte, yetkili kullanıcılar ve grup yöneticileri tanımlanmakta, yetkili teknisyenler atanmakta, sözleşmeler ilişkilendirilmekte, varlıklar ve hizmetler bağlanmakta ve müşteriye açılmış tüm istek/olay kayıtları tek panelden görüntülenmektedir. Bu sayede her müşteri için 360 derece tam görünüm sağlanmakta; satış-pazarlama ekipleri, BT destek ekipleri ve işletme yöneticileri aynı kayıt yapısı üzerinde çalışmaktadır. Yetkili Kullanıcı tanımı müşteri tarafında belirlenen kişinin kendi şirketi tarafından açılan tüm kayıtları görmesini sağlarken Grup Yetkilisi grup üyeleri tarafından açılan tüm kayıtları izleyebilmektedir; müşteri tarafı kendi iç süreçlerini şeffaf biçimde yönetebilmekte, hangi kayıtların açıldığını, kapandığını veya onaylandığını takip edebilmektedir.",
+        "ServiceCore SRM modülünde sözleşme yönetimi tarafında Hizmet Seviyesi ve OLA (Operational Level Agreement) sözleşmeleri detaylı biçimde yönetilebilmektedir. Yeni sözleşme eklenirken müşteri hesabı seçilmekte, sözleşme türü belirlenmekte, ad/açıklama/başlangıç ve bitiş tarihi girilmekte, bitiş tarihinden önce/sonra bilgilendirme günleri tanımlanmakta, otomatik yenileme ve destek planı seçenekleri eklenmektedir. Bu sayede hem iç hem de dış müşteriler için hizmet seviyeleri net şekilde tanımlanmakta, kritik tarihler kaçırılmamaktadır. Yetkili teknisyen ataması özelliği belirli müşterilere özel teknisyenler atanmasına imkan tanımakta; teknisyenler yalnızca yetkili oldukları müşteri kayıtlarını görebilmekte, veri güvenliği ve uzmanlık odağı korunmaktadır. Premium müşterilere özel ekip atamakla destek süreçleri belirgin biçimde hızlanmaktadır. Hizmet planları ve faturalama tarafında her müşteri için ücretlendirme, faturalama metodu, faturalama periyodu, sabit fatura ve fazla mesai davranışı tek formda yapılandırılmaktadır. Haftalık izin verilen maksimum saat, saatlik maliyetlendirme, sabit maliyet ve fark maliyeti tanımları ile karlılık analizi yapılmaktadır. Kullanılmayan kredilerin ötelenmesi, teknisyenin ek maliyet girmesine izin verme, harcanan süreye ilave yapma gibi esnek yapılarla her müşteri için bağımsız ticari deneyim sunulabilmektedir. Geleneksel servis yönetimi yazılımları müşteri yönetimini ya bir CRM modülüne devretmekte ya da yalnızca temel iletişim verisi düzeyinde tutmaktadır. ServiceCore SRM modülü; müşteri kaydını, sözleşmeyi ve hizmet planını ITSM süreçleriyle birinci sınıf entegre çalışan tek yapıya dönüştürerek hem iç hem dış müşteriler için şeffaf, izlenebilir ve sürdürülebilir bir hizmet yönetimi deneyimi sunmaktadır."
+      ],
+      "bullets": [],
+      "accent": "cyan",
+      "icon": "Users",
+      "title_tr": "Servis İlişkileri Yönetimi",
+      "tagline": "Müşteri kayıtları, sözleşmeler ve hizmet planları tek platformda."
     },
     {
       "id": "project-management",
@@ -1036,13 +1082,279 @@
       "icon": "GitBranch",
       "title_tr": "Kurumsal Servis Yönetimi (ESM)",
       "tagline": "BT dışı tüm departmanlara servis disiplinini taşıyın."
+    },
+    {
+      "id": "federation-engine",
+      "title": "Federation Engine",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Holding ve iştirakler, MSP ile müşteri tenant'ları, çok bölgeli kurumlar veya departman federasyonu gibi senaryolarda her bir ServiceCore kurulumu kendi veri sınırını, ekibini, Hizmet Seviyesi kurallarını ve süreçlerini korurken; politika dağıtımı, eskalasyon yönlendirmesi, konsolide raporlama ve kimlik federasyonu gibi orkestrasyon işlerinin merkezi bir katmanda yönetilmesi gerekir. ServiceCore Federation Engine modülü, birden çok bağımsız ServiceCore kurulumunu tek bir orkestratör hub altında birleştiren federasyon yönetim katmanıdır. Bağımsız tenant'lar (iştirak, müşteri, bölge, departman) hub'a bağlanmakta; her tenant kendi veri sınırını ve ekibini koruyarak bağımsız çalışmakta, hub yalnızca politika ve federe akışları yönetmektedir. Hub üzerinden tüm tenant'ların açık olay, talep ve değişiklikleri konsolide ekranda izlenebilmekte, her satırdan ilgili tenant'a tek tıkla geçilebilmektedir. Tenant ekleme dakikalar içinde tamamlanmakta; yeni iştirak veya müşteri kurulumu federasyona katıldığında politika, katalog ve roller otomatik senkronlanmaktadır. Federasyon yönlendirme kuralları (skill, lokasyon, müşteri, kategori) sayesinde bir tenant'ta açılan bilet, başka bir tenant'a otomatik olarak iletilebilmekte; manuel atama gerekmemektedir. Cross-tenant devirde paylaşılan ve gizli alanlar ayrı politika ile yönetilmekte; KVKK/GDPR uyumu için veri kapsamı satır bazında belgelenmektedir. Bilet zinciri tek bir takip numarası ile uçtan uca izlenmekte; hangi tenant'ta ne kadar süre kaldığı Hizmet Seviyesi raporlarına yansımaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Federation Engine modülünde politika ve katalog federasyonu, federasyon hub'ında tanımlanan politikaların (öncelik matrisleri, onay zincirleri, gizlilik kuralları, Hizmet Seviyesi şablonları) federe tenant'lara yayılmasını sağlamaktadır. Yerel ekipler kendi katalog uzantılarını koruyabilmekte; merkez ve yerel arasında tutarlı bir çekirdek garanti edilmektedir. Politika sürümleri merkezde sürüm kontrolü altında yayınlanmakta; her tenant'a hangi sürümün uygulandığı denetim izinde tek satırda görünmektedir. Servis kataloğu federe yayınlanmakta: merkez çekirdek kalemleri sahiplenmekte, tenant'lar yerel uzantılarını eklemekte, sürüm çakışmaları hub'da çözümlenmektedir. İstisna yönetimi merkezi; belirli bir tenant için politika muafiyeti, gerekçesi ve süresiyle birlikte kayda alınmakta, otomatik hatırlatma ile yenilenmektedir. Kimlik federasyonu tarafında SAML, OIDC ve SCIM ile merkezi kimlik sağlayıcı tüm tenant'lara yansımakta; kullanıcılar tek oturumla yetkili oldukları tenant'lara erişebilmekte, rol değişiklikleri merkezden uygulanmaktadır. Konsolide raporlama ve Hizmet Seviyesi roll-up özelliği sayesinde tüm tenant'ların kritik metrikleri (açık olay sayısı, Hizmet Seviyesi performansı, ortalama çözüm süresi, müşteri memnuniyeti) merkez panoda toplanmakta; tenant kıyaslaması, bölge çapraz kesiti ve trend analizleri tek bakışta alınabilmektedir. Veri ikametgâhı ve bölge eşleme özelliğiyle her tenant'ın verisi hangi bölgede tutulduğu açıkça etiketlenmekte; cross-tenant akışlarda bölge sınırı denetlenmekte, uyumluluk gereken senaryolarda veri yalnızca politika izin verirse hub'a taşınmaktadır. Politika yayını, tenant devri, istisna kararı ve bilet aktarımı dahil tüm federasyon işlemleri değişmez bir denetim defterinde tutulmakta; dış denetim ve sertifikasyon süreçleri için kanıt zinciri tek tıkla dışa aktarılabilmektedir. Bu sayede ITIL4'ün Multi-tenancy ve Service Provider Hierarchy senaryolarında ihtiyaç duyulan tüm orkestrasyon yetenekleri ServiceCore Federation Engine ile tek motorda toplanmaktadır."
+        }
+      ],
+      "paragraphs": [
+        "Holding ve iştirakler, MSP ile müşteri tenant'ları, çok bölgeli kurumlar veya departman federasyonu gibi senaryolarda her bir ServiceCore kurulumu kendi veri sınırını, ekibini, Hizmet Seviyesi kurallarını ve süreçlerini korurken; politika dağıtımı, eskalasyon yönlendirmesi, konsolide raporlama ve kimlik federasyonu gibi orkestrasyon işlerinin merkezi bir katmanda yönetilmesi gerekir. ServiceCore Federation Engine modülü, birden çok bağımsız ServiceCore kurulumunu tek bir orkestratör hub altında birleştiren federasyon yönetim katmanıdır. Bağımsız tenant'lar (iştirak, müşteri, bölge, departman) hub'a bağlanmakta; her tenant kendi veri sınırını ve ekibini koruyarak bağımsız çalışmakta, hub yalnızca politika ve federe akışları yönetmektedir. Hub üzerinden tüm tenant'ların açık olay, talep ve değişiklikleri konsolide ekranda izlenebilmekte, her satırdan ilgili tenant'a tek tıkla geçilebilmektedir. Tenant ekleme dakikalar içinde tamamlanmakta; yeni iştirak veya müşteri kurulumu federasyona katıldığında politika, katalog ve roller otomatik senkronlanmaktadır. Federasyon yönlendirme kuralları (skill, lokasyon, müşteri, kategori) sayesinde bir tenant'ta açılan bilet, başka bir tenant'a otomatik olarak iletilebilmekte; manuel atama gerekmemektedir. Cross-tenant devirde paylaşılan ve gizli alanlar ayrı politika ile yönetilmekte; KVKK/GDPR uyumu için veri kapsamı satır bazında belgelenmektedir. Bilet zinciri tek bir takip numarası ile uçtan uca izlenmekte; hangi tenant'ta ne kadar süre kaldığı Hizmet Seviyesi raporlarına yansımaktadır.",
+        "ServiceCore Federation Engine modülünde politika ve katalog federasyonu, federasyon hub'ında tanımlanan politikaların (öncelik matrisleri, onay zincirleri, gizlilik kuralları, Hizmet Seviyesi şablonları) federe tenant'lara yayılmasını sağlamaktadır. Yerel ekipler kendi katalog uzantılarını koruyabilmekte; merkez ve yerel arasında tutarlı bir çekirdek garanti edilmektedir. Politika sürümleri merkezde sürüm kontrolü altında yayınlanmakta; her tenant'a hangi sürümün uygulandığı denetim izinde tek satırda görünmektedir. Servis kataloğu federe yayınlanmakta: merkez çekirdek kalemleri sahiplenmekte, tenant'lar yerel uzantılarını eklemekte, sürüm çakışmaları hub'da çözümlenmektedir. İstisna yönetimi merkezi; belirli bir tenant için politika muafiyeti, gerekçesi ve süresiyle birlikte kayda alınmakta, otomatik hatırlatma ile yenilenmektedir. Kimlik federasyonu tarafında SAML, OIDC ve SCIM ile merkezi kimlik sağlayıcı tüm tenant'lara yansımakta; kullanıcılar tek oturumla yetkili oldukları tenant'lara erişebilmekte, rol değişiklikleri merkezden uygulanmaktadır. Konsolide raporlama ve Hizmet Seviyesi roll-up özelliği sayesinde tüm tenant'ların kritik metrikleri (açık olay sayısı, Hizmet Seviyesi performansı, ortalama çözüm süresi, müşteri memnuniyeti) merkez panoda toplanmakta; tenant kıyaslaması, bölge çapraz kesiti ve trend analizleri tek bakışta alınabilmektedir. Veri ikametgâhı ve bölge eşleme özelliğiyle her tenant'ın verisi hangi bölgede tutulduğu açıkça etiketlenmekte; cross-tenant akışlarda bölge sınırı denetlenmekte, uyumluluk gereken senaryolarda veri yalnızca politika izin verirse hub'a taşınmaktadır. Politika yayını, tenant devri, istisna kararı ve bilet aktarımı dahil tüm federasyon işlemleri değişmez bir denetim defterinde tutulmakta; dış denetim ve sertifikasyon süreçleri için kanıt zinciri tek tıkla dışa aktarılabilmektedir. Bu sayede ITIL4'ün Multi-tenancy ve Service Provider Hierarchy senaryolarında ihtiyaç duyulan tüm orkestrasyon yetenekleri ServiceCore Federation Engine ile tek motorda toplanmaktadır."
+      ],
+      "bullets": [],
+      "accent": "purple",
+      "icon": "Combine",
+      "title_tr": "Federation Engine",
+      "tagline": "Çoklu tenant ve organizasyonu tek orkestratörle bağlayın."
+    },
+    {
+      "id": "self-service-portal",
+      "title": "Self Service Portal",
+      "pages": [
+        17
+      ],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Müşterilerinize ve kullanıcılarınıza eşsiz bir servis talep ve takip deneyimi yaşatın!"
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Profesyonel bir servis sağlayıcının olmazsa olmaz ihtiyaçlarından biri de müşterilerine ve kullanıcılarına sunacakları bir servis erişim ve takip ekranıdır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Self Service Portal’ın sunduğu kolay ve modern ara yüzlerle müşteri memnuniyetinizi arttırın."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Kullanıcılar self service portal üzerinden destek taleplerini, hizmet isteklerini kolayca iletebilir ve mevcut isteklerinin durumunu takip edebilirler. Detaylı istek ve olay takip ekranları ile hem durum takibi yapabilir hem de teknik ekiplerle yazışmalarını aynı ortamdan yürütebilir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Kullanıcılar bilgi bankası üzerinden olay ve isteklerle ilgili bilgilere kolayca erişebilir ve self- servis çözümlere hızlıca erişebilir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Kullanıcılar servis kataloğunu portal üzerinde görebilir ve isteklerini katalogdan seçerek teknik ekiplere iletebilir. Sunulan tüm servisler SCM modülünde önceden hazırlanmış paketlerdir ve kullanıcılar bu panelde doğru servisi arama motoru ile veya katalog içerisinde gezerek bulabilir. Açtıkları servis taleplerini yine aynı portal üzerinde takip edebilir ve detaylarını görebilir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Kullanıcılara atanmış projeler, varlıklar ve hizmetler de keza bu portalda görülebilir ve bir kullanıcı kendisine ait varlıkların, hizmetlerin, projelerin durumunu buradan takip edebilir."
+        }
+      ],
+      "paragraphs": [
+        "Müşterilerinize ve kullanıcılarınıza eşsiz bir servis talep ve takip deneyimi yaşatın!",
+        "Profesyonel bir servis sağlayıcının olmazsa olmaz ihtiyaçlarından biri de müşterilerine ve kullanıcılarına sunacakları bir servis erişim ve takip ekranıdır.",
+        "ServiceCore Self Service Portal’ın sunduğu kolay ve modern ara yüzlerle müşteri memnuniyetinizi arttırın.",
+        "Kullanıcılar self service portal üzerinden destek taleplerini, hizmet isteklerini kolayca iletebilir ve mevcut isteklerinin durumunu takip edebilirler. Detaylı istek ve olay takip ekranları ile hem durum takibi yapabilir hem de teknik ekiplerle yazışmalarını aynı ortamdan yürütebilir.",
+        "Kullanıcılar bilgi bankası üzerinden olay ve isteklerle ilgili bilgilere kolayca erişebilir ve self- servis çözümlere hızlıca erişebilir.",
+        "Kullanıcılar servis kataloğunu portal üzerinde görebilir ve isteklerini katalogdan seçerek teknik ekiplere iletebilir. Sunulan tüm servisler SCM modülünde önceden hazırlanmış paketlerdir ve kullanıcılar bu panelde doğru servisi arama motoru ile veya katalog içerisinde gezerek bulabilir. Açtıkları servis taleplerini yine aynı portal üzerinde takip edebilir ve detaylarını görebilir.",
+        "Kullanıcılara atanmış projeler, varlıklar ve hizmetler de keza bu portalda görülebilir ve bir kullanıcı kendisine ait varlıkların, hizmetlerin, projelerin durumunu buradan takip edebilir."
+      ],
+      "bullets": [],
+      "accent": "amber",
+      "icon": "Smartphone",
+      "title_tr": "Self Servis Portal",
+      "tagline": "Eşsiz servis talep ve takip deneyimi."
+    },
+    {
+      "id": "admin-panel",
+      "title": "Admin Panel",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Bir servis yönetimi platformunun kurumsal kullanılabilirliği, yapılandırma katmanının kuruma ne kadar hızlı, esnek ve sürdürülebilir biçimde uyarlanabildiğine doğrudan bağlıdır. ServiceCore Admin Panel modülü, kurumun tüm yapı taşlarını tek noktadan kontrol etmenizi sağlayan merkezi yönetim katmanıdır. Genel ayarlardan organizasyon şemasına, varlık yönetiminden gelişmiş otomasyonlara kadar her şey kullanıcı dostu bir arayüzde bir araya gelmekte; merkezi kontrol, esneklik, verimlilik ve şeffaflık aynı panelde sunulmaktadır. Genel Yönetim Ayarları kategorisi altında saat dilimi, dil, tema ve uygulama düzeyindeki yapılandırma seçenekleri tanımlanmakta; bildirim şablonları, süreç şablonları (Quick Create), hazır cevaplar, görev şablonları ve worklog şablonları sayesinde tekrar eden işlemler standartlaştırılmaktadır. Validasyon ayarları ile form alanlarına zorunluluk ve karakter kuralları tanımlanmakta; duyuru yönetimi kullanıcı/grup bazında yapılmakta; iş saatleri, kurum konumları ve alt şirketler organizasyon yapısına uygun biçimde sisteme tanımlanmaktadır. Organizasyon Yönetimi kategorisinde kullanıcılar ve kullanıcı grupları (ekipler, departmanlar) tanımlanmakta; teknisyenler ve teknisyen grupları rollerine göre belirlenmekte; onay ve danışma kurulları (CAB, advisory) süreçlerdeki karar verici ve danışman rollerini kalibre etmekte; departmanlar kurumsal hiyerarşiye uygun olarak kayda alınmakta ve roller kullanıcı yetki ve erişimlerini yönetmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Admin Panel modülünde Varlık ve Konfigürasyon Yönetimi kategorisi altında Konfigürasyon Yönetimi Veri Tabanı (CMDB) aracılığıyla varlıklar ve aralarındaki ilişkiler tek doğruluk kaynağında izlenmektedir. Üreticiler, kullanım modelleri, konumlar, durumlar, varlık türleri ve ilişkileri burada yapılandırılmakta; tedarikçiler ve onlarla yapılan sözleşmeler aynı panelden yönetilmektedir. Gelişmiş Ayarlar kategorisi kurumsal ihtiyaçlara birebir uyarlama için tasarlanmıştır: Hizmet Seviyesi politikaları, kapatma kuralları, otomasyon yönetimi, ortak ve özel ek alanlar (custom fields), global durumlar, anket tasarımı, sistem genel bakış, entegrasyonlar, iş akışı yönetimi, dil kaynağı ayarları, zamanlanmış olay ve istekler ile otomatik teknisyen atama yetkinlikleri bu kategori altında toplanmaktadır. Hizmet düzeyi anlaşmaları için politikalar oluşturulmakta; olayların ve kayıtların nasıl, ne zaman kapatılacağı kurallarla belirlenmekte; servis bazında kalibre edilen Hizmet Seviyeleri otomatik kapatma kurallarıyla birleşince operasyonel disiplin standart hale gelmektedir. Sık tekrarlanan işlemleri otomatize etmek için kurallar tanımlanmakta; kuralın koşulu karşılandığında aksiyon devreye girmektedir. Tüm organizasyon için geçerli olacak durum kodları (Beklemede, İşlemde, Tamamlandı vb.) yapılandırılmakta; modüller arası ortak dil sağlanmakta, raporlama tutarlı kalmaktadır. Formlar kategorisi sürükle-bırak form tasarımı, şartlı alanlar ve validasyon imkanları sunarken Hizmet İlişkileri Yönetimi kategorisi müşteri hesapları, müşteri hizmet sözleşmeleri ve hizmet planlarını tek panelden yönetmektedir. Geleneksel ITSM araçlarında ayarlar farklı menülere dağıtılmış, bağlam kaybeden ve teknik ekipten destek alınmadan değiştirilemeyen bir yapıda iken ServiceCore Admin Panel; iş analisti, süreç sahibi ve sistem yöneticisinin doğrudan yapılandırma yapabildiği, audit log üzerinden geriye yönelik denetlenebilen, kuruma özgü gereksinimlere bir günde uyarlanabilen kapsamlı bir kontrol noktası sunmaktadır."
+        }
+      ],
+      "paragraphs": [
+        "Bir servis yönetimi platformunun kurumsal kullanılabilirliği, yapılandırma katmanının kuruma ne kadar hızlı, esnek ve sürdürülebilir biçimde uyarlanabildiğine doğrudan bağlıdır. ServiceCore Admin Panel modülü, kurumun tüm yapı taşlarını tek noktadan kontrol etmenizi sağlayan merkezi yönetim katmanıdır. Genel ayarlardan organizasyon şemasına, varlık yönetiminden gelişmiş otomasyonlara kadar her şey kullanıcı dostu bir arayüzde bir araya gelmekte; merkezi kontrol, esneklik, verimlilik ve şeffaflık aynı panelde sunulmaktadır. Genel Yönetim Ayarları kategorisi altında saat dilimi, dil, tema ve uygulama düzeyindeki yapılandırma seçenekleri tanımlanmakta; bildirim şablonları, süreç şablonları (Quick Create), hazır cevaplar, görev şablonları ve worklog şablonları sayesinde tekrar eden işlemler standartlaştırılmaktadır. Validasyon ayarları ile form alanlarına zorunluluk ve karakter kuralları tanımlanmakta; duyuru yönetimi kullanıcı/grup bazında yapılmakta; iş saatleri, kurum konumları ve alt şirketler organizasyon yapısına uygun biçimde sisteme tanımlanmaktadır. Organizasyon Yönetimi kategorisinde kullanıcılar ve kullanıcı grupları (ekipler, departmanlar) tanımlanmakta; teknisyenler ve teknisyen grupları rollerine göre belirlenmekte; onay ve danışma kurulları (CAB, advisory) süreçlerdeki karar verici ve danışman rollerini kalibre etmekte; departmanlar kurumsal hiyerarşiye uygun olarak kayda alınmakta ve roller kullanıcı yetki ve erişimlerini yönetmektedir.",
+        "ServiceCore Admin Panel modülünde Varlık ve Konfigürasyon Yönetimi kategorisi altında Konfigürasyon Yönetimi Veri Tabanı (CMDB) aracılığıyla varlıklar ve aralarındaki ilişkiler tek doğruluk kaynağında izlenmektedir. Üreticiler, kullanım modelleri, konumlar, durumlar, varlık türleri ve ilişkileri burada yapılandırılmakta; tedarikçiler ve onlarla yapılan sözleşmeler aynı panelden yönetilmektedir. Gelişmiş Ayarlar kategorisi kurumsal ihtiyaçlara birebir uyarlama için tasarlanmıştır: Hizmet Seviyesi politikaları, kapatma kuralları, otomasyon yönetimi, ortak ve özel ek alanlar (custom fields), global durumlar, anket tasarımı, sistem genel bakış, entegrasyonlar, iş akışı yönetimi, dil kaynağı ayarları, zamanlanmış olay ve istekler ile otomatik teknisyen atama yetkinlikleri bu kategori altında toplanmaktadır. Hizmet düzeyi anlaşmaları için politikalar oluşturulmakta; olayların ve kayıtların nasıl, ne zaman kapatılacağı kurallarla belirlenmekte; servis bazında kalibre edilen Hizmet Seviyeleri otomatik kapatma kurallarıyla birleşince operasyonel disiplin standart hale gelmektedir. Sık tekrarlanan işlemleri otomatize etmek için kurallar tanımlanmakta; kuralın koşulu karşılandığında aksiyon devreye girmektedir. Tüm organizasyon için geçerli olacak durum kodları (Beklemede, İşlemde, Tamamlandı vb.) yapılandırılmakta; modüller arası ortak dil sağlanmakta, raporlama tutarlı kalmaktadır. Formlar kategorisi sürükle-bırak form tasarımı, şartlı alanlar ve validasyon imkanları sunarken Hizmet İlişkileri Yönetimi kategorisi müşteri hesapları, müşteri hizmet sözleşmeleri ve hizmet planlarını tek panelden yönetmektedir. Geleneksel ITSM araçlarında ayarlar farklı menülere dağıtılmış, bağlam kaybeden ve teknik ekipten destek alınmadan değiştirilemeyen bir yapıda iken ServiceCore Admin Panel; iş analisti, süreç sahibi ve sistem yöneticisinin doğrudan yapılandırma yapabildiği, audit log üzerinden geriye yönelik denetlenebilen, kuruma özgü gereksinimlere bir günde uyarlanabilen kapsamlı bir kontrol noktası sunmaktadır."
+      ],
+      "bullets": [],
+      "accent": "blue",
+      "icon": "Sliders",
+      "title_tr": "Yönetim Paneli",
+      "tagline": "Sistemin tüm parametreleri tek kontrol panelinde."
+    },
+    {
+      "id": "mobile-service-management",
+      "title": "Mobile Service Management",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Modern BT operasyonlarının ofis duvarlarının dışına taşındığı; teknisyenlerin sahada, yolda ve müşteri lokasyonunda çalıştığı bir çağda, servis yönetimi platformunun mobil erişim yeteneği artık bir tercih değil, operasyonun temel direklerinden biridir. ServiceCore Mobile Service Management modülü, IT hizmet yönetimini sahaya, ofis dışına ve teknik ekibin cebine taşıyan; ITIL4 ile uyumlu süreç altyapısını, gerçek zamanlı izleme yeteneklerini, kullanıcı dostu arayüzü, anlık bildirim altyapısını ve mevcut sistemlerle native entegrasyon imkanını mobil cihazlara ölçeklendiren kapsamlı bir Field Service Management (FSM) ve mobil ITSM çözümüdür. Uygulama tüm IT hizmetlerini her yerden yönetebilmenizi sağlayarak teknik ekibe hareket özgürlüğü sunmakta; hizmet talebi yönetiminden problem çözümlemeye kadar tüm süreçler ITIL 4 standartlarına göre tasarlandığı için en iyi uygulamalardan ofis dışında da yararlanılmaktadır. Mobil cihazda tek dokunuşla talep oluşturma, durumu güncelleme ve ekiple iletişim kurma mümkün olmakta; teknisyen sahada bile olsa Olay yönetimi süreci aynı disiplin altında işletilebilmektedir. Kritik olaylar push bildirim olarak ulaşmakta, teknisyen yolda bile olsa hızla devreye girebilmektedir. Değişiklik yönetiminde IT altyapısındaki değişiklikler mobilden planlanmakta, onay süreçleri kolayca yürütülmektedir; onay bekleyen kayıtlar bir bildirimle gelmekte ve tek tıkla onaylanabilmektedir. Talep durumları, olay çözümleri ve Hizmet Seviyeleri anlık takip edilmekte; karar süresi saatlerden saniyelere inmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Mobile Service Management modülünde Hizmet Seviyesi ihlalleri ve kritik durumlar için push, e-posta ve uygulama içi bildirimler ekiplere anında ulaşmaktadır. Hatırlatmalar ve eskalasyon uyarıları sayesinde unutulan adım kalmamakta; kesintisiz hizmet sunumu sahada da garanti altına alınmaktadır. Özelleştirilebilir raporlar ve panolar ile hizmet performansı anlık analiz edilmekte; CIO'dan teknisyene kadar her rol kendi mobil dashboard'undan ekibinin durumunu okumaktadır. Mobil uygulama mevcut kurumsal sistemlerle entegre çalışmakta; çift kayıt, kayıp veri ve manuel senkronizasyon ihtiyacı ortadan kalkmakta, tek doğruluk kaynağı (single source of truth) sahada da korunmaktadır. Tüm süreç adımları masaüstü deneyimiyle birebir uyumlu çalışmakta; mobil ekran küçülse de süreç disiplini korunmaktadır. Geleneksel ITSM araçlarının mobil uygulamaları genellikle yalnızca okuma odaklı, sınırlı yetkinlikte ve süreç akışından kopuk bir deneyim sunmaktadır. ServiceCore Mobile Service Management modülü; saha teknisyenlerinin, operasyon yöneticilerinin ve hizmet sağlayıcıların ofis ile aynı yetkinlikle çalışabileceği, ITIL4 süreçlerinin tamamının mobil disiplinde sürdürülebildiği, BT yönetiminde yeni bir dönem başlatan bir mobil ITSM deneyimi sunmaktadır. Saha servis operasyonlarında işin yapıldığı yerde imza alma, fotoğraf ekleme, barkod/QR ile varlık tanıma, GPS lokasyonu kaydetme gibi field-specific yetkinlikler de aynı mobil uygulamada toplandığı için saha ekipleri ayrı bir FSM aracına geçmek zorunda kalmamakta; FSM ile ITSM süreçleri tek mobil deneyim altında birleşmektedir."
+        }
+      ],
+      "paragraphs": [
+        "Modern BT operasyonlarının ofis duvarlarının dışına taşındığı; teknisyenlerin sahada, yolda ve müşteri lokasyonunda çalıştığı bir çağda, servis yönetimi platformunun mobil erişim yeteneği artık bir tercih değil, operasyonun temel direklerinden biridir. ServiceCore Mobile Service Management modülü, IT hizmet yönetimini sahaya, ofis dışına ve teknik ekibin cebine taşıyan; ITIL4 ile uyumlu süreç altyapısını, gerçek zamanlı izleme yeteneklerini, kullanıcı dostu arayüzü, anlık bildirim altyapısını ve mevcut sistemlerle native entegrasyon imkanını mobil cihazlara ölçeklendiren kapsamlı bir Field Service Management (FSM) ve mobil ITSM çözümüdür. Uygulama tüm IT hizmetlerini her yerden yönetebilmenizi sağlayarak teknik ekibe hareket özgürlüğü sunmakta; hizmet talebi yönetiminden problem çözümlemeye kadar tüm süreçler ITIL 4 standartlarına göre tasarlandığı için en iyi uygulamalardan ofis dışında da yararlanılmaktadır. Mobil cihazda tek dokunuşla talep oluşturma, durumu güncelleme ve ekiple iletişim kurma mümkün olmakta; teknisyen sahada bile olsa Olay yönetimi süreci aynı disiplin altında işletilebilmektedir. Kritik olaylar push bildirim olarak ulaşmakta, teknisyen yolda bile olsa hızla devreye girebilmektedir. Değişiklik yönetiminde IT altyapısındaki değişiklikler mobilden planlanmakta, onay süreçleri kolayca yürütülmektedir; onay bekleyen kayıtlar bir bildirimle gelmekte ve tek tıkla onaylanabilmektedir. Talep durumları, olay çözümleri ve Hizmet Seviyeleri anlık takip edilmekte; karar süresi saatlerden saniyelere inmektedir.",
+        "ServiceCore Mobile Service Management modülünde Hizmet Seviyesi ihlalleri ve kritik durumlar için push, e-posta ve uygulama içi bildirimler ekiplere anında ulaşmaktadır. Hatırlatmalar ve eskalasyon uyarıları sayesinde unutulan adım kalmamakta; kesintisiz hizmet sunumu sahada da garanti altına alınmaktadır. Özelleştirilebilir raporlar ve panolar ile hizmet performansı anlık analiz edilmekte; CIO'dan teknisyene kadar her rol kendi mobil dashboard'undan ekibinin durumunu okumaktadır. Mobil uygulama mevcut kurumsal sistemlerle entegre çalışmakta; çift kayıt, kayıp veri ve manuel senkronizasyon ihtiyacı ortadan kalkmakta, tek doğruluk kaynağı (single source of truth) sahada da korunmaktadır. Tüm süreç adımları masaüstü deneyimiyle birebir uyumlu çalışmakta; mobil ekran küçülse de süreç disiplini korunmaktadır. Geleneksel ITSM araçlarının mobil uygulamaları genellikle yalnızca okuma odaklı, sınırlı yetkinlikte ve süreç akışından kopuk bir deneyim sunmaktadır. ServiceCore Mobile Service Management modülü; saha teknisyenlerinin, operasyon yöneticilerinin ve hizmet sağlayıcıların ofis ile aynı yetkinlikle çalışabileceği, ITIL4 süreçlerinin tamamının mobil disiplinde sürdürülebildiği, BT yönetiminde yeni bir dönem başlatan bir mobil ITSM deneyimi sunmaktadır. Saha servis operasyonlarında işin yapıldığı yerde imza alma, fotoğraf ekleme, barkod/QR ile varlık tanıma, GPS lokasyonu kaydetme gibi field-specific yetkinlikler de aynı mobil uygulamada toplandığı için saha ekipleri ayrı bir FSM aracına geçmek zorunda kalmamakta; FSM ile ITSM süreçleri tek mobil deneyim altında birleşmektedir."
+      ],
+      "bullets": [],
+      "accent": "purple",
+      "icon": "Smartphone",
+      "title_tr": "Mobil Servis Yönetimi (FSM)",
+      "tagline": "IT hizmet yönetimi her yerden, cebinizde."
+    },
+    {
+      "id": "workflow-management",
+      "title": "Workflow Management",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ITIL4'ün Service Value Chain yaklaşımı, kurumdaki tüm iş akışlarının modüler, görselleştirilebilir, yeniden kullanılabilir ve sürekli iyileştirilebilir bir yapıda işletilmesini gerektirir. ServiceCore Workflow Management modülü; istek, değişiklik, problem ve sürekli iyileştirme süreçlerinde merkezi, modüler ve no-code bir workflow yönetimi sunan kapsamlı bir otomasyon katmanıdır. Tetikleme, koşul, onay, paralel süreç, aksiyon, entegrasyon, bildirim ve raporlama yetenekleri sayesinde kurumlar iş süreçlerini standartlaştırmakta, otomasyonu artırmakta ve tüm operasyonları uçtan uca izlenebilir hale getirmektedir. Kullanıcılar kod yazmadan uçtan uca iş akışları tasarlayabilmekte; sürükle-bırak no-code mimari teknik bağımlılığı azaltmakta, süreçlerin daha hızlı devreye alınmasını sağlamaktadır. Tüm süreçler merkezi bir workflow altyapısı üzerinden yönetilmekte; İstek, Değişiklik ve Sürekli İyileştirme modülleri aynı yapıda işletilmektedir. Süreçler otomasyon motoru tarafından otomatik veya kullanıcı kontrollü manuel butonlarla başlatılabilmekte; tetikleyiciler kayıt oluşturma, kayıt güncelleme, durum değişimi ve teknisyen ataması gibi olaylara bağlanmaktadır. Gelişmiş Query Condition motoru ile çok katmanlı koşullar oluşturulabilmekte; kayıtların hangi akışa gireceği tanımlı filtre ve iş kurallarına göre dinamik olarak belirlenmektedir. AND/OR operatörleri ile kompleks karar ağaçları tasarlanabilmekte; kategori, öncelik, kullanıcı, grup, departman, rol ve custom field değerlerine göre esnek koşullar tanımlanmaktadır. Standart filtrelerin yetmediği yerde JavaScript veya C# benzeri script yapılarıyla özel koşullar yazılmakta; True, False ve Fail ayrımları sayesinde koşul sonuçları detaylı yönetilmekte, hata durumunda alternatif aksiyonlarla süreç kesilmeden devam etmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Workflow Management modülünde tekli, çoklu ve çok kanallı onay deneyimi tam ITIL4 disiplinine uygun biçimde tasarlanmıştır. Workflow içinde tekli veya çoklu onay mekanizmaları kurulmakta; onaycılar rol, departman, grup, kullanıcı veya koşul sonucuna göre dinamik atanmakta; üst yönetici onayı gereken durumlarda manager approval otomatik devreye girmektedir. Onay veya red kararından sonra farklı aksiyonlar tetiklenebilmekte: kayıt durumu güncellenmekte, bildirim gönderilmekte, atama yapılmakta veya süreç farklı bir kola yönlendirilmektedir. Kullanıcılar portal, e-posta veya reply mekanizması üzerinden onay/red verebilmekte; onay açıklaması zorunlu hale getirilebilmekte, tüm onay geçmişi timeline üzerinden takip edilebilmektedir. İş akışları seri olarak adım adım ilerletilebilmekte veya paralel onay/iş akışlarıyla birden fazla ekip aynı anda devreye alınabilmektedir. Fork ile akış kollara ayrılmakta, join ile birleştirilmekte; Wait All ve Wait Any seçenekleriyle paralel adımların nasıl tamamlanacağı belirlenmektedir. Switch-case yapısı ile çoklu senaryolar yönetilmekte; match-first, match-any ve dinamik branching ile kayıtlar farklı yollara yönlendirilmektedir. Workflow içinde kayıt durumu otomatik güncellenmekte, ticket kapatılmakta, alanlar değiştirilmekte; teknisyen veya grup atamaları otomatik yapılmakta, round-robin ve load balancing desteği ile işler ekipler arasında dengeli dağıtılmaktadır. Not, yorum, e-posta veya dosya yükleme/silme aksiyonları workflow başlatabilmekte; iş günlüğü üzerindeki değişiklikler de otomasyon tetiklemektedir. Custom HTTP request, Run Workflow, Run JS ve Run Integration aksiyonları ile dış sistemler ve alt akışlar devreye alınmakta; workflow'lar arası veri taşıma ve parametre geçirme desteklenmektedir. Email, SMS, web ve Teams bildirimleriyle kullanıcılar süreç aşamalarından haberdar edilmekte; her adım loglanmakta, audit trail oluşturulmakta, performans ölçümlenmekte ve süreçler tek panelden izlenmektedir. TicketAutoAssignAction sayesinde her yeni kayıt listedeki bir sonraki teknisyene yönlendirilmekte; müşteri destek merkezlerinde yoğun talep akışı round-robin ile adil ve sorunsuz dağıtılmaktadır."
+        }
+      ],
+      "paragraphs": [
+        "ITIL4'ün Service Value Chain yaklaşımı, kurumdaki tüm iş akışlarının modüler, görselleştirilebilir, yeniden kullanılabilir ve sürekli iyileştirilebilir bir yapıda işletilmesini gerektirir. ServiceCore Workflow Management modülü; istek, değişiklik, problem ve sürekli iyileştirme süreçlerinde merkezi, modüler ve no-code bir workflow yönetimi sunan kapsamlı bir otomasyon katmanıdır. Tetikleme, koşul, onay, paralel süreç, aksiyon, entegrasyon, bildirim ve raporlama yetenekleri sayesinde kurumlar iş süreçlerini standartlaştırmakta, otomasyonu artırmakta ve tüm operasyonları uçtan uca izlenebilir hale getirmektedir. Kullanıcılar kod yazmadan uçtan uca iş akışları tasarlayabilmekte; sürükle-bırak no-code mimari teknik bağımlılığı azaltmakta, süreçlerin daha hızlı devreye alınmasını sağlamaktadır. Tüm süreçler merkezi bir workflow altyapısı üzerinden yönetilmekte; İstek, Değişiklik ve Sürekli İyileştirme modülleri aynı yapıda işletilmektedir. Süreçler otomasyon motoru tarafından otomatik veya kullanıcı kontrollü manuel butonlarla başlatılabilmekte; tetikleyiciler kayıt oluşturma, kayıt güncelleme, durum değişimi ve teknisyen ataması gibi olaylara bağlanmaktadır. Gelişmiş Query Condition motoru ile çok katmanlı koşullar oluşturulabilmekte; kayıtların hangi akışa gireceği tanımlı filtre ve iş kurallarına göre dinamik olarak belirlenmektedir. AND/OR operatörleri ile kompleks karar ağaçları tasarlanabilmekte; kategori, öncelik, kullanıcı, grup, departman, rol ve custom field değerlerine göre esnek koşullar tanımlanmaktadır. Standart filtrelerin yetmediği yerde JavaScript veya C# benzeri script yapılarıyla özel koşullar yazılmakta; True, False ve Fail ayrımları sayesinde koşul sonuçları detaylı yönetilmekte, hata durumunda alternatif aksiyonlarla süreç kesilmeden devam etmektedir.",
+        "ServiceCore Workflow Management modülünde tekli, çoklu ve çok kanallı onay deneyimi tam ITIL4 disiplinine uygun biçimde tasarlanmıştır. Workflow içinde tekli veya çoklu onay mekanizmaları kurulmakta; onaycılar rol, departman, grup, kullanıcı veya koşul sonucuna göre dinamik atanmakta; üst yönetici onayı gereken durumlarda manager approval otomatik devreye girmektedir. Onay veya red kararından sonra farklı aksiyonlar tetiklenebilmekte: kayıt durumu güncellenmekte, bildirim gönderilmekte, atama yapılmakta veya süreç farklı bir kola yönlendirilmektedir. Kullanıcılar portal, e-posta veya reply mekanizması üzerinden onay/red verebilmekte; onay açıklaması zorunlu hale getirilebilmekte, tüm onay geçmişi timeline üzerinden takip edilebilmektedir. İş akışları seri olarak adım adım ilerletilebilmekte veya paralel onay/iş akışlarıyla birden fazla ekip aynı anda devreye alınabilmektedir. Fork ile akış kollara ayrılmakta, join ile birleştirilmekte; Wait All ve Wait Any seçenekleriyle paralel adımların nasıl tamamlanacağı belirlenmektedir. Switch-case yapısı ile çoklu senaryolar yönetilmekte; match-first, match-any ve dinamik branching ile kayıtlar farklı yollara yönlendirilmektedir. Workflow içinde kayıt durumu otomatik güncellenmekte, ticket kapatılmakta, alanlar değiştirilmekte; teknisyen veya grup atamaları otomatik yapılmakta, round-robin ve load balancing desteği ile işler ekipler arasında dengeli dağıtılmaktadır. Not, yorum, e-posta veya dosya yükleme/silme aksiyonları workflow başlatabilmekte; iş günlüğü üzerindeki değişiklikler de otomasyon tetiklemektedir. Custom HTTP request, Run Workflow, Run JS ve Run Integration aksiyonları ile dış sistemler ve alt akışlar devreye alınmakta; workflow'lar arası veri taşıma ve parametre geçirme desteklenmektedir. Email, SMS, web ve Teams bildirimleriyle kullanıcılar süreç aşamalarından haberdar edilmekte; her adım loglanmakta, audit trail oluşturulmakta, performans ölçümlenmekte ve süreçler tek panelden izlenmektedir. TicketAutoAssignAction sayesinde her yeni kayıt listedeki bir sonraki teknisyene yönlendirilmekte; müşteri destek merkezlerinde yoğun talep akışı round-robin ile adil ve sorunsuz dağıtılmaktadır."
+      ],
+      "bullets": [],
+      "accent": "cyan",
+      "icon": "GitBranch",
+      "title_tr": "İş Akışı Yönetimi",
+      "tagline": "No-code workflow ile modüller arası uçtan uca otomasyon."
+    },
+    {
+      "id": "integration-management",
+      "title": "Integration Management",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Kurumsal yazılım ekosisteminin temel disiplinlerinden biri, farklı sistemlerin birbirlerinin verisine güvenli, standart ve denetlenebilir biçimde erişebilmesidir. ServiceCore Integration Management modülü; CRM, ERP ve üçüncü taraf yazılımlarla sorunsuz veri transferi, gerçek zamanlı senkronizasyon ve kapsamlı yetkilendirme sağlayan REST API protokolü üzerine kurulmuştur. ServiceCore entegrasyonları REST API protokolü üzerine inşa edilmiş; GET, POST, PUT, DELETE metodlarıyla tüm kaynaklara erişim sağlanmakta, JSON tabanlı veri formatı ve standart HTTP yanıt kodları sayesinde herhangi bir programlama dili ve ortamdan çağrı yapılabilmektedir. Farklı platformlar ve sistemler arasında hızlı ve güvenli veri transferi sağlanmakta; manuel kopyalama, dışa aktarma ve içe aktarma adımları ortadan kalkmaktadır. Verilerin anlık aktarılması sayesinde iş süreçleri akıcılaşmakta; CRM, ERP ve üçüncü taraf yazılımlardaki değişim ServiceCore'da gecikmesiz yansımakta ve tersi de aynı şekilde işlemektedir. Gerçek zamanlı güncellemeler tüm sistemler arasında verilerin senkronize kalmasını sağlamakta; tek doğruluk kaynağı (single source of truth) korunmakta, veri ambarı silosu yerine akan bir entegrasyon ekosistemi kurulmaktadır. ServiceCore API'leri yazılım geliştiricilere sistemler arasında esnek bir veri alışverişi imkanı sunmakta; işletmenin ihtiyaçlarına uygun özelleştirilmiş çözümler hızla geliştirilebilmektedir. Standart bir REST mimarisi tüm dillerden çağrılabilmekte; entegrasyon proje ekiplerinin önündeki büyük yük hafiflemektedir. Ölçeklenebilir altyapı sayesinde küçük entegrasyonlardan büyük kurumsal veri akışlarına kadar aynı API üzerinden iş yapılmaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Integration Management modülü güvenli erişim için gelişmiş yetkilendirme mekanizmaları sunmaktadır. Token tabanlı doğrulama, rol bazlı yetki ve kapsam (scope) tanımları ile her uygulama yalnızca ihtiyaç duyduğu kaynaklara ulaşmakta; audit izi ile her erişim geriye dönük denetlenebilmektedir. API entegrasyonları sayesinde veri doğruluğu artmakta ve en güncel bilgilere hızla ulaşılmaktadır; karar süreci güncel veriyle beslenmekte, manuel veri girişi kaynaklı hatalar elenmektedir. CRM ve satış entegrasyonu kapsamında satış ekibinin kullandığı CRM uygulamaları ile ServiceCore arasında veri alışverişi yapılmakta; müşteri bilgileri her iki tarafta da güncel kalmakta, satış süreci daha verimli hale gelmektedir. ERP ve finans sistemleri entegrasyonu ile finansal ve muhasebe işlemlerinde kullanılan ERP sistemleri ile bağlantı kurulmakta; mutabakat ve raporlama süresi kısalmakta, finansal verilerin etkili yönetimi sağlanmaktadır. Operasyonel izleme ve raporlama entegrasyonu kapsamında ServiceCore'daki olay, talep, değişiklik ve performans verisi BI panellerine, alarm sistemlerine ve veri ambarlarına aktarılmakta; veri silosu yerine tek bir analiz katmanı kurulmaktadır. Geleneksel servis yönetimi yazılımlarında entegrasyon yetenekleri ya tedarikçi tarafından özel paketler halinde satılmakta ya da yalnızca belirli sistemler için hazır gelen sınırlı bağlayıcılarla işletilmektedir. ServiceCore Integration Management modülü; standart, açık, dokümante edilmiş ve sürüm yönetimine sahip bir REST API katmanıyla her iş ortağının kendi sistemini ServiceCore'a güvenle bağlayabildiği bir entegrasyon ekosistemi sunmakta; müşteri deneyimini iyileştirmekte, iş süreçlerini hızlandırmakta, gelişmiş veri yönetimiyle veri bütünlüğünü garanti altına almaktadır."
+        }
+      ],
+      "paragraphs": [
+        "Kurumsal yazılım ekosisteminin temel disiplinlerinden biri, farklı sistemlerin birbirlerinin verisine güvenli, standart ve denetlenebilir biçimde erişebilmesidir. ServiceCore Integration Management modülü; CRM, ERP ve üçüncü taraf yazılımlarla sorunsuz veri transferi, gerçek zamanlı senkronizasyon ve kapsamlı yetkilendirme sağlayan REST API protokolü üzerine kurulmuştur. ServiceCore entegrasyonları REST API protokolü üzerine inşa edilmiş; GET, POST, PUT, DELETE metodlarıyla tüm kaynaklara erişim sağlanmakta, JSON tabanlı veri formatı ve standart HTTP yanıt kodları sayesinde herhangi bir programlama dili ve ortamdan çağrı yapılabilmektedir. Farklı platformlar ve sistemler arasında hızlı ve güvenli veri transferi sağlanmakta; manuel kopyalama, dışa aktarma ve içe aktarma adımları ortadan kalkmaktadır. Verilerin anlık aktarılması sayesinde iş süreçleri akıcılaşmakta; CRM, ERP ve üçüncü taraf yazılımlardaki değişim ServiceCore'da gecikmesiz yansımakta ve tersi de aynı şekilde işlemektedir. Gerçek zamanlı güncellemeler tüm sistemler arasında verilerin senkronize kalmasını sağlamakta; tek doğruluk kaynağı (single source of truth) korunmakta, veri ambarı silosu yerine akan bir entegrasyon ekosistemi kurulmaktadır. ServiceCore API'leri yazılım geliştiricilere sistemler arasında esnek bir veri alışverişi imkanı sunmakta; işletmenin ihtiyaçlarına uygun özelleştirilmiş çözümler hızla geliştirilebilmektedir. Standart bir REST mimarisi tüm dillerden çağrılabilmekte; entegrasyon proje ekiplerinin önündeki büyük yük hafiflemektedir. Ölçeklenebilir altyapı sayesinde küçük entegrasyonlardan büyük kurumsal veri akışlarına kadar aynı API üzerinden iş yapılmaktadır.",
+        "ServiceCore Integration Management modülü güvenli erişim için gelişmiş yetkilendirme mekanizmaları sunmaktadır. Token tabanlı doğrulama, rol bazlı yetki ve kapsam (scope) tanımları ile her uygulama yalnızca ihtiyaç duyduğu kaynaklara ulaşmakta; audit izi ile her erişim geriye dönük denetlenebilmektedir. API entegrasyonları sayesinde veri doğruluğu artmakta ve en güncel bilgilere hızla ulaşılmaktadır; karar süreci güncel veriyle beslenmekte, manuel veri girişi kaynaklı hatalar elenmektedir. CRM ve satış entegrasyonu kapsamında satış ekibinin kullandığı CRM uygulamaları ile ServiceCore arasında veri alışverişi yapılmakta; müşteri bilgileri her iki tarafta da güncel kalmakta, satış süreci daha verimli hale gelmektedir. ERP ve finans sistemleri entegrasyonu ile finansal ve muhasebe işlemlerinde kullanılan ERP sistemleri ile bağlantı kurulmakta; mutabakat ve raporlama süresi kısalmakta, finansal verilerin etkili yönetimi sağlanmaktadır. Operasyonel izleme ve raporlama entegrasyonu kapsamında ServiceCore'daki olay, talep, değişiklik ve performans verisi BI panellerine, alarm sistemlerine ve veri ambarlarına aktarılmakta; veri silosu yerine tek bir analiz katmanı kurulmaktadır. Geleneksel servis yönetimi yazılımlarında entegrasyon yetenekleri ya tedarikçi tarafından özel paketler halinde satılmakta ya da yalnızca belirli sistemler için hazır gelen sınırlı bağlayıcılarla işletilmektedir. ServiceCore Integration Management modülü; standart, açık, dokümante edilmiş ve sürüm yönetimine sahip bir REST API katmanıyla her iş ortağının kendi sistemini ServiceCore'a güvenle bağlayabildiği bir entegrasyon ekosistemi sunmakta; müşteri deneyimini iyileştirmekte, iş süreçlerini hızlandırmakta, gelişmiş veri yönetimiyle veri bütünlüğünü garanti altına almaktadır."
+      ],
+      "bullets": [],
+      "accent": "orange",
+      "icon": "Link2",
+      "title_tr": "Entegrasyon Yönetimi",
+      "tagline": "REST API ile tüm sistemleri tek ekosisteme bağlayın."
+    },
+    {
+      "id": "integration-system",
+      "title": "Integration System",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Saf REST API entegrasyon altyapısı, kod yazabilen ekipler için güçlü bir araç olsa da kurumsal entegrasyon yaşam döngüsünü uçtan uca yönetebilmek için connector katalogu, görsel akış tasarımı, alan eşleme stüdyosu, secret kasası, versiyonlama ve canlı çalıştırma izleme katmanlarının da aynı modülde bir araya gelmesi gerekir. ServiceCore Integration System modülü; başlangıçta hazır connector kataloğu, sonrasında görsel akış tasarımı, son olarak da denetim ve gözlemle çalıştırma katmanını tek modülde toplayan kapsamlı bir entegrasyon iş istasyonudur. ITSM süreçleri; ERP, CRM, izleme, kimlik ve sohbet platformlarıyla kod yazmadan birbirine bağlanmakta; her çalıştırma denetlenebilir kayıt bırakmaktadır. Yeni bir entegrasyona ERP, CRM, izleme, sohbet veya kimlik connector'larını seçerek başlanmakta; her connector için kimlik doğrulama şablonları, varsayılan eylemler ve veri şemaları hazır gelmekte; dakikalar içinde ilk akış ayağa kalkmaktadır. Hazır connector kataloğunda SAP, Oracle EBS, Salesforce, Dynamics 365, Jira, Slack, Microsoft Teams, Azure AD, ServiceCore yerel modüller ve genel HTTP/REST connector'ları yer almaktadır. Connector kurulumunda kimlik doğrulama (API key, OAuth 2.0, basic auth, mTLS) yapılandırılmakta; secret'lar şifreli kasada saklanmaktadır. Her connector için örnek tetikleyiciler ve eylemler hazır şablonla gelmekte; ilk akışa boş canvas yerine örnek desenle başlanmaktadır. Görsel canvas üzerinde tetikleyici, dönüşüm ve hedef adımları sürükle-bırak ile bağlanmakta; alan eşleme paneli kaynak ve hedef şemalarını yan yana açmakta; ifadelerle dönüşüm, koşullu dallanma ve hata akışı tek ekranda kurulmaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Integration System modülünde tetikleyici tipleri zamanlı (cron), olay (record created/updated), webhook ve manuel olmak üzere tek akışta birleştirilebilmekte; her akış birden fazla tetikleyiciyle çalışabilmektedir. Alan eşleme; kaynak şema → hedef şema arasında bire bir, ifadeli (concat, format, lookup) veya koşullu eşleme desteklemekte; örnek yük üzerinde anlık önizleme vermektedir. Koşullu dallanma, hata yakalama, paralel dallar ve toplu (batch) işleme blokları gerçek dünya akışlarını canvas'ta okunabilir biçimde modellemektedir. Yayına alınan akışlar canlı izleme panelinden takip edilmekte; her çalıştırma adımı, yük ve süresi kayıt altında tutulmakta; başarısız adımlar otomatik yeniden denemeye girmekte veya manuel onarımla yeniden tetiklenebilmektedir. Canlı çalıştırma paneli başarılı, başarısız ve yeniden deneyen akışları zaman çizelgesinde göstermekte; tıklayınca adım adım yük ve hata mesajları açılmaktadır. Otomatik yeniden deneme politikaları (sabit, üstel, çevrim dışı kuyruk) connector veya akış bazında tanımlanmakta; çözülemeyenler ölü mektup kuyruğuna (dead letter queue) düşmektedir. Her çalıştırma için değişmez denetim izi tutulmakta; kim ne zaman hangi akışı yayınladı, hangi sürüm çalıştırıldı, hangi veri taşındı sorularına dış denetim için tek tıkla yanıt alınabilmektedir. API anahtarları, OAuth token'ları ve sertifikalar şifreli kasada saklanmakta; akış tasarımında secret referansı yapılmakta, gerçek değer asla canvas'ta veya logda görünmemektedir. Her yayın bir sürüm üretmekte; sürümler arası fark görünür biçimde karşılaştırılmakta; sorunlu yayın saniyeler içinde önceki kararlı sürüme geri alınabilmektedir. Geleneksel entegrasyon araçlarında kod yazan ekip, görsel tasarım yapan ekip ve operasyonu işleten ekip farklı sistemlerde çalışmaktadır. ServiceCore Integration System; connector katalogundan canlı çalıştırmaya kadar tüm entegrasyon yaşam döngüsünü tek modülde işleten; kurumsal sistemlerle ServiceCore'u denetlenebilir biçimde konuşturan kapsamlı bir entegrasyon motoru sunmaktadır."
+        }
+      ],
+      "paragraphs": [
+        "Saf REST API entegrasyon altyapısı, kod yazabilen ekipler için güçlü bir araç olsa da kurumsal entegrasyon yaşam döngüsünü uçtan uca yönetebilmek için connector katalogu, görsel akış tasarımı, alan eşleme stüdyosu, secret kasası, versiyonlama ve canlı çalıştırma izleme katmanlarının da aynı modülde bir araya gelmesi gerekir. ServiceCore Integration System modülü; başlangıçta hazır connector kataloğu, sonrasında görsel akış tasarımı, son olarak da denetim ve gözlemle çalıştırma katmanını tek modülde toplayan kapsamlı bir entegrasyon iş istasyonudur. ITSM süreçleri; ERP, CRM, izleme, kimlik ve sohbet platformlarıyla kod yazmadan birbirine bağlanmakta; her çalıştırma denetlenebilir kayıt bırakmaktadır. Yeni bir entegrasyona ERP, CRM, izleme, sohbet veya kimlik connector'larını seçerek başlanmakta; her connector için kimlik doğrulama şablonları, varsayılan eylemler ve veri şemaları hazır gelmekte; dakikalar içinde ilk akış ayağa kalkmaktadır. Hazır connector kataloğunda SAP, Oracle EBS, Salesforce, Dynamics 365, Jira, Slack, Microsoft Teams, Azure AD, ServiceCore yerel modüller ve genel HTTP/REST connector'ları yer almaktadır. Connector kurulumunda kimlik doğrulama (API key, OAuth 2.0, basic auth, mTLS) yapılandırılmakta; secret'lar şifreli kasada saklanmaktadır. Her connector için örnek tetikleyiciler ve eylemler hazır şablonla gelmekte; ilk akışa boş canvas yerine örnek desenle başlanmaktadır. Görsel canvas üzerinde tetikleyici, dönüşüm ve hedef adımları sürükle-bırak ile bağlanmakta; alan eşleme paneli kaynak ve hedef şemalarını yan yana açmakta; ifadelerle dönüşüm, koşullu dallanma ve hata akışı tek ekranda kurulmaktadır.",
+        "ServiceCore Integration System modülünde tetikleyici tipleri zamanlı (cron), olay (record created/updated), webhook ve manuel olmak üzere tek akışta birleştirilebilmekte; her akış birden fazla tetikleyiciyle çalışabilmektedir. Alan eşleme; kaynak şema → hedef şema arasında bire bir, ifadeli (concat, format, lookup) veya koşullu eşleme desteklemekte; örnek yük üzerinde anlık önizleme vermektedir. Koşullu dallanma, hata yakalama, paralel dallar ve toplu (batch) işleme blokları gerçek dünya akışlarını canvas'ta okunabilir biçimde modellemektedir. Yayına alınan akışlar canlı izleme panelinden takip edilmekte; her çalıştırma adımı, yük ve süresi kayıt altında tutulmakta; başarısız adımlar otomatik yeniden denemeye girmekte veya manuel onarımla yeniden tetiklenebilmektedir. Canlı çalıştırma paneli başarılı, başarısız ve yeniden deneyen akışları zaman çizelgesinde göstermekte; tıklayınca adım adım yük ve hata mesajları açılmaktadır. Otomatik yeniden deneme politikaları (sabit, üstel, çevrim dışı kuyruk) connector veya akış bazında tanımlanmakta; çözülemeyenler ölü mektup kuyruğuna (dead letter queue) düşmektedir. Her çalıştırma için değişmez denetim izi tutulmakta; kim ne zaman hangi akışı yayınladı, hangi sürüm çalıştırıldı, hangi veri taşındı sorularına dış denetim için tek tıkla yanıt alınabilmektedir. API anahtarları, OAuth token'ları ve sertifikalar şifreli kasada saklanmakta; akış tasarımında secret referansı yapılmakta, gerçek değer asla canvas'ta veya logda görünmemektedir. Her yayın bir sürüm üretmekte; sürümler arası fark görünür biçimde karşılaştırılmakta; sorunlu yayın saniyeler içinde önceki kararlı sürüme geri alınabilmektedir. Geleneksel entegrasyon araçlarında kod yazan ekip, görsel tasarım yapan ekip ve operasyonu işleten ekip farklı sistemlerde çalışmaktadır. ServiceCore Integration System; connector katalogundan canlı çalıştırmaya kadar tüm entegrasyon yaşam döngüsünü tek modülde işleten; kurumsal sistemlerle ServiceCore'u denetlenebilir biçimde konuşturan kapsamlı bir entegrasyon motoru sunmaktadır."
+      ],
+      "bullets": [],
+      "accent": "orange",
+      "icon": "Plug",
+      "title_tr": "Integration System",
+      "tagline": "Connector katalogundan canlı çalıştırmaya, uçtan uca entegrasyon motoru."
+    },
+    {
+      "id": "low-code-development",
+      "title": "Low Code Development",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Modern bir servis yönetimi platformunun kuruma uyarlanabilirliği, yalnızca yapılandırma menüleriyle değil; kuruma özgü formların, alanların ve iş süreçlerinin teknik ekipten bağımsız biçimde tasarlanabilmesiyle ölçülür. ServiceCore Low Code Development modülü; kullanıcı dostu bir arayüz ve sürükle-bırak özellikleriyle dinamik form tasarımı yapmaya olanak tanıyan kapsamlı bir low-code geliştirme ortamıdır. Formlar iş süreçlerine göre tamamen özelleştirilmekte, gerçek zamanlı uyarlanmakta ve farklı sistemlerle kolayca entegre edilmektedir. Teknik uzmanlığa ihtiyaç duymadan iş süreçleri dijitalleştirilmekte; uygulama süresi minimuma inmekte, yazılım geliştirme maliyeti düşmektedir. Sürükle-bırak özellikleriyle dinamik form tasarımı yapılmakta; metin, sayı, seçim, tarih, dosya ve özel alanlar sahaya bırakılmaktadır. Teknik bilgiye gerek duymadan form alanları kolayca oluşturulmakta ve düzenlenmekte; iş analisti, süreç sahibi ve admin doğrudan üretici olmaktadır. Doğrulama kuralları, zorunlu alan tanımları ve koşullu görünürlük basit ekranlardan yönetilmektedir. Formlar iş ihtiyaçlarına göre anında uyarlanmakta; iş kuralındaki değişim formda da gecikmesiz yansımakta; yayınlanan bir form üzerindeki güncelleme yayın saniyesinde tüm yeni kayıtlarda etkin olmakta, mevcut kayıtlar tutarlı kalmaktadır. Form değişikliği için yazılım sürümü beklemeye gerek kalmamakta; pilot uygulamadan tam yayına hızlı geçilmektedir. Dinamik formlar farklı sistemler ve platformlarla kolayca entegre edilmekte; toplanan veri ServiceCore içinde değerlendirilebileceği gibi REST API üzerinden CRM, ERP ve BI gibi araçlara da aktarılabilmektedir."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Low Code Development modülünün form düzenleme stüdyosu üç ana bölümden oluşmaktadır: sol panelde sürükle-bırak bileşen kütüphanesi (metin kutusu, seçim listesi, tarih alanı, sayı, dosya, onay kutusu, açılır liste ve özel bileşenler), ortada görsel form alanı (alanların konumlandırıldığı, grupların oluşturulduğu, kullanıcı deneyiminin optimize edildiği canvas) ve sağda seçilen alanın detaylı ayarları (boyut, renk, doğrulama, görünürlük, varsayılan değer, koşullu mantık). Alan Özellikleri tabında isim, başlık, açıklama, varsayılan değer, zorunluluk ve doğrulama kuralları yapılandırılmakta; Reactions (bağlantılar) tabında alanlar arasında koşullu ilişkiler, dinamik form mantığı, tetikleyici tabanlı görünürlük ve karşılıklı bağımlılık zinciri tanımlanmaktadır. Dekorasyon tabında tooltip, ikon, etiket genişliği, arka plan rengi, gölge ve yazı tipi gibi görsel özelleştirmeler yapılırken Stil Ayarları tabında genişlik, yükseklik, margin, padding, border, opacity ve responsive davranış tanımlanmaktadır. Her departman kendi süreçlerine uygun formları hızla oluşturabilmektedir: İK için işe alım başvuru, yıllık izin talebi, performans değerlendirme ve istifa süreci formları; finans için harcama onayı, bütçe talebi, fatura işleme ve avans talebi formları; BT için olay bildirim, değişiklik talebi, erişim talebi ve donanım talebi formları; operasyon için envanter sayım, bakım planı, saha denetim raporu ve stok hareket formları üretilmektedir. Koşullu görünürlük ve mantık sayesinde alanlar koşula göre gösterilmekte veya gizlenmekte; bir seçim diğer alanları tetiklemekte, karmaşık formlar kullanıcının yalnızca ilgili kısmını görmesi için sadeleşmektedir. Form değişiklikleri taslak halinde tutulmakta, hazır olduğunda yayınlanmakta; eski sürümle açılmış kayıtlar bozulmamakta, yeni sürüm tüm yeni kayıtlarda kullanılmaktadır. Geleneksel ITSM araçlarında her form değişikliği bir yazılım talebi açmayı ve teknik ekibin sıraya girmesini gerektirmektedir. ServiceCore Low Code Development modülü; iş ihtiyaçlarının yazılım kuyruğuna düşmeden departman içinde dijitalleştirildiği, hızlı dijitalleşme, esneklik, kullanıcı dostu yapı, mevcut sistemlerle entegrasyon ve maliyet avantajı temel faydalarını sağlayan modern bir geliştirme ortamı sunmaktadır."
+        }
+      ],
+      "paragraphs": [
+        "Modern bir servis yönetimi platformunun kuruma uyarlanabilirliği, yalnızca yapılandırma menüleriyle değil; kuruma özgü formların, alanların ve iş süreçlerinin teknik ekipten bağımsız biçimde tasarlanabilmesiyle ölçülür. ServiceCore Low Code Development modülü; kullanıcı dostu bir arayüz ve sürükle-bırak özellikleriyle dinamik form tasarımı yapmaya olanak tanıyan kapsamlı bir low-code geliştirme ortamıdır. Formlar iş süreçlerine göre tamamen özelleştirilmekte, gerçek zamanlı uyarlanmakta ve farklı sistemlerle kolayca entegre edilmektedir. Teknik uzmanlığa ihtiyaç duymadan iş süreçleri dijitalleştirilmekte; uygulama süresi minimuma inmekte, yazılım geliştirme maliyeti düşmektedir. Sürükle-bırak özellikleriyle dinamik form tasarımı yapılmakta; metin, sayı, seçim, tarih, dosya ve özel alanlar sahaya bırakılmaktadır. Teknik bilgiye gerek duymadan form alanları kolayca oluşturulmakta ve düzenlenmekte; iş analisti, süreç sahibi ve admin doğrudan üretici olmaktadır. Doğrulama kuralları, zorunlu alan tanımları ve koşullu görünürlük basit ekranlardan yönetilmektedir. Formlar iş ihtiyaçlarına göre anında uyarlanmakta; iş kuralındaki değişim formda da gecikmesiz yansımakta; yayınlanan bir form üzerindeki güncelleme yayın saniyesinde tüm yeni kayıtlarda etkin olmakta, mevcut kayıtlar tutarlı kalmaktadır. Form değişikliği için yazılım sürümü beklemeye gerek kalmamakta; pilot uygulamadan tam yayına hızlı geçilmektedir. Dinamik formlar farklı sistemler ve platformlarla kolayca entegre edilmekte; toplanan veri ServiceCore içinde değerlendirilebileceği gibi REST API üzerinden CRM, ERP ve BI gibi araçlara da aktarılabilmektedir.",
+        "ServiceCore Low Code Development modülünün form düzenleme stüdyosu üç ana bölümden oluşmaktadır: sol panelde sürükle-bırak bileşen kütüphanesi (metin kutusu, seçim listesi, tarih alanı, sayı, dosya, onay kutusu, açılır liste ve özel bileşenler), ortada görsel form alanı (alanların konumlandırıldığı, grupların oluşturulduğu, kullanıcı deneyiminin optimize edildiği canvas) ve sağda seçilen alanın detaylı ayarları (boyut, renk, doğrulama, görünürlük, varsayılan değer, koşullu mantık). Alan Özellikleri tabında isim, başlık, açıklama, varsayılan değer, zorunluluk ve doğrulama kuralları yapılandırılmakta; Reactions (bağlantılar) tabında alanlar arasında koşullu ilişkiler, dinamik form mantığı, tetikleyici tabanlı görünürlük ve karşılıklı bağımlılık zinciri tanımlanmaktadır. Dekorasyon tabında tooltip, ikon, etiket genişliği, arka plan rengi, gölge ve yazı tipi gibi görsel özelleştirmeler yapılırken Stil Ayarları tabında genişlik, yükseklik, margin, padding, border, opacity ve responsive davranış tanımlanmaktadır. Her departman kendi süreçlerine uygun formları hızla oluşturabilmektedir: İK için işe alım başvuru, yıllık izin talebi, performans değerlendirme ve istifa süreci formları; finans için harcama onayı, bütçe talebi, fatura işleme ve avans talebi formları; BT için olay bildirim, değişiklik talebi, erişim talebi ve donanım talebi formları; operasyon için envanter sayım, bakım planı, saha denetim raporu ve stok hareket formları üretilmektedir. Koşullu görünürlük ve mantık sayesinde alanlar koşula göre gösterilmekte veya gizlenmekte; bir seçim diğer alanları tetiklemekte, karmaşık formlar kullanıcının yalnızca ilgili kısmını görmesi için sadeleşmektedir. Form değişiklikleri taslak halinde tutulmakta, hazır olduğunda yayınlanmakta; eski sürümle açılmış kayıtlar bozulmamakta, yeni sürüm tüm yeni kayıtlarda kullanılmaktadır. Geleneksel ITSM araçlarında her form değişikliği bir yazılım talebi açmayı ve teknik ekibin sıraya girmesini gerektirmektedir. ServiceCore Low Code Development modülü; iş ihtiyaçlarının yazılım kuyruğuna düşmeden departman içinde dijitalleştirildiği, hızlı dijitalleşme, esneklik, kullanıcı dostu yapı, mevcut sistemlerle entegrasyon ve maliyet avantajı temel faydalarını sağlayan modern bir geliştirme ortamı sunmaktadır."
+      ],
+      "bullets": [],
+      "accent": "blue",
+      "icon": "Code",
+      "title_tr": "Low Code Geliştirme",
+      "tagline": "Sürükle-bırak dinamik formlar, kod yazmadan iş süreçleri."
+    },
+    {
+      "id": "contract-management",
+      "title": "Contract Management",
+      "pages": [],
+      "items": [
+        {
+          "kind": "para",
+          "number": null,
+          "text": "Global iş dünyasında düzenli ve şeffaf bir sözleşme yönetimi, başarılı bir operasyonun temel taşlarından biridir. ITIL4'ün Supplier Management ve Service Level Management pratikleri kapsamında kurum içi destek (OLA), tedarikçi ve müşteri hizmet sözleşmelerinin tek bir doğruluk kaynağında izlenmesi; yenileme tarihlerinin, kapsam tanımlarının, sorumluluk sınırlarının ve Hizmet Seviyesi hedeflerinin operasyonel süreçlerle birinci sınıf entegre çalışması gerekir. ServiceCore Contract Management modülü; kurum içi destek (OLA), tedarikçi ve müşteri hizmet sözleşmelerinizi etkin bir şekilde yönetmenize olanak tanıyan kapsamlı bir sözleşme yönetim katmanıdır. Tek platformdan kolayca erişilebilir, düzenli ve sürdürülebilir bir yapı kurarken zamandan tasarruf edilmekte, süreçlerde tam kontrol sağlanmaktadır. Kurum İçi Destek Sözleşmeleri (OLA) kapsamında Bilgi Teknolojileri birimi ile diğer departmanlar arasındaki hizmet anlaşmaları kolayca oluşturulup takip edilmekte; iç süreçlerdeki servis koşulları düzenli tutularak verimlilik artırılmakta, BT ile iş birimleri arasında ortak bir taahhüt çerçevesi kurulmaktadır. OLA kapsamı, kapsam dışı durumlar ve sorumluluk sınırları aynı kayıt üzerinde şeffaf biçimde tanımlanmaktadır. Tedarikçi sözleşmeleri kapsamında malzeme, hizmet veya lisans gibi dış tedariklerle ilgili tüm anlaşmalar kaydedilmekte ve tedarikçiler sistematik biçimde yönetilmektedir. Yenileme tarihleri, fiyat değişiklikleri ve performans değerlendirmeleri tek panelden takip edilmekte; tedarikçi ekosistemi disiplinli yürütülmektedir. Müşteri hizmet sözleşmeleri (Hizmet Seviyesi) tarafında iç müşterilerden global müşterilere kadar her seviyede sunulan hizmet anlaşmaları detaylandırılmakta; profesyonel bir yönetim standardı kurulmaktadır."
+        },
+        {
+          "kind": "para",
+          "number": null,
+          "text": "ServiceCore Contract Management modülünde sözleşmeler 8 aşamalı bir yaşam döngüsü disiplini altında işletilmektedir. Yeni sözleşme oluşturma aşamasında model seçimi (kurum içi/tedarikçi/müşteri), temel bilgiler (ad, açıklama, başlangıç/bitiş), bildirim ayarları ve otomatik yenileme periyodu tanımlanmaktadır. Sözleşme detayları aşamasında durum yönetimi (aktif/pasif), dosya yükleme/görüntüleme, CNR numarasıyla tek tıkla erişim ve özellik/detay güncelleme yapılmaktadır. Onay süreci aşamasında sözleşmeler kurul veya yetkili kişilere onaya gönderilmekte; onay/red kararları süreç akışına otomatik yansımakta; onay zinciri tek panelde izlenebilmektedir. Varlık ve hizmet ilişkileri aşamasında sözleşmeye bağlı varlık girişleri ve hizmet tanımları yapılmakta; kapsam tek bakışta görünür hale gelmektedir. Finansal bilgiler aşamasında maliyet girişleri, bütçe ve harcama takibi, tedarikçi performans değerlendirmesi yapılmaktadır. İlişkili sözleşmeler aşamasında farklı sözleşmeler birbirine bağlanmakta; bütünsel görünürlük ve bağımlı/parent-child ilişki yönetimi sağlanmaktadır. Bildirimler aşamasında kurum içi kullanıcılara ve karşı taraf kullanıcılarına otomatik bildirimler gönderilmekte; yenileme/fesih ihbarı eskalasyonu yürütülmektedir. Geçmiş kayıtları aşamasında tüm işlemler geçmiş tabında izlenmekte; denetim için tam audit trail oluşturulmakta ve versiyon karşılaştırmalı yenileme desteklenmektedir. Sözleşme açıldığında ilgili olay, talep ve değişiklik kayıtlarında kapsam ve Hizmet Seviyesi anında görünür hale gelmekte; kapsam dışı talepler ayrı kanaldan yönetilmektedir. Yenileme, fesih ihbar süresi ve kritik milestone'lar otomatik bildirim üretmekte; önemli tarihlerin unutulması engellenmekte, sözleşme yönetimi proaktif yürümektedir. Aktif/pasif sözleşme sayıları, yaklaşan yenilemeler, tedarikçi performansı ve Hizmet Seviyesi uyumu tek panelden raporlanmakta; stratejik kararlar veriye dayandırılmaktadır. Geleneksel ITSM araçlarında sözleşme yönetimi ya ayrı bir modül olarak satılmakta ya da yalnızca CMDB içinde bir alan olarak tutulmaktadır. ServiceCore Contract Management modülü; OLA, tedarikçi ve müşteri Hizmet Seviyesi sözleşmelerini Olay, İstek, Değişiklik ve Servis Konfigürasyon modülleriyle native entegre çalışan tek bir disiplin altında toplayarak işinizi bir üst seviyeye taşımakta, sözleşmelerde tam kontrol sağlamaktadır."
+        }
+      ],
+      "paragraphs": [
+        "Global iş dünyasında düzenli ve şeffaf bir sözleşme yönetimi, başarılı bir operasyonun temel taşlarından biridir. ITIL4'ün Supplier Management ve Service Level Management pratikleri kapsamında kurum içi destek (OLA), tedarikçi ve müşteri hizmet sözleşmelerinin tek bir doğruluk kaynağında izlenmesi; yenileme tarihlerinin, kapsam tanımlarının, sorumluluk sınırlarının ve Hizmet Seviyesi hedeflerinin operasyonel süreçlerle birinci sınıf entegre çalışması gerekir. ServiceCore Contract Management modülü; kurum içi destek (OLA), tedarikçi ve müşteri hizmet sözleşmelerinizi etkin bir şekilde yönetmenize olanak tanıyan kapsamlı bir sözleşme yönetim katmanıdır. Tek platformdan kolayca erişilebilir, düzenli ve sürdürülebilir bir yapı kurarken zamandan tasarruf edilmekte, süreçlerde tam kontrol sağlanmaktadır. Kurum İçi Destek Sözleşmeleri (OLA) kapsamında Bilgi Teknolojileri birimi ile diğer departmanlar arasındaki hizmet anlaşmaları kolayca oluşturulup takip edilmekte; iç süreçlerdeki servis koşulları düzenli tutularak verimlilik artırılmakta, BT ile iş birimleri arasında ortak bir taahhüt çerçevesi kurulmaktadır. OLA kapsamı, kapsam dışı durumlar ve sorumluluk sınırları aynı kayıt üzerinde şeffaf biçimde tanımlanmaktadır. Tedarikçi sözleşmeleri kapsamında malzeme, hizmet veya lisans gibi dış tedariklerle ilgili tüm anlaşmalar kaydedilmekte ve tedarikçiler sistematik biçimde yönetilmektedir. Yenileme tarihleri, fiyat değişiklikleri ve performans değerlendirmeleri tek panelden takip edilmekte; tedarikçi ekosistemi disiplinli yürütülmektedir. Müşteri hizmet sözleşmeleri (Hizmet Seviyesi) tarafında iç müşterilerden global müşterilere kadar her seviyede sunulan hizmet anlaşmaları detaylandırılmakta; profesyonel bir yönetim standardı kurulmaktadır.",
+        "ServiceCore Contract Management modülünde sözleşmeler 8 aşamalı bir yaşam döngüsü disiplini altında işletilmektedir. Yeni sözleşme oluşturma aşamasında model seçimi (kurum içi/tedarikçi/müşteri), temel bilgiler (ad, açıklama, başlangıç/bitiş), bildirim ayarları ve otomatik yenileme periyodu tanımlanmaktadır. Sözleşme detayları aşamasında durum yönetimi (aktif/pasif), dosya yükleme/görüntüleme, CNR numarasıyla tek tıkla erişim ve özellik/detay güncelleme yapılmaktadır. Onay süreci aşamasında sözleşmeler kurul veya yetkili kişilere onaya gönderilmekte; onay/red kararları süreç akışına otomatik yansımakta; onay zinciri tek panelde izlenebilmektedir. Varlık ve hizmet ilişkileri aşamasında sözleşmeye bağlı varlık girişleri ve hizmet tanımları yapılmakta; kapsam tek bakışta görünür hale gelmektedir. Finansal bilgiler aşamasında maliyet girişleri, bütçe ve harcama takibi, tedarikçi performans değerlendirmesi yapılmaktadır. İlişkili sözleşmeler aşamasında farklı sözleşmeler birbirine bağlanmakta; bütünsel görünürlük ve bağımlı/parent-child ilişki yönetimi sağlanmaktadır. Bildirimler aşamasında kurum içi kullanıcılara ve karşı taraf kullanıcılarına otomatik bildirimler gönderilmekte; yenileme/fesih ihbarı eskalasyonu yürütülmektedir. Geçmiş kayıtları aşamasında tüm işlemler geçmiş tabında izlenmekte; denetim için tam audit trail oluşturulmakta ve versiyon karşılaştırmalı yenileme desteklenmektedir. Sözleşme açıldığında ilgili olay, talep ve değişiklik kayıtlarında kapsam ve Hizmet Seviyesi anında görünür hale gelmekte; kapsam dışı talepler ayrı kanaldan yönetilmektedir. Yenileme, fesih ihbar süresi ve kritik milestone'lar otomatik bildirim üretmekte; önemli tarihlerin unutulması engellenmekte, sözleşme yönetimi proaktif yürümektedir. Aktif/pasif sözleşme sayıları, yaklaşan yenilemeler, tedarikçi performansı ve Hizmet Seviyesi uyumu tek panelden raporlanmakta; stratejik kararlar veriye dayandırılmaktadır. Geleneksel ITSM araçlarında sözleşme yönetimi ya ayrı bir modül olarak satılmakta ya da yalnızca CMDB içinde bir alan olarak tutulmaktadır. ServiceCore Contract Management modülü; OLA, tedarikçi ve müşteri Hizmet Seviyesi sözleşmelerini Olay, İstek, Değişiklik ve Servis Konfigürasyon modülleriyle native entegre çalışan tek bir disiplin altında toplayarak işinizi bir üst seviyeye taşımakta, sözleşmelerde tam kontrol sağlamaktadır."
+      ],
+      "bullets": [],
+      "accent": "emerald",
+      "icon": "FileSignature",
+      "title_tr": "Sözleşme Yönetimi",
+      "tagline": "OLA, tedarikçi ve Hizmet Seviyesi sözleşmeleri tek platformda."
     }
   ],
   "cover": {
     "eyebrow": "DATASHEET",
     "title_main": "Kurumsal Servis Yönetimi",
     "title_accent": "Platformu",
-    "lede": "17 modül. Tek platform. ITIL4 uyumlu.",
+    "lede": "30+ modül. Tek platform. ITIL4 uyumlu.",
     "description": "Kurumsal servis yönetimini, BT operasyonlarını ve proje süreçlerini tek platformda dijitalleştirin.",
     "primary_cta": {
       "label": "PDF olarak al",
@@ -1055,7 +1367,7 @@
   },
   "kpis": [
     {
-      "value": "17",
+      "value": "29",
       "suffix": "",
       "label": "Modül",
       "detail": "ITIL4 uyumlu, native entegre"

@@ -17,6 +17,7 @@ import {
   TableProperties,
   Command
 } from "lucide-react";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function BilgiBankasiPage() {
   const fadeUp: Variants = {
@@ -378,6 +379,7 @@ export default function BilgiBankasiPage() {
         </div>
       </section>
 
+      <PrivacyContact />
     </div>
   );
 }

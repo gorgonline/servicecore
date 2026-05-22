@@ -37,6 +37,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import data from "@/data/moduller.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 const iconMap: Record<string, LucideIcon> = {
   MessageSquare,
@@ -182,7 +183,7 @@ export default function ModullerPage() {
               className="inline-flex items-center gap-2 text-xs font-mono text-(--color-text-muted) tracking-wider"
             >
               <span className="text-(--color-accent-blue-light) font-semibold">
-                {data.modules.length}
+                30+
               </span>
               <span>entegre modül · native bağlantı · tek platform</span>
             </motion.div>
@@ -300,6 +301,8 @@ export default function ModullerPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

@@ -3,7 +3,7 @@
     "badge": "Modüller",
     "titleLead": "ServiceCore'un",
     "titleAccent": "entegre modül ailesi.",
-    "description": "ITSM ve ESM süreçlerinizi uçtan uca yöneten, native entegre çalışan 29 modül. Hizmet masasından varlık yönetimine, otomasyondan raporlamaya kadar tüm yetenekler tek platformda."
+    "description": "ITSM ve ESM süreçlerinizi uçtan uca yöneten, native entegre çalışan 30+ modül. Hizmet masasından varlık yönetimine, otomasyondan raporlamaya kadar tüm yetenekler tek platformda."
   },
   "modules": [
     { "name": "Hizmet Masası ve Etkileşim Yönetimi", "icon": "MessageSquare", "desc": "Tüm iletişim kanallarını birleştirin.", "href": "/etkilesim-yonetimi", "tone": "blue", "category": "ITSM" },
@@ -37,7 +37,7 @@
     { "name": "Sözleşme Yönetimi", "icon": "FileSignature", "desc": "Hizmet Seviyeleri ve sözleşmeleri yönetin.", "href": "/sozlesme-yonetimi", "tone": "emerald", "category": "Sözleşme" }
   ],
   "cta": {
-    "title": "Tek platformda 29 entegre modül, sınırsız operasyon.",
+    "title": "Tek platformda 30+ entegre modül, sınırsız operasyon.",
     "description": "ServiceCore modüllerinin native entegre çalışmasını canlı demoda inceleyin; ITSM, ESM ve AI yetkinliklerini bir arada deneyimleyin.",
     "primaryLabel": "Hemen Demo Alın",
     "primaryHref": "/demo",

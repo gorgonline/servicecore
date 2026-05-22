@@ -35,6 +35,7 @@ import {
 } from "lucide-react";
 import data from "@/data/surekli-iyilestirme.json";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function SurekliIyilestirmePage() {
   const fadeUp: Variants = {
@@ -1116,6 +1117,8 @@ export default function SurekliIyilestirmePage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

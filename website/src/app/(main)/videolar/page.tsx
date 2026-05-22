@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 import ServiceCoreHero from "@/components/ui/ServiceCoreHero";
 import videosData from "@/data/videos.json";
+import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 interface VideoItem {
   id: string;
@@ -181,7 +183,7 @@ export default function VideolarPage() {
                     {video.title}
                   </h3>
                   <div className="mt-auto flex items-center justify-between pt-4 border-t border-white/5">
-                    <span className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted)">Servicecore Academy</span>
+                    <En className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted)">ServiceCore Academy</En>
                     <ChevronRight size={16} className="text-(--color-text-dim) group-hover:text-(--color-accent-blue-light) group-hover:translate-x-1 transition-all" />
                   </div>
                 </div>
@@ -201,6 +203,8 @@ export default function VideolarPage() {
 
       {/* FOOTER DECORATION */}
       <div className="h-px bg-linear-to-r from-transparent via-white/10 to-transparent" />
+
+      <PrivacyContact />
     </div>
   );
 }

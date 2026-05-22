@@ -32,6 +32,7 @@ import {
 } from "lucide-react";
 import data from "@/data/servis-iliskileri-yonetimi.json";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function ServisIliskileriYonetimiPage() {
   const fadeUp: Variants = {
@@ -1118,6 +1119,8 @@ export default function ServisIliskileriYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

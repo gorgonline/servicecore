@@ -7,6 +7,7 @@ import cozumlerContent from "@/data/cozumler-content.json";
 import { FeaturesGrid } from "@/components/ui/features-grid";
 import { SolutionSections } from "@/components/sections/solution-sections";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 interface SolutionData {
   slug: string;
@@ -199,7 +200,7 @@ export default async function SolutionPage({ params }: PageProps) {
                 <p className="text-base font-light leading-relaxed text-(--color-text-secondary)">
                   {isFiltered
                     ? `${solution.name_tr} paketi, ${moduleCount} odaklı modülü tek lisans altında sunar. ${solution.name_tr} planlama, sprint, SDLC ve workflow operasyonları için aşağıdaki modüller paketin parçasıdır.`
-                    : `ServiceCore platformundaki 29 entegre modülün tamamı her çözüm paketi içinde native olarak çalışır. ${solution.name_tr} kullanıcıları aşağıdaki tüm modüllere erişebilir.`}
+                    : `ServiceCore platformundaki 30+ entegre modülün tamamı her çözüm paketi içinde native olarak çalışır. ${solution.name_tr} kullanıcıları aşağıdaki tüm modüllere erişebilir.`}
                 </p>
               </div>
               <FeaturesGrid filterLinks={isFiltered ? APM_MODULE_LINKS : undefined} />
@@ -248,6 +249,8 @@ export default async function SolutionPage({ params }: PageProps) {
           </div>
         </div>
       </div>
+
+      <PrivacyContact />
     </main>
   );
 }

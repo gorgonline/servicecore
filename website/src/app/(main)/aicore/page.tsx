@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import aicoreData from "@/data/aicore.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export const metadata: Metadata = {
   title: "AICore — Yapay Zeka Araç Ailesi | ServiceCore",
@@ -134,6 +135,8 @@ export default function AicoreIndexPage() {
           </div>
         </section>
       </div>
+
+      <PrivacyContact />
     </main>
   );
 }

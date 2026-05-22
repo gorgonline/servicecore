@@ -5,6 +5,7 @@ import { ArrowRight, ArrowUpRight, Building2, CheckCircle2, Sparkles } from "luc
 import aicoreData from "@/data/aicore.json";
 import modullerData from "@/data/moduller.json";
 import { AicoreMock, hasMock } from "@/components/ui/aicore/mock-registry";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 interface HowItWorksStep {
   label: string;
@@ -292,6 +293,8 @@ export default async function AicoreToolPage({ params }: PageProps) {
           </div>
         </div>
       </div>
+
+      <PrivacyContact />
     </main>
   );
 }

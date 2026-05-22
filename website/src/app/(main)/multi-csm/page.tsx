@@ -43,6 +43,7 @@ import {
 } from "lucide-react";
 import data from "@/data/multi-csm.json";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 type IconComponent = React.ComponentType<{ className?: string; size?: number }>;
 
@@ -1193,6 +1194,8 @@ export default function MultiCsmPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

@@ -26,6 +26,7 @@ import {
   CircuitBoard,
 } from "lucide-react";
 import data from "@/data/servis-otomasyonu.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function ServisOtomasyonuPage() {
   const fadeUp: Variants = {
@@ -889,6 +890,8 @@ export default function ServisOtomasyonuPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

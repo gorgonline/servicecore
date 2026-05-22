@@ -3,6 +3,7 @@ import AboutHero from "@/components/ui/AboutHero";
 import pricingData from "@/data/pricing-itsm.json";
 import { HelpCircle } from "lucide-react";
 import { pageMetadata } from "@/lib/page-metadata";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export const metadata = pageMetadata("planlar");
 
@@ -48,6 +49,7 @@ export default function PlanlarPage() {
         </div>
       </section>
 
+      <PrivacyContact />
     </div>
   );
 }

@@ -49,7 +49,7 @@ const STATS_DATA = [
   {
     id: 2,
     icon: <LayoutGrid className="w-6 h-6 text-(--color-accent-purple-light)" />,
-    number: 24,
+    number: 29,
     suffix: "",
     label: "Kapsamlı Modül",
     accent: "bg-purple-500/10 border-purple-500/20"

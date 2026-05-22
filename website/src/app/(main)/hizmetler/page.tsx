@@ -21,6 +21,7 @@ import {
 import { getAccentTone } from "@/components/hizmetler/icon-map";
 import { ServiceCard } from "@/components/hizmetler/ServiceCard";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 const CATEGORY_HUB_ICON_MAP = {
   Hammer,
@@ -414,6 +415,8 @@ export default function HizmetlerHubPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

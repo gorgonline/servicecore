@@ -37,6 +37,7 @@ import {
   CornerDownRight,
 } from "lucide-react";
 import data from "@/data/etkilesim-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function EtkilesimYonetimiPage() {
   const fadeUp: Variants = {
@@ -1037,6 +1038,8 @@ export default function EtkilesimYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

@@ -9,11 +9,14 @@ export const metadata: Metadata = {
 
 // Using Client Component wrapper for animations inside the page
 import MottoContent from './motto-content';
+import PrivacyContact from '@/components/ui/privacy-contact';
 
 export default function MottoPage() {
   return (
     <main className="min-h-screen bg-(--color-surface-base) text-white pt-24 pb-32">
       <MottoContent data={mottoData} />
+
+      <PrivacyContact />
     </main>
   );
 }

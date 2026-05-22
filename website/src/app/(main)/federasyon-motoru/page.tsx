@@ -22,6 +22,7 @@ import {
   Activity,
 } from "lucide-react";
 import data from "@/data/federasyon-motoru.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function FederasyonMotoruPage() {
   const fadeUp: Variants = {
@@ -980,6 +981,7 @@ export default function FederasyonMotoruPage() {
         </div>
       </section>
 
+      <PrivacyContact />
     </div>
   );
 }

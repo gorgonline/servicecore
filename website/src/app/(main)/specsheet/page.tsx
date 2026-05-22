@@ -11,6 +11,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import data from "@/data/specsheet.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function SpecsheetPage() {
   const [activeTab, setActiveTab] = useState<string>(data.tabs[0].id);
@@ -397,7 +398,7 @@ export default function SpecsheetPage() {
                   </h2>
 
                   <p className="text-lg text-(--color-text-overline) font-light leading-relaxed mb-10 max-w-xl mx-auto">
-                    29 entegre modül, kurumsal güvenlik, REST API ve uçtan uca otomasyon — her özelliği uzman ekibimizle keşfedin.
+                    30+ entegre modül, kurumsal güvenlik, REST API ve uçtan uca otomasyon — her özelliği uzman ekibimizle keşfedin.
                   </p>
 
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -419,6 +420,8 @@ export default function SpecsheetPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

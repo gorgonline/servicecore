@@ -10,7 +10,7 @@
       "id": "itsm-esm",
       "title": "ITSM / ESM",
       "references": [
-        { "name": "AKSA", "logo": "/logos/aksa.png" },
+        { "name": "AKSA", "logo": "/logos/aksa-beyaz.png" },
         { "name": "Roketsan", "logo": "/logos/roketsan.png" },
         { "name": "T.C. Cumhurbaşkanlığı Savunma Sanayii Başkanlığı", "logo": "/logos/savunma.png" },
         { "name": "T.C. Cumhurbaşkanlığı Diyanet İşleri Başkanlığı", "logo": "/logos/diyanet.png" },
@@ -102,7 +102,7 @@
     {
       "id": "aksa",
       "name": "Aksa",
-      "logo": "/logos/aksa.png",
+      "logo": "/logos/aksa-beyaz.png",
       "description": "Holding şirketlerinin tamamı tek platformda Servicecore süreçleriyle kullanılmakta; 16 modül üzerinden merkezi servis yönetimi ile uçtan uca tüm BT süreçleri otomatize edilerek kurumun tüm operasyonlarının yönetimi sağlanmıştır."
     },
     {

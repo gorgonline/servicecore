@@ -4,6 +4,7 @@ import AboutHero from "@/components/ui/AboutHero";
 import AboutExperience from "@/components/sections/about/AboutExperience";
 import DesignPhilosophyGrid from "@/components/sections/about/DesignPhilosophyGrid";
 import MethodologyTimeline from "@/components/sections/about/MethodologyTimeline";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export const metadata: Metadata = {
   title: "Hakkımızda | ServiceCore",
@@ -26,10 +27,12 @@ export default function HakkimizdaPage() {
         principles={aboutData.designPrinciples.principles}
       />
       
-      <MethodologyTimeline 
+      <MethodologyTimeline
         title={aboutData.implementationPrinciples.title}
         principles={aboutData.implementationPrinciples.principles}
       />
+
+      <PrivacyContact />
     </main>
   );
 }

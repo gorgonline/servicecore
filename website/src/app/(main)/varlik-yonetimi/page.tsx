@@ -42,6 +42,7 @@ import {
 } from "lucide-react";
 import data from "@/data/varlik-yonetimi.json";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function VarlikYonetimiPage() {
   const fadeUp: Variants = {
@@ -1163,6 +1164,8 @@ export default function VarlikYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, CheckCircle2, Radar } from "lucide-react";
 import discoveryData from "@/data/discovery.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 interface DiscoveryFeature {
   id: number;
@@ -313,6 +314,8 @@ export default function DiscoveryPage() {
           </div>
         </section>
       </div>
+
+      <PrivacyContact />
     </main>
   );
 }

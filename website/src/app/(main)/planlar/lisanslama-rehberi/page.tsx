@@ -1,6 +1,7 @@
 import { CheckCircle2, HelpCircle, ChevronRight } from "lucide-react";
 import AboutHero from "@/components/ui/AboutHero";
 import lisansData from "@/data/lisanslama-rehberi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 interface ListBlock {
   title?: string;
@@ -43,7 +44,7 @@ export default function LisanslamaRehberiPage() {
       />
 
       <section className="py-24 bg-(--color-surface-base) relative overflow-hidden">
-        <div className="absolute top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-(--color-brand-primary)/8 blur-[160px] rounded-full pointer-events-none" />
+        <div className="absolute top-40 left-1/2 -translate-x-1/2 w-225 h-125 bg-(--color-brand-primary)/8 blur-[160px] rounded-full pointer-events-none" />
         <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/5 to-transparent" />
 
         <div className="mx-auto max-w-5xl px-6 lg:px-12 relative z-10 space-y-10">
@@ -80,6 +81,8 @@ export default function LisanslamaRehberiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }
@@ -170,7 +173,7 @@ function GroupBlock({ group }: { group: Group }) {
 function CategoryBlock({ category }: { category: Category }) {
   return (
     <div className="p-5 rounded-xl bg-white/2 border border-white/5 hover:border-white/10 transition-colors">
-      <h4 className="text-sm font-semibold tracking-[0.1em] uppercase text-(--color-brand-primary) mb-3">
+      <h4 className="text-sm font-semibold tracking-widest uppercase text-(--color-brand-primary) mb-3">
         {category.label}
       </h4>
       <ul className="space-y-2">

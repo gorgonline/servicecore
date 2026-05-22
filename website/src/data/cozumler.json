@@ -9,8 +9,8 @@
       "abbr": "ITSM",
       "name": "IT Service Management",
       "name_tr": "BT Servis Yönetimi",
-      "tagline": "ITIL4 uyumlu 22 modülle BT operasyonlarını uçtan uca yönetin.",
-      "description": "Olay, problem, değişiklik, talep, varlık ve konfigürasyon süreçlerinin tamamını ITIL4 prensipleriyle dijitalleştirin. Mevcut 25 modülün 22'si bu çözüm paketinin parçasıdır.",
+      "tagline": "ITIL4 uyumlu 30+ modülle BT operasyonlarını uçtan uca yönetin.",
+      "description": "Olay, problem, değişiklik, talep, varlık ve konfigürasyon süreçlerinin tamamını ITIL4 prensipleriyle dijitalleştirin. 30+ entegre modülün büyük çoğunluğu bu çözüm paketinin parçasıdır.",
       "icon": "Settings",
       "accent": "blue",
       "modules": ["etkilesim-yonetimi", "olay-yonetimi", "problem-yonetimi", "istek-yonetimi", "degisiklik-yonetimi", "varlik-yonetimi", "servis-konfigurasyon-yonetimi", "bilgi-bankasi", "servis-katalog-yonetimi", "servis-seviye-yonetimi", "servis-otomasyonu", "raporlama-yonetimi", "gorev-yonetimi", "is-akisi-yonetimi"]

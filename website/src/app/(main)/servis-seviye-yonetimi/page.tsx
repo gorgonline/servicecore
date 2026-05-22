@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import data from "@/data/servis-seviye-yonetimi.json";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function ServisSeviyeYonetimiPage() {
   const fadeUp: Variants = {
@@ -322,7 +323,7 @@ export default function ServisSeviyeYonetimiPage() {
                   <div className="flex items-center justify-between pb-2 border-b border-white/8">
                     <div className="flex items-center gap-1.5">
                       <Gauge className="w-3.5 h-3.5 text-(--color-accent-blue-light)" />
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Hizmet Seviyesi Policy Yönetimi</span>
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-white">Hizmet Seviyesi <En>Policy</En> Yönetimi</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <span className="text-[8px] font-mono text-(--color-text-muted)">3 policy</span>
@@ -1139,6 +1140,8 @@ export default function ServisSeviyeYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

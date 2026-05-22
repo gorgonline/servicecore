@@ -29,6 +29,7 @@ import {
   Activity,
 } from "lucide-react";
 import data from "@/data/sozlesme-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function SozlesmeYonetimiPage() {
   const fadeUp: Variants = {
@@ -1042,6 +1043,8 @@ export default function SozlesmeYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

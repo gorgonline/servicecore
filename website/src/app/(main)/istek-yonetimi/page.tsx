@@ -34,6 +34,7 @@ import {
   Hash,
 } from "lucide-react";
 import data from "@/data/istek-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function IstekYonetimiPage() {
   const fadeUp: Variants = {
@@ -915,6 +916,8 @@ export default function IstekYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

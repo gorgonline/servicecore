@@ -28,6 +28,7 @@ import {
   Users,
 } from "lucide-react";
 import data from "@/data/servis-konfigurasyon-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function ServisKonfigurasyonYonetimiPage() {
   const fadeUp: Variants = {
@@ -1006,6 +1007,8 @@ export default function ServisKonfigurasyonYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

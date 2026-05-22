@@ -3,17 +3,22 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
-import { Mail, Send, MessageSquare, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, Phone, Send, MessageSquare, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { submitForm, type FormSheet } from "@/lib/forms";
 import { trackFormSubmit } from "@/lib/analytics";
 import { runtimeTokens } from "@/lib/tokens";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormSheet }) {
+export default function PrivacyContact({
+  sheet = "İletişim",
+}: {
+  sheet?: FormSheet;
+}) {
   const pathname = usePathname();
   const reduced = useReducedMotion();
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
@@ -21,12 +26,13 @@ export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormS
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "loading") return;
-    if (!email.trim() || !message.trim()) return;
+    if (!email.trim() || !phone.trim() || !message.trim()) return;
 
     setStatus("loading");
     setErrorMessage("");
     const result = await submitForm(sheet, {
       "E-posta": email.trim(),
+      Telefon: phone.trim(),
       Mesaj: message.trim(),
       "Sayfa Kaynağı": pathname || "/",
     });
@@ -34,6 +40,7 @@ export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormS
     if (result.ok) {
       setStatus("success");
       setEmail("");
+      setPhone("");
       setMessage("");
       // Inline form — redirect yok, conversion event burada fire edilir.
       trackFormSubmit("iletisim");
@@ -72,7 +79,7 @@ export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormS
             </h3>
 
             <p className="text-base md:text-lg text-(--color-text-overline) font-light leading-relaxed mb-10 max-w-xl mx-auto">
-              E-posta adresinizi ve sorunuzu bırakın, uzman ekibimiz en kısa sürede dönüş yapsın.
+              İletişim bilgilerinizi ve sorunuzu bırakın, uzman ekibimiz en kısa sürede dönüş yapsın.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4 text-left">
@@ -91,19 +98,33 @@ export default function PrivacyContact({ sheet = "İletişim" }: { sheet?: FormS
                   />
                 </div>
 
-                {/* Mesaj */}
+                {/* Telefon */}
                 <div className="relative flex-1">
-                  <MessageSquare className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-(--color-text-muted) pointer-events-none" />
+                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-(--color-text-muted) pointer-events-none" />
                   <input
-                    type="text"
+                    type="tel"
                     required
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     disabled={disabled}
-                    placeholder="Mesajınız"
+                    placeholder="Telefon"
                     className="w-full bg-black/30 border border-white/15 rounded-xl pl-11 pr-4 h-12 text-white placeholder:text-(--color-text-secondary) focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-border-active) transition-all disabled:opacity-60"
                   />
                 </div>
+              </div>
+
+              {/* Mesaj — tam genişlik textarea */}
+              <div className="relative">
+                <MessageSquare className="absolute left-4 top-4 w-4 h-4 text-(--color-text-muted) pointer-events-none" />
+                <textarea
+                  required
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  disabled={disabled}
+                  placeholder="Mesajınız"
+                  rows={4}
+                  className="w-full bg-black/30 border border-white/15 rounded-xl pl-11 pr-4 py-3 text-white placeholder:text-(--color-text-secondary) focus:outline-none focus:ring-2 focus:ring-(--color-border-active) focus:border-(--color-border-active) transition-all disabled:opacity-60 resize-none"
+                />
               </div>
 
               {status === "success" && (

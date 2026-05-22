@@ -2,6 +2,7 @@ import React from "react";
 import { ServiceCoreHero } from "./components/servicecore-hero";
 import { InteractiveSupportMetrics } from "./components/interactive-support-metrics";
 import { PremiumComparisonMatrix } from "./components/premium-comparison-matrix";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export const metadata = {
   title: "Premium BT Destek Kanalları ve Destek Paketleri | ServiceCore",
@@ -14,6 +15,8 @@ export default function DestekKanallariPage() {
       <ServiceCoreHero />
       <InteractiveSupportMetrics />
       <PremiumComparisonMatrix />
+
+      <PrivacyContact />
     </main>
   );
 }

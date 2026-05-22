@@ -20,6 +20,7 @@ import {
   Tags
 } from "lucide-react";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function ProjeYonetimiPage() {
   const fadeUp: Variants = {
@@ -524,6 +525,7 @@ export default function ProjeYonetimiPage() {
         </div>
       </section>
 
+      <PrivacyContact />
     </div>
   );
 }

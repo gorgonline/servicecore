@@ -24,6 +24,7 @@ import {
   Shield,
 } from "lucide-react";
 import data from "@/data/mobil-servis-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 function PhoneFrame({
   children,
@@ -939,6 +940,8 @@ export default function MobilServisYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

@@ -40,6 +40,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import data from "@/data/self-servis-portal.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function SelfServisPortalPage() {
   const fadeUp: Variants = {
@@ -1110,6 +1111,8 @@ export default function SelfServisPortalPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

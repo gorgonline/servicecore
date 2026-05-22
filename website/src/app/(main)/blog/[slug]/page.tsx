@@ -39,6 +39,7 @@ import {
   FileSignature,
 } from "lucide-react";
 import data from "@/data/blog.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   BookOpen,
@@ -429,6 +430,8 @@ export default function BlogDetailPage() {
           </motion.div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

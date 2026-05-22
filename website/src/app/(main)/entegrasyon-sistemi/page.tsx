@@ -28,6 +28,7 @@ import {
   CheckCheck,
 } from "lucide-react";
 import data from "@/data/entegrasyon-sistemi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function EntegrasyonSistemiPage() {
   const fadeUp: Variants = {
@@ -1074,6 +1075,8 @@ export default function EntegrasyonSistemiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

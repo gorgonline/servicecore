@@ -37,6 +37,7 @@ import {
   Headphones,
 } from "lucide-react";
 import data from "@/data/olay-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function OlayYonetimiPage() {
   const fadeUp: Variants = {
@@ -1201,6 +1202,8 @@ export default function OlayYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

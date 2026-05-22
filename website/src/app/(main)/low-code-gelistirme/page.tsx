@@ -37,6 +37,7 @@ import {
   Settings,
 } from "lucide-react";
 import data from "@/data/low-code-gelistirme.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function LowCodeGelistirmePage() {
   const fadeUp: Variants = {
@@ -1205,6 +1206,8 @@ export default function LowCodeGelistirmePage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

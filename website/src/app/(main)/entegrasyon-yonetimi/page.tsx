@@ -26,6 +26,7 @@ import {
   Webhook,
 } from "lucide-react";
 import data from "@/data/entegrasyon-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function EntegrasyonYonetimiPage() {
   const fadeUp: Variants = {
@@ -830,6 +831,8 @@ export default function EntegrasyonYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

@@ -34,6 +34,7 @@ import {
   Play,
 } from "lucide-react";
 import data from "@/data/is-akisi-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function IsAkisiYonetimiPage() {
   const fadeUp: Variants = {
@@ -1140,6 +1141,8 @@ function shouldEscalate(record) {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { ExpandedPricingSection } from "@/components/ui/expanded-pricing";
 import AboutHero from "@/components/ui/AboutHero";
 import pricingData from "@/data/pricing-css.json";
 import { HelpCircle } from "lucide-react";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export const metadata = {
   title: "CSM Planları | ServiceCore",
@@ -46,6 +47,8 @@ export default function PlanlarCssPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

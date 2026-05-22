@@ -22,6 +22,7 @@ import {
   Database,
 } from "lucide-react";
 import data from "@/data/degisiklik-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function DegisiklikYonetimiPage() {
   const fadeUp: Variants = {
@@ -811,6 +812,8 @@ export default function DegisiklikYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

@@ -26,6 +26,7 @@ import {
   HeartHandshake,
 } from "lucide-react";
 import data from "@/data/servis-katalog-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function ServisKatalogYonetimiPage() {
   const fadeUp: Variants = {
@@ -949,6 +950,8 @@ export default function ServisKatalogYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

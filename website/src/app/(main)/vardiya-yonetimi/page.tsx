@@ -22,6 +22,7 @@ import {
   Plane,
 } from "lucide-react";
 import data from "@/data/vardiya-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 const DAYS = ["Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz"] as const;
 
@@ -1248,6 +1249,7 @@ export default function VardiyaYonetimiPage() {
         </div>
       </section>
 
+      <PrivacyContact />
     </div>
   );
 }

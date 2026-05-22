@@ -29,6 +29,7 @@ import {
   Search,
 } from "lucide-react";
 import data from "@/data/servis-topoloji-kesif.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function ServisTopolojiKesifPage() {
   const fadeUp: Variants = {
@@ -1097,6 +1098,7 @@ export default function ServisTopolojiKesifPage() {
         </div>
       </section>
 
+      <PrivacyContact />
     </div>
   );
 }

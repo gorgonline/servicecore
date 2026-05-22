@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import data from "@/data/raporlama-yonetimi.json";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function RaporlamaYonetimiPage() {
   const fadeUp: Variants = {
@@ -983,6 +984,8 @@ export default function RaporlamaYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

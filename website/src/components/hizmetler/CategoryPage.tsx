@@ -20,6 +20,7 @@ import {
   type HizmetService,
 } from "@/lib/hizmetler";
 import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 interface CategoryPageProps {
   category: HizmetCategory;
@@ -265,6 +266,8 @@ export function CategoryPage({
         title={ctaTitle}
         description={ctaDescription}
       />
+
+      <PrivacyContact />
     </div>
   );
 }

@@ -193,7 +193,7 @@ export default function WorkshoplarPage() {
         </div>
       </div>
 
-      <PrivacyContact />
+      <PrivacyContact sheet="Eğitim" />
     </main>
   );
 }

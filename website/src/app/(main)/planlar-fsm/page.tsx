@@ -2,6 +2,7 @@ import { ExpandedPricingSection } from "@/components/ui/expanded-pricing";
 import AboutHero from "@/components/ui/AboutHero";
 import pricingData from "@/data/pricing-fsm.json";
 import { HelpCircle } from "lucide-react";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export const metadata = {
   title: "FSM Planları | ServiceCore",
@@ -46,6 +47,8 @@ export default function PlanlarFsmPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

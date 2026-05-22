@@ -82,6 +82,7 @@ import {
   type HizmetCategory,
   type HizmetService,
 } from "@/lib/hizmetler";
+import { En } from "@/components/ui/En";
 
 // Sıralama ve isimler canli siteyle birebir. Href'ler korundu.
 const modules = [
@@ -417,7 +418,7 @@ export default function Navbar() {
                           <div className="min-w-0">
                             <div className="flex items-baseline gap-2 mb-0.5">
                               <h4 className="text-sm font-semibold text-white group-hover:text-(--color-brand-primary) transition-colors">{sol.name}</h4>
-                              <span className="text-[10px] font-mono text-(--color-text-muted) tracking-wider uppercase truncate">{sol.title}</span>
+                              <En className="text-[10px] font-mono text-(--color-text-muted) tracking-wider uppercase truncate">{sol.title}</En>
                             </div>
                             <p className="text-xs text-(--color-text-secondary) leading-snug">{sol.desc}</p>
                           </div>

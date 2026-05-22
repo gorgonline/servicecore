@@ -36,6 +36,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 import data from "@/data/gorev-yonetimi.json";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function GorevYonetimiPage() {
   const fadeUp: Variants = {
@@ -1165,6 +1166,8 @@ export default function GorevYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }

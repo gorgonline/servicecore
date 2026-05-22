@@ -31,6 +31,8 @@ import {
   CornerDownRight,
 } from "lucide-react";
 import data from "@/data/problem-yonetimi.json";
+import { En } from "@/components/ui/En";
+import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function ProblemYonetimiPage() {
   const fadeUp: Variants = {
@@ -143,7 +145,7 @@ export default function ProblemYonetimiPage() {
                       <div className="flex items-center justify-between pb-1 border-b border-red-500/15">
                         <div className="flex items-center gap-1.5">
                           <AlertCircle className="w-3 h-3 text-(--color-accent-red-light)" />
-                          <span className="text-[10px] font-bold uppercase tracking-widest text-(--color-accent-red-light)">Reactive</span>
+                          <En className="text-[10px] font-bold uppercase tracking-widest text-(--color-accent-red-light)">Reactive</En>
                         </div>
                         <span className="text-[7px] font-mono text-(--color-text-muted)">olay sonrası</span>
                       </div>
@@ -343,7 +345,7 @@ export default function ProblemYonetimiPage() {
                     <div className="rounded-lg bg-purple-500/10 border border-purple-500/25 p-2 flex flex-col gap-0.5">
                       <div className="flex items-center gap-1.5">
                         <BookOpen className="w-3 h-3 text-(--color-accent-purple-light)" />
-                        <span className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Known Error</span>
+                        <En className="text-[8px] font-mono uppercase tracking-wider text-(--color-text-muted)">Known Error</En>
                       </div>
                       <span className="text-[10px] font-bold text-white">KE-2034</span>
                       <span className="text-[8px] text-(--color-text-secondary) truncate">Workaround: manuel cron tetikle</span>
@@ -432,7 +434,7 @@ export default function ProblemYonetimiPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
                         <RefreshCw className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-(--color-accent-purple-light)">Change Request</span>
+                        <En className="text-[10px] font-bold uppercase tracking-widest text-(--color-accent-purple-light)">Change Request</En>
                         <span className="text-[10px] font-mono font-bold text-white">CR-2451</span>
                       </div>
                       <span className="text-[8px] font-mono font-semibold text-(--color-accent-emerald-light) px-1.5 py-0.5 rounded-full bg-emerald-500/12 border border-emerald-500/25">
@@ -953,6 +955,8 @@ export default function ProblemYonetimiPage() {
           </div>
         </div>
       </section>
+
+      <PrivacyContact />
     </div>
   );
 }
