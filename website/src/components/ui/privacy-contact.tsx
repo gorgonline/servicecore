@@ -53,7 +53,7 @@ export default function PrivacyContact({
   const disabled = status === "loading";
 
   return (
-    <div className="container mx-auto px-6 lg:px-12 pb-40 max-w-7xl">
+    <div className="container mx-auto px-6 lg:px-12 pt-20 lg:pt-24 pb-24 lg:pb-32 max-w-7xl">
       <motion.div
         initial={reduced ? false : { opacity: 0, y: 24 }}
         whileInView={reduced ? undefined : { opacity: 1, y: 0 }}

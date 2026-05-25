@@ -37,6 +37,9 @@ import {
   TreeView,
   CloudUpload,
   Calendar as CalendarIcon,
+  CarouselHorizontal,
+  RowExpand,
+  InformationSquare,
 } from "@carbon/icons-react";
 import { Display, Heading, Text, Eyebrow } from "@servicecore/ui";
 import { Card, Flex } from "@servicecore/ui/wraps";
@@ -274,6 +277,24 @@ const groups: Group[] = [
         href: "/calendar",
         icon: <CalendarIcon />,
         desc: "Takvim widget'ı — etkinlik göstergesi, fullscreen/compact",
+      },
+      {
+        name: "Carousel",
+        href: "/carousel",
+        icon: <CarouselHorizontal />,
+        desc: "Slide rotasyonu — splash, KPI rotation, onboarding tour",
+      },
+      {
+        name: "Collapse",
+        href: "/collapse",
+        icon: <RowExpand />,
+        desc: "Accordion / açılır panel — FAQ, settings, ticket sections",
+      },
+      {
+        name: "Descriptions",
+        href: "/descriptions",
+        icon: <InformationSquare />,
+        desc: "Tek nesne key-value detay — ticket meta, asset info, profile",
       },
     ],
   },

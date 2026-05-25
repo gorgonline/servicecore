@@ -1,0 +1,162 @@
+/* AntD Descriptions wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Header: title sans semibold, extra sağda
+ * - View (içerik table): bordered=true → border default, radius md,
+ *   bordered=false → ince ayırıcı border-subtle
+ * - Label: bg subtle (bordered'da), text-tertiary caps yarı sm
+ * - Content: text-primary md, sans
+ * - Row gap (bordered=false): --sc-space-3
+ * - Size variants
+ */
+
+.descriptions {
+  font-family: var(--sc-font-sans) !important;
+  color: var(--sc-color-text-primary);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Header (title + extra)
+ * ─────────────────────────────────────────────────────────────── */
+
+.descriptions :global(.ant-descriptions-header) {
+  margin-bottom: var(--sc-space-4) !important;
+  padding-bottom: var(--sc-space-3);
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+}
+
+.descriptions :global(.ant-descriptions-title) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-lg) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-primary) !important;
+  line-height: var(--sc-line-height-snug);
+}
+
+.descriptions :global(.ant-descriptions-extra) {
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-sm);
+  color: var(--sc-color-text-secondary);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * View — Borderless variant (default)
+ * ─────────────────────────────────────────────────────────────── */
+
+.descriptions :global(.ant-descriptions-view) {
+  font-family: var(--sc-font-sans);
+  color: var(--sc-color-text-primary);
+}
+
+/* Borderless'ta row spacing */
+.descriptions:not(:global(.ant-descriptions-bordered)) :global(.ant-descriptions-row) > th,
+.descriptions:not(:global(.ant-descriptions-bordered)) :global(.ant-descriptions-row) > td {
+  padding-bottom: var(--sc-space-3) !important;
+}
+
+/* Borderless label */
+.descriptions:not(:global(.ant-descriptions-bordered)) :global(.ant-descriptions-item-label) {
+  color: var(--sc-color-text-tertiary) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wide);
+  padding-inline-end: var(--sc-space-3) !important;
+}
+
+/* Borderless content */
+.descriptions:not(:global(.ant-descriptions-bordered)) :global(.ant-descriptions-item-content) {
+  color: var(--sc-color-text-primary) !important;
+  font-size: var(--sc-font-size-md) !important;
+  font-weight: var(--sc-font-weight-regular);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Bordered variant
+ * ─────────────────────────────────────────────────────────────── */
+
+.descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-view) {
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-md) !important;
+  overflow: hidden;
+}
+
+.descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-row) {
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+}
+
+.descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-row):last-child {
+  border-bottom: none !important;
+}
+
+/* Bordered label */
+.descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-item-label) {
+  background: var(--sc-color-bg-subtle) !important;
+  color: var(--sc-color-text-secondary) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  border-inline-end: 1px solid var(--sc-color-border-subtle) !important;
+  width: 200px;
+  vertical-align: top;
+}
+
+/* Bordered content */
+.descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-item-content) {
+  color: var(--sc-color-text-primary) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  border-inline-end: 1px solid var(--sc-color-border-subtle) !important;
+}
+
+.descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-row) > :global(.ant-descriptions-item-content):last-child {
+  border-inline-end: none !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Layout: vertical — label üstte, content altta
+ * ─────────────────────────────────────────────────────────────── */
+
+.descriptions :global(.ant-descriptions-row) :global(.ant-descriptions-item-container) {
+  display: flex;
+  align-items: baseline;
+}
+
+/* Vertical layout — label/content alt alta */
+.descriptions:global(.ant-descriptions-layout-vertical) :global(.ant-descriptions-row) :global(.ant-descriptions-item-container) {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sc-space-1);
+}
+
+.descriptions:global(.ant-descriptions-layout-vertical) :global(.ant-descriptions-item-label) {
+  margin-bottom: 0;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Colon (label sonundaki ":") — bordered'da gizli; borderless'ta görünür
+ * ─────────────────────────────────────────────────────────────── */
+
+.descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-item-label)::after {
+  display: none !important;
+}
+
+.descriptions:not(:global(.ant-descriptions-bordered)) :global(.ant-descriptions-item-label)::after {
+  content: "" !important; /* Colon gizli — caps label estetik gereği */
+  margin: 0 !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size variants — small / middle / large(default)
+ * ─────────────────────────────────────────────────────────────── */
+
+.descriptions:global(.ant-descriptions-small):global(.ant-descriptions-bordered) :global(.ant-descriptions-item-label),
+.descriptions:global(.ant-descriptions-small):global(.ant-descriptions-bordered) :global(.ant-descriptions-item-content) {
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  font-size: var(--sc-font-size-xs) !important;
+}
+
+.descriptions:global(.ant-descriptions-middle):global(.ant-descriptions-bordered) :global(.ant-descriptions-item-label),
+.descriptions:global(.ant-descriptions-middle):global(.ant-descriptions-bordered) :global(.ant-descriptions-item-content) {
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+}

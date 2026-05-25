@@ -10,7 +10,7 @@ import PrivacyContact from "@/components/ui/privacy-contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-(--color-surface-base) pb-32">
+    <main className="min-h-screen bg-(--color-surface-base)">
       <HeroSection />
       
       {/* Trusted By / Logo Cloud Section */}

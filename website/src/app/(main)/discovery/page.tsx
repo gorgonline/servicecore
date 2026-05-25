@@ -30,7 +30,7 @@ export default function DiscoveryPage() {
     .map((f) => ({ src: f.image, alt: f.imageAlt }));
 
   return (
-    <main className="relative min-h-screen bg-(--color-surface-base) overflow-hidden pb-32">
+    <main className="relative min-h-screen bg-(--color-surface-base) overflow-hidden">
       {/* Soft glow */}
       <div
         aria-hidden="true"

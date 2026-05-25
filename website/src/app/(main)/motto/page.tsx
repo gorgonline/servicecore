@@ -13,7 +13,7 @@ import PrivacyContact from '@/components/ui/privacy-contact';
 
 export default function MottoPage() {
   return (
-    <main className="min-h-screen bg-(--color-surface-base) text-white pt-24 pb-32">
+    <main className="min-h-screen bg-(--color-surface-base) text-white pt-24">
       <MottoContent data={mottoData} />
 
       <PrivacyContact />

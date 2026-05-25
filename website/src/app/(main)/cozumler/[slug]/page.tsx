@@ -80,7 +80,7 @@ export default async function SolutionPage({ params }: PageProps) {
   const richContent = CONTENT[solution.slug];
 
   return (
-    <main className="relative min-h-screen bg-(--color-surface-base) overflow-hidden pb-32">
+    <main className="relative min-h-screen bg-(--color-surface-base) overflow-hidden">
       <div
         className="absolute -top-40 -left-40 w-130 h-130 rounded-full pointer-events-none"
         style={{

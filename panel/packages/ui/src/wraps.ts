@@ -40,3 +40,6 @@ export * from "./Transfer";
 export * from "./TreeSelect";
 export * from "./Upload";
 export * from "./Calendar";
+export * from "./Carousel";
+export * from "./Collapse";
+export * from "./Descriptions";
