@@ -1,0 +1,155 @@
+/* AntD Segmented wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Track (container): bg-muted, radius md, padding 3px (içerideki item'a nefes ver)
+ * - Item: text-secondary, padding sane, no border (track içinde "yüzer")
+ * - Selected item: bg-base + subtle shadow xs (track'in üstüne çıkmış kart hissi),
+ *   text-primary semibold
+ * - Thumb (animated transition): AntD'nin internal transition'ı korunur
+ * - Hover (unselected): text-primary (vurgu)
+ * - Disabled: text-disabled, cursor not-allowed
+ */
+
+.segmented {
+  font-family: var(--sc-font-sans) !important;
+  background: var(--sc-color-bg-muted) !important;
+  border-radius: var(--sc-radius-md) !important;
+  padding: 3px !important;
+  display: inline-flex;
+  gap: 0;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Group container (inner)
+ * ─────────────────────────────────────────────────────────────── */
+
+.segmented :global(.ant-segmented-group) {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  position: relative;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Item — base
+ * ─────────────────────────────────────────────────────────────── */
+
+.segmented :global(.ant-segmented-item) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-secondary) !important;
+  background: transparent !important;
+  border-radius: var(--sc-radius-sm) !important;
+  padding: var(--sc-space-1) var(--sc-space-3) !important;
+  position: relative;
+  z-index: 1;
+  transition: color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* Hover (unselected) */
+.segmented :global(.ant-segmented-item):not(:global(.ant-segmented-item-selected)):not(:global(.ant-segmented-item-disabled)):hover {
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Item label + icon */
+.segmented :global(.ant-segmented-item-label) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-1);
+  min-height: 24px;
+  line-height: 24px;
+}
+
+.segmented :global(.ant-segmented-item-icon) {
+  display: inline-flex;
+  align-items: center;
+}
+
+.segmented :global(.ant-segmented-item-icon) :global(svg) {
+  width: 14px;
+  height: 14px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Selected — track'in üstüne çıkmış kart hissi
+ * ─────────────────────────────────────────────────────────────── */
+
+.segmented :global(.ant-segmented-item-selected) {
+  background: var(--sc-color-bg-base) !important;
+  color: var(--sc-color-text-primary) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  box-shadow: var(--sc-shadow-xs) !important;
+}
+
+/* Thumb (AntD'nin animated transition pseudo) — selected item ile aynı stil */
+.segmented :global(.ant-segmented-thumb) {
+  background: var(--sc-color-bg-base) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  box-shadow: var(--sc-shadow-xs) !important;
+  z-index: 0;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Disabled item
+ * ─────────────────────────────────────────────────────────────── */
+
+.segmented :global(.ant-segmented-item-disabled),
+.segmented :global(.ant-segmented-item-disabled) :global(.ant-segmented-item-label) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+/* Group disabled */
+.segmented:global(.ant-segmented-disabled) {
+  background: var(--sc-color-bg-subtle) !important;
+}
+
+.segmented:global(.ant-segmented-disabled) :global(.ant-segmented-item) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Block — tam genişlik
+ * ─────────────────────────────────────────────────────────────── */
+
+.segmented:global(.ant-segmented-block) {
+  display: flex;
+  width: 100%;
+}
+
+.segmented:global(.ant-segmented-block) :global(.ant-segmented-group) {
+  width: 100%;
+}
+
+.segmented:global(.ant-segmented-block) :global(.ant-segmented-item) {
+  flex: 1;
+  text-align: center;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size variants
+ * ─────────────────────────────────────────────────────────────── */
+
+.segmented:global(.ant-segmented-sm) :global(.ant-segmented-item) {
+  padding: 2px var(--sc-space-2) !important;
+}
+
+.segmented:global(.ant-segmented-sm) :global(.ant-segmented-item-label) {
+  font-size: var(--sc-font-size-xs) !important;
+  min-height: 20px;
+  line-height: 20px;
+}
+
+.segmented:global(.ant-segmented-lg) :global(.ant-segmented-item) {
+  padding: var(--sc-space-2) var(--sc-space-4) !important;
+}
+
+.segmented:global(.ant-segmented-lg) :global(.ant-segmented-item-label) {
+  font-size: var(--sc-font-size-md) !important;
+  min-height: 28px;
+  line-height: 28px;
+}

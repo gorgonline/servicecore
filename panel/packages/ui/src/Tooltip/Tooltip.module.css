@@ -1,0 +1,52 @@
+/* AntD Tooltip wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Inner: bg-emphasis (koyu), text-inverse (beyaz), radius sm, padding sane
+ * - Font: sans, sm, medium weight
+ * - Max width: 280px (uzun metin için yumuşak sınır)
+ * - Arrow: bg-emphasis ile match (AntD'nin native arrow rengi)
+ * - Color prop verilirse AntD inline style ile bg ezer — biz dokunmayız
+ */
+
+.tooltip {
+  font-family: var(--sc-font-sans);
+}
+
+.legacyOverlay {
+  font-family: var(--sc-font-sans);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Inner — tooltip kutusu
+ * ─────────────────────────────────────────────────────────────── */
+
+.tooltip :global(.ant-tooltip-inner),
+.legacyOverlay :global(.ant-tooltip-inner) {
+  background: var(--sc-color-bg-emphasis) !important;
+  color: var(--sc-color-text-inverse) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  line-height: var(--sc-line-height-normal);
+  border-radius: var(--sc-radius-sm) !important;
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+  max-width: 280px;
+  min-height: 24px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Arrow — bg-emphasis ile match
+ * AntD'nin arrow rengi CSS custom property üzerinden bg ile aynı renk
+ * alır (--antd-arrow-background-color). Biz bunu token'a bağlıyoruz.
+ * ─────────────────────────────────────────────────────────────── */
+
+.tooltip,
+.legacyOverlay {
+  --antd-arrow-background-color: var(--sc-color-bg-emphasis);
+}
+
+.tooltip :global(.ant-tooltip-arrow)::before,
+.legacyOverlay :global(.ant-tooltip-arrow)::before {
+  background: var(--sc-color-bg-emphasis) !important;
+}

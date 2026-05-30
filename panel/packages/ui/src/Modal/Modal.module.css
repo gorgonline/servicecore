@@ -1,0 +1,147 @@
+/* AntD Modal wrap — ServiceCore görsel dili.
+ *
+ * Modal portal'da render edilir; .modal class'ı sadece content
+ * sarmalayıcısına gider. Mask için wrapClassName gerekli.
+ *
+ * Tasarım:
+ * - Mask: yarı şeffaf siyah (oklch tutarlılık için)
+ * - Content: bg-base, radius-lg, shadow-lg, no extra border
+ * - Header: bg-base, alt çizgi subtle, title sans semibold lg
+ * - Body: bg-base, padding 20-24, text-primary sans md, line-height relaxed
+ * - Footer: bg-base, üst çizgi subtle, buton gap-2 justify-end
+ * - Close: top-right, text-tertiary → text-primary hover
+ */
+
+/* ── Mask ───────────────────────────────────────── */
+
+.wrap :global(.ant-modal-mask),
+:global(.ant-modal-root) .wrap + :global(.ant-modal-mask) {
+  background: oklch(0 0 0 / 0.45) !important;
+}
+
+/* ── Content (kutu) ─────────────────────────────── */
+
+.modal :global(.ant-modal-content) {
+  background: var(--sc-color-bg-base) !important;
+  border-radius: var(--sc-radius-lg) !important;
+  box-shadow: var(--sc-shadow-lg) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+/* ── Header ─────────────────────────────────────── */
+
+.modal :global(.ant-modal-header) {
+  background: var(--sc-color-bg-base) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+  margin: 0 !important;
+  padding: var(--sc-space-5) var(--sc-space-6) !important;
+  border-radius: 0 !important;
+}
+
+.modal :global(.ant-modal-title) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-lg) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  line-height: var(--sc-line-height-tight) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* ── Body ───────────────────────────────────────── */
+
+.modal :global(.ant-modal-body) {
+  background: var(--sc-color-bg-base) !important;
+  padding: var(--sc-space-5) var(--sc-space-6) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  line-height: var(--sc-line-height-relaxed) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* ── Footer ─────────────────────────────────────── */
+
+.modal :global(.ant-modal-footer) {
+  background: var(--sc-color-bg-base) !important;
+  border-top: 1px solid var(--sc-color-border-subtle) !important;
+  margin: 0 !important;
+  padding: var(--sc-space-4) var(--sc-space-6) !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: var(--sc-space-2) !important;
+}
+
+.modal :global(.ant-modal-footer) :global(.ant-btn) + :global(.ant-btn) {
+  margin-inline-start: 0 !important;
+}
+
+/* ── Close button ───────────────────────────────── */
+
+.modal :global(.ant-modal-close) {
+  inset-block-start: var(--sc-space-4) !important;
+  inset-inline-end: var(--sc-space-4) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  transition: color 0.15s, background 0.15s;
+}
+
+.modal :global(.ant-modal-close:hover) {
+  color: var(--sc-color-text-primary) !important;
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* ── Static method dialogs (confirm/info/success/error/warning) ── */
+
+:global(.ant-modal-confirm) :global(.ant-modal-content) {
+  background: var(--sc-color-bg-base) !important;
+  border-radius: var(--sc-radius-lg) !important;
+  box-shadow: var(--sc-shadow-lg) !important;
+}
+
+:global(.ant-modal-confirm-title) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-lg) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-primary) !important;
+  line-height: var(--sc-line-height-tight) !important;
+}
+
+:global(.ant-modal-confirm-content) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  color: var(--sc-color-text-secondary) !important;
+  line-height: var(--sc-line-height-relaxed) !important;
+  margin-block-start: var(--sc-space-2) !important;
+}
+
+/* Icon renkleri */
+:global(.ant-modal-confirm-confirm) :global(.ant-modal-confirm-body) > :global(.anticon) {
+  color: var(--sc-color-state-warning-fg) !important;
+}
+
+:global(.ant-modal-confirm-info) :global(.ant-modal-confirm-body) > :global(.anticon) {
+  color: var(--sc-color-state-info-fg) !important;
+}
+
+:global(.ant-modal-confirm-success) :global(.ant-modal-confirm-body) > :global(.anticon) {
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+:global(.ant-modal-confirm-error) :global(.ant-modal-confirm-body) > :global(.anticon) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+:global(.ant-modal-confirm-warning) :global(.ant-modal-confirm-body) > :global(.anticon) {
+  color: var(--sc-color-state-warning-fg) !important;
+}
+
+:global(.ant-modal-confirm) :global(.ant-modal-confirm-btns) {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: var(--sc-space-2) !important;
+  margin-block-start: var(--sc-space-5) !important;
+}
+
+:global(.ant-modal-confirm) :global(.ant-modal-confirm-btns) :global(.ant-btn) + :global(.ant-btn) {
+  margin-inline-start: 0 !important;
+}

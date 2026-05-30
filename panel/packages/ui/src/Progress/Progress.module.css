@@ -1,0 +1,104 @@
+/* AntD Progress wrap — ServiceCore görsel dili.
+ *
+ * Tasarım:
+ * - Rail (boş kısım): bg-muted
+ * - Track (dolu kısım): accent (default), success-fg / danger-fg (status)
+ * - Text: sans medium primary
+ * - Steps: gap'li segmentler
+ * - Circle/Dashboard: stroke tutarlı, trail muted
+ */
+
+/* ── Line — bar wrapper ───────────────────────── */
+
+.progress :global(.ant-progress-bg) {
+  background: var(--sc-color-accent) !important;
+}
+
+.progress :global(.ant-progress-inner) {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* status="success" → yeşil */
+.progress:global(.ant-progress-status-success) :global(.ant-progress-bg) {
+  background: var(--sc-color-state-success-fg) !important;
+}
+
+/* status="exception" → kırmızı */
+.progress:global(.ant-progress-status-exception) :global(.ant-progress-bg) {
+  background: var(--sc-color-state-danger-fg) !important;
+}
+
+/* status="active" → animasyon overlay rengi accent uyumlu */
+.progress:global(.ant-progress-status-active) :global(.ant-progress-bg::before) {
+  background: var(--sc-color-bg-base) !important;
+}
+
+/* success segment (success.percent ile yeşil overlay) */
+.progress :global(.ant-progress-success-bg) {
+  background: var(--sc-color-state-success-fg) !important;
+}
+
+/* ── Yüzde metin ──────────────────────────────── */
+
+.progress :global(.ant-progress-text) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Success/exception status text rengi */
+.progress:global(.ant-progress-status-success) :global(.ant-progress-text) {
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+.progress:global(.ant-progress-status-exception) :global(.ant-progress-text) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+/* ── Circle / Dashboard ───────────────────────── */
+
+.progress :global(.ant-progress-circle-trail) {
+  stroke: var(--sc-color-bg-muted) !important;
+}
+
+.progress :global(.ant-progress-circle-path) {
+  stroke: var(--sc-color-accent) !important;
+}
+
+.progress:global(.ant-progress-status-success) :global(.ant-progress-circle-path) {
+  stroke: var(--sc-color-state-success-fg) !important;
+}
+
+.progress:global(.ant-progress-status-exception) :global(.ant-progress-circle-path) {
+  stroke: var(--sc-color-state-danger-fg) !important;
+}
+
+.progress :global(.ant-progress-circle) :global(.ant-progress-text) {
+  font-family: var(--sc-font-sans) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* ── Steps (segmented line) ───────────────────── */
+
+.progress :global(.ant-progress-steps-item) {
+  background: var(--sc-color-bg-muted) !important;
+  border-radius: var(--sc-radius-xs) !important;
+}
+
+.progress :global(.ant-progress-steps-item-active) {
+  background: var(--sc-color-accent) !important;
+}
+
+/* ── Status icon (success/exception) ──────────── */
+
+.progress :global(.ant-progress-status-success) :global(.anticon),
+.progress:global(.ant-progress-status-success) :global(.anticon) {
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+.progress :global(.ant-progress-status-exception) :global(.anticon),
+.progress:global(.ant-progress-status-exception) :global(.anticon) {
+  color: var(--sc-color-state-danger-fg) !important;
+}

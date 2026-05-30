@@ -1,0 +1,204 @@
+/* AntD Timeline wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Tail (dikey çizgi): border-default, 1.5px
+ * - Dot: 10px daire, default accent border + bg-base center (outline tarzı)
+ * - Color variants:
+ *   - blue → accent (ServiceCore mavisi)
+ *   - green → success-fg
+ *   - red → danger-fg
+ *   - gray → text-tertiary
+ * - Content: sans sm primary, line-height relaxed
+ * - Label: mono xs tertiary (timestamp gibi)
+ * - Pending: animated spinner accent + italic placeholder
+ * - Item spacing: padding-bottom space-4
+ */
+
+.timeline {
+  font-family: var(--sc-font-sans) !important;
+  color: var(--sc-color-text-primary);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Item — tek bir kayıt (dot + tail + content)
+ * ─────────────────────────────────────────────────────────────── */
+
+.timeline :global(.ant-timeline-item) {
+  padding-bottom: var(--sc-space-4) !important;
+  font-family: var(--sc-font-sans);
+}
+
+/* Son item'ın altında padding az */
+.timeline :global(.ant-timeline-item-last) {
+  padding-bottom: 0 !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Hizalama matematik:
+ * - Content text-size 13px (sm), line-height 1.625 → ~21px ilk satır
+ * - Text vertical center: ~10.5px
+ * - Dot 10px (5px radius), center'ı 10.5px'e gelmeli → dot top: 5.5px
+ * - Tail dot bottom'undan başlamalı: 5.5 + 10 = 15.5px → 16px round
+ * - Custom dot (16px icon): icon center 8px, text center 10.5px →
+ *   icon top: 2.5px, tail top: 18.5px → 19px round
+ * ─────────────────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────────────────────
+ * Tail (dikey çizgi)
+ * NOT: inline-start verme — AntD mode'a göre konumlar (left/alternate/right).
+ * Sadece görsel (renk, stil) ve vertical offset (block-start).
+ * ─────────────────────────────────────────────────────────────── */
+
+.timeline :global(.ant-timeline-item-tail) {
+  border-inline-start: 2px solid var(--sc-color-border-default) !important;
+  /* Vertical offset ve position'a dokunmuyoruz — AntD'nin native hesabını koru */
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Dot (default) — AntD'nin native boyut/pozisyon değerlerini koru,
+ * sadece renk ve border değiştir. Aksi halde tail-dot align bozulur.
+ * ─────────────────────────────────────────────────────────────── */
+
+.timeline :global(.ant-timeline-item-head) {
+  background: var(--sc-color-bg-base) !important;
+  border: 2px solid var(--sc-color-accent) !important;
+  /* width/height/inset/margin VERMİYORUZ — AntD'nin defaults */
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Custom dot (Carbon icon — 16x16) — text-center'la align
+ * Wrapper'a inline-start vermez — AntD position'unu koru.
+ * ─────────────────────────────────────────────────────────────── */
+
+.timeline :global(.ant-timeline-item-head-custom) {
+  background: var(--sc-color-bg-base) !important;
+  border: 0 !important;
+  color: var(--sc-color-accent) !important;
+  /* AntD'nin native position/size/translate hesabını koru — sadece renk */
+}
+
+/* Carbon icon SVG */
+.timeline :global(.ant-timeline-item-head-custom) > :global(svg),
+.timeline :global(.ant-timeline-item-head-custom) > :global(.anticon) {
+  width: 16px !important;
+  height: 16px !important;
+  color: inherit;
+  display: block;
+}
+
+/* Custom dot için tail offset'ine dokunmuyoruz — AntD native */
+
+/* ───────────────────────────────────────────────────────────────
+ * Color variants — preset color names
+ * ─────────────────────────────────────────────────────────────── */
+
+.timeline :global(.ant-timeline-item-head-blue) {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.timeline :global(.ant-timeline-item-head-green) {
+  border-color: var(--sc-color-state-success-fg) !important;
+}
+
+.timeline :global(.ant-timeline-item-head-red) {
+  border-color: var(--sc-color-state-danger-fg) !important;
+}
+
+.timeline :global(.ant-timeline-item-head-gray) {
+  border-color: var(--sc-color-border-strong) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Content
+ * ─────────────────────────────────────────────────────────────── */
+
+/* Content — sadece görsel (font, color, line-height). Position/margin'e
+ * dokunma; alternate mode'da AntD content'i sağ/sol kolona alır,
+ * margin-inline-start zorlamak bu logic'i bozar. */
+.timeline :global(.ant-timeline-item-content) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  line-height: var(--sc-line-height-relaxed) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Label (soldaki timestamp/meta)
+ * ─────────────────────────────────────────────────────────────── */
+
+/* Label görsel — content ile aynı satır yüksekliği için sabit pixel
+ * line-height. Aksi halde xs font (12px) ile sm content (13px) arasında
+ * ~1.5px line-height farkı → vertical hizalama bozulur (label hafif aşağıda
+ * görünür). 21px = content sm 13px × 1.625 ≈ ilk satır kutusu. */
+.timeline :global(.ant-timeline-item-label) {
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  line-height: 21px !important;
+  padding-block: 0 !important;
+  margin-block: 0 !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Pending state — pendingDot (default LoadingOutlined icon) görünür kal.
+ * Pending dot custom-head class alır; custom dot kuralları geçerli ama
+ * border/border-radius'u pending'e özel reset gerekmez (icon sade).
+ * ─────────────────────────────────────────────────────────────── */
+
+.timeline :global(.ant-timeline-item-pending) :global(.ant-timeline-item-head),
+.timeline :global(.ant-timeline-item-pending) :global(.ant-timeline-item-head-custom) {
+  width: 16px !important;
+  height: 16px !important;
+  background: var(--sc-color-bg-base) !important;
+  border: 0 !important;
+  color: var(--sc-color-accent) !important;
+  inset-block-start: 2.5px !important;
+}
+
+/* Pending dot içindeki spinner / icon */
+.timeline :global(.ant-timeline-item-pending) :global(.ant-timeline-item-head) > :global(svg),
+.timeline :global(.ant-timeline-item-pending) :global(.ant-timeline-item-head) > :global(.anticon),
+.timeline :global(.ant-timeline-item-pending) :global(.ant-timeline-item-head-custom) > :global(svg),
+.timeline :global(.ant-timeline-item-pending) :global(.ant-timeline-item-head-custom) > :global(.anticon) {
+  width: 16px !important;
+  height: 16px !important;
+  color: var(--sc-color-accent) !important;
+  display: block;
+}
+
+.timeline :global(.ant-timeline-item-pending) :global(.ant-timeline-item-content) {
+  color: var(--sc-color-text-tertiary) !important;
+  font-style: italic;
+}
+
+/* Pending tail dashed */
+.timeline :global(.ant-timeline-item-pending) :global(.ant-timeline-item-tail),
+.timeline :global(.ant-timeline-pending) :global(.ant-timeline-item-tail) {
+  border-inline-start-style: dashed !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Mode — alternate (zigzag), left, right
+ * ─────────────────────────────────────────────────────────────── */
+
+.timeline:global(.ant-timeline-alternate) :global(.ant-timeline-item-content),
+.timeline:global(.ant-timeline-right) :global(.ant-timeline-item-content) {
+  font-family: var(--sc-font-sans);
+}
+
+/* Right mode'da content sol'da */
+.timeline:global(.ant-timeline-right) :global(.ant-timeline-item-content) {
+  text-align: end;
+}
+
+/* Label mode (timestamp label kullanan label mode) */
+.timeline:global(.ant-timeline-label) :global(.ant-timeline-item-label) {
+  font-family: var(--sc-font-mono) !important;
+  width: calc(50% - var(--sc-space-3));
+}
+
+.timeline:global(.ant-timeline-label) :global(.ant-timeline-item-tail),
+.timeline:global(.ant-timeline-label) :global(.ant-timeline-item-head) {
+  inset-inline-start: 50% !important;
+}

@@ -1,0 +1,98 @@
+/* AntD Skeleton wrap — ServiceCore görsel dili.
+ *
+ * Tasarım:
+ * - Base bg: bg-muted (skeleton blok rengi)
+ * - Title: 16px height, radius xs
+ * - Paragraph row: 16px height, radius xs, gap 16
+ * - Active shimmer: subtle ton geçişi (bg-muted → bg-subtle)
+ * - Round=true: title+paragraph radius md
+ * - Avatar circle: bg-muted
+ * - Sub-components (Button, Input, Image, Node) — aynı bg
+ */
+
+/* ── Base placeholder rengi (title, paragraph, avatar) ── */
+
+.skeleton :global(.ant-skeleton-title),
+.skeleton :global(.ant-skeleton-paragraph) > li,
+.skeleton :global(.ant-skeleton-avatar) {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* Title/paragraph radius default xs */
+.skeleton :global(.ant-skeleton-title),
+.skeleton :global(.ant-skeleton-paragraph) > li {
+  border-radius: var(--sc-radius-xs) !important;
+}
+
+/* round=true → radius md */
+.skeleton:global(.ant-skeleton-round) :global(.ant-skeleton-title),
+.skeleton:global(.ant-skeleton-round) :global(.ant-skeleton-paragraph) > li {
+  border-radius: var(--sc-radius-md) !important;
+}
+
+/* ── Active shimmer animasyonu — gradient bg ── */
+
+.skeleton:global(.ant-skeleton-active) :global(.ant-skeleton-title),
+.skeleton:global(.ant-skeleton-active) :global(.ant-skeleton-paragraph) > li,
+.skeleton:global(.ant-skeleton-active) :global(.ant-skeleton-avatar),
+.skeleton:global(.ant-skeleton-active) :global(.ant-skeleton-button),
+.skeleton:global(.ant-skeleton-active) :global(.ant-skeleton-input),
+.skeleton:global(.ant-skeleton-active) :global(.ant-skeleton-image) {
+  background: linear-gradient(
+    90deg,
+    var(--sc-color-bg-muted) 25%,
+    var(--sc-color-bg-subtle) 37%,
+    var(--sc-color-bg-muted) 63%
+  ) !important;
+  background-size: 400% 100% !important;
+}
+
+/* ── Sub-components — Button / Input / Image / Node ── */
+
+/* Global selektörler — Object.assign'la attach edilen sub'lar Skeleton wrap'ı
+ * dışında render edilse de aynı görsel olsun. */
+
+:global(.ant-skeleton-button) {
+  background: var(--sc-color-bg-muted) !important;
+  border-radius: var(--sc-radius-sm) !important;
+}
+
+:global(.ant-skeleton-input) {
+  background: var(--sc-color-bg-muted) !important;
+  border-radius: var(--sc-radius-sm) !important;
+}
+
+:global(.ant-skeleton-image) {
+  background: var(--sc-color-bg-muted) !important;
+  border-radius: var(--sc-radius-md) !important;
+}
+
+:global(.ant-skeleton-image) :global(.ant-skeleton-image-svg) {
+  color: var(--sc-color-text-tertiary) !important;
+  opacity: 0.4;
+}
+
+:global(.ant-skeleton-element) :global(.ant-skeleton-avatar) {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* Active sub-component shimmer */
+:global(.ant-skeleton-element.ant-skeleton-active) :global(.ant-skeleton-button),
+:global(.ant-skeleton-element.ant-skeleton-active) :global(.ant-skeleton-input),
+:global(.ant-skeleton-element.ant-skeleton-active) :global(.ant-skeleton-image),
+:global(.ant-skeleton-element.ant-skeleton-active) :global(.ant-skeleton-avatar) {
+  background: linear-gradient(
+    90deg,
+    var(--sc-color-bg-muted) 25%,
+    var(--sc-color-bg-subtle) 37%,
+    var(--sc-color-bg-muted) 63%
+  ) !important;
+  background-size: 400% 100% !important;
+}
+
+/* Skeleton.Node — custom child kutusu */
+:global(.ant-skeleton-element) :global(.ant-skeleton-node) {
+  background: var(--sc-color-bg-muted) !important;
+  border-radius: var(--sc-radius-md) !important;
+  color: var(--sc-color-text-tertiary) !important;
+}

@@ -1,0 +1,67 @@
+/* AntD Message wrap — ServiceCore görsel diline çek.
+ *
+ * NOT: Message portal'da render edilir, scope yok. CSS Module'ün :global
+ * selektörleri ile gerçek class'ları yakalıyoruz. Bu CSS bundle'ı import
+ * edildiğinde global etki eder.
+ *
+ * Görsel kararlar:
+ * - Notice content: bg-base, shadow md, radius md, padding sane
+ * - Icon: type'a göre semantic renk (success/info/warning/danger fg)
+ * - Text: sans sm primary
+ * - Top default 24px (config.top ile değiştirilir)
+ */
+
+/* ───────────────────────────────────────────────────────────────
+ * Notice — tek toast kutusu
+ * ─────────────────────────────────────────────────────────────── */
+
+:global(.ant-message-notice-content) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-md) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+  padding: var(--sc-space-2) var(--sc-space-4) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  line-height: var(--sc-line-height-normal);
+  pointer-events: auto;
+}
+
+/* Icon + text wrapper */
+:global(.ant-message-notice) :global(.ant-message-notice-content) > :global(.anticon),
+:global(.ant-message-notice-content) > :global(svg) {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-end: var(--sc-space-2);
+  vertical-align: middle;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Type renkleri — icon color
+ * ─────────────────────────────────────────────────────────────── */
+
+:global(.ant-message-success) :global(.anticon),
+:global(.ant-message-success) > :global(svg) {
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+:global(.ant-message-error) :global(.anticon),
+:global(.ant-message-error) > :global(svg) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+:global(.ant-message-warning) :global(.anticon),
+:global(.ant-message-warning) > :global(svg) {
+  color: var(--sc-color-state-warning-fg) !important;
+}
+
+:global(.ant-message-info) :global(.anticon),
+:global(.ant-message-info) > :global(svg) {
+  color: var(--sc-color-state-info-fg) !important;
+}
+
+:global(.ant-message-loading) :global(.anticon),
+:global(.ant-message-loading) > :global(svg) {
+  color: var(--sc-color-accent) !important;
+}

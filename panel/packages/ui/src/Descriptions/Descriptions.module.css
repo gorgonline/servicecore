@@ -89,7 +89,7 @@
   border-bottom: none !important;
 }
 
-/* Bordered label */
+/* Bordered label — width içeriğe göre, taşma yok */
 .descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-item-label) {
   background: var(--sc-color-bg-subtle) !important;
   color: var(--sc-color-text-secondary) !important;
@@ -97,16 +97,20 @@
   font-weight: var(--sc-font-weight-medium) !important;
   padding: var(--sc-space-3) var(--sc-space-4) !important;
   border-inline-end: 1px solid var(--sc-color-border-subtle) !important;
-  width: 200px;
   vertical-align: top;
+  white-space: nowrap;
+  width: 1%;  /* "shrink to content" — AntD'ye label'ı içerik kadar genişlet de */
 }
 
-/* Bordered content */
+/* Bordered content — kalan alanı kapla, içerikte gereksiz wrap yok */
 .descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-item-content) {
   color: var(--sc-color-text-primary) !important;
   font-size: var(--sc-font-size-sm) !important;
   padding: var(--sc-space-3) var(--sc-space-4) !important;
   border-inline-end: 1px solid var(--sc-color-border-subtle) !important;
+  vertical-align: top;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .descriptions:global(.ant-descriptions-bordered) :global(.ant-descriptions-row) > :global(.ant-descriptions-item-content):last-child {

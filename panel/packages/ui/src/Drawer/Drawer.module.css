@@ -1,0 +1,120 @@
+/* AntD Drawer wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Mask: oklch black 0.4 overlay
+ * - Content: bg-base, shadow lg, border yok (sağdan açılırken sol kenar
+ *   ayrıca border-default; soldan açılırken sağ kenar; vs)
+ * - Header: bg-base, padding sane, alt çizgi border-subtle
+ * - Title: sans semibold lg, primary
+ * - Extra: sağ slot — close button + action
+ * - Body: padding sane, font sans
+ * - Footer: bg-subtle, üst çizgi border-subtle, padding align right
+ * - Close button: text-tertiary → accent hover
+ */
+
+.root {
+  font-family: var(--sc-font-sans);
+}
+
+.drawer {
+  font-family: var(--sc-font-sans);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Mask — backdrop overlay
+ * ─────────────────────────────────────────────────────────────── */
+
+.root :global(.ant-drawer-mask) {
+  background: oklch(0 0 0 / 0.4) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Content — drawer panel
+ * ─────────────────────────────────────────────────────────────── */
+
+.root :global(.ant-drawer-content) {
+  background: var(--sc-color-bg-base) !important;
+  box-shadow: var(--sc-shadow-lg) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Header
+ * ─────────────────────────────────────────────────────────────── */
+
+.root :global(.ant-drawer-header) {
+  background: var(--sc-color-bg-base) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+  padding: var(--sc-space-4) var(--sc-space-5) !important;
+}
+
+.root :global(.ant-drawer-header-title) {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-3);
+}
+
+.root :global(.ant-drawer-title) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-lg) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-primary) !important;
+  line-height: var(--sc-line-height-snug);
+  margin: 0 !important;
+}
+
+.root :global(.ant-drawer-extra) {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Close button
+ * ─────────────────────────────────────────────────────────────── */
+
+.root :global(.ant-drawer-close) {
+  color: var(--sc-color-text-tertiary) !important;
+  padding: var(--sc-space-1) !important;
+  margin: 0 var(--sc-space-2) 0 0 !important;
+  border-radius: var(--sc-radius-sm);
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.root :global(.ant-drawer-close):hover {
+  background: var(--sc-color-bg-muted) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.root :global(.ant-drawer-close) :global(.anticon) :global(svg),
+.root :global(.ant-drawer-close) :global(svg) {
+  width: 16px;
+  height: 16px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Body — ana içerik
+ * ─────────────────────────────────────────────────────────────── */
+
+.root :global(.ant-drawer-body) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  padding: var(--sc-space-5) !important;
+  line-height: var(--sc-line-height-relaxed);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Footer
+ * ─────────────────────────────────────────────────────────────── */
+
+.root :global(.ant-drawer-footer) {
+  background: var(--sc-color-bg-subtle) !important;
+  border-top: 1px solid var(--sc-color-border-subtle) !important;
+  padding: var(--sc-space-3) var(--sc-space-5) !important;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--sc-space-2);
+}

@@ -1,0 +1,100 @@
+/* AntD Result wrap — ServiceCore görsel dili.
+ *
+ * Tasarım:
+ * - Container: padding ample, center align (default)
+ * - Icon: 72px, status'a göre semantic renk
+ * - Title: sans semibold 2xl, line-height tight
+ * - SubTitle: sans md secondary, line-height relaxed
+ * - Extra: button row, center, gap-2
+ * - Children: alt blok bg-muted radius padding (log/code için)
+ */
+
+.result {
+  padding: var(--sc-space-12) var(--sc-space-6) !important;
+}
+
+/* ── Icon ──────────────────────────────────────── */
+
+.result :global(.ant-result-icon) {
+  margin-bottom: var(--sc-space-6) !important;
+}
+
+.result :global(.ant-result-icon) > :global(.anticon) {
+  font-size: 72px !important;
+}
+
+/* Status renkleri — icon */
+.result:global(.ant-result-success) :global(.ant-result-icon) > :global(.anticon) {
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+.result:global(.ant-result-error) :global(.ant-result-icon) > :global(.anticon) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+.result:global(.ant-result-warning) :global(.ant-result-icon) > :global(.anticon) {
+  color: var(--sc-color-state-warning-fg) !important;
+}
+
+.result:global(.ant-result-info) :global(.ant-result-icon) > :global(.anticon) {
+  color: var(--sc-color-state-info-fg) !important;
+}
+
+/* 404 / 403 / 500 — illustration SVG (AntD built-in) */
+.result :global(.ant-result-image) {
+  margin: 0 auto var(--sc-space-6) !important;
+  max-width: 280px;
+  height: auto;
+}
+
+/* ── Title ─────────────────────────────────────── */
+
+.result :global(.ant-result-title) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-2xl) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  line-height: var(--sc-line-height-tight) !important;
+  color: var(--sc-color-text-primary) !important;
+  margin-bottom: var(--sc-space-2) !important;
+  text-align: center;
+}
+
+/* ── SubTitle ──────────────────────────────────── */
+
+.result :global(.ant-result-subtitle) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  line-height: var(--sc-line-height-relaxed) !important;
+  color: var(--sc-color-text-secondary) !important;
+  text-align: center;
+  margin-bottom: var(--sc-space-6) !important;
+}
+
+/* ── Extra (actions) ───────────────────────────── */
+
+.result :global(.ant-result-extra) {
+  margin-top: var(--sc-space-6) !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: var(--sc-space-3) !important;
+  flex-wrap: wrap;
+}
+
+.result :global(.ant-result-extra) > * {
+  margin-inline-start: 0 !important;
+  margin-inline-end: 0 !important;
+}
+
+/* ── Children content (alt bloğu — log/code/detay) ── */
+
+.result :global(.ant-result-content) {
+  background: var(--sc-color-bg-muted) !important;
+  border: 1px solid var(--sc-color-border-subtle) !important;
+  border-radius: var(--sc-radius-md) !important;
+  padding: var(--sc-space-5) var(--sc-space-6) !important;
+  margin-top: var(--sc-space-6) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-secondary) !important;
+}

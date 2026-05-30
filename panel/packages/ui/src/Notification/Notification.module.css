@@ -1,0 +1,107 @@
+/* AntD Notification wrap — ServiceCore görsel diline çek.
+ *
+ * Notification portal'da render edilir, scope yok. :global selektörler
+ * ile gerçek class'ları yakalıyoruz. Import edildiğinde global etki eder.
+ *
+ * Tasarım:
+ * - Notice: bg-base, radius-lg, shadow-lg, border subtle
+ * - Message (title): sans semibold md
+ * - Description: sans sm secondary
+ * - Icon: type'a göre semantic renk (success/info/warning/danger fg)
+ * - Close: text-tertiary → text-primary hover
+ * - btn: alt sağ, gap'li
+ */
+
+/* ── Notice (kart) ──────────────────────────────── */
+
+:global(.ant-notification-notice) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-subtle) !important;
+  border-radius: var(--sc-radius-lg) !important;
+  box-shadow: var(--sc-shadow-lg) !important;
+  padding: var(--sc-space-4) var(--sc-space-5) !important;
+  font-family: var(--sc-font-sans) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* ── Message (title) ────────────────────────────── */
+
+:global(.ant-notification-notice-message) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  line-height: var(--sc-line-height-tight) !important;
+  color: var(--sc-color-text-primary) !important;
+  margin-bottom: var(--sc-space-1) !important;
+}
+
+/* ── Description ────────────────────────────────── */
+
+:global(.ant-notification-notice-description) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  line-height: var(--sc-line-height-relaxed) !important;
+  color: var(--sc-color-text-secondary) !important;
+}
+
+/* ── Icon — type renkleri ──────────────────────── */
+
+:global(.ant-notification-notice-icon) {
+  font-size: 20px !important;
+  margin-inline-start: 0 !important;
+}
+
+:global(.ant-notification-notice-icon-success) {
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+:global(.ant-notification-notice-icon-error) {
+  color: var(--sc-color-state-danger-fg) !important;
+}
+
+:global(.ant-notification-notice-icon-warning) {
+  color: var(--sc-color-state-warning-fg) !important;
+}
+
+:global(.ant-notification-notice-icon-info) {
+  color: var(--sc-color-state-info-fg) !important;
+}
+
+/* ── Icon + content hizalama ───────────────────── */
+
+:global(.ant-notification-notice-with-icon) :global(.ant-notification-notice-message) {
+  margin-inline-start: 32px !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-md) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+:global(.ant-notification-notice-with-icon) :global(.ant-notification-notice-description) {
+  margin-inline-start: 32px !important;
+}
+
+/* ── Close button ───────────────────────────────── */
+
+:global(.ant-notification-notice-close) {
+  color: var(--sc-color-text-tertiary) !important;
+  inset-block-start: var(--sc-space-3) !important;
+  inset-inline-end: var(--sc-space-3) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  transition: color 0.15s, background 0.15s;
+}
+
+:global(.ant-notification-notice-close:hover) {
+  color: var(--sc-color-text-primary) !important;
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* ── btn — action alanı ────────────────────────── */
+
+:global(.ant-notification-notice-btn) {
+  margin-block-start: var(--sc-space-4) !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: var(--sc-space-2) !important;
+  margin-inline-start: 32px !important;
+}

@@ -1,0 +1,104 @@
+/* AntD Popover wrap — ServiceCore görsel diline çek.
+ *
+ * NOT: Popover popup AntD portal'ında render edilir — rootClassName ile
+ * bizim scope'umuza alıyoruz, :global ile içerideki class'ları çekiyoruz.
+ *
+ * Görsel kararlar:
+ * - Inner: bg-base, border-default, radius lg, shadow md
+ * - Title: text-primary semibold sm, alt çizgi border-subtle
+ * - Content: text-primary sm, line-height relaxed
+ * - Padding: 12px (title), 12px (content)
+ * - Arrow: AntD'nin default'unu koru, border-default match
+ * - Max width: 280px (uzun metinler için)
+ */
+
+.popover {
+  font-family: var(--sc-font-sans);
+}
+
+.legacyOverlay {
+  font-family: var(--sc-font-sans);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Inner — popover'ın bg container'ı
+ * ─────────────────────────────────────────────────────────────── */
+
+.popover :global(.ant-popover-inner) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-lg) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+  padding: 0 !important;
+  max-width: 320px;
+  font-family: var(--sc-font-sans);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Title — varsa
+ * ─────────────────────────────────────────────────────────────── */
+
+.popover :global(.ant-popover-title) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-primary) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+  margin-bottom: 0 !important;
+  line-height: var(--sc-line-height-snug);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Inner content — asıl içerik
+ * ─────────────────────────────────────────────────────────────── */
+
+.popover :global(.ant-popover-inner-content) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  line-height: var(--sc-line-height-relaxed);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Arrow — üçgen
+ * ─────────────────────────────────────────────────────────────── */
+
+.popover :global(.ant-popover-arrow) {
+  --antd-arrow-background-color: var(--sc-color-bg-base);
+}
+
+.popover :global(.ant-popover-arrow)::before {
+  background: var(--sc-color-bg-base) !important;
+}
+
+/* AntD'nin custom property tabanlı arrow renklerini token'a bağla */
+.popover {
+  --antd-arrow-background-color: var(--sc-color-bg-base);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Color prop override — popover'a custom bg
+ * (color="warning" gibi quick variant CSS module'da olmaz; user
+ * inline color prop verir, AntD onu uygular. Border ve arrow'u
+ * eşitlemek için ek kuralı yok — direct color prop ile bizim
+ * tema dışı renkler kullanıcının inisiyatifinde.)
+ * ─────────────────────────────────────────────────────────────── */
+
+/* ───────────────────────────────────────────────────────────────
+ * Legacy overlay (overlayClassName) — eski API
+ * ─────────────────────────────────────────────────────────────── */
+
+.legacyOverlay :global(.ant-popover-inner) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-lg) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+}
+
+.legacyOverlay :global(.ant-popover-title) {
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-primary) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+}

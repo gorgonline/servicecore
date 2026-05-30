@@ -1,0 +1,347 @@
+/* AntD Table wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Wrapper: bordered ise border default + radius md
+ * - Header: bg subtle, font sans medium sm, text-tertiary caps eyebrow
+ * - Header çizgisi: alt border-subtle
+ * - Cell: padding sane, sans sm, text-primary
+ * - Cell border alt: border-subtle
+ * - Row hover: bg-muted
+ * - Row selected: bg accent-subtle, hover devamı accent-subtle
+ * - Sort icon: tertiary, active'te accent
+ * - Filter icon: tertiary, filtered'da accent
+ * - Pagination: accent active, default cell border-strong
+ * - Expand icon: tertiary, hover accent
+ * - Loading spinner: accent
+ * - Selection checkbox: Checkbox wrap stiliyle uyumlu
+ */
+
+.table {
+  font-family: var(--sc-font-sans) !important;
+  color: var(--sc-color-text-primary);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Wrapper border + radius — bordered=true varsayılan, false ise yok
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table) {
+  background: var(--sc-color-bg-base) !important;
+  border-radius: var(--sc-radius-md) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.table:global(.ant-table-wrapper) :global(.ant-table-bordered) :global(.ant-table-container) {
+  border-color: var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-md);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Header (.ant-table-thead)
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-thead) > tr > th {
+  background: var(--sc-color-bg-subtle) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wide);
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+  border-inline-end-color: var(--sc-color-border-subtle) !important;
+}
+
+/* İlk th sol radius (bordered modda) */
+.table :global(.ant-table-thead) > tr > th:first-child {
+  border-start-start-radius: var(--sc-radius-md) !important;
+}
+
+.table :global(.ant-table-thead) > tr > th:last-child {
+  border-start-end-radius: var(--sc-radius-md) !important;
+}
+
+/* Header'da hover olduğunda (sort/filter trigger için) */
+.table :global(.ant-table-thead) > tr > th:hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Body (.ant-table-tbody)
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-tbody) > tr > td {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+  transition: background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* Son satırın alt border'ını sil */
+.table :global(.ant-table-tbody) > tr:last-child > td {
+  border-bottom: 0 !important;
+}
+
+/* Row hover */
+.table :global(.ant-table-tbody) > tr:hover > td {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* Selected row */
+.table :global(.ant-table-tbody) > tr:global(.ant-table-row-selected) > td {
+  background: var(--sc-color-accent-subtle) !important;
+}
+
+.table :global(.ant-table-tbody) > tr:global(.ant-table-row-selected):hover > td {
+  background: var(--sc-color-accent-subtle) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Sort icons (column header)
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-column-sorters) {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-1);
+}
+
+.table :global(.ant-table-column-sorter) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.table :global(.ant-table-column-sorter-up),
+.table :global(.ant-table-column-sorter-down) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.table :global(.ant-table-column-sorter-up.active),
+.table :global(.ant-table-column-sorter-down.active) {
+  color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Filter icons
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-filter-trigger) {
+  color: var(--sc-color-text-tertiary) !important;
+  margin-inline-start: var(--sc-space-2);
+}
+
+.table :global(.ant-table-filter-trigger):hover {
+  background: transparent !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+.table :global(.ant-table-filter-trigger.active),
+.table :global(.ant-table-filter-trigger):global(.active) {
+  color: var(--sc-color-accent) !important;
+}
+
+/* Filter dropdown — popup (.ant-table-filter-dropdown) */
+:global(.ant-table-filter-dropdown) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-md) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Selection column (checkbox)
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-selection-column) {
+  padding: 0 var(--sc-space-3) !important;
+}
+
+.table :global(.ant-checkbox-inner) {
+  border-color: var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  border-width: 1.5px !important;
+}
+
+.table :global(.ant-checkbox-checked) :global(.ant-checkbox-inner),
+.table :global(.ant-checkbox-indeterminate) :global(.ant-checkbox-inner) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Expand icon
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-row-expand-icon) {
+  background: var(--sc-color-bg-base) !important;
+  border-color: var(--sc-color-border-strong) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.table :global(.ant-table-row-expand-icon):hover {
+  border-color: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent) !important;
+}
+
+.table :global(.ant-table-row-expand-icon-expanded) {
+  border-color: var(--sc-color-accent) !important;
+  color: var(--sc-color-accent) !important;
+}
+
+/* Expanded row content */
+.table :global(.ant-table-expanded-row) > td {
+  background: var(--sc-color-bg-subtle) !important;
+  padding: var(--sc-space-4) var(--sc-space-5) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Sticky header / fixed columns
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-cell-fix-left),
+.table :global(.ant-table-cell-fix-right) {
+  background: var(--sc-color-bg-base) !important;
+}
+
+.table :global(.ant-table-cell-fix-left::after),
+.table :global(.ant-table-cell-fix-right::before) {
+  box-shadow: inset -10px 0 8px -8px oklch(0 0 0 / 0.08) !important;
+}
+
+.table :global(.ant-table-thead) > tr > :global(.ant-table-cell-fix-left),
+.table :global(.ant-table-thead) > tr > :global(.ant-table-cell-fix-right) {
+  background: var(--sc-color-bg-subtle) !important;
+}
+
+/* Sticky header (sticky=true) */
+.table :global(.ant-table-sticky-holder),
+.table :global(.ant-table-sticky-scroll) {
+  background: var(--sc-color-bg-base) !important;
+  z-index: 2;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Pagination
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-pagination) {
+  margin: var(--sc-space-4) 0 !important;
+  font-family: var(--sc-font-sans);
+}
+
+.table :global(.ant-pagination-item) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+}
+
+.table :global(.ant-pagination-item) a {
+  color: var(--sc-color-text-primary) !important;
+}
+
+.table :global(.ant-pagination-item):hover {
+  border-color: var(--sc-color-accent) !important;
+}
+
+.table :global(.ant-pagination-item):hover a {
+  color: var(--sc-color-accent) !important;
+}
+
+.table :global(.ant-pagination-item-active) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+.table :global(.ant-pagination-item-active) a {
+  color: var(--sc-color-accent-on-accent) !important;
+}
+
+.table :global(.ant-pagination-prev),
+.table :global(.ant-pagination-next),
+.table :global(.ant-pagination-jump-prev),
+.table :global(.ant-pagination-jump-next) {
+  border-radius: var(--sc-radius-sm) !important;
+  color: var(--sc-color-text-secondary) !important;
+}
+
+.table :global(.ant-pagination-prev):hover,
+.table :global(.ant-pagination-next):hover {
+  color: var(--sc-color-accent) !important;
+}
+
+.table :global(.ant-pagination-disabled),
+.table :global(.ant-pagination-disabled):hover {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed;
+}
+
+/* Page size select */
+.table :global(.ant-pagination-options) :global(.ant-select-selector) {
+  border-color: var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-sm) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Loading spin (loading=true)
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-spin-blur) {
+  opacity: 0.4;
+}
+
+.table :global(.ant-spin-dot-item) {
+  background: var(--sc-color-accent) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Empty state (data yok)
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-placeholder) > td {
+  padding: var(--sc-space-12) var(--sc-space-4) !important;
+  background: var(--sc-color-bg-base) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Size variants
+ * ─────────────────────────────────────────────────────────────── */
+
+.table:global(.ant-table-wrapper) :global(.ant-table-small) :global(.ant-table-thead) > tr > th,
+.table:global(.ant-table-wrapper) :global(.ant-table-small) :global(.ant-table-tbody) > tr > td {
+  padding: var(--sc-space-2) var(--sc-space-3) !important;
+  font-size: var(--sc-font-size-xs) !important;
+}
+
+.table:global(.ant-table-wrapper) :global(.ant-table-middle) :global(.ant-table-thead) > tr > th,
+.table:global(.ant-table-wrapper) :global(.ant-table-middle) :global(.ant-table-tbody) > tr > td {
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Table title / footer (custom render)
+ * ─────────────────────────────────────────────────────────────── */
+
+.table :global(.ant-table-title) {
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  background: var(--sc-color-bg-base) !important;
+  border-bottom: 1px solid var(--sc-color-border-subtle) !important;
+  font-family: var(--sc-font-sans);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+.table :global(.ant-table-footer) {
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+  background: var(--sc-color-bg-subtle) !important;
+  border-top: 1px solid var(--sc-color-border-subtle) !important;
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-sm);
+}

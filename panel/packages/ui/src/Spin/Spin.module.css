@@ -1,0 +1,69 @@
+/* AntD Spin wrap — ServiceCore görsel dili.
+ *
+ * Tasarım:
+ * - Dot color: accent (#0070F3)
+ * - Tip text: sans sm secondary
+ * - Wrapper overlay (spinning içerik üstü): bg-base semi-transparent
+ * - Container — relative pozisyon (AntD'nin native pattern'i)
+ */
+
+/* ── Spinner dot rengi ─────────────────────────── */
+
+.spin :global(.ant-spin-dot-item) {
+  background-color: var(--sc-color-accent) !important;
+}
+
+/* Inline spinner — class .spin doğrudan AntSpin'e gidiyor,
+ * wrapper kullanım için ek selektör gerekiyor. Global override: */
+:global(.ant-spin) :global(.ant-spin-dot-item) {
+  background-color: var(--sc-color-accent) !important;
+}
+
+/* ── Tip metni ────────────────────────────────── */
+
+:global(.ant-spin-text) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-secondary) !important;
+  margin-top: var(--sc-space-3) !important;
+}
+
+/* ── Wrapper (children overlay) ───────────────── */
+
+.wrapper :global(.ant-spin-container) {
+  transition: opacity 0.2s;
+}
+
+.wrapper:global(.ant-spin-blur) :global(.ant-spin-container) {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Spinner overlay — children üstünde */
+.wrapper :global(.ant-spin) {
+  background: oklch(from var(--sc-color-bg-base) l c h / 0.6);
+  border-radius: var(--sc-radius-md);
+}
+
+/* ── Custom indicator container ────────────────── */
+
+:global(.ant-spin-dot-spin) {
+  animation-duration: 1.2s !important;
+}
+
+/* CSS-only spin animation utility — Carbon icon ile birlikte:
+ *   <Renew style={{ animation: 'sc-spin 1s linear infinite' }} />
+ */
+@keyframes sc-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:global(.sc-spin-anim) {
+  animation: sc-spin 1s linear infinite;
+}

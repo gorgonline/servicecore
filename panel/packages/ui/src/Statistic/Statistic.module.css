@@ -1,0 +1,87 @@
+/* AntD Statistic wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Title: text-tertiary, caps eyebrow tarzı (sm uppercase letter-spacing wide)
+ * - Value: mono font (rakamların hizası net), 32px, semibold, text-primary
+ * - Prefix/Suffix: text-secondary, sm, mono
+ * - Decimal kısmı: biraz daha küçük (28px)
+ * - Loading state: skeleton placeholder
+ */
+
+.statistic {
+  font-family: var(--sc-font-sans) !important;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Title — caps eyebrow stili
+ * ─────────────────────────────────────────────────────────────── */
+
+.statistic :global(.ant-statistic-title) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wide);
+  margin-bottom: 0 !important;
+  line-height: var(--sc-line-height-snug);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Content wrapper — value + prefix + suffix
+ * ─────────────────────────────────────────────────────────────── */
+
+.statistic :global(.ant-statistic-content) {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sc-space-1);
+  font-family: var(--sc-font-mono) !important;
+  font-size: 32px !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-primary) !important;
+  line-height: var(--sc-line-height-tight);
+}
+
+/* Value (asıl rakam) */
+.statistic :global(.ant-statistic-content-value) {
+  font-family: var(--sc-font-mono) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Decimal kısmı — biraz daha küçük */
+.statistic :global(.ant-statistic-content-value-decimal) {
+  font-size: 0.7em;
+  color: var(--sc-color-text-secondary) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Prefix / Suffix
+ * ─────────────────────────────────────────────────────────────── */
+
+.statistic :global(.ant-statistic-content-prefix) {
+  font-family: var(--sc-font-mono) !important;
+  font-size: var(--sc-font-size-xl) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-secondary) !important;
+  margin-inline-end: var(--sc-space-1) !important;
+}
+
+.statistic :global(.ant-statistic-content-suffix) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  margin-inline-start: var(--sc-space-1) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Loading skeleton
+ * ─────────────────────────────────────────────────────────────── */
+
+.statistic :global(.ant-statistic-skeleton) {
+  background: var(--sc-color-bg-muted) !important;
+}

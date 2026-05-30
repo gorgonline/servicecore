@@ -1,0 +1,73 @@
+/* AntD QRCode wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Container: border-default, radius md, padding 16px (bordered=true ise)
+ * - QR code rengi: text-primary (default siyah)
+ * - Background: bg-base (default beyaz)
+ * - Mask overlay (expired/loading/scanned): yarı şeffaf overlay + accent text
+ * - Refresh button (expired durumunda): accent
+ */
+
+.qrcode {
+  font-family: var(--sc-font-sans);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sc-space-4) !important;
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-default) !important;
+  border-radius: var(--sc-radius-md) !important;
+}
+
+/* AntD'nin bordered=false varyantı border'ı kaldırır */
+.qrcode:global(.ant-qrcode-borderless) {
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Mask (status overlay) — expired / loading / scanned
+ * ─────────────────────────────────────────────────────────────── */
+
+.qrcode :global(.ant-qrcode-mask) {
+  background: oklch(1 0 0 / 0.85) !important;
+  color: var(--sc-color-text-primary) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-medium);
+  border-radius: var(--sc-radius-md);
+  text-align: center;
+  gap: var(--sc-space-2);
+}
+
+.qrcode :global(.ant-qrcode-expired) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* Refresh button (expired durumunda görünür) */
+.qrcode :global(.ant-qrcode-expired) :global(.ant-btn) {
+  background: transparent !important;
+  border: none !important;
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-medium) !important;
+  padding: var(--sc-space-1) var(--sc-space-2) !important;
+  height: auto !important;
+  font-size: var(--sc-font-size-sm) !important;
+}
+
+.qrcode :global(.ant-qrcode-expired) :global(.ant-btn):hover {
+  color: var(--sc-color-accent-hover) !important;
+  background: transparent !important;
+}
+
+/* Scanned status — success renk */
+.qrcode :global(.ant-qrcode-scanned),
+.qrcode :global(.ant-qrcode-mask-scanned) {
+  color: var(--sc-color-state-success-fg) !important;
+}
+
+/* Loading spinner */
+.qrcode :global(.ant-qrcode-loading) {
+  color: var(--sc-color-accent) !important;
+}

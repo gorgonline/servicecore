@@ -1,0 +1,181 @@
+/* AntD Tree wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Node content: sans sm primary, padding sane
+ * - Hover: bg-muted
+ * - Selected: bg accent-subtle, color accent, font-weight medium
+ * - Checkbox: accent
+ * - Switcher (▶/▼): text-tertiary, hover/active accent
+ * - Connect lines (showLine): border-default 1px
+ * - Disabled: text-disabled
+ */
+
+.tree {
+  font-family: var(--sc-font-sans) !important;
+  background: var(--sc-color-bg-base) !important;
+  color: var(--sc-color-text-primary) !important;
+  padding: var(--sc-space-2) !important;
+  border-radius: var(--sc-radius-md);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * TreeNode wrapper
+ * ─────────────────────────────────────────────────────────────── */
+
+.tree :global(.ant-tree-treenode) {
+  padding: 2px 0 !important;
+  align-items: center;
+}
+
+.tree :global(.ant-tree-treenode-disabled) :global(.ant-tree-node-content-wrapper) {
+  color: var(--sc-color-text-disabled) !important;
+  cursor: not-allowed;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Node content wrapper (tıklanabilir alan)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tree :global(.ant-tree-node-content-wrapper) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-primary) !important;
+  padding: var(--sc-space-1) var(--sc-space-2) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  line-height: var(--sc-line-height-normal);
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.tree :global(.ant-tree-node-content-wrapper):hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* Selected */
+.tree :global(.ant-tree-node-content-wrapper.ant-tree-node-selected) {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+  font-weight: var(--sc-font-weight-medium);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Switcher (▶ collapse / ▼ expand)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tree :global(.ant-tree-switcher) {
+  color: var(--sc-color-text-tertiary) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.tree :global(.ant-tree-switcher):not(:global(.ant-tree-switcher-noop)):hover {
+  color: var(--sc-color-accent) !important;
+}
+
+.tree :global(.ant-tree-switcher-noop) {
+  cursor: default;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Checkbox (checkable=true)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tree :global(.ant-tree-checkbox) :global(.ant-tree-checkbox-inner) {
+  border: 1.5px solid var(--sc-color-border-strong) !important;
+  border-radius: var(--sc-radius-sm) !important;
+  width: 16px !important;
+  height: 16px !important;
+  background: var(--sc-color-bg-base) !important;
+  transition:
+    background var(--sc-duration-fast) var(--sc-easing-default),
+    border-color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.tree :global(.ant-tree-checkbox-checked) :global(.ant-tree-checkbox-inner),
+.tree :global(.ant-tree-checkbox-indeterminate) :global(.ant-tree-checkbox-inner) {
+  background: var(--sc-color-accent) !important;
+  border-color: var(--sc-color-accent) !important;
+}
+
+.tree :global(.ant-tree-checkbox-disabled) :global(.ant-tree-checkbox-inner) {
+  background: var(--sc-color-bg-muted) !important;
+  border-color: var(--sc-color-border-default) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Custom icon (showIcon)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tree :global(.ant-tree-iconEle) {
+  color: var(--sc-color-text-tertiary);
+  margin-inline-end: var(--sc-space-1);
+}
+
+.tree :global(.ant-tree-iconEle) :global(svg) {
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Connect lines (showLine=true)
+ * ─────────────────────────────────────────────────────────────── */
+
+.tree:global(.ant-tree-show-line) :global(.ant-tree-indent-unit)::before {
+  border-inline-end: 1px solid var(--sc-color-border-default) !important;
+}
+
+.tree:global(.ant-tree-show-line) :global(.ant-tree-switcher-line-icon) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Drag & drop indicators
+ * ─────────────────────────────────────────────────────────────── */
+
+.tree :global(.ant-tree-drop-indicator) {
+  background: var(--sc-color-accent) !important;
+  height: 2px;
+}
+
+.tree :global(.ant-tree-treenode-drop-container) > :global(.ant-tree-node-content-wrapper) {
+  background: var(--sc-color-accent-subtle) !important;
+}
+
+.tree :global(.ant-tree-draggable-icon) {
+  color: var(--sc-color-text-tertiary);
+  cursor: grab;
+}
+
+.tree :global(.ant-tree-draggable-icon):active {
+  cursor: grabbing;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * DirectoryTree (file explorer mode)
+ * ─────────────────────────────────────────────────────────────── */
+
+.directoryTree :global(.ant-tree-treenode) {
+  position: relative;
+}
+
+.directoryTree :global(.ant-tree-treenode-selected) :global(.ant-tree-node-content-wrapper) {
+  background: var(--sc-color-accent-subtle) !important;
+  color: var(--sc-color-accent) !important;
+}
+
+.directoryTree :global(.ant-tree-treenode):hover {
+  background: var(--sc-color-bg-muted) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Empty state
+ * ─────────────────────────────────────────────────────────────── */
+
+.tree :global(.ant-empty) {
+  color: var(--sc-color-text-tertiary) !important;
+  padding: var(--sc-space-8) var(--sc-space-3) !important;
+}

@@ -1,0 +1,109 @@
+/* AntD Popconfirm wrap — ServiceCore görsel dili.
+ *
+ * Popconfirm portal'da render edilir. overlayClassName ile inner
+ * sarmalayıcıya, rootClassName ile dış wrapper'a class veriliyor.
+ *
+ * Tasarım:
+ * - Inner: bg-base, radius-md, shadow-md, padding 12-16
+ * - Title: sans semibold sm
+ * - Description: sans xs secondary
+ * - Icon: warning fg (default exclamation), danger fg (okType=danger ise)
+ * - Footer: gap-2 justify-end, küçük butonlar
+ * - Arrow: bg-base
+ */
+
+/* ── Kart kabuğu — sadece BU yere bg/border/shadow/radius ──
+ * AntD 5.x Popconfirm DOM:
+ *   .ant-popover-inner  ← kart (bg + shadow + border)
+ *     .ant-popover-inner-content  ← padding wrapper (transparent)
+ *       .ant-popconfirm-message / .ant-popconfirm-buttons
+ * İç içe kart oluşmasın diye iç wrapper'ı düzleştiriyoruz.
+ */
+
+.overlay :global(.ant-popover-inner) {
+  background: var(--sc-color-bg-base) !important;
+  border: 1px solid var(--sc-color-border-subtle) !important;
+  border-radius: var(--sc-radius-md) !important;
+  box-shadow: var(--sc-shadow-md) !important;
+  padding: 0 !important;
+}
+
+.overlay :global(.ant-popover-inner-content) {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: var(--sc-space-3) var(--sc-space-4) !important;
+}
+
+/* ── Mesaj satırı — icon + title yatay ortalı ──
+ * AntD default: icon position absolute, title padding-left. Bunu
+ * flex'e çevirip icon + title aynı satıra ortalanır.
+ */
+
+.overlay :global(.ant-popconfirm-message) {
+  display: flex !important;
+  align-items: center !important;
+  gap: var(--sc-space-2) !important;
+  margin: 0 !important;
+  position: relative;
+}
+
+.overlay :global(.ant-popconfirm-message) > :global(.ant-popconfirm-message-icon) {
+  position: static !important;
+  inset: auto !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+  color: var(--sc-color-state-warning-fg) !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.overlay :global(.ant-popconfirm-message-title) {
+  padding-inline-start: 0 !important;
+  margin: 0 !important;
+  flex: 1 1 auto !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  font-weight: var(--sc-font-weight-semibold) !important;
+  line-height: var(--sc-line-height-tight) !important;
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Description ayrı satır — icon kolonu altına hizala (icon 14 + gap 8 = 22) */
+.overlay :global(.ant-popconfirm-description) {
+  padding-inline-start: calc(14px + var(--sc-space-2)) !important;
+  margin-inline-start: 0 !important;
+  margin-block-start: var(--sc-space-1) !important;
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-xs) !important;
+  line-height: var(--sc-line-height-relaxed) !important;
+  color: var(--sc-color-text-secondary) !important;
+}
+
+/* ── Footer (buttons) ──────────────────────────── */
+
+.overlay :global(.ant-popconfirm-buttons) {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: var(--sc-space-2) !important;
+  margin-block-start: var(--sc-space-3) !important;
+}
+
+.overlay :global(.ant-popconfirm-buttons) :global(.ant-btn) + :global(.ant-btn) {
+  margin-inline-start: 0 !important;
+}
+
+/* ── Arrow ─────────────────────────────────────── */
+
+.overlay :global(.ant-popover-arrow::before),
+.overlay :global(.ant-popover-arrow::after) {
+  background: var(--sc-color-bg-base) !important;
+}
+
+/* ── Root wrapper (trigger sarmalayıcı) ────────── */
+
+.root {
+  /* AntD wrap noktası — şimdilik nötr. */
+}

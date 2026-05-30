@@ -1,0 +1,126 @@
+/* AntD Empty wrap — ServiceCore görsel diline çek.
+ *
+ * Görsel kararlar:
+ * - Container: padding sane, text-align center
+ * - Image: max-height 80px (default), 40px (simple)
+ * - Image stroke: --sc-color-border-strong (gri çizgi nötr)
+ * - Image fill: --sc-color-bg-muted (gri dolgu)
+ * - Description: --sc-color-text-tertiary, --sc-font-size-sm
+ * - Footer (action): margin-top, accent button beklenir
+ */
+
+.empty {
+  font-family: var(--sc-font-sans) !important;
+  padding: var(--sc-space-8) var(--sc-space-6) !important;
+  text-align: center;
+  color: var(--sc-color-text-tertiary);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Image — default illüstrasyon (SVG çizimleri)
+ * ─────────────────────────────────────────────────────────────── */
+
+.empty :global(.ant-empty-image) {
+  margin-bottom: var(--sc-space-3) !important;
+  display: flex;
+  justify-content: center;
+}
+
+.empty :global(.ant-empty-image) :global(svg) {
+  max-height: 80px;
+  width: auto;
+}
+
+/* AntD'nin default SVG stroke/fill rengini token'a çek */
+.empty :global(.ant-empty-img-default-ellipse) {
+  fill: var(--sc-color-bg-muted) !important;
+}
+
+.empty :global(.ant-empty-img-default-path-1) {
+  fill: var(--sc-color-border-default) !important;
+}
+
+.empty :global(.ant-empty-img-default-path-2),
+.empty :global(.ant-empty-img-default-path-3) {
+  fill: var(--sc-color-bg-subtle) !important;
+}
+
+.empty :global(.ant-empty-img-default-path-4),
+.empty :global(.ant-empty-img-default-path-5) {
+  fill: var(--sc-color-border-strong) !important;
+}
+
+.empty :global(.ant-empty-img-default-g) {
+  stroke: var(--sc-color-border-strong) !important;
+}
+
+/* Simple variant — küçük üçgen */
+.empty :global(.ant-empty-img-simple) {
+  width: 64px;
+  height: 41px;
+}
+
+.empty :global(.ant-empty-img-simple-ellipse) {
+  fill: var(--sc-color-bg-muted) !important;
+}
+
+.empty :global(.ant-empty-img-simple-g) {
+  stroke: var(--sc-color-border-strong) !important;
+}
+
+.empty :global(.ant-empty-img-simple-path) {
+  fill: var(--sc-color-bg-subtle) !important;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Custom image (icon vs)
+ * ─────────────────────────────────────────────────────────────── */
+
+.empty :global(.ant-empty-image) :global(.anticon),
+.empty :global(.ant-empty-image) > :global(svg):not([class*="ant-empty-img"]) {
+  color: var(--sc-color-text-tertiary);
+  font-size: 48px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Description
+ * ─────────────────────────────────────────────────────────────── */
+
+.empty :global(.ant-empty-description) {
+  font-family: var(--sc-font-sans) !important;
+  font-size: var(--sc-font-size-sm) !important;
+  color: var(--sc-color-text-tertiary) !important;
+  line-height: var(--sc-line-height-normal);
+  margin-top: var(--sc-space-2);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Footer (children — action button area)
+ * ─────────────────────────────────────────────────────────────── */
+
+.empty :global(.ant-empty-footer) {
+  margin-top: var(--sc-space-4) !important;
+  display: flex;
+  justify-content: center;
+  gap: var(--sc-space-2);
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Variants: small (inline / table footer)
+ * ─────────────────────────────────────────────────────────────── */
+
+.empty:global(.ant-empty-small) {
+  padding: var(--sc-space-4) var(--sc-space-3) !important;
+}
+
+.empty:global(.ant-empty-small) :global(.ant-empty-image) {
+  margin-bottom: var(--sc-space-2) !important;
+}
+
+.empty:global(.ant-empty-small) :global(.ant-empty-image) :global(svg) {
+  max-height: 40px;
+}
+
+.empty:global(.ant-empty-small) :global(.ant-empty-description) {
+  font-size: var(--sc-font-size-xs) !important;
+}
