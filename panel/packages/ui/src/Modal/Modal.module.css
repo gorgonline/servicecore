@@ -90,6 +90,12 @@
   background: var(--sc-color-bg-muted) !important;
 }
 
+/* Carbon Close ikonu boyutu (default closeIcon Modal.tsx'te) */
+.modal :global(.ant-modal-close) :global(svg) {
+  width: 16px;
+  height: 16px;
+}
+
 /* ── Static method dialogs (confirm/info/success/error/warning) ── */
 
 :global(.ant-modal-confirm) :global(.ant-modal-content) {
@@ -114,25 +120,61 @@
   margin-block-start: var(--sc-space-2) !important;
 }
 
-/* Icon renkleri */
-:global(.ant-modal-confirm-confirm) :global(.ant-modal-confirm-body) > :global(.anticon) {
+/* ── Icon renkleri ──────────────────────────────────
+ * AntD default glyph'i `> .anticon`; bizim Carbon ikonumuz `> svg` (Modal.tsx'te
+ * static metod/useModal enjeksiyonu). İkisini de aynı semantik renge boyuyoruz —
+ * consumer kendi @ant-design/icons ikonunu verirse de doğru renk gelir. */
+:global(.ant-modal-confirm-confirm) :global(.ant-modal-confirm-body) > :global(.anticon),
+:global(.ant-modal-confirm-confirm) :global(.ant-modal-confirm-body) > svg {
   color: var(--sc-color-state-warning-fg) !important;
 }
 
-:global(.ant-modal-confirm-info) :global(.ant-modal-confirm-body) > :global(.anticon) {
+:global(.ant-modal-confirm-info) :global(.ant-modal-confirm-body) > :global(.anticon),
+:global(.ant-modal-confirm-info) :global(.ant-modal-confirm-body) > svg {
   color: var(--sc-color-state-info-fg) !important;
 }
 
-:global(.ant-modal-confirm-success) :global(.ant-modal-confirm-body) > :global(.anticon) {
+:global(.ant-modal-confirm-success) :global(.ant-modal-confirm-body) > :global(.anticon),
+:global(.ant-modal-confirm-success) :global(.ant-modal-confirm-body) > svg {
   color: var(--sc-color-state-success-fg) !important;
 }
 
-:global(.ant-modal-confirm-error) :global(.ant-modal-confirm-body) > :global(.anticon) {
+:global(.ant-modal-confirm-error) :global(.ant-modal-confirm-body) > :global(.anticon),
+:global(.ant-modal-confirm-error) :global(.ant-modal-confirm-body) > svg {
   color: var(--sc-color-state-danger-fg) !important;
 }
 
-:global(.ant-modal-confirm-warning) :global(.ant-modal-confirm-body) > :global(.anticon) {
+:global(.ant-modal-confirm-warning) :global(.ant-modal-confirm-body) > :global(.anticon),
+:global(.ant-modal-confirm-warning) :global(.ant-modal-confirm-body) > svg {
   color: var(--sc-color-state-warning-fg) !important;
+}
+
+/* ── Carbon confirm ikonu — boyut + hizalama ─────────
+ * AntD'nin confirm-body layout'u `> .anticon` selektörüne dayanır (flex:none,
+ * marginInlineEnd, fontSize). Carbon bare <svg> bu class'ı almaz → boyutu +
+ * gap'i + flex:none'ı burada veriyoruz. Renk per-type yukarıda; fill=currentColor
+ * olduğu için color çalışır. Hizalama .ant-modal-confirm-body flex'i korunur. */
+.confirmIcon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-inline-end: var(--sc-space-3);
+}
+
+.confirmIconWarning { color: var(--sc-color-state-warning-fg); }
+.confirmIconInfo    { color: var(--sc-color-state-info-fg); }
+.confirmIconSuccess { color: var(--sc-color-state-success-fg); }
+.confirmIconError   { color: var(--sc-color-state-danger-fg); }
+
+/* AntD title `flex:1`'i `> .anticon + title` zincirinden gelir; Carbon svg .anticon
+ * olmadığı için zincir kırılır → svg sonrası title'a flex:1'i biz veriyoruz.
+ * Content'in icon-genişliği kadar girintisi de svg zincirinden gelmediği için ekle. */
+:global(.ant-modal-confirm-body) > svg + :global(.ant-modal-confirm-title) {
+  flex: 1 !important;
+}
+
+:global(.ant-modal-confirm-body) > svg + :global(.ant-modal-confirm-title) + :global(.ant-modal-confirm-content) {
+  margin-inline-start: calc(22px + var(--sc-space-3)) !important;
 }
 
 :global(.ant-modal-confirm) :global(.ant-modal-confirm-btns) {

@@ -90,6 +90,14 @@
   color: var(--sc-color-text-tertiary) !important;
 }
 
+/* Carbon ikonlar (suffix=Calendar, clear=Close) — fill=currentColor ile yukarıdaki
+ * rengi alır; sadece glyph boyutunu kontrol et (Carbon default 32px gelir). */
+.picker :global(.ant-picker-suffix) svg,
+.picker :global(.ant-picker-clear) svg {
+  width: 16px;
+  height: 16px;
+}
+
 .picker :global(.ant-picker-clear):hover {
   color: var(--sc-color-text-primary) !important;
 }
@@ -184,6 +192,18 @@
 .popup :global(.ant-picker-header-super-prev-btn):hover,
 .popup :global(.ant-picker-header-super-next-btn):hover {
   color: var(--sc-color-accent) !important;
+}
+
+/* Carbon nav ikonları (prev/next=Chevron, super=PageFirst/PageLast yıl atlama).
+ * Buton içine doğrudan render edilir; AntD'nin ::before-tabanlı ok span'ı yerine
+ * gerçek <svg>. Renk butondan currentColor ile gelir; sadece boyut ver. */
+.popup :global(.ant-picker-header-prev-btn) svg,
+.popup :global(.ant-picker-header-next-btn) svg,
+.popup :global(.ant-picker-header-super-prev-btn) svg,
+.popup :global(.ant-picker-header-super-next-btn) svg {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
 }
 
 /* ───────────────────────────────────────────────────────────────

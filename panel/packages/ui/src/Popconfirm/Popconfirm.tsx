@@ -1,4 +1,5 @@
 import { Popconfirm as AntPopconfirm } from "antd";
+import { WarningAltFilled } from "@carbon/icons-react";
 import clsx from "clsx";
 import type { PopconfirmProps } from "./Popconfirm.types";
 import styles from "./Popconfirm.module.css";
@@ -67,10 +68,13 @@ import styles from "./Popconfirm.module.css";
  * ```
  */
 export function Popconfirm(props: PopconfirmProps) {
-  const { overlayClassName, rootClassName, ...rest } = props;
+  const { overlayClassName, rootClassName, icon, ...rest } = props;
   return (
     <AntPopconfirm
       {...rest}
+      // Default uyarı ikonu Carbon (warning rengi wrapper'dan currentColor ile gelir);
+      // consumer null/false ile gizleyebilir, custom node geçebilir.
+      icon={icon === undefined ? <WarningAltFilled /> : icon}
       overlayClassName={clsx(styles.overlay, overlayClassName)}
       rootClassName={clsx(styles.root, rootClassName)}
     />

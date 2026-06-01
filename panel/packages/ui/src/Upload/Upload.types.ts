@@ -18,13 +18,18 @@ export type UploadStatus = "uploading" | "done" | "error" | "removed" | "success
  *   withCredentials, defaultFileList, fileList, directory, disabled,
  *   listType (picture-circle 5.2+ → 5.7'de var), maxCount (4.10+),
  *   multiple, name, openFileDialogOnClick, previewFile, progress,
- *   showUploadList (boolean), iconRender, itemRender (4.16+),
- *   isImageUrl,
- *   onChange, onPreview, onRemove, onDrop, onDownload
+ *   iconRender, itemRender (4.16+), isImageUrl,
+ *   onChange, onPreview, onRemove, onDrop, onDownload.
+ *
+ *   showUploadList: boolean | ShowUploadListInterface — OBJE FORMU 5.7'de VAR.
+ *   ShowUploadListInterface (antd/es/upload/interface.d.ts ile doğrulandı):
+ *     showRemoveIcon / showPreviewIcon / showDownloadIcon: boolean,
+ *     removeIcon / previewIcon / downloadIcon:
+ *       ReactNode | ((file: UploadFile) => ReactNode).
+ *   (Wrap bu ikon alanlarını default'ta Carbon'a çeker — bkz. Upload.tsx.)
  *
  * 5.7'de YOK:
- *   showUploadList object form (showPreviewIcon/showRemoveIcon/
- *   showDownloadIcon function) (5.21+),
+ *   showPreviewIcon/showDownloadIcon'ın FONKSIYON ((file)=>boolean) formu (5.21+),
  *   pastable (5.25+),
  *   classNames/styles semantic DOM (6.0+).
  */

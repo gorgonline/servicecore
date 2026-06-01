@@ -40,6 +40,19 @@
   color: var(--sc-color-state-info-fg) !important;
 }
 
+/* Carbon status ikonu (default icon Result.tsx'te). Mevcut renk/boyut kuralları
+ * .anticon'a bağlı; Carbon <svg> olduğu için boyut + renk doğrudan ikon class'ında.
+ * Carbon dolu (filled) glyph'ler AntD outline'dan optik olarak daha ağır → 64px. */
+.statusIcon {
+  width: 64px;
+  height: 64px;
+}
+
+.statusSuccess { color: var(--sc-color-state-success-fg); }
+.statusError   { color: var(--sc-color-state-danger-fg); }
+.statusInfo    { color: var(--sc-color-state-info-fg); }
+.statusWarning { color: var(--sc-color-state-warning-fg); }
+
 /* 404 / 403 / 500 — illustration SVG (AntD built-in) */
 .result :global(.ant-result-image) {
   margin: 0 auto var(--sc-space-6) !important;

@@ -46,6 +46,16 @@
   color: var(--sc-color-accent) !important;
 }
 
+/* Carbon action ikonları (preview/remove/download) — boyut netliği.
+ * Carbon SVG fill=currentColor; renk + hover (accent/danger) mevcut
+ * .ant-upload-list-item ... svg kurallarından miras gelir. AntD glyph'leri
+ * font-size (1em) ile boyutlanıyordu; Carbon attribute 16px gelir, module
+ * class ile sabitliyoruz (font-size mirası yerine svg width/height). */
+.actionIcon {
+  width: 16px;
+  height: 16px;
+}
+
 /* Remove action — danger renk hover'da */
 .upload :global(.ant-upload-list-item-action) :global([aria-label="Remove file"]):hover {
   color: var(--sc-color-state-danger-fg) !important;

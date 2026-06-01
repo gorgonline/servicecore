@@ -1,4 +1,5 @@
 import { TimePicker as AntTimePicker } from "antd";
+import { Time, Close } from "@carbon/icons-react";
 import clsx from "clsx";
 import styles from "./TimePicker.module.css";
 import type {
@@ -33,10 +34,21 @@ import type {
  * />
  * ```
  */
-function TimePickerRoot({ className, popupClassName, ...rest }: TimePickerProps) {
+function TimePickerRoot({
+  className,
+  popupClassName,
+  // AntD default glyph'leri (ClockCircleOutlined / CloseCircleFilled) yerine Carbon.
+  // 5.7 baseline: clearIcon top-level prop (allowClear obje formu 5.8+, burada YOK).
+  // suffix'te gizleme semantiği yok → ?? yeterli; clear null/false ile gizlenebilir → === undefined.
+  suffixIcon,
+  clearIcon,
+  ...rest
+}: TimePickerProps) {
   return (
     <AntTimePicker
       {...rest}
+      suffixIcon={suffixIcon ?? <Time />}
+      clearIcon={clearIcon === undefined ? <Close /> : clearIcon}
       className={clsx(styles.picker, className)}
       popupClassName={clsx(styles.popup, popupClassName)}
     />
@@ -47,11 +59,15 @@ function TimePickerRoot({ className, popupClassName, ...rest }: TimePickerProps)
 function TimePickerRange({
   className,
   popupClassName,
+  suffixIcon,
+  clearIcon,
   ...rest
 }: TimePickerRangeProps) {
   return (
     <AntTimePicker.RangePicker
       {...rest}
+      suffixIcon={suffixIcon ?? <Time />}
+      clearIcon={clearIcon === undefined ? <Close /> : clearIcon}
       className={clsx(styles.picker, className)}
       popupClassName={clsx(styles.popup, popupClassName)}
     />

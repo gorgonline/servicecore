@@ -1,4 +1,5 @@
 import { Drawer as AntDrawer } from "antd";
+import { Close } from "@carbon/icons-react";
 import clsx from "clsx";
 import styles from "./Drawer.module.css";
 import type { DrawerProps } from "./Drawer.types";
@@ -51,10 +52,12 @@ import type { DrawerProps } from "./Drawer.types";
  * </Drawer>
  * ```
  */
-export function Drawer({ className, rootClassName, ...rest }: DrawerProps) {
+export function Drawer({ className, rootClassName, closeIcon, ...rest }: DrawerProps) {
   return (
     <AntDrawer
       {...rest}
+      // Default kapatma X'i Carbon; consumer null/false ile gizleyebilir, custom node geçebilir.
+      closeIcon={closeIcon === undefined ? <Close /> : closeIcon}
       className={clsx(styles.drawer, className)}
       rootClassName={clsx(styles.root, rootClassName)}
     />

@@ -1,7 +1,23 @@
 import { Result as AntResult } from "antd";
+import {
+  CheckmarkFilled,
+  ErrorFilled,
+  InformationFilled,
+  WarningAltFilled,
+} from "@carbon/icons-react";
 import clsx from "clsx";
+import type { ReactNode } from "react";
 import type { ResultProps } from "./Result.types";
 import styles from "./Result.module.css";
+
+/** success/error/info/warning için Carbon status ikonu. 404/403/500 AntD illüstrasyonu
+ *  kullanır (glyph değil) — map'te yer almaz, String(status) eşleşmez, AntD'ye düşer. */
+const STATUS_ICON: Record<string, ReactNode> = {
+  success: <CheckmarkFilled className={clsx(styles.statusIcon, styles.statusSuccess)} />,
+  error: <ErrorFilled className={clsx(styles.statusIcon, styles.statusError)} />,
+  info: <InformationFilled className={clsx(styles.statusIcon, styles.statusInfo)} />,
+  warning: <WarningAltFilled className={clsx(styles.statusIcon, styles.statusWarning)} />,
+};
 
 /** ServiceCore Result — sayfa/bölüm seviyesi durum sonucu.
  *
@@ -71,6 +87,17 @@ import styles from "./Result.module.css";
  * ```
  */
 export function Result(props: ResultProps) {
-  const { className, ...rest } = props;
-  return <AntResult {...rest} className={clsx(styles.result, className)} />;
+  const { className, status, icon, ...rest } = props;
+  // status verilmezse AntD 'info' varsayar — Carbon ikonu da ona göre seç.
+  // icon consumer tarafından verildiyse (null dahil) ona dokunma.
+  const effectiveStatus = status ?? "info";
+  const resolvedIcon = icon === undefined ? STATUS_ICON[String(effectiveStatus)] : icon;
+  return (
+    <AntResult
+      {...rest}
+      status={status}
+      icon={resolvedIcon}
+      className={clsx(styles.result, className)}
+    />
+  );
 }

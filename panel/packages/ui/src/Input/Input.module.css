@@ -75,14 +75,36 @@
   display: block;
 }
 
-/* Clear icon (X) — circle olmadan sade */
+/* Clear icon (X) — Carbon <Close />, circle olmadan sade.
+ * Carbon ikon fill=currentColor → color çalışır; svg boyutu burada veriliyor. */
 .input :global(.ant-input-clear-icon) {
   color: var(--sc-color-text-tertiary) !important;
-  font-size: 14px !important;
+  display: inline-flex;
+  align-items: center;
   line-height: 1 !important;
 }
 
+.input :global(.ant-input-clear-icon) :global(svg) {
+  width: 14px !important;
+  height: 14px !important;
+  display: block;
+}
+
 .input :global(.ant-input-clear-icon):hover {
+  color: var(--sc-color-text-primary) !important;
+}
+
+/* Password visibility toggle — Carbon <View /> / <ViewOff />.
+ * .ant-input-password-icon suffix içinde; tıklanabilir, hover'da koyulaşır. */
+.input :global(.ant-input-password-icon) {
+  color: var(--sc-color-text-tertiary) !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: color var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.input :global(.ant-input-password-icon):hover {
   color: var(--sc-color-text-primary) !important;
 }
 

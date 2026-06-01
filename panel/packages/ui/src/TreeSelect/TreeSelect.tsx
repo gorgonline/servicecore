@@ -1,4 +1,5 @@
 import { TreeSelect as AntTreeSelect } from "antd";
+import { ChevronDown } from "@carbon/icons-react";
 import clsx from "clsx";
 import styles from "./TreeSelect.module.css";
 import type { TreeSelectProps } from "./TreeSelect.types";
@@ -40,11 +41,19 @@ import type { TreeSelectProps } from "./TreeSelect.types";
 export function TreeSelect({
   className,
   popupClassName,
+  suffixIcon,
+  switcherIcon,
   ...rest
 }: TreeSelectProps) {
   return (
     <AntTreeSelect
       {...rest}
+      // Default Carbon ikonları; consumer kendi ikonunu verirse korunur.
+      // suffixIcon: gizlenebilir değil (ReactNode), ?? yeterli — Select wrap ile aynı.
+      suffixIcon={suffixIcon ?? <ChevronDown />}
+      // switcherIcon: ReactNode | fn olabilir; null/false ile gizlemeye saygı,
+      // bu yüzden ?? değil === undefined (?? null'ı ezerdi).
+      switcherIcon={switcherIcon === undefined ? <ChevronDown /> : switcherIcon}
       className={clsx(styles.treeSelect, className)}
       popupClassName={clsx(styles.popup, popupClassName)}
     />

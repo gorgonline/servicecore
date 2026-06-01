@@ -102,7 +102,8 @@
 }
 
 /* ───────────────────────────────────────────────────────────────
- * Sort icons (column header)
+ * Sort icons — Carbon ArrowsVertical (nötr) / ArrowUp / ArrowDown
+ * (default sortIcon Table.tsx'te) — caret yerine tek yön ikonu
  * ─────────────────────────────────────────────────────────────── */
 
 .table :global(.ant-table-column-sorters) {
@@ -111,18 +112,23 @@
   gap: var(--sc-space-1);
 }
 
-.table :global(.ant-table-column-sorter) {
-  color: var(--sc-color-text-tertiary) !important;
+/* Carbon sort ikonu (default sortIcon Table.tsx'te). AntD, custom sortIcon'u
+ * .ant-table-column-sorter ile SARMAZ — ikon doğrudan .ant-table-column-sorters'ın
+ * çocuğu olur — bu yüzden boyut + renk doğrudan ikonun module class'ında. */
+.sortIcon,
+.sortIconActive {
+  width: 14px;
+  height: 14px;
 }
 
-.table :global(.ant-table-column-sorter-up),
-.table :global(.ant-table-column-sorter-down) {
-  color: var(--sc-color-text-tertiary) !important;
+/* Sortable ama aktif değil → tertiary (nötr ArrowsVertical) */
+.sortIcon {
+  color: var(--sc-color-text-tertiary);
 }
 
-.table :global(.ant-table-column-sorter-up.active),
-.table :global(.ant-table-column-sorter-down.active) {
-  color: var(--sc-color-accent) !important;
+/* Aktif sıralı (ascend/descend) → accent */
+.sortIconActive {
+  color: var(--sc-color-accent);
 }
 
 /* ───────────────────────────────────────────────────────────────
@@ -142,6 +148,12 @@
 .table :global(.ant-table-filter-trigger.active),
 .table :global(.ant-table-filter-trigger):global(.active) {
   color: var(--sc-color-accent) !important;
+}
+
+/* Carbon Filter ikonu boyutu (default filterIcon Table.tsx'te) */
+.table :global(.ant-table-filter-trigger) :global(svg) {
+  width: 14px;
+  height: 14px;
 }
 
 /* Filter dropdown — popup (.ant-table-filter-dropdown) */
@@ -276,6 +288,14 @@
 .table :global(.ant-pagination-prev):hover,
 .table :global(.ant-pagination-next):hover {
   color: var(--sc-color-accent) !important;
+}
+
+/* Carbon ChevronLeft/Right boyutu — item-link butonu (kutu) clone'la korunuyor,
+ * yalnız içindeki glyph Carbon. jump-prev/next (çift-ok) AntD'de kalır. */
+.table :global(.ant-pagination-prev) :global(.ant-pagination-item-link) :global(svg),
+.table :global(.ant-pagination-next) :global(.ant-pagination-item-link) :global(svg) {
+  width: 14px;
+  height: 14px;
 }
 
 .table :global(.ant-pagination-disabled),

@@ -50,6 +50,25 @@
   border-color: var(--sc-color-state-warning-fg) !important;
 }
 
+/* Suffix arrow — Carbon ChevronDown (input alanındaki ok).
+ * Select wrap ile aynı dil: tertiary renk, 14px svg, açılınca 180° döner.
+ * NOT: AntD custom inputIcon'u .ant-select-arrow içine koyar ama Select'in
+ * .anticon-bağlı rotate selector'ı Carbon'da çalışmaz; rotate'i .ant-select-open
+ * parent state'iyle manuel veriyoruz (Select.module.css ile birebir). */
+.treeSelect :global(.ant-select-arrow) {
+  color: var(--sc-color-text-tertiary) !important;
+}
+
+.treeSelect :global(.ant-select-arrow) :global(svg) {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--sc-duration-normal) var(--sc-easing-default);
+}
+
+.treeSelect:global(.ant-select-open) :global(.ant-select-arrow) :global(svg) {
+  transform: rotate(180deg);
+}
+
 /* Placeholder + selection text */
 .treeSelect :global(.ant-select-selection-placeholder) {
   color: var(--sc-color-text-tertiary) !important;
@@ -140,6 +159,17 @@
 
 .popup :global(.ant-select-tree-switcher):not(:global(.ant-select-tree-switcher-noop)):hover {
   color: var(--sc-color-accent) !important;
+}
+
+/* Carbon ChevronDown svg boyutu — AntD default svg fontSize:10 yerine sabit 16px.
+ * AntD custom switcherIcon'u cloneElement ile .ant-select-tree-switcher-icon
+ * class'ıyla sarar; rengi parent .ant-select-tree-switcher'dan currentColor ile
+ * alır. Açma/kapama dönüşü (_close → rotate -90deg) AntD'nin kendi style'ında
+ * .ant-select-tree-switcher-icon svg'ye uygulanır — transform'u EZMİYORUZ. */
+.popup :global(.ant-select-tree-switcher) :global(.ant-select-tree-switcher-icon) :global(svg),
+.popup :global(.ant-select-tree-switcher) :global(svg) {
+  width: 16px;
+  height: 16px;
 }
 
 .popup :global(.ant-select-tree-switcher-noop) {

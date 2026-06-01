@@ -6,11 +6,31 @@ import type { SearchProps as AntSearchProps } from "antd/es/input/Search";
 import type { PasswordProps as AntPasswordProps } from "antd/es/input/Password";
 import type { ForwardedRef } from "react";
 import { forwardRef } from "react";
+import { Close, View, ViewOff } from "@carbon/icons-react";
 import clsx from "clsx";
 import styles from "./Input.module.css";
 
 export type InputSize = "small" | "middle" | "large";
 export type InputStatus = "" | "error" | "warning";
+
+/** allowClear prop: boolean | { clearIcon?: ReactNode } */
+type AllowClear = boolean | { clearIcon?: ReactNode } | undefined;
+
+/** AntD'nin default clear ikonu CloseCircleFilled — onu Carbon <Close /> ile değiştir.
+ * - true            → { clearIcon: <Close /> }
+ * - { clearIcon }   → consumer'ın ikonu korunur
+ * - { } (boş obje)  → { ...obje, clearIcon: <Close /> }
+ * - false/undefined → olduğu gibi (gizleme/varsayılana saygı)
+ */
+function withClearIcon(allowClear: AllowClear): AllowClear {
+  if (allowClear === true) {
+    return { clearIcon: <Close /> };
+  }
+  if (typeof allowClear === "object" && allowClear !== null && !allowClear.clearIcon) {
+    return { ...allowClear, clearIcon: <Close /> };
+  }
+  return allowClear;
+}
 
 export interface InputProps extends Omit<AntInputProps, "size" | "status"> {
   /** Boyut. AntD ile aynı. Default: "middle" */
@@ -43,13 +63,14 @@ const STATUS_CLASS: Partial<Record<InputStatus, string>> = {
  * NOT: `addonBefore` / `addonAfter` AntD'de deprecated — `Space.Compact` kullan.
  */
 function InputImpl(
-  { size = "middle", status, className, ...rest }: InputProps,
+  { size = "middle", status, className, allowClear, ...rest }: InputProps,
   ref: ForwardedRef<InputRef>,
 ) {
   return (
     <AntInput
       ref={ref}
       {...rest}
+      allowClear={withClearIcon(allowClear)}
       size={size}
       status={status || undefined}
       className={clsx(
@@ -72,7 +93,7 @@ export interface TextAreaProps extends Omit<AntTextAreaProps, "size" | "status">
 }
 
 function TextAreaImpl(
-  { status, className, ...rest }: TextAreaProps,
+  { status, className, allowClear, ...rest }: TextAreaProps,
   ref: ForwardedRef<InputRef>,
 ) {
   // AntD'nin TextArea ref'i HTMLTextAreaElement uzantısı, InputRef ile uyumlu
@@ -80,6 +101,7 @@ function TextAreaImpl(
     <AntInput.TextArea
       ref={ref as never}
       {...rest}
+      allowClear={withClearIcon(allowClear)}
       status={status || undefined}
       className={clsx(
         styles.textArea,
@@ -99,13 +121,14 @@ export interface SearchInputProps extends Omit<AntSearchProps, "size" | "status"
 }
 
 function SearchImpl(
-  { size = "middle", status, className, ...rest }: SearchInputProps,
+  { size = "middle", status, className, allowClear, ...rest }: SearchInputProps,
   ref: ForwardedRef<InputRef>,
 ) {
   return (
     <AntInput.Search
       ref={ref}
       {...rest}
+      allowClear={withClearIcon(allowClear)}
       size={size}
       status={status || undefined}
       className={clsx(
@@ -128,13 +151,24 @@ export interface PasswordInputProps extends Omit<AntPasswordProps, "size" | "sta
 }
 
 function PasswordImpl(
-  { size = "middle", status, className, ...rest }: PasswordInputProps,
+  {
+    size = "middle",
+    status,
+    className,
+    allowClear,
+    // Default AntD: EyeOutlined / EyeInvisibleOutlined → Carbon View / ViewOff.
+    // Consumer iconRender verirse onu kullan.
+    iconRender = (visible) => (visible ? <View /> : <ViewOff />),
+    ...rest
+  }: PasswordInputProps,
   ref: ForwardedRef<InputRef>,
 ) {
   return (
     <AntInput.Password
       ref={ref}
       {...rest}
+      allowClear={withClearIcon(allowClear)}
+      iconRender={iconRender}
       size={size}
       status={status || undefined}
       className={clsx(

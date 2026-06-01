@@ -1,4 +1,12 @@
 import { DatePicker as AntDatePicker } from "antd";
+import {
+  Calendar,
+  Close,
+  ChevronLeft,
+  ChevronRight,
+  PageFirst,
+  PageLast,
+} from "@carbon/icons-react";
 import clsx from "clsx";
 import styles from "./DatePicker.module.css";
 import type {
@@ -43,10 +51,29 @@ import type {
  * />
  * ```
  */
-function DatePickerRoot({ className, popupClassName, ...rest }: DatePickerProps) {
+function DatePickerRoot({
+  className,
+  popupClassName,
+  // AntD default glyph'leri (CalendarOutlined / CloseCircleFilled / CSS-span ok)
+  // yerine Carbon. Consumer null/false verirse gizleme korunsun → === undefined.
+  // suffix'te gizleme semantiği yok → ?? yeterli (Select pattern'i ile aynı).
+  suffixIcon,
+  clearIcon,
+  prevIcon,
+  nextIcon,
+  superPrevIcon,
+  superNextIcon,
+  ...rest
+}: DatePickerProps) {
   return (
     <AntDatePicker
       {...rest}
+      suffixIcon={suffixIcon ?? <Calendar />}
+      clearIcon={clearIcon === undefined ? <Close /> : clearIcon}
+      prevIcon={prevIcon === undefined ? <ChevronLeft /> : prevIcon}
+      nextIcon={nextIcon === undefined ? <ChevronRight /> : nextIcon}
+      superPrevIcon={superPrevIcon === undefined ? <PageFirst /> : superPrevIcon}
+      superNextIcon={superNextIcon === undefined ? <PageLast /> : superNextIcon}
       className={clsx(styles.picker, className)}
       popupClassName={clsx(styles.popup, popupClassName)}
     />
@@ -68,10 +95,27 @@ function DatePickerRoot({ className, popupClassName, ...rest }: DatePickerProps)
  * />
  * ```
  */
-function DatePickerRange({ className, popupClassName, ...rest }: DatePickerRangeProps) {
+function DatePickerRange({
+  className,
+  popupClassName,
+  // RangePicker da tek picker ile aynı ikon prop'larını alır (AntD 5.7 source).
+  suffixIcon,
+  clearIcon,
+  prevIcon,
+  nextIcon,
+  superPrevIcon,
+  superNextIcon,
+  ...rest
+}: DatePickerRangeProps) {
   return (
     <AntDatePicker.RangePicker
       {...rest}
+      suffixIcon={suffixIcon ?? <Calendar />}
+      clearIcon={clearIcon === undefined ? <Close /> : clearIcon}
+      prevIcon={prevIcon === undefined ? <ChevronLeft /> : prevIcon}
+      nextIcon={nextIcon === undefined ? <ChevronRight /> : nextIcon}
+      superPrevIcon={superPrevIcon === undefined ? <PageFirst /> : superPrevIcon}
+      superNextIcon={superNextIcon === undefined ? <PageLast /> : superNextIcon}
       className={clsx(styles.picker, className)}
       popupClassName={clsx(styles.popup, popupClassName)}
     />

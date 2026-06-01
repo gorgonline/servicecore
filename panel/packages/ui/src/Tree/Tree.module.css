@@ -5,7 +5,7 @@
  * - Hover: bg-muted
  * - Selected: bg accent-subtle, color accent, font-weight medium
  * - Checkbox: accent
- * - Switcher (▶/▼): text-tertiary, hover/active accent
+ * - Switcher (Carbon ChevronDown): text-tertiary, hover/active accent; kapalıda -90° döner
  * - Connect lines (showLine): border-default 1px
  * - Disabled: text-disabled
  */
@@ -60,7 +60,8 @@
 }
 
 /* ───────────────────────────────────────────────────────────────
- * Switcher (▶ collapse / ▼ expand)
+ * Switcher — Carbon ChevronDown (kapalıda -90° → ChevronRight görünümü)
+ * AntD .ant-tree-switcher-icon class'ını ikona clone ile ekler (iconUtil.js).
  * ─────────────────────────────────────────────────────────────── */
 
 .tree :global(.ant-tree-switcher) {
@@ -77,6 +78,14 @@
 
 .tree :global(.ant-tree-switcher-noop) {
   cursor: default;
+}
+
+/* Carbon ikon: fill=currentColor → renk .ant-tree-switcher'dan miras.
+ * Boyut sabit 16px; rotate için yumuşak geçiş. */
+.tree :global(.ant-tree-switcher) :global(.ant-tree-switcher-icon) {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--sc-duration-fast) var(--sc-easing-default);
 }
 
 /* ───────────────────────────────────────────────────────────────

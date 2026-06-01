@@ -55,3 +55,12 @@ export type TreeProps = ComponentProps<typeof AntTree>;
 
 /** Tree.DirectoryTree — file explorer tarzı (klasör icon + selectable). */
 export type DirectoryTreeProps = ComponentProps<typeof AntTree.DirectoryTree>;
+
+/** switcherIcon fonksiyon imzasının aldığı node prop'ları (AntD AntTreeNodeProps alt kümesi).
+ *
+ * AntD'de `switcherIcon` ya ReactNode ya da `(props) => ReactNode`. Default switcher
+ * ikonumuz bu props'tan `expanded` (dönüş yönü) ve `isLeaf` (leaf'te gizle) okur. */
+export interface TreeSwitcherProps {
+  expanded?: boolean;
+  isLeaf?: boolean;
+}

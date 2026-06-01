@@ -128,6 +128,18 @@
 .inputNumber :global(.ant-input-number-handler-down-inner) {
   color: inherit !important;
   font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carbon Chevron ikonları handler-inner span içinde render edilir.
+ * fill=currentColor → color inherit (handler text rengi) zaten geçer;
+ * SVG'yi font-size boyutlandırmaz, açık width/height ver (stepper küçük). */
+.inputNumber :global(.ant-input-number-handler-up-inner) svg,
+.inputNumber :global(.ant-input-number-handler-down-inner) svg {
+  width: 12px;
+  height: 12px;
 }
 
 .inputNumber :global(.ant-input-number-handler-up) {

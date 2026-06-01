@@ -67,6 +67,19 @@
   color: var(--sc-color-state-info-fg) !important;
 }
 
+/* Carbon custom icon — AntD `.ant-notification-notice-icon` span'ine sarılır ama
+ * `-icon-{type}` renk class'ı eklenMEZ; renk + boyut burada (Notification.tsx'te
+ * her ikon bu class'larla enjekte edilir). */
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.iconSuccess { color: var(--sc-color-state-success-fg); }
+.iconError   { color: var(--sc-color-state-danger-fg); }
+.iconWarning { color: var(--sc-color-state-warning-fg); }
+.iconInfo    { color: var(--sc-color-state-info-fg); }
+
 /* ── Icon + content hizalama ───────────────────── */
 
 :global(.ant-notification-notice-with-icon) :global(.ant-notification-notice-message) {

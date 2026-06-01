@@ -1,9 +1,80 @@
-import "./Notification.module.css";
+import { notification as antNotification } from "antd";
+import {
+  CheckmarkFilled,
+  ErrorFilled,
+  InformationFilled,
+  WarningAltFilled,
+} from "@carbon/icons-react";
+import { useMemo } from "react";
+import type { ReactElement, ReactNode } from "react";
+import clsx from "clsx";
+import styles from "./Notification.module.css";
 
-/** ServiceCore Notification — AntD notification imperative API re-export.
+/* ── Carbon ikon enjeksiyonu ───────────────────────────────────────────────
+ * notification imperative bir API'dir; AntD her notice'te type'a göre @ant-design/icons
+ * glyph'i basar (CheckCircleFilled, ...). Panel Carbon kullandığı için her tipli metodu
+ * (success/error/warning/info) + open + useNotification hook'unu sarıp config'e Carbon
+ * `icon` enjekte ediyoruz; sonra AntD'nin kendi tipli metoduna delege ediyoruz.
+ * Consumer kendi icon'unu verirse korunur.
+ * NOT: Custom icon AntD'de `.ant-notification-notice-icon` span'ine sarılır ama type
+ * renk class'ı (`-icon-{type}`) EKLENMEZ — bu yüzden renk + boyut doğrudan ikonun
+ * module class'ında (Notification.module.css). */
+
+type AntNotification = typeof antNotification;
+type NotifTypeMethod = AntNotification["success"];
+type OpenMethod = AntNotification["open"];
+type NotifConfig = Parameters<NotifTypeMethod>[0];
+type OpenConfig = Parameters<OpenMethod>[0];
+type NotifReturn = ReturnType<NotifTypeMethod>;
+type NotifApi = ReturnType<AntNotification["useNotification"]>[0];
+
+const NOTICE_TYPES = ["success", "error", "warning", "info"] as const;
+type NoticeType = (typeof NOTICE_TYPES)[number];
+
+const TYPE_ICON: Record<NoticeType, ReactNode> = {
+  success: <CheckmarkFilled className={clsx(styles.icon, styles.iconSuccess)} />,
+  error: <ErrorFilled className={clsx(styles.icon, styles.iconError)} />,
+  warning: <WarningAltFilled className={clsx(styles.icon, styles.iconWarning)} />,
+  info: <InformationFilled className={clsx(styles.icon, styles.iconInfo)} />,
+};
+
+function isNoticeType(type: unknown): type is NoticeType {
+  return typeof type === "string" && (NOTICE_TYPES as readonly string[]).includes(type);
+}
+
+/** Tipli metot (success/error/...) — config'e Carbon icon enjekte edip AntD'ye delege.
+ *  Consumer config.icon verirse spread sonrası korunur. */
+function wrapTypeMethod(origFn: NotifTypeMethod, type: NoticeType): NotifTypeMethod {
+  const icon = TYPE_ICON[type];
+  return (config: NotifConfig): NotifReturn => origFn({ icon, ...config });
+}
+
+/** open(config) — type'lı çağrıda icon verilmemişse Carbon enjekte. */
+function wrapOpen(origOpen: OpenMethod): OpenMethod {
+  return (config: OpenConfig): ReturnType<OpenMethod> => {
+    if (config && isNoticeType(config.type) && config.icon === undefined) {
+      return origOpen({ ...config, icon: TYPE_ICON[config.type] });
+    }
+    return origOpen(config);
+  };
+}
+
+/** Bir notification api'sinin (static ya da hook) tüm metotlarını Carbon ile sarar. */
+function wrapApi(api: NotifApi): NotifApi {
+  return {
+    ...api,
+    open: wrapOpen(api.open),
+    success: wrapTypeMethod(api.success, "success"),
+    error: wrapTypeMethod(api.error, "error"),
+    warning: wrapTypeMethod(api.warning, "warning"),
+    info: wrapTypeMethod(api.info, "info"),
+  };
+}
+
+/** ServiceCore Notification — AntD notification imperative API + Carbon ikonlar.
  *
- * Bildirim/notification — title + description, opsiyonel action button.
- * Köşede 4.5sn (default) görünür sonra kaybolur.
+ * Bildirim — title + description, opsiyonel action button. Köşede 4.5sn (default)
+ * görünür sonra kaybolur.
  *
  * <strong>Component DEĞİL — imperative API.</strong> JSX'te
  * <code>&lt;Notification /&gt;</code> render etmezsin, fonksiyon olarak
@@ -76,4 +147,19 @@ import "./Notification.module.css";
  * });
  * ```
  */
-export { notification } from "antd";
+function useNotification(
+  ...args: Parameters<AntNotification["useNotification"]>
+): [NotifApi, ReactElement] {
+  const [api, holder] = antNotification.useNotification(...args);
+  const wrapped = useMemo(() => wrapApi(api), [api]);
+  return [wrapped, holder];
+}
+
+export const notification: typeof antNotification = Object.assign({}, antNotification, {
+  open: wrapOpen(antNotification.open),
+  success: wrapTypeMethod(antNotification.success, "success"),
+  error: wrapTypeMethod(antNotification.error, "error"),
+  warning: wrapTypeMethod(antNotification.warning, "warning"),
+  info: wrapTypeMethod(antNotification.info, "info"),
+  useNotification,
+});

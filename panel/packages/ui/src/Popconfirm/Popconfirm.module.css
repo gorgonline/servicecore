@@ -60,6 +60,13 @@
   align-items: center !important;
 }
 
+/* Carbon WarningAltFilled boyutu — renk wrapper'dan currentColor ile gelir.
+ * 14px description'ın sol hizasıyla (calc 14px + gap) uyumlu kalsın diye. */
+.overlay :global(.ant-popconfirm-message-icon) :global(svg) {
+  width: 14px;
+  height: 14px;
+}
+
 .overlay :global(.ant-popconfirm-message-title) {
   padding-inline-start: 0 !important;
   margin: 0 !important;

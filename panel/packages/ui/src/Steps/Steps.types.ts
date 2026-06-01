@@ -36,6 +36,16 @@ export interface StepsItem {
   disabled?: boolean;
 }
 
+/** finish/error adımlarındaki durum ikonları.
+ *  Wrap varsayılanı Carbon Checkmark/Close'tur; biri verilirse o baskındır,
+ *  verilmeyen diğeri yine Carbon kalır. Per-item `icon` her ikisini de ezer. */
+export interface StepsIcons {
+  /** finish status ikonu. Default: Carbon Checkmark. */
+  finish?: ReactNode;
+  /** error status ikonu. Default: Carbon Close. */
+  error?: ReactNode;
+}
+
 export interface StepsProps
   extends Omit<
     AntStepsProps,
@@ -71,4 +81,6 @@ export interface StepsProps
       ) => ReactNode);
   /** Adım listesi. AntD 5.7'de tercih edilen API. */
   items?: StepsItem[];
+  /** finish/error durum ikonlarını ez. Verilmeyen taraf Carbon varsayılanında kalır. */
+  icons?: StepsIcons;
 }

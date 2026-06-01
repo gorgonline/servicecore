@@ -65,3 +65,18 @@
 :global(.ant-message-loading) > :global(svg) {
   color: var(--sc-color-accent) !important;
 }
+
+/* ───────────────────────────────────────────────────────────────
+ * Loading spin — Carbon Renew ikonu (message.loading) döndürme
+ * (renk yukarıdaki .ant-message-loading > svg kuralından gelir)
+ * ─────────────────────────────────────────────────────────────── */
+
+.loadingSpin {
+  animation: messageSpin 1s linear infinite;
+}
+
+@keyframes messageSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

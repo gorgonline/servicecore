@@ -77,9 +77,14 @@
  * Arrow (chevron — collapse/expand göstergesi)
  * ─────────────────────────────────────────────────────────────── */
 
+/* Carbon ChevronRight, AntD'nin cloneElement'i ile .ant-collapse-arrow
+ * class'ını doğrudan <svg>'ye alır (source: antd/es/collapse/Collapse.js).
+ * Renk currentColor ile buradan gelir; boyut svg 16px olarak verilir;
+ * isActive dönüşü .tsx'teki inline transform + bu transition ile animasyonlu. */
 .collapse :global(.ant-collapse-arrow) {
   color: var(--sc-color-text-tertiary) !important;
-  font-size: var(--sc-font-size-sm) !important;
+  width: 16px;
+  height: 16px;
   margin-inline-end: var(--sc-space-2) !important;
   transition:
     transform var(--sc-duration-fast) var(--sc-easing-default),

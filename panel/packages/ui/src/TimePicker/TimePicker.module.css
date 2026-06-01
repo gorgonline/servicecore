@@ -78,6 +78,14 @@
   color: var(--sc-color-text-tertiary) !important;
 }
 
+/* Carbon ikonlar (suffix=Time, clear=Close) — fill=currentColor ile yukarıdaki
+ * rengi alır; sadece glyph boyutunu kontrol et (Carbon default 32px gelir). */
+.picker :global(.ant-picker-suffix) svg,
+.picker :global(.ant-picker-clear) svg {
+  width: 16px;
+  height: 16px;
+}
+
 .picker :global(.ant-picker-clear):hover {
   color: var(--sc-color-text-primary) !important;
 }

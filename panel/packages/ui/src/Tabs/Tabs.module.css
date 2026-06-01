@@ -132,6 +132,16 @@
   background: var(--sc-color-state-danger-bg) !important;
 }
 
+/* Kapatma ikonu (default CloseOutlined veya item closeIcon=Carbon Close).
+ * Carbon SVG fill=currentColor; renk yukarıdaki .ant-tabs-tab-remove'dan gelir,
+ * burada sadece boyut hizalanır. */
+.tabs :global(.ant-tabs-tab-remove) :global(svg) {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: -2px;
+}
+
 /* Add butonu (editable-card için "+") */
 .tabs :global(.ant-tabs-nav-add) {
   background: transparent !important;
@@ -148,6 +158,14 @@
 .tabs :global(.ant-tabs-nav-add):hover {
   color: var(--sc-color-accent) !important;
   border-color: var(--sc-color-accent) !important;
+}
+
+/* Add ikonu (Carbon Add). fill=currentColor; renk .ant-tabs-nav-add'dan gelir. */
+.tabs :global(.ant-tabs-nav-add) :global(svg) {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: -3px;
 }
 
 /* ───────────────────────────────────────────────────────────────
@@ -220,6 +238,15 @@
 .tabs :global(.ant-tabs-nav-more):hover {
   color: var(--sc-color-accent) !important;
   background: var(--sc-color-bg-muted) !important;
+}
+
+/* More ikonu (Carbon OverflowMenuHorizontal — yatay ⋯).
+ * fill=currentColor; renk .ant-tabs-nav-more'dan gelir. */
+.tabs :global(.ant-tabs-nav-more) :global(svg) {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: -3px;
 }
 
 /* ───────────────────────────────────────────────────────────────

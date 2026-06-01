@@ -17,6 +17,11 @@ import type { Image as AntImage } from "antd";
  *   preview.imageRender — modern API,
  *   classNames/styles semantic DOM (6.0+),
  *   focusTrap (6.4+), mask.closable (6.4+).
+ *
+ * ServiceCore wrap — preview toolbar/close/switch ikonları Carbon'a çevrilir
+ * (zoomIn/zoomOut/rotateLeft/rotateRight/flipX/flipY/close/left/right).
+ * Per-image: <code>preview.icons</code>, gallery: top-level
+ * <code>icons</code> ile per-ikon override edilebilir (Carbon default üstüne).
  */
 export type ImageProps = ComponentProps<typeof AntImage>;
 
