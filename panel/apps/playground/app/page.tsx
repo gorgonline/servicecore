@@ -59,8 +59,8 @@ import {
   TextLineSpacing,
   InProgress,
 } from "@carbon/icons-react";
-import { Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Card, Flex } from "@servicecore/ui/wraps";
+import { Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Card, Flex } from "@servicecoreui/ui/wraps";
 
 type Item = {
   name: string;
@@ -453,7 +453,7 @@ export default function HomePage() {
       }}
     >
       <Flex vertical gap="large" style={{ marginBottom: "var(--sc-space-12)" }}>
-        <Eyebrow tone="accent">@servicecore/ui v0.0.1</Eyebrow>
+        <Eyebrow tone="accent">@servicecoreui/ui v0.0.1</Eyebrow>
         <Display size="lg">ServiceCore UI</Display>
         <Text size="lg" color="secondary" style={{ maxWidth: 640 }}>
           AntD 5.7 wrap + Carbon icon + OKLCH token sistemi. Her bileşenin

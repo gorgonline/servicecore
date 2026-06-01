@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import {
   Alert,
   Button,
@@ -10,7 +10,7 @@ import {
   Modal,
   Select,
   message,
-} from "@servicecore/ui/wraps";
+} from "@servicecoreui/ui/wraps";
 import styles from "./modal.module.css";
 
 /* ────────────────────────────────────────────────

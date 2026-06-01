@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Card, Flex, Select } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Card, Flex, Select } from "@servicecoreui/ui/wraps";
 import styles from "./selects.module.css";
 
 /* ────────────────────────────────────────────────

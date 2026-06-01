@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import type { MenuProps } from "@servicecore/ui/wraps";
+import type { MenuProps } from "@servicecoreui/ui/wraps";
 import {
   Dashboard,
   Analytics,
@@ -19,8 +19,8 @@ import {
   Settings,
   Home,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Menu } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Menu } from "@servicecoreui/ui/wraps";
 import styles from "./menus.module.css";
 
 /* ────────────────────────────────────────────────

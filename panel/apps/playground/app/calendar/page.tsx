@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import dayjs, { type Dayjs } from "dayjs";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Calendar } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Calendar } from "@servicecoreui/ui/wraps";
 import styles from "./calendar.module.css";
 
 /* ────────────────────────────────────────────────

@@ -9,8 +9,8 @@ import {
   WarningAlt,
   DocumentTasks,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Timeline } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Timeline } from "@servicecoreui/ui/wraps";
 import styles from "./timeline.module.css";
 
 /* ────────────────────────────────────────────────

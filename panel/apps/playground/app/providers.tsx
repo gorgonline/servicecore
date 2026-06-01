@@ -6,7 +6,7 @@ import { ConfigProvider } from "antd";
 import trTR from "antd/locale/tr_TR";
 import dayjs from "dayjs";
 import "dayjs/locale/tr";
-import { servicecoreTheme } from "@servicecore/ui/theme";
+import { servicecoreTheme } from "@servicecoreui/ui/theme";
 
 // dayjs için global Türkçe locale — DatePicker, Calendar, RangePicker
 // hepsi bu locale'i kullanır. Pazartesi haftanın ilk günü olur.

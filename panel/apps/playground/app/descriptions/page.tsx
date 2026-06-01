@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { Edit, Download } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Descriptions } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Descriptions } from "@servicecoreui/ui/wraps";
 import styles from "./descriptions.module.css";
 
 /* ────────────────────────────────────────────────

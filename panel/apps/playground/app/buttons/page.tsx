@@ -15,8 +15,8 @@ import {
   WarningAlt,
   ChevronRight,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button } from "@servicecoreui/ui/wraps";
 import styles from "./buttons.module.css";
 
 /* ────────────────────────────────────────────────

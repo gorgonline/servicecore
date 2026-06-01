@@ -28,8 +28,8 @@ import {
   Time,
   Renew,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Card, Dropdown, Tag } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Card, Dropdown, Tag } from "@servicecoreui/ui/wraps";
 import styles from "./dropdowns.module.css";
 
 /* ────────────────────────────────────────────────

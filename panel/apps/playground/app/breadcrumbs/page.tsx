@@ -11,8 +11,8 @@ import {
   Phone,
   WarningAlt,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Breadcrumb, Button, Card } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Breadcrumb, Button, Card } from "@servicecoreui/ui/wraps";
 import styles from "./breadcrumbs.module.css";
 
 /* ────────────────────────────────────────────────

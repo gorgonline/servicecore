@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { List, Grid, Calendar } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Segmented } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Segmented } from "@servicecoreui/ui/wraps";
 import styles from "./segmented.module.css";
 
 /* ────────────────────────────────────────────────

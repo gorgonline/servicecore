@@ -1,25 +1,53 @@
-# Ekip Kullanım Notu — @servicecore/ui
+# Ekip Kullanım Notu — @servicecoreui/ui
 
-> Bu doküman ekibe `@servicecore/ui` panel kütüphanesini nasıl kullanacaklarını ve standardın nasıl korunacağını anlatır.
+> Bu doküman ekibe `@servicecoreui/ui` panel kütüphanesini nasıl kullanacaklarını ve standardın nasıl korunacağını anlatır.
 
 ## Niyet
 
-Backend ekibi şu an AntD 5.7 ile karışık yazıyor — sayfa sayfa farklı kalıp, farklı renk, farklı boşluk. `@servicecore/ui` bu dağınıklığı tek bir tasarım sistemi altında topluyor: AntD bileşenlerinin üstüne ServiceCore imzası giydirilmiş, standartlaştırılmış bir wrap katmanı.
+Backend ekibi şu an AntD 5.7 ile karışık yazıyor — sayfa sayfa farklı kalıp, farklı renk, farklı boşluk. `@servicecoreui/ui` bu dağınıklığı tek bir tasarım sistemi altında topluyor: AntD bileşenlerinin üstüne ServiceCore imzası giydirilmiş, standartlaştırılmış bir wrap katmanı.
 
-Ekip `npm install @servicecore/ui` ile paketi kurar, doğrudan oradan import eder. AntD'yi doğrudan import etmek yasak (aşağıya bakın).
+Ekip `npm install @servicecoreui/ui` ile paketi kurar, doğrudan oradan import eder. AntD'yi doğrudan import etmek yasak (aşağıya bakın).
 
 ## AI ile Çalışma — MCP Entegrasyonu
 
-Ekip Claude / Cursor / Copilot kullanıyor. AI'ın `@servicecore/ui` dışına çıkıp rastgele AntD veya kendi HTML'ini yazmasını engellemek için MCP server kuracağız.
+Ekip çoğunlukla **VS Code + Claude Code / Cursor / Continue** kullanıyor. AI'ın `@servicecoreui/ui` dışına çıkıp rastgele AntD veya kendi HTML'ini yazmasını engellemek için **`@servicecoreui/mcp` server'ı** yayınlandı.
 
-**Plan:** `@servicecore/ui` MCP server olarak expose edilecek. AI ajanları MCP üzerinden:
+MCP server şu tool'ları expose ediyor:
 
 - `list_components` — kataloğu listele
 - `get_component_spec` — props, varyant, örnek kod
+- `find_component` — amaç metniyle arama ("data tablo", "modal")
 - `get_design_rules` — ne zaman kullan / kullanma
-- `get_token` — renk, spacing, type token'ları
+- `get_tokens` — renk, spacing, type token'ları
 
-Ekipten biri Claude'una "ticket listesi UI yap" dediğinde, Claude MCP'den katalogu çeker, sadece `@servicecore/ui` bileşenlerini kullanarak kod üretir. Yanlış malzeme önerme ihtimali düşer.
+### Kurulum (her ekip üyesi kendi makinesinde)
+
+**Claude Code (VS Code uzantısı) — önerilen:** Repo zaten kök `.mcp.json` ile geliyor. VS Code'da Claude Code açılınca onay ister — "Allow" de, hazır.
+
+**Cursor:** Settings → MCP → **Add new MCP server**:
+
+```json
+{
+  "mcpServers": {
+    "servicecoreui": {
+      "command": "npx",
+      "args": ["-y", "@servicecoreui/mcp"]
+    }
+  }
+}
+```
+
+**Continue:** Aynı JSON'ı `~/.continue/config.json`'a ekle.
+
+Detay: `panel/packages/mcp/README.md`.
+
+### Akış
+
+1. Ekipten biri Claude'una/Cursor'ına "ticket listesi UI yap" der
+2. AI önce `list_components` veya `find_component` çağırır → mevcut wrap'leri görür
+3. `get_component_spec Table` ile tam spec'i alır
+4. `get_tokens` ile renk/spacing'i kontrol eder
+5. Sadece `@servicecoreui/ui` import ederek kod yazar
 
 **Önemli:** MCP sadece kütüphaneci. Polis değil. Zorlama katmanı ekipte.
 
@@ -29,14 +57,14 @@ MCP doğru malzemeyi eline verir, ama kullanmayı garanti etmez. Aşağıdaki ka
 
 ### 1. ESLint Kuralı
 
-`antd` paketinden doğrudan import yasak — sadece `@servicecore/ui` izinli.
+`antd` paketinden doğrudan import yasak — sadece `@servicecoreui/ui` izinli.
 
 ```js
 // .eslintrc
 "no-restricted-imports": ["error", {
   "paths": [{
     "name": "antd",
-    "message": "antd'yi doğrudan import etme. @servicecore/ui kullan."
+    "message": "antd'yi doğrudan import etme. @servicecoreui/ui kullan."
   }]
 }]
 ```
@@ -59,13 +87,13 @@ Lint ve stylelint geçmeyen PR merge edilmez. GitHub branch protection ile zorla
 
 ## Dağıtım
 
-- Paket adı: `@servicecore/ui`
-- Registry: GitHub Packages (private)
-- Kurulum: ekip kendi `.npmrc` ile auth olur, `npm install @servicecore/ui`
+- UI paketi: `@servicecoreui/ui` — `npm install @servicecoreui/ui`
+- MCP server: `@servicecoreui/mcp` — `npx -y @servicecoreui/mcp` (kurmadan çalışır)
+- Registry: npm.js (public)
 - Peer deps: `antd >=5.7`, `react >=18`, `react-dom >=18`, `@carbon/icons-react`
 
 ## Sıradaki Adımlar
 
-1. Faz 5 tamamlandığında gerçek ekran testi (örn. ticket-list)
-2. MCP server iskeleti — hangi component'ler ilk turda yer alacak, hangi kurallar makine-okunabilir olacak
+1. Faz 5: gerçek ekran testi (örn. ticket-list)
+2. UI paketi güncellenince MCP paketini de yeniden yayınla (`pnpm build && npm publish`)
 3. Ekibe sunum + ESLint/CI kuralları kurulumu

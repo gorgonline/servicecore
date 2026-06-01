@@ -3,8 +3,8 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Edit, TrashCan, Send, Copy, Settings } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Tooltip } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Tooltip } from "@servicecoreui/ui/wraps";
 import styles from "./tooltip.module.css";
 
 /* ────────────────────────────────────────────────

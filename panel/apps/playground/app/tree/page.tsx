@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Folder, FolderOpen, Document, ServerProxy } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Tree } from "@servicecore/ui/wraps";
-import type { TreeDataNode } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Tree } from "@servicecoreui/ui/wraps";
+import type { TreeDataNode } from "@servicecoreui/ui/wraps";
 import styles from "./tree.module.css";
 
 /* ────────────────────────────────────────────────

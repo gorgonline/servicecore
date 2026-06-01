@@ -2,11 +2,11 @@
  * Theme public API
  *
  * Tüketici:
- *   import { servicecoreTheme } from '@servicecore/ui/theme';
+ *   import { servicecoreTheme } from '@servicecoreui/ui/theme';
  *   <ConfigProvider theme={servicecoreTheme}>...</ConfigProvider>
  *
  * Token erişimi (TS):
- *   import { colors, radius, cssVar } from '@servicecore/ui/theme';
+ *   import { colors, radius, cssVar } from '@servicecoreui/ui/theme';
  *   colors.primary[500]   → '#0070F3'
  *   cssVar.color.accent   → 'var(--sc-color-accent)'
  */

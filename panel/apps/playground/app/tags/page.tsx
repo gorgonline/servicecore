@@ -9,8 +9,8 @@ import {
   ArrowRight,
   Information,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Card, Tag } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Card, Tag } from "@servicecoreui/ui/wraps";
 import styles from "./tags.module.css";
 
 /* ────────────────────────────────────────────────

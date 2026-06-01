@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { Image as ImageIconCarbon } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Image } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Image } from "@servicecoreui/ui/wraps";
 import styles from "./image.module.css";
 
 /* ────────────────────────────────────────────────

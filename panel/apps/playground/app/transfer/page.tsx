@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Transfer } from "@servicecore/ui/wraps";
-import type { TransferItem } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Transfer } from "@servicecoreui/ui/wraps";
+import type { TransferItem } from "@servicecoreui/ui/wraps";
 import styles from "./transfer.module.css";
 
 /* ────────────────────────────────────────────────

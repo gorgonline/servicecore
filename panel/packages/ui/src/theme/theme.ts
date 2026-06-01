@@ -1,5 +1,5 @@
 /**
- * @servicecore/ui — AntD ThemeConfig
+ * @servicecoreui/ui — AntD ThemeConfig
  *
  * Tüketici `<ConfigProvider theme={servicecoreTheme}>` ile sarar.
  * Bu tüm AntD bileşenlerine (bizim wrap'larımız dahil) ServiceCore dilini giydirir.

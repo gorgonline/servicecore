@@ -1,5 +1,5 @@
 /**
- * @servicecore/ui — tokens (TypeScript counterpart)
+ * @servicecoreui/ui — tokens (TypeScript counterpart)
  *
  * tokens.css ile PARALEL tutulur. Bir değeri değiştirirken ikisini birden güncelle.
  * AntD theme.ts bu dosyadan beslenir (CSS değişkeni değil, gerçek değer lazım çünkü

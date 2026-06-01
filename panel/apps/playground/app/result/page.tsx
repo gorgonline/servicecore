@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Result } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Result } from "@servicecoreui/ui/wraps";
 import { CheckmarkFilled, Download } from "@carbon/icons-react";
 import styles from "./result.module.css";
 

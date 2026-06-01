@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Progress } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Progress } from "@servicecoreui/ui/wraps";
 import { Document, DocumentPdf, Image as ImageIcon } from "@carbon/icons-react";
 import styles from "./progress.module.css";
 

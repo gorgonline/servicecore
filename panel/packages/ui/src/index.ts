@@ -1,5 +1,5 @@
 /**
- * @servicecore/ui — public API
+ * @servicecoreui/ui — public API
  *
  * Faz 1: token foundation + AntD theme.
  * Faz 3'te ilk wrap bileşenleri (Button, Input, Badge, Tag) eklenecek.
@@ -15,9 +15,9 @@ export * from "./Text";
 export * from "./Eyebrow";
 export * from "./Code";
 
-// NOT: AntD wrap'leri burada DEĞİL — `@servicecore/ui/wraps` subpath altında.
+// NOT: AntD wrap'leri burada DEĞİL — `@servicecoreui/ui/wraps` subpath altında.
 // Sebep: AntD runtime'da createContext kullanır, RSC server context'inde patlar.
-// `import { Button } from "@servicecore/ui/wraps"` ile kullan.
+// `import { Button } from "@servicecoreui/ui/wraps"` ile kullan.
 
 // ── Theme ───────────────────────────────────────────────────
 // Re-export theme & tokens for convenience (also available via /theme subpath)

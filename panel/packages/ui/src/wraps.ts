@@ -5,7 +5,7 @@
  * Next.js'in server component'lerinde çalışmaz. CRA/Vite tüketici için
  * "use client" yorumu görmezden gelinir, etki yoktur.
  *
- * Server-safe bileşenler için ana entry: `@servicecore/ui`
+ * Server-safe bileşenler için ana entry: `@servicecoreui/ui`
  */
 
 export * from "./Button";

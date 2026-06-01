@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import {
   Alert,
   Button,
   Popconfirm,
   Switch,
   message,
-} from "@servicecore/ui/wraps";
+} from "@servicecoreui/ui/wraps";
 import { WarningAltFilled, Archive, TrashCan } from "@carbon/icons-react";
 import styles from "./popconfirm.module.css";
 

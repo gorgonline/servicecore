@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "servicecoreui": {
+      "command": "npx",
+      "args": ["-y", "@servicecoreui/mcp"]
+    }
+  }
+}

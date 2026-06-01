@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, message } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, message } from "@servicecoreui/ui/wraps";
 import styles from "./message.module.css";
 
 /* ────────────────────────────────────────────────
@@ -246,7 +246,7 @@ message.loading("Yükleniyor...", 0);  // 0 = manuel kapanır`}</CodeBlock>
           alınır.
         </Text>
         <CodeBlock>{`// app/providers.tsx veya app entry'de
-import { message } from "@servicecore/ui/wraps";
+import { message } from "@servicecoreui/ui/wraps";
 
 message.config({
   top: 80,         // header altından (default 24px → header gizler)

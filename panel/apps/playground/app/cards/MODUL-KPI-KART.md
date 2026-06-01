@@ -169,7 +169,7 @@ const STAT_MODULE_BODY_STYLE: React.CSSProperties = {
 
 ```tsx
 import { ArrowUp, ArrowDown } from "@carbon/icons-react";
-import { Card } from "@servicecore/ui/wraps";
+import { Card } from "@servicecoreui/ui/wraps";
 import styles from "./cards.module.css";
 ```
 

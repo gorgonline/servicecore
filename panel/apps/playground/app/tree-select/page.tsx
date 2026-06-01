@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, TreeSelect } from "@servicecore/ui/wraps";
-import type { TreeSelectNode } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, TreeSelect } from "@servicecoreui/ui/wraps";
+import type { TreeSelectNode } from "@servicecoreui/ui/wraps";
 import styles from "./tree-select.module.css";
 
 /* ────────────────────────────────────────────────

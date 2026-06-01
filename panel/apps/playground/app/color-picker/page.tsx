@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, ColorPicker, Input } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, ColorPicker, Input } from "@servicecoreui/ui/wraps";
 import styles from "./color-picker.module.css";
 
 /* ────────────────────────────────────────────────

@@ -20,7 +20,7 @@ import "./Message.module.css";
  *
  * @example Static (basit)
  * ```tsx
- * import { message } from "@servicecore/ui/wraps";
+ * import { message } from "@servicecoreui/ui/wraps";
  *
  * const onSave = async () => {
  *   await api.save();

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm --filter playground dev",
     "build": "pnpm -r build",
-    "build:ui": "pnpm --filter @servicecore/ui build",
+    "build:ui": "pnpm --filter @servicecoreui/ui build",
     "lint": "pnpm -r lint",
     "typecheck": "pnpm -r typecheck",
     "clean": "pnpm -r exec rm -rf dist .next node_modules .turbo"

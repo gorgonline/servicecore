@@ -9,8 +9,8 @@ import {
   Locked,
   Information,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Card, Input } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Card, Input } from "@servicecoreui/ui/wraps";
 import styles from "./inputs.module.css";
 
 /* ────────────────────────────────────────────────

@@ -10,8 +10,8 @@ import {
   Settings,
   Email,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Popover } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Popover } from "@servicecoreui/ui/wraps";
 import styles from "./popover.module.css";
 
 /* ────────────────────────────────────────────────

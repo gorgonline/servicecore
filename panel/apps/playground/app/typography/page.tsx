@@ -10,7 +10,7 @@ import {
   type TextWeight,
   type TextColor,
   type EyebrowTone,
-} from "@servicecore/ui";
+} from "@servicecoreui/ui";
 import styles from "./typography.module.css";
 
 const HEADING_LEVELS = [1, 2, 3, 4, 5, 6] as const;
@@ -211,8 +211,8 @@ export default function TypographyPage() {
         </div>
         <div className={styles.swatchCell}>
           <span className={styles.swatchLabel}>block</span>
-          <Code block>{`import { Button } from '@servicecore/ui';
-import '@servicecore/ui/styles.css';
+          <Code block>{`import { Button } from '@servicecoreui/ui';
+import '@servicecoreui/ui/styles.css';
 
 export function App() {
   return <Button>Kaydet</Button>;

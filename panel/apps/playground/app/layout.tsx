@@ -2,8 +2,8 @@ import type { ReactNode } from "react";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Providers } from "./providers";
-import "@servicecore/ui/tokens.css";
-import "@servicecore/ui/styles.css";
+import "@servicecoreui/ui/tokens.css";
+import "@servicecoreui/ui/styles.css";
 import "./globals.css";
 
 export const metadata = {

@@ -28,9 +28,9 @@ import {
   Renew,
   OverflowMenuVertical,
 } from "@carbon/icons-react";
-import { Heading, Text } from "@servicecore/ui";
-import { Breadcrumb, Button, Card, Menu, Tag } from "@servicecore/ui/wraps";
-import type { MenuProps } from "@servicecore/ui/wraps";
+import { Heading, Text } from "@servicecoreui/ui";
+import { Breadcrumb, Button, Card, Menu, Tag } from "@servicecoreui/ui/wraps";
+import type { MenuProps } from "@servicecoreui/ui/wraps";
 import styles from "./shell.module.css";
 
 const { Header, Sider, Content } = Layout;

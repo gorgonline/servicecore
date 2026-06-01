@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { Settings, Information } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Collapse } from "@servicecore/ui/wraps";
-import type { CollapseItem } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Collapse } from "@servicecoreui/ui/wraps";
+import type { CollapseItem } from "@servicecoreui/ui/wraps";
 import styles from "./collapse.module.css";
 
 /* ────────────────────────────────────────────────

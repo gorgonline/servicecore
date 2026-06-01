@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ThumbsUp, ThumbsDown, FaceSatisfied } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Rate } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Rate } from "@servicecoreui/ui/wraps";
 import styles from "./rate.module.css";
 
 /* ────────────────────────────────────────────────

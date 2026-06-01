@@ -8,5 +8,7 @@ dist/
 .env
 .env.local
 .env.*.local
+.npmrc
+!.npmrc.example
 coverage/
 *.tsbuildinfo

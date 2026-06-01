@@ -1,0 +1,44 @@
+{
+  "name": "@servicecoreui/mcp",
+  "version": "0.0.1",
+  "description": "ServiceCore UI MCP server — exposes @servicecoreui/ui catalog to AI agents (Claude, Cursor)",
+  "license": "UNLICENSED",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gorgonline/servicecore.git",
+    "directory": "panel/packages/mcp"
+  },
+  "homepage": "https://github.com/gorgonline/servicecore/tree/main/panel/packages/mcp",
+  "bugs": {
+    "url": "https://github.com/gorgonline/servicecore/issues"
+  },
+  "bin": {
+    "servicecoreui-mcp": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "design-rules.md"
+  ],
+  "scripts": {
+    "build:catalog": "node --experimental-strip-types src/build-catalog.ts",
+    "build:js": "node build.mjs",
+    "build": "node --experimental-strip-types src/build-catalog.ts && node build.mjs",
+    "start": "node dist/index.js",
+    "dev": "node --experimental-strip-types src/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.27.0",
+    "typescript": "^5.6.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  }
+}

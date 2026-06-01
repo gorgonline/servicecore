@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Add, TrashCan, Information } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import {
   Alert,
   Button,
@@ -12,7 +12,7 @@ import {
   Form,
   Input,
   Select,
-} from "@servicecore/ui/wraps";
+} from "@servicecoreui/ui/wraps";
 import styles from "./form.module.css";
 
 /* ────────────────────────────────────────────────

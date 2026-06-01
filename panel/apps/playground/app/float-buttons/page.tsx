@@ -12,8 +12,8 @@ import {
   Idea,
   ShoppingCart,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, FloatButton } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, FloatButton } from "@servicecoreui/ui/wraps";
 import styles from "./float-buttons.module.css";
 
 /* ────────────────────────────────────────────────

@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { Add, Search, DocumentBlank, NotificationOff, Filter } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Empty } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Empty } from "@servicecoreui/ui/wraps";
 import styles from "./empty.module.css";
 
 /* ────────────────────────────────────────────────

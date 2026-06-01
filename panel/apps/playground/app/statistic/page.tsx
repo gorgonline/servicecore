@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import dayjs from "dayjs";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Statistic } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Statistic } from "@servicecoreui/ui/wraps";
 import styles from "./statistic.module.css";
 
 /* ────────────────────────────────────────────────

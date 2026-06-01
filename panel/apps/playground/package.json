@@ -13,7 +13,7 @@
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.2",
     "@carbon/icons-react": "^11.50.0",
-    "@servicecore/ui": "workspace:*",
+    "@servicecoreui/ui": "workspace:*",
     "antd": "5.7.0",
     "dayjs": "^1.11.20",
     "geist": "^1.7.0",

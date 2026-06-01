@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { CloudUpload, Document, Add, UserAvatar } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecore/ui";
-import { Alert, Button, Upload } from "@servicecore/ui/wraps";
-import type { UploadProps } from "@servicecore/ui/wraps";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Alert, Button, Upload } from "@servicecoreui/ui/wraps";
+import type { UploadProps } from "@servicecoreui/ui/wraps";
 import styles from "./upload.module.css";
 
 /* ────────────────────────────────────────────────
