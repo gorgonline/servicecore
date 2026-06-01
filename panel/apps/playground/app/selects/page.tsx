@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, Card, Flex, Select } from "@servicecoreui/ui/wraps";
@@ -501,10 +500,6 @@ export default function SelectsPage() {
           yerine <code>multiple</code> kullan + ayrı &quot;Etiket ekle&quot; buton'u.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

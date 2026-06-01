@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, Result } from "@servicecoreui/ui/wraps";
 import { CheckmarkFilled, Download } from "@carbon/icons-react";
@@ -462,10 +461,6 @@ export default function ResultPage() {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

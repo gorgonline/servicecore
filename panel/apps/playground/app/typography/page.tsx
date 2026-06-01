@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   Display,
   Heading,
@@ -219,10 +218,6 @@ export function App() {
 }`}</Code>
         </div>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

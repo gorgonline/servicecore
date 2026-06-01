@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   CheckmarkOutline,
   WarningAlt,
@@ -331,10 +330,6 @@ export default function TagsPage() {
           Tablo satırında en fazla 2-3 tag (öncelik + statü). Daha fazlası gürültü olur — diğerlerini detay sayfasına bırak.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, InputNumber } from "@servicecoreui/ui/wraps";
 import styles from "./input-number.module.css";
@@ -490,10 +489,6 @@ export default function InputNumberPage() {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, Skeleton, Switch } from "@servicecoreui/ui/wraps";
 import styles from "./skeleton.module.css";
@@ -515,10 +514,6 @@ export default function SkeletonPage() {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

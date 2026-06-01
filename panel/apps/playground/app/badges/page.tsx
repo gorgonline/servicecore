@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   Notification as NotificationIcon,
   Phone,
@@ -436,10 +435,6 @@ export default function BadgesPage() {
           &quot;Açık Çağrılar <em>12</em>&quot; gibi inline metin daha sade.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

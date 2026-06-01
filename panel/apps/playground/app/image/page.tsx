@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Image as ImageIconCarbon } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Image } from "@servicecoreui/ui/wraps";
@@ -390,10 +389,6 @@ export default function ImagePage() {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

@@ -562,10 +562,6 @@ const onSearch = useDebouncedCallback((text, prefix) => {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

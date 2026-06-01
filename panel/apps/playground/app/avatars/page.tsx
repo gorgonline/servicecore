@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   User,
   UserMultiple,
@@ -524,10 +523,6 @@ export default function AvatarsPage() {
           neutral, kilitli kullanıcı için danger gibi semantic kullanım.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

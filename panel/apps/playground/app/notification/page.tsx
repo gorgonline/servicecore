@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, notification } from "@servicecoreui/ui/wraps";
 import {
@@ -602,10 +601,6 @@ notification.config({
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

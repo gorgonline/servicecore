@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Add, TrashCan, Information } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import {
@@ -740,10 +739,6 @@ return (
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

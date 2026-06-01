@@ -516,10 +516,6 @@ export default function BreadcrumbsPage() {
           rendering hepsi hazır geliyor.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

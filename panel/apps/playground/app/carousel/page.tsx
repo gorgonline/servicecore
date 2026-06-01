@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, Carousel } from "@servicecoreui/ui/wraps";
@@ -409,10 +408,6 @@ export default function CarouselPage() {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

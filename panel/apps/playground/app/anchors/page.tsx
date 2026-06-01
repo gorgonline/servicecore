@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Anchor } from "@servicecoreui/ui/wraps";
 import styles from "./anchors.module.css";
@@ -464,10 +463,6 @@ export default function AnchorsPage() {
           <code>element.scrollIntoView()</code> kullan.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

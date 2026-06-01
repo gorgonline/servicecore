@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Settings, Information } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Collapse } from "@servicecoreui/ui/wraps";
@@ -504,10 +503,6 @@ export default function CollapsePage() {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

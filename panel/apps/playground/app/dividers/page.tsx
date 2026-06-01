@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, Card, Divider } from "@servicecoreui/ui/wraps";
 import styles from "./dividers.module.css";
@@ -287,10 +286,6 @@ export default function DividersPage() {
           tek dashed olsun, gerisi solid.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

@@ -1,0 +1,147 @@
+/* "Başlarken" — dokümantasyon ana sayfası */
+
+.page {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: var(--sc-space-16) var(--sc-space-6) var(--sc-space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-16);
+}
+
+/* ── Hero ────────────────────────────────────────── */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-4);
+}
+
+.lead {
+  max-width: 640px;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sc-space-2) var(--sc-space-3);
+  margin-top: var(--sc-space-2);
+}
+
+.metaChip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  padding: var(--sc-space-1) var(--sc-space-3);
+  border-radius: var(--sc-radius-full);
+  background: var(--sc-color-bg-base);
+  border: 1px solid var(--sc-color-border-subtle);
+  color: var(--sc-color-text-secondary);
+  font-size: var(--sc-font-size-xs);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+.metaChipStrong {
+  color: var(--sc-color-accent);
+  font-family: var(--sc-font-mono);
+}
+
+/* ── Section ─────────────────────────────────────── */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-4);
+}
+
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+}
+
+/* ── Principles grid ─────────────────────────────── */
+
+.principleGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--sc-space-3);
+}
+
+.principle {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+  padding: var(--sc-space-5);
+  border-radius: var(--sc-radius-lg);
+  background: var(--sc-color-bg-base);
+  border: 1px solid var(--sc-color-border-subtle);
+}
+
+.principleIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--sc-radius-md);
+  background: var(--sc-color-accent-subtle);
+  color: var(--sc-color-accent);
+  margin-bottom: var(--sc-space-1);
+}
+
+/* ── Quick links ─────────────────────────────────── */
+
+.quickGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--sc-space-3);
+}
+
+.quickLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sc-space-3);
+  padding: var(--sc-space-4) var(--sc-space-5);
+  border-radius: var(--sc-radius-lg);
+  background: var(--sc-color-bg-base);
+  border: 1px solid var(--sc-color-border-subtle);
+  color: var(--sc-color-text-primary);
+  text-decoration: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
+}
+
+.quickLink:hover {
+  color: var(--sc-color-text-primary);
+  border-color: var(--sc-color-border-default);
+  box-shadow: var(--sc-shadow-sm);
+  transform: translateY(-1px);
+}
+
+.quickLinkBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.quickLinkName {
+  font-size: var(--sc-font-size-md);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+.quickLinkDesc {
+  color: var(--sc-color-text-tertiary);
+  font-size: var(--sc-font-size-xs);
+}
+
+.quickLinkArrow {
+  flex-shrink: 0;
+  color: var(--sc-color-text-tertiary);
+}
+
+.quickLink:hover .quickLinkArrow {
+  color: var(--sc-color-accent);
+}

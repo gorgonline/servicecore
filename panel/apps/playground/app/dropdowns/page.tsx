@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import {
   ChevronDown,
@@ -1118,10 +1117,6 @@ export default function DropdownsPage() {
           arama/Tree yapısına geçir — kullanıcı kaydırırken context kaybeder.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import type { MenuProps } from "@servicecoreui/ui/wraps";
 import {
@@ -654,10 +653,6 @@ function Sider() {
           key olursa selected state random davranır, console warning verir.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Link from "next/link";
 import {
   UserAvatar,
   Chat,
@@ -757,10 +756,6 @@ const onEdit: TabsProps["onEdit"] = (targetKey, action) => {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

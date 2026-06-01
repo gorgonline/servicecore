@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   Search,
   User,
@@ -406,10 +405,6 @@ export default function InputsPage() {
           <code>Input.TextArea</code> kullan — yatay scroll oluşur.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

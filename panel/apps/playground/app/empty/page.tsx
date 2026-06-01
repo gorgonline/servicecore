@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Add, Search, DocumentBlank, NotificationOff, Filter } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, Empty } from "@servicecoreui/ui/wraps";
@@ -403,10 +402,6 @@ export default function EmptyPage() {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

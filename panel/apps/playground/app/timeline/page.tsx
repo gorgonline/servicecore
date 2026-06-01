@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   CheckmarkOutline,
   Send,
@@ -494,10 +493,6 @@ export default function TimelinePage() {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

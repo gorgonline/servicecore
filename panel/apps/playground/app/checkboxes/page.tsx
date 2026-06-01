@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import { TrashCan, Edit, Send } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, Checkbox } from "@servicecoreui/ui/wraps";
@@ -644,10 +643,6 @@ const indeterminate  = selected.length > 0 && selected.length < rows.length;
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

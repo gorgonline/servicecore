@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, Spin, Switch } from "@servicecoreui/ui/wraps";
 import { Renew, CheckmarkFilled } from "@carbon/icons-react";
@@ -507,10 +506,6 @@ Spin.setDefaultIndicator(
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

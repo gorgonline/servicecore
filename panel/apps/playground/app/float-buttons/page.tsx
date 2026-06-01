@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   Help,
   Add,
@@ -349,9 +348,6 @@ export default function FloatButtonsPage() {
         </AntiPattern>
       </section>
 
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
 
       {/* Gerçek BackTop — bu sayfada aktif */}
       <FloatButton.BackTop visibilityHeight={400} />

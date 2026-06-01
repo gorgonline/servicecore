@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { colors, radius, spacing, fontSize, fontWeight } from "@servicecoreui/ui";
 import styles from "./tokens.module.css";
 
@@ -262,10 +261,6 @@ export default function TokensPage() {
           ))}
         </div>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

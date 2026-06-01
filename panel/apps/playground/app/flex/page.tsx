@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   Add,
   CheckmarkOutline,
@@ -394,10 +393,6 @@ export default function FlexPage() {
           Flex iki+ child'ı düzenlemek için.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

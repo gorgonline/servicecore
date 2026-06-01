@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Edit, Download } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, Button, Descriptions } from "@servicecoreui/ui/wraps";
@@ -442,10 +441,6 @@ export default function DescriptionsPage() {
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

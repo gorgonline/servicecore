@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   ChartBar,
   OverflowMenuVertical,
@@ -735,10 +734,6 @@ export default function CardsPage() {
           ya buton — ikisi birden değil.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

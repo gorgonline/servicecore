@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   CheckmarkOutline,
   WarningAlt,
@@ -428,10 +427,6 @@ export default function AlertsPage() {
           <code>action</code> ile &quot;Tekrar dene&quot;, &quot;Düzelt&quot; gibi bir seçenek sun.
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

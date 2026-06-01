@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import {
   Add,
   ArrowRight,
@@ -643,10 +642,6 @@ export default function ButtonsPage() {
           </>
         </AntiPattern>
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }

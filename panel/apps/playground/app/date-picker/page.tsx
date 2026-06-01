@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import dayjs, { type Dayjs } from "dayjs";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
 import { Alert, DatePicker } from "@servicecoreui/ui/wraps";
@@ -654,10 +653,6 @@ dayjs.locale("tr");  // global — bir kez yap
           }
         />
       </section>
-
-      <Link href="/" className={styles.backLink}>
-        ← Ana sayfa
-      </Link>
     </main>
   );
 }
