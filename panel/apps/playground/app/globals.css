@@ -33,3 +33,15 @@ kbd,
 pre {
   font-family: var(--sc-font-mono);
 }
+
+/* Collapsed menü item tooltip'i — body portal'ında render olur (CSS Module ile
+ * hedeflenemez, o yüzden burada global). AntD default .ant-tooltip-inner'da
+ * min-height:32px var; küçük font ile metin üste yapışıp altta boşluk bırakıyor.
+ * min-height'ı sıfırla, flex ile dikey/yatay ortala, padding'i sıkılaştır. */
+.ant-menu-inline-collapsed-tooltip .ant-tooltip-inner {
+  min-height: 0 !important;
+  padding: var(--sc-space-1) var(--sc-space-3) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}

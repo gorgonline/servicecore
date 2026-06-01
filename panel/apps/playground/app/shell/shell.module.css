@@ -22,9 +22,22 @@
   display: flex;
   align-items: center;
   gap: var(--sc-space-2);
-  padding: 0 var(--sc-space-3);
+  /* Sol padding 0 — toggle zonu x=0'dan başlasın, collapsed sidebar (64px)
+   * ikon koloyla hizalanabilsin. Sağ padding korunur. */
+  padding: 0 var(--sc-space-3) 0 0;
   background: var(--sc-color-bg-base);
   border-bottom: 1px solid var(--sc-color-border-default);
+}
+
+/* Toggle zonu — collapsed sidebar ile aynı genişlik (64px), buton tam ortada.
+ * Böylece toggle ikonunun merkezi (32px) alttaki collapsed ikonların merkeziyle
+ * birebir hizalı olur. */
+.headerToggle {
+  width: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .brand {
@@ -37,18 +50,10 @@
   border-right: 1px solid var(--sc-color-border-subtle);
 }
 
-.brandMark {
-  width: 24px;
-  height: 24px;
+/* Brand sembolü (inline SVG) — küçülmesin, baseline boşluğu olmasın */
+.brand svg {
   flex-shrink: 0;
-  border-radius: var(--sc-radius-sm);
-  background: var(--sc-color-accent);
-  color: var(--sc-color-accent-on-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: var(--sc-font-weight-bold);
-  font-size: var(--sc-font-size-sm);
+  display: block;
 }
 
 .brandName {
@@ -136,6 +141,50 @@
   padding-bottom: var(--sc-space-6);
   background: var(--sc-color-bg-base);
   border-right: 1px solid var(--sc-color-border-default);
+  transition: width var(--sc-duration-normal) var(--sc-easing-default);
+}
+
+/* Collapsed — 80px ikon rayı. Genişlik aside'da inline (page.tsx).
+ *
+ * KRİTİK: item'lar GRUP içinde (type:"group") → AntD'nin kendi collapsed
+ * ortalaması `.ant-menu-inline-collapsed > .ant-menu-item` (DOĞRUDAN çocuk)
+ * gruplu item'lara değmez, ikonlar sola yapışır. Ortalamayı descendant
+ * selector ile biz zorluyoruz. Tooltip'ler AntD native (item.title).
+ */
+.siderCollapsed :global(.ant-menu),
+.siderCollapsed :global(.ant-menu-item-group),
+.siderCollapsed :global(.ant-menu-item-group-list) {
+  width: 64px !important;
+}
+
+.siderCollapsed :global(.ant-menu-item),
+.siderCollapsed :global(.ant-menu-submenu-title) {
+  width: calc(64px - var(--sc-space-4)) !important;
+  padding-inline: 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* İkonun sağındaki label boşluğu collapsed'da sıfırlanır (ikon tam ortada) */
+.siderCollapsed :global(.ant-menu-item-icon) {
+  margin-inline-end: 0 !important;
+}
+
+/* KÖK SEBEP: AntD gizli label'ı yalnız opacity:0 yapar, genişliği KALIR.
+ * justify-content:center, ikon + görünmez-label'ı birlikte ortalayıp ikonu
+ * sola itiyordu. Label'ı layout'tan tamamen çıkar → ikon tam ortada.
+ * Tooltip item.title'dan geldiği için bundan etkilenmez. */
+.siderCollapsed :global(.ant-menu-title-content) {
+  display: none !important;
+}
+
+/* NOT: collapsed tooltip'i body portal'ında (sider dışında) render olduğu için
+ * burada hedeflenemez (CSS Module "pure selector" kuralı). Stili globals.css'te. */
+
+/* Grup başlıkları gizli — saf ikon görünümü */
+.siderCollapsed :global(.ant-menu-item-group-title) {
+  display: none !important;
 }
 
 /* Menu (wrap) ince ayarları */
@@ -165,32 +214,6 @@
   letter-spacing: var(--sc-letter-spacing-wider);
   color: var(--sc-color-text-tertiary) !important;
   padding: var(--sc-space-4) var(--sc-space-5) var(--sc-space-2) !important;
-}
-
-.menuItemRow {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: var(--sc-space-2);
-}
-
-.menuItemLabel {
-  flex: 1;
-}
-
-.menuBadge {
-  margin-inline-start: auto;
-  font-size: var(--sc-font-size-2xs);
-  font-weight: var(--sc-font-weight-semibold);
-  padding: 1px 6px;
-  border-radius: var(--sc-radius-full);
-  background: var(--sc-color-bg-muted);
-  color: var(--sc-color-text-secondary);
-}
-
-.menuBadgeAlert {
-  background: var(--sc-color-state-danger-bg);
-  color: var(--sc-color-state-danger-fg);
 }
 
 /* ── Content ─────────────────────────────────────── */

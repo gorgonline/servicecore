@@ -17,35 +17,35 @@
 
 import {
   Add,
-  Analytics,
   ArrowDown,
   ArrowUp,
-  Asset,
   Book,
   Catalog,
   ChevronDown,
-  Dashboard,
-  Document,
+  Cloud,
+  DataBase,
+  Debug,
+  DocumentSigned,
   Export,
   Filter,
   Help,
-  Idea,
-  Locked,
+  Logout,
   Notification as NotificationIcon,
   OverflowMenuVertical,
   Phone,
   Renew,
-  Rocket,
+  RequestQuote,
+  Roadmap,
   Search,
   Settings,
-  ShoppingCart,
-  Time,
+  SidePanelClose,
+  SidePanelOpen,
+  Task,
   User,
   UserMultiple,
-  Logout,
   WarningAlt,
 } from "@carbon/icons-react";
-import type { ReactNode } from "react";
+import { useState } from "react";
 import { Heading, Text } from "@servicecoreui/ui";
 import {
   Avatar,
@@ -79,84 +79,26 @@ interface Ticket {
 }
 
 /* ────────────────────────────────────────────────
- * Nav — 5 grup ITSM modülleri
+ * Nav — ServiceCore'un gerçek üst-menü modülleri (mevcut panelden birebir).
+ * Düz liste; uydurma grup / sahte rozet-sayı YOK. Her item'da `title` →
+ * collapsed (icon-only) modda AntD hover tooltip'i bu string'den üretir.
+ * İkonlar Carbon (@carbon/icons-react).
  * ──────────────────────────────────────────────── */
 
-function navBadge(count: number, alert?: boolean): ReactNode {
-  return (
-    <span className={`${styles.menuBadge} ${alert ? styles.menuBadgeAlert : ""}`}>
-      {count}
-    </span>
-  );
-}
-
-function navLabel(label: string, count: number, alert?: boolean): ReactNode {
-  return (
-    <span className={styles.menuItemRow}>
-      <span className={styles.menuItemLabel}>{label}</span>
-      {navBadge(count, alert)}
-    </span>
-  );
-}
-
 const menuItems: MenuProps["items"] = [
-  {
-    key: "g1",
-    type: "group",
-    label: "Çalışma Alanı",
-    children: [
-      { key: "home", icon: <Dashboard />, label: "Ana sayfa" },
-      { key: "pano", icon: <Analytics />, label: "Pano" },
-      { key: "gorev", icon: <NotificationIcon />, label: navLabel("Görev", 8) },
-      { key: "cagri", icon: <Phone />, label: navLabel("Çağrı", 12, true) },
-      { key: "olay", icon: <WarningAlt />, label: navLabel("Olay", 148) },
-      { key: "problem", icon: <Idea />, label: "Problem" },
-      { key: "istek", icon: <ShoppingCart />, label: "İstek" },
-      { key: "degisiklik", icon: <Renew />, label: "Değişiklik" },
-      { key: "yayin", icon: <Rocket />, label: "Yayın" },
-    ],
-  },
-  {
-    key: "g2",
-    type: "group",
-    label: "Hizmet",
-    children: [
-      { key: "katalog", icon: <Catalog />, label: "Katalog" },
-      { key: "kb", icon: <Book />, label: "Bilgi Tabanı" },
-      { key: "sla", icon: <Time />, label: "SLA" },
-    ],
-  },
-  {
-    key: "g3",
-    type: "group",
-    label: "Varlıklar",
-    children: [
-      { key: "asset", icon: <Asset />, label: "Varlık" },
-      { key: "cmdb", icon: <Analytics />, label: "Yapılandırma (CMDB)" },
-      { key: "kontrat", icon: <Document />, label: "Kontrat" },
-      { key: "tedarikci", icon: <UserMultiple />, label: "Tedarikçi" },
-    ],
-  },
-  {
-    key: "g4",
-    type: "group",
-    label: "Otomasyon",
-    children: [
-      { key: "workflow", icon: <Renew />, label: "Workflow" },
-      { key: "otomasyon", icon: <Settings />, label: "Otomasyon" },
-    ],
-  },
-  {
-    key: "g5",
-    type: "group",
-    label: "Yönetim",
-    children: [
-      { key: "rapor", icon: <Analytics />, label: "Rapor" },
-      { key: "kullanicilar", icon: <UserMultiple />, label: "Kullanıcılar" },
-      { key: "roller", icon: <Locked />, label: "Roller / Yetkiler" },
-      { key: "ayarlar", icon: <Settings />, label: "Ayarlar" },
-    ],
-  },
+  { key: "gorev", icon: <Task />, label: "Görev", title: "Görev" },
+  { key: "cagri", icon: <Phone />, label: "Çağrı", title: "Çağrı" },
+  { key: "olay", icon: <WarningAlt />, label: "Olay", title: "Olay" },
+  { key: "problem", icon: <Debug />, label: "Problem", title: "Problem" },
+  { key: "istek", icon: <RequestQuote />, label: "İstek", title: "İstek" },
+  { key: "katalog", icon: <Catalog />, label: "Katalog", title: "Katalog" },
+  { key: "degisiklik", icon: <Renew />, label: "Değişiklik", title: "Değişiklik" },
+  { key: "kb", icon: <Book />, label: "KB", title: "KB" },
+  { key: "si", icon: <Cloud />, label: "SI", title: "SI" },
+  { key: "cmdb", icon: <DataBase />, label: "CMDB", title: "CMDB" },
+  { key: "sozlesme", icon: <DocumentSigned />, label: "Sözleşme", title: "Sözleşme" },
+  { key: "proje", icon: <Roadmap />, label: "Proje", title: "Proje" },
+  { key: "musteriler", icon: <UserMultiple />, label: "Müşteriler", title: "Müşteriler" },
 ];
 
 /* ────────────────────────────────────────────────
@@ -227,16 +169,58 @@ function initials(name: string): string {
 }
 
 /* ────────────────────────────────────────────────
+ * ServiceCore sembolü — brand/assets/logo.svg (iki renkli mark).
+ * Renkler token'a bağlı: koyu kısım → text-primary, mavi kısım → accent.
+ * Hardcoded hex yok; light/dark zemine göre token üzerinden uyum sağlar.
+ * ──────────────────────────────────────────────── */
+
+function ServiceCoreSymbol({ size = 24 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M 9.11 8.542 L 11.967 8.543 L 14.823 3.379 L 11.14 6.708 Z M 13.101 10.063 L 13.689 11.125 L 19.991 11.125 L 15.559 3.113 L 12.408 8.809 Z M 9.11 14.238 L 5.958 19.934 L 15.117 19.934 L 11.967 14.238 Z M 19.991 11.656 L 13.689 11.656 L 13.048 12.814 L 12.408 13.972 L 15.559 19.668 Z"
+        fill="var(--sc-color-text-primary)"
+      />
+      <path
+        d="M 7.583 5.962 L 4.432 0.266 L 0 8.277 L 6.302 8.277 Z M 8.025 11.391 L 5.168 16.553 L 10.882 11.391 Z M 7.583 11.125 L 6.302 8.809 L 0 8.809 L 4.433 16.819 Z M 10.882 5.696 L 14.033 0 L 4.874 0 L 8.023 5.695 Z"
+        fill="var(--sc-color-accent)"
+      />
+    </svg>
+  );
+}
+
+/* ────────────────────────────────────────────────
  * Sayfa
  * ──────────────────────────────────────────────── */
 
 export default function ShellPage() {
+  const [collapsed, setCollapsed] = useState(false);
+
   return (
     <div className={styles.page}>
       {/* ── Top bar ── */}
       <header className={styles.header}>
+        {/* Toggle, collapsed sidebar (64px) ile aynı kolonda ortalı —
+            alttaki ikon koloyla hizalı. */}
+        <div className={styles.headerToggle}>
+          <Button
+            type="text"
+            onClick={() => setCollapsed((c) => !c)}
+            leadingIcon={
+              collapsed ? <SidePanelOpen size={18} /> : <SidePanelClose size={18} />
+            }
+            aria-label={collapsed ? "Menüyü genişlet" : "Menüyü daralt"}
+          />
+        </div>
         <div className={styles.brand}>
-          <div className={styles.brandMark}>SC</div>
+          <ServiceCoreSymbol size={24} />
           <span className={styles.brandName}>ServiceCore</span>
         </div>
 
@@ -274,8 +258,19 @@ export default function ShellPage() {
 
       {/* ── Body: sidebar + content ── */}
       <div className={styles.body}>
-        <aside className={styles.sider}>
-          <Menu mode="inline" selectedKeys={["pano"]} items={menuItems} />
+        {/* Sidebar — collapsed'da 80px ikon rayı. Genişlik INLINE veriliyor:
+            sınıf cascade'ine güvenmeden kesin uygulansın (AntD 5.7 specificity +
+            stale CSS'e karşı). Daralma animasyonu .sider'daki transition'dan gelir. */}
+        <aside
+          className={`${styles.sider} ${collapsed ? styles.siderCollapsed : ""}`}
+          style={{ width: collapsed ? 64 : 240 }}
+        >
+          <Menu
+            mode="inline"
+            inlineCollapsed={collapsed}
+            selectedKeys={["olay"]}
+            items={menuItems}
+          />
         </aside>
 
         <main className={styles.content}>
