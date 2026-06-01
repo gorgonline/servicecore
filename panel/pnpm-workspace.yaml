@@ -1,3 +1,13 @@
 packages:
   - "packages/*"
   - "apps/*"
+
+# pnpm v10 varsayılan olarak bağımlılıkların install (postinstall) script'lerini
+# çalıştırmaz — güvenlik için. Build'e gereken paketleri AÇIKÇA izinliyoruz;
+# aksi halde Vercel'in temiz install'ında esbuild/sharp binary script'i atlanır
+# ve `tsup` (@servicecoreui/ui build) ile Next build PATLAR.
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - "@carbon/icons-react"
+  - "@carbon/icon-helpers"
