@@ -5,6 +5,13 @@ ServiceCore'un mevcut paneli için **bileşen kütüphanesi**. Biz panel yazmıy
 
 **Deliverable:** `@servicecore/ui` npm paketi (GitHub Packages)
 
+## ⚠️ Deploy — DİKKAT (iki repo var)
+- Bu klasör **monorepo** `gorgonline/servicecore` içinde (`panel/`). Burası **çalışma kopyası**.
+- **Vercel deploy AYRI repodan olur:** `gorgonline/servicecore-panel` (kökü = bu `panel/` içeriği).
+- **Monorepo'ya push DEPLOY ETMEZ.** Panel'i yayına almak için `servicecore-panel`'e senkron şart.
+- Tek komut (panel/ içinden): `pnpm sync-deploy "commit mesajı"` → [scripts/sync-deploy.sh](scripts/sync-deploy.sh)
+- "Panel'i commit/push et" denince **bu script'i** kullan; `origin` (monorepo) push'u yayına çıkmaz.
+
 ## Yapı
 - `packages/ui/` — yayınlanan paket. AntD 5.7 wrap bileşenleri, CSS Modules, kendi token sistemi
 - `apps/playground/` — bizim test ortamımız. Next.js 15 + React 18 + AntD 5.7 + AntdRegistry. **Onlara gitmez**
