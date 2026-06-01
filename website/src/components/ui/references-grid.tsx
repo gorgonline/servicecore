@@ -63,7 +63,7 @@ export function ReferencesLogoGrid() {
           <motion.div
             variants={containerVariants}
             animate="visible"
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4"
+            className="grid grid-cols-2 sm:grid-cols-3 gap-4"
           >
             {category.references.map((ref) => (
               <motion.div
@@ -71,18 +71,18 @@ export function ReferencesLogoGrid() {
                 variants={logoItemVariants}
                 className="group"
               >
-                <div className="relative flex items-center justify-center h-24 rounded-2xl bg-white/90 backdrop-blur-md border border-white/20 shadow-xl transition-all duration-500 hover:bg-white hover:-translate-y-1 hover:shadow-white/10 overflow-hidden p-6">
+                <div className="relative flex items-center justify-center h-28 rounded-2xl bg-white/90 backdrop-blur-md border border-white/20 shadow-xl transition-all duration-500 hover:bg-white hover:-translate-y-1 hover:shadow-white/10 overflow-hidden p-6">
                   {/* Hover glow */}
                   <div className="absolute inset-0 bg-linear-to-br from-blue-500/0 to-purple-500/0 group-hover:from-blue-500/4 group-hover:to-purple-500/4 transition-all duration-700" />
                   
-                  <div className="relative z-10 w-full h-full flex items-center justify-center p-4">
+                  <div className="relative z-10 w-full h-full flex items-center justify-center p-3">
                     <Image
                       src={ref.logo}
                       alt={ref.name}
-                      width={120}
-                      height={48}
-                      className="object-contain max-h-12 w-auto transition-transform duration-500 group-hover:scale-105"
-                      style={{ maxWidth: "85%" }}
+                      width={160}
+                      height={64}
+                      className="object-contain max-h-16 w-auto transition-transform duration-500 group-hover:scale-105"
+                      style={{ maxWidth: "92%" }}
                     />
                   </div>
                 </div>

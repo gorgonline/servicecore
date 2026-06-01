@@ -8,9 +8,9 @@
   "categories": [
     {
       "id": "itsm-esm",
-      "title": "ITSM / ESM",
+      "title": "ESM / ITSM / CSM / FSM / ITAM / EAM",
       "references": [
-        { "name": "AKSA", "logo": "/logos/aksa-beyaz.png" },
+        { "name": "AKSA", "logo": "/logos/aksa.png" },
         { "name": "Roketsan", "logo": "/logos/roketsan.png" },
         { "name": "T.C. Cumhurbaşkanlığı Savunma Sanayii Başkanlığı", "logo": "/logos/savunma.png" },
         { "name": "T.C. Cumhurbaşkanlığı Diyanet İşleri Başkanlığı", "logo": "/logos/diyanet.png" },
@@ -54,7 +54,7 @@
     },
     {
       "id": "itsm-esm-servis-entegrasyonu",
-      "title": "ITSM / ESM Service Integrators",
+      "title": "CSM / Multi-CSM Service Integrators",
       "references": [
         { "name": "Sabancı DX", "logo": "/logos/sabanci.png" },
         { "name": "Bulutistan", "logo": "/logos/bulutistan.png" },
