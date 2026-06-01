@@ -177,11 +177,8 @@ const aicoreSubmenu = (aicoreData.tools as AicoreToolEntry[]).map((tool) => ({
 }));
 
 const plansSubmenu = [
-  { name: "ITSM Lisans Seçenekleri", icon: ShieldCheck, desc: "Service Desk, ITIL4 ve ESM için lisans ve modül seçenekleri.", href: "/planlar" },
-  { name: "ESM Lisans Seçenekleri", icon: Building2, desc: "Enterprise Service Management lisans ve modül seçenekleri.", href: "/planlar-esm" },
-  { name: "CSM Lisans Seçenekleri", icon: Headphones, desc: "Customer Service Management lisans ve modül seçenekleri.", href: "/planlar-css" },
-  { name: "FSM Lisans Seçenekleri", icon: Truck, desc: "Field Service Management lisans ve modül seçenekleri.", href: "/planlar-fsm" },
-  { name: "AgilePM Lisans Seçenekleri", icon: Target, desc: "Agile, hibrit ve stratejik proje yönetimi lisans seçenekleri.", href: "/planlar-pm" },
+  { name: "Servis Yönetimi Lisans Seçenekleri", icon: ShieldCheck, desc: "ESM - ITSM - CSM - FSM - ITAM - EAM Lisanslamaları", href: "/planlar" },
+  { name: "Proje Yönetimi Lisans Seçenekleri", icon: Target, desc: "Agile, hibrit ve stratejik proje yönetimi lisans seçenekleri.", href: "/planlar-pm" },
   { name: "Abonelik ve Lisanslama Rehberi", icon: ScrollText, desc: "Roller, edition kuralları, ESM ve add-on lisanslama detayları.", href: "/planlar/lisanslama-rehberi" },
 ];
 
