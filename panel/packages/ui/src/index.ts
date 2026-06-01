@@ -15,6 +15,8 @@ export * from "./Text";
 export * from "./Eyebrow";
 export * from "./Code";
 
+// NOT: ServiceCore'a özel (sıfırdan) bileşenler burada DEĞİL —
+// `@servicecoreui/ui/custom` subpath altında (ör. Brand).
 // NOT: AntD wrap'leri burada DEĞİL — `@servicecoreui/ui/wraps` subpath altında.
 // Sebep: AntD runtime'da createContext kullanır, RSC server context'inde patlar.
 // `import { Button } from "@servicecoreui/ui/wraps"` ile kullan.

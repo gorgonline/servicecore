@@ -6,6 +6,7 @@
 //
 // İki tier'lı çıktı:
 //   dist/index.{js,cjs,d.ts}      Server-safe — typography + tokens (AntD bağımlılığı yok)
+//   dist/custom.{js,cjs,d.ts}     ServiceCore'a özel bileşenler (server-safe, AntD'siz)
 //   dist/wraps.{js,cjs,d.ts}      AntD wraps — "use client" banner'lı, client-only
 //   dist/theme/index.{js,cjs}     Theme + tokens (server-safe)
 //   dist/styles.css               Tüm CSS Modules tek dosyada, class adları namespaced
@@ -57,6 +58,7 @@ async function main() {
     ...SHARED,
     entryPoints: {
       index: "src/index.ts",
+      custom: "src/custom.ts",
       "theme/index": "src/theme/index.ts",
     },
     format: "esm",
@@ -68,6 +70,7 @@ async function main() {
     ...SHARED,
     entryPoints: {
       index: "src/index.ts",
+      custom: "src/custom.ts",
       "theme/index": "src/theme/index.ts",
     },
     format: "cjs",

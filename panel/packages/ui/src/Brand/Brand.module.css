@@ -1,0 +1,33 @@
+/* Brand — logo (müşteri görseli ya da ServiceCore sembolü) + marka adı lockup'ı */
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+}
+
+.brand svg {
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Müşteri logosu — yükseklik sabit (inline size ile override), genişlik sınırlı
+ * → navbar/sidebar layout'u logo ne olursa olsun bozulmaz */
+.logo {
+  display: block;
+  height: 24px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: var(--sc-font-sans);
+  font-weight: var(--sc-font-weight-semibold);
+  font-size: var(--sc-font-size-md);
+  letter-spacing: var(--sc-letter-spacing-tight);
+  color: var(--sc-color-text-primary);
+  line-height: 1;
+  white-space: nowrap;
+}

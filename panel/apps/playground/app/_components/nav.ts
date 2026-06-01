@@ -28,6 +28,14 @@ export const navGroups: NavGroup[] = [
     ],
   },
   {
+    // ServiceCore'a özel, sıfırdan kurulan bileşenler — AntD wrap DEĞİL.
+    // Paket karşılığı: @servicecoreui/ui/custom
+    label: "ServiceCore Özel",
+    items: [
+      { name: "Brand", href: "/brand", desc: "Logo + marka adı — white-label (logoSrc)" },
+    ],
+  },
+  {
     label: "Layout",
     items: [
       { name: "Flex", href: "/flex", desc: "Block-level flex helper" },

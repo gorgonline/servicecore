@@ -40,29 +40,14 @@
   justify-content: center;
 }
 
+/* Brand zonu — logo/ad lockup'ı <Brand> bileşeninde; burada sadece bölme çizgisi */
 .brand {
   display: flex;
   align-items: center;
-  gap: var(--sc-space-2);
   height: 100%;
   padding: 0 var(--sc-space-2);
   margin-inline-end: var(--sc-space-3);
   border-right: 1px solid var(--sc-color-border-subtle);
-}
-
-/* Brand sembolü (inline SVG) — küçülmesin, baseline boşluğu olmasın */
-.brand svg {
-  flex-shrink: 0;
-  display: block;
-}
-
-.brandName {
-  font-family: var(--sc-font-sans);
-  font-weight: var(--sc-font-weight-semibold);
-  font-size: var(--sc-font-size-md);
-  letter-spacing: var(--sc-letter-spacing-tight);
-  color: var(--sc-color-text-primary);
-  line-height: 1;
 }
 
 /* Search — bizim Input'u sarar, genişliği sınırlar */

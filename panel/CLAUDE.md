@@ -17,6 +17,18 @@ ServiceCore'un mevcut paneli için **bileşen kütüphanesi**. Biz panel yazmıy
 - `apps/playground/` — bizim test ortamımız. Next.js 15 + React 18 + AntD 5.7 + AntdRegistry. **Onlara gitmez**
 - `packages/ui/dist/` — tsup çıktısı (ESM + CJS + .d.ts + birleşik CSS)
 
+## Export kovaları — bileşen NEREYE gider
+Üç ayrı export var; yeni bileşeni **doğru kovaya** koy:
+- `@servicecoreui/ui` → typography primitifleri + theme (Heading, Display, Text, Eyebrow, Code). Server-safe.
+- `@servicecoreui/ui/custom` → **bizim sıfırdan yaptığımız** ServiceCore'a özel bileşenler (Brand…). AntD wrap DEĞİL, server-safe.
+- `@servicecoreui/ui/wraps` → AntD wrap'leri (Button, Card, Table…). `"use client"`, client-only.
+
+**Yeni custom (kendi) bileşen eklerken:**
+1. `src/<Ad>/` klasörü (pattern aşağıda — Eyebrow/Code gibi: `<Ad>.tsx` + `.module.css` + `index.ts`)
+2. `src/custom.ts`'e `export * from "./<Ad>";`
+3. Playground'da `app/<ad>/` demo sayfası + `_components/nav.ts`'te **"ServiceCore Özel"** grubuna giriş
+4. `pnpm build:ui` (dist'i yenile)
+
 ## Stack
 - pnpm workspace monorepo
 - TypeScript strict, React 18, AntD 5.7

@@ -25,6 +25,11 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./custom": {
+      "types": "./dist/custom.d.ts",
+      "import": "./dist/custom.js",
+      "require": "./dist/custom.cjs"
+    },
     "./wraps": {
       "types": "./dist/wraps.d.ts",
       "import": "./dist/wraps.js",
