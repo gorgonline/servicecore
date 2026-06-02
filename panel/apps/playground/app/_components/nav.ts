@@ -34,7 +34,11 @@ export const navGroups: NavGroup[] = [
     items: [
       { name: "Brand", href: "/brand", desc: "Logo + marka adı — white-label (logoSrc)" },
       { name: "Kbd", href: "/kbd", desc: "Klavye tuşu rozeti — kısayol ipuçları" },
+      { name: "ListItem", href: "/list-item", desc: "İkon + başlık + açıklama satırı (paylaşılan)" },
       { name: "CommandPalette", href: "/command-palette", desc: "Global arama / komut paleti (⌘K)" },
+      { name: "TimeTracker", href: "/time-tracker", desc: "Zaman Makinesi — isimli sayaçlar" },
+      { name: "NotificationCenter", href: "/notification-center", desc: "Bildirim merkezi — sekmeli, Empty" },
+      { name: "UserMenu", href: "/user-menu", desc: "Kullanıcı menüsü — header + liste + aksiyonlar" },
     ],
   },
   {

@@ -29,25 +29,18 @@
   border-bottom: 1px solid var(--sc-color-border-default);
 }
 
-/* Toggle zonu — collapsed sidebar ile aynı genişlik (64px), buton tam ortada.
- * Böylece toggle ikonunun merkezi (32px) alttaki collapsed ikonların merkeziyle
- * birebir hizalı olur. */
-.headerToggle {
-  width: 64px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Brand zonu — logo/ad lockup'ı <Brand> bileşeninde; burada sadece bölme çizgisi */
-.brand {
+/* Marka zonu — genişlik INLINE (sidebar ile aynı: 240/64). Logo solda, toggle
+ * sağda (justifyContent inline). border-right sidebar çizgisini yukarı uzatır →
+ * toggle o çizgiyle hizalı. Collapsed'da toggle ortada (alttaki ikon koloyla hizalı). */
+.brandZone {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 var(--sc-space-2);
-  margin-inline-end: var(--sc-space-3);
-  border-right: 1px solid var(--sc-color-border-subtle);
+  flex-shrink: 0;
+  gap: var(--sc-space-2);
+  /* yatay padding inline (duruma göre: expanded'da logo hizası, collapsed'da ortala) */
+  border-right: 1px solid var(--sc-color-border-default);
+  transition: width var(--sc-duration-normal) var(--sc-easing-default);
 }
 
 .spacer {

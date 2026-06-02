@@ -19,10 +19,13 @@ import {
   Add,
   ArrowDown,
   ArrowUp,
+  Asset,
   Book,
   Calendar,
   Catalog,
   ChartColumn,
+  Chat,
+  CheckmarkOutline,
   ChevronDown,
   Cloud,
   DataBase,
@@ -32,26 +35,34 @@ import {
   Filter,
   Earth,
   Help,
+  Home,
+  Idea,
   Logout,
+  Notebook,
   Notification as NotificationIcon,
   OverflowMenuVertical,
   Phone,
-  RecentlyViewed,
   Renew,
   RequestQuote,
   Roadmap,
   Search,
-  Settings,
   SidePanelClose,
   SidePanelOpen,
   Task,
+  Time,
   User,
   UserMultiple,
   WarningAlt,
 } from "@carbon/icons-react";
 import { useEffect, useState } from "react";
 import { Heading, Text } from "@servicecoreui/ui";
-import { Brand, CommandPalette } from "@servicecoreui/ui/custom";
+import {
+  Brand,
+  CommandPalette,
+  NotificationCenter,
+  TimeTracker,
+  UserMenu,
+} from "@servicecoreui/ui/custom";
 import {
   Avatar,
   Badge,
@@ -109,12 +120,48 @@ const menuItems: MenuProps["items"] = [
  * Dropdown menüleri
  * ──────────────────────────────────────────────── */
 
-const profileMenu: MenuProps = {
+// Kullanıcı menüsü — "bana atanan kayıtlar" + footer aksiyonları
+const USER_ITEMS = [
+  { key: "gorev", icon: <Task size={20} />, title: "Görevlerim", description: "Görev Detaylarım" },
+  { key: "etkilesim", icon: <Chat size={20} />, title: "Etkileşim Kayıtlarım", description: "Bana Atanan Etkileşimler" },
+  { key: "olay", icon: <WarningAlt size={20} />, title: "Olay Kayıtlarım", description: "Bana Atanan Olaylar" },
+  { key: "problem", icon: <Debug size={20} />, title: "Problem Kayıtlarım", description: "Bana Atanan Problemler" },
+  { key: "istek", icon: <RequestQuote size={20} />, title: "İstek Kayıtlarım", description: "Bana Atanan İstekler" },
+  { key: "degisim", icon: <Renew size={20} />, title: "Değişimlerim", description: "Bana Atanan Değişiklikler" },
+  { key: "iyilestirme", icon: <Idea size={20} />, title: "İyileştirmelerim", description: "Bana Atanan İyileştirmeler" },
+  { key: "onay", icon: <CheckmarkOutline size={20} />, title: "Onaylarım", description: "Onaylarım Açıklama" },
+  { key: "varlik", icon: <Asset size={20} />, title: "Varlıklarım", description: "Bana Atanan Varlıklar" },
+  { key: "hizmet", icon: <Catalog size={20} />, title: "Hizmetlerim", description: "Bana Atanan Hizmetler" },
+];
+
+const USER_ACTIONS = [
+  { key: "kullanici", label: "Kullanıcı", icon: <User size={18} /> },
+  { key: "baslangic", label: "Başlangıç", icon: <Home size={18} /> },
+  { key: "cikis", label: "Çıkış Yap", icon: <Logout size={18} />, danger: true },
+];
+
+/* + (hızlı oluştur) menüsü — navbar Add butonuna bağlı. Carbon ikonlar. */
+const createMenu: MenuProps = {
   items: [
-    { key: "profil", icon: <User />, label: "Profil" },
-    { key: "ayarlar", icon: <Settings />, label: "Ayarlar" },
-    { type: "divider" },
-    { key: "cikis", icon: <Logout />, label: "Çıkış", danger: true },
+    {
+      key: "create",
+      type: "group",
+      label: "Yeni oluştur",
+      children: [
+        { key: "is-gunlugu", icon: <Notebook />, label: "İş Günlüğü" },
+        { key: "gorev", icon: <Task />, label: "Görev" },
+        { key: "cagri", icon: <Phone />, label: "Çağrı" },
+        { key: "olay", icon: <WarningAlt />, label: "Olay" },
+        { key: "problem", icon: <Debug />, label: "Problem" },
+        { key: "istek", icon: <RequestQuote />, label: "İstek" },
+        { key: "degisiklik", icon: <Renew />, label: "Değişiklik" },
+        { key: "bilgi", icon: <Book />, label: "Bilgi" },
+        { key: "iyilestirme", icon: <Idea />, label: "İyileştirme" },
+        { key: "varlik", icon: <Asset />, label: "Varlık" },
+        { key: "sozlesme", icon: <DocumentSigned />, label: "Sözleşme" },
+        { key: "proje", icon: <Roadmap />, label: "Proje" },
+      ],
+    },
   ],
 };
 
@@ -187,6 +234,20 @@ const SEARCH_FILTERS = [
   { key: "closed", label: "Kapalı kayıtları dahil et" },
 ];
 
+// Zaman Makinesi mock sayaçları (1631:21:18 = 5.872.878 sn)
+const TIMERS = [
+  { key: "telefon", name: "Telefon", seconds: 0, running: false },
+  { key: "toplanti", name: "Toplantı", seconds: 5872878, running: true },
+  { key: "test", name: "test", seconds: 60, running: false },
+];
+
+// Bildirim merkezi mock — Etkinlikler boş, Aktivite Kayıtları dolu
+const NOTIF_ACTIVITIES = [
+  { key: "1", title: "SC-4127 güncellendi", description: "Durum: Beklemede → İşlemde", time: "5 dk" },
+  { key: "2", title: "Yeni yorum — SC-4125", description: "Selin Koç: AD entegrasyonu tamam", time: "1 sa" },
+  { key: "3", title: "SLA uyarısı — SC-4124", description: "Yanıt süresi aşıldı", time: "2 sa" },
+];
+
 /* ────────────────────────────────────────────────
  * Sayfa
  * ──────────────────────────────────────────────── */
@@ -211,9 +272,22 @@ export default function ShellPage() {
     <div className={styles.page}>
       {/* ── Top bar ── */}
       <header className={styles.header}>
-        {/* Toggle, collapsed sidebar (64px) ile aynı kolonda ortalı —
-            alttaki ikon koloyla hizalı. */}
-        <div className={styles.headerToggle}>
+        {/* Marka zonu — sidebar genişliğinde (240/64). Expanded'da logo solda,
+            toggle sağda (border-right sidebar çizgisini yukarı uzatır → toggle çizgiyle
+            hizalı). Collapsed'da sadece toggle, ortada (alttaki ikon koloyla hizalı).
+            müşteri logosu: <Brand logoSrc="/musteri-logo.svg" name="..." /> */}
+        <div
+          className={styles.brandZone}
+          style={{
+            width: collapsed ? 64 : 240,
+            justifyContent: collapsed ? "center" : "space-between",
+            // expanded: logo sidebar ikonlarıyla hizalı başlasın (8 margin + 12 padding = 20px)
+            // collapsed: padding 0 → toggle ortada (32px), alttaki ikon koloyla hizalı
+            paddingLeft: collapsed ? 0 : "var(--sc-space-5)",
+            paddingRight: collapsed ? 0 : "var(--sc-space-3)",
+          }}
+        >
+          {collapsed ? null : <Brand />}
           <Button
             type="text"
             onClick={() => setCollapsed((c) => !c)}
@@ -222,10 +296,6 @@ export default function ShellPage() {
             }
             aria-label={collapsed ? "Menüyü genişlet" : "Menüyü daralt"}
           />
-        </div>
-        {/* müşteri logosu buraya: <Brand logoSrc="/musteri-logo.svg" name="..." /> */}
-        <div className={styles.brand}>
-          <Brand />
         </div>
 
         <div className={styles.spacer} />
@@ -241,48 +311,62 @@ export default function ShellPage() {
             aria-label="Ara"
             onClick={() => setSearchOpen(true)}
           />
-          <Button
-            type="primary"
-            shape="circle"
-            leadingIcon={<Add size={18} />}
-            aria-label="Yeni oluştur"
-          />
+          <Dropdown menu={createMenu} trigger={["click"]} placement="bottomRight">
+            <Button
+              type="primary"
+              shape="circle"
+              leadingIcon={<Add size={18} />}
+              aria-label="Yeni oluştur"
+            />
+          </Dropdown>
 
           <span className={styles.navDivider} />
 
           {/* 2 — İş araçları */}
           <Button type="text" leadingIcon={<Calendar size={18} />} aria-label="Takvim" />
           <Button type="text" leadingIcon={<ChartColumn size={18} />} aria-label="Raporlar" />
-          <Button
-            type="text"
-            leadingIcon={<RecentlyViewed size={18} />}
-            aria-label="Son işlemler"
-          />
+          <TimeTracker initialTimers={TIMERS}>
+            <Button
+              type="text"
+              leadingIcon={<Time size={18} />}
+              aria-label="Zaman Makinesi"
+            />
+          </TimeTracker>
 
           <span className={styles.navDivider} />
 
           {/* 3 — Sistem & kişisel */}
           <Button type="text" leadingIcon={<Earth size={18} />} aria-label="Dil" />
           <Button type="text" leadingIcon={<Help size={18} />} aria-label="Yardım" />
-          <Badge dot>
+          <NotificationCenter activities={NOTIF_ACTIVITIES}>
             <Button
               type="text"
-              leadingIcon={<NotificationIcon size={18} />}
+              leadingIcon={
+                <Badge dot offset={[-2, 4]}>
+                  <NotificationIcon size={18} />
+                </Badge>
+              }
               aria-label="Bildirimler"
             />
-          </Badge>
+          </NotificationCenter>
 
           <span className={styles.navDivider} />
 
           {/* 4 — Hesap */}
-          <Dropdown menu={profileMenu} trigger={["click"]} placement="bottomRight">
+          <UserMenu
+            name="Ayşe Yıldız"
+            email="ayse.yildiz@servicecore.app"
+            initials="AY"
+            items={USER_ITEMS}
+            actions={USER_ACTIONS}
+          >
             <button type="button" className={styles.profile}>
               <Avatar size="small" tone="accent">
                 AY
               </Avatar>
               <ChevronDown size={14} />
             </button>
-          </Dropdown>
+          </UserMenu>
         </div>
       </header>
 

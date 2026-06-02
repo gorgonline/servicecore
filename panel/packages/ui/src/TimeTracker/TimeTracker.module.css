@@ -1,0 +1,84 @@
+/* Zaman Makinesi — Popover içeriği. */
+
+/* Genişlik Popover çerçevesinde (overlayInnerStyle); panel onu %100 doldurur */
+.panel {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-3);
+}
+
+/* ── Yeni sayaç satırı ── */
+/* Input + altında inline hata; input tam genişlik (+ suffix içinde, taşmaz) */
+.addRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-1);
+}
+
+.addRow :global(.ant-input-affix-wrapper) {
+  width: 100%;
+}
+
+/* Ekle/başlat butonu — input içinde (suffix), accent */
+.addBtn {
+  color: var(--sc-color-accent) !important;
+}
+
+.addBtn:hover {
+  color: var(--sc-color-accent-hover) !important;
+}
+
+/* ── Sayaç listesi ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-1);
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.empty {
+  padding: var(--sc-space-4) 0;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  padding: var(--sc-space-2);
+  border-radius: var(--sc-radius-md);
+  transition: background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.row:hover {
+  background: var(--sc-color-bg-muted);
+}
+
+.rowIcon {
+  flex-shrink: 0;
+  color: var(--sc-color-text-tertiary);
+}
+
+.elapsed {
+  flex-shrink: 0;
+  font-family: var(--sc-font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}

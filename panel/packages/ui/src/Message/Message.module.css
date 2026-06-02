@@ -28,13 +28,20 @@
   pointer-events: auto;
 }
 
-/* Icon + text wrapper */
-:global(.ant-message-notice) :global(.ant-message-notice-content) > :global(.anticon),
-:global(.ant-message-notice-content) > :global(svg) {
-  display: inline-flex;
+/* Icon + metin hizası.
+ * AntD'de icon+text container'ı `.ant-message-custom-content` (`.ant-message-{type}`
+ * ile AYNI element); svg/.anticon onun çocuğu. Eski selektör `.ant-message-notice-
+ * content > svg` bir üst seviyeyi hedeflediği için svg'yi YAKALAMIYORDU → hiza/boşluk
+ * uygulanmıyordu. Container'ı flex + dikey ortala; ikona sağ boşluk ver. */
+:global(.ant-message-custom-content) {
+  display: inline-flex !important;
   align-items: center;
+}
+
+:global(.ant-message-custom-content) > :global(svg),
+:global(.ant-message-custom-content) > :global(.anticon) {
+  flex-shrink: 0;
   margin-inline-end: var(--sc-space-2);
-  vertical-align: middle;
 }
 
 /* ───────────────────────────────────────────────────────────────

@@ -1,0 +1,47 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-3);
+  padding: var(--sc-space-3) var(--sc-space-4);
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+  background: var(--sc-color-bg-subtle);
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+/* ── Liste ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: var(--sc-space-2);
+}
+
+/* ── Footer — ikon üstte, etiket altta; 3 eşit buton ── */
+/* Footer eylemleri — icon-only butonlar + hover tooltip, yan yana eşit genişlik.
+ * Etiket taşmaz (kompakt), tooltip ile keşfedilir. Tip: text (border yok),
+ * Çıkış yıkıcı → text + danger. (buttons docs: menü içi eylem → text) */
+.footer {
+  display: flex;
+  gap: var(--sc-space-1);
+  padding: var(--sc-space-2) var(--sc-space-3);
+  border-top: 1px solid var(--sc-color-border-subtle);
+}
+
+.action {
+  flex: 1;
+  justify-content: center;
+}

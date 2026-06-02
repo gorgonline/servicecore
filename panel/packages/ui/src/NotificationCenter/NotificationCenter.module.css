@@ -1,0 +1,38 @@
+/* Bildirim merkezi — Popover içeriği (overlayInnerStyle padding:0; düzen burada). */
+
+.tabs {
+  width: 100%;
+}
+
+/* Sekme navı — kenarlara yaslı, üstte biraz boşluk */
+.tabs :global(.ant-tabs-nav) {
+  margin: 0;
+  padding: var(--sc-space-2) var(--sc-space-4) 0;
+}
+
+.tabLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+}
+
+/* ── Liste ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: var(--sc-space-2);
+}
+
+/* Satır deseni ortak ListItem bileşeninde (DRY). */
+
+/* ── Boş durum ── */
+.empty {
+  padding: var(--sc-space-10) 0 !important;
+}
+
+.emptyIcon {
+  color: var(--sc-color-accent);
+}
