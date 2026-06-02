@@ -185,7 +185,9 @@
         "Credential hatası → ticket (sorumluya atanır)",
         "Ticket'tan asset'e tek tıkla erişim",
         "Asset'tan ticket geçmişine tek tıkla erişim"
-      ]
+      ],
+      "image": "/images/discovery/ticket.png",
+      "imageAlt": "Ticket Entegrasyonu — Discovery'den ticket akışı"
     },
     {
       "id": 13,
@@ -237,7 +239,9 @@
         "Webhook desteği (yeni asset → kendi sisteminize)",
         "Mevcut SIEM / ITAM araçlarınızla entegrasyon",
         "Custom raporlama için veri export"
-      ]
+      ],
+      "image": "/images/discovery/webhook.png",
+      "imageAlt": "Açık API ve Webhook — entegrasyon ekranı"
     },
     {
       "id": 17,
