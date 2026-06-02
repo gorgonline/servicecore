@@ -8,7 +8,11 @@
  *   • AntD wrap'leri → `@servicecoreui/ui/wraps`
  *   • Typography primitifleri (Heading/Text/…) → ana entry `@servicecoreui/ui`
  *
- * Server-safe (AntD/runtime context bağımlılığı yok) — "use client" gerekmez.
+ * NOT: Bu bundle "use client" banner'lı (build.mjs). İçinde AntD wrap kullanan
+ * composite'ler (CommandPalette) var; client-only. Brand/Kbd presentational
+ * ama tutarlılık için aynı kovada.
  */
 
 export * from "./Brand";
+export * from "./Kbd";
+export * from "./CommandPalette";

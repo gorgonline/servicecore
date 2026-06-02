@@ -20,7 +20,9 @@ import {
   ArrowDown,
   ArrowUp,
   Book,
+  Calendar,
   Catalog,
+  ChartColumn,
   ChevronDown,
   Cloud,
   DataBase,
@@ -28,11 +30,13 @@ import {
   DocumentSigned,
   Export,
   Filter,
+  Earth,
   Help,
   Logout,
   Notification as NotificationIcon,
   OverflowMenuVertical,
   Phone,
+  RecentlyViewed,
   Renew,
   RequestQuote,
   Roadmap,
@@ -45,9 +49,9 @@ import {
   UserMultiple,
   WarningAlt,
 } from "@carbon/icons-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Heading, Text } from "@servicecoreui/ui";
-import { Brand } from "@servicecoreui/ui/custom";
+import { Brand, CommandPalette } from "@servicecoreui/ui/custom";
 import {
   Avatar,
   Badge,
@@ -55,7 +59,6 @@ import {
   Button,
   Card,
   Dropdown,
-  Input,
   Menu,
   Progress,
   Statistic,
@@ -170,11 +173,39 @@ function initials(name: string): string {
 }
 
 /* ────────────────────────────────────────────────
+ * Komut paleti mock verisi
+ * ──────────────────────────────────────────────── */
+
+const SEARCH_RECENT = [
+  { key: "1", label: "SC-4127 — Print server bağlanamıyor" },
+  { key: "2", label: "VPN yavaş — ev ofisi" },
+  { key: "3", label: "Yeni kullanıcı AD entegrasyonu" },
+];
+
+const SEARCH_FILTERS = [
+  { key: "desc", label: "Açıklamada da ara" },
+  { key: "closed", label: "Kapalı kayıtları dahil et" },
+];
+
+/* ────────────────────────────────────────────────
  * Sayfa
  * ──────────────────────────────────────────────── */
 
 export default function ShellPage() {
   const [collapsed, setCollapsed] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+
+  // ⌘K / Ctrl+K — global arama paletini aç/kapa
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        setSearchOpen((o) => !o);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <div className={styles.page}>
@@ -197,18 +228,42 @@ export default function ShellPage() {
           <Brand />
         </div>
 
-        <div className={styles.search}>
-          <Input
-            prefix={<Search size={16} />}
-            suffix={<kbd className={styles.kbd}>⌘K</kbd>}
-            placeholder="Hızlı arama"
-            aria-label="Hızlı arama"
-          />
-        </div>
-
         <div className={styles.spacer} />
 
+        {/* Sağ araç kümesi — işlevsel gruplar, soldan sağa:
+            [Keşfet&Oluştur] · [İş araçları] · [Sistem&kişisel] · [Hesap]
+            En sık global eylemler başta; bildirim profile bitişik (konvansiyon). */}
         <div className={styles.utilities}>
+          {/* 1 — Keşfet & oluştur */}
+          <Button
+            type="text"
+            leadingIcon={<Search size={18} />}
+            aria-label="Ara"
+            onClick={() => setSearchOpen(true)}
+          />
+          <Button
+            type="primary"
+            shape="circle"
+            leadingIcon={<Add size={18} />}
+            aria-label="Yeni oluştur"
+          />
+
+          <span className={styles.navDivider} />
+
+          {/* 2 — İş araçları */}
+          <Button type="text" leadingIcon={<Calendar size={18} />} aria-label="Takvim" />
+          <Button type="text" leadingIcon={<ChartColumn size={18} />} aria-label="Raporlar" />
+          <Button
+            type="text"
+            leadingIcon={<RecentlyViewed size={18} />}
+            aria-label="Son işlemler"
+          />
+
+          <span className={styles.navDivider} />
+
+          {/* 3 — Sistem & kişisel */}
+          <Button type="text" leadingIcon={<Earth size={18} />} aria-label="Dil" />
+          <Button type="text" leadingIcon={<Help size={18} />} aria-label="Yardım" />
           <Badge dot>
             <Button
               type="text"
@@ -216,13 +271,15 @@ export default function ShellPage() {
               aria-label="Bildirimler"
             />
           </Badge>
-          <Button type="text" leadingIcon={<Help size={18} />} aria-label="Yardım" />
+
+          <span className={styles.navDivider} />
+
+          {/* 4 — Hesap */}
           <Dropdown menu={profileMenu} trigger={["click"]} placement="bottomRight">
             <button type="button" className={styles.profile}>
               <Avatar size="small" tone="accent">
                 AY
               </Avatar>
-              <span className={styles.profileName}>Ayşe Y.</span>
               <ChevronDown size={14} />
             </button>
           </Dropdown>
@@ -431,6 +488,14 @@ export default function ShellPage() {
           </div>
         </main>
       </div>
+
+      <CommandPalette
+        open={searchOpen}
+        onClose={() => setSearchOpen(false)}
+        placeholder="Olay, istek, varlık, kişi ara…"
+        recent={SEARCH_RECENT}
+        filters={SEARCH_FILTERS}
+      />
     </div>
   );
 }

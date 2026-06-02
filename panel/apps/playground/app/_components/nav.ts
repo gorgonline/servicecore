@@ -33,6 +33,8 @@ export const navGroups: NavGroup[] = [
     label: "ServiceCore Özel",
     items: [
       { name: "Brand", href: "/brand", desc: "Logo + marka adı — white-label (logoSrc)" },
+      { name: "Kbd", href: "/kbd", desc: "Klavye tuşu rozeti — kısayol ipuçları" },
+      { name: "CommandPalette", href: "/command-palette", desc: "Global arama / komut paleti (⌘K)" },
     ],
   },
   {

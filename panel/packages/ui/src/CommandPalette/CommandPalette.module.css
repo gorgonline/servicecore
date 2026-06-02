@@ -1,0 +1,124 @@
+/* Command palette — global arama overlay'i. Modal body padding:0; düzen burada. */
+
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Arama kutusu ── */
+.searchRow {
+  display: flex;
+  align-items: center;
+  padding: var(--sc-space-3) var(--sc-space-5);
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+}
+
+.searchRow :global(.ant-input-affix-wrapper),
+.searchRow :global(.ant-input) {
+  font-size: var(--sc-font-size-xl);
+}
+
+/* Affix iç padding'i sıfır — prefix (search ikonu) tam satır gutter'ında (20px)
+ * dursun, alttaki satır ikonlarıyla hizalansın.
+ * Ayrıca komut paletinde border/glow İSTEMİYORUZ — satırın alt çizgisi ayraç.
+ * Borderless'ın focus'ta gösterdiği mavi border + box-shadow'u tüm durumlarda bastır. */
+.searchRow :global(.ant-input-affix-wrapper),
+.searchRow :global(.ant-input-affix-wrapper:focus),
+.searchRow :global(.ant-input-affix-wrapper:focus-within),
+.searchRow :global(.ant-input-affix-wrapper-focused) {
+  padding-inline: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+/* AntD default placeholder çok soluk — belirginlik için koyulaştır */
+.searchRow :global(.ant-input::placeholder) {
+  color: var(--sc-color-text-tertiary);
+}
+
+.searchIcon {
+  color: var(--sc-color-text-secondary);
+}
+
+/* Clear (X) ikonu — AntD default. Sade tut ama belirgin: biraz büyük + hover'da
+ * koyulaşır. Border YOK (ikon zaten dolu daire; arkasına zemin gereksiz olurdu). */
+.searchRow :global(.ant-input-clear-icon) {
+  font-size: var(--sc-font-size-xl);
+  color: var(--sc-color-text-tertiary);
+}
+
+.searchRow :global(.ant-input-clear-icon:hover) {
+  color: var(--sc-color-text-secondary);
+}
+
+/* ── Filtreler ── */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sc-space-5);
+  padding: var(--sc-space-3) var(--sc-space-5);
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+}
+
+/* ── Sonuç alanı ── */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--sc-space-2);
+  min-height: 180px;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.sectionLabel {
+  display: block;
+  padding: var(--sc-space-2) var(--sc-space-3);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-3);
+  width: 100%;
+  padding: var(--sc-space-2) var(--sc-space-3);
+  border: none;
+  background: transparent;
+  border-radius: var(--sc-radius-md);
+  text-align: start;
+  cursor: pointer;
+  transition: background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.item:hover {
+  background: var(--sc-color-bg-muted);
+}
+
+.itemIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--sc-color-text-tertiary);
+}
+
+.itemMeta {
+  margin-inline-start: auto;
+}
+
+/* ── Footer — klavye ipuçları ── */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-4);
+  padding: var(--sc-space-2) var(--sc-space-4);
+  border-top: 1px solid var(--sc-color-border-subtle);
+  background: var(--sc-color-bg-subtle);
+  color: var(--sc-color-text-tertiary);
+  font-size: var(--sc-font-size-xs);
+}
+
+.hint {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-1);
+}

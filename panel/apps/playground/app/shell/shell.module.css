@@ -50,27 +50,6 @@
   border-right: 1px solid var(--sc-color-border-subtle);
 }
 
-/* Search — bizim Input'u sarar, genişliği sınırlar */
-.search {
-  flex: 1;
-  max-width: 420px;
-}
-
-.search :global(.ant-input-affix-wrapper) {
-  width: 100%;
-}
-
-.kbd {
-  font-family: var(--sc-font-mono);
-  font-size: var(--sc-font-size-2xs);
-  color: var(--sc-color-text-tertiary);
-  background: var(--sc-color-bg-subtle);
-  border: 1px solid var(--sc-color-border-subtle);
-  border-radius: var(--sc-radius-xs);
-  padding: 1px var(--sc-space-1);
-  line-height: 1;
-}
-
 .spacer {
   flex: 1;
 }
@@ -79,6 +58,15 @@
   display: flex;
   align-items: center;
   gap: var(--sc-space-1);
+}
+
+/* Araç kümesi işlevsel grupları arası ince ayraç */
+.navDivider {
+  width: 1px;
+  height: 20px;
+  flex-shrink: 0;
+  margin: 0 var(--sc-space-1);
+  background: var(--sc-color-border-default);
 }
 
 /* Profil — Dropdown trigger butonu */
@@ -98,13 +86,6 @@
 
 .profile:hover {
   background: var(--sc-color-bg-muted);
-}
-
-.profileName {
-  font-size: var(--sc-font-size-sm);
-  font-weight: var(--sc-font-weight-medium);
-  color: var(--sc-color-text-primary);
-  line-height: 1;
 }
 
 /* ── Body: sidebar + content ─────────────────────── */

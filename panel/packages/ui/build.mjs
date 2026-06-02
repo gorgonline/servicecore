@@ -6,7 +6,8 @@
 //
 // İki tier'lı çıktı:
 //   dist/index.{js,cjs,d.ts}      Server-safe — typography + tokens (AntD bağımlılığı yok)
-//   dist/custom.{js,cjs,d.ts}     ServiceCore'a özel bileşenler (server-safe, AntD'siz)
+//   dist/custom.{js,cjs,d.ts}     ServiceCore'a özel bileşenler — "use client" banner'lı
+//                                  (composite'ler AntD wrap kullanır; client-only)
 //   dist/wraps.{js,cjs,d.ts}      AntD wraps — "use client" banner'lı, client-only
 //   dist/theme/index.{js,cjs}     Theme + tokens (server-safe)
 //   dist/styles.css               Tüm CSS Modules tek dosyada, class adları namespaced
@@ -58,7 +59,6 @@ async function main() {
     ...SHARED,
     entryPoints: {
       index: "src/index.ts",
-      custom: "src/custom.ts",
       "theme/index": "src/theme/index.ts",
     },
     format: "esm",
@@ -70,7 +70,6 @@ async function main() {
     ...SHARED,
     entryPoints: {
       index: "src/index.ts",
-      custom: "src/custom.ts",
       "theme/index": "src/theme/index.ts",
     },
     format: "cjs",
@@ -81,7 +80,7 @@ async function main() {
   // 3. AntD wraps entry — "use client" banner'lı
   const WRAPS = {
     ...SHARED,
-    entryPoints: { wraps: "src/wraps.ts" },
+    entryPoints: { wraps: "src/wraps.ts", custom: "src/custom.ts" },
     outdir: "dist",
     banner: { js: '"use client";' },
   };
