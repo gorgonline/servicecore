@@ -29,6 +29,20 @@ ServiceCore'un mevcut paneli için **bileşen kütüphanesi**. Biz panel yazmıy
 3. Playground'da `app/<ad>/` demo sayfası + `_components/nav.ts`'te **"ServiceCore Özel"** grubuna giriş
 4. `pnpm build:ui` (dist'i yenile)
 
+## MCP — AI katalog server'ı (`packages/mcp`)
+`@servicecoreui/mcp` — AI araçlarına (Claude Code, Cursor) `@servicecoreui/ui` kataloğunu açar; AI doğrudan AntD yerine bizim wrap kütüphanesini görür. Kurulum/IDE ayarları: [packages/mcp/README.md](packages/mcp/README.md).
+
+**Tool'lar:** `list_components` · `find_component "<arama>"` · `get_component_spec <Ad>` (source+types+css) · `get_tokens` · `get_design_rules`.
+
+**Katalog nasıl üretiliyor:** build-time'da `packages/mcp/src/build-catalog.ts`, `packages/ui/src/`'i tarar → `dist/catalog.json`.
+- Bileşen taraması: `src/<Ad>/<Ad>.tsx` (top-level) **ve bir seviye nested** `src/<Kapsayıcı>/<Alt>/<Alt>.tsx` (ör. `Charts/BarChart`).
+- Token'lar `src/theme/tokens.css`'ten, kurallar `packages/mcp/design-rules.md`'den okunur.
+
+**⚠️ Bakım:** Yeni bileşen / token / kural eklediğinde kataloğu **yeniden üret**, yoksa MCP eski bilgi döner:
+```
+pnpm --filter @servicecoreui/mcp build
+```
+
 ## Stack
 - pnpm workspace monorepo
 - TypeScript strict, React 18, AntD 5.7
