@@ -29,8 +29,9 @@ export function DocsShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const [query, setQuery] = useState("");
 
-  // /shell: tam-ekran, kendi chrome'u var → kabuğa sarma.
-  const isFullBleed = pathname?.startsWith("/shell") ?? false;
+  // /shell ve /kayitlar: tam-ekran panel sayfaları, kendi chrome'u var → kabuğa sarma.
+  const isFullBleed =
+    (pathname?.startsWith("/shell") || pathname?.startsWith("/kayitlar")) ?? false;
 
   const q = query.trim().toLocaleLowerCase("tr");
   const matches = (name: string) => q === "" || name.toLocaleLowerCase("tr").includes(q);

@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import { forwardRef } from "react";
+import type { ElementRef, ReactNode } from "react";
 import { Button as AntButton } from "antd";
 import type { ButtonProps as AntButtonProps } from "antd";
 import clsx from "clsx";
@@ -45,21 +46,26 @@ const TYPE_CLASS: Partial<Record<ButtonType, string>> = {
  *
  * Backend kendi AntD kodunda da bu type/danger/size isimlerini birebir kullanır.
  */
-export function Button({
-  type = "default",
-  danger = false,
-  size = "middle",
-  leadingIcon,
-  trailingIcon,
-  className,
-  children,
-  ...rest
-}: ButtonProps) {
+export const Button = forwardRef<ElementRef<typeof AntButton>, ButtonProps>(
+  function Button(
+    {
+      type = "default",
+      danger = false,
+      size = "middle",
+      leadingIcon,
+      trailingIcon,
+      className,
+      children,
+      ...rest
+    },
+    ref,
+  ) {
   const hasText = children !== undefined && children !== null && children !== false;
   const iconOnly = !hasText && Boolean(leadingIcon || trailingIcon);
 
   return (
     <AntButton
+      ref={ref}
       {...rest}
       type={type}
       danger={danger}
@@ -86,4 +92,7 @@ export function Button({
       ) : null}
     </AntButton>
   );
-}
+  },
+);
+
+Button.displayName = "Button";

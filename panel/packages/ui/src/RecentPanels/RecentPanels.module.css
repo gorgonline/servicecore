@@ -1,0 +1,111 @@
+/* Son Panolar — Popover içeriği (overlayInnerStyle padding:0; düzen burada).
+ * Yapı: header (sabit) / list (scroll) / footer (sabit). NotificationCenter DRY deseni. */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Başlık ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sc-space-3);
+  padding: var(--sc-space-3) var(--sc-space-4);
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+}
+
+.headerTitle {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sc-space-2);
+  min-width: 0;
+}
+
+.count {
+  font-family: var(--sc-font-mono);
+}
+
+/* ── Liste ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: var(--sc-space-2);
+}
+
+/* Satır = ListItem (kapatılabilir varyant — × ve meta-swap ListItem'da, DRY).
+ * Aktif/şu an açık pano — sol 2px accent şerit + sessiz zemin (ListItem wrapper'ına). */
+.currentRow {
+  border-radius: var(--sc-radius-md);
+  box-shadow: inset 2px 0 0 var(--sc-color-accent);
+  background: var(--sc-color-bg-muted);
+}
+
+/* ── Footer ── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sc-space-3);
+  padding: var(--sc-space-2) var(--sc-space-4);
+  border-top: 1px solid var(--sc-color-border-subtle);
+}
+
+.kbdHint {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-1);
+  color: var(--sc-color-text-tertiary);
+}
+
+/* ── Boş durum ── */
+.empty {
+  padding: var(--sc-space-8) var(--sc-space-4) !important;
+}
+
+.emptyIcon {
+  color: var(--sc-color-text-tertiary);
+}
+
+.emptyDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ── Geri al toast ── */
+.undo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-3);
+}
+
+.undoBtn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  color: var(--sc-color-accent);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+.undoBtn:hover {
+  text-decoration: underline;
+}
+
+/* Ekran okuyucu için gizli metin (aktif pano işareti). */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Close } from "@carbon/icons-react";
 import clsx from "clsx";
 import { Text } from "../Text";
 import styles from "./ListItem.module.css";
@@ -14,14 +15,23 @@ export interface ListItemProps {
   meta?: ReactNode;
   /** Verilirse satır tıklanabilir buton olur (hover + cursor). */
   onClick?: () => void;
+  /**
+   * Verilirse satır kapatılabilir olur: sağ-üst köşede × belirir (hover/focus).
+   * meta varsa hover'da meta yerini köşedeki ×'e bırakır (kart kapatma deseni).
+   * Yıkıcı değil — "listeden çıkar" gibi geri-alınabilir aksiyon için (nötr ×).
+   */
+  onRemove?: () => void;
+  /** Kapatma butonunun erişilebilir adı (ör. "X panosunu listeden çıkar"). */
+  removeLabel?: string;
   className?: string;
 }
 
 /**
  * ListItem — ikon + başlık + açıklama (+ meta) satırı.
  *
- * NotificationCenter, UserMenu gibi listelerin ortak satır deseni (DRY).
- * onClick verilirse tıklanabilir buton, yoksa statik satır olur.
+ * NotificationCenter, UserMenu, RecentPanels gibi listelerin ortak satır deseni (DRY).
+ * onClick verilirse tıklanabilir buton, yoksa statik satır olur. onRemove verilirse
+ * sağ-üst köşede kapatma (×) butonlu "kapatılabilir" varyant olur.
  */
 export function ListItem({
   icon,
@@ -29,6 +39,8 @@ export function ListItem({
   description,
   meta,
   onClick,
+  onRemove,
+  removeLabel = "Kaldır",
   className,
 }: ListItemProps) {
   const inner = (
@@ -54,16 +66,34 @@ export function ListItem({
     </>
   );
 
-  if (onClick) {
-    return (
+  const main = onClick ? (
+    <button
+      type="button"
+      className={clsx(styles.item, styles.clickable, !onRemove && className)}
+      onClick={onClick}
+    >
+      {inner}
+    </button>
+  ) : (
+    <div className={clsx(styles.item, !onRemove && className)}>{inner}</div>
+  );
+
+  // Düz satır (kapatılamaz) — eski davranış.
+  if (!onRemove) return main;
+
+  // Kapatılabilir varyant — wrapper + main + sağ-üst köşede × (native buton, sibling:
+  // tıklanabilir satırın içine ikinci <button> koymak geçersiz HTML olurdu).
+  return (
+    <div className={clsx(styles.dismissible, className)}>
+      {main}
       <button
         type="button"
-        className={clsx(styles.item, styles.clickable, className)}
-        onClick={onClick}
+        className={styles.removeBtn}
+        onClick={onRemove}
+        aria-label={removeLabel}
       >
-        {inner}
+        <Close size={16} />
       </button>
-    );
-  }
-  return <div className={clsx(styles.item, className)}>{inner}</div>;
+    </div>
+  );
 }

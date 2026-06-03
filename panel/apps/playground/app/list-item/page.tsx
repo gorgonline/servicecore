@@ -39,6 +39,36 @@ export default function ListItemPage() {
       </section>
 
       <section className={styles.section}>
+        <Heading level={2}>Kapatılabilir (onRemove)</Heading>
+        <Text color="secondary">
+          <code>onRemove</code> verilince sağ-üst köşede kapatma (×) butonu çıkar.
+          meta varsa hover'da yerini köşedeki ×'e bırakır (kart kapatma deseni).
+          Yıkıcı değil — "listeden çıkar" gibi geri-alınabilir aksiyon için nötr ×
+          (kalıcı silme için çöp + danger kullan, bkz. Button).
+        </Text>
+        <div className={styles.demo}>
+          <ListItem
+            icon={<Task size={20} />}
+            title="Operasyon Panosu"
+            description="Operasyon Yönetimi · /panolar/ops"
+            meta="5 dk önce"
+            onClick={() => {}}
+            onRemove={() => {}}
+            removeLabel="Operasyon Panosu panosunu listeden çıkar"
+          />
+          <ListItem
+            icon={<Notification size={20} />}
+            title="SLA Genel Bakış"
+            description="Raporlama · /panolar/sla"
+            meta="22 dk önce"
+            onClick={() => {}}
+            onRemove={() => {}}
+            removeLabel="SLA Genel Bakış panosunu listeden çıkar"
+          />
+        </div>
+      </section>
+
+      <section className={styles.section}>
         <Heading level={2}>API</Heading>
         <table className={styles.props}>
           <thead>
@@ -73,6 +103,16 @@ export default function ListItemPage() {
               <td><code>onClick</code></td>
               <td><code>() =&gt; void</code></td>
               <td>Verilirse satır tıklanabilir buton olur (hover + cursor).</td>
+            </tr>
+            <tr>
+              <td><code>onRemove</code></td>
+              <td><code>() =&gt; void</code></td>
+              <td>Verilirse sağ-üst köşede kapatma (×) butonu çıkar; meta varsa hover'da swap.</td>
+            </tr>
+            <tr>
+              <td><code>removeLabel</code></td>
+              <td><code>string</code></td>
+              <td>Kapatma butonunun erişilebilir adı (vars. "Kaldır").</td>
             </tr>
           </tbody>
         </table>

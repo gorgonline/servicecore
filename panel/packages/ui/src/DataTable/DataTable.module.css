@@ -1,0 +1,68 @@
+/* DataTable — kayıt tarayıcısı composite. Toolbar + filtre chip'leri + Table. */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-4);
+}
+
+/* Araç çubuğu — sağa yaslı (Sütunlar + ek toolbar) */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sc-space-2);
+}
+
+/* Aktif filtre chip çubuğu */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  flex-wrap: wrap;
+}
+
+/* Kolon-başı huni-popup filtre içeriği (AntD table filter dropdown kartı içinde) */
+.filterPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+  padding: var(--sc-space-2);
+  min-width: 220px;
+}
+
+.filterChecks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+}
+
+.filterActions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sc-space-2);
+  padding-top: var(--sc-space-2);
+  border-top: 1px solid var(--sc-color-border-subtle);
+}
+
+/* "Sütunlar" dropdown'ı — generic Dropdown'da AntD kart yok → kartı kendimiz veriyoruz */
+.colPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--sc-space-2);
+  min-width: 200px;
+  background: var(--sc-color-bg-base);
+  border: 1px solid var(--sc-color-border-default);
+  border-radius: var(--sc-radius-md);
+  box-shadow: var(--sc-shadow-md);
+}
+
+.colItem {
+  padding: var(--sc-space-1) var(--sc-space-2);
+  border-radius: var(--sc-radius-sm);
+}
+
+.colItem:hover {
+  background: var(--sc-color-bg-muted);
+}

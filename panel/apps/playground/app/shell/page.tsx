@@ -1,169 +1,54 @@
 "use client";
 
 /* ════════════════════════════════════════════════════════════════════════
- * ServiceCore — App Shell BLUEPRINT
+ * ServiceCore — App Shell BLUEPRINT (dashboard içeriği)
  *
- * Developer referansı: "Bir panel sayfası NASIL kurulur." Kural:
+ * Developer referansı: "Bir panel sayfası NASIL kurulur." Chrome (üst navbar +
+ * sidebar + CommandPalette) PanelShell'de; burada yalnız dashboard içeriği var.
+ * Kural:
  *   • SADECE @servicecoreui/ui + /wraps bileşenleri kullanılır.
  *   • İkonlar Carbon (@carbon/icons-react).
  *   • Renk/boşluk/radius YALNIZCA var(--sc-*) token'larından.
  *   • Hardcoded hex/px YOK (yalnız frame layout ölçüleri token).
- *   • antd DOĞRUDAN import edilmez. (Frame L-şekli için Layout wrap'i henüz yok
- *     → semantic HTML + CSS Module ile kuruldu; gerisi tamamen bileşen.)
+ *   • antd DOĞRUDAN import edilmez.
  *
- * KPI → Statistic+Card · kategori/SLA → Progress · liste → Table ·
- * header aksiyonları → Button/Badge/Dropdown/Avatar · arama → Input · nav → Menu.
+ * KPI → Statistic+Card · kategori/dağılım/trend/SLA → charts (BarChart/
+ * DonutChart/LineChart/SlaGauge) · header aksiyonları → Button/Dropdown · nav → PanelShell.
  * ════════════════════════════════════════════════════════════════════════ */
 
 import {
   Add,
   ArrowDown,
   ArrowUp,
-  Asset,
-  Book,
-  Calendar,
-  Catalog,
-  ChartColumn,
-  Chat,
-  CheckmarkOutline,
   ChevronDown,
-  Cloud,
-  DataBase,
-  Debug,
-  DocumentSigned,
+  ChevronRight,
   Export,
-  Filter,
-  Earth,
-  Help,
-  Home,
-  Idea,
-  Logout,
-  Notebook,
-  Notification as NotificationIcon,
   OverflowMenuVertical,
-  Phone,
   Renew,
-  RequestQuote,
-  Roadmap,
-  Search,
-  SidePanelClose,
-  SidePanelOpen,
-  Task,
   Time,
-  User,
-  UserMultiple,
-  WarningAlt,
 } from "@carbon/icons-react";
-import { useEffect, useState } from "react";
-import { Heading, Text } from "@servicecoreui/ui";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Text } from "@servicecoreui/ui";
+import { PageHeader, RecentPanels, SearchableMenu } from "@servicecoreui/ui/custom";
 import {
-  Brand,
-  CommandPalette,
-  NotificationCenter,
-  TimeTracker,
-  UserMenu,
-} from "@servicecoreui/ui/custom";
-import {
-  Avatar,
-  Badge,
-  Breadcrumb,
   Button,
   Card,
   Dropdown,
-  Menu,
-  Progress,
+  Input,
+  Modal,
   Statistic,
-  Table,
   Tag,
+  message,
 } from "@servicecoreui/ui/wraps";
-import type { MenuProps, TagProps } from "@servicecoreui/ui/wraps";
+import type { MenuProps } from "@servicecoreui/ui/wraps";
+import { BarChart, DonutChart, LineChart, SlaGauge } from "@servicecoreui/ui/charts";
+import { PanelShell } from "../_components/PanelShell";
 import styles from "./shell.module.css";
 
 /* ────────────────────────────────────────────────
- * Tipler
+ * Menüler & mock veri
  * ──────────────────────────────────────────────── */
-
-interface Ticket {
-  key: string;
-  kod: string;
-  konu: string;
-  atanan: string;
-  durum: string;
-  tone: NonNullable<TagProps["tone"]>;
-  guncelleme: string;
-}
-
-/* ────────────────────────────────────────────────
- * Nav — ServiceCore'un gerçek üst-menü modülleri (mevcut panelden birebir).
- * Düz liste; uydurma grup / sahte rozet-sayı YOK. Her item'da `title` →
- * collapsed (icon-only) modda AntD hover tooltip'i bu string'den üretir.
- * İkonlar Carbon (@carbon/icons-react).
- * ──────────────────────────────────────────────── */
-
-const menuItems: MenuProps["items"] = [
-  { key: "gorev", icon: <Task />, label: "Görev", title: "Görev" },
-  { key: "cagri", icon: <Phone />, label: "Çağrı", title: "Çağrı" },
-  { key: "olay", icon: <WarningAlt />, label: "Olay", title: "Olay" },
-  { key: "problem", icon: <Debug />, label: "Problem", title: "Problem" },
-  { key: "istek", icon: <RequestQuote />, label: "İstek", title: "İstek" },
-  { key: "katalog", icon: <Catalog />, label: "Katalog", title: "Katalog" },
-  { key: "degisiklik", icon: <Renew />, label: "Değişiklik", title: "Değişiklik" },
-  { key: "kb", icon: <Book />, label: "KB", title: "KB" },
-  { key: "si", icon: <Cloud />, label: "SI", title: "SI" },
-  { key: "cmdb", icon: <DataBase />, label: "CMDB", title: "CMDB" },
-  { key: "sozlesme", icon: <DocumentSigned />, label: "Sözleşme", title: "Sözleşme" },
-  { key: "proje", icon: <Roadmap />, label: "Proje", title: "Proje" },
-  { key: "musteriler", icon: <UserMultiple />, label: "Müşteriler", title: "Müşteriler" },
-];
-
-/* ────────────────────────────────────────────────
- * Dropdown menüleri
- * ──────────────────────────────────────────────── */
-
-// Kullanıcı menüsü — "bana atanan kayıtlar" + footer aksiyonları
-const USER_ITEMS = [
-  { key: "gorev", icon: <Task size={20} />, title: "Görevlerim", description: "Görev Detaylarım" },
-  { key: "etkilesim", icon: <Chat size={20} />, title: "Etkileşim Kayıtlarım", description: "Bana Atanan Etkileşimler" },
-  { key: "olay", icon: <WarningAlt size={20} />, title: "Olay Kayıtlarım", description: "Bana Atanan Olaylar" },
-  { key: "problem", icon: <Debug size={20} />, title: "Problem Kayıtlarım", description: "Bana Atanan Problemler" },
-  { key: "istek", icon: <RequestQuote size={20} />, title: "İstek Kayıtlarım", description: "Bana Atanan İstekler" },
-  { key: "degisim", icon: <Renew size={20} />, title: "Değişimlerim", description: "Bana Atanan Değişiklikler" },
-  { key: "iyilestirme", icon: <Idea size={20} />, title: "İyileştirmelerim", description: "Bana Atanan İyileştirmeler" },
-  { key: "onay", icon: <CheckmarkOutline size={20} />, title: "Onaylarım", description: "Onaylarım Açıklama" },
-  { key: "varlik", icon: <Asset size={20} />, title: "Varlıklarım", description: "Bana Atanan Varlıklar" },
-  { key: "hizmet", icon: <Catalog size={20} />, title: "Hizmetlerim", description: "Bana Atanan Hizmetler" },
-];
-
-const USER_ACTIONS = [
-  { key: "kullanici", label: "Kullanıcı", icon: <User size={18} /> },
-  { key: "baslangic", label: "Başlangıç", icon: <Home size={18} /> },
-  { key: "cikis", label: "Çıkış Yap", icon: <Logout size={18} />, danger: true },
-];
-
-/* + (hızlı oluştur) menüsü — navbar Add butonuna bağlı. Carbon ikonlar. */
-const createMenu: MenuProps = {
-  items: [
-    {
-      key: "create",
-      type: "group",
-      label: "Yeni oluştur",
-      children: [
-        { key: "is-gunlugu", icon: <Notebook />, label: "İş Günlüğü" },
-        { key: "gorev", icon: <Task />, label: "Görev" },
-        { key: "cagri", icon: <Phone />, label: "Çağrı" },
-        { key: "olay", icon: <WarningAlt />, label: "Olay" },
-        { key: "problem", icon: <Debug />, label: "Problem" },
-        { key: "istek", icon: <RequestQuote />, label: "İstek" },
-        { key: "degisiklik", icon: <Renew />, label: "Değişiklik" },
-        { key: "bilgi", icon: <Book />, label: "Bilgi" },
-        { key: "iyilestirme", icon: <Idea />, label: "İyileştirme" },
-        { key: "varlik", icon: <Asset />, label: "Varlık" },
-        { key: "sozlesme", icon: <DocumentSigned />, label: "Sözleşme" },
-        { key: "proje", icon: <Roadmap />, label: "Proje" },
-      ],
-    },
-  ],
-};
 
 const widgetMenu: MenuProps = {
   items: [
@@ -172,27 +57,50 @@ const widgetMenu: MenuProps = {
   ],
 };
 
-const panoMenu: MenuProps = {
-  selectable: true,
-  selectedKeys: ["ikd"],
-  items: [
-    { key: "ikd", label: "IKD PANO" },
-    { key: "sla", label: "SLA PANO" },
-    { key: "ops", label: "Operasyon PANO" },
-  ],
-};
+// Pano seçici — SearchableMenu (üstte arama + filtrelenmiş liste; çoklu → scroll)
+const PANO_ITEMS = [
+  { key: "ornek", label: "Örnek Pano" },
+  { key: "ikd", label: "IKD PANO" },
+  { key: "sla", label: "SLA PANO" },
+  { key: "ops", label: "Operasyon Panosu" },
+  { key: "cmdb", label: "CMDB Panosu" },
+  { key: "kb", label: "Bilgi Tabanı Panosu" },
+  { key: "degisiklik", label: "Değişiklik Yönetimi" },
+  { key: "problem", label: "Problem Analizi" },
+  { key: "varlik", label: "Varlık Envanteri" },
+  { key: "katalog", label: "Hizmet Kataloğu" },
+  { key: "csat", label: "Müşteri Memnuniyeti" },
+  { key: "ekip", label: "Ekip Performansı" },
+  { key: "trend", label: "Olay Trendleri" },
+];
+
+// Son Panolar — saat ikonu listesi (current = sayfadaki aktif pano; çoklu → scroll)
+const RECENT_PANELS = [
+  { key: "ornek", title: "Örnek Pano", path: "Genel · /panolar/ornek", lastViewed: "şimdi", lastViewedTitle: "2 Haziran 2026, 14:30", current: true },
+  { key: "sla", title: "SLA Genel Bakış", path: "Raporlama · /panolar/sla", lastViewed: "22 dk önce", lastViewedTitle: "2 Haziran 2026, 14:08" },
+  { key: "ops", title: "Operasyon Panosu", path: "Operasyon Yönetimi · /panolar/ops", lastViewed: "2 sa önce", lastViewedTitle: "2 Haziran 2026, 12:30" },
+  { key: "admin", title: "Erişim Yönetimi", path: "Yönetim › Erişim · /panolar/admin", lastViewed: "Dün", lastViewedTitle: "1 Haziran 2026, 17:45" },
+  { key: "cmdb", title: "Donanım Envanteri", path: "CMDB · /panolar/cmdb", lastViewed: "2 gün önce", lastViewedTitle: "31 Mayıs 2026, 09:12" },
+  { key: "degisiklik", title: "Değişiklik Takvimi", path: "Değişiklik · /panolar/degisiklik", lastViewed: "3 gün önce", lastViewedTitle: "30 Mayıs 2026, 11:20" },
+  { key: "problem", title: "Problem Analizi", path: "Problem · /panolar/problem", lastViewed: "4 gün önce", lastViewedTitle: "29 Mayıs 2026, 16:05" },
+  { key: "katalog", title: "Hizmet Kataloğu", path: "Katalog · /panolar/katalog", lastViewed: "5 gün önce", lastViewedTitle: "28 Mayıs 2026, 10:40" },
+  { key: "csat", title: "Müşteri Memnuniyeti", path: "Raporlama · /panolar/csat", lastViewed: "geçen hafta", lastViewedTitle: "25 Mayıs 2026, 09:00" },
+  { key: "ekip", title: "Ekip Performansı", path: "Raporlama · /panolar/ekip", lastViewed: "geçen hafta", lastViewedTitle: "24 Mayıs 2026, 14:15" },
+  { key: "trend", title: "Olay Trendleri", path: "Olay · /panolar/trend", lastViewed: "2 hafta önce", lastViewedTitle: "19 Mayıs 2026, 13:30" },
+];
 
 /* ────────────────────────────────────────────────
  * Mock veri
  * ──────────────────────────────────────────────── */
 
 const kpis = [
-  { label: "Açık Çağrı", value: 12, trend: "+3", tone: "success" as const, dir: "up" as const, sub: "düne göre" },
-  { label: "SLA Aşıldı", value: 3, trend: "−1", tone: "success" as const, dir: "down" as const, sub: "düne göre (iyi)" },
-  { label: "Bekleyen Olay", value: 148, trend: null, tone: "neutral" as const, dir: null, sub: "toplam aktif" },
-  { label: "Bu Hafta Kapanan", value: 47, trend: "%12", tone: "success" as const, dir: "up" as const, sub: "geçen haftaya göre" },
+  { label: "Açık Çağrı", value: 12, suffix: "adet", trend: "+3", tone: "success" as const, dir: "up" as const, sub: "düne göre" },
+  { label: "SLA Aşıldı", value: 3, suffix: "adet", trend: "−1", tone: "success" as const, dir: "down" as const, sub: "düne göre (iyi)" },
+  { label: "Bekleyen Olay", value: 148, suffix: "adet", trend: null, tone: "neutral" as const, dir: null, sub: "toplam aktif" },
+  { label: "Bu Hafta Kapanan", value: 47, suffix: "adet", trend: "%12", tone: "success" as const, dir: "up" as const, sub: "geçen haftaya göre" },
 ];
 
+// Kategoriye göre olaylar — BarChart (dikey)
 const categories = [
   { label: "Donanım", value: 47 },
   { label: "Yazılım", value: 32 },
@@ -200,52 +108,33 @@ const categories = [
   { label: "Hesap", value: 14 },
   { label: "Diğer", value: 9 },
 ];
-const maxCategory = Math.max(...categories.map((c) => c.value));
 
-const tickets: Ticket[] = [
-  { key: "1", kod: "SC-4127", konu: "Print server bağlanamıyor", atanan: "Deniz Aktaş", durum: "Beklemede", tone: "warning", guncelleme: "5 dk önce" },
-  { key: "2", kod: "SC-4126", konu: "VPN yavaş — ev ofisi", atanan: "Mert Yıldız", durum: "İşlemde", tone: "accent", guncelleme: "22 dk önce" },
-  { key: "3", kod: "SC-4125", konu: "Yeni kullanıcı AD entegrasyonu", atanan: "Selin Koç", durum: "Çözüldü", tone: "success", guncelleme: "1 saat önce" },
-  { key: "4", kod: "SC-4124", konu: "Outlook kalibrasyon sorunu", atanan: "Can Erdem", durum: "SLA Aşıldı", tone: "danger", guncelleme: "2 saat önce" },
-  { key: "5", kod: "SC-4123", konu: "Yazıcı toner değişimi talebi", atanan: "Selin Koç", durum: "Açık", tone: "info", guncelleme: "3 saat önce" },
+// Duruma göre dağılım — DonutChart (parça/bütün)
+const DURUM_DAGILIM = [
+  { name: "Açık", value: 42 },
+  { name: "İşlemde", value: 28 },
+  { name: "Beklemede", value: 13 },
+  { name: "Çözüldü", value: 67 },
+  { name: "Kapatıldı", value: 35 },
 ];
 
-function initials(name: string): string {
-  return name
-    .split(" ")
-    .map((part) => part[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
-}
-
-/* ────────────────────────────────────────────────
- * Komut paleti mock verisi
- * ──────────────────────────────────────────────── */
-
-const SEARCH_RECENT = [
-  { key: "1", label: "SC-4127 — Print server bağlanamıyor" },
-  { key: "2", label: "VPN yavaş — ev ofisi" },
-  { key: "3", label: "Yeni kullanıcı AD entegrasyonu" },
+// Teknisyene göre çağrılar — yatay BarChart (sıralama; uzun ad x-eksenine sığmaz)
+const TEKNISYEN_CAGRI = [
+  { ad: "Jack Bauer", adet: 42 },
+  { ad: "Ayşe Tan", adet: 31 },
+  { ad: "Mehmet Kaya", adet: 27 },
+  { ad: "Selin Koç", adet: 19 },
+  { ad: "Can Erdem", adet: 11 },
 ];
 
-const SEARCH_FILTERS = [
-  { key: "desc", label: "Açıklamada da ara" },
-  { key: "closed", label: "Kapalı kayıtları dahil et" },
-];
-
-// Zaman Makinesi mock sayaçları (1631:21:18 = 5.872.878 sn)
-const TIMERS = [
-  { key: "telefon", name: "Telefon", seconds: 0, running: false },
-  { key: "toplanti", name: "Toplantı", seconds: 5872878, running: true },
-  { key: "test", name: "test", seconds: 60, running: false },
-];
-
-// Bildirim merkezi mock — Etkinlikler boş, Aktivite Kayıtları dolu
-const NOTIF_ACTIVITIES = [
-  { key: "1", title: "SC-4127 güncellendi", description: "Durum: Beklemede → İşlemde", time: "5 dk" },
-  { key: "2", title: "Yeni yorum — SC-4125", description: "Selin Koç: AD entegrasyonu tamam", time: "1 sa" },
-  { key: "3", title: "SLA uyarısı — SC-4124", description: "Yanıt süresi aşıldı", time: "2 sa" },
+// Açılan / çözülen trend — LineChart (area)
+const TREND = [
+  { ay: "Oca", acilan: 64, cozulen: 58 },
+  { ay: "Şub", acilan: 72, cozulen: 61 },
+  { ay: "Mar", acilan: 58, cozulen: 66 },
+  { ay: "Nis", acilan: 81, cozulen: 70 },
+  { ay: "May", acilan: 69, cozulen: 74 },
+  { ay: "Haz", acilan: 77, cozulen: 80 },
 ];
 
 /* ────────────────────────────────────────────────
@@ -253,333 +142,186 @@ const NOTIF_ACTIVITIES = [
  * ──────────────────────────────────────────────── */
 
 export default function ShellPage() {
-  const [collapsed, setCollapsed] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
+  const router = useRouter();
+  const [yeniPanoOpen, setYeniPanoOpen] = useState(false);
+  const [panoAdi, setPanoAdi] = useState("");
+  const [panoError, setPanoError] = useState(false);
+  const [messageApi, msgContext] = message.useMessage();
 
-  // ⌘K / Ctrl+K — global arama paletini aç/kapa
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        setSearchOpen((o) => !o);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
+  const closeYeniPano = () => {
+    setYeniPanoOpen(false);
+    setPanoAdi("");
+    setPanoError(false);
+  };
+
+  const saveYeniPano = () => {
+    if (!panoAdi.trim()) {
+      setPanoError(true); // zorunlu alan — inline hata
+      return;
+    }
+    messageApi.success(`"${panoAdi.trim()}" panosu oluşturuldu`);
+    closeYeniPano();
+  };
+
+  // Widget kartlarının sağ-üst "…" menüsü (Yenile / Dışa aktar) — tüm kartlarda ortak.
+  const widgetExtra = (
+    <Dropdown menu={widgetMenu} trigger={["click"]} placement="bottomRight">
+      <Button
+        type="text"
+        size="small"
+        leadingIcon={<OverflowMenuVertical size={16} />}
+        aria-label="Widget menüsü"
+      />
+    </Dropdown>
+  );
 
   return (
-    <div className={styles.page}>
-      {/* ── Top bar ── */}
-      <header className={styles.header}>
-        {/* Marka zonu — sidebar genişliğinde (240/64). Expanded'da logo solda,
-            toggle sağda (border-right sidebar çizgisini yukarı uzatır → toggle çizgiyle
-            hizalı). Collapsed'da sadece toggle, ortada (alttaki ikon koloyla hizalı).
-            müşteri logosu: <Brand logoSrc="/musteri-logo.svg" name="..." /> */}
-        <div
-          className={styles.brandZone}
-          style={{
-            width: collapsed ? 64 : 240,
-            justifyContent: collapsed ? "center" : "space-between",
-            // expanded: logo sidebar ikonlarıyla hizalı başlasın (8 margin + 12 padding = 20px)
-            // collapsed: padding 0 → toggle ortada (32px), alttaki ikon koloyla hizalı
-            paddingLeft: collapsed ? 0 : "var(--sc-space-5)",
-            paddingRight: collapsed ? 0 : "var(--sc-space-3)",
-          }}
-        >
-          {collapsed ? null : <Brand />}
-          <Button
-            type="text"
-            onClick={() => setCollapsed((c) => !c)}
-            leadingIcon={
-              collapsed ? <SidePanelOpen size={18} /> : <SidePanelClose size={18} />
-            }
-            aria-label={collapsed ? "Menüyü genişlet" : "Menüyü daralt"}
-          />
-        </div>
-
-        <div className={styles.spacer} />
-
-        {/* Sağ araç kümesi — işlevsel gruplar, soldan sağa:
-            [Keşfet&Oluştur] · [İş araçları] · [Sistem&kişisel] · [Hesap]
-            En sık global eylemler başta; bildirim profile bitişik (konvansiyon). */}
-        <div className={styles.utilities}>
-          {/* 1 — Keşfet & oluştur */}
-          <Button
-            type="text"
-            leadingIcon={<Search size={18} />}
-            aria-label="Ara"
-            onClick={() => setSearchOpen(true)}
-          />
-          <Dropdown menu={createMenu} trigger={["click"]} placement="bottomRight">
-            <Button
-              type="primary"
-              shape="circle"
-              leadingIcon={<Add size={18} />}
-              aria-label="Yeni oluştur"
-            />
-          </Dropdown>
-
-          <span className={styles.navDivider} />
-
-          {/* 2 — İş araçları */}
-          <Button type="text" leadingIcon={<Calendar size={18} />} aria-label="Takvim" />
-          <Button type="text" leadingIcon={<ChartColumn size={18} />} aria-label="Raporlar" />
-          <TimeTracker initialTimers={TIMERS}>
-            <Button
-              type="text"
-              leadingIcon={<Time size={18} />}
-              aria-label="Zaman Makinesi"
-            />
-          </TimeTracker>
-
-          <span className={styles.navDivider} />
-
-          {/* 3 — Sistem & kişisel */}
-          <Button type="text" leadingIcon={<Earth size={18} />} aria-label="Dil" />
-          <Button type="text" leadingIcon={<Help size={18} />} aria-label="Yardım" />
-          <NotificationCenter activities={NOTIF_ACTIVITIES}>
-            <Button
-              type="text"
-              leadingIcon={
-                <Badge dot offset={[-2, 4]}>
-                  <NotificationIcon size={18} />
-                </Badge>
-              }
-              aria-label="Bildirimler"
-            />
-          </NotificationCenter>
-
-          <span className={styles.navDivider} />
-
-          {/* 4 — Hesap */}
-          <UserMenu
-            name="Ayşe Yıldız"
-            email="ayse.yildiz@servicecore.app"
-            initials="AY"
-            items={USER_ITEMS}
-            actions={USER_ACTIONS}
-          >
-            <button type="button" className={styles.profile}>
-              <Avatar size="small" tone="accent">
-                AY
-              </Avatar>
-              <ChevronDown size={14} />
-            </button>
-          </UserMenu>
-        </div>
-      </header>
-
-      {/* ── Body: sidebar + content ── */}
-      <div className={styles.body}>
-        {/* Sidebar — collapsed'da 80px ikon rayı. Genişlik INLINE veriliyor:
-            sınıf cascade'ine güvenmeden kesin uygulansın (AntD 5.7 specificity +
-            stale CSS'e karşı). Daralma animasyonu .sider'daki transition'dan gelir. */}
-        <aside
-          className={`${styles.sider} ${collapsed ? styles.siderCollapsed : ""}`}
-          style={{ width: collapsed ? 64 : 240 }}
-        >
-          <Menu
-            mode="inline"
-            inlineCollapsed={collapsed}
-            selectedKeys={["olay"]}
-            items={menuItems}
-          />
-        </aside>
-
-        <main className={styles.content}>
-          {/* ── Page header ── */}
-          <div className={styles.pageHeader}>
-            <Breadcrumb
-              items={[{ title: "Ana sayfa" }, { title: "Panolar" }, { title: "IKD PANO" }]}
-            />
-            <div className={styles.pageHeaderTopRow}>
-              <div className={styles.pageHeaderTitle}>
-                <Heading level={2}>Panolar</Heading>
-                <Dropdown menu={panoMenu} trigger={["click"]}>
-                  <Button trailingIcon={<ChevronDown size={14} />}>IKD PANO</Button>
-                </Dropdown>
-              </div>
-              <div className={styles.pageHeaderActions}>
-                <span className={styles.refreshMeta}>
-                  <span className={styles.refreshDot} />
-                  Otomatik: 5 dk
-                </span>
-                <Button leadingIcon={<Filter />}>Filtre</Button>
-                <Button type="primary" leadingIcon={<Add />}>
-                  Yeni Pano
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* ── Content body ── */}
-          <div className={styles.contentBody}>
-            {/* KPI strip */}
-            <div className={styles.kpiStrip}>
-              {kpis.map((k) => (
-                <Card key={k.label}>
-                  <Statistic title={k.label} value={k.value} />
-                  <div className={styles.kpiTrendRow}>
-                    {k.trend ? (
-                      <Tag
-                        tone={k.tone}
-                        size="small"
-                        leadingIcon={k.dir === "up" ? <ArrowUp /> : <ArrowDown />}
-                      >
-                        {k.trend}
-                      </Tag>
-                    ) : null}
-                    <Text size="xs" color="tertiary">
-                      {k.sub}
-                    </Text>
-                  </div>
-                </Card>
-              ))}
-            </div>
-
-            {/* Widget grid */}
-            <div className={styles.widgetGrid}>
-              <Card
-                title="Açık çağrılar (kategori)"
-                extra={
-                  <Dropdown menu={widgetMenu} trigger={["click"]} placement="bottomRight">
-                    <Button
-                      type="text"
-                      size="small"
-                      leadingIcon={<OverflowMenuVertical size={16} />}
-                      aria-label="Widget menüsü"
-                    />
-                  </Dropdown>
-                }
-              >
-                <div className={styles.catList}>
-                  {categories.map((c) => (
-                    <div key={c.label} className={styles.catRow}>
-                      <Text size="sm">{c.label}</Text>
-                      <Progress
-                        percent={Math.round((c.value / maxCategory) * 100)}
-                        showInfo={false}
-                        size="small"
-                        status="normal"
-                        strokeColor="var(--sc-color-accent)"
-                      />
-                      <Text size="sm" color="tertiary" className={styles.catValue}>
-                        {c.value}
-                      </Text>
-                    </div>
-                  ))}
-                </div>
-              </Card>
-
-              <Card
-                title="SLA uyumu (bu ay)"
-                extra={
-                  <Dropdown menu={widgetMenu} trigger={["click"]} placement="bottomRight">
-                    <Button
-                      type="text"
-                      size="small"
-                      leadingIcon={<OverflowMenuVertical size={16} />}
-                      aria-label="Widget menüsü"
-                    />
-                  </Dropdown>
-                }
-              >
-                <div className={styles.slaWidget}>
-                  <Progress type="circle" percent={94} size={132} />
-                  <div className={styles.slaMeta}>
-                    <Statistic title="Hedef" value={95} suffix="%" />
-                    <Text size="sm" color="tertiary">
-                      318 / 338 talep süresinde kapandı
-                    </Text>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            {/* Recent tickets */}
-            <Card
-              title="Son açılan çağrılar"
-              extra={
-                <Button type="link" size="small">
-                  Tümünü gör →
-                </Button>
-              }
-            >
-              <Table<Ticket>
-                rowKey="key"
-                dataSource={tickets}
-                pagination={false}
-                columns={[
-                  {
-                    title: "Kod",
-                    dataIndex: "kod",
-                    width: 110,
-                    render: (kod: string) => (
-                      <Text
-                        size="sm"
-                        weight="medium"
-                        color="accent"
-                        style={{ fontFamily: "var(--sc-font-mono)" }}
-                      >
-                        {kod}
-                      </Text>
-                    ),
-                  },
-                  {
-                    title: "Konu",
-                    dataIndex: "konu",
-                    ellipsis: true,
-                    render: (konu: string) => <Text size="sm">{konu}</Text>,
-                  },
-                  {
-                    title: "Atanan",
-                    dataIndex: "atanan",
-                    width: 190,
-                    render: (atanan: string) => (
-                      <span className={styles.assignee}>
-                        <Avatar size="small" tone="neutral">
-                          {initials(atanan)}
-                        </Avatar>
-                        <Text size="sm">{atanan}</Text>
-                      </span>
-                    ),
-                  },
-                  {
-                    title: "Durum",
-                    dataIndex: "durum",
-                    width: 150,
-                    render: (_durum: string, row: Ticket) => (
-                      <Tag tone={row.tone} dot size="small">
-                        {row.durum}
-                      </Tag>
-                    ),
-                  },
-                  {
-                    title: "Güncelleme",
-                    dataIndex: "guncelleme",
-                    width: 130,
-                    align: "right",
-                    render: (guncelleme: string) => (
-                      <Text size="sm" color="tertiary">
-                        {guncelleme}
-                      </Text>
-                    ),
-                  },
-                ]}
+    <PanelShell activeNav="olay">
+      {/* ── Page header ── */}
+      <PageHeader
+        title={
+          <span className={styles.panoNav}>
+            {/* saat — Son Panolar (ana seçiciden ayrı: silinebilir geçmiş listesi).
+                NOT: overlay tetikleyicisi AntD Tooltip ile SARILMAZ — iç içe iki
+                overlay (Popover>Tooltip) ref zincirini kırar ("same shadow root"
+                uyarısı). Hover ipucu native title ile; a11y aria-label ile. */}
+            <RecentPanels panels={RECENT_PANELS}>
+              <Button
+                type="text"
+                leadingIcon={<Time size={18} />}
+                aria-label="Son panolar"
+                title="Son panolar"
               />
+            </RecentPanels>
+            <span className={styles.panoLabel}>Pano</span>
+            <ChevronRight size={16} className={styles.panoSep} />
+            {/* pano seçici — üstte arama + filtrelenmiş liste */}
+            <SearchableMenu items={PANO_ITEMS} selectedKey="ornek" placeholder="Pano ara">
+              <Button trailingIcon={<ChevronDown size={14} />}>Örnek Pano</Button>
+            </SearchableMenu>
+          </span>
+        }
+        extra={
+          <>
+            {/* Hepsi → tüm kayıtlar sayfası (Modal değil, tam sayfa Table) */}
+            <Button type="default" onClick={() => router.push("/kayitlar")}>
+              Hepsi
+            </Button>
+            <Button type="primary" leadingIcon={<Add />} onClick={() => setYeniPanoOpen(true)}>
+              Yeni Pano
+            </Button>
+          </>
+        }
+      />
+
+      {/* ── Content body ── */}
+      <div className={styles.contentBody}>
+        {/* KPI strip */}
+        <div className={styles.kpiStrip}>
+          {kpis.map((k) => (
+            <Card key={k.label}>
+              <Statistic title={k.label} value={k.value} suffix={k.suffix} />
+              <div className={styles.kpiTrendRow}>
+                {k.trend ? (
+                  <Tag
+                    tone={k.tone}
+                    size="small"
+                    leadingIcon={k.dir === "up" ? <ArrowUp /> : <ArrowDown />}
+                  >
+                    {k.trend}
+                  </Tag>
+                ) : null}
+                <Text size="xs" color="tertiary">
+                  {k.sub}
+                </Text>
+              </div>
             </Card>
-          </div>
-        </main>
+          ))}
+        </div>
+
+        {/* Widget grid — gerçek chart bileşenleri (doğru veri → doğru chart) */}
+        <div className={styles.widgetGrid}>
+          <Card title="Kategoriye göre olaylar" extra={widgetExtra}>
+            <BarChart
+              data={categories}
+              categoryKey="label"
+              series={[{ key: "value", label: "Olay" }]}
+              height={260}
+            />
+          </Card>
+
+          <Card title="Duruma göre dağılım" extra={widgetExtra}>
+            <DonutChart data={DURUM_DAGILIM} centerLabel="Toplam" height={260} />
+          </Card>
+
+          {/* yatay bar — uzun teknisyen adları + sıralama (çarpık dikey bar yerine) */}
+          <Card title="Teknisyene göre çağrılar" extra={widgetExtra}>
+            <BarChart
+              data={TEKNISYEN_CAGRI}
+              categoryKey="ad"
+              series={[{ key: "adet", label: "Çağrı" }]}
+              horizontal
+              height={260}
+            />
+          </Card>
+
+          <Card title="SLA uyumu (bu ay)" extra={widgetExtra}>
+            <SlaGauge value={94} label="SLA uyumu" size={180} />
+          </Card>
+        </div>
+
+        {/* Trend — tam genişlik */}
+        <Card title="Açılan / çözülen kayıt (aylık)" extra={widgetExtra}>
+          <LineChart
+            data={TREND}
+            categoryKey="ay"
+            series={[
+              { key: "acilan", label: "Açılan" },
+              { key: "cozulen", label: "Çözülen" },
+            ]}
+            variant="area"
+            height={260}
+          />
+        </Card>
       </div>
 
-      <CommandPalette
-        open={searchOpen}
-        onClose={() => setSearchOpen(false)}
-        placeholder="Olay, istek, varlık, kişi ara…"
-        recent={SEARCH_RECENT}
-        filters={SEARCH_FILTERS}
-      />
-    </div>
+      {/* Yeni Pano — kısa tek-alanlı oluşturma formu (Modal'ın doğru kullanımı) */}
+      {msgContext}
+      <Modal
+        title="Yeni Pano"
+        open={yeniPanoOpen}
+        onCancel={closeYeniPano}
+        footer={
+          <div className={styles.modalFooter}>
+            <Button onClick={closeYeniPano}>Vazgeç</Button>
+            <Button type="primary" onClick={saveYeniPano}>
+              Kaydet
+            </Button>
+          </div>
+        }
+      >
+        <div className={styles.yeniPanoBody}>
+          <Text size="sm" weight="medium">
+            Adı
+          </Text>
+          <Input
+            autoFocus
+            placeholder="Adı"
+            value={panoAdi}
+            status={panoError ? "error" : undefined}
+            onChange={(e) => {
+              setPanoAdi(e.target.value);
+              if (panoError) setPanoError(false);
+            }}
+            onPressEnter={saveYeniPano}
+          />
+          {panoError ? (
+            <Text size="xs" color="danger">
+              Bu alan zorunlu.
+            </Text>
+          ) : null}
+        </div>
+      </Modal>
+    </PanelShell>
   );
 }

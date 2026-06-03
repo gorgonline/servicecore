@@ -85,7 +85,9 @@ import { servicecoreTheme } from '@servicecoreui/ui/theme';
 - ❌ Tailwind class kullanmak (CSS Modules veya `style` prop)
 - ❌ Yeni varyant icat etmek (önce wrap'i genişletmek lazım)
 - ❌ AntD legacy class isimleri (`ant-*`) doğrudan hedeflemek
-- ❌ 12 renk paleti — tek accent `#0070F3`
+- ❌ 12 renk paleti — tek accent `#0070F3` (UI'da). **İstisna:** grafikler — kategori
+  ayrımı için kategorik chart paleti vardır (`var(--sc-chart-1..6)`). Sadece grafik
+  serilerinde kullan; genel UI'da yine tek accent.
 
 ## Tüketim Akışı
 

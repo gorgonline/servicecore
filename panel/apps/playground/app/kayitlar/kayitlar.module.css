@@ -1,0 +1,23 @@
+/* Kayıtlar sayfası — içerik stilleri.
+ * Chrome (header + sidebar) PanelShell'de; tablo/filtre/Sütunlar DataTable'da.
+ * Burada yalnız içerik padding'i + başlık + atanan hücresi kalır. */
+
+.body {
+  padding: var(--sc-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-5);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-1);
+}
+
+.assignee {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  min-width: 0;
+}

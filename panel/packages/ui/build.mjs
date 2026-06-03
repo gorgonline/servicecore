@@ -27,6 +27,7 @@ const EXTERNAL = [
   "antd",
   "@carbon/icons-react",
   "clsx",
+  "recharts",
 ];
 
 const SHARED = {
@@ -80,7 +81,7 @@ async function main() {
   // 3. AntD wraps entry — "use client" banner'lı
   const WRAPS = {
     ...SHARED,
-    entryPoints: { wraps: "src/wraps.ts", custom: "src/custom.ts" },
+    entryPoints: { wraps: "src/wraps.ts", custom: "src/custom.ts", charts: "src/charts.ts" },
     outdir: "dist",
     banner: { js: '"use client";' },
   };

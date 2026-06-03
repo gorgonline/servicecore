@@ -38,4 +38,66 @@
   flex-shrink: 0;
   white-space: nowrap;
   margin-top: 2px;
+  transition: opacity var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+/* ── Kapatılabilir varyant (onRemove) ── */
+.dismissible {
+  position: relative;
+}
+
+/* × — kartın sağ ÜST köşesi; native buton (AntD .ant-btn specificity'sinden bağımsız).
+ * idle gizli, satır hover/focus'ta belirir. Nötr renk — yıkıcı değil. */
+.removeBtn {
+  position: absolute;
+  top: var(--sc-space-1);
+  right: var(--sc-space-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sc-space-6);
+  height: var(--sc-space-6);
+  padding: 0;
+  border: none;
+  border-radius: var(--sc-radius-sm);
+  background: transparent;
+  color: var(--sc-color-text-tertiary);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity var(--sc-duration-fast) var(--sc-easing-default),
+    color var(--sc-duration-fast) var(--sc-easing-default),
+    background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.dismissible:hover .removeBtn,
+.dismissible:focus-within .removeBtn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.removeBtn:hover {
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-bg-muted);
+}
+
+.removeBtn:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
+  outline: 2px solid var(--sc-color-accent);
+  outline-offset: 1px;
+}
+
+/* meta varsa hover'da yerini köşedeki ×'e bırakır (swap — aynı sağ-üst köşe). */
+.dismissible:hover .meta,
+.dismissible:focus-within .meta {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meta,
+  .removeBtn {
+    transition: none;
+  }
 }

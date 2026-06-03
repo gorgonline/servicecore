@@ -63,6 +63,19 @@
   --sc-color-info-700:    var(--sc-color-primary-700);
 
   /* ─────────────────────────────────────────────────────────
+   * CHART — kategorik veri serisi paleti
+   * Tek-accent kuralının meşru istisnası: grafikte kategorileri ayırmak için
+   * çok-hue gerekir. Marka mavisine demirli, beyaz üstünde erişilebilir,
+   * restrained 6 hue (benzer L/C → görsel denge).
+   * ───────────────────────────────────────────────────────── */
+  --sc-chart-1: var(--sc-color-primary-500);   /* mavi (accent) */
+  --sc-chart-2: oklch(0.65 0.13 195);          /* teal */
+  --sc-chart-3: oklch(0.60 0.18 300);          /* mor */
+  --sc-chart-4: oklch(0.72 0.15 60);           /* amber */
+  --sc-chart-5: oklch(0.62 0.20 12);           /* gül */
+  --sc-chart-6: oklch(0.64 0.15 150);          /* yeşil */
+
+  /* ─────────────────────────────────────────────────────────
    * SEMANTIC ALIAS (kullanım katmanı — bileşenler bunları çağırır)
    * Token isimleri rolü anlatır, ham scale'i değil
    * ───────────────────────────────────────────────────────── */

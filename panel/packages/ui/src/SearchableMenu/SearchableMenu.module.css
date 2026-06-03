@@ -1,0 +1,73 @@
+/* Aranabilir menü — overlay tamamen kendi kartımız (Card/Dropdown ile aynı dil).
+ * dropdownRender ile render edildiği için AntD .ant-dropdown-menu kartı kullanılmaz. */
+
+.panel {
+  min-width: 240px;
+  background: var(--sc-color-bg-base);
+  border: 1px solid var(--sc-color-border-default);
+  border-radius: var(--sc-radius-md);
+  box-shadow: var(--sc-shadow-md);
+  overflow: hidden;
+}
+
+.search {
+  padding: var(--sc-space-2);
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+}
+
+.list {
+  max-height: 280px;
+  overflow-y: auto;
+  padding: var(--sc-space-1);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  width: 100%;
+  padding: var(--sc-space-2) var(--sc-space-3);
+  border: none;
+  background: transparent;
+  border-radius: var(--sc-radius-sm);
+  cursor: pointer;
+  text-align: start;
+  font-size: var(--sc-font-size-sm);
+  color: var(--sc-color-text-primary);
+  transition: background var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.item:hover {
+  background: var(--sc-color-bg-muted);
+}
+
+.itemSelected,
+.itemSelected:hover {
+  background: var(--sc-color-accent-subtle);
+  color: var(--sc-color-accent);
+  font-weight: var(--sc-font-weight-medium);
+}
+
+.itemIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  color: var(--sc-color-text-tertiary);
+}
+
+.itemLabel {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.itemCheck {
+  flex-shrink: 0;
+  color: var(--sc-color-accent);
+}
+
+.empty {
+  padding: var(--sc-space-4);
+  text-align: center;
+}

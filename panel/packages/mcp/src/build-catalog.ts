@@ -43,39 +43,51 @@ function extractDescription(source: string): string {
     .slice(0, 300);
 }
 
+/** Tek bir klasörden (<dir>/<name>.tsx + opsiyonel .types.ts/.module.css) spec çıkar. */
+function specFromDir(dir: string, name: string): ComponentSpec | null {
+  const tsxPath = path.join(dir, `${name}.tsx`);
+  if (!fs.existsSync(tsxPath)) return null;
+
+  const typesPath = path.join(dir, `${name}.types.ts`);
+  const cssPath = path.join(dir, `${name}.module.css`);
+  const source = fs.readFileSync(tsxPath, "utf-8");
+  const types = fs.existsSync(typesPath) ? fs.readFileSync(typesPath, "utf-8") : undefined;
+  const css = fs.existsSync(cssPath) ? fs.readFileSync(cssPath, "utf-8") : undefined;
+
+  const spec: ComponentSpec = {
+    name,
+    source,
+    description: extractDescription(types ?? source),
+  };
+  if (types !== undefined) spec.types = types;
+  if (css !== undefined) spec.css = css;
+  return spec;
+}
+
 function scanComponents(): Record<string, ComponentSpec> {
   const components: Record<string, ComponentSpec> = {};
-  const entries = fs.readdirSync(UI_SRC, { withFileTypes: true });
 
-  for (const entry of entries) {
+  const add = (dir: string, name: string) => {
+    const spec = specFromDir(dir, name);
+    if (spec) components[name] = spec;
+  };
+
+  for (const entry of fs.readdirSync(UI_SRC, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
     if (!/^[A-Z]/.test(entry.name)) continue;
     if (entry.name === "theme") continue;
 
     const dir = path.join(UI_SRC, entry.name);
-    const tsxPath = path.join(dir, `${entry.name}.tsx`);
-    const typesPath = path.join(dir, `${entry.name}.types.ts`);
-    const cssPath = path.join(dir, `${entry.name}.module.css`);
+    // 1) Top-level bileşen: src/<Ad>/<Ad>.tsx
+    add(dir, entry.name);
 
-    if (!fs.existsSync(tsxPath)) continue;
-
-    const source = fs.readFileSync(tsxPath, "utf-8");
-    const types = fs.existsSync(typesPath)
-      ? fs.readFileSync(typesPath, "utf-8")
-      : undefined;
-    const css = fs.existsSync(cssPath)
-      ? fs.readFileSync(cssPath, "utf-8")
-      : undefined;
-
-    const spec: ComponentSpec = {
-      name: entry.name,
-      source,
-      description: extractDescription(types ?? source),
-    };
-    if (types !== undefined) spec.types = types;
-    if (css !== undefined) spec.css = css;
-
-    components[entry.name] = spec;
+    // 2) Nested bileşenler: src/<Kapsayıcı>/<Alt>/<Alt>.tsx (ör. Charts/BarChart).
+    //    Scanner tek seviye iner; kapsayıcının kendi .tsx'i yoksa (Charts gibi) yalnız alt'lar girer.
+    for (const sub of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (!sub.isDirectory()) continue;
+      if (!/^[A-Z]/.test(sub.name)) continue;
+      add(path.join(dir, sub.name), sub.name);
+    }
   }
 
   return components;

@@ -35,10 +35,24 @@ export const navGroups: NavGroup[] = [
       { name: "Brand", href: "/brand", desc: "Logo + marka adı — white-label (logoSrc)" },
       { name: "Kbd", href: "/kbd", desc: "Klavye tuşu rozeti — kısayol ipuçları" },
       { name: "ListItem", href: "/list-item", desc: "İkon + başlık + açıklama satırı (paylaşılan)" },
+      { name: "PageHeader", href: "/page-header", desc: "Sayfa üst çubuğu — breadcrumb + başlık + aksiyon" },
+      { name: "RecentPanels", href: "/recent-panels", desc: "Son panolar — silinebilir geçmiş + geri al" },
+      { name: "SearchableMenu", href: "/searchable-menu", desc: "Aranabilir dropdown — üstte arama + filtreli liste" },
+      { name: "DataTable", href: "/data-table", desc: "Kayıt tarayıcısı — sort + filtre + Sütunlar + chip" },
       { name: "CommandPalette", href: "/command-palette", desc: "Global arama / komut paleti (⌘K)" },
       { name: "TimeTracker", href: "/time-tracker", desc: "Zaman Makinesi — isimli sayaçlar" },
       { name: "NotificationCenter", href: "/notification-center", desc: "Bildirim merkezi — sekmeli, Empty" },
       { name: "UserMenu", href: "/user-menu", desc: "Kullanıcı menüsü — header + liste + aksiyonlar" },
+    ],
+  },
+  {
+    // Recharts tabanlı, token-temalı grafikler — @servicecoreui/ui/charts
+    label: "Grafikler",
+    items: [
+      { name: "BarChart", href: "/bar-chart", desc: "Bar grafiği — dikey/yatay, gruplu/yığılı" },
+      { name: "DonutChart", href: "/donut-chart", desc: "Donut/pie — dağılım + ortada toplam" },
+      { name: "LineChart", href: "/line-chart", desc: "Trend — çizgi/alan, çoklu seri" },
+      { name: "SlaGauge", href: "/sla-gauge", desc: "SLA % halkası — eşik renkli gauge" },
     ],
   },
   {

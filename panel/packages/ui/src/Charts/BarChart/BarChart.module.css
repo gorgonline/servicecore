@@ -1,0 +1,4 @@
+/* BarChart — ResponsiveContainer kabı. Yükseklik inline (prop), genişlik %100. */
+.root {
+  width: 100%;
+}

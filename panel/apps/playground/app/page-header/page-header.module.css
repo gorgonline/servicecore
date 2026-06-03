@@ -1,0 +1,77 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--sc-space-12) var(--sc-space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-16);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-3);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-4);
+  align-items: flex-start;
+}
+
+/* Demo kutusu — gerçek sayfa bağlamı (kenarlık + zemin) */
+.demo {
+  width: 100%;
+  border-radius: var(--sc-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--sc-color-border-subtle);
+  background: var(--sc-color-bg-muted);
+}
+
+/* Pano seçici kümesi — shell ile birebir */
+.panoNav {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  min-width: 0;
+}
+
+.panoLabel {
+  font-size: var(--sc-font-size-sm);
+  font-weight: var(--sc-font-weight-medium);
+  color: var(--sc-color-text-secondary);
+}
+
+.panoSep {
+  flex-shrink: 0;
+  color: var(--sc-color-text-tertiary);
+}
+
+.props {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--sc-font-size-sm);
+}
+
+.props th,
+.props td {
+  text-align: start;
+  padding: var(--sc-space-2) var(--sc-space-3);
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+  vertical-align: top;
+}
+
+.props th {
+  color: var(--sc-color-text-tertiary);
+  font-weight: var(--sc-font-weight-semibold);
+  font-size: var(--sc-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--sc-letter-spacing-wider);
+}
+
+.props code {
+  font-family: var(--sc-font-mono);
+  font-size: var(--sc-font-size-xs);
+  color: var(--sc-color-accent);
+}
