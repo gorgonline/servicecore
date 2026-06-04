@@ -52,7 +52,7 @@ export function ReferencesLogoGrid() {
           <div className="flex items-center gap-4 mb-12">
             <div className="flex items-center gap-3">
               <span className="flex h-2 w-2 rounded-full bg-(--color-brand-primary)" />
-              <h2 className="text-xs font-semibold tracking-[0.2em] text-(--color-text-overline) uppercase">
+              <h2 lang="en" className="text-xs font-semibold tracking-[0.2em] text-(--color-text-overline) uppercase">
                 {category.title}
               </h2>
             </div>
@@ -115,7 +115,7 @@ export function ReferencesDetailGrid() {
       <div className="flex items-center gap-4 mb-12">
         <div className="flex items-center gap-3">
           <span className="flex h-2 w-2 rounded-full bg-(--color-brand-secondary)" />
-          <h2 className="text-xs font-semibold tracking-[0.2em] text-(--color-text-overline) uppercase">
+          <h2 lang="en" className="text-xs font-semibold tracking-[0.2em] text-(--color-text-overline) uppercase">
             Servicecore Referans Detayları
           </h2>
         </div>

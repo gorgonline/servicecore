@@ -8,7 +8,7 @@
   "categories": [
     {
       "id": "itsm-esm",
-      "title": "ESM / ITSM / CSM / FSM / ITAM / EAM",
+      "title": "ESM / ITSM / FSM / ITAM / EAM",
       "references": [
         { "name": "AKSA", "logo": "/logos/aksa.png" },
         { "name": "Roketsan", "logo": "/logos/roketsan.png" },
