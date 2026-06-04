@@ -16,7 +16,17 @@
   font-family: var(--sc-font-sans) !important;
   font-size: var(--sc-font-size-md) !important;
   color: var(--sc-color-text-primary) !important;
+  /* Çok satırlı label'da kutu ilk satırla hizalı kalsın (dikey ortalama değil) */
+  align-items: flex-start !important;
+}
+
+/* Kutu konteyneri yüksekliğini bir satıra eşitle + içini ortala → kutu, label
+ * tek satırda da çok satırda da ilk satırın dikey ortasında durur. */
+.checkbox :global(.ant-checkbox) {
+  display: inline-flex !important;
   align-items: center !important;
+  align-self: flex-start !important;
+  height: calc(var(--sc-font-size-md) * var(--sc-line-height-normal)) !important;
 }
 
 /* ───────────────────────────────────────────────────────────────
@@ -139,7 +149,15 @@
   font-family: var(--sc-font-sans) !important;
   font-size: var(--sc-font-size-md) !important;
   color: var(--sc-color-text-primary) !important;
-  align-items: center;
+  /* çok satırlı label → kutu ilk satırla hizalı */
+  align-items: flex-start !important;
+}
+
+.group :global(.ant-checkbox) {
+  display: inline-flex !important;
+  align-items: center !important;
+  align-self: flex-start !important;
+  height: calc(var(--sc-font-size-md) * var(--sc-line-height-normal)) !important;
 }
 
 /* Group içindeki inner box'lar da .checkbox kuralına uymalı — :global ile

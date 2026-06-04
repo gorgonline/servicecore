@@ -44,7 +44,8 @@ import {
 import type { MenuProps } from "@servicecoreui/ui/wraps";
 import { BarChart, DonutChart, LineChart, SlaGauge } from "@servicecoreui/ui/charts";
 import { PanelShell } from "../_components/PanelShell";
-import styles from "./shell.module.css";
+import { RECENT_PANELS } from "../_data/recentPanels";
+import styles from "./pano.module.css";
 
 /* ────────────────────────────────────────────────
  * Menüler & mock veri
@@ -72,21 +73,6 @@ const PANO_ITEMS = [
   { key: "csat", label: "Müşteri Memnuniyeti" },
   { key: "ekip", label: "Ekip Performansı" },
   { key: "trend", label: "Olay Trendleri" },
-];
-
-// Son Panolar — saat ikonu listesi (current = sayfadaki aktif pano; çoklu → scroll)
-const RECENT_PANELS = [
-  { key: "ornek", title: "Örnek Pano", path: "Genel · /panolar/ornek", lastViewed: "şimdi", lastViewedTitle: "2 Haziran 2026, 14:30", current: true },
-  { key: "sla", title: "SLA Genel Bakış", path: "Raporlama · /panolar/sla", lastViewed: "22 dk önce", lastViewedTitle: "2 Haziran 2026, 14:08" },
-  { key: "ops", title: "Operasyon Panosu", path: "Operasyon Yönetimi · /panolar/ops", lastViewed: "2 sa önce", lastViewedTitle: "2 Haziran 2026, 12:30" },
-  { key: "admin", title: "Erişim Yönetimi", path: "Yönetim › Erişim · /panolar/admin", lastViewed: "Dün", lastViewedTitle: "1 Haziran 2026, 17:45" },
-  { key: "cmdb", title: "Donanım Envanteri", path: "CMDB · /panolar/cmdb", lastViewed: "2 gün önce", lastViewedTitle: "31 Mayıs 2026, 09:12" },
-  { key: "degisiklik", title: "Değişiklik Takvimi", path: "Değişiklik · /panolar/degisiklik", lastViewed: "3 gün önce", lastViewedTitle: "30 Mayıs 2026, 11:20" },
-  { key: "problem", title: "Problem Analizi", path: "Problem · /panolar/problem", lastViewed: "4 gün önce", lastViewedTitle: "29 Mayıs 2026, 16:05" },
-  { key: "katalog", title: "Hizmet Kataloğu", path: "Katalog · /panolar/katalog", lastViewed: "5 gün önce", lastViewedTitle: "28 Mayıs 2026, 10:40" },
-  { key: "csat", title: "Müşteri Memnuniyeti", path: "Raporlama · /panolar/csat", lastViewed: "geçen hafta", lastViewedTitle: "25 Mayıs 2026, 09:00" },
-  { key: "ekip", title: "Ekip Performansı", path: "Raporlama · /panolar/ekip", lastViewed: "geçen hafta", lastViewedTitle: "24 Mayıs 2026, 14:15" },
-  { key: "trend", title: "Olay Trendleri", path: "Olay · /panolar/trend", lastViewed: "2 hafta önce", lastViewedTitle: "19 Mayıs 2026, 13:30" },
 ];
 
 /* ────────────────────────────────────────────────
@@ -268,21 +254,25 @@ export default function ShellPage() {
           <Card title="SLA uyumu (bu ay)" extra={widgetExtra}>
             <SlaGauge value={94} label="SLA uyumu" size={180} />
           </Card>
-        </div>
 
-        {/* Trend — tam genişlik */}
-        <Card title="Açılan / çözülen kayıt (aylık)" extra={widgetExtra}>
-          <LineChart
-            data={TREND}
-            categoryKey="ay"
-            series={[
-              { key: "acilan", label: "Açılan" },
-              { key: "cozulen", label: "Çözülen" },
-            ]}
-            variant="area"
-            height={260}
-          />
-        </Card>
+          {/* Trend — 2 kolon kaplar (3'lü grid'de 2. satırı tamamlar) */}
+          <Card
+            title="Açılan / çözülen kayıt (aylık)"
+            extra={widgetExtra}
+            className={styles.widgetWide}
+          >
+            <LineChart
+              data={TREND}
+              categoryKey="ay"
+              series={[
+                { key: "acilan", label: "Açılan" },
+                { key: "cozulen", label: "Çözülen" },
+              ]}
+              variant="area"
+              height={260}
+            />
+          </Card>
+        </div>
       </div>
 
       {/* Yeni Pano — kısa tek-alanlı oluşturma formu (Modal'ın doğru kullanımı) */}

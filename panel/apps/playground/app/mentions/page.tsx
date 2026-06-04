@@ -109,7 +109,7 @@ function CommentReplyMock() {
         <div className={styles.commentAvatar}>AK</div>
         <div className={styles.commentBody}>
           <div className={styles.commentHeader}>
-            <Text size="sm" weight="semibold">
+            <Text size="sm" weight="medium">
               Ahmet K.
             </Text>
             <Text size="xs" color="tertiary">

@@ -1,6 +1,6 @@
 {
   "name": "@servicecoreui/mcp",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ServiceCore UI MCP server — exposes @servicecoreui/ui catalog to AI agents (Claude, Cursor)",
   "license": "UNLICENSED",
   "type": "module",

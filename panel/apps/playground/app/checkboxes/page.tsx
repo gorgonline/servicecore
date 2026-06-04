@@ -401,7 +401,7 @@ export default function CheckboxesPage() {
               checked={allChecked}
               onChange={onMasterChange}
             >
-              <Text size="md" weight="semibold">
+              <Text size="md" weight="medium">
                 Tüm kategoriler
               </Text>
             </Checkbox>

@@ -21,6 +21,12 @@ export type NavGroup = {
 
 export const navGroups: NavGroup[] = [
   {
+    label: "Başlarken",
+    items: [
+      { name: "MCP (AI kurulumu)", href: "/mcp", desc: "Claude Code / Cursor için MCP server kurulumu" },
+    ],
+  },
+  {
     label: "Foundations",
     items: [
       { name: "Tokens", href: "/tokens", desc: "Renk, radius, spacing, type" },
@@ -35,6 +41,7 @@ export const navGroups: NavGroup[] = [
       { name: "Brand", href: "/brand", desc: "Logo + marka adı — white-label (logoSrc)" },
       { name: "Kbd", href: "/kbd", desc: "Klavye tuşu rozeti — kısayol ipuçları" },
       { name: "ListItem", href: "/list-item", desc: "İkon + başlık + açıklama satırı (paylaşılan)" },
+      { name: "NavCard", href: "/nav-card", desc: "İkon + başlık + açıklama tıklanabilir tile" },
       { name: "PageHeader", href: "/page-header", desc: "Sayfa üst çubuğu — breadcrumb + başlık + aksiyon" },
       { name: "RecentPanels", href: "/recent-panels", desc: "Son panolar — silinebilir geçmiş + geri al" },
       { name: "SearchableMenu", href: "/searchable-menu", desc: "Aranabilir dropdown — üstte arama + filtreli liste" },
@@ -134,6 +141,13 @@ export const navGroups: NavGroup[] = [
       { name: "Spin", href: "/spin", desc: "Süre belirsiz loading — overlay" },
     ],
   },
+];
+
+/** Yeniden tasarladığımız gerçek panel sayfaları (PanelShell içinde, full-bleed). */
+export const appPages: NavItem[] = [
+  { name: "Pano", href: "/pano", desc: "Dashboard — KPI + grafikler" },
+  { name: "Kayıtlar", href: "/kayitlar", desc: "Kayıt tarayıcısı (DataTable)" },
+  { name: "Ayarlar", href: "/ayarlar", desc: "Ayarlar — gruplu kart grid" },
 ];
 
 /** Toplam bileşen sayısı — "Başlarken" sayfasındaki rozet için. */

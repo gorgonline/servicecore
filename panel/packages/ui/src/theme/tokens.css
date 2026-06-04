@@ -179,11 +179,13 @@
   --sc-line-height-normal:  1.5;
   --sc-line-height-relaxed: 1.625;
 
-  /* Weights */
+  /* Weights — tip rampası TAVANI = medium (500). semibold/bold tasarım kararıyla
+   * medium'a denk; chrome dâhil daha kalın yazı kullanılmaz. Token adları geriye
+   * dönük uyum için duruyor ama değerleri medium. */
   --sc-font-weight-regular:  400;
   --sc-font-weight-medium:   500;
-  --sc-font-weight-semibold: 600;
-  --sc-font-weight-bold:     700;
+  --sc-font-weight-semibold: 500; /* = medium (tavan) */
+  --sc-font-weight-bold:     500; /* = medium (tavan) */
 
   /* Letter spacing (display'lerde tighter daha sade görünür) */
   --sc-letter-spacing-tighter: -0.03em;

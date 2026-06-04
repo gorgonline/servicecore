@@ -4,7 +4,9 @@ import clsx from "clsx";
 import styles from "./Text.module.css";
 
 export type TextSize = "xs" | "sm" | "md" | "lg" | "xl";
-export type TextWeight = "regular" | "medium" | "semibold" | "bold";
+/** Type sistemi tavanı medium — semibold/bold typo'da kullanılmaz (vurgu için
+ * medium + renk yeterli). Daha kalın gerekiyorsa tasarım kararı gözden geçirilir. */
+export type TextWeight = "regular" | "medium";
 export type TextColor =
   | "primary"
   | "secondary"
@@ -44,10 +46,8 @@ const SIZE: Partial<Record<TextSize, string>> = {
 };
 
 const WEIGHT: Partial<Record<TextWeight, string>> = {
-  regular:  styles.weightRegular,
-  medium:   styles.weightMedium,
-  semibold: styles.weightSemibold,
-  bold:     styles.weightBold,
+  regular: styles.weightRegular,
+  medium:  styles.weightMedium,
 };
 
 const COLOR: Partial<Record<TextColor, string>> = {

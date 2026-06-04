@@ -1,0 +1,57 @@
+/* NavCard — ikon + başlık + açıklama tıklanabilir tile. */
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sc-space-3);
+  width: 100%;
+  padding: var(--sc-space-4);
+  border: 1px solid var(--sc-color-border-subtle);
+  border-radius: var(--sc-radius-lg);
+  background: var(--sc-color-bg-base);
+  cursor: pointer;
+  text-align: start;
+  text-decoration: none;
+  transition:
+    border-color var(--sc-duration-fast) var(--sc-easing-default),
+    box-shadow var(--sc-duration-fast) var(--sc-easing-default);
+}
+
+.card:hover {
+  border-color: var(--sc-color-border-accent);
+  box-shadow: var(--sc-shadow-sm);
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--sc-color-accent);
+  outline-offset: 1px;
+}
+
+/* Statik (href/onClick yok) — tıklanamaz. */
+.static {
+  cursor: default;
+}
+
+.static:hover {
+  border-color: var(--sc-color-border-subtle);
+  box-shadow: none;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--sc-color-accent);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--sc-font-size-sm);
+  font-weight: var(--sc-font-weight-semibold);
+  color: var(--sc-color-accent);
+}

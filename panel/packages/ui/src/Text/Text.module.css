@@ -10,11 +10,9 @@
 .sizeLg  { font-size: var(--sc-font-size-lg);  line-height: var(--sc-line-height-relaxed); }
 .sizeXl  { font-size: var(--sc-font-size-xl);  line-height: var(--sc-line-height-snug); }
 
-/* weights */
+/* weights — tavan medium (semibold/bold typo'da yok) */
 .weightRegular  { font-weight: var(--sc-font-weight-regular); }
 .weightMedium   { font-weight: var(--sc-font-weight-medium); }
-.weightSemibold { font-weight: var(--sc-font-weight-semibold); }
-.weightBold     { font-weight: var(--sc-font-weight-bold); }
 
 /* colors (semantic alias) */
 .colorPrimary   { color: var(--sc-color-text-primary); }

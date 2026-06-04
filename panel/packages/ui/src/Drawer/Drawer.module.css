@@ -14,6 +14,9 @@
 
 .root {
   font-family: var(--sc-font-sans);
+  /* AntD default zIndex (1000) sticky header'ın (1010) ALTINDA kalıyor → drawer
+   * başlığı navbar'ın arkasında gizleniyordu. Modal seviyesine çek (sticky üstü). */
+  z-index: var(--sc-z-modal) !important;
 }
 
 .drawer {

@@ -1,0 +1,69 @@
+{
+  "version": "5.10.13.1",
+  "groups": [
+    {
+      "label": "Genel",
+      "items": [
+        { "key": "genel-ayarlar", "title": "Genel Ayarlar", "description": "Genel Uygulama Ayarları", "icon": "SettingsAdjust" },
+        { "key": "sistem-ayarlari", "title": "Sistem Ayarları", "description": "Genel Sistem Konfigürasyonları", "icon": "Settings" },
+        { "key": "instance-ayarlari", "title": "Instance Ayarları", "description": "Instance Yönetimi", "icon": "Db2Database" },
+        { "key": "uyari-bildirimler", "title": "Uyarı ve Bildirimler", "description": "ePosta, SMS, Teams vd. bildirimler", "icon": "Notification" },
+        { "key": "sablonlar", "title": "Şablonlar", "description": "Modüller İçin Hazır Şablonlar", "icon": "Document" },
+        { "key": "hazir-cevaplar", "title": "Hazır Cevaplar", "description": "Not ve E-Postalar İçin Şablonlar", "icon": "Chat" },
+        { "key": "validasyon-ayarlari", "title": "Validasyon Ayarları", "description": "Validasyon Ayarlarını Yönet", "icon": "Security" },
+        { "key": "duyurular", "title": "Duyurular", "description": "Duyuru Ayarları", "icon": "Bullhorn" },
+        { "key": "is-saatleri", "title": "İş Saatleri", "description": "Kurum Çalışma Saatleri Ayarları", "icon": "Time" },
+        { "key": "kurum-konumlari", "title": "Kurum Konumları", "description": "Kurum Konumlarını Yönet", "icon": "Location" },
+        { "key": "alt-sirketler", "title": "Alt Şirketler", "description": "Alt Şirketleri Yönet", "icon": "Building" },
+        { "key": "lisans-surum-notlari", "title": "Lisans ve Sürüm Notları", "description": "Lisans ve sürüm güncellemeleri notları", "icon": "License" },
+        { "key": "denetim-gunlukleri", "title": "Denetim Günlükleri", "description": "Kullanıcı etkinlikleri ve sistem log kayıtları", "icon": "ListChecked" },
+        { "key": "son-kullanici-ayarlari", "title": "Son Kullanıcı Ayarları", "description": "Son Kullanıcı Ayarlarını Yönet", "icon": "UserSettings" },
+        { "key": "formlar", "title": "Formlar", "description": "Özel Form Düzenle", "icon": "DocumentBlank" },
+        { "key": "vardiya-yonetimi", "title": "Vardiya Yönetimi", "description": "Teknisyen Vardiya Yönetimi", "icon": "Time" }
+      ]
+    },
+    {
+      "label": "Organizasyon",
+      "items": [
+        { "key": "teknisyen-gruplari", "title": "Teknisyen Grupları", "description": "Destek Gruplarını Yönet", "icon": "UserMultiple" },
+        { "key": "kullanici-gruplari", "title": "Kullanıcı Grupları", "description": "Kullanıcı Gruplarını Yönet", "icon": "Group" },
+        { "key": "teknisyenler", "title": "Teknisyenler", "description": "Teknisyenleri Yönet", "icon": "User" },
+        { "key": "kullanicilar", "title": "Kullanıcılar", "description": "Kullanıcıları Yönet", "icon": "UserAvatar" },
+        { "key": "onaylayanlar-danismanlar", "title": "Onaylayanlar ve Danışmanlar", "description": "Kurulları Yönet", "icon": "Events" },
+        { "key": "departmanlar", "title": "Departmanlar", "description": "Kullanıcı Departmanlarını Yönet", "icon": "Building" },
+        { "key": "roller", "title": "Roller", "description": "Rollerin Yönetimi", "icon": "UserRole" },
+        { "key": "organizasyon-semalari", "title": "Organizasyon Şemaları", "description": "Organizasyon Şemalarını Yönet", "icon": "Tree" },
+        { "key": "kurum-ici-destek-sozlesmeleri", "title": "Kurum İçi Destek Sözleşmeleri", "description": "Destek Sözleşmelerini Yönet", "icon": "Document" },
+        { "key": "tedarikci-sozlesmeleri", "title": "Tedarikçi Sözleşmeleri", "description": "Varlık Sözleşmeleri Yönet", "icon": "Document" }
+      ]
+    },
+    {
+      "label": "Gelişmiş",
+      "items": [
+        { "key": "sla-politikalari", "title": "SLA Politikaları", "description": "Kayıtların Performansını Ölçün", "icon": "Meter" },
+        { "key": "kapatma-kurallari", "title": "Kapatma Kuralları ve Gerekçeleri", "description": "Kapatma Kurallarını Yönet", "icon": "DocumentTasks" },
+        { "key": "otomasyon-yonetimi", "title": "Otomasyon Yönetimi", "description": "Esnek Otomasyon Kuralı Oluştur", "icon": "Flash" },
+        { "key": "ortak-alanlari", "title": "Ortak Alanları Yönet", "description": "Tüm Modüller İçin Ortak Özellikleri Yönet", "icon": "Table" },
+        { "key": "ozel-ek-alanlar", "title": "Özel Ek Alanlar", "description": "Ek Alanları Yönet", "icon": "TextLinkAnalysis" },
+        { "key": "global-durumlar", "title": "Global Durumlar", "description": "Global Durum Ayarları", "icon": "Globe" },
+        { "key": "anketler", "title": "Anketler", "description": "Anketleri Yönet", "icon": "Report" },
+        { "key": "sisteme-genel-bakis", "title": "Sisteme Genel Bakış", "description": "Sistem Ayarlarına Genel Bakış", "icon": "SearchLocate" },
+        { "key": "entegrasyonlar", "title": "Entegrasyonlar", "description": "Dış Sistemlerle Entegrasyonlar", "icon": "Plug" },
+        { "key": "is-akisi", "title": "İş Akışı", "description": "Süreçlere Özel Dinamik İş Akışlarını Yönet", "icon": "Flow" },
+        { "key": "dil-kaynagi-ayarlari", "title": "Dil Kaynağı Ayarları", "description": "Dil Kaynağı Ayarlarını Yönet", "icon": "Translate" },
+        { "key": "zamanlanmis-olaylar", "title": "Zamanlanmış Olaylar", "description": "Geleceğe yönelik olaylar", "icon": "EventSchedule" },
+        { "key": "zamanlanmis-istekler", "title": "Zamanlanmış İstekler", "description": "Geleceğe yönelik istekler", "icon": "Calendar" },
+        { "key": "otomatik-teknisyen-atama", "title": "Otomatik Teknisyen Atama", "description": "Otomatik Teknisyen Atama", "icon": "UserFollow" },
+        { "key": "varlik-yonetimi", "title": "Varlık Yönetimi", "description": "Varlık bilgilerini tek noktadan yönetin.", "icon": "Asset" }
+      ]
+    },
+    {
+      "label": "Hizmet İlişkileri Yönetimi",
+      "items": [
+        { "key": "musteriler", "title": "Müşteriler", "description": "Dış Müşteri Hesapları", "icon": "UserMultiple" },
+        { "key": "musteri-hizmet-sozlesmeleri", "title": "Müşteri Hizmet Sözleşmeleri", "description": "Müşteri Sözleşmelerini Yönet", "icon": "Document" },
+        { "key": "hizmet-planlari", "title": "Hizmet Planları", "description": "Hizmet Paketleri Yönet", "icon": "Box" }
+      ]
+    }
+  ]
+}

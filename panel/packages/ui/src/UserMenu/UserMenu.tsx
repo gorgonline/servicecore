@@ -65,7 +65,7 @@ export function UserMenu({
           {initials}
         </Avatar>
         <div className={styles.headerText}>
-          <Text size="sm" weight="semibold">
+          <Text size="sm" weight="medium">
             {name}
           </Text>
           {email ? (

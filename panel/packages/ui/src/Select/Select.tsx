@@ -1,9 +1,10 @@
 import { Select as AntSelect } from "antd";
 import type { SelectProps as AntSelectProps, RefSelectProps } from "antd";
-import { ChevronDown, Close, Checkmark } from "@carbon/icons-react";
-import { forwardRef } from "react";
+import { ChevronDown, Close, Checkmark, Search } from "@carbon/icons-react";
+import { forwardRef, useMemo, useState } from "react";
 import type { ForwardedRef, ReactElement } from "react";
 import clsx from "clsx";
+import { Input } from "../Input";
 import styles from "./Select.module.css";
 
 export type SelectSize = "small" | "middle" | "large";
@@ -22,6 +23,11 @@ export interface SelectProps<
   size?: SelectSize;
   /** Validation status */
   status?: SelectStatus;
+  /** Aramayı selector'a inline yazmak yerine dropdown'ın İÇİNE ayrı bir "Ara"
+   * kutusu olarak koyar; options'ı label'a göre filtreler. Selector typeable olmaz. */
+  searchInPopup?: boolean;
+  /** searchInPopup arama kutusu placeholder'ı. Default "Ara". */
+  searchPlaceholder?: string;
 }
 
 const SIZE_CLASS: Partial<Record<SelectSize, string>> = {
@@ -53,17 +59,64 @@ function SelectImpl<ValueType, OptionType extends { label?: unknown; value?: unk
     suffixIcon,
     removeIcon,
     menuItemSelectedIcon,
+    searchInPopup,
+    searchPlaceholder = "Ara",
+    options,
+    dropdownRender,
+    onDropdownVisibleChange,
+    showSearch,
     ...rest
   }: SelectProps<ValueType, OptionType>,
   ref: ForwardedRef<RefSelectProps>,
 ) {
+  const [search, setSearch] = useState("");
+
+  // searchInPopup: option'ları label'a göre BİZ filtreliyoruz (selector typeable
+  // olmasın; arama dropdown içindeki kutuda).
+  const filteredOptions = useMemo(() => {
+    if (!searchInPopup || !options) return options;
+    const q = search.trim().toLocaleLowerCase("tr");
+    if (!q) return options;
+    return (options as { label?: unknown; value?: unknown }[]).filter((o) =>
+      String(o.label ?? o.value ?? "").toLocaleLowerCase("tr").includes(q),
+    ) as typeof options;
+  }, [searchInPopup, options, search]);
+
+  const popupRender = searchInPopup
+    ? (menu: ReactElement) => (
+        <>
+          {/* keydown stopPropagation → yazılan harf/ok/Enter Select navigasyonunu tetiklemesin */}
+          <div className={styles.popupSearch} onKeyDown={(e) => e.stopPropagation()}>
+            <Input
+              size="small"
+              autoFocus
+              allowClear
+              prefix={<Search size={16} />}
+              placeholder={searchPlaceholder}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+          {menu}
+        </>
+      )
+    : dropdownRender;
+
   return (
     <AntSelect
       ref={ref}
       {...rest}
+      options={searchInPopup ? filteredOptions : options}
+      // searchInPopup'ta selector'a yazılmasın — arama kutuda
+      showSearch={searchInPopup ? false : showSearch}
       size={size}
       status={status || undefined}
       popupClassName={styles.dropdown}
+      dropdownRender={popupRender}
+      onDropdownVisibleChange={(open) => {
+        if (!open) setSearch(""); // kapanınca aramayı sıfırla
+        onDropdownVisibleChange?.(open);
+      }}
       // Default Carbon ikonları; custom verilirse override
       suffixIcon={suffixIcon ?? <ChevronDown />}
       removeIcon={removeIcon ?? <Close />}

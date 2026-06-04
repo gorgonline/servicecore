@@ -110,6 +110,14 @@
 
 /* ── Multiple/tags mode — tag stilini ServiceCore'a uyar ── */
 
+/* Size class'ı selector'a sabit `height` veriyor; multiple'da tag'ler 2. satıra
+ * sarınca kutu büyümeyip taşıyordu. height: auto + min-height ile düzelt. */
+.select:global(.ant-select-multiple) :global(.ant-select-selector) {
+  height: auto !important;
+  min-height: var(--sc-control-height-md) !important;
+  padding-block: 3px !important;
+}
+
 .select:global(.ant-select-multiple) :global(.ant-select-selection-item) {
   background: var(--sc-color-accent-subtle) !important;
   color: var(--sc-color-accent) !important;
@@ -118,6 +126,7 @@
   font-size: var(--sc-font-size-xs) !important;
   font-weight: var(--sc-font-weight-medium) !important;
   padding-inline: var(--sc-space-2) !important;
+  margin-block: 2px !important;
 }
 
 .select:global(.ant-select-multiple) :global(.ant-select-selection-item-remove) {
@@ -150,6 +159,12 @@
   border-radius: var(--sc-radius-md) !important;
   border: 1px solid var(--sc-color-border-default) !important;
   box-shadow: var(--sc-shadow-md) !important;
+}
+
+/* searchInPopup — dropdown içindeki arama kutusu (option listesinin üstünde) */
+.popupSearch {
+  padding: var(--sc-space-2);
+  border-bottom: 1px solid var(--sc-color-border-subtle);
 }
 
 .dropdown :global(.ant-select-item) {

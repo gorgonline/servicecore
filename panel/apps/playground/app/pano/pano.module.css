@@ -61,8 +61,13 @@
 
 .widgetGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--sc-space-4);
+}
+
+/* Geniş widget — 3'lü grid'de 2 kolon kaplar (ör. trend grafiği). */
+.widgetWide {
+  grid-column: span 2;
 }
 
 /* Kategori/SLA/liste widget'ları artık @servicecoreui/ui/charts bileşenleriyle
@@ -75,6 +80,15 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .widgetGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .widgetGrid {
     grid-template-columns: 1fr;
+  }
+  .widgetWide {
+    grid-column: span 1;
   }
 }

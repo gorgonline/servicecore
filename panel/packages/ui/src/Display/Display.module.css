@@ -1,6 +1,7 @@
 .display {
   font-family: var(--sc-font-sans);
-  font-weight: var(--sc-font-weight-semibold);
+  /* Type sistemi tavanı = medium (bold/semibold typo'da kullanılmaz). */
+  font-weight: var(--sc-font-weight-medium);
   color: var(--sc-color-text-primary);
   letter-spacing: var(--sc-letter-spacing-tighter);
   line-height: var(--sc-line-height-tight);

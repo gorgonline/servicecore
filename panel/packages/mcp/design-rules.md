@@ -44,6 +44,8 @@ Bütün token listesi için `get_tokens` tool'u çağır.
 
 `Heading`, `Display`, `Text`, `Eyebrow`, `Code` — hepsi server-safe (RSC uyumlu), AntD'siz.
 
+**Ağırlık tavanı = medium (500).** Tip sisteminde `semibold`/`bold` KULLANILMAZ; vurgu boyut + renk + `medium` ile yapılır. `Text` ağırlığı yalnız `regular | medium`; `Heading`/`Display` medium. (`--sc-font-weight-semibold/bold` token'ları geriye uyum için durur ama değerleri 500.)
+
 ### 4. Icon: Carbon Design System
 
 ```tsx

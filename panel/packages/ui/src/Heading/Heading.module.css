@@ -1,6 +1,8 @@
 .heading {
   font-family: var(--sc-font-sans);
-  font-weight: var(--sc-font-weight-semibold);
+  /* Type sistemi tavanı = medium (bold/semibold typo'da kullanılmaz; ayrım
+   * boyut + renk ile). Geist diliyle de uyumlu. */
+  font-weight: var(--sc-font-weight-medium);
   color: var(--sc-color-text-primary);
   letter-spacing: var(--sc-letter-spacing-tight);
   margin: 0;
@@ -38,5 +40,4 @@
   font-size: var(--sc-font-size-md);
   line-height: var(--sc-line-height-snug);
   letter-spacing: var(--sc-letter-spacing-normal);
-  font-weight: var(--sc-font-weight-medium);
 }

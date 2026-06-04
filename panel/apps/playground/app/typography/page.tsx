@@ -28,7 +28,8 @@ const TEXT_SIZES: { size: TextSize; desc: string }[] = [
   { size: "xs", desc: "12px · küçük metin / caption" },
 ];
 
-const TEXT_WEIGHTS: TextWeight[] = ["regular", "medium", "semibold", "bold"];
+// Type sistemi tavanı = medium (semibold/bold typo'dan kaldırıldı).
+const TEXT_WEIGHTS: TextWeight[] = ["regular", "medium"];
 
 const TEXT_COLORS: TextColor[] = [
   "primary",

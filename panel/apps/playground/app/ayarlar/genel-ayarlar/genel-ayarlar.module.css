@@ -1,0 +1,51 @@
+/* Genel Ayarlar detay — page header crumb + body + yardım Drawer.
+   Form yapısı SettingsForm bileşeninde. */
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-space-2);
+  min-width: 0;
+}
+
+.crumbLink {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-size: var(--sc-font-size-sm);
+  font-weight: var(--sc-font-weight-medium);
+  color: var(--sc-color-accent);
+}
+
+.crumbLink:hover {
+  text-decoration: underline;
+}
+
+.crumbCurrent {
+  font-size: var(--sc-font-size-sm);
+  font-weight: var(--sc-font-weight-medium);
+  color: var(--sc-color-text-secondary);
+}
+
+.crumbSep {
+  flex-shrink: 0;
+  color: var(--sc-color-text-tertiary);
+}
+
+.body {
+  padding: var(--sc-space-6);
+}
+
+/* ── Yardım Drawer ── */
+.help {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-4);
+}
+
+.helpSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-1);
+}

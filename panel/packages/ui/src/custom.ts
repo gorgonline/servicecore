@@ -16,6 +16,7 @@
 export * from "./Brand";
 export * from "./Kbd";
 export * from "./ListItem";
+export * from "./NavCard";
 export * from "./PageHeader";
 export * from "./RecentPanels";
 export * from "./SearchableMenu";

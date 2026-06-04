@@ -126,7 +126,7 @@ function TicketDetailMock() {
             </div>
             <div className={styles.commentBody}>
               <div className={styles.commentHeader}>
-                <Text size="sm" weight="semibold">
+                <Text size="sm" weight="medium">
                   Mehmet K.
                 </Text>
                 <Text size="xs" color="tertiary">
@@ -145,7 +145,7 @@ function TicketDetailMock() {
             </div>
             <div className={styles.commentBody}>
               <div className={styles.commentHeader}>
-                <Text size="sm" weight="semibold">
+                <Text size="sm" weight="medium">
                   Ayşe T.
                 </Text>
                 <Text size="xs" color="tertiary">

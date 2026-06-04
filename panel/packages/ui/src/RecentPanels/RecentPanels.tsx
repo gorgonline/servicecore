@@ -209,7 +209,7 @@ export function RecentPanels({
     <div className={styles.panel}>
       <div className={styles.header}>
         <span className={styles.headerTitle}>
-          <Text size="sm" weight="semibold">
+          <Text size="sm" weight="medium">
             {title}
           </Text>
           {list.length > 0 ? (

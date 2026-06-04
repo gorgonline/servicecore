@@ -11,8 +11,8 @@
  * Affix/BackTop demoları window scroll'a bağlı — internal scroll kabı bunları
  * bozardı.
  *
- * İstisna: /shell tam-ekran panel önizlemesidir, kendi chrome'u vardır →
- * docs kabuğuna sarılmaz, children doğrudan döner.
+ * İstisna: /pano · /kayitlar · /ayarlar tam-ekran panel sayfalarıdır (kendi chrome'u
+ * PanelShell'de) → docs kabuğuna sarılmaz, children doğrudan döner.
  * ════════════════════════════════════════════════════════════════════════ */
 
 import { useState } from "react";
@@ -22,16 +22,19 @@ import { usePathname } from "next/navigation";
 import { Search, Dashboard, ArrowUpRight } from "@carbon/icons-react";
 import { VERSION } from "@servicecoreui/ui";
 import { Input } from "@servicecoreui/ui/wraps";
-import { navGroups } from "./nav";
+import { appPages, navGroups } from "./nav";
 import styles from "./DocsShell.module.css";
 
 export function DocsShell({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const [query, setQuery] = useState("");
 
-  // /shell ve /kayitlar: tam-ekran panel sayfaları, kendi chrome'u var → kabuğa sarma.
+  // /pano · /kayitlar · /ayarlar: tam-ekran panel sayfaları, kendi chrome'u (PanelShell) var.
   const isFullBleed =
-    (pathname?.startsWith("/shell") || pathname?.startsWith("/kayitlar")) ?? false;
+    (pathname?.startsWith("/pano") ||
+      pathname?.startsWith("/kayitlar") ||
+      pathname?.startsWith("/ayarlar")) ??
+    false;
 
   const q = query.trim().toLocaleLowerCase("tr");
   const matches = (name: string) => q === "" || name.toLocaleLowerCase("tr").includes(q);
@@ -44,8 +47,8 @@ export function DocsShell({ children }: { children: ReactNode }) {
     .filter((group) => group.items.length > 0);
 
   const showStart = matches("Başlarken");
-  const showShell = matches("Shell") || matches("Panel");
-  const hasResults = showStart || showShell || filteredGroups.length > 0;
+  const filteredPages = appPages.filter((p) => matches(p.name));
+  const hasResults = showStart || filteredPages.length > 0 || filteredGroups.length > 0;
 
   if (isFullBleed) {
     return <>{children}</>;
@@ -66,7 +69,7 @@ export function DocsShell({ children }: { children: ReactNode }) {
 
         <div className={styles.topbarSpacer} />
 
-        <Link href="/shell" className={styles.topbarLink}>
+        <Link href="/pano" className={styles.topbarLink}>
           <Dashboard size={16} />
           Panel Önizleme
         </Link>
@@ -97,6 +100,23 @@ export function DocsShell({ children }: { children: ReactNode }) {
               </Link>
             ) : null}
 
+            {/* Sayfalar — yeniden tasarladığımız gerçek panel sayfaları */}
+            {filteredPages.length > 0 ? (
+              <div className={styles.navGroup}>
+                <span className={styles.navGroupLabel}>Sayfalar</span>
+                {filteredPages.map((page) => (
+                  <Link
+                    key={page.href}
+                    href={page.href}
+                    className={`${styles.navItem} ${isActive(page.href) ? styles.navItemActive : ""}`}
+                    aria-current={isActive(page.href) ? "page" : undefined}
+                  >
+                    {page.name}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+
             {filteredGroups.map((group) => (
               <div key={group.label} className={styles.navGroup}>
                 <span className={styles.navGroupLabel}>{group.label}</span>
@@ -112,19 +132,6 @@ export function DocsShell({ children }: { children: ReactNode }) {
                 ))}
               </div>
             ))}
-
-            {showShell ? (
-              <div className={styles.navGroup}>
-                <span className={styles.navGroupLabel}>Application</span>
-                <Link
-                  href="/shell"
-                  className={`${styles.navItem} ${isActive("/shell") ? styles.navItemActive : ""}`}
-                  aria-current={isActive("/shell") ? "page" : undefined}
-                >
-                  Shell — Panel Önizleme
-                </Link>
-              </div>
-            ) : null}
 
             {!hasResults ? (
               <p className={styles.navEmpty}>

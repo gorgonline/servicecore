@@ -22,7 +22,7 @@ import {
   Book,
   Calendar,
   Catalog,
-  ChartColumn,
+  Settings,
   Chat,
   CheckmarkOutline,
   ChevronDown,
@@ -52,6 +52,7 @@ import {
 } from "@carbon/icons-react";
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
+import { useRouter } from "next/navigation";
 import {
   Brand,
   CommandPalette,
@@ -59,7 +60,7 @@ import {
   TimeTracker,
   UserMenu,
 } from "@servicecoreui/ui/custom";
-import { Avatar, Badge, Button, Dropdown, Menu } from "@servicecoreui/ui/wraps";
+import { Avatar, Badge, Button, Dropdown, Menu, Tooltip } from "@servicecoreui/ui/wraps";
 import type { MenuProps } from "@servicecoreui/ui/wraps";
 import styles from "./PanelShell.module.css";
 
@@ -191,6 +192,7 @@ export interface PanelShellProps {
 }
 
 export function PanelShell({ children, activeNav }: PanelShellProps) {
+  const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [lang, setLang] = useState<"tr" | "en">("tr");
@@ -227,14 +229,16 @@ export function PanelShell({ children, activeNav }: PanelShellProps) {
           }}
         >
           {collapsed ? null : <Brand />}
-          <Button
-            type="text"
-            onClick={() => setCollapsed((c) => !c)}
-            leadingIcon={
-              collapsed ? <SidePanelOpen size={18} /> : <SidePanelClose size={18} />
-            }
-            aria-label={collapsed ? "Menüyü genişlet" : "Menüyü daralt"}
-          />
+          <Tooltip title={collapsed ? "Menüyü genişlet" : "Menüyü daralt"} placement="right">
+            <Button
+              type="text"
+              onClick={() => setCollapsed((c) => !c)}
+              leadingIcon={
+                collapsed ? <SidePanelOpen size={18} /> : <SidePanelClose size={18} />
+              }
+              aria-label={collapsed ? "Menüyü genişlet" : "Menüyü daralt"}
+            />
+          </Tooltip>
         </div>
 
         <div className={styles.spacer} />
@@ -244,39 +248,52 @@ export function PanelShell({ children, activeNav }: PanelShellProps) {
             En sık global eylemler başta; bildirim profile bitişik (konvansiyon). */}
         <div className={styles.utilities}>
           {/* 1 — Keşfet & oluştur */}
-          <Button
-            type="text"
-            leadingIcon={<Search size={18} />}
-            aria-label="Ara"
-            onClick={() => setSearchOpen(true)}
-          />
+          <Tooltip title="Ara" placement="bottom">
+            <Button
+              type="text"
+              leadingIcon={<Search size={18} />}
+              aria-label="Ara"
+              onClick={() => setSearchOpen(true)}
+            />
+          </Tooltip>
           <Dropdown menu={createMenu} trigger={["click"]} placement="bottomRight">
             <Button
               type="primary"
               shape="circle"
               leadingIcon={<Add size={18} />}
               aria-label="Yeni oluştur"
+              title="Yeni oluştur"
             />
           </Dropdown>
 
           <span className={styles.navDivider} />
 
           {/* 2 — İş araçları */}
-          <Button type="text" leadingIcon={<Calendar size={18} />} aria-label="Takvim" />
-          <Button type="text" leadingIcon={<ChartColumn size={18} />} aria-label="Raporlar" />
+          <Tooltip title="Takvim" placement="bottom">
+            <Button type="text" leadingIcon={<Calendar size={18} />} aria-label="Takvim" />
+          </Tooltip>
+          <Tooltip title="Ayarlar" placement="bottom">
+            <Button
+              type="text"
+              leadingIcon={<Settings size={18} />}
+              aria-label="Ayarlar"
+              onClick={() => router.push("/ayarlar")}
+            />
+          </Tooltip>
           <TimeTracker initialTimers={TIMERS}>
             <Button
               type="text"
               leadingIcon={<Time size={18} />}
               aria-label="Zaman Makinesi"
+              title="Zaman Makinesi"
             />
           </TimeTracker>
 
           <span className={styles.navDivider} />
 
           {/* 3 — Sistem & kişisel */}
-          {/* Dil — selectable Dropdown (aktif dil işaretli); overlay tetikleyicisi
-              olduğu için Tooltip yerine native title. */}
+          {/* Dil — selectable Dropdown (aktif dil işaretli). Tooltip overlay'in
+              İÇİNDE, forwardRef Button'ı direkt sarar → ref zinciri çözülür. */}
           <Dropdown
             trigger={["click"]}
             placement="bottomRight"
@@ -297,7 +314,9 @@ export function PanelShell({ children, activeNav }: PanelShellProps) {
               title={lang === "tr" ? "Dil — Türkçe" : "Language — English"}
             />
           </Dropdown>
-          <Button type="text" leadingIcon={<Help size={18} />} aria-label="Yardım" />
+          <Tooltip title="Yardım" placement="bottom">
+            <Button type="text" leadingIcon={<Help size={18} />} aria-label="Yardım" />
+          </Tooltip>
           <NotificationCenter activities={NOTIF_ACTIVITIES}>
             <Button
               type="text"
@@ -307,6 +326,7 @@ export function PanelShell({ children, activeNav }: PanelShellProps) {
                 </Badge>
               }
               aria-label="Bildirimler"
+              title="Bildirimler"
             />
           </NotificationCenter>
 
@@ -320,7 +340,12 @@ export function PanelShell({ children, activeNav }: PanelShellProps) {
             items={USER_ITEMS}
             actions={USER_ACTIONS}
           >
-            <button type="button" className={styles.profile}>
+            <button
+              type="button"
+              className={styles.profile}
+              aria-label="Hesap menüsü — Ayşe Yıldız"
+              title="Hesap menüsü"
+            >
               <Avatar size="small" tone="accent">
                 AY
               </Avatar>

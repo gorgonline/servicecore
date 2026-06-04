@@ -916,7 +916,7 @@ export default function DropdownsPage() {
                 <div style={{ display: "flex", gap: "var(--sc-space-3)", alignItems: "center" }}>
                   <Book />
                   <div style={{ flex: 1 }}>
-                    <Text size="sm" weight="semibold">
+                    <Text size="sm" weight="medium">
                       Print Server Bağlantı Hatalarını Çözme
                     </Text>
                     <Text size="xs" color="tertiary">

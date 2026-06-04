@@ -14,7 +14,7 @@ import {
   Code,
   VERSION,
 } from "@servicecoreui/ui";
-import { componentCount } from "./_components/nav";
+import { appPages, componentCount } from "./_components/nav";
 import styles from "./home.module.css";
 
 /* ────────────────────────────────────────────────
@@ -42,14 +42,6 @@ const principles = [
     title: "Carbon ikon + açık tema",
     desc: "İkonlar @carbon/icons-react. Tek tema: açık. Layout CSS Modules ile — Tailwind yok.",
   },
-];
-
-const quickLinks = [
-  { name: "Tokens", href: "/tokens", desc: "Renk, radius, spacing, type" },
-  { name: "Typography", href: "/typography", desc: "Heading, Display, Text, Eyebrow" },
-  { name: "Button", href: "/buttons", desc: "İlk wrap — type hiyerarşisi" },
-  { name: "Table", href: "/table", desc: "ITSM omurgası — sort/filter/pagination" },
-  { name: "Shell — Panel Önizleme", href: "/shell", desc: "Gerçek panel iskeleti, uçtan uca" },
 ];
 
 const installSnippet = `# npm.js (public) — kurulum
@@ -148,13 +140,16 @@ export default function HomePage() {
         <Code block>{mcpSnippet}</Code>
       </section>
 
-      {/* ── Nereden başlamalı ── */}
+      {/* ── Sayfalar ── */}
       <section className={styles.section}>
         <div className={styles.sectionHead}>
-          <Heading level={2}>Nereden başlamalı</Heading>
+          <Heading level={2}>Sayfalar</Heading>
+          <Text size="md" color="secondary">
+            Bu kütüphaneyle yeniden tasarladığımız panel sayfaları — uçtan uca önizleme.
+          </Text>
         </div>
         <div className={styles.quickGrid}>
-          {quickLinks.map((link) => (
+          {appPages.map((link) => (
             <Link key={link.href} href={link.href} className={styles.quickLink}>
               <span className={styles.quickLinkBody}>
                 <span className={styles.quickLinkName}>{link.name}</span>

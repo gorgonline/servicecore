@@ -116,11 +116,13 @@ export const lineHeight = {
   relaxed: 1.625,
 } as const;
 
+// Tip rampası TAVANI = medium (500). semibold/bold tasarım kararıyla medium'a denk
+// (chrome dâhil daha kalın yazı yok). theme.ts fontWeightStrong bunu okur → AntD da medium.
 export const fontWeight = {
   regular:  400,
   medium:   500,
-  semibold: 600,
-  bold:     700,
+  semibold: 500,
+  bold:     500,
 } as const;
 
 export const letterSpacing = {
