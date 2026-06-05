@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Jira Alternatifi | Türkiye'nin Tek On-Prem Çözümü — ServiceCore",
-    "description": "Atlassian Jira Data Center 2026 Mart'ta yeni satışa kapanıyor. ServiceCore; Türkçe arayüz, KVKK uyumlu on-prem kurulum ve sıfır veri kaybı garantili migration ile agile dönüşümünüze kesintisiz devam ettirir."
+    "description": "Atlassian Jira Data Center 30 Mart 2026'da yeni satışa kapandı, 28 Mart 2029'da read-only moda geçiyor. ServiceCore; Türkçe arayüz, KVKK uyumlu on-prem kurulum ve sıfır veri kaybı garantili migration ile agile dönüşümünüze kesintisiz devam ettirir."
   },
   "hero": {
     "badge": "JIRA ALTERNATIFI",
     "titleLead": "Türkiye'nin",
     "titleHighlight": "tek on-prem Jira alternatifi",
     "titleTrail": "ile agile dönüşümünüze devam edin.",
-    "lead": "Atlassian Jira Server kapandı, Data Center 30 Mart 2026'da yeni satışlara kapanıyor ve 2029'da read-only moda geçiyor. ServiceCore; tüm Jira verilerinizi eksiksiz alır, Türkçe arayüzde, kendi sunucunuzda kurumsal proje yönetimini kesintisiz sürdürür.",
+    "lead": "Atlassian Jira Server'ın desteği bitti, Data Center 30 Mart 2026'da yeni satışlara kapandı ve 28 Mart 2029'da read-only moda geçiyor. ServiceCore; tüm Jira verilerinizi eksiksiz alır, Türkçe arayüzde, kendi sunucunuzda kurumsal proje yönetimini kesintisiz sürdürür.",
     "primaryCta": {
       "label": "Migration Demosu İste",
       "href": "/demo"
@@ -36,37 +36,37 @@
     "subtitle": "Atlassian'ın açıkladığı resmi geçiş takvimi, on-prem Jira kullanan kurumlar için kritik tarihler içeriyor.",
     "milestones": [
       {
-        "date": "Şubat 2024",
-        "title": "Jira Server tamamen sonlandırıldı",
-        "description": "Atlassian, Jira Server ürün ailesini End-of-Life olarak ilan etti. Sunucu kurulumlu Jira artık güncelleme ve güvenlik yaması almıyor.",
+        "date": "15 Şubat 2024",
+        "title": "Jira Server desteği tamamen sonlandı",
+        "description": "Atlassian, Jira Server desteğini sonlandırdı (resmî terim: End of Support). Sunucu kurulumlu Jira artık güncelleme, geliştirme veya güvenlik yaması almıyor; indirilebilen son sürüm Jira 9.12.",
         "tone": "past"
       },
       {
         "date": "17 Şubat 2026",
-        "title": "Yüzde 15 fiyat zammı yürürlüğe girdi",
-        "description": "Data Center lisans ücretlerine küresel ölçekte yüzde 15 zam uygulandı. USD bazlı fiyatlama Türkiye'deki kurumlar için ek kur riski yaratıyor.",
+        "title": "Yüzde 15 ve üzeri fiyat zammı yürürlüğe girdi",
+        "description": "Atlassian, 17 Şubat 2026'dan itibaren yenilemelerde Data Center fiyatlarını artırdı: standart liste fiyatlarında ~%15, eski 'Advantage' fiyatlamada %40'a varan zam. USD bazlı fiyatlama Türkiye'deki kurumlar için ek kur riski yaratıyor.",
         "tone": "past"
       },
       {
         "date": "30 Mart 2026",
-        "title": "Data Center yeni satışları kapanıyor",
-        "description": "Atlassian, Jira Data Center için yeni müşteri kabulünü durduruyor. Bu tarihten sonra Data Center lisansı satın alma seçeneği bulunmuyor.",
-        "tone": "imminent"
+        "title": "Data Center yeni satışları kapandı",
+        "description": "Atlassian, Jira Data Center için yeni müşteri kabulünü durdurdu. Bu tarihten itibaren yeni müşteriler Data Center lisansı satın alamıyor.",
+        "tone": "past"
       },
       {
         "date": "30 Mart 2028",
         "title": "Mevcut müşteriler için son lisans alımı",
-        "description": "Mevcut Data Center müşterileri yalnızca bu tarihe kadar lisans yenileyebilir ya da kullanıcı eklemesi yapabilir.",
-        "tone": "future"
+        "description": "Mevcut müşteriler bu tarihten sonra yeni lisans, yeni Marketplace uygulaması veya kullanıcı genişletmesi satın alamıyor; mevcut abonelikler 2029'a kadar yenilenebiliyor.",
+        "tone": "imminent"
       },
       {
         "date": "28 Mart 2029",
         "title": "Data Center read-only moda geçiyor",
-        "description": "Tüm Data Center kurulumları salt-okunur hale geliyor. Yeni issue açma, workflow güncelleme ve operasyonel kullanım sona eriyor.",
+        "description": "Etkilenen Data Center ürünleri (Jira Software, Jira Service Management, Confluence dahil) salt-okunur hale geliyor. Yeni issue açma, workflow güncelleme ve operasyonel kullanım sona eriyor.",
         "tone": "future"
       }
     ],
-    "footnote": "Kaynak: Atlassian resmi ürün yaşam döngüsü duyuruları (Cloud Migration Strategy 2024–2029)."
+    "footnote": "Kaynak: Atlassian resmi duyuruları — \"Atlassian Ascend\" Data Center yaşam döngüsü takvimi (8 Eylül 2025) ve atlassian.com/licensing/data-center-end-of-life."
   },
   "comparison": {
     "id": "karsilastirma",
