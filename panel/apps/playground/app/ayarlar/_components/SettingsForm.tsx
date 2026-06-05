@@ -15,7 +15,7 @@
  * ════════════════════════════════════════════════════════════════════════ */
 
 import { createContext, useContext, useState } from "react";
-import { Add, Checkmark, Search } from "@carbon/icons-react";
+import { Add, Checkmark, ChevronDown, Search } from "@carbon/icons-react";
 import { Heading, Text } from "@servicecoreui/ui";
 import {
   Button,
@@ -24,7 +24,6 @@ import {
   ColorPicker,
   Input,
   InputNumber,
-  Menu,
   Select,
   Switch,
   Upload,
@@ -331,6 +330,7 @@ export function SettingsForm({ tabs }: { tabs: SettingsTab[] }) {
   const setValue = (k: string, v: boolean) => setValues((prev) => ({ ...prev, [k]: v }));
   const [activeTab, setActiveTab] = useState(() => tabs[0]?.key ?? "");
   const [activeSection, setActiveSection] = useState(() => tabs[0]?.sections[0]?.key ?? "");
+  const [openAreas, setOpenAreas] = useState<string[]>(() => (tabs[0] ? [tabs[0].key] : []));
   const [query, setQuery] = useState("");
 
   const area = tabs.find((t) => t.key === activeTab) ?? tabs[0];
@@ -338,9 +338,13 @@ export function SettingsForm({ tabs }: { tabs: SettingsTab[] }) {
 
   if (!area) return null;
 
-  const selectArea = (t: SettingsTab) => {
-    setActiveTab(t.key);
-    setActiveSection(t.sections[0]?.key ?? "");
+  const toggleArea = (key: string) =>
+    setOpenAreas((p) => (p.includes(key) ? p.filter((k) => k !== key) : [...p, key]));
+
+  const selectSection = (tabKey: string, sectionKey: string) => {
+    setActiveTab(tabKey);
+    setActiveSection(sectionKey);
+    setOpenAreas((p) => (p.includes(tabKey) ? p : [...p, tabKey]));
     setQuery("");
   };
 
@@ -352,33 +356,44 @@ export function SettingsForm({ tabs }: { tabs: SettingsTab[] }) {
   return (
     <SwitchCtx.Provider value={{ values, setValue }}>
       <div className={styles.shell}>
-        {/* İki seviyeli sol-nav: alanlar → (aktif alanın) bölümleri */}
+        {/* Sol-nav: alanlar = açılır gruplar, bölümler = tree-girintili öğeler
+            (DocsShell deseniyle aynı). */}
         <div className={styles.nav}>
-          <Menu
-            mode="inline"
-            selectedKeys={[`${activeTab}::${activeSection}`]}
-            openKeys={[activeTab]}
-            onOpenChange={(keys) => {
-              const opened = (keys as string[]).find((k) => k !== activeTab);
-              const t = opened ? tabs.find((x) => x.key === opened) : undefined;
-              if (t) selectArea(t);
-            }}
-            onClick={({ key }) => {
-              const [tabKey = "", sectionKey = ""] = String(key).split("::");
-              if (!sectionKey) return;
-              setActiveTab(tabKey);
-              setActiveSection(sectionKey);
-              setQuery("");
-            }}
-            items={tabs.map((t) => ({
-              key: t.key,
-              label: t.label,
-              children: t.sections.map((s) => ({
-                key: `${t.key}::${s.key}`,
-                label: s.title ?? "Genel",
-              })),
-            }))}
-          />
+          {tabs.map((t) => {
+            const open = openAreas.includes(t.key);
+            return (
+              <div key={t.key} className={styles.navGroup}>
+                <button
+                  type="button"
+                  className={styles.navGroupToggle}
+                  onClick={() => toggleArea(t.key)}
+                  aria-expanded={open}
+                >
+                  <span>{t.label}</span>
+                  <ChevronDown
+                    size={14}
+                    className={`${styles.navChevron} ${open ? styles.navChevronOpen : ""}`}
+                  />
+                </button>
+                {open ? (
+                  <div className={styles.navGroupItems}>
+                    {t.sections.map((s) => (
+                      <button
+                        key={s.key}
+                        type="button"
+                        className={`${styles.navItem} ${
+                          activeTab === t.key && activeSection === s.key ? styles.navItemActive : ""
+                        }`}
+                        onClick={() => selectSection(t.key, s.key)}
+                      >
+                        {s.title ?? "Genel"}
+                      </button>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
         </div>
 
         {/* Sağ içerik: arama + seçili bölüm (veya arama sonuçları) + Kaydet */}

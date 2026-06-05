@@ -32,10 +32,25 @@ interface ComponentSpec {
   description: string;
 }
 
+interface PageFile {
+  path: string;
+  content: string;
+}
+
+interface PageBundle {
+  name: string;
+  title: string;
+  route: string;
+  description: string;
+  files: PageFile[];
+}
+
 interface Catalog {
   uiPackage: string;
   uiVersion: string;
   components: Record<string, ComponentSpec>;
+  pages: Record<string, PageBundle>;
+  pageInstall: string;
   tokens: string;
   rules: string;
 }
@@ -105,6 +120,27 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       description:
         "CSS design token'ları (renk, spacing, radius, typography, shadow). Hardcoded hex/px yerine bunları kullan.",
       inputSchema: { type: "object", properties: {} },
+    },
+    {
+      name: "list_pages",
+      description:
+        "Hazır SAYFA şablonlarını listeler (login, ayarlar, genel-ayarlar, 404, 500, vb.). Sayfalar bileşen DEĞİL; get_page ile kaynak kod olarak çekilip repoya kopyalanır.",
+      inputSchema: { type: "object", properties: {} },
+    },
+    {
+      name: "get_page",
+      description:
+        "Bir sayfa şablonunun TÜM kaynak dosyalarını (route page + css + data/şema + yerel yapıtaşları: AuthShell, SettingsForm, PanelShell, …) + kurulum notunu döner. AI dosyaları repoya koyar, mock veriyi gerçek API/DTO'ya bağlar.",
+      inputSchema: {
+        type: "object",
+        properties: {
+          name: {
+            type: "string",
+            description: "Sayfa adı (örn: 'login', 'genel-ayarlar', 'kayit', '404')",
+          },
+        },
+        required: ["name"],
+      },
     },
   ],
 }));
@@ -216,6 +252,41 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
         },
       ],
     };
+  }
+
+  if (name === "list_pages") {
+    const list = Object.values(catalog.pages)
+      .map((p) => `- **${p.name}** (\`${p.route}\`) — ${p.description}`)
+      .join("\n");
+    return {
+      content: [
+        {
+          type: "text",
+          text: `# ServiceCore Sayfa Şablonları\n\n${Object.keys(catalog.pages).length} sayfa (kaynak-kod şablon; \`get_page <ad>\` ile çek):\n\n${list}`,
+        },
+      ],
+    };
+  }
+
+  if (name === "get_page") {
+    const pageName = String(args.name ?? "");
+    const page = catalog.pages[pageName];
+    if (!page) {
+      const available = Object.keys(catalog.pages).join(", ");
+      return {
+        content: [{ type: "text", text: `Sayfa '${pageName}' bulunamadı. Mevcut: ${available}` }],
+        isError: true,
+      };
+    }
+    const langOf = (p: string) => {
+      const ext = p.split(".").pop() ?? "";
+      return ext === "tsx" || ext === "ts" || ext === "css" || ext === "json" ? ext : "";
+    };
+    let body = `# ${page.title}\n\nRoute: \`${page.route}\`\n\n${page.description}\n\n${catalog.pageInstall}\n\n## Dosyalar (${page.files.length})\n\n`;
+    for (const f of page.files) {
+      body += `### \`${f.path}\`\n\`\`\`${langOf(f.path)}\n${f.content}\n\`\`\`\n\n`;
+    }
+    return { content: [{ type: "text", text: body }] };
   }
 
   throw new Error(`Bilinmeyen tool: ${name}`);

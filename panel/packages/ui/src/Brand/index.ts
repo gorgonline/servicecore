@@ -1,2 +1,2 @@
-export { Brand } from "./Brand";
+export { Brand, BrandMark } from "./Brand";
 export type { BrandProps } from "./Brand";

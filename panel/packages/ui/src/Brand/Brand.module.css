@@ -31,3 +31,20 @@
   line-height: 1;
   white-space: nowrap;
 }
+
+/* tagline'lı lockup — ad üstte, alt-etiket altta (ikonun sağında hizalı) */
+.lockup {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tagline {
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--sc-color-text-tertiary);
+  line-height: 1;
+  white-space: nowrap;
+}

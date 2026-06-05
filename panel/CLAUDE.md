@@ -32,7 +32,7 @@ ServiceCore'un mevcut paneli için **bileşen kütüphanesi**. Biz panel yazmıy
 ## MCP — AI katalog server'ı (`packages/mcp`)
 `@servicecoreui/mcp` — AI araçlarına (Claude Code, Cursor) `@servicecoreui/ui` kataloğunu açar; AI doğrudan AntD yerine bizim wrap kütüphanesini görür. Kurulum/IDE ayarları: [packages/mcp/README.md](packages/mcp/README.md).
 
-**Tool'lar:** `list_components` · `find_component "<arama>"` · `get_component_spec <Ad>` (source+types+css) · `get_tokens` · `get_design_rules`.
+**Tool'lar:** `list_components` · `find_component "<arama>"` · `get_component_spec <Ad>` (source+types+css) · `get_tokens` · `get_design_rules` · **`list_pages`** · **`get_page <ad>`** (sayfa şablonu = route page + css + data/şema + yerel yapıtaşları, kaynak-kod olarak; manifest `build-catalog.ts`'te, dosyalar `apps/playground/app`'ten okunur).
 
 **Katalog nasıl üretiliyor:** build-time'da `packages/mcp/src/build-catalog.ts`, `packages/ui/src/`'i tarar → `dist/catalog.json`.
 - Bileşen taraması: `src/<Ad>/<Ad>.tsx` (top-level) **ve bir seviye nested** `src/<Kapsayıcı>/<Alt>/<Alt>.tsx` (ör. `Charts/BarChart`).
@@ -112,7 +112,7 @@ export function Button({ variant = 'default', className, ...rest }: ButtonProps)
 - Önce token'la çöz, sonra CSS Module override'a in
 - `!important` gerekirse 5.7 specificity yüzünden — sebebi yorumla yaz
 - Her bileşen için playground'da bir demo sayfası
-- Carbon icon: `@carbon/icons-react` peer dep, AntD `<Icon component={CarbonIcon} />` ile
+- Carbon icon: paketten re-export → `import { Add } from "@servicecoreui/ui/icons"` (consumer Carbon'u ayrı kurmaz; `@carbon/icons-react` artık dependency, build'de external)
 
 ## Komutlar (panel/ içinden)
 - `pnpm dev` — playground başlatır (port 3300)

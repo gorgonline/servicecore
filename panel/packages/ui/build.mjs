@@ -60,6 +60,7 @@ async function main() {
     ...SHARED,
     entryPoints: {
       index: "src/index.ts",
+      icons: "src/icons.ts",
       "theme/index": "src/theme/index.ts",
     },
     format: "esm",
@@ -71,6 +72,7 @@ async function main() {
     ...SHARED,
     entryPoints: {
       index: "src/index.ts",
+      icons: "src/icons.ts",
       "theme/index": "src/theme/index.ts",
     },
     format: "cjs",

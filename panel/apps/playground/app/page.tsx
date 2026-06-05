@@ -14,7 +14,7 @@ import {
   Code,
   VERSION,
 } from "@servicecoreui/ui";
-import { appPages, componentCount } from "./_components/nav";
+import { appPages, settingsPages, authPages, systemPages, componentCount } from "./_components/nav";
 import styles from "./home.module.css";
 
 /* ────────────────────────────────────────────────
@@ -140,16 +140,79 @@ export default function HomePage() {
         <Code block>{mcpSnippet}</Code>
       </section>
 
-      {/* ── Sayfalar ── */}
+      {/* ── Panel Sayfaları ── */}
       <section className={styles.section}>
         <div className={styles.sectionHead}>
-          <Heading level={2}>Sayfalar</Heading>
+          <Heading level={2}>Panel Sayfaları</Heading>
           <Text size="md" color="secondary">
             Bu kütüphaneyle yeniden tasarladığımız panel sayfaları — uçtan uca önizleme.
           </Text>
         </div>
         <div className={styles.quickGrid}>
           {appPages.map((link) => (
+            <Link key={link.href} href={link.href} className={styles.quickLink}>
+              <span className={styles.quickLinkBody}>
+                <span className={styles.quickLinkName}>{link.name}</span>
+                <span className={styles.quickLinkDesc}>{link.desc}</span>
+              </span>
+              <ArrowRight size={16} className={styles.quickLinkArrow} />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Ayarlar Modülü ── */}
+      <section className={styles.section}>
+        <div className={styles.sectionHead}>
+          <Heading level={2}>Ayarlar Modülü</Heading>
+          <Text size="md" color="secondary">
+            Ayar kategorileri + detay sayfaları (data-driven SettingsForm). Zamanla çoğalacak.
+          </Text>
+        </div>
+        <div className={styles.quickGrid}>
+          {settingsPages.map((link) => (
+            <Link key={link.href} href={link.href} className={styles.quickLink}>
+              <span className={styles.quickLinkBody}>
+                <span className={styles.quickLinkName}>{link.name}</span>
+                <span className={styles.quickLinkDesc}>{link.desc}</span>
+              </span>
+              <ArrowRight size={16} className={styles.quickLinkArrow} />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Giriş / Auth Sayfaları ── */}
+      <section className={styles.section}>
+        <div className={styles.sectionHead}>
+          <Heading level={2}>Giriş / Auth Sayfaları</Heading>
+          <Text size="md" color="secondary">
+            Tam-ekran kimlik doğrulama akışı — AuthShell + ortak form bileşenleri.
+          </Text>
+        </div>
+        <div className={styles.quickGrid}>
+          {authPages.map((link) => (
+            <Link key={link.href} href={link.href} className={styles.quickLink}>
+              <span className={styles.quickLinkBody}>
+                <span className={styles.quickLinkName}>{link.name}</span>
+                <span className={styles.quickLinkDesc}>{link.desc}</span>
+              </span>
+              <ArrowRight size={16} className={styles.quickLinkArrow} />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Sistem Sayfaları ── */}
+      <section className={styles.section}>
+        <div className={styles.sectionHead}>
+          <Heading level={2}>Sistem Sayfaları</Heading>
+          <Text size="md" color="secondary">
+            Hata / erişim durumları — 404, 403 ve error boundary (500).
+          </Text>
+        </div>
+        <div className={styles.quickGrid}>
+          {systemPages.map((link) => (
             <Link key={link.href} href={link.href} className={styles.quickLink}>
               <span className={styles.quickLinkBody}>
                 <span className={styles.quickLinkName}>{link.name}</span>

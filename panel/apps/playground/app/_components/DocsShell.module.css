@@ -122,21 +122,78 @@
   flex: 1;
 }
 
+/* Üst başlık: SAYFALAR / BİLEŞENLER */
+.navSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--sc-space-5);
+}
+
+.navSectionTitle {
+  padding: 0 var(--sc-space-3);
+  margin-bottom: var(--sc-space-2);
+  color: var(--sc-color-text-tertiary);
+  font-size: var(--sc-font-size-2xs);
+  font-weight: var(--sc-font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Başlarken üst linki — bölümlerden ayrı küçük boşluk */
+.navTopLink {
+  margin-bottom: var(--sc-space-1);
+}
+
 .navGroup {
   display: flex;
   flex-direction: column;
   gap: 2px;
-  margin-top: var(--sc-space-4);
 }
 
-.navGroupLabel {
-  padding: 0 var(--sc-space-3);
-  margin-bottom: var(--sc-space-1);
+/* Açılır grup başlığı (chevron'lu buton) */
+.navGroupToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--sc-space-2) var(--sc-space-3);
+  border: none;
+  background: transparent;
+  border-radius: var(--sc-radius-md);
+  cursor: pointer;
+  color: var(--sc-color-text-secondary);
+  font-family: var(--sc-font-sans);
+  font-size: var(--sc-font-size-sm);
+  font-weight: var(--sc-font-weight-medium);
+  text-align: start;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.navGroupToggle:hover {
+  background: var(--sc-color-bg-muted);
+  color: var(--sc-color-text-primary);
+}
+
+.navChevron {
+  flex-shrink: 0;
   color: var(--sc-color-text-tertiary);
-  font-size: var(--sc-font-size-2xs);
-  font-weight: var(--sc-font-weight-semibold);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  transform: rotate(-90deg);
+  transition: transform 150ms ease;
+}
+
+.navChevronOpen {
+  transform: rotate(0deg);
+}
+
+/* Grup öğeleri — sol çizgi + girinti (tree görünümü) */
+.navGroupItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 2px 0 var(--sc-space-1) var(--sc-space-4);
+  padding-inline-start: var(--sc-space-2);
+  border-inline-start: 1px solid var(--sc-color-border-subtle);
 }
 
 .navItem {

@@ -37,6 +37,12 @@
   padding: var(--sc-space-6);
 }
 
+/* Kartı dikeyde doldur — kısa içerikte altta gri boşluk kalmasın
+   (navbar + page header + body padding ≈ 170px düşülür). */
+.body :global(.ant-card) {
+  min-height: calc(100vh - 170px);
+}
+
 /* ── Yardım Drawer ── */
 .help {
   display: flex;

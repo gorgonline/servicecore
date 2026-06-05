@@ -30,6 +30,11 @@ function ServiceCoreSymbol({ size }: { size: number }) {
   );
 }
 
+/** ServiceCore sembolü (yalnız ikon/mark) — özel logo lockup'ları için. */
+export function BrandMark({ size = 24 }: { size?: number }) {
+  return <ServiceCoreSymbol size={size} />;
+}
+
 export interface BrandProps extends ComponentPropsWithoutRef<"span"> {
   /**
    * Müşteri logosu (görsel URL).
@@ -39,6 +44,9 @@ export interface BrandProps extends ComponentPropsWithoutRef<"span"> {
   logoSrc?: string;
   /** Logonun yanındaki marka adı. Default: "ServiceCore". */
   name?: string;
+  /** Marka adının ALTINA gelen küçük alt-etiket (ör. "Service Management Suite").
+   * Verilince lockup ikon + (ad / alt-etiket) kolonuna döner. */
+  tagline?: string;
   /** Sembol / logo yüksekliği (px). Default: 24. */
   size?: number;
 }
@@ -57,6 +65,7 @@ export interface BrandProps extends ComponentPropsWithoutRef<"span"> {
 export function Brand({
   logoSrc,
   name = "ServiceCore",
+  tagline,
   size = 24,
   className,
   ...rest
@@ -69,7 +78,14 @@ export function Brand({
       ) : (
         <ServiceCoreSymbol size={size} />
       )}
-      <span className={styles.name}>{name}</span>
+      {tagline ? (
+        <span className={styles.lockup}>
+          <span className={styles.name}>{name}</span>
+          <span className={styles.tagline}>{tagline}</span>
+        </span>
+      ) : (
+        <span className={styles.name}>{name}</span>
+      )}
     </span>
   );
 }

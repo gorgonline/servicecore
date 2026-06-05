@@ -1,0 +1,150 @@
+/* AuthShell — split-screen: sol form, sağ mavi marka paneli. */
+
+.shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Sol: form ── */
+.formSide {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sc-space-8);
+  background: var(--sc-color-bg-base);
+}
+
+.formInner {
+  width: 100%;
+  max-width: 380px;
+}
+
+/* ── Sağ: marka paneli (mavi) ── */
+.brandSide {
+  flex: 1 1 50%;
+  position: relative;
+  overflow: hidden;
+  padding: var(--sc-space-12);
+  background: linear-gradient(
+    150deg,
+    var(--sc-color-primary-500) 0%,
+    var(--sc-color-primary-700) 55%,
+    var(--sc-color-primary-900) 100%
+  );
+  /* panel içeriği için açık (beyaz) renkler — token tabanlı */
+  --sc-color-text-primary: var(--sc-color-text-inverse);
+  --sc-color-accent: var(--sc-color-accent-on-accent);
+  /* Brand tagline (text-tertiary kullanır) mavi üstünde okunur olsun */
+  --sc-color-text-tertiary: color-mix(in srgb, var(--sc-color-text-inverse) 62%, transparent);
+}
+
+/* yumuşak glow orb */
+.glow {
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  top: -140px;
+  right: -120px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--sc-color-accent-on-accent) 22%, transparent),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ince dot pattern */
+.pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--sc-color-accent-on-accent) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--sc-space-10);
+}
+
+/* Logo lockup — ikon + (wordmark / tagline) kolonu */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sc-space-3);
+}
+
+.word {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.wordmark {
+  display: flex;
+  font-size: var(--sc-font-size-3xl);
+  line-height: 1;
+  color: var(--sc-color-text-inverse);
+}
+
+/* Logo wordmark — brand mark; medium-ceiling UI kuralı dışında (iki-tonlu).
+   SERVICE hafif, CORE bold (vurgu CORE'da). */
+.wmService {
+  font-weight: 500;
+}
+.wmCore {
+  font-weight: 700;
+}
+
+/* tagline — kelime boşluğu (justify) DEĞİL, eşit harf tracking ile yayılır */
+.tagline {
+  font-size: var(--sc-font-size-xs);
+  line-height: 1;
+  letter-spacing: 0.09em;
+  color: var(--sc-color-text-inverse);
+  opacity: 0.68;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-4);
+  max-width: 440px;
+}
+
+.eyebrow {
+  font-family: var(--sc-font-mono);
+  font-size: var(--sc-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--sc-color-text-inverse);
+  opacity: 0.7;
+}
+
+.subtitle {
+  opacity: 0.82;
+}
+
+.trust {
+  font-size: var(--sc-font-size-xs);
+  letter-spacing: 0.04em;
+  color: var(--sc-color-text-inverse);
+  opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+  .brandSide {
+    display: none;
+  }
+  .formSide {
+    flex-basis: 100%;
+  }
+}

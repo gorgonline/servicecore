@@ -1,0 +1,124 @@
+/* Login formu (AuthShell sol slot). */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-5);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-1);
+  margin-bottom: var(--sc-space-2);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+}
+
+.label {
+  font-size: var(--sc-font-size-sm);
+  font-weight: var(--sc-font-weight-medium);
+  color: var(--sc-color-text-secondary);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  font-size: var(--sc-font-size-sm);
+  color: var(--sc-color-accent);
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* auth form alt linki (ortalı) */
+.foot {
+  text-align: center;
+  font-size: var(--sc-font-size-sm);
+  color: var(--sc-color-text-secondary);
+}
+
+/* Captcha — faux görsel + yenile (sadece görsel, backend yok) */
+.captchaRow {
+  display: flex;
+  gap: var(--sc-space-2);
+  align-items: center;
+}
+
+.captchaImg {
+  flex: 1;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--sc-color-border-default);
+  border-radius: var(--sc-radius-md);
+  background: var(--sc-color-bg-muted);
+  font-family: var(--sc-font-mono);
+  font-size: var(--sc-font-size-xl);
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.35em;
+  color: var(--sc-color-text-secondary);
+  user-select: none;
+  text-decoration: line-through;
+  text-decoration-color: var(--sc-color-border-strong);
+}
+
+/* Alternatif giriş yöntemleri (Google / SSO) */
+.altMethods {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-space-2);
+}
+
+/* OTP / doğrulama kodu girişi */
+.code {
+  text-align: center;
+  letter-spacing: 0.4em;
+  font-size: var(--sc-font-size-lg);
+}
+
+/* QR kod alanı (ortalı) */
+.qrWrap {
+  display: flex;
+  justify-content: center;
+  padding: var(--sc-space-2) 0;
+}
+
+/* iki kolon alan (ör. Ad / Soyad) */
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sc-space-4);
+}
+
+/* mesaj sayfaları (ortalı: ikon + başlık + metin + buton) */
+.msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sc-space-4);
+}
+
+.msgIconSuccess {
+  color: var(--sc-color-state-success-fg);
+}
+
+.msgIconWarning {
+  color: var(--sc-color-state-warning-fg);
+}

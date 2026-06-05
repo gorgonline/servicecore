@@ -55,6 +55,14 @@
     color var(--sc-duration-fast) var(--sc-easing-default) !important;
 }
 
+/* Inline submenu çocukları — hiyerarşi için ek girinti (parent space-3, çocuk space-6).
+ * AntD'nin seviye-bazlı padding-left'i üstteki padding-inline !important ile ezildiği
+ * için girintiyi burada açıkça veriyoruz. */
+.menu:global(.ant-menu-inline) :global(.ant-menu-sub) :global(.ant-menu-item),
+.menu:global(.ant-menu-inline) :global(.ant-menu-sub) :global(.ant-menu-submenu-title) {
+  padding-inline-start: var(--sc-space-6) !important;
+}
+
 /* Title content — gap'i biz veriyoruz, AntD margin'ını sıfırla.
  * flex: 1 ile kalan alanı doldur → submenu arrow doğal olarak sağ kenara gelir. */
 .menu :global(.ant-menu-title-content) {

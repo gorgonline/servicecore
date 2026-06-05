@@ -46,14 +46,19 @@ Bütün token listesi için `get_tokens` tool'u çağır.
 
 **Ağırlık tavanı = medium (500).** Tip sisteminde `semibold`/`bold` KULLANILMAZ; vurgu boyut + renk + `medium` ile yapılır. `Text` ağırlığı yalnız `regular | medium`; `Heading`/`Display` medium. (`--sc-font-weight-semibold/bold` token'ları geriye uyum için durur ama değerleri 500.)
 
-### 4. Icon: Carbon Design System
+### 4. Icon: Carbon Design System — paketten import et
 
 ```tsx
-import { Add } from '@carbon/icons-react';
+// DOĞRU — ikonlar paketten gelir (Carbon'u ayrı kurma)
+import { Add } from '@servicecoreui/ui/icons';
 <Button leadingIcon={<Add />}>Ekle</Button>
+
+// YANLIŞ — doğrudan Carbon
+import { Add } from '@carbon/icons-react';
 ```
 
-`@ant-design/icons` kullanma — Carbon kullan. Tutarlı çizgi, doluluk, boyut.
+`@servicecoreui/ui/icons`, Carbon Design System ikonlarını re-export eder; tek
+bağımlılık `@servicecoreui/ui`. `@ant-design/icons` kullanma — Carbon kullan.
 
 ### 5. Koyu tema yok
 

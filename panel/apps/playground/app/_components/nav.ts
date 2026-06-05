@@ -147,7 +147,39 @@ export const navGroups: NavGroup[] = [
 export const appPages: NavItem[] = [
   { name: "Pano", href: "/pano", desc: "Dashboard — KPI + grafikler" },
   { name: "Kayıtlar", href: "/kayitlar", desc: "Kayıt tarayıcısı (DataTable)" },
-  { name: "Ayarlar", href: "/ayarlar", desc: "Ayarlar — gruplu kart grid" },
+];
+
+/** Ayarlar modülü — liste + detay sayfaları (zamanla çoğalacak). */
+export const settingsPages: NavItem[] = [
+  { name: "Ayarlar", href: "/ayarlar", desc: "Ayar kategorileri (kart grid)" },
+  { name: "Genel Ayarlar", href: "/ayarlar/genel-ayarlar", desc: "Ayar detayı — SettingsForm (5 sekme)" },
+];
+
+/** Giriş / kimlik doğrulama sayfaları (tam-ekran, AuthShell). */
+export const authPages: NavItem[] = [
+  { name: "Giriş", href: "/giris", desc: "Login — split-screen auth" },
+  { name: "Şifremi Unuttum", href: "/sifremi-unuttum", desc: "Parola sıfırlama isteği" },
+  { name: "Bağlantı Gönderildi", href: "/sifre-link-gonderildi", desc: "Sıfırlama e-postası onayı" },
+  { name: "Şifre Sıfırla", href: "/sifre-sifirla", desc: "Yeni şifre + canlı kural kontrolü" },
+  { name: "Şifre Değiştir", href: "/sifre-degistir", desc: "Mevcut + yeni şifre" },
+  { name: "2FA — Kod", href: "/2fa", desc: "İki adımlı doğrulama kodu" },
+  { name: "2FA — QR Kurulum", href: "/2fa-qr", desc: "Authenticator QR kurulumu" },
+  { name: "Kayıt", href: "/kayit", desc: "Hesap oluşturma" },
+];
+
+/** Sistem sayfaları — 404 / 403 / 500. */
+export const systemPages: NavItem[] = [
+  { name: "404 — Bulunamadı", href: "/404-ornek", desc: "Sayfa bulunamadı (not-found)" },
+  { name: "403 — Yetkisiz", href: "/yetkisiz", desc: "Erişim reddedildi" },
+  { name: "500 — Hata", href: "/hata-ornegi", desc: "Error boundary demosu" },
+];
+
+/** Sol nav "Sayfalar" başlığı altındaki açılır gruplar. */
+export const pageGroups: { label: string; items: NavItem[] }[] = [
+  { label: "Panel", items: appPages },
+  { label: "Ayarlar Modülü", items: settingsPages },
+  { label: "Giriş / Auth", items: authPages },
+  { label: "Sistem", items: systemPages },
 ];
 
 /** Toplam bileşen sayısı — "Başlarken" sayfasındaki rozet için. */
