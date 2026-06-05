@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { ExternalLink, LifeBuoy, PhoneCall, Mail } from "lucide-react";
+import { ExternalLink, LifeBuoy } from "lucide-react";
 import { ContactInfoCards } from "@/components/ui/contact-info-cards";
 import { ContactForm } from "@/components/ui/contact-form";
 import { OfficeShowcase } from "@/components/ui/office-showcase";
@@ -73,48 +73,6 @@ export default function ContactPage() {
                   <span>{contactData.supportSystem.url}</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
-              </div>
-            </div>
-
-            {/* Quick Reach Card - Çağrı Merkezi + Destek E-postası */}
-            <div className="rounded-3xl bg-white/2 border border-white/5 p-8 relative overflow-hidden group hover:border-(--color-accent-emerald-light)/30 transition-colors">
-              <div className="absolute inset-0 bg-linear-to-br from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <span className="text-xs font-semibold text-(--color-text-overline) tracking-[0.2em] uppercase block mb-5">
-                  Hızlı Erişim
-                </span>
-
-                <div className="flex flex-col gap-4">
-                  <a
-                    href="tel:4442673"
-                    className="flex items-center gap-4 p-4 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/4 hover:border-(--color-brand-primary)/30 transition-all group/item"
-                  >
-                    <div className="h-11 w-11 rounded-xl bg-(--color-brand-primary)/10 border border-(--color-brand-primary)/20 flex items-center justify-center text-(--color-brand-accent) shrink-0">
-                      <PhoneCall className="w-4 h-4" />
-                    </div>
-                    <div className="flex flex-col min-w-0">
-                      <span className="text-xs font-medium text-(--color-text-muted) mb-0.5">Çağrı Merkezi</span>
-                      <span className="text-white font-semibold tracking-tight">
-                        {contactData.company.callCenter}
-                      </span>
-                    </div>
-                  </a>
-
-                  <a
-                    href={`mailto:${contactData.support.email}`}
-                    className="flex items-center gap-4 p-4 rounded-2xl bg-white/2 border border-white/5 hover:bg-white/4 hover:border-(--color-accent-emerald-light)/30 transition-all group/item"
-                  >
-                    <div className="h-11 w-11 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-(--color-accent-emerald-light) shrink-0">
-                      <Mail className="w-4 h-4" />
-                    </div>
-                    <div className="flex flex-col min-w-0">
-                      <span className="text-xs font-medium text-(--color-text-muted) mb-0.5">Destek E-postası</span>
-                      <span className="text-white font-semibold tracking-tight truncate">
-                        {contactData.support.email}
-                      </span>
-                    </div>
-                  </a>
-                </div>
               </div>
             </div>
           </div>
