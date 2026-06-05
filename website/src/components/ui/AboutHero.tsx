@@ -62,6 +62,8 @@ export default function AboutHero({ title, subtitle, description }: AboutHeroPro
             <MeshGradient
               width={dimensions.width}
               height={dimensions.height}
+              maxPixelCount={1280 * 720}
+              minPixelRatio={1}
               colors={runtimeTokens.meshGradient.about}
               distortion={0.6}
               swirl={0.4}

@@ -52,6 +52,8 @@ export function LegalHero({ meta }: LegalHeroProps) {
             <MeshGradient
               width={dimensions.width}
               height={dimensions.height}
+              maxPixelCount={1280 * 720}
+              minPixelRatio={1}
               colors={runtimeTokens.meshGradient.about}
               distortion={0.6}
               swirl={0.4}

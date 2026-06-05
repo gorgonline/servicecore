@@ -66,6 +66,8 @@ export default function HeroSection() {
             <MeshGradient
               width={dimensions.width}
               height={dimensions.height}
+              maxPixelCount={1280 * 720}
+              minPixelRatio={1}
               colors={runtimeTokens.meshGradient.hero}
               distortion={0.8}
               swirl={0.6}
