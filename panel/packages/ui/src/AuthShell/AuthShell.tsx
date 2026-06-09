@@ -1,11 +1,15 @@
-"use client";
-
-/* AuthShell — auth sayfalarının ortak split-screen kabuğu (login/forgot/reset/2FA).
- * Sol: form slot (children). Sağ: marka paneli (mavi gradient + glow + logo + metin). */
+/**
+ * AuthShell — auth sayfalarının ortak split-screen kabuğu (login / şifremi
+ * unuttum / sıfırla / 2FA / kayıt / yetkisiz).
+ *
+ * Sol: form slot (children). Sağ: marka paneli (mavi gradient + glow + dot
+ * pattern + iki-tonlu wordmark). 900px altında sağ panel gizlenir.
+ */
 
 import type { ReactNode } from "react";
-import { Heading, Text } from "@servicecoreui/ui";
-import { BrandMark } from "@servicecoreui/ui/custom";
+import { Heading } from "../Heading";
+import { Text } from "../Text";
+import { BrandMark } from "../Brand";
 import styles from "./AuthShell.module.css";
 
 export interface AuthShellProps {

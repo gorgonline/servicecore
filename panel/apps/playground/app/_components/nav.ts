@@ -153,6 +153,7 @@ export const appPages: NavItem[] = [
 export const settingsPages: NavItem[] = [
   { name: "Ayarlar", href: "/ayarlar", desc: "Ayar kategorileri (kart grid)" },
   { name: "Genel Ayarlar", href: "/ayarlar/genel-ayarlar", desc: "Ayar detayı — SettingsForm (5 sekme)" },
+  { name: "Teknisyenler", href: "/teknisyenler", desc: "Liste + CRUD (DataTable + Drawer)" },
 ];
 
 /** Giriş / kimlik doğrulama sayfaları (tam-ekran, AuthShell). */

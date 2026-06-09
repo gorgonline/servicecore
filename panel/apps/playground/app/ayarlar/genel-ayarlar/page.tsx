@@ -4,11 +4,10 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronRight, Help, Time } from "@carbon/icons-react";
 import { Heading, Text } from "@servicecoreui/ui";
-import { PageHeader, RecentPanels } from "@servicecoreui/ui/custom";
+import { PageHeader, RecentPanels, SettingsForm } from "@servicecoreui/ui/custom";
 import { Button, Card, Drawer, Tooltip } from "@servicecoreui/ui/wraps";
 import { PanelShell } from "../../_components/PanelShell";
 import { RECENT_PANELS } from "../../_data/recentPanels";
-import { SettingsForm } from "../_components/SettingsForm";
 import { GENEL_AYARLAR_TABS } from "./fields";
 import styles from "./genel-ayarlar.module.css";
 

@@ -1,9 +1,14 @@
-/* SystemMessage — tam-ekran sistem sayfası (404 / 500). position:fixed ile
- * DocsShell chrome'unu örter → her yerde tam-ekran. Server-safe. */
+/**
+ * SystemMessage — tam-ekran sistem sayfası (404 / 500 / bakım).
+ *
+ * `position:fixed; inset:0` ile çevre chrome'unu (sidebar/topbar) örter → her
+ * yerde tam-ekran. BrandMark + büyük durum kodu + başlık + açıklama + aksiyon.
+ */
 
 import type { ReactNode } from "react";
-import { Heading, Text } from "@servicecoreui/ui";
-import { BrandMark } from "@servicecoreui/ui/custom";
+import { Heading } from "../Heading";
+import { Text } from "../Text";
+import { BrandMark } from "../Brand";
 import styles from "./SystemMessage.module.css";
 
 export interface SystemMessageProps {

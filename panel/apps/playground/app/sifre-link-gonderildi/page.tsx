@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MailAll } from "@carbon/icons-react";
 import { Heading, Text } from "@servicecoreui/ui";
 import { Button } from "@servicecoreui/ui/wraps";
-import { AuthShell } from "../_components/AuthShell";
+import { AuthShell } from "@servicecoreui/ui/custom";
 import styles from "../giris/giris.module.css";
 
 export default function SifreLinkGonderildiPage() {

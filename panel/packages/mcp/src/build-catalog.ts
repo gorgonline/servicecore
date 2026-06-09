@@ -133,16 +133,22 @@ const PAGE_INSTALL = [
   '3. İkonlar paketten gelir: `import { Add } from "@servicecoreui/ui/icons";`',
   "4. Aşağıdaki dosyaları repona kopyala (yollar `app/` köküne göre).",
   "5. Mock veri / placeholder handler'ları gerçek API + DTO'ya bağla (`value` / `onChange` / `options`).",
+  "",
+  "### Yapıtaşları = paketten import (KOPYALANMAZ)",
+  "Sayfa dosyaları şu bileşenleri `@servicecoreui/ui/custom`'dan çeker — npm'den gelir, kaynak kopyalamana gerek yok:",
+  "`AuthShell` · `PasswordChecklist` · `SystemMessage` · `SettingsForm` (+ `SettingsTab`/`Field` tipleri).",
+  "Aşağıda listelenen dosyalar yalnızca **sayfaya özel** (route page, şema/data, `PanelShell`, paylaşılan CSS) — bunları kopyalarsın.",
 ].join("\n");
 
-/** Paylaşılan blok dosyaları (birden çok sayfanın kullandığı yerel yapıtaşları). */
+/** Paylaşılan blok dosyaları (birden çok sayfanın kullandığı yerel yapıtaşları).
+ *
+ * NOT: AuthShell · PasswordChecklist · SystemMessage · SettingsForm artık
+ * yapıtaşı olarak burada DEĞİL — `@servicecoreui/ui/custom`'dan import edilen
+ * yayınlanmış bileşenler. Sayfa dosyaları onları npm'den çeker; kopyalanmaz.
+ * Burada kalanlar Next'e bağlı / sayfaya özel (kopyalanması gereken) dosyalar. */
 const BLOCKS: Record<string, string[]> = {
   authStyles: ["giris/giris.module.css"],
-  AuthShell: ["_components/AuthShell.tsx", "_components/AuthShell.module.css"],
-  PasswordChecklist: ["_components/PasswordChecklist.tsx", "_components/PasswordChecklist.module.css"],
-  SystemMessage: ["_components/SystemMessage.tsx", "_components/SystemMessage.module.css"],
   PanelShell: ["_components/PanelShell.tsx", "_components/PanelShell.module.css"],
-  SettingsForm: ["ayarlar/_components/SettingsForm.tsx", "ayarlar/_components/SettingsForm.module.css"],
   recentPanels: ["_data/recentPanels.ts"],
 };
 
@@ -156,24 +162,25 @@ interface PageDef {
 }
 
 const PAGES: PageDef[] = [
-  // ── Auth akışı ──
-  { name: "login", title: "Giriş (Login)", route: "/giris", description: "Split-screen login — e-posta/şifre + captcha + Google/SSO. AuthShell + form.", files: ["giris/page.tsx"], blocks: ["authStyles", "AuthShell"] },
-  { name: "sifremi-unuttum", title: "Şifremi Unuttum", route: "/sifremi-unuttum", description: "Parola sıfırlama isteği (e-posta).", files: ["sifremi-unuttum/page.tsx"], blocks: ["authStyles", "AuthShell"] },
-  { name: "sifre-link-gonderildi", title: "Bağlantı Gönderildi", route: "/sifre-link-gonderildi", description: "Sıfırlama e-postası gönderildi onay ekranı.", files: ["sifre-link-gonderildi/page.tsx"], blocks: ["authStyles", "AuthShell"] },
-  { name: "sifre-sifirla", title: "Şifre Sıfırla", route: "/sifre-sifirla", description: "Yeni şifre + tekrar + canlı parola kuralları (PasswordChecklist).", files: ["sifre-sifirla/page.tsx"], blocks: ["authStyles", "AuthShell", "PasswordChecklist"] },
-  { name: "sifre-degistir", title: "Şifre Değiştir", route: "/sifre-degistir", description: "Mevcut + yeni şifre + kurallar.", files: ["sifre-degistir/page.tsx"], blocks: ["authStyles", "AuthShell", "PasswordChecklist"] },
-  { name: "2fa", title: "2FA — Kod", route: "/2fa", description: "İki adımlı doğrulama kodu girişi.", files: ["2fa/page.tsx"], blocks: ["authStyles", "AuthShell"] },
-  { name: "2fa-qr", title: "2FA — QR Kurulum", route: "/2fa-qr", description: "Authenticator QR kurulumu + kod.", files: ["2fa-qr/page.tsx"], blocks: ["authStyles", "AuthShell"] },
-  { name: "kayit", title: "Kayıt (Register)", route: "/kayit", description: "Hesap oluşturma + parola kuralları.", files: ["kayit/page.tsx"], blocks: ["authStyles", "AuthShell", "PasswordChecklist"] },
-  { name: "yetkisiz", title: "Yetkisiz (403)", route: "/yetkisiz", description: "Erişim reddedildi ekranı.", files: ["yetkisiz/page.tsx"], blocks: ["authStyles", "AuthShell"] },
-  // ── Sistem ──
-  { name: "404", title: "404 — Bulunamadı", route: "(not-found)", description: "Next not-found.tsx — tam-ekran 404.", files: ["not-found.tsx"], blocks: ["SystemMessage"] },
-  { name: "500", title: "500 — Error Boundary", route: "(error)", description: "Next error.tsx — hata sınırı (reset + ana sayfa).", files: ["error.tsx"], blocks: ["SystemMessage"] },
+  // ── Auth akışı (AuthShell/PasswordChecklist npm'den — @servicecoreui/ui/custom) ──
+  { name: "login", title: "Giriş (Login)", route: "/giris", description: "Split-screen login — e-posta/şifre + captcha + Google/SSO. AuthShell (npm) + form.", files: ["giris/page.tsx"], blocks: ["authStyles"] },
+  { name: "sifremi-unuttum", title: "Şifremi Unuttum", route: "/sifremi-unuttum", description: "Parola sıfırlama isteği (e-posta).", files: ["sifremi-unuttum/page.tsx"], blocks: ["authStyles"] },
+  { name: "sifre-link-gonderildi", title: "Bağlantı Gönderildi", route: "/sifre-link-gonderildi", description: "Sıfırlama e-postası gönderildi onay ekranı.", files: ["sifre-link-gonderildi/page.tsx"], blocks: ["authStyles"] },
+  { name: "sifre-sifirla", title: "Şifre Sıfırla", route: "/sifre-sifirla", description: "Yeni şifre + tekrar + canlı parola kuralları (PasswordChecklist npm).", files: ["sifre-sifirla/page.tsx"], blocks: ["authStyles"] },
+  { name: "sifre-degistir", title: "Şifre Değiştir", route: "/sifre-degistir", description: "Mevcut + yeni şifre + kurallar.", files: ["sifre-degistir/page.tsx"], blocks: ["authStyles"] },
+  { name: "2fa", title: "2FA — Kod", route: "/2fa", description: "İki adımlı doğrulama kodu girişi.", files: ["2fa/page.tsx"], blocks: ["authStyles"] },
+  { name: "2fa-qr", title: "2FA — QR Kurulum", route: "/2fa-qr", description: "Authenticator QR kurulumu + kod.", files: ["2fa-qr/page.tsx"], blocks: ["authStyles"] },
+  { name: "kayit", title: "Kayıt (Register)", route: "/kayit", description: "Hesap oluşturma + parola kuralları.", files: ["kayit/page.tsx"], blocks: ["authStyles"] },
+  { name: "yetkisiz", title: "Yetkisiz (403)", route: "/yetkisiz", description: "Erişim reddedildi ekranı.", files: ["yetkisiz/page.tsx"], blocks: ["authStyles"] },
+  // ── Sistem (SystemMessage npm'den — @servicecoreui/ui/custom) ──
+  { name: "404", title: "404 — Bulunamadı", route: "(not-found)", description: "Next not-found.tsx — tam-ekran 404 (SystemMessage npm).", files: ["not-found.tsx"], blocks: [] },
+  { name: "500", title: "500 — Error Boundary", route: "(error)", description: "Next error.tsx — hata sınırı, reset + ana sayfa (SystemMessage npm).", files: ["error.tsx"], blocks: [] },
   // ── Panel + Ayarlar ──
   { name: "pano", title: "Pano (Dashboard)", route: "/pano", description: "Dashboard — KPI Statistic + chart'lar + widget grid. PanelShell içinde.", files: ["pano/page.tsx", "pano/pano.module.css"], blocks: ["PanelShell", "recentPanels"] },
   { name: "kayitlar", title: "Kayıtlar (DataTable)", route: "/kayitlar", description: "Kayıt tarayıcısı — DataTable (sıralama/filtre/kolon). PanelShell içinde.", files: ["kayitlar/page.tsx", "kayitlar/kayitlar.module.css"], blocks: ["PanelShell"] },
   { name: "ayarlar", title: "Ayarlar (Liste)", route: "/ayarlar", description: "Ayar kategorileri — NavCard grid + arama. PanelShell içinde.", files: ["ayarlar/page.tsx", "ayarlar/ayarlar.module.css", "ayarlar/settings.json"], blocks: ["PanelShell", "recentPanels"] },
-  { name: "genel-ayarlar", title: "Genel Ayarlar (Detay)", route: "/ayarlar/genel-ayarlar", description: "Ayar detayı — data-driven SettingsForm (5 sekme, 11 alan tipi, koşullu alanlar, sol açılır nav + arama).", files: ["ayarlar/genel-ayarlar/page.tsx", "ayarlar/genel-ayarlar/genel-ayarlar.module.css", "ayarlar/genel-ayarlar/fields.ts"], blocks: ["PanelShell", "SettingsForm", "recentPanels"] },
+  { name: "genel-ayarlar", title: "Genel Ayarlar (Detay)", route: "/ayarlar/genel-ayarlar", description: "Ayar detayı — data-driven SettingsForm (npm). Sayfa = şema (fields.ts) + PanelShell. 5 sekme, 11 alan tipi, koşullu alanlar.", files: ["ayarlar/genel-ayarlar/page.tsx", "ayarlar/genel-ayarlar/genel-ayarlar.module.css", "ayarlar/genel-ayarlar/fields.ts"], blocks: ["PanelShell", "recentPanels"] },
+  { name: "teknisyenler", title: "Teknisyenler (Liste + CRUD)", route: "/teknisyenler", description: "AdminListPage deseni — DataTable (durum/ad/e-posta/aksiyon) + Yeni/Düzenle Drawer + Parola Drawer (PasswordChecklist npm). PanelShell içinde.", files: ["teknisyenler/page.tsx", "teknisyenler/teknisyenler.module.css"], blocks: ["PanelShell", "recentPanels"] },
 ];
 
 function scanPages(): Record<string, PageBundle> {

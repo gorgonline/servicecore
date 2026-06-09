@@ -25,3 +25,11 @@ export * from "./CommandPalette";
 export * from "./TimeTracker";
 export * from "./NotificationCenter";
 export * from "./UserMenu";
+
+// ── Sayfa yapıtaşları (auth + ayarlar + sistem) ──
+// Saf bileşenler (Next'e bağlı değil); auth/ayarlar/sistem sayfaları bunları
+// npm'den import eder. Sayfaların kendisi get_page ile kaynak-kod şablonu gelir.
+export * from "./AuthShell";
+export * from "./PasswordChecklist";
+export * from "./SystemMessage";
+export * from "./SettingsForm";

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Enterprise, Renew } from "@carbon/icons-react";
 import { Heading, Text } from "@servicecoreui/ui";
 import { Button, Checkbox, Divider, Input } from "@servicecoreui/ui/wraps";
-import { AuthShell } from "../_components/AuthShell";
+import { AuthShell } from "@servicecoreui/ui/custom";
 import styles from "./giris.module.css";
 
 const CAPTCHAS = ["G7K9X2", "M4P8QZ", "B3N6YK"];

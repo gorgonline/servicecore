@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Heading, Text } from "@servicecoreui/ui";
 import { Button, Input } from "@servicecoreui/ui/wraps";
-import { AuthShell } from "../_components/AuthShell";
+import { AuthShell } from "@servicecoreui/ui/custom";
 import styles from "../giris/giris.module.css";
 
 export default function TwoFactorPage() {

@@ -4,8 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Heading, Text } from "@servicecoreui/ui";
 import { Button, Input } from "@servicecoreui/ui/wraps";
-import { AuthShell } from "../_components/AuthShell";
-import { PasswordChecklist } from "../_components/PasswordChecklist";
+import { AuthShell, PasswordChecklist } from "@servicecoreui/ui/custom";
 import styles from "../giris/giris.module.css";
 
 export default function SifreSifirlaPage() {

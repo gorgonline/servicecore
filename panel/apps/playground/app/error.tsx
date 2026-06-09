@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@servicecoreui/ui/wraps";
-import { SystemMessage } from "./_components/SystemMessage";
+import { SystemMessage } from "@servicecoreui/ui/custom";
 
 export default function Error({
   reset,

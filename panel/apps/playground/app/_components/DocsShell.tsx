@@ -26,6 +26,7 @@ const FULL_BLEED = [
   "/pano",
   "/kayitlar",
   "/ayarlar",
+  "/teknisyenler",
   "/giris",
   "/sifremi-unuttum",
   "/sifre-sifirla",

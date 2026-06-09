@@ -1,5 +1,3 @@
-"use client";
-
 /* ════════════════════════════════════════════════════════════════════════
  * SettingsForm — data-driven ayar formu (tüm ayar detay sayfalarında ortak).
  *
@@ -12,22 +10,23 @@
  *   • Renkler = ColorPicker, 2 kolon grid
  *   • Kod (CSS/JS) = Collapse/accordion (sayfayı uzatmaz, ileri-seviye)
  *   • Kompakt alanlar 2 kolon; switch/kod tam genişlik
+ *   • Sol nav: iki seviyeli açılır gruplar (alanlar → bölümler) + tab içi arama
+ *   • dependsOn: bağlı switch kapalıyken alan gizlenir (koşullu alan)
  * ════════════════════════════════════════════════════════════════════════ */
 
 import { createContext, useContext, useState } from "react";
 import { Add, Checkmark, ChevronDown, Search } from "@carbon/icons-react";
-import { Heading, Text } from "@servicecoreui/ui";
-import {
-  Button,
-  Checkbox,
-  Collapse,
-  ColorPicker,
-  Input,
-  InputNumber,
-  Select,
-  Switch,
-  Upload,
-} from "@servicecoreui/ui/wraps";
+import { Heading } from "../Heading";
+import { Text } from "../Text";
+import { Button } from "../Button";
+import { Checkbox } from "../Checkbox";
+import { Collapse } from "../Collapse";
+import { ColorPicker } from "../ColorPicker";
+import { Input } from "../Input";
+import { InputNumber } from "../InputNumber";
+import { Select } from "../Select";
+import { Switch } from "../Switch";
+import { Upload } from "../Upload";
 import styles from "./SettingsForm.module.css";
 
 export type SelectOption = { value: string; label: string };
@@ -325,7 +324,11 @@ function filterSection(section: Section, q: string): Section | null {
   return fields.length ? { ...section, fields } : null;
 }
 
-export function SettingsForm({ tabs }: { tabs: SettingsTab[] }) {
+export interface SettingsFormProps {
+  tabs: SettingsTab[];
+}
+
+export function SettingsForm({ tabs }: SettingsFormProps) {
   const [values, setValues] = useState(() => collectSwitchDefaults(tabs));
   const setValue = (k: string, v: boolean) => setValues((prev) => ({ ...prev, [k]: v }));
   const [activeTab, setActiveTab] = useState(() => tabs[0]?.key ?? "");

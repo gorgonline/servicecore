@@ -5,7 +5,7 @@
  * Faz 3'te ilk wrap bileşenleri (Button, Input, Badge, Tag) eklenecek.
  */
 
-export const VERSION = "0.4.0";
+export const VERSION = "0.5.0";
 
 // ── Components ──────────────────────────────────────────────
 // Typography (server-safe, no AntD dep)

@@ -1,7 +1,10 @@
-"use client";
-
-/* PasswordChecklist — canlı parola kuralı kontrolü + güç barı (frontend, regex).
- * Güvenlik Ayarları'ndaki ilkelerle aynı kurallar. Auth sayfalarında ortak. */
+/**
+ * PasswordChecklist — canlı parola kuralı kontrolü + güç barı (frontend, regex).
+ *
+ * Güvenlik Ayarları'ndaki ilkelerle aynı kurallar; auth akışında (şifre sıfırla /
+ * değiştir / kayıt) ortak. `value` controlled; kurallar `defaultPasswordRules`
+ * ile gelir, override edilebilir.
+ */
 
 import { CheckmarkFilled, CircleDash } from "@carbon/icons-react";
 import styles from "./PasswordChecklist.module.css";
@@ -29,13 +32,15 @@ const STRENGTH = [
   { label: "Güçlü", className: "strong" },
 ];
 
+export interface PasswordChecklistProps {
+  value: string;
+  rules?: PasswordRule[];
+}
+
 export function PasswordChecklist({
   value,
   rules = defaultPasswordRules(),
-}: {
-  value: string;
-  rules?: PasswordRule[];
-}) {
+}: PasswordChecklistProps) {
   const met = rules.filter((r) => r.test(value)).length;
   const ratio = rules.length ? met / rules.length : 0;
   // 0–%40 zayıf, %40–%80 orta, %80+ güçlü
