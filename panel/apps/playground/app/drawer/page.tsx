@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Drawer } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Drawer } from "@servicecoreui/ui";
 import styles from "./drawer.module.css";
 
 /* ────────────────────────────────────────────────

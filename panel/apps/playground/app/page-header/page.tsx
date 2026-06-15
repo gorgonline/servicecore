@@ -2,8 +2,8 @@
 
 import { Add, ChevronDown, ChevronRight, Time } from "@carbon/icons-react";
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { PageHeader } from "@servicecoreui/ui/custom";
-import { Breadcrumb, Button, Dropdown } from "@servicecoreui/ui/wraps";
+import { PageHeader } from "@servicecoreui/ui";
+import { Breadcrumb, Button, Dropdown } from "@servicecoreui/ui";
 import type { MenuProps } from "antd";
 import styles from "./page-header.module.css";
 

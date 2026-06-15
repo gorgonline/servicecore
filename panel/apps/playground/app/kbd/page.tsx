@@ -1,5 +1,6 @@
+"use client";
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { Kbd } from "@servicecoreui/ui/custom";
+import { Kbd } from "@servicecoreui/ui";
 import styles from "./kbd.module.css";
 
 export default function KbdPage() {

@@ -15,7 +15,7 @@ import {
   ChevronRight,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button } from "@servicecoreui/ui/wraps";
+import { Alert, Button } from "@servicecoreui/ui";
 import styles from "./buttons.module.css";
 
 /* ────────────────────────────────────────────────

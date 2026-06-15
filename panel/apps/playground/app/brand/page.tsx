@@ -1,8 +1,8 @@
 "use client";
 
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { Brand } from "@servicecoreui/ui/custom";
-import { Alert } from "@servicecoreui/ui/wraps";
+import { Brand } from "@servicecoreui/ui";
+import { Alert } from "@servicecoreui/ui";
 import styles from "./brand.module.css";
 
 /* Örnek müşteri logosu — white-label gösterimi için (public/ altında) */

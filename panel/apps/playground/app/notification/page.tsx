@@ -1,7 +1,7 @@
 "use client";
 
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, notification } from "@servicecoreui/ui/wraps";
+import { Alert, Button, notification } from "@servicecoreui/ui";
 import {
   Notification as NotificationIcon,
   CheckmarkFilled,
@@ -479,7 +479,7 @@ notifApi.open({
           <Heading level={2}>Global Config — app entry'de 1 kez</Heading>
         </div>
         <CodeBlock>{`// app/providers.tsx veya app entry'de
-import { notification } from "@servicecoreui/ui/wraps";
+import { notification } from "@servicecoreui/ui";
 
 notification.config({
   placement: "topRight",

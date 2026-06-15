@@ -11,8 +11,8 @@ import {
   ChevronDown,
 } from "@carbon/icons-react";
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { UserMenu } from "@servicecoreui/ui/custom";
-import { Button, Avatar } from "@servicecoreui/ui/wraps";
+import { UserMenu } from "@servicecoreui/ui";
+import { Button, Avatar } from "@servicecoreui/ui";
 import styles from "./user-menu.module.css";
 
 const ITEMS = [

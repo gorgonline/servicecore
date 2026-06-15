@@ -12,7 +12,7 @@ import {
   ShoppingCart,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, FloatButton } from "@servicecoreui/ui/wraps";
+import { Alert, FloatButton } from "@servicecoreui/ui";
 import styles from "./float-buttons.module.css";
 
 /* ────────────────────────────────────────────────

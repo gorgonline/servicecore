@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 import { TrashCan, Edit, Send } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Checkbox } from "@servicecoreui/ui/wraps";
-import type { CheckboxValueType } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Checkbox } from "@servicecoreui/ui";
+import type { CheckboxValueType } from "@servicecoreui/ui";
 import styles from "./checkboxes.module.css";
 
 /* ────────────────────────────────────────────────

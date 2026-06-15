@@ -1,7 +1,7 @@
 "use client";
 
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, message } from "@servicecoreui/ui/wraps";
+import { Alert, Button, message } from "@servicecoreui/ui";
 import styles from "./message.module.css";
 
 /* ────────────────────────────────────────────────
@@ -245,7 +245,7 @@ message.loading("Yükleniyor...", 0);  // 0 = manuel kapanır`}</CodeBlock>
           alınır.
         </Text>
         <CodeBlock>{`// app/providers.tsx veya app entry'de
-import { message } from "@servicecoreui/ui/wraps";
+import { message } from "@servicecoreui/ui";
 
 message.config({
   top: 80,         // header altından (default 24px → header gizler)

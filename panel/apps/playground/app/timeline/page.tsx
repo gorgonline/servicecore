@@ -9,7 +9,7 @@ import {
   DocumentTasks,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Timeline } from "@servicecoreui/ui/wraps";
+import { Alert, Timeline } from "@servicecoreui/ui";
 import styles from "./timeline.module.css";
 
 /* ────────────────────────────────────────────────

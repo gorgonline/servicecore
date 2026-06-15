@@ -6,7 +6,9 @@ import { ConfigProvider } from "antd";
 import trTR from "antd/locale/tr_TR";
 import dayjs from "dayjs";
 import "dayjs/locale/tr";
-import { servicecoreTheme } from "@servicecoreui/ui/theme";
+import { I18nextProvider } from "react-i18next";
+import { servicecoreTheme } from "@servicecoreui/ui";
+import { i18next } from "../lib/i18n";
 
 // dayjs için global Türkçe locale — DatePicker, Calendar, RangePicker
 // hepsi bu locale'i kullanır. Pazartesi haftanın ilk günü olur.
@@ -30,10 +32,12 @@ dayjs.locale("tr");
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <AntdRegistry>
-      <ConfigProvider theme={servicecoreTheme} locale={trTR}>
-        {children}
-      </ConfigProvider>
-    </AntdRegistry>
+    <I18nextProvider i18n={i18next}>
+      <AntdRegistry>
+        <ConfigProvider theme={servicecoreTheme} locale={trTR}>
+          {children}
+        </ConfigProvider>
+      </AntdRegistry>
+    </I18nextProvider>
   );
 }

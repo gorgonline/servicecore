@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Radio } from "@servicecoreui/ui/wraps";
+import { Alert, Radio } from "@servicecoreui/ui";
 import styles from "./radio.module.css";
 
 /* ────────────────────────────────────────────────

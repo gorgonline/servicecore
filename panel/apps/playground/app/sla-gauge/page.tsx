@@ -1,8 +1,8 @@
 "use client";
 
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { SlaGauge } from "@servicecoreui/ui/charts";
-import { Card } from "@servicecoreui/ui/wraps";
+import { SlaGauge } from "@servicecoreui/ui";
+import { Card } from "@servicecoreui/ui";
 import styles from "./sla-gauge.module.css";
 
 export default function SlaGaugePage() {
@@ -51,7 +51,7 @@ export default function SlaGaugePage() {
 
       <section className={styles.section}>
         <Heading level={2}>Kullanım</Heading>
-        <Code block>{`import { SlaGauge } from "@servicecoreui/ui/charts";
+        <Code block>{`import { SlaGauge } from "@servicecoreui/ui";
 
 <SlaGauge value={94} label="SLA uyumu" />
 <SlaGauge value={72} label="SLA uyumu" thresholds={{ ok: 90, warn: 80 }} />`}</Code>

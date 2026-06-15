@@ -3,7 +3,7 @@
 import { useState } from "react";
 import dayjs from "dayjs";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Statistic } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Statistic } from "@servicecoreui/ui";
 import styles from "./statistic.module.css";
 
 /* ────────────────────────────────────────────────

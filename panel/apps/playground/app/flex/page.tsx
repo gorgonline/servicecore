@@ -10,7 +10,7 @@ import {
   ArrowDown,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Card, Flex, Tag } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Card, Flex, Tag } from "@servicecoreui/ui";
 import styles from "./flex.module.css";
 
 /* ────────────────────────────────────────────────

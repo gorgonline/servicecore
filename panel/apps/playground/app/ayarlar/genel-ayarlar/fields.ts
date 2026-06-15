@@ -1,4 +1,4 @@
-import type { SettingsTab } from "@servicecoreui/ui/custom";
+import type { SettingsTab } from "@servicecoreui/ui";
 
 /* Genel Ayarlar — tüm sekme alanları (tek kaynak; SettingsForm bunu render eder).
  * Tab 1 (Genel) + Tab 2 (Genel Portal) ekranlardan birebir.

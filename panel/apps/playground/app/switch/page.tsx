@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Checkmark, Close } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Switch } from "@servicecoreui/ui/wraps";
+import { Alert, Switch } from "@servicecoreui/ui";
 import styles from "./switch.module.css";
 
 /* ────────────────────────────────────────────────

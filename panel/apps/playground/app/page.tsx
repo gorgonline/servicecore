@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import {
   Catalog,
@@ -47,7 +48,7 @@ const principles = [
 const installSnippet = `# npm.js (public) — kurulum
 npm install @servicecoreui/ui`;
 
-const usageSnippet = `import { Button, Table } from "@servicecoreui/ui/wraps";
+const usageSnippet = `import { Button, Table } from "@servicecoreui/ui";
 import { Heading, Text } from "@servicecoreui/ui";
 
 // app entry'sinde bir kez:
@@ -55,7 +56,7 @@ import "@servicecoreui/ui/tokens.css";
 import "@servicecoreui/ui/styles.css";`;
 
 const themeSnippet = `import { ConfigProvider } from "antd";
-import { servicecoreTheme } from "@servicecoreui/ui/theme";
+import { servicecoreTheme } from "@servicecoreui/ui";
 
 // Tüm AntD'yi ServiceCore diline çevirir (opsiyonel):
 <ConfigProvider theme={servicecoreTheme}>{children}</ConfigProvider>`;

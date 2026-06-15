@@ -8,7 +8,7 @@ import {
   Popconfirm,
   Switch,
   message,
-} from "@servicecoreui/ui/wraps";
+} from "@servicecoreui/ui";
 import { WarningAltFilled, Archive, TrashCan } from "@carbon/icons-react";
 import styles from "./popconfirm.module.css";
 

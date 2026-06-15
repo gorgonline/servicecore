@@ -13,8 +13,8 @@ import {
   Download,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Tabs } from "@servicecoreui/ui/wraps";
-import type { TabsItem } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Tabs } from "@servicecoreui/ui";
+import type { TabsItem } from "@servicecoreui/ui";
 import styles from "./tabs.module.css";
 
 /* ────────────────────────────────────────────────

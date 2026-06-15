@@ -11,7 +11,7 @@ import {
   Form,
   Input,
   Select,
-} from "@servicecoreui/ui/wraps";
+} from "@servicecoreui/ui";
 import styles from "./form.module.css";
 
 /* ────────────────────────────────────────────────

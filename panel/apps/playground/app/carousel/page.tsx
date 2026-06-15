@@ -3,8 +3,8 @@
 import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Carousel } from "@servicecoreui/ui/wraps";
-import type { CarouselRef } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Carousel } from "@servicecoreui/ui";
+import type { CarouselRef } from "@servicecoreui/ui";
 import styles from "./carousel.module.css";
 
 /* ────────────────────────────────────────────────

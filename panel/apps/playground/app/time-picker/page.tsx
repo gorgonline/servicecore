@@ -3,7 +3,7 @@
 import { useState } from "react";
 import dayjs, { type Dayjs } from "dayjs";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, TimePicker } from "@servicecoreui/ui/wraps";
+import { Alert, TimePicker } from "@servicecoreui/ui";
 import styles from "./time-picker.module.css";
 
 const { RangePicker } = TimePicker;

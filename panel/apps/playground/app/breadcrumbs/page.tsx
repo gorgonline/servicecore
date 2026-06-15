@@ -12,7 +12,7 @@ import {
   WarningAlt,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Breadcrumb, Button, Card } from "@servicecoreui/ui/wraps";
+import { Alert, Breadcrumb, Button, Card } from "@servicecoreui/ui";
 import styles from "./breadcrumbs.module.css";
 
 /* ────────────────────────────────────────────────

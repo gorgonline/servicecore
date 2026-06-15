@@ -3,11 +3,11 @@
 import { useRouter } from "next/navigation";
 import { ArrowLeft } from "@carbon/icons-react";
 import { Heading, Text } from "@servicecoreui/ui";
-import { DataTable } from "@servicecoreui/ui/custom";
-import type { DataTableColumn } from "@servicecoreui/ui/custom";
-import { Avatar, Button, Tag } from "@servicecoreui/ui/wraps";
-import type { TagProps } from "@servicecoreui/ui/wraps";
-import { PanelShell } from "../_components/PanelShell";
+import { DataTable } from "@servicecoreui/ui";
+import type { DataTableColumn } from "@servicecoreui/ui";
+import { Avatar, Button, Tag } from "@servicecoreui/ui";
+import type { TagProps } from "@servicecoreui/ui";
+import { PanelShell } from "@servicecoreui/ui/custom";
 import styles from "./kayitlar.module.css";
 
 interface Kayit {
@@ -179,7 +179,7 @@ export default function KayitlarPage() {
   const router = useRouter();
 
   return (
-    <PanelShell>
+    <PanelShell onNavigate={router.push}>
       <div className={styles.body}>
         {/* Geri — buraya tek giriş "Hepsi"; geldiği yere döner */}
         <div>

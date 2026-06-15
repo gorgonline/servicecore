@@ -4,14 +4,11 @@
 //   tsup default loader ayarı esbuild'in .module.css auto-detection'ını eziyor.
 //   Direkt esbuild ile CSS Modules class adları hash'lenir, JS bundle class-map alır.
 //
-// İki tier'lı çıktı:
-//   dist/index.{js,cjs,d.ts}      Server-safe — typography + tokens (AntD bağımlılığı yok)
-//   dist/custom.{js,cjs,d.ts}     ServiceCore'a özel bileşenler — "use client" banner'lı
-//                                  (composite'ler AntD wrap kullanır; client-only)
-//   dist/wraps.{js,cjs,d.ts}      AntD wraps — "use client" banner'lı, client-only
-//   dist/theme/index.{js,cjs}     Theme + tokens (server-safe)
+// Entry çıktıları:
+//   dist/index.{js,cjs,d.ts}      Ana barrel — tüm public API — "use client" banner'lı
+//   dist/custom.{js,cjs,d.ts}     Backward-compat — ./custom alt-yolu (ana barrel tercih et)
 //   dist/styles.css               Tüm CSS Modules tek dosyada, class adları namespaced
-//   dist/theme/tokens.css         Raw CSS değişkenleri (--sc-*)
+//   dist/tokens.css               Raw CSS değişkenleri (--sc-*)
 
 import { build } from "esbuild";
 import { rm, mkdir, copyFile, rename, readdir, stat } from "node:fs/promises";
@@ -53,57 +50,30 @@ async function main() {
   // 1. Temizle
   if (await exists(DIST)) await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
-  await mkdir(join(DIST, "theme"), { recursive: true });
 
-  // 2. Server-safe entry'ler (index + theme) — banner yok
-  await build({
+  // 2. Entry'ler — "use client" banner'lı (AntD + Recharts client-only)
+  const ENTRY = {
     ...SHARED,
-    entryPoints: {
-      index: "src/index.ts",
-      icons: "src/icons.ts",
-      "theme/index": "src/theme/index.ts",
-    },
-    format: "esm",
-    outdir: "dist",
-    outExtension: { ".js": ".js" },
-  });
-
-  await build({
-    ...SHARED,
-    entryPoints: {
-      index: "src/index.ts",
-      icons: "src/icons.ts",
-      "theme/index": "src/theme/index.ts",
-    },
-    format: "cjs",
-    outdir: "dist",
-    outExtension: { ".js": ".cjs" },
-  });
-
-  // 3. AntD wraps entry — "use client" banner'lı
-  const WRAPS = {
-    ...SHARED,
-    entryPoints: { wraps: "src/wraps.ts", custom: "src/custom.ts", charts: "src/charts.ts" },
+    entryPoints: { index: "src/index.ts", custom: "src/custom.ts" },
     outdir: "dist",
     banner: { js: '"use client";' },
   };
 
-  await build({ ...WRAPS, format: "esm", outExtension: { ".js": ".js" } });
-  await build({ ...WRAPS, format: "cjs", outExtension: { ".js": ".cjs" } });
+  await build({ ...ENTRY, format: "esm", outExtension: { ".js": ".js" } });
+  await build({ ...ENTRY, format: "cjs", outExtension: { ".js": ".cjs" } });
 
-  // 4. tokens.css raw kopyala
+  // 3. tokens.css raw kopyala (dist/tokens.css + dist/theme/tokens.css — geriye dönük uyum)
   await copyFile(
     join(ROOT, "src/theme/tokens.css"),
-    join(DIST, "theme/tokens.css"),
+    join(DIST, "tokens.css"),
   );
 
-  // 5. CSS çıktılarını tek dosyada birleştir: dist/styles.css
-  // ESM build her entry için bir CSS üretti (index.css ve muhtemelen wraps.css).
-  // Hepsini styles.css'e topla.
+  // 4. CSS çıktılarını tek dosyada birleştir: dist/styles.css
+  // ESM build index.css üretiyor; rename et.
   const fs = await import("node:fs/promises");
   const cssFiles = [];
   for (const file of await readdir(DIST)) {
-    if (file.endsWith(".css") && file !== "styles.css") {
+    if (file.endsWith(".css") && file !== "styles.css" && file !== "tokens.css") {
       cssFiles.push(join(DIST, file));
     }
   }

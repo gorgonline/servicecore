@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Heading, Text } from "@servicecoreui/ui";
-import { Button } from "@servicecoreui/ui/wraps";
+import { Button } from "@servicecoreui/ui";
 import styles from "./hata-ornegi.module.css";
 
 export default function HataOrnegiPage() {

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, InputNumber, Slider } from "@servicecoreui/ui/wraps";
+import { Alert, InputNumber, Slider } from "@servicecoreui/ui";
 import styles from "./slider.module.css";
 
 /* ────────────────────────────────────────────────

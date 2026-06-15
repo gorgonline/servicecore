@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { Button } from "@servicecoreui/ui/wraps";
-import { SystemMessage } from "@servicecoreui/ui/custom";
+import { useRouter } from "next/navigation";
+import { ErrorPage } from "@servicecoreui/ui/custom";
 
 export default function Error({
   reset,
@@ -10,21 +9,6 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  return (
-    <SystemMessage
-      code="500"
-      title="Bir şeyler ters gitti"
-      description="Beklenmeyen bir hata oluştu. Tekrar deneyebilir ya da ana sayfaya dönebilirsin."
-      action={
-        <>
-          <Button type="primary" size="large" onClick={reset}>
-            Tekrar dene
-          </Button>
-          <Link href="/">
-            <Button size="large">Ana sayfa</Button>
-          </Link>
-        </>
-      }
-    />
-  );
+  const router = useRouter();
+  return <ErrorPage variant="500" onRetry={reset} onNavigate={router.push} />;
 }

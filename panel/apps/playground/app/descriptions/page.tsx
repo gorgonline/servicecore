@@ -2,7 +2,7 @@
 
 import { Edit, Download } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Descriptions } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Descriptions } from "@servicecoreui/ui";
 import styles from "./descriptions.module.css";
 
 /* ────────────────────────────────────────────────

@@ -9,6 +9,12 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@servicecoreui/ui": [
+        "../../packages/ui/src/index.ts"
+      ],
+      "@servicecoreui/ui/custom": [
+        "../../packages/ui/src/custom.ts"
       ]
     },
     "incremental": true,

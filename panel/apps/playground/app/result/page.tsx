@@ -1,7 +1,7 @@
 "use client";
 
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Result } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Result } from "@servicecoreui/ui";
 import { CheckmarkFilled, Download } from "@carbon/icons-react";
 import styles from "./result.module.css";
 

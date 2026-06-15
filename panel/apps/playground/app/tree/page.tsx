@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Folder, FolderOpen, Document, ServerProxy } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Tree } from "@servicecoreui/ui/wraps";
-import type { TreeDataNode } from "@servicecoreui/ui/wraps";
+import { Alert, Tree } from "@servicecoreui/ui";
+import type { TreeDataNode } from "@servicecoreui/ui";
 import styles from "./tree.module.css";
 
 /* ────────────────────────────────────────────────

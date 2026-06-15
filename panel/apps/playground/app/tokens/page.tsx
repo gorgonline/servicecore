@@ -1,3 +1,4 @@
+"use client";
 import { colors, radius, spacing, fontSize, fontWeight } from "@servicecoreui/ui";
 import styles from "./tokens.module.css";
 

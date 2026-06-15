@@ -2,8 +2,8 @@
 
 import { Settings, Information } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Collapse } from "@servicecoreui/ui/wraps";
-import type { CollapseItem } from "@servicecoreui/ui/wraps";
+import { Alert, Collapse } from "@servicecoreui/ui";
+import type { CollapseItem } from "@servicecoreui/ui";
 import styles from "./collapse.module.css";
 
 /* ────────────────────────────────────────────────

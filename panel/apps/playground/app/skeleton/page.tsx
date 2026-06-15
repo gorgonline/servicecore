@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Skeleton, Switch } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Skeleton, Switch } from "@servicecoreui/ui";
 import styles from "./skeleton.module.css";
 
 /* ────────────────────────────────────────────────

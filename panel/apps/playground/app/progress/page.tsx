@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Progress } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Progress } from "@servicecoreui/ui";
 import { Document, DocumentPdf, Image as ImageIcon } from "@carbon/icons-react";
 import styles from "./progress.module.css";
 

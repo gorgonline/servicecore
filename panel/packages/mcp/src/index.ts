@@ -30,6 +30,8 @@ interface ComponentSpec {
   types?: string;
   css?: string;
   description: string;
+  kind: "primitive" | "feature";
+  i18nKeys?: string;
 }
 
 interface PageFile {
@@ -51,6 +53,7 @@ interface Catalog {
   components: Record<string, ComponentSpec>;
   pages: Record<string, PageBundle>;
   pageInstall: string;
+  i18n: string;
   tokens: string;
   rules: string;
 }
@@ -79,7 +82,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "list_components",
-      description: `${catalog.uiPackage} kütüphanesindeki tüm component'leri listeler. Her kayıt: isim + kısa açıklama. AI bu listeden seçer.`,
+      description: `${catalog.uiPackage} kütüphanesindeki tüm component'leri listeler. Her kayıt: isim + tür (primitive/feature) + kısa açıklama. AI bu listeden seçer.`,
       inputSchema: { type: "object", properties: {} },
     },
     {
@@ -142,6 +145,12 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
         required: ["name"],
       },
     },
+    {
+      name: "get_i18n_contract",
+      description:
+        "ServiceCore UI i18n key sözleşmesini döner: sc- namespace, ScAuthKeys (LoginForm/ForgotPasswordForm/… anahtar grupları) ve ScLayoutKeys (PanelShell/ErrorPage). Feature-level bileşenler kullanırken tüketici bu key'leri kendi sözlüğünde tanımlar.",
+      inputSchema: { type: "object", properties: {} },
+    },
   ],
 }));
 
@@ -149,14 +158,25 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
   const { name, arguments: args = {} } = req.params;
 
   if (name === "list_components") {
-    const list = Object.values(catalog.components)
+    const primitives = Object.values(catalog.components).filter((c) => c.kind === "primitive");
+    const features = Object.values(catalog.components).filter((c) => c.kind === "feature");
+
+    const primitiveList = primitives
       .map((c) => `- **${c.name}** — ${c.description || "(açıklama yok)"}`)
       .join("\n");
+    const featureList = features
+      .map((c) => `- **${c.name}** *(feature-level)* — ${c.description || "(açıklama yok)"}`)
+      .join("\n");
+
+    const featureSection = features.length > 0
+      ? `\n\n## Feature-Level Bileşenler (${features.length})\n\nHazır UI blokları — ham primitive ile elle icat etme, bunları kullan:\n\n${featureList}`
+      : "";
+
     return {
       content: [
         {
           type: "text",
-          text: `# ${catalog.uiPackage}@${catalog.uiVersion}\n\n${Object.keys(catalog.components).length} component:\n\n${list}\n\nKullanım: \`import { Button } from "${catalog.uiPackage}/wraps"\``,
+          text: `# ${catalog.uiPackage}@${catalog.uiVersion}\n\n## Primitive Bileşenler (${primitives.length})\n\n${primitiveList}${featureSection}\n\nImport: \`import { Button } from "${catalog.uiPackage}"\``,
         },
       ],
     };
@@ -177,14 +197,21 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
         isError: true,
       };
     }
-    let body = `# ${spec.name}\n\n${spec.description}\n\n`;
-    body += `## Import\n\`\`\`tsx\nimport { ${spec.name} } from "${catalog.uiPackage}/wraps";\n\`\`\`\n\n`;
+    const kindLabel = spec.kind === "feature" ? " *(feature-level)*" : "";
+    let body = `# ${spec.name}${kindLabel}\n\n${spec.description}\n\n`;
+    body += `## Import\n\`\`\`tsx\nimport { ${spec.name} } from "${catalog.uiPackage}";\n\`\`\`\n\n`;
+    if (spec.kind === "feature") {
+      body += `> **Feature-level bileşen** — Ham primitive (\`Form\`, \`Input\`, \`Button\`) ile elle icat etme; bu hazır bileşeni kullan.\n\n`;
+    }
     if (spec.types) {
       body += `## Types (${spec.name}.types.ts)\n\`\`\`ts\n${spec.types}\n\`\`\`\n\n`;
     }
     body += `## Implementation (${spec.name}.tsx)\n\`\`\`tsx\n${spec.source}\n\`\`\`\n`;
     if (spec.css) {
       body += `\n## Styles (${spec.name}.module.css)\n\`\`\`css\n${spec.css}\n\`\`\`\n`;
+    }
+    if (spec.i18nKeys) {
+      body += `\n## i18n Keys\n\n${spec.i18nKeys}\n\nTam sözleşme için: \`get_i18n_contract\`\n`;
     }
     return { content: [{ type: "text", text: body }] };
   }
@@ -287,6 +314,17 @@ server.setRequestHandler(CallToolRequestSchema, async (req) => {
       body += `### \`${f.path}\`\n\`\`\`${langOf(f.path)}\n${f.content}\n\`\`\`\n\n`;
     }
     return { content: [{ type: "text", text: body }] };
+  }
+
+  if (name === "get_i18n_contract") {
+    return {
+      content: [
+        {
+          type: "text",
+          text: catalog.i18n || "i18n sözleşmesi katalogda bulunamadı.",
+        },
+      ],
+    };
   }
 
   throw new Error(`Bilinmeyen tool: ${name}`);

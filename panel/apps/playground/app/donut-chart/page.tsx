@@ -1,8 +1,8 @@
 "use client";
 
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { DonutChart } from "@servicecoreui/ui/charts";
-import { Card } from "@servicecoreui/ui/wraps";
+import { DonutChart } from "@servicecoreui/ui";
+import { Card } from "@servicecoreui/ui";
 import styles from "./donut-chart.module.css";
 
 const DURUM = [
@@ -66,7 +66,7 @@ export default function DonutChartPage() {
 
       <section className={styles.section}>
         <Heading level={2}>Kullanım</Heading>
-        <Code block>{`import { DonutChart } from "@servicecoreui/ui/charts";
+        <Code block>{`import { DonutChart } from "@servicecoreui/ui";
 
 <DonutChart
   data={[

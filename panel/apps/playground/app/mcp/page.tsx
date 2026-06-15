@@ -1,7 +1,7 @@
 "use client";
 
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { Alert } from "@servicecoreui/ui/wraps";
+import { Alert } from "@servicecoreui/ui";
 import styles from "./mcp.module.css";
 
 const MCP_JSON = `{

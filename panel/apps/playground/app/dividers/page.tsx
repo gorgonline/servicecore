@@ -1,7 +1,7 @@
 "use client";
 
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Card, Divider } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Card, Divider } from "@servicecoreui/ui";
 import styles from "./dividers.module.css";
 
 /* ────────────────────────────────────────────────

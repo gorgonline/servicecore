@@ -45,9 +45,9 @@ import {
   UserSettings,
 } from "@carbon/icons-react";
 import { Text } from "@servicecoreui/ui";
-import { NavCard, PageHeader, RecentPanels } from "@servicecoreui/ui/custom";
-import { Button, Card, Input } from "@servicecoreui/ui/wraps";
-import { PanelShell } from "../_components/PanelShell";
+import { NavCard, PageHeader, RecentPanels } from "@servicecoreui/ui";
+import { Button, Card, Input } from "@servicecoreui/ui";
+import { PanelShell } from "@servicecoreui/ui/custom";
 import { RECENT_PANELS } from "../_data/recentPanels";
 import settings from "./settings.json";
 import styles from "./ayarlar.module.css";
@@ -113,7 +113,7 @@ export default function AyarlarPage() {
     .filter((g) => g.items.length > 0);
 
   return (
-    <PanelShell>
+    <PanelShell onNavigate={router.push}>
       {/* Page header — saat (Son Panolar) + "Ayarlar" + chevron (Pano ile aynı desen) */}
       <PageHeader
         title={

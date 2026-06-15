@@ -2,7 +2,7 @@
 
 import { Settings, UserMultiple, Plug, Flow } from "@carbon/icons-react";
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { NavCard } from "@servicecoreui/ui/custom";
+import { NavCard } from "@servicecoreui/ui";
 import styles from "./nav-card.module.css";
 
 export default function NavCardPage() {

@@ -8,5 +8,12 @@
     "noEmit": false
   },
   "include": ["src/**/*"],
-  "exclude": ["dist", "node_modules", "build.mjs"]
+  "exclude": [
+    "dist",
+    "node_modules",
+    "build.mjs",
+    "src/wraps.ts",
+    "src/charts.ts",
+    "src/icons.ts"
+  ]
 }

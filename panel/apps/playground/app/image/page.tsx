@@ -2,7 +2,7 @@
 
 import { Image as ImageIconCarbon } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Image } from "@servicecoreui/ui/wraps";
+import { Alert, Image } from "@servicecoreui/ui";
 import styles from "./image.module.css";
 
 /* ────────────────────────────────────────────────

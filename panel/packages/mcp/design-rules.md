@@ -11,10 +11,12 @@
 import { Button } from 'antd';
 
 // DOĞRU
-import { Button } from '@servicecoreui/ui/wraps';
+import { Button } from '@servicecoreui/ui';
 ```
 
 AntD'yi doğrudan import etme. Sebep: standartlaşma. Wrap katmanı kalkarsa tek dosya değişir, tüm panel değil.
+
+**Sub-path YOK** — tüm bileşenler tek entry point'ten gelir: `@servicecoreui/ui`. `/wraps`, `/custom` gibi alt yollar artık kullanılmaz.
 
 ### 2. Token kullan, hex/px yazma
 
@@ -96,10 +98,58 @@ import { servicecoreTheme } from '@servicecoreui/ui/theme';
   ayrımı için kategorik chart paleti vardır (`var(--sc-chart-1..6)`). Sadece grafik
   serilerinde kullan; genel UI'da yine tek accent.
 
+## 7. Feature-Level Bileşen Kullan, Ham Primitifle UI İcat Etme
+
+Kütüphane iki katman sunar:
+- **Primitives** — `Button`, `Input`, `Form`, `Table`, vb. Düşük seviye yapıtaşları.
+- **Feature bileşenler** — `LoginForm`, `ForgotPasswordForm`, `ResetPasswordForm`, `ChangePasswordForm`, `TwoFactorForm`, `TwoFactorSetup`, `RegisterForm`, `PanelShell`, `ErrorPage`. Hazır UI blokları; içinde primitive'ler zaten kurulu.
+
+**Anti-pattern (YANLIŞ)** — tüketici ham primitive'lerle elle login formu kurar:
+
+```tsx
+// ❌ YANLIŞ: primitiflerle sıfırdan form icat etme
+import { Form, Input, Button } from '@servicecoreui/ui';
+
+function LoginPage() {
+  return (
+    <Form>
+      <Form.Item name="email"><Input /></Form.Item>
+      <Form.Item name="password"><Input.Password /></Form.Item>
+      <Button htmlType="submit">Giriş</Button>
+    </Form>
+  );
+}
+```
+
+**Doğru yaklaşım** — hazır feature bileşeni kullan:
+
+```tsx
+// ✅ DOĞRU: feature-level bileşen
+import { LoginForm } from '@servicecoreui/ui';
+
+function LoginPage() {
+  return <LoginForm onSubmit={handleLogin} />;
+}
+```
+
+Feature bileşenler i18n için `sc-` namespace key'lerini kullanır. Tüketici bu key'leri kendi sözlüğünde tanımlar (tam liste: `get_i18n_contract`):
+
+```ts
+// i18n/tr.json
+{
+  "sc-login": {
+    "email": "E-posta",
+    "password": "Şifre",
+    "submit": "Giriş Yap"
+  }
+}
+```
+
 ## Tüketim Akışı
 
 1. Component bul: `find_component "data tablo"`
 2. Spec oku: `get_component_spec Table`
 3. Token kontrol: `get_tokens`
 4. Kuralları doğrula: `get_design_rules`
-5. Kod yaz
+5. Feature bileşen mi? → `get_i18n_contract` ile key'leri al
+6. Kod yaz

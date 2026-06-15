@@ -9,7 +9,7 @@ import {
   Modal,
   Select,
   message,
-} from "@servicecoreui/ui/wraps";
+} from "@servicecoreui/ui";
 import styles from "./modal.module.css";
 
 /* ────────────────────────────────────────────────

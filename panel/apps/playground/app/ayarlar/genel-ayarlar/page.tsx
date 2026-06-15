@@ -4,9 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronRight, Help, Time } from "@carbon/icons-react";
 import { Heading, Text } from "@servicecoreui/ui";
-import { PageHeader, RecentPanels, SettingsForm } from "@servicecoreui/ui/custom";
-import { Button, Card, Drawer, Tooltip } from "@servicecoreui/ui/wraps";
-import { PanelShell } from "../../_components/PanelShell";
+import { PageHeader, RecentPanels, SettingsForm } from "@servicecoreui/ui";
+import { Button, Card, Drawer, Tooltip } from "@servicecoreui/ui";
+import { PanelShell } from "@servicecoreui/ui/custom";
 import { RECENT_PANELS } from "../../_data/recentPanels";
 import { GENEL_AYARLAR_TABS } from "./fields";
 import styles from "./genel-ayarlar.module.css";
@@ -43,7 +43,7 @@ export default function GenelAyarlarPage() {
   const [helpOpen, setHelpOpen] = useState(false);
 
   return (
-    <PanelShell>
+    <PanelShell onNavigate={router.push}>
       <PageHeader
         title={
           <span className={styles.crumb}>

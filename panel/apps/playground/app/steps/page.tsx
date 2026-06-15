@@ -12,7 +12,7 @@ import {
   ArrowRight,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Steps } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Steps } from "@servicecoreui/ui";
 import styles from "./steps.module.css";
 
 /* ────────────────────────────────────────────────

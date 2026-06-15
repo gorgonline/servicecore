@@ -2,7 +2,7 @@
 
 import { Task, WarningAlt, Notification } from "@carbon/icons-react";
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { ListItem } from "@servicecoreui/ui/custom";
+import { ListItem } from "@servicecoreui/ui";
 import styles from "./list-item.module.css";
 
 export default function ListItemPage() {

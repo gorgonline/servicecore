@@ -1,8 +1,8 @@
 "use client";
 
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { LineChart } from "@servicecoreui/ui/charts";
-import { Card } from "@servicecoreui/ui/wraps";
+import { LineChart } from "@servicecoreui/ui";
+import { Card } from "@servicecoreui/ui";
 import styles from "./line-chart.module.css";
 
 const TREND = [
@@ -82,7 +82,7 @@ export default function LineChartPage() {
 
       <section className={styles.section}>
         <Heading level={2}>Kullanım</Heading>
-        <Code block>{`import { LineChart } from "@servicecoreui/ui/charts";
+        <Code block>{`import { LineChart } from "@servicecoreui/ui";
 
 <LineChart
   data={[{ ay: "Oca", acilan: 64, cozulen: 58 }]}

@@ -1,10 +1,10 @@
 "use client";
 
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { DataTable } from "@servicecoreui/ui/custom";
-import type { DataTableColumn } from "@servicecoreui/ui/custom";
-import { Tag } from "@servicecoreui/ui/wraps";
-import type { TagProps } from "@servicecoreui/ui/wraps";
+import { DataTable } from "@servicecoreui/ui";
+import type { DataTableColumn } from "@servicecoreui/ui";
+import { Tag } from "@servicecoreui/ui";
+import type { TagProps } from "@servicecoreui/ui";
 import styles from "./data-table.module.css";
 
 interface Bilet {

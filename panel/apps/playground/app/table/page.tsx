@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { Edit, TrashCan, Send } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Table } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Table } from "@servicecoreui/ui";
 import styles from "./table.module.css";
 
 /* ────────────────────────────────────────────────

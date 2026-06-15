@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { CloudUpload, Document, Add, UserAvatar } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Upload } from "@servicecoreui/ui/wraps";
-import type { UploadProps } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Upload } from "@servicecoreui/ui";
+import type { UploadProps } from "@servicecoreui/ui";
 import styles from "./upload.module.css";
 
 /* ────────────────────────────────────────────────

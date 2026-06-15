@@ -30,7 +30,7 @@ import {
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Text } from "@servicecoreui/ui";
-import { PageHeader, RecentPanels, SearchableMenu } from "@servicecoreui/ui/custom";
+import { PageHeader, RecentPanels, SearchableMenu } from "@servicecoreui/ui";
 import {
   Button,
   Card,
@@ -40,10 +40,10 @@ import {
   Statistic,
   Tag,
   message,
-} from "@servicecoreui/ui/wraps";
-import type { MenuProps } from "@servicecoreui/ui/wraps";
-import { BarChart, DonutChart, LineChart, SlaGauge } from "@servicecoreui/ui/charts";
-import { PanelShell } from "../_components/PanelShell";
+} from "@servicecoreui/ui";
+import type { MenuProps } from "@servicecoreui/ui";
+import { BarChart, DonutChart, LineChart, SlaGauge } from "@servicecoreui/ui";
+import { PanelShell } from "@servicecoreui/ui/custom";
 import { RECENT_PANELS } from "../_data/recentPanels";
 import styles from "./pano.module.css";
 
@@ -162,7 +162,7 @@ export default function ShellPage() {
   );
 
   return (
-    <PanelShell activeNav="olay">
+    <PanelShell activeNav="olay" onNavigate={router.push}>
       {/* ── Page header ── */}
       <PageHeader
         title={

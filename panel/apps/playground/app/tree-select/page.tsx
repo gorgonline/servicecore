@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, TreeSelect } from "@servicecoreui/ui/wraps";
-import type { TreeSelectNode } from "@servicecoreui/ui/wraps";
+import { Alert, TreeSelect } from "@servicecoreui/ui";
+import type { TreeSelectNode } from "@servicecoreui/ui";
 import styles from "./tree-select.module.css";
 
 /* ────────────────────────────────────────────────

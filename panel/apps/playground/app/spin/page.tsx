@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Spin, Switch } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Spin, Switch } from "@servicecoreui/ui";
 import { Renew, CheckmarkFilled } from "@carbon/icons-react";
 import styles from "./spin.module.css";
 
@@ -320,7 +320,7 @@ export default function SpinPage() {
           Her sayfada custom indicator yazmaktan kurtarır.
         </Text>
         <CodeBlock>{`// app/providers.tsx veya layout.tsx
-import { Spin } from "@servicecoreui/ui/wraps";
+import { Spin } from "@servicecoreui/ui";
 import { Renew } from "@carbon/icons-react";
 
 Spin.setDefaultIndicator(

@@ -17,7 +17,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight, ChevronDown, Dashboard, Search } from "@carbon/icons-react";
 import { VERSION } from "@servicecoreui/ui";
-import { Input } from "@servicecoreui/ui/wraps";
+import { Input } from "@servicecoreui/ui";
 import { navGroups, pageGroups } from "./nav";
 import styles from "./DocsShell.module.css";
 

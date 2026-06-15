@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Anchor } from "@servicecoreui/ui/wraps";
+import { Alert, Anchor } from "@servicecoreui/ui";
 import styles from "./anchors.module.css";
 
 /* ────────────────────────────────────────────────

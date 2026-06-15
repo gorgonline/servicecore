@@ -9,7 +9,7 @@ import {
   Information,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Card, Tag } from "@servicecoreui/ui/wraps";
+import { Alert, Card, Tag } from "@servicecoreui/ui";
 import styles from "./tags.module.css";
 
 /* ────────────────────────────────────────────────

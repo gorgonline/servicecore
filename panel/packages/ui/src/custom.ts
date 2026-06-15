@@ -13,23 +13,24 @@
  * ama tutarlılık için aynı kovada.
  */
 
-export * from "./Brand";
-export * from "./Kbd";
-export * from "./ListItem";
-export * from "./NavCard";
-export * from "./PageHeader";
-export * from "./RecentPanels";
-export * from "./SearchableMenu";
-export * from "./DataTable";
-export * from "./CommandPalette";
-export * from "./TimeTracker";
-export * from "./NotificationCenter";
-export * from "./UserMenu";
+export * from "./components/Brand";
+export * from "./components/Kbd";
+export * from "./components/ListItem";
+export * from "./components/NavCard";
+export * from "./components/PageHeader";
+export * from "./components/RecentPanels";
+export * from "./components/SearchableMenu";
+export * from "./components/DataTable";
+export * from "./components/CommandPalette";
+export * from "./components/TimeTracker";
+export * from "./components/NotificationCenter";
+export * from "./components/UserMenu";
 
 // ── Sayfa yapıtaşları (auth + ayarlar + sistem) ──
 // Saf bileşenler (Next'e bağlı değil); auth/ayarlar/sistem sayfaları bunları
 // npm'den import eder. Sayfaların kendisi get_page ile kaynak-kod şablonu gelir.
-export * from "./AuthShell";
-export * from "./PasswordChecklist";
-export * from "./SystemMessage";
-export * from "./SettingsForm";
+export * from "./features/auth";
+export * from "./features/layout";
+export * from "./components/PasswordChecklist";
+export * from "./components/SystemMessage";
+export * from "./components/SettingsForm";

@@ -11,7 +11,7 @@ import {
   Chat,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Avatar, Badge, Card, Flex } from "@servicecoreui/ui/wraps";
+import { Alert, Avatar, Badge, Card, Flex } from "@servicecoreui/ui";
 import styles from "./badges.module.css";
 
 /* ────────────────────────────────────────────────

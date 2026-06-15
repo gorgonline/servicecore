@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Button, Transfer } from "@servicecoreui/ui/wraps";
-import type { TransferItem } from "@servicecoreui/ui/wraps";
+import { Alert, Button, Transfer } from "@servicecoreui/ui";
+import type { TransferItem } from "@servicecoreui/ui";
 import styles from "./transfer.module.css";
 
 /* ────────────────────────────────────────────────

@@ -2,8 +2,8 @@
 
 import { Time } from "@carbon/icons-react";
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { TimeTracker } from "@servicecoreui/ui/custom";
-import { Button } from "@servicecoreui/ui/wraps";
+import { TimeTracker } from "@servicecoreui/ui";
+import { Button } from "@servicecoreui/ui";
 import styles from "./time-tracker.module.css";
 
 const TIMERS = [

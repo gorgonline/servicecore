@@ -1,8 +1,8 @@
 "use client";
 
 import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
-import { BarChart } from "@servicecoreui/ui/charts";
-import { Card } from "@servicecoreui/ui/wraps";
+import { BarChart } from "@servicecoreui/ui";
+import { Card } from "@servicecoreui/ui";
 import styles from "./bar-chart.module.css";
 
 const AYLIK = [
@@ -114,7 +114,7 @@ export default function BarChartPage() {
 
       <section className={styles.section}>
         <Heading level={2}>Kullanım</Heading>
-        <Code block>{`import { BarChart } from "@servicecoreui/ui/charts";
+        <Code block>{`import { BarChart } from "@servicecoreui/ui";
 
 <BarChart
   data={[{ ay: "Oca", acik: 24, kapali: 40 }]}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { MenuProps } from "@servicecoreui/ui/wraps";
+import type { MenuProps } from "@servicecoreui/ui";
 import {
   Dashboard,
   Analytics,
@@ -19,7 +19,7 @@ import {
   Home,
 } from "@carbon/icons-react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Menu } from "@servicecoreui/ui/wraps";
+import { Alert, Menu } from "@servicecoreui/ui";
 import styles from "./menus.module.css";
 
 /* ────────────────────────────────────────────────

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, InputNumber } from "@servicecoreui/ui/wraps";
+import { Alert, InputNumber } from "@servicecoreui/ui";
 import styles from "./input-number.module.css";
 
 /* ────────────────────────────────────────────────

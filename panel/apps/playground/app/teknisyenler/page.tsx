@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Add, ChevronRight, Edit, Help, Password, Power, Time } from "@servicecoreui/ui/icons";
+import { Add, ChevronRight, Edit, Help, Password, Power, Time } from "@servicecoreui/ui";
 import { Heading, Text } from "@servicecoreui/ui";
-import { DataTable, PageHeader, PasswordChecklist, RecentPanels } from "@servicecoreui/ui/custom";
-import type { DataTableColumn } from "@servicecoreui/ui/custom";
-import { Avatar, Button, Drawer, Input, Select, Switch, Tag, Tooltip } from "@servicecoreui/ui/wraps";
-import { PanelShell } from "../_components/PanelShell";
+import { DataTable, PageHeader, PasswordChecklist, RecentPanels } from "@servicecoreui/ui";
+import type { DataTableColumn } from "@servicecoreui/ui";
+import { Avatar, Button, Drawer, Input, Select, Switch, Tag, Tooltip } from "@servicecoreui/ui";
+import { useRouter } from "next/navigation";
+import { PanelShell } from "@servicecoreui/ui/custom";
 import { RECENT_PANELS } from "../_data/recentPanels";
 import styles from "./teknisyenler.module.css";
 
@@ -89,6 +90,7 @@ function HelpContent() {
 }
 
 export default function TeknisyenlerPage() {
+  const router = useRouter();
   const [agents, setAgents] = useState<Agent[]>(MOCK);
   const [editOpen, setEditOpen] = useState(false);
   const [editing, setEditing] = useState<Agent | null>(null);
@@ -174,7 +176,7 @@ export default function TeknisyenlerPage() {
   ];
 
   return (
-    <PanelShell>
+    <PanelShell onNavigate={router.push}>
       <PageHeader
         title={
           <span className={styles.crumb}>

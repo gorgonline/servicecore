@@ -1,0 +1,87 @@
+/* AntD Message wrap — ServiceCore görsel diline çek.
+ *
+ * NOT: Message portal'da render edilir, scope yok. CSS Module'ün :global
+ * selektörleri ile gerçek class'ları yakalıyoruz. Bu CSS bundle'ı import
+ * edildiğinde global etki eder.
+ *
+ * Görsel kararlar:
+ * - Notice content: bg-base, shadow md, radius md, padding sane
+ * - Icon: type'a göre semantic renk (success/info/warning/danger fg)
+ * - Text: sans sm primary
+ * - Top default 24px (config.top ile değiştirilir)
+ */
+
+/* ───────────────────────────────────────────────────────────────
+ * Notice — tek toast kutusu
+ * ─────────────────────────────────────────────────────────────── */
+
+:global {
+  .ant-message-notice-content {
+    background: var(--sc-color-bg-base) !important;
+    border: 1px solid var(--sc-color-border-default) !important;
+    border-radius: var(--sc-radius-md) !important;
+    box-shadow: var(--sc-shadow-md) !important;
+    padding: var(--sc-space-2) var(--sc-space-4) !important;
+    font-family: var(--sc-font-sans) !important;
+    font-size: var(--sc-font-size-sm) !important;
+    color: var(--sc-color-text-primary) !important;
+    line-height: var(--sc-line-height-normal);
+    pointer-events: auto;
+  }
+
+  /* Icon + metin hizası. */
+  .ant-message-custom-content {
+    display: inline-flex !important;
+    align-items: center;
+  }
+
+  .ant-message-custom-content > svg,
+  .ant-message-custom-content > .anticon {
+    flex-shrink: 0;
+    margin-inline-end: var(--sc-space-2);
+  }
+
+  /* ─────────────────────────────────────────────────
+   * Type renkleri — icon color
+   * ───────────────────────────────────────────────── */
+
+  .ant-message-success .anticon,
+  .ant-message-success > svg {
+    color: var(--sc-color-state-success-fg) !important;
+  }
+
+  .ant-message-error .anticon,
+  .ant-message-error > svg {
+    color: var(--sc-color-state-danger-fg) !important;
+  }
+
+  .ant-message-warning .anticon,
+  .ant-message-warning > svg {
+    color: var(--sc-color-state-warning-fg) !important;
+  }
+
+  .ant-message-info .anticon,
+  .ant-message-info > svg {
+    color: var(--sc-color-state-info-fg) !important;
+  }
+
+  .ant-message-loading .anticon,
+  .ant-message-loading > svg {
+    color: var(--sc-color-accent) !important;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────
+ * Loading spin — Carbon Renew ikonu (message.loading) döndürme
+ * (renk yukarıdaki .ant-message-loading > svg kuralından gelir)
+ * ─────────────────────────────────────────────────────────────── */
+
+.loadingSpin {
+  animation: messageSpin 1s linear infinite;
+}
+
+@keyframes messageSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -9,7 +9,7 @@ import {
   ChevronDown,
 } from "@carbon/icons-react";
 import { Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
-import { Alert, Avatar, Card, Tag } from "@servicecoreui/ui/wraps";
+import { Alert, Avatar, Card, Tag } from "@servicecoreui/ui";
 import styles from "./avatars.module.css";
 
 /* ────────────────────────────────────────────────

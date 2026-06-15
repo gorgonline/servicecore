@@ -1,20 +1,9 @@
-import Link from "next/link";
-import { Button } from "@servicecoreui/ui/wraps";
-import { SystemMessage } from "@servicecoreui/ui/custom";
+"use client";
+
+import { useRouter } from "next/navigation";
+import { ErrorPage } from "@servicecoreui/ui/custom";
 
 export default function NotFound() {
-  return (
-    <SystemMessage
-      code="404"
-      title="Sayfa bulunamadı"
-      description="Aradığın sayfa taşınmış, adı değişmiş ya da hiç var olmamış olabilir."
-      action={
-        <Link href="/">
-          <Button type="primary" size="large">
-            Ana sayfaya dön
-          </Button>
-        </Link>
-      }
-    />
-  );
+  const router = useRouter();
+  return <ErrorPage variant="404" onNavigate={router.push} />;
 }
