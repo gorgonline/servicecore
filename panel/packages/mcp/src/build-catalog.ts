@@ -135,15 +135,15 @@ const PAGE_INSTALL = [
   "5. Mock veri / placeholder handler'ları gerçek API + DTO'ya bağla (`value` / `onChange` / `options`).",
   "",
   "### Yapıtaşları = paketten import (KOPYALANMAZ)",
-  "Sayfa dosyaları şu bileşenleri `@servicecoreui/ui/custom`'dan çeker — npm'den gelir, kaynak kopyalamana gerek yok:",
-  "`AuthShell` · `PasswordChecklist` · `SystemMessage` · `SettingsForm` (+ `SettingsTab`/`Field` tipleri).",
+  "Sayfa dosyaları şu bileşenleri `@servicecoreui/ui/features`'tan çeker — npm'den gelir, kaynak kopyalamana gerek yok:",
+  "`AuthShell` · `PasswordChecklist` · `SystemMessage` · `SettingsForm` (+ `SettingsTab`/`Field` tipleri). (Geriye-uyum: `@servicecoreui/ui/custom` da çalışır.)",
   "Aşağıda listelenen dosyalar yalnızca **sayfaya özel** (route page, şema/data, `PanelShell`, paylaşılan CSS) — bunları kopyalarsın.",
 ].join("\n");
 
 /** Paylaşılan blok dosyaları (birden çok sayfanın kullandığı yerel yapıtaşları).
  *
  * NOT: AuthShell · PasswordChecklist · SystemMessage · SettingsForm artık
- * yapıtaşı olarak burada DEĞİL — `@servicecoreui/ui/custom`'dan import edilen
+ * yapıtaşı olarak burada DEĞİL — `@servicecoreui/ui/features`'tan import edilen
  * yayınlanmış bileşenler. Sayfa dosyaları onları npm'den çeker; kopyalanmaz.
  * Burada kalanlar Next'e bağlı / sayfaya özel (kopyalanması gereken) dosyalar. */
 const BLOCKS: Record<string, string[]> = {

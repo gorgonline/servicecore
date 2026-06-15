@@ -80,10 +80,16 @@ async function main() {
     outExtension: { ".js": ".cjs" },
   });
 
-  // 3. AntD wraps entry — "use client" banner'lı
+  // 3. Client entry'ler — "use client" banner'lı
+  //    wraps (AntD) · custom (ServiceCore-özel) · charts (Recharts) · features (sayfa yapıtaşları)
   const WRAPS = {
     ...SHARED,
-    entryPoints: { wraps: "src/wraps.ts", custom: "src/custom.ts", charts: "src/charts.ts" },
+    entryPoints: {
+      wraps: "src/wraps.ts",
+      custom: "src/custom.ts",
+      charts: "src/charts.ts",
+      features: "src/features.ts",
+    },
     outdir: "dist",
     banner: { js: '"use client";' },
   };

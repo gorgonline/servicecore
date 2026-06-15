@@ -3,7 +3,7 @@
 ## Misyon
 ServiceCore'un mevcut paneli için **bileşen kütüphanesi**. Biz panel yazmıyoruz — kütüphane yazıyoruz. Backend ekibi AntD 5.7 kullanan kendi panel codebase'inde bizim paketi tüketecek.
 
-**Deliverable:** `@servicecore/ui` npm paketi (GitHub Packages)
+**Deliverable:** `@servicecoreui/ui` npm paketi (npmjs.org — public)
 
 ## ⚠️ Deploy — DİKKAT (iki repo var)
 - Bu klasör **monorepo** `gorgonline/servicecore` içinde (`panel/`). Burası **çalışma kopyası**.
@@ -15,13 +15,18 @@ ServiceCore'un mevcut paneli için **bileşen kütüphanesi**. Biz panel yazmıy
 ## Yapı
 - `packages/ui/` — yayınlanan paket. AntD 5.7 wrap bileşenleri, CSS Modules, kendi token sistemi
 - `apps/playground/` — bizim test ortamımız. Next.js 15 + React 18 + AntD 5.7 + AntdRegistry. **Onlara gitmez**
-- `packages/ui/dist/` — tsup çıktısı (ESM + CJS + .d.ts + birleşik CSS)
+- `packages/ui/dist/` — esbuild çıktısı (ESM + CJS + .d.ts + birleşik CSS) — `build.mjs`
 
 ## Export kovaları — bileşen NEREYE gider
-Üç ayrı export var; yeni bileşeni **doğru kovaya** koy:
-- `@servicecoreui/ui` → typography primitifleri + theme (Heading, Display, Text, Eyebrow, Code). Server-safe.
-- `@servicecoreui/ui/custom` → **bizim sıfırdan yaptığımız** ServiceCore'a özel bileşenler (Brand…). AntD wrap DEĞİL, server-safe.
-- `@servicecoreui/ui/wraps` → AntD wrap'leri (Button, Card, Table…). `"use client"`, client-only.
+Paket çok-girişli (subpath export). Yeni bileşeni **doğru kovaya** koy:
+- `@servicecoreui/ui` → typography primitifleri + theme (Heading, Display, Text, Eyebrow, Code). **Server-safe** (AntD yok, RSC uyumlu).
+- `@servicecoreui/ui/wraps` → AntD wrap'leri (Button, Card, Input, Table…). `"use client"`, client-only.
+- `@servicecoreui/ui/custom` → **bizim sıfırdan yaptığımız** ServiceCore'a özel bileşenler (Brand, Kbd, DataTable, CommandPalette, PageHeader, UserMenu…). `"use client"`.
+- `@servicecoreui/ui/features` → sayfa-seviyesi feature yapıtaşları (AuthShell, PasswordChecklist, SystemMessage, SettingsForm). `"use client"`. *(custom da geriye-uyum için re-export eder.)*
+- `@servicecoreui/ui/charts` → Recharts grafikleri (BarChart, DonutChart, LineChart, SlaGauge). `"use client"`, izole bundle (~100KB recharts yalnız buraya).
+- `@servicecoreui/ui/icons` → Carbon ikonları re-export. Server-safe.
+- `@servicecoreui/ui/theme` → token'lar + `servicecoreTheme` (ConfigProvider). Server-safe.
+- CSS: `@servicecoreui/ui/styles.css` (app entry'de bir kez) + `@servicecoreui/ui/tokens.css`.
 
 **Yeni custom (kendi) bileşen eklerken:**
 1. `src/<Ad>/` klasörü (pattern aşağıda — Eyebrow/Code gibi: `<Ad>.tsx` + `.module.css` + `index.ts`)
@@ -46,7 +51,7 @@ pnpm --filter @servicecoreui/mcp build
 ## Stack
 - pnpm workspace monorepo
 - TypeScript strict, React 18, AntD 5.7
-- tsup build (ESM + CJS dual output)
+- esbuild build (ESM + CJS dual output) — `build.mjs`
 - CSS Modules + AntD theme tokens (Tailwind YOK)
 
 ## Hedef tüketim ortamı
@@ -54,17 +59,16 @@ Backend ekibi: AntD 5.7 + React 18 + Webpack (CRA veya custom). Bizim paket bu o
 
 ## Kullanım (onların gözünden)
 ```bash
-echo "@servicecore:registry=https://npm.pkg.github.com" >> .npmrc
-npm install @servicecore/ui
+npm install @servicecoreui/ui   # public npmjs.org — .npmrc gerekmez
 ```
 ```tsx
-import { Button } from '@servicecore/ui';
-import '@servicecore/ui/styles.css';  // app entry'sinde bir kez
+import { Button } from '@servicecoreui/ui/wraps';   // AntD wrap'leri (client-only)
+import '@servicecoreui/ui/styles.css';              // app entry'sinde bir kez
 ```
 
 Opsiyonel — tüm AntD'yi ServiceCore diline çevirmek için:
 ```tsx
-import { servicecoreTheme } from '@servicecore/ui/theme';
+import { servicecoreTheme } from '@servicecoreui/ui/theme';
 <ConfigProvider theme={servicecoreTheme}>...</ConfigProvider>
 ```
 
@@ -116,7 +120,7 @@ export function Button({ variant = 'default', className, ...rest }: ButtonProps)
 
 ## Komutlar (panel/ içinden)
 - `pnpm dev` — playground başlatır (port 3300)
-- `pnpm build:ui` — sadece library'yi build eder (tsup)
+- `pnpm build:ui` — sadece library'yi build eder (esbuild)
 - `pnpm build` — her şeyi build eder
 - `pnpm typecheck` — tüm paketler
 
@@ -130,7 +134,7 @@ export function Button({ variant = 'default', className, ...rest }: ButtonProps)
 
 ## Açık konular
 - Backend ekibinin webpack/CRA exact setup'ı (`pnpm install` sonrası belirli olur)
-- ProComponents (`@servicecore/ui-pro`) ayrı paket olacak mı (Faz 5'te kararla)
+- ProComponents (`@servicecoreui/ui-pro`) ayrı paket olacak mı (Faz 5'te kararla)
 - Storybook eklenecek mi (Faz 3 sonunda karar)
 - AntD versiyon yükseltme planı (backend ekibiyle konuşulacak)
 

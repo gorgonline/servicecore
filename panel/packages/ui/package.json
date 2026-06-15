@@ -1,6 +1,6 @@
 {
   "name": "@servicecoreui/ui",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "ServiceCore UI library — AntD 5.7 wrapped components with CSS Modules",
   "license": "UNLICENSED",
   "type": "module",
@@ -29,6 +29,11 @@
       "types": "./dist/custom.d.ts",
       "import": "./dist/custom.js",
       "require": "./dist/custom.cjs"
+    },
+    "./features": {
+      "types": "./dist/features.d.ts",
+      "import": "./dist/features.js",
+      "require": "./dist/features.cjs"
     },
     "./wraps": {
       "types": "./dist/wraps.d.ts",

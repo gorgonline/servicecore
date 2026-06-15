@@ -27,9 +27,7 @@ export * from "./NotificationCenter";
 export * from "./UserMenu";
 
 // ── Sayfa yapıtaşları (auth + ayarlar + sistem) ──
-// Saf bileşenler (Next'e bağlı değil); auth/ayarlar/sistem sayfaları bunları
-// npm'den import eder. Sayfaların kendisi get_page ile kaynak-kod şablonu gelir.
-export * from "./AuthShell";
-export * from "./PasswordChecklist";
-export * from "./SystemMessage";
-export * from "./SettingsForm";
+// Kanonik ev artık `@servicecoreui/ui/features` (AuthShell·PasswordChecklist·
+// SystemMessage·SettingsForm). ./custom bunları geriye-uyum için re-export eder
+// — 0.5.0'da bu yolu kullanan tüketiciler kırılmasın.
+export * from "./features";
