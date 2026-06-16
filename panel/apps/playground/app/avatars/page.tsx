@@ -8,7 +8,7 @@ import {
   Settings,
   ChevronDown,
 } from "@carbon/icons-react";
-import { Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Avatar, Card, Tag } from "@servicecoreui/ui/wraps";
 import styles from "./avatars.module.css";
 

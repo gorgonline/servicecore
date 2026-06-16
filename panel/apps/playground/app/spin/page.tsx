@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Button, Spin, Switch } from "@servicecoreui/ui/wraps";
 import { Renew, CheckmarkFilled } from "@carbon/icons-react";
 import styles from "./spin.module.css";

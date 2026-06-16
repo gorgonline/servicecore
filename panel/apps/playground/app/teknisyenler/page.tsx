@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Add, ChevronRight, Edit, Help, Password, Power, Time } from "@servicecoreui/ui/icons";
-import { Heading, Text } from "@servicecoreui/ui";
+import { Heading, Text } from "@servicecoreui/ui/typography";
 import { DataTable, PageHeader, PasswordChecklist, RecentPanels } from "@servicecoreui/ui/custom";
 import type { DataTableColumn } from "@servicecoreui/ui/custom";
 import { Avatar, Button, Drawer, Input, Select, Switch, Tag, Tooltip } from "@servicecoreui/ui/wraps";

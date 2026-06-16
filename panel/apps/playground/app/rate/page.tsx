@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ThumbsUp, ThumbsDown, FaceSatisfied } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Button, Rate } from "@servicecoreui/ui/wraps";
 import styles from "./rate.module.css";
 

@@ -44,7 +44,7 @@ import {
   UserRole,
   UserSettings,
 } from "@carbon/icons-react";
-import { Text } from "@servicecoreui/ui";
+import { Text } from "@servicecoreui/ui/typography";
 import { NavCard, PageHeader, RecentPanels } from "@servicecoreui/ui/custom";
 import { Button, Card, Input } from "@servicecoreui/ui/wraps";
 import { PanelShell } from "../_components/PanelShell";

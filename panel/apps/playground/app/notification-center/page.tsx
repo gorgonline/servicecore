@@ -1,7 +1,7 @@
 "use client";
 
 import { Notification } from "@carbon/icons-react";
-import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui/typography";
 import { NotificationCenter } from "@servicecoreui/ui/custom";
 import { Button, Badge } from "@servicecoreui/ui/wraps";
 import styles from "./notification-center.module.css";

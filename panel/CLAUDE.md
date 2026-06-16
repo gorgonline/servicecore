@@ -17,22 +17,48 @@ ServiceCore'un mevcut paneli için **bileşen kütüphanesi**. Biz panel yazmıy
 - `apps/playground/` — bizim test ortamımız. Next.js 15 + React 18 + AntD 5.7 + AntdRegistry. **Onlara gitmez**
 - `packages/ui/dist/` — esbuild çıktısı (ESM + CJS + .d.ts + birleşik CSS) — `build.mjs`
 
-## Export kovaları — bileşen NEREYE gider
-Paket çok-girişli (subpath export). Yeni bileşeni **doğru kovaya** koy:
-- `@servicecoreui/ui` → typography primitifleri + theme (Heading, Display, Text, Eyebrow, Code). **Server-safe** (AntD yok, RSC uyumlu).
-- `@servicecoreui/ui/wraps` → AntD wrap'leri (Button, Card, Input, Table…). `"use client"`, client-only.
-- `@servicecoreui/ui/custom` → **bizim sıfırdan yaptığımız** ServiceCore'a özel bileşenler (Brand, Kbd, DataTable, CommandPalette, PageHeader, UserMenu…). `"use client"`.
-- `@servicecoreui/ui/features` → sayfa-seviyesi feature yapıtaşları (AuthShell, PasswordChecklist, SystemMessage, SettingsForm). `"use client"`. *(custom da geriye-uyum için re-export eder.)*
-- `@servicecoreui/ui/charts` → Recharts grafikleri (BarChart, DonutChart, LineChart, SlaGauge). `"use client"`, izole bundle (~100KB recharts yalnız buraya).
-- `@servicecoreui/ui/icons` → Carbon ikonları re-export. Server-safe.
-- `@servicecoreui/ui/theme` → token'lar + `servicecoreTheme` (ConfigProvider). Server-safe.
-- CSS: `@servicecoreui/ui/styles.css` (app entry'de bir kez) + `@servicecoreui/ui/tokens.css`.
+## Klasör mimarisi — `src/` katmanları (feature-based)
+> Tam mimari + bileşen→hedef haritası: [ARCHITECTURE-feature-based.md](ARCHITECTURE-feature-based.md)
 
-**Yeni custom (kendi) bileşen eklerken:**
-1. `src/<Ad>/` klasörü (pattern aşağıda — Eyebrow/Code gibi: `<Ad>.tsx` + `.module.css` + `index.ts`)
-2. `src/custom.ts`'e `export * from "./<Ad>";`
-3. Playground'da `app/<ad>/` demo sayfası + `_components/nav.ts`'te **"ServiceCore Özel"** grubuna giriş
-4. `pnpm build:ui` (dist'i yenile)
+`src/` katmanlı. Bir bileşenin **katmanı yerini belirler**:
+- `src/typography/` → metin primitifleri (Heading, Display, Text, Eyebrow, Code). Server-safe.
+- `src/primitive/` → **jenerik yapı taşları**: AntD wrap'leri (Button, Card, Input, Table…) + `primitive/charts/` (BarChart, DonutChart, LineChart) + ServiceCore-jenerik bloklar (DataTable, PageHeader, Brand, Kbd, ListItem, NavCard, CommandPalette, SearchableMenu, UserMenu, RecentPanels). **Tüketici doğrudan kullanmaz** — feature içinde tüketilir.
+- `src/feature/<domain>/` → domain-özel kompozisyonlar (public yüzey). `auth/` (AuthShell, PasswordChecklist), `settings/` (SettingsForm), `system/` (SystemMessage), `sla/` (SlaGauge), `notification/` (NotificationCenter), `time/` (TimeTracker). Primitive'leri birleştirir (ör. ileride `IncidentTable` → içeride `DataTable`).
+- `src/asset/` → icons (Carbon re-export) + (ileride) img/svg.
+- `src/theme/` → token sistemi.
+
+## Export kovaları — bileşen NEREYE gider
+Paket çok-girişli (subpath export). **Hedef: primitive'i gizle, domain feature'ı aç.**
+Public yüzey **SADECE** domain feature'ları + theme. Primitive/wraps/typography/icons **dışarı kapalı**.
+- **Domain feature subpath'leri (public):** `@servicecoreui/ui/auth` · `/settings` · `/system` · `/sla` · `/notification` · `/time`. `"use client"`.
+- `@servicecoreui/ui` (`.`) → **sadece** theme token'ları + `VERSION`. Server-safe.
+- `@servicecoreui/ui/theme` → token'lar + `servicecoreTheme`. Server-safe.
+- CSS: `@servicecoreui/ui/styles.css` (app entry'de bir kez) + `@servicecoreui/ui/tokens.css`.
+- **PUBLIC DEĞİL (node exports'tan bloklu):** `/wraps` `/custom` `/features` `/charts` `/icons` + typography + tüm primitive'ler. Tüketici bunları göremez.
+
+> **Playground bunları nasıl görüyor?** İç katalog olduğu için primitive demolarına ihtiyaç duyar; kaldırılan yolları `apps/playground/tsconfig.json` `paths` ile **iç dist hedeflerine** alias'lar (`/wraps`→`dist/_internal/wraps`, typography→`dist/typography/index`, `/icons`→`dist/asset/icons`). Bu alias'lar yalnız playground'da; yayınlanan pakette yok. `src/_internal/*` + `src/typography/index.ts` bu yüzden build edilir ama `package.json` `exports`'ta **değildir**.
+
+**Yeni bileşen eklerken — önce KATMANINA karar ver:**
+- *Jenerik yapı taşı mı (primitive)?* → `src/primitive/<Ad>/`. İç barrel `src/_internal/wraps.ts`/`custom.ts`'e ekle. **Public export YOK** — bir domain feature içinde tüket.
+- *Domain feature mı?* → `src/feature/<domain>/<Ad>/` + `src/feature/<domain>/index.ts`'e `export * from "./<Ad>";`. Yeni domain ise (dist src'yi yansıtır): `build.mjs` entry `"feature/<domain>/index"` + `package.json` exports `"./<domain>"` → `./dist/feature/<domain>/index.*`.
+- *Typography mı?* → `src/typography/<Ad>/` + `src/typography/index.ts` (iç barrel).
+Sonra: Playground'da `app/<ad>/` demo + `_components/nav.ts` girişi → `pnpm build:ui`.
+
+## i18n — Lokalizasyon (`@servicecoreui/ui/i18n`)
+Kütüphane **hiçbir çeviri taşımaz**. Sadece sözleşmeyi verir: `LocalizationMessages`
+tipi + `LocalizationProvider` + `useLocalization()` hook. Tüketici kendi dil nesnesini
+(bu tipe uygun) Provider'a geçirir; feature bileşenleri içeriden `useLocalization()`
+ile okur. AntD-native string'ler (pagination, "veri yok") tüketicinin `ConfigProvider
+locale`'inden gelir — sözleşmeye girmez.
+
+- **Yeni feature string'i:** `src/i18n/messages.ts`'teki ilgili namespace'e anahtar ekle
+  (tip zorlar → tüketici eksik bırakırsa derlenmez). Bileşende `const m = useLocalization().<ns>`.
+- **⚠️ SINGLETON KURALI:** i18n bir React context; her bundle'a gömülürse ayrı instance
+  olur, Provider eşleşmez (null → hata). Bu yüzden bileşenler i18n'i **bare subpath ile**
+  import eder: `import { useLocalization } from "@servicecoreui/ui/i18n"` (relative DEĞİL).
+  `build.mjs` `EXTERNAL`'da `@servicecoreui/ui/i18n` var → tüm bundle'lar runtime'da tek
+  `dist/i18n`'i paylaşır. `packages/ui/tsconfig.json` `paths` bunu derlemede `src/i18n`'e
+  çözer. Yeni context-tabanlı paylaşılan modül eklersen aynı deseni uygula.
 
 ## MCP — AI katalog server'ı (`packages/mcp`)
 `@servicecoreui/mcp` — AI araçlarına (Claude Code, Cursor) `@servicecoreui/ui` kataloğunu açar; AI doğrudan AntD yerine bizim wrap kütüphanesini görür. Kurulum/IDE ayarları: [packages/mcp/README.md](packages/mcp/README.md).
@@ -40,7 +66,7 @@ Paket çok-girişli (subpath export). Yeni bileşeni **doğru kovaya** koy:
 **Tool'lar:** `list_components` · `find_component "<arama>"` · `get_component_spec <Ad>` (source+types+css) · `get_tokens` · `get_design_rules` · **`list_pages`** · **`get_page <ad>`** (sayfa şablonu = route page + css + data/şema + yerel yapıtaşları, kaynak-kod olarak; manifest `build-catalog.ts`'te, dosyalar `apps/playground/app`'ten okunur).
 
 **Katalog nasıl üretiliyor:** build-time'da `packages/mcp/src/build-catalog.ts`, `packages/ui/src/`'i tarar → `dist/catalog.json`.
-- Bileşen taraması: `src/<Ad>/<Ad>.tsx` (top-level) **ve bir seviye nested** `src/<Kapsayıcı>/<Alt>/<Alt>.tsx` (ör. `Charts/BarChart`).
+- Bileşen taraması: **özyineli** — herhangi bir derinlikte `<klasör>/<Ad>/<Ad>.tsx` bileşendir (ör. `primitive/Button`, `primitive/charts/BarChart`, `feature/auth/AuthShell`). Container klasörler (primitive/feature/typography/charts/`<domain>`) yaprak değil, atlanır.
 - Token'lar `src/theme/tokens.css`'ten, kurallar `packages/mcp/design-rules.md`'den okunur.
 
 **⚠️ Bakım:** Yeni bileşen / token / kural eklediğinde kataloğu **yeniden üret**, yoksa MCP eski bilgi döner:
@@ -75,8 +101,9 @@ import { servicecoreTheme } from '@servicecoreui/ui/theme';
 ## Kurallar
 
 ### Bileşen pattern'i — her bileşen aynı kalıbı izler
+> Klasör yolu katmana göre: `src/primitive/Button/`, `src/feature/auth/AuthShell/`, `src/typography/Text/`.
 ```
-src/Button/
+src/primitive/Button/
 ├── Button.tsx           # AntD'yi wrap eder, varyant prop'ları ekler
 ├── Button.module.css    # Token'la çözülmeyen ince ayarlar
 ├── Button.types.ts      # Public type'lar

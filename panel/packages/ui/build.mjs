@@ -28,6 +28,10 @@ const EXTERNAL = [
   "@carbon/icons-react",
   "clsx",
   "recharts",
+  // i18n tek paylaşılan modül olmalı (singleton React context). Her bundle'a
+  // gömülürse her birinde ayrı context instance olur → Provider eşleşmez.
+  // External → runtime'da hepsi tek dist/i18n'i import eder.
+  "@servicecoreui/ui/i18n",
 ];
 
 const SHARED = {
@@ -60,8 +64,10 @@ async function main() {
     ...SHARED,
     entryPoints: {
       index: "src/index.ts",
-      icons: "src/icons.ts",
+      "asset/icons": "src/asset/icons.ts",
       "theme/index": "src/theme/index.ts",
+      // DAHİLİ (public exports.'ta değil) — playground typography demoları alias hedefi
+      "typography/index": "src/typography/index.ts",
     },
     format: "esm",
     outdir: "dist",
@@ -72,8 +78,10 @@ async function main() {
     ...SHARED,
     entryPoints: {
       index: "src/index.ts",
-      icons: "src/icons.ts",
+      "asset/icons": "src/asset/icons.ts",
       "theme/index": "src/theme/index.ts",
+      // DAHİLİ (public exports.'ta değil) — playground typography demoları alias hedefi
+      "typography/index": "src/typography/index.ts",
     },
     format: "cjs",
     outdir: "dist",
@@ -85,10 +93,20 @@ async function main() {
   const WRAPS = {
     ...SHARED,
     entryPoints: {
-      wraps: "src/wraps.ts",
-      custom: "src/custom.ts",
-      charts: "src/charts.ts",
-      features: "src/features.ts",
+      // Public domain feature subpath'leri — dist src'yi yansıtır (theme/index gibi)
+      "feature/auth/index": "src/feature/auth/index.ts",
+      "feature/settings/index": "src/feature/settings/index.ts",
+      "feature/system/index": "src/feature/system/index.ts",
+      "feature/sla/index": "src/feature/sla/index.ts",
+      "feature/notification/index": "src/feature/notification/index.ts",
+      "feature/time/index": "src/feature/time/index.ts",
+      // Lokalizasyon (Provider + hook + tip) — public
+      "i18n/index": "src/i18n/index.ts",
+      // Dahili/geçiş toplayıcıları (katmanlar-arası; primitive-gizleme adımında silinecek)
+      "_internal/wraps": "src/_internal/wraps.ts",
+      "_internal/custom": "src/_internal/custom.ts",
+      "_internal/charts": "src/_internal/charts.ts",
+      "_internal/features": "src/_internal/features.ts",
     },
     outdir: "dist",
     banner: { js: '"use client";' },
@@ -107,12 +125,21 @@ async function main() {
   // ESM build her entry için bir CSS üretti (index.css ve muhtemelen wraps.css).
   // Hepsini styles.css'e topla.
   const fs = await import("node:fs/promises");
+  // Nested entry'ler (feature/<domain>, _internal/*, typography/) CSS'lerini alt
+  // klasörlere yazar; hepsini özyineli topla. theme/ (raw tokens.css) hariç.
   const cssFiles = [];
-  for (const file of await readdir(DIST)) {
-    if (file.endsWith(".css") && file !== "styles.css") {
-      cssFiles.push(join(DIST, file));
+  const collectCss = async (dir) => {
+    for (const e of await readdir(dir, { withFileTypes: true })) {
+      const p = join(dir, e.name);
+      if (e.isDirectory()) {
+        if (p === join(DIST, "theme")) continue; // tokens.css ayrı export, birleştirme
+        await collectCss(p);
+      } else if (e.name.endsWith(".css") && p !== join(DIST, "styles.css")) {
+        cssFiles.push(p);
+      }
     }
-  }
+  };
+  await collectCss(DIST);
 
   if (cssFiles.length === 1) {
     // Tek CSS — direkt rename

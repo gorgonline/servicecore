@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Button, Progress } from "@servicecoreui/ui/wraps";
 import { Document, DocumentPdf, Image as ImageIcon } from "@carbon/icons-react";
 import styles from "./progress.module.css";

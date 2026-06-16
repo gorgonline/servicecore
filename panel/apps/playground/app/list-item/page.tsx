@@ -1,7 +1,7 @@
 "use client";
 
 import { Task, WarningAlt, Notification } from "@carbon/icons-react";
-import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui/typography";
 import { ListItem } from "@servicecoreui/ui/custom";
 import styles from "./list-item.module.css";
 

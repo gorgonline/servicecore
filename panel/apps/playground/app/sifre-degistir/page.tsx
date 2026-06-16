@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Heading, Text } from "@servicecoreui/ui";
+import { Heading, Text } from "@servicecoreui/ui/typography";
 import { Button, Input } from "@servicecoreui/ui/wraps";
 import { AuthShell, PasswordChecklist } from "@servicecoreui/ui/custom";
 import styles from "../giris/giris.module.css";

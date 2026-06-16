@@ -1,6 +1,6 @@
 "use client";
 
-import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui/typography";
 import { Alert } from "@servicecoreui/ui/wraps";
 import styles from "./mcp.module.css";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { Time } from "@carbon/icons-react";
-import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui/typography";
 import { TimeTracker } from "@servicecoreui/ui/custom";
 import { Button } from "@servicecoreui/ui/wraps";
 import styles from "./time-tracker.module.css";

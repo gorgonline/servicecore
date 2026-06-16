@@ -88,22 +88,23 @@ function scanComponents(): Record<string, ComponentSpec> {
     if (spec) components[name] = spec;
   };
 
+  // Katmanlı yapı değişken derinlikte: typography/<Ad>, primitive/<Ad>,
+  // primitive/charts/<Ad>, feature/<domain>/<Ad>. Container klasörler (lowercase:
+  // primitive/feature/typography/charts/<domain>) bileşen değil; bir klasör ancak
+  // basename'iyle aynı adlı <Ad>.tsx içeriyorsa bileşendir. Özyineli olarak in.
+  const walk = (dir: string) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const sub = path.join(dir, entry.name);
+      if (/^[A-Z]/.test(entry.name)) add(sub, entry.name); // <Ad>/<Ad>.tsx → bileşen
+      walk(sub); // daha derine (ör. primitive/charts/BarChart, feature/auth/AuthShell)
+    }
+  };
+
   for (const entry of fs.readdirSync(UI_SRC, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
-    if (!/^[A-Z]/.test(entry.name)) continue;
     if (entry.name === "theme") continue;
-
-    const dir = path.join(UI_SRC, entry.name);
-    // 1) Top-level bileşen: src/<Ad>/<Ad>.tsx
-    add(dir, entry.name);
-
-    // 2) Nested bileşenler: src/<Kapsayıcı>/<Alt>/<Alt>.tsx (ör. Charts/BarChart).
-    //    Scanner tek seviye iner; kapsayıcının kendi .tsx'i yoksa (Charts gibi) yalnız alt'lar girer.
-    for (const sub of fs.readdirSync(dir, { withFileTypes: true })) {
-      if (!sub.isDirectory()) continue;
-      if (!/^[A-Z]/.test(sub.name)) continue;
-      add(path.join(dir, sub.name), sub.name);
-    }
+    walk(path.join(UI_SRC, entry.name));
   }
 
   return components;

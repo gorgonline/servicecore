@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ChevronRight, Help, Time } from "@carbon/icons-react";
-import { Heading, Text } from "@servicecoreui/ui";
+import { Heading, Text } from "@servicecoreui/ui/typography";
 import { PageHeader, RecentPanels, SettingsForm } from "@servicecoreui/ui/custom";
 import { Button, Card, Drawer, Tooltip } from "@servicecoreui/ui/wraps";
 import { PanelShell } from "../../_components/PanelShell";

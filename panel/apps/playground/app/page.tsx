@@ -12,8 +12,8 @@ import {
   Text,
   Eyebrow,
   Code,
-  VERSION,
-} from "@servicecoreui/ui";
+} from "@servicecoreui/ui/typography";
+import { VERSION } from "@servicecoreui/ui";
 import { appPages, settingsPages, authPages, systemPages, componentCount } from "./_components/nav";
 import styles from "./home.module.css";
 
@@ -48,7 +48,7 @@ const installSnippet = `# npm.js (public) — kurulum
 npm install @servicecoreui/ui`;
 
 const usageSnippet = `import { Button, Table } from "@servicecoreui/ui/wraps";
-import { Heading, Text } from "@servicecoreui/ui";
+import { Heading, Text } from "@servicecoreui/ui/typography";
 
 // app entry'sinde bir kez:
 import "@servicecoreui/ui/tokens.css";

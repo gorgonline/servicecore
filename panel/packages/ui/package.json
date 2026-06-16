@@ -25,30 +25,40 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
-    "./custom": {
-      "types": "./dist/custom.d.ts",
-      "import": "./dist/custom.js",
-      "require": "./dist/custom.cjs"
+    "./auth": {
+      "types": "./dist/feature/auth/index.d.ts",
+      "import": "./dist/feature/auth/index.js",
+      "require": "./dist/feature/auth/index.cjs"
     },
-    "./features": {
-      "types": "./dist/features.d.ts",
-      "import": "./dist/features.js",
-      "require": "./dist/features.cjs"
+    "./settings": {
+      "types": "./dist/feature/settings/index.d.ts",
+      "import": "./dist/feature/settings/index.js",
+      "require": "./dist/feature/settings/index.cjs"
     },
-    "./wraps": {
-      "types": "./dist/wraps.d.ts",
-      "import": "./dist/wraps.js",
-      "require": "./dist/wraps.cjs"
+    "./system": {
+      "types": "./dist/feature/system/index.d.ts",
+      "import": "./dist/feature/system/index.js",
+      "require": "./dist/feature/system/index.cjs"
     },
-    "./charts": {
-      "types": "./dist/charts.d.ts",
-      "import": "./dist/charts.js",
-      "require": "./dist/charts.cjs"
+    "./sla": {
+      "types": "./dist/feature/sla/index.d.ts",
+      "import": "./dist/feature/sla/index.js",
+      "require": "./dist/feature/sla/index.cjs"
     },
-    "./icons": {
-      "types": "./dist/icons.d.ts",
-      "import": "./dist/icons.js",
-      "require": "./dist/icons.cjs"
+    "./notification": {
+      "types": "./dist/feature/notification/index.d.ts",
+      "import": "./dist/feature/notification/index.js",
+      "require": "./dist/feature/notification/index.cjs"
+    },
+    "./time": {
+      "types": "./dist/feature/time/index.d.ts",
+      "import": "./dist/feature/time/index.js",
+      "require": "./dist/feature/time/index.cjs"
+    },
+    "./i18n": {
+      "types": "./dist/i18n/index.d.ts",
+      "import": "./dist/i18n/index.js",
+      "require": "./dist/i18n/index.cjs"
     },
     "./styles.css": "./dist/styles.css",
     "./theme": {

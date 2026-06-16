@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Add, TrashCan, Information } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import {
   Alert,
   Button,

@@ -9,6 +9,21 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@servicecoreui/ui/typography": [
+        "../../packages/ui/dist/typography/index"
+      ],
+      "@servicecoreui/ui/wraps": [
+        "../../packages/ui/dist/_internal/wraps"
+      ],
+      "@servicecoreui/ui/custom": [
+        "../../packages/ui/dist/_internal/custom"
+      ],
+      "@servicecoreui/ui/charts": [
+        "../../packages/ui/dist/_internal/charts"
+      ],
+      "@servicecoreui/ui/icons": [
+        "../../packages/ui/dist/asset/icons"
       ]
     },
     "incremental": true,

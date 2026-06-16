@@ -1,7 +1,7 @@
 "use client";
 
 import { Add, ChevronDown, ChevronRight, Time } from "@carbon/icons-react";
-import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui/typography";
 import { PageHeader } from "@servicecoreui/ui/custom";
 import { Breadcrumb, Button, Dropdown } from "@servicecoreui/ui/wraps";
 import type { MenuProps } from "antd";

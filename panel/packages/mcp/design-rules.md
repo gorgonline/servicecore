@@ -4,17 +4,21 @@
 
 ## Kategorik Kurallar
 
-### 1. Sadece `@servicecoreui/ui` kullan
+### 1. Domain feature bileşeni kullan — ham primitive değil
 
 ```tsx
-// YANLIŞ
+// YANLIŞ — ne ham AntD ne de ham primitive
 import { Button } from 'antd';
+import { DataTable } from '@servicecoreui/ui/custom';   // primitive — gizlenecek
+import { Button } from '@servicecoreui/ui/wraps';        // primitive — gizlenecek
 
-// DOĞRU
-import { Button } from '@servicecoreui/ui/wraps';
+// DOĞRU — domain feature subpath'i
+import { AuthShell } from '@servicecoreui/ui/auth';
+import { SlaGauge } from '@servicecoreui/ui/sla';
+import { SettingsForm } from '@servicecoreui/ui/settings';
 ```
 
-AntD'yi doğrudan import etme. Sebep: standartlaşma. Wrap katmanı kalkarsa tek dosya değişir, tüm panel değil.
+Mimari katmanlı: `primitive/` (Button, Card, DataTable…) ve `typography/` **jenerik yapı taşı** — tüketici doğrudan kullanmaz, kendi tasarımını kurmaz. Bunun yerine **domain feature** bileşenini (`@servicecoreui/ui/<domain>`) kullanır; o, primitive'leri içeride birleştirir (ör. `IncidentTable` → içeride `DataTable`). Sebep: standartlaşma + tutarlı tasarım. `/wraps`·`/custom`·`/features`·`/charts` subpath'leri **geçiştir, kaldırılacak** — onlara yeni bağımlılık ekleme. Bkz. `ARCHITECTURE-feature-based.md`.
 
 ### 2. Token kullan, hex/px yazma
 

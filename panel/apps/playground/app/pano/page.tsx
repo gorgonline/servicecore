@@ -29,7 +29,7 @@ import {
 } from "@carbon/icons-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Text } from "@servicecoreui/ui";
+import { Text } from "@servicecoreui/ui/typography";
 import { PageHeader, RecentPanels, SearchableMenu } from "@servicecoreui/ui/custom";
 import {
   Button,

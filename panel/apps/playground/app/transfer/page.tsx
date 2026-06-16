@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Button, Transfer } from "@servicecoreui/ui/wraps";
 import type { TransferItem } from "@servicecoreui/ui/wraps";
 import styles from "./transfer.module.css";

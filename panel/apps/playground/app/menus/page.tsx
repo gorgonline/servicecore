@@ -18,7 +18,7 @@ import {
   Settings,
   Home,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Menu } from "@servicecoreui/ui/wraps";
 import styles from "./menus.module.css";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Button, message } from "@servicecoreui/ui/wraps";
 import styles from "./message.module.css";
 

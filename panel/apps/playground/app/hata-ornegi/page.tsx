@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Heading, Text } from "@servicecoreui/ui";
+import { Heading, Text } from "@servicecoreui/ui/typography";
 import { Button } from "@servicecoreui/ui/wraps";
 import styles from "./hata-ornegi.module.css";
 

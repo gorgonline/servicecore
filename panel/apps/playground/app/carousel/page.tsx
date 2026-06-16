@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Button, Carousel } from "@servicecoreui/ui/wraps";
 import type { CarouselRef } from "@servicecoreui/ui/wraps";
 import styles from "./carousel.module.css";

@@ -1,7 +1,7 @@
 "use client";
 
 import { Edit, Download } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Button, Descriptions } from "@servicecoreui/ui/wraps";
 import styles from "./descriptions.module.css";
 

@@ -1,4 +1,4 @@
-import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui/typography";
 import { Kbd } from "@servicecoreui/ui/custom";
 import styles from "./kbd.module.css";
 

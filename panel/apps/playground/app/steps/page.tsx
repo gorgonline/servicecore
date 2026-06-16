@@ -11,7 +11,7 @@ import {
   ArrowLeft,
   ArrowRight,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Button, Steps } from "@servicecoreui/ui/wraps";
 import styles from "./steps.module.css";
 

@@ -7,19 +7,14 @@
 
 export const VERSION = "0.6.0";
 
-// ── Components ──────────────────────────────────────────────
-// Typography (server-safe, no AntD dep)
-export * from "./Heading";
-export * from "./Display";
-export * from "./Text";
-export * from "./Eyebrow";
-export * from "./Code";
-
-// NOT: ServiceCore'a özel (sıfırdan) bileşenler burada DEĞİL —
-// `@servicecoreui/ui/custom` subpath altında (ör. Brand).
-// NOT: AntD wrap'leri burada DEĞİL — `@servicecoreui/ui/wraps` subpath altında.
-// Sebep: AntD runtime'da createContext kullanır, RSC server context'inde patlar.
-// `import { Button } from "@servicecoreui/ui/wraps"` ile kullan.
+// ── Public API yüzeyi ───────────────────────────────────────
+// Bu paket SADECE domain feature'larını + theme'i dışarı açar.
+//   • Feature bileşenleri → `@servicecoreui/ui/auth` `/settings` `/system` `/sla`
+//     `/notification` `/time`
+//   • Theme → aşağıda (+ `/theme` subpath)
+// Primitive (Button/Card/Table…), typography ve jenerik bloklar PUBLIC DEĞİL —
+// tüketici kendi tasarımını kurmaz, hazır feature bileşenlerini kullanır.
+// Bkz. ARCHITECTURE-feature-based.md.
 
 // ── Theme ───────────────────────────────────────────────────
 // Re-export theme & tokens for convenience (also available via /theme subpath)

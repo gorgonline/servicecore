@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { ArrowLeft } from "@carbon/icons-react";
-import { Heading, Text } from "@servicecoreui/ui";
+import { Heading, Text } from "@servicecoreui/ui/typography";
 import { DataTable } from "@servicecoreui/ui/custom";
 import type { DataTableColumn } from "@servicecoreui/ui/custom";
 import { Avatar, Button, Tag } from "@servicecoreui/ui/wraps";

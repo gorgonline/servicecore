@@ -1,6 +1,6 @@
 "use client";
 
-import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui/typography";
 import { DataTable } from "@servicecoreui/ui/custom";
 import type { DataTableColumn } from "@servicecoreui/ui/custom";
 import { Tag } from "@servicecoreui/ui/wraps";

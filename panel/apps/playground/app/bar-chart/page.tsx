@@ -1,6 +1,6 @@
 "use client";
 
-import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui/typography";
 import { BarChart } from "@servicecoreui/ui/charts";
 import { Card } from "@servicecoreui/ui/wraps";
 import styles from "./bar-chart.module.css";

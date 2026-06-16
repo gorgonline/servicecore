@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import dayjs, { type Dayjs } from "dayjs";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Calendar } from "@servicecoreui/ui/wraps";
 import styles from "./calendar.module.css";
 

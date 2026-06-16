@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Enterprise, Renew } from "@carbon/icons-react";
-import { Heading, Text } from "@servicecoreui/ui";
+import { Heading, Text } from "@servicecoreui/ui/typography";
 import { Button, Checkbox, Divider, Input } from "@servicecoreui/ui/wraps";
 import { AuthShell } from "@servicecoreui/ui/custom";
 import styles from "./giris.module.css";
@@ -40,7 +40,7 @@ export default function GirisPage() {
 
         <label className={styles.field}>
           <span className={styles.label}>E-posta</span>
-          <Input type="email" size="large" placeholder="ornek@sirket.com" autoComplete="email" />
+          <Input type="email" size="large" placeholder={"ornek@sirket.com"} autoComplete="email" />
         </label>
 
         <label className={styles.field}>

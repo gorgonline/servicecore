@@ -6,7 +6,7 @@ import {
   Information,
   ErrorOutline,
 } from "@carbon/icons-react";
-import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui";
+import { Code, Display, Heading, Text, Eyebrow } from "@servicecoreui/ui/typography";
 import { Alert, Button, Card, Flex, Input } from "@servicecoreui/ui/wraps";
 import styles from "./alerts.module.css";
 

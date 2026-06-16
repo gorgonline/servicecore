@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Locked } from "@carbon/icons-react";
-import { Heading, Text } from "@servicecoreui/ui";
+import { Heading, Text } from "@servicecoreui/ui/typography";
 import { Button } from "@servicecoreui/ui/wraps";
 import { AuthShell } from "@servicecoreui/ui/custom";
 import styles from "../giris/giris.module.css";

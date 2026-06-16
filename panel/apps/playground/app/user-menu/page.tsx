@@ -10,7 +10,7 @@ import {
   Home,
   ChevronDown,
 } from "@carbon/icons-react";
-import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui";
+import { Display, Heading, Text, Eyebrow, Code } from "@servicecoreui/ui/typography";
 import { UserMenu } from "@servicecoreui/ui/custom";
 import { Button, Avatar } from "@servicecoreui/ui/wraps";
 import styles from "./user-menu.module.css";

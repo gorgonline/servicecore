@@ -9,7 +9,7 @@ import {
   type TextWeight,
   type TextColor,
   type EyebrowTone,
-} from "@servicecoreui/ui";
+} from "@servicecoreui/ui/typography";
 import styles from "./typography.module.css";
 
 const HEADING_LEVELS = [1, 2, 3, 4, 5, 6] as const;
