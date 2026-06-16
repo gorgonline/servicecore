@@ -5,7 +5,7 @@
  * Faz 3'te ilk wrap bileşenleri (Button, Input, Badge, Tag) eklenecek.
  */
 
-export const VERSION = "0.6.0";
+export const VERSION = "0.7.0";
 
 // ── Public API yüzeyi ───────────────────────────────────────
 // Bu paket SADECE domain feature'larını + theme'i dışarı açar.
