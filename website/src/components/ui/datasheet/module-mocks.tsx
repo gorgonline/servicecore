@@ -4,48 +4,81 @@ import {
   AlertCircle,
   ArrowRight,
   Bell,
-  Bot,
   BookOpen,
+  Bot,
+  Boxes,
   Briefcase,
   Building2,
   Calendar,
+  CalendarClock,
   CheckCircle2,
+  CheckSquare,
   ChevronRight,
   Clock,
+  Cloud,
+  Code,
+  Combine,
   Cpu,
   Database,
   Eye,
+  FileSignature,
   FileText,
   Filter,
   Flag,
   Gauge,
   GitBranch,
+  GitMerge,
+  Globe,
   HardDrive,
   HelpCircle,
+  History,
+  KeyRound,
   Laptop,
   Layers,
   Lightbulb,
+  Link2,
+  List,
   Lock,
   Mail,
+  MapPin,
   MessageCircle,
+  MessageSquare,
   Monitor,
+  Moon,
   Network,
+  Package,
   Phone,
+  Play,
+  Plug,
   Plus,
   Printer,
+  Radar,
   RefreshCw,
+  Repeat,
   Scale,
   Search,
   Server,
   Shield,
   ShoppingCart,
+  Sliders,
+  SlidersHorizontal,
+  Smartphone,
   Sparkles,
+  Sun,
   Target,
+  ToggleLeft,
+  ToggleRight,
   TrendingUp,
   Truck,
+  Type,
+  Upload,
   User,
   Users,
   Wallet,
+  Waypoints,
+  Webhook,
+  WifiOff,
+  XCircle,
   Zap,
 } from "lucide-react";
 
@@ -62,7 +95,8 @@ export type MockAccent =
   | "orange"
   | "sky"
   | "pink"
-  | "emerald";
+  | "emerald"
+  | "indigo";
 
 interface ModuleMockProps {
   moduleId: string;
@@ -140,6 +174,13 @@ const ACCENT_MAP: Record<MockAccent, AccentClasses> = {
     border: "border-emerald-500/30",
     chip: "text-emerald-400 bg-emerald-500/15 border-emerald-500/30",
     dot: "bg-emerald-400",
+  },
+  indigo: {
+    text: "text-indigo-400",
+    bg: "bg-indigo-500/15",
+    border: "border-indigo-500/30",
+    chip: "text-indigo-400 bg-indigo-500/15 border-indigo-500/30",
+    dot: "bg-indigo-400",
   },
 };
 
@@ -1570,11 +1611,2195 @@ function EsmMock({ accent }: { accent: AccentClasses }) {
 }
 
 // ============================================================
+// Discovery — ağ & varlık keşfi tarama paneli
+// ============================================================
+
+function DiscoveryMock({ accent }: { accent: AccentClasses }) {
+  const methods = [
+    { label: "SNMP", active: true },
+    { label: "WMI", active: true },
+    { label: "SSH", active: true },
+    { label: "Agentless", active: false },
+  ];
+
+  const categories = [
+    { label: "Sunucular", count: 412, delta: 6, icon: Server },
+    { label: "Ağ Cihazları", count: 318, delta: 4, icon: Network },
+    { label: "Endpoint", count: 1284, delta: 22, icon: Laptop },
+    { label: "Yazılım Lisansları", count: 346, delta: 9, icon: Package },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<Radar className="w-[3mm] h-[3mm]" />}
+        title="Ağ ve Varlık Keşfi"
+        meta="DISC-07 · gerçek zamanlı"
+        accent={accent}
+      />
+
+      {/* Scan progress bar */}
+      <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] mb-[3mm] flex flex-col gap-[1.5mm]">
+        <div className="flex items-baseline justify-between">
+          <div className="flex items-center gap-[1.5mm]">
+            <span className={`w-[1.5mm] h-[1.5mm] rounded-full ${accent.dot} animate-pulse`} />
+            <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
+              Tarama Sürüyor
+            </span>
+          </div>
+          <div className="flex items-baseline gap-[1.5mm]">
+            <span className={`text-[11pt] font-mono font-bold ${accent.text} leading-none`}>
+              %78
+            </span>
+            <span className="text-[7pt] font-mono text-slate-400 tabular-nums">
+              1.842 / 2.360 varlık
+            </span>
+          </div>
+        </div>
+
+        <div className="h-[1.6mm] rounded-full bg-white/5 overflow-hidden">
+          <div
+            className={`h-full ${accent.dot} rounded-full`}
+            style={{ width: "78%" }}
+          />
+        </div>
+
+        {/* Scan method badges */}
+        <div className="flex items-center gap-[1.5mm] flex-wrap pt-[0.5mm]" lang="en">
+          <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500 mr-[0.5mm]" lang="tr">
+            Yöntem
+          </span>
+          {methods.map((m, i) => (
+            <div
+              key={i}
+              className={`flex items-center gap-[1mm] px-[1.5mm] py-[0.4mm] rounded-md border ${
+                m.active
+                  ? `${accent.chip}`
+                  : "text-slate-400 bg-white/2 border-white/8"
+              }`}
+            >
+              <span
+                className={`w-[1mm] h-[1mm] rounded-full ${
+                  m.active ? accent.dot : "bg-slate-500"
+                }`}
+              />
+              <span className="text-[7pt] font-mono font-medium">{m.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Discovered asset categories */}
+      <div className="grid grid-cols-4 gap-[2mm] mb-[3mm]">
+        {categories.map((c, i) => {
+          const Icon = c.icon;
+          return (
+            <div
+              key={i}
+              className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]"
+            >
+              <div
+                className={`w-[7mm] h-[7mm] rounded-md ${accent.bg} border ${accent.border} flex items-center justify-center`}
+              >
+                <Icon className={`w-[3.5mm] h-[3.5mm] ${accent.text}`} />
+              </div>
+              <span className="text-[14pt] font-mono font-bold text-white leading-none tabular-nums">
+                {c.count.toLocaleString("tr-TR")}
+              </span>
+              <span className="text-[7pt] font-light text-slate-400 leading-tight">
+                {c.label}
+              </span>
+              <div className="flex items-center gap-[1mm] mt-auto pt-[1mm] border-t border-white/5">
+                <Plus className="w-[2.5mm] h-[2.5mm] text-emerald-400" />
+                <span className="text-[7pt] font-mono text-emerald-400 tabular-nums">
+                  yeni +{c.delta}
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Security footer */}
+      <div className="flex items-center justify-between rounded-md border border-emerald-500/25 bg-emerald-500/10 px-[2.5mm] py-[1.5mm]">
+        <div className="flex items-center gap-[1.5mm]">
+          <KeyRound className="w-[3mm] h-[3mm] text-emerald-400 shrink-0" />
+          <span className="text-[7.5pt] font-medium text-white">
+            Kimlik bilgileri{" "}
+            <span className="font-mono text-emerald-400">AES-256</span> ile
+            şifreli{" "}
+            <span lang="en" className="font-mono">
+              credential vault
+            </span>
+          </span>
+        </div>
+        <div className="flex items-center gap-[1mm]">
+          <RefreshCw className="w-[2.5mm] h-[2.5mm] text-emerald-400" />
+          <span className="text-[7pt] font-mono text-emerald-400 uppercase tracking-[0.16em]">
+            CMDB senkron
+          </span>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Service Topologies — katmanlı topoloji + zaman yolculuğu
+// ============================================================
+
+function TopologyMock({ accent }: { accent: AccentClasses }) {
+  // Three horizontal tiers. Each node carries a tier-relative x (%) used both
+  // for absolute placement and for the SVG link endpoints.
+  const serviceTier = [
+    { id: "svc", label: "Sipariş Yönetimi", icon: Globe, x: 50 },
+  ];
+
+  const appTier = [
+    { id: "web", label: "Web Ön Yüz", icon: Monitor, x: 22, onPath: false },
+    { id: "api", label: "Sipariş API", icon: Layers, x: 50, onPath: true },
+    { id: "auth", label: "Kimlik Servisi", icon: Lock, x: 78, onPath: false },
+  ];
+
+  const infraTier = [
+    { id: "db", label: "PostgreSQL", icon: Database, x: 18, onPath: true },
+    { id: "cache", label: "Redis Önbellek", icon: Cpu, x: 41, onPath: false },
+    { id: "lb", label: "Yük Dengeleyici", icon: Network, x: 64, onPath: false },
+    { id: "host", label: "Sunucu Düğümü", icon: Server, x: 87, onPath: false },
+  ];
+
+  // Tier vertical anchors (% of the diagram box) for SVG link endpoints.
+  const yService = 16;
+  const yApp = 50;
+  const yInfra = 84;
+
+  // Impact path: Sipariş Yönetimi → Sipariş API → PostgreSQL.
+  const impactAppX = 50;
+  const impactInfraX = 18;
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<Waypoints className="w-[3mm] h-[3mm]" />}
+        title="Servis Topoloji Keşfi"
+        meta="8 düğüm · 3 katman"
+        accent={accent}
+      />
+
+      {/* Tier legend + live impact note */}
+      <div className="flex items-center justify-between mb-[2.5mm]">
+        <div className="flex items-center gap-[2mm]">
+          <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
+            Etki Yolu
+          </span>
+          <div className="flex items-center gap-[1mm]">
+            <span className={`w-[3mm] h-[0.6mm] rounded-full ${accent.dot}`} />
+            <span className={`text-[7pt] font-mono ${accent.text}`}>
+              Sipariş Yönetimi → API → Veritabanı
+            </span>
+          </div>
+        </div>
+        <div className="flex items-center gap-[1mm] px-[1.5mm] py-[0.5mm] rounded-full bg-red-500/10 border border-red-500/25">
+          <span className="w-[1.2mm] h-[1.2mm] rounded-full bg-red-400" />
+          <span className="text-[7pt] font-mono text-red-400">3 hizmet etkilenir</span>
+        </div>
+      </div>
+
+      {/* Layered diagram */}
+      <div className="relative w-full h-[50mm] mb-[3mm]">
+        {/* Links between tiers */}
+        <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          className="absolute inset-0 w-full h-full"
+          aria-hidden="true"
+        >
+          {/* Service → App links */}
+          {appTier.map((n, i) => (
+            <line
+              key={`sa-${i}`}
+              x1={serviceTier[0].x}
+              y1={yService}
+              x2={n.x}
+              y2={yApp}
+              stroke="currentColor"
+              strokeWidth="0.4"
+              strokeDasharray="1.5 1"
+              className="text-white/15"
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+          {/* App → Infra links */}
+          {infraTier.map((n, i) => (
+            <line
+              key={`ai-${i}`}
+              x1={n.x < 50 ? appTier[0].x : appTier[2].x}
+              y1={yApp}
+              x2={n.x}
+              y2={yInfra}
+              stroke="currentColor"
+              strokeWidth="0.4"
+              strokeDasharray="1.5 1"
+              className="text-white/15"
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+          {/* Highlighted impact path: Service → API → DB */}
+          <line
+            x1={serviceTier[0].x}
+            y1={yService}
+            x2={impactAppX}
+            y2={yApp}
+            stroke="currentColor"
+            strokeWidth="0.8"
+            className={accent.text}
+            vectorEffect="non-scaling-stroke"
+          />
+          <line
+            x1={impactAppX}
+            y1={yApp}
+            x2={impactInfraX}
+            y2={yInfra}
+            stroke="currentColor"
+            strokeWidth="0.8"
+            className={accent.text}
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+
+        {/* Tier labels (left rail) */}
+        <span
+          className="absolute left-0 text-[6.5pt] font-mono uppercase tracking-[0.2em] text-slate-500"
+          style={{ top: `${yService}%`, transform: "translateY(-50%)" }}
+        >
+          Hizmet
+        </span>
+        <span
+          className="absolute left-0 text-[6.5pt] font-mono uppercase tracking-[0.2em] text-slate-500"
+          style={{ top: `${yApp}%`, transform: "translateY(-50%)" }}
+        >
+          Uygulama
+        </span>
+        <span
+          className="absolute left-0 text-[6.5pt] font-mono uppercase tracking-[0.2em] text-slate-500"
+          style={{ top: `${yInfra}%`, transform: "translateY(-50%)" }}
+        >
+          Altyapı
+        </span>
+
+        {/* Service tier node */}
+        {serviceTier.map((n) => {
+          const Icon = n.icon;
+          return (
+            <div
+              key={n.id}
+              className={`absolute w-[30mm] h-[10mm] rounded-md ${accent.bg} border ${accent.border} flex items-center justify-center gap-[1.5mm]`}
+              style={{
+                left: `${n.x}%`,
+                top: `${yService}%`,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <Icon className={`w-[3.5mm] h-[3.5mm] ${accent.text}`} />
+              <div className="flex flex-col">
+                <span className="text-[6pt] font-mono uppercase tracking-[0.16em] text-slate-400 leading-none">
+                  Hizmet
+                </span>
+                <span className="text-[7.5pt] font-semibold text-white leading-tight">
+                  {n.label}
+                </span>
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Application tier nodes */}
+        {appTier.map((n) => {
+          const Icon = n.icon;
+          return (
+            <div
+              key={n.id}
+              className={`absolute w-[24mm] h-[9mm] rounded-md flex items-center justify-center gap-[1mm] ${
+                n.onPath
+                  ? `${accent.bg} border ${accent.border}`
+                  : "bg-white/4 border border-white/12"
+              }`}
+              style={{
+                left: `${n.x}%`,
+                top: `${yApp}%`,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <Icon
+                className={`w-[3mm] h-[3mm] ${
+                  n.onPath ? accent.text : "text-slate-300"
+                }`}
+              />
+              <span className="text-[6.5pt] font-medium text-white leading-tight text-center">
+                {n.label}
+              </span>
+            </div>
+          );
+        })}
+
+        {/* Infrastructure tier nodes */}
+        {infraTier.map((n) => {
+          const Icon = n.icon;
+          return (
+            <div
+              key={n.id}
+              className={`absolute w-[20mm] h-[9mm] rounded-md flex flex-col items-center justify-center gap-[0.5mm] ${
+                n.onPath
+                  ? `${accent.bg} border ${accent.border}`
+                  : "bg-white/4 border border-white/12"
+              }`}
+              style={{
+                left: `${n.x}%`,
+                top: `${yInfra}%`,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <Icon
+                className={`w-[3mm] h-[3mm] ${
+                  n.onPath ? accent.text : "text-slate-300"
+                }`}
+              />
+              <span className="text-[6pt] font-medium text-white leading-none text-center">
+                {n.label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Time-travel scrubber */}
+      <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-[1.5mm]">
+            <History className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+            <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
+              Zaman Yolculuğu
+            </span>
+          </div>
+          <div className="flex items-center gap-[1mm]">
+            <CalendarClock className="w-[2.5mm] h-[2.5mm] text-slate-500" />
+            <span className="text-[7pt] font-mono text-white tabular-nums">
+              02 Mart 2026 · 14:20
+            </span>
+          </div>
+        </div>
+
+        {/* Track + handle */}
+        <div className="relative h-[2.5mm] flex items-center">
+          <div className="absolute inset-x-0 h-[0.6mm] rounded-full bg-white/8" />
+          {/* Filled (past → now) segment */}
+          <div
+            className={`absolute left-0 h-[0.6mm] rounded-full ${accent.dot}`}
+            style={{ width: "62%" }}
+          />
+          {/* Tick marks */}
+          {[12, 30, 48, 78, 92].map((p, i) => (
+            <span
+              key={i}
+              className="absolute w-[0.4mm] h-[2mm] rounded-full bg-white/15"
+              style={{ left: `${p}%`, transform: "translateX(-50%)" }}
+            />
+          ))}
+          {/* Draggable handle */}
+          <div
+            className={`absolute w-[3mm] h-[3mm] rounded-full ${accent.bg} border ${accent.border} flex items-center justify-center`}
+            style={{ left: "62%", transform: "translateX(-50%)" }}
+          >
+            <span className={`w-[1mm] h-[1mm] rounded-full ${accent.dot}`} />
+          </div>
+        </div>
+
+        <div className="flex items-center justify-between">
+          <span className="text-[6.5pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+            ← geçmiş
+          </span>
+          <span className="text-[6.5pt] font-mono text-slate-400">
+            Değişiklik CHG-2841 öncesi topoloji
+          </span>
+          <span className="text-[6.5pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+            bugün →
+          </span>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Shift Management — haftalık vardiya cizelgesi
+// ============================================================
+
+function ShiftMock({ accent }: { accent: AccentClasses }) {
+  const days = ["Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz"];
+
+  // Vardiya kodları: G = Gündüz (emerald), A = Akşam (amber), N = Nöbet (accent), "" = İzin/Off
+  const technicians: { name: string; initials: string; shifts: string[] }[] = [
+    { name: "Ahmet Y.", initials: "AY", shifts: ["G", "G", "A", "A", "N", "N", ""] },
+    { name: "Selin K.", initials: "SK", shifts: ["A", "A", "G", "G", "G", "", "N"] },
+    { name: "Mehmet T.", initials: "MT", shifts: ["N", "", "G", "A", "A", "G", "G"] },
+    { name: "Ayşe D.", initials: "AD", shifts: ["G", "N", "N", "", "G", "A", "A"] },
+  ];
+
+  const shiftStyle = (code: string): { cls: string; icon: ReactNode | null } => {
+    if (code === "G")
+      return {
+        cls: "text-emerald-400 bg-emerald-500/12 border-emerald-500/30",
+        icon: <Sun className="w-[2mm] h-[2mm]" />,
+      };
+    if (code === "A")
+      return {
+        cls: "text-amber-400 bg-amber-500/12 border-amber-500/30",
+        icon: <Moon className="w-[2mm] h-[2mm]" />,
+      };
+    if (code === "N")
+      return {
+        cls: `${accent.text} ${accent.bg} ${accent.border}`,
+        icon: <Clock className="w-[2mm] h-[2mm]" />,
+      };
+    return { cls: "text-slate-600 bg-white/2 border-white/5", icon: null };
+  };
+
+  const legend = [
+    { code: "G", label: "Gündüz", cls: "text-emerald-400 bg-emerald-500/12 border-emerald-500/30" },
+    { code: "A", label: "Akşam", cls: "text-amber-400 bg-amber-500/12 border-amber-500/30" },
+    { code: "N", label: "Nöbet", cls: `${accent.text} ${accent.bg} ${accent.border}` },
+    { code: "—", label: "İzin", cls: "text-slate-600 bg-white/2 border-white/8" },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<CalendarClock className="w-[3mm] h-[3mm]" />}
+        title="Vardiya Çizelgesi — 23-29 Haziran"
+        meta="7/24 · 4 teknisyen"
+        accent={accent}
+      />
+
+      <div className="grid grid-cols-[1fr_52mm] gap-[3mm]">
+        {/* Sol: haftalık vardiya matrisi */}
+        <div className="flex flex-col gap-[1.5mm] min-w-0">
+          {/* Gün başlıkları */}
+          <div className="grid grid-cols-[20mm_repeat(7,1fr)] gap-[1mm] items-center">
+            <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+              Teknisyen
+            </span>
+            {days.map((d, i) => (
+              <span
+                key={i}
+                className={`text-[7pt] font-mono font-semibold uppercase tracking-[0.12em] text-center ${
+                  i >= 5 ? "text-slate-600" : "text-slate-400"
+                }`}
+              >
+                {d}
+              </span>
+            ))}
+          </div>
+
+          {/* Teknisyen satırları */}
+          {technicians.map((t, ri) => (
+            <div
+              key={ri}
+              className="grid grid-cols-[20mm_repeat(7,1fr)] gap-[1mm] items-center"
+            >
+              <div className="flex items-center gap-[1.5mm] min-w-0">
+                <span
+                  className={`w-[4mm] h-[4mm] rounded-full ${accent.bg} border ${accent.border} flex items-center justify-center shrink-0`}
+                >
+                  <span className={`text-[6pt] font-mono font-bold ${accent.text}`}>
+                    {t.initials}
+                  </span>
+                </span>
+                <span className="text-[7.5pt] font-medium text-white truncate">
+                  {t.name}
+                </span>
+              </div>
+              {t.shifts.map((code, ci) => {
+                const s = shiftStyle(code);
+                return (
+                  <div
+                    key={ci}
+                    className={`h-[6mm] rounded-sm border flex items-center justify-center gap-[0.5mm] ${s.cls}`}
+                  >
+                    {s.icon}
+                    <span className="text-[7pt] font-mono font-bold">
+                      {code === "" ? "·" : code}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          ))}
+
+          {/* Lejant + kapasite */}
+          <div className="flex items-center justify-between mt-[1mm] pt-[2mm] border-t border-white/8">
+            <div className="flex items-center gap-[1.5mm] flex-wrap">
+              {legend.map((l, i) => (
+                <div
+                  key={i}
+                  className={`flex items-center gap-[1mm] px-[1.2mm] py-[0.3mm] rounded-full border ${l.cls}`}
+                >
+                  <span className="text-[6.5pt] font-mono font-bold">{l.code}</span>
+                  <span className="text-[6.5pt] font-medium text-white">{l.label}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-[1mm] shrink-0">
+              <Users className="w-[2.5mm] h-[2.5mm] text-slate-500" />
+              <span className="text-[7pt] font-mono text-slate-400">kapasite %92</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Sağ: nöbet devri notu + on-call rozeti */}
+        <div className="flex flex-col gap-[2mm]">
+          {/* On-call rozeti */}
+          <div
+            className={`rounded-md ${accent.bg} border ${accent.border} p-[2.5mm] flex items-center gap-[2mm]`}
+          >
+            <span className="w-[6mm] h-[6mm] rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+              <Clock className={`w-[3mm] h-[3mm] ${accent.text}`} />
+            </span>
+            <div className="flex flex-col min-w-0">
+              <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-400">
+                Aktif Nöbet
+              </span>
+              <span className="text-[8pt] font-semibold text-white truncate">
+                Ahmet Y. · 7/24
+              </span>
+            </div>
+          </div>
+
+          {/* Nöbet devri notu */}
+          <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
+            <div className="flex items-center gap-[1.5mm] pb-[1mm] border-b border-white/8">
+              <GitMerge className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+              <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-white">
+                Nöbet Devri
+              </span>
+            </div>
+            <div className="flex items-center gap-[1.5mm] text-[7pt] font-mono">
+              <span className="text-slate-300">Selin K.</span>
+              <ArrowRight className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+              <span className="text-white font-semibold">Ahmet Y.</span>
+              <span className="text-slate-500 ml-auto">20:00</span>
+            </div>
+            <div className="flex items-start gap-[1.5mm]">
+              <span className="w-[1.2mm] h-[1.2mm] rounded-full bg-amber-400 shrink-0 mt-[1mm]" />
+              <span className="text-[7pt] font-light text-slate-300 leading-tight">
+                Açık olay #4217 izlemede — mail sunucu gecikme alarmı devredildi.
+              </span>
+            </div>
+            <div className="flex items-center gap-[1mm] mt-[0.5mm] pt-[1.5mm] border-t border-white/5">
+              <Repeat className="w-[2.5mm] h-[2.5mm] text-slate-500" />
+              <span className="text-[6.5pt] font-mono uppercase tracking-[0.14em] text-slate-500">
+                Devir bilgi kaybını önler
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Service Relations — müşteri 360
+// ============================================================
+
+function SrmMock({ accent }: { accent: AccentClasses }) {
+  const stats = [
+    { label: "Açık Talep", value: "14", icon: ShoppingCart, tone: accent.text },
+    { label: "Aktif Sözleşme", value: "06", icon: FileSignature, tone: accent.text },
+    { label: "Sağlık", value: "%92", icon: Activity, tone: "text-emerald-400" },
+  ];
+
+  const contracts = [
+    { type: "SLA", icon: FileSignature, scope: "P1 Kritik · 7/24 yanıt", end: "31.12.2026", status: "Aktif", sTone: "text-emerald-400 bg-emerald-500/10 border-emerald-500/25", tTone: "text-cyan-400 bg-cyan-500/12 border-cyan-500/25" },
+    { type: "OLA", icon: Scale, scope: "Altyapı ekibi · 4 sa onarım", end: "30.09.2026", status: "Aktif", sTone: "text-emerald-400 bg-emerald-500/10 border-emerald-500/25", tTone: "text-purple-400 bg-purple-500/12 border-purple-500/25" },
+    { type: "Tedarikçi", icon: Truck, scope: "Donanım bakımı · yerinde", end: "18.07.2026", status: "Yenileme", sTone: "text-amber-400 bg-amber-500/10 border-amber-500/25", tTone: "text-orange-400 bg-orange-500/12 border-orange-500/25" },
+    { type: "SLA", icon: FileSignature, scope: "Standart talep · 8 sa", end: "12.06.2026", status: "Süre Doluyor", sTone: "text-red-400 bg-red-500/10 border-red-500/25", tTone: "text-cyan-400 bg-cyan-500/12 border-cyan-500/25" },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<Users className="w-[3mm] h-[3mm]" />}
+        title="Müşteri 360 Görünümü"
+        meta="REL-2026"
+        accent={accent}
+      />
+
+      {/* Account header: logo + name + tier, with mini stats */}
+      <div className="grid grid-cols-[1fr_auto] gap-[3mm] items-center mb-[3mm]">
+        <div className="flex items-center gap-[2mm] min-w-0">
+          <div
+            className={`w-[9mm] h-[9mm] rounded-md ${accent.bg} border ${accent.border} flex items-center justify-center shrink-0`}
+          >
+            <Building2 className={`w-[4.5mm] h-[4.5mm] ${accent.text}`} />
+          </div>
+          <div className="flex flex-col gap-[0.5mm] min-w-0">
+            <div className="flex items-center gap-[1.5mm]">
+              <span className="text-[10pt] font-semibold text-white truncate">
+                Akçe Holding
+              </span>
+              <span
+                className={`text-[7pt] font-mono uppercase tracking-[0.18em] px-[1.5mm] py-[0.3mm] rounded-full border ${accent.chip}`}
+              >
+                Kurumsal
+              </span>
+            </div>
+            <span className="text-[7pt] font-mono text-slate-500">
+              Müşteri No · ACC-0412 · Hesap Yöneticisi: Selin K.
+            </span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-[1.5mm]">
+          {stats.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <div
+                key={i}
+                className="rounded-md border border-white/8 bg-white/2 px-[2mm] py-[1.5mm] flex flex-col gap-[0.5mm] min-w-[22mm]"
+              >
+                <div className="flex items-center gap-[1mm]">
+                  <Icon className="w-[2.5mm] h-[2.5mm] text-slate-500" />
+                  <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500 truncate">
+                    {s.label}
+                  </span>
+                </div>
+                <span className={`text-[12pt] font-mono font-bold leading-none ${s.tone}`}>
+                  {s.value}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Contract table */}
+      <div className="grid grid-cols-[20mm_1fr_20mm_22mm] gap-[2mm] px-[2mm] py-[1mm] text-[7pt] font-mono font-semibold uppercase tracking-[0.18em] text-slate-500 bg-white/2 border border-white/5 rounded-md mb-[1.5mm]">
+        <span>Tip</span>
+        <span>Kapsam</span>
+        <span className="flex items-center gap-[1mm]">
+          <CalendarClock className="w-[2.5mm] h-[2.5mm]" />
+          Bitiş
+        </span>
+        <span>Durum</span>
+      </div>
+
+      <div className="flex flex-col gap-[1mm] mb-[3mm]">
+        {contracts.map((c, i) => {
+          const Icon = c.icon;
+          return (
+            <div
+              key={i}
+              className="grid grid-cols-[20mm_1fr_20mm_22mm] gap-[2mm] items-center px-[2mm] py-[1.5mm] rounded-md bg-white/2 border border-white/5"
+            >
+              <span
+                className={`flex items-center gap-[1mm] text-[7pt] font-mono font-semibold px-[1.2mm] py-[0.3mm] rounded-full border ${c.tTone}`}
+              >
+                <Icon className="w-[2.5mm] h-[2.5mm]" />
+                {c.type}
+              </span>
+              <span className="text-[8pt] font-medium text-white truncate">
+                {c.scope}
+              </span>
+              <span className="text-[7pt] font-mono text-slate-300 tabular-nums">
+                {c.end}
+              </span>
+              <span
+                className={`text-[7pt] font-mono px-[1.2mm] py-[0.3mm] rounded-full border text-center ${c.sTone}`}
+              >
+                {c.status}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Customer health / satisfaction bar */}
+      <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-[1.5mm]">
+            <TrendingUp className={`w-[3mm] h-[3mm] ${accent.text}`} />
+            <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
+              Müşteri Sağlık Skoru
+            </span>
+          </div>
+          <div className="flex items-baseline gap-[1.5mm]">
+            <span className="text-[10pt] font-mono font-bold text-emerald-400 leading-none">
+              92
+            </span>
+            <span className="text-[7pt] font-mono text-slate-500">/ 100 · Memnuniyet 4.6</span>
+          </div>
+        </div>
+        <div className="h-[1.5mm] rounded-full bg-white/5 overflow-hidden flex">
+          <div className="h-full bg-emerald-400 rounded-l-full" style={{ width: "78%" }} />
+          <div className="h-full bg-amber-400" style={{ width: "14%" }} />
+          <div className="h-full bg-red-400 rounded-r-full" style={{ width: "8%" }} />
+        </div>
+        <div className="flex items-center gap-[3mm]">
+          <div className="flex items-center gap-[1mm]">
+            <span className="w-[1.2mm] h-[1.2mm] rounded-full bg-emerald-400" />
+            <span className="text-[7pt] font-mono text-slate-500">Sağlıklı %78</span>
+          </div>
+          <div className="flex items-center gap-[1mm]">
+            <span className="w-[1.2mm] h-[1.2mm] rounded-full bg-amber-400" />
+            <span className="text-[7pt] font-mono text-slate-500">İzlemede %14</span>
+          </div>
+          <div className="flex items-center gap-[1mm]">
+            <span className="w-[1.2mm] h-[1.2mm] rounded-full bg-red-400" />
+            <span className="text-[7pt] font-mono text-slate-500">Riskli %8</span>
+          </div>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Federation Engine — multi-tenant hub-and-spoke
+// ============================================================
+
+function FederationMock({ accent }: { accent: AccentClasses }) {
+  const tenants = [
+    { id: "hq", label: "Holding Merkez", icon: Building2, x: 50, y: 13, sync: "ok" },
+    { id: "a", label: "İştirak A", icon: Briefcase, x: 86, y: 40, sync: "ok" },
+    { id: "b", label: "İştirak B", icon: Briefcase, x: 74, y: 87, sync: "sync" },
+    { id: "msp", label: "MSP Müşteri", icon: Users, x: 26, y: 87, sync: "ok" },
+    { id: "tr", label: "Bölge — TR", icon: Globe, x: 14, y: 40, sync: "ok" },
+  ];
+
+  const federation = [
+    { label: "Politika Federasyonu", detail: "Öncelik matrisi · onay zinciri", status: "Aktif", icon: Shield },
+    { label: "Katalog Federasyonu", detail: "184 hizmet dağıtıldı", status: "Aktif", icon: Layers },
+    { label: "Veri Sınırı İzolasyonu", detail: "Tenant başına ayrık şema", status: "Garanti", icon: Lock },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<Combine className="w-[3mm] h-[3mm]" />}
+        title="Federasyon Orkestratörü"
+        meta="5 tenant · senkron"
+        accent={accent}
+      />
+
+      <div className="relative w-full h-[52mm] mb-[3mm]">
+        {/* Hub-and-spoke connections */}
+        <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          className="absolute inset-0 w-full h-full"
+          aria-hidden="true"
+        >
+          {tenants.map((t, i) => (
+            <line
+              key={i}
+              x1={50}
+              y1={50}
+              x2={t.x}
+              y2={t.y}
+              stroke="currentColor"
+              strokeWidth="0.4"
+              strokeDasharray="1.5 1"
+              className={`${accent.text} opacity-50`}
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+        </svg>
+
+        {/* Center hub */}
+        <div
+          className={`absolute w-[26mm] h-[15mm] rounded-md ${accent.bg} border ${accent.border} flex flex-col items-center justify-center gap-[0.5mm]`}
+          style={{ left: "50%", top: "50%", transform: "translate(-50%, -50%)" }}
+        >
+          <Combine className={`w-[4mm] h-[4mm] ${accent.text}`} />
+          <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-white">
+            Federasyon Hub
+          </span>
+          <span className={`text-[7pt] font-medium ${accent.text}`}>orkestratör</span>
+        </div>
+
+        {/* Tenant nodes */}
+        {tenants.map((t) => {
+          const Icon = t.icon;
+          const dotTone = t.sync === "ok" ? "bg-emerald-400" : "bg-amber-400";
+          return (
+            <div
+              key={t.id}
+              className="absolute w-[20mm] h-[12mm] rounded-md bg-white/4 border border-white/15 flex flex-col items-center justify-center gap-[0.5mm]"
+              style={{
+                left: `${t.x}%`,
+                top: `${t.y}%`,
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <div className="flex items-center gap-[1mm]">
+                <Icon className="w-[2.5mm] h-[2.5mm] text-slate-300" />
+                <span className={`w-[1.2mm] h-[1.2mm] rounded-full ${dotTone}`} />
+              </div>
+              <span className="text-[6.5pt] font-medium text-white text-center px-[1mm] leading-tight">
+                {t.label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Federation status rows */}
+      <div className="flex flex-col gap-[1mm]">
+        {federation.map((f, i) => {
+          const Icon = f.icon;
+          return (
+            <div
+              key={i}
+              className="grid grid-cols-[auto_1fr_auto] gap-[2mm] items-center px-[2mm] py-[1.5mm] rounded-md bg-white/2 border border-white/5"
+            >
+              <Icon className={`w-[3mm] h-[3mm] ${accent.text}`} />
+              <div className="flex items-center gap-[2mm] min-w-0">
+                <span className="text-[8pt] font-medium text-white shrink-0">
+                  {f.label}
+                </span>
+                <span className="text-[7pt] text-slate-400 truncate">{f.detail}</span>
+              </div>
+              <span
+                className={`text-[7pt] font-mono px-[1.2mm] py-[0.3mm] rounded-full border ${accent.chip}`}
+              >
+                {f.status}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Admin Panel — sistem yapılandırma
+// ============================================================
+
+function AdminMock({ accent }: { accent: AccentClasses }) {
+  const categories = [
+    { label: "Kullanıcılar ve Roller", icon: Users, meta: "248 kullanıcı", active: true },
+    { label: "CMDB", icon: Database, meta: "2.148 CI", active: false },
+    { label: "Hizmet Seviyesi", icon: Gauge, meta: "12 politika", active: false },
+    { label: "Bildirimler", icon: Bell, meta: "8 kanal", active: false },
+    { label: "Güvenlik", icon: Shield, meta: "SSO · MFA", active: false },
+  ];
+
+  const toggles = [
+    { label: "Çok faktörlü kimlik doğrulama", desc: "Tüm yönetici hesapları için zorunlu", on: true },
+    { label: "Otomatik rol ataması", desc: "AD grubuna göre yetki eşle", on: true },
+    { label: "Misafir kullanıcı erişimi", desc: "Dış paydaş self-servis portalı", on: false },
+    { label: "Oturum kaydı ve izleme", desc: "Yönetim işlemlerini denetim defterine yaz", on: true },
+  ];
+
+  const fields = [
+    { label: "Varsayılan rol", value: "Hizmet Masası Ajanı" },
+    { label: "Oturum zaman aşımı", value: "30 dk · iş saatleri" },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<Sliders className="w-[3mm] h-[3mm]" />}
+        title="Yönetim Paneli — Yapılandırma"
+        meta="5 kategori"
+        accent={accent}
+      />
+
+      <div className="grid grid-cols-1 md:grid-cols-[44mm_1fr] gap-[3mm]">
+        {/* Left: category navigation */}
+        <div className="flex flex-col gap-[1mm]">
+          <div className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500 mb-[0.5mm] px-[1mm]">
+            Kategoriler
+          </div>
+          {categories.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <div
+                key={i}
+                className={`grid grid-cols-[auto_1fr] gap-[1.5mm] items-center px-[2mm] py-[1.5mm] rounded-md border cursor-pointer transition-colors ${
+                  c.active
+                    ? `${accent.bg} ${accent.border}`
+                    : "bg-white/2 border-white/5 hover:bg-white/3 hover:border-white/8"
+                }`}
+              >
+                <Icon
+                  className={`w-[3mm] h-[3mm] ${
+                    c.active ? accent.text : "text-slate-500"
+                  }`}
+                />
+                <div className="flex flex-col min-w-0">
+                  <span
+                    className={`text-[8pt] font-medium truncate ${
+                      c.active ? "text-white" : "text-slate-300"
+                    }`}
+                  >
+                    {c.label}
+                  </span>
+                  <span className="text-[7pt] font-mono text-slate-500 truncate">
+                    {c.meta}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Right: settings panel for the active category */}
+        <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[2mm]">
+          <div className="flex items-center justify-between pb-[1.5mm] border-b border-white/8">
+            <span className="text-[8pt] font-semibold text-white">
+              Kullanıcılar ve Roller
+            </span>
+            <span
+              className={`text-[7pt] font-mono px-[1.5mm] py-[0.3mm] rounded-full border ${accent.chip}`}
+            >
+              Düzenleniyor
+            </span>
+          </div>
+
+          {/* Toggle rows */}
+          <div className="flex flex-col gap-[1.5mm]">
+            {toggles.map((t, i) => (
+              <div
+                key={i}
+                className="grid grid-cols-[1fr_auto] gap-[2mm] items-center px-[2mm] py-[1.5mm] rounded-md bg-white/2 border border-white/5"
+              >
+                <div className="flex flex-col min-w-0">
+                  <span className="text-[8pt] font-medium text-white truncate">
+                    {t.label}
+                  </span>
+                  <span className="text-[7pt] font-light text-slate-400 leading-tight truncate">
+                    {t.desc}
+                  </span>
+                </div>
+                <div
+                  className={`flex items-center gap-[1mm] px-[1.5mm] py-[0.4mm] rounded-full border cursor-pointer transition-colors ${
+                    t.on
+                      ? "text-emerald-400 bg-emerald-500/10 border-emerald-500/25 hover:bg-emerald-500/15 hover:border-emerald-500/35"
+                      : "text-slate-500 bg-white/3 border-white/10 hover:bg-white/5 hover:border-white/15"
+                  }`}
+                >
+                  {t.on ? (
+                    <ToggleRight className="w-[3mm] h-[3mm]" />
+                  ) : (
+                    <ToggleLeft className="w-[3mm] h-[3mm]" />
+                  )}
+                  <span className="text-[7pt] font-mono font-semibold uppercase tracking-[0.12em]">
+                    {t.on ? "Açık" : "Kapalı"}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Field rows */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[1.5mm]">
+            {fields.map((f, i) => (
+              <div
+                key={i}
+                className="rounded-md bg-white/2 border border-white/5 px-[2mm] py-[1.5mm] flex flex-col gap-[0.5mm]"
+              >
+                <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+                  {f.label}
+                </span>
+                <span className="text-[8pt] font-medium text-white truncate">
+                  {f.value}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Mobile Service (FSM) — saha teknisyeni uygulaması
+// ============================================================
+
+function MobileMock({ accent }: { accent: AccentClasses }) {
+  const jobs = [
+    {
+      id: "FSM-3142",
+      title: "Sunucu odası klima arızası",
+      location: "Ankara · Veri Merkezi · Kat -1",
+      time: "09:40",
+      priority: "Kritik",
+      pTone: "text-red-400 bg-red-500/15 border-red-500/30",
+    },
+    {
+      id: "FSM-3139",
+      title: "Şube ağ anahtarı değişimi",
+      location: "İzmir · Bornova Şubesi",
+      time: "11:15",
+      priority: "Yüksek",
+      pTone: "text-amber-400 bg-amber-500/10 border-amber-500/25",
+    },
+    {
+      id: "FSM-3127",
+      title: "POS terminali kurulum",
+      location: "İstanbul · Kadıköy Mağaza",
+      time: "14:00",
+      priority: "Orta",
+      pTone: "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
+    },
+  ];
+
+  const stats: Array<{
+    label: string;
+    value: string;
+    icon: typeof Briefcase;
+    tone: string;
+  }> = [
+    { label: "Açık İş", value: "5", icon: Briefcase, tone: "text-white" },
+    { label: "Tamamlanan", value: "12", icon: CheckCircle2, tone: "text-emerald-400" },
+    { label: "Çevrimdışı Senk.", value: "3", icon: RefreshCw, tone: "text-amber-400" },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<Smartphone className="w-[3mm] h-[3mm]" />}
+        title="Mobil Servis Yönetimi · FSM"
+        meta="Saha Teknisyeni"
+        accent={accent}
+      />
+
+      <div className="grid grid-cols-[1fr_42mm] gap-[3mm]">
+        {/* Phone body */}
+        <div className="rounded-[6mm] border-[1mm] border-white/15 bg-white/2 p-[2mm] flex flex-col gap-[2mm]">
+          {/* Status bar */}
+          <div className="flex items-center justify-between px-[1.5mm] pt-[0.5mm]">
+            <span className="text-[7pt] font-mono font-semibold text-white tabular-nums">
+              09:41
+            </span>
+            <div className="h-[1.5mm] w-[12mm] rounded-full bg-white/10" />
+            <div className="flex items-center gap-[1mm]">
+              <div className="flex items-center gap-[1mm] px-[1.2mm] py-[0.2mm] rounded-full bg-amber-500/10 border border-amber-500/25">
+                <WifiOff className="w-[2.2mm] h-[2.2mm] text-amber-400" />
+                <span className="text-[6.5pt] font-mono text-amber-400">Çevrimdışı</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Push notification banner */}
+          <div
+            className={`rounded-[2.5mm] ${accent.bg} border ${accent.border} px-[2mm] py-[1.5mm] flex items-center gap-[2mm]`}
+          >
+            <div
+              className={`w-[6mm] h-[6mm] rounded-[1.5mm] bg-white/10 border ${accent.border} flex items-center justify-center shrink-0`}
+            >
+              <Bell className={`w-[3mm] h-[3mm] ${accent.text}`} />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <div className="flex items-center justify-between gap-[2mm]">
+                <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-white">
+                  Yeni İş Atandı
+                </span>
+                <span className="text-[6.5pt] font-mono text-slate-400 shrink-0">şimdi</span>
+              </div>
+              <span className="text-[8pt] font-medium text-white truncate">
+                FSM-3142 · Konum bazlı atama
+              </span>
+            </div>
+          </div>
+
+          {/* Assigned job cards */}
+          <div className="flex flex-col gap-[1.5mm]">
+            {jobs.map((j, i) => (
+              <div
+                key={i}
+                className="rounded-[2mm] bg-white/3 border border-white/8 p-[2mm] flex flex-col gap-[1mm]"
+              >
+                <div className="flex items-center justify-between gap-[2mm]">
+                  <span className={`text-[7pt] font-mono ${accent.text}`}>{j.id}</span>
+                  <div className="flex items-center gap-[1.5mm] shrink-0">
+                    <span
+                      className={`text-[7pt] font-mono px-[1.2mm] py-[0.3mm] rounded-full border ${j.pTone}`}
+                    >
+                      {j.priority}
+                    </span>
+                    <div className="flex items-center gap-[0.8mm]">
+                      <Clock className="w-[2.2mm] h-[2.2mm] text-slate-500" />
+                      <span className="text-[7pt] font-mono text-slate-400 tabular-nums">
+                        {j.time}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <span className="text-[8pt] font-medium text-white leading-tight truncate">
+                  {j.title}
+                </span>
+                <div className="flex items-center gap-[1mm] min-w-0">
+                  <MapPin className={`w-[2.5mm] h-[2.5mm] ${accent.text} shrink-0`} />
+                  <span className="text-[7pt] font-light text-slate-400 truncate">
+                    {j.location}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Offline / sync footer */}
+          <div className="flex items-center justify-between mt-auto px-[1.5mm] py-[1mm] rounded-[2mm] bg-white/2 border border-white/5">
+            <div className="flex items-center gap-[1.5mm]">
+              <WifiOff className="w-[2.5mm] h-[2.5mm] text-amber-400" />
+              <span className="text-[7pt] font-light text-slate-400">
+                Çevrimdışı çalışma açık
+              </span>
+            </div>
+            <div className="flex items-center gap-[1mm]">
+              <RefreshCw className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+              <span className={`text-[7pt] font-mono font-semibold ${accent.text}`}>
+                3 bekliyor
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* FSM stat column */}
+        <div className="flex flex-col gap-[2mm]">
+          <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500 px-[0.5mm]">
+            Saha Durumu
+          </span>
+          {stats.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <div
+                key={i}
+                className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+                    {s.label}
+                  </span>
+                  <Icon className={`w-[3mm] h-[3mm] ${accent.text}`} />
+                </div>
+                <span className={`text-[14pt] font-mono font-bold leading-none ${s.tone}`}>
+                  {s.value}
+                </span>
+              </div>
+            );
+          })}
+
+          <div
+            className={`rounded-md ${accent.bg} border ${accent.border} p-[2.5mm] flex flex-col gap-[1mm] mt-auto`}
+          >
+            <div className="flex items-center gap-[1.5mm]">
+              <Bell className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+              <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-white">
+                Bildirim Kanalı
+              </span>
+            </div>
+            <span className="text-[7pt] font-light text-slate-300 leading-tight">
+              Push · E-posta · Uygulama içi
+            </span>
+          </div>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Workflow Management — no-code akış tasarımcısı
+// ============================================================
+
+function WorkflowMock({ accent }: { accent: AccentClasses }) {
+  const palette = [
+    { label: "Görev", icon: FileText, tone: "text-blue-400 bg-blue-500/15 border-blue-500/30" },
+    { label: "Koşul", icon: GitBranch, tone: "text-amber-400 bg-amber-500/15 border-amber-500/30" },
+    { label: "Onay", icon: CheckCircle2, tone: "text-emerald-400 bg-emerald-500/15 border-emerald-500/30" },
+    { label: "Bildirim", icon: Bell, tone: "text-purple-400 bg-purple-500/15 border-purple-500/30" },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<GitBranch className="w-[3mm] h-[3mm]" />}
+        title="İş Akışı Tasarımcısı — WF-031"
+        meta="No-code · Yayında"
+        accent={accent}
+      />
+
+      {/* Canvas: horizontal BPMN flow */}
+      <div className="relative w-full h-[52mm] rounded-md border border-white/8 bg-white/2 overflow-hidden">
+        {/* Dotted grid hint */}
+        <div className="absolute inset-0 opacity-40">
+          <svg
+            viewBox="0 0 100 60"
+            preserveAspectRatio="none"
+            className="w-full h-full"
+            aria-hidden="true"
+          >
+            <defs>
+              <pattern
+                id="wf-grid"
+                width="6"
+                height="6"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle cx="0.6" cy="0.6" r="0.4" className="fill-white/10" />
+              </pattern>
+              <marker
+                id="wf-arrow"
+                viewBox="0 0 10 10"
+                refX="8"
+                refY="5"
+                markerWidth="5"
+                markerHeight="5"
+                orient="auto-start-reverse"
+              >
+                <path d="M0,1 L9,5 L0,9 Z" className="fill-current" />
+              </marker>
+              <marker
+                id="wf-arrow-emerald"
+                viewBox="0 0 10 10"
+                refX="8"
+                refY="5"
+                markerWidth="5"
+                markerHeight="5"
+                orient="auto-start-reverse"
+              >
+                <path d="M0,1 L9,5 L0,9 Z" className="fill-emerald-400" />
+              </marker>
+              <marker
+                id="wf-arrow-red"
+                viewBox="0 0 10 10"
+                refX="8"
+                refY="5"
+                markerWidth="5"
+                markerHeight="5"
+                orient="auto-start-reverse"
+              >
+                <path d="M0,1 L9,5 L0,9 Z" className="fill-red-400" />
+              </marker>
+            </defs>
+            <rect width="100" height="60" fill="url(#wf-grid)" />
+          </svg>
+        </div>
+
+        {/* Connector layer */}
+        <svg
+          viewBox="0 0 100 60"
+          preserveAspectRatio="none"
+          className="absolute inset-0 w-full h-full"
+          aria-hidden="true"
+        >
+          {/* Start -> Talep Oluştur */}
+          <line
+            x1={11}
+            y1={30}
+            x2={20}
+            y2={30}
+            stroke="currentColor"
+            strokeWidth="0.6"
+            className={accent.text}
+            markerEnd="url(#wf-arrow)"
+            vectorEffect="non-scaling-stroke"
+          />
+          {/* Talep Oluştur -> Onay (decision) */}
+          <line
+            x1={40}
+            y1={30}
+            x2={47}
+            y2={30}
+            stroke="currentColor"
+            strokeWidth="0.6"
+            className={accent.text}
+            markerEnd="url(#wf-arrow)"
+            vectorEffect="non-scaling-stroke"
+          />
+          {/* Onay -> (Onaylandı) up to Otomasyon */}
+          <polyline
+            points="58,24 64,24 64,16 71,16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.6"
+            className="text-emerald-400"
+            markerEnd="url(#wf-arrow-emerald)"
+            vectorEffect="non-scaling-stroke"
+          />
+          {/* Onay -> (Reddedildi) down to terminal */}
+          <polyline
+            points="58,36 64,36 64,46 71,46"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="0.6"
+            className="text-red-400"
+            markerEnd="url(#wf-arrow-red)"
+            vectorEffect="non-scaling-stroke"
+          />
+          {/* Otomasyon -> Bitiş */}
+          <line
+            x1={91}
+            y1={16}
+            x2={93.5}
+            y2={16}
+            stroke="currentColor"
+            strokeWidth="0.6"
+            className={accent.text}
+            markerEnd="url(#wf-arrow)"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+
+        {/* Node: Start */}
+        <div
+          className={`absolute w-[9mm] h-[9mm] rounded-full ${accent.bg} border ${accent.border} flex items-center justify-center`}
+          style={{ left: "5%", top: "50%", transform: "translate(-50%, -50%)" }}
+        >
+          <Play className={`w-[3mm] h-[3mm] ${accent.text}`} />
+        </div>
+
+        {/* Node: Talep Oluştur (task) */}
+        <div
+          className="absolute w-[20mm] rounded-md bg-white/4 border border-white/15 px-[1.5mm] py-[1.5mm] flex flex-col gap-[0.5mm]"
+          style={{ left: "30%", top: "50%", transform: "translate(-50%, -50%)" }}
+        >
+          <div className="flex items-center gap-[1mm]">
+            <FileText className="w-[2.5mm] h-[2.5mm] text-blue-400 shrink-0" />
+            <span className="text-[6.5pt] font-mono uppercase tracking-[0.12em] text-slate-500">
+              Görev
+            </span>
+          </div>
+          <span className="text-[7pt] font-semibold text-white leading-tight">
+            Talep Oluştur
+          </span>
+        </div>
+
+        {/* Node: Onay (decision diamond) */}
+        <div
+          className="absolute flex items-center justify-center"
+          style={{ left: "52.5%", top: "50%", transform: "translate(-50%, -50%)" }}
+        >
+          <div className="relative w-[13mm] h-[13mm]">
+            <div className="absolute inset-[1.6mm] rotate-45 rounded-[1mm] bg-amber-500/12 border border-amber-500/30" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-[0.3mm]">
+              <Filter className="w-[2.5mm] h-[2.5mm] text-amber-400" />
+              <span className="text-[6.5pt] font-semibold text-white leading-none">
+                Onay
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Branch label: Onaylandı */}
+        <span
+          className="absolute text-[6pt] font-mono text-emerald-400"
+          style={{ left: "60%", top: "13%" }}
+        >
+          Onaylandı
+        </span>
+        {/* Branch label: Reddedildi */}
+        <span
+          className="absolute text-[6pt] font-mono text-red-400"
+          style={{ left: "60%", top: "62%" }}
+        >
+          Reddedildi
+        </span>
+
+        {/* Node: Otomasyon (bot action) */}
+        <div
+          className="absolute w-[20mm] rounded-md bg-emerald-500/10 border border-emerald-500/25 px-[1.5mm] py-[1.5mm] flex flex-col gap-[0.5mm]"
+          style={{ left: "81%", top: "27%", transform: "translate(-50%, -50%)" }}
+        >
+          <div className="flex items-center gap-[1mm]">
+            <Bot className="w-[2.5mm] h-[2.5mm] text-emerald-400 shrink-0" />
+            <span className="text-[6.5pt] font-mono uppercase tracking-[0.12em] text-slate-500">
+              Otomasyon
+            </span>
+          </div>
+          <span className="text-[7pt] font-semibold text-white leading-tight">
+            Hesap Sağla
+          </span>
+        </div>
+
+        {/* Node: Reddedildi terminal (notify) */}
+        <div
+          className="absolute w-[20mm] rounded-md bg-red-500/10 border border-red-500/25 px-[1.5mm] py-[1.5mm] flex flex-col gap-[0.5mm]"
+          style={{ left: "81%", top: "77%", transform: "translate(-50%, -50%)" }}
+        >
+          <div className="flex items-center gap-[1mm]">
+            <Bell className="w-[2.5mm] h-[2.5mm] text-red-400 shrink-0" />
+            <span className="text-[6.5pt] font-mono uppercase tracking-[0.12em] text-slate-500">
+              Bildirim
+            </span>
+          </div>
+          <span className="text-[7pt] font-semibold text-white leading-tight">
+            Talep Edene Dön
+          </span>
+        </div>
+
+        {/* Node: End */}
+        <div
+          className="absolute w-[7mm] h-[7mm] rounded-full bg-emerald-500/15 border-[0.5mm] border-emerald-500/40 flex items-center justify-center"
+          style={{ left: "95%", top: "27%", transform: "translate(-50%, -50%)" }}
+        >
+          <Flag className="w-[2.5mm] h-[2.5mm] text-emerald-400" />
+        </div>
+      </div>
+
+      {/* Node-type palette */}
+      <div className="flex items-center gap-[1.5mm] mt-[2.5mm] flex-wrap">
+        <span className="text-[7pt] font-mono uppercase tracking-[0.2em] text-slate-500 mr-[0.5mm]">
+          Düğümler
+        </span>
+        {palette.map((p, i) => {
+          const Icon = p.icon;
+          return (
+            <div
+              key={i}
+              className={`flex items-center gap-[1mm] px-[1.5mm] py-[0.5mm] rounded-md border ${p.tone}`}
+            >
+              <Icon className="w-[2.5mm] h-[2.5mm]" />
+              <span className="text-[7pt] font-medium text-white">{p.label}</span>
+            </div>
+          );
+        })}
+        <div className="flex items-center gap-[1mm] ml-auto">
+          <XCircle className="w-[2.5mm] h-[2.5mm] text-slate-500" />
+          <span className="text-[7pt] font-mono text-slate-500">
+            sürükle ve bırak · 14 düğüm
+          </span>
+          <ArrowRight className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Integration Management — REST API konsolu
+// ============================================================
+
+function IntegrationApiMock({ accent }: { accent: AccentClasses }) {
+  const endpoints = [
+    { method: "GET", path: "/api/v1/incidents", auth: Lock, code: "200", codeTone: "text-emerald-400", mTone: "text-emerald-400 bg-emerald-500/12 border-emerald-500/30" },
+    { method: "POST", path: "/api/v1/requests", auth: Lock, code: "201", codeTone: "text-emerald-400", mTone: "text-blue-400 bg-blue-500/12 border-blue-500/30" },
+    { method: "PUT", path: "/api/v1/changes/{id}", auth: Lock, code: "200", codeTone: "text-emerald-400", mTone: "text-amber-400 bg-amber-500/12 border-amber-500/30" },
+    { method: "GET", path: "/api/v1/assets", auth: KeyRound, code: "200", codeTone: "text-emerald-400", mTone: "text-emerald-400 bg-emerald-500/12 border-emerald-500/30" },
+    { method: "DELETE", path: "/api/v1/webhooks/{id}", auth: Lock, code: "204", codeTone: "text-slate-400", mTone: "text-red-400 bg-red-500/12 border-red-500/30" },
+  ];
+
+  const scopes = [
+    "incidents:read",
+    "requests:write",
+    "assets:read",
+    "cmdb:read",
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<Link2 className="w-[3mm] h-[3mm]" />}
+        title="REST API Konsolu"
+        meta="v1 · canlı"
+        accent={accent}
+      />
+
+      <div className="grid grid-cols-[1fr_52mm] gap-[3mm]">
+        {/* Endpoint table */}
+        <div className="flex flex-col min-w-0">
+          {/* Base URL bar */}
+          <div className="flex items-center gap-[1.5mm] px-[2mm] py-[1.5mm] rounded-md bg-white/3 border border-white/8 mb-[2mm]">
+            <Webhook className={`w-[2.5mm] h-[2.5mm] ${accent.text} shrink-0`} />
+            <span className="text-[7pt] font-mono text-slate-500 shrink-0">
+              base
+            </span>
+            <span className="text-[7.5pt] font-mono text-white truncate">
+              https://api.servicecore.app
+            </span>
+          </div>
+
+          {/* Table header */}
+          <div className="grid grid-cols-[16mm_1fr_8mm_12mm] gap-[2mm] px-[2mm] py-[1mm] text-[7pt] font-mono font-semibold uppercase tracking-[0.18em] text-slate-500 bg-white/2 border border-white/5 rounded-md mb-[1.5mm]">
+            <span>Metod</span>
+            <span>Uç Nokta</span>
+            <span>Yetki</span>
+            <span>Yanıt</span>
+          </div>
+
+          {/* Endpoint rows */}
+          <div className="flex flex-col gap-[1mm]">
+            {endpoints.map((e, i) => {
+              const AuthIcon = e.auth;
+              return (
+                <div
+                  key={i}
+                  className="grid grid-cols-[16mm_1fr_8mm_12mm] gap-[2mm] items-center px-[2mm] py-[1.5mm] rounded-md bg-white/2 border border-white/5"
+                >
+                  <span
+                    className={`text-[7pt] font-mono font-bold px-[1.2mm] py-[0.3mm] rounded-md border text-center ${e.mTone}`}
+                  >
+                    {e.method}
+                  </span>
+                  <span className="text-[8pt] font-mono text-white truncate">
+                    {e.path}
+                  </span>
+                  <AuthIcon className="w-[2.5mm] h-[2.5mm] text-slate-400 justify-self-center" />
+                  <span className={`text-[8pt] font-mono font-bold tabular-nums ${e.codeTone}`}>
+                    {e.code}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Audit footer */}
+          <div className="flex items-center gap-[1.5mm] mt-[2mm] pt-[1.5mm] border-t border-white/5">
+            <Activity className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+            <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+              Denetim İzi
+            </span>
+            <span className="text-[7pt] font-mono text-slate-400 truncate">
+              14.218 çağrı · son 24 sa
+            </span>
+            <span className={`ml-auto w-[1.2mm] h-[1.2mm] rounded-full ${accent.dot}`} />
+          </div>
+        </div>
+
+        {/* Auth / token panel */}
+        <div className="flex flex-col gap-[2mm] min-w-0">
+          {/* Bearer token card */}
+          <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
+            <div className="flex items-center gap-[1.5mm]">
+              <KeyRound className={`w-[3mm] h-[3mm] ${accent.text}`} />
+              <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-white">
+                Erişim Anahtarı
+              </span>
+            </div>
+            <div className="flex items-center gap-[1mm] px-[1.5mm] py-[1.5mm] rounded-md bg-black/20 border border-white/8">
+              <span className="text-[7pt] font-mono text-slate-500 shrink-0">
+                Bearer
+              </span>
+              <span className={`text-[7pt] font-mono ${accent.text} truncate`}>
+                sk_live_8f2a••••4c1e
+              </span>
+            </div>
+            <div className="flex items-center gap-[1.5mm]">
+              <Shield className="w-[2.5mm] h-[2.5mm] text-emerald-400 shrink-0" />
+              <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+                Rol
+              </span>
+              <span className="text-[7.5pt] font-medium text-white truncate">
+                Entegrasyon Servisi
+              </span>
+            </div>
+          </div>
+
+          {/* Scope chips */}
+          <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
+            <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
+              Kapsam (Scope)
+            </span>
+            <div className="flex flex-wrap gap-[1mm]">
+              {scopes.map((s, i) => (
+                <span
+                  key={i}
+                  className={`text-[6.5pt] font-mono px-[1.2mm] py-[0.3mm] rounded-full border ${accent.chip}`}
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Rate limit gauge */}
+          <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-[1.5mm]">
+                <Gauge className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+                <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+                  Hız Limiti
+                </span>
+              </div>
+              <span className="text-[7pt] font-mono text-slate-400 tabular-nums">
+                742 / 1.000
+              </span>
+            </div>
+            <div className="h-[1.5mm] rounded-full bg-white/5 overflow-hidden">
+              <div
+                className={`h-full ${accent.bg} border ${accent.border} rounded-full`}
+                style={{ width: "74%" }}
+              />
+            </div>
+            <span className="text-[6.5pt] font-mono text-slate-500">
+              istek / dakika · sıfırlama 18s
+            </span>
+          </div>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Integration System — connector katalogu & çalıştırma
+// ============================================================
+
+function IntegrationSystemMock({ accent }: { accent: AccentClasses }) {
+  const connectors = [
+    { label: "E-posta", system: "SMTP / IMAP", icon: Mail, online: true },
+    { label: "Teams", system: "Microsoft 365", icon: MessageSquare, online: true },
+    { label: "Webhook", system: "HTTP / REST", icon: Webhook, online: true },
+    { label: "Veritabanı", system: "PostgreSQL", icon: Database, online: true },
+    { label: "Bulut Depolama", system: "Azure Blob", icon: Cloud, online: true },
+    { label: "ERP", system: "SAP S/4HANA", icon: GitMerge, online: false },
+  ];
+
+  const runs = [
+    {
+      flow: "Olay → Teams bildirim",
+      trigger: "Olay",
+      tIcon: CheckCircle2,
+      tTone: "text-purple-400 bg-purple-500/10 border-purple-500/25",
+      state: "Başarılı",
+      sIcon: CheckCircle2,
+      sTone: "text-emerald-400",
+      dur: "1,2 sn",
+    },
+    {
+      flow: "ERP varlık eşitleme",
+      trigger: "Cron",
+      tIcon: CalendarClock,
+      tTone: "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
+      state: "Çalışıyor",
+      sIcon: RefreshCw,
+      sTone: accent.text,
+      dur: "4,8 sn",
+    },
+    {
+      flow: "CRM talep oluştur",
+      trigger: "Webhook",
+      tIcon: Webhook,
+      tTone: "text-amber-400 bg-amber-500/10 border-amber-500/25",
+      state: "Başarılı",
+      sIcon: CheckCircle2,
+      sTone: "text-emerald-400",
+      dur: "0,9 sn",
+    },
+    {
+      flow: "Toplu kullanıcı içe aktar",
+      trigger: "Manuel",
+      tIcon: MessageSquare,
+      tTone: "text-slate-300 bg-white/5 border-white/10",
+      state: "Hata",
+      sIcon: XCircle,
+      sTone: "text-red-400",
+      dur: "2,1 sn",
+    },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<Plug className="w-[3mm] h-[3mm]" />}
+        title="Entegrasyon İstasyonu — Akış Motoru"
+        meta="6 connector · 248 çalıştırma/gün"
+        accent={accent}
+      />
+
+      {/* Connector catalog */}
+      <div className="mb-[3mm]">
+        <div className="flex items-center justify-between mb-[1.5mm]">
+          <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
+            Connector Kataloğu
+          </span>
+          <div className="flex items-center gap-[1mm]">
+            <span className="w-[1.2mm] h-[1.2mm] rounded-full bg-emerald-400" />
+            <span className="text-[7pt] font-mono text-slate-500">5 bağlı</span>
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-[1.5mm]">
+          {connectors.map((c, i) => {
+            const Icon = c.icon;
+            return (
+              <div
+                key={i}
+                className="rounded-md border border-white/8 bg-white/2 p-[2mm] flex items-center gap-[1.5mm]"
+              >
+                <div
+                  className={`w-[6mm] h-[6mm] rounded-md ${accent.bg} border ${accent.border} flex items-center justify-center shrink-0`}
+                >
+                  <Icon className={`w-[3mm] h-[3mm] ${accent.text}`} />
+                </div>
+                <div className="flex flex-col min-w-0 flex-1">
+                  <span className="text-[8pt] font-semibold text-white truncate">
+                    {c.label}
+                  </span>
+                  <span className="text-[6.5pt] font-mono text-slate-500 truncate">
+                    {c.system}
+                  </span>
+                </div>
+                <span
+                  className={`w-[1.5mm] h-[1.5mm] rounded-full shrink-0 ${
+                    c.online ? "bg-emerald-400" : "bg-slate-600"
+                  }`}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Recent runs */}
+      <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm]">
+        <div className="flex items-center justify-between mb-[1.5mm]">
+          <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
+            Son Çalıştırmalar
+          </span>
+          <span className="text-[7pt] font-mono text-slate-500">canlı</span>
+        </div>
+
+        <div className="grid grid-cols-[16mm_1fr_18mm_14mm] gap-[2mm] px-[1.5mm] pb-[1mm] text-[6.5pt] font-mono font-semibold uppercase tracking-[0.16em] text-slate-500 border-b border-white/5 mb-[1mm]">
+          <span>Tetikleyici</span>
+          <span>Akış</span>
+          <span>Durum</span>
+          <span className="text-right">Süre</span>
+        </div>
+
+        <div className="flex flex-col gap-[1mm]">
+          {runs.map((r, i) => {
+            const TIcon = r.tIcon;
+            const SIcon = r.sIcon;
+            return (
+              <div
+                key={i}
+                className="grid grid-cols-[16mm_1fr_18mm_14mm] gap-[2mm] items-center px-[1.5mm] py-[1mm] rounded-md bg-white/2 border border-white/5"
+              >
+                <span
+                  className={`flex items-center gap-[1mm] text-[6.5pt] font-mono px-[1.2mm] py-[0.3mm] rounded-full border ${r.tTone}`}
+                >
+                  <TIcon className="w-[2mm] h-[2mm]" />
+                  {r.trigger}
+                </span>
+                <span className="text-[8pt] font-medium text-white truncate">
+                  {r.flow}
+                </span>
+                <span
+                  className={`flex items-center gap-[1mm] text-[7pt] font-mono font-semibold ${r.sTone}`}
+                >
+                  <SIcon className="w-[2.5mm] h-[2.5mm]" />
+                  {r.state}
+                </span>
+                <span className="text-[7pt] font-mono text-slate-400 tabular-nums text-right">
+                  {r.dur}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="flex items-center justify-end gap-[1mm] mt-[1.5mm] pt-[1.5mm] border-t border-white/5">
+          <span className={`text-[7pt] font-mono ${accent.text}`}>
+            Tüm çalıştırma geçmişi
+          </span>
+          <ArrowRight className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Low Code — form tasarım stüdyosu
+// ============================================================
+
+function LowCodeMock({ accent }: { accent: AccentClasses }) {
+  const palette = [
+    { label: "Metin Kutusu", icon: Type },
+    { label: "Seçim Listesi", icon: List },
+    { label: "Tarih", icon: Calendar },
+    { label: "Dosya", icon: Upload },
+    { label: "Onay Kutusu", icon: CheckSquare },
+  ];
+
+  const canvas = [
+    { label: "Talep Eden", placeholder: "Ad Soyad · Departman", icon: Type, selected: false },
+    { label: "Hizmet Türü", placeholder: "Listeden seçin…", icon: List, selected: true },
+    { label: "İhtiyaç Tarihi", placeholder: "gg.aa.yyyy", icon: Calendar, selected: false },
+    { label: "Onay Belgesi", placeholder: "Dosya yükle (PDF)", icon: Upload, selected: false },
+  ];
+
+  const props = [
+    { label: "Alan Adı", value: "hizmet_turu" },
+    { label: "Etiket", value: "Hizmet Türü" },
+    { label: "Tip", value: "Seçim Listesi" },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<Code className="w-[3mm] h-[3mm]" />}
+        title="Form Tasarım Stüdyosu — FRM-208"
+        meta="Taslak · v3"
+        accent={accent}
+      />
+
+      <div className="grid grid-cols-[33mm_1fr_42mm] gap-[2mm] items-stretch">
+        {/* Left: component palette */}
+        <div className="rounded-md border border-white/8 bg-white/2 p-[2mm] flex flex-col gap-[1.5mm]">
+          <div className="flex items-center gap-[1.5mm] pb-[1mm] border-b border-white/8">
+            <Boxes className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+            <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+              Bileşenler
+            </span>
+          </div>
+          {palette.map((p, i) => {
+            const Icon = p.icon;
+            return (
+              <div
+                key={i}
+                className="flex items-center gap-[1.5mm] px-[1.5mm] py-[1mm] rounded-md bg-white/3 border border-white/8"
+              >
+                <span className="flex flex-col gap-[0.5mm] shrink-0">
+                  <span className="flex gap-[0.5mm]">
+                    <span className="w-[0.6mm] h-[0.6mm] rounded-full bg-white/25" />
+                    <span className="w-[0.6mm] h-[0.6mm] rounded-full bg-white/25" />
+                  </span>
+                  <span className="flex gap-[0.5mm]">
+                    <span className="w-[0.6mm] h-[0.6mm] rounded-full bg-white/25" />
+                    <span className="w-[0.6mm] h-[0.6mm] rounded-full bg-white/25" />
+                  </span>
+                  <span className="flex gap-[0.5mm]">
+                    <span className="w-[0.6mm] h-[0.6mm] rounded-full bg-white/25" />
+                    <span className="w-[0.6mm] h-[0.6mm] rounded-full bg-white/25" />
+                  </span>
+                </span>
+                <Icon className="w-[2.5mm] h-[2.5mm] text-slate-300 shrink-0" />
+                <span className="text-[7.5pt] font-medium text-white truncate">
+                  {p.label}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Center: form canvas */}
+        <div className="rounded-md border border-dashed border-white/12 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
+          <div className="flex items-center justify-between pb-[1mm] border-b border-white/8">
+            <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+              Personel Talep Formu
+            </span>
+            <span className="text-[7pt] font-mono text-slate-500">4 alan</span>
+          </div>
+          {canvas.map((f, i) => {
+            const Icon = f.icon;
+            return (
+              <div
+                key={i}
+                className={`rounded-md p-[2mm] flex flex-col gap-[1mm] border ${
+                  f.selected
+                    ? `${accent.bg} ${accent.border}`
+                    : "bg-white/3 border-white/8"
+                }`}
+              >
+                <div className="flex items-center gap-[1mm]">
+                  <Icon
+                    className={`w-[2.5mm] h-[2.5mm] ${
+                      f.selected ? accent.text : "text-slate-500"
+                    }`}
+                  />
+                  <span className="text-[7.5pt] font-medium text-white">
+                    {f.label}
+                  </span>
+                  {f.selected && (
+                    <span
+                      className={`ml-auto text-[6.5pt] font-mono uppercase tracking-[0.16em] px-[1.2mm] py-[0.2mm] rounded-full border ${accent.chip}`}
+                    >
+                      Seçili
+                    </span>
+                  )}
+                </div>
+                <div className="h-[4mm] rounded-sm bg-white/4 border border-white/8 flex items-center px-[1.5mm]">
+                  <span className="text-[7pt] font-light text-slate-500 truncate">
+                    {f.placeholder}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+          <div className="rounded-md border border-dashed border-white/15 bg-white/2 py-[1.5mm] flex items-center justify-center gap-[1mm]">
+            <Plus className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+            <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-400">
+              Bileşeni buraya bırak
+            </span>
+          </div>
+        </div>
+
+        {/* Right: field properties */}
+        <div className="rounded-md border border-white/8 bg-white/2 p-[2mm] flex flex-col gap-[1.5mm]">
+          <div className="flex items-center gap-[1.5mm] pb-[1mm] border-b border-white/8">
+            <SlidersHorizontal className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
+            <span className="text-[7pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+              Alan Özellikleri
+            </span>
+          </div>
+
+          {props.map((pr, i) => (
+            <div key={i} className="flex flex-col gap-[0.5mm]">
+              <span className="text-[6.5pt] font-mono uppercase tracking-[0.16em] text-slate-500">
+                {pr.label}
+              </span>
+              <div className="h-[4mm] rounded-sm bg-white/4 border border-white/8 flex items-center px-[1.5mm]">
+                <span className="text-[7.5pt] font-mono text-white truncate">
+                  {pr.value}
+                </span>
+              </div>
+            </div>
+          ))}
+
+          {/* Zorunlu toggle — on */}
+          <div className="flex items-center justify-between px-[1.5mm] py-[1mm] rounded-md bg-white/3 border border-white/8 mt-[0.5mm]">
+            <span className="text-[7.5pt] font-medium text-white">Zorunlu</span>
+            <ToggleRight className={`w-[4mm] h-[4mm] ${accent.text}`} />
+          </div>
+
+          {/* Görünürlük */}
+          <div className="flex items-center justify-between px-[1.5mm] py-[1mm] rounded-md bg-white/3 border border-white/8">
+            <div className="flex items-center gap-[1mm]">
+              <Eye className="w-[2.5mm] h-[2.5mm] text-slate-500" />
+              <span className="text-[7.5pt] font-medium text-white">Görünürlük</span>
+            </div>
+            <span className="text-[6.5pt] font-mono uppercase tracking-[0.16em] text-emerald-400">
+              Koşullu
+            </span>
+          </div>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
+// Contract Management — sözleşme yaşam döngüsü
+// ============================================================
+
+function ContractMock({ accent }: { accent: AccentClasses }) {
+  const lifecycle = [
+    { label: "Taslak", status: "done" },
+    { label: "İnceleme", status: "done" },
+    { label: "Onay", status: "done" },
+    { label: "İmza", status: "done" },
+    { label: "Aktif", status: "active" },
+    { label: "İzleme", status: "pending" },
+    { label: "Yenileme", status: "pending" },
+    { label: "Kapanış", status: "pending" },
+  ];
+
+  const contracts = [
+    {
+      id: "CTR-2418",
+      type: "SLA",
+      typeIcon: Shield,
+      typeTone: "text-blue-400 bg-blue-500/12 border-blue-500/30",
+      party: "Bilgi Teknolojileri",
+      end: "31.07.2026",
+      status: "Aktif",
+      sTone: "text-emerald-400 bg-emerald-500/10 border-emerald-500/25",
+      left: "46 gün",
+      lTone: "text-emerald-400",
+    },
+    {
+      id: "CTR-2417",
+      type: "Tedarikçi",
+      typeIcon: Building2,
+      typeTone: "text-purple-400 bg-purple-500/12 border-purple-500/30",
+      party: "Netaş Telekom A.Ş.",
+      end: "28.06.2026",
+      status: "Yenilenecek",
+      sTone: "text-amber-400 bg-amber-500/10 border-amber-500/25",
+      left: "13 gün",
+      lTone: "text-amber-400",
+    },
+    {
+      id: "CTR-2416",
+      type: "OLA",
+      typeIcon: Scale,
+      typeTone: "text-cyan-400 bg-cyan-500/12 border-cyan-500/30",
+      party: "Ağ Operasyon Ekibi",
+      end: "30.09.2026",
+      status: "Aktif",
+      sTone: "text-emerald-400 bg-emerald-500/10 border-emerald-500/25",
+      left: "107 gün",
+      lTone: "text-emerald-400",
+    },
+    {
+      id: "CTR-2415",
+      type: "Tedarikçi",
+      typeIcon: Building2,
+      typeTone: "text-purple-400 bg-purple-500/12 border-purple-500/30",
+      party: "Dell EMC Bakım",
+      end: "08.06.2026",
+      status: "Süresi Doldu",
+      sTone: "text-red-400 bg-red-500/12 border-red-500/30",
+      left: "-7 gün",
+      lTone: "text-red-400",
+    },
+    {
+      id: "CTR-2414",
+      type: "SLA",
+      typeIcon: Shield,
+      typeTone: "text-blue-400 bg-blue-500/12 border-blue-500/30",
+      party: "İnsan Kaynakları",
+      end: "20.06.2026",
+      status: "Yenilenecek",
+      sTone: "text-amber-400 bg-amber-500/10 border-amber-500/25",
+      left: "5 gün",
+      lTone: "text-amber-400",
+    },
+  ];
+
+  return (
+    <Frame>
+      <TitleBar
+        icon={<FileSignature className="w-[3mm] h-[3mm]" />}
+        title="Sözleşme Yaşam Döngüsü"
+        meta="184 sözleşme · 6 yenileme"
+        accent={accent}
+      />
+
+      {/* Lifecycle stepper — 8 stages, horizontally compressed */}
+      <div className="rounded-md border border-white/8 bg-white/2 px-[2.5mm] py-[2.5mm] mb-[3mm]">
+        <div className="flex items-center justify-between mb-[2mm]">
+          <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
+            Sözleşme Aşamaları
+          </span>
+          <span className={`text-[7pt] font-mono font-semibold ${accent.text}`}>
+            5 / 8 · Aktif
+          </span>
+        </div>
+        <div className="flex items-start">
+          {lifecycle.map((s, i) => {
+            const isDone = s.status === "done";
+            const isActive = s.status === "active";
+            const isLast = i === lifecycle.length - 1;
+            const connectorTone = isDone
+              ? "bg-emerald-500/50"
+              : "bg-white/10";
+            return (
+              <div key={i} className="flex items-start flex-1 min-w-0">
+                <div className="flex flex-col items-center gap-[1mm] shrink-0">
+                  <div
+                    className={`w-[4mm] h-[4mm] rounded-full border flex items-center justify-center ${
+                      isDone
+                        ? "bg-emerald-500/15 border-emerald-500/40"
+                        : isActive
+                        ? `${accent.bg} ${accent.border}`
+                        : "bg-white/3 border-white/12"
+                    }`}
+                  >
+                    {isDone ? (
+                      <CheckCircle2 className="w-[2.5mm] h-[2.5mm] text-emerald-400" />
+                    ) : isActive ? (
+                      <span className={`w-[1.6mm] h-[1.6mm] rounded-full ${accent.dot}`} />
+                    ) : (
+                      <span className="w-[1.2mm] h-[1.2mm] rounded-full bg-white/25" />
+                    )}
+                  </div>
+                  <span
+                    className={`text-[6.5pt] font-mono text-center leading-tight ${
+                      isActive
+                        ? `${accent.text} font-semibold`
+                        : isDone
+                        ? "text-slate-300"
+                        : "text-slate-500"
+                    }`}
+                  >
+                    {s.label}
+                  </span>
+                </div>
+                {!isLast && (
+                  <div
+                    className={`h-[0.5mm] flex-1 rounded-full mt-[1.75mm] mx-[0.5mm] ${connectorTone}`}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Contract ledger table */}
+      <div className="grid grid-cols-[16mm_20mm_1fr_20mm_22mm_16mm] gap-[2mm] px-[2mm] py-[1mm] text-[7pt] font-mono font-semibold uppercase tracking-[0.18em] text-slate-500 bg-white/2 border border-white/5 rounded-md mb-[1.5mm]">
+        <span>Sözleşme</span>
+        <span>Tip</span>
+        <span>Taraf</span>
+        <span>Bitiş</span>
+        <span>Durum</span>
+        <span>Kalan</span>
+      </div>
+
+      <div className="flex flex-col gap-[1mm]">
+        {contracts.map((c, i) => {
+          const TypeIcon = c.typeIcon;
+          const expired = c.left.startsWith("-");
+          return (
+            <div
+              key={i}
+              className="grid grid-cols-[16mm_20mm_1fr_20mm_22mm_16mm] gap-[2mm] items-center px-[2mm] py-[1.5mm] rounded-md bg-white/2 border border-white/5"
+            >
+              <span className="text-[7pt] font-mono text-slate-500">{c.id}</span>
+              <span
+                className={`flex items-center gap-[1mm] text-[7pt] font-mono font-semibold px-[1.2mm] py-[0.3mm] rounded-full border ${c.typeTone}`}
+              >
+                <TypeIcon className="w-[2.2mm] h-[2.2mm]" />
+                {c.type}
+              </span>
+              <span className="text-[8pt] font-medium text-white truncate">
+                {c.party}
+              </span>
+              <div className="flex items-center gap-[1mm] min-w-0">
+                <Calendar className="w-[2.2mm] h-[2.2mm] text-slate-500 shrink-0" />
+                <span className="text-[7pt] font-mono text-slate-300 tabular-nums truncate">
+                  {c.end}
+                </span>
+              </div>
+              <span
+                className={`flex items-center justify-center gap-[1mm] text-[7pt] font-mono px-[1.2mm] py-[0.3mm] rounded-full border ${c.sTone}`}
+              >
+                {c.status === "Süresi Doldu" ? (
+                  <AlertCircle className="w-[2.2mm] h-[2.2mm]" />
+                ) : c.status === "Yenilenecek" ? (
+                  <RefreshCw className="w-[2.2mm] h-[2.2mm]" />
+                ) : (
+                  <CheckCircle2 className="w-[2.2mm] h-[2.2mm]" />
+                )}
+                {c.status}
+              </span>
+              <span
+                className={`flex items-center gap-[1mm] text-[7.5pt] font-mono font-bold tabular-nums ${c.lTone}`}
+              >
+                <Clock className="w-[2.2mm] h-[2.2mm] shrink-0" />
+                {expired ? "Doldu" : c.left}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </Frame>
+  );
+}
+
+// ============================================================
 // Main dispatcher
 // ============================================================
 
 export function ModuleMock({ moduleId, accent }: ModuleMockProps): ReactNode {
-  const a = ACCENT_MAP[accent];
+  const a = ACCENT_MAP[accent] ?? ACCENT_MAP.blue;
 
   switch (moduleId) {
     case "service-desk-and-interaction-management":
@@ -1611,6 +3836,30 @@ export function ModuleMock({ moduleId, accent }: ModuleMockProps): ReactNode {
       return <ProjectMock accent={a} />;
     case "enterprise-service-management":
       return <EsmMock accent={a} />;
+    case "discovery":
+      return <DiscoveryMock accent={a} />;
+    case "service-topologies-explorer":
+      return <TopologyMock accent={a} />;
+    case "shift-management":
+      return <ShiftMock accent={a} />;
+    case "service-relations-management":
+      return <SrmMock accent={a} />;
+    case "federation-engine":
+      return <FederationMock accent={a} />;
+    case "admin-panel":
+      return <AdminMock accent={a} />;
+    case "mobile-service-management":
+      return <MobileMock accent={a} />;
+    case "workflow-management":
+      return <WorkflowMock accent={a} />;
+    case "integration-management":
+      return <IntegrationApiMock accent={a} />;
+    case "integration-system":
+      return <IntegrationSystemMock accent={a} />;
+    case "low-code-development":
+      return <LowCodeMock accent={a} />;
+    case "contract-management":
+      return <ContractMock accent={a} />;
     default:
       return null;
   }
