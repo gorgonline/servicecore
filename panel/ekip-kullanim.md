@@ -8,6 +8,29 @@ Backend ekibi şu an AntD 5.7 ile karışık yazıyor — sayfa sayfa farklı ka
 
 Ekip `npm install @servicecoreui/ui` ile paketi kurar, doğrudan oradan import eder. AntD'yi doğrudan import etmek yasak (aşağıya bakın).
 
+## Ekip Çalışma Düzeni — Git Akışı
+
+> **Tek kaynak: monorepo `gorgonline/servicecore` → `panel/`.** Asıl burasıdır.
+> `gorgonline/servicecore-panel` SADECE deploy çıktısıdır — oraya **elle commit YASAK**
+> (bir sonraki `pnpm sync-deploy` onu ezer, işin kaybolur).
+
+1. **Clone:** `gorgonline/servicecore` (monorepo). Panel işi `panel/` klasöründe yapılır.
+2. **Dal aç:** her iş kendi dalında — `main`'den `git checkout -b feature/<konu>`.
+3. **Çalış + push:** küçük ve sık commit → `git push -u origin feature/<konu>`.
+4. **PR:** dalı `main`'e Pull Request ile getir. İki göz bakar; merge Levent'te.
+5. **`main`'e direkt push YOK** (ikimiz de). Branch protection ile zorlanmalı.
+6. **Çalışmaya başlamadan:** `git checkout main && git pull` → sonra yeni dal. Eskimiş dalda çalışma.
+
+### İş bölümü (aynı dosyada çakışmamak için)
+- **Levent:** tasarım, `apps/playground/`, `theme/tokens.css`.
+- **Bora:** `packages/ui/` bileşen implementasyonu.
+- Aynı anda aynı alana girmemek için günlük kısa "şu an şunu tutuyorum" mesajı.
+
+### Sadece Levent yapar
+- **Deploy:** temiz `main`'den `pnpm sync-deploy "mesaj"`.
+- **npm publish:** `@servicecoreui/ui` + `@servicecoreui/mcp`.
+- **Sürüm (version) bump.**
+
 ## AI ile Çalışma — MCP Entegrasyonu
 
 Ekip çoğunlukla **VS Code + Claude Code / Cursor / Continue** kullanıyor. AI'ın `@servicecoreui/ui` dışına çıkıp rastgele AntD veya kendi HTML'ini yazmasını engellemek için **`@servicecoreui/mcp` server'ı** yayınlandı.
