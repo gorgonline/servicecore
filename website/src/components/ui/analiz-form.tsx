@@ -267,7 +267,7 @@ export function AnalizForm() {
                         {field.label} kullanılacak mı?
                       </p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap items-center gap-2">
                           {["Evet", "Hayır"].map((opt) => {
                             const selected = state.kullanilacak === opt;
                             return (
@@ -346,7 +346,7 @@ export function AnalizForm() {
                         {field.label} kullanılacak mı?
                       </p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap items-center gap-2">
                           {["Evet", "Hayır"].map((opt) => {
                             const selected = state.kullanilacak === opt;
                             return (
