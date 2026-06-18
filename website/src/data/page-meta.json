@@ -189,7 +189,7 @@
   },
   "hizmetler-support": {
     "title": "Destek Hizmetleri | ServiceCore",
-    "description": "Entegrasyon, göçüm, raporlama, saha destek ve dört yıllık destek paketi: Silver, Gold, Platinum, Mission Critical."
+    "description": "Entegrasyon, taşıma, raporlama, saha destek ve dört yıllık destek paketi: Silver, Gold, Platinum, Mission Critical."
   },
   "hizmetler-training": {
     "title": "Eğitim Hizmetleri | ServiceCore",
@@ -212,8 +212,8 @@
     "description": "ServiceCore'un diğer platformlarla REST API üzerinden entegrasyonu — tek yönlü veya çift yönlü mimari, kimlik doğrulama ve sonuç eşleştirme."
   },
   "hizmetler-support-migration": {
-    "title": "Göçüm Konfigürasyon Paketi | ServiceCore",
-    "description": "Eski servis yönetimi ve varlık yönetimi platformlarından ServiceCore'a 7 aşamalı yapılandırılmış veri göçüm hizmeti."
+    "title": "Taşıma Konfigürasyon Paketi | ServiceCore",
+    "description": "Eski servis yönetimi ve varlık yönetimi platformlarından ServiceCore'a 7 aşamalı yapılandırılmış veri taşıma hizmeti."
   },
   "hizmetler-support-silver": {
     "title": "Silver Destek Paketi | ServiceCore",

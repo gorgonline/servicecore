@@ -55,7 +55,7 @@ SÜTUN 1: KURULUM HİZMETLERİ (accent: blue · Hammer ikonu)
 
 SÜTUN 2: DESTEK HİZMETLERİ (accent: cyan · LifeBuoy ikonu)
   · Entegrasyon Paketi                          [featured rozet]
-  · Göçüm Paketi                                [featured rozet]
+  · Taşıma Paketi                               [featured rozet]
   · Analiz, Özelleştirme ve Devreye Alma
   · Raporlama Hizmetleri
   · Saha Destek
@@ -541,10 +541,10 @@ Accordion (mevcut Modüller accordion pattern'i ile aynı):
 
 #### Bölüm Listesi
 1. Üst Bilgi Şeridi: `Support · Migration` + `Tek seferlik` + `Öne çıkan hizmet`
-2. Hero: "7 aşamalı yapılandırılmış veri göçüm hizmeti"
+2. Hero: "7 aşamalı yapılandırılmış veri taşıma hizmeti"
 3. Sections (2 section):
    - Giriş (text)
-   - Göçüm Süreci · 7 Aşama (**steps**, 7 adım — her adımın label başında "1." gibi numara)
+   - Taşıma Süreci · 7 Aşama (**steps**, 7 adım — her adımın label başında "1." gibi numara)
 4. Docs Link
 5. Diğer Hizmetler grid
 6. CTA

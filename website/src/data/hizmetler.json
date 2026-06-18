@@ -3,7 +3,7 @@
     "badge": "Hizmetler",
     "titleLead": "ServiceCore",
     "titleAccent": "profesyonel hizmetleri.",
-    "description": "Konfigürasyon, devreye alma, entegrasyon, göçüm, eğitim ve danışmanlık başlıklarını tek çatıda toplayan, ITIL4 disiplinine sadık 23 profesyonel hizmet. Yerli mühendislik kadrosu, sertifikalı danışman ekibi ve uçtan uca yaşam döngüsü sahipliği ile servis yönetiminizi güvenle sağlamlaştırın."
+    "description": "Konfigürasyon, devreye alma, entegrasyon, taşıma, eğitim ve danışmanlık başlıklarını tek çatıda toplayan, ITIL4 disiplinine sadık 23 profesyonel hizmet. Yerli mühendislik kadrosu, sertifikalı danışman ekibi ve uçtan uca yaşam döngüsü sahipliği ile servis yönetiminizi güvenle sağlamlaştırın."
   },
   "categories": [
     {
@@ -22,7 +22,7 @@
       "name": "Destek Hizmetleri",
       "nameEn": "Support Services",
       "tagline": "Canlı sistemler için uzman müdahale ve geliştirme.",
-      "description": "Entegrasyon, göçüm, analiz ve geliştirme operasyonlarından yıllık Silver-Gold-Platinum-Mission Critical destek paketlerine kadar sürekliliği güvence altına alan hizmet portföyü. Continuous Delivery ile her sürüm aksayışmaksızın sahaya iner.",
+      "description": "Entegrasyon, taşıma, analiz ve geliştirme operasyonlarından yıllık Silver-Gold-Platinum-Mission Critical destek paketlerine kadar sürekliliği güvence altına alan hizmet portföyü. Continuous Delivery ile her sürüm aksayışmaksızın sahaya iner.",
       "icon": "LifeBuoy",
       "accent": "cyan",
       "count": 8,
@@ -181,14 +181,14 @@
     {
       "slug": "migration",
       "code": "SCMS",
-      "name": "Göçüş Konfigürasyon Paketi",
+      "name": "Taşıma Konfigürasyon Paketi",
       "nameEn": "Migration Configuration Pack",
       "category": "support",
       "paymentTerm": "one-time",
       "featured": true,
       "hasDetailPage": true,
-      "tagline": "Veri haritalama ve göçüm süreç yönetimi.",
-      "shortDescription": "Diğer servis yönetimi ve varlık yönetimi platformlarından ServiceCore'a yapılandırılmış veri göçümü hizmetidir. Veri analizi, haritalama, strateji, yedekleme, göçüm, doğrulama ve iyileştirme adımlarını içeren 7 aşamalı metodoloji ile yürütülür.",
+      "tagline": "Veri haritalama ve taşıma süreç yönetimi.",
+      "shortDescription": "Diğer servis yönetimi ve varlık yönetimi platformlarından ServiceCore'a yapılandırılmış veri taşıma hizmetidir. Veri analizi, haritalama, strateji, yedekleme, taşıma, doğrulama ve iyileştirme adımlarını içeren 7 aşamalı metodoloji ile yürütülür.",
       "valueProps": [
         "Kaynak sistemde veri yapısının analizi ve uyum kontrolü yapılır",
         "Eski sistem alanları ServiceCore alanlarıyla detaylı haritalanır",
@@ -461,7 +461,7 @@
       "featured": false,
       "hasDetailPage": false,
       "tagline": "ServiceCore proje yönetimi danışmanlığı.",
-      "shortDescription": "ServiceCore implementasyon, göçüm, entegrasyon veya özelleştirme projelerinin uçtan uca yönetimi hizmetidir. Sertifikalı proje yöneticisi ile kapsam, takvim, bütçe ve risk yönetimi uçtan uca yürütülür; paydaş iletişimi merkezi yönetilir.",
+      "shortDescription": "ServiceCore implementasyon, taşıma, entegrasyon veya özelleştirme projelerinin uçtan uca yönetimi hizmetidir. Sertifikalı proje yöneticisi ile kapsam, takvim, bütçe ve risk yönetimi uçtan uca yürütülür; paydaş iletişimi merkezi yönetilir.",
       "valueProps": [
         "Sertifikalı proje yöneticisi ile uçtan uca yönetim",
         "Kapsam, takvim, bütçe ve risk disiplini",

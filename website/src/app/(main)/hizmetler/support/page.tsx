@@ -12,7 +12,7 @@ export default function SupportCategoryPage() {
       heroStat="10 hizmet · 6 proje bazlı + 4 yıllık abonelik"
       annualLayout
       prefaceTitle="Destek Portföyü"
-      prefaceLead="Entegrasyon ve göçüm operasyonlarından raporlama, saha desteği ve özellik geliştirmeye; Silver, Gold, Platinum ve Mission Critical yıllık paketlere kadar uzanan 10 destek hizmeti."
+      prefaceLead="Entegrasyon ve taşıma operasyonlarından raporlama, saha desteği ve özellik geliştirmeye; Silver, Gold, Platinum ve Mission Critical yıllık paketlere kadar uzanan 10 destek hizmeti."
       ctaTitle="Servis sürekliliğini birlikte güvence altına alalım."
       ctaDescription="Destek seviyenizi ihtiyaçlarınıza göre kalibre edelim. Continuous Delivery, health-check ve dedicated teknisyen seçenekleriyle yola çıkın."
       ctaBadge="Destek Hizmetleri"

@@ -1,7 +1,7 @@
 {
   "slug": "migration",
   "code": "SCMS",
-  "name": "Göçüm Konfigürasyon Paketi",
+  "name": "Taşıma Konfigürasyon Paketi",
   "nameEn": "Migration Configuration Pack",
   "category": "support",
   "categoryLabel": "Destek Hizmetleri",
@@ -11,9 +11,9 @@
   "icon": "ArrowLeftRight",
   "hero": {
     "eyebrow": "Support · Migration",
-    "title": "7 aşamalı yapılandırılmış veri göçüm hizmeti",
+    "title": "7 aşamalı yapılandırılmış veri taşıma hizmeti",
     "subtitle": "Eski servis yönetimi ve varlık yönetimi platformlarından ServiceCore'a planlanmış veri taşıma.",
-    "intro": "Göçüm Konfigürasyon Paketi, eski kayıtları yeni ServiceCore ortamına yapılandırılmış ve güvenli şekilde taşımak için tasarlanmış profesyonel hizmettir. Veri analizinden geri bildirim ve iyileştirmeye kadar 7 aşamalı metodoloji ile yürütülür."
+    "intro": "Taşıma Konfigürasyon Paketi, eski kayıtları yeni ServiceCore ortamına yapılandırılmış ve güvenli şekilde taşımak için tasarlanmış profesyonel hizmettir. Veri analizinden geri bildirim ve iyileştirmeye kadar 7 aşamalı metodoloji ile yürütülür."
   },
   "sections": [
     {
@@ -24,7 +24,7 @@
     },
     {
       "id": "yedi-asama",
-      "title": "Göçüm Süreci · 7 Aşama",
+      "title": "Taşıma Süreci · 7 Aşama",
       "type": "steps",
       "items": [
         {
@@ -59,7 +59,7 @@
     }
   ],
   "cta": {
-    "title": "ServiceCore'a güvenli veri göçümü",
+    "title": "ServiceCore'a güvenli veri taşıması",
     "description": "Eski ServiceDesk, ITSM veya CMDB platformundan ServiceCore'a geçişi planlayalım. Yedeklemeden doğrulamaya kadar 7 aşamalı profesyonel metodoloji.",
     "primaryLabel": "Demo İste",
     "primaryHref": "/demo",
