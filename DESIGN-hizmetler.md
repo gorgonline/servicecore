@@ -198,7 +198,7 @@ Accordion (mevcut Modüller accordion pattern'i ile aynı):
 - Badge: `Hammer` + "KURULUM HİZMETLERİ" (mono, blue accent)
 - Başlık: "Sıfırdan canlıya hazır" (white) + "ServiceCore kurulumu." (gradient blue → cyan)
 - Açıklama: hizmetler.json `categories[0].description`
-- Stat: `6 hizmet · sunucu hazırlığından SLA policelerine`
+- Stat: `6 hizmet · sunucu hazırlığından SLA Policy'lerine`
 - Breadcrumb: `Hizmetler / Kurulum Hizmetleri`
 - Animasyon: spring entry
 
@@ -452,7 +452,7 @@ Accordion (mevcut Modüller accordion pattern'i ile aynı):
    - Varlık Yönetimi - CMDB (list intro+5 madde)
    - Tedarikçi Tanımlama (text)
    - Sözleşme Tanımlama (text)
-   - SLA Policeleri Oluşturma (text)
+   - SLA Policy'leri Oluşturma (text)
    - Uyarı Şablonları (text)
    - Kapatma Kuralları (text)
    - İş Otomasyon Kuralları (text)

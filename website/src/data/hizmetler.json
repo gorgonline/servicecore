@@ -11,7 +11,7 @@
       "name": "Kurulum Hizmetleri",
       "nameEn": "Setup Services",
       "tagline": "Sıfırdan canlıya hazır ServiceCore kurulumu.",
-      "description": "Sunucu hazırlığından AD entegrasyonuna, süreç şablonlarından SLA poliçelerine kadar tüm başlangıç işlerini içine alan kurulum paketleri. Standart konfigürasyondan felaket kurtarmaya kadar her ölçekli kurumun ihtiyacını karşılar.",
+      "description": "Sunucu hazırlığından AD entegrasyonuna, süreç şablonlarından SLA Policy'lerine kadar tüm başlangıç işlerini içine alan kurulum paketleri. Standart konfigürasyondan felaket kurtarmaya kadar her ölçekli kurumun ihtiyacını karşılar.",
       "icon": "Hammer",
       "accent": "blue",
       "count": 5,
@@ -62,7 +62,7 @@
       "featured": true,
       "hasDetailPage": true,
       "tagline": "Anahtar teslim ServiceCore devreye alma.",
-      "shortDescription": "ServiceCore standart uygulama devreye alma işlemlerinin tamamını içeren, uygulamalı konfigürasyon gösterimleri ile yürütülen detaylı implementasyon hizmetidir. Kullanıcı tanımlamadan ITSM süreç rollerine, SLA poliçelerinden iş otomasyon kurallarına kadar 18 ana iskelet adımını kapsar.",
+      "shortDescription": "ServiceCore standart uygulama devreye alma işlemlerinin tamamını içeren, uygulamalı konfigürasyon gösterimleri ile yürütülen detaylı implementasyon hizmetidir. Kullanıcı tanımlamadan ITSM süreç rollerine, SLA Policy'lerinden iş otomasyon kurallarına kadar 18 ana iskelet adımını kapsar.",
       "valueProps": [
         "AD senkronizasyonu ve teknisyen rol atamaları uçtan uca yapılandırılır",
         "Hizmet kataloğu, CMDB ilişkileri, SLA ve uyarı şablonları kuruma özel kurulur",

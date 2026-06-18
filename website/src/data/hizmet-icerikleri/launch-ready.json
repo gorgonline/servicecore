@@ -13,7 +13,7 @@
     "eyebrow": "Setup · Launch Ready",
     "title": "Anahtar teslim ServiceCore implementasyonu",
     "subtitle": "Standart uygulama devreye alma işlemlerinin tamamını içeren, uygulamalı konfigürasyon gösterimleri ile yürütülen detaylı implementasyon hizmeti.",
-    "intro": "Launch Ready Konfigürasyon Paketi, ServiceCore tarafından sunulan standart implementasyon hizmetidir. Müşterilere uygulamalı gösterimler yapılarak konfigürasyon süreci yönetilir; kullanıcı tanımlamadan ITSM süreç rollerine, SLA poliçelerinden iş otomasyon kurallarına kadar 18 ana iskelet adımını kapsar."
+    "intro": "Launch Ready Konfigürasyon Paketi, ServiceCore tarafından sunulan standart implementasyon hizmetidir. Müşterilere uygulamalı gösterimler yapılarak konfigürasyon süreci yönetilir; kullanıcı tanımlamadan ITSM süreç rollerine, SLA Policy'lerinden iş otomasyon kurallarına kadar 18 ana iskelet adımını kapsar."
   },
   "sections": [
     {
@@ -122,8 +122,8 @@
       "content": "Tedarikçi sözleşmeleri, iç destek birim sözleşmeleri ve müşteri sözleşmeleri sisteme aktarılır."
     },
     {
-      "id": "sla-policeleri",
-      "title": "SLA Poliçeleri Oluşturma",
+      "id": "sla-policy-leri",
+      "title": "SLA Policy'leri Oluşturma",
       "type": "text",
       "content": "Kategori-servis-departman özelinde belirlenen müdahale ve çözüm süreleri için SLA kuralları belirlenir."
     },

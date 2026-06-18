@@ -201,7 +201,7 @@
   },
   "hizmetler-setup-launch-ready": {
     "title": "Launch Ready Konfigürasyon Paketi | ServiceCore",
-    "description": "Anahtar teslim ServiceCore implementasyon hizmeti — kullanıcı tanımlamadan SLA policelerine, CMDB'den iş otomasyon kurallarına kadar 18 ana iskelet adımı."
+    "description": "Anahtar teslim ServiceCore implementasyon hizmeti — kullanıcı tanımlamadan SLA Policy'lerine, CMDB'den iş otomasyon kurallarına kadar 18 ana iskelet adımı."
   },
   "hizmetler-setup-quickstart": {
     "title": "Quickstart Konfigürasyon Paketi | ServiceCore",

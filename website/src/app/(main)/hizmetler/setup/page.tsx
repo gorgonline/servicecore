@@ -9,7 +9,7 @@ export default function SetupCategoryPage() {
   return (
     <CategoryPage
       category={category}
-      heroStat="6 hizmet · sunucu hazırlığından SLA policelerine"
+      heroStat="6 hizmet · sunucu hazırlığından SLA Policy'lerine"
       prefaceTitle="Kurulum Portföyü"
       prefaceLead="Anahtar teslim implementasyondan hızlı başlangıç paketine, felaket kurtarmadan failover topolojisine kadar 6 farklı kurulum profili. Her paket, ITIL4 disiplinine sadık şekilde tasarlanır ve uzman danışmanlarımızla uygulamalı olarak teslim edilir."
       processSteps={[
