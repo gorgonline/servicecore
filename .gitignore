@@ -39,6 +39,13 @@ Thumbs.db
 /Servicecore ITSM Gereksinim Analiz Dokumani V2.xlsx
 /Servicecore ITSM Gereksinim Analiz Dokümanı V2.xlsx
 
+# Urun MVC kaynak referansi (Drive'da tutulur, marketing repoya girmez)
+/Views/
+
+# Ayri projeler — kendi repolarinda (icine girmez)
+/projectcore/
+/servicecore-app/
+
 # Datasheet uretim ciktilari ve debug
 /datasheet.pdf
 /datasheet-debug.txt

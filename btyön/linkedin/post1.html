@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+  :root{
+    --navy:#0E1C66;
+    --navy2:#16277e;
+    --orange:#FF3D17;
+    --orange2:#ff7a4d;
+    --blue:#1B2FA8;
+    --muted:#5b6588;
+    --line:#e3e8f5;
+    --bg1:#ffffff;
+    --bg2:#eaf0fb;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ background:#d8deec; }
+  .card{
+    position:relative;
+    width:1080px;
+    height:1080px;
+    overflow:hidden;
+    font-family:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--navy);
+    background:
+      radial-gradient(1200px 900px at 78% -10%, #ffffff 0%, #f4f7fd 42%, #eaf0fb 100%);
+  }
+  /* faint dot grid */
+  .card::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:radial-gradient(rgba(14,28,102,0.06) 1.5px, transparent 1.6px);
+    background-size:34px 34px;
+    background-position:0 0;
+    -webkit-mask-image:radial-gradient(1100px 1100px at 70% 60%, #000 0%, transparent 75%);
+            mask-image:radial-gradient(1100px 1100px at 70% 60%, #000 0%, transparent 75%);
+    opacity:.9;
+  }
+  /* soft brand glows */
+  .glow-o{ position:absolute; width:520px; height:520px; right:-150px; top:-160px;
+    background:radial-gradient(circle, rgba(255,61,23,0.14), transparent 62%); filter:blur(6px); }
+  .glow-b{ position:absolute; width:560px; height:560px; left:-200px; bottom:-220px;
+    background:radial-gradient(circle, rgba(27,47,168,0.12), transparent 62%); filter:blur(6px); }
+
+  .frame{ position:absolute; inset:0; padding:72px 72px 64px; display:flex; flex-direction:column; z-index:2; }
+
+  /* top bar */
+  .top{ display:flex; align-items:center; justify-content:space-between; }
+  .logo-chip{
+    background:#fff; border:1px solid var(--line); border-radius:18px;
+    padding:18px 26px; box-shadow:0 14px 34px -18px rgba(14,28,102,0.35);
+    display:flex; align-items:center;
+  }
+  .logo-chip img{ height:62px; width:auto; display:block; }
+
+  /* ServiceCore product lockup */
+  .sc-chip{
+    background:#fff; border:1px solid var(--line); border-radius:18px;
+    padding:18px 26px; box-shadow:0 14px 34px -18px rgba(14,28,102,0.35);
+    display:flex; align-items:center; gap:15px; align-self:stretch;
+  }
+  .sc-chip .sc-mark{ height:50px; width:auto; display:block; }
+  .sc-word{ font-weight:800; font-size:37px; letter-spacing:-0.02em; line-height:1; color:#0b1736; }
+  .sc-word .c{ color:#0070F3; }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    background:#fff; border:1px solid var(--line); border-radius:999px;
+    padding:11px 19px; font-weight:700; font-size:19px; letter-spacing:.06em;
+    color:var(--navy); box-shadow:0 10px 26px -18px rgba(14,28,102,0.4);
+    margin-bottom:22px;
+  }
+  .eyebrow .dot{ width:11px; height:11px; border-radius:50%;
+    background:var(--orange); box-shadow:0 0 0 4px rgba(255,61,23,0.16); }
+
+  /* headline */
+  .head{ margin-top:44px; }
+  .head h1{ font-weight:800; font-size:74px; line-height:1.04; letter-spacing:-0.02em; }
+  .head h1 .o{ color:var(--orange); }
+  .head p.sub{ margin-top:20px; font-size:25px; font-weight:500; color:var(--muted); max-width:880px; line-height:1.4; }
+
+  /* body : loop + list */
+  .body{ margin-top:24px; flex:1; display:grid; grid-template-columns:432px 1fr; gap:30px; align-items:center; }
+
+  .loop-wrap{ position:relative; height:100%; display:flex; align-items:center; justify-content:center; }
+
+  .list{ display:flex; flex-direction:column; gap:18px; padding-top:6px; }
+  .row{ display:flex; align-items:center; gap:20px; }
+  .badge{ flex:0 0 auto; width:58px; height:58px; border-radius:16px;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 12px 26px -14px rgba(14,28,102,0.5); }
+  .badge svg{ width:28px; height:28px; }
+  .b-navy{ background:linear-gradient(150deg,var(--navy2),var(--navy)); }
+  .b-orange{ background:linear-gradient(150deg,var(--orange2),var(--orange)); }
+  .row .txt h3{ font-size:30px; font-weight:800; letter-spacing:-0.01em; }
+  .row .txt span{ font-size:19px; font-weight:500; color:var(--muted); }
+
+  /* footer */
+  .foot{ display:flex; align-items:center; justify-content:space-between;
+    border-top:1px solid var(--line); padding-top:26px; margin-top:14px; }
+  .foot .l{ font-size:21px; font-weight:700; color:var(--navy); letter-spacing:.02em; }
+  .foot .l b{ color:var(--orange); }
+  .foot .r{ font-size:20px; font-weight:600; color:var(--muted); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-o"></div>
+    <div class="glow-b"></div>
+
+    <div class="frame">
+      <!-- top : BTYÖN (sirket) × ServiceCore (urun) -->
+      <div class="top">
+        <div class="logo-chip"><img src="logo-color.jpg" alt="BTYÖN" /></div>
+        <div class="sc-chip">
+          <svg class="sc-mark" viewBox="0 0 20.033 19.821" width="51" height="50" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <path d="M 9.152 8.429 L 12.009 8.43 L 14.865 3.266 L 11.182 6.594 Z M 13.143 9.949 L 13.731 11.012 L 20.033 11.012 L 15.601 3 L 12.45 8.696 Z M 9.152 14.125 L 6 19.821 L 15.159 19.821 L 12.009 14.125 Z M 20.033 11.543 L 13.731 11.543 L 13.09 12.701 L 12.45 13.859 L 15.601 19.555 Z" fill="#020E21"/>
+            <path d="M 7.583 5.962 L 4.432 0.266 L 0 8.277 L 6.302 8.277 Z M 8.025 11.391 L 5.168 16.553 L 10.882 11.391 Z M 7.583 11.125 L 6.302 8.809 L 0 8.809 L 4.433 16.819 Z M 10.882 5.696 L 14.033 0 L 4.874 0 L 8.023 5.695 Z" fill="#0F62FE"/>
+          </svg>
+          <span class="sc-word">Service<span class="c">Core</span></span>
+        </div>
+      </div>
+
+      <!-- headline -->
+      <div class="head">
+        <span class="eyebrow"><span class="dot"></span>ITSM · ITIL 4 · CMDB</span>
+        <h1>Servis ve Varlık Yönetimi<br/><span class="o">tek yaşam döngüsünde.</span></h1>
+        <p class="sub">Talepten varlığa, olaydan sürekli iyileştirmeye — kesintisiz bir hizmet yaşam döngüsü.</p>
+      </div>
+
+      <!-- body -->
+      <div class="body">
+        <div class="loop-wrap">
+          <svg width="432" height="432" viewBox="0 0 432 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="og" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff7a4d"/><stop offset="1" stop-color="#FF3D17"/>
+              </linearGradient>
+              <linearGradient id="bg" x1="0" y1="1" x2="1" y2="0">
+                <stop offset="0" stop-color="#2c43d6"/><stop offset="1" stop-color="#0E1C66"/>
+              </linearGradient>
+              <marker id="ah-o" markerUnits="userSpaceOnUse" markerWidth="34" markerHeight="34"
+                      refX="9" refY="13" orient="auto">
+                <path d="M2 2 L2 24 L26 13 Z" fill="#FF3D17"/>
+              </marker>
+              <marker id="ah-b" markerUnits="userSpaceOnUse" markerWidth="34" markerHeight="34"
+                      refX="9" refY="13" orient="auto">
+                <path d="M2 2 L2 24 L26 13 Z" fill="#1B2FA8"/>
+              </marker>
+              <filter id="ds" x="-40%" y="-40%" width="180%" height="180%">
+                <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0E1C66" flood-opacity="0.18"/>
+              </filter>
+            </defs>
+
+            <!-- orange arc: right side, top -> bottom (points down) -->
+            <path d="M 242 68.3 A 150 150 0 0 1 242 363.7"
+                  stroke="url(#og)" stroke-width="24" stroke-linecap="round"
+                  marker-end="url(#ah-o)"/>
+            <!-- blue arc: left side, bottom -> top (points up) -->
+            <path d="M 190 363.7 A 150 150 0 0 1 190 68.3"
+                  stroke="url(#bg)" stroke-width="24" stroke-linecap="round"
+                  marker-end="url(#ah-b)"/>
+
+            <!-- center hub -->
+            <circle cx="216" cy="216" r="96" fill="#ffffff" filter="url(#ds)"/>
+            <circle cx="216" cy="216" r="96" fill="none" stroke="#eef2fb" stroke-width="2"/>
+            <text x="216" y="198" text-anchor="middle" font-family="Manrope" font-weight="800"
+                  font-size="27" fill="#0E1C66" letter-spacing="-0.5">Hizmet</text>
+            <text x="216" y="228" text-anchor="middle" font-family="Manrope" font-weight="800"
+                  font-size="27" fill="#0E1C66" letter-spacing="-0.5">Yaşam</text>
+            <text x="216" y="256" text-anchor="middle" font-family="Manrope" font-weight="800"
+                  font-size="27" fill="#FF3D17" letter-spacing="-0.5">Döngüsü</text>
+          </svg>
+        </div>
+
+        <div class="list">
+          <div class="row">
+            <div class="badge b-navy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </div>
+            <div class="txt"><h3>Talep &amp; Katalog</h3><span>Self-servis portal, hizmet kataloğu</span></div>
+          </div>
+
+          <div class="row">
+            <div class="badge b-orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3z"/>
+                <path d="M12 9v4"/><path d="M12 17h.01"/>
+              </svg>
+            </div>
+            <div class="txt"><h3>Olay &amp; Problem</h3><span>Hızlı çözüm, kök-neden analizi</span></div>
+          </div>
+
+          <div class="row">
+            <div class="badge b-navy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/>
+                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>
+              </svg>
+            </div>
+            <div class="txt"><h3>Değişiklik &amp; Sürüm</h3><span>Kontrollü değişiklik, güvenli sürüm</span></div>
+          </div>
+
+          <div class="row">
+            <div class="badge b-orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>
+              </svg>
+            </div>
+            <div class="txt"><h3>Varlık &amp; CMDB</h3><span>Tüm varlıklar tek envanterde</span></div>
+          </div>
+
+          <div class="row">
+            <div class="badge b-navy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/>
+              </svg>
+            </div>
+            <div class="txt"><h3>Sürekli İyileştirme</h3><span>Ölç, öğren, optimize et</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div class="foot">
+        <div class="l">BT<b>YÖN</b> · Kurumsal Hizmet Yönetimi</div>
+        <div class="r">Tek platform, kesintisiz hizmet.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

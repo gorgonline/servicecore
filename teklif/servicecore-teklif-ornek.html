@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<!--
+  ServiceCore Teklif Sablonu — ARASTIRMA-YONLU v6 (5 sayfa):
+  1 Kapak · 2 Yonetici Ozeti (NOSE) · 3 Mevcut Durumun Maliyeti (COI) ·
+  4 Fark Var · 5 Teklif ve Yatirim. Cerceve: rakip = atalet; COI ROI'den once.
+  ZOHO Flying Saucer (XHTML+CSS2.1): flex/grid/var/gradient/shadow/transform/
+  radius/rgba/SVG/web-font YOK. Tablo-layout, literal hex, kose KARE, Arial+
+  Georgia. Tek raster = logo (assets/logo.png).
+-->
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>ServiceCore Teklif</title>
+<style type="text/css">
+  body { margin: 0; padding: 24px 0; background: #EEF2F6; font-family: Arial, Helvetica, sans-serif; color: #0A1B2E; }
+  table { border-collapse: collapse; }
+  img { border: 0; display: block; }
+
+  .sheet { max-width: 820px; margin: 0 auto 24px auto; background: #FFFFFF; padding: 40px 52px 38px 52px; }
+  .pb { page-break-before: always; }
+  .avoid { page-break-inside: avoid; }
+
+  /* calisan header / footer */
+  .run { width: 100%; max-width: 820px; margin: 0 auto; }
+  .run td { font-size: 10px; color: #64748B; letter-spacing: 0.05em; }
+  .run-logo { height: 20px; }
+  .hexglyph { height: 11px; }
+  .run-label { font-weight: 700; color: #0A1B2E; letter-spacing: 0.2em; }
+
+  /* tipografi */
+  .overline { font-size: 11px; font-weight: 700; color: #0070F3; letter-spacing: 0.26em; text-transform: uppercase; margin: 0; }
+  .cover-title { font-family: Georgia, "Times New Roman", serif; font-size: 46px; font-weight: 700; color: #0A1B2E; letter-spacing: -0.015em; line-height: 1.06; margin: 16px 0 8px 0; }
+  .cover-sub { font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 400; font-style: italic; color: #0070F3; margin: 0; }
+  .h2 { font-family: Georgia, "Times New Roman", serif; font-size: 29px; font-weight: 700; color: #0A1B2E; letter-spacing: -0.015em; line-height: 1.15; margin: 8px 0 0 0; }
+  .lead { font-size: 13px; font-weight: 400; color: #475569; line-height: 1.62; margin: 12px 0 0 0; }
+  .accent { color: #0070F3; }
+  .wm { font-size: 17px; font-weight: 400; letter-spacing: -0.02em; color: #0A1B2E; }
+  .wm .c { color: #0070F3; font-weight: 700; }
+  .wm-lg { font-size: 26px; font-weight: 400; letter-spacing: -0.03em; color: #0A1B2E; }
+  .wm-lg .c { color: #0070F3; font-weight: 700; }
+
+  .ruleC { width: 56px; height: 3px; background: #0070F3; margin: 18px auto 0 auto; font-size: 0; line-height: 0; }
+  .ruleL { width: 56px; height: 3px; background: #0070F3; margin: 18px 0 0 0; font-size: 0; line-height: 0; }
+  .hairline { height: 1px; background: #DCE3EC; font-size: 0; line-height: 0; }
+  .pill { display: inline-block; padding: 5px 12px; background: #EAF1FB; border: 1px solid #CCE2FF; color: #0070F3; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+
+  /* ===== ortak yardimci (paylasilan havuz) ===== */
+  .tsub { font-size: 9px; color: #94A3B8; }
+
+  /* meta kart (kapak + teklif sayfasi) */
+  .meta { width: 100%; border: 1px solid #DCE3EC; margin: 0; }
+  .meta td { padding: 13px 18px; border-bottom: 1px solid #EDF1F6; vertical-align: top; }
+  .meta .lbl { font-size: 9px; font-weight: 700; color: #94A3B8; letter-spacing: 0.14em; text-transform: uppercase; }
+  .meta .val { font-size: 15px; font-weight: 700; color: #0A1B2E; padding-top: 4px; }
+
+  .callout-band { background: #F4F7FB; border-left: 3px solid #0070F3; padding: 16px 18px; }
+  .callout-band p { font-size: 13px; font-weight: 700; color: #0A1B2E; line-height: 1.5; margin: 0; }
+
+  /* ===== KAPAK deger-anchor + meta ===== */
+  .anchor-row { width: 100%; border-top: 1px solid #DCE3EC; border-bottom: 1px solid #DCE3EC; }
+  .anchor-row td { padding: 13px 8px; text-align: center; vertical-align: middle; }
+  .anchor-txt { font-size: 11px; font-weight: 700; color: #475569; letter-spacing: 0.02em; }
+  .anchor-sep { width: 1px; background: #DCE3EC; font-size: 0; line-height: 0; padding: 13px 0; }
+  .conf-h { font-size: 11px; font-weight: 700; color: #0A1B2E; letter-spacing: 0.04em; margin: 0 0 6px 0; }
+  .conf-p { font-size: 10px; font-style: italic; color: #94A3B8; line-height: 1.6; margin: 0; }
+
+  /* ===== TEKLIF ve FIYAT — lisans kademeleri ===== */
+  .tier { width: 100%; border-spacing: 10px; border-collapse: separate; }
+  .tier > tbody > tr > td { width: 33.33%; vertical-align: top; }
+  .tcard { border: 1px solid #DCE3EC; background: #FFFFFF; }
+  .tcard-mid { border: 2px solid #0070F3; background: #FFFFFF; }
+  .tcap { background: #F4F7FB; border-bottom: 1px solid #DCE3EC; padding: 9px 14px; }
+  .tcap-mid { background: #0070F3; border-bottom: 1px solid #0070F3; padding: 9px 14px; }
+  .tflag { font-size: 8px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.16em; text-transform: uppercase; margin: 0; }
+  .tname { font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: 700; color: #0A1B2E; margin: 0; }
+  .tname-mid { font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: 700; color: #FFFFFF; margin: 0; }
+  .tbody { padding: 12px 14px 14px 14px; }
+  .tdesc { font-size: 10px; color: #475569; line-height: 1.5; margin: 0 0 9px 0; }
+  .tli { font-size: 10px; color: #334155; line-height: 1.7; }
+  .tdot { display: inline-block; width: 4px; height: 4px; background: #0070F3; margin: 0 7px 2px 0; vertical-align: middle; }
+
+  /* ===== premium fiyat tablosu ===== */
+  .ptbl { width: 100%; border: 1px solid #DCE3EC; }
+  .ptbl th { background: #0A1B2E; color: #FFFFFF; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-align: left; padding: 11px 12px; }
+  .ptbl th.num { text-align: right; }
+  .ptbl td { font-size: 11px; color: #0A1B2E; padding: 11px 12px; border-bottom: 1px solid #EDF1F6; vertical-align: top; }
+  .ptbl td.num { text-align: right; font-weight: 700; }
+  .pt-name { font-size: 11px; font-weight: 700; color: #0A1B2E; }
+  .pt-desc { font-size: 9px; color: #64748B; line-height: 1.45; padding-top: 3px; }
+  .pt-sum td { font-size: 11px; padding: 9px 12px; border-bottom: 1px solid #EDF1F6; }
+  .pt-sum td.lbl { text-align: right; color: #475569; font-weight: 700; }
+  .pt-sum td.val { text-align: right; color: #0A1B2E; font-weight: 700; width: 150px; }
+  .pt-grand td { padding: 13px 12px; background: #F4F7FB; border-top: 2px solid #0A1B2E; }
+  .pt-grand td.lbl { text-align: right; font-size: 12px; font-weight: 700; color: #0A1B2E; letter-spacing: 0.04em; }
+  .pt-grand td.val { text-align: right; font-family: Georgia, "Times New Roman", serif; font-size: 20px; font-weight: 700; color: #0070F3; width: 150px; }
+  .pt-note { font-size: 9px; color: #64748B; line-height: 1.6; margin: 10px 0 0 0; }
+
+  /* ===== FARK VAR — farklilastirici kartlar ===== */
+  .dif { width: 100%; border-spacing: 12px; border-collapse: separate; }
+  .dif > tbody > tr > td { width: 50%; vertical-align: top; border: 1px solid #DCE3EC; background: #FFFFFF; padding: 0; }
+  .dif-top { font-size: 0; line-height: 0; height: 3px; background: #0070F3; }
+  .dif-pad { padding: 14px 15px 16px 15px; }
+  .dif-eyebrow { font-size: 8px; font-weight: 700; color: #94A3B8; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 9px 0; }
+  .dif-title { font-family: Georgia, "Times New Roman", serif; font-size: 15px; font-weight: 700; color: #0A1B2E; line-height: 1.2; margin: 11px 0 6px 0; }
+  .dif-desc { font-size: 11px; color: #475569; line-height: 1.55; margin: 0; }
+
+  /* mock: time engine satiri */
+  .te { width: 100%; }
+  .te td { padding: 5px 0; vertical-align: middle; }
+  .te-lbl { font-size: 9px; font-weight: 700; color: #0A1B2E; }
+  .te-bar { width: 100%; background: #E6ECF4; height: 9px; font-size: 0; line-height: 0; }
+  .te-fill { background: #0070F3; height: 9px; font-size: 0; line-height: 0; }
+  .te-val { font-size: 9px; font-weight: 700; color: #0070F3; font-family: Georgia, "Times New Roman", serif; }
+  .te-auto { display: inline-block; font-size: 7px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0F766E; background: #E4F2F0; border: 1px solid #BFE0DB; padding: 1px 6px; }
+
+  /* mock: ESM multi-company kutulari */
+  .esm { width: 100%; border-spacing: 6px; border-collapse: separate; }
+  .esm td { width: 33.33%; text-align: center; border: 1px solid #DCE3EC; background: #FBFCFE; padding: 9px 4px; vertical-align: middle; }
+  .esm-co { font-size: 9px; font-weight: 700; color: #0A1B2E; }
+  .esm-sub { font-size: 7px; color: #94A3B8; letter-spacing: 0.06em; text-transform: uppercase; padding-top: 2px; }
+  .esm-core { background: #0A1B2E; }
+  .esm-core .esm-co { color: #FFFFFF; }
+  .esm-core .esm-sub { color: #9DB2C9; }
+
+  /* mock: 5-katmanli raporlama */
+  .lyr { width: 100%; }
+  .lyr td { padding: 3px 0; vertical-align: middle; }
+  .lyr-band { height: 11px; font-size: 0; line-height: 0; }
+  .lyr-lbl { font-size: 8px; font-weight: 700; color: #475569; letter-spacing: 0.04em; padding-left: 8px; }
+
+  /* mock: no-code workflow zinciri */
+  .wf { width: 100%; }
+  .wf td { vertical-align: middle; }
+  .wf-node { border: 1px solid #CCE2FF; background: #EAF1FB; padding: 7px 6px; text-align: center; }
+  .wf-node-em { border: 1px solid #BFE0DB; background: #E4F2F0; padding: 7px 6px; text-align: center; }
+  .wf-t { font-size: 8px; font-weight: 700; color: #0070F3; letter-spacing: 0.04em; }
+  .wf-t-em { font-size: 8px; font-weight: 700; color: #0F766E; letter-spacing: 0.04em; }
+  .wf-arr { width: 16px; text-align: center; font-size: 11px; font-weight: 700; color: #94A3B8; }
+
+  /* mock: hibrit lisans dagilimi */
+  .hyb { width: 100%; border: 1px solid #DCE3EC; }
+  .hyb td { padding: 8px 10px; vertical-align: middle; border-bottom: 1px solid #EDF1F6; }
+  .hyb-grp { font-size: 9px; font-weight: 700; color: #0A1B2E; }
+  .hyb-bar { width: 100%; background: #E6ECF4; height: 8px; font-size: 0; line-height: 0; }
+  .hyb-pro { background: #0070F3; height: 8px; font-size: 0; line-height: 0; }
+  .hyb-std { background: #94A3B8; height: 8px; font-size: 0; line-height: 0; }
+  .hyb-tag { font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .hyb-key { width: 100%; }
+  .hyb-key td { border-bottom: 0; padding: 6px 0 0 0; }
+  .hyb-sw { display: inline-block; width: 9px; height: 9px; margin: 0 5px 1px 0; vertical-align: middle; }
+
+  /* mock: on-premise / veri egemenligi */
+  .onp { width: 100%; border: 1px solid #DCE3EC; background: #FBFCFE; }
+  .onp td { padding: 11px 12px; vertical-align: middle; }
+  .onp-server { width: 46px; height: 46px; background: #0A1B2E; vertical-align: middle; text-align: center; }
+  .onp-srvtxt { font-size: 7px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.08em; text-transform: uppercase; }
+  .onp-h { font-size: 10px; font-weight: 700; color: #0A1B2E; margin: 0 0 3px 0; }
+  .onp-p { font-size: 9px; color: #64748B; line-height: 1.45; margin: 0; }
+  .onp-lock { display: inline-block; font-size: 7px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0070F3; background: #EAF1FB; border: 1px solid #CCE2FF; padding: 2px 7px; }
+
+  /* ===== YONETICI OZETI (NOSE) ===== */
+  .nose { width: 100%; border-spacing: 11px; border-collapse: separate; }
+  .nose > tbody > tr > td { width: 25%; vertical-align: top; border: 1px solid #DCE3EC; background: #FBFCFE; padding: 0; }
+  .nose-top { font-size: 0; line-height: 0; height: 3px; background: #0070F3; }
+  .nose-pad { padding: 13px 13px 15px 13px; }
+  .nose-step { font-size: 8px; font-weight: 700; color: #94A3B8; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 7px 0; }
+  .nose-h { font-family: Georgia, "Times New Roman", serif; font-size: 13px; font-weight: 700; color: #0A1B2E; line-height: 1.2; margin: 0 0 6px 0; }
+  .nose-p { font-size: 10px; color: #475569; line-height: 1.55; margin: 0; }
+  .es-flow td { vertical-align: top; }
+  .es-num { font-family: Georgia, "Times New Roman", serif; font-size: 22px; font-weight: 700; color: #0070F3; line-height: 1; }
+  .es-body { padding: 14px 0 0 0; }
+  .es-h { font-size: 12px; font-weight: 700; color: #0A1B2E; margin: 0 0 4px 0; letter-spacing: 0.01em; }
+  .es-p { font-size: 12px; color: #475569; line-height: 1.6; margin: 0; }
+  .es-rule { width: 18px; height: 2px; background: #DCE3EC; font-size: 0; line-height: 0; }
+
+  /* ===== COI — mevcut durumun maliyeti ===== */
+  .coi-lead { font-size: 13px; font-weight: 400; color: #475569; line-height: 1.62; margin: 12px 0 0 0; }
+  .stat-hero { width: 100%; border: 1px solid #DCE3EC; background: #FBF7F1; border-left: 3px solid #B45309; }
+  .stat-hero td { padding: 18px 22px; vertical-align: middle; }
+  .sh-cap { font-size: 9px; font-weight: 700; color: #B45309; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 6px 0; }
+  .sh-num { font-family: Georgia, "Times New Roman", serif; font-size: 42px; font-weight: 700; color: #0A1B2E; line-height: 1; letter-spacing: -0.02em; }
+  .sh-unit { font-family: Georgia, "Times New Roman", serif; font-size: 18px; font-weight: 400; color: #B45309; }
+  .sh-sub { font-size: 10px; color: #64748B; line-height: 1.5; margin: 7px 0 0 0; }
+  .sh-tag { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #B45309; background: #F6E9D8; border: 1px solid #E6CBA3; padding: 2px 8px; }
+
+  /* COI maliyet kalemi tablosu */
+  .coi { width: 100%; border: 1px solid #DCE3EC; }
+  .coi th { background: #0A1B2E; color: #FFFFFF; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-align: left; padding: 10px 12px; }
+  .coi th.num { text-align: right; }
+  .coi td { padding: 11px 12px; border-bottom: 1px solid #EDF1F6; vertical-align: middle; }
+  .coi-item { font-size: 11px; font-weight: 700; color: #0A1B2E; }
+  .coi-base { font-size: 9px; color: #64748B; line-height: 1.4; padding-top: 2px; }
+  .coi-val { font-size: 12px; font-weight: 700; color: #0A1B2E; font-family: Georgia, "Times New Roman", serif; text-align: right; }
+  .coi-bar { width: 100%; background: #E6ECF4; height: 9px; font-size: 0; line-height: 0; }
+  .coi-fill { background: #B45309; height: 9px; font-size: 0; line-height: 0; }
+  .coi-sum td { padding: 12px 12px; background: #FBF7F1; border-top: 2px solid #B45309; border-bottom: 0; }
+  .coi-sum .lbl { font-size: 11px; font-weight: 700; color: #0A1B2E; letter-spacing: 0.03em; }
+  .coi-sum .val { font-family: Georgia, "Times New Roman", serif; font-size: 18px; font-weight: 700; color: #B45309; text-align: right; }
+
+  /* COI 12/24/36 ay projeksiyon */
+  .proj { width: 100%; border-spacing: 10px; border-collapse: separate; }
+  .proj > tbody > tr > td { width: 33.33%; vertical-align: top; border: 1px solid #DCE3EC; background: #FBFCFE; padding: 15px 14px; text-align: center; }
+  .proj-mid { border: 1px solid #E6CBA3; background: #FBF7F1; }
+  .proj-lbl { font-size: 9px; font-weight: 700; color: #94A3B8; letter-spacing: 0.1em; text-transform: uppercase; margin: 0; }
+  .proj-num { font-family: Georgia, "Times New Roman", serif; font-size: 26px; font-weight: 700; color: #0A1B2E; line-height: 1; margin: 8px 0 4px 0; }
+  .proj-num-em { font-family: Georgia, "Times New Roman", serif; font-size: 26px; font-weight: 700; color: #B45309; line-height: 1; margin: 8px 0 4px 0; }
+  .proj-sub { font-size: 9px; color: #64748B; margin: 0; }
+
+  .callout-amber { background: #FBF7F1; border-left: 3px solid #B45309; padding: 16px 18px; }
+  .callout-amber p { font-size: 13px; font-weight: 700; color: #0A1B2E; line-height: 1.5; margin: 0; }
+
+  /* deger-recap anchor (teklif sayfasi basi) */
+  .recap { width: 100%; border: 1px solid #DCE3EC; border-left: 3px solid #0070F3; background: #F4F7FB; }
+  .recap td { padding: 13px 18px; vertical-align: middle; }
+  .recap p { font-size: 11px; font-weight: 700; color: #0A1B2E; line-height: 1.5; margin: 0; }
+
+  .spacer-l { height: 40px; font-size: 0; line-height: 0; }
+  .spacer-m { height: 26px; font-size: 0; line-height: 0; }
+  .spacer-s { height: 16px; font-size: 0; line-height: 0; }
+</style>
+</head>
+<body>
+
+<!-- ============ CALISAN HEADER ============ -->
+<section id="header-container">
+<div id="pdfgen-header" style="padding-bottom:20px;">
+  <table class="run">
+    <tr>
+      <td align="left">
+        <table><tr>
+          <td valign="middle"><img class="run-logo" src="assets/logo.png" alt="ServiceCore" /></td>
+          <td valign="middle" style="padding-left:7px;"><span class="wm">service<span class="c">core</span></span></td>
+        </tr></table>
+      </td>
+      <td align="right"><span class="run-label">TEKL&#304;F</span> &#183; ${Quotes.Quote Number}</td>
+    </tr>
+    <tr><td colspan="2" style="padding-top:11px;"><div class="hairline"></div></td></tr>
+  </table>
+</div>
+</section>
+
+<!-- ============ ICERIK ============ -->
+<section id="page-container">
+<div id="pdfgen-content">
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 1 — KAPAK (sade / resmi premium, mock YOK)             -->
+  <!-- ============================================================ -->
+  <div class="sheet">
+
+    <table width="100%" class="avoid">
+      <tr>
+        <td align="left" valign="middle">&#160;</td>
+        <td align="right" valign="middle"><span class="pill">Kuruma &#214;zel &#183; Confidential</span></td>
+      </tr>
+    </table>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+
+    <table width="100%" class="avoid">
+      <tr>
+        <td align="left" valign="middle">
+          <table><tr>
+            <td valign="middle"><img src="assets/logo.png" alt="ServiceCore" style="height:34px;" /></td>
+            <td valign="middle" style="padding-left:9px;"><span class="wm-lg">service<span class="c">core</span></span></td>
+          </tr></table>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-l"></div>
+
+    <p class="overline">Kurumsal ITSM / ESM Platformu &#8212; Yat&#305;r&#305;m Teklifi</p>
+    <h1 class="cover-title">${Quotes.Account Name}</h1>
+    <p class="cover-sub">${Quotes.Subject}</p>
+    <div class="ruleL"></div>
+
+    <div class="spacer-s"></div>
+    <p class="lead" style="max-width:560px;">ITSM ve proje y&#246;netimini tek platformda birle&#351;tiren kurumsal servis y&#246;netimi &#231;&#246;z&#252;m&#252; i&#231;in haz&#305;rlanm&#305;&#351; yat&#305;r&#305;m teklifidir.</p>
+
+    <div class="spacer-l"></div>
+
+    <table class="meta avoid">
+      <tr>
+        <td width="50%" style="border-right:1px solid #EDF1F6;">
+          <div class="lbl">Teklif No</div><div class="val">${Quotes.Quote Number}</div>
+        </td>
+        <td width="50%">
+          <div class="lbl">Teklif Tarihi</div><div class="val">${Quotes.Created Time}</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" style="border-right:1px solid #EDF1F6; border-bottom:0;">
+          <div class="lbl">Son Ge&#231;erlilik</div><div class="val">${Quotes.Valid Until}</div>
+        </td>
+        <td width="50%" style="border-bottom:0;">
+          <div class="lbl">Yetkili</div><div class="val">${Quotes.Contact Name}</div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-l"></div>
+
+    <!-- ince deger-anchor satiri -->
+    <table class="anchor-row avoid">
+      <tr>
+        <td width="32%"><span class="anchor-txt">2000&#8217;den beri 25+ y&#305;l ITSM deneyimi</span></td>
+        <td class="anchor-sep">&#160;</td>
+        <td width="22%"><span class="anchor-txt">600.000+ kullan&#305;c&#305;</span></td>
+        <td class="anchor-sep">&#160;</td>
+        <td width="44%"><span class="anchor-txt">Sabanc&#305; &#183; Toyota &#183; Roketsan &#183; QNB g&#252;veniyle</span></td>
+      </tr>
+    </table>
+
+    <div class="spacer-l"></div>
+    <div class="hairline"></div>
+    <div class="spacer-s"></div>
+    <p class="conf-h">S&#305;n&#305;fland&#305;rma: Kuruma &#214;zel &#8212; Confidential</p>
+    <p class="conf-p">${Quotes.Created Time} tarihinde d&#252;zenlenmi&#351;tir. ${Quotes.Quote Number} numaral&#305;, ${Quotes.Account Name} kurumuna &#246;zel ve ${Quotes.Subject} konulu teklifidir. ${Quotes.Contact Name} &#351;ahs&#305;na &#246;zel payla&#351;&#305;lm&#305;&#351;t&#305;r; gizli bilgi olarak s&#305;n&#305;fland&#305;r&#305;lm&#305;&#351;t&#305;r ve yetkisiz &#252;&#231;&#252;nc&#252; ki&#351;ilerle payla&#351;&#305;lmamas&#305; gerekmektedir.</p>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 2 — YONETICI OZETI (NOSE: Needs > Outcomes > Solution  -->
+  <!--           > Evidence; tek sayfa, bottom-line kutusu)         -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Y&#246;netici &#214;zeti</p>
+    <h2 class="h2">Da&#287;&#305;n&#305;k servis y&#246;netiminden tek platforma.</h2>
+    <p class="lead">${Quotes.Account Name}, b&#252;y&#252;yen BT ve servis operasyonunu birbirinden kopuk ara&#231;lar, manuel s&#252;re&#231;ler ve s&#305;n&#305;rl&#305; g&#246;r&#252;n&#252;rl&#252;kle y&#246;netiyor. Bu yap&#305; yava&#351; &#231;&#246;z&#252;m, tekrar eden i&#351; ve g&#246;r&#252;nmeyen maliyet &#252;retir.</p>
+
+    <div class="spacer-m"></div>
+
+    <table width="100%" class="es-flow avoid">
+      <tr>
+        <td width="40" valign="top"><span class="es-num">01</span></td>
+        <td valign="top" style="padding-left:14px;">
+          <div class="es-body" style="padding-top:0;">
+            <p class="es-h">Hedeflenen sonu&#231;</p>
+            <p class="es-p">T&#252;m servis s&#252;re&#231;lerini tek platformda toplamak, tekrar eden i&#351;i otomatikle&#351;tirmek, kesintiyi azaltmak, uyum ve raporlamay&#305; g&#252;vence alt&#305;na almak.</p>
+          </div>
+        </td>
+      </tr>
+      <tr><td>&#160;</td><td style="padding-left:14px; padding-top:12px; padding-bottom:12px;"><div class="es-rule"></div></td></tr>
+      <tr>
+        <td width="40" valign="top"><span class="es-num">02</span></td>
+        <td valign="top" style="padding-left:14px;">
+          <div class="es-body" style="padding-top:0;">
+            <p class="es-h">&#199;&#246;z&#252;m</p>
+            <p class="es-p">ServiceCore; ITSM, ESM ve proje y&#246;netimini 30+ native entegre mod&#252;lde birle&#351;tiren on-premise kurumsal platformdur. Tek veri modeli, tek aray&#252;z, tek lisans.</p>
+          </div>
+        </td>
+      </tr>
+      <tr><td>&#160;</td><td style="padding-left:14px; padding-top:12px; padding-bottom:12px;"><div class="es-rule"></div></td></tr>
+      <tr>
+        <td width="40" valign="top"><span class="es-num">03</span></td>
+        <td valign="top" style="padding-left:14px;">
+          <div class="es-body" style="padding-top:0;">
+            <p class="es-h">Kan&#305;t</p>
+            <p class="es-p">2000&#8217;den beri, ITIL Expert sertifikal&#305; yerli kadroyla; Sabanc&#305;, Toyota, Roketsan, QNB dahil T&#252;rkiye&#8217;nin en zorlu kurumlar&#305;n&#305;n 4M+ kullan&#305;c&#305;ya ula&#351;an tercihi.</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <table class="meta avoid">
+      <tr>
+        <td width="33.33%" style="border-right:1px solid #EDF1F6; border-bottom:0;">
+          <div class="lbl">Tek Platform</div><div class="val">30+ Mod&#252;l &#183; 16 ITIL4</div>
+        </td>
+        <td width="33.33%" style="border-right:1px solid #EDF1F6; border-bottom:0;">
+          <div class="lbl">Kurulum</div><div class="val">On-Premise</div>
+        </td>
+        <td width="33.34%" style="border-bottom:0;">
+          <div class="lbl">Lisans</div><div class="val">Yaln&#305;zca Teknisyen</div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <div class="callout-band avoid">
+      <p>&#214;zet: ServiceCore mevcut da&#287;&#305;n&#305;kl&#305;&#287;&#305;n g&#246;r&#252;nmeyen maliyetini ortadan kald&#305;r&#305;rken kurumunuzu <span class="accent">&#252;retici-seviye destek ve veri egemenli&#287;iyle y&#246;netilen TEK sisteme</span> ta&#351;&#305;r.</p>
+    </div>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 3 — MEVCUT DURUMUN MALIYETI (COI) — asil wow           -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Mevcut Durumun Maliyeti</p>
+    <h2 class="h2">As&#305;l soru: de&#287;i&#351;imin de&#287;il, de&#287;i&#351;memenin maliyeti.</h2>
+    <p class="lead">Yeni bir platformun maliyetini sormadan &#246;nce, mevcut da&#287;&#305;n&#305;k yap&#305;n&#305;n bug&#252;n size ne kadara mal oldu&#287;unu g&#246;relim. A&#351;a&#287;&#305;daki kalemler sekt&#246;r benchmark&#8217;&#305;d&#305;r; analiz formuyla kurumunuza &#246;zel hesaplan&#305;r.</p>
+
+    <div class="spacer-m"></div>
+
+    <!-- buyuk anchor (illustratif gizli maliyet) -->
+    <table class="stat-hero avoid">
+      <tr>
+        <td>
+          <p class="sh-cap">&#214;rnek senaryo: 50 teknisyenli BT operasyonu</p>
+          <span class="sh-num">&#8378; 4.2M</span><span class="sh-unit"> / y&#305;l gizli maliyet</span>
+          <p class="sh-sub">Plans&#305;z kesinti, tekrar eden manuel i&#351;, da&#287;&#305;n&#305;k ara&#231; ve verim kayb&#305;n&#305;n y&#305;ll&#305;k toplam&#305; (illustratif).</p>
+        </td>
+        <td width="170" align="right" valign="top"><span class="sh-tag">&#214;rnek &#183; kuruma &#246;zel hesaplan&#305;r</span></td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <!-- maliyet kalemi tablosu (illustratif yer tutucu) -->
+    <table class="coi avoid">
+      <thead>
+        <tr>
+          <th width="40%">Gizli Maliyet Kalemi</th>
+          <th width="40%">G&#246;reli A&#287;&#305;rl&#305;k</th>
+          <th class="num" width="20%">Y&#305;ll&#305;k &#246;rnek</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="coi-item">Plans&#305;z kesinti &amp; yava&#351; &#231;&#246;z&#252;m</div>
+            <div class="coi-base">Y&#252;ksek MTTR; uzayan ar&#305;za s&#252;releri</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:90%;"></div></div></td>
+          <td class="coi-val">&#8378; 1.35M</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="coi-item">Tekrar eden manuel i&#351;</div>
+            <div class="coi-base">Otomatikle&#351;tirilmeyen ticket ve s&#252;re&#231;ler</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:72%;"></div></div></td>
+          <td class="coi-val">&#8378; 980K</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="coi-item">Da&#287;&#305;n&#305;k ara&#231; lisans + entegrasyon</div>
+            <div class="coi-base">&#199;ok say&#305;da abonelik ve bak&#305;m y&#252;k&#252;</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:58%;"></div></div></td>
+          <td class="coi-val">&#8378; 760K</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="coi-item">SLA ihlali &amp; itibar</div>
+            <div class="coi-base">Ge&#231;ilen hizmet seviyeleri, ceza riski</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:44%;"></div></div></td>
+          <td class="coi-val">&#8378; 620K</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="coi-item">Son kullan&#305;c&#305; verim kayb&#305;</div>
+            <div class="coi-base">Self-servis / bilgi bankas&#305; yoklu&#287;u</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:36%;"></div></div></td>
+          <td class="coi-val">&#8378; 490K</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr class="coi-sum">
+          <td colspan="2"><span class="lbl">Y&#305;ll&#305;k gizli maliyet (&#246;rnek toplam)</span></td>
+          <td><span class="val">&#8378; 4.2M</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <!-- 12 / 24 / 36 ay kumulatif projeksiyon -->
+    <table class="proj avoid">
+      <tr>
+        <td>
+          <p class="proj-lbl">12 Ay</p>
+          <p class="proj-num">&#8378; 4.2M</p>
+          <p class="proj-sub">K&#252;m&#252;latif gizli maliyet</p>
+        </td>
+        <td>
+          <p class="proj-lbl">24 Ay</p>
+          <p class="proj-num">&#8378; 8.4M</p>
+          <p class="proj-sub">K&#252;m&#252;latif gizli maliyet</p>
+        </td>
+        <td class="proj-mid">
+          <p class="proj-lbl">36 Ay</p>
+          <p class="proj-num-em">&#8378; 12.6M</p>
+          <p class="proj-sub">K&#252;m&#252;latif gizli maliyet</p>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <div class="callout-amber avoid">
+      <p>Soru &#8220;ServiceCore ne kadar?&#8221; de&#287;il &#8212; <span class="accent">&#8220;mevcut da&#287;&#305;n&#305;kl&#305;k her y&#305;l ne kadar&#305;n&#305;z&#305; g&#246;t&#252;r&#252;yor?&#8221;</span></p>
+    </div>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 4 — FARK VAR (mevcut, Teklif'ten ONCE; mock visual'li) -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Fark Yaratan Yetenekler</p>
+    <h2 class="h2">Neden ServiceCore premium&#8217;u hak ediyor.</h2>
+    <p class="lead">A&#351;a&#287;&#305;daki yetenekler muadil &#231;&#246;z&#252;mlerin &#231;o&#287;unda ya hi&#231; yoktur ya da k&#305;smen bulunur &#8212; premium fark&#305; tam olarak buradad&#305;r.</p>
+
+    <div class="spacer-m"></div>
+
+    <table class="dif avoid">
+      <tr>
+        <!-- 1 — TIME ENGINE -->
+        <td>
+          <div class="dif-top" style="background:#0070F3;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">Patentli &#183; Sadece ServiceCore</p>
+            <table class="te">
+              <tr>
+                <td width="34%"><span class="te-lbl">Olay #4182</span></td>
+                <td width="50%"><div class="te-bar"><div class="te-fill" style="width:72%;"></div></div></td>
+                <td width="16%" align="right"><span class="te-val">2.4 sa</span></td>
+              </tr>
+              <tr>
+                <td><span class="te-lbl">G&#246;rev #318</span></td>
+                <td><div class="te-bar"><div class="te-fill" style="width:45%;"></div></div></td>
+                <td align="right"><span class="te-val">1.1 sa</span></td>
+              </tr>
+              <tr>
+                <td><span class="te-lbl">De&#287;i&#351;iklik #92</span></td>
+                <td><div class="te-bar"><div class="te-fill" style="width:88%;"></div></div></td>
+                <td align="right"><span class="te-val">3.2 sa</span></td>
+              </tr>
+              <tr><td colspan="3" style="padding-top:7px;"><span class="te-auto">Otomatik hesaplan&#305;yor</span></td></tr>
+            </table>
+            <p class="dif-title">Time Engine</p>
+            <p class="dif-desc">Patentli otomatik s&#252;re ve timesheet motoru efor ile faturalanabilir s&#252;reyi elle de&#287;il otomatik hesaplar &#8212; bu yetenek tek ba&#351;&#305;na rakip e&#351;i olmayan bir de&#287;erdir.</p>
+          </div>
+        </td>
+        <!-- 2 — ESM MULTI-COMPANY -->
+        <td>
+          <div class="dif-top" style="background:#6D28D9;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">ESM &#183; Multi-Company</p>
+            <table class="esm">
+              <tr>
+                <td class="esm-core" colspan="3"><div class="esm-co">Holding &#183; Tek Kurulum</div><div class="esm-sub">Merkezi Y&#246;netim</div></td>
+              </tr>
+              <tr>
+                <td><div class="esm-co">Finans A.&#350;.</div><div class="esm-sub">Tenant</div></td>
+                <td><div class="esm-co">&#220;retim A.&#350;.</div><div class="esm-sub">Tenant</div></td>
+                <td><div class="esm-co">Perakende</div><div class="esm-sub">Tenant</div></td>
+              </tr>
+            </table>
+            <p class="dif-title">ESM &#8212; Multi-Company / Multi-Tenant</p>
+            <p class="dif-desc">Holding yap&#305;s&#305;nda alt &#351;irketlere g&#246;re ayr&#305;&#351;t&#305;rma; tek kurulumda say&#305;s&#305;z departman ve alt &#351;irket &#8212; b&#252;y&#252;k kurum i&#231;in pazarl&#305;k d&#305;&#351;&#305; bir gereksinim.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <!-- 3 — 5 KATMANLI RAPORLAMA -->
+        <td>
+          <div class="dif-top" style="background:#0E7490;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">5 Katmanl&#305; Raporlama</p>
+            <table class="lyr">
+              <tr><td width="62%"><div class="lyr-band" style="background:#0A1B2E; width:100%;"></div></td><td><span class="lyr-lbl">Y&#246;netim Panosu</span></td></tr>
+              <tr><td><div class="lyr-band" style="background:#0B3A8C; width:84%;"></div></td><td><span class="lyr-lbl">Stratejik Rapor</span></td></tr>
+              <tr><td><div class="lyr-band" style="background:#0070F3; width:68%;"></div></td><td><span class="lyr-lbl">Operasyonel</span></td></tr>
+              <tr><td><div class="lyr-band" style="background:#0E7490; width:52%;"></div></td><td><span class="lyr-lbl">Servis Analiti&#287;i</span></td></tr>
+              <tr><td><div class="lyr-band" style="background:#06B6D4; width:36%;"></div></td><td><span class="lyr-lbl">Dinamik Rapor</span></td></tr>
+            </table>
+            <p class="dif-title">5 Katmanl&#305; Raporlama + &#304;leri Proje Y&#246;netimi</p>
+            <p class="dif-desc">Y&#246;netim panosundan servis analiti&#287;ine 5 katman, dinamik Gantt / WBS / Kanban ile birlikte gelir; y&#246;netim karar&#305;n&#305; veriyle al&#305;r, ayr&#305; BI veya PM arac&#305; gerekmez.</p>
+          </div>
+        </td>
+        <!-- 4 — NO-CODE OTOMASYON -->
+        <td>
+          <div class="dif-top" style="background:#B45309;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">No-Code &#183; Workflow Engine</p>
+            <table class="wf">
+              <tr>
+                <td width="27%"><div class="wf-node"><span class="wf-t">Talep</span></div></td>
+                <td class="wf-arr">&#8594;</td>
+                <td width="27%"><div class="wf-node-em"><span class="wf-t-em">Ko&#351;ul</span></div></td>
+                <td class="wf-arr">&#8594;</td>
+                <td width="27%"><div class="wf-node"><span class="wf-t">Onay</span></div></td>
+              </tr>
+            </table>
+            <div style="height:7px; font-size:0; line-height:0;">&#160;</div>
+            <table class="wf">
+              <tr>
+                <td width="27%"><div class="wf-node-em"><span class="wf-t-em">Atama</span></div></td>
+                <td class="wf-arr">&#8594;</td>
+                <td width="27%"><div class="wf-node"><span class="wf-t">Bildirim</span></div></td>
+                <td class="wf-arr">&#8594;</td>
+                <td width="27%"><div class="wf-node-em"><span class="wf-t-em">Kapan&#305;&#351;</span></div></td>
+              </tr>
+            </table>
+            <p class="dif-title">10+ S&#252;re&#231;te No-Code Otomasyon</p>
+            <p class="dif-desc">Kod yazmadan ko&#351;ullu otomasyon ve s&#252;r&#252;kle-b&#305;rak ak&#305;&#351; tasar&#305;m&#305;; s&#252;re&#231;ler ki&#351;iye de&#287;il sisteme ba&#287;lan&#305;r, operasyon &#246;l&#231;eklenir.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <!-- 5 — HIBRIT LISANS -->
+        <td>
+          <div class="dif-top" style="background:#0F766E;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">Esnek &#183; Hibrit Lisanslama</p>
+            <table class="hyb">
+              <tr>
+                <td width="32%"><span class="hyb-grp">Teknik Ekip</span></td>
+                <td width="50%"><div class="hyb-bar"><div class="hyb-pro" style="width:80%;"></div></div></td>
+                <td width="18%" align="right"><span class="hyb-tag" style="color:#0070F3;">Pro</span></td>
+              </tr>
+              <tr style="border-bottom:0;">
+                <td><span class="hyb-grp">&#304;dari Ekip</span></td>
+                <td><div class="hyb-bar"><div class="hyb-std" style="width:55%;"></div></div></td>
+                <td align="right"><span class="hyb-tag" style="color:#64748B;">Standart</span></td>
+              </tr>
+            </table>
+            <table class="hyb-key">
+              <tr>
+                <td width="50%"><span class="hyb-sw" style="background:#0070F3;"></span><span class="tsub">Profesyonel lisans</span></td>
+                <td width="50%"><span class="hyb-sw" style="background:#94A3B8;"></span><span class="tsub">Standart lisans</span></td>
+              </tr>
+            </table>
+            <p class="dif-title">Hibrit Lisanslama</p>
+            <p class="dif-desc">Teknik ekip Profesyonel, idari ekip Standart kullan&#305;r; herkese ayn&#305; paketi ald&#305;rmaz, ihtiyac&#305;n&#305;z kadar &#246;dersiniz &#8212; &#246;nemli &#246;l&#231;&#252;de tasarruf.</p>
+          </div>
+        </td>
+        <!-- 6 — ON-PREMISE / VERI EGEMENLIGI -->
+        <td>
+          <div class="dif-top" style="background:#0B3A8C;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">Veri Egemenli&#287;i &#183; On-Premise</p>
+            <table class="onp">
+              <tr>
+                <td class="onp-server" width="46"><span class="onp-srvtxt">Sizin<br />Sunucu</span></td>
+                <td>
+                  <p class="onp-h">Veriniz kendi sunucunuzda</p>
+                  <p class="onp-p">SaaS ba&#287;&#305;ml&#305;l&#305;&#287;&#305; yok. Kurulum on-premise; veri kurum d&#305;&#351;&#305;na &#231;&#305;kmaz.</p>
+                  <div style="height:6px; font-size:0; line-height:0;">&#160;</div>
+                  <span class="onp-lock">KVKK uyumlu &#183; Tam kontrol</span>
+                </td>
+              </tr>
+            </table>
+            <p class="dif-title">ITIL Expert Kadro + Yerel Destek</p>
+            <p class="dif-desc">ITIL Expert / MP sertifikal&#305; yerli dan&#305;&#351;man, do&#287;rudan &#252;reticiden h&#305;zl&#305; destek ve verinizin kendi sunucunuzda kalmas&#305; &#8212; arac&#305;s&#305;z, ba&#287;&#305;ms&#305;z, egemen.</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+    <div class="callout-band avoid">
+      <p>30+ mod&#252;l, 16 ITIL4 s&#252;reci <span class="accent">tek platformda</span> &#8212; ayr&#305; &#252;r&#252;nleri kurup entegre etme maliyeti ve riski yok.</p>
+    </div>
+
+  </div>
+  <!-- ============================================================ -->
+  <!-- SAYFA 5 — TEKLIF ve YATIRIM (asil teklif, en sona tasindi)   -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Yat&#305;r&#305;m ve Lisanslama</p>
+    <h2 class="h2">Teklif ve yat&#305;r&#305;m &#246;zeti.</h2>
+    <p class="lead">Bu yat&#305;r&#305;m; yaz&#305;l&#305;m lisans&#305;n&#305;, kurulumu, t&#252;m bak&#305;m ve &#252;retici roadmap g&#252;ncellemelerini ve &#252;retici-seviye uzman deste&#287;ini abonelik d&#246;nemi boyunca kapsar. Lisans yaln&#305;zca teknisyen say&#305;s&#305;na ba&#287;l&#305;d&#305;r &#8212; son kullan&#305;c&#305;, varl&#305;k ve kay&#305;t adedi s&#305;n&#305;rs&#305;z ve &#252;cretsizdir.</p>
+
+    <div class="spacer-s"></div>
+
+    <!-- deger-recap anchor: fiyati COI'ye karsi capala -->
+    <table class="recap avoid">
+      <tr>
+        <td>
+          <p>&#214;nceki sayfada g&#246;r&#252;len mevcut durum maliyetinin yan&#305;nda, bu yat&#305;r&#305;m t&#252;m bak&#305;m + g&#252;ncelleme + uzman destek dahil <span class="accent">tek kalemdir</span>.</p>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <!-- 3 lisans kademesi -->
+    <table class="tier avoid">
+      <tr>
+        <td>
+          <div class="tcard">
+            <div class="tcap">
+              <p class="tflag" style="color:#94A3B8;">Ba&#351;lang&#305;&#231;</p>
+              <p class="tname">Standart</p>
+            </div>
+            <div class="tbody">
+              <p class="tdesc">Service Desk ve ITIL4 temel s&#252;re&#231;lerine ihtiyac&#305; olan organizasyonlar i&#231;in.</p>
+              <div class="tli"><span class="tdot"></span>Olay ve &#231;a&#287;r&#305; y&#246;netimi</div>
+              <div class="tli"><span class="tdot"></span>Hizmet Seviyesi otomasyonu</div>
+              <div class="tli"><span class="tdot"></span>G&#246;rev y&#246;netimi ve Time Engine</div>
+              <div class="tli"><span class="tdot"></span>Bilgi y&#246;netimi ve Self Servis Portal</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="tcard-mid">
+            <div class="tcap-mid">
+              <p class="tflag">En &#199;ok Tercih Edilen</p>
+              <p class="tname-mid">Profesyonel</p>
+            </div>
+            <div class="tbody">
+              <p class="tdesc">Kurumsal ESM / ITSM &#246;zelliklerine ve geli&#351;mi&#351; pratiklere ihtiyac&#305; olan kurulu&#351;lar i&#231;in.</p>
+              <div class="tli"><span class="tdot"></span>Standart&#8217;taki t&#252;m &#246;zellikler</div>
+              <div class="tli"><span class="tdot"></span>Problem, De&#287;i&#351;iklik, &#304;stek / Katalog</div>
+              <div class="tli"><span class="tdot"></span>Varl&#305;k y&#246;netimi ve CMDB</div>
+              <div class="tli"><span class="tdot"></span>No-Code i&#351; ak&#305;&#351;&#305; ve servis otomasyonu</div>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="tcard">
+            <div class="tcap">
+              <p class="tflag" style="color:#6D28D9;">Holding</p>
+              <p class="tname">ESM</p>
+            </div>
+            <div class="tbody">
+              <p class="tdesc">Holding yap&#305;s&#305;nda &#231;ok &#351;irketli, &#231;ok kirac&#305;l&#305; (multi-tenant) kurumsal servis y&#246;netimi i&#231;in.</p>
+              <div class="tli"><span class="tdot"></span>Multi-Company / Holding yap&#305;s&#305;</div>
+              <div class="tli"><span class="tdot"></span>Tenant baz&#305;nda ba&#287;&#305;ms&#305;z lisanslama</div>
+              <div class="tli"><span class="tdot"></span>BT d&#305;&#351;&#305; t&#252;m departmanlara servis</div>
+              <div class="tli"><span class="tdot"></span>Merkezi y&#246;netim ve raporlama</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <!-- premium fiyat tablosu (Zoho lineItem) -->
+    <table class="ptbl avoid">
+      <thead>
+        <tr>
+          <th width="40%">Kalem</th>
+          <th class="num" width="16%">Birim Fiyat</th>
+          <th class="num" width="10%">Adet</th>
+          <th class="num" width="14%">&#304;ndirim</th>
+          <th class="num" width="20%">Tutar</th>
+        </tr>
+      </thead>
+      <tbody id="lineItem">
+        <tr>
+          <td>
+            <div class="pt-name">${Ürün ve Hizmet Listesi.Product Name}</div>
+            <div class="pt-desc">${Ürün ve Hizmet Listesi.Description}</div>
+          </td>
+          <td class="num">${Ürün ve Hizmet Listesi.List Price}</td>
+          <td class="num">${Ürün ve Hizmet Listesi.Quantity}</td>
+          <td class="num">${Ürün ve Hizmet Listesi.Discount}</td>
+          <td class="num">${Ürün ve Hizmet Listesi.Total After Discount}</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr class="pt-sum"><td colspan="3" style="border-bottom:0;">&#160;</td><td class="lbl">Ara Toplam</td><td class="val">${Quotes.Sub Total}</td></tr>
+        <tr class="pt-sum"><td colspan="3" style="border-bottom:0;">&#160;</td><td class="lbl">KDV</td><td class="val">${Quotes.Tax}</td></tr>
+        <tr class="pt-grand"><td colspan="3" style="background:#FFFFFF; border-top:0;">&#160;</td><td class="lbl">GENEL TOPLAM</td><td class="val">${Quotes.Grand Total}</td></tr>
+      </tbody>
+    </table>
+
+    <p class="pt-note">Lisanslama minimum 10 teknisyen ile ba&#351;lar. Standart lisans&#305;n en az %25&#8217;i kadar Profesyonel lisans ile hibrit kurulum yap&#305;labilir. Abonelik d&#246;nemi boyunca t&#252;m bak&#305;m, bug-fix, &#252;retici roadmap yeni &#246;zellikleri ve s&#252;rekli g&#252;ncellemeler fiyata dahildir; gizli maliyet yoktur. T&#252;m tutarlar T&#252;rk Liras&#305; (TL) cinsindendir; talep halinde USD kar&#351;&#305;l&#305;&#287;&#305; sunulur.</p>
+
+    <div class="spacer-m"></div>
+    <div class="callout-band avoid">
+      <p>Son kullan&#305;c&#305;lar, varl&#305;klar ve kay&#305;t adedi <span class="accent">s&#305;n&#305;rs&#305;z ve &#252;cretsizdir</span> &#8212; lisans yaln&#305;zca teknisyen say&#305;s&#305;na ba&#287;l&#305;d&#305;r.</p>
+    </div>
+
+  </div>
+
+
+</div>
+</section>
+
+<!-- ============ CALISAN FOOTER ============ -->
+<section id="footer-container">
+<div id="pdfgen-footer">
+  <table class="run">
+    <tr><td class="hairline" colspan="2"></td></tr>
+    <tr>
+      <td align="left" style="padding-top:8px;">${Organization.Organization Name} &#183; ${Organization.Phone} &#183; sales@servicecore.app</td>
+      <td align="right" style="padding-top:8px;">
+        <table><tr>
+          <td valign="middle" style="font-size:10px; color:#64748B;">Sayfa <span class="pageNumber"></span> / <span class="totalPage"></span></td>
+          <td valign="middle" style="padding-left:8px;"><img class="hexglyph" src="assets/logo.png" alt="ServiceCore" /></td>
+        </tr></table>
+      </td>
+    </tr>
+  </table>
+</div>
+</section>
+
+</body>
+</html>

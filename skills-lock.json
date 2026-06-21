@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "skills": {
+    "copywriting": {
+      "source": "nexu-io/open-design",
+      "sourceType": "github",
+      "skillPath": "skills/copywriting/SKILL.md",
+      "computedHash": "0c80ef86794636c2d9c7661bf1a29b38dd5cd987209fa51a6a387ffa302dea28"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "computedHash": "9e1c8b3103f92fa8092568a44fe64858de7c5c9dc65ce4bea8f168080e889cfd"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "4eabc66183767153e404b39d1b839b1c37f2d82d86f0a0d7e880a579d8d62336"
+    },
+    "proposal-writer": {
+      "source": "ncklrs/startup-os-skills",
+      "sourceType": "github",
+      "skillPath": "skills/proposal-writer/SKILL.md",
+      "computedHash": "9cefd425f25f7d05869647986fa8d7f2649a0c1ccefe4b74cd4378335da6c85c"
+    }
+  }
+}
