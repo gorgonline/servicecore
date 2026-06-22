@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<!--
+  ServiceCore Teklif Sablonu — ZOHO CRM Inventory (Quotes) TAM SURUM (7 sayfa):
+  1 Kapak · 2 Yonetici Ozeti (NOSE) · 3 Mevcut Durumun Maliyeti (COI) ·
+  4 Fark Yaratan Yetenekler (6 mock + 44 madde, 3 A4 parca) · 5 Teklif ve Lisanslama ·
+  6 Teklif Kosullari · 7 Referanslar. Cerceve: rakip = atalet; COI ROI'den once.
+  ZOHO Flying Saucer (XHTML+CSS2.1): flex/grid/var/gradient/shadow/web-font YOK.
+  Tablo-layout, literal hex, kose KARE, tek sans-serif: "Helvetica Neue", Arial.
+  ServiceCore logosu = mutlak HTTPS PNG (deploy gerektirmez, base64 YOK):
+  https://www.servicecore.com.tr/teklif/logo.png. Referans logolari da
+  mutlak HTTPS PNG: https://www.servicecore.com.tr/logos/<dosya> (www = 200,
+  apex servicecore.com.tr 308 redirect verir, Zoho takip etmez -> www sart).
+  Ingilizce kelimeler text-transform yerine onceden BUYUK yazilir (lang=tr +
+  uppercase, Confidential -> CONFIDENTIAL; buyuk "I" dotsuz).
+
+  RENK PALETI — brand/tokens.json tureviyle (print/aydinlik dokuman):
+  Flying Saucer rgba() YASAK oldugundan, dark-tema tokenlarindaki rgba tint'ler
+  bu aydinlik dokumanda literal opak hex'e cevrilir. Marka ana renkleri birebir
+  token degeridir; tint/neutral'lar ilgili token'in aydinlik karsiligidir.
+    MARKA (token birebir):
+      #0070F3 = brand.primary        #FFFFFF = text.primary
+      #94A3B8 = text.secondary       #64748B = text.muted
+      #475569 = text.dim             #334155 = text.faint
+      #06B6D4 = accent.cyan.base
+    MARKA HUE — doygun on-plan (en yakin token):
+      #0A1930 = surface.shader2      (koyu navy yuzey + ana metin)
+      #2563EB = accent.blue.dark     (derin mavi bant)
+      #0891B2 = accent.cyan.dark     (teal/cyan vurgu)
+      #059669 = accent.emerald.dark  (emerald-teal metin)
+      #9333EA = accent.purple.dark   (mor vurgu)
+      #D97706 = accent.amber.dark    (COI amber vurgu)
+    AYDINLIK TINT — ilgili token hue'sunun opak print karsiligi
+    (tokens.json'da rgba alpha ile tutulur; Flying Saucer rgba YASAK -> opak hex):
+      neutral cizgi/yuzey:  #E3E8F0 hairline/kenar · #ECF0F5 satir/track
+                            #F4F7FB yuzey · #FBFCFE kart · #EEF2F6 sayfa zemini
+      primary.tint:         #EAF1FB zemin · #CCE2FF kenar
+      emerald.tint:         #E4F2F0 zemin · #BFE0DB kenar
+      amber.tint:           #FBF7F1 zemin · #F6E9D8 zemin2 · #E6CBA3 kenar
+      muted-on-dark:        #9DB2C9 -> #94A3B8 (text.secondary)
+-->
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>ServiceCore Teklif</title>
+<style type="text/css">
+  body { margin: 0; padding: 24px 0; background: #EEF2F6; font-family: Arial, Helvetica, sans-serif; color: #0A1930; }
+  table { border-collapse: collapse; }
+  img { border: 0; display: block; }
+
+  .sheet { max-width: 820px; margin: 0 auto 24px auto; background: #FFFFFF; padding: 40px 52px 38px 52px; }
+  .pb { page-break-before: always; }
+  .avoid { page-break-inside: avoid; }
+
+  /* calisan header / footer */
+  .run { width: 100%; max-width: 820px; margin: 0 auto; }
+  .run td { font-size: 10px; color: #64748B; letter-spacing: 0.05em; }
+  .run-logo { height: 20px; }
+  .hexglyph { height: 14px; }
+  .run-label { font-weight: 700; color: #0A1930; letter-spacing: 0.2em; }
+
+  /* tipografi */
+  .overline { font-size: 11px; font-weight: 700; color: #0070F3; letter-spacing: 0.26em; text-transform: uppercase; margin: 0; }
+  .cover-title { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 32px; font-weight: 700; color: #0A1930; letter-spacing: -0.015em; line-height: 1.1; word-wrap: break-word; margin: 16px 0 8px 0; }
+  .cover-sub { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 22px; font-weight: 400; font-style: italic; color: #0070F3; margin: 0; }
+  .h2 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 29px; font-weight: 700; color: #0A1930; letter-spacing: -0.015em; line-height: 1.15; margin: 8px 0 0 0; }
+  .lead { font-size: 13px; font-weight: 400; color: #475569; line-height: 1.62; margin: 12px 0 0 0; }
+  .accent { color: #0070F3; }
+  .wm { font-size: 17px; font-weight: 400; letter-spacing: -0.02em; color: #0A1930; }
+  .wm .c { color: #0070F3; font-weight: 700; }
+  .wm-lg { font-size: 26px; font-weight: 400; letter-spacing: -0.03em; color: #0A1930; }
+  .wm-lg .c { color: #0070F3; font-weight: 700; }
+
+  .ruleC { width: 56px; height: 3px; background: #0070F3; margin: 18px auto 0 auto; font-size: 0; line-height: 0; }
+  .ruleL { width: 56px; height: 3px; background: #0070F3; margin: 18px 0 0 0; font-size: 0; line-height: 0; }
+  .hairline { height: 1px; background: #E3E8F0; font-size: 0; line-height: 0; }
+  .pill { display: inline-block; padding: 5px 12px; background: #EAF1FB; border: 1px solid #CCE2FF; color: #0070F3; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+
+  /* ===== ortak yardimci (paylasilan havuz) ===== */
+  .tsub { font-size: 9px; color: #94A3B8; }
+
+  /* meta kart (kapak + teklif sayfasi) */
+  .meta { width: 100%; border: 1px solid #E3E8F0; margin: 0; }
+  .meta td { padding: 13px 18px; border-bottom: 1px solid #ECF0F5; vertical-align: top; }
+  .meta .lbl { font-size: 9px; font-weight: 700; color: #94A3B8; letter-spacing: 0.14em; text-transform: uppercase; }
+  .meta .val { font-size: 15px; font-weight: 700; color: #0A1930; padding-top: 4px; }
+
+  .callout-band { background: #F4F7FB; border-left: 3px solid #0070F3; padding: 16px 18px; }
+  .callout-band p { font-size: 13px; font-weight: 700; color: #0A1930; line-height: 1.5; margin: 0; }
+
+  /* ===== KAPAK deger-anchor + meta ===== */
+  .anchor-row { width: 100%; border-top: 1px solid #E3E8F0; border-bottom: 1px solid #E3E8F0; }
+  .anchor-row td { padding: 13px 8px; text-align: center; vertical-align: middle; }
+  .anchor-txt { font-size: 11px; font-weight: 700; color: #475569; letter-spacing: 0.02em; }
+  .anchor-sep { width: 1px; background: #E3E8F0; font-size: 0; line-height: 0; padding: 13px 0; }
+  .conf-h { font-size: 11px; font-weight: 700; color: #0A1930; letter-spacing: 0.04em; margin: 0 0 6px 0; }
+  .conf-p { font-size: 10px; font-style: italic; color: #94A3B8; line-height: 1.6; margin: 0; }
+
+  /* ===== TEKLIF ve FIYAT — lisans kademeleri ===== */
+  .tier { width: 100%; border-spacing: 10px; border-collapse: separate; }
+  .tier > tbody > tr > td { width: 33.33%; vertical-align: top; }
+  .tcard { border: 1px solid #E3E8F0; background: #FFFFFF; }
+  .tcard-mid { border: 2px solid #0070F3; background: #FFFFFF; }
+  .tcap { background: #F4F7FB; border-bottom: 1px solid #E3E8F0; padding: 9px 14px; }
+  .tcap-mid { background: #0070F3; border-bottom: 1px solid #0070F3; padding: 9px 14px; }
+  .tflag { font-size: 8px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.16em; text-transform: uppercase; margin: 0; }
+  .tname { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 17px; font-weight: 700; color: #0A1930; margin: 0; }
+  .tname-mid { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 17px; font-weight: 700; color: #FFFFFF; margin: 0; }
+  .tbody { padding: 12px 14px 14px 14px; }
+  .tdesc { font-size: 10px; color: #475569; line-height: 1.5; margin: 0 0 9px 0; }
+  .tli { font-size: 10px; color: #334155; line-height: 1.7; }
+  .tdot { display: inline-block; width: 4px; height: 4px; background: #0070F3; margin: 0 7px 2px 0; vertical-align: middle; }
+
+  /* ===== fiyat tablosu ===== */
+  .ptbl { width: 100%; border: 1px solid #E3E8F0; }
+  .ptbl th { background: #0A1930; color: #FFFFFF; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-align: left; padding: 11px 12px; }
+  .ptbl th.num { text-align: right; }
+  .ptbl td { font-size: 11px; color: #0A1930; padding: 11px 12px; border-bottom: 1px solid #ECF0F5; vertical-align: top; }
+  .ptbl td.num { text-align: right; font-weight: 700; }
+  .pt-name { font-size: 11px; font-weight: 700; color: #0A1930; }
+  .pt-desc { font-size: 9px; color: #64748B; line-height: 1.45; padding-top: 3px; }
+  .pt-sum td { font-size: 11px; padding: 9px 12px; border-bottom: 1px solid #ECF0F5; }
+  .pt-sum td.lbl { text-align: right; color: #475569; font-weight: 700; }
+  .pt-sum td.val { text-align: right; color: #0A1930; font-weight: 700; width: 150px; }
+  .pt-grand td { padding: 13px 12px; background: #F4F7FB; border-top: 2px solid #0A1930; }
+  .pt-grand td.lbl { text-align: right; font-size: 12px; font-weight: 700; color: #0A1930; letter-spacing: 0.04em; }
+  .pt-grand td.val { text-align: right; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 20px; font-weight: 700; color: #0070F3; width: 150px; }
+  .pt-note { font-size: 9px; color: #64748B; line-height: 1.6; margin: 10px 0 0 0; }
+
+  /* ===== FARK VAR — farklilastirici kartlar ===== */
+  .dif { width: 100%; border-spacing: 12px; border-collapse: separate; }
+  .dif > tbody > tr > td { width: 50%; vertical-align: top; border: 1px solid #E3E8F0; background: #FFFFFF; padding: 0; page-break-inside: avoid; }
+  .dif-top { font-size: 0; line-height: 0; height: 3px; background: #0070F3; }
+  .dif-pad { padding: 14px 15px 16px 15px; }
+  .dif-eyebrow { font-size: 8px; font-weight: 700; color: #94A3B8; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 9px 0; }
+  .dif-title { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 15px; font-weight: 700; color: #0A1930; line-height: 1.2; margin: 11px 0 6px 0; }
+  .dif-desc { font-size: 11px; color: #475569; line-height: 1.55; margin: 0; }
+
+  /* mock: time engine satiri */
+  .te { width: 100%; }
+  .te td { padding: 5px 0; vertical-align: middle; }
+  .te-lbl { font-size: 9px; font-weight: 700; color: #0A1930; }
+  .te-bar { width: 100%; background: #ECF0F5; height: 9px; font-size: 0; line-height: 0; }
+  .te-fill { background: #0070F3; height: 9px; font-size: 0; line-height: 0; }
+  .te-val { font-size: 9px; font-weight: 700; color: #0070F3; font-family: "Helvetica Neue", Arial, sans-serif; }
+  .te-auto { display: inline-block; font-size: 7px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #059669; background: #E4F2F0; border: 1px solid #BFE0DB; padding: 1px 6px; }
+
+  /* mock: ESM multi-company kutulari */
+  .esm { width: 100%; border-spacing: 6px; border-collapse: separate; }
+  .esm td { width: 33.33%; text-align: center; border: 1px solid #E3E8F0; background: #FBFCFE; padding: 9px 4px; vertical-align: middle; }
+  .esm-co { font-size: 9px; font-weight: 700; color: #0A1930; }
+  .esm-sub { font-size: 7px; color: #94A3B8; letter-spacing: 0.06em; text-transform: uppercase; padding-top: 2px; }
+  .esm-core { background: #0A1930; }
+  .esm-core .esm-co { color: #FFFFFF; }
+  .esm-core .esm-sub { color: #94A3B8; }
+
+  /* mock: 5-katmanli raporlama */
+  .lyr { width: 100%; }
+  .lyr td { padding: 3px 0; vertical-align: middle; }
+  .lyr-band { height: 11px; font-size: 0; line-height: 0; }
+  .lyr-lbl { font-size: 8px; font-weight: 700; color: #475569; letter-spacing: 0.04em; padding-left: 8px; }
+
+  /* mock: no-code workflow zinciri */
+  .wf { width: 100%; }
+  .wf td { vertical-align: middle; }
+  .wf-node { border: 1px solid #CCE2FF; background: #EAF1FB; padding: 7px 6px; text-align: center; }
+  .wf-node-em { border: 1px solid #BFE0DB; background: #E4F2F0; padding: 7px 6px; text-align: center; }
+  .wf-t { font-size: 8px; font-weight: 700; color: #0070F3; letter-spacing: 0.04em; }
+  .wf-t-em { font-size: 8px; font-weight: 700; color: #059669; letter-spacing: 0.04em; }
+  .wf-arr { width: 16px; text-align: center; font-size: 11px; font-weight: 700; color: #94A3B8; }
+
+  /* mock: hibrit lisans dagilimi */
+  .hyb { width: 100%; border: 1px solid #E3E8F0; }
+  .hyb td { padding: 8px 10px; vertical-align: middle; border-bottom: 1px solid #ECF0F5; }
+  .hyb-grp { font-size: 9px; font-weight: 700; color: #0A1930; }
+  .hyb-bar { width: 100%; background: #ECF0F5; height: 8px; font-size: 0; line-height: 0; }
+  .hyb-pro { background: #0070F3; height: 8px; font-size: 0; line-height: 0; }
+  .hyb-std { background: #94A3B8; height: 8px; font-size: 0; line-height: 0; }
+  .hyb-tag { font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .hyb-key { width: 100%; }
+  .hyb-key td { border-bottom: 0; padding: 6px 0 0 0; }
+  .hyb-sw { display: inline-block; width: 9px; height: 9px; margin: 0 5px 1px 0; vertical-align: middle; }
+
+  /* mock: on-premise / veri egemenligi */
+  .onp { width: 100%; border: 1px solid #E3E8F0; background: #FBFCFE; }
+  .onp td { padding: 11px 12px; vertical-align: middle; }
+  .onp-server { width: 46px; height: 46px; background: #0A1930; vertical-align: middle; text-align: center; }
+  .onp-srvtxt { font-size: 7px; font-weight: 700; color: #FFFFFF; letter-spacing: 0.08em; text-transform: uppercase; }
+  .onp-h { font-size: 10px; font-weight: 700; color: #0A1930; margin: 0 0 3px 0; }
+  .onp-p { font-size: 9px; color: #64748B; line-height: 1.45; margin: 0; }
+  .onp-lock { display: inline-block; font-size: 7px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0070F3; background: #EAF1FB; border: 1px solid #CCE2FF; padding: 2px 7px; }
+
+  /* ===== FARK VAR — TAM LISTE (44 madde, 2 kolon) ===== */
+  .fk-h { display: inline-block; padding: 5px 12px; background: #0A1930; color: #FFFFFF; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+  .fk { width: 100%; border-spacing: 10px; border-collapse: separate; }
+  .fk > tbody > tr > td { width: 50%; vertical-align: top; border: 1px solid #E3E8F0; background: #FBFCFE; padding: 0; page-break-inside: avoid; }
+  .fk-cell { padding: 12px 14px 13px 14px; page-break-inside: avoid; }
+  .fk-row { page-break-inside: avoid; }
+  .fk-row td { padding: 4px 0; vertical-align: top; }
+  .fk-no { width: 24px; vertical-align: top; }
+  .fk-num { display: inline-block; width: 22px; height: 22px; background: #EAF1FB; border: 1px solid #CCE2FF; color: #0070F3; font-size: 9px; font-weight: 700; text-align: center; line-height: 22px; }
+  .fk-title { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 12px; font-weight: 700; color: #0A1930; line-height: 1.25; margin: 0 0 4px 0; }
+  .fk-desc { font-size: 10px; color: #475569; line-height: 1.5; margin: 0; }
+
+  /* ===== TEKLIF KOSULLARI ===== */
+  .ko { width: 100%; }
+  .ko-item { width: 100%; border: 1px solid #E3E8F0; background: #FBFCFE; margin: 0 0 9px 0; page-break-inside: avoid; }
+  .ko-item td { padding: 12px 14px; vertical-align: top; }
+  .ko-no { width: 34px; vertical-align: top; }
+  .ko-num { display: inline-block; width: 26px; height: 26px; background: #0A1930; color: #FFFFFF; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 12px; font-weight: 700; text-align: center; line-height: 26px; }
+  .ko-txt { font-size: 11px; color: #334155; line-height: 1.6; margin: 0; }
+  .ko-txt strong { color: #0A1930; font-weight: 700; }
+  .ko-link { color: #0070F3; font-weight: 700; text-decoration: none; }
+  .ko-foot { font-size: 10px; font-style: italic; color: #94A3B8; line-height: 1.6; margin: 14px 0 0 0; }
+  .ko-vat { width: 100%; border: 1px solid #CCE2FF; background: #EAF1FB; border-left: 3px solid #0070F3; }
+  .ko-vat td { padding: 13px 16px; vertical-align: top; }
+  .ko-vat p { font-size: 11px; color: #0A1930; line-height: 1.55; margin: 0; }
+  .ko-vat .vat-cap { font-size: 9px; font-weight: 700; color: #0070F3; letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 5px 0; }
+
+  /* ===== REFERANSLAR ===== */
+  .rf-subhead { font-size: 11px; font-weight: 700; color: #0A1930; letter-spacing: 0.04em; margin: 0 0 4px 0; }
+  .rf-subline { width: 28px; height: 2px; background: #0070F3; font-size: 0; line-height: 0; margin: 0 0 11px 0; }
+  .rf-grid { width: 100%; border-spacing: 7px; border-collapse: separate; }
+  .rf-grid td { width: 20%; height: 48px; border: 1px solid #E3E8F0; background: #FFFFFF; text-align: center; vertical-align: middle; padding: 7px 8px; }
+  .rf-logo { max-height: 26px; max-width: 100%; margin: 0 auto; }
+  .rf-case-wrap { width: 100%; border-spacing: 9px; border-collapse: separate; }
+  .rf-case-wrap > tbody > tr > td { width: 50%; vertical-align: top; border: 1px solid #E3E8F0; background: #FBFCFE; padding: 0; page-break-inside: avoid; }
+  .rf-case-top { font-size: 0; line-height: 0; height: 3px; background: #0070F3; }
+  .rf-case-pad { padding: 13px 15px 14px 15px; }
+  .rf-case-name { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 14px; font-weight: 700; color: #0A1930; margin: 0 0 6px 0; }
+  .rf-case-desc { font-size: 10px; color: #475569; line-height: 1.55; margin: 0; }
+
+  /* ===== YONETICI OZETI (NOSE) ===== */
+  .nose { width: 100%; border-spacing: 11px; border-collapse: separate; }
+  .nose > tbody > tr > td { width: 25%; vertical-align: top; border: 1px solid #E3E8F0; background: #FBFCFE; padding: 0; page-break-inside: avoid; }
+  .nose-top { font-size: 0; line-height: 0; height: 3px; background: #0070F3; }
+  .nose-pad { padding: 13px 13px 15px 13px; }
+  .nose-step { font-size: 8px; font-weight: 700; color: #94A3B8; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 7px 0; }
+  .nose-h { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 13px; font-weight: 700; color: #0A1930; line-height: 1.2; margin: 0 0 6px 0; }
+  .nose-p { font-size: 10px; color: #475569; line-height: 1.55; margin: 0; }
+  .es-flow td { vertical-align: top; }
+  .es-num { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 22px; font-weight: 700; color: #0070F3; line-height: 1; }
+  .es-body { padding: 14px 0 0 0; }
+  .es-h { font-size: 12px; font-weight: 700; color: #0A1930; margin: 0 0 4px 0; letter-spacing: 0.01em; }
+  .es-p { font-size: 12px; color: #475569; line-height: 1.6; margin: 0; }
+  .es-rule { width: 18px; height: 2px; background: #E3E8F0; font-size: 0; line-height: 0; }
+
+  /* ===== COI — mevcut durumun maliyeti ===== */
+  .coi-lead { font-size: 13px; font-weight: 400; color: #475569; line-height: 1.62; margin: 12px 0 0 0; }
+  .stat-hero { width: 100%; border: 1px solid #E3E8F0; background: #FBF7F1; border-left: 3px solid #D97706; }
+  .stat-hero td { padding: 18px 22px; vertical-align: middle; }
+  .sh-cap { font-size: 9px; font-weight: 700; color: #D97706; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 6px 0; }
+  .sh-num { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 42px; font-weight: 700; color: #0A1930; line-height: 1; letter-spacing: -0.02em; }
+  .sh-unit { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: 400; color: #D97706; }
+  .sh-sub { font-size: 10px; color: #64748B; line-height: 1.5; margin: 7px 0 0 0; }
+  .sh-tag { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #D97706; background: #F6E9D8; border: 1px solid #E6CBA3; padding: 2px 8px; }
+
+  /* COI maliyet kalemi tablosu */
+  .coi { width: 100%; border: 1px solid #E3E8F0; }
+  .coi th { background: #0A1930; color: #FFFFFF; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-align: left; padding: 10px 12px; }
+  .coi th.num { text-align: right; }
+  .coi td { padding: 11px 12px; border-bottom: 1px solid #ECF0F5; vertical-align: middle; }
+  .coi-item { font-size: 11px; font-weight: 700; color: #0A1930; }
+  .coi-base { font-size: 9px; color: #64748B; line-height: 1.4; padding-top: 2px; }
+  .coi-val { font-size: 12px; font-weight: 700; color: #0A1930; font-family: "Helvetica Neue", Arial, sans-serif; text-align: right; }
+  .coi-bar { width: 100%; background: #ECF0F5; height: 9px; font-size: 0; line-height: 0; }
+  .coi-fill { background: #D97706; height: 9px; font-size: 0; line-height: 0; }
+  .coi-sum td { padding: 12px 12px; background: #FBF7F1; border-top: 2px solid #D97706; border-bottom: 0; }
+  .coi-sum .lbl { font-size: 11px; font-weight: 700; color: #0A1930; letter-spacing: 0.03em; }
+  .coi-sum .val { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: 700; color: #D97706; text-align: right; }
+
+  /* COI 12/24/36 ay projeksiyon */
+  .proj { width: 100%; border-spacing: 10px; border-collapse: separate; }
+  .proj > tbody > tr > td { width: 33.33%; vertical-align: top; border: 1px solid #E3E8F0; background: #FBFCFE; padding: 15px 14px; text-align: center; page-break-inside: avoid; }
+  .proj-mid { border: 1px solid #E6CBA3; background: #FBF7F1; }
+  .proj-lbl { font-size: 9px; font-weight: 700; color: #94A3B8; letter-spacing: 0.1em; text-transform: uppercase; margin: 0; }
+  .proj-num { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 26px; font-weight: 700; color: #0A1930; line-height: 1; margin: 8px 0 4px 0; }
+  .proj-num-em { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 26px; font-weight: 700; color: #D97706; line-height: 1; margin: 8px 0 4px 0; }
+  .proj-sub { font-size: 9px; color: #64748B; margin: 0; }
+
+  .callout-amber { background: #FBF7F1; border-left: 3px solid #D97706; padding: 16px 18px; }
+  .callout-amber p { font-size: 13px; font-weight: 700; color: #0A1930; line-height: 1.5; margin: 0; }
+
+  /* deger-recap anchor (teklif sayfasi basi) */
+  .recap { width: 100%; border: 1px solid #E3E8F0; border-left: 3px solid #0070F3; background: #F4F7FB; }
+  .recap td { padding: 13px 18px; vertical-align: middle; }
+  .recap p { font-size: 11px; font-weight: 700; color: #0A1930; line-height: 1.5; margin: 0; }
+
+  .spacer-l { height: 40px; font-size: 0; line-height: 0; }
+  .spacer-m { height: 26px; font-size: 0; line-height: 0; }
+  .spacer-s { height: 16px; font-size: 0; line-height: 0; }
+</style>
+</head>
+<body>
+
+<!-- ============ CALISAN HEADER ============ -->
+<section id="header-container">
+<div id="pdfgen-header" style="padding-bottom:20px;">
+  <table class="run">
+    <tr>
+      <td align="left">
+        <table><tr>
+          <td valign="middle"><img class="run-logo" src="https://www.servicecore.com.tr/teklif/logo.png" alt="ServiceCore" /></td>
+          
+        </tr></table>
+      </td>
+      <td align="right"><span class="run-label">TEKL&#304;F</span> &#183; ${Quotes.Quote Number}</td>
+    </tr>
+    <tr><td colspan="2" style="padding-top:11px;"><div class="hairline"></div></td></tr>
+  </table>
+</div>
+</section>
+
+<!-- ============ ICERIK ============ -->
+<section id="page-container">
+<div id="pdfgen-content">
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 1 — KAPAK (sade / resmi, mock YOK)                     -->
+  <!-- ============================================================ -->
+  <div class="sheet">
+
+    <table width="100%" class="avoid">
+      <tr>
+        <td align="left" valign="middle">&#160;</td>
+        <td align="right" valign="middle"><span class="pill">Kuruma &#214;zel &#183; CONFIDENTIAL</span></td>
+      </tr>
+    </table>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+
+    <table width="100%" class="avoid">
+      <tr>
+        <td align="left" valign="middle">
+          <table><tr>
+            <td valign="middle"><img src="https://www.servicecore.com.tr/teklif/logo.png" alt="ServiceCore" style="height:42px;" /></td>
+
+          </tr></table>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+
+    <p class="overline">Kurumsal ITSM / ESM Platformu</p>
+    <h1 class="cover-title">${Quotes.Account Name}</h1>
+    <p class="cover-sub">${Quotes.Subject}</p>
+    <div class="ruleL"></div>
+
+    <div class="spacer-s"></div>
+    <p class="lead" style="max-width:560px;">ITSM ve proje y&#246;netimini tek platformda birle&#351;tiren kurumsal servis y&#246;netimi &#231;&#246;z&#252;m&#252; i&#231;in haz&#305;rlanm&#305;&#351; tekliftir.</p>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+
+    <table class="meta avoid">
+      <tr>
+        <td width="50%" style="border-right:1px solid #ECF0F5;">
+          <div class="lbl">Teklif No</div><div class="val">${Quotes.Quote Number}</div>
+        </td>
+        <td width="50%">
+          <div class="lbl">Teklif Tarihi</div><div class="val">${Quotes.Created Time}</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" style="border-right:1px solid #ECF0F5; border-bottom:0;">
+          <div class="lbl">Son Ge&#231;erlilik</div><div class="val">${Quotes.Valid Until}</div>
+        </td>
+        <td width="50%" style="border-bottom:0;">
+          <div class="lbl">Yetkili</div><div class="val">${Quotes.Contact Name}</div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+
+    <!-- ince deger-anchor satiri -->
+    <table class="anchor-row avoid">
+      <tr>
+        <td width="32%"><span class="anchor-txt">2000&#8217;den beri 25+ y&#305;l ITSM deneyimi</span></td>
+        <td class="anchor-sep">&#160;</td>
+        <td width="22%"><span class="anchor-txt">600.000+ kullan&#305;c&#305;</span></td>
+        <td class="anchor-sep">&#160;</td>
+        <td width="44%"><span class="anchor-txt">Sabanc&#305; &#183; Toyota &#183; Roketsan &#183; QNB g&#252;veniyle</span></td>
+      </tr>
+    </table>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+    <div class="hairline"></div>
+    <div class="spacer-s"></div>
+    <p class="conf-h">S&#305;n&#305;fland&#305;rma: Kuruma &#214;zel &#8212; Confidential</p>
+    <p class="conf-p">${Quotes.Created Time} tarihinde d&#252;zenlenmi&#351;tir. ${Quotes.Quote Number} numaral&#305;, ${Quotes.Account Name} kurumuna &#246;zel ve ${Quotes.Subject} konulu teklifidir. ${Quotes.Contact Name} &#351;ahs&#305;na &#246;zel payla&#351;&#305;lm&#305;&#351;t&#305;r; gizli bilgi olarak s&#305;n&#305;fland&#305;r&#305;lm&#305;&#351;t&#305;r ve yetkisiz &#252;&#231;&#252;nc&#252; ki&#351;ilerle payla&#351;&#305;lmamas&#305; gerekmektedir.</p>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 2 — YONETICI OZETI (NOSE: Needs > Outcomes > Solution  -->
+  <!--           > Evidence; tek sayfa, bottom-line kutusu)         -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Y&#246;netici &#214;zeti</p>
+    <h2 class="h2">Da&#287;&#305;n&#305;k servis y&#246;netiminden tek platforma.</h2>
+    <p class="lead">${Quotes.Account Name}, b&#252;y&#252;yen BT ve servis operasyonunu birbirinden kopuk ara&#231;lar, manuel s&#252;re&#231;ler ve s&#305;n&#305;rl&#305; g&#246;r&#252;n&#252;rl&#252;kle y&#246;netiyor. Bu yap&#305; yava&#351; &#231;&#246;z&#252;m, tekrar eden i&#351; ve g&#246;r&#252;nmeyen maliyet &#252;retir.</p>
+
+    <div class="spacer-m"></div>
+
+    <table width="100%" class="es-flow avoid">
+      <tr>
+        <td width="40" valign="top"><span class="es-num">01</span></td>
+        <td valign="top" style="padding-left:14px;">
+          <div class="es-body" style="padding-top:0;">
+            <p class="es-h">Hedeflenen sonu&#231;</p>
+            <p class="es-p">T&#252;m servis s&#252;re&#231;lerini tek platformda toplamak, tekrar eden i&#351;i otomatikle&#351;tirmek, kesintiyi azaltmak, uyum ve raporlamay&#305; g&#252;vence alt&#305;na almak.</p>
+          </div>
+        </td>
+      </tr>
+      <tr><td>&#160;</td><td style="padding-left:14px; padding-top:12px; padding-bottom:12px;"><div class="es-rule"></div></td></tr>
+      <tr>
+        <td width="40" valign="top"><span class="es-num">02</span></td>
+        <td valign="top" style="padding-left:14px;">
+          <div class="es-body" style="padding-top:0;">
+            <p class="es-h">&#199;&#246;z&#252;m</p>
+            <p class="es-p">ServiceCore; ITSM, ESM ve proje y&#246;netimini 30+ native entegre mod&#252;lde birle&#351;tiren on-premise kurumsal platformdur. Tek veri modeli, tek aray&#252;z, tek lisans.</p>
+          </div>
+        </td>
+      </tr>
+      <tr><td>&#160;</td><td style="padding-left:14px; padding-top:12px; padding-bottom:12px;"><div class="es-rule"></div></td></tr>
+      <tr>
+        <td width="40" valign="top"><span class="es-num">03</span></td>
+        <td valign="top" style="padding-left:14px;">
+          <div class="es-body" style="padding-top:0;">
+            <p class="es-h">Kan&#305;t</p>
+            <p class="es-p">2000&#8217;den beri, ITIL Expert sertifikal&#305; yerli kadroyla; Sabanc&#305;, Toyota, Roketsan, QNB dahil T&#252;rkiye&#8217;nin en zorlu kurumlar&#305;n&#305;n 4M+ kullan&#305;c&#305;ya ula&#351;an tercihi.</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <table class="meta avoid">
+      <tr>
+        <td width="33.33%" style="border-right:1px solid #ECF0F5; border-bottom:0;">
+          <div class="lbl">Tek Platform</div><div class="val">30+ Mod&#252;l &#183; 16 ITIL4</div>
+        </td>
+        <td width="33.33%" style="border-right:1px solid #ECF0F5; border-bottom:0;">
+          <div class="lbl">Kurulum</div><div class="val">On-Premise</div>
+        </td>
+        <td width="33.34%" style="border-bottom:0;">
+          <div class="lbl">Lisans</div><div class="val">Yaln&#305;zca Teknisyen</div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <div class="callout-band avoid">
+      <p>&#214;zet: ServiceCore mevcut da&#287;&#305;n&#305;kl&#305;&#287;&#305;n g&#246;r&#252;nmeyen maliyetini ortadan kald&#305;r&#305;rken kurumunuzu <span class="accent">&#252;retici-seviye destek ve veri egemenli&#287;iyle y&#246;netilen TEK sisteme</span> ta&#351;&#305;r.</p>
+    </div>
+
+    <div class="spacer-l"></div>
+
+    <span class="fk-h">Bu teklif neleri kapsar</span>
+
+    <div class="spacer-s"></div>
+
+    <table class="meta avoid">
+      <tr>
+        <td width="50%" style="border-right:1px solid #ECF0F5;">
+          <div class="lbl">Platform</div><div class="val">30+ Native Mod&#252;l &#183; 16 ITIL4 S&#252;reci</div>
+        </td>
+        <td width="50%">
+          <div class="lbl">Kurulum</div><div class="val">On-Premise &#8212; Veri Sizde Kal&#305;r</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" style="border-right:1px solid #ECF0F5;">
+          <div class="lbl">Lisanslama</div><div class="val">Yaln&#305;z Teknisyen &#8212; S&#305;n&#305;rs&#305;z Son Kullan&#305;c&#305;</div>
+        </td>
+        <td width="50%">
+          <div class="lbl">Bak&#305;m + G&#252;ncelleme</div><div class="val">Abonelikte Dahil &#8212; Gizli Maliyet Yok</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" style="border-right:1px solid #ECF0F5;">
+          <div class="lbl">Dan&#305;&#351;manl&#305;k</div><div class="val">ITIL Expert Sertifikal&#305; Yerli Kadro</div>
+        </td>
+        <td width="50%">
+          <div class="lbl">&#220;r&#252;n + Destek</div><div class="val">T&#252;rk&#231;e Aray&#252;z &#183; Yerel Destek</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" style="border-right:1px solid #ECF0F5; border-bottom:0;">
+          <div class="lbl">Lisans Modeli</div><div class="val">Hibrit / Karma &#8212; &#304;htiyac&#305;n&#305;z Kadar</div>
+        </td>
+        <td width="50%" style="border-bottom:0;">
+          <div class="lbl">Devreye Alma</div><div class="val">Kurulum, E&#287;itim ve Implementasyon</div>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 3 — MEVCUT DURUMUN MALIYETI (COI) — asil wow           -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Mevcut Durumun Maliyeti</p>
+    <h2 class="h2">Mevcut da&#287;&#305;n&#305;k yap&#305;n&#305;n y&#305;ll&#305;k g&#246;r&#252;nmeyen maliyeti.</h2>
+    <p class="lead">A&#351;a&#287;&#305;daki kalemler, da&#287;&#305;n&#305;k ara&#231; ve manuel s&#252;re&#231;lerin tipik y&#305;ll&#305;k y&#252;k&#252;n&#252; g&#246;sterir; sekt&#246;r benchmark&#8217;&#305;d&#305;r ve analiz formuyla kurumunuza &#246;zel hesaplan&#305;r.</p>
+
+    <div class="spacer-m"></div>
+
+    <!-- buyuk anchor (illustratif gizli maliyet) -->
+    <table class="stat-hero avoid">
+      <tr>
+        <td>
+          <p class="sh-cap">&#214;rnek senaryo: 50 teknisyenli BT operasyonu</p>
+          <span class="sh-num">&#8378; 4.2M</span><span class="sh-unit"> / y&#305;l gizli maliyet</span>
+          <p class="sh-sub">Plans&#305;z kesinti, tekrar eden manuel i&#351;, da&#287;&#305;n&#305;k ara&#231; ve verim kayb&#305;n&#305;n y&#305;ll&#305;k toplam&#305; (illustratif).</p>
+        </td>
+        <td width="170" align="right" valign="top"><span class="sh-tag">&#214;rnek &#183; kuruma &#246;zel hesaplan&#305;r</span></td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <!-- maliyet kalemi tablosu (illustratif yer tutucu) -->
+    <table class="coi avoid">
+      <thead>
+        <tr>
+          <th width="40%">Gizli Maliyet Kalemi</th>
+          <th width="40%">G&#246;reli A&#287;&#305;rl&#305;k</th>
+          <th class="num" width="20%">Y&#305;ll&#305;k &#246;rnek</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="coi-item">Plans&#305;z kesinti &amp; yava&#351; &#231;&#246;z&#252;m</div>
+            <div class="coi-base">Y&#252;ksek MTTR; uzayan ar&#305;za s&#252;releri</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:90%;"></div></div></td>
+          <td class="coi-val">&#8378; 1.35M</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="coi-item">Tekrar eden manuel i&#351;</div>
+            <div class="coi-base">Otomatikle&#351;tirilmeyen ticket ve s&#252;re&#231;ler</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:72%;"></div></div></td>
+          <td class="coi-val">&#8378; 980K</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="coi-item">Da&#287;&#305;n&#305;k ara&#231; lisans + entegrasyon</div>
+            <div class="coi-base">&#199;ok say&#305;da abonelik ve bak&#305;m y&#252;k&#252;</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:58%;"></div></div></td>
+          <td class="coi-val">&#8378; 760K</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="coi-item">SLA ihlali &amp; itibar</div>
+            <div class="coi-base">Ge&#231;ilen hizmet seviyeleri, ceza riski</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:44%;"></div></div></td>
+          <td class="coi-val">&#8378; 620K</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="coi-item">Son kullan&#305;c&#305; verim kayb&#305;</div>
+            <div class="coi-base">Self-servis / bilgi bankas&#305; yoklu&#287;u</div>
+          </td>
+          <td><div class="coi-bar"><div class="coi-fill" style="width:36%;"></div></div></td>
+          <td class="coi-val">&#8378; 490K</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr class="coi-sum">
+          <td colspan="2"><span class="lbl">Y&#305;ll&#305;k gizli maliyet (&#246;rnek toplam)</span></td>
+          <td><span class="val">&#8378; 4.2M</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <!-- 12 / 24 / 36 ay kumulatif projeksiyon -->
+    <table class="proj avoid">
+      <tr>
+        <td>
+          <p class="proj-lbl">12 Ay</p>
+          <p class="proj-num">&#8378; 4.2M</p>
+          <p class="proj-sub">K&#252;m&#252;latif gizli maliyet</p>
+        </td>
+        <td>
+          <p class="proj-lbl">24 Ay</p>
+          <p class="proj-num">&#8378; 8.4M</p>
+          <p class="proj-sub">K&#252;m&#252;latif gizli maliyet</p>
+        </td>
+        <td class="proj-mid">
+          <p class="proj-lbl">36 Ay</p>
+          <p class="proj-num-em">&#8378; 12.6M</p>
+          <p class="proj-sub">K&#252;m&#252;latif gizli maliyet</p>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <div class="callout-amber avoid">
+      <p>Bu g&#246;r&#252;nmeyen maliyetler, <span class="accent">tek platforma ge&#231;i&#351;le b&#252;y&#252;k &#246;l&#231;&#252;de ortadan kalkar.</span></p>
+    </div>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 4 — FARK VAR (6 mock kart + TUM 44 madde)              -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Fark Yaratan Yetenekler</p>
+    <h2 class="h2">Rakiplerde bulunmayan, fark yaratan yetenekler.</h2>
+    <p class="lead">A&#351;a&#287;&#305;daki yetenekler muadil &#231;&#246;z&#252;mlerin &#231;o&#287;unda ya hi&#231; yoktur ya da k&#305;smen bulunur &#8212; i&#351;te bu yetenekler ServiceCore&#8217;u ay&#305;r&#305;r.</p>
+
+    <div class="spacer-m"></div>
+
+    <table class="dif avoid">
+      <tr>
+        <!-- 1 — ESM MULTI-COMPANY -->
+        <td>
+          <div class="dif-top" style="background:#9333EA;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">ESM &#183; MULTI-COMPANY</p>
+            <table class="esm">
+              <tr>
+                <td class="esm-core" colspan="3"><div class="esm-co">Holding &#183; Tek Kurulum</div><div class="esm-sub">Merkezi Y&#246;netim</div></td>
+              </tr>
+              <tr>
+                <td><div class="esm-co">Finans A.&#350;.</div><div class="esm-sub">Tenant</div></td>
+                <td><div class="esm-co">&#220;retim A.&#350;.</div><div class="esm-sub">Tenant</div></td>
+                <td><div class="esm-co">Perakende</div><div class="esm-sub">Tenant</div></td>
+              </tr>
+            </table>
+            <p class="dif-title">ESM &#8212; Multi-Company / Multi-Tenant</p>
+            <p class="dif-desc">Holding yap&#305;s&#305;nda alt &#351;irketlere g&#246;re ayr&#305;&#351;t&#305;rma; tek kurulumda say&#305;s&#305;z departman ve alt &#351;irket &#8212; b&#252;y&#252;k kurum i&#231;in pazarl&#305;k d&#305;&#351;&#305; bir gereksinim.</p>
+          </div>
+        </td>
+        <!-- 2 — ITIL EXPERT KADRO + YEREL DESTEK (on-premise mock) -->
+        <td>
+          <div class="dif-top" style="background:#2563EB;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">Veri Egemenli&#287;i &#183; ON-PREMISE</p>
+            <table class="onp">
+              <tr>
+                <td class="onp-server" width="46"><span class="onp-srvtxt">Sizin<br />Sunucu</span></td>
+                <td>
+                  <p class="onp-h">Veriniz kendi sunucunuzda</p>
+                  <p class="onp-p">SaaS ba&#287;&#305;ml&#305;l&#305;&#287;&#305; yok. Kurulum on-premise; veri kurum d&#305;&#351;&#305;na &#231;&#305;kmaz.</p>
+                  <div style="height:6px; font-size:0; line-height:0;">&#160;</div>
+                  <span class="onp-lock">KVKK uyumlu &#183; Tam kontrol</span>
+                </td>
+              </tr>
+            </table>
+            <p class="dif-title">ITIL Expert Kadro + Yerel Destek</p>
+            <p class="dif-desc">ITIL Expert / MP sertifikal&#305; yerli dan&#305;&#351;man, do&#287;rudan &#252;reticiden h&#305;zl&#305; destek ve verinizin kendi sunucunuzda kalmas&#305; &#8212; arac&#305;s&#305;z, ba&#287;&#305;ms&#305;z, egemen.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <!-- 3 — 5 KATMANLI RAPORLAMA -->
+        <td>
+          <div class="dif-top" style="background:#0891B2;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">5 Katmanl&#305; Raporlama</p>
+            <table class="lyr">
+              <tr><td width="62%"><div class="lyr-band" style="background:#0A1930; width:100%;"></div></td><td><span class="lyr-lbl">Y&#246;netim Panosu</span></td></tr>
+              <tr><td><div class="lyr-band" style="background:#2563EB; width:84%;"></div></td><td><span class="lyr-lbl">Stratejik Rapor</span></td></tr>
+              <tr><td><div class="lyr-band" style="background:#0070F3; width:68%;"></div></td><td><span class="lyr-lbl">Operasyonel</span></td></tr>
+              <tr><td><div class="lyr-band" style="background:#0891B2; width:52%;"></div></td><td><span class="lyr-lbl">Servis Analiti&#287;i</span></td></tr>
+              <tr><td><div class="lyr-band" style="background:#06B6D4; width:36%;"></div></td><td><span class="lyr-lbl">Dinamik Rapor</span></td></tr>
+            </table>
+            <p class="dif-title">5 Katmanl&#305; Raporlama + &#304;leri Proje Y&#246;netimi</p>
+            <p class="dif-desc">Y&#246;netim panosundan servis analiti&#287;ine 5 katman, dinamik Gantt / WBS / Kanban ile birlikte gelir; y&#246;netim karar&#305;n&#305; veriyle al&#305;r, ayr&#305; BI veya PM arac&#305; gerekmez.</p>
+          </div>
+        </td>
+        <!-- 4 — NO-CODE OTOMASYON -->
+        <td>
+          <div class="dif-top" style="background:#D97706;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">No-Code &#183; WORKFLOW ENGINE</p>
+            <table class="wf">
+              <tr>
+                <td width="27%"><div class="wf-node"><span class="wf-t">Talep</span></div></td>
+                <td class="wf-arr">&#8594;</td>
+                <td width="27%"><div class="wf-node-em"><span class="wf-t-em">Ko&#351;ul</span></div></td>
+                <td class="wf-arr">&#8594;</td>
+                <td width="27%"><div class="wf-node"><span class="wf-t">Onay</span></div></td>
+              </tr>
+            </table>
+            <div style="height:7px; font-size:0; line-height:0;">&#160;</div>
+            <table class="wf">
+              <tr>
+                <td width="27%"><div class="wf-node-em"><span class="wf-t-em">Atama</span></div></td>
+                <td class="wf-arr">&#8594;</td>
+                <td width="27%"><div class="wf-node"><span class="wf-t">Bildirim</span></div></td>
+                <td class="wf-arr">&#8594;</td>
+                <td width="27%"><div class="wf-node-em"><span class="wf-t-em">Kapan&#305;&#351;</span></div></td>
+              </tr>
+            </table>
+            <p class="dif-title">10+ S&#252;re&#231;te No-Code Otomasyon</p>
+            <p class="dif-desc">Kod yazmadan ko&#351;ullu otomasyon ve s&#252;r&#252;kle-b&#305;rak ak&#305;&#351; tasar&#305;m&#305;; s&#252;re&#231;ler ki&#351;iye de&#287;il sisteme ba&#287;lan&#305;r, operasyon &#246;l&#231;eklenir.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <!-- 5 — HIBRIT LISANS -->
+        <td>
+          <div class="dif-top" style="background:#059669;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">Esnek &#183; Hibrit Lisanslama</p>
+            <table class="hyb">
+              <tr>
+                <td width="32%"><span class="hyb-grp">Teknik Ekip</span></td>
+                <td width="50%"><div class="hyb-bar"><div class="hyb-pro" style="width:80%;"></div></div></td>
+                <td width="18%" align="right"><span class="hyb-tag" style="color:#0070F3;">Pro</span></td>
+              </tr>
+              <tr style="border-bottom:0;">
+                <td><span class="hyb-grp">&#304;dari Ekip</span></td>
+                <td><div class="hyb-bar"><div class="hyb-std" style="width:55%;"></div></div></td>
+                <td align="right"><span class="hyb-tag" style="color:#64748B;">Standart</span></td>
+              </tr>
+            </table>
+            <table class="hyb-key">
+              <tr>
+                <td width="50%"><span class="hyb-sw" style="background:#0070F3;"></span><span class="tsub">Profesyonel lisans</span></td>
+                <td width="50%"><span class="hyb-sw" style="background:#94A3B8;"></span><span class="tsub">Standart lisans</span></td>
+              </tr>
+            </table>
+            <p class="dif-title">Hibrit Lisanslama</p>
+            <p class="dif-desc">Teknik ekip Profesyonel, idari ekip Standart kullan&#305;r; herkese ayn&#305; paketi ald&#305;rmaz, ihtiyac&#305;n&#305;z kadar &#246;dersiniz &#8212; &#246;nemli &#246;l&#231;&#252;de tasarruf.</p>
+          </div>
+        </td>
+        <!-- 6 — TIME ENGINE -->
+        <td>
+          <div class="dif-top" style="background:#0070F3;"></div>
+          <div class="dif-pad">
+            <p class="dif-eyebrow">Patentli &#183; Sadece SERVICECORE</p>
+            <table class="te">
+              <tr>
+                <td width="34%"><span class="te-lbl">Olay #4182</span></td>
+                <td width="50%"><div class="te-bar"><div class="te-fill" style="width:72%;"></div></div></td>
+                <td width="16%" align="right"><span class="te-val">2.4 sa</span></td>
+              </tr>
+              <tr>
+                <td><span class="te-lbl">G&#246;rev #318</span></td>
+                <td><div class="te-bar"><div class="te-fill" style="width:45%;"></div></div></td>
+                <td align="right"><span class="te-val">1.1 sa</span></td>
+              </tr>
+              <tr>
+                <td><span class="te-lbl">De&#287;i&#351;iklik #92</span></td>
+                <td><div class="te-bar"><div class="te-fill" style="width:88%;"></div></div></td>
+                <td align="right"><span class="te-val">3.2 sa</span></td>
+              </tr>
+              <tr><td colspan="3" style="padding-top:7px;"><span class="te-auto">Otomatik hesaplan&#305;yor</span></td></tr>
+            </table>
+            <p class="dif-title">Time Engine</p>
+            <p class="dif-desc">Patentli otomatik s&#252;re ve timesheet motoru efor ile faturalanabilir s&#252;reyi elle de&#287;il otomatik hesaplar &#8212; bu yetenek tek ba&#351;&#305;na rakip e&#351;i olmayan bir de&#287;erdir.</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+    <div class="callout-band avoid">
+      <p>30+ mod&#252;l, 16 ITIL4 s&#252;reci <span class="accent">tek platformda</span> &#8212; ayr&#305; &#252;r&#252;nleri kurup entegre etme maliyeti ve riski yok.</p>
+    </div>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 4B — TUM FARK YARATAN YETENEKLER (madde 01-15 / 1.parca)-->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <span class="fk-h">T&#252;m Fark Yaratan Yetenekler</span>
+    <p class="lead" style="margin-top:14px;">A&#351;a&#287;&#305;daki ba&#351;l&#305;klar di&#287;er rakiplerimizde bulunmayan ve sadece Servicecore&#8217;da bulunan ek &#246;zelliklerdir. Bu &#246;zellik ve fonksiyonlardan baz&#305;lar&#305; rakip &#252;r&#252;nlerin baz&#305;lar&#305;nda hi&#231; bulunmazken baz&#305;lar&#305;nda k&#305;smen bulunmaktad&#305;r. Detayl&#305; kar&#351;&#305;la&#351;t&#305;rma bilgisi i&#231;in dan&#305;&#351;manlar&#305;m&#305;za ula&#351;abilir, sekt&#246;rdeki t&#252;m rakiplerle detayl&#305; kar&#351;&#305;la&#351;t&#305;rma i&#231;in teknik analiz konusunda yard&#305;m alabilirsiniz.</p>
+
+    <div class="spacer-s"></div>
+
+    <table class="fk">
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">01</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">ITIL4 UYUMLULU&#286;U</p>
+                <p class="fk-desc">Servicecore ITIL4 en g&#252;ncel versiyondaki &#231;evik ve yal&#305;n s&#252;re&#231; partikleri baz al&#305;narak geli&#351;tirilmi&#351;tir.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">02</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">ITIL4 S&#220;RE&#199; SAYISI</p>
+                <p class="fk-desc">Servicecore b&#252;nyesinde 16 ITIL4 s&#252;reci yer almaktad&#305;r. Detay bilgi datasheet i&#231;inde yer almaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">03</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">INTERACTION MANAGEMENT</p>
+                <p class="fk-desc">Service desk &#246;n kar&#351;&#305;lama, de&#287;erlendirme katman&#305; bulunmaktad&#305;r. Detay bilgi ekteki datasheet i&#231;inde yer almaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">04</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">BACKLOG MANAGEMENT</p>
+                <p class="fk-desc">T&#252;m s&#252;re&#231;lerdeki t&#252;m g&#246;revlerin kuyruk ve havuz modeli ile ajandaya al&#305;nmas&#305;n&#305; s&#252;r&#252;kle b&#305;rak ile sa&#287;layan i&#351; kay&#305;tlar&#305; y&#246;netimi &#246;zelli&#287;i bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">05</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">AGILE KANBAN VIEW</p>
+                <p class="fk-desc">T&#252;m s&#252;re&#231;lerde &#231;evik planlama metotlar&#305;ndan Kanban deste&#287;i yer almaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">06</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">CI MANAGEMENT</p>
+                <p class="fk-desc">ITIL4&#8217;e g&#246;re en &#246;ncelikli s&#252;re&#231;lerden olan s&#252;rekli iyile&#351;tirme mod&#252;l&#252;d&#252;r. CI mod&#252;l&#252; Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">07</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">WORKFORCE MANAGEMENT</p>
+                <p class="fk-desc">G&#246;revlerin koordinasyonu ve i&#351; g&#252;c&#252;n&#252;n verimli kullan&#305;lmas&#305; i&#231;in gerekli olan planlama mod&#252;l&#252;d&#252;r, Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">08</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">TASK MANAGEMENT</p>
+                <p class="fk-desc">Merkezi g&#246;rev y&#246;netimi mod&#252;l&#252; t&#252;m s&#252;re&#231;lerde ger&#231;ekle&#351;tirilen g&#246;revlerin ba&#287;&#305;ms&#305;z olarak y&#246;netilebilmesini sa&#287;layan ek mod&#252;ld&#252;r, Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">09</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">&#199;EV&#304;K Y&#214;NET&#304;M &#8211; KANBAN</p>
+                <p class="fk-desc">Kanban metodu ile sadece proje mod&#252;l&#252;nde de&#287;il, s&#252;re&#231;lerin tamam&#305;nda g&#246;revlerin durumlar&#305;n&#305;n takibi ve izlenmesi merkezi olarak sa&#287;lanmaktad&#305;r, bu &#246;zellik Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">10</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">SRM MOD&#220;L&#220;</p>
+                <p class="fk-desc">Hizmet sa&#287;lay&#305;c&#305; firmalar i&#231;in d&#305;&#351; m&#252;&#351;terilerin y&#246;netimine y&#246;nelik bu mod&#252;l ile hem i&#231; departmanlara hem de d&#305;&#351; kurumlara sa&#287;lanan hizmetlerin y&#246;netimi ayn&#305; &#252;r&#252;n i&#231;erisinde m&#252;mk&#252;n olmaktad&#305;r. Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">11</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">&#304;LER&#304; D&#220;ZEY PROJE Y&#214;NET&#304;M&#304;</p>
+                <p class="fk-desc">Servicecore Proje mod&#252;l&#252; kapsaml&#305; bir &#252;r&#252;n olup, kaynak y&#246;netimi, dinamik gantt &#351;emas&#305;, roadmap, planlama, WBS, Kanban, Dosya y&#246;netimi &#246;zellikleri Servicecore&#8217;da yer almaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">12</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">ESM - MULTICOMPANY MODE</p>
+                <p class="fk-desc">Holding yap&#305;lanmas&#305;nda kullan&#305;lan, alt &#351;irketlere g&#246;re ayr&#305;&#351;t&#305;rma imkan&#305; bulunmaktad&#305;r. Multitenant yap&#305; ile ayn&#305; uygulamada say&#305;s&#305;z departman veya alt &#351;irkete hizmet sunabilme imkan&#305; bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">13</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">3 KATMANLI S&#214;ZLE&#350;ME</p>
+                <p class="fk-desc">&#304;&#231; s&#246;zle&#351;me, tedarik&#231;i s&#246;zle&#351;mesi ve d&#305;&#351; m&#252;&#351;teri s&#246;zle&#351;meleri olmak &#252;zere 3 katmanl&#305; yap&#305; ve s&#246;zle&#351;me onay mekanizmalar&#305; Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">14</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">5 KATMANLI RAPORLAMA</p>
+                <p class="fk-desc">Dashboard, servis raporlama, dinamik raporlar (wizard), d&#246;k&#252;m raporlar&#305; (custom export engine) ve servis analti&#287;i olmak &#252;zere 5 katmanl&#305; ileri d&#252;zey raporlama yetenekleri Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">15</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">10+ S&#220;RE&#199;TE NO-CODE OTOMASYON</p>
+                <p class="fk-desc">Otomasyon y&#246;netimi mod&#252;l&#252; ile &#252;r&#252;nde yer alan b&#252;t&#252;n s&#252;re&#231;lerde ko&#351;ullu aksiyonlar&#305;n otomatik &#231;al&#305;&#351;t&#305;r&#305;lmas&#305; ve s&#305;n&#305;rs&#305;z senaryoda otomasyon imkan&#305; Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 4C — TUM FARK YARATAN YETENEKLER (madde 16-30 / 2.parca)-->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <span class="fk-h">T&#252;m Fark Yaratan Yetenekler &#183; devam</span>
+
+    <div class="spacer-s"></div>
+
+    <table class="fk">
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">16</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">S&#220;RE&#199; &#350;ABLONLARI</p>
+                <p class="fk-desc">H&#305;zl&#305; yeni kay&#305;t eklemeye yarayan t&#252;m s&#252;re&#231;lerde &#246;n tan&#305;ml&#305; s&#252;re&#231; &#351;ablonlar&#305; Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">17</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">&#199;&#304;FT KATMANLI Hizmet Seviyesi</p>
+                <p class="fk-desc">Olay ve &#304;stek y&#246;netiminde ve s&#305;n&#305;rs&#305;z ko&#351;ul belirleme yetenekleri ile kapsaml&#305; Hizmet Seviyesi mod&#252;l&#252; Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">18</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">SINIRSIZ AD SYNC</p>
+                <p class="fk-desc">S&#305;n&#305;rs&#305;z Active Directory ile senkronize olabilme &#246;zelli&#287;i Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">19</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">SINIRSIZ EPOSTA FETCHER</p>
+                <p class="fk-desc">S&#305;n&#305;rs&#305;z eposta adresini okuyarak ve farkl&#305; kurum esposta adreslerine gelen epostalar&#305; yakalayarak otomatik kay&#305;t a&#231;ma &#246;zelli&#287;i Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">20</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">D&#304;NAM&#304;K ONAY MEKANIZMASI</p>
+                <p class="fk-desc">Otomatik organizasyon &#351;emas&#305; &#231;&#305;kartma ve kurum i&#231;indeki hiyerar&#351;ik onay s&#252;re&#231;lerini s&#305;n&#305;rs&#305;z ko&#351;ullu ak&#305;&#351;a ba&#287;layabilme yetene&#287;i Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">21</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">CUSTOM FLOW DESIGN</p>
+                <p class="fk-desc">&#304;stenilen ko&#351;ullu i&#351; s&#252;re&#231;lerinin kolayca modellenebilmesi ve otomatik eskalasyonlar&#305; sa&#287;layan ak&#305;&#351; tasar&#305;m mod&#252;l&#252; Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">22</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">SINIRSIZ AD ATTRIBUTE</p>
+                <p class="fk-desc">AD &#252;zerinden esnek veri senkronizasyonu i&#231;in AD attribute y&#246;netimi Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">23</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">Z&#304;MMET FORMU</p>
+                <p class="fk-desc">Otomatik zimmet formu &#252;reticisi Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">24</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">Z&#304;MMET ONAY-RED</p>
+                <p class="fk-desc">Son kullan&#305;c&#305; zimmet takip, onay-red aray&#252;zleri Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">25</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">H&#304;ZMETLER KATMANI</p>
+                <p class="fk-desc">Asset y&#246;netiminde &#252;st katman olarak hizmetlerin ya&#351;am d&#246;ng&#252;s&#252; boyunca ve t&#252;m CMDB ili&#351;kileri ile y&#246;netilebilmesi yetene&#287;i Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">26</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">H&#304;ZMET HARITALARI</p>
+                <p class="fk-desc">Hizmetlerin arka plan&#305;ndaki t&#252;m bile&#351;enlerle ili&#351;kilerinin tan&#305;m&#305; ile servis topolojilerinin CMDB &#252;zerinde modellenebilmesi yetene&#287;i Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">27</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">SINIRSIZ H&#304;ZMET KATEGOR&#304;S&#304;</p>
+                <p class="fk-desc">Hizmet katalo&#287;unda s&#305;n&#305;rs&#305;z alt k&#305;r&#305;l&#305;mda kategorizasyon yetene&#287;i Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">28</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">TIME ENGINE</p>
+                <p class="fk-desc">Otomatik timesheet hesaplamalar&#305; ve kolay i&#351;/servis tutana&#287;&#305; &#252;retimi i&#231;in zaman makinesi &#246;zelli&#287;i patentli mod&#252;ld&#252;r. Sadece Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">29</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">ESNEK L&#304;SANSLAMA</p>
+                <p class="fk-desc">Mod&#252;ler add-on ekleme ile ger&#231;ek kullan&#305;ma ba&#287;l&#305; lisanslama. Mevcut versiyona ilave mod&#252;ller ile gerekti&#287;inde &#252;r&#252;n kullan&#305;m&#305;n&#305; artt&#305;rma veya azaltma se&#231;enekleri bulunmaktad&#305;r. Bu sayede &#246;nemli &#246;l&#231;&#252;de tasarruf elde edilmektedir.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">30</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">H&#304;BR&#304;T L&#304;SANSLAMA</p>
+                <p class="fk-desc">Ger&#231;ek kullan&#305;ma ba&#287;l&#305; hibrit lisanslama modeli Servicecore&#8217;da bulunmaktad&#305;r. Bu sayede &#252;r&#252;nde Standart veya Professional versiyondan ihtiya&#231; kadar mixleyerek kullanma ve adil add-on ekleme sayesinde tam hassas lisans kullan&#305;m&#305; sa&#287;lan&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 4D — TUM FARK YARATAN YETENEKLER (madde 31-44 / 3.parca)-->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <span class="fk-h">T&#252;m Fark Yaratan Yetenekler &#183; devam</span>
+
+    <div class="spacer-s"></div>
+
+    <table class="fk">
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">31</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">TL S&#214;ZLE&#350;ME VE &#214;DEME</p>
+                <p class="fk-desc">T&#252;rk Liras&#305; s&#246;zle&#351;me ve &#246;deme yapabilme imkan&#305; Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">32</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">AYLIK &#214;DEME &#304;MKANI</p>
+                <p class="fk-desc">Y&#305;ll&#305;k kiralama veya sat&#305;nalma modelinin yan&#305; s&#305;ra ayl&#305;k &#246;deme se&#231;ene&#287;i Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">33</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">LOW CODE DESIGN YETENE&#286;&#304;</p>
+                <p class="fk-desc">Formlar&#305;n ve aray&#252;zlerin geli&#351;mi&#351; designer uygulamas&#305; ve lowcode destekli bile&#351;enlerle &#246;zelle&#351;tirilebilme kabiliyeti Servicecore taraf&#305;ndan sunulabilmektedir.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">34</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">WORKFLOW ENGINE YETENE&#286;&#304;</p>
+                <p class="fk-desc">Dinamik i&#351; ve onay ak&#305;&#351;lar&#305; i&#231;in s&#252;r&#252;kle b&#305;rak s&#252;re&#231; ak&#305;&#351; tasar&#305;mc&#305;s&#305; ile ileri d&#252;zey i&#351; ak&#305;&#351; motoru yetene&#287;i Servicecore ile sunulmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">35</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">EK GEL&#304;&#350;T&#304;RMELER</p>
+                <p class="fk-desc">Do&#287;rudan &#252;retici ile ek ihtiya&#231;lar&#305;n geli&#351;tirilmesi ve y&#252;ksek frekansta s&#252;r&#252;m becerisi Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">36</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">ITIL UZMANLI&#286;I</p>
+                <p class="fk-desc">ITIL uzman&#305;, ITIL expert ve ITIL MP sertifikal&#305; yerli dan&#305;&#351;manlarla implementasyon deste&#287;i sunulmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">37</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">Y&#220;KSEK GEL&#304;&#350;T&#304;RME HIZI</p>
+                <p class="fk-desc">&#199;evik yaz&#305;l&#305;m geli&#351;tirme ve g&#252;&#231;l&#252; kadro ile y&#252;ksek frekansta yeni &#246;zellikler ve h&#305;zl&#305; s&#252;r&#252;mlerle s&#252;rekli geli&#351;tirme ve g&#252;ncelleme imkan&#305; bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">38</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">UPDATE HIZI</p>
+                <p class="fk-desc">Continuous Delivery modeli ile s&#305;f&#305;r kesinti ile s&#252;rekli otomatik g&#252;ncelleme hizmeti Servicecore&#8217;da bulunmaktad&#305;r. S&#252;rekli g&#252;ncel sistem otomasyonla ve s&#305;f&#305;ra yak&#305;n kesinti ile yap&#305;lmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">39</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">ONPREMISE KULLANMA &#304;MKANI</p>
+                <p class="fk-desc">M&#252;&#351;teri sunucular&#305;nda ve yerel bar&#305;nd&#305;rma ortamlar&#305;nda kurulum ve implementasyon yap&#305;lmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">40</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">HOSTED Y&#214;NET&#304;LEN H&#304;ZMET OLARAK KULLANMA &#304;MKANI</p>
+                <p class="fk-desc">Servicecore ITSM ve ESM &#252;r&#252;nlerinde yayg&#305;n i&#351; orta&#287;&#305; a&#287;&#305;ndan hosted ve y&#246;netilen hizmet olarak ITSM as a Service modeli ile kullanma imkan&#305; bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">41</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">GEL&#304;&#350;M&#304;&#350; E&#286;&#304;T&#304;M KAYNAKLARI</p>
+                <p class="fk-desc">Kapsaml&#305; dok&#252;mantasyon, detayl&#305; video e&#287;itim kaynaklar&#305;, T&#252;rk&#231;e olarak sunulan s&#252;rekli a&#231;&#305;lan e&#287;itimler ile h&#305;zl&#305; &#246;&#287;renme imkanlar&#305; sunulmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">42</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">YAYGIN PARTNER A&#286;I DESTE&#286;&#304;</p>
+                <p class="fk-desc">Servicecore 25 y&#305;ll&#305;k bir T&#252;rk &#351;irketidir. ITIL ve ITSM alan&#305;nda lider firmad&#305;r. ITSM konusunda uzman ve kurumsal 20&#8217;den fazla i&#351; orta&#287;&#305; ve yerel destek sunabilen partnerleri bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">43</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">YEREL DESTEK</p>
+                <p class="fk-desc">Do&#287;rudan &#252;retici kurumdan, &#252;st d&#252;zey destek anla&#351;mas&#305; paketleri ile &#252;retici kabiliyetinde yerelde destek alabilme imkan&#305; sunulmaktad&#305;r. Yerel &#252;retici deste&#287;i ve do&#287;rudan T&#252;rk m&#252;hendislerden yak&#305;n temas ve h&#305;zl&#305; destek alabilme imkan&#305; Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tr>
+              <td class="fk-no"><span class="fk-num">44</span></td>
+              <td style="padding-left:10px;">
+                <p class="fk-title">KOLAY VE HAZIR ENTEGRASYONLAR</p>
+                <p class="fk-desc">Haz&#305;r entegrasyon paketleri k&#252;t&#252;phanesi, API servisleri, &#231;ok d&#252;&#351;&#252;k maliyetli ve h&#305;zl&#305; entegrasyon deste&#287;i Servicecore&#8217;da bulunmaktad&#305;r.</p>
+              </td>
+            </tr></table>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 5 — TEKLIF ve LISANSLAMA (asil teklif)                 -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Teklif ve Lisanslama</p>
+    <h2 class="h2">Teklif &#246;zeti.</h2>
+    <p class="lead">Bu teklif; yaz&#305;l&#305;m lisans&#305;n&#305;, kurulumu, t&#252;m bak&#305;m ve &#252;retici roadmap g&#252;ncellemelerini ve &#252;retici-seviye uzman deste&#287;ini abonelik d&#246;nemi boyunca kapsar. Lisans yaln&#305;zca teknisyen say&#305;s&#305;na ba&#287;l&#305;d&#305;r &#8212; son kullan&#305;c&#305;, varl&#305;k ve kay&#305;t adedi s&#305;n&#305;rs&#305;z ve &#252;cretsizdir.</p>
+
+    <div class="spacer-m"></div>
+
+    <!-- fiyat tablosu (Zoho lineItem) -->
+    <table class="ptbl avoid">
+      <thead>
+        <tr>
+          <th width="40%">Kalem</th>
+          <th class="num" width="16%">Birim Fiyat</th>
+          <th class="num" width="10%">Adet</th>
+          <th class="num" width="14%">&#304;ndirim</th>
+          <th class="num" width="20%">Tutar</th>
+        </tr>
+      </thead>
+      <tbody id="lineItem">
+        <tr>
+          <td>
+            <div class="pt-name">${Ürün ve Hizmet Listesi.Product Name}</div>
+            <div class="pt-desc">${Ürün ve Hizmet Listesi.Description}</div>
+          </td>
+          <td class="num">${Ürün ve Hizmet Listesi.List Price}</td>
+          <td class="num">${Ürün ve Hizmet Listesi.Quantity}</td>
+          <td class="num">${Ürün ve Hizmet Listesi.Discount}</td>
+          <td class="num">${Ürün ve Hizmet Listesi.Total After Discount}</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr class="pt-sum"><td colspan="3" style="border-bottom:0;">&#160;</td><td class="lbl">Ara Toplam</td><td class="val">${Quotes.Sub Total}</td></tr>
+        <tr class="pt-sum"><td colspan="3" style="border-bottom:0;">&#160;</td><td class="lbl">KDV</td><td class="val">${Quotes.Tax}</td></tr>
+        <tr class="pt-grand"><td colspan="3" style="background:#FFFFFF; border-top:0;">&#160;</td><td class="lbl">GENEL TOPLAM</td><td class="val">${Quotes.Grand Total}</td></tr>
+      </tbody>
+    </table>
+
+    <p class="pt-note">Lisanslama minimum 10 teknisyen ile ba&#351;lar. Standart lisans&#305;n en az %25&#8217;i kadar Profesyonel lisans ile hibrit kurulum yap&#305;labilir. Abonelik d&#246;nemi boyunca t&#252;m bak&#305;m, bug-fix, &#252;retici roadmap yeni &#246;zellikleri ve s&#252;rekli g&#252;ncellemeler fiyata dahildir; gizli maliyet yoktur. T&#252;m tutarlar T&#252;rk Liras&#305; (TL) cinsindendir; talep halinde USD kar&#351;&#305;l&#305;&#287;&#305; sunulur.</p>
+
+    <div class="spacer-m"></div>
+    <div class="callout-band avoid">
+      <p>Son kullan&#305;c&#305;lar, varl&#305;klar ve kay&#305;t adedi <span class="accent">s&#305;n&#305;rs&#305;z ve &#252;cretsizdir</span> &#8212; lisans yaln&#305;zca teknisyen say&#305;s&#305;na ba&#287;l&#305;d&#305;r.</p>
+    </div>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 6 — TEKLIF KOSULLARI (YENI)                            -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Teklif Ko&#351;ullar&#305;</p>
+    <h2 class="h2">Teklif ve hizmet ko&#351;ullar&#305;.</h2>
+    <p class="lead">A&#351;a&#287;&#305;daki ko&#351;ullar, iki taraf&#305;n da ba&#351;ar&#305;s&#305;n&#305; g&#252;vence alt&#305;na almak i&#231;in tan&#305;mlanm&#305;&#351;t&#305;r.</p>
+
+    <div class="spacer-m"></div>
+
+    <table class="ko">
+      <tr><td>
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">1</span></td>
+            <td><p class="ko-txt"><strong>KDV Muafiyeti &#8212; STB 092050.</strong> Servicecore A.&#350;. &#252;r&#252;nleri teknopark b&#252;nyesinde ve T.C. Sanayi ve Ticaret Bakanl&#305;&#287;&#305;&#8217;na ba&#287;l&#305;d&#305;r. T.C. STB 092050 kodlu Servicecore &#252;r&#252;n&#252; 223-20/1 kapsam&#305;nda KDV&#8217;den muaft&#305;r.</p></td>
+          </tr>
+        </table>
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">2</span></td>
+            <td><p class="ko-txt">Teklif yukar&#305;da belirtilen s&#252;reyle (Son Ge&#231;erlilik tarihi) ge&#231;erlidir. Fiyatlar ge&#231;erlilik s&#252;resinden sonra de&#287;i&#351;tirilebilir, g&#252;ncellenebilir.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">3</span></td>
+            <td><p class="ko-txt">S&#246;zle&#351;me ve fatura imza tarihindeki TCMB kuru ile T&#252;rk Liras&#305; olarak d&#252;zenlenmektedir. Fiyatlar global olarak t&#252;m yurtd&#305;&#351;&#305; ve yurti&#231;i m&#252;&#351;terilere sunuldu&#287;undan teklif USD veya TL para biriminde sunulabilmektedir.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">4</span></td>
+            <td><p class="ko-txt">&#304;lk al&#305;m indirimi m&#252;&#351;teriye ve projeye &#246;zel sunulmu&#351;tur. Fiyatlar s&#246;zle&#351;me s&#252;resince ge&#231;erlidir ve sonraki y&#305;llarda de&#287;i&#351;ebilir. Liste fiyatlar&#305;, indirim oranlar&#305; ve &#246;zel fiyatlarda enflasyon kaynakl&#305; de&#287;i&#351;iklik hakk&#305;m&#305;z sakl&#305;d&#305;r.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">5</span></td>
+            <td><p class="ko-txt">Teklife konu &#252;r&#252;nlerin detaylar&#305; ve taahh&#252;t edilen t&#252;m fonksiyonlar&#305; ilgili sayfada; ayr&#305;ca &#246;zet olarak <strong>datasheet</strong> ve kapsaml&#305; olarak <strong>specsheet</strong> i&#231;inde yer al&#305;r. (<a class="ko-link" href="https://servicecore.com.tr/datasheet">servicecore.com.tr/datasheet</a> &#183; <a class="ko-link" href="https://servicecore.com.tr/specsheet">servicecore.com.tr/specsheet</a>)</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">6</span></td>
+            <td><p class="ko-txt">Lisans kiralama s&#246;zle&#351;memiz ilgili ko&#351;ullarda tan&#305;ml&#305;d&#305;r ve teklif bu ko&#351;ullarda olu&#351;turulmu&#351;tur.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">7</span></td>
+            <td><p class="ko-txt">Teklifte yer alan <strong>destek hizmetleri</strong> ilgili ko&#351;ullara g&#246;re sunulur. (<a class="ko-link" href="https://servicecore.com.tr/destek">servicecore.com.tr/destek</a>)</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">8</span></td>
+            <td><p class="ko-txt">Teklifte yer alan <strong>kurulum ve implementasyon hizmetleri</strong> ilgili kapsamlarda sunulur. (<a class="ko-link" href="https://servicecore.com.tr/hizmetler/setup">servicecore.com.tr/hizmetler/setup</a>)</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">9</span></td>
+            <td><p class="ko-txt">Teklifin daha sa&#287;l&#305;kl&#305; olu&#351;turulmas&#305; ve en do&#287;ru ihtiya&#231; analizi i&#231;in <strong>analiz formu</strong> kullan&#305;labilir; bu formdaki sorular lisans ve hizmet ihtiya&#231;lar&#305;n&#305;n tespiti i&#231;in yeterlidir. Form, online toplant&#305;da birlikte doldurulduktan sonra en sa&#287;l&#305;kl&#305; tekliflendirme yap&#305;l&#305;r. (<a class="ko-link" href="https://servicecore.com.tr/analiz">servicecore.com.tr/analiz</a>)</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">10</span></td>
+            <td><p class="ko-txt">Talep &#252;zerine ve analiz formundaki cevaplara g&#246;re implementasyon, migration, entegrasyon ve &#246;zel ek geli&#351;tirmeler i&#231;in ek tekliflendirme yap&#305;labilir.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">11</span></td>
+            <td><p class="ko-txt">&#220;r&#252;n kullan&#305;m haklar&#305; y&#305;ll&#305;k, 3 y&#305;ll&#305;k vb. s&#252;relerde abonelik (subscription / kiralama) modeli ile sunulur.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">12</span></td>
+            <td><p class="ko-txt">Bu s&#252;relerde yap&#305;lan abonelik, &#252;r&#252;nle ilgili her t&#252;r bak&#305;m&#305; kapsar. T&#252;m bak&#305;m (d&#252;zeltici + &#252;retici standart roadmap yeni &#246;zellikleri ve bunlar&#305;n m&#252;&#351;teri ortam&#305;na y&#252;klenmesi) abonelik &#252;cretine dahildir.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">13</span></td>
+            <td><p class="ko-txt">Abonelik/Subscription modeli SaaS anlam&#305;na gelmez. &#220;r&#252;n abonelik olarak lisanslansa da kurulum m&#252;&#351;teri ortam&#305;na on-premises yap&#305;l&#305;r.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">14</span></td>
+            <td><p class="ko-txt">Lisans, y&#305;ll&#305;k bazda kullan&#305;m hakk&#305; olarak sisteme tan&#305;mlan&#305;r. Abonelik s&#252;resi sonunda yaz&#305;l&#305;m&#305;n &#231;al&#305;&#351;maya devam&#305; i&#231;in abonelik yenilenmelidir.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">15</span></td>
+            <td><p class="ko-txt">Lisanslama minimum 10 teknisyen ile ba&#351;lar. Hibrit/karma lisans m&#252;mk&#252;nd&#252;r (&#8220;X adet Standart + Y adet Add-on + Z adet Professional&#8221;); do&#287;ru kullan&#305;m analizi ile en tasarruflu modele ula&#351;&#305;l&#305;r. Hibrit lisanslamada Professional lisans, Standart lisans&#305;n %25&#8217;inden az olamaz.</p></td>
+          </tr>
+        </table>
+
+        <table class="ko-item avoid">
+          <tr>
+            <td class="ko-no"><span class="ko-num">16</span></td>
+            <td><p class="ko-txt">Lisanslama planlar&#305;n&#305;z&#305; bu g&#246;zle yeniden incelemenizde fayda olabilir.</p></td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+
+    <p class="ko-foot">Detayl&#305; s&#246;zle&#351;me &#351;artlar&#305; imzaya esas ana s&#246;zle&#351;mede (MSA) yer al&#305;r; yukar&#305;daki maddeler &#246;zet niteli&#287;indedir.</p>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 7 — REFERANSLAR (YENI)                                 -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Referanslar</p>
+    <h2 class="h2">T&#252;rkiye&#8217;nin lider kurumlar&#305;n&#305;n tercihi.</h2>
+    <p class="lead">Ba&#351;ar&#305;l&#305; m&#252;&#351;teri referanslar&#305;m&#305;z aras&#305;nda siz de yer al&#305;n. Servicecore&#8217;a g&#252;venen kurumlar&#305;n son kullan&#305;c&#305; say&#305;s&#305; 4M&#8217;i a&#351;m&#305;&#351;t&#305;r. A&#351;a&#287;&#305;da baz&#305; m&#252;&#351;teri referanslar&#305;m&#305;z yer almaktad&#305;r.</p>
+
+    <div class="spacer-m"></div>
+
+    <!-- KATEGORI 1 -->
+    <div class="avoid">
+      <p class="rf-subhead">ESM / ITSM / FSM / ITAM / EAM</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="rf-grid">
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/aksa.png" alt="AKSA" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/roketsan.png" alt="Roketsan" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/savunma.png" alt="T.C. Cumhurba&#351;kanl&#305;&#287;&#305; Savunma Sanayii Ba&#351;kanl&#305;&#287;&#305;" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/diyanet.png" alt="T.C. Cumhurba&#351;kanl&#305;&#287;&#305; Diyanet &#304;&#351;leri Ba&#351;kanl&#305;&#287;&#305;" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/toyota.png" alt="Toyota" /></td>
+      </tr>
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/boyner.png" alt="Boyner" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/kazanci.png" alt="Kazanc&#305; Holding" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/aydinli.png" alt="Ayd&#305;nl&#305;" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/misyon.png" alt="Misyon" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/qnb.png" alt="QNB" /></td>
+      </tr>
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/golden.png" alt="Golden Global Bank" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/asas.png" alt="ASA&#350;" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/uludag-enerji.png" alt="Ulada&#287; Enerji" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/alj.png" alt="ALJ Finans" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/turkishbank.png" alt="TurkishBank" /></td>
+      </tr>
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/aksa-jenerator.png" alt="AKSA Jenerat&#246;r" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/marport.png" alt="Marport" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/tgs.png" alt="TGS" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/turanlar.png" alt="Turanlar Group" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/is-factoring.png" alt="&#304;&#351; Faktoring" /></td>
+      </tr>
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/tatko.png" alt="Tatko" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/turkkep.png" alt="T&#252;rkKep" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/yesim.png" alt="Ye&#351;im" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/yildizlar-yatirim.png" alt="Y&#305;ld&#305;zlar Yat&#305;r&#305;m Holding" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/tci.png" alt="TCI Aircraft Interiors" /></td>
+      </tr>
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/hasel.png" alt="Hasel" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/saat-saat.png" alt="Saat&amp;Saat" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/aktas.png" alt="Ak-Ta&#351;" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/aytemiz.png" alt="Aytemiz Yat&#305;r&#305;m Bankas&#305;" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/almatext.png" alt="Almaxtex Tekstil" /></td>
+      </tr>
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/petro-yag.png" alt="Petroya&#287; Lubricants" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/integral-yatirim.png" alt="&#304;ntegral Yat&#305;r&#305;m" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/mefa.png" alt="MEFA Group" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/katilim-evim.png" alt="Kat&#305;l&#305;mevim" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/iktisat-katilim.png" alt="&#304;ktisat Kat&#305;l&#305;m Bankas&#305;" /></td>
+      </tr>
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/profen.png" alt="Profen" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/kuveyt-turk-yatirim.png" alt="Kuveytt&#252;rk Yat&#305;r&#305;m" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/tatcelik.png" alt="Tat&#231;elik" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/stablex.webp" alt="Stablex" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/tks.png" alt="T&#252;rk K&#305;z&#305;lay" /></td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+
+    <!-- KATEGORI 2 -->
+    <div class="avoid">
+      <p class="rf-subhead">CSM / Multi-CSM Service Integrators</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="rf-grid">
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/sabanci.png" alt="Sabanc&#305; DX" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/bulutistan.png" alt="Bulutistan" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/logo.png" alt="Logo Yaz&#305;l&#305;m" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/fino-tech.png" alt="Findex Tech" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/mayasoft.png" alt="Mayasoft" /></td>
+      </tr>
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/data-platform.png" alt="Data Platform" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/servicepark.png" alt="Servicepark" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/idea.png" alt="Idea" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/platin.png" alt="Platin" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/planet.png" alt="Planet" /></td>
+      </tr>
+      <tr>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/pure7.png" alt="Pure7" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/cozumtek.png" alt="&#199;&#246;z&#252;mtek" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/novus.png" alt="Novus" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/wildcats.png" alt="WildCats Teknoloji" /></td>
+        <td><img class="rf-logo" src="https://www.servicecore.com.tr/logos/tdt.png" alt="TDT Turkish Dijital Teknolojiler" /></td>
+      </tr>
+    </table>
+
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SAYFA 7B — REFERANSLAR / ONE CIKAN BASARI OYKULERI           -->
+  <!-- ============================================================ -->
+  <div class="sheet pb">
+
+    <p class="overline">Referanslar</p>
+    <h2 class="h2">&#214;ne &#231;&#305;kan ba&#351;ar&#305; &#246;yk&#252;leri.</h2>
+    <p class="lead">A&#351;a&#287;&#305;daki k&#305;sa vakalar, ServiceCore&#8217;un farkl&#305; sekt&#246;rlerde nas&#305;l de&#287;er &#252;retti&#287;ini &#246;zetler.</p>
+
+    <div class="spacer-m"></div>
+
+    <table class="rf-case-wrap">
+      <tr>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad avoid">
+            <p class="rf-case-name">Logo Yaz&#305;l&#305;m</p>
+            <p class="rf-case-desc">ERP yap&#305;s&#305; ile birlikte m&#252;&#351;terilerin sahas&#305;, yazarkasas&#305;, ofis ve IT altyap&#305;lar&#305;nda olu&#351;an ar&#305;za, talep ve de&#287;i&#351;ikliklerin t&#252;m s&#252;re&#231;leri ile y&#246;netilmesi ve operasyonlar&#305;n optimizasyonu sa&#287;lanmaktad&#305;r. Serviscore m&#252;&#351;terinin kendi m&#252;&#351;terilerine servis hizmeti sunma s&#252;recini u&#231;tan uca y&#246;netmesine olanak tan&#305;r.</p>
+          </div>
+        </td>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad avoid">
+            <p class="rf-case-name">Misyon</p>
+            <p class="rf-case-desc">Ek hizmet y&#246;netimi kapsam&#305;nda i&#351;letme ve y&#246;netim gereksinimleri do&#287;rultusunda ESM s&#252;re&#231;lerini y&#246;netmektedir. Finansman sekt&#246;r&#252;nde hizmet, talep ve ar&#305;za y&#246;netimi s&#252;re&#231;lerinin dijitalle&#351;tirilmesi ve operasyonel verimlili&#287;in art&#305;r&#305;lmas&#305; sa&#287;lanm&#305;&#351;t&#305;r.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad avoid">
+            <p class="rf-case-name">Sabanc&#305; DX</p>
+            <p class="rf-case-desc">Sabanc&#305; DX b&#252;nyesindeki kurumsal BT destek s&#252;re&#231;lerinin verimli y&#246;netimi i&#231;in ITSM platformu kullan&#305;lmaktad&#305;r. &#199;a&#287;r&#305; y&#246;netimi, Hizmet Seviyesi takibi ve raporlama gibi kritik alanlar entegre bi&#231;imde y&#252;r&#252;t&#252;lmektedir.</p>
+          </div>
+        </td>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad avoid">
+            <p class="rf-case-name">Boyner</p>
+            <p class="rf-case-desc">Boyner&#8217;in 120+ perakende ma&#287;azas&#305; olan Servicecore ITSM ile donan&#305;m, yaz&#305;l&#305;m ve altyap&#305; taleplerinin merkezi y&#246;netimini sa&#287;lamaktad&#305;r. Hizmet Seviyesi tabanl&#305; &#231;a&#287;r&#305; y&#246;netimi ve operasyonel raporlama s&#252;re&#231;leri etkin bi&#231;imde y&#252;r&#252;t&#252;lmektedir.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad avoid">
+            <p class="rf-case-name">Aksa</p>
+            <p class="rf-case-desc">Holding &#351;irketlerinin tamam&#305; tek platformda Servicecore s&#252;re&#231;leriyle kullan&#305;lmakta; 16 mod&#252;l &#252;zerinden merkezi servis y&#246;netimi ile u&#231;tan uca t&#252;m BT s&#252;re&#231;leri otomatize edilerek kurumun t&#252;m operasyonlar&#305;n&#305;n y&#246;netimi sa&#287;lanm&#305;&#351;t&#305;r.</p>
+          </div>
+        </td>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad avoid">
+            <p class="rf-case-name">Roketsan</p>
+            <p class="rf-case-desc">Roketsan&#8217;&#305;n kurumsal IT destek s&#252;re&#231;lerinin etkili y&#246;netimi i&#231;in ITSM platformu kullan&#305;lmaktad&#305;r. &#199;a&#287;r&#305; y&#246;netimi, Hizmet Seviyesi takibi ve raporlama gibi kritik alanlar entegre bi&#231;imde y&#252;r&#252;t&#252;lmektedir.</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="spacer-m"></div>
+    <div class="callout-band avoid">
+      <p>Sekt&#246;r&#252;n&#252;ze en yak&#305;n referans&#305;m&#305;zla bir referans g&#246;r&#252;&#351;mesi ayarlayabiliriz.</p>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- ============ CALISAN FOOTER ============ -->
+<section id="footer-container">
+<div id="pdfgen-footer">
+  <table class="run">
+    <tr><td class="hairline" colspan="2"></td></tr>
+    <tr>
+      <td align="left" style="padding-top:8px;">${Organization.Organization Name} &#183; ${Organization.Phone} &#183; sales@servicecore.app</td>
+      <td align="right" style="padding-top:8px;">
+        <table><tr>
+          <td valign="middle" style="font-size:10px; color:#64748B;">Sayfa <span class="pageNumber"></span> / <span class="totalPage"></span></td>
+          <td valign="middle" style="padding-left:8px;"><img class="hexglyph" src="https://www.servicecore.com.tr/teklif/logo.png" alt="ServiceCore" /></td>
+        </tr></table>
+      </td>
+    </tr>
+  </table>
+</div>
+</section>
+
+</body>
+</html>
