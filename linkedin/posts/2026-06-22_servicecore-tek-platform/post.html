@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
+  /* brand/tokens.json */
+  :root{
+    --surface-base:#010E21;
+    --surface-elevated:#021330;
+    --primary:#0070F3;
+    --accent-sky:#38BDF8;
+    --secondary:#10B981;
+    --purple:#A855F7;
+    --text-primary:#FFFFFF;
+    --text-secondary:#94A3B8;
+    --text-muted:#64748B;
+    --border-default:rgba(255,255,255,0.10);
+    --border-subtle:rgba(255,255,255,0.05);
+    --glass:rgba(255,255,255,0.05);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ background:#0a1426; }
+
+  .card{
+    position:relative;
+    width:1200px; height:1200px;
+    overflow:hidden;
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    color:var(--text-primary);
+    background:var(--surface-base);
+  }
+
+  /* arka plan: mesh glow'lar + grid */
+  .glow-blue{ position:absolute; width:900px; height:900px; left:50%; top:-300px; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(0,112,243,0.22), transparent 65%); filter:blur(110px); }
+  .glow-emerald{ position:absolute; width:560px; height:560px; left:-200px; bottom:-180px;
+    background:radial-gradient(circle, rgba(16,185,129,0.10), transparent 62%); filter:blur(120px); }
+  .glow-purple{ position:absolute; width:520px; height:520px; right:-180px; bottom:-160px;
+    background:radial-gradient(circle, rgba(168,85,247,0.12), transparent 62%); filter:blur(110px); }
+  .grid-pattern{ position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+    background-size:48px 48px;
+    opacity:0.05;
+    -webkit-mask-image:radial-gradient(900px 760px at 50% 42%, #000 0%, transparent 78%);
+            mask-image:radial-gradient(900px 760px at 50% 42%, #000 0%, transparent 78%);
+  }
+
+  /* dev background watermark — "tek omurga" omurga cizgisi */
+  .spine{ position:absolute; left:50%; top:300px; bottom:300px; width:2px; transform:translateX(-50%);
+    background:linear-gradient(to bottom, transparent, rgba(56,189,248,0.45), rgba(0,112,243,0.10), transparent);
+    z-index:1; }
+  .spine::before,.spine::after{ content:""; position:absolute; left:50%; transform:translate(-50%,-50%);
+    width:11px; height:11px; border-radius:50%; background:var(--accent-sky);
+    box-shadow:0 0 16px 3px rgba(56,189,248,0.6); }
+  .spine::before{ top:0; }
+  .spine::after{ top:100%; background:var(--primary); box-shadow:0 0 16px 3px rgba(0,112,243,0.6); }
+
+  .frame{ position:absolute; inset:0; padding:96px 96px 72px; display:flex; flex-direction:column; align-items:center; z-index:3; }
+
+  /* eyebrow */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:13px;
+    background:var(--glass); border:1px solid var(--border-default); border-radius:9999px;
+    padding:13px 26px; font-weight:600; font-size:19px; letter-spacing:.28em; text-transform:uppercase;
+    color:#CBD5E1;
+  }
+  .eyebrow .dot{ width:10px; height:10px; border-radius:50%;
+    background:var(--secondary); box-shadow:0 0 0 5px rgba(16,185,129,0.20); }
+
+  /* hero: ortada manifesto */
+  .hero{ margin:auto 0; display:flex; flex-direction:column; align-items:center; text-align:center; }
+  .hero h1{ font-weight:700; font-size:108px; line-height:1.02; letter-spacing:-0.035em; }
+  .hero h1 .grad{
+    background:linear-gradient(105deg, #0070F3 0%, #38BDF8 55%, #A855F7 120%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero p.sub{ margin:34px auto 0; font-size:30px; font-weight:300; color:var(--text-secondary);
+    max-width:880px; line-height:1.48; }
+
+  /* stat chips */
+  .stats{ margin-top:54px; display:flex; align-items:center; gap:18px; }
+  .stat{
+    display:inline-flex; align-items:center; gap:11px;
+    background:rgba(255,255,255,0.04); border:1px solid var(--border-default); border-radius:16px;
+    padding:16px 24px; backdrop-filter:blur(10px);
+  }
+  .stat b{ font-size:25px; font-weight:700; letter-spacing:-0.02em; color:#fff; }
+  .stat .lbl{ font-size:19px; font-weight:400; color:var(--text-secondary); }
+  .stat .pip{ width:9px; height:9px; border-radius:50%; }
+  .pip-blue{ background:var(--primary); box-shadow:0 0 10px 1px rgba(0,112,243,0.6); }
+  .pip-sky{ background:var(--accent-sky); box-shadow:0 0 10px 1px rgba(56,189,248,0.6); }
+  .pip-emerald{ background:var(--secondary); box-shadow:0 0 10px 1px rgba(16,185,129,0.6); }
+
+  /* CTA pill */
+  .cta{ margin-top:46px; display:inline-flex; align-items:center; gap:14px;
+    background:linear-gradient(180deg, #0A84FF, #0060D0);
+    border:1px solid rgba(56,189,248,0.55); border-radius:9999px;
+    padding:19px 38px; font-size:24px; font-weight:600; letter-spacing:-0.01em; color:#fff;
+    box-shadow:0 0 50px -12px rgba(0,112,243,0.8), inset 0 1px 0 rgba(255,255,255,0.25); }
+  .cta .arrow{ font-size:24px; }
+
+  /* footer */
+  .foot{ margin-top:auto; width:100%; }
+  .foot .sep{ height:1px; width:100%;
+    background:linear-gradient(to right, transparent, rgba(255,255,255,0.20), transparent); }
+  .foot .row{ display:flex; align-items:center; justify-content:space-between; padding-top:32px; }
+  .sc-lockup{ display:flex; align-items:center; gap:13px; }
+  .sc-lockup svg{ height:38px; width:auto; }
+  .sc-word{ font-weight:700; font-size:30px; letter-spacing:-0.02em; color:#fff; }
+  .sc-word .c{ color:var(--accent-sky); }
+  .foot .url{ font-size:23px; font-weight:500; color:var(--text-secondary); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-blue"></div>
+    <div class="glow-emerald"></div>
+    <div class="glow-purple"></div>
+    <div class="grid-pattern"></div>
+    <div class="spine"></div>
+
+    <div class="frame">
+      <span class="eyebrow"><span class="dot"></span>Tek Platform</span>
+
+      <div class="hero">
+        <h1>ITSM ve proje yönetimi,<br/><span class="grad">tek omurgada.</span></h1>
+        <p class="sub">Servis masası, varlıklar ve projeler — ITIL 4 uyumlu süreçlerle
+        ayrı araçlarda değil, tek platformda birlikte çalışır.</p>
+
+        <div class="stats">
+          <span class="stat"><span class="pip pip-blue"></span><b>24+</b><span class="lbl">modül</span></span>
+          <span class="stat"><span class="pip pip-sky"></span><b>600.000+</b><span class="lbl">kullanıcı</span></span>
+          <span class="stat"><span class="pip pip-emerald"></span><b>25 yıl</b><span class="lbl">ITSM deneyimi</span></span>
+        </div>
+
+        <div class="cta">Demo İste <span class="arrow">→</span></div>
+      </div>
+
+      <div class="foot">
+        <div class="sep"></div>
+        <div class="row">
+          <div class="sc-lockup">
+            <svg viewBox="0 0 20.033 19.821" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M 9.152 8.429 L 12.009 8.43 L 14.865 3.266 L 11.182 6.594 Z M 13.143 9.949 L 13.731 11.012 L 20.033 11.012 L 15.601 3 L 12.45 8.696 Z M 9.152 14.125 L 6 19.821 L 15.159 19.821 L 12.009 14.125 Z M 20.033 11.543 L 13.731 11.543 L 13.09 12.701 L 12.45 13.859 L 15.601 19.555 Z" fill="#FFFFFF"/>
+              <path d="M 7.583 5.962 L 4.432 0.266 L 0 8.277 L 6.302 8.277 Z M 8.025 11.391 L 5.168 16.553 L 10.882 11.391 Z M 7.583 11.125 L 6.302 8.809 L 0 8.809 L 4.433 16.819 Z M 10.882 5.696 L 14.033 0 L 4.874 0 L 8.023 5.695 Z" fill="#38BDF8"/>
+            </svg>
+            <span class="sc-word">Service<span class="c">Core</span></span>
+          </div>
+          <div class="url">servicecore.com.tr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

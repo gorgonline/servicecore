@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
+  /* brand/tokens.json */
+  :root{
+    --surface-base:#010E21;
+    --surface-elevated:#021330;
+    --primary:#0070F3;
+    --accent-sky:#38BDF8;
+    --secondary:#10B981;
+    --purple:#A855F7;
+    --text-primary:#FFFFFF;
+    --text-secondary:#94A3B8;
+    --text-muted:#64748B;
+    --border-default:rgba(255,255,255,0.10);
+    --border-subtle:rgba(255,255,255,0.05);
+    --glass:rgba(255,255,255,0.05);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ background:#0a1426; }
+
+  .card{
+    position:relative;
+    width:1200px; height:1200px;
+    overflow:hidden;
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    color:var(--text-primary);
+    background:var(--surface-base);
+  }
+
+  /* arka plan: mesh glow'lar + grid */
+  .glow-blue{ position:absolute; width:900px; height:760px; left:50%; top:-280px; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(0,112,243,0.20), transparent 65%); filter:blur(110px); }
+  .glow-emerald{ position:absolute; width:520px; height:520px; left:-200px; bottom:-160px;
+    background:radial-gradient(circle, rgba(16,185,129,0.10), transparent 62%); filter:blur(120px); }
+  .glow-purple{ position:absolute; width:520px; height:520px; right:-180px; bottom:-160px;
+    background:radial-gradient(circle, rgba(168,85,247,0.12), transparent 62%); filter:blur(110px); }
+  .grid-pattern{ position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+    background-size:48px 48px;
+    opacity:0.04;
+    -webkit-mask-image:radial-gradient(900px 800px at 50% 30%, #000 0%, transparent 80%);
+            mask-image:radial-gradient(900px 800px at 50% 30%, #000 0%, transparent 80%);
+  }
+
+  .frame{ position:absolute; inset:0; padding:80px 80px 64px; display:flex; flex-direction:column; z-index:3; }
+
+  /* eyebrow */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:11px;
+    background:var(--glass); border:1px solid var(--border-default); border-radius:9999px;
+    padding:11px 22px; font-weight:600; font-size:16px; letter-spacing:.26em; text-transform:uppercase;
+    color:#CBD5E1; align-self:flex-start;
+  }
+  .eyebrow .dot{ width:9px; height:9px; border-radius:50%;
+    background:var(--accent-sky); box-shadow:0 0 0 4px rgba(56,189,248,0.18); }
+
+  /* baslik */
+  .head{ margin-top:30px; }
+  .head h1{ font-weight:700; font-size:92px; line-height:1.0; letter-spacing:-0.035em; }
+  .head h1 .grad{ background:linear-gradient(100deg,#38BDF8,#0070F3); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .head p.sub{ margin-top:26px; font-size:29px; font-weight:300; color:var(--text-secondary); max-width:1000px; line-height:1.5; }
+  .head p.sub b{ color:#E2E8F0; font-weight:500; }
+
+  /* karsilastirma alani */
+  .compare{ margin-top:44px; flex:1; display:grid; grid-template-columns:1fr auto 1fr; align-items:stretch; gap:30px; }
+
+  .panel{ position:relative; border-radius:22px; overflow:hidden; display:flex; flex-direction:column;
+    border:1px solid var(--border-subtle); background:linear-gradient(180deg,#04142F,#020E22); }
+  .panel .ph{ display:flex; align-items:center; gap:11px; padding:20px 24px; border-bottom:1px solid var(--border-subtle); }
+  .panel .ph .ic{ width:11px; height:11px; border-radius:3px; }
+  .panel .ph .ttl{ font-size:16px; font-weight:600; color:#E2E8F0; letter-spacing:.01em; }
+  .panel .ph .tag{ margin-left:auto; font-size:12.5px; font-weight:600; padding:4px 11px; border-radius:7px; letter-spacing:.02em; }
+
+  /* sol: yogun ticket metni silueti */
+  .raw .ph .ic{ background:var(--text-muted); }
+  .raw .ph .tag{ background:rgba(255,255,255,0.06); color:var(--text-secondary); }
+  .raw .body{ padding:22px 24px; display:flex; flex-direction:column; gap:13px; overflow:hidden;
+    -webkit-mask-image:linear-gradient(to bottom, #000 72%, transparent 100%);
+            mask-image:linear-gradient(to bottom, #000 72%, transparent 100%); }
+  .msg{ display:flex; flex-direction:column; gap:7px; }
+  .msg .who{ font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); }
+  .ln{ height:11px; border-radius:5px; background:rgba(148,163,184,0.16); }
+  .ln.u{ background:rgba(56,189,248,0.14); }
+  .timepill{ position:absolute; right:20px; bottom:18px; display:inline-flex; align-items:center; gap:8px;
+    background:rgba(239,68,68,0.10); border:1px solid rgba(239,68,68,0.28); border-radius:9999px;
+    padding:8px 15px; font-size:14px; font-weight:600; color:#F8A3A3; }
+  .timepill .ck{ width:7px; height:7px; border-radius:50%; background:#EF4444; box-shadow:0 0 8px 1px rgba(239,68,68,0.6); }
+
+  /* orta ok */
+  .arrowcol{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+  .arrowcol .ai{ width:64px; height:64px; border-radius:18px; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(150deg,#0070F3,#38BDF8); box-shadow:0 0 34px -4px rgba(0,112,243,0.7), inset 0 1px 0 rgba(255,255,255,0.25); }
+  .arrowcol .ai svg{ width:34px; height:34px; }
+  .arrowcol .ar{ font-size:46px; font-weight:300; color:var(--accent-sky); line-height:1; }
+  .arrowcol .al{ font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); text-align:center; }
+
+  /* sag: kisa 3 satir ozet */
+  .sum{ border-color:rgba(56,189,248,0.22);
+    box-shadow:0 40px 110px -34px rgba(0,112,243,0.5), inset 0 1px 0 rgba(255,255,255,0.05); }
+  .sum .ph .ic{ background:var(--secondary); box-shadow:0 0 10px 1px rgba(16,185,129,0.6); }
+  .sum .ph .tag{ background:rgba(16,185,129,0.14); color:#6EE3BE; }
+  .sum .body{ padding:30px 28px; display:flex; flex-direction:column; gap:20px; flex:1; }
+  .srow{ display:flex; gap:16px; align-items:flex-start; }
+  .srow .k{ flex:none; width:120px; font-size:15px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-sky); padding-top:3px; }
+  .srow .v{ font-size:23px; font-weight:400; color:#EAF1FA; line-height:1.4; }
+  .srow + .srow{ border-top:1px solid var(--border-subtle); padding-top:20px; }
+  .sum .stamp{ margin-top:auto; display:inline-flex; align-items:center; gap:9px; align-self:flex-start;
+    background:rgba(16,185,129,0.10); border:1px solid rgba(16,185,129,0.28); border-radius:9999px;
+    padding:9px 16px; font-size:15px; font-weight:600; color:#6EE3BE; }
+  .sum .stamp .ck{ width:7px; height:7px; border-radius:50%; background:var(--secondary); box-shadow:0 0 8px 1px rgba(16,185,129,0.6); }
+
+  /* page indicator + footer satiri */
+  .botrow{ margin-top:40px; display:flex; align-items:center; justify-content:space-between; }
+  .pageind{ display:inline-flex; align-items:center; gap:14px; }
+  .pageind .dots{ display:flex; align-items:center; gap:9px; }
+  .pageind .dots i{ width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.18); }
+  .pageind .dots i.on{ width:26px; border-radius:9999px;
+    background:linear-gradient(90deg,#0070F3,#38BDF8); box-shadow:0 0 12px -1px rgba(56,189,248,0.6); }
+  .pageind .num{ font-size:18px; font-weight:600; letter-spacing:.06em; color:var(--text-muted); }
+  .pageind .num b{ color:#fff; font-weight:600; }
+
+  .sc-lockup{ display:flex; align-items:center; gap:12px; }
+  .sc-lockup svg{ height:34px; width:auto; }
+  .sc-word{ font-weight:700; font-size:27px; letter-spacing:-0.02em; color:#fff; }
+  .sc-word .c{ color:var(--accent-sky); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-blue"></div>
+    <div class="glow-emerald"></div>
+    <div class="glow-purple"></div>
+    <div class="grid-pattern"></div>
+
+    <div class="frame">
+      <span class="eyebrow"><span class="dot"></span>AICore · SolveCoreAI</span>
+
+      <div class="head">
+        <h1>30 dakika <span class="grad">→ 30 saniye.</span></h1>
+        <p class="sub">Bir destek talebi açıldığında SolveCoreAI talebi <b>30 saniyede</b> özetler:
+        durum, denenenler, son nokta. Teknisyen yazışmayı baştan okumaz.</p>
+      </div>
+
+      <div class="compare">
+        <!-- sol: ham yazisma -->
+        <div class="panel raw">
+          <div class="ph"><span class="ic"></span><span class="ttl">Talep yazışması</span><span class="tag">42 mesaj</span></div>
+          <div class="body">
+            <div class="msg"><span class="who">Kullanıcı</span>
+              <span class="ln u" style="width:96%"></span><span class="ln u" style="width:88%"></span><span class="ln u" style="width:64%"></span>
+            </div>
+            <div class="msg"><span class="who">Teknisyen</span>
+              <span class="ln" style="width:92%"></span><span class="ln" style="width:78%"></span>
+            </div>
+            <div class="msg"><span class="who">Kullanıcı</span>
+              <span class="ln u" style="width:90%"></span><span class="ln u" style="width:96%"></span><span class="ln u" style="width:70%"></span>
+            </div>
+            <div class="msg"><span class="who">Teknisyen</span>
+              <span class="ln" style="width:84%"></span><span class="ln" style="width:90%"></span><span class="ln" style="width:58%"></span>
+            </div>
+            <div class="msg"><span class="who">Kullanıcı</span>
+              <span class="ln u" style="width:94%"></span><span class="ln u" style="width:72%"></span>
+            </div>
+          </div>
+          <span class="timepill"><span class="ck"></span>~30 dk okuma</span>
+        </div>
+
+        <!-- orta ok -->
+        <div class="arrowcol">
+          <span class="ai">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.2 5.2L19.5 10l-5.3 1.8L12 17l-2.2-5.2L4.5 10l5.3-1.8L12 3z" fill="#fff"/><path d="M18.5 14.5l1 2.3 2.3 1-2.3 1-1 2.3-1-2.3-2.3-1 2.3-1 1-2.3z" fill="#fff" opacity="0.85"/></svg>
+          </span>
+          <span class="ar">→</span>
+          <span class="al">SolveCoreAI<br/>özetler</span>
+        </div>
+
+        <!-- sag: ozet -->
+        <div class="panel sum">
+          <div class="ph"><span class="ic"></span><span class="ttl">AI özeti</span><span class="tag">3 satır</span></div>
+          <div class="body">
+            <div class="srow"><span class="k">Durum</span><span class="v">Kullanıcı VPN'e bağlanamıyor; oturum açma 809 hatası.</span></div>
+            <div class="srow"><span class="k">Denenenler</span><span class="v">İstemci yeniden kuruldu, sertifika yenilendi — sonuç değişmedi.</span></div>
+            <div class="srow"><span class="k">Son nokta</span><span class="v">Ağ geçidi politikası kontrolü bekliyor; sahip atandı.</span></div>
+            <span class="stamp"><span class="ck"></span>Kaynak: talep geçmişi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="botrow">
+        <span class="pageind">
+          <span class="dots"><i></i><i class="on"></i><i></i><i></i></span>
+          <span class="num"><b>2</b> / 4</span>
+        </span>
+        <div class="sc-lockup">
+          <svg viewBox="0 0 20.033 19.821" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <path d="M 9.152 8.429 L 12.009 8.43 L 14.865 3.266 L 11.182 6.594 Z M 13.143 9.949 L 13.731 11.012 L 20.033 11.012 L 15.601 3 L 12.45 8.696 Z M 9.152 14.125 L 6 19.821 L 15.159 19.821 L 12.009 14.125 Z M 20.033 11.543 L 13.731 11.543 L 13.09 12.701 L 12.45 13.859 L 15.601 19.555 Z" fill="#FFFFFF"/>
+            <path d="M 7.583 5.962 L 4.432 0.266 L 0 8.277 L 6.302 8.277 Z M 8.025 11.391 L 5.168 16.553 L 10.882 11.391 Z M 7.583 11.125 L 6.302 8.809 L 0 8.809 L 4.433 16.819 Z M 10.882 5.696 L 14.033 0 L 4.874 0 L 8.023 5.695 Z" fill="#38BDF8"/>
+          </svg>
+          <span class="sc-word">Service<span class="c">Core</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

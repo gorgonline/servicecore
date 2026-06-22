@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
+  /* brand/tokens.json */
+  :root{
+    --surface-base:#010E21;
+    --surface-elevated:#021330;
+    --primary:#0070F3;
+    --accent-sky:#38BDF8;
+    --secondary:#10B981;
+    --purple:#A855F7;
+    --text-primary:#FFFFFF;
+    --text-secondary:#94A3B8;
+    --text-muted:#64748B;
+    --border-default:rgba(255,255,255,0.10);
+    --border-subtle:rgba(255,255,255,0.05);
+    --glass:rgba(255,255,255,0.05);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ background:#0a1426; }
+
+  .card{
+    position:relative;
+    width:1200px; height:1200px;
+    overflow:hidden;
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    color:var(--text-primary);
+    background:var(--surface-base);
+  }
+
+  /* background: mesh-vari glow'lar + grid */
+  .glow-blue{ position:absolute; width:800px; height:800px; left:50%; top:-340px; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(0,112,243,0.20), transparent 65%); filter:blur(100px); }
+  .glow-emerald{ position:absolute; width:600px; height:600px; left:-220px; bottom:-200px;
+    background:radial-gradient(circle, rgba(16,185,129,0.10), transparent 62%); filter:blur(120px); }
+  .glow-purple{ position:absolute; width:500px; height:500px; right:-180px; bottom:-140px;
+    background:radial-gradient(circle, rgba(168,85,247,0.10), transparent 62%); filter:blur(100px); }
+  .grid-pattern{ position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+    background-size:40px 40px;
+    opacity:0.04;
+    -webkit-mask-image:radial-gradient(900px 900px at 50% 35%, #000 0%, transparent 80%);
+            mask-image:radial-gradient(900px 900px at 50% 35%, #000 0%, transparent 80%);
+  }
+
+  .frame{ position:absolute; inset:0; padding:84px 80px 64px; display:flex; flex-direction:column; align-items:center; z-index:2; }
+
+  /* eyebrow badge */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:12px;
+    background:var(--glass); border:1px solid var(--border-default); border-radius:9999px;
+    padding:12px 24px; font-weight:600; font-size:18px; letter-spacing:.2em; text-transform:uppercase;
+    color:#CBD5E1;
+  }
+  .eyebrow .dot{ width:10px; height:10px; border-radius:50%;
+    background:var(--secondary); box-shadow:0 0 0 5px rgba(16,185,129,0.20); }
+
+  /* headline */
+  .head{ text-align:center; margin-top:30px; }
+  .head h1{ font-weight:700; font-size:70px; line-height:1.08; letter-spacing:-0.025em; }
+  .head h1 .grad{
+    background:linear-gradient(to right, #0070F3, #38BDF8);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .head p.sub{ margin:18px auto 0; font-size:23px; font-weight:300; color:var(--text-secondary);
+    max-width:880px; line-height:1.5; }
+
+  /* partner cards */
+  .partners{ margin-top:44px; display:flex; align-items:stretch; gap:0; width:100%; justify-content:center; }
+  .pcard{
+    width:330px;
+    background:var(--glass); border:1px solid var(--border-default); border-radius:24px;
+    padding:28px 26px; display:flex; flex-direction:column; align-items:center; text-align:center;
+    backdrop-filter:blur(12px);
+  }
+  .pcard .logo-chip{
+    width:100%; height:100px; background:#FFFFFF; border-radius:16px;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 30px -10px rgba(0,112,243,0.25);
+  }
+  .pcard .logo-chip img.lg-bulutistan{ height:72px; width:auto; }
+  .pcard .logo-chip img.lg-skymod{ height:46px; width:auto; }
+  .pcard h3{ margin-top:22px; font-size:25px; font-weight:600; letter-spacing:-0.025em; }
+  .pcard p{ margin-top:10px; font-size:16.5px; font-weight:300; color:var(--text-secondary); line-height:1.5; }
+  .pcard .tag{ margin-top:auto; padding-top:18px; }
+  .pcard .tag span{
+    display:inline-block; padding:7px 16px; border-radius:9999px;
+    font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase;
+  }
+  .t-sky{ background:rgba(56,189,248,0.10); color:#7DD3FC; border:1px solid rgba(56,189,248,0.30); }
+  .t-blue{ background:rgba(0,112,243,0.15); color:#60A5FA; border:1px solid rgba(0,112,243,0.50); }
+  .t-purple{ background:rgba(168,85,247,0.10); color:#C084FC; border:1px solid rgba(168,85,247,0.30); }
+
+  /* connectors between cards */
+  .plus{
+    align-self:center; width:56px; height:56px; flex:0 0 auto; margin:0 14px;
+    border-radius:50%; background:var(--surface-elevated); border:1px solid var(--border-default);
+    display:flex; align-items:center; justify-content:center;
+    font-size:30px; font-weight:500; color:var(--accent-sky);
+    box-shadow:0 0 20px -5px rgba(0,112,243,0.50);
+  }
+
+  /* ServiceCore card vurgusu */
+  .pcard.featured{ border-color:rgba(0,112,243,0.50); box-shadow:0 0 80px -20px rgba(0,112,243,0.30); }
+
+  .sc-lockup{ display:flex; align-items:center; gap:10px; }
+  .sc-lockup svg{ height:33px; width:auto; }
+  .sc-word{ font-weight:700; font-size:24px; letter-spacing:-0.02em; color:#0b1736; }
+  .sc-word .c{ color:#0070F3; }
+
+  /* AI amblemi */
+  .ai-zone{ position:relative; margin-top:6px; display:flex; flex-direction:column; align-items:center; }
+  .ai-links{ display:block; }
+  .ai-chip{
+    position:relative; z-index:2;
+    width:128px; height:128px; border-radius:28px;
+    background:linear-gradient(160deg, #021330, #010915);
+    border:1px solid rgba(0,112,243,0.50);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 40px rgba(0,112,243,0.50), inset 0 0 30px rgba(0,112,243,0.15);
+  }
+  .ai-chip span{
+    font-size:62px; font-weight:800; letter-spacing:-0.02em; line-height:1;
+    background:linear-gradient(135deg, #60A5FA, #38BDF8 45%, #C084FC);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 0 14px rgba(56,189,248,0.45));
+  }
+  .ai-rings{ position:relative; z-index:1; margin-top:-22px; width:420px; height:64px; }
+  .ai-rings i{ position:absolute; left:50%; transform:translateX(-50%); border-radius:50%;
+    border:1px solid rgba(56,189,248,0.25); }
+  .ai-rings i:nth-child(1){ width:260px; height:44px; top:8px; border-color:rgba(0,112,243,0.40); }
+  .ai-rings i:nth-child(2){ width:400px; height:62px; top:0; }
+  .ai-rings::after{ content:""; position:absolute; left:50%; top:6px; transform:translateX(-50%);
+    width:280px; height:50px; border-radius:50%;
+    background:radial-gradient(ellipse, rgba(0,112,243,0.30), transparent 70%); filter:blur(10px); }
+
+  /* footer */
+  .foot{ margin-top:auto; width:100%; }
+  .foot .sep{ height:1px; width:100%;
+    background:linear-gradient(to right, transparent, rgba(255,255,255,0.20), transparent); }
+  .foot .row{ display:flex; align-items:center; justify-content:space-between; padding-top:28px; }
+  .foot .l{ font-size:20px; font-weight:600; color:var(--text-primary); letter-spacing:-0.01em; }
+  .foot .l span{ color:var(--text-muted); font-weight:400; }
+  .foot .r{ font-size:19px; font-weight:500; color:var(--text-secondary); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-blue"></div>
+    <div class="glow-emerald"></div>
+    <div class="glow-purple"></div>
+    <div class="grid-pattern"></div>
+
+    <div class="frame">
+      <span class="eyebrow"><span class="dot"></span>Stratejik İş Birliği</span>
+
+      <div class="head">
+        <h1>Güçlerimizi<br/><span class="grad">birleştirdik.</span></h1>
+        <p class="sub">Bulut altyapısı, servis yönetimi ve yapay zekâ ajanları —
+        kurumsal ITSM süreçlerinde uçtan uca akıllı dönüşüm artık tek çatı altında.</p>
+      </div>
+
+      <div class="partners">
+        <div class="pcard">
+          <div class="logo-chip">
+            <img class="lg-bulutistan" src="bulutistan_logo.svg" alt="Bulutistan" />
+          </div>
+          <h3>Bulut &amp; LLM Altyapısı</h3>
+          <p>Kurumsal yapay zekânın üzerinde çalıştığı güvenli ve ölçeklenebilir bulut temeli</p>
+          <div class="tag"><span class="t-sky">Altyapı</span></div>
+        </div>
+
+        <div class="plus">+</div>
+
+        <div class="pcard featured">
+          <div class="logo-chip">
+            <div class="sc-lockup">
+              <svg viewBox="0 0 20.033 19.821" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <path d="M 9.152 8.429 L 12.009 8.43 L 14.865 3.266 L 11.182 6.594 Z M 13.143 9.949 L 13.731 11.012 L 20.033 11.012 L 15.601 3 L 12.45 8.696 Z M 9.152 14.125 L 6 19.821 L 15.159 19.821 L 12.009 14.125 Z M 20.033 11.543 L 13.731 11.543 L 13.09 12.701 L 12.45 13.859 L 15.601 19.555 Z" fill="#020E21"/>
+                <path d="M 7.583 5.962 L 4.432 0.266 L 0 8.277 L 6.302 8.277 Z M 8.025 11.391 L 5.168 16.553 L 10.882 11.391 Z M 7.583 11.125 L 6.302 8.809 L 0 8.809 L 4.433 16.819 Z M 10.882 5.696 L 14.033 0 L 4.874 0 L 8.023 5.695 Z" fill="#0F62FE"/>
+              </svg>
+              <span class="sc-word">Service<span class="c">Core</span></span>
+            </div>
+          </div>
+          <h3>ITSM Platformu</h3>
+          <p>ITIL 4 uyumlu süreçlerin uçtan uca yönetildiği kurumsal servis yönetimi platformu</p>
+          <div class="tag"><span class="t-blue">Platform</span></div>
+        </div>
+
+        <div class="plus">+</div>
+
+        <div class="pcard">
+          <div class="logo-chip">
+            <img class="lg-skymod" src="skymod-logo.webp" alt="Skymod" />
+          </div>
+          <h3>Yapay Zekâ &amp; Ajan Katmanı</h3>
+          <p>Servis süreçlerini hızlandıran akıllı asistanlar ve otonom yapay zekâ ajanları</p>
+          <div class="tag"><span class="t-purple">AI / Agent</span></div>
+        </div>
+      </div>
+
+      <div class="ai-zone">
+        <svg class="ai-links" width="1000" height="52" viewBox="0 0 1000 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="lk" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="rgba(0,112,243,0.05)"/>
+              <stop offset="1" stop-color="rgba(0,112,243,0.55)"/>
+            </linearGradient>
+          </defs>
+          <path d="M 86 6 C 86 38, 500 18, 500 52" stroke="url(#lk)" stroke-width="2"/>
+          <path d="M 500 6 L 500 52" stroke="url(#lk)" stroke-width="2"/>
+          <path d="M 914 6 C 914 38, 500 18, 500 52" stroke="url(#lk)" stroke-width="2"/>
+          <circle cx="86" cy="6" r="4" fill="#38BDF8"/>
+          <circle cx="500" cy="6" r="4" fill="#38BDF8"/>
+          <circle cx="914" cy="6" r="4" fill="#38BDF8"/>
+        </svg>
+        <div class="ai-chip"><span>AI</span></div>
+        <div class="ai-rings"><i></i><i></i></div>
+      </div>
+
+      <div class="foot">
+        <div class="sep"></div>
+        <div class="row">
+          <div class="l">ServiceCore <span>· Kurumsal Orkestrasyon Platformu</span></div>
+          <div class="r">servicecore.com.tr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

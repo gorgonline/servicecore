@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
+  /* brand/tokens.json */
+  :root{
+    --surface-base:#010E21;
+    --surface-elevated:#021330;
+    --primary:#0070F3;
+    --accent-sky:#38BDF8;
+    --secondary:#10B981;
+    --purple:#A855F7;
+    --text-primary:#FFFFFF;
+    --text-secondary:#94A3B8;
+    --text-muted:#64748B;
+    --border-default:rgba(255,255,255,0.10);
+    --border-subtle:rgba(255,255,255,0.05);
+    --glass:rgba(255,255,255,0.05);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ background:#0a1426; }
+
+  .card{
+    position:relative;
+    width:1200px; height:1200px;
+    overflow:hidden;
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    color:var(--text-primary);
+    background:var(--surface-base);
+  }
+
+  /* arka plan: mesh glow'lar + grid */
+  .glow-blue{ position:absolute; width:900px; height:900px; left:50%; top:-300px; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(0,112,243,0.22), transparent 65%); filter:blur(110px); }
+  .glow-emerald{ position:absolute; width:560px; height:560px; left:-200px; bottom:-180px;
+    background:radial-gradient(circle, rgba(16,185,129,0.10), transparent 62%); filter:blur(120px); }
+  .glow-purple{ position:absolute; width:520px; height:520px; right:-180px; bottom:-160px;
+    background:radial-gradient(circle, rgba(168,85,247,0.12), transparent 62%); filter:blur(110px); }
+  .grid-pattern{ position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+    background-size:48px 48px;
+    opacity:0.05;
+    -webkit-mask-image:radial-gradient(900px 800px at 50% 38%, #000 0%, transparent 80%);
+            mask-image:radial-gradient(900px 800px at 50% 38%, #000 0%, transparent 80%);
+  }
+
+  .frame{ position:absolute; inset:0; padding:96px 96px 72px; display:flex; flex-direction:column; align-items:center; z-index:3; }
+
+  /* eyebrow */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:13px;
+    background:var(--glass); border:1px solid var(--border-default); border-radius:9999px;
+    padding:13px 26px; font-weight:600; font-size:19px; letter-spacing:.28em; text-transform:uppercase;
+    color:#CBD5E1;
+  }
+  .eyebrow .dot{ width:10px; height:10px; border-radius:50%;
+    background:var(--accent-sky); box-shadow:0 0 0 5px rgba(56,189,248,0.20); }
+
+  /* soru basligi */
+  .ask{ margin-top:54px; text-align:center; }
+  .ask h1{ font-weight:700; font-size:66px; line-height:1.08; letter-spacing:-0.03em; max-width:920px; }
+  .ask h1 .grad{
+    background:linear-gradient(105deg, #0070F3 0%, #38BDF8 55%, #A855F7 120%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  /* secenekler */
+  .options{ margin-top:60px; width:100%; max-width:900px; display:flex; flex-direction:column; gap:22px; }
+  .opt{
+    display:flex; align-items:center; gap:26px;
+    background:rgba(255,255,255,0.035);
+    border:1px solid var(--border-default); border-radius:20px;
+    padding:26px 32px;
+    backdrop-filter:blur(10px);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.04);
+  }
+  .opt .badge{
+    flex:0 0 auto; width:58px; height:58px; border-radius:15px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:28px; font-weight:700; letter-spacing:-0.01em; color:#fff;
+  }
+  .b-blue{ background:linear-gradient(150deg,#0070F3,#38BDF8); box-shadow:0 0 22px -4px rgba(0,112,243,0.7); }
+  .b-sky{ background:linear-gradient(150deg,#38BDF8,#0EA5E9); box-shadow:0 0 22px -4px rgba(56,189,248,0.7); }
+  .b-emerald{ background:linear-gradient(150deg,#10B981,#34D399); box-shadow:0 0 22px -4px rgba(16,185,129,0.7); }
+  .b-purple{ background:linear-gradient(150deg,#A855F7,#C084FC); box-shadow:0 0 22px -4px rgba(168,85,247,0.7); }
+  .opt .label{ font-size:30px; font-weight:600; letter-spacing:-0.01em; color:#EAF1FA; }
+  .opt .label span{ font-size:22px; font-weight:400; color:var(--text-secondary); }
+  .opt .chev{ margin-left:auto; font-size:26px; color:var(--text-muted); }
+
+  /* ipucu */
+  .hint{ margin-top:48px; display:inline-flex; align-items:center; gap:13px;
+    background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.28); border-radius:9999px;
+    padding:16px 30px; font-size:24px; font-weight:500; color:#CFE9FB; }
+  .hint .pip{ width:10px; height:10px; border-radius:50%; background:var(--secondary);
+    box-shadow:0 0 10px 1px rgba(16,185,129,0.7); }
+
+  /* footer */
+  .foot{ margin-top:auto; width:100%; }
+  .foot .sep{ height:1px; width:100%;
+    background:linear-gradient(to right, transparent, rgba(255,255,255,0.20), transparent); }
+  .foot .row{ display:flex; align-items:center; justify-content:space-between; padding-top:32px; }
+  .sc-lockup{ display:flex; align-items:center; gap:13px; }
+  .sc-lockup svg{ height:38px; width:auto; }
+  .sc-word{ font-weight:700; font-size:30px; letter-spacing:-0.02em; color:#fff; }
+  .sc-word .c{ color:var(--accent-sky); }
+  .foot .url{ font-size:23px; font-weight:500; color:var(--text-secondary); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-blue"></div>
+    <div class="glow-emerald"></div>
+    <div class="glow-purple"></div>
+    <div class="grid-pattern"></div>
+
+    <div class="frame">
+      <span class="eyebrow"><span class="dot"></span>Soru</span>
+
+      <div class="ask">
+        <h1>BT ekibinizde en çok zaman çalan <span class="grad">süreç hangisi?</span></h1>
+      </div>
+
+      <div class="options">
+        <div class="opt">
+          <span class="badge b-blue">A</span>
+          <span class="label">Talep yönetimi <span>· Service Request</span></span>
+          <span class="chev">→</span>
+        </div>
+        <div class="opt">
+          <span class="badge b-sky">B</span>
+          <span class="label">Olay yönetimi <span>· Incident</span></span>
+          <span class="chev">→</span>
+        </div>
+        <div class="opt">
+          <span class="badge b-emerald">C</span>
+          <span class="label">Değişiklik yönetimi <span>· Change</span></span>
+          <span class="chev">→</span>
+        </div>
+        <div class="opt">
+          <span class="badge b-purple">D</span>
+          <span class="label">Varlık yönetimi <span>· CMDB</span></span>
+          <span class="chev">→</span>
+        </div>
+      </div>
+
+      <div class="hint"><span class="pip"></span>Yanıtını yorumda paylaş.</div>
+
+      <div class="foot">
+        <div class="sep"></div>
+        <div class="row">
+          <div class="sc-lockup">
+            <svg viewBox="0 0 20.033 19.821" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M 9.152 8.429 L 12.009 8.43 L 14.865 3.266 L 11.182 6.594 Z M 13.143 9.949 L 13.731 11.012 L 20.033 11.012 L 15.601 3 L 12.45 8.696 Z M 9.152 14.125 L 6 19.821 L 15.159 19.821 L 12.009 14.125 Z M 20.033 11.543 L 13.731 11.543 L 13.09 12.701 L 12.45 13.859 L 15.601 19.555 Z" fill="#FFFFFF"/>
+              <path d="M 7.583 5.962 L 4.432 0.266 L 0 8.277 L 6.302 8.277 Z M 8.025 11.391 L 5.168 16.553 L 10.882 11.391 Z M 7.583 11.125 L 6.302 8.809 L 0 8.809 L 4.433 16.819 Z M 10.882 5.696 L 14.033 0 L 4.874 0 L 8.023 5.695 Z" fill="#38BDF8"/>
+            </svg>
+            <span class="sc-word">Service<span class="c">Core</span></span>
+          </div>
+          <div class="url">servicecore.com.tr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

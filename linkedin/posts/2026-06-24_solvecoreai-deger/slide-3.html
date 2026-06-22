@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
+  /* brand/tokens.json */
+  :root{
+    --surface-base:#010E21;
+    --surface-elevated:#021330;
+    --primary:#0070F3;
+    --accent-sky:#38BDF8;
+    --secondary:#10B981;
+    --purple:#A855F7;
+    --text-primary:#FFFFFF;
+    --text-secondary:#94A3B8;
+    --text-muted:#64748B;
+    --border-default:rgba(255,255,255,0.10);
+    --border-subtle:rgba(255,255,255,0.05);
+    --glass:rgba(255,255,255,0.05);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ background:#0a1426; }
+
+  .card{
+    position:relative;
+    width:1200px; height:1200px;
+    overflow:hidden;
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    color:var(--text-primary);
+    background:var(--surface-base);
+  }
+
+  /* arka plan: mesh glow'lar + grid */
+  .glow-blue{ position:absolute; width:900px; height:760px; left:50%; top:-280px; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(0,112,243,0.20), transparent 65%); filter:blur(110px); }
+  .glow-emerald{ position:absolute; width:560px; height:560px; left:-200px; bottom:-160px;
+    background:radial-gradient(circle, rgba(16,185,129,0.12), transparent 62%); filter:blur(120px); }
+  .glow-purple{ position:absolute; width:520px; height:520px; right:-180px; bottom:-160px;
+    background:radial-gradient(circle, rgba(168,85,247,0.12), transparent 62%); filter:blur(110px); }
+  .grid-pattern{ position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+    background-size:48px 48px;
+    opacity:0.04;
+    -webkit-mask-image:radial-gradient(900px 800px at 50% 30%, #000 0%, transparent 80%);
+            mask-image:radial-gradient(900px 800px at 50% 30%, #000 0%, transparent 80%);
+  }
+
+  .frame{ position:absolute; inset:0; padding:80px 80px 64px; display:flex; flex-direction:column; z-index:3; }
+
+  /* eyebrow */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:11px;
+    background:var(--glass); border:1px solid var(--border-default); border-radius:9999px;
+    padding:11px 22px; font-weight:600; font-size:16px; letter-spacing:.26em; text-transform:uppercase;
+    color:#CBD5E1; align-self:flex-start;
+  }
+  .eyebrow .dot{ width:9px; height:9px; border-radius:50%;
+    background:var(--accent-sky); box-shadow:0 0 0 4px rgba(56,189,248,0.18); }
+
+  /* baslik */
+  .head{ margin-top:30px; }
+  .head h1{ font-weight:700; font-size:92px; line-height:1.0; letter-spacing:-0.035em; }
+  .head h1 .grad{ background:linear-gradient(100deg,#38BDF8,#10B981); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .head p.sub{ margin-top:26px; font-size:29px; font-weight:300; color:var(--text-secondary); max-width:1000px; line-height:1.5; }
+  .head p.sub b{ color:#E2E8F0; font-weight:500; }
+
+  /* oneri alani — ortalanmis kart yigini */
+  .stage{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; }
+
+  .suggest{ width:840px; border-radius:24px; overflow:hidden;
+    background:linear-gradient(180deg,#04142F,#020E22);
+    border:1px solid rgba(56,189,248,0.22);
+    box-shadow:0 44px 120px -34px rgba(0,112,243,0.5), inset 0 1px 0 rgba(255,255,255,0.05); }
+  .suggest .sh{ display:flex; align-items:center; gap:13px; padding:22px 28px; border-bottom:1px solid var(--border-subtle);
+    background:rgba(255,255,255,0.02); }
+  .suggest .sh .ai{ width:42px; height:42px; border-radius:12px; flex:none; display:flex; align-items:center; justify-content:center;
+    background:linear-gradient(150deg,#0070F3,#38BDF8); box-shadow:0 0 22px -3px rgba(0,112,243,0.6); }
+  .suggest .sh .ai svg{ width:22px; height:22px; }
+  .suggest .sh .who{ display:flex; flex-direction:column; gap:2px; }
+  .suggest .sh .who .nm{ font-size:18px; font-weight:600; color:#fff; letter-spacing:-0.01em; }
+  .suggest .sh .who .nm b{ color:var(--accent-sky); font-weight:600; }
+  .suggest .sh .who .role{ font-size:13.5px; color:var(--text-muted); }
+  .suggest .sh .conf{ margin-left:auto; display:inline-flex; align-items:center; gap:8px;
+    background:rgba(16,185,129,0.10); border:1px solid rgba(16,185,129,0.28); border-radius:9999px;
+    padding:7px 14px; font-size:13.5px; font-weight:600; color:#6EE3BE; }
+  .suggest .sh .conf .pip{ width:7px; height:7px; border-radius:50%; background:var(--secondary); box-shadow:0 0 8px 1px rgba(16,185,129,0.6); }
+
+  .suggest .sb{ padding:26px 28px 28px; }
+  .suggest .sb .lab{ font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--text-muted); }
+  .suggest .sb .rec{ margin-top:13px; font-size:27px; font-weight:400; line-height:1.42; color:#EAF1FA; }
+  .suggest .sb .rec b{ color:#fff; font-weight:600; }
+
+  /* kaynak rozeti — karta bagli */
+  .srclink{ display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .connector{ width:2px; height:30px; background:linear-gradient(to bottom, rgba(56,189,248,0.5), rgba(56,189,248,0.12)); }
+  .srcbadge{ display:inline-flex; align-items:center; gap:14px;
+    background:rgba(56,189,248,0.08); border:1px solid rgba(56,189,248,0.30); border-radius:16px;
+    padding:15px 22px; }
+  .srcbadge .ic{ width:34px; height:34px; border-radius:10px; flex:none; display:flex; align-items:center; justify-content:center;
+    background:rgba(56,189,248,0.14); }
+  .srcbadge .ic svg{ width:18px; height:18px; }
+  .srcbadge .tx{ display:flex; flex-direction:column; gap:2px; }
+  .srcbadge .tx .t{ font-size:14px; font-weight:600; color:#CFE9FB; letter-spacing:.02em; }
+  .srcbadge .tx .s{ font-size:13px; color:var(--text-secondary); }
+  .srcbadge .tx .s b{ color:#E2E8F0; font-weight:600; }
+  .srcbadge .arrow{ font-size:20px; color:var(--accent-sky); }
+
+  /* page indicator + footer satiri */
+  .botrow{ margin-top:36px; display:flex; align-items:center; justify-content:space-between; }
+  .pageind{ display:inline-flex; align-items:center; gap:14px; }
+  .pageind .dots{ display:flex; align-items:center; gap:9px; }
+  .pageind .dots i{ width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,0.18); }
+  .pageind .dots i.on{ width:26px; border-radius:9999px;
+    background:linear-gradient(90deg,#0070F3,#38BDF8); box-shadow:0 0 12px -1px rgba(56,189,248,0.6); }
+  .pageind .num{ font-size:18px; font-weight:600; letter-spacing:.06em; color:var(--text-muted); }
+  .pageind .num b{ color:#fff; font-weight:600; }
+
+  .sc-lockup{ display:flex; align-items:center; gap:12px; }
+  .sc-lockup svg{ height:34px; width:auto; }
+  .sc-word{ font-weight:700; font-size:27px; letter-spacing:-0.02em; color:#fff; }
+  .sc-word .c{ color:var(--accent-sky); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-blue"></div>
+    <div class="glow-emerald"></div>
+    <div class="glow-purple"></div>
+    <div class="grid-pattern"></div>
+
+    <div class="frame">
+      <span class="eyebrow"><span class="dot"></span>AICore · SolveCoreAI</span>
+
+      <div class="head">
+        <h1>Kara kutu değil, <span class="grad">cam kutu.</span></h1>
+        <p class="sub">Her öneri kaynağını gösterir. Emin değilse <b>uydurmaz</b>;
+        kararı insana bırakır.</p>
+      </div>
+
+      <div class="stage">
+        <div class="suggest">
+          <div class="sh">
+            <span class="ai">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l2.2 5.2L19.5 10l-5.3 1.8L12 17l-2.2-5.2L4.5 10l5.3-1.8L12 3z" fill="#fff"/></svg>
+            </span>
+            <span class="who">
+              <span class="nm">Solve<b>CoreAI</b> önerisi</span>
+              <span class="role">Olay çözüm asistanı</span>
+            </span>
+            <span class="conf"><span class="pip"></span>Güven: yüksek</span>
+          </div>
+          <div class="sb">
+            <span class="lab">Önerilen çözüm adımı</span>
+            <div class="rec">Ağ geçidi politikasında <b>istemci sertifikası doğrulamasını</b> yenileyin;
+            benzer vakada bu adım 809 hatasını kalıcı olarak giderdi.</div>
+          </div>
+        </div>
+
+        <div class="srclink">
+          <span class="connector"></span>
+          <span class="srcbadge">
+            <span class="ic">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M10.5 14.5a4 4 0 010-5.66l2-2a4 4 0 015.66 5.66l-1 1" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/><path d="M13.5 9.5a4 4 0 010 5.66l-2 2a4 4 0 01-5.66-5.66l1-1" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+            <span class="tx">
+              <span class="t">Kaynak: benzer vaka</span>
+              <span class="s">INC‑4821 · <b>VPN 809 — sertifika yenileme</b> · çözüldü</span>
+            </span>
+            <span class="arrow">↗</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="botrow">
+        <span class="pageind">
+          <span class="dots"><i></i><i></i><i class="on"></i><i></i></span>
+          <span class="num"><b>3</b> / 4</span>
+        </span>
+        <div class="sc-lockup">
+          <svg viewBox="0 0 20.033 19.821" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <path d="M 9.152 8.429 L 12.009 8.43 L 14.865 3.266 L 11.182 6.594 Z M 13.143 9.949 L 13.731 11.012 L 20.033 11.012 L 15.601 3 L 12.45 8.696 Z M 9.152 14.125 L 6 19.821 L 15.159 19.821 L 12.009 14.125 Z M 20.033 11.543 L 13.731 11.543 L 13.09 12.701 L 12.45 13.859 L 15.601 19.555 Z" fill="#FFFFFF"/>
+            <path d="M 7.583 5.962 L 4.432 0.266 L 0 8.277 L 6.302 8.277 Z M 8.025 11.391 L 5.168 16.553 L 10.882 11.391 Z M 7.583 11.125 L 6.302 8.809 L 0 8.809 L 4.433 16.819 Z M 10.882 5.696 L 14.033 0 L 4.874 0 L 8.023 5.695 Z" fill="#38BDF8"/>
+          </svg>
+          <span class="sc-word">Service<span class="c">Core</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

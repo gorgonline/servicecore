@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
+  /* brand/tokens.json */
+  :root{
+    --surface-base:#010E21;
+    --surface-elevated:#021330;
+    --panel:#04183A;
+    --panel2:#061B3F;
+    --primary:#0070F3;
+    --accent-sky:#38BDF8;
+    --secondary:#10B981;
+    --purple:#A855F7;
+    --amber:#F59E0B;
+    --red:#EF4444;
+    --text-primary:#FFFFFF;
+    --text-secondary:#94A3B8;
+    --text-muted:#64748B;
+    --border-default:rgba(255,255,255,0.10);
+    --border-subtle:rgba(255,255,255,0.06);
+    --glass:rgba(255,255,255,0.04);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ background:#0a1426; }
+
+  .card{
+    position:relative; width:1200px; height:1200px; overflow:hidden;
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    color:var(--text-primary); background:var(--surface-base);
+  }
+
+  /* arka plan: mesh glow'lar + grid */
+  .glow-blue{ position:absolute; width:900px; height:760px; left:50%; top:-280px; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(0,112,243,0.20), transparent 65%); filter:blur(110px); }
+  .glow-purple{ position:absolute; width:560px; height:560px; right:-200px; bottom:-160px;
+    background:radial-gradient(circle, rgba(168,85,247,0.12), transparent 62%); filter:blur(110px); }
+  .glow-emerald{ position:absolute; width:520px; height:520px; left:-200px; bottom:-160px;
+    background:radial-gradient(circle, rgba(16,185,129,0.10), transparent 62%); filter:blur(120px); }
+  .grid-pattern{ position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+    background-size:48px 48px; opacity:0.04;
+    -webkit-mask-image:radial-gradient(900px 800px at 50% 30%, #000 0%, transparent 80%);
+            mask-image:radial-gradient(900px 800px at 50% 30%, #000 0%, transparent 80%); }
+
+  .frame{ position:absolute; inset:0; padding:72px 72px 56px; display:flex; flex-direction:column; z-index:3; }
+
+  /* ust baslik */
+  .top{ display:flex; flex-direction:column; }
+  .eyebrow{ align-self:flex-start; display:inline-flex; align-items:center; gap:11px; background:var(--glass);
+    border:1px solid var(--border-default); border-radius:9999px; padding:11px 22px;
+    font-weight:600; font-size:16px; letter-spacing:.24em; text-transform:uppercase; color:#CBD5E1; }
+  .eyebrow .dot{ width:9px; height:9px; border-radius:50%; background:var(--accent-sky);
+    box-shadow:0 0 0 4px rgba(56,189,248,0.18); }
+  .top h1{ margin-top:24px; font-weight:700; font-size:60px; line-height:1.04; letter-spacing:-0.03em; }
+  .top h1 .grad{ background:linear-gradient(100deg,#38BDF8,#0070F3); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  /* KPI kartlari */
+  .kpis{ margin-top:46px; display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .kpi{ position:relative; border-radius:22px; padding:30px 30px 32px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.015));
+    border:1px solid var(--border-default);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.06); overflow:hidden; }
+  .kpi::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; border-radius:4px; }
+  .kpi.k-blue::before{ background:linear-gradient(180deg,#38BDF8,#0070F3); }
+  .kpi.k-emerald::before{ background:linear-gradient(180deg,#34D399,#10B981); }
+  .kpi.k-purple::before{ background:linear-gradient(180deg,#C084FC,#A855F7); }
+  .kpi .ic{ width:46px; height:46px; border-radius:13px; display:flex; align-items:center; justify-content:center;
+    margin-bottom:22px; }
+  .kpi .ic svg{ width:23px; height:23px; }
+  .kpi.k-blue .ic{ background:rgba(0,112,243,0.16); box-shadow:0 0 20px -4px rgba(0,112,243,0.6); }
+  .kpi.k-emerald .ic{ background:rgba(16,185,129,0.16); box-shadow:0 0 20px -4px rgba(16,185,129,0.55); }
+  .kpi.k-purple .ic{ background:rgba(168,85,247,0.16); box-shadow:0 0 20px -4px rgba(168,85,247,0.55); }
+  .kpi .num{ display:flex; align-items:baseline; gap:8px; }
+  .kpi .num .big{ font-size:62px; font-weight:700; letter-spacing:-0.04em; line-height:1; color:#fff; }
+  .kpi .num .unit{ font-size:21px; font-weight:500; color:var(--text-secondary); }
+  .kpi .cap{ margin-top:14px; font-size:18px; font-weight:500; color:#CBD5E1; letter-spacing:.01em; }
+  .kpi .sub{ margin-top:4px; font-size:15px; font-weight:400; color:var(--text-muted); }
+
+  /* velocity grafik paneli */
+  .chart{ margin-top:26px; flex:1; border-radius:22px; overflow:hidden;
+    background:linear-gradient(180deg,#04142F,#020E22);
+    border:1px solid rgba(56,189,248,0.18);
+    box-shadow:0 40px 120px -30px rgba(0,112,243,0.40), inset 0 1px 0 rgba(255,255,255,0.05);
+    padding:30px 38px 34px; display:flex; flex-direction:column; }
+  .chart-head{ display:flex; align-items:flex-end; justify-content:space-between; }
+  .chart-head .tt{ font-size:24px; font-weight:600; letter-spacing:-0.01em; color:#EAF1FA; }
+  .chart-head .tt span{ color:var(--text-muted); font-weight:400; font-size:18px; }
+  .legend{ display:inline-flex; align-items:center; gap:9px; padding:8px 15px; border-radius:9999px;
+    background:rgba(16,185,129,0.10); border:1px solid rgba(16,185,129,0.30);
+    font-size:14.5px; font-weight:500; color:#6EE3BE; }
+  .legend .up{ font-size:14px; }
+
+  .plot{ margin-top:18px; flex:1; display:flex; align-items:stretch; gap:18px; }
+  .yaxis{ display:flex; flex-direction:column; justify-content:space-between; padding:6px 0 38px;
+    text-align:right; }
+  .yaxis span{ font-size:13px; color:var(--text-muted); font-variant-numeric:tabular-nums; }
+  .bars{ position:relative; flex:1; display:flex; align-items:flex-end; justify-content:space-between;
+    gap:26px; padding-bottom:38px; }
+  .gridlines{ position:absolute; left:0; right:0; top:6px; bottom:38px; display:flex; flex-direction:column;
+    justify-content:space-between; }
+  .gridlines i{ display:block; height:1px; width:100%; background:rgba(255,255,255,0.05); }
+  .barcol{ position:relative; z-index:2; flex:1; display:flex; flex-direction:column; align-items:center;
+    justify-content:flex-end; height:100%; }
+  .bar{ width:100%; max-width:84px; border-radius:10px 10px 3px 3px; position:relative;
+    background:linear-gradient(180deg, rgba(56,189,248,0.55), rgba(0,112,243,0.30));
+    border:1px solid rgba(56,189,248,0.25); border-bottom:none;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.12); }
+  .barcol.peak .bar{ background:linear-gradient(180deg,#38BDF8,#0070F3);
+    border-color:rgba(56,189,248,0.6); box-shadow:0 0 34px -6px rgba(56,189,248,0.8), inset 0 1px 0 rgba(255,255,255,0.3); }
+  .bar .vlab{ position:absolute; top:-34px; left:50%; transform:translateX(-50%);
+    font-size:19px; font-weight:700; letter-spacing:-0.02em; color:#CFE9FB; }
+  .barcol.peak .bar .vlab{ color:#fff; }
+  .xlab{ position:absolute; bottom:-30px; left:0; right:0; text-align:center;
+    font-size:14px; font-weight:500; color:var(--text-muted); }
+  .barcol.peak .xlab{ color:#CBD5E1; }
+
+  /* alt cumle */
+  .closing{ margin-top:24px; display:flex; align-items:center; gap:14px; }
+  .closing .ln{ width:36px; height:2px; border-radius:2px; background:linear-gradient(90deg,#38BDF8,#0070F3); }
+  .closing p{ font-size:22px; font-weight:400; color:var(--text-secondary); letter-spacing:-0.01em; }
+  .closing p b{ color:#EAF1FA; font-weight:600; }
+
+  /* footer */
+  .foot{ margin-top:28px; display:flex; align-items:center; justify-content:space-between; }
+  .foot .sep{ display:none; }
+  .sc-lockup{ display:flex; align-items:center; gap:13px; }
+  .sc-lockup svg{ height:36px; width:auto; }
+  .sc-word{ font-weight:700; font-size:28px; letter-spacing:-0.02em; color:#fff; }
+  .sc-word .c{ color:var(--accent-sky); }
+  .foot .url{ font-size:22px; font-weight:500; color:var(--text-secondary); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-blue"></div>
+    <div class="glow-purple"></div>
+    <div class="glow-emerald"></div>
+    <div class="grid-pattern"></div>
+
+    <div class="frame">
+      <div class="top">
+        <span class="eyebrow"><span class="dot"></span>ProjectCore · Sprint Analitiği</span>
+        <h1>Story point'ten <span class="grad">isabetli taahhüde.</span></h1>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi k-blue">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-8M21 8v5M21 8h-5" stroke="#7FB3F5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="num"><span class="big">42</span><span class="unit">SP / sprint</span></div>
+          <div class="cap">Velocity</div>
+          <div class="sub">Son 6 sprint ortalaması</div>
+        </div>
+        <div class="kpi k-emerald">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#6EE3BE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <div class="num"><span class="big">%84</span></div>
+          <div class="cap">Tamamlanma oranı</div>
+          <div class="sub">Taahhüt edilen iş kalemleri</div>
+        </div>
+        <div class="kpi k-purple">
+          <span class="ic">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 7v5l3 2" stroke="#D8B4FE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="8.5" stroke="#D8B4FE" stroke-width="2.2"/></svg>
+          </span>
+          <div class="num"><span class="big">&lt;%8</span></div>
+          <div class="cap">Tahmin sapması</div>
+          <div class="sub">Plan ile gerçekleşen fark</div>
+        </div>
+      </div>
+
+      <div class="chart">
+        <div class="chart-head">
+          <div class="tt">Velocity trendi <span>· son 6 sprint (SP)</span></div>
+          <span class="legend"><span class="up">▲</span>Yükselen trend</span>
+        </div>
+
+        <div class="plot">
+          <div class="yaxis">
+            <span>48</span><span>36</span><span>24</span><span>12</span><span>0</span>
+          </div>
+          <div class="bars">
+            <div class="gridlines"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="barcol">
+              <div class="bar" style="height:60%"><span class="vlab">29</span></div>
+              <span class="xlab">S19</span>
+            </div>
+            <div class="barcol">
+              <div class="bar" style="height:67%"><span class="vlab">32</span></div>
+              <span class="xlab">S20</span>
+            </div>
+            <div class="barcol">
+              <div class="bar" style="height:73%"><span class="vlab">35</span></div>
+              <span class="xlab">S21</span>
+            </div>
+            <div class="barcol">
+              <div class="bar" style="height:81%"><span class="vlab">39</span></div>
+              <span class="xlab">S22</span>
+            </div>
+            <div class="barcol">
+              <div class="bar" style="height:85%"><span class="vlab">41</span></div>
+              <span class="xlab">S23</span>
+            </div>
+            <div class="barcol peak">
+              <div class="bar" style="height:100%"><span class="vlab">42</span></div>
+              <span class="xlab">S24</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="closing">
+        <span class="ln"></span>
+        <p>Geçmiş velocity ile gelecek sprint'i <b>gerçekçi planlayın.</b></p>
+      </div>
+
+      <div class="foot">
+        <div class="sc-lockup">
+          <svg viewBox="0 0 20.033 19.821" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <path d="M 9.152 8.429 L 12.009 8.43 L 14.865 3.266 L 11.182 6.594 Z M 13.143 9.949 L 13.731 11.012 L 20.033 11.012 L 15.601 3 L 12.45 8.696 Z M 9.152 14.125 L 6 19.821 L 15.159 19.821 L 12.009 14.125 Z M 20.033 11.543 L 13.731 11.543 L 13.09 12.701 L 12.45 13.859 L 15.601 19.555 Z" fill="#FFFFFF"/>
+            <path d="M 7.583 5.962 L 4.432 0.266 L 0 8.277 L 6.302 8.277 Z M 8.025 11.391 L 5.168 16.553 L 10.882 11.391 Z M 7.583 11.125 L 6.302 8.809 L 0 8.809 L 4.433 16.819 Z M 10.882 5.696 L 14.033 0 L 4.874 0 L 8.023 5.695 Z" fill="#38BDF8"/>
+          </svg>
+          <span class="sc-word">Service<span class="c">Core</span></span>
+        </div>
+        <div class="url">servicecore.com.tr</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

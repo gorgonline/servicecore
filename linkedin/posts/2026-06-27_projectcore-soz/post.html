@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap');
+
+  /* brand/tokens.json */
+  :root{
+    --surface-base:#010E21;
+    --surface-elevated:#021330;
+    --primary:#0070F3;
+    --accent-sky:#38BDF8;
+    --secondary:#10B981;
+    --purple:#A855F7;
+    --text-primary:#FFFFFF;
+    --text-secondary:#94A3B8;
+    --text-muted:#64748B;
+    --border-default:rgba(255,255,255,0.10);
+    --border-subtle:rgba(255,255,255,0.05);
+    --glass:rgba(255,255,255,0.05);
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html,body{ background:#0a1426; }
+
+  .card{
+    position:relative;
+    width:1200px; height:1200px;
+    overflow:hidden;
+    font-family:'Geist',system-ui,-apple-system,sans-serif;
+    color:var(--text-primary);
+    background:var(--surface-base);
+  }
+
+  /* arka plan: mesh glow'lar + grid */
+  .glow-blue{ position:absolute; width:900px; height:900px; left:50%; top:-300px; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(0,112,243,0.22), transparent 65%); filter:blur(110px); }
+  .glow-emerald{ position:absolute; width:560px; height:560px; left:-200px; bottom:-180px;
+    background:radial-gradient(circle, rgba(16,185,129,0.10), transparent 62%); filter:blur(120px); }
+  .glow-purple{ position:absolute; width:520px; height:520px; right:-180px; bottom:-160px;
+    background:radial-gradient(circle, rgba(168,85,247,0.12), transparent 62%); filter:blur(110px); }
+  .grid-pattern{ position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.10) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.10) 1px, transparent 1px);
+    background-size:48px 48px;
+    opacity:0.05;
+    -webkit-mask-image:radial-gradient(900px 760px at 50% 42%, #000 0%, transparent 78%);
+            mask-image:radial-gradient(900px 760px at 50% 42%, #000 0%, transparent 78%);
+  }
+
+  /* dev tirnak motifi — sol ustte buyuk filigran */
+  .quote-mark{ position:absolute; left:80px; top:188px; z-index:1;
+    font-family:Georgia,'Times New Roman',serif; font-weight:700; font-size:380px; line-height:1;
+    color:transparent;
+    background:linear-gradient(160deg, rgba(56,189,248,0.18), rgba(0,112,243,0.05));
+    -webkit-background-clip:text; background-clip:text;
+    -webkit-text-stroke:2px rgba(56,189,248,0.10); user-select:none; }
+
+  .frame{ position:absolute; inset:0; padding:96px 96px 72px; display:flex; flex-direction:column; align-items:center; z-index:3; }
+
+  /* eyebrow */
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:13px;
+    background:var(--glass); border:1px solid var(--border-default); border-radius:9999px;
+    padding:13px 26px; font-weight:600; font-size:19px; letter-spacing:.28em; text-transform:uppercase;
+    color:#CBD5E1;
+  }
+  .eyebrow .dot{ width:10px; height:10px; border-radius:50%;
+    background:var(--accent-sky); box-shadow:0 0 0 5px rgba(56,189,248,0.20); }
+
+  /* hero: ortada dev soz */
+  .hero{ margin:auto 0; display:flex; flex-direction:column; align-items:center; text-align:center; }
+  .hero blockquote{ position:relative; font-weight:700; font-size:78px; line-height:1.16; letter-spacing:-0.03em;
+    max-width:1000px; }
+  .hero blockquote .q{ color:var(--text-secondary); font-weight:600; }
+  .hero blockquote .grad{
+    background:linear-gradient(105deg, #0070F3 0%, #38BDF8 55%, #A855F7 120%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+
+  /* ince ayrac cizgi */
+  .rule{ margin:58px 0 30px; width:84px; height:3px; border-radius:9999px;
+    background:linear-gradient(90deg,#38BDF8,#0070F3); }
+
+  /* imza satiri */
+  .sign{ display:inline-flex; align-items:center; gap:13px;
+    font-size:25px; font-weight:500; color:var(--text-secondary); letter-spacing:-0.005em; }
+  .sign .pc{ color:#fff; font-weight:600; }
+  .sign .pc b{ color:var(--accent-sky); font-weight:600; }
+  .sign .sep{ width:5px; height:5px; border-radius:50%; background:var(--text-muted); }
+
+  /* footer */
+  .foot{ margin-top:auto; width:100%; }
+  .foot .sep{ height:1px; width:100%;
+    background:linear-gradient(to right, transparent, rgba(255,255,255,0.20), transparent); }
+  .foot .row{ display:flex; align-items:center; justify-content:space-between; padding-top:32px; }
+  .sc-lockup{ display:flex; align-items:center; gap:13px; }
+  .sc-lockup svg{ height:38px; width:auto; }
+  .sc-word{ font-weight:700; font-size:30px; letter-spacing:-0.02em; color:#fff; }
+  .sc-word .c{ color:var(--accent-sky); }
+  .foot .url{ font-size:23px; font-weight:500; color:var(--text-secondary); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="glow-blue"></div>
+    <div class="glow-emerald"></div>
+    <div class="glow-purple"></div>
+    <div class="grid-pattern"></div>
+    <div class="quote-mark">&ldquo;</div>
+
+    <div class="frame">
+      <span class="eyebrow"><span class="dot"></span>ProjectCore</span>
+
+      <div class="hero">
+        <blockquote>
+          <span class="q">&ldquo;</span>İyi bir sprint planı,
+          yapılacakları değil;
+          <span class="grad">yapılmayacakları</span> netleştirir.<span class="q">&rdquo;</span>
+        </blockquote>
+
+        <div class="rule"></div>
+
+        <span class="sign">
+          <span>&mdash;</span>
+          <span class="pc">Project<b>Core</b></span>
+          <span class="sep"></span>
+          <span>Agile proje yönetimi</span>
+        </span>
+      </div>
+
+      <div class="foot">
+        <div class="sep"></div>
+        <div class="row">
+          <div class="sc-lockup">
+            <svg viewBox="0 0 20.033 19.821" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <path d="M 9.152 8.429 L 12.009 8.43 L 14.865 3.266 L 11.182 6.594 Z M 13.143 9.949 L 13.731 11.012 L 20.033 11.012 L 15.601 3 L 12.45 8.696 Z M 9.152 14.125 L 6 19.821 L 15.159 19.821 L 12.009 14.125 Z M 20.033 11.543 L 13.731 11.543 L 13.09 12.701 L 12.45 13.859 L 15.601 19.555 Z" fill="#FFFFFF"/>
+              <path d="M 7.583 5.962 L 4.432 0.266 L 0 8.277 L 6.302 8.277 Z M 8.025 11.391 L 5.168 16.553 L 10.882 11.391 Z M 7.583 11.125 L 6.302 8.809 L 0 8.809 L 4.433 16.819 Z M 10.882 5.696 L 14.033 0 L 4.874 0 L 8.023 5.695 Z" fill="#38BDF8"/>
+            </svg>
+            <span class="sc-word">Service<span class="c">Core</span></span>
+          </div>
+          <div class="url">servicecore.com.tr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
