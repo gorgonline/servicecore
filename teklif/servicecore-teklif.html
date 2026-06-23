@@ -123,8 +123,8 @@
   .pt-sum td.lbl { text-align: right; color: #475569; font-weight: 700; }
   .pt-sum td.val { text-align: right; color: #0A1930; font-weight: 700; width: 150px; }
   .pt-grand td { padding: 13px 12px; background: #F4F7FB; border-top: 2px solid #0A1930; }
-  .pt-grand td.lbl { text-align: right; font-size: 12px; font-weight: 700; color: #0A1930; letter-spacing: 0.04em; }
-  .pt-grand td.val { text-align: right; font-family: "Helvetica Neue", Arial, sans-serif; font-size: 20px; font-weight: 700; color: #0070F3; width: 150px; }
+  .pt-grand td.lbl { text-align: right; font-size: 11px; font-weight: 700; color: #0A1930; white-space: nowrap; }
+  .pt-grand td.val { text-align: right; font-size: 11px; font-weight: 700; color: #0070F3; width: 150px; }
   .pt-note { font-size: 9px; color: #64748B; line-height: 1.6; margin: 10px 0 0 0; }
 
   /* ===== FARK VAR — farklilastirici kartlar ===== */
@@ -383,9 +383,9 @@
       <tr>
         <td width="32%"><span class="anchor-txt">2000&#8217;den beri 25+ y&#305;l ITSM deneyimi</span></td>
         <td class="anchor-sep">&#160;</td>
-        <td width="22%"><span class="anchor-txt">600.000+ kullan&#305;c&#305;</span></td>
+        <td width="22%"><span class="anchor-txt">4M+ Kullan&#305;c&#305;</span></td>
         <td class="anchor-sep">&#160;</td>
-        <td width="44%"><span class="anchor-txt">Sabanc&#305; &#183; Toyota &#183; Roketsan &#183; QNB g&#252;veniyle</span></td>
+        <td width="44%"><span class="anchor-txt">ITIL4 Uyumlu 30+ Mod&#252;l</span></td>
       </tr>
     </table>
 
@@ -407,7 +407,7 @@
 
     <p class="overline">Y&#246;netici &#214;zeti</p>
     <h2 class="h2">Da&#287;&#305;n&#305;k servis y&#246;netiminden tek platforma.</h2>
-    <p class="lead">${Quotes.Account Name}, b&#252;y&#252;yen BT ve servis operasyonunu birbirinden kopuk ara&#231;lar, manuel s&#252;re&#231;ler ve s&#305;n&#305;rl&#305; g&#246;r&#252;n&#252;rl&#252;kle y&#246;netiyor. Bu yap&#305; yava&#351; &#231;&#246;z&#252;m, tekrar eden i&#351; ve g&#246;r&#252;nmeyen maliyet &#252;retir.</p>
+    <p class="lead">B&#252;y&#252;yen BT ve servis operasyonlar&#305;n&#305; tek bir platformda toplamak; manuel i&#351;i otomatikle&#351;tirmek, &#231;&#246;z&#252;m s&#252;relerini k&#305;saltmak ve u&#231;tan uca g&#246;r&#252;n&#252;rl&#252;k kazanmak bug&#252;n&#252;n &#246;nceli&#287;idir. Bu teklif, ${Quotes.Account Name} i&#231;in bu d&#246;n&#252;&#351;&#252;m&#252; tek bir kurumsal platformda ele al&#305;r.</p>
 
     <div class="spacer-m"></div>
 
@@ -466,7 +466,6 @@
     </div>
 
 
-    <span class="fk-h">Bu teklif neleri kapsar</span>
 
     <div class="spacer-s"></div>
 
@@ -508,129 +507,13 @@
   </div>
 
   <!-- ============================================================ -->
-  <!-- SAYFA 3 — MEVCUT DURUMUN MALIYETI (COI) — asil wow           -->
-  <!-- ============================================================ -->
-  <div class="sheet pb">
-
-    <p class="overline">Mevcut Durumun Maliyeti</p>
-    <h2 class="h2">Mevcut da&#287;&#305;n&#305;k yap&#305;n&#305;n y&#305;ll&#305;k g&#246;r&#252;nmeyen maliyeti.</h2>
-    <p class="lead">A&#351;a&#287;&#305;daki kalemler, da&#287;&#305;n&#305;k ara&#231; ve manuel s&#252;re&#231;lerin tipik y&#305;ll&#305;k y&#252;k&#252;n&#252; g&#246;sterir; sekt&#246;r benchmark&#8217;&#305;d&#305;r ve analiz formuyla kurumunuza &#246;zel hesaplan&#305;r.</p>
-
-    <div class="spacer-m"></div>
-
-    <!-- buyuk anchor (illustratif gizli maliyet) -->
-    <table class="stat-hero avoid">
-      <tr>
-        <td>
-          <p class="sh-cap">&#214;rnek senaryo: 50 teknisyenli BT operasyonu</p>
-          <span class="sh-num">&#8378; 4.2M</span><span class="sh-unit"> / y&#305;l gizli maliyet</span>
-          <p class="sh-sub">Plans&#305;z kesinti, tekrar eden manuel i&#351;, da&#287;&#305;n&#305;k ara&#231; ve verim kayb&#305;n&#305;n y&#305;ll&#305;k toplam&#305; (illustratif).</p>
-        </td>
-        <td width="170" align="right" valign="top"><span class="sh-tag">&#214;rnek &#183; kuruma &#246;zel hesaplan&#305;r</span></td>
-      </tr>
-    </table>
-
-    <div class="spacer-m"></div>
-
-    <!-- maliyet kalemi tablosu (illustratif yer tutucu) -->
-    <table class="coi avoid">
-      <thead>
-        <tr>
-          <th width="40%">Gizli Maliyet Kalemi</th>
-          <th width="40%">G&#246;reli A&#287;&#305;rl&#305;k</th>
-          <th class="num" width="20%">Y&#305;ll&#305;k &#246;rnek</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="coi-item">Plans&#305;z kesinti &amp; yava&#351; &#231;&#246;z&#252;m</div>
-            <div class="coi-base">Y&#252;ksek MTTR; uzayan ar&#305;za s&#252;releri</div>
-          </td>
-          <td><div class="coi-bar"><div class="coi-fill" style="width:90%;"></div></div></td>
-          <td class="coi-val">&#8378; 1.35M</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="coi-item">Tekrar eden manuel i&#351;</div>
-            <div class="coi-base">Otomatikle&#351;tirilmeyen ticket ve s&#252;re&#231;ler</div>
-          </td>
-          <td><div class="coi-bar"><div class="coi-fill" style="width:72%;"></div></div></td>
-          <td class="coi-val">&#8378; 980K</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="coi-item">Da&#287;&#305;n&#305;k ara&#231; lisans + entegrasyon</div>
-            <div class="coi-base">&#199;ok say&#305;da abonelik ve bak&#305;m y&#252;k&#252;</div>
-          </td>
-          <td><div class="coi-bar"><div class="coi-fill" style="width:58%;"></div></div></td>
-          <td class="coi-val">&#8378; 760K</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="coi-item">SLA ihlali &amp; itibar</div>
-            <div class="coi-base">Ge&#231;ilen hizmet seviyeleri, ceza riski</div>
-          </td>
-          <td><div class="coi-bar"><div class="coi-fill" style="width:44%;"></div></div></td>
-          <td class="coi-val">&#8378; 620K</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="coi-item">Son kullan&#305;c&#305; verim kayb&#305;</div>
-            <div class="coi-base">Self-servis / bilgi bankas&#305; yoklu&#287;u</div>
-          </td>
-          <td><div class="coi-bar"><div class="coi-fill" style="width:36%;"></div></div></td>
-          <td class="coi-val">&#8378; 490K</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr class="coi-sum">
-          <td colspan="2"><span class="lbl">Y&#305;ll&#305;k gizli maliyet (&#246;rnek toplam)</span></td>
-          <td><span class="val">&#8378; 4.2M</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="spacer-m"></div>
-
-    <!-- 12 / 24 / 36 ay kumulatif projeksiyon -->
-    <table class="proj avoid">
-      <tr>
-        <td>
-          <p class="proj-lbl">12 Ay</p>
-          <p class="proj-num">&#8378; 4.2M</p>
-          <p class="proj-sub">K&#252;m&#252;latif gizli maliyet</p>
-        </td>
-        <td>
-          <p class="proj-lbl">24 Ay</p>
-          <p class="proj-num">&#8378; 8.4M</p>
-          <p class="proj-sub">K&#252;m&#252;latif gizli maliyet</p>
-        </td>
-        <td class="proj-mid">
-          <p class="proj-lbl">36 Ay</p>
-          <p class="proj-num-em">&#8378; 12.6M</p>
-          <p class="proj-sub">K&#252;m&#252;latif gizli maliyet</p>
-        </td>
-      </tr>
-    </table>
-
-    <div class="spacer-m"></div>
-
-
-    <div class="callout-amber avoid">
-      <p>Bu g&#246;r&#252;nmeyen maliyetler, <span class="accent">tek platforma ge&#231;i&#351;le b&#252;y&#252;k &#246;l&#231;&#252;de ortadan kalkar.</span></p>
-    </div>
-
-  </div>
-
-  <!-- ============================================================ -->
   <!-- SAYFA 4 — FARK VAR (6 mock kart + TUM 44 madde)              -->
   <!-- ============================================================ -->
   <div class="sheet pb">
 
     <p class="overline">Fark Yaratan Yetenekler</p>
     <h2 class="h2">Rakiplerde bulunmayan, fark yaratan yetenekler.</h2>
-    <p class="lead">A&#351;a&#287;&#305;daki yetenekler muadil &#231;&#246;z&#252;mlerin &#231;o&#287;unda ya hi&#231; yoktur ya da k&#305;smen bulunur &#8212; i&#351;te bu yetenekler ServiceCore&#8217;u ay&#305;r&#305;r.</p>
+    <p class="lead">A&#351;a&#287;&#305;daki yetenekler muadil &#231;&#246;z&#252;mlerin &#231;o&#287;unda ya hi&#231; yoktur ya da k&#305;smen bulunur. Servicecore, servis ve proje y&#246;netimi alan&#305;nda T&#252;rkiye&#8217;nin lider yaz&#305;l&#305;m ve uygulama hizmetleri kurumudur.</p>
 
     <div class="spacer-m"></div>
 
@@ -652,7 +535,7 @@
               </tr>
             </table>
             <p class="dif-title">ESM &#8212; Multi-Company / Multi-Tenant</p>
-            <p class="dif-desc">Holding yap&#305;s&#305;nda alt &#351;irketlere g&#246;re ayr&#305;&#351;t&#305;rma; tek kurulumda say&#305;s&#305;z departman ve alt &#351;irket &#8212; b&#252;y&#252;k kurum i&#231;in pazarl&#305;k d&#305;&#351;&#305; bir gereksinim.</p>
+            <p class="dif-desc">Holding yap&#305;s&#305;nda alt &#351;irketlere g&#246;re ayr&#305;&#351;t&#305;rma; tek kurulumda say&#305;s&#305;z departman ve alt &#351;irket gibi &#231;oklu alt servis y&#246;netimi senaryolar&#305;na tam destek.</p>
           </div>
         </td>
         <!-- 2 — ITIL EXPERT KADRO + YEREL DESTEK (on-premise mock) -->
@@ -671,8 +554,8 @@
                 </td>
               </tr>
             </table>
-            <p class="dif-title">ITIL Expert Kadro + Yerel Destek</p>
-            <p class="dif-desc">ITIL Expert / MP sertifikal&#305; yerli dan&#305;&#351;man, do&#287;rudan &#252;reticiden h&#305;zl&#305; destek ve verinizin kendi sunucunuzda kalmas&#305; &#8212; arac&#305;s&#305;z, ba&#287;&#305;ms&#305;z, egemen.</p>
+            <p class="dif-title">Veri Egemenli&#287;i &amp; On-Premise</p>
+            <p class="dif-desc">Kurulum m&#252;&#351;teri sunucusuna on-premise yap&#305;l&#305;r; veriniz kurum d&#305;&#351;&#305;na &#231;&#305;kmaz. SaaS ba&#287;&#305;ml&#305;l&#305;&#287;&#305; yok &#8212; KVKK uyumlu, tam kontrol sizdedir.</p>
           </div>
         </td>
       </tr>
@@ -1375,7 +1258,7 @@
     <table class="ptbl avoid">
       <thead>
         <tr>
-          <th width="40%">Kalem</th>
+          <th width="40%">&#220;r&#252;nler ve Hizmetler</th>
           <th class="num" width="16%">Birim Fiyat</th>
           <th class="num" width="10%">Adet</th>
           <th class="num" width="14%">&#304;ndirim</th>
@@ -1401,11 +1284,9 @@
       </tbody>
     </table>
 
-    <p class="pt-note">Lisanslama minimum 10 teknisyen ile ba&#351;lar. Standart lisans&#305;n en az %25&#8217;i kadar Profesyonel lisans ile hibrit kurulum yap&#305;labilir. Abonelik d&#246;nemi boyunca t&#252;m bak&#305;m, bug-fix, &#252;retici roadmap yeni &#246;zellikleri ve s&#252;rekli g&#252;ncellemeler fiyata dahildir; gizli maliyet yoktur. T&#252;m tutarlar T&#252;rk Liras&#305; (TL) cinsindendir; talep halinde USD kar&#351;&#305;l&#305;&#287;&#305; sunulur.</p>
-
-    <div class="spacer-m"></div>
+    <div class="spacer-s"></div>
     <div class="callout-band avoid">
-      <p>Son kullan&#305;c&#305;lar, varl&#305;klar ve kay&#305;t adedi <span class="accent">s&#305;n&#305;rs&#305;z ve &#252;cretsizdir</span> &#8212; lisans yaln&#305;zca teknisyen say&#305;s&#305;na ba&#287;l&#305;d&#305;r.</p>
+      <p style="font-size:10px; font-weight:400; color:#475569; line-height:1.6;">${Quotes.Terms and Conditions}</p>
     </div>
 
   </div>
@@ -1460,7 +1341,7 @@
         <table class="ko-item avoid">
           <tr>
             <td class="ko-no"><span class="ko-num">6</span></td>
-            <td><p class="ko-txt">Lisans kiralama s&#246;zle&#351;memiz ilgili ko&#351;ullarda tan&#305;ml&#305;d&#305;r ve teklif bu ko&#351;ullarda olu&#351;turulmu&#351;tur.</p></td>
+            <td><p class="ko-txt">S&#246;zle&#351;memizde tan&#305;mlanan ko&#351;ullarda teklif sunulmu&#351;tur; lisans kiralama s&#246;zle&#351;memiz <a class="ko-link" href="https://servicecoreas.sharepoint.com/:w:/s/docs/IQBwQiQM6D-ERaF7iOgZBUH3AWj14UBoC_uq9s8RQ_YFKIo?e=hdxOhm">&#351;u linkteki</a> gibidir.</p></td>
           </tr>
         </table>
 
