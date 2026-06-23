@@ -276,6 +276,14 @@
             "desc": "ServiceCore VMware Varlık Keşif Eklentisi, VMware ortamındaki sanal makineleri ve altyapıyı otomatik olarak keşfetmenize olanak tanır. Bu özellik, IT varlık yönetimini daha verimli hale getirir ve sanal altyapınızdaki varlıkları doğru bir şekilde izleyerek, yapılandırma yönetimini güçlendirir."
           },
           {
+            "name": "Intune Discovery Add-on",
+            "desc": "ServiceCore Intune Discovery Add-on, Microsoft Intune ile yönetilen uç noktaları ve mobil cihazları otomatik olarak keşfeder; cihaz envanterini ve yapılandırma bilgilerini CMDB ile sürekli güncel tutar."
+          },
+          {
+            "name": "Lansweeper Discovery Add-on",
+            "desc": "ServiceCore Lansweeper Discovery Add-on, Lansweeper envanter verilerini ServiceCore'a aktararak ağdaki donanım ve yazılım varlıklarının tek bir merkezde güncel kalmasını sağlar."
+          },
+          {
             "name": "MS Teams Eklentisi",
             "desc": "ServiceCore MS Teams Eklentisi, Microsoft Teams ile entegre olarak, hizmet yönetimi ve işbirliği süreçlerini daha verimli hale getirir."
           },
@@ -294,6 +302,14 @@
           {
             "name": "Sandbox / Test Sistem Add-on",
             "desc": "ServiceCore Sandbox / Test Sistem Add-on, kullanıcıların ServiceCore platformu üzerinde gerçekleştirecekleri değişiklikler ve yenilikleri gerçek ortamda uygulamadan önce güvenli bir şekilde test etmelerini sağlar."
+          },
+          {
+            "name": "Shift Management Add-on",
+            "desc": "ServiceCore Shift Management Add-on, teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır."
+          },
+          {
+            "name": "Federation Service Add-on",
+            "desc": "ServiceCore Federation Service Add-on, birden fazla ServiceCore örneğini veya dış servis sağlayıcılarını birbirine bağlayarak kayıtların ve süreçlerin organizasyonlar arası federasyon yapısında paylaşılmasını sağlar."
           }
         ]
       },

@@ -94,7 +94,11 @@
           { "name": "Task Calendar Sync Eklentisi", "desc": "ServiceCore kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli bir şekilde hizmet yönetimi yapmalarını sağlar." },
           { "name": "Failover / Cluster Sistem Add-on", "desc": "ServiceCore Failover / Cluster Sistem Add-on, yüksek erişilebilirlik ve kesintisiz hizmet sağlamak amacıyla, ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır. Bu özellik, kritik iş süreçlerinin ve hizmetlerin herhangi bir kesinti durumunda devamlılık göstermesini sağlar. Failover ve Cluster sistemleri, platformun daha dayanıklı, güvenilir ve kesintisiz çalışmasını garanti eder." },
           { "name": "Disaster Center Add-on", "desc": "ServiceCore Disaster Center Add-on, şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır." },
-          { "name": "Sandbox / Test Sistem Add-on", "desc": "ServiceCore Sandbox / Test Sistem Add-on, kullanıcıların ServiceCore platformu üzerinde gerçekleştirecekleri değişiklikler ve yenilikleri gerçek ortamda uygulamadan önce güvenli bir şekilde test etmelerini sağlar." }
+          { "name": "Sandbox / Test Sistem Add-on", "desc": "ServiceCore Sandbox / Test Sistem Add-on, kullanıcıların ServiceCore platformu üzerinde gerçekleştirecekleri değişiklikler ve yenilikleri gerçek ortamda uygulamadan önce güvenli bir şekilde test etmelerini sağlar." },
+          { "name": "Intune Discovery Add-on", "desc": "ServiceCore Intune Discovery Add-on, Microsoft Intune ile yönetilen uç noktaları ve mobil cihazları otomatik olarak keşfeder; cihaz envanterini ve yapılandırma bilgilerini CMDB ile sürekli güncel tutar." },
+          { "name": "Lansweeper Discovery Add-on", "desc": "ServiceCore Lansweeper Discovery Add-on, Lansweeper envanter verilerini ServiceCore'a aktararak ağdaki donanım ve yazılım varlıklarının tek bir merkezde güncel kalmasını sağlar." },
+          { "name": "Shift Management Add-on", "desc": "ServiceCore Shift Management Add-on, teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır." },
+          { "name": "Federation Service Add-on", "desc": "ServiceCore Federation Service Add-on, birden fazla ServiceCore örneğini veya dış servis sağlayıcılarını birbirine bağlayarak kayıtların ve süreçlerin organizasyonlar arası federasyon yapısında paylaşılmasını sağlar." }
         ]
       },
       {

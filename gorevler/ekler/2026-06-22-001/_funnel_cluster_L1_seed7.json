@@ -1,0 +1,366 @@
+{
+  "seed": 7,
+  "katman": "L1",
+  "config": {
+    "GATE": 60,
+    "TRAIN": 12,
+    "TEST": 6,
+    "rerank": "0",
+    "vaka_esik": 0.85
+  },
+  "gate": {
+    "gate_aday": 60,
+    "yargilanabilir": 37,
+    "gate_orani": 0.6166666666666667,
+    "mod": "cluster",
+    "seed_ticket": 13907,
+    "aile_ort_benzerlik": 0.867
+  },
+  "train_huni": {
+    "solve": 12,
+    "oneri_var": 12,
+    "yargilandi": 11,
+    "olumsuz_👎": 8,
+    "kural_cik": {
+      "status": "success",
+      "yeni": 1,
+      "mevcut": 1,
+      "hatali": 0,
+      "kurallar": [
+        {
+          "kural": "Doğrudan güncelleme veya paket uygulama önerisi yapma.",
+          "tip": "yapma",
+          "id": 1
+        },
+        {
+          "kural": "Belirsiz ve genel sistem veya veritabanı kontrolü önerileri yapma.",
+          "tip": "yapma",
+          "id": 1
+        }
+      ],
+      "hatalar": [],
+      "girdi_olumsuz": 8
+    },
+    "onaylanan": 1
+  },
+  "kurallar": [
+    {
+      "tip": "yapma",
+      "kural": "Doğrudan güncelleme veya paket uygulama önerisi yapma."
+    }
+  ],
+  "l1_banka": {
+    "status": "success",
+    "toplam": 11,
+    "olumlu": 3,
+    "olumsuz": 8,
+    "aktif": 11
+  },
+  "l1_atesleme": {
+    "atesleyen_test": 4,
+    "toplam_test": 6,
+    "detay": [
+      {
+        "ticket_id": 13215,
+        "vaka_sayi": 1,
+        "en_benzer": 0.854
+      },
+      {
+        "ticket_id": 15702,
+        "vaka_sayi": 1,
+        "en_benzer": 0.851
+      },
+      {
+        "ticket_id": 166,
+        "vaka_sayi": 0,
+        "en_benzer": null
+      },
+      {
+        "ticket_id": 11939,
+        "vaka_sayi": 2,
+        "en_benzer": 0.878
+      },
+      {
+        "ticket_id": 6158,
+        "vaka_sayi": 3,
+        "en_benzer": 0.871
+      },
+      {
+        "ticket_id": 17717,
+        "vaka_sayi": 0,
+        "en_benzer": null
+      }
+    ]
+  },
+  "adaptivity": {
+    "S0": 0.25,
+    "S1": 0.125,
+    "delta": -0.125,
+    "skorlanan_S0": 4,
+    "skorlanan_S1": 4
+  },
+  "retention_gerileme": [],
+  "iyilesen": [
+    15702
+  ],
+  "insample": [
+    {
+      "ticket_id": 5366,
+      "once_ort": "hayir",
+      "once_skor": 0.0,
+      "sonra_ort": "hayir",
+      "sonra_skor": 0.0,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 16167,
+      "once_ort": "hayir",
+      "once_skor": 0.0,
+      "sonra_ort": "hayir",
+      "sonra_skor": 0.0,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 17534,
+      "once_ort": "hayir",
+      "once_skor": 0.0,
+      "sonra_ort": "kısmi",
+      "sonra_skor": null,
+      "enjekte": []
+    }
+  ],
+  "S0_detay": [
+    {
+      "ticket_id": 13215,
+      "durum": "oneri_var",
+      "ort": "tam",
+      "skor": 1.0,
+      "oneri": "Otomatik kapatma süresini kontrol edin.",
+      "sonuc_id": 1,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 15702,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "portal.azure üzerinden yetkili admin hesabıyla yeni Value ve Key değerlerini girin.",
+      "sonuc_id": 2,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 166,
+      "durum": "oneri_var",
+      "ort": "degerlendirilemez",
+      "skor": null,
+      "oneri": "app.js dosyasındaki seçim (selection) mantığını kontrol edin.",
+      "sonuc_id": 3,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 11939,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Sistemdeki yavaşlığın nedenini belirlemek için sunucudaki logları inceleyin.",
+      "sonuc_id": 4,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 6158,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Formdaki Priority alanı ile sağ kısımdaki öncelik alanının farklı alanlar olup olmadığını kontrol edin.",
+      "sonuc_id": 5,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 17717,
+      "durum": "oneri_var",
+      "ort": "degerlendirilemez",
+      "skor": null,
+      "oneri": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\HTTP\\Parameters adresine UrlSegmentMaxLength, MaxFieldLength, MaxRequestBytes ve UrlSegmentMaxCount kayıtlarını ekleyip HTTP servisini veya sunucuyu yeniden başlatın.",
+      "sonuc_id": 6,
+      "enjekte": []
+    }
+  ],
+  "S1_detay": [
+    {
+      "ticket_id": 13215,
+      "durum": "oneri_var",
+      "ort": "kismi",
+      "skor": 0.0,
+      "oneri": "Genel ayarlardaki Otomatik Kapatma Süresi ayarını kontrol edin.",
+      "sonuc_id": 19,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 15702,
+      "durum": "oneri_var",
+      "ort": "kismi",
+      "skor": 0.5,
+      "oneri": "portal.azure üzerinden yetkili admin hesabıyla yeni Value ve Key bilgilerini girin.",
+      "sonuc_id": 20,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 166,
+      "durum": "oneri_var",
+      "ort": "degerlendirilemez",
+      "skor": null,
+      "oneri": "app.js içerisindeki seçim (selection) tanımlamalarını ve hatalı kullanımları kontrol edin.",
+      "sonuc_id": 21,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 11939,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Sunucudaki logları inceleyin.",
+      "sonuc_id": 22,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 6158,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Formdaki öncelik alanı ile sağ taraftaki öncelik alanının farklı olup olmadığını ve varsayılan değer atamalarını kontrol edin.",
+      "sonuc_id": 23,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 17717,
+      "durum": "oneri_var",
+      "ort": "degerlendirilemez",
+      "skor": null,
+      "oneri": "Computer\\HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Services\\HTTP\\Parameters adresine 'UrlSegmentMaxLength' (4096), 'MaxFieldLength' (65534), 'MaxRequestBytes' (16777216) ve 'UrlSegmentMaxCount' (16383) DWORD kayıtlarını ekleyip HTTP servisini yeniden başlatın.",
+      "sonuc_id": 24,
+      "enjekte": []
+    }
+  ],
+  "TRAIN_detay": [
+    {
+      "ticket_id": 13907,
+      "durum": "oneri_var",
+      "ort": "kismi",
+      "skor": 0.5,
+      "oneri": "appsettings.Production.json dosyasında \"SRUpdateSignalRIsActive\": true parametresinin olup olmadığını kontrol edin, eksikse ekleyin.",
+      "sonuc_id": 7,
+      "enjekte": [],
+      "feedback": "olumlu"
+    },
+    {
+      "ticket_id": 5366,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Elsa son sürüm güncellemesini ilgili ortama geçirin.",
+      "sonuc_id": 8,
+      "enjekte": [],
+      "feedback": "olumsuz"
+    },
+    {
+      "ticket_id": 17817,
+      "durum": "oneri_var",
+      "ort": "degerlendirilemez",
+      "skor": null,
+      "oneri": "TicketServiceRequestController.cs dosyasındaki Edit sayfası mantığını kontrol edin.",
+      "sonuc_id": 9,
+      "enjekte": []
+    },
+    {
+      "ticket_id": 16167,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Kullanıcının giriş ekranından veya Ayarlar (Settings) menüsünden kendi dilini seçmesini sağlayın.",
+      "sonuc_id": 10,
+      "enjekte": [],
+      "feedback": "olumsuz"
+    },
+    {
+      "ticket_id": 17534,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": ".msg formatlı ek dosyaların adını değiştirip zipleyerek tekrar kaydetmeyi deneyin.",
+      "sonuc_id": 11,
+      "enjekte": [],
+      "feedback": "olumsuz"
+    },
+    {
+      "ticket_id": 16641,
+      "durum": "oneri_var",
+      "ort": "kismi",
+      "skor": 0.5,
+      "oneri": "Versiyon güncellemesi sonrası kullanıcı alanına yanlış bilgi gelmesi sorununa yönelik başlatılan araştırmayı takip edin.",
+      "sonuc_id": 12,
+      "enjekte": [],
+      "feedback": "olumlu"
+    },
+    {
+      "ticket_id": 13356,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Sunucu disk alanının doluluk oranını kontrol edin.",
+      "sonuc_id": 13,
+      "enjekte": [],
+      "feedback": "olumsuz"
+    },
+    {
+      "ticket_id": 6541,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Güncelleme paketini uygulayın.",
+      "sonuc_id": 14,
+      "enjekte": [],
+      "feedback": "olumsuz"
+    },
+    {
+      "ticket_id": 2070,
+      "durum": "oneri_var",
+      "ort": "tam",
+      "skor": 1.0,
+      "oneri": "İlgili güncelleme paketinin müşteri ortamına uygulanıp uygulanmadığını doğrulayın.",
+      "sonuc_id": 15,
+      "enjekte": [],
+      "feedback": "olumlu"
+    },
+    {
+      "ticket_id": 5337,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Eklenen varlık türlerinin veritabanında kayıtlı olup olmadığını doğrulayın.",
+      "sonuc_id": 16,
+      "enjekte": [],
+      "feedback": "olumsuz"
+    },
+    {
+      "ticket_id": 14117,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Ticket_ServiceRequest tablosu üzerindeki SQL sorgu parametrelerini kontrol edin.",
+      "sonuc_id": 17,
+      "enjekte": [],
+      "feedback": "olumsuz"
+    },
+    {
+      "ticket_id": 15487,
+      "durum": "oneri_var",
+      "ort": "hayir",
+      "skor": 0.0,
+      "oneri": "Sözleşme kısmının görünmemesiyle ilgili konfigürasyon kontrollerini yapın; sorun ortam ayarlarında değilse log ve hata analizi gerçekleştirin.",
+      "sonuc_id": 18,
+      "enjekte": [],
+      "feedback": "olumsuz"
+    }
+  ],
+  "sure_dk": 30.6
+}

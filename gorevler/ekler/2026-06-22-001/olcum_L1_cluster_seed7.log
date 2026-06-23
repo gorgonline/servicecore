@@ -1,0 +1,101 @@
+
+##########################################################################
+# didim ÖĞRENME ÖLÇÜMÜ (A229+) — seed=7 | GATE=60 TRAIN=12 TEST=6 | rerank=0
+##########################################################################
+
+── ÖN-ELEME: 60 ticket yargıç-kapısından geçiyor (somut çözüm mü?) ──
+   → 37/60 yargılanabilir (%62), 0 hata
+
+   → CLUSTER: seed #13907 etrafında 18 benzer ticket (ort benzerlik 0.867)
+  ısınıyor (e5 embedder)...
+  ✓ hazır (0sn)
+
+── FAZ 1: TEST baseline S0 (L1+L3 KAPALI), n=6 | ölçülen katman=L1 ──
+  [S0 1/6] #13215
+       → durum=oneri_var ort=tam skor=1.0
+  [S0 2/6] #15702
+       → durum=oneri_var ort=hayir skor=0.0
+  [S0 3/6] #166
+       → durum=oneri_var ort=degerlendirilemez skor=None
+  [S0 4/6] #11939
+       → durum=oneri_var ort=hayir skor=0.0
+  [S0 5/6] #6158
+       → durum=oneri_var ort=hayir skor=0.0
+  [S0 6/6] #17717
+       → durum=oneri_var ort=degerlendirilemez skor=None
+
+── FAZ 2: TRAIN çöz + öğren, n=12 ──
+  [TR 1/12] #13907
+       → durum=oneri_var ort=kismi skor=0.5
+  [TR 2/12] #5366
+       → durum=oneri_var ort=hayir skor=0.0
+  [TR 3/12] #17817
+       → durum=oneri_var ort=degerlendirilemez skor=None
+  [TR 4/12] #16167
+       → durum=oneri_var ort=hayir skor=0.0
+  [TR 5/12] #17534
+       → durum=oneri_var ort=hayir skor=0.0
+  [TR 6/12] #16641
+       → durum=oneri_var ort=kismi skor=0.5
+  [TR 7/12] #13356
+       → durum=oneri_var ort=hayir skor=0.0
+  [TR 8/12] #6541
+       → durum=oneri_var ort=hayir skor=0.0
+  [TR 9/12] #2070
+       → durum=oneri_var ort=tam skor=1.0
+  [TR 10/12] #5337
+       → durum=oneri_var ort=hayir skor=0.0
+  [TR 11/12] #14117
+       → durum=oneri_var ort=hayir skor=0.0
+  [TR 12/12] #15487
+       → durum=oneri_var ort=hayir skor=0.0
+   → cikar.kural_cikar()...
+   → {'status': 'success', 'yeni': 1, 'mevcut': 1, 'hatali': 0, 'kurallar': [{'kural': 'Doğrudan güncelleme veya paket uygulama önerisi yapma.', 'tip': 'yapma', 'id': 1}, {'kural': 'Belirsiz ve genel sistem veya veritabanı kontrolü önerileri yapma.', 'tip': 'yapma', 'id': 1}], 'hatalar': [], 'girdi_olumsuz': 8}
+
+── FAZ 3: 1 kural onaylandı (HITL sim) ──
+   • [yapma] Doğrudan güncelleme veya paket uygulama önerisi yapma.
+
+── L1 VAKA BANKASI (TRAIN sonrası): toplam=11 (👍3/👎8) ──
+── L1-ATEŞLEME: 4/6 TEST ticket'ında eşik-üstü (0.85) vaka var (enjekte edilir) ──
+
+── FAZ 4: TEST after S1 (L1 AÇIK: VAKA=1 HINT=0), n=6 ──
+  [S1 1/6] #13215
+       → durum=oneri_var ort=kismi skor=0.0
+  [S1 2/6] #15702
+       → durum=oneri_var ort=kismi skor=0.5
+  [S1 3/6] #166
+       → durum=oneri_var ort=degerlendirilemez skor=None
+  [S1 4/6] #11939
+       → durum=oneri_var ort=hayir skor=0.0
+  [S1 5/6] #6158
+       → durum=oneri_var ort=hayir skor=0.0
+  [S1 6/6] #17717
+       → durum=oneri_var ort=degerlendirilemez skor=None
+
+── FAZ 5: IN-SAMPLE 3 👎-ticket enjekte AÇIK tekrar (mekanizma teşhisi) ──
+   #5366: hayir(0.0) → hayir(0.0)
+   #16167: hayir(0.0) → hayir(0.0)
+   #17534: hayir(0.0) → kısmi(None)
+
+==========================================================================
+RAPOR (30.6 dk)  ölçülen katman=L1  →  _funnel_cluster_L1_seed7.json
+==========================================================================
+ÖN-ELEME      : 37/60 yargılanabilir (%62)
+TRAIN HUNİ    : 12 solve → 12 öneri → 11 yargı → 8 👎 → 1 kural → 1 onay
+L1 vs L3      : L3 → 1 onaylı kural  |  L1 → 11 vaka, 4/6 TEST'te eşik-üstü retrievable
+
+    ticket    S0 (kapalı)     S1 (açık)
+     13215            tam         kismi
+     15702          hayir         kismi
+       166  degerlendirilemez  degerlendirilemez
+     11939          hayir         hayir
+      6158          hayir         hayir
+     17717  degerlendirilemez  degerlendirilemez
+
+── 3 METRİK ──
+  • Adaptivity     : 0.25 → 0.12  (Δ -0.12)  [skorlanan S0=4 S1=4]  ❌ KÖTÜLEŞTİ
+  • Retention      : 0 gerileme (✓→✗)  ✅
+  • İyileşen vaka  : 1  [15702]
+  • IN-SAMPLE Δ    : +0.00 (n=2)  kural çıktıyı DEĞİŞTİRMEDİ
+
+  Onaylı kural: 1.  Tek tur — yön gösterir. Kesin için çok-seed tekrar.
