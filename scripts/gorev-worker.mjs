@@ -3,14 +3,17 @@
  * Görev Worker — deterministik taşıma katmanı.
  *
  * launchd (com.gorgo.gorev-worker) her 2 dakikada bir çalıştırır.
- * Tur başına en fazla 1 spec üretimi + 1 görev işleme (FIFO).
+ * Tur başına en fazla 1 "geldi" + 1 "kuyruk" işi (FIFO + önceliğe göre).
  *
- * Akış:
- *   geldi/  → [Opus 4.8: spec yaz]  → spec/   (Levent paneldan onaylar → kuyruk/)
- *   kuyruk/ → [Sonnet 4.6: uygula]  → inceleme/ (başarı) | hata/ (başarısızlık)
+ * Akış — görevin tip'ine göre dallanır:
+ *   geldi/  (gorev) → [Opus 4.8: spec yaz]      → spec/   (Levent onaylar → kuyruk/)
+ *   geldi/  (rapor) → [Opus 4.8: araştır + yaz]  → inceleme/ | hata/   (spec/onay YOK)
+ *   kuyruk/ (gorev) → [Opus 4.8: uygula]         → inceleme/ | hata/
+ *   kuyruk/ (rapor) → [Opus 4.8: araştır + yaz]  → inceleme/ | hata/   (öksüz/elle taşıma)
  *
  * Tüm durum taşımaları panel API'si üzerinden yapılır (geçmiş kaydı otomatik).
- * Claude spec aşamasında SALT-OKUR araç alır; dosya yazımını worker yapar.
+ * Spec ve RAPOR aşamasında Claude SALT-OKUR araç alır; dosya yazımını worker yapar.
+ * Rapor: tam metin ekler/<id>/rapor-*.md'ye yazılır (gövde tavanı kırpmaz).
  * Güvenlik: kilit dosyası, zaman aşımı, günlük çağrı limiti, commit/push yasağı.
  */
 
@@ -357,6 +360,100 @@ SONUC: HATA
   return basarili;
 }
 
+// ---------- aşama: rapor (geldi|kuyruk → inceleme | hata) ----------
+// Rapor görevleri spec/onay aşamasını ATLAR. Salt-okur araştırılır; bulgular
+// hem gövdeye (kırpılmış) hem ekler/<id>/rapor-*.md'ye (tam metin) yazılır.
+
+async function raporIsle(gorev) {
+  log(`RAPOR başlıyor: ${gorev.id} — ${gorev.baslik}`);
+  await eylemGonder(gorev.id, { eylem: "tasi", durum: "yapiliyor" });
+
+  const ekler = ekYollari(gorev.id);
+  const ekBolumu =
+    ekler.length > 0
+      ? `\nEKLER (Read aracıyla aç ve incele — görselleri görerek değerlendir):\n${ekler.map((y) => `- ${y}`).join("\n")}\n`
+      : "";
+
+  const prompt = `Sen ServiceCore görev panelinin ARAŞTIRMA/RAPOR ajanısın. Aşağıdaki görev bir RAPOR talebidir: kod yazmak/dosya değiştirmek DEĞİL, araştırıp bulgularını raporlamak.
+
+GÖREV (id: ${gorev.id} · proje: ${gorev.proje} · öncelik: ${gorev.oncelik}):
+Başlık: ${gorev.baslik}
+
+${gorev.govde}
+${ekBolumu}
+Kurallar:
+- Çalışma dizinin: ${calismaDizini(gorev)} — oradaki CLAUDE.md'yi dikkate al.
+- SALT-OKUR çalış: Read/Glob/Grep + Bash (yalnız okuma/analiz; komutla DOSYA OLUŞTURMA/DEĞİŞTİRME yok) + WebFetch/WebSearch.
+- git'e dokunma, hiçbir dosyayı değiştirme/silme, yıkıcı komut (rm -rf, sudo, force push...) YOK.
+- Soruyu gerçek kaynaklardan (kod, dosya, web) doğrula; uydurma; emin değilsen "emin değilim" de ve nedenini yaz.
+- Çıktının İLK SATIRI mutlaka şu ikisinden biri olmalı:
+SONUC: TAMAM
+SONUC: HATA
+- Ardından "## Rapor" başlığı altında: soruya net cevap + bulgular + dayandığın kaynaklar/dosya yolları + (varsa) öneri. Markdown kullan, somut ol, gereksiz girişten kaçın.`;
+
+  cagriSay();
+  const sonuc = await claudeCalistir({
+    prompt,
+    model: ISLEME_MODELI,
+    araclar: ["Read", "Glob", "Grep", "Bash", "WebFetch", "WebSearch", "TodoWrite"],
+    zamanAsimi: ISLEME_ZAMAN_ASIMI,
+    dizin: calismaDizini(gorev),
+  });
+
+  // Yarış koruması: claude çalışırken Levent görevi el ile taşımış olabilir.
+  // Görev artık yapiliyor'da değilse rapor yazılmaz, sonuç çöpe gider.
+  const guncel = (await gorevleriGetir()).find((g) => g.id === gorev.id);
+  if (!guncel || guncel.durum !== "yapiliyor") {
+    log(
+      `RAPOR iptal: ${gorev.id} el ile taşınmış (durum: ${guncel?.durum ?? "silinmiş"}) — sonuç yazılmadı`,
+    );
+    return false;
+  }
+
+  const basarili =
+    !sonuc.zamanAsimi &&
+    sonuc.kod === 0 &&
+    /^SONUC:\s*TAMAM/m.test(sonuc.cikti.slice(0, 200));
+
+  const damga = new Date().toISOString().slice(0, 16);
+  const ciktiMetni = sonuc.zamanAsimi
+    ? `Zaman aşımı (60 dk) — araştırma yarıda kesildi.\n${sonuc.cikti.slice(-1000)}`
+    : sonuc.cikti || sonuc.hataCiktisi.slice(0, 1000) || "(çıktı yok)";
+
+  // Tam raporu ek olarak kaydet: gövde tavanına (GOVDE_TAVANI) takılmadan tam
+  // metin korunur, Levent panelden ek olarak indirip okur. Worker yazar (ajan
+  // salt-okur kaldı). Başarısızlıkta da eldeki kısmi çıktıyı saklamak için yazılır.
+  let ekNotu = "";
+  if (sonuc.cikti) {
+    try {
+      const klasor = path.join(EKLER_KOK, gorev.id);
+      mkdirSync(klasor, { recursive: true });
+      const dosyaAdi = `rapor-${damga.replace(/[:T]/g, "-")}.md`;
+      writeFileSync(
+        path.join(klasor, dosyaAdi),
+        `# Rapor — ${gorev.baslik}\n\n_${damga} · ${gorev.id}_\n\n${sonuc.cikti}\n`,
+      );
+      ekNotu = `📄 Tam rapor eki: \`${dosyaAdi}\`\n\n`;
+      log(`RAPOR eki yazıldı: ${gorev.id}/${dosyaAdi}`);
+    } catch (hata) {
+      log(`RAPOR eki yazılamadı: ${gorev.id} — ${hata.message}`);
+    }
+  }
+
+  const yeniGovde = govdeKirp(
+    `${guncel.govde.trimEnd()}\n\n## Worker Raporu (${damga})\n\n${ekNotu}${ciktiMetni}`,
+  );
+  await eylemGonder(gorev.id, { eylem: "duzenle", govde: yeniGovde });
+  await eylemGonder(gorev.id, {
+    eylem: "tasi",
+    durum: basarili ? "inceleme" : "hata",
+  });
+  log(
+    `RAPOR ${basarili ? "tamam" : "BAŞARISIZ"}: ${gorev.id} → ${basarili ? "inceleme" : "hata"}`,
+  );
+  return basarili;
+}
+
 // ---------- ana tur ----------
 
 async function tur() {
@@ -390,23 +487,51 @@ async function tur() {
   }
   if (oksuzler.length > 0) gorevler = await gorevleriGetir();
 
-  const specBekleyen = siradakini(gorevler, "geldi");
-  if (specBekleyen) {
+  // Tur bütçesi: en fazla 1 HAFİF (spec ~15dk) + 1 AĞIR (~60dk) iş. Böylece tur
+  // süresi kilit-bayatlama eşiğinin (90dk) altında kalır, eşzamanlı worker doğmaz.
+  // Rapor AĞIR olduğundan: "geldi"de rapor çalıştıysa bu tur ayrıca "kuyruk" işi
+  // ALINMAZ (raporIsle+gorevIsle = ~120dk > 90dk olurdu). Kuyruk işi sonraki tura
+  // (2dk sonra) kalır.
+  const geldiSiradaki = siradakini(gorevler, "geldi");
+  let geldiAgirCalisti = false;
+  if (geldiSiradaki) {
     try {
-      await specUret(specBekleyen);
+      if (geldiSiradaki.tip === "rapor") {
+        geldiAgirCalisti = true;
+        await raporIsle(geldiSiradaki);
+      } else {
+        await specUret(geldiSiradaki);
+      }
     } catch (hata) {
-      log(`SPEC istisna: ${specBekleyen.id} — ${hata.message}`);
+      log(`GELDI istisna: ${geldiSiradaki.id} — ${hata.message}`);
+      // Rapor kolunda hata-taşımayı burada yaparız (specUret kendi hatasını
+      // zaten içeride yönetir; onu ikinci kez taşımayız).
+      if (geldiSiradaki.tip === "rapor") {
+        try {
+          await eylemGonder(geldiSiradaki.id, { eylem: "tasi", durum: "hata" });
+        } catch {
+          // panel de düştüyse görev yerinde kalır; sonraki tur kurtarır
+        }
+      }
     }
   }
 
-  const islenecek = siradakini(gorevler, "kuyruk");
-  if (islenecek) {
+  // "kuyruk": onaylanmış görev uygulanır; rapor (elle taşıma/öksüz) raporlanır.
+  // geldi'de ağır iş (rapor) çalıştıysa bu tur atlanır (yukarıdaki bütçe notu).
+  const kuyrukSiradaki = geldiAgirCalisti
+    ? null
+    : siradakini(gorevler, "kuyruk");
+  if (kuyrukSiradaki) {
     try {
-      await gorevIsle(islenecek);
+      if (kuyrukSiradaki.tip === "rapor") {
+        await raporIsle(kuyrukSiradaki);
+      } else {
+        await gorevIsle(kuyrukSiradaki);
+      }
     } catch (hata) {
-      log(`İŞLEME istisna: ${islenecek.id} — ${hata.message}`);
+      log(`KUYRUK istisna: ${kuyrukSiradaki.id} — ${hata.message}`);
       try {
-        await eylemGonder(islenecek.id, { eylem: "tasi", durum: "hata" });
+        await eylemGonder(kuyrukSiradaki.id, { eylem: "tasi", durum: "hata" });
       } catch {
         // panel de düştüyse görev yapiliyor'da kalır; bayat kilit kırılınca
         // sonraki tur kullanıcı taşımasıyla kurtarılır
@@ -414,7 +539,7 @@ async function tur() {
     }
   }
 
-  if (!specBekleyen && !islenecek) {
+  if (!geldiSiradaki && !kuyrukSiradaki) {
     // sessiz tur — log şişmesin diye yazmıyoruz
   }
 }

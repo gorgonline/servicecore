@@ -27,6 +27,7 @@ okur/yazar, Mac Mini'deki Claude (worker) görevleri buradan alıp işler.
 id: 2026-06-11-001
 baslik: "Görev başlığı"
 proje: website | panel | email | brand | genel
+tip: gorev | rapor
 grup: null
 durum: geldi
 oncelik: dusuk | normal | yuksek
@@ -50,3 +51,14 @@ Görev metni (Levent'in yazdığı ham açıklama).
 Kurallar:
 - Dosya adı = `<id>.md`. Taşıma = dosyayı hedef klasöre taşı + frontmatter `durum` güncelle.
 - Durum geçişleri panel API'si veya Claude tarafından yapılır; elle taşıma da geçerlidir (git-backed, audit'li).
+
+## Görev türü (`tip`)
+
+| `tip` | Akış | Çıktı |
+|---|---|---|
+| `gorev` (varsayılan) | geldi → **spec** → (onay) → kuyruk → uygula → inceleme | Kod/dosya değişikliği + `## Worker Raporu` |
+| `rapor` | geldi → **araştır (salt-okur)** → inceleme · *spec/onay YOK* | `## Worker Raporu` (özet) + `ekler/<id>/rapor-*.md` (tam metin) |
+
+Rapor görevi: "şunu araştır, bana raporla" der; worker **hiçbir dosyaya dokunmadan**
+araştırır, bulguyu görevin gövdesine yazar, tam raporu ek olarak bırakır. Eski
+(tip'siz) görev dosyaları otomatik `gorev` sayılır — geriye dönük uyumlu.
