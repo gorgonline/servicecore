@@ -1325,6 +1325,51 @@
         "/surekli-iyilestirme",
         "/raporlama-yonetimi"
       ]
+    },
+    {
+      "slug": "solvecore",
+      "name": "SolveCoreAI",
+      "tier": "beta",
+      "tagline": "Bir destek kaydını kanıta dayalı çözmeye çalışan, emin olmadığında uydurmak yerine susan ya da kararı insana devreden çözüm asistanı.",
+      "description": "Açık bir destek kaydının konusunu, açıklamasını ve yorumlarını tek bağlamda okuyup üç başlığa indirir; geçmiş kapanmış benzer kayıt arşivi ile resmi bilgi bankası çözüm makalelerini anlamsal aramayla tarar ve tek bir kanıt paketinde birleştirir. Önerip önermeyeceğine modelin öz güvenine değil, yalnızca arama skoruna bakan bir kanıt kapısı karar verir: güçlü kanıt varsa kaynaklı somut adım önerir, sınırdaysa öneri üretmeden insana devreder, kanıt yoksa dürüstçe susar. Kapı geçilse bile önerinin dayandığı kaynağın gerçekten konuyla ilgili olduğunu bir doğrulama adımı denetler; alakasızsa öneri atılır — böylece uydurma cevap baştan kesilir. Her sonuç bir sonuç kimliğiyle kaydedilir ve teknisyenin olumlu/olumsuz geri bildirimi Sürekli İyileştirme'ye akarak motoru zamanla keskinleştirir.",
+      "icon": "Zap",
+      "accent": "sky",
+      "year": 2027,
+      "release": "Beta — Yol Haritası",
+      "whatItDoes": [
+        "Kaydın konu, açıklama ve yorumlarını tek metne döküp üç başlığa indirir: sorun ne, ne denenmiş, nerede kalınmış.",
+        "Kapanmış benzer kayıt arşivi ile bilgi bankası makalelerini anlamsal aramayla tarar; yalnızca arama skoru güçlüyse kaynaklı somut bir 'sıradaki adım' önerir, kanıt yoksa cevap uydurmak yerine dürüstçe susar.",
+        "Öneri yazıldıktan sonra dayandığı kaynağın gerçekten konuyla ilgili olduğunu doğrular ve her sonucu bir sonuç kimliğiyle kaydeder; teknisyen geri bildirimi sürekli iyileştirmeye akar."
+      ],
+      "howItWorks": [
+        {
+          "label": "Oku & özetle",
+          "detail": "Kaydın konusu, açıklaması ve tüm yorumları tek metne toplanır; sorun ne, ne denenmiş ve nerede kalınmış olmak üzere üç başlığa indirilir."
+        },
+        {
+          "label": "Kanıt topla",
+          "detail": "Kapanmış benzer kayıt arşivi anlamsal benzerlikle, resmi bilgi bankası çözüm makaleleri yeniden sıralamayla taranır; skorlanan adaylar tek kanıt paketinde birleşir."
+        },
+        {
+          "label": "Kanıt kapısı",
+          "detail": "Karar modelin öz güvenine değil yalnızca arama skoruna bakar: güçlü skor kaynaklı adım önerir, sınırdaki skor öneri üretmeden insana devreder, düşük skor dürüstçe susar."
+        },
+        {
+          "label": "Kaynak doğrula & öğren",
+          "detail": "Kapı geçilse bile önerinin dayandığı kaynak konuyla ilgili değilse öneri atılır; her sonuç bir sonuç kimliğiyle kaydedilir ve teknisyen geri bildirimi sürekli iyileştirmeye akar."
+        }
+      ],
+      "modules": [
+        "/etkilesim-yonetimi",
+        "/olay-yonetimi",
+        "/istek-yonetimi",
+        "/problem-yonetimi",
+        "/bilgi-bankasi",
+        "/self-servis-portal",
+        "/servis-otomasyonu",
+        "/surekli-iyilestirme",
+        "/raporlama-yonetimi"
+      ]
     }
   ]
 }

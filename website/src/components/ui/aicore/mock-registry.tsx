@@ -22,6 +22,7 @@ import { RisiCoreMock } from "./mocks/risicore";
 import { RootCoreMock } from "./mocks/rootcore";
 import { SentimentCoreMock } from "./mocks/sentimentcore";
 import { ShiftCoreMock } from "./mocks/shiftcore";
+import { SolveCoreMock } from "./mocks/solvecore";
 import { StormCoreMock } from "./mocks/stormcore";
 import { ToneCoreMock } from "./mocks/tonecore";
 import { TranslateCoreMock } from "./mocks/translatecore";
@@ -44,6 +45,7 @@ const REGISTRY: Record<string, (props: MockProps) => ReactNode> = {
   knowcore: KnowCoreMock,
   reportcore: ReportCoreMock,
   risicore: RisiCoreMock,
+  solvecore: SolveCoreMock,
   sentimentcore: SentimentCoreMock,
   kbcore: KBCoreMock,
   tonecore: ToneCoreMock,
