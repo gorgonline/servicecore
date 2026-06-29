@@ -1082,6 +1082,46 @@
         "situation": "Stratejik 'Çekirdek Bankacılık API v2 Migrasyonu' projesi 4. ayda 12/26 sprintte ilerliyordu. Velocity son 3 sprintte −%24 düştü, M3 'Çekirdek API katmanı' %72'de takıldı ve M4 'Veri migrasyonu' için CHG-1156 önkoşulu hâlâ bekliyordu. CTO planlanan 30 Haziran teslimini bekliyordu.",
         "outcome": "ProjectCoreAI 4 risk faktörünü puanlayarak +22 gün gecikme tahmin etti (yeni tahmin 22 Temmuz). M3 kapsam parçalama (−8 gün), CHG-1156'yı bu sprint'e çekme (−6 gün) ve 2 hafta köprü developer ekleme (−5 gün) aksiyonlarını gün kazancıyla önerdi. Üçü sprint planına eklenince tahmin +22 → +3 güne indi, proje 7 iş günü gecikmeyle canlıya alındı."
       }
+    },
+    {
+      "slug": "risicore",
+      "name": "RisiCoreAI",
+      "tier": "beta",
+      "tagline": "Varlık, hizmet ve sözleşme verisini zafiyet bankalarıyla eşleştirerek BT risklerini otomatik analiz eden risk motoru.",
+      "description": "Varlık envanteri, hizmet kayıtları, lisanslar, varlık ilişkileri, servis topolojileri ve bağımlılıkların yanı sıra olay, istek, değişiklik ve sözleşme yaşam döngüsü geçmişini birlikte analiz ederek BT ve bilgi varlıklarının risklerini otomatik çıkarır. Zafiyet veri tabanları (CVE/NVD benzeri), risk kütüphaneleri ve kurumsal güvenlik bilgi bankalarıyla senkron çalışıp akıllı eşleştirme yapar; bulguları özetler, raporlar ve her risk için somut iyileştirme aksiyonu önerir. Önerilen iyileştirmeleri Sürekli İyileştirme modülünde otomatik öneriye çevirir; ilgili iyileştirmeler uygulandıkça analizi yineleyip risk raporlarını güncel tutar.",
+      "icon": "ShieldAlert",
+      "accent": "red",
+      "year": 2027,
+      "release": "Beta — Yol Haritası",
+      "whatItDoes": [
+        "Varlık, ilişki, topoloji ve incident/change geçmişini tek risk grafiğinde birleştirir; her varlık ve hizmet için canlı risk skoru üretir.",
+        "Tespit ettiği zafiyetleri CVE/NVD ve kurumsal risk kütüphaneleriyle akıllı eşleştirip etki yüzdesi ve güven skoruyla sıralar.",
+        "Her bulgu için önerdiği iyileştirme aksiyonunu Sürekli İyileştirme modülünde otomatik öneriye çevirir, aksiyon uygulandıkça raporu yeniden hesaplar."
+      ],
+      "howItWorks": [
+        { "label": "Veri birleştirme", "detail": "Varlık envanteri, lisans, ilişki, topoloji-bağımlılık ve sözleşme yaşam döngüsü verisi tek risk grafiğinde toplanır." },
+        { "label": "Zafiyet eşleştirme", "detail": "Varlık sürümleri CVE/NVD ve kurumsal güvenlik bilgi bankalarıyla senkronize edilip CVSS tabanlı akıllı eşleştirmeye sokulur." },
+        { "label": "Risk skorlama", "detail": "Zafiyet ağırlığı, servis kritikliği, incident/change geçmişi ve bağımlılık yayılımı bir araya getirilerek etki × olasılık skoru çıkarılır." },
+        { "label": "Aksiyon önerisi", "detail": "En yüksek riskler için kanıtlı iyileştirme aksiyonu üretilir ve Sürekli İyileştirme kaydı olarak otomatik öneriye dönüştürülür." }
+      ],
+      "modules": [
+        "/varlik-yonetimi",
+        "/servis-konfigurasyon-yonetimi",
+        "/servis-iliskileri-yonetimi",
+        "/servis-topoloji-kesif",
+        "/discovery",
+        "/olay-yonetimi",
+        "/problem-yonetimi",
+        "/degisiklik-yonetimi",
+        "/sozlesme-yonetimi",
+        "/surekli-iyilestirme",
+        "/raporlama-yonetimi"
+      ],
+      "scenario": {
+        "company": "Birikim Holding",
+        "situation": "Yıl sonu ISO 27001 denetimine 6 hafta kala BT risk envanteri 4 ayrı sistemde dağılmıştı; 4.812 varlığın zafiyet eşleştirmesi elle yapılamıyordu. SRV-MAIL-01 posta sunucusunun eski OpenSSL sürümü mobil bankacılık 2FA akışıyla dolaylı bağımlıydı ama bu kritik risk hiçbir listede görünmüyordu.",
+        "outcome": "RisiCoreAI 4 kaynağı tek risk grafiğinde birleştirip 137 varlığı CVE/NVD ile eşleştirdi; SRV-MAIL-01'deki CVE-2024-tabanlı zafiyetin 2FA bağımlılığı üzerinden 14 şubeye yayıldığını %91 güvenle çıkardı, riski 8.7/10 işaretledi. 3 kritik bulgu için iyileştirme aksiyonunu Sürekli İyileştirme'de otomatik öneriye çevirdi; yamalar uygulandıkça raporu yineledi, kritik risk sayısı 23'ten 4'e indi ve denetim sıfır kritik bulguyla geçti."
+      }
     }
   ]
 }

@@ -18,6 +18,7 @@ import { PriorityCoreMock } from "./mocks/prioritycore";
 import { ProjectCoreMock } from "./mocks/projectcore";
 import { ReplyCoreMock } from "./mocks/replycore";
 import { ReportCoreMock } from "./mocks/reportcore";
+import { RisiCoreMock } from "./mocks/risicore";
 import { RootCoreMock } from "./mocks/rootcore";
 import { SentimentCoreMock } from "./mocks/sentimentcore";
 import { ShiftCoreMock } from "./mocks/shiftcore";
@@ -42,6 +43,7 @@ const REGISTRY: Record<string, (props: MockProps) => ReactNode> = {
   mergecore: MergeCoreMock,
   knowcore: KnowCoreMock,
   reportcore: ReportCoreMock,
+  risicore: RisiCoreMock,
   sentimentcore: SentimentCoreMock,
   kbcore: KBCoreMock,
   tonecore: ToneCoreMock,
