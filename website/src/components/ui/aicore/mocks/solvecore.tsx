@@ -514,7 +514,7 @@ export function SolveCoreMock({ accent: accentName }: { accent: string }) {
         <MockFrame>
           <TitleBar
             icon={<GitBranch className="w-3.5 h-3.5" />}
-            title="Kaydet & Öğren"
+            title="Sonuç Kaydı"
             meta="sonuç_id COZ-7741"
             accent={accent}
           />
@@ -532,7 +532,7 @@ export function SolveCoreMock({ accent: accentName }: { accent: string }) {
               </button>
             </div>
             <p className="text-[10px] font-mono text-(--color-text-muted) leading-snug">
-              Her sonuç ve teknisyen geri bildirimi kaydedilir; skor eşiği ve arama kalitesi Sürekli İyileştirme&apos;ye akar.
+              Her sonuç ve teknisyen geri bildirimi bir sonuç kimliğiyle kaydedilir — izlenebilir ve denetlenebilir kalır.
             </p>
           </div>
         </MockFrame>
