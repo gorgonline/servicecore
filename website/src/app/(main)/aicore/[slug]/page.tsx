@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ArrowUpRight, Building2, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import aicoreData from "@/data/aicore.json";
 import modullerData from "@/data/moduller.json";
 import { AicoreMock, hasMock } from "@/components/ui/aicore/mock-registry";
@@ -10,12 +10,6 @@ import PrivacyContact from "@/components/ui/privacy-contact";
 interface HowItWorksStep {
   label: string;
   detail: string;
-}
-
-interface Scenario {
-  company: string;
-  situation: string;
-  outcome: string;
 }
 
 interface ToolData {
@@ -29,7 +23,6 @@ interface ToolData {
   whatItDoes?: string[];
   howItWorks?: HowItWorksStep[];
   modules?: string[];
-  scenario?: Scenario;
 }
 
 interface ModuleEntry {
@@ -198,41 +191,6 @@ export default async function AicoreToolPage({ params }: PageProps) {
                   <ArrowUpRight className="w-3.5 h-3.5 text-(--color-text-muted) group-hover:text-(--color-accent-purple-light) transition-colors" />
                 </Link>
               ))}
-            </div>
-          </section>
-        )}
-
-        {tool.scenario && (
-          <section className="mt-20">
-            <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
-              SAHADAN SENARYO
-            </div>
-            <div className="rounded-3xl border border-white/8 bg-white/2 p-8 md:p-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/4 mb-6">
-                <Building2 className="w-3.5 h-3.5 text-(--color-text-muted)" />
-                <span className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-white/85">
-                  {tool.scenario.company}
-                </span>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <div className="text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-2">
-                    DURUM
-                  </div>
-                  <p className="text-base font-light text-white/85 leading-relaxed">
-                    {tool.scenario.situation}
-                  </p>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 text-[10px] font-mono font-semibold tracking-[0.22em] uppercase text-(--color-accent-purple-light) mb-2">
-                    <CheckCircle2 className="w-3 h-3" />
-                    SONUÇ
-                  </div>
-                  <p className="text-base font-light text-white/85 leading-relaxed">
-                    {tool.scenario.outcome}
-                  </p>
-                </div>
-              </div>
             </div>
           </section>
         )}

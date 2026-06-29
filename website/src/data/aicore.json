@@ -21,10 +21,22 @@
         "Konuşma boyunca cihaz, geçmiş ticket ve organizasyon bağlamını taşır — kullanıcıya ikinci kez sormaz."
       ],
       "howItWorks": [
-        { "label": "Niyet anlama", "detail": "Mesaj 6 ana hizmet kategorisinden birine sınıflanır, güven skoru üretilir." },
-        { "label": "KB eşleşmesi", "detail": "En yüksek 3 makale güven yüzdesiyle birlikte kullanıcıya sunulur." },
-        { "label": "Adım adım rehberlik", "detail": "Kullanıcı 'çözüldü' ya da 'olmadı' der; her adımda model öğrenir." },
-        { "label": "Otomatik eskalasyon", "detail": "Çözüm bulunamazsa hazır kategorize edilmiş ticket P0–P3 öncelik atamasıyla açılır." }
+        {
+          "label": "Niyet anlama",
+          "detail": "Mesaj 6 ana hizmet kategorisinden birine sınıflanır, güven skoru üretilir."
+        },
+        {
+          "label": "KB eşleşmesi",
+          "detail": "En yüksek 3 makale güven yüzdesiyle birlikte kullanıcıya sunulur."
+        },
+        {
+          "label": "Adım adım rehberlik",
+          "detail": "Kullanıcı 'çözüldü' ya da 'olmadı' der; her adımda model öğrenir."
+        },
+        {
+          "label": "Otomatik eskalasyon",
+          "detail": "Çözüm bulunamazsa hazır kategorize edilmiş ticket P0–P3 öncelik atamasıyla açılır."
+        }
       ],
       "modules": [
         "/self-servis-portal",
@@ -35,12 +47,7 @@
         "/servis-katalog-yonetimi",
         "/mobil-servis-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Lyra Üniversitesi",
-        "situation": "Naz Aksoy'un 5 dakika içinde sınav duyurusu göndermesi gerekirken Outlook'u açılmadı; akademik takvim baskısı altında IT'ye yazmak yerine self-service portala bağlandı.",
-        "outcome": "ChatCore 3 KB makalesi önerdi, profil sıfırlama denemesi sonuç vermedi. AI 'P2 acil' etiketli ticket taslağını otomatik hazırladı, geçici çözüm olarak Web Outlook'u önerdi; Naz duyurusunu zamanında gönderdi, ticket arka planda 17 dakikada kapandı."
-      }
+      ]
     },
     {
       "slug": "replycore",
@@ -58,10 +65,22 @@
         "Empatik dil tonunu SentimentCoreAI sinyaline göre kalibre eder, abartısız ve net kalır."
       ],
       "howItWorks": [
-        { "label": "Tetiklenir", "detail": "Teknisyen 'yanıt yaz' eylemini başlattığında çalışır." },
-        { "label": "Bağlam toplar", "detail": "Konuşma + ilgili KB makaleleri + 3 önceki benzer çözüm okunur." },
-        { "label": "Drawer'da sunar", "detail": "Özet + taslak yanıt sağdan açılan AI drawer'ında görünür." },
-        { "label": "Öğrenir", "detail": "Teknisyen düzeltmesi modele geri besleme olarak işlenir." }
+        {
+          "label": "Tetiklenir",
+          "detail": "Teknisyen 'yanıt yaz' eylemini başlattığında çalışır."
+        },
+        {
+          "label": "Bağlam toplar",
+          "detail": "Konuşma + ilgili KB makaleleri + 3 önceki benzer çözüm okunur."
+        },
+        {
+          "label": "Drawer'da sunar",
+          "detail": "Özet + taslak yanıt sağdan açılan AI drawer'ında görünür."
+        },
+        {
+          "label": "Öğrenir",
+          "detail": "Teknisyen düzeltmesi modele geri besleme olarak işlenir."
+        }
       ],
       "modules": [
         "/etkilesim-yonetimi",
@@ -72,12 +91,7 @@
         "/gorev-yonetimi",
         "/mobil-servis-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Lyra Üniversitesi",
-        "situation": "Naz Aksoy'un açtığı şifre sıfırlama olayında 32 mesajlık konuşma birikmişti; ara sınava 200+ öğrenci giremeyebilirdi ve teknisyen Elif Şahin acil yanıt yazma baskısı altındaydı.",
-        "outcome": "ReplyCoreAI 32 mesajı 4 maddelik özete indirip empatik bir yanıt taslağı üretti; Elif iki cümle düzelterek onayladı, 2 dakikada yanıt gönderildi ve sınav krizi kırk dakikada kapandı."
-      }
+      ]
     },
     {
       "slug": "classifycore",
@@ -95,10 +109,22 @@
         "Güven skoru düşükse manuel triyaj kuyruğuna düşürür — hatalı atama riski sıfırlanır."
       ],
       "howItWorks": [
-        { "label": "İçerik okuması", "detail": "Başlık, gövde ve ek dosya metni birlikte değerlendirilir." },
-        { "label": "Hiyerarşik sınıflama", "detail": "Ana kategori → alt kategori → çekirdek hizmet zinciri çıkarılır." },
-        { "label": "Beceri-yük eşleşmesi", "detail": "Ekip için gerekli yetkinlikler ile teknisyen profilleri puanlanır." },
-        { "label": "Güven kontrolü", "detail": "%85 altı sınıflamalar 'belirsiz' kuyruğunda servis yöneticisine gider." }
+        {
+          "label": "İçerik okuması",
+          "detail": "Başlık, gövde ve ek dosya metni birlikte değerlendirilir."
+        },
+        {
+          "label": "Hiyerarşik sınıflama",
+          "detail": "Ana kategori → alt kategori → çekirdek hizmet zinciri çıkarılır."
+        },
+        {
+          "label": "Beceri-yük eşleşmesi",
+          "detail": "Ekip için gerekli yetkinlikler ile teknisyen profilleri puanlanır."
+        },
+        {
+          "label": "Güven kontrolü",
+          "detail": "%85 altı sınıflamalar 'belirsiz' kuyruğunda servis yöneticisine gider."
+        }
       ],
       "modules": [
         "/etkilesim-yonetimi",
@@ -109,12 +135,7 @@
         "/servis-katalog-yonetimi",
         "/is-akisi-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Pazartesi sabahı 09:14'te 47 yeni ticket inbox'a düştü; iki tanesi P1, çoğu farklı domainlerden ve yanlış genel posta adresi 'destek@birikim'e gelmişti.",
-        "outcome": "ClassifyCore 42 ticket'ı %90+ güvenle hiyerarşik kategorilere yerleştirdi, 5 belirsiz kayıt servis yöneticisine kuyruğa alındı. INC-2847 doğru biçimde 'Altyapı / E-posta' altına geçti, Mert Kaya'ya 12 saniyede atandı; eskiden 6-8 dakika süren manuel triyaj sıfırlandı."
-      }
+      ]
     },
     {
       "slug": "prioritycore",
@@ -132,10 +153,22 @@
         "Açık kayıtların tamamını ITIL etki × aciliyet matriksine yerleştirip yöneticiye tek bakışta kuyruk haritası sunar."
       ],
       "howItWorks": [
-        { "label": "Çok eksenli skorlama", "detail": "Etki, aciliyet, servis kritikliği ve tırmanış hızı 4 ayrı modelle puanlanır." },
-        { "label": "ITIL matriks haritası", "detail": "Skorlar etki × aciliyet matriksine yerleşir; öncelik P0–P4 olarak çıkar." },
-        { "label": "Manuel-AI karşılaştırması", "detail": "Kullanıcı önceliği farklıysa AI gerekçesiyle yükseltir veya düşürür, log tutulur." },
-        { "label": "Sürekli yeniden değerleme", "detail": "Yeni etki sinyali geldikçe öncelik canlı güncellenir, alarm atılır." }
+        {
+          "label": "Çok eksenli skorlama",
+          "detail": "Etki, aciliyet, servis kritikliği ve tırmanış hızı 4 ayrı modelle puanlanır."
+        },
+        {
+          "label": "ITIL matriks haritası",
+          "detail": "Skorlar etki × aciliyet matriksine yerleşir; öncelik P0–P4 olarak çıkar."
+        },
+        {
+          "label": "Manuel-AI karşılaştırması",
+          "detail": "Kullanıcı önceliği farklıysa AI gerekçesiyle yükseltir veya düşürür, log tutulur."
+        },
+        {
+          "label": "Sürekli yeniden değerleme",
+          "detail": "Yeni etki sinyali geldikçe öncelik canlı güncellenir, alarm atılır."
+        }
       ],
       "modules": [
         "/olay-yonetimi",
@@ -146,12 +179,7 @@
         "/gorev-yonetimi",
         "/etkilesim-yonetimi",
         "/surekli-iyilestirme"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "INC-2847 ilk açıldığında L1 tarafından P2 olarak atanmıştı; ancak posta servisi 14 şubeyi ve mobil bankacılık doğrulama akışını da etkiliyordu, etki dakika başı büyüyordu.",
-        "outcome": "PriorityCore etki skorunu 9.4, aciliyet 9.2, servis kritikliği 10/10 hesapladı; önceliği P2'den P0'a yükseltti, gerekçeyle servis yöneticisine bildirdi. Eskalasyon 4 dakikada tetiklendi, vardiya yöneticisi vakaya kişisel olarak girdi."
-      }
+      ]
     },
     {
       "slug": "impactcore",
@@ -169,10 +197,22 @@
         "Standard, Normal veya CAB önerisini somut gerekçeyle verir; düşük riskli olanları otomatik onaylar."
       ],
       "howItWorks": [
-        { "label": "Etki ağacı çıkarımı", "detail": "Değişikliğin dokunduğu varlıklardan başlayarak CMDB üzerinde dolaylı bağımlıklar tespit edilir." },
-        { "label": "Dört eksenli risk", "detail": "Bağımlılık, geçmiş başarı, zamanlama, rollback hazırlığı bağımsız puanlanır." },
-        { "label": "Geçmiş kıyas", "detail": "Son 18 ayda yapılmış benzer değişikliklerin başarı/geri dönüş oranı tartılır." },
-        { "label": "Onay rotası", "detail": "Düşük risk → standard otomasyon, orta → değişiklik yöneticisi, yüksek → CAB toplantısı." }
+        {
+          "label": "Etki ağacı çıkarımı",
+          "detail": "Değişikliğin dokunduğu varlıklardan başlayarak CMDB üzerinde dolaylı bağımlıklar tespit edilir."
+        },
+        {
+          "label": "Dört eksenli risk",
+          "detail": "Bağımlılık, geçmiş başarı, zamanlama, rollback hazırlığı bağımsız puanlanır."
+        },
+        {
+          "label": "Geçmiş kıyas",
+          "detail": "Son 18 ayda yapılmış benzer değişikliklerin başarı/geri dönüş oranı tartılır."
+        },
+        {
+          "label": "Onay rotası",
+          "detail": "Düşük risk → standard otomasyon, orta → değişiklik yöneticisi, yüksek → CAB toplantısı."
+        }
       ],
       "modules": [
         "/degisiklik-yonetimi",
@@ -185,12 +225,7 @@
         "/is-akisi-yonetimi",
         "/yonetim-paneli",
         "/surekli-iyilestirme"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Mert Kaya, posta sunucusunu Exchange 2019'dan 2024'e yükseltmek için CHG-1148'i açtı. Pencere uygundu ama mobil bankacılık 2FA akışı dolaylı olarak bu sunucuya bağımlıydı; bu bağımlılık manuel listede görünmüyordu.",
-        "outcome": "ImpactCore etki ağacında 2FA bağımlılığını otomatik tespit etti, riski 7.8/10 hesaplayıp değişikliği CAB toplantısına yönlendirdi. Yedek SMS kanalının önceden açılması şart koşuldu; değişiklik Cuma gecesi sıfır 2FA kesintisiyle tamamlandı."
-      }
+      ]
     },
     {
       "slug": "predictcore",
@@ -208,10 +243,22 @@
         "Risk düşürücü 1-2 somut aksiyon önerir; uygulanırsa risk yeniden hesaplanır."
       ],
       "howItWorks": [
-        { "label": "Sürekli puanlar", "detail": "Açık her ticket dakika başı yeniden değerlendirilir." },
-        { "label": "Çok kaynaklı sinyal", "detail": "Geçmiş 90 gün benzerleri + güncel kapasite + teknisyen yükü birlikte tartılır." },
-        { "label": "Eşik aşılınca uyarır", "detail": "Risk altındaki kayıtlar servis yöneticisi panosuna düşer." },
-        { "label": "Aksiyon önerir", "detail": "'Şu adımı atarsan risk %X'e iner' tarzında somut tavsiye üretir." }
+        {
+          "label": "Sürekli puanlar",
+          "detail": "Açık her ticket dakika başı yeniden değerlendirilir."
+        },
+        {
+          "label": "Çok kaynaklı sinyal",
+          "detail": "Geçmiş 90 gün benzerleri + güncel kapasite + teknisyen yükü birlikte tartılır."
+        },
+        {
+          "label": "Eşik aşılınca uyarır",
+          "detail": "Risk altındaki kayıtlar servis yöneticisi panosuna düşer."
+        },
+        {
+          "label": "Aksiyon önerir",
+          "detail": "'Şu adımı atarsan risk %X'e iner' tarzında somut tavsiye üretir."
+        }
       ],
       "modules": [
         "/olay-yonetimi",
@@ -223,12 +270,7 @@
         "/surekli-iyilestirme",
         "/raporlama-yonetimi",
         "/servis-iliskileri-yonetimi"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "INC-2847'nin Hizmet Seviyesi dolmadan 1 saat 46 dakika kalmıştı, atanan teknisyen Mert Kaya 6 P1 üzerinde paralel çalışıyordu, etkilenen şube sayısı her saat artıyordu.",
-        "outcome": "PredictCoreAI %78 ihlal riski uyarısı verip vardiya yöneticisine eskalasyonu ve trafiği yedek sunucuya yönlendirmeyi önerdi; iki aksiyon uygulanınca risk %34'e düştü ve Hizmet Seviyesi 22 dakikalık boşlukla yakalandı."
-      }
+      ]
     },
     {
       "slug": "mergecore",
@@ -246,10 +288,22 @@
         "Etki ölçümünü tek olay üzerinden net hesaplatır — CSAT ve Hizmet Seviyesi çift saymaz."
       ],
       "howItWorks": [
-        { "label": "Semantik kümeleme", "detail": "Yeni kayıt geldikçe içerik vektör uzayında en yakın açık kayıtlarla karşılaştırılır." },
-        { "label": "Çok sinyalli skor", "detail": "Servis, zaman penceresi, anahtar kelimeler ve kullanıcı segmenti ağırlıklı toplanır." },
-        { "label": "Onaylı birleştirme", "detail": "%85 üstü adaylar L1 ekranında işaretli gelir; tek tıkla onaylanır veya ayrılır." },
-        { "label": "Tek raporlama ekseni", "detail": "Birleşmiş alt kayıtlar ana kayda otomatik atıfla bağlanır; CSAT tek metrik olarak ölçülür." }
+        {
+          "label": "Semantik kümeleme",
+          "detail": "Yeni kayıt geldikçe içerik vektör uzayında en yakın açık kayıtlarla karşılaştırılır."
+        },
+        {
+          "label": "Çok sinyalli skor",
+          "detail": "Servis, zaman penceresi, anahtar kelimeler ve kullanıcı segmenti ağırlıklı toplanır."
+        },
+        {
+          "label": "Onaylı birleştirme",
+          "detail": "%85 üstü adaylar L1 ekranında işaretli gelir; tek tıkla onaylanır veya ayrılır."
+        },
+        {
+          "label": "Tek raporlama ekseni",
+          "detail": "Birleşmiş alt kayıtlar ana kayda otomatik atıfla bağlanır; CSAT tek metrik olarak ölçülür."
+        }
       ],
       "modules": [
         "/etkilesim-yonetimi",
@@ -260,12 +314,7 @@
         "/gorev-yonetimi",
         "/raporlama-yonetimi",
         "/servis-iliskileri-yonetimi"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Posta sunucusu kesintisi başladıktan 13 dakika sonra 7 farklı şubeden kullanıcılar ayrı ayrı ticket açtı; içerikler 'mail açılmıyor', 'outlook donuyor', 'sunucuya bağlanamıyor' gibi farklı kelimelerle ama aynı sorunu anlatıyordu.",
-        "outcome": "MergeCoreAI 6 dublike kaydı %87+ benzerlikle tespit etti, hepsini INC-2847 altına bağladı. L1 ekibi 36 dakikalık kopya işten kurtuldu, müdahale kuyruğu sadeleşti, çözümün açıklaması tek kanaldan tüm etkilenen kullanıcılara gitti."
-      }
+      ]
     },
     {
       "slug": "knowcore",
@@ -283,10 +332,22 @@
         "Tamlık, açıklık ve atıf doğruluğunu kalite skorlarıyla raporlar — editör hangi makaleye odaklanacağını bilir."
       ],
       "howItWorks": [
-        { "label": "Kapanan kayıt analizi", "detail": "Çözülmüş ticket'ın konuşması, çözüm notu ve etkilenen varlıkları okunur." },
-        { "label": "Şablon eşleşmesi", "detail": "Workaround, Known Error ya da Technical Guide şablonlarından uygun olanı seçilir." },
-        { "label": "Atıflı sentez", "detail": "Belirti, kök neden, çözüm adımları ve ilgili varlıklar bölümleri kaynak kayıtlarla bağlanır." },
-        { "label": "Kalite kontrol & yayın", "detail": "Kalite skoru editöre sunulur; tek tıkla yayınlanır veya düzeltilir." }
+        {
+          "label": "Kapanan kayıt analizi",
+          "detail": "Çözülmüş ticket'ın konuşması, çözüm notu ve etkilenen varlıkları okunur."
+        },
+        {
+          "label": "Şablon eşleşmesi",
+          "detail": "Workaround, Known Error ya da Technical Guide şablonlarından uygun olanı seçilir."
+        },
+        {
+          "label": "Atıflı sentez",
+          "detail": "Belirti, kök neden, çözüm adımları ve ilgili varlıklar bölümleri kaynak kayıtlarla bağlanır."
+        },
+        {
+          "label": "Kalite kontrol & yayın",
+          "detail": "Kalite skoru editöre sunulur; tek tıkla yayınlanır veya düzeltilir."
+        }
       ],
       "modules": [
         "/bilgi-bankasi",
@@ -297,12 +358,7 @@
         "/surekli-iyilestirme",
         "/servis-katalog-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "INC-2847 çözüldü; ancak posta sunucusu kuyruk birikmesi son 90 günde dördüncü tekrarlayan olaydı ve hâlâ KB'de kalıcı bir makale yoktu. Editörler her seferinde sıfırdan yazıyordu.",
-        "outcome": "KnowCore 4 ilgili kaydı birleştirip 'Posta sunucusu kuyruk birikmesinde ikinci sunucuya trafik yönlendirme' başlıklı taslağı 2.8 saniyede üretti, kalite skoru 8.6/10 çıktı. Editör Ayşe Demir bir paragraf düzelterek yayınladı; sonraki ay aynı sorun bir kez daha çıktığında self-service üzerinden kullanıcılar 4 dakikada çözdü."
-      }
+      ]
     },
     {
       "slug": "reportcore",
@@ -320,10 +376,22 @@
         "Algıladığı niyeti, çıkardığı filtreleri ve kullandığı kaynak veriyi şeffaf biçimde gösterir."
       ],
       "howItWorks": [
-        { "label": "Niyet çözümleme", "detail": "Türkçe soru, metrik / boyut / aralık / filtre dörtlüsüne ayrıştırılır." },
-        { "label": "Veri kaynağı bağlama", "detail": "Olay, CMDB, Hizmet Seviyesi, varlık ve katalog tablolarından gerekli olanlar dinamik birleştirilir." },
-        { "label": "Görsel seçimi", "detail": "Boyut sayısı ve veri tipine göre bar / alan / pivot / KPI bileşeni otomatik seçilir." },
-        { "label": "Açıklanabilir çıktı", "detail": "Yorumlama paneli filtreleri, kaynakları ve güven skorunu kullanıcıya birlikte sunar." }
+        {
+          "label": "Niyet çözümleme",
+          "detail": "Türkçe soru, metrik / boyut / aralık / filtre dörtlüsüne ayrıştırılır."
+        },
+        {
+          "label": "Veri kaynağı bağlama",
+          "detail": "Olay, CMDB, Hizmet Seviyesi, varlık ve katalog tablolarından gerekli olanlar dinamik birleştirilir."
+        },
+        {
+          "label": "Görsel seçimi",
+          "detail": "Boyut sayısı ve veri tipine göre bar / alan / pivot / KPI bileşeni otomatik seçilir."
+        },
+        {
+          "label": "Açıklanabilir çıktı",
+          "detail": "Yorumlama paneli filtreleri, kaynakları ve güven skorunu kullanıcıya birlikte sunar."
+        }
       ],
       "modules": [
         "/raporlama-yonetimi",
@@ -337,12 +405,7 @@
         "/varlik-yonetimi",
         "/surekli-iyilestirme",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Servis yöneticisi Ayşe Demir, üst yönetim toplantısına 20 dakika kala posta servisinin son 90 günde hangi şubelerde yoğunlaştığını ve trendin nasıl seyrettiğini gösteren bir görselleştirme istedi.",
-        "outcome": "ReportCoreAI tek cümlelik komuttan 1.4 saniyede 3 KPI + 1 bar grafik + 1 alan grafiği + 1 pivot tablosundan oluşan dashboard'u yorumlama paneliyle birlikte üretti. Ayşe sunumunu hazır şablonu olmadan toplantıya götürdü, üst yönetim trend kırılışını tek bakışta gördü."
-      }
+      ]
     },
     {
       "slug": "sentimentcore",
@@ -360,10 +423,22 @@
         "Eğilim çizgisi kötüye gidiyorsa servis yöneticisine sessiz eskalasyon uyarısı tetikler."
       ],
       "howItWorks": [
-        { "label": "Kanal-bağımsız tetiklenir", "detail": "Yeni mesaj e-posta, portal, chat ya da çağrı transkripti olabilir." },
-        { "label": "Türkçe model", "detail": "Geçmiş etkileşim ve kullanıcı profili de tartılarak skor üretir." },
-        { "label": "Inline rozet", "detail": "Skor + alt boyutlar ticket konuşmasının kenarında rozet olarak görünür." },
-        { "label": "Sessiz eskalasyon", "detail": "Eğri kırılırsa yöneticiye uyarı, kullanıcıya görünür değil." }
+        {
+          "label": "Kanal-bağımsız tetiklenir",
+          "detail": "Yeni mesaj e-posta, portal, chat ya da çağrı transkripti olabilir."
+        },
+        {
+          "label": "Türkçe model",
+          "detail": "Geçmiş etkileşim ve kullanıcı profili de tartılarak skor üretir."
+        },
+        {
+          "label": "Inline rozet",
+          "detail": "Skor + alt boyutlar ticket konuşmasının kenarında rozet olarak görünür."
+        },
+        {
+          "label": "Sessiz eskalasyon",
+          "detail": "Eğri kırılırsa yöneticiye uyarı, kullanıcıya görünür değil."
+        }
       ],
       "modules": [
         "/etkilesim-yonetimi",
@@ -375,12 +450,7 @@
         "/surekli-iyilestirme",
         "/mobil-servis-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Selin Yıldız'ın açtığı INC-2847 üçüncü tekrarlayan posta sunucusu olayıydı; mesajlarda 'üçüncü kez' ve 'müşteri kuyruğu büyüyor' gibi kritik ifadeler peş peşe geçti.",
-        "outcome": "SentimentCoreAI 7 dakikalık eğilim kırıklığını yakalayıp servis yöneticisine sessiz uyarı gönderdi. Ekip ara yanıtı 12 dakika içinde gönderdi, CSAT bu olayda 4.1 üstünde kaldı."
-      }
+      ]
     },
     {
       "slug": "kbcore",
@@ -398,10 +468,22 @@
         "Toplu uygulama ile düşük uyumlu makaleleri tek seferde v2 taslağına dönüştürür."
       ],
       "howItWorks": [
-        { "label": "Şablon taraması", "detail": "Tüm KB makaleleri kurumsal şablona karşı bölüm bazında ölçülür, uyum yüzdesi çıkarılır." },
-        { "label": "Eksiklik gerekçesi", "detail": "Hangi bölümün eksik olduğu açıkça etiketlenir, kuyruğa öncelik atanır." },
-        { "label": "Geçmişten besleme", "detail": "İlgili ticket'lar, varlıklar ve önceki çözümler eksik bölümlere atıfla yerleştirilir." },
-        { "label": "Editörle uzlaşma", "detail": "Sadece eksikleri ekle, editörde aç veya doğrudan yayınla seçenekleri sunulur." }
+        {
+          "label": "Şablon taraması",
+          "detail": "Tüm KB makaleleri kurumsal şablona karşı bölüm bazında ölçülür, uyum yüzdesi çıkarılır."
+        },
+        {
+          "label": "Eksiklik gerekçesi",
+          "detail": "Hangi bölümün eksik olduğu açıkça etiketlenir, kuyruğa öncelik atanır."
+        },
+        {
+          "label": "Geçmişten besleme",
+          "detail": "İlgili ticket'lar, varlıklar ve önceki çözümler eksik bölümlere atıfla yerleştirilir."
+        },
+        {
+          "label": "Editörle uzlaşma",
+          "detail": "Sadece eksikleri ekle, editörde aç veya doğrudan yayınla seçenekleri sunulur."
+        }
       ],
       "modules": [
         "/bilgi-bankasi",
@@ -411,12 +493,7 @@
         "/surekli-iyilestirme",
         "/yonetim-paneli",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "1.284 makaleden oluşan bilgi bankasında 487 makale şablon dışıydı; özellikle 'VPN kurulum rehberi' (KB-1042) sık aranıyor ama 'Sorun Giderme' bölümü hiç yoktu, kullanıcılar her seferinde ticket açıyordu.",
-        "outcome": "KBCoreAI envanteri taradı, KB-1042'yi %38 uyumdan %96 uyuma yükseltti — eksik 4 bölümü ticket geçmişinden besleyerek tamamladı. Editör tek tıkla v2.0'ı yayınladı; sonraki ay VPN kategorisinde self-service oranı %42'den %71'e çıktı, ticket hacmi yarıdan fazla düştü."
-      }
+      ]
     },
     {
       "slug": "tonecore",
@@ -434,10 +511,22 @@
         "Tek tıkla uygulanabilir, kurumsal dile uygun alternatif versiyon önerir."
       ],
       "howItWorks": [
-        { "label": "Inline analiz", "detail": "Yazma anında her cümle çoklu eksen üzerinden puanlanır, problemli yerler altı çizilerek işaretlenir." },
-        { "label": "Stil rehberi karşılaştırması", "detail": "Kurumun yayımlanmış iletişim rehberiyle ihlal noktası bazında karşılaştırma yapılır." },
-        { "label": "Düzeltilmiş alternatif", "detail": "Aynı bilgi içeriği korunarak empatik, net ve saygılı bir versiyon üretilir." },
-        { "label": "Kanaldan bağımsız", "detail": "E-posta, portal cevabı ve canlı chat — hepsinde aynı stil standardı uygulanır." }
+        {
+          "label": "Inline analiz",
+          "detail": "Yazma anında her cümle çoklu eksen üzerinden puanlanır, problemli yerler altı çizilerek işaretlenir."
+        },
+        {
+          "label": "Stil rehberi karşılaştırması",
+          "detail": "Kurumun yayımlanmış iletişim rehberiyle ihlal noktası bazında karşılaştırma yapılır."
+        },
+        {
+          "label": "Düzeltilmiş alternatif",
+          "detail": "Aynı bilgi içeriği korunarak empatik, net ve saygılı bir versiyon üretilir."
+        },
+        {
+          "label": "Kanaldan bağımsız",
+          "detail": "E-posta, portal cevabı ve canlı chat — hepsinde aynı stil standardı uygulanır."
+        }
       ],
       "modules": [
         "/etkilesim-yonetimi",
@@ -449,12 +538,7 @@
         "/mobil-servis-yonetimi",
         "/surekli-iyilestirme",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Mert Kaya, INC-2847'ye üst üste bildirim alan Selin Yıldız'a yanıt yazarken yorgunluğun etkisiyle savunmacı bir dil kullandı; mesaj 'şikayet getirmek yerine' gibi suçlayıcı ifadeler ve 'queue depth, failover' gibi jargonla doluydu.",
-        "outcome": "ToneCoreAI üç stil ihlalini gönderim öncesi yakaladı, ton skorunu 4.2/10 hesapladı; özür-açıklama-taahhüt yapısında 8.7/10 ton skorlu alternatif sundu. Mert tek tıkla kabul etti, ay sonu CSAT skoru +0.4 puan etkilendi."
-      }
+      ]
     },
     {
       "slug": "rootcore",
@@ -472,10 +556,22 @@
         "Onaylanan kök nedeni 'known error' olarak kaydeder ve kalıcı çözüm için değişiklik talebi açabilir."
       ],
       "howItWorks": [
-        { "label": "Çok kaynaklı toplama", "detail": "Olay, log, alarm, son değişiklik ve CMDB verisi 20 dakikalık pencere içinde sıralanır." },
-        { "label": "Zaman + nedensellik", "detail": "Sinyaller arası gecikme ve etki yönü modellenir, koreleli olanlar gruplanır." },
-        { "label": "Aday üretimi", "detail": "Etkilenen varlık ve değişiklik geçmişi kullanılarak 3 olası kök neden çıkarılır." },
-        { "label": "Kanıt zinciri", "detail": "Her aday için ölçüm, log ve geçmiş tekrar oranlarıyla beslenen 4-5 maddelik gerekçe sunulur." }
+        {
+          "label": "Çok kaynaklı toplama",
+          "detail": "Olay, log, alarm, son değişiklik ve CMDB verisi 20 dakikalık pencere içinde sıralanır."
+        },
+        {
+          "label": "Zaman + nedensellik",
+          "detail": "Sinyaller arası gecikme ve etki yönü modellenir, koreleli olanlar gruplanır."
+        },
+        {
+          "label": "Aday üretimi",
+          "detail": "Etkilenen varlık ve değişiklik geçmişi kullanılarak 3 olası kök neden çıkarılır."
+        },
+        {
+          "label": "Kanıt zinciri",
+          "detail": "Her aday için ölçüm, log ve geçmiş tekrar oranlarıyla beslenen 4-5 maddelik gerekçe sunulur."
+        }
       ],
       "modules": [
         "/problem-yonetimi",
@@ -488,12 +584,7 @@
         "/yonetim-paneli",
         "/raporlama-yonetimi",
         "/surekli-iyilestirme"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "INC-2847 yine posta kuyruğunda biriken mesajla başladı; alarm, log ve incident sinyalleri farklı ekranlardaydı, kimse 3 gün önce yapılmış CHG-1102 değişikliğiyle bağlantıyı kuramıyordu.",
-        "outcome": "RootCoreAI 20 dakikalık pencerede 6 sinyali korele etti, kuyruk geçiş eşiğinin CHG-1102 sonrasında yanlış konfigüre edildiğini %87 güvenle çıkardı; gerekçeyi 4 maddelik kanıt zinciriyle yöneticiye sundu. Kök neden 'known error' olarak kaydedildi, CHG-1148 ile kalıcı çözüm planlandı. Aynı sorun bir daha tekrarlamadı."
-      }
+      ]
     },
     {
       "slug": "stormcore",
@@ -511,10 +602,22 @@
         "Paralel ekipleri stormlara dağıtır, fırtınanın kapanış süresini öngörür."
       ],
       "howItWorks": [
-        { "label": "Akın algısı", "detail": "Dakika başına alarm sayısı eşik üstüne çıktığında storm modu otomatik devreye girer." },
-        { "label": "Kümeleme", "detail": "Servis, varlık, hata sınıfı ve coğrafya boyutlarında alarmlar paralel kümeler oluşturur." },
-        { "label": "Gürültü bastırma", "detail": "Korele alarmlar (queue/cpu, BGP flap, auth retry) tek bir 'baba alarm' altında sessizleştirilir." },
-        { "label": "Ekip rotası", "detail": "Beceri ve mevcut yüke göre paralel ekiplere küme atanır, kapanış süresi öngörülür." }
+        {
+          "label": "Akın algısı",
+          "detail": "Dakika başına alarm sayısı eşik üstüne çıktığında storm modu otomatik devreye girer."
+        },
+        {
+          "label": "Kümeleme",
+          "detail": "Servis, varlık, hata sınıfı ve coğrafya boyutlarında alarmlar paralel kümeler oluşturur."
+        },
+        {
+          "label": "Gürültü bastırma",
+          "detail": "Korele alarmlar (queue/cpu, BGP flap, auth retry) tek bir 'baba alarm' altında sessizleştirilir."
+        },
+        {
+          "label": "Ekip rotası",
+          "detail": "Beceri ve mevcut yüke göre paralel ekiplere küme atanır, kapanış süresi öngörülür."
+        }
       ],
       "modules": [
         "/olay-yonetimi",
@@ -527,12 +630,7 @@
         "/yonetim-paneli",
         "/raporlama-yonetimi",
         "/servis-iliskileri-yonetimi"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Hafta içi öğleden sonra 12 dakikada 94 alarm aynı anda akmaya başladı; posta, edge ağ ve VPN kapısı eş zamanlı sallanıyordu, kontrol merkezindeki üç teknisyen alarm panellerinde aynı sinyali defalarca görmekten ne yapacağını bilemedi.",
-        "outcome": "StormCoreAI 3 paralel kümeyi (SRV-MAIL, Edge/WAN, VPN) ayrıştırdı, 321 korele alarmı sessizleştirdi ve ekipleri beceriye göre 3 farklı stormla görevlendirdi. Major incident eş zamanlı olarak açıldı; fırtına 14 dakikada kapandı, sonraki çeyrekte kontrolsüz alarm fırtınası sıfıra düştü."
-      }
+      ]
     },
     {
       "slug": "flowcore",
@@ -550,10 +648,22 @@
         "Benzer mevcut akışlardan farkları gösterir, tekrar üretim yerine türetme yapar."
       ],
       "howItWorks": [
-        { "label": "Niyet ayrıştırma", "detail": "Komut tetikleyici, görev, karar ve son durum bileşenlerine ayrılır." },
-        { "label": "BPMN üretimi", "detail": "Çıkarılan yapı standart sembollerle (trigger / task / decision / end) diyagrama dökülür." },
-        { "label": "Entegrasyon önerisi", "detail": "Her görev için en uygun ServiceCore modülü ve otomasyon adımı önerilir." },
-        { "label": "Editör + yayın", "detail": "Akış görsel editörde açılır; tek tıkla üretime alınır." }
+        {
+          "label": "Niyet ayrıştırma",
+          "detail": "Komut tetikleyici, görev, karar ve son durum bileşenlerine ayrılır."
+        },
+        {
+          "label": "BPMN üretimi",
+          "detail": "Çıkarılan yapı standart sembollerle (trigger / task / decision / end) diyagrama dökülür."
+        },
+        {
+          "label": "Entegrasyon önerisi",
+          "detail": "Her görev için en uygun ServiceCore modülü ve otomasyon adımı önerilir."
+        },
+        {
+          "label": "Editör + yayın",
+          "detail": "Akış görsel editörde açılır; tek tıkla üretime alınır."
+        }
       ],
       "modules": [
         "/is-akisi-yonetimi",
@@ -566,12 +676,7 @@
         "/entegrasyon-yonetimi",
         "/esm",
         "/yonetim-paneli"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "İK ekibi yeni başlayan personel onboarding'i için tek tek tarif edip BT'den iş akışı kurmasını istemekten yorulmuştu; her departman farklı bir varyant istiyor, BT analist haftalarca formlar üretiyordu.",
-        "outcome": "Ayşe Demir tek bir Türkçe cümleyle akışı tarif etti, FlowCoreAI 3.6 saniyede 8 düğümlü, 1 karar noktalı, paralel kollu BPMN diyagramını çıkardı. ESM editöründe küçük bir düzeltmeyle yayınlandı; sonraki çeyrekte 184 yeni akış aynı hızla devreye alındı, manuel tasarım maliyeti %68 düştü."
-      }
+      ]
     },
     {
       "slug": "discovercore",
@@ -589,10 +694,22 @@
         "Yeni cihazları, kayıp bağımlılıkları ve riskli tek-nokta bağlantıları işaretler."
       ],
       "howItWorks": [
-        { "label": "Hibrit tarayıcı", "detail": "Agent + agentless tarayıcılar her 15 dakikada bir koşar." },
-        { "label": "Normalize eder", "detail": "Ham keşif verisi tek şemada birleşir, ilişki çıkarımı yapılır." },
-        { "label": "Vurgulu rapor", "detail": "Yeni veya değişen düğümler haritada renkli halka ile işaretlenir." },
-        { "label": "AI yorumu", "detail": "Tek-nokta bağımlılıklar veya zayıf noktalar açıklayıcı bir cümleyle raporlanır." }
+        {
+          "label": "Hibrit tarayıcı",
+          "detail": "Agent + agentless tarayıcılar her 15 dakikada bir koşar."
+        },
+        {
+          "label": "Normalize eder",
+          "detail": "Ham keşif verisi tek şemada birleşir, ilişki çıkarımı yapılır."
+        },
+        {
+          "label": "Vurgulu rapor",
+          "detail": "Yeni veya değişen düğümler haritada renkli halka ile işaretlenir."
+        },
+        {
+          "label": "AI yorumu",
+          "detail": "Tek-nokta bağımlılıklar veya zayıf noktalar açıklayıcı bir cümleyle raporlanır."
+        }
       ],
       "modules": [
         "/discovery",
@@ -606,12 +723,7 @@
         "/yonetim-paneli",
         "/raporlama-yonetimi",
         "/surekli-iyilestirme"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Posta servisi yedek sunucusunun gerçekten izole olup olmadığı CMDB'de belirsizdi; manuel envanter altı ay boyunca güncellenmemişti.",
-        "outcome": "DisCoreAI 7 yeni düğüm keşfetti ve STORE-IST-14 üzerinden iki posta sunucusunun aynı depolamayı paylaştığını işaretledi. Yedek izolasyon eksiği 3 gün içinde kapatıldı, bir sonraki incident'ta ikinci sunucu sorunsuz devraldı."
-      }
+      ]
     },
     {
       "slug": "translatecore",
@@ -629,10 +741,22 @@
         "Özel adlar, ürün adları ve kısaltmalar için kurumsal glossary kullanır — koruma altında olan terimler asla değiştirilmez."
       ],
       "howItWorks": [
-        { "label": "Otomatik dil tespiti", "detail": "Mesaj geldiğinde kaynak dil yüksek güvenle tespit edilir; istisna profillerde manuel kilit konabilir." },
-        { "label": "Terim koruma", "detail": "INC kodları, kuruluş ve ürün adları, kısaltmalar (TMS, POD, Hizmet Seviyesi) glossary üzerinden işaretlenir, çevrilmez." },
-        { "label": "Çift kanal görünüm", "detail": "Konuşma her iki tarafta hem orijinal hem çeviri olarak görünür; ekipler ne dendiğine güvenir." },
-        { "label": "Kalite raporu", "detail": "Her çeviri için anlam/terim/ton/akıcılık skoru tutulur; düşük skorlu çeviriler editöre düşer." }
+        {
+          "label": "Otomatik dil tespiti",
+          "detail": "Mesaj geldiğinde kaynak dil yüksek güvenle tespit edilir; istisna profillerde manuel kilit konabilir."
+        },
+        {
+          "label": "Terim koruma",
+          "detail": "INC kodları, kuruluş ve ürün adları, kısaltmalar (TMS, POD, Hizmet Seviyesi) glossary üzerinden işaretlenir, çevrilmez."
+        },
+        {
+          "label": "Çift kanal görünüm",
+          "detail": "Konuşma her iki tarafta hem orijinal hem çeviri olarak görünür; ekipler ne dendiğine güvenir."
+        },
+        {
+          "label": "Kalite raporu",
+          "detail": "Her çeviri için anlam/terim/ton/akıcılık skoru tutulur; düşük skorlu çeviriler editöre düşer."
+        }
       ],
       "modules": [
         "/etkilesim-yonetimi",
@@ -645,12 +769,7 @@
         "/mobil-servis-yonetimi",
         "/esm",
         "/yonetim-paneli"
-      ],
-      "scenario": {
-        "company": "Vento Lojistik",
-        "situation": "Vento'nun Almanya bürosundan Hans Müller, soğuk zincir aracının GPS izleyicisinin sinyal vermediğine dair INC-7115'i Almanca açtı; İstanbul'daki saha ekibi yalnızca Türkçe yazıyordu, eskiden bu tür ticket'lar dış çeviri servisinde 20+ dakika kaybediyordu.",
-        "outcome": "TranslateCoreAI mesajı %99 güvenle Almanca olarak tespit etti, INC-7115 ve 'GPS Tracker' gibi terimleri korudu, anlam koruma %97 ile Türkçe karşılığa çevirdi. Burak Aslan'ın Türkçe yanıtı eş zamanlı Almancaya çevrilip Hans'a sunuldu; konuşma kaybı yaşanmadan çağrı 4 dakikada çözüldü, çok dilli MTTR %21 düştü."
-      }
+      ]
     },
     {
       "slug": "voicecore",
@@ -668,10 +787,22 @@
         "Sadece eksik alan varsa kullanıcıya tek soru sorar — formu doldurma yükünü sıfıra indirir."
       ],
       "howItWorks": [
-        { "label": "Canlı transcript", "detail": "16 kHz örnekleme + gürültü filtresi ile Türkçe konuşma anlık metne dönüşür." },
-        { "label": "Niyet sınıflama", "detail": "Komut 'olay aç', 'durum sor', 'atamayı değiştir', 'yorum ekle' gibi sınıflara ayrılır." },
-        { "label": "Alan çıkarımı", "detail": "ClassifyCore ve CMDB ile birlikte kategori, varlık ve lokasyon otomatik eşleşir." },
-        { "label": "Tek soruluk doğrulama", "detail": "Eksik alan varsa kullanıcıya tek somut soru sorulur; aksi halde kayıt doğrudan açılır." }
+        {
+          "label": "Canlı transcript",
+          "detail": "16 kHz örnekleme + gürültü filtresi ile Türkçe konuşma anlık metne dönüşür."
+        },
+        {
+          "label": "Niyet sınıflama",
+          "detail": "Komut 'olay aç', 'durum sor', 'atamayı değiştir', 'yorum ekle' gibi sınıflara ayrılır."
+        },
+        {
+          "label": "Alan çıkarımı",
+          "detail": "ClassifyCore ve CMDB ile birlikte kategori, varlık ve lokasyon otomatik eşleşir."
+        },
+        {
+          "label": "Tek soruluk doğrulama",
+          "detail": "Eksik alan varsa kullanıcıya tek somut soru sorulur; aksi halde kayıt doğrudan açılır."
+        }
       ],
       "modules": [
         "/mobil-servis-yonetimi",
@@ -684,12 +815,7 @@
         "/servis-otomasyonu",
         "/entegrasyon-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Vento Lojistik",
-        "situation": "Saha mühendisi Burak Aslan, soğuk hava deposunun rafları arasında el terminallerinin açılmadığını fark etti; sevkiyat kuyruğu birikiyordu, elinde laptop yoktu ve dakikalarca form doldurmak operasyonu felç ederdi.",
-        "outcome": "Burak telefonunun mikrofonundan tek bir Türkçe cümle söyledi: 'Depo 4'te 3 el terminali açılmıyor, raf 12-A, acil, sevkiyat etiketleri okunamıyor.' VoiceCoreAI 4.8 saniyede transcript çıkardı, 6 alanı otomatik doldurup INC-7138 taslağını hazırladı; tek doğrulama sorusundan sonra kayıt açıldı, ekip 14 dakikada sahaya ulaştı. Saha ticket açma süresi %68 düştü."
-      }
+      ]
     },
     {
       "slug": "callcore",
@@ -707,10 +833,22 @@
         "Çağrı sonunda not, geri arama, eskalasyon ve CRM duyurusu gibi aksiyonları otomatik tetikler."
       ],
       "howItWorks": [
-        { "label": "Çift kanal transcript", "detail": "Müşteri ve agent konuşmaları ayrı kanallarda transkribe edilir; zaman damgaları korunur." },
-        { "label": "Canlı sinyal", "detail": "SentimentCoreAI ile anlık duygu izlenir; eskalasyon riski anında uyarıya dönüşür." },
-        { "label": "Bağlamsal yardım", "detail": "ReplyCore canlı yanıt taslağı, ilgili 3 KB makalesi ve sürmekte olan incident bağlantısı önerilir." },
-        { "label": "Çağrı sonu otomasyonu", "detail": "Not yazma, geri arama planlama, CRM duyurusu ve ticket güncellemesi tek tuşla tetiklenir." }
+        {
+          "label": "Çift kanal transcript",
+          "detail": "Müşteri ve agent konuşmaları ayrı kanallarda transkribe edilir; zaman damgaları korunur."
+        },
+        {
+          "label": "Canlı sinyal",
+          "detail": "SentimentCoreAI ile anlık duygu izlenir; eskalasyon riski anında uyarıya dönüşür."
+        },
+        {
+          "label": "Bağlamsal yardım",
+          "detail": "ReplyCore canlı yanıt taslağı, ilgili 3 KB makalesi ve sürmekte olan incident bağlantısı önerilir."
+        },
+        {
+          "label": "Çağrı sonu otomasyonu",
+          "detail": "Not yazma, geri arama planlama, CRM duyurusu ve ticket güncellemesi tek tuşla tetiklenir."
+        }
       ],
       "modules": [
         "/etkilesim-yonetimi",
@@ -724,12 +862,7 @@
         "/raporlama-yonetimi",
         "/surekli-iyilestirme",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Posta kesintisi sırasında BES müşterisi Selçuk Tan çağrı merkezini aradı; üçüncü kez aynı sorunla aradığı için sesli olarak öfkesini belli etti. L1 agent Selin Yıldız henüz sabahki INC-2847 brifingine yetişememişti, hangi kayda bağlayacağını bilmiyordu.",
-        "outcome": "CallCoreAI ilk 14 saniyede konuşmayı INC-2847'ye otomatik bağladı, SentimentCoreAI ile öfke yükselişini Selin'e uyardı, taahhütlü zaman içeren empatik bir yanıt taslağı prompter'da gösterdi. Çağrı 1 dakika 32 saniyede kapandı, sonrasında 'not eklendi + 17:00 geri arama + BES proaktif e-postası' aksiyonları otomatik kuyruğa girdi. Kayıt yazma süresi %74 düştü, FCR %18 arttı."
-      }
+      ]
     },
     {
       "slug": "visioncore",
@@ -747,10 +880,22 @@
         "Tespit edilen soruna en yakın KB makalesini eşleştirip self-service çözüm önerir; gerekirse hazır ticket açar."
       ],
       "howItWorks": [
-        { "label": "Bölge tespiti", "detail": "Yüklenen görselde uygulama, modal, hata kodu ve butonlar ayrı ayrı sınıflanır." },
-        { "label": "OCR çıkarımı", "detail": "Türkçe + İngilizce karakter tanıma ile yapılandırılmış metin üretilir." },
-        { "label": "Sorun eşleştirme", "detail": "Hata kodu + uygulama bağlamı ile KB ve geçmiş ticket'larda en yakın çözüm bulunur." },
-        { "label": "Aksiyon", "detail": "Adım adım çözüm gönderme veya hazır ticket açma — kullanıcı tek tıkla seçer." }
+        {
+          "label": "Bölge tespiti",
+          "detail": "Yüklenen görselde uygulama, modal, hata kodu ve butonlar ayrı ayrı sınıflanır."
+        },
+        {
+          "label": "OCR çıkarımı",
+          "detail": "Türkçe + İngilizce karakter tanıma ile yapılandırılmış metin üretilir."
+        },
+        {
+          "label": "Sorun eşleştirme",
+          "detail": "Hata kodu + uygulama bağlamı ile KB ve geçmiş ticket'larda en yakın çözüm bulunur."
+        },
+        {
+          "label": "Aksiyon",
+          "detail": "Adım adım çözüm gönderme veya hazır ticket açma — kullanıcı tek tıkla seçer."
+        }
       ],
       "modules": [
         "/self-servis-portal",
@@ -763,12 +908,7 @@
         "/varlik-yonetimi",
         "/servis-konfigurasyon-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Lyra Üniversitesi",
-        "situation": "Akademisyen Naz Aksoy, Outlook'ta 'Sunucuyla iletişim sırasında bir hata oluştu' diyaloğunun ekran görüntüsünü self-service portala yükledi; sınav duyurusu gönderemiyordu, hata kodunu manuel okumak zorunda kalsa kayboluyordu.",
-        "outcome": "VisionCoreAI 4 bölgeyi bounding box ile işaretledi, 0x800CCC0E hata kodunu %94 güvenle çıkardı, KB-1042 makalesini %93 eşleşmeyle önerdi. Naz adım adım çözümü 2 dakika 24 saniyede uyguladı, ticket açmaya gerek kalmadı; sonraki çeyrekte self-service çözüm oranı %31 arttı."
-      }
+      ]
     },
     {
       "slug": "shiftcore",
@@ -786,10 +926,22 @@
         "Yasal çalışma sınırları ve tükenme sinyallerini koruyarak somut vardiya değişikliği önerir."
       ],
       "howItWorks": [
-        { "label": "Yük tahmini", "detail": "Geçmiş 12 hafta + sezonsallık + bilinen değişiklikler ile gün × vardiya yük yüzdesi çıkarılır." },
-        { "label": "Beceri eşleşmesi", "detail": "Vardiya başına gerekli yetkinlikler ile teknisyen profilleri eşleştirilir." },
-        { "label": "Kısıt kontrolü", "detail": "Yasal saat sınırları, ardışık gün, izin ve tükenme skoru kontrol edilir." },
-        { "label": "Öneri + bildirim", "detail": "Uygulanabilir tek tıklık değişiklik üretilir, etkilenen teknisyene otomatik bildirim gönderilir." }
+        {
+          "label": "Yük tahmini",
+          "detail": "Geçmiş 12 hafta + sezonsallık + bilinen değişiklikler ile gün × vardiya yük yüzdesi çıkarılır."
+        },
+        {
+          "label": "Beceri eşleşmesi",
+          "detail": "Vardiya başına gerekli yetkinlikler ile teknisyen profilleri eşleştirilir."
+        },
+        {
+          "label": "Kısıt kontrolü",
+          "detail": "Yasal saat sınırları, ardışık gün, izin ve tükenme skoru kontrol edilir."
+        },
+        {
+          "label": "Öneri + bildirim",
+          "detail": "Uygulanabilir tek tıklık değişiklik üretilir, etkilenen teknisyene otomatik bildirim gönderilir."
+        }
       ],
       "modules": [
         "/gorev-yonetimi",
@@ -802,12 +954,7 @@
         "/mobil-servis-yonetimi",
         "/surekli-iyilestirme",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "L1/L2 ekibinin haftalık vardiya planı manuel hazırlanıyordu; pazartesi gece kuyrukları salı sabahları patlatıyor, gündüz vardiyası ortalama %92 yük altında ezilirken Cuma gecesi atıl kapasite vardı. Servis yöneticisi Ayşe Demir her hafta saatlerce taşıma yapıyordu.",
-        "outcome": "ShiftCoreAI Salı gündüz için %92 yük uyarısı verdi, Cuma gece düşük yüklü Kerem Doğan'ın o vardiyaya kaydırılmasını önerdi — yasal sınırlar ve beceri eşleşmesi otomatik kontrol edildi. Tek tıkla uygulandı, salı yük %92'den %78'e indi; çeyrek sonu Hizmet Seviyesi uyumu +8%, fazla mesai −24% kazanım sağladı."
-      }
+      ]
     },
     {
       "slug": "auditcore",
@@ -825,10 +972,22 @@
         "Önerilen düzeltmeleri ilgili AICore aracına (KnowCore, KBCore, RootCore) bağlı çalışma planı olarak üretir."
       ],
       "howItWorks": [
-        { "label": "Standart haritalama", "detail": "ITIL4 ve ISO maddeleri ServiceCore süreç eylemlerine bire bir bağlanır." },
-        { "label": "Sürekli izleme", "detail": "Her ticket kapanışı, change onayı ve KB yayını gerçek zamanlı denetlenir." },
-        { "label": "Açıklanabilir bulgu", "detail": "İhlal hangi madde, hangi kayıt, hangi tarih — kanıtla birlikte raporlanır." },
-        { "label": "Düzeltme yönlendirme", "detail": "Bulguya uygun AICore aracı (KnowCore taslağı, KBCore güncelleme, vb.) önerilir." }
+        {
+          "label": "Standart haritalama",
+          "detail": "ITIL4 ve ISO maddeleri ServiceCore süreç eylemlerine bire bir bağlanır."
+        },
+        {
+          "label": "Sürekli izleme",
+          "detail": "Her ticket kapanışı, change onayı ve KB yayını gerçek zamanlı denetlenir."
+        },
+        {
+          "label": "Açıklanabilir bulgu",
+          "detail": "İhlal hangi madde, hangi kayıt, hangi tarih — kanıtla birlikte raporlanır."
+        },
+        {
+          "label": "Düzeltme yönlendirme",
+          "detail": "Bulguya uygun AICore aracı (KnowCore taslağı, KBCore güncelleme, vb.) önerilir."
+        }
       ],
       "modules": [
         "/surekli-iyilestirme",
@@ -842,12 +1001,7 @@
         "/yonetim-paneli",
         "/raporlama-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Çeyrek sonu ISO 20000 dış denetimine 22 gün kalmıştı; iç denetim ekibi manuel kontrol listesini Excel'de tutuyor, kanıt toplama haftalarca sürüyordu. Son 90 günde yapılan 7 P1 olayı için post-incident review dokümantasyonu eksikti ama bunu kimse haritalandırmamıştı.",
-        "outcome": "AuditCoreAI 6 practice üzerinde sürekli izleme yaparak 48 bulgu çıkardı; 3 kritik bulgunun 7 P1 olayındaki eksik post-mortem dokümantasyonu olduğunu işaretledi ve KnowCore taslaklarıyla otomatik çözüm planını üretti. 3 düzeltme tek tıkla iş planına eklendi, 22 günlük hazırlık öncesinde dış denetim sıfır kritik bulguyla geçti, çeyreklik uyum skoru %72'den %87'ye çıktı."
-      }
+      ]
     },
     {
       "slug": "assetcore",
@@ -865,10 +1019,22 @@
         "Önerilen alternatif modelleri TCO ile karşılaştırır; tek tıkla değiştirme CHG'si oluşturur."
       ],
       "howItWorks": [
-        { "label": "Canlı telemetri", "detail": "Discovery + izleme entegrasyonları üzerinden 12+ ay performans verisi sürekli toplanır." },
-        { "label": "Sağlık skoru", "detail": "Trend kötüleşmesi, incident tekrarı ve garanti süresi birleştirilerek skor hesaplanır." },
-        { "label": "Ömür tahmini", "detail": "Benzer varlıkların ömür eğrilerinden kalan verimli süre öngörülür." },
-        { "label": "Değiştirme akışı", "detail": "Önerilen modelle birlikte tedarik süresi ve TCO sunulur; ImpactCore ile değişiklik CHG'si açılır." }
+        {
+          "label": "Canlı telemetri",
+          "detail": "Discovery + izleme entegrasyonları üzerinden 12+ ay performans verisi sürekli toplanır."
+        },
+        {
+          "label": "Sağlık skoru",
+          "detail": "Trend kötüleşmesi, incident tekrarı ve garanti süresi birleştirilerek skor hesaplanır."
+        },
+        {
+          "label": "Ömür tahmini",
+          "detail": "Benzer varlıkların ömür eğrilerinden kalan verimli süre öngörülür."
+        },
+        {
+          "label": "Değiştirme akışı",
+          "detail": "Önerilen modelle birlikte tedarik süresi ve TCO sunulur; ImpactCore ile değişiklik CHG'si açılır."
+        }
       ],
       "modules": [
         "/varlik-yonetimi",
@@ -881,12 +1047,7 @@
         "/surekli-iyilestirme",
         "/servis-otomasyonu",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Posta sunucusu SRV-MAIL-01, 4. yılında CPU ortalaması %42'den %84'e tırmandı, son aylarda tekrar eden incident'lar arttı. Garanti 7 ay sonra bitiyor, manuel takip etmek 4.812 varlığın olduğu envanterde mümkün değildi.",
-        "outcome": "AssetCoreAI sağlık skorunu %42'ye düşürdü, kalan verimli ömrü 8 ay olarak Ocak 2027 hedefiyle tahmin etti. Dell R760 (önerilen, mevcut tedarikçi · 12 hafta) ve HPE DL380 Gen11 alternatifini TCO ile karşılaştırdı; satınalma ve değişiklik CHG'si tek tıkla başlatıldı. Çeyrek sonu önleyici değiştirme sayısı 62'ye çıktı, bakım maliyeti %18 düştü."
-      }
+      ]
     },
     {
       "slug": "vendorcore",
@@ -904,10 +1065,22 @@
         "Yenileme önerisi üretir: madde revize, alternatif RFP, üst yönetici görüşmesi gibi somut aksiyonlarla beraber."
       ],
       "howItWorks": [
-        { "label": "Çok kaynaklı skor", "detail": "Sözleşme metni, Hizmet Seviyesi raporları, ticket geçmişi ve finans kayıtları birlikte tartılır." },
-        { "label": "Trend izleme", "detail": "Çeyrek başına skor değişimi ve sparkline ile yön belirgin hâle getirilir." },
-        { "label": "Risk işaretleme", "detail": "Hizmet Seviyesi tırmanışı, ceza eşiği aşımı, tek temas noktası gibi yapısal sinyaller etiketlenir." },
-        { "label": "Aksiyon önerisi", "detail": "Madde revize, alternatif RFP veya eskalasyon adımları somut çıktı olarak üretilir." }
+        {
+          "label": "Çok kaynaklı skor",
+          "detail": "Sözleşme metni, Hizmet Seviyesi raporları, ticket geçmişi ve finans kayıtları birlikte tartılır."
+        },
+        {
+          "label": "Trend izleme",
+          "detail": "Çeyrek başına skor değişimi ve sparkline ile yön belirgin hâle getirilir."
+        },
+        {
+          "label": "Risk işaretleme",
+          "detail": "Hizmet Seviyesi tırmanışı, ceza eşiği aşımı, tek temas noktası gibi yapısal sinyaller etiketlenir."
+        },
+        {
+          "label": "Aksiyon önerisi",
+          "detail": "Madde revize, alternatif RFP veya eskalasyon adımları somut çıktı olarak üretilir."
+        }
       ],
       "modules": [
         "/sozlesme-yonetimi",
@@ -920,12 +1093,7 @@
         "/olay-yonetimi",
         "/degisiklik-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Network/datacom tedarikçisi Aurora Datacom'un performansı son 12 ayda kademeli olarak düştü; Hizmet Seviyesi ihlal ceza kalemleri çeyrekte %52 arttı, Account Manager 6 hafta önce değişti ve sözleşme 4 ay sonra yenileme penceresine girecekti. Tedarik ekibi manuel takiple bunu sezmemişti.",
-        "outcome": "VendorCoreAI Aurora'nın skorunu 62/100 olarak hesapladı (12 ayda −14 puan), risk seviyesini 'yüksek' işaretledi ve 3 yapısal risk sinyalini açıkladı. Yenileme önerisi olarak madde revize + alternatif RFP + üst yönetici görüşmesi üretti. Tedarik ekibi 4 ay öncesinden alternatif tedarikçi keşfi başlattı; çeyrek sonu yenileme pazarlığında ₺ 1.8M tasarruf sağlandı."
-      }
+      ]
     },
     {
       "slug": "contractcore",
@@ -943,10 +1111,22 @@
         "Otomatik yenileme klozu, ceza üst sınırı gibi yapısal riskleri açıkça işaretler ve ihbar takvimini hatırlatır."
       ],
       "howItWorks": [
-        { "label": "OCR + Türkçe NLP", "detail": "PDF veya taranmış metin OCR ile metne dönüştürülür; Türkçe hukuk dili modeliyle çözümlenir." },
-        { "label": "Madde sınıflama", "detail": "Cümleler Hizmet Seviyesi, ceza, yenileme, risk ve taraf etiketleriyle ayrılır." },
-        { "label": "Yapılandırılmış çıktı", "detail": "Hizmet Seviyesi tablosu, ceza tablosu, tarih timeline'ı ve risk listesi tek görünümde derlenir." },
-        { "label": "Proaktif hatırlatma", "detail": "Yenileme penceresi yaklaşırken hukuk ve satınalma ekibine otomatik uyarı gönderilir." }
+        {
+          "label": "OCR + Türkçe NLP",
+          "detail": "PDF veya taranmış metin OCR ile metne dönüştürülür; Türkçe hukuk dili modeliyle çözümlenir."
+        },
+        {
+          "label": "Madde sınıflama",
+          "detail": "Cümleler Hizmet Seviyesi, ceza, yenileme, risk ve taraf etiketleriyle ayrılır."
+        },
+        {
+          "label": "Yapılandırılmış çıktı",
+          "detail": "Hizmet Seviyesi tablosu, ceza tablosu, tarih timeline'ı ve risk listesi tek görünümde derlenir."
+        },
+        {
+          "label": "Proaktif hatırlatma",
+          "detail": "Yenileme penceresi yaklaşırken hukuk ve satınalma ekibine otomatik uyarı gönderilir."
+        }
       ],
       "modules": [
         "/sozlesme-yonetimi",
@@ -959,12 +1139,7 @@
         "/degisiklik-yonetimi",
         "/esm",
         "/entegrasyon-yonetimi"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Aurora Datacom sözleşmesi 24 sayfaydı; Madde 14.3'te 30 günden az ihbar verilmezse otomatik 12 ay uzayan bir kloz vardı, Madde 11.7'de ceza üst sınırı %15 olarak gizliydi. Hukuk ekibi her yenilemede manuel tarama yapıyor, ihbar son gününü kaçırma riski büyüktü.",
-        "outcome": "ContractCoreAI sözleşmeyi 42 madde halinde ayıkladı; 3 Hizmet Seviyesi, 2 aktif ceza kalemi, 3 önemli tarih ve 2 riskli madde çıkardı. Otomatik yenileme klozu kırmızı işaretlendi, 31 Temmuz ihbar son günü hukuk ve satınalma takvimine işlendi. Çeyrek sonu ihbar kaçırma sıfıra düştü, yenileme hazırlık süresi −%61 kazandı."
-      }
+      ]
     },
     {
       "slug": "budgetcore",
@@ -982,10 +1157,22 @@
         "Anormal harcama, çift satınalma ve kullanılmayan lisans gibi kalemleri otomatik tespit edip uyarır."
       ],
       "howItWorks": [
-        { "label": "Kalem birleştirme", "detail": "Lisans envanteri, cloud fatura kalemleri, satınalma istekleri ve sözleşme ödemeleri tek tabloda toplanır." },
-        { "label": "Yıl sonu tahmini", "detail": "Gerçekleşen + kalan ay tahmini ile yıl sonu bütçe sapması canlı hesaplanır." },
-        { "label": "Senaryo üretimi", "detail": "ReportCoreAI kullanım, DisCoreAI bağımlılık ve AssetLifecycle ömür verisiyle tasarruf alternatifleri çıkar." },
-        { "label": "Anormallik uyarısı", "detail": "Tek günlük cloud sıçraması, çift satınalma, atıl lisans gibi kalemler erken işaretlenir." }
+        {
+          "label": "Kalem birleştirme",
+          "detail": "Lisans envanteri, cloud fatura kalemleri, satınalma istekleri ve sözleşme ödemeleri tek tabloda toplanır."
+        },
+        {
+          "label": "Yıl sonu tahmini",
+          "detail": "Gerçekleşen + kalan ay tahmini ile yıl sonu bütçe sapması canlı hesaplanır."
+        },
+        {
+          "label": "Senaryo üretimi",
+          "detail": "ReportCoreAI kullanım, DisCoreAI bağımlılık ve AssetLifecycle ömür verisiyle tasarruf alternatifleri çıkar."
+        },
+        {
+          "label": "Anormallik uyarısı",
+          "detail": "Tek günlük cloud sıçraması, çift satınalma, atıl lisans gibi kalemler erken işaretlenir."
+        }
       ],
       "modules": [
         "/yonetim-paneli",
@@ -998,12 +1185,7 @@
         "/istek-yonetimi",
         "/entegrasyon-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "2026 BT bütçesi ₺28M onaylanmıştı; Mart sonunda %35 harcanmıştı ama trend yıl sonu için ₺31.2M tahmini veriyordu — %11 sapma. CFO bu sapmayı çeyrek sonu raporundan önce öğrenmek istiyordu, ama bilgi 4 ayrı sistemde dağılmıştı (lisans envanteri, Stratos cloud faturası, satınalma ve sözleşme).",
-        "outcome": "BudgetCoreAI 4 sistemi tek tabloda birleştirdi; M365'te 340 atıl lisans, Stratos cloud egress %38 artış ve SRV-MAIL-01 erken yenileme alternatiflerini ortaya çıkardı. 3 senaryo uygulanırsa sapma %11 → %4'e düşüyordu. CFO Mart sonu briflendi, çeyrek sonu raporunda toplam ₺ 1.87M tasarruf bütçeye geri yazıldı."
-      }
+      ]
     },
     {
       "slug": "coachcore",
@@ -1021,10 +1203,22 @@
         "İlerlemeyi ToneCoreAI, SentimentCoreAI ve çözüm verisi üzerinden gerçek vakalarla ölçer — soyut değil somut."
       ],
       "howItWorks": [
-        { "label": "Performans okuması", "detail": "Son 6 ay çözüm, etkileşim ve geri bildirim verisi yetkinlik eksenlerine çevrilir." },
-        { "label": "Hedef belirleme", "detail": "Çeyrek başı + sektör/bant ortalaması üzerinden gerçekçi 3 ay hedefi konulur." },
-        { "label": "Eğitim & mentor eşleştirmesi", "detail": "Uygun atölye/video/okuma modülleri ve daha önce benzer profil yetiştirmiş mentor önerilir." },
-        { "label": "Somut ilerleme", "detail": "Plan adımları gerçek vakaların ToneCoreAI / SentimentCoreAI sinyaliyle ölçülür, koçluk verisi şeffaf kalır." }
+        {
+          "label": "Performans okuması",
+          "detail": "Son 6 ay çözüm, etkileşim ve geri bildirim verisi yetkinlik eksenlerine çevrilir."
+        },
+        {
+          "label": "Hedef belirleme",
+          "detail": "Çeyrek başı + sektör/bant ortalaması üzerinden gerçekçi 3 ay hedefi konulur."
+        },
+        {
+          "label": "Eğitim & mentor eşleştirmesi",
+          "detail": "Uygun atölye/video/okuma modülleri ve daha önce benzer profil yetiştirmiş mentor önerilir."
+        },
+        {
+          "label": "Somut ilerleme",
+          "detail": "Plan adımları gerçek vakaların ToneCoreAI / SentimentCoreAI sinyaliyle ölçülür, koçluk verisi şeffaf kalır."
+        }
       ],
       "modules": [
         "/gorev-yonetimi",
@@ -1037,12 +1231,7 @@
         "/bilgi-bankasi",
         "/surekli-iyilestirme",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "L2 teknisyen Mert Kaya çözüm hızında çok başarılıydı (ortalama 22 dk), teknik becerisi 8.6/10 idi; ancak ToneCoreAI üst üste savunmacı dil ve jargon işaretleri vermişti, müşteri geri bildirim skoru düşüyordu. Servis yöneticisi nereden başlayacağını bilmiyordu.",
-        "outcome": "CoachCoreAI Mert için 5 eksenli radar çıkardı, 3 ay hedefini İletişim Tonu 5.4 → 7.5 olarak belirledi. Empatik İletişim atölyesi, Ayşe Demir mentorluğu ve 4 maddelik 12 haftalık eylem planı kurguladı — her adım ToneCoreAI sinyaliyle ölçüldü. Çeyrek sonunda Mert'in iletişim tonu 7.6'ya çıktı, ekipte ortalama skor +0.7 puan yükseldi, tükenme sinyali %26 düştü."
-      }
+      ]
     },
     {
       "slug": "projectcore",
@@ -1060,10 +1249,22 @@
         "Telafi aksiyonlarını gün kazancıyla birlikte sunar: kapsam parçalama, paralel sprint, takım takviyesi."
       ],
       "howItWorks": [
-        { "label": "İlerleme okuması", "detail": "Sprint geçmişi, milestone tamamlanma yüzdesi ve burndown sapması analiz edilir." },
-        { "label": "Risk skorlama", "detail": "Velocity, önkoşul, ekip ve takvim faktörleri ağırlıklı bir gecikme tahminine dönüşür." },
-        { "label": "Senaryo üretimi", "detail": "Her telafi aksiyonu için gün kazancı ve uygulanabilirlik puanı hesaplanır." },
-        { "label": "Şeffaf öneri", "detail": "Aksiyonlar sprint planına tek tıkla eklenir, gerekçeler proje yöneticisine sunulur." }
+        {
+          "label": "İlerleme okuması",
+          "detail": "Sprint geçmişi, milestone tamamlanma yüzdesi ve burndown sapması analiz edilir."
+        },
+        {
+          "label": "Risk skorlama",
+          "detail": "Velocity, önkoşul, ekip ve takvim faktörleri ağırlıklı bir gecikme tahminine dönüşür."
+        },
+        {
+          "label": "Senaryo üretimi",
+          "detail": "Her telafi aksiyonu için gün kazancı ve uygulanabilirlik puanı hesaplanır."
+        },
+        {
+          "label": "Şeffaf öneri",
+          "detail": "Aksiyonlar sprint planına tek tıkla eklenir, gerekçeler proje yöneticisine sunulur."
+        }
       ],
       "modules": [
         "/proje-yonetimi",
@@ -1076,12 +1277,7 @@
         "/is-akisi-yonetimi",
         "/entegrasyon-yonetimi",
         "/esm"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Stratejik 'Çekirdek Bankacılık API v2 Migrasyonu' projesi 4. ayda 12/26 sprintte ilerliyordu. Velocity son 3 sprintte −%24 düştü, M3 'Çekirdek API katmanı' %72'de takıldı ve M4 'Veri migrasyonu' için CHG-1156 önkoşulu hâlâ bekliyordu. CTO planlanan 30 Haziran teslimini bekliyordu.",
-        "outcome": "ProjectCoreAI 4 risk faktörünü puanlayarak +22 gün gecikme tahmin etti (yeni tahmin 22 Temmuz). M3 kapsam parçalama (−8 gün), CHG-1156'yı bu sprint'e çekme (−6 gün) ve 2 hafta köprü developer ekleme (−5 gün) aksiyonlarını gün kazancıyla önerdi. Üçü sprint planına eklenince tahmin +22 → +3 güne indi, proje 7 iş günü gecikmeyle canlıya alındı."
-      }
+      ]
     },
     {
       "slug": "risicore",
@@ -1099,10 +1295,22 @@
         "Her bulgu için önerdiği iyileştirme aksiyonunu Sürekli İyileştirme modülünde otomatik öneriye çevirir, aksiyon uygulandıkça raporu yeniden hesaplar."
       ],
       "howItWorks": [
-        { "label": "Veri birleştirme", "detail": "Varlık envanteri, lisans, ilişki, topoloji-bağımlılık ve sözleşme yaşam döngüsü verisi tek risk grafiğinde toplanır." },
-        { "label": "Zafiyet eşleştirme", "detail": "Varlık sürümleri CVE/NVD ve kurumsal güvenlik bilgi bankalarıyla senkronize edilip CVSS tabanlı akıllı eşleştirmeye sokulur." },
-        { "label": "Risk skorlama", "detail": "Zafiyet ağırlığı, servis kritikliği, incident/change geçmişi ve bağımlılık yayılımı bir araya getirilerek etki × olasılık skoru çıkarılır." },
-        { "label": "Aksiyon önerisi", "detail": "En yüksek riskler için kanıtlı iyileştirme aksiyonu üretilir ve Sürekli İyileştirme kaydı olarak otomatik öneriye dönüştürülür." }
+        {
+          "label": "Veri birleştirme",
+          "detail": "Varlık envanteri, lisans, ilişki, topoloji-bağımlılık ve sözleşme yaşam döngüsü verisi tek risk grafiğinde toplanır."
+        },
+        {
+          "label": "Zafiyet eşleştirme",
+          "detail": "Varlık sürümleri CVE/NVD ve kurumsal güvenlik bilgi bankalarıyla senkronize edilip CVSS tabanlı akıllı eşleştirmeye sokulur."
+        },
+        {
+          "label": "Risk skorlama",
+          "detail": "Zafiyet ağırlığı, servis kritikliği, incident/change geçmişi ve bağımlılık yayılımı bir araya getirilerek etki × olasılık skoru çıkarılır."
+        },
+        {
+          "label": "Aksiyon önerisi",
+          "detail": "En yüksek riskler için kanıtlı iyileştirme aksiyonu üretilir ve Sürekli İyileştirme kaydı olarak otomatik öneriye dönüştürülür."
+        }
       ],
       "modules": [
         "/varlik-yonetimi",
@@ -1116,12 +1324,7 @@
         "/sozlesme-yonetimi",
         "/surekli-iyilestirme",
         "/raporlama-yonetimi"
-      ],
-      "scenario": {
-        "company": "Birikim Holding",
-        "situation": "Yıl sonu ISO 27001 denetimine 6 hafta kala BT risk envanteri 4 ayrı sistemde dağılmıştı; 4.812 varlığın zafiyet eşleştirmesi elle yapılamıyordu. SRV-MAIL-01 posta sunucusunun eski OpenSSL sürümü mobil bankacılık 2FA akışıyla dolaylı bağımlıydı ama bu kritik risk hiçbir listede görünmüyordu.",
-        "outcome": "RisiCoreAI 4 kaynağı tek risk grafiğinde birleştirip 137 varlığı CVE/NVD ile eşleştirdi; SRV-MAIL-01'deki CVE-2024-tabanlı zafiyetin 2FA bağımlılığı üzerinden 14 şubeye yayıldığını %91 güvenle çıkardı, riski 8.7/10 işaretledi. 3 kritik bulgu için iyileştirme aksiyonunu Sürekli İyileştirme'de otomatik öneriye çevirdi; yamalar uygulandıkça raporu yineledi, kritik risk sayısı 23'ten 4'e indi ve denetim sıfır kritik bulguyla geçti."
-      }
+      ]
     }
   ]
 }
