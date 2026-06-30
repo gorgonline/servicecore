@@ -1331,14 +1331,14 @@
       "name": "SolveCoreAI",
       "tier": "beta",
       "tagline": "Bir destek kaydını kanıta dayalı çözmeye çalışan, emin olmadığında uydurmak yerine susan ya da kararı insana devreden çözüm asistanı.",
-      "description": "Açık bir destek kaydının konusunu, açıklamasını ve yorumlarını tek bağlamda okuyup üç başlığa indirir; geçmiş kapanmış benzer kayıt arşivi ile resmi bilgi bankası çözüm makalelerini anlamsal aramayla tarar ve tek bir kanıt paketinde birleştirir. Önerip önermeyeceğine modelin öz güvenine değil, yalnızca arama skoruna bakan bir kanıt kapısı karar verir: güçlü kanıt varsa kaynaklı somut adım önerir, sınırdaysa öneri üretmeden insana devreder, kanıt yoksa dürüstçe susar. Kapı geçilse bile önerinin dayandığı kaynağın gerçekten konuyla ilgili olduğunu bir doğrulama adımı denetler; alakasızsa öneri atılır — böylece uydurma cevap baştan kesilir. Her sonuç, teknisyenin olumlu/olumsuz geri bildirimiyle birlikte bir sonuç kimliğiyle kaydedilir — izlenebilir ve denetlenebilir kalır.",
+      "description": "Açık bir destek kaydının konusunu, açıklamasını ve yorumlarını tek bağlamda okuyup üç başlığa indirir; geçmiş kapanmış benzer kayıt arşivi ile resmi bilgi bankası çözüm makalelerini anlamsal ve kelime aramasıyla tarar ve tek bir kanıt paketinde birleştirir. Önerip önermeyeceğine modelin öz güvenine değil, yalnızca arama skoruna bakan bir kanıt kapısı karar verir: güçlü kanıt varsa kaynaklı somut adım önerir, sınırdaysa öneri üretmeden insana devreder, kanıt yoksa dürüstçe susar. Kapı geçilse bile önerinin dayandığı kaynağın gerçekten konuyla ilgili olduğunu bir doğrulama adımı denetler; alakasızsa öneri atılır — böylece uydurma cevap baştan kesilir. Her sonuç, teknisyenin olumlu/olumsuz geri bildirimiyle birlikte bir sonuç kimliğiyle kaydedilir — izlenebilir ve denetlenebilir kalır.",
       "icon": "Zap",
       "accent": "sky",
       "year": 2027,
       "release": "Beta — Yol Haritası",
       "whatItDoes": [
         "Kaydın konu, açıklama ve yorumlarını tek metne döküp üç başlığa indirir: sorun ne, ne denenmiş, nerede kalınmış.",
-        "Kapanmış benzer kayıt arşivi ile bilgi bankası makalelerini anlamsal aramayla tarar; yalnızca arama skoru güçlüyse kaynaklı somut bir 'sıradaki adım' önerir, kanıt yoksa cevap uydurmak yerine dürüstçe susar.",
+        "Kapanmış benzer kayıt arşivi ile bilgi bankası makalelerini anlamsal ve kelime aramasıyla tarar; yalnızca arama skoru güçlüyse kaynaklı somut bir 'sıradaki adım' önerir, kanıt yoksa cevap uydurmak yerine dürüstçe susar.",
         "Öneri yazıldıktan sonra dayandığı kaynağın gerçekten konuyla ilgili olduğunu doğrular; alakasızsa öneriyi atar ve her sonucu, teknisyenin olumlu/olumsuz geri bildirimiyle birlikte izlenebilir biçimde kaydeder."
       ],
       "howItWorks": [
@@ -1348,7 +1348,7 @@
         },
         {
           "label": "Kanıt topla",
-          "detail": "Kapanmış benzer kayıt arşivi anlamsal benzerlikle, resmi bilgi bankası çözüm makaleleri yeniden sıralamayla taranır; skorlanan adaylar tek kanıt paketinde birleşir."
+          "detail": "Ham kayıt önce odaklı bir arama sorgusuna damıtılır; ardından geçmiş kapanmış kayıtlar ve resmi bilgi bankası makaleleri anlamsal ve kelime aramasıyla taranıp yeniden sıralanır ve skorlanan adaylar tek kanıt paketinde birleşir."
         },
         {
           "label": "Kanıt kapısı",

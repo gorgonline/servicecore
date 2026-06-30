@@ -80,7 +80,7 @@ const HEADER = {
     { tone: "info" as ChipTone, label: "küçük model + sağlam kod" },
     { tone: "neutral" as ChipTone, label: "halüsinasyon-yok · kaynak zorunlu" },
   ],
-  live: "değerlendirme 1,8 sn",
+  live: "canlı hat · ticket gelince",
 };
 
 const TICKET = {
@@ -188,7 +188,7 @@ const SUGGESTION = {
     { tone: "info" as ChipTone, label: "INC-2087 · 0.92" },
     { tone: "neutral" as ChipTone, label: "sonuç_id COZ-7741" },
   ] satisfies SourceChip[],
-  cta: "Öneriyi kayda yanıt olarak ekle",
+  cta: "Teknisyen onayına sun",
 };
 
 const GROUNDING = {
@@ -207,10 +207,10 @@ const SUPPRESS = {
   topScore: 0.29,
   decisionText: "Birleşik kanıt skoru 0.29, 0.45 eşiğinin altında → güvenilir kanıt yok.",
   bodyText:
-    "Öneri üretmiyorum; uydurma yerine kaydı L2'ye devrettim ve bilgi bankası boşluğunu işaretledim.",
+    "Öneri üretmiyorum — uydurma yerine dürüstçe susuyorum. Kayıt teknisyende kalır; sonuç izlenebilir biçimde tutulur.",
   chips: [
-    { tone: "warn" as ChipTone, label: "insana devret → L2" },
-    { tone: "neutral" as ChipTone, label: "bilgi bankası boşluğu raporlandı" },
+    { tone: "neutral" as ChipTone, label: "öneri yok · dürüst sus" },
+    { tone: "neutral" as ChipTone, label: "sonuç kaydedildi" },
   ] satisfies SourceChip[],
 };
 
@@ -222,10 +222,10 @@ const OTHER_ROWS: OtherRow[] = [
 ];
 
 const KPIS: Kpi[] = [
-  { label: "Çözülen", value: "1.964", trend: "öneri üretildi", trendTone: "up" },
+  { label: "Öneri", value: "1.964", trend: "öneri üretildi", trendTone: "up" },
   { label: "Eskale", value: "612", trend: "sınırda kanıt", trendTone: "flat" },
   { label: "Dürüst sus", value: "418", trend: "uydurma yok", trendTone: "flat" },
-  { label: "İlk yanıt", value: "−47%", trend: "süre kazancı", trendTone: "down" },
+  { label: "Halüsinasyon", value: "0", trend: "kaynak doğrulandı", trendTone: "flat" },
 ];
 
 function gateTextColor(score: number): string {
@@ -330,7 +330,7 @@ export function SolveCoreMock({ accent: accentName }: { accent: string }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div className="rounded-xl border border-white/8 bg-white/2 px-3 py-2.5">
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <SectionLabel accent={accent}>Benzer Kapanmış Kayıt · Anlamsal Arama (cosine)</SectionLabel>
+                    <SectionLabel accent={accent}>Benzer Kapanmış Kayıt · Anlamsal + Kelime Arama</SectionLabel>
                     <span className="text-[9px] font-mono text-(--color-text-muted) shrink-0 tabular-nums">
                       18.402 kapalı
                     </span>
@@ -344,7 +344,7 @@ export function SolveCoreMock({ accent: accentName }: { accent: string }) {
 
                 <div className="rounded-xl border border-white/8 bg-white/2 px-3 py-2.5">
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <SectionLabel accent={accent}>Resmi Bilgi Bankası · Çözüm Makalesi (yeniden-sıralama)</SectionLabel>
+                    <SectionLabel accent={accent}>Resmi Bilgi Bankası · Anlamsal + Kelime Arama</SectionLabel>
                     <span className="text-[9px] font-mono text-(--color-text-muted) shrink-0 tabular-nums">
                       1.247 makale
                     </span>
@@ -532,7 +532,7 @@ export function SolveCoreMock({ accent: accentName }: { accent: string }) {
               </button>
             </div>
             <p className="text-[10px] font-mono text-(--color-text-muted) leading-snug">
-              Her sonuç ve teknisyen geri bildirimi bir sonuç kimliğiyle kaydedilir — izlenebilir ve denetlenebilir kalır.
+              Her sonuç bir sonuç kimliğiyle kaydedilir; geri bildirim ölçüm/karne içindir — model anlık öğrenmez.
             </p>
           </div>
         </MockFrame>
