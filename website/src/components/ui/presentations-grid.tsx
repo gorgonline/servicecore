@@ -15,9 +15,18 @@ import {
   Star,
   BookMarked,
   KanbanSquare,
-  ArrowRight
+  ArrowUpRight,
+  Download
 } from "lucide-react";
 import sunumlarData from "@/data/sunumlar.json";
+
+interface Presentation {
+  id: string;
+  title: string;
+  url: string;
+  pdf?: string;
+  icon: string;
+}
 
 const iconsMap: Record<string, React.ElementType> = {
   "user": User,
@@ -77,52 +86,67 @@ export function PresentationsGrid() {
     },
   };
 
+  const presentations = sunumlarData.presentations as Presentation[];
+
   return (
     <motion.div
       variants={containerVariants}
       animate="visible"
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
     >
-      {sunumlarData.presentations.map((item, idx) => {
+      {presentations.map((item, idx) => {
         const Icon = iconsMap[item.icon] || FileText;
         const colorSet = accentColors[idx % accentColors.length];
         const hoverGrad = hoverGradients[idx % hoverGradients.length];
 
         return (
           <motion.div key={item.id} variants={itemVariants} className="h-full">
-            <a 
-              href={item.url} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block h-full group focus:outline-none"
-            >
-              <div className="relative h-full flex flex-col p-10 rounded-4xl bg-white/2 border border-white/5 transition-all duration-500 hover:bg-white/4 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden">
-                
-                {/* Background Hover Effects */}
-                <div className={`absolute inset-0 bg-linear-to-br ${hoverGrad} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-                <div className="absolute -right-16 -top-16 w-32 h-32 rounded-full bg-white/5 blur-3xl group-hover:bg-white/10 transition-colors duration-700" />
+            <div className="relative h-full flex flex-col p-10 rounded-4xl bg-white/2 border border-white/5 transition-all duration-500 hover:bg-white/4 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden group">
 
-                <div className="relative z-10 flex flex-col h-full">
-                  {/* Icon Container */}
-                  <div className={`mb-8 h-16 w-16 rounded-2xl flex items-center justify-center border transition-all duration-500 ease-out ${colorSet}`}>
-                    <Icon className="w-8 h-8 stroke-[1.5]" />
-                  </div>
+              {/* Background Hover Effects */}
+              <div className={`absolute inset-0 bg-linear-to-br ${hoverGrad} opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`} />
+              <div className="absolute -right-16 -top-16 w-32 h-32 rounded-full bg-white/5 blur-3xl group-hover:bg-white/10 transition-colors duration-700 pointer-events-none" />
 
-                  {/* Content */}
-                  <div className="grow">
-                    <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight mb-4 group-hover:text-(--color-accent-blue-light) transition-colors duration-300">
-                      {item.title}
-                    </h3>
-                  </div>
+              <div className="relative z-10 flex flex-col h-full">
+                {/* Icon Container */}
+                <div className={`mb-8 h-16 w-16 rounded-2xl flex items-center justify-center border transition-all duration-500 ease-out ${colorSet}`}>
+                  <Icon className="w-8 h-8 stroke-[1.5]" />
+                </div>
 
-                  {/* Action Link */}
-                  <div className="mt-10 flex items-center gap-3 text-(--color-text-muted) group-hover:text-(--color-accent-blue-light) transition-colors duration-300 font-medium">
-                    <span className="text-sm tracking-wider uppercase">Görüntüle</span>
-                    <ArrowRight className="w-4 h-4 transform transition-transform duration-500 group-hover:translate-x-2" />
-                  </div>
+                {/* Content */}
+                <div className="grow">
+                  <h3 className="text-xl md:text-2xl font-semibold text-white leading-tight mb-4 group-hover:text-(--color-accent-blue-light) transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                </div>
+
+                {/* Action Links */}
+                <div className="mt-10 pt-6 border-t border-white/5 flex items-center justify-between gap-4">
+                  {/* Sunumu Görüntüle (sol) */}
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/view inline-flex items-center gap-2 text-sm font-medium text-(--color-text-muted) hover:text-(--color-accent-blue-light) transition-colors duration-300 cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                  >
+                    <span>Sunumu Görüntüle</span>
+                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/view:translate-x-0.5 group-hover/view:-translate-y-0.5" />
+                  </a>
+
+                  {/* PDF'i İndir (sağ) */}
+                  {item.pdf && (
+                    <a
+                      href={item.pdf}
+                      download
+                      className="group/dl inline-flex items-center gap-2 text-sm font-medium text-(--color-text-muted) hover:text-white transition-colors duration-300 cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                    >
+                      <Download className="w-4 h-4 transition-transform duration-300 group-hover/dl:translate-y-0.5" />
+                      <span>PDF&apos;i İndir</span>
+                    </a>
+                  )}
                 </div>
               </div>
-            </a>
+            </div>
           </motion.div>
         );
       })}
