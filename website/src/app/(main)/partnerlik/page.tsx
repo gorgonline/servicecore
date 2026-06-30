@@ -14,6 +14,7 @@ import {
 import ServiceCoreHero from "@/components/ui/ServiceCoreHero";
 import partnershipData from "@/data/partnership.json";
 import { submitForm } from "@/lib/forms";
+import { useFormGuard } from "@/hooks/useFormGuard";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -21,6 +22,7 @@ export default function PartnerlikPage() {
   const { partnership_program } = partnershipData;
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const guard = useFormGuard();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -38,7 +40,7 @@ export default function PartnerlikPage() {
 
     setStatus("loading");
     setErrorMessage("");
-    const result = await submitForm("Partnerlik", data);
+    const result = await submitForm("Partnerlik", data, guard.collect());
     if (result.ok) {
       setStatus("success");
       form.reset();
@@ -147,6 +149,7 @@ export default function PartnerlikPage() {
                 </h3>
 
                 <form className="space-y-6" onSubmit={handleSubmit}>
+                  {guard.field}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="ad" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">Ad*</label>

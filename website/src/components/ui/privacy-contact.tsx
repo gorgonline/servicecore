@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion, useReducedMotion } from "framer-motion";
 import { Mail, Phone, Send, MessageSquare, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { submitForm, type FormSheet } from "@/lib/forms";
+import { useFormGuard } from "@/hooks/useFormGuard";
 import { trackFormSubmit } from "@/lib/analytics";
 import { runtimeTokens } from "@/lib/tokens";
 
@@ -22,6 +23,7 @@ export default function PrivacyContact({
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const guard = useFormGuard();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -35,7 +37,7 @@ export default function PrivacyContact({
       Telefon: phone.trim(),
       Mesaj: message.trim(),
       "Sayfa Kaynağı": pathname || "/",
-    });
+    }, guard.collect());
 
     if (result.ok) {
       setStatus("success");
@@ -83,6 +85,7 @@ export default function PrivacyContact({
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-4 text-left">
+              {guard.field}
               <div className="flex flex-col md:flex-row gap-3">
                 {/* E-posta */}
                 <div className="relative flex-1">

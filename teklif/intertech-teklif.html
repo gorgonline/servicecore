@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<!--
+  ServiceCore — Intertech (Denizbank IT) icin GOSTERGE TEKLIF (11 sayfa, A4)
+  Bagimsiz/self-contained: dis gorsel bagimliligi YOK (logo + referanslar text/CSS).
+  Strateji: rapor (2026-06-30_Intertech_Analiz) cekirdek bulgusu — alici bugun deal
+  degil ARTEFAKT istiyor; karar 2027 ortasi sonrasi. Teklif "gosterge", yonetici-okur,
+  cipalardan arinmis; icrada parlar, RFP/puantaji kazanmaya kurulu; sert indirim YOK.
+  Anlati ekseni: BDDK-uyumlu, on-prem, yerli — Jira Data Center sonrasi en guvenli halef.
+  Fiyat alanlari Erman icin etiketli bosluk. Hibrit oran (100/1000, 200/900) enterprise ozel.
+  Renk: brand/tokens.json aydinlik turevi. Buyuk "I": Ingilizce kelimede dotsuz I.
+-->
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<title>ServiceCore — Intertech Gösterge Teklif</title>
+<style>
+  :root {
+    --ink: #0A1930;
+    --primary: #0070F3;
+    --primary-dark: #2563EB;
+    --sec: #475569;
+    --muted: #64748B;
+    --faint: #94A3B8;
+    --line: #E3E8F0;
+    --line-soft: #ECF0F5;
+    --surf: #F4F7FB;
+    --surf-card: #FBFCFE;
+    --page-bg: #E9EEF4;
+    --pri-tint: #EAF1FB;
+    --pri-border: #CCE2FF;
+    --emerald: #059669;
+    --emerald-tint: #E4F2F0;
+    --emerald-border: #BFE0DB;
+    --amber: #B45309;
+    --amber-tint: #FBF7F1;
+    --amber-border: #E6CBA3;
+    --sans: "Geist Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page-bg);
+    font-family: var(--sans);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ============ A4 SAYFA ============ */
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    background: #FFFFFF;
+    margin: 0 auto 8mm;
+    padding: 14mm 15mm 12mm;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 24px rgba(10, 25, 48, 0.10);
+    page-break-after: always;
+    overflow: hidden;
+  }
+  .sheet:last-child { page-break-after: auto; margin-bottom: 0; }
+  .body { flex: 1 1 auto; }
+
+  /* ============ KOSAN HEADER / FOOTER ============ */
+  .shead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 18px;
+  }
+  .brand { display: flex; align-items: center; gap: 9px; }
+  .mark {
+    width: 22px; height: 22px; border-radius: 6px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    position: relative; flex: none;
+  }
+  .mark::after {
+    content: ""; position: absolute; inset: 6px;
+    border: 1.5px solid #FFFFFF; border-radius: 3px;
+  }
+  .wm { font-size: 15px; letter-spacing: -0.02em; color: var(--ink); font-weight: 400; }
+  .wm b { color: var(--primary); font-weight: 700; }
+  .shead-right { font-size: 8.5px; font-weight: 700; letter-spacing: 0.18em; color: var(--faint); text-transform: uppercase; }
+
+  .sfoot {
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 8.5px; color: var(--muted); letter-spacing: 0.04em;
+  }
+  .sfoot .conf { font-weight: 700; color: var(--ink); letter-spacing: 0.16em; }
+  .sfoot .pg { font-weight: 700; color: var(--primary); letter-spacing: 0.12em; }
+
+  /* ============ TIPOGRAFI ============ */
+  .overline { font-size: 10.5px; font-weight: 700; color: var(--primary); letter-spacing: 0.24em; text-transform: uppercase; margin: 0 0 10px; }
+  h1.title { font-size: 38px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.08; margin: 0; color: var(--ink); }
+  .h2 { font-size: 23px; font-weight: 700; letter-spacing: -0.018em; line-height: 1.18; margin: 0 0 6px; color: var(--ink); }
+  .lead { font-size: 12.5px; font-weight: 400; color: var(--sec); line-height: 1.62; margin: 8px 0 0; }
+  .lead.tight { margin-top: 4px; }
+  p { margin: 0; }
+  .accent { color: var(--primary); }
+  .rule { width: 54px; height: 3px; background: var(--primary); margin: 14px 0 0; border-radius: 2px; }
+
+  .pill { display: inline-block; padding: 5px 12px; background: var(--pri-tint); border: 1px solid var(--pri-border); color: var(--primary); font-size: 9.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border-radius: 999px; }
+  .pill.amber { background: var(--amber-tint); border-color: var(--amber-border); color: var(--amber); }
+  .pill.emerald { background: var(--emerald-tint); border-color: var(--emerald-border); color: var(--emerald); }
+
+  /* callout */
+  .callout { background: var(--surf); border-left: 3px solid var(--primary); padding: 13px 16px; border-radius: 0 8px 8px 0; margin-top: 16px; }
+  .callout p { font-size: 12px; font-weight: 600; color: var(--ink); line-height: 1.5; }
+  .callout.amber { background: var(--amber-tint); border-left-color: var(--amber); }
+  .callout.emerald { background: var(--emerald-tint); border-left-color: var(--emerald); }
+
+  /* ============ KAPAK ============ */
+  .cover-top { display: flex; align-items: center; justify-content: space-between; }
+  .cover-mid { margin-top: auto; margin-bottom: auto; }
+  .cover-meta { width: 100%; border: 1px solid var(--line); border-radius: 10px; margin-top: 26px; overflow: hidden; }
+  .cover-meta .row { display: flex; }
+  .cover-meta .cell { flex: 1; padding: 14px 18px; border-bottom: 1px solid var(--line-soft); }
+  .cover-meta .cell + .cell { border-left: 1px solid var(--line-soft); }
+  .cover-meta .row:last-child .cell { border-bottom: 0; }
+  .cover-meta .lbl { font-size: 8.5px; font-weight: 700; color: var(--faint); letter-spacing: 0.14em; text-transform: uppercase; }
+  .cover-meta .val { font-size: 13.5px; font-weight: 700; color: var(--ink); margin-top: 5px; line-height: 1.35; }
+  .cover-meta .val small { display: block; font-size: 10.5px; font-weight: 400; color: var(--sec); margin-top: 2px; }
+
+  .draft-note { margin-top: 18px; background: var(--amber-tint); border: 1px solid var(--amber-border); border-radius: 10px; padding: 13px 16px; }
+  .draft-note p { font-size: 11px; color: #7C4A12; line-height: 1.55; }
+  .draft-note b { color: var(--amber); }
+
+  .trust { margin-top: 22px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 13px 0; display: flex; align-items: stretch; }
+  .trust .t { flex: 1; text-align: center; padding: 0 6px; }
+  .trust .t + .t { border-left: 1px solid var(--line); }
+  .trust .tn { font-size: 14px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; }
+  .trust .tl { font-size: 8.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; margin-top: 3px; }
+
+  /* ============ GRID KARTLAR ============ */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 11px; }
+  .card { border: 1px solid var(--line); border-radius: 10px; padding: 14px 15px; background: var(--surf-card); }
+  .card .k { font-size: 11px; font-weight: 700; color: var(--ink); letter-spacing: 0.01em; line-height: 1.3; }
+  .card .k .num { display: inline-block; min-width: 20px; color: var(--primary); }
+  .card .v { font-size: 10.5px; color: var(--sec); line-height: 1.5; margin-top: 6px; }
+  .card.spot { border-color: var(--pri-border); background: var(--pri-tint); }
+
+  /* stat satiri */
+  .scope { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 22px; margin-top: 14px; }
+  .scope .it { display: flex; gap: 9px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid var(--line-soft); }
+  .scope .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); margin-top: 6px; flex: none; }
+  .scope .tx { font-size: 11px; color: var(--ink); line-height: 1.45; }
+  .scope .tx b { color: var(--ink); }
+  .scope .tx span { color: var(--muted); }
+
+  /* numarali adim */
+  .step { display: flex; gap: 13px; padding: 12px 0; border-bottom: 1px solid var(--line-soft); }
+  .step:last-child { border-bottom: 0; }
+  .step .n { width: 26px; height: 26px; border-radius: 7px; background: var(--pri-tint); color: var(--primary); font-weight: 700; font-size: 12px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .step .c .st { font-size: 12px; font-weight: 700; color: var(--ink); }
+  .step .c .sd { font-size: 10.5px; color: var(--sec); line-height: 1.5; margin-top: 3px; }
+
+  /* ============ TABLO ============ */
+  .tbl { width: 100%; border-collapse: collapse; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; margin-top: 12px; }
+  .tbl th { background: var(--ink); color: #FFFFFF; font-size: 8.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-align: left; padding: 10px 12px; }
+  .tbl th.num { text-align: right; }
+  .tbl td { font-size: 10.5px; color: var(--ink); padding: 10px 12px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+  .tbl tr:last-child td { border-bottom: 0; }
+  .tbl td.num { text-align: right; font-weight: 700; white-space: nowrap; }
+  .tbl .nm { font-weight: 700; color: var(--ink); }
+  .tbl .ds { font-size: 9px; color: var(--muted); line-height: 1.45; margin-top: 3px; }
+  .tbl tr.incl td { background: var(--emerald-tint); }
+  .tbl .tag-incl { color: var(--emerald); font-weight: 700; }
+  .price-ph { display: inline-block; background: var(--amber-tint); border: 1px dashed var(--amber-border); color: var(--amber); font-size: 9px; font-weight: 700; padding: 2px 7px; border-radius: 5px; letter-spacing: 0.02em; white-space: nowrap; }
+
+  /* senaryo kartlari */
+  .scen { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 14px; }
+  .scen .sc { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .scen .sc-cap { background: var(--surf); border-bottom: 1px solid var(--line); padding: 11px 16px; }
+  .scen .sc-cap .lbl { font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); }
+  .scen .sc-cap .nm { font-size: 15px; font-weight: 700; color: var(--ink); margin-top: 3px; }
+  .scen .sc-bd { padding: 14px 16px; }
+  .scen .ln { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--line-soft); }
+  .scen .ln:last-of-type { border-bottom: 0; }
+  .scen .ln .l { font-size: 10.5px; color: var(--sec); }
+  .scen .ln .r { font-size: 11px; font-weight: 700; color: var(--ink); }
+  .scen .grand { margin-top: 10px; background: var(--pri-tint); border: 1px solid var(--pri-border); border-radius: 8px; padding: 11px 14px; display: flex; justify-content: space-between; align-items: center; }
+  .scen .grand .gl { font-size: 10px; font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+  .scen .reframe { font-size: 9.5px; color: var(--muted); line-height: 1.5; margin-top: 9px; font-style: italic; }
+
+  .incl-list { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 18px; margin-top: 12px; }
+  .incl-list .i { font-size: 10.5px; color: var(--ink); padding-left: 16px; position: relative; line-height: 1.5; }
+  .incl-list .i::before { content: "✓"; position: absolute; left: 0; color: var(--emerald); font-weight: 700; font-size: 10px; }
+
+  .band-warn { margin-top: 14px; background: var(--amber-tint); border: 1px solid var(--amber-border); border-radius: 10px; padding: 12px 16px; }
+  .band-warn p { font-size: 10.5px; color: #7C4A12; line-height: 1.55; }
+  .band-warn b { color: var(--amber); letter-spacing: 0.04em; }
+
+  /* fark kartlari */
+  .feat { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-top: 14px; }
+  .feat .f { border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; background: var(--surf-card); }
+  .feat .f .fh { display: flex; align-items: center; gap: 9px; }
+  .feat .f .fi { width: 24px; height: 24px; border-radius: 7px; background: var(--pri-tint); color: var(--primary); font-weight: 700; font-size: 11px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .feat .f .ft { font-size: 11.5px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+  .feat .f .fd { font-size: 10px; color: var(--sec); line-height: 1.5; margin-top: 7px; }
+
+  /* referans cipleri */
+  .ref-group { margin-top: 14px; }
+  .ref-group .rh { font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 9px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip { font-size: 10.5px; font-weight: 600; color: var(--ink); background: var(--surf); border: 1px solid var(--line); border-radius: 7px; padding: 6px 11px; }
+  .chip.hl { background: var(--pri-tint); border-color: var(--pri-border); color: var(--primary); }
+
+  .case { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-top: 16px; }
+  .case .cs { border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; background: var(--surf-card); }
+  .case .cs .ch { font-size: 11.5px; font-weight: 700; color: var(--ink); }
+  .case .cs .cb { font-size: 10px; color: var(--sec); line-height: 1.5; margin-top: 6px; }
+
+  ul.clean { margin: 12px 0 0; padding: 0; list-style: none; }
+  ul.clean li { font-size: 11px; color: var(--ink); line-height: 1.5; padding: 8px 0 8px 18px; border-bottom: 1px solid var(--line-soft); position: relative; }
+  ul.clean li:last-child { border-bottom: 0; }
+  ul.clean li::before { content: ""; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+  ul.clean li b { color: var(--ink); }
+  ul.clean li span { color: var(--sec); }
+
+  .contact { margin-top: 16px; background: var(--ink); border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .contact .cl { color: #FFFFFF; }
+  .contact .cl .t { font-size: 13px; font-weight: 700; }
+  .contact .cl .s { font-size: 10px; color: #94A3B8; margin-top: 3px; }
+  .contact .cr { text-align: right; color: #FFFFFF; font-size: 11px; line-height: 1.7; }
+  .contact .cr b { color: #38BDF8; }
+
+  @media print {
+    body { background: #FFFFFF; }
+    .sheet { box-shadow: none; margin: 0 auto; }
+  }
+  @page { size: A4; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- ===================== SAYFA 1 — KAPAK ===================== -->
+<div class="sheet">
+  <div class="cover-top">
+    <div class="brand">
+      <div class="mark"></div>
+      <div class="wm">service<b>core</b></div>
+    </div>
+    <span class="pill amber">Gösterge Teklif</span>
+  </div>
+
+  <div class="cover-mid">
+    <p class="overline">Kurumsal ITSM / ESM Platformu</p>
+    <h1 class="title">ServiceCore Suite</h1>
+    <div class="rule"></div>
+    <p class="lead" style="font-size:14px;max-width:150mm;">
+      BDDK-uyumlu, on-premise servis yönetimi platformu —
+      <b style="color:var(--ink)">Jira Data Center sonrası en güvenli geçiş</b> için
+      Intertech'e özel hazırlanmıştır.
+    </p>
+
+    <div class="cover-meta">
+      <div class="row">
+        <div class="cell">
+          <div class="lbl">Hazırlanan</div>
+          <div class="val">Intertech (Denizbank IT)<small>Ahmet Uğur Özsak — PMO Süreç ve Raporlama Bölüm Müdürü</small></div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Hazırlayan</div>
+          <div class="val">Servicecore Bilgi Teknolojileri A.Ş.<small>ATP Digital · üretici-seviye yerel ekip</small></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="cell">
+          <div class="lbl">Tarih</div>
+          <div class="val">30 Haziran 2026</div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Geçerlilik</div>
+          <div class="val">30 gün<small>RFP sürecinde yeniden doğrulanır</small></div>
+        </div>
+        <div class="cell">
+          <div class="lbl">Konu</div>
+          <div class="val">Kapsam & Lisanslama<small>2. görüşme — gösterge çalışma</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="draft-note">
+      <p><b>Bu bir gösterge tekliftir.</b> Kapsam, teknik detaylar ve efor tahminleri ortak bir
+      doğrulama atölyesinde netleştirildikten sonra, resmî teklife RFP sürecinde dönüştürülmek üzere
+      hazırlanmıştır. Amaç; yapıyı, lisanslamayı ve geçiş yaklaşımını kurum içinde rahatça
+      değerlendirebilmenizdir.</p>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div class="t"><div class="tn">25+ yıl</div><div class="tl">2000'den beri ITSM</div></div>
+    <div class="t"><div class="tn">4M+</div><div class="tl">erişilen son kullanıcı</div></div>
+    <div class="t"><div class="tn">On-premise</div><div class="tl">veri egemenliği · yerli</div></div>
+    <div class="t"><div class="tn">QNB · Sabancı DX · Roketsan</div><div class="tl">en denetimli kurumların güveni</div></div>
+  </div>
+
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>ServiceCore × Intertech (Denizbank IT)</span>
+    <span class="pg">01 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 2 — YONETICI OZETI ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Yönetici Özeti</p>
+    <h2 class="h2">Tek platformda, regülasyona dayanıklı bir Jira halefi.</h2>
+    <p class="lead">
+      ServiceCore; Intertech'in zorunlu Jira Data Center çıkışında, BDDK gereksinimlerini karşılayan
+      <b style="color:var(--ink)">on-premise, yerli ve ITIL4-derin</b> bir kurumsal servis yönetimi
+      platformu olarak konumlanır. Bu özet, teklifi yönetiminizle tek sayfada değerlendirebilmeniz için
+      hazırlanmıştır.
+    </p>
+
+    <p class="overline" style="margin-top:20px;">Anladığımız Kapsam</p>
+    <div class="scope">
+      <div class="it"><div class="dot"></div><div class="tx"><b>~1100 teknisyen</b> <span>— ~100–150 Pro + ~1000 temel kullanıcı</span></div></div>
+      <div class="it"><div class="dot"></div><div class="tx"><b>8 entegrasyon</b> <span>+ custom onay akışları (SecureLink)</span></div></div>
+      <div class="it"><div class="dot"></div><div class="tx"><b>700+ SLA</b> <span>— anlamlı, sürdürülebilir sete sadeleştirme</span></div></div>
+      <div class="it"><div class="dot"></div><div class="tx"><b>24.000 varlık</b> <span>— lisans etkisi yok, sınırsız</span></div></div>
+      <div class="it"><div class="dot"></div><div class="tx"><b>10 yıl / TB'larca veri</b> <span>— 2016'dan beri, denetim-uyumlu göç</span></div></div>
+      <div class="it"><div class="dot"></div><div class="tx"><b>On-premise zorunlu</b> <span>— BDDK; cloud bağımlılığı yok</span></div></div>
+      <div class="it"><div class="dot"></div><div class="tx"><b>Intertech + Denizbank birleşmesi</b> <span>— ESM / multi-tenant ile büyüme</span></div></div>
+      <div class="it"><div class="dot"></div><div class="tx"><b>Çok-tedarikçi / puantaj</b> <span>— RFP'ye hazır kanıt ve dokümantasyon</span></div></div>
+    </div>
+
+    <p class="overline" style="margin-top:20px;">Neden ServiceCore</p>
+    <div class="grid3" style="margin-top:6px;">
+      <div class="card spot">
+        <div class="k">Regülasyona uygun</div>
+        <div class="v">On-premise + yerli + BDDK uyumu. Veriniz kendi veri merkezinizde; SaaS bağımlılığı yok.</div>
+      </div>
+      <div class="card spot">
+        <div class="k">Geçiş güvencesi</div>
+        <div class="v">1:1 Jira → ServiceCore taşıma aracı; veri, konfigürasyon ve akışların denetlenebilir göçü.</div>
+      </div>
+      <div class="card spot">
+        <div class="k">Kurumsal kanıt</div>
+        <div class="v">Türkiye'nin en denetimli kurumlarının (banka, savunma, holding) referansı.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>Bu gösterge teklif satışı kapatmak için değil; kapsamı, lisanslamayı ve geçiş planını kurum
+      içinde değerlendirebilmeniz içindir. Resmî teklif, RFP sürecinde birlikte netleştirilecektir.</p>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Yönetici Özeti</span>
+    <span class="pg">02 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 3 — ZORUNLU GECIS ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Durum Analizi</p>
+    <h2 class="h2">Asıl mesele bir özellik değil; regülasyona uygun, zorunlu bir geçiş.</h2>
+    <p class="lead">
+      Intertech'in gündemindeki soru "hangi ITSM aracı daha iyi" değil; <b style="color:var(--ink)">"Jira
+      çıkışında, BDDK'ya uygun, en güvenli on-premise halef kim"</b> sorusudur. Teklifimizin bütün
+      kurgusu bu eksene oturur.
+    </p>
+
+    <div class="grid3" style="margin-top:18px;">
+      <div class="card">
+        <div class="k"><span class="num">01</span>Zorunlu çıkış</div>
+        <div class="v">Jira Data Center <i>end-of-life</i> oluyor; BDDK cloud'a izin vermiyor. On-premise bir
+        halefe geçiş bir tercih değil, zorunluluk.</div>
+      </div>
+      <div class="card">
+        <div class="k"><span class="num">02</span>Yüksek bahis</div>
+        <div class="v">10 yıl / TB'larca veri, 700+ SLA, 24.000 varlık, 8 entegrasyon, custom onay. Denetime
+        tabi bir kurumda yanlış geçişin maliyeti yüksek.</div>
+      </div>
+      <div class="card spot">
+        <div class="k"><span class="num">03</span>Çözüm ekseni</div>
+        <div class="v">Yerli, on-premise, BDDK-uyumlu ve ITIL4-derin bir platform: ServiceCore. Sadece bir
+        ürün değil, <b>kontrollü bir geçiş programı</b>.</div>
+      </div>
+    </div>
+
+    <p class="overline" style="margin-top:22px;">Zamanlama — hazır olmak, acele etmek değil</p>
+    <ul class="clean">
+      <li><b>Bugün:</b> <span>Raf alternatifinin doğru kapsam ve savunulabilir efor tahminiyle hazır olması — kurum içinde "elimizde güvenli bir alternatif var" diyebilmek.</span></li>
+      <li><b>2026 boyunca:</b> <span>Kapsam/topoloji doğrulama, güvenlik değerlendirmesi, çok-tedarikçi puantajına hazırlık; düşük riskli bir kanıt çalışması (PoV) opsiyonu.</span></li>
+      <li><b>2027 ortası ve sonrası:</b> <span>Birleşme (Intertech + Denizbank) netleştikçe nihai kapsam ve resmî teklif; zorunlu Jira çıkışına senkronize devreye alma.</span></li>
+    </ul>
+
+    <div class="callout amber">
+      <p>ServiceCore'u "bir ITSM ürünü" olarak değil, regülasyonun dayattığı Jira geçişinde
+      <i>kurumun en güvenli, en hazır seçeneği</i> olarak değerlendirmenizi öneririz.</p>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Durum Analizi & Zorunlu Geçiş</span>
+    <span class="pg">03 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 4 — GECIS GUVENCESI / MIGRATION ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Geçiş Güvencesi</p>
+    <h2 class="h2">10 yıllık Jira mülkünüz; güvenli, denetime uygun şekilde taşınır.</h2>
+    <p class="lead">
+      Geçişin ölçeği (10 yıl, terabaytlarca veri, 700+ SLA, 24.000 varlık, 8 entegrasyon, custom onay)
+      haklı bir endişedir. ServiceCore'un asıl farkı tam burada: göçü <b style="color:var(--ink)">tek
+      seferlik bir veri aktarımı değil, kontrollü ve denetlenebilir bir program</b> olarak ele alırız.
+    </p>
+
+    <div class="grid2" style="margin-top:16px;">
+      <div class="card">
+        <div class="k"><span class="num">01</span>1:1 taşıma aracı</div>
+        <div class="v">Jira → ServiceCore için veri, konfigürasyon ve iş akışlarını eşleyen taşıma aracı.
+        Kayıtlar, geçmiş ve ilişkiler korunarak aktarılır.</div>
+      </div>
+      <div class="card">
+        <div class="k"><span class="num">02</span>SLA sadeleştirme</div>
+        <div class="v">700+ SLA, anlamlı ve sürdürülebilir ~10 SLA'ya konsolide edilir. Geçiş aynı zamanda
+        bir "bahar temizliği" fırsatıdır — karmaşıklığı azaltır.</div>
+      </div>
+      <div class="card">
+        <div class="k"><span class="num">03</span>24.000 varlıkta lisans etkisi yok</div>
+        <div class="v">Varlık, son kullanıcı ve kayıt sayısı sınırsız ve ücretsizdir. CMDB'niz tüm
+        ölçeğiyle taşınır; lisans yalnız teknisyene bağlıdır.</div>
+      </div>
+      <div class="card">
+        <div class="k"><span class="num">04</span>Entegrasyon & onay akışları</div>
+        <div class="v">8 entegrasyon, API modülü ile; custom onay akışları (SecureLink eşi) no-code
+        workflow motoru ile koda gerek olmadan yeniden kurulur.</div>
+      </div>
+      <div class="card spot">
+        <div class="k"><span class="num">05</span>Denetim-uyumlu canlı erişim</div>
+        <div class="v">İç/dış denetim için en az 1–2 yıllık veri, salt arşiv değil; on-premise ITSM-agent
+        ile <b>doğrudan, canlı erişilebilir</b> şekilde taşınır.</div>
+      </div>
+      <div class="card spot">
+        <div class="k"><span class="num">06</span>Şeffaf efor</div>
+        <div class="v">Migration eforu, "bir gün mü 200 gün mü" belirsizliğine düşmemek için <b>varsayımlı
+        aralık</b> olarak sunulur; ortak keşif atölyesinde kesinleşir.</div>
+      </div>
+    </div>
+
+    <div class="callout emerald">
+      <p>Rakibe karşı asıl farkımız budur: geçişin riskini biz üstlenir, denetlenebilirliği koruruz.
+      Kapsam atölyesinde her kalem için varsayımlarımızı açıkça paylaşırız.</p>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Geçiş Güvencesi (Migration)</span>
+    <span class="pg">04 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 5 — KAPSAM & TEKLIF KALEMLERI ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Teklif Kapsamı</p>
+    <h2 class="h2">Intertech için önerilen yapılandırma.</h2>
+    <p class="lead tight">
+      Lisanslama yalnız teknisyen sayısına bağlıdır; son kullanıcı, varlık ve kayıt sayısı sınırsız ve
+      ücretsizdir. Fiyat alanları, kapsam doğrulamasının ardından kesinleştirilmek üzere gösterge olarak
+      işaretlenmiştir.
+    </p>
+
+    <table class="tbl">
+      <tr><th style="width:38%">Kalem</th><th>Kapsam</th><th class="num">Tutar</th></tr>
+      <tr>
+        <td><span class="nm">ServiceCore Professional Lisans</span><div class="ds">Güç-kullanıcı teknisyen</div></td>
+        <td>Değişiklik, Problem, CMDB/Varlık, İstek & Katalog, onay akışları, custom/low-code form, API entegrasyon, mobil ITSM, SSO/SAML.</td>
+        <td class="num"><span class="price-ph">gösterge — Erman</span></td>
+      </tr>
+      <tr>
+        <td><span class="nm">ServiceCore Standart Lisans</span><div class="ds">Geniş teknisyen ekibi</div></td>
+        <td>Temel ITIL4: Olay/Çağrı, Görev, SLA otomasyonu, Bilgi Yönetimi, Self-Servis Portal, raporlama.</td>
+        <td class="num"><span class="price-ph">gösterge — Erman</span></td>
+      </tr>
+      <tr>
+        <td><span class="nm">ESM / Multi-Tenant Yapı</span><div class="ds">Birleşik kurum</div></td>
+        <td>Intertech + Denizbank birleşmesi için tenant-bazlı ayrıştırma ve bağımsız lisanslama.</td>
+        <td class="num"><span class="price-ph">gösterge — Erman</span></td>
+      </tr>
+      <tr>
+        <td><span class="nm">Jira → ServiceCore Migration</span><div class="ds">Geçiş programı</div></td>
+        <td>1:1 taşıma aracı, veri + konfigürasyon + akış göçü, SLA sadeleştirme, denetim-uyumlu canlı erişim. Efor = varsayımlı aralık.</td>
+        <td class="num"><span class="price-ph">gösterge — Erman</span></td>
+      </tr>
+      <tr>
+        <td><span class="nm">Kurulum & Devreye Alma</span><div class="ds">On-premise</div></td>
+        <td>On-premise kurulum, süreç tasarımı, kuruma özel onboarding ve eğitim.</td>
+        <td class="num"><span class="price-ph">gösterge — Erman</span></td>
+      </tr>
+      <tr>
+        <td><span class="nm">Gold Destek Paketi</span><div class="ds">Abonelik dönemi</div></td>
+        <td>7/24 e-posta, telefon ve portal; kritik kayıtlar için Hizmet Seviyesi tabanlı öncelikli müdahale.</td>
+        <td class="num"><span class="price-ph">gösterge — Erman</span></td>
+      </tr>
+      <tr class="incl">
+        <td><span class="nm">Bakım, Güncelleme & Roadmap</span><div class="ds">Üretici Continuous Delivery</div></td>
+        <td>Tüm bakım, bug-fix, ürün roadmap yeni özellikleri ve güncellemelerin kuruluma uygulanması.</td>
+        <td class="num"><span class="tag-incl">DAHİL</span></td>
+      </tr>
+    </table>
+
+    <p class="overline" style="margin-top:18px;">Opsiyonel Eklentiler <span style="color:var(--muted);font-weight:600;letter-spacing:0;text-transform:none;">— ayrı değerlendirilir, başka ekiplerin onayına bağlı olabilir</span></p>
+    <table class="tbl" style="margin-top:8px;">
+      <tr><th style="width:34%">Add-on</th><th>Açıklama</th><th class="num">Tutar</th></tr>
+      <tr><td><span class="nm">VMware Varlık Keşif</span></td><td>VMware ortamındaki sanal makine ve altyapının otomatik keşfi, CMDB güncelliği.</td><td class="num"><span class="price-ph">opsiyonel</span></td></tr>
+      <tr><td><span class="nm">MS Teams Eklentisi</span></td><td>Microsoft Teams ile servis yönetimi ve işbirliği entegrasyonu.</td><td class="num"><span class="price-ph">opsiyonel</span></td></tr>
+      <tr><td><span class="nm">Failover / Cluster</span></td><td>Yüksek erişilebilirlik; yedekli, kesintisiz çalışma.</td><td class="num"><span class="price-ph">opsiyonel</span></td></tr>
+      <tr><td><span class="nm">Sandbox / Test Sistemi</span></td><td>Değişiklikleri canlıya almadan önce güvenli test ortamı.</td><td class="num"><span class="price-ph">opsiyonel</span></td></tr>
+      <tr><td><span class="nm">Disaster Center (DR)</span></td><td>Felaket kurtarma; iş sürekliliği güvencesi.</td><td class="num"><span class="price-ph">opsiyonel</span></td></tr>
+    </table>
+
+    <div class="callout">
+      <p>Lisans yalnız teknisyene bağlıdır — son kullanıcılar, 24.000 varlık ve tüm kayıtlar sınırsız ve
+      ücretsizdir. Mevcut Jira paketindeki binlerce lisans yükü ServiceCore'da ortadan kalkar.</p>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Kapsam & Teklif Kalemleri</span>
+    <span class="pg">05 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 6 — FIYATLANDIRMA: IKI SENARYO ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Teklif & Lisanslama</p>
+    <h2 class="h2">İki senaryo, şeffaf ve hibrit lisanslama.</h2>
+    <p class="lead tight">
+      Bu teklif; yazılım lisansını, kurulumu, tüm bakım ve üretici roadmap güncellemelerini ve
+      üretici-seviye uzman desteğini abonelik dönemi boyunca kapsar. Talebiniz doğrultusunda iki Pro/temel
+      senaryosu sunulmuştur.
+    </p>
+
+    <div class="scen">
+      <div class="sc">
+        <div class="sc-cap">
+          <div class="lbl">Senaryo A</div>
+          <div class="nm">100 Pro / 1000 Standart</div>
+        </div>
+        <div class="sc-bd">
+          <div class="ln"><span class="l">Professional lisans (100)</span><span class="r"><span class="price-ph">Erman</span></span></div>
+          <div class="ln"><span class="l">Standart lisans (1000)</span><span class="r"><span class="price-ph">Erman</span></span></div>
+          <div class="ln"><span class="l">Kurulum + Migration + Gold</span><span class="r"><span class="price-ph">Erman</span></span></div>
+          <div class="grand"><span class="gl">Yıllık Yatırım</span><span class="price-ph">gösterge TL</span></div>
+          <p class="reframe">Teknisyen başına: <span class="price-ph">gösterge TL</span> / yıl — tüm bakım, güncelleme ve uzman destek dahil.</p>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="sc-cap">
+          <div class="lbl">Senaryo B</div>
+          <div class="nm">200 Pro / 900 Standart</div>
+        </div>
+        <div class="sc-bd">
+          <div class="ln"><span class="l">Professional lisans (200)</span><span class="r"><span class="price-ph">Erman</span></span></div>
+          <div class="ln"><span class="l">Standart lisans (900)</span><span class="r"><span class="price-ph">Erman</span></span></div>
+          <div class="ln"><span class="l">Kurulum + Migration + Gold</span><span class="r"><span class="price-ph">Erman</span></span></div>
+          <div class="grand"><span class="gl">Yıllık Yatırım</span><span class="price-ph">gösterge TL</span></div>
+          <p class="reframe">Teknisyen başına: <span class="price-ph">gösterge TL</span> / yıl — daha geniş Pro yetenek tabanı.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="overline" style="margin-top:18px;">Lisans modeli — neden adil</p>
+    <div class="grid3" style="margin-top:6px;">
+      <div class="card"><div class="k">Hibrit lisanslama</div><div class="v">Teknik ekip Pro, geniş ekip Standart — herkese aynı paket aldırılmaz; ihtiyaç kadar ödenir.</div></div>
+      <div class="card"><div class="k">Modüler add-on</div><div class="v">Eklentiler tek tek alınır/çıkarılır; kullanılmayana ödenmez.</div></div>
+      <div class="card"><div class="k">Sınırsız son kullanıcı</div><div class="v">Tüm kurum sisteme girer; 24.000 varlık dahil, lisans yalnız teknisyene.</div></div>
+    </div>
+
+    <p class="overline" style="margin-top:16px;">Dahil olan — gizli maliyet yok</p>
+    <div class="incl-list">
+      <div class="i">Tüm bakım & bug-fix</div>
+      <div class="i">Roadmap yeni özellikler</div>
+      <div class="i">Sürekli güncelleme (Continuous Delivery)</div>
+      <div class="i">Üretici-seviye yerel destek</div>
+      <div class="i">TL sözleşme · aylık ödeme imkânı</div>
+      <div class="i">1 / 3 / 5 yıl abonelik · ek lisans pro-rata</div>
+    </div>
+
+    <div class="band-warn">
+      <p><b>GÖSTERGE FİYATLANDIRMA.</b> Yukarıdaki rakamlar, kapsamın ortak doğrulanmasının ardından RFP
+      sürecinde resmî teklifte kesinleştirilecektir. Hibrit Pro/Standart oranı, kurumunuzun ihtiyacına
+      göre enterprise koşullarında özel olarak yapılandırılmıştır.</p>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Teklif & Lisanslama — İki Senaryo</span>
+    <span class="pg">06 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 7 — FARK YARATAN YETENEKLER ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Farklılaştırıcılar</p>
+    <h2 class="h2">Muadil çözümlerde bulunmayan, Intertech için kritik yetenekler.</h2>
+    <p class="lead tight">
+      Aşağıdaki yetenekler, çok-tedarikçi puantajında ServiceCore'u öne çıkaran ve kurumunuzun gerçek
+      gereksinimleriyle birebir örtüşen alanlardır.
+    </p>
+
+    <div class="feat">
+      <div class="f">
+        <div class="fh"><div class="fi">1</div><div class="ft">On-Premise + Yerli + BDDK Uyumu</div></div>
+        <div class="fd">Veriniz kendi veri merkezinizde; SaaS bağımlılığı yok. Yerli üretici, üretici-seviye yerel destek — denetim ve regülasyon için en güvenli zemin.</div>
+      </div>
+      <div class="f">
+        <div class="fh"><div class="fi">2</div><div class="ft">ESM — Multi-Company / Multi-Tenant</div></div>
+        <div class="fd">Intertech + Denizbank birleşik yapısı için tenant-bazlı ayrıştırma; tek kurulumda sayısız departman/alt şirket. Büyüme için pazarlık dışı gereksinim.</div>
+      </div>
+      <div class="f">
+        <div class="fh"><div class="fi">3</div><div class="ft">ITIL4 Derinliği — 30+ Modül / 16 Süreç</div></div>
+        <div class="fd">ITSM + ESM + Proje + CMDB + Sürekli İyileştirme tek üründe. Ayrı ürünleri kurup entegre etme maliyeti ve riski ortadan kalkar.</div>
+      </div>
+      <div class="f">
+        <div class="fh"><div class="fi">4</div><div class="ft">No-Code Workflow & Onay Motoru</div></div>
+        <div class="fd">Custom onay akışlarınız (SecureLink eşi) koda gerek olmadan, sürükle-bırak ile kurulur. Süreçler kişiye değil sisteme bağlanır.</div>
+      </div>
+      <div class="f">
+        <div class="fh"><div class="fi">5</div><div class="ft">5 Katmanlı Raporlama + Time Engine</div></div>
+        <div class="fd">Dashboard'tan servis analitiğine 5 katman; patentli otomatik süre/efor motoru. Yönetim kararını veriyle alır, ayrı BI aracı gerekmez.</div>
+      </div>
+      <div class="f">
+        <div class="fh"><div class="fi">6</div><div class="ft">ITIL Expert Yerel Destek</div></div>
+        <div class="fd">ITIL Expert / ITIL MP sertifikalı yerli danışman kadro; aracısız, doğrudan üreticiden hızlı destek. 25+ yıllık ITSM deneyimi.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>30+ modül ve 16 ITIL4 süreci tek platformda — ayrı ürünleri kurup entegre etme maliyeti ve riski
+      yoktur. Tek üretici, tek sözleşme, tek destek hattı.</p>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Fark Yaratan Yetenekler</span>
+    <span class="pg">07 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 8 — REFERANSLAR ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Referanslar & Güven</p>
+    <h2 class="h2">Türkiye'nin en denetimli kurumlarının tercihi.</h2>
+    <p class="lead tight">
+      ServiceCore'a güvenen kurumların eriştiği son kullanıcı sayısı 4 milyonu aşmıştır. Sizin
+      sektörünüzden ve sizin kadar denetime tabi kurumlardan örnekler:
+    </p>
+
+    <div class="ref-group">
+      <div class="rh">Finans & Bankacılık</div>
+      <div class="chips">
+        <span class="chip hl">QNB</span>
+        <span class="chip">ALJ Finans</span>
+        <span class="chip">Kuveyttürk Yatırım</span>
+        <span class="chip">İktisat Katılım Bankası</span>
+        <span class="chip">TurkishBank</span>
+        <span class="chip">Golden Global Bank</span>
+        <span class="chip">Aytemiz Yatırım Bankası</span>
+        <span class="chip">İş Faktoring</span>
+        <span class="chip">Misyon</span>
+        <span class="chip">Yıldızlar Yatırım Holding</span>
+        <span class="chip">İntegral Yatırım</span>
+        <span class="chip">Katılımevim</span>
+      </div>
+    </div>
+
+    <div class="ref-group">
+      <div class="rh">En Denetimli / Kurumsal</div>
+      <div class="chips">
+        <span class="chip hl">Sabancı DX</span>
+        <span class="chip hl">Roketsan</span>
+        <span class="chip">Savunma Sanayii Başkanlığı</span>
+        <span class="chip">Diyanet İşleri Başkanlığı</span>
+        <span class="chip">Toyota</span>
+        <span class="chip">AKSA</span>
+        <span class="chip">Türk Kızılay</span>
+        <span class="chip">Logo Yazılım</span>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="cs">
+        <div class="ch">Boyner — rakipten geçiş referansı</div>
+        <div class="cb">ManageEngine'den ServiceCore'a geçiş; 120+ perakende mağazasında donanım, yazılım ve
+        altyapı taleplerinin merkezi, Hizmet Seviyesi tabanlı yönetimi. Sizin Jira → ServiceCore geçişinizin
+        birebir benzeri.</div>
+      </div>
+      <div class="cs">
+        <div class="ch">ALJ Finans — sektörel uyum</div>
+        <div class="cb">Finans sektörüne özgü uyumluluk gereksinimleri dikkate alınarak kurumsal hizmet
+        süreçlerinin dijitalleştirilmesi ve süreç otomasyonu. Denetimli bir finans kurumunda kanıtlanmış
+        ESM kurulumu.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>Sektörünüze en yakın referansımızla — tercihen bir banka/finans kurumuyla — doğrudan bir referans
+      görüşmesi ayarlayabiliriz.</p>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Referanslar — Sizin Dünyanızdan</span>
+    <span class="pg">08 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 9 — UYUM, GUVENLIK & TOPOLOJI ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Uyum & Güvenlik</p>
+    <h2 class="h2">Satın alma ve güvenlik değerlendirmesine hazır.</h2>
+    <p class="lead tight">
+      Çok-paydaşlı teknoloji değerlendirme (TPE) sürecinizi, EMBD prosedürlerini ve BDDK gereksinimlerini
+      hızlandırmak için aşağıdaki paket önceden hazırlanır.
+    </p>
+
+    <div class="grid2" style="margin-top:16px;">
+      <div class="card">
+        <div class="k">Dağıtım & veri egemenliği</div>
+        <div class="v">On-premise — ürün kendi sunucularınıza kurulur, veriniz sizde kalır. SaaS değildir; cloud bağımlılığı yoktur.</div>
+      </div>
+      <div class="card">
+        <div class="k">BDDK & veri saklama</div>
+        <div class="v">10 yıl veri saklama, iç ve dış denetim erişimi, denetim-uyumlu canlı geçmiş veri. Bankacılık regülasyonuna uygun zemin.</div>
+      </div>
+      <div class="card">
+        <div class="k">Kimlik & erişim</div>
+        <div class="v">Azure AD / SAML / SSO entegrasyonu, sınırsız AD senkronizasyonu, ayrıntılı rol ve yetki yönetimi.</div>
+      </div>
+      <div class="card">
+        <div class="k">Yüksek erişilebilirlik</div>
+        <div class="v">Failover / Cluster ve Disaster Center (DR) opsiyonları ile kesintisiz, yedekli çalışma.</div>
+      </div>
+      <div class="card">
+        <div class="k">Topoloji</div>
+        <div class="v">DMZ-uyumlu self-servis portal, on-premise agent mimarisi; ağ ve güvenlik topolojisi şeması paylaşılır.</div>
+      </div>
+      <div class="card spot">
+        <div class="k">RFP / TPE dokümantasyonu</div>
+        <div class="v">Topoloji şeması, güvenlik checklist'i, karşılaştırma dokümanı ve NDA — değerlendirme sürecine hazır gelir.</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>Teknoloji değerlendirme (TPE) checklist'inizi paylaştığınızda, güvenlik ve topoloji paketini
+      değerlendirme başlamadan önce hazır biçimde sunarız — ServiceCore puantajda "güvenli ve kolay seçim"
+      olsun.</p>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Uyum, Güvenlik & Topoloji</span>
+    <span class="pg">09 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 10 — SONRAKI ADIMLAR ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Sonraki Adımlar</p>
+    <h2 class="h2">Birlikte, net ve baskısız bir yol haritası.</h2>
+    <p class="lead tight">
+      Kararın 2027 ufkunda olduğunu biliyoruz. Bu yüzden hız değil, hazırlık öneriyoruz: zorunlu Jira
+      çıkışına geldiğinizde ServiceCore'un en hazır ve en güvenli seçenek olması için.
+    </p>
+
+    <div style="margin-top:14px;">
+      <div class="step">
+        <div class="n">1</div>
+        <div class="c">
+          <div class="st">Kapsam & topoloji doğrulama atölyesi</div>
+          <div class="sd">Pro/Standart dağılımı, 8 entegrasyon, SLA sadeleştirme ve migration efor aralığının ortak kesinleştirilmesi.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <div class="c">
+          <div class="st">Güvenlik & uyum paketi</div>
+          <div class="sd">TPE checklist alışverişi; topoloji şeması, güvenlik dokümanı ve karşılaştırma paketinin hazırlanması.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <div class="c">
+          <div class="st">Opsiyonel — küçük kapsamlı kanıt çalışması (PoV)</div>
+          <div class="sd">Sınırlı bir alanda 1:1 Jira göçü ve süreç gösterimi; riski düşük, güveni yüksek bir doğrulama.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="n">4</div>
+        <div class="c">
+          <div class="st">RFP'ye hazırlık & resmî teklif</div>
+          <div class="sd">Doğrulanmış kapsamla, çok-tedarikçi puantajına hazır resmî teklif; zorunlu Jira çıkışına senkronize devreye alma planı.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout emerald">
+      <p>Bu süreçte sizi çeyreklik kısa değer temalarıyla bilgilendirir, gündeminizi takip ederiz. Beşiktaş
+      ofisinizdeki yönetici buluşması davetiniz ilişkiyi yüz yüze pekiştirmek için harika bir başlangıç.</p>
+    </div>
+
+    <div class="contact">
+      <div class="cl">
+        <div class="t">Başlayalım — kapsam atölyesi için bir tarih belirleyelim.</div>
+        <div class="s">İlk adım: 60 dakikalık kapsam & topoloji doğrulama görüşmesi.</div>
+      </div>
+      <div class="cr">
+        <b>444CORE</b><br>
+        info@servicecore.com.tr<br>
+        servicecore.com.tr
+      </div>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Sonraki Adımlar</span>
+    <span class="pg">10 / 11</span>
+  </div>
+</div>
+
+<!-- ===================== SAYFA 11 — KOSULLAR / NOTLAR ===================== -->
+<div class="sheet">
+  <div class="shead">
+    <div class="brand"><div class="mark"></div><div class="wm">service<b>core</b></div></div>
+    <span class="shead-right">Gösterge Teklif · Intertech</span>
+  </div>
+  <div class="body">
+    <p class="overline">Teklif & Hizmet Koşulları</p>
+    <h2 class="h2">Şeffaf, ortaklık temelli koşullar.</h2>
+    <p class="lead tight">Bu koşullar, iki tarafın da başarısını güvence altına almak için tanımlanmıştır.</p>
+
+    <ul class="clean">
+      <li><b>Gösterge teklif:</b> <span>Bu doküman gösterge niteliğindedir; rakam ve efor tahminleri, kapsamın ortak doğrulanmasının ardından RFP sürecinde resmî teklifte kesinleşir.</span></li>
+      <li><b>Geçerlilik:</b> <span>Teklif 30 gün geçerlidir; süreç ilerledikçe güncel kapsam ve fiyatlarla yenilenir.</span></li>
+      <li><b>Abonelik dönemi:</b> <span>1 / 3 / 5 yıl. Süresiz (perpetual) model yoktur; süre sonunda yenileme ile kullanım devam eder.</span></li>
+      <li><b>Dahil olanlar:</b> <span>Abonelik dönemi boyunca tüm bakım, bug-fix, ürün roadmap yeni özellikleri ve güncellemelerin kuruluma uygulanması fiyata dahildir.</span></li>
+      <li><b>Kurulum:</b> <span>On-premise — ürün kendi sunucularınıza kurulur; veriniz sizde kalır (SaaS değildir).</span></li>
+      <li><b>Lisanslama:</b> <span>Yalnız teknisyen bazlı; son kullanıcı, 24.000 varlık ve kayıt sınırsız ve ücretsiz. Hibrit Pro/Standart oranı enterprise koşullarında kuruma özel yapılandırılır.</span></li>
+      <li><b>Lisans artışı:</b> <span>Dönem içinde min. 5 lisans ile ek alım; pro-rata fiyatlanır, tüm lisanslar dönem bitişine hizalanır.</span></li>
+      <li><b>Destek:</b> <span>Gold paket — 7/24 e-posta, telefon ve destek portalı; kritik kayıtlar için Hizmet Seviyesi tabanlı öncelikli müdahale.</span></li>
+      <li><b>Para birimi:</b> <span>Türk Lirası sözleşme ve ödeme; aylık ödeme imkânı.</span></li>
+      <li><b>Eğitim & devreye alma:</b> <span>Üretici tarafından kuruma özel onboarding ve eğitim sağlanır.</span></li>
+    </ul>
+
+    <div class="callout">
+      <p>Detaylı sözleşme şartları imzaya esas ana sözleşmede (MSA) yer alır; yukarıdaki müşteri-dostu
+      maddeler özet niteliğindedir.</p>
+    </div>
+
+    <div style="margin-top:20px;text-align:center;">
+      <div class="brand" style="justify-content:center;">
+        <div class="mark"></div>
+        <div class="wm" style="font-size:18px;">service<b>core</b></div>
+      </div>
+      <p style="font-size:10px;color:var(--muted);margin-top:10px;letter-spacing:0.04em;">
+        Servicecore Bilgi Teknolojileri A.Ş. · 2000'den beri kurumsal ITSM / ESM · 444CORE · servicecore.com.tr
+      </p>
+    </div>
+  </div>
+  <div class="sfoot">
+    <span class="conf">GİZLİ — INTERTECH'E ÖZEL</span>
+    <span>Teklif & Hizmet Koşulları</span>
+    <span class="pg">11 / 11</span>
+  </div>
+</div>
+
+</body>
+</html>

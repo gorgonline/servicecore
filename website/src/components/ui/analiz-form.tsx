@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Send, AlertCircle, Loader2 } from "lucide-react";
 import analizData from "@/data/analiz.json";
 import { submitForm } from "@/lib/forms";
+import { useFormGuard } from "@/hooks/useFormGuard";
 
 // Basari durumu artik /tesekkurler?from=analiz redirect ile yonetiliyor — "success" stati state'te yok.
 type Status = "idle" | "loading" | "error";
@@ -51,6 +52,7 @@ export function AnalizForm() {
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const guard = useFormGuard();
 
   const [contactState, setContactState] = useState<ContactState>({
     firma: "",
@@ -120,7 +122,7 @@ export function AnalizForm() {
 
     setStatus("loading");
     setErrorMessage("");
-    const result = await submitForm("Analiz", data);
+    const result = await submitForm("Analiz", data, guard.collect());
     if (result.ok) {
       router.push("/tesekkurler?from=analiz");
     } else {
@@ -139,6 +141,7 @@ export function AnalizForm() {
       transition={{ type: "spring", stiffness: 100, damping: 18, delay: 0.15 }}
       className="space-y-8"
     >
+      {guard.field}
       {/* İletişim */}
       <div className="rounded-3xl bg-white/2 border border-white/5 p-8 lg:p-10 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-(--color-brand-primary)/8 to-transparent rounded-bl-full pointer-events-none" />

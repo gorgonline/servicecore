@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Send, AlertCircle, Loader2 } from "lucide-react";
 import partnerData from "@/data/partner-kayit.json";
 import { submitForm } from "@/lib/forms";
+import { useFormGuard } from "@/hooks/useFormGuard";
 
 // Basari durumu artik /tesekkurler?from=partner redirect ile yonetiliyor — "success" stati state'te yok.
 type Status = "idle" | "loading" | "error";
@@ -39,6 +40,7 @@ export function PartnerKayitForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [fieldState, setFieldState] = useState<Record<string, string>>({});
+  const guard = useFormGuard();
 
   function setField(id: string, value: string) {
     setFieldState((prev) => ({ ...prev, [id]: value }));
@@ -57,7 +59,7 @@ export function PartnerKayitForm() {
 
     setStatus("loading");
     setErrorMessage("");
-    const result = await submitForm("Register", data);
+    const result = await submitForm("Register", data, guard.collect());
     if (result.ok) {
       router.push("/tesekkurler?from=partner");
     } else {
@@ -76,6 +78,7 @@ export function PartnerKayitForm() {
       transition={{ type: "spring", stiffness: 100, damping: 18, delay: 0.15 }}
       className="space-y-8"
     >
+      {guard.field}
       {sections.map((section) => (
         <section
           key={section.id}

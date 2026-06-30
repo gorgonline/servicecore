@@ -21,6 +21,7 @@ import {
 import ServiceCoreHero from "@/components/ui/ServiceCoreHero";
 import egitimlerData from "@/data/egitimler.json";
 import { submitForm } from "@/lib/forms";
+import { useFormGuard } from "@/hooks/useFormGuard";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -72,6 +73,7 @@ export default function EgitimlerPage() {
   const { egitimler } = egitimlerData;
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const guard = useFormGuard();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -90,7 +92,7 @@ export default function EgitimlerPage() {
 
     setStatus("loading");
     setErrorMessage("");
-    const result = await submitForm("Eğitim", data);
+    const result = await submitForm("Eğitim", data, guard.collect());
     if (result.ok) {
       setStatus("success");
       form.reset();
@@ -280,6 +282,7 @@ export default function EgitimlerPage() {
                   </h3>
 
                   <form className="grid gap-6" onSubmit={handleSubmit}>
+                    {guard.field}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div className="space-y-2">
                         <label htmlFor="ad" className="text-[10px] font-bold uppercase tracking-[0.2em] text-(--color-text-secondary) ml-2">Ad*</label>

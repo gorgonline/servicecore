@@ -34,6 +34,7 @@ import {
 import ServiceCoreHero from "@/components/ui/ServiceCoreHero";
 import kurslarData from "@/data/kurslar.json";
 import { submitForm } from "@/lib/forms";
+import { useFormGuard } from "@/hooks/useFormGuard";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -66,6 +67,7 @@ export default function KurslarPage() {
   const { kurslar } = kurslarData;
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const guard = useFormGuard();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -84,7 +86,7 @@ export default function KurslarPage() {
 
     setStatus("loading");
     setErrorMessage("");
-    const result = await submitForm("Kurs", data);
+    const result = await submitForm("Kurs", data, guard.collect());
     if (result.ok) {
       setStatus("success");
       form.reset();
@@ -272,6 +274,7 @@ export default function KurslarPage() {
                 </h3>
 
                 <form className="grid gap-6" onSubmit={handleSubmit}>
+                  {guard.field}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label htmlFor="ad" className="text-[10px] font-black uppercase tracking-widest text-(--color-text-muted) ml-4">{kurslar.form_fields.name}</label>

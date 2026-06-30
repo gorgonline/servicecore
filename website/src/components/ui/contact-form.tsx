@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Send, AlertCircle, Loader2 } from "lucide-react";
 import contactData from "@/data/contact.json";
 import { submitForm } from "@/lib/forms";
+import { useFormGuard } from "@/hooks/useFormGuard";
 
 // Basari durumu artik /tesekkurler?from=iletisim redirect ile yonetiliyor — "success" stati state'te yok.
 type Status = "idle" | "loading" | "error";
@@ -14,6 +15,7 @@ export function ContactForm() {
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const guard = useFormGuard();
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -31,7 +33,7 @@ export function ContactForm() {
 
     setStatus("loading");
     setErrorMessage("");
-    const result = await submitForm("İletişim", data);
+    const result = await submitForm("İletişim", data, guard.collect());
     if (result.ok) {
       router.push("/tesekkurler?from=iletisim");
     } else {
@@ -56,6 +58,7 @@ export function ContactForm() {
         </h2>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
+          {guard.field}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label htmlFor="firstName" className="text-sm font-medium text-(--color-text-secondary) flex items-center gap-1">
