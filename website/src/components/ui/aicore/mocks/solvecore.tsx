@@ -155,17 +155,18 @@ const KB_ROWS: EvidenceRow[] = [
 
 const GATE = {
   sub: "Karar yalnız arama skoruna bakar — modelin 'eminim' demesine değil",
-  topScore: 0.91,
-  needleValue: 91,
-  rationale: "0.91 ≥ 0.70",
-  scoreTrend: [0.31, 0.38, 0.52, 0.61, 0.7, 0.74, 0.81, 0.89, 0.91],
+  topScore: 0.92,
+  needleValue: 92,
+  rationale: "0.92 ≥ 0.70",
+  // Kanıt paketindeki 6 adayın skorları (büyükten küçüğe) — en güçlüsü kapıya gider.
+  scoreTrend: [0.92, 0.89, 0.81, 0.74, 0.7, 0.52],
   scoreTrendThreshold: 0.7,
-  scoreTrendCaption: "kanıt biriktikçe skor yükseldi — eşik 0.70 aşıldı",
+  scoreTrendCaption: "6 aday skoru (büyükten küçüğe) — en güçlü kanıt 0.92 kapıya gider",
 };
 
 const THRESHOLDS: Threshold[] = [
-  { label: "Sus", range: "< 0.45", verdict: "kanıt yok → sus", tone: "danger", width: "45%" },
-  { label: "Eskale", range: "0.45 – 0.70", verdict: "sınırda → insana devret", tone: "warn", width: "25%" },
+  { label: "Sus", range: "< 0.55", verdict: "kanıt yok → sus", tone: "danger", width: "55%" },
+  { label: "Eskale", range: "0.55 – 0.70", verdict: "sınırda → insana devret", tone: "warn", width: "15%" },
   {
     label: "Öner",
     range: "≥ 0.70",
@@ -201,11 +202,23 @@ const GROUNDING = {
   note: "Alakasız çıksaydı öneri atılır → cevap üretilmezdi. Bu adım uydurmayı keser.",
 };
 
+const QUALITY = {
+  score: "1.0",
+  meta: "bağımsız hakem · öneri sonrası",
+  checks: [
+    "KVKK: cevapta kişisel veri yok (e-posta / telefon / TC).",
+    "Kaynak sadakati: her adım gösterilen kaynaktan — uydurma komut/adım yok.",
+    "Yetkisiz aksiyon yok: kapatma/atama/sıfırlama 'yapılmış gibi' sunulmuyor.",
+    "Dil & ITIL: Türkçe, teknisyene uygun profesyonel ton.",
+  ],
+  note: "Ayrı bir yargıç zinciri her öneriyi 7 uyum kuralına karşı denetler; skor kural matematiğinden gelir (yes / yes+no) — hakem kapı değil, gözlemcidir.",
+};
+
 const SUPPRESS = {
   ticketId: "INC-3205",
   ticketTitle: "Özel uygulama açılışta çöküyor (tek kullanıcı)",
   topScore: 0.29,
-  decisionText: "Birleşik kanıt skoru 0.29, 0.45 eşiğinin altında → güvenilir kanıt yok.",
+  decisionText: "Birleşik kanıt skoru 0.29, 0.55 eşiğinin altında → güvenilir kanıt yok.",
   bodyText:
     "Öneri üretmiyorum — uydurma yerine dürüstçe susuyorum. Kayıt teknisyende kalır; sonuç izlenebilir biçimde tutulur.",
   chips: [
@@ -229,11 +242,11 @@ const KPIS: Kpi[] = [
 ];
 
 function gateTextColor(score: number): string {
-  return score >= 0.7 ? "text-emerald-300" : score >= 0.45 ? "text-amber-300" : "text-red-300";
+  return score >= 0.7 ? "text-emerald-300" : score >= 0.55 ? "text-amber-300" : "text-red-300";
 }
 
 function gateBarColor(score: number): string {
-  return score >= 0.7 ? "bg-emerald-400" : score >= 0.45 ? "bg-amber-400" : "bg-red-400";
+  return score >= 0.7 ? "bg-emerald-400" : score >= 0.55 ? "bg-amber-400" : "bg-red-400";
 }
 
 function toneDot(tone: ChipTone): string {
@@ -362,7 +375,7 @@ export function SolveCoreMock({ accent: accentName }: { accent: string }) {
                   <BookOpen className={`w-3 h-3 shrink-0 ${accent.text}`} />
                   <span className="text-[11px] text-white/85">
                     Kanıt paketi · birleşik — en güçlü skor{" "}
-                    <span className={`font-mono tabular-nums ${accent.text}`}>0.91</span> · 6 kaynak
+                    <span className={`font-mono tabular-nums ${accent.text}`}>0.92</span> · 6 kaynak
                   </span>
                 </div>
               </div>
@@ -507,6 +520,34 @@ export function SolveCoreMock({ accent: accentName }: { accent: string }) {
             </div>
             <div className="mt-3 pt-3 border-t border-white/8 text-[10px] font-mono text-(--color-text-muted) leading-snug">
               {GROUNDING.note}
+            </div>
+          </div>
+        </MockFrame>
+
+        <MockFrame>
+          <TitleBar
+            icon={<ShieldCheck className="w-3.5 h-3.5" />}
+            title="Kalite Uyum Denetimi"
+            meta={QUALITY.meta}
+            accent={accent}
+          />
+          <div className="px-5 py-4">
+            <div className="flex items-center gap-3">
+              <span className="text-3xl font-bold text-white tabular-nums tracking-tight">
+                {QUALITY.score}
+              </span>
+              <Chip tone="success">tüm kurallara uyumlu</Chip>
+            </div>
+            <div className="mt-3 space-y-2">
+              {QUALITY.checks.map((check, i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300 shrink-0 mt-0.5" />
+                  <p className="text-[11px] text-white/85 leading-snug">{check}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 pt-3 border-t border-white/8 text-[10px] font-mono text-(--color-text-muted) leading-snug">
+              {QUALITY.note}
             </div>
           </div>
         </MockFrame>
