@@ -560,7 +560,7 @@
     <div class="grid c2" style="margin:4px 0 18px">
       <div class="card" style="border-color:#bdebd7">
         <b>① Senaryoyu canlı hesaplayın</b>
-        <p style="margin:.3em 0 0;font-size:13.5px">Aşağıdaki hesap makinesinde Pro/Standart adetlerini ve hizmet kapsamını girin; gösterge toplam canlı çıkar. <b>Hesapla</b> → <b>PDF olarak kaydet</b> ile çıktı alın.</p>
+        <p style="margin:.3em 0 0;font-size:13.5px">Aşağıdaki hesap makinesinde Pro/Standart adetlerini ve hizmet kapsamını girin; gösterge toplam canlı çıkar. <b>Hesapla</b> ile canlı görün; yandaki <b>Temiz PDF İndir</b> ile çıktıyı alın.</p>
       </div>
       <div class="card">
         <b>② Kapsamı birlikte netleştirelim</b>
@@ -639,8 +639,8 @@
         <div class="vmsg" id="vMsg"></div>
         <div class="cta">
           <button class="btn btn-primary" id="hesapla">Hesapla</button>
-          <button class="btn out" id="pdfBtn" disabled style="width:100%;margin-top:12px">PDF olarak kaydet / Yazdır</button>
-          <p class="footnote" id="outHint" style="margin:10px 2px 0">Önce <b>Hesapla</b>'ya basın; ardından çıktı alabilirsiniz.</p>
+          <a class="btn out" id="pdfBtn" href="https://www.servicecore.com.tr/teklif-intertech/teklif.pdf" target="_blank" rel="noopener" style="width:100%;margin-top:12px;display:block;text-align:center;text-decoration:none">Temiz PDF İndir ↓</a>
+          <p class="footnote" id="outHint" style="margin:10px 2px 0">Baskı/PDF için hazır, temiz sürümü indirin (tarayıcı yazdırma ayarı gerekmez).</p>
         </div>
       </div>
     </div>
@@ -767,7 +767,6 @@
     enableOutputs();
     toast('<b>Hesaplandı.</b> Artık “PDF olarak kaydet” ile çıktı alabilirsiniz.');
   });
-  document.getElementById('pdfBtn').addEventListener('click',function(){window.print();});
   var gc=document.getElementById('goCalc');if(gc)gc.addEventListener('click',function(){var y=document.getElementById('yatirim');if(y)y.scrollIntoView({behavior:'smooth'});});
   compute();window.__compute=compute;
 })();
