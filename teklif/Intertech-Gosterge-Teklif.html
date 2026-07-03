@@ -162,14 +162,27 @@
   .offices .of p{margin:.25em 0 0;font-size:12px;color:#42506b;line-height:1.5}
 
   @media print{
-    @page{margin:0}
+    @page{size:A4;margin:12mm 14mm}
+    @page coverpage{margin:0}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     body{background:#fff}
-    .pad{padding:16mm 18mm}.cover{padding:18mm}
-    .toolbar,.voucher button,.summary .cta,.stepper button{display:none!important}
-    .page{box-shadow:none;max-width:none}.summary{position:static;box-shadow:none}
-    .brk{page-break-before:always}
-    h2{page-break-after:avoid}.case,.proof,table.t,.tl{page-break-inside:avoid}
-    .cover{min-height:auto;height:96vh}
+    /* interaktif-only ögeler gizli */
+    .toolbar,.summary .cta,.voucher,.stepper button,#goCalc{display:none!important}
+    .page{box-shadow:none;max-width:none;margin:0}
+    .pad{padding:6mm 0 3mm}
+    /* kapak: tam-sayfa full-bleed, tek başına 1. sayfa */
+    .cover{page:coverpage;min-height:auto;height:auto;padding:24mm 16mm;page-break-after:always}
+    /* ZORLA SAYFA KIRMA YOK — içerik aksın, boş sayfa oluşmasın */
+    .brk{page-break-before:auto}
+    /* başlık öksüz kalmasın */
+    h1,h2,h3,h4{page-break-after:avoid}
+    /* atomik bloklar bölünmesin */
+    table.t,.case,.proof,.tl,.card,.ln,.opt,.lineblock,.guarantee,.ref-grid,.offices,.contact-grid,.callout,.vp,.stat,.grid,svg.mock,.quote,.draft-note{page-break-inside:avoid}
+    tr,ul.dash li,ul.clean li,.toc li{page-break-inside:avoid}
+    /* hesaplayıcı print'te tek kolon (input'lar → özet altında) */
+    .calc-wrap{display:block}
+    .summary{position:static;box-shadow:none;margin-top:14px}
+    .summary .top{padding:14px}
   }
   @media(max-width:820px){
     .c3,.c2,.c4,.case .cols,.guarantee,.calc-wrap,.addon-grid,.contact-grid,.cover .meta{grid-template-columns:1fr}
