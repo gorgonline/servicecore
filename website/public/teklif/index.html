@@ -142,7 +142,8 @@
   .faq .q{border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin-bottom:10px;background:#fff}
   .faq .q b{color:var(--navy)}.faq .q p{margin:.3em 0 0;color:#42506b;font-size:14px}
 
-  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(30px);opacity:0;pointer-events:none;background:var(--navy);color:#fff;padding:14px 22px;border-radius:12px;box-shadow:var(--shadow);z-index:60;transition:.3s;font-weight:600;max-width:88vw}
+  .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%) translateY(30px);opacity:0;pointer-events:none;background:var(--navy);color:#fff;padding:14px 22px;border-radius:12px;box-shadow:var(--shadow);z-index:80;transition:.3s;font-weight:600;max-width:88vw}
+  body.editing .toast{bottom:calc(var(--abH,86px) + 20px)}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}.toast b{color:#7df0ff}
 
   .footnote{font-size:12px;color:var(--muted)}
@@ -151,16 +152,53 @@
   .contact-grid .ci span{display:block;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
   .contact-grid .ci b{color:var(--navy)}
 
+  /* ---- düzenleme modu (gizli) ---- */
+  .adminbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--navy);color:#fff;gap:14px;align-items:center;flex-wrap:wrap;padding:10px 18px;box-shadow:0 -8px 24px rgba(15,34,71,.35)}
+  .adminbar.on{display:flex}
+  .adminbar>b{color:#7df0ff;white-space:nowrap}
+  .adminbar .ab-field{display:flex;align-items:center;gap:8px;font-size:12.5px;color:#c7d6f2;font-weight:600;white-space:nowrap}
+  .adminbar input[type=text]{font:inherit;font-size:13.5px;border:0;border-radius:8px;padding:8px 10px;min-width:190px;color:var(--ink)}
+  .adminbar .ab-hint{font-size:11.5px;color:#9fb6e6;max-width:34ch;line-height:1.35}
+  .adminbar .ab-actions{margin-left:auto;display:flex;gap:8px}
+  .adminbar .ab-btn{background:linear-gradient(135deg,var(--cyan),var(--blue2));color:#fff}
+  .adminbar .ab-btn.ghost{background:rgba(255,255,255,.14);color:#fff}
+  body.editing{padding-bottom:calc(var(--abH,86px) + env(safe-area-inset-bottom,0px))}
+  body.editing [data-edit]{outline:2px dashed rgba(6,182,212,.75);outline-offset:2px;border-radius:4px;cursor:text}
+  body.editing [data-edit]:hover{background:rgba(6,182,212,.08)}
+  body.editing [data-edit]:focus{outline:2px solid var(--blue2);background:rgba(255,255,255,.95);color:var(--ink)}
+  .pr-edit{width:96px;font:inherit;font-size:13px;text-align:right;border:1px solid var(--cyan);border-radius:7px;padding:5px 7px;background:#fff;color:var(--ink)}
+  .pr-edit:focus{outline:2px solid var(--blue2);outline-offset:1px}
+  .pr-suf{font-size:12px;color:var(--muted);margin-left:4px;white-space:nowrap}
+
   @media print{
-    @page{margin:14mm}
-    body{background:#fff}
-    .toolbar,.voucher button,.summary .cta,.stepper button{display:none!important}
-    .page{box-shadow:none;max-width:none}.summary{position:static;box-shadow:none}
-    .brk{page-break-before:always}
-    h2{page-break-after:avoid}.case,.proof,table.t,.tl{page-break-inside:avoid}
-    .cover{min-height:auto;height:96vh}
+    @page{size:A4;margin:12mm 14mm}
+    @page coverpage{margin:0}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    body{background:#fff;padding-bottom:0!important}
+    /* interaktif-only ögeler gizli */
+    .toolbar,.summary .cta,.voucher,.vmsg,.stepper button,#goCalc,.btn,.adminbar{display:none!important}
+    .page{box-shadow:none;max-width:none;margin:0}
+    .pad{padding:6mm 0 3mm}
+    /* kapak: tek başına 1. sayfa; full-bleed yalnız named-page destekleyen tarayıcıda (Safari fallback: marjlı ama taşmasız) */
+    .cover{min-height:auto;height:auto;padding:26mm 16mm;page-break-after:always;justify-content:flex-start}
+    @supports(page:auto){.cover{page:coverpage;min-height:100vh}}
+    /* ZORLA SAYFA KIRMA YOK — içerik aksın, boş sayfa oluşmasın */
+    .brk{page-break-before:auto}
+    /* başlık ve eyebrow öksüz kalmasın */
+    h1,h2,h3,h4,.eyebrow{page-break-after:avoid}
+    /* atomik bloklar bölünmesin */
+    table.t,.case,.proof,.tl,.card,.ln,.opt,.lineblock,.guarantee,.contact-grid,.callout,.vp,.stat,.grid,.mock,.quote,.faq .q,.svc-note{page-break-inside:avoid}
+    tr,ul.dash li,ul.clean li,.toc li{page-break-inside:avoid}
+    /* hesaplayıcı print'te tek kolon (özet en altta) */
+    .calc-wrap{display:block}
+    .summary{position:static;box-shadow:none;margin-top:14px}
+    .summary .top{padding:14px}
+    /* düzenleme modu izleri baskıya sızmasın */
+    body.editing [data-edit]{outline:none!important;background:transparent!important}
   }
   @media(max-width:820px){
+    .adminbar .ab-hint{display:none}
+    .adminbar{padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
     .c3,.c2,.c4,.case .cols,.guarantee,.calc-wrap,.addon-grid,.contact-grid,.cover .meta{grid-template-columns:1fr}
     .tl{grid-template-columns:repeat(2,1fr)}.tl::before{display:none}.summary{position:static}
     .pad,.cover{padding-left:24px;padding-right:24px}
@@ -181,15 +219,15 @@
   <div class="cover">
     <div class="cover-top">
       <div class="logo"><img class="mark-img" src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjAuMDMzIDE5LjgyMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjAuMDMzIiBoZWlnaHQ9IjE5LjgyMSIgZmlsbD0ibm9uZSIgb3ZlcmZsb3c9InZpc2libGUiPjxnPjxwYXRoIGQ9Ik0gOS4xNTIgOC40MjkgTCAxMi4wMDkgOC40MyBMIDE0Ljg2NSAzLjI2NiBMIDExLjE4MiA2LjU5NCBaIE0gMTMuMTQzIDkuOTQ5IEwgMTMuNzMxIDExLjAxMiBMIDIwLjAzMyAxMS4wMTIgTCAxNS42MDEgMyBMIDEyLjQ1IDguNjk2IFogTSA5LjE1MiAxNC4xMjUgTCA2IDE5LjgyMSBMIDE1LjE1OSAxOS44MjEgTCAxMi4wMDkgMTQuMTI1IFogTSAyMC4wMzMgMTEuNTQzIEwgMTMuNzMxIDExLjU0MyBMIDEzLjA5IDEyLjcwMSBMIDEyLjQ1IDEzLjg1OSBMIDE1LjYwMSAxOS41NTUgWiIgZmlsbD0icmdiKDIsIDE0LCAzMykiPjwvcGF0aD48cGF0aCBkPSJNIDcuNTgzIDUuOTYyIEwgNC40MzIgMC4yNjYgTCAwIDguMjc3IEwgNi4zMDIgOC4yNzcgWiBNIDguMDI1IDExLjM5MSBMIDUuMTY4IDE2LjU1MyBMIDEwLjg4MiAxMS4zOTEgWiBNIDcuNTgzIDExLjEyNSBMIDYuMzAyIDguODA5IEwgMCA4LjgwOSBMIDQuNDMzIDE2LjgxOSBaIE0gMTAuODgyIDUuNjk2IEwgMTQuMDMzIDAgTCA0Ljg3NCAwIEwgOC4wMjMgNS42OTUgWiIgZmlsbD0idmFyKC0tdG9rZW4tOWM4MDNiN2UtZDQ1OS00OWRlLTk0ODctM2EyMDVhYTBiNmNhLCByZ2IoMTUsIDk4LCAyNTQpKSI+PC9wYXRoPjwvZz48L3N2Zz4=" alt="ServiceCore"> Service<b>Core</b></div>
-      <div class="cust-logo">[ Acme Holding — Logo ]</div>
+      <div class="cust-logo" data-edit="musteriLogo">[ Acme Holding — Logo ]</div>
     </div>
     <span class="pill">KURUMSAL HİZMET YÖNETİMİ (ESM / ITSM) TEKLİFİ</span>
-    <h1>Acme Holding için değer odaklı hizmet yönetimi dönüşümü</h1>
-    <p class="lead">Yıllar süren ITSM projelerine son. Haftalar içinde canlıya geçin, sonucu kendiniz görün, kararınızı verin — riski biz üstleniyoruz.</p>
+    <h1 data-edit="kapakBaslik">Acme Holding için değer odaklı hizmet yönetimi dönüşümü</h1>
+    <p class="lead" data-edit="kapakLead">Yıllar süren ITSM projelerine son. Haftalar içinde canlıya geçin, sonucu kendiniz görün, kararınızı verin — riski biz üstleniyoruz.</p>
     <div class="meta">
       <div><span>Hazırlayan</span><b>ServiceCore Bilgi Teknolojileri A.Ş.</b></div>
-      <div><span>Hazırlanan</span><b>Acme Holding · BT Direktörlüğü</b></div>
-      <div><span>Teklif No</span><b>SC-ENT-2026-0042</b></div>
+      <div><span>Hazırlanan</span><b data-edit="hazirlanan">Acme Holding · BT Direktörlüğü</b></div>
+      <div><span>Teklif No</span><b data-edit="teklifNo">SC-ENT-2026-0042</b></div>
       <div><span>Tarih · Geçerlilik</span><b><span id="today">—</span> · <span id="valid">—</span></b></div>
     </div>
   </div>
@@ -220,7 +258,7 @@
   <section class="pad brk">
     <span class="eyebrow"><span class="sec-no">01</span> · Yönetici Özeti</span>
     <h2>Bir bakışta</h2>
-    <p class="lead-p">Acme Holding, grup genelinde dağınık ve büyük ölçüde manuel yürüyen hizmet/destek süreçlerini tek bir ITIL 4 platformunda toplayarak çözüm sürelerini kısaltmayı, uçtan uca görünürlük ve raporlama kazanmayı, ve toplam sahip olma maliyetini (TCO) düşürmeyi hedefliyor.</p>
+    <p class="lead-p" data-edit="ozetGiris">Acme Holding, grup genelinde dağınık ve büyük ölçüde manuel yürüyen hizmet/destek süreçlerini tek bir ITIL 4 platformunda toplayarak çözüm sürelerini kısaltmayı, uçtan uca görünürlük ve raporlama kazanmayı, ve toplam sahip olma maliyetini (TCO) düşürmeyi hedefliyor.</p>
     <p>Önerimiz net: ServiceCore'a <b>risksiz</b> bir geçiş. İlk değerin haftalar içinde kanıtlandığı bir <b>Proof of Value</b> programı (ServiceCore Proof Drive), ücretsiz ve sıfır veri kayıplı 7 aşamalı migration, ve yatırımı canlı olarak kendinizin şekillendirdiği şeffaf bir fiyat modeli. Program başında birlikte belirlediğimiz başarı kriterleri 8. haftada tutmazsa sipariş yok.</p>
     <div class="callout">
       <b>Özetin özeti:</b> Tek platformda ITSM + ESM + varlık + proje + saha; 8 haftada ispatlı canlıya geçiş; ilk 2 ay yatırımsız; %100 koşulsuz iade; ücretsiz migration; aylık veya yıllık TL ödeme.
@@ -231,7 +269,7 @@
       <div class="card soft"><div class="stat"><b>16</b>ITIL 4 süreci · 30+ modül</div></div>
       <div class="card soft"><div class="stat"><b>8 hafta</b>ispatlı geçiş</div></div>
     </div>
-    <p style="margin-top:14px">Bu teklif, ilk görüşmenizdeki öncelikleriniz temel alınarak Acme Holding'e özel hazırlanmıştır. Sonraki bölümlerde mevcut durumunuzu, hedefleri, önerilen çözümü modül düzeyinde, uygulama metodolojisini, güvence programını, hizmet ve destek paketlerini, lisans kapsamını, şeffaf yatırımı ve güvenlik/uyum çerçevesini bulacaksınız.</p>
+    <p style="margin-top:14px" data-edit="ozetKapanis">Bu teklif, ilk görüşmenizdeki öncelikleriniz temel alınarak Acme Holding'e özel hazırlanmıştır. Sonraki bölümlerde mevcut durumunuzu, hedefleri, önerilen çözümü modül düzeyinde, uygulama metodolojisini, güvence programını, hizmet ve destek paketlerini, lisans kapsamını, şeffaf yatırımı ve güvenlik/uyum çerçevesini bulacaksınız.</p>
   </section>
 
   <!-- ====== 2 · PROBLEM (s.4) ====== -->
@@ -375,7 +413,7 @@
     <span class="eyebrow"><span class="sec-no">07</span> · Uygulama &amp; Geçiş Metodolojisi</span>
     <h2>Nasıl ilerleyeceğiz</h2>
     <table class="t">
-      <tr><th>Aşama</th><th>Yapılan iş</th><th class="c">ServiceCore</th><th class="c">Acme</th></tr>
+      <tr><th>Aşama</th><th>Yapılan iş</th><th class="c">ServiceCore</th><th class="c" data-edit="raciMusteri">Acme</th></tr>
       <tr><td><b>Hazırlık (Hafta 1)</b></td><td>Ortam kurulumu, AD/SSO entegrasyonu, temel mimari</td><td class="c">R/A</td><td class="c">C</td></tr>
       <tr><td><b>Konfigürasyon (Hafta 2)</b></td><td>Süreç şablonları, SLA politikaları, roller, kategoriler</td><td class="c">R</td><td class="c">A/C</td></tr>
       <tr><td><b>Eğitim (Hafta 3)</b></td><td>Teknisyen ve yönetici rol-bazlı eğitimi, onboarding</td><td class="c">R</td><td class="c">C/I</td></tr>
@@ -476,7 +514,7 @@
   <section class="pad brk" id="yatirim">
     <span class="eyebrow"><span class="sec-no">11</span> · Yatırım &amp; Fiyatlandırma</span>
     <h2>Kendi teklifinizi oluşturun</h2>
-    <p class="lead-p">Kapsamı siz belirleyin — adetleri girin, hizmeti yapılandırın, toplam canlı güncellensin. Çok aldıkça birim fiyat düşer. <small>(Birim fiyatlar örnektir; nihai liste fiyatlarıyla değiştirilir. Fiyatlara KDV dahil değildir.)</small></p>
+    <p class="lead-p">Kapsamı siz belirleyin — adetleri girin, hizmeti yapılandırın, toplam canlı güncellensin. Çok aldıkça birim fiyat düşer. <small data-edit="fiyatNotu">(Birim fiyatlar örnektir; nihai liste fiyatlarıyla değiştirilir. Fiyatlara KDV dahil değildir.)</small></p>
     <div class="grid c2" style="margin:4px 0 18px">
       <div class="card" style="border-color:#bdebd7">
         <b>① Kendin Fiyat Oluştur</b>
@@ -493,48 +531,48 @@
         <div class="lineblock">
           <h3>1 · Lisanslar <small style="font-weight:500;color:var(--muted)">(kullanıcı / ay · named-user)</small></h3>
           <p class="sub">Son kullanıcılar ve varlıklar sınırsız ve ücretsizdir.</p>
-          <div class="ln"><div class="nm">Standart Lisans<small>24 temel modül/özellik dahil</small></div><div class="pr">1.200 ₺</div><input class="qty" type="number" min="0" value="150" data-key="std" data-price="1200"></div>
-          <div class="ln rec"><div class="nm">Professional Lisans <span class="badge rec">Önerilen</span><small>Standart + 8 modül + 17 ileri özellik</small></div><div class="pr">2.400 ₺</div><input class="qty" type="number" min="0" value="50" data-key="pro" data-price="2400"></div>
+          <div class="ln"><div class="nm">Standart Lisans<small>24 temel modül/özellik dahil</small></div><div class="pr" data-pfor="std">1.200 ₺</div><input class="qty" type="number" min="0" value="150" data-key="std" data-price="1200"></div>
+          <div class="ln rec"><div class="nm">Professional Lisans <span class="badge rec">Önerilen</span><small>Standart + 8 modül + 17 ileri özellik</small></div><div class="pr" data-pfor="pro">2.400 ₺</div><input class="qty" type="number" min="0" value="50" data-key="pro" data-price="2400"></div>
           <div class="hint" id="volHint"></div>
         </div>
         <div class="lineblock">
           <h3>2 · Standart'a ek modüller <small style="font-weight:500;color:var(--muted)">(kullanıcı / ay)</small></h3>
           <p class="sub">Professional aldıysanız bunlar zaten dahildir.</p>
-          <div class="ln"><div class="nm">Varlık Yönetimi &amp; CMDB</div><div class="pr">300 ₺</div><input class="qty" type="number" min="0" value="0" data-key="cmdb" data-price="300"></div>
-          <div class="ln"><div class="nm">Proje Yönetimi (AGILEPM)</div><div class="pr">300 ₺</div><input class="qty" type="number" min="0" value="0" data-key="proje" data-price="300"></div>
-          <div class="ln"><div class="nm">Servis İlişkileri (SRM)</div><div class="pr">250 ₺</div><input class="qty" type="number" min="0" value="0" data-key="srm" data-price="250"></div>
+          <div class="ln"><div class="nm">Varlık Yönetimi &amp; CMDB</div><div class="pr" data-pfor="cmdb">300 ₺</div><input class="qty" type="number" min="0" value="0" data-key="cmdb" data-price="300"></div>
+          <div class="ln"><div class="nm">Proje Yönetimi (AGILEPM)</div><div class="pr" data-pfor="proje">300 ₺</div><input class="qty" type="number" min="0" value="0" data-key="proje" data-price="300"></div>
+          <div class="ln"><div class="nm">Servis İlişkileri (SRM)</div><div class="pr" data-pfor="srm">250 ₺</div><input class="qty" type="number" min="0" value="0" data-key="srm" data-price="250"></div>
         </div>
         <div class="lineblock">
           <h3>3 · Add-on'lar <small style="font-weight:500;color:var(--muted)">(sabit · yıllık)</small></h3>
           <div class="addon-grid">
-            <label class="opt"><input type="checkbox" class="addon" data-price="80000"> <span class="nm">Asset Discovery<small>80.000 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="60000"> <span class="nm">VMware Discovery<small>60.000 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="30000"> <span class="nm">MS Teams Eklentisi<small>30.000 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="150000"> <span class="nm">Failover / Cluster<small>150.000 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="200000"> <span class="nm">Disaster Recovery<small>200.000 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="90000"> <span class="nm">Sandbox / Test<small>90.000 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="adisco" data-price="80000"> <span class="nm">Asset Discovery<small data-pfor="adisco">80.000 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="avmware" data-price="60000"> <span class="nm">VMware Discovery<small data-pfor="avmware">60.000 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="ateams" data-price="30000"> <span class="nm">MS Teams Eklentisi<small data-pfor="ateams">30.000 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="aha" data-price="150000"> <span class="nm">Failover / Cluster<small data-pfor="aha">150.000 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="adr" data-price="200000"> <span class="nm">Disaster Recovery<small data-pfor="adr">200.000 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="asandbox" data-price="90000"> <span class="nm">Sandbox / Test<small data-pfor="asandbox">90.000 ₺/yıl</small></span></label>
           </div>
         </div>
         <div class="lineblock">
           <h3>4 · Kurulum Modeli <small style="font-weight:500;color:var(--muted)">(tek seferlik · birini seçin)</small></h3>
-          <label class="opt"><input type="radio" name="setup" value="quickstart" data-price="150000" checked> <span class="nm">QuickStart — kendin yap<small>Hızlı canlıya geçiş</small></span><span class="pr">150.000 ₺</span></label>
-          <label class="opt rec"><input type="radio" name="setup" value="launch" data-price="450000"> <span class="nm">Launch Ready — anahtar teslim <span class="badge rec">Önerilen</span><small>Uçtan uca rehberli</small></span><span class="pr">450.000 ₺</span></label>
+          <label class="opt"><input type="radio" name="setup" value="quickstart" data-key="squick" data-price="150000" checked> <span class="nm">QuickStart — kendin yap<small>Hızlı canlıya geçiş</small></span><span class="pr" data-pfor="squick">150.000 ₺</span></label>
+          <label class="opt rec"><input type="radio" name="setup" value="launch" data-key="slaunch" data-price="450000"> <span class="nm">Launch Ready — anahtar teslim <span class="badge rec">Önerilen</span><small>Uçtan uca rehberli</small></span><span class="pr" data-pfor="slaunch">450.000 ₺</span></label>
           <label class="opt"><input type="checkbox" checked disabled> <span class="nm">Migration — 7 aşamalı <span class="badge free">Ücretsiz</span><small>Proof Drive'a dahil</small></span><span class="pr">0 ₺</span></label>
         </div>
         <div class="lineblock">
           <h3>5 · Hizmet Kapsamı <small style="font-weight:500;color:var(--muted)">(kapsam genişledikçe bedel artar)</small></h3>
-          <div class="ln"><div class="nm">Ek lokasyon / şirket</div><div class="pr">25.000 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="loc">−</button><input class="qty" type="number" min="0" value="0" data-key="loc" data-price="25000" style="width:46px"><button type="button" data-step="1" data-for="loc">+</button></div></div>
-          <div class="ln"><div class="nm">Özel entegrasyon</div><div class="pr">35.000 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="integ">−</button><input class="qty" type="number" min="0" value="0" data-key="integ" data-price="35000" style="width:46px"><button type="button" data-step="1" data-for="integ">+</button></div></div>
-          <div class="ln"><div class="nm">Özel form/süreç (low-code)</div><div class="pr">15.000 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="form">−</button><input class="qty" type="number" min="0" value="0" data-key="form" data-price="15000" style="width:46px"><button type="button" data-step="1" data-for="form">+</button></div></div>
-          <div class="ln"><div class="nm">Ek eğitim grubu</div><div class="pr">20.000 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="train">−</button><input class="qty" type="number" min="0" value="0" data-key="train" data-price="20000" style="width:46px"><button type="button" data-step="1" data-for="train">+</button></div></div>
+          <div class="ln"><div class="nm">Ek lokasyon / şirket</div><div class="pr" data-pfor="loc">25.000 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="loc">−</button><input class="qty" type="number" min="0" value="0" data-key="loc" data-price="25000" style="width:46px"><button type="button" data-step="1" data-for="loc">+</button></div></div>
+          <div class="ln"><div class="nm">Özel entegrasyon</div><div class="pr" data-pfor="integ">35.000 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="integ">−</button><input class="qty" type="number" min="0" value="0" data-key="integ" data-price="35000" style="width:46px"><button type="button" data-step="1" data-for="integ">+</button></div></div>
+          <div class="ln"><div class="nm">Özel form/süreç (low-code)</div><div class="pr" data-pfor="form">15.000 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="form">−</button><input class="qty" type="number" min="0" value="0" data-key="form" data-price="15000" style="width:46px"><button type="button" data-step="1" data-for="form">+</button></div></div>
+          <div class="ln"><div class="nm">Ek eğitim grubu</div><div class="pr" data-pfor="train">20.000 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="train">−</button><input class="qty" type="number" min="0" value="0" data-key="train" data-price="20000" style="width:46px"><button type="button" data-step="1" data-for="train">+</button></div></div>
           <div class="svc-note">Hizmet kapsamı ara toplamı: <b id="svcSubtotal">—</b>. Kapsamı genişlettikçe bu tutarı <b>siz</b> belirliyorsunuz.</div>
         </div>
         <div class="lineblock">
           <h3>6 · Destek Paketi <small style="font-weight:500;color:var(--muted)">(yıllık · birini seçin)</small></h3>
-          <label class="opt"><input type="radio" name="support" value="silver" data-price="60000"> <span class="nm">Silver</span><span class="pr">60.000 ₺</span></label>
-          <label class="opt rec"><input type="radio" name="support" value="gold" data-price="120000" checked> <span class="nm">Gold <span class="badge rec">Önerilen</span></span><span class="pr">120.000 ₺</span></label>
-          <label class="opt"><input type="radio" name="support" value="platinum" data-price="220000"> <span class="nm">Platinum</span><span class="pr">220.000 ₺</span></label>
-          <label class="opt"><input type="radio" name="support" value="mission" data-price="400000"> <span class="nm">Mission Critical</span><span class="pr">400.000 ₺</span></label>
+          <label class="opt"><input type="radio" name="support" value="silver" data-key="silver" data-price="60000"> <span class="nm">Silver</span><span class="pr" data-pfor="silver">60.000 ₺</span></label>
+          <label class="opt rec"><input type="radio" name="support" value="gold" data-key="gold" data-price="120000" checked> <span class="nm">Gold <span class="badge rec">Önerilen</span></span><span class="pr" data-pfor="gold">120.000 ₺</span></label>
+          <label class="opt"><input type="radio" name="support" value="platinum" data-key="platinum" data-price="220000"> <span class="nm">Platinum</span><span class="pr" data-pfor="platinum">220.000 ₺</span></label>
+          <label class="opt"><input type="radio" name="support" value="mission" data-key="mission" data-price="400000"> <span class="nm">Mission Critical</span><span class="pr" data-pfor="mission">400.000 ₺</span></label>
         </div>
       </div>
       <div class="summary">
@@ -615,13 +653,24 @@
 
 <div class="toast" id="toast"></div>
 
+<div class="adminbar" id="adminBar">
+  <b>Düzenleme modu</b>
+  <label class="ab-field">Müşteri adı <input type="text" id="abMusteri" placeholder="Örn. Intertech"></label>
+  <span class="ab-hint">Fiyat kutularına ve kesikli çerçeveli metinlere tıklayıp düzenleyin — değişiklikler bu tarayıcıya kaydedilir.</span>
+  <span class="ab-actions">
+    <button class="btn ab-btn" id="abLink">Müşteri linkini kopyala</button>
+    <button class="btn ab-btn ghost" id="abReset">Varsayılana dön</button>
+    <button class="btn ab-btn ghost" id="abClose">Kapat</button>
+  </span>
+</div>
+
 <script>
 (function(){
   "use strict";
   var TRY=new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',maximumFractionDigits:0});
+  var NUM=new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0});
   var fmt=function(n){return TRY.format(Math.round(n||0));};
   var now=new Date(),valid=new Date(now.getTime()+15*864e5),o={day:'2-digit',month:'long',year:'numeric'};
-  ['today'].forEach(function(){});
   document.getElementById('today').textContent=now.toLocaleDateString('tr-TR',o);
   ['valid','valid3'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=valid.toLocaleDateString('tr-TR',o);});
 
@@ -631,6 +680,142 @@
   function pr(el){return Math.max(0,parseFloat(el.getAttribute('data-price'))||0);}
   function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
   function row(id,show,vid,val){var r=document.getElementById(id);if(r){r.style.display=show?'flex':'none';if(show)set(vid,val);}}
+
+  /* ================== DÜZENLEME MODU (gizli) ==================
+     Açma: logoya 5 hızlı tıklama, Ctrl/Cmd+Shift+E veya URL sonuna #duzenle.
+     Fiyat/metin değişiklikleri localStorage'a kaydedilir;
+     "Müşteri linkini kopyala" tüm ayarları URL'e gömer. */
+  var LS_KEY='scTeklifCfg', MUSTERI_DEF='Acme Holding', editing=false;
+  var SUFFIX={std:' ₺',pro:' ₺',cmdb:' ₺',proje:' ₺',srm:' ₺',
+    adisco:' ₺/yıl',avmware:' ₺/yıl',ateams:' ₺/yıl',aha:' ₺/yıl',adr:' ₺/yıl',asandbox:' ₺/yıl',
+    squick:' ₺',slaunch:' ₺',
+    loc:' ₺/adet',integ:' ₺/adet',form:' ₺/adet',train:' ₺/adet',
+    silver:' ₺',gold:' ₺',platinum:' ₺',mission:' ₺'};
+  var KEYS=Object.keys(SUFFIX),QTY_KEYS=['std','pro','cmdb','proje','srm','loc','integ','form','train'];
+  var SETUP_VALS=['quickstart','launch'],SUPPORT_VALS=['silver','gold','platinum','mission'];
+  function ctrl(k){return document.querySelector('[data-key="'+k+'"]');}
+  function disp(k){return document.querySelector('[data-pfor="'+k+'"]');}
+  var DEF_P={},DEF_T={},musteri=MUSTERI_DEF;
+  function normText(el){return (el.innerText||el.textContent||'').replace(/\s+/g,' ').trim();}
+  KEYS.forEach(function(k){var c=ctrl(k);DEF_P[k]=c?pr(c):0;});
+  document.querySelectorAll('[data-edit]').forEach(function(el){DEF_T[el.getAttribute('data-edit')]=normText(el);});
+  function getPrice(k){var c=ctrl(k);return c?pr(c):0;}
+  function setPrice(k,v){var c=ctrl(k);if(!c)return;v=Math.max(0,Math.round(parseFloat(v))||0);c.setAttribute('data-price',v);renderDisp(k);}
+  function renderDisp(k){var d=disp(k);if(!d)return;
+    if(editing){var i=d.querySelector('input.pr-edit');if(i){if(document.activeElement!==i)i.value=getPrice(k);return;}}
+    d.textContent=NUM.format(getPrice(k))+(SUFFIX[k]||' ₺');}
+  function syncTitle(){document.title='ServiceCore Teklif — '+musteri;}
+
+  /* linke basit imza: elle kurcalanmış #cfg linkleri reddedilir (caydırıcı düzeyde bütünlük) */
+  function cfgSig(s){var h=5381,i;s='sc-teklif-v1|'+s;for(i=0;i<s.length;i++){h=((h<<5)+h+s.charCodeAt(i))>>>0;}return h.toString(36);}
+  function encCfg(obj){var j=JSON.stringify(obj);return btoa(unescape(encodeURIComponent(j)))+'.'+cfgSig(j);}
+  function decCfg(s){try{var p=s.split('.'),j=decodeURIComponent(escape(atob(p[0])));if(cfgSig(j)!==p[1])return null;return JSON.parse(j);}catch(e){return null;}}
+  function collectCfg(full){
+    var c={v:1,m:musteri,p:{},t:{}};
+    KEYS.forEach(function(k){if(getPrice(k)!==DEF_P[k])c.p[k]=getPrice(k);});
+    document.querySelectorAll('[data-edit]').forEach(function(el){var k=el.getAttribute('data-edit'),tx=normText(el);if(tx!==DEF_T[k])c.t[k]=tx;});
+    if(full){
+      c.q={};QTY_KEYS.forEach(function(k){var e=document.querySelector('.qty[data-key="'+k+'"]');if(e)c.q[k]=Math.max(0,parseInt(e.value)||0);});
+      c.a=[];document.querySelectorAll('.addon:checked').forEach(function(el){c.a.push(el.getAttribute('data-key'));});
+      var su=document.querySelector('input[name=setup]:checked');if(su)c.su=su.value;
+      var sp=document.querySelector('input[name=support]:checked');if(sp)c.sp=sp.value;
+    }
+    return c;
+  }
+  function applyCfg(c){
+    if(!c||typeof c!=='object')return;
+    if(typeof c.m==='string'&&c.m)musteri=c.m;
+    if(c.p)KEYS.forEach(function(k){if(c.p[k]!=null)setPrice(k,c.p[k]);});
+    if(c.t)Object.keys(c.t).forEach(function(k){if(!Object.prototype.hasOwnProperty.call(DEF_T,k))return;var el=document.querySelector('[data-edit="'+CSS.escape(k)+'"]');if(el)el.textContent=String(c.t[k]).replace(/\s+/g,' ').slice(0,400);});
+    if(c.q)QTY_KEYS.forEach(function(k){if(c.q[k]!=null){var e=document.querySelector('.qty[data-key="'+k+'"]');if(e)e.value=Math.max(0,parseInt(c.q[k])||0);}});
+    if(Array.isArray(c.a))document.querySelectorAll('.addon').forEach(function(el){el.checked=c.a.indexOf(el.getAttribute('data-key'))>-1;});
+    if(SETUP_VALS.indexOf(c.su)>-1){var r=document.querySelector('input[name=setup][value="'+c.su+'"]');if(r)r.checked=true;}
+    if(SUPPORT_VALS.indexOf(c.sp)>-1){var r2=document.querySelector('input[name=support][value="'+c.sp+'"]');if(r2)r2.checked=true;}
+    syncTitle();
+  }
+  var saveT,resetting=false;
+  function persist(){if(resetting)return;try{localStorage.setItem(LS_KEY,JSON.stringify(collectCfg(false)));}catch(e){}}
+  function persistSoon(){clearTimeout(saveT);saveT=setTimeout(persist,400);}
+
+  function syncAbH(){var ab=document.getElementById('adminBar');if(ab&&ab.classList.contains('on'))document.body.style.setProperty('--abH',Math.max(86,ab.offsetHeight)+'px');}
+  window.addEventListener('resize',function(){if(editing)syncAbH();});
+  function enterEdit(){if(editing)return;editing=true;
+    document.body.classList.add('editing');
+    document.getElementById('adminBar').classList.add('on');
+    document.getElementById('abMusteri').value=(musteri===MUSTERI_DEF?'':musteri);
+    document.querySelectorAll('[data-edit]').forEach(function(el){
+      el.setAttribute('contenteditable','plaintext-only');
+      if(!el.isContentEditable)el.setAttribute('contenteditable','true');
+      el.setAttribute('spellcheck','false');});
+    syncAbH();
+    KEYS.forEach(function(k){var d=disp(k);if(!d)return;
+      d.textContent='';
+      var i=document.createElement('input');i.type='number';i.min='0';i.step='50';i.className='pr-edit';i.value=getPrice(k);i.setAttribute('data-pkey',k);
+      var s=document.createElement('span');s.className='pr-suf';s.textContent=(SUFFIX[k]||' ₺').replace(/^ /,'');
+      d.appendChild(i);d.appendChild(s);});
+  }
+  function exitEdit(){if(!editing)return;editing=false;
+    document.body.classList.remove('editing');
+    document.getElementById('adminBar').classList.remove('on');
+    document.querySelectorAll('[data-edit]').forEach(function(el){el.removeAttribute('contenteditable');el.removeAttribute('spellcheck');});
+    KEYS.forEach(renderDisp);
+    persist();
+  }
+
+  /* gizli açma yolları */
+  var clickTimes=[],brandEl=document.querySelector('.toolbar .brand');
+  if(brandEl)brandEl.addEventListener('click',function(){var t=Date.now();clickTimes=clickTimes.filter(function(x){return t-x<3000;});clickTimes.push(t);
+    if(clickTimes.length>=5){clickTimes=[];if(editing)exitEdit();else enterEdit();}});
+  document.addEventListener('keydown',function(e){
+    if((e.ctrlKey||e.metaKey)&&e.shiftKey&&(e.key==='e'||e.key==='E')){e.preventDefault();if(editing)exitEdit();else enterEdit();return;}
+    /* metin alanları tek blok: Enter satır kırmasın */
+    if(editing&&e.key==='Enter'&&e.target.closest&&e.target.closest('[data-edit]'))e.preventDefault();
+  });
+  document.addEventListener('paste',function(e){
+    var t=e.target&&e.target.closest?e.target.closest('[data-edit]'):null;
+    if(!editing||!t)return;
+    e.preventDefault();
+    var txt='';try{txt=(e.clipboardData||window.clipboardData).getData('text/plain');}catch(err){}
+    document.execCommand('insertText',false,txt.replace(/\s+/g,' '));
+  });
+
+  /* admin bar aksiyonları */
+  document.getElementById('abMusteri').addEventListener('change',function(){
+    var yeni=this.value.trim();if(!yeni||yeni===musteri)return;
+    var eski=musteri;
+    document.querySelectorAll('[data-edit]').forEach(function(el){
+      if(el.getAttribute('data-edit')==='raciMusteri'){el.textContent=yeni.split(' ')[0];return;}
+      el.textContent=normText(el).split(eski).join(yeni);
+    });
+    musteri=yeni;syncTitle();persistSoon();
+    toast('<b>Müşteri adı güncellendi:</b> '+yeni.replace(/[<>&]/g,''));
+  });
+  document.getElementById('abLink').addEventListener('click',function(){
+    var url=location.href.split('#')[0]+'#cfg='+encCfg(collectCfg(true));
+    var done=function(){toast('<b>Müşteri linki kopyalandı.</b> Bu linki açan, teklifi bu fiyat ve seçimlerle görür.');};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,function(){window.prompt('Linki kopyalayın:',url);});}
+    else{window.prompt('Linki kopyalayın:',url);}
+  });
+  document.getElementById('abReset').addEventListener('click',function(){
+    if(!confirm('Tüm fiyat ve metin değişiklikleri silinip varsayılana dönülecek. Emin misiniz?'))return;
+    resetting=true;clearTimeout(saveT);
+    try{localStorage.removeItem(LS_KEY);}catch(e){}
+    history.replaceState(null,'',location.pathname+location.search);
+    location.reload();
+  });
+  document.getElementById('abClose').addEventListener('click',exitEdit);
+
+  /* baskı sırasında düzenleme izleri temizlensin */
+  var wasEditing=false;
+  window.addEventListener('beforeprint',function(){if(editing){wasEditing=true;exitEdit();}});
+  window.addEventListener('afterprint',function(){if(wasEditing){wasEditing=false;enterEdit();}});
+
+  /* açılışta yapılandırma: önce URL (#cfg=...), yoksa localStorage */
+  var hashCfg=location.hash.match(/cfg=([^&]+)/);
+  if(hashCfg){applyCfg(decCfg(hashCfg[1]));}
+  else{try{var st=localStorage.getItem(LS_KEY);if(st)applyCfg(JSON.parse(st));}catch(e){}}
+  if(/^#duzenle/.test(location.hash))enterEdit();
+  syncTitle();
 
   function compute(){
     var stdQ=q('std'),proQ=q('pro'),totalLic=stdQ+proQ,tier=volTier(totalLic),disc=tier.p;
@@ -656,7 +841,11 @@
     if(totalLic>=500){bq.style.display='block';bq.className='hint warn';bq.textContent='⚑ '+totalLic+' lisans: bu hacimde size özel fiyat çalışması yapıyoruz — ekibimiz özel teklif için iletişime geçer.';}else bq.style.display='none';
     return {totalLic:totalLic,disc:disc,annual:Math.round(annual),addons:addons,support:support,service:serviceTotal,voucher:voucherCode,voucherAmt:Math.round(voucherAmt),grand:Math.round(grand)};
   }
-  document.addEventListener('input',function(e){if(e.target.classList.contains('qty'))compute();});
+  document.addEventListener('input',function(e){
+    if(e.target.classList&&e.target.classList.contains('qty'))compute();
+    if(e.target.classList&&e.target.classList.contains('pr-edit')){setPrice(e.target.getAttribute('data-pkey'),e.target.value);compute();persistSoon();}
+    if(e.target.getAttribute&&e.target.getAttribute('data-edit'))persistSoon();
+  });
   document.addEventListener('change',function(e){if(e.target.name==='setup'||e.target.name==='support'||e.target.classList.contains('addon'))compute();});
   document.querySelectorAll('.stepper button').forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-for'),el=document.querySelector('.qty[data-key="'+k+'"]');el.value=Math.max(0,(parseInt(el.value)||0)+parseInt(b.getAttribute('data-step')));compute();});});
   document.getElementById('vApply').addEventListener('click',function(){var c=(document.getElementById('voucher').value||'').trim().toUpperCase(),m=document.getElementById('vMsg');if(VOUCHERS[c]){voucherPct=VOUCHERS[c];voucherCode=c;m.style.color='var(--good)';m.textContent='✓ %'+(voucherPct*100)+' indirim uygulandı.';}else if(c===''){voucherPct=0;voucherCode='';m.textContent='';}else{voucherPct=0;voucherCode='';m.style.color='var(--warn)';m.textContent='✕ Geçersiz kod. (Deneyin: PROOF10)';}compute();});
