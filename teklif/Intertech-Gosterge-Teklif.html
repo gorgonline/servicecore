@@ -168,13 +168,33 @@
   .offices .of b{color:var(--navy);font-weight:700}
   .offices .of p{margin:.25em 0 0;font-size:12px;color:#42506b;line-height:1.5}
 
+  /* ====== gizli edit modu (Erman/Bayi) + bayi blogu ====== */
+  .adminbar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--navy);color:#fff;gap:14px;align-items:center;flex-wrap:wrap;padding:10px 18px;box-shadow:0 -8px 24px rgba(15,34,71,.4);font-family:inherit}
+  .adminbar.on{display:flex}
+  .adminbar>b{color:#7df0ff;white-space:nowrap;font-size:13px}
+  .adminbar .ab-field{display:none;align-items:center;gap:8px;font-size:12.5px;color:#c7d6f2;font-weight:600;white-space:nowrap}
+  .adminbar input{font:inherit;font-size:13.5px;border:0;border-radius:8px;padding:7px 10px;color:var(--ink)}
+  .adminbar .ab-hint{display:none;font-size:11.5px;color:#9fb6e6;max-width:44ch;line-height:1.35}
+  .adminbar .ab-actions{margin-left:auto;display:flex;gap:8px}
+  .adminbar .ab-btn{background:linear-gradient(135deg,var(--cyan),var(--blue2));color:#fff;padding:8px 14px}
+  .adminbar .ab-btn.ghost{background:rgba(255,255,255,.14)}
+  .adminbar .ab-erman,.adminbar .ab-bayi{display:none}
+  body.role-erman .adminbar .ab-erman{display:flex}
+  body.role-bayi .adminbar .ab-bayi{display:flex}
+  body.editing{padding-bottom:92px}
+  body.editing [data-edit][contenteditable]{outline:2px dashed rgba(6,182,212,.7);outline-offset:2px;border-radius:4px;cursor:text}
+  body.editing [data-edit][contenteditable]:focus{outline:2px solid var(--blue2);background:#fff;color:var(--ink)}
+  .pr-edit{width:80px;font:inherit;font-size:12px;text-align:right;border:1px solid var(--line);border-radius:6px;padding:2px 5px;color:var(--ink)}
+  .pr-suf{font-size:11px;color:var(--muted);margin-left:3px}
+  .bayi-block{display:none;margin-top:6px}
+  body.role-bayi .bayi-block,.bayi-block.show{display:block}
   @media print{
     @page{size:A4;margin:12mm 14mm}
     @page coverpage{margin:0}
     *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     body{background:#fff}
     /* interaktif-only ögeler gizli */
-    .toolbar,.summary .cta,.voucher,.stepper button,#goCalc,.btn{display:none!important}
+    .toolbar,.summary .cta,.voucher,.stepper button,#goCalc,.btn,.adminbar{display:none!important}
     .page{box-shadow:none;max-width:none;margin:0}
     .pad{padding:6mm 0 3mm}
     /* kapak: tam-sayfa full-bleed, tek başına 1. sayfa */
@@ -218,12 +238,12 @@
       <div class="cust-logo"><img src="data:image/jpeg;base64,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" alt="Intertech · Denizbank IT"></div>
     </div>
     <span class="pill">BDDK-UYUMLU, ON-PREMISE ITSM — GÖSTERGE TEKLİF</span>
-    <h1>Intertech için, Jira Data Center sonrası güvenli ve BDDK-uyumlu geçiş</h1>
-    <p class="lead">Zorunlu Jira çıkışında; verinizi kendi veri merkezinizde tutan, ITIL 4 derinliğinde, yerli bir halef. Kapsamı, geçişi ve yatırımı kurum içinde rahatça değerlendirebileceğiniz bir gösterge çalışma.</p>
+    <h1 data-edit="coverTitle" data-role="erman">Intertech için, Jira Data Center sonrası güvenli ve BDDK-uyumlu geçiş</h1>
+    <p class="lead" data-edit="coverLead" data-role="erman">Zorunlu Jira çıkışında; verinizi kendi veri merkezinizde tutan, ITIL 4 derinliğinde, yerli bir halef. Kapsamı, geçişi ve yatırımı kurum içinde rahatça değerlendirebileceğiniz bir gösterge çalışma.</p>
     <div class="meta">
       <div><span>Hazırlayan</span><b>ServiceCore Bilgi Teknolojileri A.Ş. · ATP Digital</b></div>
-      <div><span>Hazırlanan</span><b>Intertech (Denizbank IT) · Ahmet Uğur Özsak, PMO</b></div>
-      <div><span>Teklif No · Tür</span><b>SC-INT-2026-0630 · Gösterge</b></div>
+      <div><span>Hazırlanan</span><b data-edit="hazirlanan" data-role="erman">Intertech (Denizbank IT) · Ahmet Uğur Özsak, PMO</b></div>
+      <div><span>Teklif No · Tür</span><b data-edit="teklifNo" data-role="erman">SC-INT-2026-0630 · Gösterge</b></div>
       <div><span>Tarih · Geçerlilik</span><b><span id="today">—</span> · <span id="valid">—</span></b></div>
     </div>
   </div>
@@ -581,53 +601,53 @@
         <div class="lineblock">
           <h3>1 · Lisanslar <small style="font-weight:500;color:var(--muted)">(kullanıcı / ay · named-user)</small></h3>
           <p class="sub">Son kullanıcılar ve varlıklar sınırsız ve ücretsizdir.</p>
-          <div class="ln"><div class="nm">Standart Lisans<small>temel ITIL 4 — geniş teknisyen ekibi</small></div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="1000" data-key="std" data-price="123"></div>
-          <div class="ln rec"><div class="nm">Professional Lisans <span class="badge rec">Güç-kullanıcı</span><small>Standart + 8 modül + 17 ileri özellik</small></div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="100" data-key="pro" data-price="123"></div>
+          <div class="ln"><div class="nm">Standart Lisans<small>temel ITIL 4 — geniş teknisyen ekibi</small></div><div class="pr" data-pfor="std">123 ₺</div><input class="qty" type="number" min="0" value="1000" data-key="std" data-price="123"></div>
+          <div class="ln rec"><div class="nm">Professional Lisans <span class="badge rec">Güç-kullanıcı</span><small>Standart + 8 modül + 17 ileri özellik</small></div><div class="pr" data-pfor="pro">123 ₺</div><input class="qty" type="number" min="0" value="100" data-key="pro" data-price="123"></div>
           <div class="hint" id="volHint"></div>
         </div>
         <div class="lineblock">
           <h3>2 · Standart'a ek modüller <small style="font-weight:500;color:var(--muted)">(kullanıcı / ay)</small></h3>
           <p class="sub">Professional aldıysanız bunlar zaten dahildir.</p>
-          <div class="ln"><div class="nm">Varlık Yönetimi &amp; CMDB</div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="cmdb" data-price="123"></div>
-          <div class="ln"><div class="nm">Proje Yönetimi (AGILEPM)</div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="proje" data-price="123"></div>
-          <div class="ln"><div class="nm">Servis İlişkileri (SRM)</div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="srm" data-price="123"></div>
-          <div class="ln"><div class="nm">İstek &amp; Servis Katalog</div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="katalog" data-price="123"></div>
-          <div class="ln"><div class="nm">Problem Yönetimi</div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="problem" data-price="123"></div>
-          <div class="ln"><div class="nm">Değişiklik Yönetimi</div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="degisiklik" data-price="123"></div>
-          <div class="ln"><div class="nm">Sözleşme Yönetimi</div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="sozlesme" data-price="123"></div>
-          <div class="ln"><div class="nm">Sürekli İyileştirme</div><div class="pr">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="iyilestirme" data-price="123"></div>
+          <div class="ln"><div class="nm">Varlık Yönetimi &amp; CMDB</div><div class="pr" data-pfor="cmdb">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="cmdb" data-price="123"></div>
+          <div class="ln"><div class="nm">Proje Yönetimi (AGILEPM)</div><div class="pr" data-pfor="proje">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="proje" data-price="123"></div>
+          <div class="ln"><div class="nm">Servis İlişkileri (SRM)</div><div class="pr" data-pfor="srm">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="srm" data-price="123"></div>
+          <div class="ln"><div class="nm">İstek &amp; Servis Katalog</div><div class="pr" data-pfor="katalog">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="katalog" data-price="123"></div>
+          <div class="ln"><div class="nm">Problem Yönetimi</div><div class="pr" data-pfor="problem">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="problem" data-price="123"></div>
+          <div class="ln"><div class="nm">Değişiklik Yönetimi</div><div class="pr" data-pfor="degisiklik">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="degisiklik" data-price="123"></div>
+          <div class="ln"><div class="nm">Sözleşme Yönetimi</div><div class="pr" data-pfor="sozlesme">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="sozlesme" data-price="123"></div>
+          <div class="ln"><div class="nm">Sürekli İyileştirme</div><div class="pr" data-pfor="iyilestirme">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="iyilestirme" data-price="123"></div>
         </div>
         <div class="lineblock">
           <h3>3 · Add-on'lar <small style="font-weight:500;color:var(--muted)">(sabit · yıllık)</small></h3>
           <div class="addon-grid">
-            <label class="opt"><input type="checkbox" class="addon" data-price="123"> <span class="nm">Asset Discovery<small>123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="123"> <span class="nm">VMware Discovery<small>123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="123"> <span class="nm">MS Teams Eklentisi<small>123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="123"> <span class="nm">Failover / Cluster<small>123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="123"> <span class="nm">Disaster Recovery<small>123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="123"> <span class="nm">Sandbox / Test<small>123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-price="123"> <span class="nm">Pro Functions Pack<small>123 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="adisco" data-price="123"> <span class="nm">Asset Discovery<small data-pfor="adisco">123 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="avmware" data-price="123"> <span class="nm">VMware Discovery<small data-pfor="avmware">123 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="ateams" data-price="123"> <span class="nm">MS Teams Eklentisi<small data-pfor="ateams">123 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="afailover" data-price="123"> <span class="nm">Failover / Cluster<small data-pfor="afailover">123 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="adr" data-price="123"> <span class="nm">Disaster Recovery<small data-pfor="adr">123 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="asandbox" data-price="123"> <span class="nm">Sandbox / Test<small data-pfor="asandbox">123 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="apfp" data-price="123"> <span class="nm">Pro Functions Pack<small data-pfor="apfp">123 ₺/yıl</small></span></label>
           </div>
         </div>
         <div class="lineblock">
           <h3>4 · Kurulum Modeli <small style="font-weight:500;color:var(--muted)">(tek seferlik)</small></h3>
-          <label class="opt rec"><input type="radio" name="setup" value="launch" data-price="123" checked> <span class="nm">Launch Ready — anahtar teslim <span class="badge rec">Önerilen</span><small>Uçtan uca, kuruma özel rehberli implementasyon</small></span><span class="pr">123 ₺</span></label>
+          <label class="opt rec"><input type="radio" name="setup" value="launch" data-key="launch" data-price="123" checked> <span class="nm">Launch Ready — anahtar teslim <span class="badge rec">Önerilen</span><small>Uçtan uca, kuruma özel rehberli implementasyon</small></span><span class="pr" data-pfor="launch">123 ₺</span></label>
           <label class="opt"><input type="checkbox" checked disabled> <span class="nm">Migration — 7 aşamalı <span class="badge free">Varsayımlı efor</span><small>Jira → ServiceCore · kapsam atölyesinde netleşir</small></span><span class="pr">ayrı kalem</span></label>
         </div>
         <div class="lineblock">
           <h3>5 · Hizmet Kapsamı <small style="font-weight:500;color:var(--muted)">(kapsam genişledikçe bedel artar)</small></h3>
-          <div class="ln"><div class="nm">Ek lokasyon / şirket</div><div class="pr">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="loc">−</button><input class="qty" type="number" min="0" value="0" data-key="loc" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="loc">+</button></div></div>
-          <div class="ln"><div class="nm">Özel entegrasyon</div><div class="pr">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="integ">−</button><input class="qty" type="number" min="0" value="0" data-key="integ" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="integ">+</button></div></div>
-          <div class="ln"><div class="nm">Özel form/süreç (low-code)</div><div class="pr">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="form">−</button><input class="qty" type="number" min="0" value="0" data-key="form" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="form">+</button></div></div>
-          <div class="ln"><div class="nm">Ek eğitim grubu</div><div class="pr">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="train">−</button><input class="qty" type="number" min="0" value="0" data-key="train" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="train">+</button></div></div>
+          <div class="ln"><div class="nm">Ek lokasyon / şirket</div><div class="pr" data-pfor="loc">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="loc">−</button><input class="qty" type="number" min="0" value="0" data-key="loc" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="loc">+</button></div></div>
+          <div class="ln"><div class="nm">Özel entegrasyon</div><div class="pr" data-pfor="integ">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="integ">−</button><input class="qty" type="number" min="0" value="0" data-key="integ" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="integ">+</button></div></div>
+          <div class="ln"><div class="nm">Özel form/süreç (low-code)</div><div class="pr" data-pfor="form">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="form">−</button><input class="qty" type="number" min="0" value="0" data-key="form" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="form">+</button></div></div>
+          <div class="ln"><div class="nm">Ek eğitim grubu</div><div class="pr" data-pfor="train">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="train">−</button><input class="qty" type="number" min="0" value="0" data-key="train" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="train">+</button></div></div>
           <div class="svc-note">Hizmet kapsamı ara toplamı: <b id="svcSubtotal">—</b>. Kapsamı genişlettikçe bu tutarı <b>siz</b> belirliyorsunuz.</div>
         </div>
         <div class="lineblock">
           <h3>6 · Destek Paketi <small style="font-weight:500;color:var(--muted)">(yıllık · birini seçin)</small></h3>
-          <label class="opt"><input type="radio" name="support" value="silver" data-price="123"> <span class="nm">Silver</span><span class="pr">123 ₺</span></label>
-          <label class="opt rec"><input type="radio" name="support" value="gold" data-price="123" checked> <span class="nm">Gold <span class="badge rec">Önerilen</span></span><span class="pr">123 ₺</span></label>
-          <label class="opt"><input type="radio" name="support" value="platinum" data-price="123"> <span class="nm">Platinum</span><span class="pr">123 ₺</span></label>
-          <label class="opt"><input type="radio" name="support" value="mission" data-price="123"> <span class="nm">Mission Critical</span><span class="pr">123 ₺</span></label>
+          <label class="opt"><input type="radio" name="support" value="silver" data-key="silver" data-price="123"> <span class="nm">Silver</span><span class="pr" data-pfor="silver">123 ₺</span></label>
+          <label class="opt rec"><input type="radio" name="support" value="gold" data-key="gold" data-price="123" checked> <span class="nm">Gold <span class="badge rec">Önerilen</span></span><span class="pr" data-pfor="gold">123 ₺</span></label>
+          <label class="opt"><input type="radio" name="support" value="platinum" data-key="platinum" data-price="123"> <span class="nm">Platinum</span><span class="pr" data-pfor="platinum">123 ₺</span></label>
+          <label class="opt"><input type="radio" name="support" value="mission" data-key="mission" data-price="123"> <span class="nm">Mission Critical</span><span class="pr" data-pfor="mission">123 ₺</span></label>
         </div>
       </div>
       <div class="summary">
@@ -699,6 +719,14 @@
       <div class="ci"><span>Destek</span><b>support@servicecore.app</b></div>
       <div class="ci"><span>Web</span><b>servicecore.com.tr</b></div>
     </div>
+    <div class="bayi-block" data-bayi-block>
+      <h3 data-edit="bayiBaslik" data-role="bayi">Yetkili İş Ortağınız</h3>
+      <div class="offices"><div class="of">
+        <span>İş Ortağı</span>
+        <b data-edit="bayiAd" data-role="bayi">Bayi / İş Ortağı Adı</b>
+        <p data-edit="bayiIletisim" data-role="bayi">Telefon · e-posta · web</p>
+      </div></div>
+    </div>
     <h3>Ofislerimiz</h3>
     <div class="offices">
       <div class="of"><span>İstanbul · Merkez</span><b>Zaim Teknopark</b><p>Halkalı Cad. No:281/23 Ofis No:118, Küçükçekmece/İstanbul</p></div>
@@ -713,33 +741,71 @@
 
 <div class="toast" id="toast"></div>
 
+<div class="adminbar" id="adminBar">
+  <b id="abRole">Düzenleme</b>
+  <span class="ab-hint ab-erman">Fiyat kutularına (maliyet) ve kesikli çerçeveli metinlere tıklayıp düzenleyin.</span>
+  <label class="ab-field ab-bayi">Marj % <input type="number" id="abMargin" min="0" step="1" value="0" style="width:78px"></label>
+  <span class="ab-hint ab-bayi">Marj tüm birim fiyata uygulanır; müşteri final fiyatı görür (maliyet/marj gizli). Bayi iletişim alanları da düzenlenebilir.</span>
+  <span class="ab-actions">
+    <button class="btn ab-btn" id="abLink">Müşteri linkini kopyala</button>
+    <button class="btn ab-btn ghost ab-erman" id="abReset">Varsayılana dön</button>
+    <button class="btn ab-btn ghost" id="abClose">Kapat</button>
+  </span>
+</div>
+
 <script>
 (function(){
   "use strict";
+  var ERMAN_PASS='erman2026', BAYI_PASS='bayi2026';
   var TRY=new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',maximumFractionDigits:0});
+  var NUM=new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0});
   var fmt=function(n){return TRY.format(Math.round(n||0));};
   var now=new Date(),valid=new Date(now.getTime()+15*864e5),o={day:'2-digit',month:'long',year:'numeric'};
-  ['today'].forEach(function(){});
-  document.getElementById('today').textContent=now.toLocaleDateString('tr-TR',o);
+  var td=document.getElementById('today');if(td)td.textContent=now.toLocaleDateString('tr-TR',o);
   ['valid','valid3'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=valid.toLocaleDateString('tr-TR',o);});
 
-  function volTier(n){return n>=200?{p:.20,next:null}:n>=100?{p:.15,next:{at:200,p:.20}}:n>=50?{p:.10,next:{at:100,p:.15}}:{p:0,next:{at:50,p:.10}};}
-  var VOUCHERS={'PROOF10':.10,'PROOF20':.20,'WOW15':.15},voucherPct=0,voucherCode='';
+  var SUFFIX={std:' ₺',pro:' ₺',cmdb:' ₺',proje:' ₺',srm:' ₺',katalog:' ₺',problem:' ₺',degisiklik:' ₺',sozlesme:' ₺',iyilestirme:' ₺',
+    adisco:' ₺/yıl',avmware:' ₺/yıl',ateams:' ₺/yıl',afailover:' ₺/yıl',adr:' ₺/yıl',asandbox:' ₺/yıl',apfp:' ₺/yıl',
+    launch:' ₺', loc:' ₺/adet',integ:' ₺/adet',form:' ₺/adet',train:' ₺/adet',
+    silver:' ₺',gold:' ₺',platinum:' ₺',mission:' ₺'};
+  var KEYS=Object.keys(SUFFIX);
+  var MONTHLY_KEYS=['std','pro','cmdb','proje','srm','katalog','problem','degisiklik','sozlesme','iyilestirme'];
+  var QTY_KEYS=MONTHLY_KEYS.concat(['loc','integ','form','train']);
+  var SERVICE_KEYS=['loc','integ','form','train'];
+  var SETUP_VALS=['launch'],SUPPORT_VALS=['silver','gold','platinum','mission'];
+
+  function ctrl(k){return document.querySelector('[data-key="'+k+'"]');}
+  function disp(k){return document.querySelector('[data-pfor="'+k+'"]');}
+  function cost(k){var c=ctrl(k);return c?Math.max(0,parseFloat(c.getAttribute('data-price'))||0):0;}
+  var margin=0, editing=false, role='musteri';
+  function eff(k){return Math.round(cost(k)*(1+margin/100));}
+  function setCost(k,v){var c=ctrl(k);if(!c)return;v=Math.max(0,Math.round(parseFloat(v))||0);c.setAttribute('data-price',v);renderDisp(k);}
+
+  var DEF_P={},DEF_T={}, LS_KEY='scIntertechCfg';
+  function normText(el){return (el.innerText||el.textContent||'').replace(/\s+/g,' ').trim();}
+  KEYS.forEach(function(k){DEF_P[k]=cost(k);});
+  document.querySelectorAll('[data-edit]').forEach(function(el){DEF_T[el.getAttribute('data-edit')]=normText(el);});
+
+  function renderDisp(k){var d=disp(k);if(!d)return;
+    if(editing&&role==='erman'){var i=d.querySelector('input.pr-edit');if(i){if(document.activeElement!==i)i.value=cost(k);return;}}
+    d.textContent=NUM.format(eff(k))+(SUFFIX[k]||' ₺');}
+  function renderAll(){KEYS.forEach(renderDisp);}
+
   function q(k){var e=document.querySelector('.qty[data-key="'+k+'"]');return e?Math.max(0,parseInt(e.value)||0):0;}
-  function pr(el){return Math.max(0,parseFloat(el.getAttribute('data-price'))||0);}
   function set(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
   function row(id,show,vid,val){var r=document.getElementById(id);if(r){r.style.display=show?'flex':'none';if(show)set(vid,val);}}
+  function volTier(n){return n>=200?{p:.20,next:null}:n>=100?{p:.15,next:{at:200,p:.20}}:n>=50?{p:.10,next:{at:100,p:.15}}:{p:0,next:{at:50,p:.10}};}
+  var VOUCHERS={'PROOF10':.10,'PROOF20':.20,'WOW15':.15},voucherPct=0,voucherCode='';
 
   function compute(){
-    var stdQ=q('std'),proQ=q('pro'),totalLic=stdQ+proQ,tier=volTier(totalLic),disc=tier.p;
-    var monthlyGross=0;
-    ['std','pro','cmdb','proje','srm','katalog','problem','degisiklik','sozlesme','iyilestirme'].forEach(function(k){var el=document.querySelector('.qty[data-key="'+k+'"]');if(el)monthlyGross+=pr(el)*(parseInt(el.value)||0);});
+    var totalLic=q('std')+q('pro'),tier=volTier(totalLic),disc=tier.p;
+    var monthlyGross=0;MONTHLY_KEYS.forEach(function(k){monthlyGross+=eff(k)*q(k);});
     var monthly=monthlyGross*(1-disc),annual=monthly*12,volSaving=monthlyGross*12*disc;
-    var addons=0;document.querySelectorAll('.addon:checked').forEach(function(el){addons+=pr(el);});
-    var setupEl=document.querySelector('input[name=setup]:checked'),setup=setupEl?pr(setupEl):0;
-    var svc=0;['loc','integ','form','train'].forEach(function(k){var el=document.querySelector('.qty[data-key="'+k+'"]');if(el)svc+=pr(el)*(parseInt(el.value)||0);});
+    var addons=0;document.querySelectorAll('.addon:checked').forEach(function(el){addons+=eff(el.getAttribute('data-key'));});
+    var setupEl=document.querySelector('input[name=setup]:checked'),setup=setupEl?eff(setupEl.getAttribute('data-key')):0;
+    var svc=0;SERVICE_KEYS.forEach(function(k){svc+=eff(k)*q(k);});
     var serviceTotal=setup+svc;
-    var supEl=document.querySelector('input[name=support]:checked'),support=supEl?pr(supEl):0;
+    var supEl=document.querySelector('input[name=support]:checked'),support=supEl?eff(supEl.getAttribute('data-key')):0;
     var voucherBase=annual+support,voucherAmt=voucherBase*voucherPct;
     var grand=annual+addons+support+serviceTotal-voucherAmt,monthlyEq=monthly+(addons+support)/12;
     set('sMonthly',fmt(monthly));set('sAnnual',fmt(annual));set('sSupport',fmt(support));
@@ -748,34 +814,108 @@
     row('rVol',disc>0,'sVol','− '+fmt(volSaving)+' /yıl');row('rAddon',addons>0,'sAddon',fmt(addons));
     row('rVoucher',voucherPct>0,'sVoucher','− '+fmt(voucherAmt)+' ('+voucherCode+')');
     var vh=document.getElementById('volHint');
-    if(tier.next){vh.className='hint';vh.textContent=totalLic>0?((disc>0?'Şu an %'+(disc*100)+' hacim indirimi. ':'')+(tier.next.at-totalLic)+' lisans daha = %'+(tier.next.p*100)+' indirim.'):'İpucu: '+tier.next.at+' lisansta birim %'+(tier.next.p*100)+' düşer.';}
-    else{vh.className='hint';vh.textContent='En yüksek kademe: %20 hacim indirimi.';}
+    if(vh){if(tier.next){vh.className='hint';vh.textContent=totalLic>0?((disc>0?'Şu an %'+(disc*100)+' hacim indirimi. ':'')+(tier.next.at-totalLic)+' lisans daha = %'+(tier.next.p*100)+' indirim.'):'İpucu: '+tier.next.at+' lisansta birim %'+(tier.next.p*100)+' düşer.';}else{vh.className='hint';vh.textContent='En yüksek kademe: %20 hacim indirimi.';}}
     var bq=document.getElementById('bigQuoteNote');
-    if(totalLic>=500){bq.style.display='block';bq.className='hint warn';bq.textContent='⚑ '+totalLic+' lisans: bu hacimde size özel fiyat çalışması yapıyoruz — ekibimiz özel teklif için iletişime geçer.';}else bq.style.display='none';
-    return {totalLic:totalLic,disc:disc,annual:Math.round(annual),addons:addons,support:support,service:serviceTotal,voucher:voucherCode,voucherAmt:Math.round(voucherAmt),grand:Math.round(grand)};
+    if(bq){if(totalLic>=500){bq.style.display='block';bq.className='hint warn';bq.textContent='⚑ '+totalLic+' lisans: bu hacimde size özel fiyat çalışması yapıyoruz — ekibimiz iletişime geçer.';}else bq.style.display='none';}
   }
-  document.addEventListener('input',function(e){if(e.target.classList.contains('qty'))compute();});
-  document.addEventListener('change',function(e){if(e.target.name==='setup'||e.target.name==='support'||e.target.classList.contains('addon'))compute();});
-  document.querySelectorAll('.stepper button').forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-for'),el=document.querySelector('.qty[data-key="'+k+'"]');el.value=Math.max(0,(parseInt(el.value)||0)+parseInt(b.getAttribute('data-step')));compute();});});
-  document.getElementById('vApply').addEventListener('click',function(){var c=(document.getElementById('voucher').value||'').trim().toUpperCase(),m=document.getElementById('vMsg');if(VOUCHERS[c]){voucherPct=VOUCHERS[c];voucherCode=c;m.style.color='var(--good)';m.textContent='✓ %'+(voucherPct*100)+' indirim uygulandı.';}else if(c===''){voucherPct=0;voucherCode='';m.textContent='';}else{voucherPct=0;voucherCode='';m.style.color='var(--warn)';m.textContent='✕ Geçersiz kod. (Deneyin: PROOF10)';}compute();});
-  var tEl=document.getElementById('toast'),tT;
-  function toast(h){tEl.innerHTML=h;tEl.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){tEl.classList.remove('show');},4200);}
-  function generate(){var s=compute();
-    // === GERÇEK ENTEGRASYON: her oluşturmada bu payload kendi e-posta/CRM endpoint'inize POST edilir ===
-    // fetch('/api/teklif',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(s)});
-    console.log('[ServiceCore] Teklif:',s);
-    toast('<b>Hazır.</b> “PDF olarak kaydet” ile çıktı alabilirsiniz.');}
-  function enableOutputs(){['pdfBtn'].forEach(function(id){var b=document.getElementById(id);if(b)b.disabled=false;});var h=document.getElementById('outHint');if(h)h.style.display='none';}
-  document.getElementById('hesapla').addEventListener('click',function(){
-    var s=compute();
-    // === Her Hesapla'da bir kopya bize email — GERÇEK ENTEGRASYON noktası ===
-    // fetch('/api/teklif',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(s)});
-    console.log('[ServiceCore] Hesaplandı:',s);
-    enableOutputs();
-    toast('<b>Hesaplandı.</b> Artık “PDF olarak kaydet” ile çıktı alabilirsiniz.');
+
+  function cfgSig(s){var x=5381,i;s='sc-int-v1|'+s;for(i=0;i<s.length;i++){x=((x<<5)+x+s.charCodeAt(i))>>>0;}return x.toString(36);}
+  function encCfg(obj){var j=JSON.stringify(obj);return btoa(unescape(encodeURIComponent(j)))+'.'+cfgSig(j);}
+  function decCfg(s){try{var p=s.split('.'),j=decodeURIComponent(escape(atob(p[0])));if(cfgSig(j)!==p[1])return null;return JSON.parse(j);}catch(e){return null;}}
+
+  function collectWork(full){
+    var c={v:1,mrg:margin,p:{},t:{}};
+    KEYS.forEach(function(k){if(cost(k)!==DEF_P[k])c.p[k]=cost(k);});
+    document.querySelectorAll('[data-edit]').forEach(function(el){var k=el.getAttribute('data-edit'),tx=normText(el);if(tx!==DEF_T[k])c.t[k]=tx;});
+    if(full){c.q={};QTY_KEYS.forEach(function(k){c.q[k]=q(k);});
+      c.a=[];document.querySelectorAll('.addon:checked').forEach(function(el){c.a.push(el.getAttribute('data-key'));});
+      var su=document.querySelector('input[name=setup]:checked');if(su)c.su=su.value;
+      var sp=document.querySelector('input[name=support]:checked');if(sp)c.sp=sp.value;}
+    return c;
+  }
+  function collectCustomer(){
+    var c=collectWork(true),pp={};
+    KEYS.forEach(function(k){pp[k]=eff(k);});
+    c.p=pp; c.mrg=0;
+    return c;
+  }
+  function applyCfg(c){
+    if(!c||typeof c!=='object')return;
+    if(typeof c.mrg==='number')margin=Math.max(0,c.mrg);
+    if(c.p)KEYS.forEach(function(k){if(c.p[k]!=null)setCost(k,c.p[k]);});
+    if(c.t)Object.keys(c.t).forEach(function(k){if(!Object.prototype.hasOwnProperty.call(DEF_T,k))return;var el=document.querySelector('[data-edit="'+CSS.escape(k)+'"]');if(el)el.textContent=String(c.t[k]).replace(/\s+/g,' ').slice(0,600);});
+    if(c.q)QTY_KEYS.forEach(function(k){if(c.q[k]!=null){var e=document.querySelector('.qty[data-key="'+k+'"]');if(e)e.value=Math.max(0,parseInt(c.q[k])||0);}});
+    if(Array.isArray(c.a))document.querySelectorAll('.addon').forEach(function(el){el.checked=c.a.indexOf(el.getAttribute('data-key'))>-1;});
+    if(SETUP_VALS.indexOf(c.su)>-1){var r1=document.querySelector('input[name=setup][value="'+c.su+'"]');if(r1)r1.checked=true;}
+    if(SUPPORT_VALS.indexOf(c.sp)>-1){var r2=document.querySelector('input[name=support][value="'+c.sp+'"]');if(r2)r2.checked=true;}
+    if(c.t&&(c.t.bayiAd||c.t.bayiIletisim)){var bb=document.querySelector('[data-bayi-block]');if(bb)bb.classList.add('show');}
+    renderAll();
+  }
+  var saveT,resetting=false;
+  function persist(){if(resetting||role==='musteri')return;try{localStorage.setItem(LS_KEY,JSON.stringify(collectWork(true)));}catch(e){}}
+  function persistSoon(){clearTimeout(saveT);saveT=setTimeout(persist,400);}
+
+  var ab=document.getElementById('adminBar');
+  function enterEdit(rl){
+    role=rl; editing=true;
+    document.body.classList.add('editing','role-'+rl);
+    ab.classList.add('on');
+    set('abRole', rl==='erman'?'Erman · Üretici düzenleme':'Bayi · Marj & iletişim');
+    if(rl==='bayi'){var mi=document.getElementById('abMargin');if(mi)mi.value=margin;var bb=document.querySelector('[data-bayi-block]');if(bb)bb.classList.add('show');}
+    document.querySelectorAll('[data-edit]').forEach(function(el){
+      if(el.getAttribute('data-role')===rl){el.setAttribute('contenteditable','true');el.setAttribute('spellcheck','false');}});
+    if(rl==='erman'){KEYS.forEach(function(k){var d=disp(k);if(!d)return;d.textContent='';
+      var i=document.createElement('input');i.type='number';i.min='0';i.step='50';i.className='pr-edit';i.value=cost(k);i.setAttribute('data-pkey',k);
+      var s=document.createElement('span');s.className='pr-suf';s.textContent=(SUFFIX[k]||' ₺').replace(/^ /,'');
+      d.appendChild(i);d.appendChild(s);});}
+  }
+  function exitEdit(){if(!editing)return;editing=false;
+    document.body.classList.remove('editing','role-erman','role-bayi');
+    ab.classList.remove('on');
+    document.querySelectorAll('[data-edit]').forEach(function(el){el.removeAttribute('contenteditable');el.removeAttribute('spellcheck');});
+    renderAll();compute();persist();
+  }
+
+  document.addEventListener('input',function(e){
+    if(e.target.classList.contains('pr-edit')){setCost(e.target.getAttribute('data-pkey'),e.target.value);compute();persistSoon();return;}
+    if(e.target.id==='abMargin'){margin=Math.max(0,parseFloat(e.target.value)||0);renderAll();compute();persistSoon();return;}
+    if(e.target.classList.contains('qty'))compute();
   });
+  document.addEventListener('change',function(e){if(e.target.name==='setup'||e.target.name==='support'||e.target.classList.contains('addon'))compute();});
+  document.addEventListener('keyup',function(e){if(editing&&e.target.getAttribute&&e.target.getAttribute('data-edit')!=null)persistSoon();});
+  document.addEventListener('keydown',function(e){if(editing&&e.key==='Enter'&&e.target.closest&&e.target.closest('[data-edit]'))e.preventDefault();});
+  document.addEventListener('paste',function(e){var t=e.target&&e.target.closest?e.target.closest('[data-edit]'):null;if(!editing||!t)return;e.preventDefault();var txt='';try{txt=(e.clipboardData||window.clipboardData).getData('text/plain');}catch(err){}document.execCommand('insertText',false,txt.replace(/\s+/g,' '));});
+
+  document.querySelectorAll('.stepper button').forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-for'),el=document.querySelector('.qty[data-key="'+k+'"]');el.value=Math.max(0,(parseInt(el.value)||0)+parseInt(b.getAttribute('data-step')));compute();});});
+  var vAp=document.getElementById('vApply');if(vAp)vAp.addEventListener('click',function(){var c=(document.getElementById('voucher').value||'').trim().toUpperCase(),m=document.getElementById('vMsg');if(VOUCHERS[c]){voucherPct=VOUCHERS[c];voucherCode=c;m.style.color='var(--good)';m.textContent='✓ %'+(voucherPct*100)+' indirim uygulandı.';}else if(c===''){voucherPct=0;voucherCode='';m.textContent='';}else{voucherPct=0;voucherCode='';m.style.color='var(--warn)';m.textContent='✕ Geçersiz kod.';}compute();});
+
+  var tEl=document.getElementById('toast'),tT;
+  function toast(hh){if(!tEl)return;tEl.innerHTML=hh;tEl.classList.add('show');clearTimeout(tT);tT=setTimeout(function(){tEl.classList.remove('show');},4600);}
+
+  var abLink=document.getElementById('abLink');if(abLink)abLink.addEventListener('click',function(){
+    var url=location.href.split('#')[0]+'#cfg='+encCfg(collectCustomer());
+    var done=function(){toast('<b>Müşteri linki kopyalandı.</b> Açan kişi teklifi bu final fiyatlarla görür; marj/maliyet görünmez.');};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,function(){window.prompt('Linki kopyalayın:',url);});}else{window.prompt('Linki kopyalayın:',url);}
+  });
+  var abReset=document.getElementById('abReset');if(abReset)abReset.addEventListener('click',function(){if(!confirm('Tüm fiyat/metin/marj değişiklikleri silinip varsayılana dönülecek. Emin misiniz?'))return;resetting=true;clearTimeout(saveT);try{localStorage.removeItem(LS_KEY);}catch(e){}history.replaceState(null,'',location.pathname+location.search);location.reload();});
+  var abClose=document.getElementById('abClose');if(abClose)abClose.addEventListener('click',exitEdit);
+
+  var oh=document.getElementById('outHint');if(oh)oh.style.display='none';
+  var hesap=document.getElementById('hesapla');if(hesap)hesap.addEventListener('click',function(){compute();toast('<b>Hesaplandı.</b> “Temiz PDF İndir” ile çıktı alabilirsiniz.');});
   var gc=document.getElementById('goCalc');if(gc)gc.addEventListener('click',function(){var y=document.getElementById('yatirim');if(y)y.scrollIntoView({behavior:'smooth'});});
-  compute();window.__compute=compute;
+
+  var wasEditing=false,wasRole='erman';
+  window.addEventListener('beforeprint',function(){if(editing){wasEditing=true;wasRole=role;exitEdit();}});
+  window.addEventListener('afterprint',function(){if(wasEditing){wasEditing=false;enterEdit(wasRole);}});
+
+  var hash=location.hash||'';
+  var mErman=hash.match(/erman=([^&]+)/),mBayi=hash.match(/bayi=([^&]+)/),mCfg=hash.match(/cfg=([^&]+)/);
+  if(mCfg){applyCfg(decCfg(mCfg[1]));role='musteri';}
+  else{try{var st=localStorage.getItem(LS_KEY);if(st)applyCfg(JSON.parse(st));}catch(e){}}
+  renderAll();compute();
+  if(mErman&&decodeURIComponent(mErman[1])===ERMAN_PASS){enterEdit('erman');}
+  else if(mBayi&&decodeURIComponent(mBayi[1])===BAYI_PASS){enterEdit('bayi');}
+  window.__compute=compute;
 })();
 </script>
 </body>
