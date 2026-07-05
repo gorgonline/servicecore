@@ -186,6 +186,9 @@
   body.editing [data-edit][contenteditable]:focus{outline:2px solid var(--blue2);background:#fff;color:var(--ink)}
   .pr-edit{width:80px;font:inherit;font-size:12px;text-align:right;border:1px solid var(--line);border-radius:6px;padding:2px 5px;color:var(--ink)}
   .pr-suf{font-size:11px;color:var(--muted);margin-left:3px}
+  .webd{color:var(--blue2);text-decoration:none;font-weight:600;white-space:nowrap}
+  .webd:hover{text-decoration:underline}
+  .webd-row{display:block;margin-top:3px}
   .bayi-block{display:none;margin-top:6px}
   body.role-bayi .bayi-block,.bayi-block.show{display:block}
   @media print{
@@ -277,7 +280,7 @@
     <p class="lead-p">Intertech (Denizbank IT), BDDK'nın buluta izin vermemesi ve Jira Data Center'ın <i>end-of-life</i> olması nedeniyle zorunlu bir geçiş ufkundadır. İhtiyaç bir ITSM özelliği değil; 10 yıllık, terabaytlarca veriyi denetime uygun şekilde taşıyabilecek, <b>on-premise, yerli ve ITIL 4 derinliğinde bir Jira halefidir.</b></p>
     <p>Önerimiz net: ServiceCore'u, regülasyona dayanıklı ve denetlenebilir bir Jira halefi olarak konumlamak. 1:1 taşıma aracı, 700+ SLA'nın anlamlı bir sete sadeleştirilmesi, 24.000 varlıkta lisans etkisinin olmaması ve eski dataya on-premise denetim-uyumlu canlı erişim ile <b>geçiş riskini biz üstleniriz.</b> Kapsam ve efor, ortak bir doğrulama atölyesinde kesinleşir; bu doküman gösterge niteliğindedir.</p>
     <div class="callout">
-      <b>Özetin özeti:</b> On-premise + yerli + BDDK uyumu; 1:1 denetimli Jira → ServiceCore geçişi; teknisyen-bazlı lisans (son kullanıcı + 24.000 varlık sınırsız ve ücretsiz); tüm bakım, güncelleme ve roadmap abonelikte dahil; TL · aylık ödeme imkânı. Rakamlar gösterge — RFP'de doğrulanır.
+      <b>Özetin özeti:</b> On-premise + yerli + BDDK uyumu; 1:1 denetimli Jira → ServiceCore geçişi; teknisyen-bazlı lisans (son kullanıcı + 24.000 varlık sınırsız ve ücretsiz); tüm bakım, güncelleme ve roadmap abonelikte dahil; USD · aylık ödeme imkânı. Rakamlar gösterge — RFP'de doğrulanır.
     </div>
     <div class="grid c4" style="margin-top:8px">
       <div class="card soft"><div class="stat"><b>~1100</b>teknisyen · 100–150 Pro + ~1000 temel</div></div>
@@ -403,7 +406,7 @@
       <tr><td><b>1:1 Jira → ServiceCore Migration</b></td><td>Veri, konfigürasyon ve akışların denetlenebilir göçü; eski dataya on-prem canlı erişim; 700→~10 SLA sadeleştirme.</td></tr>
       <tr><td><b>No-code Otomasyon &amp; Onay</b></td><td>10+ süreçte koşullu otomasyon ve custom onay akışları (SecureLink eşi) koda gerek olmadan; sınırsız senaryo.</td></tr>
       <tr><td><b>5 Katmanlı Raporlama</b></td><td>Dashboard, servis raporlama, dinamik (wizard), döküm (custom export) ve servis analitiği.</td></tr>
-      <tr><td><b>Esnek &amp; Hibrit Lisanslama</b></td><td>Teknisyen-bazlı; son kullanıcı + 24.000 varlık sınırsız ve ücretsiz; TL sözleşme ve <b>aylık ödeme</b> imkânı.</td></tr>
+      <tr><td><b>Esnek &amp; Hibrit Lisanslama</b></td><td>Teknisyen-bazlı; son kullanıcı + 24.000 varlık sınırsız ve ücretsiz; USD bazlı fiyatlama; <b>aylık ödeme</b> imkânı.</td></tr>
       <tr><td><b>CD ile Sıfır-Kesinti Güncelleme</b></td><td>Continuous Delivery ile sürekli, otomatik ve kesintisiz güncel sistem; abonelikte dahil.</td></tr>
       <tr><td><b>25 yıllık yerel lider</b></td><td>2000'den beri Türk şirketi; ITIL-uzman/expert/MP sertifikalı danışmanlar; 20+ iş ortağı; üretici seviyesinde yerel destek.</td></tr>
     </table>
@@ -573,7 +576,7 @@
       </ul></div>
       <div><ul class="clean">
         <li>Hibrit oran enterprise koşullarında kuruma özel (Intertech: 100/1000 ve 200/900 senaryoları).</li>
-        <li>Abonelik 1/3/5 yıl; TL + aylık ödeme.</li>
+        <li>Abonelik 1/3/5 yıl; USD · aylık ödeme.</li>
         <li>Genişleme: min. 5 lisans, pro-rata.</li>
       </ul></div>
     </div>
@@ -583,7 +586,7 @@
   <section class="pad brk" id="yatirim">
     <span class="eyebrow"><span class="sec-no">11</span> · Yatırım &amp; Fiyatlandırma</span>
     <h2>İki senaryoyu canlı hesaplayın</h2>
-    <p class="lead-p">Hesap makinesi <b>Senaryo A</b> ile açılır: <b>100 Pro / 1000 Standart</b>. <b>Senaryo B</b> için Pro'yu 200, Standart'ı 900 yapın. Adetleri değiştirin, toplam canlı güncellensin. <small>(Birim fiyatlar gösterge/örnektir; nihai liste fiyatları ve enterprise koşulları RFP sürecinde kesinleşir. Fiyatlara KDV dahil değildir.)</small></p>
+    <p class="lead-p">Hesap makinesi <b>Senaryo A</b> ile açılır: <b>100 Pro / 1000 Standart</b>. <b>Senaryo B</b> için Pro'yu 200, Standart'ı 900 yapın. Adetleri değiştirin, toplam canlı güncellensin. <small>(Birim fiyatlar gösterge/örnektir; nihai liste fiyatları ve enterprise koşulları RFP sürecinde kesinleşir. Fiyatlar USD bazlıdır; KDV dahil değildir.)</small></p>
     <div class="grid c2" style="margin:4px 0 18px">
       <div class="card" style="border-color:#bdebd7">
         <b>① Senaryoyu canlı hesaplayın</b>
@@ -595,59 +598,59 @@
         <a class="btn btn-primary" href="https://outlook.office365.com/owa/calendar/Servicecore1@servicecore.com.tr/bookings/" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">Randevu Al — Microsoft Bookings</a>
       </div>
     </div>
-    <!-- FİYATLAR TEMSİLİ: tüm birim fiyatlar 123 ₺ placeholder — her müşteri için gerçek TL rakamlarıyla (data-price VE görünen ₺) değiştirin. Referans: Standart ~20 USD, Pro ~60 USD, ek modül ~8 USD/kullanıcı/ay (güncel liste Erman'dan). -->
+    <!-- FİYATLAR TEMSİLİ: tüm birim fiyatlar 123 $ placeholder — her müşteri için gerçek USD rakamlarıyla (data-price VE görünen $) değiştirin. Referans: Standart ~20 USD, Pro ~60 USD, ek modül ~8 USD/kullanıcı/ay (güncel liste Erman'dan). -->
     <div class="calc-wrap">
       <div>
         <div class="lineblock">
           <h3>1 · Lisanslar <small style="font-weight:500;color:var(--muted)">(kullanıcı / ay · named-user)</small></h3>
           <p class="sub">Son kullanıcılar ve varlıklar sınırsız ve ücretsizdir.</p>
-          <div class="ln"><div class="nm">Standart Lisans<small>temel ITIL 4 — geniş teknisyen ekibi</small></div><div class="pr" data-pfor="std">123 ₺</div><input class="qty" type="number" min="0" value="1000" data-key="std" data-price="123"></div>
-          <div class="ln rec"><div class="nm">Professional Lisans <span class="badge rec">Güç-kullanıcı</span><small>Standart + 8 modül + 17 ileri özellik</small></div><div class="pr" data-pfor="pro">123 ₺</div><input class="qty" type="number" min="0" value="100" data-key="pro" data-price="123"></div>
+          <div class="ln"><div class="nm">Standart Lisans<small>temel ITIL 4 — geniş teknisyen ekibi · <a href="https://www.servicecore.com.tr/planlar" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="std">123 $</div><input class="qty" type="number" min="0" value="1000" data-key="std" data-price="123"></div>
+          <div class="ln rec"><div class="nm">Professional Lisans<small>Standart + 8 modül + 17 ileri özellik · <a href="https://www.servicecore.com.tr/planlar" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="pro">123 $</div><input class="qty" type="number" min="0" value="100" data-key="pro" data-price="123"></div>
           <div class="hint" id="volHint"></div>
         </div>
         <div class="lineblock">
           <h3>2 · Standart'a ek modüller <small style="font-weight:500;color:var(--muted)">(kullanıcı / ay)</small></h3>
           <p class="sub">Professional aldıysanız bunlar zaten dahildir.</p>
-          <div class="ln"><div class="nm">Varlık Yönetimi &amp; CMDB</div><div class="pr" data-pfor="cmdb">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="cmdb" data-price="123"></div>
-          <div class="ln"><div class="nm">Proje Yönetimi (AGILEPM)</div><div class="pr" data-pfor="proje">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="proje" data-price="123"></div>
-          <div class="ln"><div class="nm">Servis İlişkileri (SRM)</div><div class="pr" data-pfor="srm">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="srm" data-price="123"></div>
-          <div class="ln"><div class="nm">İstek &amp; Servis Katalog</div><div class="pr" data-pfor="katalog">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="katalog" data-price="123"></div>
-          <div class="ln"><div class="nm">Problem Yönetimi</div><div class="pr" data-pfor="problem">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="problem" data-price="123"></div>
-          <div class="ln"><div class="nm">Değişiklik Yönetimi</div><div class="pr" data-pfor="degisiklik">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="degisiklik" data-price="123"></div>
-          <div class="ln"><div class="nm">Sözleşme Yönetimi</div><div class="pr" data-pfor="sozlesme">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="sozlesme" data-price="123"></div>
-          <div class="ln"><div class="nm">Sürekli İyileştirme</div><div class="pr" data-pfor="iyilestirme">123 ₺</div><input class="qty" type="number" min="0" value="0" data-key="iyilestirme" data-price="123"></div>
+          <div class="ln"><div class="nm">Varlık Yönetimi &amp; CMDB<small class="webd-row"><a href="https://www.servicecore.com.tr/varlik-yonetimi" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="cmdb">123 $</div><input class="qty" type="number" min="0" value="0" data-key="cmdb" data-price="123"></div>
+          <div class="ln"><div class="nm">Proje Yönetimi (AGILEPM)<small class="webd-row"><a href="https://www.servicecore.com.tr/proje-yonetimi" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="proje">123 $</div><input class="qty" type="number" min="0" value="0" data-key="proje" data-price="123"></div>
+          <div class="ln"><div class="nm">Servis İlişkileri (SRM)<small class="webd-row"><a href="https://www.servicecore.com.tr/servis-iliskileri-yonetimi" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="srm">123 $</div><input class="qty" type="number" min="0" value="0" data-key="srm" data-price="123"></div>
+          <div class="ln"><div class="nm">İstek &amp; Servis Katalog<small class="webd-row"><a href="https://www.servicecore.com.tr/servis-katalog-yonetimi" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="katalog">123 $</div><input class="qty" type="number" min="0" value="0" data-key="katalog" data-price="123"></div>
+          <div class="ln"><div class="nm">Problem Yönetimi<small class="webd-row"><a href="https://www.servicecore.com.tr/problem-yonetimi" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="problem">123 $</div><input class="qty" type="number" min="0" value="0" data-key="problem" data-price="123"></div>
+          <div class="ln"><div class="nm">Değişiklik Yönetimi<small class="webd-row"><a href="https://www.servicecore.com.tr/degisiklik-yonetimi" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="degisiklik">123 $</div><input class="qty" type="number" min="0" value="0" data-key="degisiklik" data-price="123"></div>
+          <div class="ln"><div class="nm">Sözleşme Yönetimi<small class="webd-row"><a href="https://www.servicecore.com.tr/sozlesme-yonetimi" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="sozlesme">123 $</div><input class="qty" type="number" min="0" value="0" data-key="sozlesme" data-price="123"></div>
+          <div class="ln"><div class="nm">Sürekli İyileştirme<small class="webd-row"><a href="https://www.servicecore.com.tr/surekli-iyilestirme" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></div><div class="pr" data-pfor="iyilestirme">123 $</div><input class="qty" type="number" min="0" value="0" data-key="iyilestirme" data-price="123"></div>
         </div>
         <div class="lineblock">
           <h3>3 · Add-on'lar <small style="font-weight:500;color:var(--muted)">(sabit · yıllık)</small></h3>
           <div class="addon-grid">
-            <label class="opt"><input type="checkbox" class="addon" data-key="adisco" data-price="123"> <span class="nm">Asset Discovery<small data-pfor="adisco">123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-key="avmware" data-price="123"> <span class="nm">VMware Discovery<small data-pfor="avmware">123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-key="ateams" data-price="123"> <span class="nm">MS Teams Eklentisi<small data-pfor="ateams">123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-key="afailover" data-price="123"> <span class="nm">Failover / Cluster<small data-pfor="afailover">123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-key="adr" data-price="123"> <span class="nm">Disaster Recovery<small data-pfor="adr">123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-key="asandbox" data-price="123"> <span class="nm">Sandbox / Test<small data-pfor="asandbox">123 ₺/yıl</small></span></label>
-            <label class="opt"><input type="checkbox" class="addon" data-key="apfp" data-price="123"> <span class="nm">Pro Functions Pack<small data-pfor="apfp">123 ₺/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="adisco" data-price="123"> <span class="nm">Asset Discovery<small data-pfor="adisco">123 $/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="avmware" data-price="123"> <span class="nm">VMware Discovery<small data-pfor="avmware">123 $/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="ateams" data-price="123"> <span class="nm">MS Teams Eklentisi<small data-pfor="ateams">123 $/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="afailover" data-price="123"> <span class="nm">Failover / Cluster<small data-pfor="afailover">123 $/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="adr" data-price="123"> <span class="nm">Disaster Recovery<small data-pfor="adr">123 $/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="asandbox" data-price="123"> <span class="nm">Sandbox / Test<small data-pfor="asandbox">123 $/yıl</small></span></label>
+            <label class="opt"><input type="checkbox" class="addon" data-key="apfp" data-price="123"> <span class="nm">Pro Functions Pack<small data-pfor="apfp">123 $/yıl</small></span></label>
           </div>
         </div>
         <div class="lineblock">
           <h3>4 · Kurulum Modeli <small style="font-weight:500;color:var(--muted)">(tek seferlik)</small></h3>
-          <label class="opt rec"><input type="radio" name="setup" value="launch" data-key="launch" data-price="123" checked> <span class="nm">Launch Ready — anahtar teslim <span class="badge rec">Önerilen</span><small>Uçtan uca, kuruma özel rehberli implementasyon</small></span><span class="pr" data-pfor="launch">123 ₺</span></label>
+          <label class="opt rec"><input type="radio" name="setup" value="launch" data-key="launch" data-price="123" checked> <span class="nm">Launch Ready — anahtar teslim <span class="badge rec">Önerilen</span><small>Uçtan uca, kuruma özel rehberli implementasyon</small></span><span class="pr" data-pfor="launch">123 $</span></label>
           <label class="opt"><input type="checkbox" checked disabled> <span class="nm">Migration — 7 aşamalı <span class="badge free">Varsayımlı efor</span><small>Jira → ServiceCore · kapsam atölyesinde netleşir</small></span><span class="pr">ayrı kalem</span></label>
         </div>
         <div class="lineblock">
           <h3>5 · Hizmet Kapsamı <small style="font-weight:500;color:var(--muted)">(kapsam genişledikçe bedel artar)</small></h3>
-          <div class="ln"><div class="nm">Ek lokasyon / şirket</div><div class="pr" data-pfor="loc">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="loc">−</button><input class="qty" type="number" min="0" value="0" data-key="loc" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="loc">+</button></div></div>
-          <div class="ln"><div class="nm">Özel entegrasyon</div><div class="pr" data-pfor="integ">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="integ">−</button><input class="qty" type="number" min="0" value="0" data-key="integ" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="integ">+</button></div></div>
-          <div class="ln"><div class="nm">Özel form/süreç (low-code)</div><div class="pr" data-pfor="form">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="form">−</button><input class="qty" type="number" min="0" value="0" data-key="form" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="form">+</button></div></div>
-          <div class="ln"><div class="nm">Ek eğitim grubu</div><div class="pr" data-pfor="train">123 ₺/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="train">−</button><input class="qty" type="number" min="0" value="0" data-key="train" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="train">+</button></div></div>
+          <div class="ln"><div class="nm">Ek lokasyon / şirket</div><div class="pr" data-pfor="loc">123 $/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="loc">−</button><input class="qty" type="number" min="0" value="0" data-key="loc" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="loc">+</button></div></div>
+          <div class="ln"><div class="nm">Özel entegrasyon</div><div class="pr" data-pfor="integ">123 $/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="integ">−</button><input class="qty" type="number" min="0" value="0" data-key="integ" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="integ">+</button></div></div>
+          <div class="ln"><div class="nm">Özel form/süreç (low-code)</div><div class="pr" data-pfor="form">123 $/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="form">−</button><input class="qty" type="number" min="0" value="0" data-key="form" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="form">+</button></div></div>
+          <div class="ln"><div class="nm">Ek eğitim grubu</div><div class="pr" data-pfor="train">123 $/adet</div><div class="stepper"><button type="button" data-step="-1" data-for="train">−</button><input class="qty" type="number" min="0" value="0" data-key="train" data-price="123" style="width:46px"><button type="button" data-step="1" data-for="train">+</button></div></div>
           <div class="svc-note">Hizmet kapsamı ara toplamı: <b id="svcSubtotal">—</b>. Kapsamı genişlettikçe bu tutarı <b>siz</b> belirliyorsunuz.</div>
         </div>
         <div class="lineblock">
           <h3>6 · Destek Paketi <small style="font-weight:500;color:var(--muted)">(yıllık · birini seçin)</small></h3>
-          <label class="opt"><input type="radio" name="support" value="silver" data-key="silver" data-price="123"> <span class="nm">Silver</span><span class="pr" data-pfor="silver">123 ₺</span></label>
-          <label class="opt rec"><input type="radio" name="support" value="gold" data-key="gold" data-price="123" checked> <span class="nm">Gold <span class="badge rec">Önerilen</span></span><span class="pr" data-pfor="gold">123 ₺</span></label>
-          <label class="opt"><input type="radio" name="support" value="platinum" data-key="platinum" data-price="123"> <span class="nm">Platinum</span><span class="pr" data-pfor="platinum">123 ₺</span></label>
-          <label class="opt"><input type="radio" name="support" value="mission" data-key="mission" data-price="123"> <span class="nm">Mission Critical</span><span class="pr" data-pfor="mission">123 ₺</span></label>
+          <label class="opt"><input type="radio" name="support" value="silver" data-key="silver" data-price="123"> <span class="nm">Silver</span><span class="pr" data-pfor="silver">123 $</span></label>
+          <label class="opt rec"><input type="radio" name="support" value="gold" data-key="gold" data-price="123" checked> <span class="nm">Gold <span class="badge rec">Önerilen</span></span><span class="pr" data-pfor="gold">123 $</span></label>
+          <label class="opt"><input type="radio" name="support" value="platinum" data-key="platinum" data-price="123"> <span class="nm">Platinum</span><span class="pr" data-pfor="platinum">123 $</span></label>
+          <label class="opt"><input type="radio" name="support" value="mission" data-key="mission" data-price="123"> <span class="nm">Mission Critical</span><span class="pr" data-pfor="mission">123 $</span></label>
         </div>
       </div>
       <div class="summary">
@@ -759,15 +762,15 @@
   var ERMAN_PASS='erman2026', BAYI_PASS='bayi2026';
   var TRY=new Intl.NumberFormat('tr-TR',{style:'currency',currency:'TRY',maximumFractionDigits:0});
   var NUM=new Intl.NumberFormat('tr-TR',{maximumFractionDigits:0});
-  var fmt=function(n){return TRY.format(Math.round(n||0));};
+  var fmt=function(n){return NUM.format(Math.round(n||0))+' $';};
   var now=new Date(),valid=new Date(now.getTime()+15*864e5),o={day:'2-digit',month:'long',year:'numeric'};
   var td=document.getElementById('today');if(td)td.textContent=now.toLocaleDateString('tr-TR',o);
   ['valid','valid3'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=valid.toLocaleDateString('tr-TR',o);});
 
-  var SUFFIX={std:' ₺',pro:' ₺',cmdb:' ₺',proje:' ₺',srm:' ₺',katalog:' ₺',problem:' ₺',degisiklik:' ₺',sozlesme:' ₺',iyilestirme:' ₺',
-    adisco:' ₺/yıl',avmware:' ₺/yıl',ateams:' ₺/yıl',afailover:' ₺/yıl',adr:' ₺/yıl',asandbox:' ₺/yıl',apfp:' ₺/yıl',
-    launch:' ₺', loc:' ₺/adet',integ:' ₺/adet',form:' ₺/adet',train:' ₺/adet',
-    silver:' ₺',gold:' ₺',platinum:' ₺',mission:' ₺'};
+  var SUFFIX={std:' $',pro:' $',cmdb:' $',proje:' $',srm:' $',katalog:' $',problem:' $',degisiklik:' $',sozlesme:' $',iyilestirme:' $',
+    adisco:' $/yıl',avmware:' $/yıl',ateams:' $/yıl',afailover:' $/yıl',adr:' $/yıl',asandbox:' $/yıl',apfp:' $/yıl',
+    launch:' $', loc:' $/adet',integ:' $/adet',form:' $/adet',train:' $/adet',
+    silver:' $',gold:' $',platinum:' $',mission:' $'};
   var KEYS=Object.keys(SUFFIX);
   var MONTHLY_KEYS=['std','pro','cmdb','proje','srm','katalog','problem','degisiklik','sozlesme','iyilestirme'];
   var QTY_KEYS=MONTHLY_KEYS.concat(['loc','integ','form','train']);
@@ -788,7 +791,7 @@
 
   function renderDisp(k){var d=disp(k);if(!d)return;
     if(editing&&role==='erman'){var i=d.querySelector('input.pr-edit');if(i){if(document.activeElement!==i)i.value=cost(k);return;}}
-    d.textContent=NUM.format(eff(k))+(SUFFIX[k]||' ₺');}
+    d.textContent=NUM.format(eff(k))+(SUFFIX[k]||' $');}
   function renderAll(){KEYS.forEach(renderDisp);}
 
   function q(k){var e=document.querySelector('.qty[data-key="'+k+'"]');return e?Math.max(0,parseInt(e.value)||0):0;}
@@ -866,7 +869,7 @@
       if(el.getAttribute('data-role')===rl){el.setAttribute('contenteditable','true');el.setAttribute('spellcheck','false');}});
     if(rl==='erman'){KEYS.forEach(function(k){var d=disp(k);if(!d)return;d.textContent='';
       var i=document.createElement('input');i.type='number';i.min='0';i.step='50';i.className='pr-edit';i.value=cost(k);i.setAttribute('data-pkey',k);
-      var s=document.createElement('span');s.className='pr-suf';s.textContent=(SUFFIX[k]||' ₺').replace(/^ /,'');
+      var s=document.createElement('span');s.className='pr-suf';s.textContent=(SUFFIX[k]||' $').replace(/^ /,'');
       d.appendChild(i);d.appendChild(s);});}
   }
   function exitEdit(){if(!editing)return;editing=false;
