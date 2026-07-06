@@ -115,7 +115,7 @@
   .ln.rec{border-color:#bdebd7;box-shadow:0 0 0 1px #bdebd7 inset}
   .ln .nm{font-weight:600;color:var(--navy)}.ln .nm small{display:block;color:var(--muted);font-weight:500}
   .ln .pr{color:var(--muted);font-size:13px;white-space:nowrap}
-  .qty{width:62px;font:inherit;text-align:center;border:1px solid var(--line);border-radius:9px;padding:8px;background:#fff}
+  .qty{width:92px;font:inherit;text-align:center;border:1px solid var(--line);border-radius:9px;padding:5px 8px;background:#fff}
   .qty:focus{outline:2px solid var(--blue2);outline-offset:1px}
   .opt{display:flex;gap:10px;align-items:center;padding:11px 12px;border:1px solid var(--line);border-radius:11px;margin-bottom:8px;cursor:pointer}
   .opt.rec{border-color:#bdebd7}.opt input{accent-color:var(--blue)}
@@ -194,16 +194,15 @@
   .bayi-block{display:none;margin-top:6px}
   body.role-bayi .bayi-block,.bayi-block.show{display:block}
   @media print{
-    @page{size:A4;margin:12mm 14mm}
-    @page coverpage{margin:0}
+    @page{size:A4;margin:0}
     *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     body{background:#fff}
     /* interaktif-only ögeler gizli */
     .toolbar,.summary .cta,.voucher,.stepper button,#goCalc,.btn,.adminbar{display:none!important}
     .page{box-shadow:none;max-width:none;margin:0}
-    .pad{padding:6mm 0 3mm}
+    .pad{padding:13mm 15mm 4mm}
     /* kapak: tam-sayfa full-bleed, tek başına 1. sayfa */
-    .cover{page:coverpage;min-height:100vh;height:auto;padding:26mm 16mm;page-break-after:always;justify-content:flex-start}
+    .cover{min-height:100vh;height:auto;padding:26mm 16mm;page-break-after:always;justify-content:flex-start}
     /* ZORLA SAYFA KIRMA YOK — içerik aksın, boş sayfa oluşmasın */
     .brk{page-break-before:auto}
     /* başlık öksüz kalmasın */
@@ -592,7 +591,7 @@
     <div class="grid c2" style="margin:4px 0 18px">
       <div class="card" style="border-color:#bdebd7">
         <b>① Senaryoyu canlı hesaplayın</b>
-        <p style="margin:.3em 0 0;font-size:13.5px">Aşağıdaki hesap makinesinde Pro/Standart adetlerini ve hizmet kapsamını girin; gösterge toplam canlı çıkar. <b>Hesapla</b> ile canlı görün; yandaki <b>Temiz PDF İndir</b> ile çıktıyı alın.</p>
+        <p style="margin:.3em 0 0;font-size:13.5px">Aşağıdaki hesap makinesinde Pro/Standart adetlerini ve hizmet kapsamını girin; gösterge toplam canlı çıkar. <b>Hesapla</b> ile canlı görün; yandaki <b>PDF / Yazdır</b> ile girdiğiniz fiyatlarla çıktıyı alın.</p>
       </div>
       <div class="card">
         <b>② Kapsamı birlikte netleştirelim</b>
@@ -636,7 +635,7 @@
         </div>
         <div class="lineblock">
           <h3>4 · Kurulum Modeli <small style="font-weight:500;color:var(--muted)">(tek seferlik)</small></h3>
-          <label class="opt rec"><input type="radio" name="setup" value="launch" data-key="launch" data-price="123" checked> <span class="nm">Launch Ready — anahtar teslim <span class="badge rec">Önerilen</span><small>Uçtan uca, kuruma özel rehberli implementasyon</small></span><span class="pr" data-pfor="launch">123 $</span></label>
+          <label class="opt rec"><input type="radio" name="setup" value="launch" data-key="launch" data-price="123" checked> <span class="nm">Launch Ready — anahtar teslim <span class="badge rec">Önerilen</span><small>Uçtan uca, kuruma özel rehberli implementasyon · <a href="https://www.servicecore.com.tr/hizmetler/setup/launch-ready" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></span><span class="pr" data-pfor="launch">123 $</span></label>
           <label class="opt"><input type="checkbox" checked disabled> <span class="nm">Migration — 7 aşamalı <span class="badge free">Varsayımlı efor</span><small>Jira → ServiceCore · kapsam atölyesinde netleşir</small></span><span class="pr">ayrı kalem</span></label>
         </div>
         <div class="lineblock">
@@ -649,10 +648,10 @@
         </div>
         <div class="lineblock">
           <h3>6 · Destek Paketi <small style="font-weight:500;color:var(--muted)">(yıllık · birini seçin)</small></h3>
-          <label class="opt"><input type="radio" name="support" value="silver" data-key="silver" data-price="123"> <span class="nm">Silver</span><span class="pr" data-pfor="silver">123 $</span></label>
-          <label class="opt rec"><input type="radio" name="support" value="gold" data-key="gold" data-price="123" checked> <span class="nm">Gold <span class="badge rec">Önerilen</span></span><span class="pr" data-pfor="gold">123 $</span></label>
-          <label class="opt"><input type="radio" name="support" value="platinum" data-key="platinum" data-price="123"> <span class="nm">Platinum</span><span class="pr" data-pfor="platinum">123 $</span></label>
-          <label class="opt"><input type="radio" name="support" value="mission" data-key="mission" data-price="123"> <span class="nm">Mission Critical</span><span class="pr" data-pfor="mission">123 $</span></label>
+          <label class="opt"><input type="radio" name="support" value="silver" data-key="silver" data-price="123"> <span class="nm">Silver<small class="webd-row"><a href="https://www.servicecore.com.tr/hizmetler/support/silver" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></span><span class="pr" data-pfor="silver">123 $</span></label>
+          <label class="opt rec"><input type="radio" name="support" value="gold" data-key="gold" data-price="123" checked> <span class="nm">Gold<small class="webd-row"><a href="https://www.servicecore.com.tr/hizmetler/support/gold" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></span><span class="pr" data-pfor="gold">123 $</span></label>
+          <label class="opt"><input type="radio" name="support" value="platinum" data-key="platinum" data-price="123"> <span class="nm">Platinum<small class="webd-row"><a href="https://www.servicecore.com.tr/hizmetler/support/platinum" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></span><span class="pr" data-pfor="platinum">123 $</span></label>
+          <label class="opt"><input type="radio" name="support" value="mission" data-key="mission" data-price="123"> <span class="nm">Mission Critical<small class="webd-row"><a href="https://www.servicecore.com.tr/hizmetler/support/mission-critical" target="_blank" rel="noopener" class="webd">web detay ↗</a></small></span><span class="pr" data-pfor="mission">123 $</span></label>
         </div>
       </div>
       <div class="summary">
@@ -671,8 +670,8 @@
         <div class="vmsg" id="vMsg"></div>
         <div class="cta">
           <button class="btn btn-primary" id="hesapla">Hesapla</button>
-          <a class="btn out" id="pdfBtn" href="https://www.servicecore.com.tr/teklif-intertech/teklif.pdf" target="_blank" rel="noopener" style="width:100%;margin-top:12px;display:block;text-align:center;text-decoration:none">Temiz PDF İndir ↓</a>
-          <p class="footnote" id="outHint" style="margin:10px 2px 0">Baskı/PDF için hazır, temiz sürümü indirin (tarayıcı yazdırma ayarı gerekmez).</p>
+          <button class="btn out" id="pdfBtn" style="width:100%;margin-top:12px">PDF / Yazdır ↓</button>
+          <p class="footnote" id="outHint" style="margin:10px 2px 0">Hesapla, sonra <b>PDF / Yazdır</b> ile girdiğiniz fiyatlarla çıktı alın.</p>
         </div>
       </div>
     </div>
@@ -813,7 +812,7 @@
     var supEl=document.querySelector('input[name=support]:checked'),support=supEl?eff(supEl.getAttribute('data-key')):0;
     var voucherBase=annual+support,voucherAmt=voucherBase*voucherPct;
     var grand=annual+addons+support+serviceTotal-voucherAmt,monthlyEq=monthly+(addons+support)/12;
-    set('sMonthly',fmt(monthly));set('sAnnual',fmt(annual));set('sSupport',fmt(support));
+    set('sMonthly',fmt(monthlyGross));set('sAnnual',fmt(monthlyGross*12));set('sSupport',fmt(support));
     set('sSetup',fmt(serviceTotal));set('sTotal',fmt(grand));set('grand',fmt(grand));
     set('svcSubtotal',fmt(serviceTotal));set('grandSub','≈ '+fmt(monthlyEq)+'/ay · aylık ödeme de mümkündür');
     row('rVol',disc>0,'sVol','− '+fmt(volSaving)+' /yıl');row('rAddon',addons>0,'sAddon',fmt(addons));
@@ -906,7 +905,8 @@
   var abClose=document.getElementById('abClose');if(abClose)abClose.addEventListener('click',exitEdit);
 
   var oh=document.getElementById('outHint');if(oh)oh.style.display='none';
-  var hesap=document.getElementById('hesapla');if(hesap)hesap.addEventListener('click',function(){compute();toast('<b>Hesaplandı.</b> “Temiz PDF İndir” ile çıktı alabilirsiniz.');});
+  var hesap=document.getElementById('hesapla');if(hesap)hesap.addEventListener('click',function(){compute();toast('<b>Hesaplandı.</b> “PDF / Yazdır” ile bu fiyatlarla çıktı alın.');});
+  var pdfB=document.getElementById('pdfBtn');if(pdfB)pdfB.addEventListener('click',function(){window.print();});
   var gc=document.getElementById('goCalc');if(gc)gc.addEventListener('click',function(){var y=document.getElementById('yatirim');if(y)y.scrollIntoView({behavior:'smooth'});});
 
   var wasEditing=false,wasRole='erman';
