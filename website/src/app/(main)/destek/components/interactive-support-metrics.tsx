@@ -64,7 +64,7 @@ export function InteractiveSupportMetrics() {
                 </h2>
                 
                 <div className="space-y-4 text-(--color-text-secondary) font-light leading-relaxed">
-                  {maintenanceServices.description.split("\\n\\n").slice(0, 3).map((p, i) => (
+                  {maintenanceServices.description.split("\\n\\n").map((p, i) => (
                     <p key={i}>{p}</p>
                   ))}
                 </div>
