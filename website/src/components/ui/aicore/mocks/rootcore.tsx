@@ -36,20 +36,20 @@ const LOOP_STEPS: LoopStep[] = [
   {
     time: "03:00",
     stage: "tarama",
-    title: "14 yeni olumsuz geri bildirim okundu",
-    detail: "İmleç #4807 → #4821 · hiçbir oy iki kez sayılmaz, hiçbiri kaçmaz",
+    title: "14 yeni geri bildirim toplandı",
+    detail: "Dünden bu yana gelen tüm değerlendirmeler — hiçbiri gözden kaçmaz",
   },
   {
     time: "03:04",
     stage: "cikarim",
-    title: "5 tekrar eden hata kalıbı çıkarıldı",
-    detail: "Kategori + tek cümlelik kural + güven seviyesi",
+    title: "5 tekrar eden hata yakalandı",
+    detail: "Tek seferlik aksaklık değil, tekrar eden hatalar aranır",
   },
   {
     time: "03:09",
     stage: "yargic",
-    title: "Kalite yargıcı: 3/5 bulgu eşiği geçti",
-    detail: "0-10 ölçek · eşik 7.0 · puan kalıcı yazılır",
+    title: "Kalite süzgeci: 5 bulgudan 3'ü güçlü çıktı",
+    detail: "Zayıf ve belirsiz bulgular ekranınıza hiç gelmez",
   },
   {
     time: "03:12",
@@ -61,15 +61,15 @@ const LOOP_STEPS: LoopStep[] = [
   {
     time: "03:15",
     stage: "bakim",
-    title: "1 ders pekişti · 2 kural söndü",
-    detail: "Tekrar eden ders kanıt kazanır; pekişmeyen kural zamanla erir",
+    title: "1 kural güçlendi · 2 kural emekliye ayrıldı",
+    detail: "Kendini kanıtlayan kural güçlenir; işe yaramayan zamanla emekli olur",
   },
 ];
 
 const STAGE_META: Record<Stage, { label: string; icon: ReactNode; color: string }> = {
   tarama: { label: "Tarama", icon: <Database className="w-3 h-3" />, color: "text-cyan-300 bg-cyan-500/12 border-cyan-400/30" },
   cikarim: { label: "Çıkarım", icon: <Sparkles className="w-3 h-3" />, color: "text-purple-300 bg-purple-500/12 border-purple-400/30" },
-  yargic: { label: "Yargıç", icon: <Scale className="w-3 h-3" />, color: "text-amber-300 bg-amber-500/12 border-amber-400/30" },
+  yargic: { label: "Kalite", icon: <Scale className="w-3 h-3" />, color: "text-amber-300 bg-amber-500/12 border-amber-400/30" },
   onay: { label: "İnsan Onayı", icon: <UserCheck className="w-3 h-3" />, color: "text-emerald-300 bg-emerald-500/12 border-emerald-400/30" },
   bakim: { label: "Bakım", icon: <RefreshCcw className="w-3 h-3" />, color: "text-blue-300 bg-blue-500/12 border-blue-400/30" },
 };
@@ -85,27 +85,27 @@ const STORED_RULES: StoredRule[] = [
   {
     text: "Parola sıfırlama kayıtlarında self-servis bağlantısını cevabın en üstünde ver.",
     status: "pekisti",
-    meta: "kanıt 5 · güven yüksek",
+    meta: "5 kez doğrulandı · güven yüksek",
     strength: 90,
   },
   {
     text: "Yazıcı kayıtlarında sürücü sürümü sorulmadan kurulum adımı önerme.",
     status: "aktif",
-    meta: "kanıt 3 · güven orta",
+    meta: "3 kez doğrulandı · güven orta",
     strength: 60,
   },
   {
     text: "Eski VPN istemcisine ait kurulum adımlarını önerme.",
     status: "sonuyor",
-    meta: "21 gündür pekişmedi",
+    meta: "21 gündür tekrar görülmedi",
     strength: 25,
   },
 ];
 
 const RULE_STATUS_CHIP: Record<StoredRule["status"], { label: string; tone: "success" | "info" | "warn" }> = {
-  pekisti: { label: "pekişti", tone: "success" },
+  pekisti: { label: "güçlendi", tone: "success" },
   aktif: { label: "aktif", tone: "info" },
-  sonuyor: { label: "sönüyor", tone: "warn" },
+  sonuyor: { label: "emekli oluyor", tone: "warn" },
 };
 
 export function RootCoreMock({ accent: accentName }: { accent: string }) {
@@ -117,7 +117,7 @@ export function RootCoreMock({ accent: accentName }: { accent: string }) {
         <TitleBar
           icon={<Moon className="w-3.5 h-3.5" />}
           title="Gece Koşusu · Öğrenme Döngüsü"
-          meta="feedback.db · son tarama 03:00"
+          meta="her gece 03:00 · otomatik"
           accent={accent}
         />
 
@@ -189,16 +189,16 @@ export function RootCoreMock({ accent: accentName }: { accent: string }) {
           />
           <div className="px-5 py-4">
             <div className="flex items-center gap-2 mb-2.5">
-              <Chip tone="neutral">eskalasyon_kalibi</Chip>
-              <Chip tone="warn">yargıç 8.4/10</Chip>
-              <Chip tone="info">4 kanıt</Chip>
+              <Chip tone="neutral">eskalasyon</Chip>
+              <Chip tone="warn">kalite 8.4/10</Chip>
+              <Chip tone="info">4 kez görüldü</Chip>
             </div>
             <p className="text-[12px] text-white/90 leading-snug">
               VPN bağlantı kayıtlarında kullanıcıya doğrudan yeniden kurulum önerme;
               önce MFA oturum durumunun kontrolünü öner.
             </p>
             <div className="mt-2 text-[10px] font-mono text-(--color-text-muted)">
-              4 teknisyen reddi aynı kalıbı gösteriyor · son örnek INC-31842
+              4 teknisyen aynı hatayı işaretledi · son örnek INC-31842
             </div>
 
             <div className="mt-4 pt-3 border-t border-white/8 flex items-center gap-2">
@@ -223,7 +223,7 @@ export function RootCoreMock({ accent: accentName }: { accent: string }) {
         <MockFrame className={accent.glow}>
           <TitleBar
             icon={<RefreshCcw className="w-3.5 h-3.5" />}
-            title="Kural Deposu · Pekiştirme & Unutma"
+            title="Kural Deposu · Canlı"
             meta="onaylı kurallar"
             accent={accent}
           />
@@ -241,10 +241,10 @@ export function RootCoreMock({ accent: accentName }: { accent: string }) {
             accent={accent}
           />
           <div className="px-4 py-3 grid grid-cols-2 gap-2">
-            <KpiTile label="Taranan Oy" value="1.248" trend="geri bildirim" trendTone="up" />
-            <KpiTile label="Çıkan Bulgu" value="86" trend="yargıç süzgeçli" trendTone="up" />
-            <KpiTile label="Onaylı Kural" value="31" trend="insan kararı" trendTone="up" />
-            <KpiTile label="Sönen Kural" value="12" trend="oto bakım" trendTone="down" />
+            <KpiTile label="Geri Bildirim" value="1.248" trend="değerlendirildi" trendTone="up" />
+            <KpiTile label="İyileştirme" value="86" trend="kalite süzgeçli" trendTone="up" />
+            <KpiTile label="Onaylı Kural" value="31" trend="sizin kararınız" trendTone="up" />
+            <KpiTile label="Emekli Kural" value="12" trend="kendiliğinden" trendTone="down" />
           </div>
         </MockFrame>
       </div>

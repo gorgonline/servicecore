@@ -9,37 +9,37 @@
       "slug": "solvecore",
       "name": "SolveCoreAI",
       "tier": "production",
-      "tagline": "Bir destek kaydını kanıta dayalı çözmeye çalışan, emin olmadığında uydurmak yerine susan ya da kararı insana devreden çözüm asistanı.",
-      "description": "Açık bir destek kaydının konusunu, açıklamasını ve yorumlarını tek bağlamda okuyup üç başlığa indirir; geçmiş kapanmış benzer kayıt arşivi ile resmi bilgi bankası çözüm makalelerini anlamsal ve kelime aramasıyla tarar ve tek bir kanıt paketinde birleştirir. Önerip önermeyeceğine modelin öz güvenine değil, yalnızca arama skoruna bakan bir kanıt kapısı karar verir: güçlü kanıt varsa kaynaklı somut adım önerir, sınırdaysa öneri üretmeden insana devreder, kanıt yoksa dürüstçe susar. Kapı geçilse bile önerinin dayandığı kaynağın gerçekten konuyla ilgili olduğunu bir doğrulama adımı denetler; alakasızsa öneri atılır — böylece uydurma cevap baştan kesilir. Her sonuç, teknisyenin olumlu/olumsuz geri bildirimiyle birlikte bir sonuç kimliğiyle kaydedilir — izlenebilir ve denetlenebilir kalır. Teknisyenin verdiği geri bildirim, RootCoreAI'nin gece öğrenme taramasının girdisidir — sistem sahada kullanıldıkça ders birikir.",
+      "tagline": "Destek kayıtlarını kanıta dayanarak çözer: doğru adımı kaynağıyla önerir, emin olmadığında asla uydurmaz.",
+      "description": "Teknisyen daha kaydı okumadan SolveCoreAI okur: konuyu, yazışmaları ve denenenleri saniyeler içinde özetler; geçmişte çözülmüş benzer kayıtları ve bilgi bankasındaki doğru makaleyi bulup önüne koyar. Önerdiği her adımın kaynağı yanındadır — teknisyen tek tıkla doğrular. En önemlisi: emin olmadığında uydurmaz; ya dürüstçe söyler ya da kaydı gerekçesiyle birlikte kıdemli uzmana devreder. Sonuç: çözüm süreleri kısalır, yanlış yönlendirme ortadan kalkar, ekip rutin aramalarla değil gerçek problemlerle uğraşır. Her öneri teknisyenin onayından geçer; verdiği geri bildirimle sistem her hafta biraz daha isabetli hâle gelir.",
       "icon": "Zap",
       "accent": "sky",
       "year": 2026,
       "release": "Pilot — canlı geliştirme",
       "whatItDoes": [
-        "Kaydın konu, açıklama ve yorumlarını tek metne döküp üç başlığa indirir: sorun ne, ne denenmiş, nerede kalınmış.",
-        "Kapanmış benzer kayıt arşivi ile bilgi bankası makalelerini anlamsal ve kelime aramasıyla tarar; yalnızca arama skoru güçlüyse kaynaklı somut bir 'sıradaki adım' önerir, kanıt yoksa cevap uydurmak yerine dürüstçe susar.",
-        "Öneri yazıldıktan sonra dayandığı kaynağın gerçekten konuyla ilgili olduğunu doğrular; alakasızsa öneriyi atar ve her sonucu, teknisyenin olumlu/olumsuz geri bildirimiyle birlikte izlenebilir biçimde kaydeder."
+        "Uzun kayıt yazışmalarını saniyeler içinde özetler: sorun ne, ne denendi, nerede kalındı — teknisyen ilk bakışta tam resmi görür.",
+        "Geçmiş çözümleri ve bilgi bankasını tarayıp en güçlü çözüm adımını kaynağıyla birlikte önerir — doğrulamak tek tık.",
+        "Emin olmadığında uydurmaz: ya dürüstçe 'benzer çözüm yok' der ya da kaydı gerekçesiyle uzmana devreder — yanlış yönlendirme riski sıfırlanır."
       ],
       "howItWorks": [
         {
-          "label": "Oku & özetle",
-          "detail": "Kaydın konusu, açıklaması ve tüm yorumları tek metne toplanır; özetten önce konu dışı ifadeler işaretlenip kanıttan ayıklanır (şüpheli durumda orijinal korunur) ve kayıt üç başlığa indirilir: sorun ne, ne denenmiş, nerede kalınmış."
+          "label": "Kaydı anlar",
+          "detail": "Konu, açıklama ve tüm yazışmalar okunur; kayıt üç net başlığa iner: sorun ne, ne denendi, nerede kalındı."
         },
         {
-          "label": "Kanıt topla",
-          "detail": "Ham kayıt önce odaklı bir arama sorgusuna damıtılır; ardından geçmiş kapanmış kayıtlar ve resmi bilgi bankası makaleleri anlamsal ve kelime aramasıyla taranıp yeniden sıralanır ve skorlanan adaylar tek kanıt paketinde birleşir."
+          "label": "Çözümü arar",
+          "detail": "Geçmişte çözülmüş benzer kayıtlar ve bilgi bankası makaleleri taranır; en güçlü çözüm adayları bir araya getirilir."
         },
         {
-          "label": "Kanıt kapısı",
-          "detail": "Karar modelin öz güvenine değil yalnızca arama skoruna bakar: güçlü skor kaynaklı adım önerir, sınırdaki skor öneri üretmeden insana devreder, düşük skor dürüstçe susar."
+          "label": "Emin olmadan konuşmaz",
+          "detail": "Güçlü bir dayanak varsa öneri hazırlanır; dayanak zayıfsa uydurmak yerine kayıt uzmana devredilir ya da dürüstçe 'bulamadım' denir."
         },
         {
-          "label": "Kaynak doğrula & kaydet",
-          "detail": "Kapı geçilse bile önerinin dayandığı kaynak konuyla ilgili değilse öneri atılır; her sonuç bir sonuç kimliğiyle, teknisyenin olumlu/olumsuz geri bildirimiyle birlikte kaydedilir."
+          "label": "Kaynağıyla önerir",
+          "detail": "Önerilen her adımın yanında dayandığı kayıt ya da makale gösterilir; teknisyen tek tıkla kontrol eder, son karar her zaman ondadır."
         },
         {
-          "label": "Geri bildirim döngüsü",
-          "detail": "Üç yolun sonucu da — öneri, insana devir, susma — bir sonuç kimliğiyle kaydedilir; teknisyenin olumlu/olumsuz oyu eşik kalibrasyon raporlarına ve RootCoreAI'nin gece öğrenme taramasına akar."
+          "label": "Kullandıkça gelişir",
+          "detail": "Teknisyenin beğendi/beğenmedi geri bildirimi sisteme işlenir; öneriler her hafta biraz daha isabetli olur."
         }
       ],
       "modules": [
@@ -57,37 +57,37 @@
       "slug": "knowcore",
       "name": "KnowCoreAI",
       "tier": "production",
-      "tagline": "Çözülmüş kayıtlardan otomatik bilgi bankası içeriği üretir.",
-      "description": "Kapanmış destek kayıtlarını aynı problemi anlatan kümeler hâlinde ele alır ve her kümeden kaynak-dayanaklı bir bilgi bankası kartı üretir; kaynak kayıtlarda olmayan bilgi karta giremez. Üretilen kart çift yapay zekâ yargıcından (uydurma denetimi + tehlikeli/yetkisiz eylem denetimi) ve deterministik kural kapılarından geçer; şüpheli kart gerekçesiyle birlikte en fazla iki onarım turuna girer, düzelmeyen kart yayınlanmaz. Yakın kopya kartlar eşleştirme motoruyla (MergeCoreAI) yakalanır. Hiçbir kart uzman onayı olmadan bilgi bankasına yazılmaz: onay panelinde uzman kartı onaylar, reddeder veya düzeltir — onaylanan kart, SolveCoreAI'nin kanıt olarak kullandığı bilgi bankasına eklenir.",
+      "tagline": "Çözülen her sorunu kalıcı bilgiye dönüştürür — bilgi bankanız kendi kendine büyür.",
+      "description": "Ekibiniz her gün onlarca sorun çözüyor; ama o bilgi çoğu zaman kapanan kaydın içinde kayboluyor. KnowCoreAI kapanmış kayıtları tarar, aynı sorunun tekrar tekrar nasıl çözüldüğünü bulur ve bunu herkesin anlayacağı bir bilgi bankası makalesine dönüştürür — belirtiler, çözüm adımları ve ilgili sistemler hazır yazılmış olarak. Her makale yayınlanmadan önce çok aşamalı doğrulamadan geçer: dayanağı olmayan hiçbir bilgi yayınlanmaz ve son söz her zaman sizin uzmanınızdadır — tek tıkla onaylar, düzeltir ya da reddeder. Sonuç: makale yazma yükü ekibin üzerinden kalkar, bilgi personelle birlikte şirketten ayrılmaz, aynı sorun bir daha sıfırdan çözülmez.",
       "icon": "BookOpen",
       "accent": "sky",
       "year": 2026,
       "release": "Pilot — canlı geliştirme",
       "whatItDoes": [
-        "Aynı problemi anlatan kapanmış kayıtları kümeler, her kümeden tek bir kalıcı çözüm kartı damıtır; karttaki her iddia kaynak kayda bağlıdır.",
-        "Her kartı çift yapay zekâ yargıcı + deterministik kapılardan geçirir; şüpheli kartı en fazla iki tur kendi kendine onarır, düzelmeyeni yayınlamaz.",
-        "Temiz kartı uzman onay kuyruğuna taşır; onaylanan kart bilgi bankasına yazılır ve SolveCoreAI'nin kanıt tabanını besler."
+        "Kapanan kayıtlardan hazır bilgi bankası makalesi üretir — belirti, çözüm adımları ve ilgili sistemler yazılmış olarak önünüze gelir.",
+        "Yayınlamadan önce her makaleyi çok aşamalı doğrulamadan geçirir; dayanağı olmayan bilgi asla yayınlanmaz.",
+        "Son sözü uzmanınıza bırakır: tek tıkla onayla, düzelt ya da reddet — onaylanan makale anında ekibin ve son kullanıcının hizmetinde."
       ],
       "howItWorks": [
         {
-          "label": "Küme kapısı",
-          "detail": "Kapanmış kayıtlar benzerliğe göre kümelenir; kart üretmeye yetecek yoğunlukta kanıt içermeyen kümeler baştan elenir."
+          "label": "Tekrarları yakalar",
+          "detail": "Kapanmış kayıtlar taranır; aynı sorunun farklı zamanlarda nasıl çözüldüğü bir araya getirilir."
         },
         {
-          "label": "Kaynaklı üretim",
-          "detail": "Üretici model kartı yalnızca küme içindeki kayıtlardan yazar; belirti, çözüm adımları ve ilgili varlıklar kaynak kayıtlara atıfla bağlanır."
+          "label": "Makaleyi yazar",
+          "detail": "Belirtiler, çözüm adımları ve ilgili sistemler tek bir anlaşılır makalede toplanır; her bilginin dayandığı kayıt bellidir."
         },
         {
-          "label": "Çift yargıç denetimi",
-          "detail": "Bir yargıç kaynakta olmayan bilgiyi (uydurma), diğeri tehlikeli veya yetkisiz eylem adımlarını arar; deterministik kurallar üçüncü bir emniyet katmanı ekler."
+          "label": "Kendini denetler",
+          "detail": "Makale yayınlanmadan önce çok aşamalı doğrulamadan geçer; şüpheli içerik ya düzeltilir ya da hiç yayınlanmaz."
         },
         {
-          "label": "Öz-onarım",
-          "detail": "Şüpheli bulunan kart, yargıç gerekçesiyle birlikte en fazla iki onarım turuna girer; hâlâ düzelmeyen kart yayınlanmaz."
+          "label": "Uzmanınız onaylar",
+          "detail": "Makale onay ekranına düşer; uzmanınız tek tıkla onaylar, düzeltir ya da reddeder — kontrol her zaman sizde."
         },
         {
-          "label": "Uzman onayı & yayın",
-          "detail": "Temiz kart insan onay kuyruğuna düşer; uzman onaylar, reddeder veya düzeltir — onaylanan kart bilgi bankasına yazılır."
+          "label": "Bilgi işe koşulur",
+          "detail": "Onaylanan makale bilgi bankasına eklenir; teknisyenler ve self-servis kullanan çalışanlar aynı bilgiden anında yararlanır."
         }
       ],
       "modules": [
@@ -105,37 +105,37 @@
       "slug": "doccore",
       "name": "DocCoreAI",
       "tier": "production",
-      "tagline": "Kurumsal dokümanları — kılavuz, prosedür, el kitabı — kaynak ve sayfa referanslı bilgi bankası kartlarına dönüştürür.",
-      "description": "KnowCoreAI'nin kardeş giriş kapısıdır: aynı denetim motorunu paylaşır, farkı kaynağıdır — kapanmış kayıtlar yerine kurumun doküman hazinesini okur. PDF, Word, Excel, metin ve web sayfalarını sayfa/bölüm sınırlarını koruyarak okur; belgeye gömülü ekran görüntüleri de görüntü-anlama yolundan geçirilir. Belge, başlık hiyerarşisi ve sayfa sınırlarına saygılı deterministik bir parçalayıcıyla kart-boyu bölümlere ayrılır; içindekiler ve tekrar eden üstbilgi/altbilgi gibi gürültü otomatik temizlenir. Üretilen her kart kaynak belge ve sayfa referansı taşır; karttaki her sayfa atıfı modelin gerçekten gördüğü aralıkla sınanır, destekleyen alıntılar kaynakta birebir aranarak doğrulanır — hayalet atıf geçemez. Kartlar KnowCoreAI ile aynı hattan geçer: çift yargıç, deterministik kapılar, en fazla iki onarım turu ve uzman onayı.",
+      "tagline": "Kılavuz ve prosedürlerinizdeki bilgiyi, herkesin anında bulabildiği yardım kartlarına dönüştürür.",
+      "description": "Kurumunuzun en değerli bilgisi çoğu zaman kimsenin açmadığı dosyalarda duruyor: kılavuzlar, prosedürler, el kitapları. DocCoreAI bu dokümanları okur ve içindeki bilgiyi, ihtiyaç anında saniyeler içinde bulunabilen kısa yardım kartlarına dönüştürür. Her kartın üzerinde hangi belgeden, hangi sayfadan geldiği yazar — doğruluğunu bir tıkla kontrol edersiniz; belgede olmayan hiçbir bilgi karta giremez. Kartlar yayınlanmadan önce çok aşamalı doğrulamadan geçer ve son onay her zaman sizin uzmanınızdadır. Sonuç: 'belgede vardı ama kimse bulamıyordu' devri kapanır; yeni personel haftalar değil günler içinde yetkinleşir, bilgi dokümana gömülü kalmaz.",
       "icon": "FileText",
       "accent": "emerald",
       "year": 2026,
       "release": "Pilot — canlı geliştirme",
       "whatItDoes": [
-        "PDF, Word, Excel, metin ve web sayfasını sayfa/bölüm sınırlarını koruyarak okur; gömülü ekran görüntülerini de metne çevirir.",
-        "Belgeyi başlık ve sayfa sınırlarına saygılı parçalara böler; her kart kaynak belge + sayfa referansı taşır, hayalet atıflar deterministik kontrolle yakalanır.",
-        "Kartları KnowCoreAI ile aynı denetim hattından geçirir: çift yargıç, en fazla iki onarım turu, uzman onayı."
+        "PDF, Word ve Excel dokümanlarınızı okur; içlerindeki bilgiyi kısa, aranabilir yardım kartlarına dönüştürür.",
+        "Her kartta kaynak belge ve sayfa numarası yazar — doğruluk bir tıkla kontrol edilir, belgede olmayan bilgi karta giremez.",
+        "Kartlar yayınlanmadan önce doğrulamadan ve uzman onayından geçer; bilgi bankanız güvenilir kalarak büyür."
       ],
       "howItWorks": [
         {
-          "label": "Belge okuma",
-          "detail": "Dosya türüne göre metin sayfa sayfa, bölüm bölüm çıkarılır; okunamayan birim sessizce yutulmaz, nota düşer."
+          "label": "Dokümanı okur",
+          "detail": "PDF, Word, Excel ve web sayfaları okunur; içlerindeki ekran görüntülerinde yazan bilgi bile metne dönüştürülür."
         },
         {
-          "label": "Parçalama + gürültü temizliği",
-          "detail": "İçindekiler, kapak ve tekrar eden üstbilgi/altbilgi deterministik olarak temizlenir; belge başlık/sayfa sınırlarından kart-boyu parçalara ayrılır."
+          "label": "Kart boyuna böler",
+          "detail": "Uzun doküman, her biri tek bir konuyu anlatan kart boyunda bölümlere ayrılır; kapak, içindekiler gibi gereksiz sayfalar elenir."
         },
         {
-          "label": "Kaynaklı kart üretimi",
-          "detail": "Üretici model kartı yalnızca gördüğü parçadan yazar; kaynak belge adı ve sayfa aralığı karta işlenir."
+          "label": "Kaynağıyla yazar",
+          "detail": "Her kart yalnızca belgede yazandan üretilir; üzerinde kaynak belge ve sayfa numarası hazır durur."
         },
         {
-          "label": "Sayfa + alıntı denetimi",
-          "detail": "Karttaki her sayfa atıfı modelin gördüğü aralıkla sınanır; destekleyen cümleler kaynakta birebir aranır — uydurulmuş alıntı geçemez."
+          "label": "Doğruluğunu sınar",
+          "detail": "Kart yayınlanmadan önce içeriği belgeyle karşılaştırılır; belgede karşılığı olmayan bilgi ayıklanır."
         },
         {
-          "label": "Ortak denetim hattı",
-          "detail": "Çift yargıç + deterministik kapılar + en fazla iki onarım turu; temiz kart uzman onay kuyruğuna düşer, onaylanan kart bilgi bankasına yazılır."
+          "label": "Uzmanınız onaylar",
+          "detail": "Kart onay ekranına düşer; uzmanınız tek tıkla onaylar, düzeltir ya da reddeder — sonra herkesin hizmetinde."
         }
       ],
       "modules": [
@@ -148,37 +148,37 @@
       "slug": "rootcore",
       "name": "RootCoreAI",
       "tier": "production",
-      "tagline": "Teknisyen geri bildiriminden öğrenen katman: tekrar eden hata kalıplarını kurala çevirir, kalite yargıcından ve insan onayından geçirir.",
-      "description": "SolveCoreAI'nin önerilerine teknisyenlerin verdiği olumsuz geri bildirimleri her gece tarar ve tekrar eden hata kalıplarını tek cümlelik kurallara dönüştürür. Her bulgu 0-10 ölçekli bir kalite yargıcından puan alır; yalnızca eşiği geçen bulgular insan onay kuyruğuna düşer — hiçbir kural insan onayı olmadan devreye girmez. Döngünün unutma tarafı da vardır: tekrar eden dersler pekişir ve güven kazanır, pekiştirilmeyen kurallar zamanla söner, yakın kopyalar birleştirilir; kural deposu şişmez, güncel kalır. ITIL Sürekli İyileştirme (CSI) pratiğinin yapay zekâ karşılığıdır. Yol haritasında: olay, log ve alarm sinyallerini birleştiren derin kök neden analizi katmanı.",
+      "tagline": "Ekibinizin geri bildirimini kalıcı iyileşmeye çevirir: yapay zekânız her hafta daha isabetli olur.",
+      "description": "Çoğu yapay zekâ kurulduğu gün ne kadar iyiyse hep o kadar kalır. RootCoreAI bunu değiştirir: teknisyenlerinizin önerilere verdiği geri bildirimleri her gece analiz eder, tekrar eden hataları yakalar ve bunları kalıcı iyileştirmelere dönüştürür. Hiçbir değişiklik kendiliğinden devreye girmez — her yeni kural önce kalite süzgecinden, sonra sizin onayınızdan geçer. İşe yaramayan kurallar da sonsuza dek yaşamaz: kendini kanıtlayamayan kural zamanla emekliye ayrılır, sistem hep güncel ve sade kalır. Sonuç: aynı hata iki kez tekrarlanmaz, yapay zekânız ekibinizle birlikte öğrenir ve yatırımınızın değeri zamanla artar — azalmaz. Yol haritasında: olay, log ve alarm verilerini birleştirerek sorunların kök nedenini bulan analiz katmanı.",
       "icon": "Search",
       "accent": "blue",
       "year": 2026,
       "release": "Pilot — canlı geliştirme",
       "whatItDoes": [
-        "Reddedilen önerileri ve teknisyen notlarını gece taramasıyla okur; hiçbir geri bildirimi iki kez saymaz, hiçbirini kaçırmaz.",
-        "Tekrar eden hata kalıplarını kurala çevirir; her kural kalite yargıcı puanından ve insan onayından geçmeden devreye girmez.",
-        "Kural deposunu canlı tutar: tekrarlanan dersler pekişir, kullanılmayanlar zamanla söner, yakın kopyalar tek kurala birleştirilir."
+        "Teknisyen geri bildirimlerini her gece analiz eder; tekrar eden hataları yakalayıp kalıcı iyileştirme önerisine dönüştürür.",
+        "Hiçbir değişikliği kendiliğinden devreye almaz: her öneri kalite süzgecinden ve sizin onayınızdan geçer — kontrol her zaman sizde.",
+        "Sistemi güncel tutar: kendini kanıtlayan kurallar güçlenir, işe yaramayanlar kendiliğinden emekliye ayrılır."
       ],
       "howItWorks": [
         {
-          "label": "Gece taraması",
-          "detail": "Son taramadan bu yana gelen olumsuz geri bildirimler imleçten itibaren okunur; kaynağa erişilemezse koşu sessizce 'temiz' sayılmaz, hata verir."
+          "label": "Dinler",
+          "detail": "Teknisyenlerin önerilere verdiği beğendi/beğenmedi geri bildirimleri her gece toplanır — hiçbiri gözden kaçmaz."
         },
         {
-          "label": "Kural çıkarımı",
-          "detail": "Model, geri bildirim metinlerinden tekrar eden davranış kalıbını kategori, tek cümlelik bulgu ve güven seviyesiyle yapılandırılmış biçimde çıkarır."
+          "label": "Deseni yakalar",
+          "detail": "Tek seferlik aksaklıklar değil, tekrar eden hatalar aranır; aynı hata birden çok kayıtta görülürse iyileştirme adayı olur."
         },
         {
-          "label": "Kalite yargıcı",
-          "detail": "Her bulgu 0-10 ölçekli değerlendirmeden geçer ve puanı kalıcı kaydedilir; eşiğin altında kalan bulgu onay kuyruğuna hiç taşınmaz."
+          "label": "Kaliteyi süzer",
+          "detail": "Her aday önce kalite değerlendirmesinden geçer; zayıf ya da belirsiz olanlar size hiç gelmez, vaktiniz çalınmaz."
         },
         {
-          "label": "İnsan onayı",
-          "detail": "Eşiği geçen kurallar onay kuyruğunda bekler; uzman onaylar, reddeder veya düzeltir — devreye girme kararı insandadır."
+          "label": "Onayınıza sunar",
+          "detail": "Güçlü adaylar onay ekranına düşer; tek tıkla onaylar, düzeltir ya da reddedersiniz — onaysız hiçbir kural devreye girmez."
         },
         {
-          "label": "Pekiştirme + unutma",
-          "detail": "Aynı ders tekrar geldiğinde kopya açılmaz: kanıt sayacı artar, güveni yükselir. Pekiştirilmeyen kurallar söner, yakın kopyalar konsolide edilir."
+          "label": "Tazeler ve sadeleştirir",
+          "detail": "Kendini tekrar kanıtlayan kurallar güçlenir; uzun süre işe yaramayanlar kendiliğinden emekliye ayrılır — sistem şişmez."
         }
       ],
       "modules": [
@@ -193,33 +193,33 @@
       "slug": "mergecore",
       "name": "MergeCoreAI",
       "tier": "production",
-      "tagline": "Benzer kayıtları 'aynı problem mi?' sorusuyla eşleştirir; birleştirme her zaman insan onayından geçer.",
-      "description": "'Aynı problem mi?' kararını veren eşleştirme motorudur ve bugün canlıdır: KnowCoreAI, yakın kopya bilgi bankası kartlarını bu motorla yakalar. Benzerlik skoru tek başına yanıltıcıdır — çok benzeyen iki metin farklı problemler anlatabilir. Bu yüzden karar iki aşamalıdır: ucuz vektör karşılaştırması adayları bulur, yapay zekâ yargıcı çözüme değil problem tanımına bakarak 'aynı / farklı / belirsiz' der. Motor kendi başına birleştirme yapmaz; 'aynı' ve 'belirsiz' kararları insan onayına düşer — yanlış birleştirme çözüm kaybıdır. Ticket birleştirme yüzeyi yol haritasındadır ve aynı motoru kullanacaktır.",
+      "tagline": "Aynı sorun için açılan mükerrer kayıtları yakalar; siz onaylarsınız, kayıt karmaşası biter.",
+      "description": "Büyük bir kesinti yaşandığında aynı sorun için onlarca kayıt açılır; ekip aynı işi defalarca yapar, raporlar şişer. MergeCoreAI aynı kök soruna işaret eden kayıtları yakalar ve birleştirme önerisi sunar. İki kaydın gerçekten aynı sorunu anlatıp anlatmadığına yüzeysel benzerlikle değil, sorunun kendisine bakarak karar verir — benzer görünen ama farklı olan kayıtları ayırt eder. Ve asla kendi başına birleştirmez: öneri her zaman ekibinizin onayına gelir, yanlış birleştirme riski yaşanmaz. Bu teknoloji bugün bilgi bankası tarafında canlıdır: birbirinin kopyası makaleler otomatik yakalanır, bilgi bankanız temiz kalır. Sonuç: ekip aynı sorunu bir kez çözer, etki tek kayıttan net ölçülür, raporlarınız gerçeği gösterir.",
       "icon": "Merge",
       "accent": "emerald",
       "year": 2026,
-      "release": "Motor pilotta — ticket birleştirme yol haritasında",
+      "release": "Bilgi bankasında canlı — kayıt birleştirme yol haritasında",
       "whatItDoes": [
-        "Aynı kök sorunu anlatan kayıt ve kartları iki aşamada eşleştirir: vektör benzerliğiyle aday bulma + problem tanımına bakan yapay zekâ yargıcı.",
-        "Birleştirme önerisi sunar; birleştirme yalnızca insan onayıyla gerçekleşir. Düşük benzerlik ucuza elenir, yargıca hiç gitmez.",
-        "Birleşen kayıtlar tek raporlama ekseni yaratır — etki, memnuniyet ve hizmet seviyesi çift sayılmaz."
+        "Aynı kök sorun için açılmış kayıtları yakalar; sorunun kendisine bakarak karar verir, yüzeysel benzerliğe aldanmaz.",
+        "Asla kendi başına birleştirmez: her öneri ekibinizin onayına gelir — tek tıkla onaylanır ya da ayrı tutulur.",
+        "Kayıt karmaşasını bitirir: aynı sorun bir kez çözülür, etki ve memnuniyet tek kayıttan net ölçülür."
       ],
       "howItWorks": [
         {
-          "label": "Aday bulma",
-          "detail": "Yeni kayıt/kart, vektör uzayında en yakın örneklerle karşılaştırılır; düşük benzerlik ucuza elenir."
+          "label": "Benzerleri yakalar",
+          "detail": "Yeni kayıt açıldığında, açık kayıtlar arasından aynı soruna benzeyenler anında bulunur."
         },
         {
-          "label": "Yargıç karşılaştırması",
-          "detail": "Yapay zekâ yargıcı iki metnin çözümünü değil problem tanımını karşılaştırır: aynı, farklı veya belirsiz."
+          "label": "Gerçekten aynı mı diye bakar",
+          "detail": "Karar yüzeysel benzerliğe bırakılmaz; iki kaydın anlattığı sorunun gerçekten aynı olup olmadığı değerlendirilir."
         },
         {
-          "label": "Onaylı birleştirme",
-          "detail": "'Farklı' kararı otomatik ayrılır; 'aynı' ve 'belirsiz' insan onay kuyruğuna düşer, tek tıkla onaylanır veya ayrılır."
+          "label": "Onayınıza sunar",
+          "detail": "Birleştirme önerisi ekibin ekranına düşer; tek tıkla onaylanır ya da ayrı tutulur — karar her zaman sizde."
         },
         {
-          "label": "Tek raporlama ekseni",
-          "detail": "Onaylanan birleştirmede alt kayıtlar ana kayda atıfla bağlanır; etki tek olay üzerinden ölçülür."
+          "label": "Tek resim sunar",
+          "detail": "Onaylanan birleştirmede kayıtlar ana kayda bağlanır; ekip tek kaydı çözer, raporlar gerçek etkiyi gösterir."
         }
       ],
       "modules": [

@@ -112,7 +112,7 @@ export function DocCoreMock({ accent: accentName }: { accent: string }) {
                 </span>
               </div>
               <p className="mt-1.5 text-[10px] font-mono text-(--color-text-muted)">
-                Model yalnızca bu parçayı gördü — sayfa dışına atıf veremez.
+                Kart yalnızca bu sayfadan üretildi — belgede olmayan bilgi karta giremez.
               </p>
             </Section>
           </div>
@@ -132,7 +132,7 @@ export function DocCoreMock({ accent: accentName }: { accent: string }) {
             </div>
             <div className="mt-2.5 flex items-center gap-1.5 text-[10px] font-mono text-(--color-text-muted)">
               <Lock className="w-3 h-3" />
-              Kart incelenmeden onay butonu kilitli kalır — damga basmaya kapalı
+              Kart incelenmeden onay butonu açılmaz — gözden geçirme güvencesi
             </div>
           </div>
         </div>
@@ -155,10 +155,10 @@ export function DocCoreMock({ accent: accentName }: { accent: string }) {
               <div className={`h-full rounded-full ${accent.dot}`} style={{ width: "95%" }} />
             </div>
             <div className="space-y-2.5">
-              <CheckRow>Sayfa atıfları gördüğü aralıkta — 5/5</CheckRow>
-              <CheckRow>Destekleyen alıntılar kaynakta birebir bulundu</CheckRow>
-              <CheckRow>Çift yargıç temiz · onarım turu 0</CheckRow>
-              <CheckRow>Yakın kopya taraması: yeni kart</CheckRow>
+              <CheckRow>Her adımın sayfa referansı belgeyle örtüşüyor — 5/5</CheckRow>
+              <CheckRow>Tüm bilgiler kaynak belgede birebir doğrulandı</CheckRow>
+              <CheckRow>İçerik denetimi temiz — ilk seferde</CheckRow>
+              <CheckRow>Kopya kontrolü: bilgi bankasında benzeri yok</CheckRow>
             </div>
           </div>
         </MockFrame>
@@ -197,8 +197,8 @@ export function DocCoreMock({ accent: accentName }: { accent: string }) {
           <div className="px-4 py-3 grid grid-cols-2 gap-2">
             <KpiTile label="İşlenen Belge" value="12" trend="pdf · word · web" trendTone="up" />
             <KpiTile label="Üretilen Kart" value="86" trend="sayfa referanslı" trendTone="up" />
-            <KpiTile label="Uzman Onayı" value="71" trend="insan kararı" trendTone="up" />
-            <KpiTile label="Hayalet Atıf" value="9" trend="yakalandı" trendTone="down" />
+            <KpiTile label="Uzman Onayı" value="71" trend="sizin kararınız" trendTone="up" />
+            <KpiTile label="Kaynaksız Bilgi" value="9" trend="yayınlanmadan engellendi" trendTone="down" />
           </div>
         </MockFrame>
       </div>

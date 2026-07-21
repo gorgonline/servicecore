@@ -211,7 +211,7 @@ const QUALITY = {
     "Yetkisiz aksiyon yok: kapatma/atama/sıfırlama 'yapılmış gibi' sunulmuyor.",
     "Dil & ITIL: Türkçe, teknisyene uygun profesyonel ton.",
   ],
-  note: "Ayrı bir yargıç zinciri her öneriyi 7 uyum kuralına karşı denetler; skor kural matematiğinden gelir (yes / yes+no) — hakem kapı değil, gözlemcidir.",
+  note: "Her öneri gönderilmeden önce kurumsal uyum kurallarına (KVKK, yetki, üslup) karşı bağımsız olarak denetlenir; uyum notu ekranda hazır durur.",
 };
 
 const SUPPRESS = {
@@ -385,13 +385,13 @@ export function SolveCoreMock({ accent: accentName }: { accent: string }) {
             <SpineNode
               accent={accent}
               icon={<Filter className="w-3.5 h-3.5" />}
-              label="Kanıt Kapısı · CRAG"
+              label="Kanıt Kapısı"
               step="hero"
               stepHidden
               hero
             >
               <div className={`rounded-xl border ${accent.border} ${accent.bg} px-4 py-4`}>
-                <SectionLabel accent={accent}>Kanıt Kapısı · CRAG</SectionLabel>
+                <SectionLabel accent={accent}>Kanıt Kapısı</SectionLabel>
                 <p className="mt-1 text-[11px] text-white/70 leading-snug">{GATE.sub}</p>
 
                 <div className="mt-3 flex items-center gap-3 flex-wrap">
