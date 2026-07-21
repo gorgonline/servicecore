@@ -8,6 +8,7 @@ import { ClassifyCoreMock } from "./mocks/classifycore";
 import { CoachCoreMock } from "./mocks/coachcore";
 import { ContractCoreMock } from "./mocks/contractcore";
 import { DiscoverCoreMock } from "./mocks/discovercore";
+import { DocCoreMock } from "./mocks/doccore";
 import { FlowCoreMock } from "./mocks/flowcore";
 import { ImpactCoreMock } from "./mocks/impactcore";
 import { KBCoreMock } from "./mocks/kbcore";
@@ -43,6 +44,7 @@ const REGISTRY: Record<string, (props: MockProps) => ReactNode> = {
   predictcore: PredictCoreMock,
   mergecore: MergeCoreMock,
   knowcore: KnowCoreMock,
+  doccore: DocCoreMock,
   reportcore: ReportCoreMock,
   risicore: RisiCoreMock,
   solvecore: SolveCoreMock,

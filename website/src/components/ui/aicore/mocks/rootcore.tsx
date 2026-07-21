@@ -1,16 +1,14 @@
 import {
-  Activity,
-  AlertTriangle,
-  Bell,
-  Bug,
+  Check,
   Database,
-  FileText,
-  GitBranch,
   History,
-  Search,
-  Server,
+  Moon,
+  Pencil,
+  RefreshCcw,
+  Scale,
   Sparkles,
-  Target,
+  UserCheck,
+  X,
 } from "lucide-react";
 import type { ReactNode } from "react";
 import {
@@ -24,136 +22,121 @@ import {
   trUpper,
 } from "../primitives";
 
-type SignalSource = "alarm" | "log" | "incident" | "change" | "cmdb";
+type Stage = "tarama" | "cikarim" | "yargic" | "onay" | "bakim";
 
-interface Signal {
+interface LoopStep {
   time: string;
-  source: SignalSource;
-  asset?: string;
+  stage: Stage;
   title: string;
   detail: string;
   current?: boolean;
 }
 
-const SIGNALS: Signal[] = [
+const LOOP_STEPS: LoopStep[] = [
   {
-    time: "08:54",
-    source: "alarm",
-    asset: "SRV-MAIL-01",
-    title: "CPU eşik üstü",
-    detail: "5 dakikalık ortalama %85 → uyarı seviyesi",
+    time: "03:00",
+    stage: "tarama",
+    title: "14 yeni olumsuz geri bildirim okundu",
+    detail: "İmleç #4807 → #4821 · hiçbir oy iki kez sayılmaz, hiçbiri kaçmaz",
   },
   {
-    time: "09:00",
-    source: "log",
-    asset: "Exchange Transport",
-    title: "Queue depth tırmanıyor",
-    detail: "7.512 mesaj · 60 sn'de +1.200",
+    time: "03:04",
+    stage: "cikarim",
+    title: "5 tekrar eden hata kalıbı çıkarıldı",
+    detail: "Kategori + tek cümlelik kural + güven seviyesi",
   },
   {
-    time: "09:07",
-    source: "alarm",
-    asset: "SRV-MAIL-01",
-    title: "Failover eşiği aşıldı (8.000)",
-    detail: "Otomatik yedeğe geçiş bekleniyordu ama tetiklenmedi",
+    time: "03:09",
+    stage: "yargic",
+    title: "Kalite yargıcı: 3/5 bulgu eşiği geçti",
+    detail: "0-10 ölçek · eşik 7.0 · puan kalıcı yazılır",
   },
   {
-    time: "09:11",
-    source: "cmdb",
-    asset: "queue_threshold",
-    title: "Konfigürasyon kaydı eski",
-    detail: "Son güncelleme CHG-1102 · 3 gün önce",
-  },
-  {
-    time: "09:14",
-    source: "incident",
-    asset: "INC-2847",
-    title: "Posta sunucusu yanıt vermiyor",
-    detail: "Şube ekipleri etkilendi · Selin Yıldız L1",
+    time: "03:12",
+    stage: "onay",
+    title: "3 kural insan onay kuyruğunda",
+    detail: "Onaysız hiçbir kural devreye girmez",
     current: true,
   },
   {
-    time: "09:16",
-    source: "incident",
-    asset: "+6 dublike",
-    title: "MergeCoreAI 6 kaydı INC-2847'ye bağladı",
-    detail: "13 dk içinde 7 şube",
+    time: "03:15",
+    stage: "bakim",
+    title: "1 ders pekişti · 2 kural söndü",
+    detail: "Tekrar eden ders kanıt kazanır; pekişmeyen kural zamanla erir",
   },
 ];
 
-interface Candidate {
-  title: string;
-  asset: string;
-  confidence: number;
-  evidence: string[];
-  primary?: boolean;
+const STAGE_META: Record<Stage, { label: string; icon: ReactNode; color: string }> = {
+  tarama: { label: "Tarama", icon: <Database className="w-3 h-3" />, color: "text-cyan-300 bg-cyan-500/12 border-cyan-400/30" },
+  cikarim: { label: "Çıkarım", icon: <Sparkles className="w-3 h-3" />, color: "text-purple-300 bg-purple-500/12 border-purple-400/30" },
+  yargic: { label: "Yargıç", icon: <Scale className="w-3 h-3" />, color: "text-amber-300 bg-amber-500/12 border-amber-400/30" },
+  onay: { label: "İnsan Onayı", icon: <UserCheck className="w-3 h-3" />, color: "text-emerald-300 bg-emerald-500/12 border-emerald-400/30" },
+  bakim: { label: "Bakım", icon: <RefreshCcw className="w-3 h-3" />, color: "text-blue-300 bg-blue-500/12 border-blue-400/30" },
+};
+
+interface StoredRule {
+  text: string;
+  status: "pekisti" | "aktif" | "sonuyor";
+  meta: string;
+  strength: number;
 }
 
-const CANDIDATES: Candidate[] = [
+const STORED_RULES: StoredRule[] = [
   {
-    title: "Kuyruk geçiş eşiği yanlış konfigüre",
-    asset: "queue_threshold = 8000 · CHG-1102 sonrası",
-    confidence: 87,
-    primary: true,
-    evidence: [
-      "Aktif kuyruk ortalaması 12.000 mesaja yakın seyrediyor — eşik bunun çok altında.",
-      "CHG-1102 (3 gün önce) bu parametreyi 5000 → 8000'e çıkardı, gerekçesi 'gürültü azaltma'.",
-      "Failover alarmı tam eşik anında 09:07'de tetiklendi ama yedek geçiş tetikleyici çalışmadı.",
-      "Aynı parametre ile son 7 günde 4 incident yaşandı (INC-2847 + 3 önceki).",
-    ],
+    text: "Parola sıfırlama kayıtlarında self-servis bağlantısını cevabın en üstünde ver.",
+    status: "pekisti",
+    meta: "kanıt 5 · güven yüksek",
+    strength: 90,
   },
   {
-    title: "SRV-MAIL-01 disk I/O kontentüsü",
-    asset: "STORE-IST-12",
-    confidence: 34,
-    evidence: [],
+    text: "Yazıcı kayıtlarında sürücü sürümü sorulmadan kurulum adımı önerme.",
+    status: "aktif",
+    meta: "kanıt 3 · güven orta",
+    strength: 60,
   },
   {
-    title: "DNS çözümleme gecikmesi",
-    asset: "DNS-INT-01",
-    confidence: 18,
-    evidence: [],
+    text: "Eski VPN istemcisine ait kurulum adımlarını önerme.",
+    status: "sonuyor",
+    meta: "21 gündür pekişmedi",
+    strength: 25,
   },
 ];
 
-const SOURCE_META: Record<SignalSource, { label: string; icon: ReactNode; color: string }> = {
-  alarm: { label: "Alarm", icon: <Bell className="w-3 h-3" />, color: "text-red-300 bg-red-500/12 border-red-400/30" },
-  log: { label: "Log", icon: <FileText className="w-3 h-3" />, color: "text-amber-300 bg-amber-500/12 border-amber-400/30" },
-  incident: { label: "Incident", icon: <Bug className="w-3 h-3" />, color: "text-orange-300 bg-orange-500/12 border-orange-400/30" },
-  change: { label: "Change", icon: <GitBranch className="w-3 h-3" />, color: "text-purple-300 bg-purple-500/12 border-purple-400/30" },
-  cmdb: { label: "CMDB", icon: <Database className="w-3 h-3" />, color: "text-cyan-300 bg-cyan-500/12 border-cyan-400/30" },
+const RULE_STATUS_CHIP: Record<StoredRule["status"], { label: string; tone: "success" | "info" | "warn" }> = {
+  pekisti: { label: "pekişti", tone: "success" },
+  aktif: { label: "aktif", tone: "info" },
+  sonuyor: { label: "sönüyor", tone: "warn" },
 };
 
 export function RootCoreMock({ accent: accentName }: { accent: string }) {
   const accent = resolveAccent(accentName);
-  const primary = CANDIDATES.find((c) => c.primary) ?? CANDIDATES[0];
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-4">
       <MockFrame className={accent.glow}>
         <TitleBar
-          icon={<Activity className="w-3.5 h-3.5" />}
-          title="Korelasyon Çizelgesi · INC-2847"
-          meta="Birikim · 20 dk pencere"
+          icon={<Moon className="w-3.5 h-3.5" />}
+          title="Gece Koşusu · Öğrenme Döngüsü"
+          meta="feedback.db · son tarama 03:00"
           accent={accent}
         />
 
         <div className="px-5 py-3 border-b border-white/8 bg-white/2 flex items-center gap-2">
-          <AiBadge label="6 sinyal korele edildi" accent={accent} />
-          <Chip tone="info">5 kaynak</Chip>
+          <AiBadge label="teknisyen geri bildiriminden öğrenir" accent={accent} />
+          <Chip tone="info">5 aşama</Chip>
           <span className="ml-auto inline-flex items-center gap-1.5 text-[10px] font-mono text-(--color-text-muted)">
             <span className={`w-1.5 h-1.5 rounded-full ${accent.dot} animate-pulse`} />
-            canlı
+            gece döngüsü
           </span>
         </div>
 
         <div className="relative px-5 py-4">
           <div className="absolute top-4 bottom-4 left-12 w-px bg-white/12" />
           <div className="space-y-3.5">
-            {SIGNALS.map((s) => {
-              const meta = SOURCE_META[s.source];
+            {LOOP_STEPS.map((s) => {
+              const meta = STAGE_META[s.stage];
               return (
-                <div key={s.time + s.title} className="relative flex items-start gap-3">
+                <div key={s.time} className="relative flex items-start gap-3">
                   <div className="w-7 text-[10px] font-mono text-(--color-text-muted) tabular-nums shrink-0 pt-1">
                     {s.time}
                   </div>
@@ -180,12 +163,9 @@ export function RootCoreMock({ accent: accentName }: { accent: string }) {
                       >
                         {trUpper(meta.label)}
                       </span>
-                      {s.asset && (
-                        <span className="text-[10px] font-mono text-(--color-text-muted)">{s.asset}</span>
-                      )}
                       {s.current && (
                         <span className={`ml-auto text-[10px] font-mono font-semibold ${accent.text}`}>
-                          {trUpper("incelenen olay")}
+                          {trUpper("insan kararı bekliyor")}
                         </span>
                       )}
                     </div>
@@ -200,56 +180,57 @@ export function RootCoreMock({ accent: accentName }: { accent: string }) {
       </MockFrame>
 
       <div className="space-y-4">
-        <MockFrame className={accent.glow}>
-          <TitleBar
-            icon={<Target className="w-3.5 h-3.5" />}
-            title="Kök Neden Adayları"
-            meta="3 aday"
-            accent={accent}
-          />
-          <div className="px-5 py-4 space-y-3">
-            {CANDIDATES.map((c) => (
-              <CandidateCard key={c.title} candidate={c} accent={accent} />
-            ))}
-          </div>
-        </MockFrame>
-
         <MockFrame className={`border ${accent.border}`}>
           <TitleBar
-            icon={<Sparkles className="w-3.5 h-3.5" />}
-            title="Kanıt Zinciri"
-            meta={`${primary.confidence}% güven`}
+            icon={<UserCheck className="w-3.5 h-3.5" />}
+            title="Onay Kuyruğu · İnsan Kararı"
+            meta="3 kural beklemede"
             accent={accent}
           />
           <div className="px-5 py-4">
-            <div className="text-xs font-semibold text-white mb-1">{primary.title}</div>
-            <div className="text-[10px] font-mono text-(--color-text-muted) mb-3">
-              {primary.asset}
+            <div className="flex items-center gap-2 mb-2.5">
+              <Chip tone="neutral">eskalasyon_kalibi</Chip>
+              <Chip tone="warn">yargıç 8.4/10</Chip>
+              <Chip tone="info">4 kanıt</Chip>
             </div>
-            <div className="space-y-2">
-              {primary.evidence.map((e, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span
-                    className={`shrink-0 inline-flex items-center justify-center w-4 h-4 rounded-full ${accent.bg} ${accent.text} text-[9px] font-mono font-semibold mt-0.5`}
-                  >
-                    {i + 1}
-                  </span>
-                  <p className="text-[11px] text-white/85 leading-snug">{e}</p>
-                </div>
-              ))}
+            <p className="text-[12px] text-white/90 leading-snug">
+              VPN bağlantı kayıtlarında kullanıcıya doğrudan yeniden kurulum önerme;
+              önce MFA oturum durumunun kontrolünü öner.
+            </p>
+            <div className="mt-2 text-[10px] font-mono text-(--color-text-muted)">
+              4 teknisyen reddi aynı kalıbı gösteriyor · son örnek INC-31842
             </div>
 
             <div className="mt-4 pt-3 border-t border-white/8 flex items-center gap-2">
               <button
                 className={`flex-1 text-[11px] font-mono px-2.5 py-1.5 rounded-md border ${accent.border} ${accent.bg} ${accent.text} font-semibold cursor-pointer inline-flex items-center justify-center gap-1.5`}
               >
-                <AlertTriangle className="w-3 h-3" />
-                Known Error olarak kaydet
+                <Check className="w-3 h-3" />
+                Onayla
               </button>
-              <button className="text-[11px] font-mono px-2.5 py-1.5 rounded-md border border-white/10 text-white/70 hover:bg-white/5 cursor-pointer">
-                CHG aç
+              <button className="text-[11px] font-mono px-2.5 py-1.5 rounded-md border border-white/10 text-white/70 hover:bg-white/5 cursor-pointer inline-flex items-center gap-1.5">
+                <Pencil className="w-3 h-3" />
+                Düzelt
+              </button>
+              <button className="text-[11px] font-mono px-2.5 py-1.5 rounded-md border border-white/10 text-white/70 hover:bg-white/5 cursor-pointer inline-flex items-center gap-1.5">
+                <X className="w-3 h-3" />
+                Reddet
               </button>
             </div>
+          </div>
+        </MockFrame>
+
+        <MockFrame className={accent.glow}>
+          <TitleBar
+            icon={<RefreshCcw className="w-3.5 h-3.5" />}
+            title="Kural Deposu · Pekiştirme & Unutma"
+            meta="onaylı kurallar"
+            accent={accent}
+          />
+          <div className="px-5 py-4 space-y-3">
+            {STORED_RULES.map((r) => (
+              <RuleRow key={r.text} rule={r} accent={accent} />
+            ))}
           </div>
         </MockFrame>
 
@@ -260,10 +241,10 @@ export function RootCoreMock({ accent: accentName }: { accent: string }) {
             accent={accent}
           />
           <div className="px-4 py-3 grid grid-cols-2 gap-2">
-            <KpiTile label="Korelasyon" value="2.184" trend="sinyal" trendTone="up" />
-            <KpiTile label="Kök Neden" value="471" trend="otomatik" trendTone="up" />
-            <KpiTile label="MTTR Kazancı" value="38%" trend="↓ 22 dk" trendTone="down" />
-            <KpiTile label="Tekrar" value="−54%" trend="known error" trendTone="down" />
+            <KpiTile label="Taranan Oy" value="1.248" trend="geri bildirim" trendTone="up" />
+            <KpiTile label="Çıkan Bulgu" value="86" trend="yargıç süzgeçli" trendTone="up" />
+            <KpiTile label="Onaylı Kural" value="31" trend="insan kararı" trendTone="up" />
+            <KpiTile label="Sönen Kural" value="12" trend="oto bakım" trendTone="down" />
           </div>
         </MockFrame>
       </div>
@@ -271,50 +252,30 @@ export function RootCoreMock({ accent: accentName }: { accent: string }) {
   );
 }
 
-interface CandidateCardProps {
-  candidate: Candidate;
+interface RuleRowProps {
+  rule: StoredRule;
   accent: AccentClasses;
 }
 
-function CandidateCard({ candidate, accent }: CandidateCardProps) {
+function RuleRow({ rule, accent }: RuleRowProps) {
+  const chip = RULE_STATUS_CHIP[rule.status];
   return (
-    <div
-      className={`rounded-xl border ${
-        candidate.primary ? accent.border : "border-white/8"
-      } ${candidate.primary ? accent.bg : "bg-white/2"} p-3`}
-    >
+    <div className={`rounded-xl border ${rule.status === "pekisti" ? accent.border : "border-white/8"} ${rule.status === "pekisti" ? accent.bg : "bg-white/2"} p-3`}>
       <div className="flex items-start gap-3">
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-1.5 mb-0.5">
-            {candidate.primary && (
-              <Search className={`w-3 h-3 ${accent.text} shrink-0`} />
-            )}
-            <div className={`text-xs font-semibold ${candidate.primary ? "text-white" : "text-white/85"}`}>
-              {candidate.title}
-            </div>
-          </div>
-          <div className="text-[10px] font-mono text-(--color-text-muted) flex items-center gap-1.5">
-            <Server className="w-2.5 h-2.5" />
-            {candidate.asset}
-          </div>
+          <p className="text-[11px] text-white/90 leading-snug">{rule.text}</p>
+          <div className="mt-1 text-[10px] font-mono text-(--color-text-muted)">{rule.meta}</div>
         </div>
-        <div className="shrink-0 text-right">
-          <div
-            className={`text-base font-semibold tabular-nums ${
-              candidate.primary ? accent.text : "text-(--color-text-muted)"
-            }`}
-          >
-            {candidate.confidence}%
-          </div>
-        </div>
+        <Chip tone={chip.tone} className="shrink-0">
+          {chip.label}
+        </Chip>
       </div>
       <div className="mt-2 h-1 rounded-full bg-white/8 overflow-hidden">
         <div
-          className={`h-full rounded-full ${candidate.primary ? accent.dot : "bg-white/25"}`}
-          style={{ width: `${candidate.confidence}%` }}
+          className={`h-full rounded-full ${rule.status === "sonuyor" ? "bg-white/25" : accent.dot}`}
+          style={{ width: `${rule.strength}%` }}
         />
       </div>
     </div>
   );
 }
-
