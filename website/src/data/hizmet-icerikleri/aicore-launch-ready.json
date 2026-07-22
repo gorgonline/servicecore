@@ -1,0 +1,95 @@
+{
+  "slug": "aicore-launch-ready",
+  "code": "SCAILRCP",
+  "name": "AICORE Launch Ready Paketi",
+  "nameEn": "AICORE Launch Ready - Implementation Pack",
+  "category": "setup",
+  "categoryLabel": "Kurulum Hizmetleri",
+  "paymentTerm": "one-time",
+  "paymentTermLabel": "Tek seferlik",
+  "accent": "purple",
+  "icon": "Zap",
+  "hero": {
+    "eyebrow": "Setup · AICORE Launch Ready",
+    "title": "AICore eklentileri için anahtar teslim kurulum",
+    "subtitle": "Yapay zekâ sunucusunun kurulumundan kurumun kendi verisiyle kalibrasyona; onay paneli, ekip eğitimi ve gözetimli canlıya alışa kadar uçtan uca devreye alma hizmeti.",
+    "intro": "AICore eklentileri, ServiceCore kurulumunuza dokunmadan yanına eklenen ayrı bir yapay zekâ katmanında çalışır. AICORE Launch Ready, satın aldığınız eklentilerin bu katman üzerinde kurulmasını, kurumunuzun kendi verisiyle ayarlanmasını ve ekibiniz kullanmaya hazır hâlde teslim edilmesini kapsar. Süreç uygulamalı yürütülür: her aşamada ne yapıldığı gösterilir, canlıya alış gözetimli yapılır."
+  },
+  "sections": [
+    {
+      "type": "text",
+      "id": "giris",
+      "title": "Giriş",
+      "content": "Yapay zekâ eklentisi kurmak, klasik yazılım kurulumundan bir adım fazlasını ister: sistemin kurulması yetmez, kurumunuzun diline ve verisine göre ayarlanması gerekir. Launch Ready bu iki işi tek pakette birleştirir. ServiceCore uygulama ve veritabanı sunucularında hiçbir değişiklik yapılmaz; yapay zekâ katmanı ayrı bir sunucuda kurulur ve ServiceCore ile güvenli iç ağ üzerinden konuşur."
+    },
+    {
+      "type": "list",
+      "id": "kesif",
+      "title": "1. Keşif ve Hazırlık",
+      "items": [
+        "Altyapı gereksinim kontrolü: sunucu/GPU kademesinin doğrulanması, işletim sistemi ve ağ hazırlığı",
+        "ServiceCore erişimi: eklenti bazlı yetkilendirilmiş servis hesabının tanımlanması",
+        "Eklenti seçimine göre ek erişimlerin planlanması (doküman kaynakları, izleme sistemleri, çağrı altyapısı vb.)",
+        "Veri ve gizlilik modunun netleştirilmesi: yerinde model (kapalı ağ dahil) veya maskeli bulut"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "kurulum",
+      "title": "2. Yapay Zekâ Sunucusunun Kurulumu",
+      "content": "Yapay zekâ katmanı, konteyner tabanlı olarak müşteri sunucusuna kurulur; yerel dil modelleri devreye alınır. Kurulum tamamlandığında sistem internetsiz (kapalı ağ) çalışabilir — veri kurum dışına çıkmaz."
+    },
+    {
+      "type": "text",
+      "id": "veri",
+      "title": "3. Veri Bağlantısı ve Dizinleme",
+      "content": "Kayıt arşivi ve bilgi bankası yapay zekâ katmanına bağlanır; arama dizinleri oluşturulur. Bu adımın sonunda sistem kurumunuzun geçmiş bilgisini görmeye başlar."
+    },
+    {
+      "type": "text",
+      "id": "kalibrasyon",
+      "title": "4. Kalibrasyon — kuruma özel ayar",
+      "content": "Her kurumun kayıt dili ve veri dağılımı farklıdır; bu yüzden karar ayarları hazır değerlerle değil, kurumunuzun kendi kayıtları ölçülerek yapılır. Kalibrasyon sonunda kuruma özel bir doğrulama seti oluşturulur ve saklanır: sonraki her güncellemede sistemin davranışı bu setle otomatik denetlenir — 'güncelleme geldi, davranış değişti mi?' sorusu tahminle değil testle cevaplanır."
+    },
+    {
+      "type": "text",
+      "id": "panel",
+      "title": "5. Onay Paneli ve Yetkilendirme",
+      "content": "İnsan onayı gerektiren akışlar (bilgi kartı yayını, kural onayı, birleştirme kararları) için onay paneli kurulur; kurumunuzun kimlik sistemine (SSO) bağlanır ve roller tanımlanır. Yapay zekânın hangi adımda insana danıştığı bu panelden izlenir."
+    },
+    {
+      "type": "list",
+      "id": "egitim",
+      "title": "6. Eğitim",
+      "items": [
+        "Teknisyen eğitimi: eklentilerin günlük kullanımı, öneri/geri bildirim akışı",
+        "Onaycı (uzman) eğitimi: onay paneli, kart/kural inceleme pratiği",
+        "Yönetici eğitimi: sağlık ve değer raporlarının okunması"
+      ]
+    },
+    {
+      "type": "list",
+      "id": "canli",
+      "title": "7. Gözetimli Canlıya Alış",
+      "items": [
+        "Kademeli açılış: önce seçili ekip/kategori, ardından tüm kapsam",
+        "İlk hafta yakın takip: davranış gözlemi ve ince ayar",
+        "Başarı metriklerinin devreye alınması: kullanım, isabet ve zaman kazancı raporları"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "sure",
+      "title": "Süre ve Kapsam",
+      "content": "Tipik devreye alma süresi, eklenti sayısına ve veri hacmine göre 2-4 haftadır. Yapay zekâ altyapısı bir kez kurulduktan sonra her yeni AICore eklentisi aynı altyapıya çok daha kısa sürede eklenir — ilk kurulum en kapsamlısıdır."
+    }
+  ],
+  "cta": {
+    "title": "AICore'u güvenle devreye alın",
+    "description": "Eklenti seçiminden gözetimli canlıya alışa kadar tüm süreci birlikte planlayalım; kurulum sonunda ölçülebilir, denetlenebilir bir yapay zekâ katmanı teslim edelim.",
+    "primaryLabel": "Demo İste",
+    "primaryHref": "/demo",
+    "secondaryLabel": "İletişime Geç",
+    "secondaryHref": "/iletisim"
+  }
+}

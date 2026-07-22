@@ -14,7 +14,7 @@
       "description": "Sunucu hazırlığından AD entegrasyonuna, süreç şablonlarından SLA Policy'lerine kadar tüm başlangıç işlerini içine alan kurulum paketleri. Standart konfigürasyondan felaket kurtarmaya kadar her ölçekli kurumun ihtiyacını karşılar.",
       "icon": "Hammer",
       "accent": "blue",
-      "count": 5,
+      "count": 6,
       "href": "/hizmetler/setup"
     },
     {
@@ -25,7 +25,7 @@
       "description": "Entegrasyon, taşıma, analiz ve geliştirme operasyonlarından yıllık Silver-Gold-Platinum-Mission Critical destek paketlerine kadar sürekliliği güvence altına alan hizmet portföyü. Continuous Delivery ile her sürüm aksayışmaksızın sahaya iner.",
       "icon": "LifeBuoy",
       "accent": "cyan",
-      "count": 8,
+      "count": 9,
       "href": "/hizmetler/support"
     },
     {
@@ -156,6 +156,26 @@
       "whoFor": "Sürüm yönetimi disiplinini sahip çıkmak isteyen, eğitim ve değişiklik testlerini ayrı alanda yürütmek isteyen kurumlar.",
       "icon": "FlaskConical",
       "accentColor": "blue"
+    },
+    {
+      "slug": "aicore-launch-ready",
+      "code": "SCAILRCP",
+      "name": "AICORE Launch Ready Paketi",
+      "nameEn": "AICORE Launch Ready - Implementation Pack",
+      "category": "setup",
+      "paymentTerm": "one-time",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "AICore eklentileri için anahtar teslim kurulum: yapay zekâ sunucusundan kalibrasyona, eğitimden gözetimli canlıya alışa.",
+      "shortDescription": "Seçilen AICore eklentilerinin müşteri ortamında kurulumu, kurumun kendi verisiyle kalibrasyonu, onay paneli kurulumu, ekip eğitimi ve gözetimli canlıya alış — uçtan uca tek pakette.",
+      "valueProps": [
+        "Yapay zekâ sunucusu kurulumu ve yerel dil modellerinin devreye alınması (kapalı ağ desteğiyle)",
+        "Kurumun kendi kayıtlarıyla kalibrasyon + kalıcı doğrulama seti",
+        "Onay paneli, ekip eğitimi ve ilk hafta yakın takip"
+      ],
+      "whoFor": "AICore eklentilerini satın alan ve ölçülebilir şekilde canlıya almak isteyen tüm kurumlar",
+      "icon": "Zap",
+      "accentColor": "purple"
     },
     {
       "slug": "integration",
@@ -512,6 +532,26 @@
       ],
       "whoFor": "Acil özellik talep eden, hızlı sonuç ve bütçe kesinliği arayan kurumlar.",
       "icon": "Rocket",
+      "accentColor": "purple"
+    },
+    {
+      "slug": "aicore-destek",
+      "code": "SCAIDSP",
+      "name": "AICORE Destek Paketleri",
+      "nameEn": "AICORE Support Packages",
+      "category": "support",
+      "paymentTerm": "annual",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Yapay zekânızın sağlıklı ve isabetli kalması için yıllık bakım: güncelleme, doğrulama ve kalibrasyon tek abonelikte.",
+      "shortDescription": "AICore eklentileri için Silver, Gold ve Platinum yıllık destek paketleri: sürüm güncellemeleri, her güncelleme sonrası otomatik doğrulama koşusu, periyodik yeniden kalibrasyon ve sağlık raporları.",
+      "valueProps": [
+        "Her güncelleme sonrası otomatik doğrulama — davranış değişimi gözden kaçmaz",
+        "Periyodik yeniden kalibrasyon ve isabet/sağlık raporları",
+        "Silver · Gold · Platinum kademeleriyle ihtiyaca göre seviye"
+      ],
+      "whoFor": "AICore eklentisi canlıda olan tüm kurumlar",
+      "icon": "ShieldCheck",
       "accentColor": "purple"
     }
   ],

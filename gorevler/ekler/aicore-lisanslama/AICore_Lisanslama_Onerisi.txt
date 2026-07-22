@@ -1,0 +1,105 @@
+AICORE LİSANSLAMA — DEĞERLENDİRME VE ÖNERİ
+(Fix price + sembolik fiyat + seçici devreye alma yaklaşımına cevap.
+Rakip verileri 2026 güncel araştırmadan; kaynaklar en altta.)
+
+
+1) FIX + SEMBOLİK YAKLAŞIM DOĞRU — GEREKÇESİ DE SAĞLAM
+
+Amaç gelir değil SAVUNMA: ana ürünü içeride tutundurmak, AI soran müşteriyi
+kaçırmamak, AI şart koşan yeni adaya kapıyı açmak. Amaç buysa sembolik sabit
+fiyat doğru araç:
+
+- Müşterinin "evet" demesi sürtünmesiz olur; satın almayla pazarlık çıkmaz.
+- Teklife saniyede eklenir, bütçe onayına takılmaz.
+- "Sadece soran müşteride devreye alırız" stratejisiyle birebir uyumlu.
+
+Rakip okuması da doğru: ServiceNow AI'ı artık paketin parçası yaptı (her
+katmanda gömülü; pratikte kullanıcı başına %25-40 zam olarak yansıyor).
+Bizim ayrı add-on duruşumuz bu yüzden satışta avantaja çevrilebilir:
+
+   "Rakipler AI'ı zorla paketin içine koyup herkese ödetiyor. Biz
+   seçtiriyoruz — yalnızca aldığınız modülü ödersiniz, veriniz de kendi
+   sunucunuzda kalır."
+
+
+2) TEK KRİTİK AYRIM: LİSANS İLE HİZMETİ AYIR
+
+Sembolik fiyat MODÜL LİSANSI için doğru; ama KURULUM ve BAKIM için değil.
+Sebep, rakiplerle aramızdaki yapısal fark:
+
+- AI'ı bir müşteriye açmak:
+  Rakipler (SaaS): bir tık, maliyet ~sıfır.
+  Biz (yerinde kurulum): yerel yapay zekâ kurulumu + müşteriye özel ayar
+  (kalibrasyon, 1-2 hafta).
+
+- Güncelleme:
+  Rakipler: merkezden herkese anında.
+  Biz: her müşteride ayrı dağıtım + otomatik doğrulama koşusu.
+
+- Yıllık bakım:
+  Rakipler: fiyatın içinde, görünmez.
+  Biz: müşteri başına gerçek mühendislik emeği.
+
+SaaS rakip sembolik fiyatı kaldırır çünkü marjinal maliyeti yok. Bizde her
+AI müşterisi gerçek emek demek. Lisans da hizmet de sembolik olursa her AI
+müşterisi zarar yazar; büyüdükçe zarar büyür.
+
+ÖNERİ — İKİ KALEMLİ YAPI:
+
+- AICore modül lisansı (eklenti başına, yıllık):
+  SEMBOLİK SABİT (senin dediğin gibi) → tutundurma + rekabet savunması.
+
+- Kurulum / devreye alma (bir defalık) + yıllık platform-bakım ücreti:
+  GERÇEK FİYAT → yerel kurulum, kalibrasyon, güncelleme ve bakım emeğinin
+  karşılığı.
+
+Kurumsal müşteri kurulum ve bakım bedeline zaten alışıktır (her on-prem
+üründe vardır); "AI eklentimiz çok uygun" mesajı bozulmaz. On-prem yazılım
+dünyasının standardı da budur: lisans + yıllık bakım (tipik olarak lisansın
+%15-25'i).
+
+
+3) SEMBOLİK FİYATI "İNDİRİM" OLARAK VER, LİSTE FİYATI OLARAK DEĞİL
+
+Bugün savunma amaçlı verilen düşük fiyat, yarın AI gerçek talep gördüğünde
+yapışıp kalır — fiyatı sonradan yükseltmek, düşürmekten çok daha zordur.
+
+Öneri: Liste fiyatını makul seviyede tut; sembolikliği "mevcut müşteri
+sadakat indirimi %X" olarak uygula.
+
+- Müşteri aynı düşük rakamı öder — amaç aynen gerçekleşir.
+- Ama çapa liste fiyatıdır: ileride indirim kademeli azaltılabilir, liste
+  fiyatına dokunmak gerekmez.
+- Yeni müşteri pazarlığında da alan bırakır ("listede şu, size şu").
+
+
+4) RAKİP FİYATLAMA ÖZETİ (2026)
+
+- ServiceNow (Now Assist): pakete gömülü, kullanıcı başına zam —
+  teknisyen başına %25-40 artış ($50-100+/ay).
+- Freshworks (Freddy Copilot): teknisyen başına sabit add-on —
+  ~$29-35/teknisyen/ay.
+- Zendesk: hibrit — $50/teknisyen/ay + otomatik çözüm başına $1.5-2.
+- Piyasa geneli: hibrit model standartlaştı (%41); salt koltuk bazlı model
+  düşüşte. Taban abonelik + kullanım katmanı.
+
+Not: Salt kullanım-bazlı (sayaçlı) modeli bilinçli önermiyoruz — yerinde
+kurulumda kullanım sayacıyla faturalama müşteriyle güven/denetim sorunu
+yaratır; kurumsal satın alma sabit bütçe ister.
+
+
+ÖZET
+
+1. Fix + sembolik modül lisansı: EVET — savunma silahı olarak doğru.
+2. Kurulum + yıllık bakım: GERÇEK FİYAT — SaaS değiliz, müşteri başına
+   emek gerçek.
+3. Sembolikliği liste fiyatıyla değil sadakat indirimiyle ver — gelecekteki
+   değer algısı korunur.
+4. "Zorla bundle yok, seçtiriyoruz" mesajını satışta kullan — ServiceNow'un
+   tersi, bizim artımız.
+
+
+Kaynaklar: Redress Compliance ve Atonement Licensing (ServiceNow Now Assist
+fiyat analizleri), eesel (Freshservice Freddy fiyat kılavuzu), Premium Plus
+ve Voiceflow (Zendesk sonuç-bazlı fiyatlama), Monetizely ve Particula (2026
+SaaS/AI fiyatlama trend raporları), NVIDIA AI Enterprise lisans dokümanı.

@@ -134,6 +134,53 @@ export default function AicoreIndexPage() {
             ))}
           </div>
         </section>
+
+        <section className="mt-24">
+          <div className="flex items-baseline justify-between gap-6 mb-8">
+            <div>
+              <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
+                HİZMET VE DESTEK
+              </h2>
+              <p className="mt-3 text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                AICore&apos;u kuran ve bakımlı tutan paketler
+              </p>
+            </div>
+            <span className="text-xs font-mono text-(--color-text-muted) shrink-0">02 PAKET</span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link
+              href="/hizmetler/setup/aicore-launch-ready"
+              className="group rounded-2xl border border-white/8 bg-white/2 hover:bg-white/4 hover:border-(--color-accent-purple-base)/30 transition-all p-6 cursor-pointer"
+            >
+              <div className="flex items-start justify-between gap-3 mb-4">
+                <h3 className="text-base font-semibold text-white tracking-tight group-hover:text-(--color-accent-purple-light) transition-colors">
+                  AICORE Launch Ready Paketi
+                </h3>
+                <ArrowUpRight className="w-4 h-4 text-(--color-text-muted) group-hover:text-(--color-accent-purple-light) shrink-0" />
+              </div>
+              <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+                Anahtar teslim kurulum: yapay zekâ sunucusundan kurumunuzun verisiyle
+                kalibrasyona, eğitimden gözetimli canlıya alışa.
+              </p>
+            </Link>
+            <Link
+              href="/hizmetler/support/aicore-destek"
+              className="group rounded-2xl border border-white/8 bg-white/2 hover:bg-white/4 hover:border-(--color-accent-purple-base)/30 transition-all p-6 cursor-pointer"
+            >
+              <div className="flex items-start justify-between gap-3 mb-4">
+                <h3 className="text-base font-semibold text-white tracking-tight group-hover:text-(--color-accent-purple-light) transition-colors">
+                  AICORE Destek Paketleri
+                </h3>
+                <ArrowUpRight className="w-4 h-4 text-(--color-text-muted) group-hover:text-(--color-accent-purple-light) shrink-0" />
+              </div>
+              <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+                Silver · Gold · Platinum yıllık bakım: güncelleme, her güncelleme sonrası
+                otomatik doğrulama ve periyodik yeniden kalibrasyon.
+              </p>
+            </Link>
+          </div>
+        </section>
       </div>
 
       <PrivacyContact />

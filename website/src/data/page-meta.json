@@ -234,5 +234,13 @@
   "jira-alternatifi": {
     "title": "Jira Alternatifi | Türkiye'nin Tek On-Prem Çözümü — ServiceCore",
     "description": "Atlassian Jira Data Center 2026 Mart'ta yeni satışa kapanıyor. ServiceCore; Türkçe arayüz, KVKK uyumlu on-prem kurulum ve sıfır veri kaybı garantili migration ile agile dönüşümünüze kesintisiz devam ettirir."
+  },
+  "hizmetler-setup-aicore-launch-ready": {
+    "title": "AICORE Launch Ready Paketi | ServiceCore",
+    "description": "AICore eklentileri için anahtar teslim kurulum hizmeti — yapay zekâ sunucusu kurulumu, kurumun verisiyle kalibrasyon, onay paneli, eğitim ve gözetimli canlıya alış."
+  },
+  "hizmetler-support-aicore-destek": {
+    "title": "AICORE Destek Paketleri | ServiceCore",
+    "description": "AICore eklentileri için Silver, Gold ve Platinum yıllık destek paketleri — güncelleme, her güncelleme sonrası otomatik doğrulama ve periyodik yeniden kalibrasyon."
   }
 }

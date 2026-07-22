@@ -1,0 +1,97 @@
+{
+  "slug": "aicore-destek",
+  "code": "SCAIDSP",
+  "name": "AICORE Destek Paketleri",
+  "nameEn": "AICORE Support Packages",
+  "category": "support",
+  "categoryLabel": "Destek Hizmetleri",
+  "paymentTerm": "annual",
+  "paymentTermLabel": "Yıllık abonelik",
+  "accent": "purple",
+  "icon": "ShieldCheck",
+  "hero": {
+    "eyebrow": "Support · AICORE",
+    "title": "Yapay zekânız her zaman sağlıklı ve isabetli",
+    "subtitle": "AICore eklentileri için güncelleme, doğrulama ve kalibrasyon içeren yıllık bakım paketleri: AICORE Silver, Gold ve Platinum.",
+    "intro": "Yapay zekâ klasik yazılımdan farklı yaşar: davranışı, kurumunuzun verisiyle birlikte zaman içinde değişir. Sağlıklı kalması için sürüm güncellemesi tek başına yetmez; davranışın düzenli doğrulanması ve ayarların periyodik tazelenmesi gerekir. AICORE Destek Paketleri bu üç işi tek yıllık abonelikte toplar. Mevcut ServiceCore destek paketlerinizin tamamlayıcısıdır — yerine geçmez."
+  },
+  "sections": [
+    {
+      "type": "text",
+      "id": "neden",
+      "title": "Neden AICore'a Özel Destek?",
+      "content": "Klasik yazılım desteği 'çalışıyor mu?' sorusuna bakar. Yapay zekâda ikinci bir soru daha vardır: 'hâlâ isabetli mi?'. Kayıt diliniz, kategorileriniz ve iş yükünüz değiştikçe yapay zekânın ayarları da bakım ister. AICORE Destek Paketleri her güncellemede otomatik doğrulama koşusu yapar, isabet metriklerini raporlar ve gerektiğinde ayarları kurumunuzun güncel verisiyle yeniden kalibre eder."
+    },
+    {
+      "type": "steps",
+      "id": "temel",
+      "title": "Her Pakette Olan Temel Güvenceler",
+      "items": [
+        {
+          "label": "Sürüm güncellemeleri",
+          "detail": "AICore eklentilerinin yeni sürümleri ve güvenlik yamaları kontrollü şekilde kurulur."
+        },
+        {
+          "label": "Güncelleme sonrası doğrulama",
+          "detail": "Her güncellemeden sonra kuruma özel doğrulama seti otomatik koşulur; davranış değişimi varsa canlıya çıkmadan yakalanır."
+        },
+        {
+          "label": "İzleme ve olay desteği",
+          "detail": "Yapay zekâ katmanının sağlığı izlenir; sorun bildirimlerine paket seviyesine göre tanımlı sürelerde yanıt verilir."
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "id": "silver",
+      "title": "AICORE Silver",
+      "items": [
+        "İş saatleri içinde destek",
+        "Sürüm güncellemeleri + güncelleme sonrası otomatik doğrulama koşuları",
+        "Yılda 1 yeniden kalibrasyon",
+        "Yıllık sağlık ve isabet raporu"
+      ]
+    },
+    {
+      "type": "list",
+      "id": "gold",
+      "title": "AICORE Gold",
+      "items": [
+        "Öncelikli yanıt süreleri",
+        "Yılda 2 yeniden kalibrasyon",
+        "Çeyreklik sağlık raporu: isabet, kullanım ve zaman kazancı metrikleri",
+        "Karar ayarları için danışmanlık (eşik ve kapsam ayarlamaları)"
+      ]
+    },
+    {
+      "type": "list",
+      "id": "platinum",
+      "title": "AICORE Platinum",
+      "items": [
+        "Kritik olaylar için 7/24 ulaşılabilir destek hattı",
+        "İhtiyaç oldukça yeniden kalibrasyon (sınırsız)",
+        "Aylık sağlık raporu + dönemsel değerlendirme toplantısı",
+        "Adanmış yapay zekâ uzmanı",
+        "Yeni AICore eklentisi devreye alımında öncelik"
+      ]
+    },
+    {
+      "type": "list",
+      "id": "kapsam-disi",
+      "title": "Paket Kapsamı Dışında Kalanlar",
+      "items": [
+        "Yeni eklenti kurulumu ve devreye alma (AICORE Launch Ready kapsamındadır)",
+        "Sunucu/GPU donanımının işletimi (kurum BT ekibindedir)",
+        "ServiceCore çekirdek ürün desteği (mevcut ServiceCore destek paketleri kapsamındadır)"
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Yapay zekânızı bakımlı tutun",
+    "description": "AICore eklentileriniz için doğru destek seviyesini birlikte belirleyelim; güncelleme, doğrulama ve kalibrasyonu tek abonelikte güvence altına alalım.",
+    "primaryLabel": "İletişime Geç",
+    "primaryHref": "/iletisim",
+    "secondaryLabel": "Tüm Destek Hizmetleri",
+    "secondaryHref": "/hizmetler/support"
+  }
+}
