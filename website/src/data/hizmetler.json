@@ -14,7 +14,7 @@
       "description": "Sunucu hazırlığından AD entegrasyonuna, süreç şablonlarından SLA Policy'lerine kadar tüm başlangıç işlerini içine alan kurulum paketleri. Standart konfigürasyondan felaket kurtarmaya kadar her ölçekli kurumun ihtiyacını karşılar.",
       "icon": "Hammer",
       "accent": "blue",
-      "count": 7,
+      "count": 8,
       "href": "/hizmetler/setup"
     },
     {
@@ -196,6 +196,26 @@
       "whoFor": "Veri hassasiyeti esnek, hızlı başlangıç isteyen veya GPU yatırımı yapmak istemeyen kurumlar",
       "icon": "Rocket",
       "accentColor": "cyan"
+    },
+    {
+      "slug": "aicore-quick-start",
+      "code": "SCAIQSCP",
+      "name": "AICORE Quick Start Konfigürasyon Paketi",
+      "nameEn": "AICORE Products Quick Start - Configuration Pack",
+      "category": "setup",
+      "paymentTerm": "one-time",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Mevcut AICore altyapınıza yeni eklenti: eklentiye özel kalibrasyon ve odaklı eğitimle günler içinde devreye alma.",
+      "shortDescription": "AICore altyapısı kurulu müşteriler için sonraki her eklentinin devreye alma paketi: eklenti kurulumu, varsa ek erişimlerin bağlanması, eklentiye özel kalibrasyon, doğrulama setinin genişletilmesi ve odaklı eğitim — tipik 2-5 gün.",
+      "valueProps": [
+        "Altyapı hazır: yeni eklenti günler içinde açılır (tipik 2-5 gün)",
+        "Eklentiye özel kalibrasyon + doğrulama setinin genişletilmesi",
+        "İlk kurulum Launch Ready / Cloud Ready ile; sonraki her eklenti Quick Start ile"
+      ],
+      "whoFor": "AICORE Launch Ready veya Cloud Ready kurulumu tamamlanmış, yeni eklenti ekleyen tüm kurumlar",
+      "icon": "Plug",
+      "accentColor": "emerald"
     },
     {
       "slug": "integration",

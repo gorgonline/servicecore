@@ -234,13 +234,20 @@ export default function AicoreLaunchReadyDetailPage() {
 
         <section className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="rounded-2xl border border-white/8 bg-white/2 p-6">
-            <h3 className="text-sm font-semibold text-white tracking-tight mb-3">Sonraki eklentiler çok daha hızlı</h3>
+            <h3 className="text-sm font-semibold text-white tracking-tight mb-3">Sonraki eklentiler: AICORE Quick Start</h3>
             <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
-              Yapay zekâ altyapısı bir kez kurulduktan sonra her yeni AICore
-              eklentisi aynı altyapıya eklenir: sunucu, modeller, panel ve
-              yetkilendirme hazırdır. İlk kurulum en kapsamlısıdır; sonraki her
-              eklenti günler mertebesinde devreye alınır.
+              Launch Ready müşteri başına bir kez alınır — altyapı kurulur.
+              Sonraki her eklenti, AICORE Quick Start Konfigürasyon Paketi ile
+              devreye alınır: altyapı işi tekrarlanmaz, eklentiye özel
+              kalibrasyon ve odaklı eğitimle tipik 2-5 gün sürer.
             </p>
+            <Link
+              href="/hizmetler/setup/aicore-quick-start"
+              className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-(--color-accent-purple-light) hover:text-white transition-colors cursor-pointer"
+            >
+              Quick Start paketini incele
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
           </div>
           <div className="rounded-2xl border border-white/8 bg-white/2 p-6">
             <h3 className="text-sm font-semibold text-white tracking-tight mb-3">Kurulumdan sonrası: AICORE Destek</h3>

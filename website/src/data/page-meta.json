@@ -246,5 +246,9 @@
   "hizmetler-setup-aicore-cloud-ready": {
     "title": "AICORE Cloud Ready Paketi | ServiceCore",
     "description": "Maskeli Bulut modunda AICore kurulum hizmeti — GPU'suz hafif altyapı, denetlenebilir veri maskeleme katmanı, kalibrasyon ve eğitimle 1-2 haftada devreye alma."
+  },
+  "hizmetler-setup-aicore-quick-start": {
+    "title": "AICORE Quick Start Konfigürasyon Paketi | ServiceCore",
+    "description": "Mevcut AICore altyapısına yeni eklenti devreye alma paketi — eklentiye özel kalibrasyon, doğrulama setinin genişletilmesi ve odaklı eğitimle tipik 2-5 gün."
   }
 }
