@@ -13,9 +13,12 @@ interface AicoreToolEntry {
 }
 
 // AICORE: aicore.json'dan production tier'lari dinamik turetilir, beta'lar dislanir.
-const aicoreProductionLinks = (aicoreData.tools as AicoreToolEntry[])
-  .filter((tool) => tool.tier === "production")
-  .map((tool) => ({ text: tool.name, href: `/aicore/${tool.slug}` }));
+const aicoreProductionLinks = [
+  { text: "On-Prem Yapay Zekâ", href: "/aicore/on-prem" },
+  ...(aicoreData.tools as AicoreToolEntry[])
+    .filter((tool) => tool.tier === "production")
+    .map((tool) => ({ text: tool.name, href: `/aicore/${tool.slug}` })),
+];
 
 const footerData = {
 

@@ -168,13 +168,22 @@ interface AicoreToolEntry {
   icon: string;
 }
 
-const aicoreSubmenu = (aicoreData.tools as AicoreToolEntry[]).map((tool) => ({
-  name: tool.name,
-  icon: AICORE_ICON_MAP[tool.icon] ?? Sparkles,
-  desc: tool.tagline,
-  href: `/aicore/${tool.slug}`,
-  isBeta: tool.tier === "beta",
-}));
+const aicoreSubmenu = [
+  {
+    name: "On-Prem Yapay Zekâ",
+    icon: ShieldCheck,
+    desc: "Neden yerinde kurulum? Üstünlükler ve Maskeli Bulut karşılaştırması.",
+    href: "/aicore/on-prem",
+    isBeta: false,
+  },
+  ...(aicoreData.tools as AicoreToolEntry[]).map((tool) => ({
+    name: tool.name,
+    icon: AICORE_ICON_MAP[tool.icon] ?? Sparkles,
+    desc: tool.tagline,
+    href: `/aicore/${tool.slug}`,
+    isBeta: tool.tier === "beta",
+  })),
+];
 
 const plansSubmenu = [
   { name: "Servis Yönetimi Lisans Seçenekleri", icon: ShieldCheck, desc: "ESM - ITSM - CSM - FSM - ITAM - EAM Lisanslamaları", href: "/planlar" },
