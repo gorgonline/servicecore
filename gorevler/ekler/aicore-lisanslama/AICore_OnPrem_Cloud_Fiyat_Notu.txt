@@ -1,0 +1,96 @@
+AICORE — ON-PREM / CLOUD FİYAT DURUŞU NOTU
+(Üç soruya cevap: modül başına kurulum bedeli, modül başına destek,
+ve "Cloud AI seçeneğinde add-on fiyatı farklı olmalı mı?")
+
+
+1) MODÜL LİSANSI: İKİ MODDA DA AYNI FİYAT
+
+Add-on (eklenti) fiyatı On-Prem ve Maskeli Bulut'ta farklılaşmamalı. Sebep:
+
+- Eklenti iki modda da AYNI ÜRÜN — aynı yetenek, aynı ekran, aynı değer.
+  Müşteriye "aynı ürünün iki fiyatı var" anlatmak kafa karıştırır, pazarlığı
+  davet eder.
+- İki mod arasındaki gerçek maliyet farkı lisansta değil KURULUMDA ve
+  İŞLETİMDE oluşur; fark orada fiyatlanınca lisansa dokunmaya gerek kalmaz.
+- Geçiş serbestliği korunur: müşteri Maskeli Bulut'tan On-Prem'e geçerken
+  lisans fiyatı değişmez — geçişin önünde fiyat engeli olmaz.
+
+
+2) FARKIN FİYATLANDIĞI YER: KURULUM PAKETİ
+
+- AICORE Launch Ready (On-Prem):
+  Kapsam: AI sunucusu + yerel modeller + kalibrasyon + eğitim + gözetimli canlı.
+  Tipik süre: 2-4 hafta.
+  Kurulum bedeli: YÜKSEK TABAN.
+
+- AICORE Cloud Ready (Maskeli Bulut):
+  Kapsam: hafif sunucu + maskeleme katmanı + kalibrasyon + eğitim.
+  Tipik süre: 1-2 hafta.
+  Kurulum bedeli: DÜŞÜK TABAN (yaklaşık yarısı makul).
+
+Modül başına kurulum bedeli, ağırlık tablosuyla birleşir:
+
+   Kurulum bedeli = kurulum tabanı (moda göre) x modülün fiyat çarpanı
+
+Örnek: taban 100 birimse → SolveCore kurulumu 3.0X = 300 birim,
+MergeCore 1.7X = 170 birim, SentimentCore 1.0X = 100 birim.
+
+İlk kurulumdan sonra eklenen her modül, altyapı hazır olduğu için pratikte
+daha ucuza kurulur — istenirse "ikinci ve sonraki modüllerde kurulum %40
+indirimli" kuralıyla sadeleştirilir.
+
+
+3) MODÜL BAŞINA DESTEK: FİYAT MODÜL BAŞINA, SÖZLEŞME TEK
+
+Destek fiyatı da aynı çarpanla modül başına hesaplanabilir:
+
+   Yıllık destek = destek tabanı (Silver/Gold/Platinum)
+                   x modül çarpanlarının toplamı
+
+Ama sözleşme ve operasyon TEK AICORE destek paketi olarak kalmalı — 5 modül
+alan müşteriye 5 ayrı destek sözleşmesi yönetilemez; tek paket, fiyatı modül
+sayısından ve ağırlığından hesaplanır. Destek paketleri her iki dağıtım
+modunda da geçerlidir (bulutta da güncelleme + doğrulama + kalibrasyon aynı
+ihtiyaçtır).
+
+
+4) TOKEN MALİYETİ: BİZE DOKUNMAZ, AMA SAHİPSİZ DE KALMASIN
+
+Maskeli Bulut'ta bulut modelinin kullanım (token) ücreti MÜŞTERİNİN KENDİ
+API HESABINA aittir — biz aracılık etmeyiz, faturalamayız. Teklifte tek
+cümleyle netleştirilir:
+
+   "Bulut yapay zekâ kullanım ücretleri sağlayıcı ile müşteri arasındadır;
+   ServiceCore'un fiyatlarına dahil değildir."
+
+Bu cümle yazılmazsa ilk faturada "bu ne?" telefonu bize gelir.
+
+
+5) UNUTULMAMASI GEREKEN TEKNİK GERÇEK: KALİBRASYON BULUTTA DA ZORUNLU
+
+"Bulut modeli hazır gelir, kurulum yok" algısı yanlış. Karar ayarları modelin
+nerede çalıştığına değil MÜŞTERİNİN VERİSİNE bağlıdır; Maskeli Bulut'ta da
+kalibrasyon ve doğrulama seti kurulumu yapılır. Cloud Ready'nin kurulum
+bedeli bu yüzden düşüktür ama sıfır değildir — sıfırlanırsa bu emek sahipsiz
+kalır.
+
+
+ÖZET TABLO
+
+- Modül lisansı (yıllık):
+  On-Prem: aynı fiyat · Maskeli Bulut: aynı fiyat.
+
+- Kurulum paketi:
+  On-Prem: Launch Ready — yüksek taban x çarpan.
+  Maskeli Bulut: Cloud Ready — düşük taban x çarpan.
+
+- Yıllık destek:
+  İki modda da Silver/Gold/Platinum x modül ağırlıkları.
+
+- Altyapı:
+  On-Prem: müşteri sağlar (GPU'lu sunucu).
+  Maskeli Bulut: müşteri sağlar (hafif sunucu).
+
+- Token maliyeti:
+  On-Prem: yok.
+  Maskeli Bulut: müşterinin API hesabına — bizim fiyata dahil değil.

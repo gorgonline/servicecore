@@ -59,6 +59,14 @@ export default function AicoreIndexPage() {
           {intro.description}
         </p>
 
+        <Link
+          href="/aicore/on-prem"
+          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-(--color-accent-purple-light) hover:text-white transition-colors cursor-pointer"
+        >
+          Neden On-Prem Yapay Zekâ? Üstünlükleri ve Maskeli Bulut karşılaştırması
+          <ArrowUpRight className="w-4 h-4" />
+        </Link>
+
         <section className="mt-20">
           <div className="flex items-baseline justify-between gap-6 mb-8">
             <div>
@@ -145,10 +153,10 @@ export default function AicoreIndexPage() {
                 AICore&apos;u kuran ve bakımlı tutan paketler
               </p>
             </div>
-            <span className="text-xs font-mono text-(--color-text-muted) shrink-0">02 PAKET</span>
+            <span className="text-xs font-mono text-(--color-text-muted) shrink-0">03 PAKET</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link
               href="/hizmetler/setup/aicore-launch-ready"
               className="group rounded-2xl border border-white/8 bg-white/2 hover:bg-white/4 hover:border-(--color-accent-purple-base)/30 transition-all p-6 cursor-pointer"
@@ -160,8 +168,23 @@ export default function AicoreIndexPage() {
                 <ArrowUpRight className="w-4 h-4 text-(--color-text-muted) group-hover:text-(--color-accent-purple-light) shrink-0" />
               </div>
               <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
-                Anahtar teslim kurulum: yapay zekâ sunucusundan kurumunuzun verisiyle
-                kalibrasyona, eğitimden gözetimli canlıya alışa.
+                Anahtar teslim On-Prem kurulum: yapay zekâ sunucusundan kurumunuzun
+                verisiyle kalibrasyona, eğitimden gözetimli canlıya alışa.
+              </p>
+            </Link>
+            <Link
+              href="/hizmetler/setup/aicore-cloud-ready"
+              className="group rounded-2xl border border-white/8 bg-white/2 hover:bg-white/4 hover:border-(--color-accent-purple-base)/30 transition-all p-6 cursor-pointer"
+            >
+              <div className="flex items-start justify-between gap-3 mb-4">
+                <h3 className="text-base font-semibold text-white tracking-tight group-hover:text-(--color-accent-purple-light) transition-colors">
+                  AICORE Cloud Ready Paketi
+                </h3>
+                <ArrowUpRight className="w-4 h-4 text-(--color-text-muted) group-hover:text-(--color-accent-purple-light) shrink-0" />
+              </div>
+              <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+                Maskeli Bulut kurulumu: GPU&apos;suz hafif altyapı, denetlenebilir veri
+                maskeleme, 1-2 haftada devreye alma.
               </p>
             </Link>
             <Link

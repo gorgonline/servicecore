@@ -242,5 +242,9 @@
   "hizmetler-support-aicore-destek": {
     "title": "AICORE Destek Paketleri | ServiceCore",
     "description": "AICore eklentileri için Silver, Gold ve Platinum yıllık destek paketleri — güncelleme, her güncelleme sonrası otomatik doğrulama ve periyodik yeniden kalibrasyon."
+  },
+  "hizmetler-setup-aicore-cloud-ready": {
+    "title": "AICORE Cloud Ready Paketi | ServiceCore",
+    "description": "Maskeli Bulut modunda AICore kurulum hizmeti — GPU'suz hafif altyapı, denetlenebilir veri maskeleme katmanı, kalibrasyon ve eğitimle 1-2 haftada devreye alma."
   }
 }

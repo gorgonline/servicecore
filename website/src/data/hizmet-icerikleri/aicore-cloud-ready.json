@@ -1,0 +1,91 @@
+{
+  "slug": "aicore-cloud-ready",
+  "code": "SCAICRCP",
+  "name": "AICORE Cloud Ready Paketi",
+  "nameEn": "AICORE Cloud Ready - Implementation Pack",
+  "category": "setup",
+  "categoryLabel": "Kurulum Hizmetleri",
+  "paymentTerm": "one-time",
+  "paymentTermLabel": "Tek seferlik",
+  "accent": "cyan",
+  "icon": "Rocket",
+  "hero": {
+    "eyebrow": "Setup · AICORE Cloud Ready",
+    "title": "Maskeli Bulut modunda hızlı AICore kurulumu",
+    "subtitle": "Bulut yapay zekâ modelleriyle çalışmak isteyen kurumlar için: GPU'suz hafif altyapı, denetlenebilir veri maskeleme ve kuruma özel kalibrasyonla 1-2 haftada devreye alma.",
+    "intro": "AICore eklentileri iki dağıtım modunda çalışır: yerinde kurulum (On-Prem) ve Maskeli Bulut. Cloud Ready, Maskeli Bulut modunun kurulum paketidir: kurum ortamına dil modeli kurulmaz; kişisel veriler denetlenebilir bir maskeleme katmanından geçtikten sonra tercih edilen bulut modeline (OpenAI vb.) gönderilir. Eklentiler her iki modda da aynıdır — Cloud Ready ile başlayıp dilediğinizde yerinde kuruluma geçebilirsiniz."
+  },
+  "sections": [
+    {
+      "type": "text",
+      "id": "giris",
+      "title": "Giriş",
+      "content": "Her kurumun yapay zekâ yolculuğu aynı yerden başlamaz. Bazı kurumlar GPU yatırımı yapmadan, hızla başlamak ister; veri hassasiyeti buna uygunsa Maskeli Bulut modu doğru başlangıçtır. Bu pakette kurum ortamına yalnızca hafif bir uygulama sunucusu kurulur; yapay zekâ hesaplaması bulut sağlayıcının modelinde yapılır. Kişisel verilerin korunması maskeleme katmanının işidir ve her maskeleme işlemi denetlenebilir şekilde kayıt altındadır."
+    },
+    {
+      "type": "list",
+      "id": "kesif",
+      "title": "1. Keşif ve Hazırlık",
+      "items": [
+        "Bulut sağlayıcı ve model seçimi (kurumun tercih ettiği API hesabı üzerinden)",
+        "Maskeleme kapsamının belirlenmesi: hangi alanlar kişisel veri sayılır, nasıl maskelenir",
+        "Tek denetimli internet çıkışının tanımlanması (yalnızca bulut yapay zekâ API'sine)",
+        "ServiceCore erişimi: eklenti bazlı yetkilendirilmiş servis hesabı"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "kurulum",
+      "title": "2. Uygulama Sunucusu Kurulumu",
+      "content": "GPU gerekmez: yapay zekâ katmanı hafif bir uygulama sunucusuna (8-16 çekirdek, 32-64 GB RAM) konteyner tabanlı kurulur. Mevcut sanallaştırma ortamında dakikalar içinde ayağa kalkar."
+    },
+    {
+      "type": "text",
+      "id": "maskeleme",
+      "title": "3. Maskeleme Katmanının Devreye Alınması",
+      "content": "Kişisel veriler (ad, e-posta, telefon, kimlik bilgileri vb.) buluta gitmeden önce maskeleme katmanında ayıklanır. Ne maskelendiği, ne zaman ve hangi kayıt için maskelendiği denetlenebilir şekilde loglanır — KVKK denetiminde 'ne dışarı çıktı?' sorusunun cevabı kayıtlardadır."
+    },
+    {
+      "type": "text",
+      "id": "veri",
+      "title": "4. Veri Bağlantısı ve Dizinleme",
+      "content": "Kayıt arşivi ve bilgi bankası bağlanır, arama dizinleri oluşturulur. Dizinler ve tüm yapay zekâ verileri kurum sunucusunda kalır; buluta yalnızca maskelenmiş sorgu içerikleri gider."
+    },
+    {
+      "type": "text",
+      "id": "kalibrasyon",
+      "title": "5. Kalibrasyon — bulutta da zorunlu",
+      "content": "Sık yapılan bir yanılgı: 'bulut modeli hazır gelir, ayar gerekmez.' Gerçek şu ki karar ayarları modelin nerede çalıştığına değil, kurumunuzun verisine bağlıdır. Cloud Ready'de de karar eşikleri kurumun kendi kayıtlarıyla ölçülür ve kuruma özel doğrulama seti oluşturulur — sonraki güncellemeler bu setle denetlenir."
+    },
+    {
+      "type": "list",
+      "id": "egitim",
+      "title": "6. Panel, Eğitim ve Canlıya Alış",
+      "items": [
+        "Onay paneli kurulumu ve SSO entegrasyonu",
+        "Teknisyen, onaycı ve yönetici eğitimleri",
+        "Gözetimli canlıya alış: ilk hafta yakın takip + başarı metrikleri"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "maliyet",
+      "title": "Kullanım Maliyeti Hakkında",
+      "content": "Bulut modelinin kullanım (token) ücreti, kurumun kendi API hesabına aittir ve sağlayıcıya ödenir — ServiceCore aracılık etmez, kullanım şeffaf biçimde kurumun kontrolündedir. Öngörülebilir sabit maliyet tercih eden kurumlar için On-Prem model önerilir."
+    },
+    {
+      "type": "text",
+      "id": "sure",
+      "title": "Süre ve Geçiş Yolu",
+      "content": "Tipik devreye alma süresi 1-2 haftadır. Eklentiler her iki dağıtım modunda da aynı olduğundan, Maskeli Bulut ile başlayan bir kurum dilediğinde yerinde kuruluma (On-Prem) geçebilir; kalibrasyon ve birikim taşınır."
+    }
+  ],
+  "cta": {
+    "title": "Hızlı başlayın, dilediğinizde içeri taşıyın",
+    "description": "Maskeli Bulut ile GPU yatırımı olmadan başlayalım; kurumunuz hazır olduğunda aynı eklentileri yerinde kuruluma taşıyalım.",
+    "primaryLabel": "Demo İste",
+    "primaryHref": "/demo",
+    "secondaryLabel": "On-Prem Üstünlükleri",
+    "secondaryHref": "/aicore/on-prem"
+  }
+}

@@ -14,7 +14,7 @@
       "description": "Sunucu hazırlığından AD entegrasyonuna, süreç şablonlarından SLA Policy'lerine kadar tüm başlangıç işlerini içine alan kurulum paketleri. Standart konfigürasyondan felaket kurtarmaya kadar her ölçekli kurumun ihtiyacını karşılar.",
       "icon": "Hammer",
       "accent": "blue",
-      "count": 6,
+      "count": 7,
       "href": "/hizmetler/setup"
     },
     {
@@ -176,6 +176,26 @@
       "whoFor": "AICore eklentilerini satın alan ve ölçülebilir şekilde canlıya almak isteyen tüm kurumlar",
       "icon": "Zap",
       "accentColor": "purple"
+    },
+    {
+      "slug": "aicore-cloud-ready",
+      "code": "SCAICRCP",
+      "name": "AICORE Cloud Ready Paketi",
+      "nameEn": "AICORE Cloud Ready - Implementation Pack",
+      "category": "setup",
+      "paymentTerm": "one-time",
+      "featured": true,
+      "hasDetailPage": true,
+      "tagline": "Maskeli Bulut modunda AICore kurulumu: GPU'suz hafif altyapı, denetlenebilir veri maskeleme, hızlı devreye alma.",
+      "shortDescription": "Bulut yapay zekâ modelleriyle (OpenAI vb.) çalışmak isteyen kurumlar için AICore kurulumu: hafif uygulama sunucusu, kişisel verileri denetlenebilir şekilde maskeleyen katman, veri bağlantısı, kalibrasyon ve eğitim — GPU yatırımı olmadan.",
+      "valueProps": [
+        "GPU gerekmez — hafif uygulama sunucusuyla 1-2 haftada devreye alma",
+        "Kişisel veriler buluta gitmeden denetlenebilir şekilde maskelenir",
+        "Aynı eklentiler, aynı kalibrasyon disiplini; dilerseniz sonradan yerinde kuruluma geçiş"
+      ],
+      "whoFor": "Veri hassasiyeti esnek, hızlı başlangıç isteyen veya GPU yatırımı yapmak istemeyen kurumlar",
+      "icon": "Rocket",
+      "accentColor": "cyan"
     },
     {
       "slug": "integration",
