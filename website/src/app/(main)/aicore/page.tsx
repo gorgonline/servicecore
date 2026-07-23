@@ -59,13 +59,6 @@ export default function AicoreIndexPage() {
           {intro.description}
         </p>
 
-        <Link
-          href="/aicore/on-prem"
-          className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-(--color-accent-purple-light) hover:text-white transition-colors cursor-pointer"
-        >
-          Neden On-Prem Yapay Zekâ? Üstünlükleri ve Maskeli Bulut karşılaştırması
-          <ArrowUpRight className="w-4 h-4" />
-        </Link>
 
         <section className="mt-20">
           <div className="flex items-baseline justify-between gap-6 mb-8">
@@ -100,6 +93,73 @@ export default function AicoreIndexPage() {
                 </p>
               </Link>
             ))}
+          </div>
+        </section>
+
+        <section className="mt-24">
+          <div className="relative rounded-3xl border border-(--color-accent-purple-base)/30 bg-linear-to-br from-(--color-accent-purple-base)/12 via-white/2 to-transparent overflow-hidden">
+            <div
+              className="absolute -top-24 -right-24 w-96 h-96 rounded-full pointer-events-none"
+              style={{
+                background: "radial-gradient(circle, rgba(168,85,247,0.25), transparent 70%)",
+                filter: "blur(80px)",
+              }}
+            />
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-8 p-8 md:p-12">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/10 mb-6">
+                  <Sparkles className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                  <span className="text-[10px] font-mono font-semibold tracking-[0.22em] text-(--color-accent-purple-light)">
+                    ON-PREM YAPAY ZEKÂ
+                  </span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-white">
+                  Rakiplerde yapay zekâ bulutta çalışır.{" "}
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-accent-purple-light) to-(--color-brand-accent)">
+                    AICore kurumunuzda.
+                  </span>
+                </h2>
+                <p className="mt-5 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-xl">
+                  AICore eklentileri, kurumunuzun kendi sunucusunda çalışan yerel
+                  dil modelleriyle gelir: veriniz dışarı çıkmaz, maliyetiniz
+                  kullanımla artmaz, sistem kapalı ağda bile çalışır. Bulut
+                  modelleriyle çalışmak isteyenler için denetlenebilir Maskeli
+                  Bulut seçeneği de hazırdır.
+                </p>
+                <div className="mt-8 flex flex-wrap items-center gap-3">
+                  <Link
+                    href="/aicore/on-prem"
+                    className="inline-flex items-center gap-2 h-11 px-6 rounded-full bg-(--color-brand-primary) text-white font-medium text-sm shadow-(--shadow-glow-primary) hover:shadow-(--shadow-glow-primary-strong) transition-all cursor-pointer"
+                  >
+                    On-Prem Üstünlüklerini İncele
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/hizmetler/setup/aicore-cloud-ready"
+                    className="inline-flex items-center gap-2 h-11 px-6 rounded-full border border-white/15 text-white/85 hover:text-white hover:border-white/30 font-medium text-sm transition-colors cursor-pointer"
+                  >
+                    Maskeli Bulut seçeneği
+                    <ArrowUpRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3 content-center">
+                {[
+                  { v: "0", l: "veri dışarı çıkar" },
+                  { v: "0", l: "kullanım başına ücret" },
+                  { v: "Kapalı ağ", l: "internetsiz tam işlev" },
+                  { v: "%100", l: "model kontrolü sizde" },
+                ].map((k) => (
+                  <div
+                    key={k.l}
+                    className="rounded-2xl border border-white/10 bg-(--color-surface-base)/60 backdrop-blur px-5 py-4"
+                  >
+                    <div className="text-2xl font-semibold text-white tracking-tight">{k.v}</div>
+                    <div className="mt-1 text-[11px] font-mono text-(--color-text-muted)">{k.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
