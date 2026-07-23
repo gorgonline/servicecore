@@ -1,6 +1,6 @@
 {
   "slug": "aicore-destek",
-  "code": "SCAIDSP",
+  "code": "SCAISSP–SCAIMCSP",
   "name": "AICORE Destek Paketleri",
   "nameEn": "AICORE Support Packages",
   "category": "support",
@@ -12,8 +12,8 @@
   "hero": {
     "eyebrow": "Support · AICORE",
     "title": "Yapay zekânız her zaman sağlıklı ve isabetli",
-    "subtitle": "AICore eklentileri için güncelleme, doğrulama ve kalibrasyon içeren yıllık bakım paketleri: AICORE Silver, Gold ve Platinum.",
-    "intro": "Yapay zekâ klasik yazılımdan farklı yaşar: davranışı, kurumunuzun verisiyle birlikte zaman içinde değişir. Sağlıklı kalması için sürüm güncellemesi tek başına yetmez; davranışın düzenli doğrulanması ve ayarların periyodik tazelenmesi gerekir. AICORE Destek Paketleri bu üç işi tek yıllık abonelikte toplar. Mevcut ServiceCore destek paketlerinizin tamamlayıcısıdır — yerine geçmez."
+    "subtitle": "AICore eklentileri için güncelleme, doğrulama ve kalibrasyon içeren dört yıllık bakım paketi: AICORE Silver, Gold, Platinum ve Mission Critical.",
+    "intro": "Yapay zekâ klasik yazılımdan farklı yaşar: davranışı, kurumunuzun verisiyle birlikte zaman içinde değişir. Sağlıklı kalması için sürüm güncellemesi tek başına yetmez; davranışın düzenli doğrulanması ve ayarların periyodik tazelenmesi gerekir. AICORE Destek Paketleri bu işleri dört kademeli yıllık abonelikte toplar — ServiceCore destek paketlerinizin (Silver/Gold/Platinum/Mission Critical) yapay zekâ karşılığıdır; onların yerine geçmez, yanına gelir."
   },
   "sections": [
     {
@@ -42,37 +42,153 @@
       ]
     },
     {
-      "type": "list",
-      "id": "silver",
-      "title": "AICORE Silver",
+      "type": "comparison",
+      "id": "paketler",
+      "title": "Dört Paket",
       "items": [
-        "İş saatleri içinde destek",
-        "Sürüm güncellemeleri + güncelleme sonrası otomatik doğrulama koşuları",
-        "Yılda 1 yeniden kalibrasyon",
-        "Yıllık sağlık ve isabet raporu"
+        {
+          "title": "AICORE Silver · SCAISSP",
+          "description": "Tek ya da az sayıda eklentiyle başlayan kurumlar için temel bakım: iş saatleri desteği, yıllık kalibrasyon ve güncelleme güvencesi."
+        },
+        {
+          "title": "AICORE Gold · SCAIGSP",
+          "description": "Birden çok eklentiyi aktif kullanan kurumlar için: telefon desteği, yılda iki kalibrasyon, çeyreklik sağlık raporu ve AI Health-Check."
+        },
+        {
+          "title": "AICORE Platinum · SCAIPSP",
+          "description": "Yapay zekâyı iş akışının parçası yapmış kurumlar için: genişletilmiş saatler, yüksek öncelikli müdahale, aylık rapor ve performans izleme."
+        },
+        {
+          "title": "AICORE Mission Critical · SCAIMCSP",
+          "description": "Yapay zekâsı kesintiye tahammülü olmayan kurumlar için: 7x24 kesintisiz kapsam, sınırsız kalibrasyon ve adanmış yapay zekâ uzmanı."
+        }
       ]
     },
     {
-      "type": "list",
-      "id": "gold",
-      "title": "AICORE Gold",
-      "items": [
-        "Öncelikli yanıt süreleri",
-        "Yılda 2 yeniden kalibrasyon",
-        "Çeyreklik sağlık raporu: isabet, kullanım ve zaman kazancı metrikleri",
-        "Karar ayarları için danışmanlık (eşik ve kapsam ayarlamaları)"
-      ]
-    },
-    {
-      "type": "list",
-      "id": "platinum",
-      "title": "AICORE Platinum",
-      "items": [
-        "Kritik olaylar için 7/24 ulaşılabilir destek hattı",
-        "İhtiyaç oldukça yeniden kalibrasyon (sınırsız)",
-        "Aylık sağlık raporu + dönemsel değerlendirme toplantısı",
-        "Adanmış yapay zekâ uzmanı",
-        "Yeni AICore eklentisi devreye alımında öncelik"
+      "type": "table",
+      "id": "karsilastirma",
+      "title": "Paket Karşılaştırma Tablosu",
+      "intro": "Dört paketin kapsamı yan yana. Ticket hakkı ve çalışma saatleri ServiceCore destek paketleriyle aynı merdiveni izler; kalibrasyon, doğrulama ve sağlık raporu satırları AICore'a özgüdür.",
+      "headers": [
+        "",
+        "Silver",
+        "Gold",
+        "Platinum",
+        "Mission Critical"
+      ],
+      "rows": [
+        [
+          "Ürün kodu",
+          "SCAISSP",
+          "SCAIGSP",
+          "SCAIPSP",
+          "SCAIMCSP"
+        ],
+        [
+          "Yıllık ticket hakkı",
+          "15",
+          "30",
+          "60",
+          "60"
+        ],
+        [
+          "Çalışma saatleri kapsamı",
+          "5x8",
+          "5x8",
+          "7x8",
+          "7x24 kesintisiz"
+        ],
+        [
+          "E-posta ve Service Portal ile destek",
+          "✓",
+          "✓",
+          "✓",
+          "✓"
+        ],
+        [
+          "Telefon desteği (444 CORE)",
+          "—",
+          "✓",
+          "✓",
+          "✓"
+        ],
+        [
+          "Online anlık mesaj desteği",
+          "—",
+          "—",
+          "✓",
+          "✓"
+        ],
+        [
+          "Sürüm güncellemeleri (Continuous Delivery)",
+          "✓",
+          "✓",
+          "✓",
+          "✓"
+        ],
+        [
+          "Güncelleme sonrası otomatik doğrulama koşusu",
+          "✓",
+          "✓",
+          "✓",
+          "✓"
+        ],
+        [
+          "Yıllık yeniden kalibrasyon",
+          "1",
+          "2",
+          "4",
+          "Sınırsız"
+        ],
+        [
+          "Sağlık ve isabet raporu",
+          "Yıllık",
+          "Çeyreklik",
+          "Aylık",
+          "Aylık + dönemsel değerlendirme"
+        ],
+        [
+          "AI Health-Check",
+          "—",
+          "✓",
+          "✓",
+          "✓"
+        ],
+        [
+          "Karar ayarı (eşik) danışmanlığı",
+          "—",
+          "✓",
+          "✓",
+          "✓"
+        ],
+        [
+          "Yüksek öncelikli müdahale",
+          "—",
+          "—",
+          "✓",
+          "✓"
+        ],
+        [
+          "Model performansı izleme",
+          "—",
+          "—",
+          "✓",
+          "✓"
+        ],
+        [
+          "Yeni eklenti devreye alımında öncelik",
+          "—",
+          "—",
+          "✓",
+          "✓"
+        ],
+        [
+          "Adanmış yapay zekâ uzmanı",
+          "—",
+          "—",
+          "—",
+          "✓"
+        ]
       ]
     },
     {

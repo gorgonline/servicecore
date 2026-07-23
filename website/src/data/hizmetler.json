@@ -556,19 +556,19 @@
     },
     {
       "slug": "aicore-destek",
-      "code": "SCAIDSP",
+      "code": "SCAISSP–SCAIMCSP",
       "name": "AICORE Destek Paketleri",
       "nameEn": "AICORE Support Packages",
       "category": "support",
       "paymentTerm": "annual",
       "featured": true,
       "hasDetailPage": true,
-      "tagline": "Yapay zekânızın sağlıklı ve isabetli kalması için yıllık bakım: güncelleme, doğrulama ve kalibrasyon tek abonelikte.",
-      "shortDescription": "AICore eklentileri için Silver, Gold ve Platinum yıllık destek paketleri: sürüm güncellemeleri, her güncelleme sonrası otomatik doğrulama koşusu, periyodik yeniden kalibrasyon ve sağlık raporları.",
+      "tagline": "AICore eklentileri için dört yıllık bakım paketi: Silver, Gold, Platinum ve Mission Critical.",
+      "shortDescription": "AICore eklentileri için dört kademeli yıllık destek: sürüm güncellemeleri, her güncelleme sonrası otomatik doğrulama koşusu, periyodik yeniden kalibrasyon, sağlık raporları ve Mission Critical'da 7x24 kesintisiz kapsam.",
       "valueProps": [
-        "Her güncelleme sonrası otomatik doğrulama — davranış değişimi gözden kaçmaz",
-        "Periyodik yeniden kalibrasyon ve isabet/sağlık raporları",
-        "Silver · Gold · Platinum kademeleriyle ihtiyaca göre seviye"
+        "Dört kademe: Silver (SCAISSP) · Gold (SCAIGSP) · Platinum (SCAIPSP) · Mission Critical (SCAIMCSP)",
+        "Her pakette güncelleme sonrası otomatik doğrulama — davranış değişimi gözden kaçmaz",
+        "Kademeye göre yeniden kalibrasyon, sağlık raporu ve 7x24 kapsam"
       ],
       "whoFor": "AICore eklentisi canlıda olan tüm kurumlar",
       "icon": "ShieldCheck",
