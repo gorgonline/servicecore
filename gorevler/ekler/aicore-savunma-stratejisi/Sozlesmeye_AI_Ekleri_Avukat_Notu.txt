@@ -1,0 +1,148 @@
+SÖZLEŞMEYE AI EKLERİ — AVUKAT İÇİN ÖNERİ NOTU
+
+AMAÇ: Mevcut "Servicecore Ürün Yıllık Kiralama ve Hizmet Satış
+Sözleşmesi"ne, yapay zekâ ajanları çağında ortaya çıkan yeni riskleri
+(ürünün AI ile çözülmesi/klonlanması, lisans bypass'ı, koltuk ikamesi)
+kapatacak madde/bent önerileri. İŞ TARAFI TASLAĞIDIR; nihai hukuki dil
+şirket avukatınca yazılmalıdır. Referanslar Erman'ın gönderdiği sözleşme
+paketinin madde numaralarına yapılmıştır. (24.07.2026)
+
+
+0) MEVCUT SÖZLEŞME NEYİ KARŞILIYOR, BOŞLUK NEREDE
+
+ZATEN GÜÇLÜ (korunmalı):
+- Madde 3 (Lisans/FMH): FSEK m.16 atfı, tersine mühendislik/çoğaltma/kaynak
+  koda ulaşma yasağı, DB yapısı ve işleyiş mantığının FMH kapsamında olması.
+- Madde 6 (Gizlilik): süresiz gizlilik + doğrudan/dolaylı zarar tazmini.
+- Madde 2.9: "named technician" başına ücretlendirme.
+
+AI ÇAĞI BOŞLUKLARI (mevcut metin insan kullanıcı varsayar):
+1. "Kullanıcı" tanımı insanı varsayar → ajan/otomatik erişim tanımsız.
+2. Named technician başına ücret → ajan koltuk sayısını düşürürse gelir
+   korumasız (multiplexing).
+3. Tersine mühendislik yasağı var ama "yapıyı/çıktıyı AI'a girdi vermek"
+   açıkça sayılmamış → "ben çözmedim, AI çözdü" boşluğu.
+4. Çıktı/veri ile model eğitimi/damıtma yasağı yok.
+5. Doğrudan DB erişimi ve PoC ortamından yapı çıkarma özel düzenlenmemiş.
+
+
+ÖNERİ 1 — MADDE 1'E (TANIMLAR) YENİ TANIMLAR
+
+"Otomatik Erişim": Gerçek kişi kullanıcının ürün arayüzü üzerinden
+gerçekleştirdiği kullanım dışında; yazılım, betik, robot, yapay zekâ ajanı
+veya benzeri otomatik araçlarla ürünün arayüzlerine, API'lerine,
+veritabanına veya çıktılarına erişilmesi ya da işlem yaptırılması.
+
+"Yapay Zekâ Sistemi": Makine öğrenmesi modeli, büyük dil modeli, yapay zekâ
+ajanı veya bunları barındıran her tür yazılım/hizmet.
+
+
+ÖNERİ 2 — MADDE 2.9'A EK (KOLTUK İKAMESİ / MULTIPLEXING)
+
+Mevcut boşluk: Ücret named technician sayısına bağlı; bir ajan az sayıda
+hesapla çok kullanıcının işini yaparsa lisans sayısı ve gelir düşer.
+
+2.9.1 (yeni): Teknik Tanımlı Kullanıcı lisansı yalnızca tek bir gerçek
+kişinin olağan çalışma kapasitesindeki kullanımını kapsar. Müşteri; donanım,
+yazılım, entegrasyon katmanı, havuz hesabı veya yapay zekâ ajanı dahil
+herhangi bir aracı kullanarak, ürüne erişen gerçek kullanıcı sayısını
+azaltılmış göstermek ve gereken lisans sayısını düşürmek amacıyla hareket
+edemez (çoklama / multiplexing). Araya konulan katman lisans ihtiyacını
+ortadan kaldırmaz.
+
+2.9.2 (yeni): Kayıt işleme eylemi (kayıt cevaplama, kapatma, durum
+değiştirme, atama, eskalasyon) gerçekleştiren her yapay zekâ ajanı / makine
+kimliği için, insan kullanıcı lisanslarından ayrı olarak yıllık DİJİTAL
+TEKNİSYEN LİSANSI gereklidir. Bu lisans ajan kimliği başına sabittir; işlem
+hacmine bağlı değildir. Salt-okur (raporlama/analiz) erişim bu yükümlülüğün
+dışındadır.
+
+Not: Sektörde (Microsoft, SAP) yerleşik "multiplexing / indirect access"
+hükmünün ITSM'e uyarlanmış hâlidir; SAP-Diageo davası emsaldir.
+
+
+ÖNERİ 3 — MADDE 3'E EK (FSEK — AI'A GİRDİ VERMEK = İFŞA/İŞLEME)
+
+Mevcut boşluk: Madde 3 tersine mühendisliği yasaklar ama yapının/çıktının
+bir yapay zekâya analiz/yeniden üretim için verilmesini açıkça saymaz.
+
+3.x (yeni): Ürünün kaynak veya nesne kodları, veritabanı şeması, veri
+modeli, kullanıcı arayüzü, işleyiş mantığı, yapılandırma dosyaları veya
+bunlardan türetilmiş bilgilerin herhangi bir Yapay Zekâ Sistemi'ne girdi
+olarak verilmesi; bu yolla analiz edilmesi, özetlenmesi, yeniden üretilmesi
+veya benzeri bir eserin oluşturulması, FSEK m.16 anlamında izinsiz işleme ve
+Madde 3'teki tersine mühendislik yasağının ihlali sayılır. Müşteri, bu
+fiillerin gerçek kişi eliyle mi yoksa otomatik araç/yapay zekâ eliyle mi
+yapıldığına bakılmaksızın sorumludur.
+
+Gerekçe: "AI çözdü, ben çözmedim" savunmasını kapatır; FSEK m.16 (işleme
+hakkı) ve mevcut m.3 yasaklarına doğrudan bağlanır.
+
+
+ÖNERİ 4 — MADDE 3'E EK (MODEL EĞİTİMİ / DAMITMA YASAĞI)
+
+3.y (yeni): Müşteri; üründen, API'lerinden, arayüzlerinden veya
+çıktılarından elde edilen veri, öneri, şema ve yapıları, bir Yapay Zekâ
+Sistemi'nin eğitilmesi, ince ayarı (fine-tuning), damıtılması (distillation)
+veya değerlendirme/karşılaştırma setine dahil edilmesi amacıyla kullanamaz;
+üçüncü kişilere bu amaçla kullandıramaz. Müşterinin kendi iş verileri (kendi
+kayıtlarının içeriği) üzerindeki hakları saklıdır; bu yasak ürünün yapısına,
+mantığına ve ürettiği çıktılara ilişkindir.
+
+Not: Son cümle kritik — "kendi verim saklı" ayrımı yazılmazsa madde
+müzakerede tümden reddedilir.
+
+
+ÖNERİ 5 — MADDE 3'E / MADDE 10.2'YE EK (DOĞRUDAN DB ERİŞİMİ + RESMÎ KAPI)
+
+3.z (yeni): Ürünün veritabanına, ürün arayüzleri ve Servicecore'un sağladığı
+resmî raporlama/entegrasyon katmanı dışında doğrudan erişim (sorgu, dışa
+aktarım, şema inceleme) desteklenmez ve Madde 3 kapsamındaki yasaklara
+tabidir. Bu yolla elde edilen yapısal bilginin ifşası veya yeniden üretimi
+ihlal oluşturur.
+
+Uyum: Madde 10.2 zaten "çevresel/konfigürasyon değişikliklerinin Servicecore
+sorumluluğunda olmadığını" söylüyor; bu bent onu bütünler.
+
+
+ÖNERİ 6 — POC/DEĞERLENDİRME İÇİN ÖZEL HÜKÜM (ayrı PoC sözleşmesine)
+
+Mevcut boşluk: PoC/deneme ortamı en yüksek sızıntı riski; ürün henüz
+satılmadan tam kurulum müşteri ortamında duruyor.
+
+(PoC sözleşmesine): Değerlendirme (PoC) kurulumu süre kilitli, sınırlı
+kapsamlı ve yalnız değerlendirme amaçlıdır; tam ürün yerine sınırlı
+"değerlendirme sürümü" kurulabilir. PoC ortamının kendisi, çıktıları ve
+ekran görüntüleri dahil hiçbir materyal, Öneri 3 ve 4 kapsamındaki amaçlarla
+kullanılamaz. PoC süresi sonunda kurulum ve tüm kopyalar (yedekler dahil)
+kalıcı olarak imha edilir; yazılı imha teyidi verilir. Servicecore'un
+kurulumu uzaktan devre dışı bırakma hakkı saklıdır.
+
+
+ÖNERİ 7 — DENETİM HAKKI (Madde 2 veya yeni madde)
+
+(yeni): Servicecore, makul önceden bildirimle ve yılda bir defayı aşmamak
+üzere, lisans uyumunu (kullanıcı sayısı, Otomatik Erişim, Dijital Teknisyen
+Lisansı) doğrulamak amacıyla ilgili kayıt ve logların incelenmesini talep
+edebilir.
+
+Not: Öneri 2'nin fiilî yaptırım dayanağı; ürün içi otomasyon-tespiti
+telemetrisiyle birlikte çalışır.
+
+
+AVUKATA İLETİM NOTLARI
+
+1. Öncelik sırası: Öneri 3 + 4 (FSEK/AI ifşa ve eğitim yasağı) en kritik ve
+   en kolay kabul edilenler; Öneri 2 (Dijital Teknisyen Lisansı) ticari
+   müzakere gerektirir; Öneri 6 (PoC) ayrı sözleşmeye.
+2. Mevcut müşteriler: Bu bentler yeni sözleşme/yenileme döneminde devreye
+   alınır; mevcutlara ek protokolle (Madde 13 "ek protokol" mekanizması)
+   eklenebilir.
+3. Müzakerede korunacak cümle: Öneri 4'teki "müşterinin kendi iş verisi
+   saklıdır" — bu olmadan madde satış engeline döner.
+4. Teknik-hukuki eşleşme: Bu maddeler tek başına dava dayanağıdır; fiilî
+   önleme ürün içi kilitlerdir (bkz. Backend İş Paketi — kapasite tavanı,
+   API kısıtı, otomasyon bloğu). Sözleşme + ürün birlikte çalışır.
+5. FSEK dışı dayanaklar: TTK haksız rekabet (m.54 vd.), TBK sözleşme ihlali,
+   ticari sır korumasının da metne dayanak yapılması avukatın
+   değerlendirmesine bırakılmıştır.

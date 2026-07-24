@@ -548,6 +548,49 @@
       ]
     },
     {
+      "slug": "kbcore",
+      "name": "KBCoreAI",
+      "tier": "production",
+      "tagline": "Eksik bilgi bankası içeriklerini kurumsal şablonlara göre düzenler.",
+      "description": "Eksik bilgi bankası içeriklerini kurumsal şablonlara göre düzenler, eksik bölümleri tamamlayarak yayın hazırlığı yapar.",
+      "icon": "FileCheck",
+      "accent": "sky",
+      "year": 2027,
+      "release": "Eylül 2027",
+      "whatItDoes": [
+        "KB envanterini kurumsal şablona göre tarar; uyumlu, kısmen uyumlu ve şablon dışı olarak sınıflandırır.",
+        "Eksik bölümleri (sorun giderme, ilgili varlıklar, atıflar) ticket geçmişinden besleyerek tamamlar.",
+        "Toplu uygulama ile düşük uyumlu makaleleri tek seferde v2 taslağına dönüştürür."
+      ],
+      "howItWorks": [
+        {
+          "label": "Şablon taraması",
+          "detail": "Tüm KB makaleleri kurumsal şablona karşı bölüm bazında ölçülür, uyum yüzdesi çıkarılır."
+        },
+        {
+          "label": "Eksiklik gerekçesi",
+          "detail": "Hangi bölümün eksik olduğu açıkça etiketlenir, kuyruğa öncelik atanır."
+        },
+        {
+          "label": "Geçmişten besleme",
+          "detail": "İlgili ticket'lar, varlıklar ve önceki çözümler eksik bölümlere atıfla yerleştirilir."
+        },
+        {
+          "label": "Editörle uzlaşma",
+          "detail": "Sadece eksikleri ekle, editörde aç veya doğrudan yayınla seçenekleri sunulur."
+        }
+      ],
+      "modules": [
+        "/bilgi-bankasi",
+        "/self-servis-portal",
+        "/problem-yonetimi",
+        "/servis-katalog-yonetimi",
+        "/surekli-iyilestirme",
+        "/yonetim-paneli",
+        "/esm"
+      ]
+    },
+    {
       "slug": "sentimentcore",
       "name": "SentimentCoreAI",
       "tier": "production",
@@ -589,49 +632,6 @@
         "/yonetim-paneli",
         "/surekli-iyilestirme",
         "/mobil-servis-yonetimi",
-        "/esm"
-      ]
-    },
-    {
-      "slug": "kbcore",
-      "name": "KBCoreAI",
-      "tier": "production",
-      "tagline": "Eksik bilgi bankası içeriklerini kurumsal şablonlara göre düzenler.",
-      "description": "Eksik bilgi bankası içeriklerini kurumsal şablonlara göre düzenler, eksik bölümleri tamamlayarak yayın hazırlığı yapar.",
-      "icon": "FileCheck",
-      "accent": "sky",
-      "year": 2027,
-      "release": "Eylül 2027",
-      "whatItDoes": [
-        "KB envanterini kurumsal şablona göre tarar; uyumlu, kısmen uyumlu ve şablon dışı olarak sınıflandırır.",
-        "Eksik bölümleri (sorun giderme, ilgili varlıklar, atıflar) ticket geçmişinden besleyerek tamamlar.",
-        "Toplu uygulama ile düşük uyumlu makaleleri tek seferde v2 taslağına dönüştürür."
-      ],
-      "howItWorks": [
-        {
-          "label": "Şablon taraması",
-          "detail": "Tüm KB makaleleri kurumsal şablona karşı bölüm bazında ölçülür, uyum yüzdesi çıkarılır."
-        },
-        {
-          "label": "Eksiklik gerekçesi",
-          "detail": "Hangi bölümün eksik olduğu açıkça etiketlenir, kuyruğa öncelik atanır."
-        },
-        {
-          "label": "Geçmişten besleme",
-          "detail": "İlgili ticket'lar, varlıklar ve önceki çözümler eksik bölümlere atıfla yerleştirilir."
-        },
-        {
-          "label": "Editörle uzlaşma",
-          "detail": "Sadece eksikleri ekle, editörde aç veya doğrudan yayınla seçenekleri sunulur."
-        }
-      ],
-      "modules": [
-        "/bilgi-bankasi",
-        "/self-servis-portal",
-        "/problem-yonetimi",
-        "/servis-katalog-yonetimi",
-        "/surekli-iyilestirme",
-        "/yonetim-paneli",
         "/esm"
       ]
     },
@@ -1005,52 +1005,6 @@
       ]
     },
     {
-      "slug": "shiftcore",
-      "name": "ShiftCoreAI",
-      "tier": "beta",
-      "tagline": "İş yükünü analiz ederek vardiya planlamasını yapar.",
-      "description": "İş yükünü analiz ederek Servicecore'un vardiya planlamasını yapar.",
-      "icon": "Clock",
-      "accent": "amber",
-      "year": 2027,
-      "release": "Beta — Yol Haritası",
-      "whatItDoes": [
-        "Önümüzdeki haftanın ticket yükünü gün × vardiya bazında tahmin eder; pik saatleri ve günleri çıkarır.",
-        "Mevcut planı tahmin ile karşılaştırır, kapasite eksikliklerini ve riskli vardiyaları işaretler.",
-        "Yasal çalışma sınırları ve tükenme sinyallerini koruyarak somut vardiya değişikliği önerir."
-      ],
-      "howItWorks": [
-        {
-          "label": "Yük tahmini",
-          "detail": "Geçmiş 12 hafta + sezonsallık + bilinen değişiklikler ile gün × vardiya yük yüzdesi çıkarılır."
-        },
-        {
-          "label": "Beceri eşleşmesi",
-          "detail": "Vardiya başına gerekli yetkinlikler ile teknisyen profilleri eşleştirilir."
-        },
-        {
-          "label": "Kısıt kontrolü",
-          "detail": "Yasal saat sınırları, ardışık gün, izin ve tükenme skoru kontrol edilir."
-        },
-        {
-          "label": "Öneri + bildirim",
-          "detail": "Uygulanabilir tek tıklık değişiklik üretilir, etkilenen teknisyene otomatik bildirim gönderilir."
-        }
-      ],
-      "modules": [
-        "/gorev-yonetimi",
-        "/olay-yonetimi",
-        "/servis-seviye-yonetimi",
-        "/raporlama-yonetimi",
-        "/yonetim-paneli",
-        "/servis-otomasyonu",
-        "/etkilesim-yonetimi",
-        "/mobil-servis-yonetimi",
-        "/surekli-iyilestirme",
-        "/esm"
-      ]
-    },
-    {
       "slug": "auditcore",
       "name": "AuditCoreAI",
       "tier": "beta",
@@ -1282,52 +1236,6 @@
       ]
     },
     {
-      "slug": "coachcore",
-      "name": "CoachCoreAI",
-      "tier": "beta",
-      "tagline": "Teknisyen performansını analiz ederek kişiye özel gelişim önerir.",
-      "description": "Çözüm süreleri, müşteri geri bildirimleri ve etkileşim kalitesinden teknisyen başına gelişim alanları çıkarır; kişiye özel koçluk önerileri ve eğitim rotaları üretir.",
-      "icon": "GraduationCap",
-      "accent": "purple",
-      "year": 2027,
-      "release": "Beta — Yol Haritası",
-      "whatItDoes": [
-        "Her teknisyen için 5 eksenli yetkinlik radarı çıkarır: teknik beceri, çözüm hızı, iletişim tonu, müşteri empatisi, takım çalışması.",
-        "3 aylık kişisel hedef, önerilen eğitim modülleri ve uyumlu bir mentor önerir; eylem planını 12 haftaya yayar.",
-        "İlerlemeyi ToneCoreAI, SentimentCoreAI ve çözüm verisi üzerinden gerçek vakalarla ölçer — soyut değil somut."
-      ],
-      "howItWorks": [
-        {
-          "label": "Performans okuması",
-          "detail": "Son 6 ay çözüm, etkileşim ve geri bildirim verisi yetkinlik eksenlerine çevrilir."
-        },
-        {
-          "label": "Hedef belirleme",
-          "detail": "Çeyrek başı + sektör/bant ortalaması üzerinden gerçekçi 3 ay hedefi konulur."
-        },
-        {
-          "label": "Eğitim & mentor eşleştirmesi",
-          "detail": "Uygun atölye/video/okuma modülleri ve daha önce benzer profil yetiştirmiş mentor önerilir."
-        },
-        {
-          "label": "Somut ilerleme",
-          "detail": "Plan adımları gerçek vakaların ToneCoreAI / SentimentCoreAI sinyaliyle ölçülür, koçluk verisi şeffaf kalır."
-        }
-      ],
-      "modules": [
-        "/gorev-yonetimi",
-        "/etkilesim-yonetimi",
-        "/olay-yonetimi",
-        "/istek-yonetimi",
-        "/servis-seviye-yonetimi",
-        "/raporlama-yonetimi",
-        "/yonetim-paneli",
-        "/bilgi-bankasi",
-        "/surekli-iyilestirme",
-        "/esm"
-      ]
-    },
-    {
       "slug": "projectcore",
       "name": "ProjectCoreAI",
       "tier": "beta",
@@ -1458,6 +1366,98 @@
         "/yonetim-paneli",
         "/raporlama-yonetimi",
         "/entegrasyon-yonetimi"
+      ]
+    },
+    {
+      "slug": "shiftcore",
+      "name": "ShiftCoreAI",
+      "tier": "beta",
+      "tagline": "İş yükünü analiz ederek vardiya planlamasını yapar.",
+      "description": "İş yükünü analiz ederek Servicecore'un vardiya planlamasını yapar.",
+      "icon": "Clock",
+      "accent": "amber",
+      "year": 2027,
+      "release": "Beta — Yol Haritası",
+      "whatItDoes": [
+        "Önümüzdeki haftanın ticket yükünü gün × vardiya bazında tahmin eder; pik saatleri ve günleri çıkarır.",
+        "Mevcut planı tahmin ile karşılaştırır, kapasite eksikliklerini ve riskli vardiyaları işaretler.",
+        "Yasal çalışma sınırları ve tükenme sinyallerini koruyarak somut vardiya değişikliği önerir."
+      ],
+      "howItWorks": [
+        {
+          "label": "Yük tahmini",
+          "detail": "Geçmiş 12 hafta + sezonsallık + bilinen değişiklikler ile gün × vardiya yük yüzdesi çıkarılır."
+        },
+        {
+          "label": "Beceri eşleşmesi",
+          "detail": "Vardiya başına gerekli yetkinlikler ile teknisyen profilleri eşleştirilir."
+        },
+        {
+          "label": "Kısıt kontrolü",
+          "detail": "Yasal saat sınırları, ardışık gün, izin ve tükenme skoru kontrol edilir."
+        },
+        {
+          "label": "Öneri + bildirim",
+          "detail": "Uygulanabilir tek tıklık değişiklik üretilir, etkilenen teknisyene otomatik bildirim gönderilir."
+        }
+      ],
+      "modules": [
+        "/gorev-yonetimi",
+        "/olay-yonetimi",
+        "/servis-seviye-yonetimi",
+        "/raporlama-yonetimi",
+        "/yonetim-paneli",
+        "/servis-otomasyonu",
+        "/etkilesim-yonetimi",
+        "/mobil-servis-yonetimi",
+        "/surekli-iyilestirme",
+        "/esm"
+      ]
+    },
+    {
+      "slug": "coachcore",
+      "name": "CoachCoreAI",
+      "tier": "beta",
+      "tagline": "Teknisyen performansını analiz ederek kişiye özel gelişim önerir.",
+      "description": "Çözüm süreleri, müşteri geri bildirimleri ve etkileşim kalitesinden teknisyen başına gelişim alanları çıkarır; kişiye özel koçluk önerileri ve eğitim rotaları üretir.",
+      "icon": "GraduationCap",
+      "accent": "purple",
+      "year": 2027,
+      "release": "Beta — Yol Haritası",
+      "whatItDoes": [
+        "Her teknisyen için 5 eksenli yetkinlik radarı çıkarır: teknik beceri, çözüm hızı, iletişim tonu, müşteri empatisi, takım çalışması.",
+        "3 aylık kişisel hedef, önerilen eğitim modülleri ve uyumlu bir mentor önerir; eylem planını 12 haftaya yayar.",
+        "İlerlemeyi ToneCoreAI, SentimentCoreAI ve çözüm verisi üzerinden gerçek vakalarla ölçer — soyut değil somut."
+      ],
+      "howItWorks": [
+        {
+          "label": "Performans okuması",
+          "detail": "Son 6 ay çözüm, etkileşim ve geri bildirim verisi yetkinlik eksenlerine çevrilir."
+        },
+        {
+          "label": "Hedef belirleme",
+          "detail": "Çeyrek başı + sektör/bant ortalaması üzerinden gerçekçi 3 ay hedefi konulur."
+        },
+        {
+          "label": "Eğitim & mentor eşleştirmesi",
+          "detail": "Uygun atölye/video/okuma modülleri ve daha önce benzer profil yetiştirmiş mentor önerilir."
+        },
+        {
+          "label": "Somut ilerleme",
+          "detail": "Plan adımları gerçek vakaların ToneCoreAI / SentimentCoreAI sinyaliyle ölçülür, koçluk verisi şeffaf kalır."
+        }
+      ],
+      "modules": [
+        "/gorev-yonetimi",
+        "/etkilesim-yonetimi",
+        "/olay-yonetimi",
+        "/istek-yonetimi",
+        "/servis-seviye-yonetimi",
+        "/raporlama-yonetimi",
+        "/yonetim-paneli",
+        "/bilgi-bankasi",
+        "/surekli-iyilestirme",
+        "/esm"
       ]
     }
   ]

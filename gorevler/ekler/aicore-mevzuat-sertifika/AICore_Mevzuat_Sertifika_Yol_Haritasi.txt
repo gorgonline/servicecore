@@ -10,10 +10,10 @@ geldiğinde madde bazlı hukuk görüşü alınmalıdır. 24.07.2026)
 - AB AI Act yürürlükte ve kademeli sıkılaşıyor. Bizi doğrudan bağlaması
   için AB'ye satış veya AB operasyonlu müşteri gerekir. 4 ürün kartımız
   AB gözüyle işaretlenmeli (Bölüm 3).
-- Asıl fırsat gönüllü sertifika: ISO/IEC 42001 (AI Yönetim Sistemi).
-  Kurumsal ihalelerde sorulmaya başlandı (AB RFP'lerinin ~%40'ı). Mevcut
-  iç doğrulama/mühür disiplinimiz standardın istediklerinin büyük kısmını
-  fiilen karşılıyor — bizim için sıfırdan inşaat değil, belgeleme işi.
+- ISO/IEC 42001 bir KORUMA aracı DEĞİLDİR — satış/güven sinyalidir (Erman
+  notu). Bu sertifika bizi IP hırsızlığına, bypass'a veya koltuk ikamesine
+  karşı KORUMAZ; bunların cevabı ürün kilidi + sözleşmedir. ISO 42001'in tek
+  işlevi kurumsal ihalede belge göstermek — opsiyonel, önceliği düşük.
 
 
 2) AB AI ACT — DURUM VE TAKVİM
@@ -68,7 +68,13 @@ Pratik sonuç: Türkiye satışında bugün engel yok. AB bağlantılı satışt
   denetlenebilir kayıt mimarimiz bu mantığın çekirdeğini zaten uyguluyor.
 
 
-5) ISO/IEC 42001 — SERTİFİKA FIRSATI
+5) ISO/IEC 42001 — SERTİFİKA (OPSİYONEL SATIŞ SİNYALİ, KORUMA DEĞİL)
+
+ÖNEMLİ ÇERÇEVE (Erman): Bu sertifika bizi hukuki olarak KORUMAZ — IP
+hırsızlığına, ürün klonlanmasına veya lisans bypass'ına karşı hiçbir
+yaptırımı yoktur. Yalnızca kurumsal ihalede güven/uygunluk göstergesidir.
+Aşağıdaki içerik "istenirse yapılır" niteliğinde referanstır; koruma
+gündemi savunma stratejisi + backend kilitleridir.
 
 Ne: Dünyanın ilk AI Yönetim Sistemi standardı (Aralık 2023). ISO 27001'in
 AI kardeşi; kurumu sertifikalar. Akredite kuruluşlar verir — BSI, TÜV,
