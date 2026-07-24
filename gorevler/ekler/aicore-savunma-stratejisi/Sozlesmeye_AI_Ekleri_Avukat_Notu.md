@@ -15,7 +15,9 @@
 - Madde 3 (Lisans/FMH): FSEK m.16 atfı, tersine mühendislik/çoğaltma/kaynak
   koda ulaşma yasağı, DB yapısı ve işleyiş mantığının FMH kapsamında olması.
 - Madde 6 (Gizlilik): süresiz gizlilik + doğrudan/dolaylı zarar tazmini.
-- Madde 2.9: "named technician" (Teknik Tanımlı Kullanıcı) başına ücretlendirme.
+- Madde 2 — "Teknik Tanımlı Kullanıcı" (named technician) başına
+  ücretlendirme bendi (sayımımızla 2.8; kesin numara imzalı nüshadan teyit
+  edilmeli).
 
 **AI çağı boşlukları (mevcut metin insan kullanıcı varsayar):**
 1. "Kullanıcı" tanımı insanı varsayar → **ajan/otomatik erişim** tanımsız.
@@ -43,12 +45,14 @@ Sözleşmede ayrı bir tanımlar bölümü yoksa Madde 3 başına eklenebilir.
 > **"Yapay Zekâ Sistemi":** Makine öğrenmesi modeli, büyük dil modeli, yapay
 > zekâ ajanı veya bunları barındıran her tür yazılım/hizmet.
 
-## Öneri 2 — Madde 2.9'a ek (koltuk ikamesi / multiplexing)
+## Öneri 2 — Madde 2'nin "Teknik Tanımlı Kullanıcı" bendine ek (koltuk ikamesi / multiplexing)
 
 *Mevcut boşluk:* Ücret named technician sayısına bağlı; bir ajan az sayıda
 hesapla çok kullanıcının işini yaparsa lisans sayısı ve gelir düşer.
+*(Yeni bent numaralarını — 2.8.1/2.8.2 veya 2.11/2.12 — avukat belirlesin;
+aşağıda (a)/(b) olarak verilmiştir.)*
 
-> **2.9.1 (yeni):** Teknik Tanımlı Kullanıcı lisansı yalnızca tek bir gerçek
+> **(a) (yeni bent):** Teknik Tanımlı Kullanıcı lisansı yalnızca tek bir gerçek
 > kişinin olağan çalışma kapasitesindeki kullanımını kapsar. Müşteri;
 > donanım, yazılım, entegrasyon katmanı, havuz hesabı veya yapay zekâ ajanı
 > dahil herhangi bir aracı kullanarak, ürüne erişen gerçek kullanıcı sayısını
@@ -56,7 +60,7 @@ hesapla çok kullanıcının işini yaparsa lisans sayısı ve gelir düşer.
 > edemez (çoklama / *multiplexing*). Araya konulan katman lisans ihtiyacını
 > ortadan kaldırmaz.
 >
-> **2.9.2 (yeni):** Kayıt işleme eylemi (kayıt cevaplama, kapatma, durum
+> **(b) (yeni bent):** Kayıt işleme eylemi (kayıt cevaplama, kapatma, durum
 > değiştirme, atama, eskalasyon) gerçekleştiren her yapay zekâ ajanı / makine
 > kimliği için, insan kullanıcı lisanslarından ayrı olarak yıllık **Dijital
 > Teknisyen Lisansı** gereklidir. Bu lisans ajan kimliği başına sabittir;
@@ -96,7 +100,7 @@ hakkı) ve mevcut m.3 yasaklarına doğrudan bağlanır.
 *Not:* Son cümle kritik — "kendi verim saklı" ayrımı yazılmazsa madde
 müzakerede tümden reddedilir.
 
-## Öneri 5 — Madde 3ّe / Madde 10.2'ye ek (doğrudan DB erişimi + resmî kapı)
+## Öneri 5 — Madde 3'e / Madde 10.2'ye ek (doğrudan DB erişimi + resmî kapı)
 
 > **3.z (yeni):** Ürünün veritabanına, ürün arayüzleri ve Servicecore'un
 > sağladığı resmî raporlama/entegrasyon katmanı dışında doğrudan erişim

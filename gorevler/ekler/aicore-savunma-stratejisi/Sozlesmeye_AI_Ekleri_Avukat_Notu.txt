@@ -14,7 +14,9 @@ ZATEN GÜÇLÜ (korunmalı):
 - Madde 3 (Lisans/FMH): FSEK m.16 atfı, tersine mühendislik/çoğaltma/kaynak
   koda ulaşma yasağı, DB yapısı ve işleyiş mantığının FMH kapsamında olması.
 - Madde 6 (Gizlilik): süresiz gizlilik + doğrudan/dolaylı zarar tazmini.
-- Madde 2.9: "named technician" başına ücretlendirme.
+- Madde 2 — "Teknik Tanımlı Kullanıcı" (named technician) başına
+  ücretlendirme bendi (sayımımızla 2.8; kesin numara imzalı nüshadan teyit
+  edilmeli).
 
 AI ÇAĞI BOŞLUKLARI (mevcut metin insan kullanıcı varsayar):
 1. "Kullanıcı" tanımı insanı varsayar → ajan/otomatik erişim tanımsız.
@@ -37,12 +39,15 @@ veritabanına veya çıktılarına erişilmesi ya da işlem yaptırılması.
 ajanı veya bunları barındıran her tür yazılım/hizmet.
 
 
-ÖNERİ 2 — MADDE 2.9'A EK (KOLTUK İKAMESİ / MULTIPLEXING)
+ÖNERİ 2 — MADDE 2'NİN "TEKNİK TANIMLI KULLANICI" BENDİNE EK
+(KOLTUK İKAMESİ / MULTIPLEXING)
 
 Mevcut boşluk: Ücret named technician sayısına bağlı; bir ajan az sayıda
 hesapla çok kullanıcının işini yaparsa lisans sayısı ve gelir düşer.
+(Yeni bent numaralarını — 2.8.1/2.8.2 veya 2.11/2.12 — avukat belirlesin;
+aşağıda (a)/(b) olarak verilmiştir.)
 
-2.9.1 (yeni): Teknik Tanımlı Kullanıcı lisansı yalnızca tek bir gerçek
+(a) (yeni bent): Teknik Tanımlı Kullanıcı lisansı yalnızca tek bir gerçek
 kişinin olağan çalışma kapasitesindeki kullanımını kapsar. Müşteri; donanım,
 yazılım, entegrasyon katmanı, havuz hesabı veya yapay zekâ ajanı dahil
 herhangi bir aracı kullanarak, ürüne erişen gerçek kullanıcı sayısını
@@ -50,7 +55,7 @@ azaltılmış göstermek ve gereken lisans sayısını düşürmek amacıyla har
 edemez (çoklama / multiplexing). Araya konulan katman lisans ihtiyacını
 ortadan kaldırmaz.
 
-2.9.2 (yeni): Kayıt işleme eylemi (kayıt cevaplama, kapatma, durum
+(b) (yeni bent): Kayıt işleme eylemi (kayıt cevaplama, kapatma, durum
 değiştirme, atama, eskalasyon) gerçekleştiren her yapay zekâ ajanı / makine
 kimliği için, insan kullanıcı lisanslarından ayrı olarak yıllık DİJİTAL
 TEKNİSYEN LİSANSI gereklidir. Bu lisans ajan kimliği başına sabittir; işlem
