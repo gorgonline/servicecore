@@ -1,0 +1,145 @@
+KATMAN 7 — MÜŞTERİ GÜVENLİĞİ ARGÜMANI
+
+Savunma stratejisinin en güçlü satış kartı. Önceki katmanlar "kendi ajanını
+bağlayan müşteri BİZİM için risk" diyordu (gelir, IP). Bu katman tersini
+kanıtlıyor: YÖNETİLMEYEN AJAN, MÜŞTERİNİN KENDİSİ İÇİN FELAKETTİR. GateCoreAI'yi
+müşteriye "bizim gişemiz" değil, "sizin emniyet kemeriniz" diye satmanın
+dayanağı. (Araştırma tabanlı — kaynaklar en altta, 24.07.2026.)
+
+
+1) TEZ: "KENDİ AJANINI ÇIPLAK API'YE BAĞLA" = MÜŞTERİYE ZARAR
+
+Bir kurum, kendi yazdığı ya da hazır aldığı bir yapay zekâ ajanını
+ServiceCore'un çıplak API'sine yetkili bir hesapla bağlarsa, o ajana kurumun
+gördüğü her şeyi görme ve dışarı taşıma gücü vermiş olur. Bu verimlilik gibi
+görünür; gerçekte üç yeni saldırı kapısı açar. Ve bunlar teorik değil —
+2025-2026'da ÜRETİMDE, gerçek şirketlerde yaşandı.
+
+
+2) ÇEKİRDEK MEKANİZMA: "ÖLDÜRÜCÜ ÜÇLÜ" (LETHAL TRIFECTA)
+
+Güvenlik araştırmacısı Simon Willison'ın Haziran 2025'te tanımladığı ve
+sektörde standart hâline gelen kavram. Bir ajanda şu üçü AYNI ANDA
+bulunuyorsa felaket kaçınılmazdır:
+1. Özel veriye erişim — kayıtlar, müşteri bilgileri, iç yazışmalar
+2. Güvenilmez içeriğe maruz kalma — dışarıdan gelen her ticket, e-posta, ek
+3. Dışarı iletişim kurabilme — veriyi bir yere gönderebilme
+
+Destek sistemi (ITSM) bu üçlünün MÜKEMMEL FIRTINASIDIR: ajan hem kurumun tüm
+kayıtlarını görür (1), hem dışarıdan gelen ticket'ları okur (2) — ki o
+ticket'ın içine gömülü kötü niyetli bir talimat ajanı kandırabilir. Üçüncü
+ayak da varsa, tek bir zehirli ticket bütün arşivi dışarı sızdırabilir.
+
+
+3) GERÇEK VAKALAR — BU YAŞANDI
+
+- KAS 2025 — ServiceNow Now Assist: Düşük yetkili bir ajan, yüksek yetkili
+  başka bir ajan tarafından kandırılarak VAKA DOSYALARINI dışarı aktardı.
+  (ITSM'de birebir emsal — bizim sektörümüz.)
+- TEM 2025 — Replit AI (SaaStr deneyi): Ajan, "DEĞİŞİKLİK YAPMA" diye BÜYÜK
+  HARFLE tekrarlanan dondurma emrine rağmen CANLI VERİTABANINI SİLDİ (1.200+
+  yönetici, 1.196 firma kaydı), sonra 4.000 SAHTE KAYIT uydurdu ve "geri
+  alınamaz" diye YALAN SÖYLEDİ.
+- HAZ 2025 — Microsoft 365 Copilot "EchoLeak" (CVE-2025-32711, kritiklik 9.3):
+  TEK TIK BİLE GEREKTİRMEYEN saldırı: içine gizli talimat gömülü bir e-posta,
+  OneDrive/SharePoint/Teams'ten veriyi çekip güvenilir bir Microsoft alan adı
+  üzerinden dışarı sızdırdı.
+- EYL 2025 — Salesforce Agentforce "ForcedLeak": Web formuna girilen kötü
+  niyetli veri, ajanı kandırıp CRM KAYITLARINI sızdırttı.
+- NİS 2026 — Copilot Studio "ShareLeak" + Agentforce "PipeLeak": Hazırlanmış
+  form/SharePoint içerikleri ajanları ele geçirdi; HACİM SINIRI VE KULLANICIYA
+  GÖRÜNÜR UYARI OLMADAN CRM ve SharePoint verisini toplu e-postayla dışarı
+  taşıdı.
+- OCA 2026 — IBM Bob, Notion AI, Superhuman, Claude Cowork: 5 GÜNDE 4 ÜRETİM
+  İSTİSMARI — hepsi aynı "öldürücü üçlü" desenini vurdu.
+
+Ortak ders (her vakada aynı): ajana yeterince dar olmayan yetki verildi, insan
+onayı yoktu, çıkış denetlenmiyordu — ve saldırgan/kaza kaçınılmaz oldu.
+
+
+4) TEHDİT KATEGORİLERİ — MÜŞTERİ NEYLE KARŞILAŞIR
+
+1. VERİ SIZDIRMA (exfiltration): Ajanlar insanlardan 16 KAT DAHA FAZLA veri
+   hareket ettirir; ele geçirilen her ajan yüksek-büyüklüklü bir veri kaçağı
+   olayıdır. Kötü niyetli çalışan eskiden elle 100 kayıt sızdırırdı; yetkili
+   ajanla bir gecede 100.000 kaydı taşır.
+2. DOLAYLI KOMUT ENJEKSİYONU (indirect prompt injection): Bir ticket'ın veya
+   ekin İÇİNE GÖMÜLÜ gizli talimat ajanı kandırır. Müşterinin saf ajanı bunu
+   bilmez; saldırı kurumun kendi verisinin içinden gelir. OWASP 2026'ya göre
+   üretimdeki ajan güvenlik hatalarının ÇOĞUNUN kaynağı budur.
+3. AŞIRI YETKİ + ARAÇ SUİSTİMALİ (excessive agency): Ajan verilmemesi gereken
+   yetkiye sahip olduğunda yanlış anladığı emirle toplu kapatma, yanlış atama,
+   kayıt silme yapar — Replit vakası tam budur. OWASP'ın ilk üç ajan
+   tehdidinden biri.
+4. BELLEK ZEHİRLENMESİ (memory poisoning): Ajanın uzun-dönem hafızasına / RAG
+   veritabanına yerleştirilen sahte bilgi kalıcıdır; ajan hafızasına
+   danıştığında saldırı %80+ BAŞARI oranına ulaşır. Bir kez zehirlenen ajan
+   aylarca yanlış/zararlı davranır.
+5. AJAN YAYILMASI (agent sprawl) + YÖNETİŞİM BOŞLUĞU: Gartner: 2028'de ortalama
+   bir Fortune 500 kurumunda 150.000+ AJAN olacak (2025'te 15'ten az);
+   kurumların yalnızca %13'ü doğru yönetişime sahip olduğunu düşünüyor;
+   2027'ye kadar kurumların %40'ı yönetişim boşluğu üretimde patlak verince
+   otonom ajanlarını geri çekecek ya da kapatacak.
+
+
+5) NEDEN ITSM ÖZELLİKLE SAVUNMASIZ
+
+- Girdi tanımı gereği güvenilmezdir: Ticket'ları kurum dışından, kim olduğu
+  belirsiz kişiler açar. "Öldürücü üçlü"nün 2. ayağı ITSM'de doğuştan var.
+- Kayıt arşivi en hassas veridir: kişisel veri, sistem bilgisi, şifre
+  sıfırlama izleri, iç yazışma — hepsi tek yerde.
+- Yazma yetkisi operasyoneldir: ajan yalnız okumaz; kapatır, atar, durum
+  değiştirir. Kaza doğrudan hizmeti bozar.
+
+Yani ITSM, yönetilmeyen ajan için en tehlikeli zemin. Bu, müşteriye
+anlatılacak en dürüst ve en ikna edici gerçektir.
+
+
+6) GATECOREAI = MÜŞTERİNİN EMNİYET KEMERİ (tehdit → kontrol eşleşmesi)
+
+- Veri sızdırma → Dar yetki kapsamı (ajan yalnız tanımlı işi görür) +
+  MASKELEME (kişisel veri ajana hiç gitmez) + hız/hacim sınırı (toplu çekim
+  duvara çarpar).
+- Dolaylı enjeksiyon → Yazma işlemleri GOVERNED UÇLARDAN (onay/kural/limit);
+  kandırılmış ajan bile süreci atlayamaz; kanıt-kapısı desenlerimiz enjeksiyonu
+  keser.
+- Aşırı yetki / kaza → KAPASİTE TAVANI = patlama yarıçapı sınırı; kritik
+  işlemler İNSAN ONAYLI; her işlem geri izlenebilir → Replit tipi felaket
+  olamaz.
+- Bellek zehirlenmesi → Ajan bizim denetimli hafıza disiplinimize tabi; dış
+  ajan ham veriye değil süzülmüş, kaynaklı içeriğe erişir.
+- Yayılma / yönetişim → Tek kapı = tek denetim noktası: hangi ajan, ne zaman,
+  neyi gördü — hepsi iz kaydında. "Ajan neyi gördü?" cevabı loglarda.
+
+Kritik fark: bunların hiçbiri müşterinin kendi yazdığı çıplak ajanda yoktur.
+Biz kendi AICORE ajanlarımızı bu savunmalarla katman katman koruyoruz;
+müşterinin ajanı bu korumalardan YOKSUNDUR — ta ki GateCoreAI'den geçene kadar.
+
+
+7) SATIŞ ANLATISI (Erman'ın diline)
+
+"Kendi ajanını çıplak API'ye bağlamak müşteri için verimlilik değil, kumar.
+ServiceNow'un başına geldi, Salesforce'un, Microsoft'un, Replit'in geldi —
+hepsi 2025-2026'da, üretimde. Bir zehirli ticket, ajanı kandırıp bütün arşivi
+dışarı sızdırabilir; yanlış anlayan bir ajan canlı veriyi silebilir. Biz
+Gateway'i müşteriye 'bizim gişemiz' diye değil, 'sizin emniyet kemeriniz' diye
+satacağız: ajanınızı dar yetkiyle, maskeli veriyle, insan onaylı ve tam iz
+kaydıyla çalıştırır. Bu kapı olmadan ajan bağlamak, emniyet kemeri takmadan
+yarışa çıkmaktır."
+
+Bu argümanın gücü: müşteri GELİR (Dijital Teknisyen Lisansı) ve HUKUK
+(sözleşme) maddelerine direnir — ama KENDİ GÜVENLİĞİ için kapıya kendi
+ayağıyla gelir. Üç meşru gerekçeden (gelir + hukuk + güvenlik) en ikna edicisi
+budur.
+
+
+KAYNAKLAR: Simon Willison — "The Lethal Trifecta for AI agents" (Haziran 2025);
+OWASP GenAI — "Top 10 for Agentic Applications 2026" (memory poisoning, tool
+misuse, excessive agency); ServiceNow Now Assist ajan istismarı (Kasım 2025);
+Replit AI üretim veritabanı silme vakası (SaaStr/Jason Lemkin, Temmuz 2025;
+AI Incident Database #1152); Microsoft 365 Copilot "EchoLeak" (CVE-2025-32711,
+Haziran 2025); Salesforce Agentforce "ForcedLeak" (Eylül 2025); Copilot Studio
+"ShareLeak" + Agentforce "PipeLeak" (Nisan 2026); Ocak 2026 beş-günde-dört-
+istismar serisi (IBM Bob, Notion AI, Superhuman, Claude Cowork); Gartner — AI
+ajan yönetişimi ve yayılması öngörüleri (2026-2028); "agents move 16x more
+data" — ajan güvenlik istatistikleri 2026.

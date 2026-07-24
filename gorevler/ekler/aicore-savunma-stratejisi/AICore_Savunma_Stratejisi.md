@@ -185,6 +185,16 @@ kişilik iş yapar → 100 kişilik iş için TEK yol Dijital Teknisyen Lisansı
 **Sahiplik:** Bu dört kilit ServiceCore backend ekibinin iş paketidir
 (AI servisinin değil); Gateway makine kimliklerinin kapısı olarak bağlanır.
 
+## 9.5. Katman 7 — Müşteri güvenliği argümanı (ayrı dosya)
+
+Kendi ajanını çıplak API'ye bağlayan müşteri yalnız BİZİM için değil,
+KENDİSİ için de risk alır: veri sızdırma, dolaylı komut enjeksiyonu, ajan
+kazaları (Replit vakası), bellek zehirlenmesi, ajan yayılması. GateCoreAI
+bu tehditlere karşı müşterinin "emniyet kemeri"dir — üç meşru gerekçeden
+(gelir + hukuk + **güvenlik**) müşteriyi kapıya kendi ayağıyla getireni.
+Gerçek vakalar + tehdit → kontrol eşleşmesi + satış anlatısı:
+**`Katman7_Musteri_Guvenligi_Argumani.md`**.
+
 ## 10. Yol haritası önerisi
 
 | Vade | Adım |
