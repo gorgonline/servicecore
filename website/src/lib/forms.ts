@@ -18,7 +18,8 @@ export type FormSheet =
   | "Kurs"
   | "Partnerlik"
   | "Analiz"
-  | "Register";
+  | "Register"
+  | "PoC";
 
 export type FormSubmitResult =
   | { ok: true; sheet: FormSheet }

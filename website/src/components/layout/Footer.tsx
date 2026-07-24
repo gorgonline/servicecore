@@ -143,6 +143,7 @@ const footerData = {
         { text: "Datasheet", href: "/datasheet" },
         { text: "Specsheet", href: "/specsheet" },
         { text: "Demo", href: "/demo" },
+        { text: "PoC Süreci", href: "/poc" },
         { text: "İş Ortaklığı", href: "/partnerlik" },
         { text: "Özellikler", href: "/cozumler/itsm" },
         { text: "Planlar & Lisanslama", href: "/planlar" },
