@@ -1,0 +1,184 @@
+# AICore — Fiyatlama Bilimi Notu (Akademik Dayanaklar)
+
+> **Amaç:** AICore ticari kararlarımızın (fix+sembolik lisans, Dijital Teknisyen
+> Lisansı, PoC başvuru formu, PoC Edition, kapasite tavanı) her birinin arkasına
+> iktisat/mekanizma-tasarımı literatüründen dayanak koymak. Kararları zaten verdik;
+> bu not onların **neden doğru olduğunun ispatını** sağlar — pazarlıkta, backend
+> ekibinde ve avukat evrağında "bunu biz uydurmadık" kozudur.
+>
+> **Dürüst çerçeve:** Ekonomi makaleleri hazır fiyat vermez; çerçeve, ispat ve
+> gerekçe verir. Aşağıda hangi kararın arkasında hangi teori/makale var, ve
+> teorinin bize NE söylediği ile NE söylemediği açıkça ayrılmıştır. (24.07.2026)
+
+---
+
+## 0. Tek bakışta: karar → iktisat adı → kaynak
+
+| Bizim kararımız | İktisattaki adı | Kaynak |
+|---|---|---|
+| Fix + sembolik lisans, "kullanım bazlı yapamayız" | **Sabit-ücret yanlılığı** (flat-rate bias) | Lambrecht & Skiera (2006) |
+| Üç kalem: platform + modül + kurulum | **Bileşik fiyat modeli** P=ΣαC+βV+γ | Dalmia (2026, MPRA 129348) |
+| Dijital Teknisyen Lisansı (ajan = ayrı lisans) | **Per-seat çöküşüne hibrit cevap** | Dalmia (2026) |
+| Modül menüsü + Silver/Gold/Platinum/MC | **Menü tasarımı / versiyonlama** | Bergemann-Bonatti-Smolin (2025) |
+| PoC başvuru formu + LOI + efor bedeli | **Ayrıştırıcı sözleşme / sinyalleme** | Spence (1973), Rothschild-Stiglitz (1976) |
+| PoC Edition (kısıtlı deneme sürümü) | **"Hasarlı mal" versiyonlama** | Deneckere-McAfee (1996), Shapiro-Varian (1998) |
+| Kapasite tavanı + makine kimliği | **Arbitraj engeli** (fiyat farklılaştırmasının şartı) | Klasik fiyat-ayrımı teorisi |
+| Ajan kimliği + lisans + denetim | **Ajan kimlik/kayıt altyapısı** | Hadfield & Koh (2025) |
+| Genel çerçeve | **Ajan-aracılı ekonomi** | "The Agentic Economy" (2025, Microsoft Research) |
+
+---
+
+## 1. "Kullanım bazlı yapamayız" — Erman haklı, adı var
+
+**Karar:** Fix + sembolik modül lisansı; işlem/token sayacı yok.
+
+**Teori — Sabit-ücret yanlılığı (flat-rate bias):** Lambrecht & Skiera'nın
+klasik bulgusu: tüketiciler, matematiksel olarak daha pahalıya gelse bile
+**sabit ücreti sayaçlı ücrete sistematik olarak tercih eder.** İki sebep:
+(1) *sigorta etkisi* — fatura sürprizi istemezler; (2) *taksimetre etkisi* —
+her kullanımda "sayaç işliyor" kaygısı kullanımı bastırır, memnuniyeti düşürür.
+
+**Dalmia (2026) bunu AI ajanları için doğrudan söylüyor:** "kullanım/maliyet-artı
+fiyatlama, *taksimetre izleme* (meter watching) yaratıp adopsiyonu sınırlar."
+Yani Erman'ın "sayaçlı yapamayız" içgüdüsü, kurumsal alıcı davranışının ölçülmüş
+gerçeğidir — ve düşük fiyatla adopsiyonu açma stratejisiyle birebir uyumlu.
+
+**Ne söylüyor / söylemiyor:** Teori "sabit tercih edilir" der; sembolik
+rakamı biz seçtik (savunma amaçlı düşük tutundurma).
+
+## 2. Üç-kalemli yapımız = akademik optimum
+
+**Karar:** Platform ücreti + modül lisansı + kurulum/bakım — üç ayrı kalem.
+
+**Teori — Dalmia'nın bileşik formülü:** Dalmia (2026), ajan çağında çöken
+per-seat modeli yerine üç parçalı doğrusal fiyat önerir:
+
+> **P = Σ(αᵢ·Cᵢ) + β·V + γ**
+> — **Σ(αᵢ·Cᵢ):** altyapı/emek taban maliyeti (bizde: kurulum + yıllık bakım)
+> — **β·V:** değere bağlı bileşen (bizde: modül lisansı — ağırlık çarpanımız β·V'nin ta kendisi)
+> — **γ:** sabit platform ücreti (bizde: AICORE platform/Gateway ücreti)
+
+Yani biz sezgiyle kurduğumuz "kurulum gerçek + lisans sembolik + platform sabiti"
+yapısı, literatürün ajan-çağı için önerdiği **kanonik formülün birebir karşılığı.**
+Bu, avukat notundaki ve fiyat notundaki "lisansı hizmetten ayır" argümanımızın
+akademik ispatıdır.
+
+**Bonus metrik — Inference Capture Ratio (ICR):** Dalmia, modelin altyapı
+maliyetinin ne kadarını fiyata yansıttığını ölçen bir sağlık göstergesi
+tanımlar. On-prem'de token maliyeti müşteride olduğu için bizim ICR'ımız
+yapısal olarak sağlıklı — bulut rakiplerinin taşıdığı "çıkarım maliyeti riski"
+bizde yok. Satışta teknik üstünlük argümanı.
+
+## 3. Dijital Teknisyen Lisansı = per-seat çöküşünün tam cevabı
+
+**Karar:** Kayıt işleyen her ajan = ayrı yıllık sabit lisans (sayaç yok),
+insan lisansının 3-5 katı çapası.
+
+**Teori:** Dalmia'nın açılış tezi Erman'ın "DİKKAT DİKKAT" mesajının
+akademik kelimesi kelimesine karşılığı: *"per-seat lisans, bir ajan çok
+kullanıcının yerini aldığında çöker."* Çözüm olarak salt-kullanım ve
+salt-sonuç fiyatını da eler (birincisi taksimetre-korkusu, ikincisi riski
+üreticiye yıkar) → **hibrit + sabit bileşen** önerir. Bizim DTL'imiz tam bu.
+
+**Ne söylüyor / söylemiyor (ÖNEMLİ — dürüstlük):** Literatür **yapıyı**
+doğruluyor (ajan ayrı, sabit lisanslanmalı); ama **3-5× çarpanını hiçbir makale
+vermiyor** — o bizim iş yargımız ("1 ajan = 7/24 = ~3 vardiya insan"). İstersek
+Dalmia'nın β·V değer-bileşenini ve ICR'ı kullanarak çarpanı veriyle kalibre
+edebiliriz; ama bugün 3-5× savunulabilir bir başlangıç çapasıdır, bilimsel
+kesinlik iddiası değildir.
+
+## 4. Modül menüsü + destek kademeleri = menü tasarımı optimumu
+
+**Karar:** Müşteri modülleri tek tek seçer; destek Silver→Mission Critical
+kademeli; kurulum çarpanla fiyatlanır.
+
+**Teori — Bergemann, Bonatti & Smolin (2025), "LLM'lerin İktisadı":**
+Mekanizma-tasarımının en büyük isimleri AI fiyatlamaya girdi. Bulguları:
+tek fiyat değil, **menü (versiyon dizisi) satmak optimaldir**; çok boyutlu
+müşteri farklılığı tek bir skalar indekse iner ve satıcının işi
+tek-boyutlu **eleme (screening)** olur; optimum, **iki-parçalı tarife
+menüsü** (sabit + kullanım) ve yoğun kullanıcıya daha yüksek markup'tır.
+Bu, "modüllerini seç + kademeli destek + kullanıcı sayısına göre lisans"
+yapımızın optimum olduğunu söyler — sezgi değil, teorem.
+
+## 5. PoC başvuru formu = ayrıştırıcı sözleşme (Erman'ın "işsiz herifler" derdi)
+
+**Karar:** Yerinde PoC için üst yönetim taahhüdü + LOI + "kapsam ispatlanırsa
+alırız, almazsak efor bedeli öderiz" imzası.
+
+**Teori — Sinyalleme ve eleme (Spence 1973 Nobel; Rothschild-Stiglitz 1976):**
+Bir sözleşmeye **maliyetli bir taahhüt** koyarsan, tipleri kendiliğinden
+ayrıştırırsın: gerçekten alacak olan imzalar (maliyet ona ucuz), sadece
+"kurcalamak isteyen" kaçar (maliyet ona pahalı). Buna *ayrıştırıcı denge*
+(separating equilibrium) denir. Bizim form tam bir ayrıştırıcı sözleşmedir —
+"efor bedeli taahhüdü" Spence'in *sinyal maliyeti*dir. Erman'ın "LOI'ye kimse
+yanaşmıyor" sızlanması aslında iyi haber: **yanaşmayan zaten alıcı değildi**;
+form onları kapıda eliyor, ekibin 4-5 ayını kurtarıyor.
+
+**Deneme ne kadar/nasıl verilmeli:** "From Doubt to Devotion: Trials and
+Learning-Based Pricing" ve "Personalized Free Trials" — denemenin süresi ve
+kapsamı, alıcının öğrenmesini kâra çevirecek şekilde tasarlanır. Online PoC
+(ücretsiz, hızlı, düşük-maliyet) = geniş eleme; Yerinde PoC (taahhütlü) =
+ciddi alıcıya derin deneme. İkili yapımız teorik olarak doğru segmentasyon.
+
+## 6. PoC Edition = "hasarlı mal" versiyonlama
+
+**Karar:** Yerinde PoC'de tam ürün değil, süre kilitli/kısıtlı "değerlendirme
+sürümü" kurulur.
+
+**Teori — Deneckere & McAfee (1996) "Damaged Goods"; Shapiro-Varian (1998)
+"Information Rules":** Üretici, bilerek **kısıtlanmış bir sürüm** üreterek
+(süre kilidi, sınırlı kapsam) düşük-değer segmentini ayırır ve tam üründen
+korur. Yazılımda bunun adı *versioning*. PoC Edition bu klasiğin ta kendisi;
+aynı zamanda IP sızıntısını da kısar (savunma stratejisi Katman 5 ile aynı iş).
+
+## 7. Kapasite tavanı + makine kimliği = arbitraj engeli
+
+**Karar:** İnsan hesabına işlem tavanı; yazma yalnız lisanslı makine kimliğine.
+
+**Teori — Fiyat farklılaştırmasının ön şartı:** Farklı segmentlere farklı
+fiyat vermek (insan lisansı ucuz, ajan lisansı pahalı) ancak **arbitrajı
+engelleyebiliyorsan** işe yarar — yoksa herkes ucuz kanaldan girer. Kapasite
+tavanı + makine kimliği tam bir *arbitraj engeli*dir: ucuz insan lisansıyla
+pahalı ajan işini yapmayı fiziken imkânsız kılar (backend İP1+İP2). Yani
+ürün-içi kilitler sadece güvenlik değil, **fiyat teorisinin zorunlu koşulu**.
+
+## 8. Ajan kimlik altyapısı = ekonominin çağrısı
+
+**Teori — Hadfield & Koh (2025) "An Economy of AI Agents":** Ajanların ekonomik
+aktör olduğu bir düzende **kimlik, kayıt ve sorumluluk altyapısı** olmadan
+piyasa çalışmaz. Bizim "her ajan = makine kimliği + DTL + denetim izi"
+tasarımımız, bu akademik çağrının ITSM'deki somut uygulaması. Genel çerçeve
+için "The Agentic Economy" (Microsoft Research, 2025) — ajan-aracılı ticaretin
+üreticiler için gelir modelini nasıl değiştirdiğinin haritası.
+
+---
+
+## Erman'a tek paragraf özet
+
+> *"İyi haber: verdiğimiz kararların hepsinin iktisatta adı ve ispatı varmış.
+> 'Kullanım bazlı yapamayız' = sabit-ücret yanlılığı (ölçülmüş kurumsal alıcı
+> davranışı). Üç kalemli fiyatımız = Dalmia'nın ajan-çağı formülü P=ΣαC+βV+γ'nın
+> birebir karşılığı. Dijital Teknisyen Lisansı = per-seat çöküşünün akademik
+> çözümü. PoC başvuru formu = Nobel'lik sinyalleme teorisinin ayrıştırıcı
+> sözleşmesi — 'yanaşmayan zaten alıcı değildi'. Kapasite tavanı = fiyat
+> ayrımının zorunlu arbitraj engeli. Tek dürüst çekince: 3-5× ajan çarpanı bizim
+> yargımız, literatür yapıyı doğruluyor ama sayıyı vermiyor; istersen ICR
+> metriğiyle veriyle kalibre ederiz. Sonuç: pazarlığa, backend'e ve avukata
+> 'bunu MIT/Yale de aynı söylüyor' diye gidebiliriz."*
+
+---
+
+*Kaynaklar: Abha Dalmia, "A Commodity Indexed Pricing Framework for Autonomous
+AI Agents" (2026, MPRA 129348) — P=ΣαC+βV+γ, ICR, per-seat çöküşü; Bergemann,
+Bonatti & Smolin, "The Economics of Large Language Models: Token Allocation,
+Fine-Tuning, and Optimal Pricing" (2025, arXiv:2502.07736 / Cowles / TSE) —
+menü/versiyon optimumu, iki-parçalı tarife, tek-boyutlu eleme; Lambrecht &
+Skiera, "Paying Too Much and Being Happy About It" (2006, JMR) — flat-rate bias;
+Michael Spence, "Job Market Signaling" (1973, Nobel 2001); Rothschild & Stiglitz
+(1976) — eleme/ayrıştırıcı denge; Deneckere & McAfee, "Damaged Goods" (1996);
+Shapiro & Varian, "Information Rules" (1998) — versiyonlama; "From Doubt to
+Devotion: Trials and Learning-Based Pricing" (arXiv:2311.00846) + "Design and
+Evaluation of Personalized Free Trials" (arXiv:2006.13420); Hadfield & Koh,
+"An Economy of AI Agents" (2025, arXiv:2509.01063); "The Agentic Economy"
+(2025, arXiv:2505.15799, Microsoft Research).*
