@@ -1,0 +1,132 @@
+SERVICECORE BACKEND — AICORE KORUMA VE LİSANS ZORLAMA İŞ PAKETİ
+(AICORE Review toplantısı — backend ekibi ve takım liderine. 24.07.2026)
+
+BAĞLAM (2 CÜMLE): Müşteriler merkezi yapay zekâ ajanları kurmaya başladı;
+tek bir ajan, az sayıda hesap üzerinden 100 teknisyenin işini yapabilir ve
+lisans sayısını %90 düşürebilir (sektördeki adı: MULTIPLEXING). Bu paketin
+hedefi, lisanssız otomasyonu ÜRÜN SEVİYESİNDE imkânsız kılmak ve ajan
+kullanımını DİJİTAL TEKNİSYEN LİSANSI'na bağlamak — sözleşme değil, kilit.
+
+Kapsam: ServiceCore çekirdeği (C#/.NET + MSSQL). AI servisi (AICORE/Gateway)
+ayrı kutudur; yalnız İş Paketi 4'te arayüz olarak geçer.
+
+
+İŞ PAKETİ 1 — HESAP KAPASİTE TAVANI ("insan lisansı = insan kapasitesi") [P1]
+
+NE: Her insan hesabı için kayıt-işleme sayaçları: cevaplama, kapatma, durum
+değiştirme, atama, eskalasyon. Dakikalık ve günlük tavanlar.
+
+GEREKSİNİMLER:
+- Sayaç KANAL BAĞIMSIZDIR: UI, API, e-posta fetch, portal — işlem hangi
+  kanaldan gelirse gelsin işleyen hesaba yazılır.
+- Eşikler yapılandırılabilir (müşteri config'i, varsayılanlar üründe).
+- Aşımda AŞAMALI davranış: (1) logla — gölge mod, (2) admin bildirimi,
+  (3) blok + ekran: "Bu hesapta otomasyon tespit edildi; devam için Dijital
+  Teknisyen Lisansı gereklidir." Blok ekranı aynı zamanda satış ekranıdır.
+- Ürün içi meşru toplu işlemler (ör. toplu kapatma aksiyonu) ayrı
+  sayılır/muaftır — normal kullanıcı asla takılmamalı.
+
+KALİBRASYON (KRİTİK): Doğrudan blokla BAŞLANMAZ. Önce 4-8 hafta gölge modda
+telemetri toplanır; eşik = gözlenen insan p99'unun 5-10 katı. Gerçek
+teknisyen bu tavana ömründe takılmaz; ajan ilk saatte çarpar.
+Yanlış-pozitif satış felaketidir — önce ölç, sonra kilitle.
+
+KABUL ÖLÇÜTÜ: Test botu (100 işlem/dk) X dakika içinde bloklanır; gerçek
+teknisyen senaryoları (yoğun gün dahil) hiçbir zaman takılmaz.
+
+
+İŞ PAKETİ 2 — API YAZMA YETKİSİ AYRIMI [P1]
+
+NE: Kayıt-işleme yazma uçları (cevaplama, kapatma, durum, atama) insan
+hesaplarında VARSAYILAN KAPALI. Yazma-API yalnız MAKİNE HESABI tipiyle.
+
+GEREKSİNİMLER:
+- Yeni varlık: MAKİNE HESABI (service account) — ayrı hesap tipi, token
+  bazlı kimlik; sahibi, amacı, etiketi kayıtlı; insan lisansı tüketmez,
+  Dijital Teknisyen Lisansı kontrolüne bağlıdır (İş Paketi 4).
+- Lisanssız/insan token'ıyla yazma çağrısı → 403 + audit log.
+- Salt-okur API insan hesabında kalabilir (raporlama/BI meşru kullanım).
+
+GEÇİŞ RİSKİ (EKİP DİKKAT): Mevcut müşterilerin entegrasyonları bugün insan
+hesabıyla API'ye yazıyor olabilir. Önce ENTEGRASYON ENVANTERİ çıkarılır;
+2 sürümlük geçiş dönemi; mevcut meşru entegrasyonlara sınırlı kapsamlı
+"entegrasyon makine hesabı" verilerek kırılmadan geçilir.
+
+
+İŞ PAKETİ 3 — OTOMASYON TESPİTİ + OTURUM KİLİDİ [P2]
+
+SİNYALLER: 7/24 kesintisiz aktivite · istekler arası sabit aralık (düşük
+varyans) · insanüstü tempo · UI etkileşimi olmadan istek desenleri · aynı
+hesabın paralel oturumları · user-agent tutarsızlıkları.
+
+GEREKSİNİMLER:
+- Sinyaller skorlanır; aşamalı aksiyon: işaretle → admin bildirimi → blok
+  ekranı (İP1'deki ekranla aynı).
+- Tek aktif oturum kuralı (yapılandırılabilir).
+- KVKK NOTU: Telemetri amaç sınırlıdır — lisans uyumu; kişisel profilleme
+  değildir. Sözleşme tarafında denetim maddesi karşılığı vardır.
+
+KABUL ÖLÇÜTÜ: RPA botu (tarayıcı otomasyonu) 1 saat içinde tespit + blok;
+insan senaryolarında 0 yanlış-pozitif.
+
+
+İŞ PAKETİ 4 — DİJİTAL TEKNİSYEN LİSANSI ALTYAPISI [P1]
+
+GEREKSİNİMLER:
+- Lisans modeline yeni tip: DİJİTAL TEKNİSYEN LİSANSI (DTL) — ajan kimliği
+  başına, yıllık, SABİT (işlem hacminden bağımsız — sayaçlı faturalama YOK,
+  bilinçli karar).
+- Makine Hesabı ↔ DTL eşleşmesi: lisanssız makine hesabının yazma uçları
+  kapalı; lisans süresi bitince otomatik pasif.
+- "İŞLEYEN KİMLİK" ZORUNLULUĞU: Her kayıt işleminde işleyen hesabın tipi
+  (insan/makine) ve kimliği audit'e yazılır; "kim kapattı?" alanı makine
+  kimliğini açıkça gösterir.
+- LİSANS UYUM RAPORU (admin panel): hesap tipi bazlı işlem dağılımı +
+  şüpheli otomasyon işaretleri — müşteriyle lisans görüşmesinin veri kaynağı.
+- AICORE ARAYÜZÜ: AICORE Gateway (AI tarafı) makine kimliklerini bu
+  altyapıya kaydedecek; backend'in sunması gereken şey kimlik + lisans
+  doğrulama API'sidir. (AI tarafının işi bizde — backend yalnız API sunar.)
+
+
+İŞ PAKETİ 5 — EK KORUMALAR [P3]
+
+- RESMÎ RAPORLAMA KATMANI: Read-only raporlama view'ları/replica. "Ana
+  şemaya doğrudan erişim destek dışıdır" politikasının teknik karşılığı;
+  meşru BI ihtiyacını resmî kapıya yönlendirir.
+- POC EDITION: Süre kilitli kurulum (lisans anahtarında bitiş tarihi + süre
+  sonunda kilit ekranı), kısıtlı bileşen seti, sentetik veri paketi. Mevcut
+  PoC süreciyle uyumlu: LOI (Niyet Mektubu) + Gizlilik Sözleşmesi
+  imzalanmadan tam ürün müşteri ortamına kurulmaz; kurulursa PoC Edition
+  kurulur.
+- KURULUM PARMAK İZİ: Kurulum başına benzersiz, zararsız şema/veri izleri —
+  olası klon vakasında "bizden kopyalandı" kanıtı.
+- (Düşük öncelik) Kritik stored procedure'lerde şifreleme.
+
+
+ÖNCELİK VE SIRA ÖNERİSİ
+
+- P1 (gelir koruması çekirdeği): İP1 (gölge modda) + İP2 (makine hesabı) +
+  İP4 (DTL altyapısı) — aynı sürümde çıkmalı; gölge mod verisi eşikleri
+  kalibre eder.
+- P2: İP3 (tespit/blok) + İP1'in blok modunun açılması — gölge mod
+  verisiyle beslenir.
+- P3: İP5 (raporlama katmanı, PoC Edition, parmak izi) — PoC Edition satış
+  takvimine göre öne çekilebilir.
+
+
+RİSKLER VE DİKKAT NOKTALARI
+
+1. Mevcut entegrasyonları kırmamak — İP2 envanter + geçiş dönemi şart.
+2. Yanlış-pozitif — önce gölge mod; insan asla bloklanmamalı.
+3. Performans — sayaçlar hafif (bellek içi sayaç + periyodik yazma).
+4. KVKK — telemetri amaç sınırlı; kişisel profilleme değil lisans uyumu.
+5. İletişim dili — müşteriye "ceza" değil "ADİL KULLANIM" diliyle anlatılır:
+   "1 teknisyen lisansı = 1 insan kapasitesi; ajanlar için Dijital Teknisyen
+   Lisansı".
+
+
+TEK CÜMLELİK ÖZET
+
+Lisanssız ajan, kapasite tavanına çarpar (İP1), API kapısını kapalı bulur
+(İP2), tespit edilir ve bloklanır (İP3); çalışmak isteyen her ajanın tek
+yolu Dijital Teknisyen Lisansı olur (İP4) — kilit üründe, gelir bizde.

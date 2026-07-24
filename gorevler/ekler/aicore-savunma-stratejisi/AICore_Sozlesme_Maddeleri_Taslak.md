@@ -27,6 +27,19 @@ Taslak metin:
 Gerekçe: Mevcut sözleşmeler "kullanıcı" kavramını insan varsayar; ajan
 çağında tanım boşluğu bırakılmamalı.
 
+### Madde 1/A — Lisans kapasite tanımı
+
+Taslak metin:
+
+> Bir adlandırılmış kullanıcı (teknisyen) lisansı, tek bir gerçek kişinin
+> olağan çalışma kapasitesindeki kullanımını kapsar. Ürün, bu kapasiteyle
+> uyumlu teknik sınırlar uygulayabilir; bu sınırların otomatik araçlarla
+> aşılması veya aşılmaya çalışılması lisans ihlalidir.
+
+Gerekçe: "İnsan lisansı = insan kapasitesi" ilkesinin sözleşme karşılığı.
+Üründeki kapasite tavanı kilidinin (hesap başına işlem sınırı) hukuki
+dayanağıdır — kilit üründe, tanımı sözleşmede.
+
 ### Madde 2 — Otomatik erişim, insan lisansından ayrıdır
 
 Taslak metin:
@@ -41,6 +54,40 @@ Taslak metin:
 Gerekçe: SAP-Diageo "dolaylı erişim" emsali — insan lisansının makine
 erişimini kapsamadığı hukuken tanınmış durumda. Ücretlendirme dayanağı bu
 maddedir.
+
+### Madde 2/A — Dijital Teknisyen Lisansı
+
+Taslak metin:
+
+> Kayıt işleme eylemi (kayıt cevaplama, kapatma, durum değiştirme,
+> eskalasyon, atama) gerçekleştiren her ajan makine kimliği için, insan
+> kullanıcı lisanslarından ayrı olarak yıllık **Dijital Teknisyen Lisansı**
+> gereklidir. Lisans, ajan kimliği başına sabittir; işlem hacmine bağlı
+> değildir. Geçerli lisansı bulunmayan ajan kimliklerinin kayıt işleme
+> uçlarına erişimi engellenir. Salt-okur erişim bu madde kapsamı dışındadır.
+
+Gerekçe: Koltuk ikamesinin (ajan ile teknisyen lisans sayısını düşürme)
+gelir karşılığı. Bilinçli olarak kullanım sayacı YOK — ajan başına sabit
+yıllık lisans; kurumsal satın almanın öngörülebilir bütçe beklentisiyle
+uyumlu. Salt-okur istisnası, meşru raporlama/BI kullanımını madde
+kapsamından çıkarır ve müzakerede maddeyi savunulabilir kılar.
+
+### Madde 2/B — Çoklama (multiplexing) yasağı
+
+Taslak metin:
+
+> Müşteri; donanım, yazılım, entegrasyon katmanı, havuz hesabı veya yapay
+> zekâ ajanı dahil herhangi bir aracı, Ürün'e erişen gerçek kullanıcı veya
+> iş yükü sayısını azaltılmış göstermek ve gereken lisans sayısını düşürmek
+> amacıyla kullanamaz (çoklama / multiplexing). Araya konulan katman lisans
+> ihtiyacını ortadan kaldırmaz: Ürün'ü doğrudan veya dolaylı kullanan her
+> gerçek kişi ve kayıt işleme eylemi gerçekleştiren her ajan kimliği için
+> ilgili lisans gereklidir.
+
+Gerekçe: Microsoft ve SAP sözleşmelerinin standart "multiplexing" hükmü —
+"bir ajan bağlar, 100 kişinin işini lisanssız yaptırır" senaryosunun
+sektörde yerleşik hukuki adı ve yasağı. Ürün içi kilitlerin (kapasite
+tavanı, API kısıtı, otomasyon bloğu) sözleşme tarafındaki karşılığıdır.
 
 ### Madde 3 — Model eğitimi ve damıtma yasağı
 

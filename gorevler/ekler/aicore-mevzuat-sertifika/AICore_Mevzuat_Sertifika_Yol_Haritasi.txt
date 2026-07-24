@@ -1,0 +1,131 @@
+AICORE — AI MEVZUAT VE SERTİFİKA YOL HARİTASI
+(İş planlama evrakıdır, hukuki görüş değildir. AB'ye satış gündeme
+geldiğinde madde bazlı hukuk görüşü alınmalıdır. 24.07.2026)
+
+
+1) YÖNETİCİ ÖZETİ
+
+- Bugün Türkiye'de zorunlu AI lisansı/sertifikası YOK. KVKK ana çerçeve;
+  özel yapay zekâ kanunu henüz çıkmadı (TBMM'de 3 teklif).
+- AB AI Act yürürlükte ve kademeli sıkılaşıyor. Bizi doğrudan bağlaması
+  için AB'ye satış veya AB operasyonlu müşteri gerekir. 4 ürün kartımız
+  AB gözüyle işaretlenmeli (Bölüm 3).
+- Asıl fırsat gönüllü sertifika: ISO/IEC 42001 (AI Yönetim Sistemi).
+  Kurumsal ihalelerde sorulmaya başlandı (AB RFP'lerinin ~%40'ı). Mevcut
+  iç doğrulama/mühür disiplinimiz standardın istediklerinin büyük kısmını
+  fiilen karşılıyor — bizim için sıfırdan inşaat değil, belgeleme işi.
+
+
+2) AB AI ACT — DURUM VE TAKVİM
+
+- Şubat 2025: Yasaklı uygulamalar (işyerinde DUYGU TANIMA dahil) + AI
+  okuryazarlığı yükümlülüğü. YÜRÜRLÜKTE.
+- Ağustos 2025: Genel amaçlı model (GPAI) yükümlülükleri — model
+  sağlayıcılarını bağlar, bizi dolaylı.
+- Ağustos 2026: Şeffaflık yükümlülükleri (sohbet botu bildirimi vb.).
+- Aralık 2027: Yüksek-risk (Annex III) belgeleme yükümlülükleri
+  (Digital Omnibus ile ertelendi).
+
+Cezalar: yasak ihlali 35M EUR / %7'ye, yüksek-risk ihlali 15M EUR / %3'e
+kadar.
+
+Bizi ne zaman bağlar: AB'de yerleşik müşteriye satış; çıktısı AB'de
+kullanılan sistemler; AB operasyonlu Türk müşterinin oradaki kullanımı.
+Yalnız Türkiye içi kullanımda doğrudan uygulanmaz.
+
+
+3) ÜRÜN AİLESİ — AB GÖZÜYLE RİSK İŞARETLEMESİ (32 ÜRÜN)
+
+- SentimentCoreAI — YASAK RİSKİ: İşyerinde ÇALIŞAN duygu analizi mutlak
+  yasak (Şubat 2025'ten beri). Ürün son-kullanıcı/müşteri duygusuna
+  konumlanmalı; "teknisyen duygu analizi" ifadesi hiçbir materyalde yer
+  almamalı.
+- CoachCoreAI — YÜKSEK RİSK: Çalışan performans değerlendirmesi =
+  istihdam kategorisi. AB satışında tam yükümlülük seti.
+- ShiftCoreAI — YÜKSEK RİSK: Görev dağıtımı/vardiya = istihdam kategorisi.
+- ToneCoreAI — GRİ ALAN: Üslup analizi duygu tanıma sayılmayabilir ama
+  "çalışan izleme" yönü yüksek-risk sınırında; AB öncesi hukuk görüşü şart.
+- ClassifyCoreAI — GRİ ALAN: Kayıt yönlendirme minimal; "teknisyene atama"
+  özelliği görev-dağıtımına yaklaşır. Konumlama: kayıt yönlendirme.
+- ChatCore, VoiceCore, CallCore, TranslateCore — ŞEFFAFLIK: Kullanıcıya
+  AI ile etkileşimde olduğu bildirilmeli (arayüz metni yeterli).
+- Diğer 24 ürün — MİNİMAL: İş kaydı/varlık/süreç analizi; kişi hakkında
+  hukuki sonuç doğuran karar yok. Standart iyi uygulama yeterli.
+
+Pratik sonuç: Türkiye satışında bugün engel yok. AB bağlantılı satışta
+4 işaretli ürün ya kapsam dışı bırakılır ya yeniden konumlanır.
+
+
+4) TÜRKİYE — MEVZUAT DURUMU
+
+- Özel yapay zekâ kanunu YOK. TBMM'de 3 teklif; en yenisi (Aralık 2025)
+  dar kapsamlı, AI içerik şeffaflığına odaklı.
+- Çerçeve kanun çalışması sürüyor; taslak yaklaşım AI Act paraleli:
+  risk sınıflandırması + sandbox + denetim otoritesi.
+- Bugünkü fiilî çerçeve: KVKK + sektörel düzenlemeler (BDDK vb.).
+- Strateji: Türk kanunu çıktığında AI Act kopyası olacak. Şimdiden AI Act
+  mantığıyla davranan hazır yakalanır. On-prem + insan onayı +
+  denetlenebilir kayıt mimarimiz bu mantığın çekirdeğini zaten uyguluyor.
+
+
+5) ISO/IEC 42001 — SERTİFİKA FIRSATI
+
+Ne: Dünyanın ilk AI Yönetim Sistemi standardı (Aralık 2023). ISO 27001'in
+AI kardeşi; kurumu sertifikalar. Akredite kuruluşlar verir — BSI, TÜV,
+Bureau Veritas, SGS (Türkiye ofisleri mevcut).
+
+Neden şimdi:
+- "ISO 42001 var mı / yol haritanız var mı?" sorusu AB RFP'lerinin
+  ~%40'ına, Kuzey Amerika'da ~%25'ine girdi; Türkiye'ye düşmesi an
+  meselesi. AWS dahil büyük sağlayıcılar aldı.
+- Gelecek Türk kanununa ve AI Act'e hazırlığın belgelenmiş hâli.
+- Satış cümlesi: "ISO 42001 yolunda ilk Türk ITSM yapay zekâsı."
+
+Hazırlık durumumuz (standart gereksinimi → bizdeki durum):
+- AI sistemlerinin izlenmesi/doğrulanması → VAR (mühür disiplini:
+  gerçek-veri + görülmemiş-soru sınavları, güncelleme sonrası otomatik
+  doğrulama koşuları)
+- İnsan gözetimi → VAR (onay paneli/HITL; incelemeden onay kilidi)
+- Risk yönetimi → BÜYÜK ÖLÇÜDE VAR (kanıt kapısı, kalibrasyon, fail-safe)
+- Kayıt ve izlenebilirlik → VAR (denetim logları, sonuç kimlikleri,
+  maskeleme kayıtları)
+- Model envanteri → KISMEN (merkezi kayıt dokümanı yazılmalı)
+- AI politikası (üst yönetim onaylı) → EKSİK (yazılacak; savunma
+  stratejisi + sözleşme taslağı iyi hammadde)
+- AI etki değerlendirme süreci → EKSİK (şablon + süreç tanımlanacak)
+- Tedarikçi/model sağlayıcı yönetimi → KISMEN
+
+Okuma: teknik tarafın ~%70'i fiilen hazır; eksik olan yönetsel
+dokümantasyon. ISO 27001'i olan kurum için süre kısalır — ServiceCore'un
+27001 durumu ilk teyit edilecek bilgi.
+
+Adımlar ve kaba takvim (toplam ~4-6 ay):
+1. ServiceCore ISO 27001 durumunun teyidi — 1 hafta (Erman)
+2. Kapsam kararı (önerilen: AICore ailesi + AI servis operasyonu) — 1 hafta
+3. Sertifika kuruluşundan boşluk analizi (gap assessment) teklifi —
+   2-4 hafta (maliyet burada netleşir; teklif almak ücretsiz)
+4. Eksik dokümantasyon (AI politikası, model envanteri, etki değerlendirme
+   süreci) — 4-8 hafta
+5. İç denetim + düzeltmeler — 2-4 hafta
+6. Sertifika denetimi (Aşama 1 + 2) — 4-6 hafta
+
+2026 içinde başlanırsa 2027 ilk çeyrekte sertifika gerçekçi — muhtemelen
+Türkiye ITSM alanında ilk.
+
+
+6) ERMAN İÇİN KARAR NOKTALARI
+
+1. ServiceCore'un ISO 27001'i var mı? (Varsa yol yarıya iner.)
+2. Gap assessment teklifi alalım mı? (Teklif almak ücretsiz.)
+3. AB bağlantılı müşterilere satış planı var mı? (Varsa 4 işaretli ürün
+   için hukuk görüşü şimdiden alınmalı.)
+4. Satış materyaline "ISO 42001 yol haritamız başladı" cümlesi ne zaman
+   girsin? (Gap assessment başladığı gün söylenebilir.)
+
+
+Kaynaklar: EU AI Act takvimi ve Digital Omnibus ertelemesi (Mondaq, DLA
+Piper, Legiscope), AB'de AI+İK hukuk özeti (Crowell & Moring), işyeri
+duygu-tanıma yasağı (Agrello), ISO/IEC 42001 rehberleri (ISO.org,
+Konfirmity, Microsoft Learn), RFP istatistiği (Konfirmity 2026), Türkiye
+kanun teklifleri karşılaştırması (N Partners), KVKK-AI Act uyum rehberi
+(Lexidata).

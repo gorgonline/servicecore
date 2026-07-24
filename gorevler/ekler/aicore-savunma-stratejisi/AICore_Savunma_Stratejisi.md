@@ -14,6 +14,8 @@
    "backend + DB"ye iner, sonra backend fonksiyonları muz gibi soyulup klonlanır.
 3. **IP kopyası:** DB şeması müşteri ortamında açık durur; bir PoC'den veya
    müşteri kurulumundan yapı alınıp AI'a verilerek ürünün rakibi yazdırılabilir.
+4. **Koltuk ikamesi (en somut gelir tehdidi):** Kayıtları cevaplayan/kapatan
+   bir ajan, 100 teknisyen lisansını 10-20'ye düşürerek koltuk gelirini eritebilir.
 
 Bu tehdit ServiceCore'a özgü değil — sektörün varoluş tartışması. Nadella'nın
 tezi: "İş uygulamaları = CRUD + iş mantığı; agent'lar iş mantığını yutacak."
@@ -123,20 +125,81 @@ kendisi öder, domain güncellemesi alamaz. "Kendi ITSM'ini yazan kurum" hikâye
 30 yıldır hep aynı biter — 3. yılda bakım maliyetinde boğulur. İzlenecek asıl
 risk: bunu ürünleştiren üçüncü taraf entegratör → panzehir: sözleşme + roadmap hızı.
 
-## 9. Yol haritası önerisi
+## 9. Katman 6 — Koltuk ikamesine cevap: Dijital Teknisyen Lisansı
+
+Tehdit 4'ün cevabı. Koltuk düşüşü durdurulamaz — müşteri AI'ı verimlilik
+için alıyor; yasaklamak müşteriyi kaçırır. Cevap: düşen koltuğu **ajan
+lisansıyla ikame etmek** — kullanım/işlem sayacı OLMADAN, sabit lisansla.
+
+- **Model:** Kayıt işleme eylemi (cevaplama, kapatma, durum değiştirme,
+  eskalasyon) gerçekleştiren her dış ajan = Gateway'de ayrı makine kimliği =
+  **1 Dijital Teknisyen Lisansı** (yıllık, sabit).
+- **Fiyat çapası:** insan teknisyen lisansının **3-5 katı**. Müşteriye
+  anlatılabilir gerekçe: ajan 7/24 çalışır (3 vardiya = 3 insan), paralel iş
+  yapar — "1 ajan = 3-5 teknisyen eşdeğeri".
+- **Matematik:** 100 koltuk → 20 koltuk + 5 ajan × (3-5 koltuk fiyatı) =
+  **35-45 koltuk eşdeğeri gelir.** Çöküş ikameye döner; müşteri de kârlı
+  çıkar. Sektör emsali: Salesforce / ServiceNow / Microsoft "agent seat"
+  modeline gidiyor — uydurma değil, standartlaşan model.
+- **İkinci hat — AICORE'u ucuz alternatif yap:** AICORE ajanları öneri +
+  insan onayı modelinde çalışır, koltuk öldürmez → modül lisansı sembolik
+  kalır. Tam otonom ikame isteyen dış ajan pahalı Dijital Teknisyen Lisansı
+  öder. Müşteriye mesaj: *"Bizim AI ile hızlan, koltuğun kalsın, ucuz; dış
+  ajanla ikame et, ajan başına öde."*
+- **Sözleşme dayanağı:** Sözleşme taslağına Madde 2/A (Dijital Teknisyen
+  Lisansı), Madde 1/A (insan kapasitesi tanımı) ve Madde 2/B (multiplexing
+  yasağı) olarak eklendi.
+
+### Ürün içi zorlama (enforcement) — 4 kilit
+
+Sözleşme kâğıttır; asıl cevap ürünün içindeki kilittir. Bu senaryonun
+sektördeki adı **multiplexing**tir (araya katman koyup lisans sayısını
+düşürmek — Microsoft/SAP 20 yıldır tanımlar ve ürün kilidiyle önler).
+Lisanssız ajanın 100 kişilik işi yapmasını FİZİKEN imkânsız kılan dört
+kilit, ServiceCore çekirdeğine (C# backend) yazılır:
+
+1. **İnsan lisansı = insan kapasitesi (en öldürücü kilit).** Lisans tanımına
+   kapasite gömülür ve ürün zorlar: hesap başına dakikada en fazla N kayıt
+   işlemi, günde en fazla M kapatma/cevaplama. Gerçek insan bu tavana asla
+   takılmaz; ajan ilk saatte duvara çarpar. 100 kişilik iş 10 hesaptan
+   matematiksel olarak geçemez.
+2. **İnsan hesabında yazma-API'si HİÇ YOK.** API üzerinden kayıt yazma
+   yetkisi insan hesaplarında varsayılan kapalıdır; yazma-API yalnız makine
+   kimliklerine açılır — makine kimliği de ancak Dijital Teknisyen
+   Lisansıyla tanımlanır. Lisanssız ajanın girebileceği API kapısı ürün
+   seviyesinde mevcut değildir.
+3. **Tek oturum + otomasyon tespiti → otomatik BLOK.** Kalan yol tarayıcı
+   taklididir (RPA); imzası bellidir: 7/24 aktivite, sabit aralıklı
+   istekler, insanüstü tempo. Ürün tespit edince uyarmaz, keser — ekranda:
+   "Bu hesapta otomasyon tespit edildi; devam için Dijital Teknisyen
+   Lisansı gereklidir." Kilit aynı zamanda satış ekranıdır.
+4. **Kanal bağımsız sayım.** E-posta botu, portal botu, entegrasyon —
+   işlem hangi kanaldan gelirse gelsin işleyen hesaba yazılır; kapasite
+   tavanı kanal ayırt etmez. Arka kapı kalmaz.
+
+**Senaryonun ölümü:** Ajan API'ye giremez (Kilit 2) → tarayıcıdan dener,
+kapasite tavanına çarpar (Kilit 1) → hızını insana düşürürse zaten 10
+kişilik iş yapar → 100 kişilik iş için TEK yol Dijital Teknisyen Lisansı.
+"Durdurmak", lisansa zorlamanın mekanizmasıdır.
+
+**Sahiplik:** Bu dört kilit ServiceCore backend ekibinin iş paketidir
+(AI servisinin değil); Gateway makine kimliklerinin kapısı olarak bağlanır.
+
+## 10. Yol haritası önerisi
 
 | Vade | Adım |
 |---|---|
-| Hemen | PoC politikası (PoC edition + NDA + imha) · sözleşme maddeleri taslağının hukuka verilmesi · parmak izi pratiğinin başlatılması |
-| 1-3 ay | AICORE Gateway ürün tanımı + fiyat bandları · vitrine ürün kartı (beta) · raporlama katmanı politikasının yazılması |
-| 3-6 ay | Gateway MVP (temel uçlar + maskeleme + audit) · ilk pilot müşteriyle "Agent-Ready" anlatısının denenmesi |
+| Hemen | PoC politikası (PoC edition + NDA + imha) · sözleşme maddeleri taslağının hukuka verilmesi · parmak izi pratiğinin başlatılması · **Dijital Teknisyen Lisansı fiyat çapasının belirlenmesi (kaç × teknisyen lisansı?)** |
+| 1-3 ay | AICORE Gateway ürün tanımı + fiyat bandları · vitrine ürün kartı (beta) ✅ · raporlama katmanı politikasının yazılması · Dijital Teknisyen Lisansı SKU'sunun açılması |
+| 3-6 ay | Gateway MVP (temel uçlar + maskeleme + audit + **otomasyon tespiti telemetrisi**) · ilk pilot müşteriyle "Agent-Ready" anlatısının denenmesi · **ServiceCore backend'ine 4-kilit enforcement spec'inin verilmesi (kapasite tavanı · API yazma kısıtı · otomasyon bloğu · kanal bağımsız sayım)** |
 
-## 10. Tek cümlelik özet
+## 11. Tek cümlelik özet
 
 > Kapıyı kapatmayacağız; kapıyı biz yapıp gişe koyacağız. Yazma asla çıplak
 > verilmeyecek, şema boş tabağa çevrilecek, sözleşme AI çağına göre yazılacak,
-> bypass fiyatla cazibesizleştirilecek — ve asıl yatırım, klonlanamayan tek
-> şeye yapılacak: yaşayan, öğrenen, desteklenen akışa.
+> bypass fiyatla cazibesizleştirilecek, kayıt işleyen her dış ajan Dijital
+> Teknisyen Lisansıyla sayılacak — ve asıl yatırım, klonlanamayan tek şeye
+> yapılacak: yaşayan, öğrenen, desteklenen akışa.
 
 ---
 
