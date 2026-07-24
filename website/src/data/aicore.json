@@ -1419,6 +1419,46 @@
         "/surekli-iyilestirme",
         "/raporlama-yonetimi"
       ]
+    },
+    {
+      "slug": "gatecore",
+      "name": "GateCoreAI",
+      "tier": "beta",
+      "tagline": "Kurumunuzun kendi yapay zekâ ajanlarını ServiceCore'a bağlayan resmî ve denetlenebilir kapı.",
+      "description": "Kurumlar artık merkezi yapay zekâ ajanları kuruyor ve kullandıkları her üründen bu ajanlara güvenli bağlantı bekliyor. GateCoreAI bu bağlantının resmî kapısıdır: Copilot, Claude, Gemini ya da kurumun kendi geliştirdiği ajan, ServiceCore'a bu kapıdan bağlanır. Her istek kimliklendirilir, yalnızca tanımlı yetki kapsamında çalışır ve denetlenebilir şekilde kayıt altına alınır; kişisel veriler ajanlara maskelenerek sunulur. Temel işlemler (kayıt okuma, açma, güncelleme) kapının standart uçlarıdır; kanıtlı çözüm önerisi, bilgi kartı üretimi gibi akıllı yetenekler ise sahip olduğunuz AICore eklentileri üzerinden aynı kapıdan sunulur — kurumunuzun ajanı, AICore'un uzmanlığını kendi iş akışında kullanır.",
+      "icon": "Network",
+      "accent": "indigo",
+      "year": 2027,
+      "release": "Beta — Yol Haritası",
+      "whatItDoes": [
+        "Kurumun merkezi yapay zekâ ajanlarını (Copilot, Claude, Gemini veya kendi geliştirdiğiniz) ServiceCore'a tek resmî kapıdan bağlar.",
+        "Her ajan isteğini kimliklendirir, tanımlı yetki kapsamında tutar ve denetlenebilir kayda geçirir; kişisel verileri ajanlara maskeleyerek sunar.",
+        "Sahip olduğunuz AICore eklentilerinin akıllı yeteneklerini (kanıtlı çözüm önerisi, bilgi kartı üretimi) kurumun kendi ajanına servis eder."
+      ],
+      "howItWorks": [
+        {
+          "label": "Ajan bağlanır",
+          "detail": "Kurumun ajan platformu, güncel ajan bağlantı standartlarıyla GateCore'a tek seferlik güvenli bağlantı kurar; ajan başına ayrı makine kimliği tanımlanır."
+        },
+        {
+          "label": "Yetki kapsanır",
+          "detail": "Her ajan yalnızca kendisine tanımlı işlemleri yapabilir; yazma işlemleri kurumun onay ve kayıt süreçlerinden geçer — hiçbir ajan süreci atlayamaz."
+        },
+        {
+          "label": "Veri maskelenir",
+          "detail": "Kişisel veriler ajana gitmeden maskelenir; ne paylaşıldığı denetlenebilir şekilde loglanır — 'ajan neyi gördü?' sorusunun cevabı her zaman kayıtlardadır."
+        },
+        {
+          "label": "Akıllı uçlar sunulur",
+          "detail": "Kurumun ajanı, sahip olunan AICore eklentilerinin yeteneklerini aynı kapıdan çağırır; kullanım eklenti lisanslarına göre yetkilendirilir ve raporlanır."
+        }
+      ],
+      "modules": [
+        "/servis-otomasyonu",
+        "/yonetim-paneli",
+        "/raporlama-yonetimi",
+        "/entegrasyon-yonetimi"
+      ]
     }
   ]
 }

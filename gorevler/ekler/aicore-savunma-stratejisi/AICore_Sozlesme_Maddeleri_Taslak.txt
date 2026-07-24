@@ -1,0 +1,103 @@
+AICORE — SÖZLEŞME MADDELERİ TASLAĞI (HUKUK İNCELEMESİNE)
+
+Amaç: Müşteri ajanlarının ürünü bypass etmesi, yapının kopyalanması ve
+verinin model eğitiminde kullanılması risklerine karşı lisans, PoC ve
+partner sözleşmelerine eklenecek hükümler.
+
+NOT: Bu bir iş tarafı taslağıdır — madde metinleri niyeti netleştirmek için
+yazılmıştır; nihai hukuki dil, ilgili mevzuat (FSEK, TTK haksız rekabet,
+KVKK, Borçlar K.) süzgecinden hukuk müşaviri tarafından geçirilmelidir.
+
+
+A. LİSANS SÖZLEŞMESİNE EKLENECEK HÜKÜMLER
+
+MADDE 1 — TANIMLAR
+"Otomatik Erişim": İnsan kullanıcının arayüz üzerinden gerçekleştirdiği
+kullanım dışında, yazılım, betik, robot, yapay zekâ ajanı veya benzeri
+otomatik araçlarla Ürün'ün arayüzlerine, API'lerine, veritabanına veya
+çıktılarına erişilmesi.
+"Yapay Zekâ Sistemi": Makine öğrenmesi modeli, büyük dil modeli, ajan
+platformu veya bunları barındıran her tür yazılım/hizmet.
+(Gerekçe: mevcut sözleşmeler "kullanıcı"yı insan varsayar; ajan çağında
+tanım boşluğu bırakılmamalı.)
+
+MADDE 2 — OTOMATİK ERİŞİM, İNSAN LİSANSINDAN AYRIDIR
+Adlandırılmış kullanıcı lisansları yalnızca gerçek kişilerin kullanımını
+kapsar. Otomatik Erişim, ancak Müşteri'nin geçerli bir GateCoreAI / AICORE
+Gateway lisansına sahip olması ve erişimin bu kapı üzerinden, ajan başına
+tanımlı makine kimliğiyle yapılması hâlinde mümkündür. İnsan kullanıcı
+hesabı bilgilerinin otomatik araçlara tanımlanması esaslı aykırılıktır.
+(Gerekçe: SAP-Diageo dolaylı erişim emsali; ücretlendirme dayanağı bu madde.)
+
+MADDE 3 — MODEL EĞİTİMİ VE DAMITMA YASAĞI
+Müşteri; Ürün'den, API'lerinden veya Gateway'den elde edilen veri, çıktı,
+öneri, şema ve yapıları, bir Yapay Zekâ Sistemi'nin eğitilmesi, ince ayarı,
+damıtılması veya değerlendirme setine dahil edilmesi için kullanamaz;
+üçüncü kişilere kullandıramaz. Müşteri'nin kendi iş verileri üzerindeki
+hakları saklıdır; yasak, Ürün'ün yapısına, mantığına ve ürettiği çıktılara
+ilişkindir.
+(Gerekçe: "bizim emeğimizle kendi ajanını besleme" riskinin cevabı. Son
+cümle önemli — müşteri kendi verisinin sahibi; ayrım net çizilmezse madde
+müzakerede tümden düşer.)
+
+MADDE 4 — YAPI TİCARİ SIRDIR; TERSİNE MÜHENDİSLİK YASAĞI
+Ürün'ün veritabanı şeması, veri modeli, iş mantığı, API tasarımı ve iç
+mimarisi ServiceCore'un ticari sırrı ve eser niteliğindeki fikri
+mülkiyetidir. Tersine mühendislik, şemanın çıkarılması, belgelenmesi veya
+ifşası yasaktır. Veritabanına Ürün arayüzleri ve resmî raporlama katmanı
+dışında doğrudan erişim desteklenmez; bu yolla yapılan müdahalelerden doğan
+sorunlar destek kapsamı dışındadır.
+(Gerekçe: FSEK + haksız rekabet koruması, sözleşmede "sır" tanımıyla güçlü
+işler. "Destek dışı" ibaresi ticari yaptırım kurar.)
+
+MADDE 5 — YAPAY ZEKÂYA GİRDİ VERMEK İFŞA HÜKMÜNDEDİR
+Ürün'ün yapısının, şemasının, kodlarının, yapılandırma dosyalarının veya
+bunlardan türetilmiş bilgilerin herhangi bir Yapay Zekâ Sistemi'ne girdi
+olarak verilmesi, üçüncü kişiye ifşa hükmündedir ve Madde 4 yasaklarına
+tabidir; analiz, özetleme, yeniden üretim amaçlı girişler dahildir.
+(Gerekçe: "ben çözmedim, AI çözdü" savunmasını kapatır.)
+
+MADDE 6 — DENETİM VE TESPİT
+ServiceCore, makul bildirimle ve yılda bir defayı aşmamak üzere lisans
+uyumunu (kullanıcı sayısı, Otomatik Erişim, Gateway kullanımı) doğrulamak
+için kayıt incelemesi talep edebilir. Ürün'ün, kullanım desenlerinden
+otomatik erişimi tespit eden teknik göstergeler içerdiğini Müşteri kabul
+eder.
+(Gerekçe: Madde 2'nin dişi; parmak izi/telemetri pratiğinin dayanağı.)
+
+
+B. POC SÖZLEŞMESİNE EKLENECEK HÜKÜMLER
+
+MADDE 7 — POC KAPSAM VE SINIRLARI
+PoC kurulumu süre kilitli, sınırlı kapsamlı ve yalnız değerlendirme
+amaçlıdır. Üretim verisi kullanılmayacaksa ServiceCore sentetik veri
+sağlar. PoC sürümü, Ürün'ün tam şemasını ve tüm bileşenlerini içermeyebilir.
+PoC çıktıları, Madde 3 ve 5 kapsamındaki amaçlarla kullanılamaz.
+
+MADDE 8 — POC SONU İMHA
+PoC sonunda Müşteri, kurulumu ve tüm kopyaları (yedekler dahil) kalıcı
+olarak imha eder ve yazılı imha teyidi verir. ServiceCore'un kurulumu
+uzaktan devre dışı bırakma hakkı saklıdır.
+(Gerekçe: en sıcak sızıntı kapısı PoC; NDA tek başına yetmez — imha + süre
+kilidi + sentetik veri üçlüsü gerekir.)
+
+
+C. PARTNER / ENTEGRATÖR SÖZLEŞMELERİNE EKLENECEK HÜKÜMLER
+
+MADDE 9 — REKABET EDEN ÜRÜN GELİŞTİRME YASAĞI
+Partner; Ürün'e erişimi süresince ve sonrasında, bu erişimden edindiği
+yapı, şema, mantık ve know-how'ı kullanarak Ürün'le veya AICore ailesiyle
+rekabet eden bir ürün geliştiremez, geliştirilmesine katkı sunamaz.
+Madde 3, 4 ve 5 partner için de aynen geçerlidir.
+(Gerekçe: asıl risk müşteri değil, öğrendiğini ürünleştiren entegratör.)
+
+
+UYGULAMA NOTLARI (HUKUK + SATIŞ)
+
+1. Mevcut müşterilere geçiş: yeni sözleşme/yenileme döneminde; mevcutlara
+   ek protokol önerilir.
+2. Müzakere düşme sırası: Madde 6 (denetim) ilk pazarlık konusu olur —
+   yılda 1 sınırı bu yüzden baştan yazıldı. Madde 3'ün "kendi verisi saklı"
+   cümlesi korunmalı; yoksa tümü tartışmaya açılır.
+3. Bu maddelerin ticari karşılığı GateCoreAI lisansıdır — hukuki metin,
+   Gateway ürünü fiilen çıkmadan da caydırıcılık sağlar.
