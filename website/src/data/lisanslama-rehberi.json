@@ -145,7 +145,9 @@
         },
         {
           "label": "Kimlik ve Erişim Yönetimi",
-          "items": ["Azure AD / SAML / SSO Entegrasyonları"]
+          "items": [
+            "Azure AD / SAML / SSO Entegrasyonları"
+          ]
         },
         {
           "label": "Şablon ve Operasyonel Yapılar",
@@ -233,6 +235,65 @@
     },
     {
       "number": "13",
+      "title": "AICore Yapay Zekâ Eklentileri Lisanslama",
+      "intro": "AICore eklentileri iki fiyat modelinden biriyle lisanslanır. Ayrım, eklentinin bir teknisyenin ekranında mı yoksa kurumun verisi üzerinde mi çalıştığına göre yapılır:",
+      "groups": [
+        {
+          "label": "Teknisyen bazlı lisanslanan eklentiler (7)",
+          "tagline": "Teknisyenin ekranında, onun oturumuyla çalışır ve o kişi olmadan iş üretmez. Teknisyen lisansının üstüne yıllık sabit ek bedelle, isme yazılı lisanslanır. ReportCoreAI bu grupta teknisyen değil, raporu kullanan yönetici koltuğuna bağlanır.",
+          "items": [
+            "SolveCoreAI",
+            "ReplyCoreAI",
+            "ToneCoreAI",
+            "VoiceCoreAI",
+            "CallCoreAI",
+            "CoachCoreAI",
+            "ReportCoreAI"
+          ]
+        },
+        {
+          "label": "Sabit fiyatlı lisanslanan eklentiler (diğer tüm eklentiler)",
+          "tagline": "Kurumun verisi üzerinde çalışır: kayıtlar, varlıklar, dokümanlar veya son kullanıcılar. Teknisyen sayısıyla ölçeklenmez; kurum başına yıllık sabit bedelle lisanslanır. Bedelin bandı her eklentinin kendi ölçüsüne göre belirlenir (kayıt hacmi, varlık sayısı, çalışan sayısı gibi).",
+          "items": [
+            "KnowCoreAI",
+            "DocCoreAI",
+            "RootCoreAI",
+            "KBCoreAI",
+            "ContractCoreAI",
+            "ClassifyCoreAI",
+            "PriorityCoreAI",
+            "MergeCoreAI",
+            "SentimentCoreAI",
+            "VisionCoreAI",
+            "StormCoreAI",
+            "TranslateCoreAI",
+            "PredictCoreAI",
+            "ImpactCoreAI",
+            "DisCoreAI",
+            "AuditCoreAI",
+            "AssetCoreAI",
+            "VendorCoreAI",
+            "BudgetCoreAI",
+            "ProjectCoreAI",
+            "RisiCoreAI",
+            "ShiftCoreAI",
+            "ChatCoreAI",
+            "FlowCoreAI"
+          ]
+        }
+      ],
+      "note": {
+        "title": "Her koşulda geçerli kurallar:",
+        "items": [
+          "GateCoreAI her AICore kurulumunda ayrıca lisanslanır — hangi eklenti alınırsa alınsın zorunludur; kurum başına sabit fiyatlıdır",
+          "AICore lisansları isme yazılıdır; havuzdan ortak (concurrent) kullanım yoktur",
+          "Kurulum ve devreye alma paketleri ayrıca fiyatlandırılır (AICORE Launch Ready / Cloud Ready / Quick Start)",
+          "Yıllık bakım ve destek paketi ayrıca fiyatlandırılır (Silver / Gold / Platinum / Mission Critical)"
+        ]
+      }
+    },
+    {
+      "number": "14",
       "title": "Kurulum, Bakım ve Destek",
       "groups": [
         {
