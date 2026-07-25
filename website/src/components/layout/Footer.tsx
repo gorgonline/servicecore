@@ -15,8 +15,11 @@ interface AicoreToolEntry {
 // AICORE: aicore.json'dan production tier'lari dinamik turetilir, beta'lar dislanir.
 const aicoreProductionLinks = [
   { text: "On-Prem Yapay Zekâ", href: "/aicore/on-prem" },
+  // GateCoreAI zorunlu bilesendir: beta olsa da footer'da her zaman gorunur.
+  { text: "GateCoreAI — Zorunlu Bileşen", href: "/aicore/gatecore" },
+  { text: "AICore Lisanslama", href: "/aicore/lisanslama" },
   ...(aicoreData.tools as AicoreToolEntry[])
-    .filter((tool) => tool.tier === "production")
+    .filter((tool) => tool.tier === "production" && tool.slug !== "gatecore")
     .map((tool) => ({ text: tool.name, href: `/aicore/${tool.slug}` })),
 ];
 

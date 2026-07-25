@@ -168,6 +168,8 @@ interface AicoreToolEntry {
   icon: string;
 }
 
+const gateCoreEntry = (aicoreData.tools as AicoreToolEntry[]).find((t) => t.slug === "gatecore");
+
 const aicoreSubmenu = [
   {
     name: "On-Prem Yapay Zekâ",
@@ -175,14 +177,29 @@ const aicoreSubmenu = [
     desc: "Neden yerinde kurulum? Üstünlükler ve Maskeli Bulut karşılaştırması.",
     href: "/aicore/on-prem",
     isBeta: false,
+    isRequired: false,
   },
-  ...(aicoreData.tools as AicoreToolEntry[]).map((tool) => ({
-    name: tool.name,
-    icon: AICORE_ICON_MAP[tool.icon] ?? Sparkles,
-    desc: tool.tagline,
-    href: `/aicore/${tool.slug}`,
-    isBeta: tool.tier === "beta",
-  })),
+  // GateCoreAI zorunlu bilesendir: listenin basinda, rozetli durur.
+  ...(gateCoreEntry
+    ? [{
+        name: gateCoreEntry.name,
+        icon: AICORE_ICON_MAP[gateCoreEntry.icon] ?? Sparkles,
+        desc: gateCoreEntry.tagline,
+        href: `/aicore/${gateCoreEntry.slug}`,
+        isBeta: false,
+        isRequired: true,
+      }]
+    : []),
+  ...(aicoreData.tools as AicoreToolEntry[])
+    .filter((tool) => tool.slug !== "gatecore")
+    .map((tool) => ({
+      name: tool.name,
+      icon: AICORE_ICON_MAP[tool.icon] ?? Sparkles,
+      desc: tool.tagline,
+      href: `/aicore/${tool.slug}`,
+      isBeta: tool.tier === "beta",
+      isRequired: false,
+    })),
 ];
 
 const plansSubmenu = [
@@ -494,6 +511,12 @@ export default function Navbar() {
                               <h4 className="text-sm font-semibold text-white mb-0.5 group-hover:text-(--color-accent-purple-light) transition-colors">{tool.name}</h4>
                               <p className="text-[11px] text-(--color-text-secondary) leading-snug line-clamp-2">{tool.desc}</p>
                             </div>
+                            {tool.isRequired && (
+                              <span className="absolute top-2 right-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-(--color-brand-accent)/50 bg-(--color-brand-accent)/12 text-[9px] font-mono font-semibold tracking-[0.14em] uppercase text-(--color-brand-accent)">
+                                <span className="w-1 h-1 rounded-full bg-(--color-brand-accent)" />
+                                zorunlu
+                              </span>
+                            )}
                             {tool.isBeta && (
                               <span className="absolute top-2 right-2 inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/12 text-[9px] font-mono font-semibold tracking-[0.14em] uppercase text-(--color-accent-purple-light)">
                                 <span className="w-1 h-1 rounded-full bg-(--color-accent-purple-light)" />
@@ -911,6 +934,12 @@ export default function Navbar() {
                           >
                             <tool.icon className="w-5 h-5 text-(--color-accent-purple-light) group-hover:text-(--color-accent-blue-light) transition-colors shrink-0" />
                             <span className="text-sm font-medium transition-colors flex-1 truncate">{tool.name}</span>
+                            {tool.isRequired && (
+                              <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-(--color-brand-accent)/50 bg-(--color-brand-accent)/12 text-[9px] font-mono font-semibold tracking-[0.14em] uppercase text-(--color-brand-accent) shrink-0">
+                                <span className="w-1 h-1 rounded-full bg-(--color-brand-accent)" />
+                                zorunlu
+                              </span>
+                            )}
                             {tool.isBeta && (
                               <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/12 text-[9px] font-mono font-semibold tracking-[0.14em] uppercase text-(--color-accent-purple-light) shrink-0">
                                 <span className="w-1 h-1 rounded-full bg-(--color-accent-purple-light)" />
