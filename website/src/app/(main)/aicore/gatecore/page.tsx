@@ -55,6 +55,39 @@ const BUGUNKU_DURUM = [
   },
 ];
 
+const UCLU = [
+  {
+    baslik: "Özel veriye erişir",
+    desc: "Kayıtlar, kullanıcı bilgileri, iç yazışmalar, varlık envanteri — işini yapabilmesi için hepsini görmesi gerekir.",
+  },
+  {
+    baslik: "Dışarıdan gelen metni okur",
+    desc: "Kaydı kurum dışından, kim olduğu doğrulanmamış kişiler açar. Ajan o metni okumak zorundadır; içinde ne yazdığını önceden bilemez.",
+  },
+  {
+    baslik: "Dışarıya bilgi gönderebilir",
+    desc: "Cevap yazar, e-posta gönderir, başka sisteme veri aktarır. Bilginin dışarı çıkabileceği bir yol her zaman vardır.",
+  },
+];
+
+const ITSM_NEDEN = [
+  {
+    icon: FileWarning,
+    baslik: "Girdi doğası gereği güvenilmezdir",
+    desc: "Kaydı açan kişi kurum dışından olabilir. Ajanın okuduğu metnin güvenli olduğunu kimse garanti edemez.",
+  },
+  {
+    icon: ScrollText,
+    baslik: "Arşiv, kurumun en hassas verisi",
+    desc: "Kişisel veriler, sistem ve ağ bilgisi, sözleşmeler, şifre sıfırlama izleri, iç yazışmalar — hepsi aynı yerde durur.",
+  },
+  {
+    icon: Siren,
+    baslik: "Yazma işlemi operasyona dokunur",
+    desc: "Ajan yalnız okumaz; kayıt kapatır, atama yapar, durum değiştirir. Buradaki hata doğrudan hizmeti bozar.",
+  },
+];
+
 const RISKLER = [
   {
     icon: KeyRound,
@@ -236,6 +269,81 @@ export default function GateCorePage() {
               soruya cevap veremez — yavaş ilerleyen bir dışa aktarmayı rutin
               trafikten ayıramaz. Ayrım, uygulamanın kendi kapısında yapılır.
             </p>
+          </div>
+        </section>
+
+        {/* ÜÇ ŞEY BİR ARADA */}
+        <section className="mt-24">
+          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            ASIL MESELE
+          </div>
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
+            Ajan, üç şeyi aynı anda yapabildiğinde tehlikeli hâle gelir.
+          </p>
+          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
+            Bunların her biri tek başına zararsızdır ve bir ajandan zaten
+            beklenir. Tehlike üçünün bir arada olmasından doğar — güvenlik
+            araştırmacılarının 2025'ten beri altını çizdiği tanım budur.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            {UCLU.map((u, i) => (
+              <div key={u.baslik} className="rounded-2xl border border-white/8 bg-white/2 p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex items-center justify-center w-8 h-8 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-300 font-mono text-xs shrink-0">
+                    {i + 1}
+                  </span>
+                  <h3 className="text-base font-semibold text-white tracking-tight">{u.baslik}</h3>
+                </div>
+                <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">{u.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-amber-500/25 bg-amber-500/5 px-6 py-5 max-w-4xl">
+            <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+              <span className="text-white font-medium">Sonuç:</span> Kaydın içine
+              gizlenmiş tek bir kötü niyetli talimat, iyi niyetli bir ajanı
+              kullanarak arşivi dışarı taşıyabilir. Ajan kandırıldığını fark
+              etmez — talimat aldığını sanır. Bu yüzden sınırın ajanın kendisine
+              değil, ajanın önündeki kapıya konması gerekir.
+            </p>
+          </div>
+        </section>
+
+        {/* NEDEN ITSM */}
+        <section className="mt-24">
+          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            NEDEN ÖZELLİKLE BURADA
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div>
+              <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
+                Servis yönetimi, ajan için en zor zemin.
+              </p>
+              <p className="mt-5 text-base font-light leading-relaxed text-(--color-text-secondary)">
+                Üç koşulun bir arada bulunduğu yer, kurumdaki her sistem değildir.
+                Ama servis yönetimi tam olarak orasıdır — ve bu, ürünümüz olduğu
+                için değil, işin doğası gereği böyledir.
+              </p>
+              <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-muted)">
+                Bir satış sisteminde yanlış kayıt can sıkar. Burada yanlış işlem
+                hizmeti durdurur.
+              </p>
+            </div>
+            <div className="space-y-3">
+              {ITSM_NEDEN.map((n) => (
+                <div key={n.baslik} className="rounded-2xl border border-white/8 bg-white/2 p-5 flex gap-4">
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 shrink-0">
+                    <n.icon className="w-4 h-4" />
+                  </span>
+                  <div>
+                    <h3 className="text-[15px] font-semibold text-white tracking-tight mb-1">{n.baslik}</h3>
+                    <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">{n.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
