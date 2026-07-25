@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>AICore İş Modeli — Ders Sunumu</title>
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #f9f9f7;
+    --surface: #fcfcfb;
+    --ink: #0b0b0b;
+    --ink-2: #52514e;
+    --muted: #898781;
+    --rule: #e1e0d9;
+    --baseline: #c3c2b7;
+    --s1: #2a78d6;  /* koltuk lisansı */
+    --s2: #eb6834;  /* yapay zekâ ek ücreti */
+    --s3: #1baf7a;  /* iş paketi */
+    --s4: #eda100;  /* platform tabanı */
+    --good: #006300;
+    --good-bg: #eef6ee;
+    --bad: #d03b3b;
+    --bad-bg: #fbeeee;
+    --warn: #b45309;
+    --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 17px;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- slide skeleton ---------- */
+  .slide { padding: 88px 0 72px; border-top: 1px solid var(--rule); }
+  .slide:first-child { border-top: none; }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .eyebrow b { color: var(--ink); font-weight: 700; }
+  h1 { font-size: clamp(40px, 7vw, 64px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.08; }
+  h2 { font-size: clamp(28px, 4.5vw, 40px); font-weight: 800; letter-spacing: -0.015em; line-height: 1.15; margin-bottom: 20px; }
+  h3 { font-size: 19px; font-weight: 700; margin: 30px 0 10px; }
+  p  { max-width: 62ch; margin-bottom: 14px; }
+  p.lead { font-size: 20px; color: var(--ink-2); max-width: 56ch; }
+  .note { font-size: 14px; color: var(--muted); max-width: 60ch; }
+  em { font-style: italic; }
+
+  /* stamps — mürekkep damgası */
+  .stamp {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border: 2px dashed currentColor;
+    border-radius: 4px;
+    transform: rotate(-2deg);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .stamp.free { color: var(--good); background: var(--good-bg); }
+  .stamp.paid { color: #1c5cab; background: #edf3fc; }
+  .stamp.block { color: var(--bad); background: var(--bad-bg); }
+
+  /* ---------- kapak ---------- */
+  .cover { min-height: 92vh; display: flex; flex-direction: column; justify-content: center; }
+  .cover .thesis { margin-top: 26px; font-size: 21px; color: var(--ink-2); max-width: 58ch; }
+  .cover .thesis b { color: var(--ink); }
+  .toc {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 6px 24px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-2);
+  }
+  .toc a { color: inherit; text-decoration: none; padding: 3px 0; display: block; }
+  .toc a:hover, .toc a:focus-visible { color: var(--ink); }
+  .toc a span { color: var(--muted); margin-right: 8px; }
+  .cover .date { margin-top: 44px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+  /* ---------- stat row ---------- */
+  .stats { display: flex; gap: 16px; flex-wrap: wrap; margin: 26px 0 8px; }
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 16px 20px;
+    min-width: 170px;
+    flex: 1;
+  }
+  .stat .num { font-size: 34px; font-weight: 800; letter-spacing: -0.01em; }
+  .stat .lbl { font-size: 13px; color: var(--ink-2); margin-top: 2px; }
+
+  /* çıkmaz kapılar */
+  .deadends { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 24px 0; }
+  .deadend {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .deadend .q { font-weight: 700; margin-bottom: 6px; }
+  .deadend .q::before { content: "✗ "; color: var(--bad); }
+  .deadend .a { font-size: 15px; color: var(--ink-2); }
+
+  .keyline {
+    margin: 30px 0 8px;
+    padding: 18px 22px;
+    background: var(--surface);
+    border-left: 4px solid var(--ink);
+    border-radius: 0 10px 10px 0;
+    font-size: 19px;
+    font-weight: 600;
+    max-width: 62ch;
+  }
+
+  /* ---------- chart: gelir senaryoları ---------- */
+  .viz {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 24px 24px 18px;
+    margin: 30px 0 10px;
+  }
+  .viz .viz-title { font-weight: 700; font-size: 16px; }
+  .viz .viz-sub { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+  .bars { display: flex; align-items: flex-end; gap: clamp(18px, 6vw, 64px); min-height: 300px; padding: 0 8px; }
+  .bar-group { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; max-width: 180px; }
+  .bar-total { font-family: var(--mono); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .bar-stack { width: 100%; max-width: 96px; display: flex; flex-direction: column-reverse; gap: 2px; }
+  .seg { width: 100%; position: relative; cursor: default; }
+  .seg:last-child { border-radius: 4px 4px 0 0; }
+  .seg .seg-lbl {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 12px; font-weight: 700; color: #fff;
+  }
+  .seg.ghost {
+    background: repeating-linear-gradient(45deg, transparent, transparent 4px, var(--baseline) 4px, var(--baseline) 5px);
+    border: 1px dashed var(--baseline);
+    border-radius: 4px 4px 0 0;
+  }
+  .seg.ghost .seg-lbl { color: var(--muted); }
+  .bar-name { font-size: 13px; color: var(--ink-2); margin-top: 10px; text-align: center; line-height: 1.35; border-top: 1px solid var(--baseline); padding-top: 8px; width: 100%; min-height: 54px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 18px; font-size: 13px; color: var(--ink-2); }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .swatch { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+  .viz details { margin-top: 14px; font-size: 13px; color: var(--ink-2); }
+  .viz details summary { cursor: pointer; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+  .viz table { border-collapse: collapse; margin-top: 10px; font-variant-numeric: tabular-nums; }
+  .viz td, .viz th { border: 1px solid var(--rule); padding: 5px 12px; text-align: right; font-size: 13px; }
+  .viz th:first-child, .viz td:first-child { text-align: left; }
+
+  /* tooltip */
+  #tip {
+    position: fixed; pointer-events: none; z-index: 50;
+    background: var(--ink); color: #fff;
+    font-family: var(--mono); font-size: 12px;
+    padding: 6px 10px; border-radius: 6px;
+    opacity: 0; transition: opacity 0.12s;
+    white-space: nowrap;
+  }
+
+  /* ---------- kapı diyagramı ---------- */
+  .gateflow { margin: 30px 0; display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .gf-box {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 14px 22px; text-align: center; max-width: 420px; width: 100%;
+  }
+  .gf-box .t { font-weight: 700; }
+  .gf-box .d { font-size: 14px; color: var(--ink-2); }
+  .gf-gate { border: 2px solid var(--ink); }
+  .gf-gate .q { font-family: var(--mono); font-size: 14px; font-weight: 700; padding: 2px 0; }
+  .gf-arrow { font-size: 20px; color: var(--muted); line-height: 1.6; }
+  .gf-outs { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; width: 100%; margin-top: 4px; }
+  .gf-out { border-radius: 10px; padding: 16px; border: 1px solid var(--rule); background: var(--surface); }
+  .gf-out .h { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .gf-out .d { font-size: 14px; color: var(--ink-2); margin-bottom: 10px; }
+  .gf-out.no { background: var(--bad-bg); border-color: #ecc8c8; }
+
+  /* ---------- üç gelir yolu ---------- */
+  .lanes { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin: 28px 0; }
+  .lane {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 12px;
+    padding: 22px; border-top: 5px solid var(--baseline);
+    display: flex; flex-direction: column;
+  }
+  .lane.l1 { border-top-color: var(--s1); }
+  .lane.l2 { border-top-color: var(--s2); }
+  .lane.l3 { border-top-color: var(--s3); }
+  .lane .who { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+  .lane .h { font-size: 20px; font-weight: 800; margin: 6px 0 8px; letter-spacing: -0.01em; }
+  .lane .d { font-size: 15px; color: var(--ink-2); flex: 1; }
+  .lane .money {
+    margin-top: 16px; padding-top: 12px; border-top: 1px dashed var(--rule);
+    font-weight: 700; font-size: 15px;
+  }
+  .lane .money::before { content: "₺ "; font-family: var(--mono); color: var(--muted); }
+  .lane .fine { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  /* ---------- makbuz (signature) ---------- */
+  .receipt-wrap { display: flex; gap: 28px; flex-wrap: wrap; align-items: flex-start; margin: 28px 0; }
+  .receipt {
+    font-family: var(--mono); font-size: 13.5px;
+    background: #fffdf8;
+    border: 1px solid var(--rule);
+    box-shadow: 0 2px 10px rgba(11,11,11,0.06);
+    padding: 20px 22px 26px;
+    width: 300px;
+    position: relative;
+    line-height: 1.9;
+  }
+  .receipt::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 10px;
+    background: linear-gradient(-45deg, transparent 66%, #fffdf8 67%) 0 0 / 14px 100%,
+                linear-gradient(45deg, transparent 66%, #fffdf8 67%) 7px 0 / 14px 100%;
+  }
+  .receipt .rc-head { text-align: center; font-weight: 700; letter-spacing: 0.12em; border-bottom: 1px dashed var(--baseline); padding-bottom: 8px; margin-bottom: 10px; }
+  .receipt .row { display: flex; justify-content: space-between; gap: 12px; }
+  .receipt .row.dim { color: var(--muted); }
+  .receipt .row.dim s { text-decoration-color: var(--bad); }
+  .receipt .total { border-top: 1px dashed var(--baseline); margin-top: 10px; padding-top: 8px; font-weight: 700; display: flex; justify-content: space-between; }
+  .receipt .rc-stamp { position: absolute; right: 12px; bottom: 26px; }
+  .receipt-side { flex: 1; min-width: 260px; }
+
+  ul.clean { list-style: none; max-width: 62ch; }
+  ul.clean li { padding: 9px 0 9px 30px; position: relative; border-bottom: 1px solid var(--rule); font-size: 16px; }
+  ul.clean li:last-child { border-bottom: none; }
+  ul.clean li::before { position: absolute; left: 2px; }
+  ul.clean.nos li::before { content: "✗"; color: var(--bad); font-weight: 700; }
+  ul.clean.yes li::before { content: "✓"; color: var(--good); font-weight: 700; }
+
+  .multiplier { display: flex; gap: 14px; flex-wrap: wrap; margin: 20px 0; }
+  .mult {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 14px 18px; flex: 1; min-width: 170px;
+  }
+  .mult .x { font-family: var(--mono); font-size: 26px; font-weight: 700; }
+  .mult .w { font-size: 14px; color: var(--ink-2); }
+
+  /* ---------- kaçaklar ---------- */
+  .leaks { margin: 26px 0; display: flex; flex-direction: column; gap: 12px; }
+  .leak {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden;
+  }
+  .leak .try { padding: 16px 18px; font-style: italic; color: var(--ink-2); border-right: 1px solid var(--rule); }
+  .leak .try::before { content: "Deneme — "; font-style: normal; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--bad); text-transform: uppercase; display: block; margin-bottom: 4px; }
+  .leak .fix { padding: 16px 18px; font-size: 15px; }
+  .leak .fix::before { content: "Kapanış — "; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; color: var(--good); text-transform: uppercase; display: block; margin-bottom: 4px; }
+  @media (max-width: 620px) {
+    .leak { grid-template-columns: 1fr; }
+    .leak .try { border-right: none; border-bottom: 1px solid var(--rule); }
+  }
+
+  /* ---------- rapor ---------- */
+  .report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 26px 0; }
+  @media (max-width: 700px) { .report-grid { grid-template-columns: 1fr; } }
+  .hbars { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+  .hbar .hlbl { font-size: 13px; color: var(--ink-2); margin-bottom: 3px; display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
+  .hbar .track { background: var(--paper); border-radius: 4px; height: 14px; overflow: hidden; }
+  .hbar .fill { height: 100%; border-radius: 0 4px 4px 0; background: var(--s1); }
+  .locked { position: relative; overflow: hidden; }
+  .locked .blurred { filter: blur(5px); opacity: 0.55; pointer-events: none; user-select: none; }
+  .locked .lock-msg {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 20px; gap: 8px;
+  }
+  .lock-msg .ic { font-size: 26px; }
+  .lock-msg .t { font-weight: 700; }
+  .lock-msg .d { font-size: 13.5px; color: var(--ink-2); max-width: 30ch; }
+
+  /* ---------- zaman çizgisi ---------- */
+  .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 28px 0; counter-reset: tstep; }
+  .tstep {
+    background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px;
+    counter-increment: tstep; position: relative;
+  }
+  .tstep::before {
+    content: counter(tstep);
+    font-family: var(--mono); font-weight: 700; font-size: 13px;
+    display: inline-flex; width: 26px; height: 26px; align-items: center; justify-content: center;
+    border: 2px solid var(--ink); border-radius: 50%; margin-bottom: 10px;
+  }
+  .tstep .h { font-weight: 700; margin-bottom: 4px; }
+  .tstep .d { font-size: 14.5px; color: var(--ink-2); }
+
+  /* ---------- kapanış ---------- */
+  .finale { text-align: left; padding-bottom: 120px; }
+  .finale .big { font-size: clamp(24px, 4vw, 34px); font-weight: 800; line-height: 1.35; letter-spacing: -0.01em; max-width: 26ch; margin: 24px 0; }
+  .finale .big .hl { border-bottom: 4px solid var(--s3); }
+  .next { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+  .next .doc {
+    font-family: var(--mono); font-size: 13px; color: var(--ink-2);
+    border: 1px solid var(--rule); background: var(--surface); border-radius: 8px; padding: 10px 16px;
+  }
+  .next .doc b { color: var(--ink); display: block; font-size: 13px; }
+
+  /* reveal animasyonu */
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+  }
+  a:focus-visible, summary:focus-visible { outline: 2px solid var(--s1); outline-offset: 3px; border-radius: 3px; }
+</style>
+</head>
+<body>
+<div id="tip" role="presentation"></div>
+<main>
+
+  <!-- ═══════════ KAPAK ═══════════ -->
+  <section class="slide cover">
+    <div class="eyebrow">AICORE · İŞ MODELİ DERSİ · SERVICECORE</div>
+    <h1>Yapay zekâ çağında lisans geliri</h1>
+    <p class="thesis">
+      İnsan çalışıyorsa <b>lisans</b>. Yanında yapay zekâ varsa <b>lisans + sabit ek ücret</b>.
+      İnsansız biten iş <b>yıllık paketten</b> düşer. Kapıdan girmeyen bot <b>bloklanır</b>.
+      Bu sunum, bu dört cümlenin dersidir.
+    </p>
+    <nav class="toc" aria-label="Bölümler">
+      <a href="#b1"><span>01</span>Problem</a>
+      <a href="#b2"><span>02</span>Kapı</a>
+      <a href="#b3"><span>03</span>Üç gelir yolu</a>
+      <a href="#b4"><span>04</span>Sayaç</a>
+      <a href="#b5"><span>05</span>Bedava kalanlar</a>
+      <a href="#b6"><span>06</span>Kaçak yolları</a>
+      <a href="#b7"><span>07</span>Raporlar</a>
+      <a href="#b8"><span>08</span>Devreye alma</a>
+    </nav>
+    <div class="date">25 TEMMUZ 2026 · SERVICECORE · AICORE</div>
+  </section>
+
+  <!-- ═══════════ 1 · PROBLEM ═══════════ -->
+  <section class="slide reveal" id="b1">
+    <div class="eyebrow"><b>BÖLÜM 01</b> · PROBLEM</div>
+    <h2>Neden bu modele mecburuz?</h2>
+    <p class="lead">Bugün gelirimiz teknisyen lisansından geliyor. Yapay zekâ aynı işi daha az insanla yaptıracak — bu durdurulamaz. Soru şu: azalan lisansın geliri nereden gelecek?</p>
+
+    <div class="stats">
+      <div class="stat"><div class="num">100</div><div class="lbl">bugün: teknisyen lisansı</div></div>
+      <div class="stat"><div class="num">→ 60</div><div class="lbl">yapay zekâ sonrası: kalan koltuk (örnek)</div></div>
+      <div class="stat"><div class="num" style="color:var(--bad)">−40</div><div class="lbl">cevapsız kalırsa: kaybolan lisans</div></div>
+    </div>
+
+    <h3>Üç kestirme cevap var, üçü de çıkmaz</h3>
+    <div class="deadends">
+      <div class="deadend"><div class="q">Yasaklayalım</div><div class="a">Müşteri verim istiyor. Yasaklayan satıcıyı bırakır, izin veren rakibe gider.</div></div>
+      <div class="deadend"><div class="q">Bedava verelim</div><div class="a">Kaybolan 40 lisansın yerine tek kuruş gelmez. Gelir sessizce erir.</div></div>
+      <div class="deadend"><div class="q">Bota tek lisans satalım</div><div class="a">Sınırsız tek lisans yüz kişinin işini yapar. Herkes bir tane alır — sistemin fiyatı tek lisansa iner.</div></div>
+    </div>
+
+    <div class="keyline">Geriye tek yol kalıyor: yapay zekânın yaptığı işi saymak ve sayıya göre ücretlendirmek. Bütün model bu cümledir.</div>
+
+    <figure class="viz" aria-label="Gelir senaryoları karşılaştırması">
+      <div class="viz-title">Gelir nereden gelecek?</div>
+      <div class="viz-sub">Temsili birimler — bugünkü gelir 100 kabul edildi. Gerçek rakamlar sessiz ölçümden sonra netleşir.</div>
+      <div class="bars">
+        <div class="bar-group">
+          <div class="bar-total">100</div>
+          <div class="bar-stack">
+            <div class="seg" style="height:250px;background:var(--s1)" data-tip="Koltuk lisansı · 100"><span class="seg-lbl">100</span></div>
+          </div>
+          <div class="bar-name">Bugün</div>
+        </div>
+        <div class="bar-group">
+          <div class="bar-total" style="color:var(--bad)">60</div>
+          <div class="bar-stack">
+            <div class="seg" style="height:150px;background:var(--s1)" data-tip="Kalan koltuk · 60"><span class="seg-lbl">60</span></div>
+            <div class="seg ghost" style="height:98px" data-tip="Kaybolan lisans geliri · 40"><span class="seg-lbl">−40</span></div>
+          </div>
+          <div class="bar-name">Yapay zekâ gelir,<br>model olmazsa</div>
+        </div>
+        <div class="bar-group">
+          <div class="bar-total" style="color:var(--good)">110</div>
+          <div class="bar-stack">
+            <div class="seg" style="height:150px;background:var(--s1)" data-tip="Koltuk lisansı · 60"><span class="seg-lbl">60</span></div>
+            <div class="seg" style="height:37px;background:var(--s2)" data-tip="Yapay zekâ ek ücreti · 15"><span class="seg-lbl">15</span></div>
+            <div class="seg" style="height:62px;background:var(--s3)" data-tip="Yıllık iş paketi · 25"><span class="seg-lbl">25</span></div>
+            <div class="seg" style="height:25px;background:var(--s4)" data-tip="Platform tabanı · 10"><span class="seg-lbl">10</span></div>
+          </div>
+          <div class="bar-name">Yapay zekâ gelir,<br>bu modelle</div>
+        </div>
+      </div>
+      <div class="legend">
+        <span><i class="swatch" style="background:var(--s1)"></i>Koltuk lisansı</span>
+        <span><i class="swatch" style="background:var(--s2)"></i>Yapay zekâ ek ücreti</span>
+        <span><i class="swatch" style="background:var(--s3)"></i>Yıllık iş paketi</span>
+        <span><i class="swatch" style="background:var(--s4)"></i>Platform tabanı</span>
+      </div>
+      <details>
+        <summary>Tablo olarak gör</summary>
+        <table>
+          <tr><th>Senaryo</th><th>Koltuk</th><th>Ek ücret</th><th>İş paketi</th><th>Taban</th><th>Toplam</th></tr>
+          <tr><td>Bugün</td><td>100</td><td>—</td><td>—</td><td>—</td><td>100</td></tr>
+          <tr><td>Model olmazsa</td><td>60</td><td>—</td><td>—</td><td>—</td><td>60</td></tr>
+          <tr><td>Bu modelle</td><td>60</td><td>15</td><td>25</td><td>10</td><td>110</td></tr>
+        </table>
+      </details>
+    </figure>
+    <p class="note">Ders şu: iş insanda kaldıkça koltuktan, yapay zekâya kaydıkça paketten kazanırız. İki durumda da gelir bizde.</p>
+  </section>
+
+  <!-- ═══════════ 2 · KAPI ═══════════ -->
+  <section class="slide reveal" id="b2">
+    <div class="eyebrow"><b>BÖLÜM 02</b> · KAPI</div>
+    <h2>Herkes kim olduğunu söyleyecek</h2>
+    <p class="lead">Site güvenliği gibi: içeri giren herkes kapıda <em>"kimim, kime geldim"</em> der ve deftere yazılır. Cevap veremeyen giremez.</p>
+
+    <div class="gateflow">
+      <div class="gf-box"><div class="t">Dışarıdan gelen her yazılım</div><div class="d">bizim asistan · müşterinin programı · üçüncü taraf bot</div></div>
+      <div class="gf-arrow">↓</div>
+      <div class="gf-box gf-gate">
+        <div class="q">1 — Sen kimsin?</div>
+        <div class="q">2 — Sorumlun kim?</div>
+      </div>
+      <div class="gf-arrow">↓</div>
+      <div class="gf-outs">
+        <div class="gf-out">
+          <div class="h">Teknisyene yardım ediyor</div>
+          <div class="d">Teknisyenin adına, canlı oturumla çalışır.</div>
+          <span class="stamp paid">Ek ücretli</span>
+        </div>
+        <div class="gf-out">
+          <div class="h">Kendi başına iş bitiriyor</div>
+          <div class="d">Kayıtlı sorumlu yöneticisiyle çalışır.</div>
+          <span class="stamp paid">Paketten düşer</span>
+        </div>
+        <div class="gf-out">
+          <div class="h">Kayıt açıyor / veri taşıyor</div>
+          <div class="d">Normal entegrasyon; kimlik yine zorunlu.</div>
+          <span class="stamp free">Bedava</span>
+        </div>
+        <div class="gf-out no">
+          <div class="h">Cevap veremiyor</div>
+          <div class="d">Gizli bot imzasından tanınır.</div>
+          <span class="stamp block">Blok</span>
+        </div>
+      </div>
+    </div>
+
+    <p>Bir kural daha, çok önemli: bot <b>asla bir insanın şifresini kullanmaz</b>. Kullansaydı defter yalan söylerdi — işi bot yapmışken kayıtta "Ayşe yaptı" görünürdü. Doğru kayıt: <em>"işi gece botu yaptı, sorumlusu Ayşe."</em></p>
+  </section>
+
+  <!-- ═══════════ 3 · ÜÇ GELİR YOLU ═══════════ -->
+  <section class="slide reveal" id="b3">
+    <div class="eyebrow"><b>BÖLÜM 03</b> · ÜÇ GELİR YOLU</div>
+    <h2>Üç çalışma şekli, üç ayrı fiyat</h2>
+    <p class="lead">Aynı sistemin içinde iş üç şekilde yapılabilir. Her birinin kimliği ayrı, ücreti ayrı.</p>
+
+    <div class="lanes">
+      <div class="lane l1">
+        <div class="who">Yol 1</div>
+        <div class="h">İşi insan yapıyor</div>
+        <div class="d">Teknisyen sisteme giriyor, işi kendisi yapıyor. Bugünden farkı yok.</div>
+        <div class="money">İsme yazılı teknisyen lisansı</div>
+      </div>
+      <div class="lane l2">
+        <div class="who">Yol 2</div>
+        <div class="h">İnsan + yapay zekâ</div>
+        <div class="d">Teknisyen ekranda; yapay zekâ özet çıkarıyor, cevap taslağı yazıyor. <b>Son kararı insan veriyor.</b> Teknisyen ekranda değilse bu yol çalışmaz — gece işi buradan kaçamaz.</div>
+        <div class="money">Lisans üstüne yıllık sabit ek ücret</div>
+        <div class="fine">Telefon hattına ek hizmet paketi gibi. Koltuğu öldüremez — ancak koltuğun üstünde yaşar; her koltuğun gelirini artırır.</div>
+      </div>
+      <div class="lane l3">
+        <div class="who">Yol 3</div>
+        <div class="h">İşi yazılım bitiriyor</div>
+        <div class="d">Ortada insan yok: gece 3'te gelen kaydı yazılım kendisi çözüp kapatıyor. Kayıtlı sorumlu yöneticisi var.</div>
+        <div class="money">Yıllık iş paketi — küçük / orta / büyük</div>
+        <div class="fine">Telefon tarifesi gibi: yılda şu kadar iş, sabit fatura. Bitince sürpriz fatura yok — bot durur, isteyen büyük paket alır.</div>
+      </div>
+    </div>
+
+    <div class="keyline">Limit olduğu için korkulan şey imkânsız: tek paketle yüz kişinin işi yapılamaz. Çok iş = büyük paket = daha yüksek gelir.</div>
+  </section>
+
+  <!-- ═══════════ 4 · SAYAÇ ═══════════ -->
+  <section class="slide reveal" id="b4">
+    <div class="eyebrow"><b>BÖLÜM 04</b> · SAYAÇ</div>
+    <h2>Neyi sayıyoruz?</h2>
+    <p class="lead">Lokanta hesabı masaya gelen <b>tabağa</b> kesilir — mutfakta kaç tencere kirlendiğine değil. Sayacımız botun teknik adımlarını değil, <b>başarıyla bitmiş işi</b> sayar.</p>
+
+    <div class="receipt-wrap">
+      <div class="receipt" role="img" aria-label="Örnek hesap: 15 teknik adım, müşteriye 1 iş yazılır">
+        <div class="rc-head">— HESAP —</div>
+        <div class="row dim"><span><s>kayıt okundu</s></span><span>0</span></div>
+        <div class="row dim"><span><s>benzer kayıt arandı</s></span><span>0</span></div>
+        <div class="row dim"><span><s>çözüm denendi (başarısız)</s></span><span>0</span></div>
+        <div class="row dim"><span><s>tekrar denendi</s></span><span>0</span></div>
+        <div class="row dim"><span><s>… 11 teknik adım daha</s></span><span>0</span></div>
+        <div class="row"><span><b>kayıt çözüldü ✓</b></span><span><b>1</b></span></div>
+        <div class="total"><span>MÜŞTERİYE YAZILAN</span><span>1 İŞ</span></div>
+        <div class="rc-stamp"><span class="stamp free">Adil sayım</span></div>
+      </div>
+      <div class="receipt-side">
+        <h3 style="margin-top:0">Sayılmayanlar</h3>
+        <ul class="clean nos">
+          <li>Başarısız deneme ve tekrarlar</li>
+          <li>Botun içerideki teknik adımları</li>
+          <li>Yarım kalıp insana devredilen iş</li>
+          <li>"Çözüldü" denip aynı dertle geri açılan kayıt — <b>sayaçtan geri düşülür</b></li>
+        </ul>
+        <p class="note" style="margin-top:14px">Neden böyle? Müşteri botun iç adımlarını bilemez ve kontrol edemez. Bilemediği şeye fatura kesersen kavga alırsın — SAP bunu yaşadı.</p>
+      </div>
+    </div>
+
+    <h3>Ağır iş, baştan belli çarpanla</h3>
+    <div class="multiplier">
+      <div class="mult"><div class="x">× 1</div><div class="w">basit cevap, standart çözüm</div></div>
+      <div class="mult"><div class="x">× 2</div><div class="w">randevu değiştirme, tek sistemli işlem</div></div>
+      <div class="mult"><div class="x">× 5</div><div class="w">birkaç sistemi dolaşan iş emri</div></div>
+    </div>
+    <p class="note">Bu çarpanlar sözleşmede sabitlenir; dönem içinde kimse oynayamaz.</p>
+  </section>
+
+  <!-- ═══════════ 5 · BEDAVA ═══════════ -->
+  <section class="slide reveal" id="b5">
+    <div class="eyebrow"><b>BÖLÜM 05</b> · BEDAVA KALANLAR</div>
+    <h2>Neyi ücretlendirmeyiz?</h2>
+    <p class="lead">Bu bölüm sayaç kadar önemli. Yanlış yerden ücret alırsak müşteri isyan eder — doğru yerden almazsak gelir erir.</p>
+
+    <ul class="clean yes">
+      <li><b>Kayıt açan trafik bedava.</b> E-postadan kayıt açılması, izleme sisteminin arıza bildirmesi, portal. Bunlar bize iş <b>getiriyor</b> — getirene vergi kesilmez.</li>
+      <li><b>Veri kopyalayan entegrasyon bedava.</b> İki sistem arasında bilgi taşımak normal entegrasyondur.</li>
+    </ul>
+
+    <h3>Ücretlendirilen tek şey</h3>
+    <p>İnsansız <b>çözen, kapatan, karar veren</b> iş. Yazılımın markasına bakmayız, <b>yaptığı işe</b> bakarız — <em>"bu yapay zekâ değil, normal script"</em> bahanesi işlemez.</p>
+
+    <div class="keyline">Aynı iş iki kere ücretlenmez: ya yardımlı iştir ya insansız iştir. Kayıtta tek etiket taşır.</div>
+  </section>
+
+  <!-- ═══════════ 6 · KAÇAK YOLLARI ═══════════ -->
+  <section class="slide reveal" id="b6">
+    <div class="eyebrow"><b>BÖLÜM 06</b> · KAÇAK YOLLARI</div>
+    <h2>Kuralı dolanmaya çalışan ne bulur?</h2>
+    <p class="lead">Dört bilinen deneme var. Dördü de üründe kapalı — sözleşmede değil, ürünün kendisinde.</p>
+
+    <div class="leaks">
+      <div class="leak">
+        <div class="try">"10 teknisyenle 100 kişilik iş yaptırırım."</div>
+        <div class="fix">Her insan hesabının işlem tavanı var. Gerçek insan bu tavana ömründe takılmaz; bot ilk saatte çarpar.</div>
+      </div>
+      <div class="leak">
+        <div class="try">"Botu insan gibi gösteririm."</div>
+        <div class="fix">Bot imzası bellidir: 7/24 çalışma, istekler arası hep aynı süre, insanüstü hız. Tespit edilir, bloklanır.</div>
+      </div>
+      <div class="leak">
+        <div class="try">"Ucuz yol yardım yolu — botun işine teknisyene formalite onay bastırırım."</div>
+        <div class="fix">Saniyeler arayla, okumadan toplu onay deseni yakalanır. İş insansız sayılır, paketten düşer.</div>
+      </div>
+      <div class="leak">
+        <div class="try">"Kendi yazdığım program bedava çalışsın."</div>
+        <div class="fix">İş bitiren her yazılım aynı kapıdan girer, aynı paketten düşer. Bizi atlatmaya çalışan bile bize ödeme yapar.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ 7 · RAPORLAR ═══════════ -->
+  <section class="slide reveal" id="b7">
+    <div class="eyebrow"><b>BÖLÜM 07</b> · RAPORLAR</div>
+    <h2>Patrona ne var?</h2>
+    <p class="lead">Her iş defterde olduğu için raporlar kendiliğinden çıkar. İki kural: fatura kontrolü müşterinin hakkıdır (bedava), gelişmiş analiz üründür (satılır).</p>
+
+    <div class="report-grid">
+      <figure class="viz" style="margin:0" aria-label="Ekip bazında yapay zekâ kullanım oranı — örnek">
+        <div class="viz-title">İşin ne kadarı yapay zekâ eliyle? — ekip bazında</div>
+        <div class="viz-sub">Örnek veri · varsayılan görünüm bu</div>
+        <div class="hbars">
+          <div class="hbar"><div class="hlbl"><span>Ağ ekibi</span><span>%38</span></div><div class="track"><div class="fill" style="width:38%"></div></div></div>
+          <div class="hbar"><div class="hlbl"><span>Masaüstü destek</span><span>%29</span></div><div class="track"><div class="fill" style="width:29%;background:#5598e7"></div></div></div>
+          <div class="hbar"><div class="hlbl"><span>Uygulama ekibi</span><span>%17</span></div><div class="track"><div class="fill" style="width:17%;background:#86b6ef"></div></div></div>
+          <div class="hbar"><div class="hlbl"><span>Saha servis</span><span>%9</span></div><div class="track"><div class="fill" style="width:9%;background:#b7d3f6"></div></div></div>
+        </div>
+      </figure>
+      <figure class="viz locked" style="margin:0" aria-label="Kişi bazlı görünüm — izinle açılır">
+        <div class="blurred">
+          <div class="viz-title">Kişi bazında görünüm</div>
+          <div class="viz-sub">Ali · Ayşe · Mehmet · Zeynep</div>
+          <div class="hbars">
+            <div class="hbar"><div class="hlbl"><span>████</span><span>%62</span></div><div class="track"><div class="fill" style="width:62%"></div></div></div>
+            <div class="hbar"><div class="hlbl"><span>████</span><span>%41</span></div><div class="track"><div class="fill" style="width:41%"></div></div></div>
+            <div class="hbar"><div class="hlbl"><span>████</span><span>%12</span></div><div class="track"><div class="fill" style="width:12%"></div></div></div>
+          </div>
+        </div>
+        <div class="lock-msg">
+          <div class="ic">🔒</div>
+          <div class="t">Varsayılan kapalı</div>
+          <div class="d">Kişi bazlı ekran çalışan gözetimi sayılır. Yetki + hukuk onayı + aydınlatma ile açılır.</div>
+        </div>
+      </figure>
+    </div>
+
+    <ul class="clean yes" style="margin-top:8px">
+      <li><b>Bedava:</b> müşterinin sayaç ekranı — kaç iş hakkı alındı, kaçı kullanıldı, hangi iş neden sayıldı/sayılmadı. Paket %70 / %85 / %95 dolunca uyarı.</li>
+      <li><b>Satılır:</b> gelişmiş analiz — nerede daha çok otomasyon yapılır, hangi bot sık hata yapıyor, ekipler ne kadar zaman kazandı.</li>
+    </ul>
+  </section>
+
+  <!-- ═══════════ 8 · DEVREYE ALMA ═══════════ -->
+  <section class="slide reveal" id="b8">
+    <div class="eyebrow"><b>BÖLÜM 08</b> · DEVREYE ALMA</div>
+    <h2>Acele yok: önce ölç, sonra sat</h2>
+    <p class="lead">Fiyatlar ve paket boyları masa başında kilitlenmez. Sıra şu:</p>
+
+    <div class="timeline">
+      <div class="tstep">
+        <div class="h">Sessiz ölçüm</div>
+        <div class="d">10-15 müşteride sayaç fatura kesmeden çalışır. Gerçek iş hacmini ilk kez burada görürüz.</div>
+      </div>
+      <div class="tstep">
+        <div class="h">Küçük pilot</div>
+        <div class="d">Tek senaryoda, sabit bedelle. Çıkış şartı: yetkisiz işlem sıfır, müşteri kazancı en az 2 kat.</div>
+      </div>
+      <div class="tstep">
+        <div class="h">Satış</div>
+        <div class="d">Fiyat ve paketler ancak pilot verisinden sonra kilitlenir. Yalnız yeni sözleşme ve yenilemelerde.</div>
+      </div>
+    </div>
+
+    <p style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <span class="stamp block">Geçmişe borç yasak</span>
+      <span style="font-size:15px;color:var(--ink-2);max-width:46ch">Sonradan kural değiştirip geriye dönük fatura çıkarmak yok. SAP bu çukura düştü — müşterileriyle mahkemelik oldu.</span>
+    </p>
+  </section>
+
+  <!-- ═══════════ KAPANIŞ ═══════════ -->
+  <section class="slide reveal finale">
+    <div class="eyebrow"><b>ÖZET</b> · TEK CÜMLE</div>
+    <div class="big">
+      İnsan çalışıyorsa lisans; yanında yapay zekâ varsa lisans + ek ücret;
+      insansız biten iş paketten düşer; kayıt açan bedava; kapıdan girmeyen bot bloklanır.
+      <span class="hl">Sayaç tabağı sayar, tencereyi değil.</span>
+    </div>
+    <div class="next">
+      <div class="doc"><b>Karar listesi</b>yönetimin vereceği 8 karar</div>
+      <div class="doc"><b>Yol haritası</b>backend ekibinin 11 adımı</div>
+      <div class="doc"><b>Ders notu</b>bu sunumun madde madde hali</div>
+    </div>
+  </section>
+
+</main>
+<script>
+  // yumuşak görünme
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // grafik ipuçları
+  const tip = document.getElementById('tip');
+  document.querySelectorAll('[data-tip]').forEach(el => {
+    el.addEventListener('mousemove', (ev) => {
+      tip.textContent = el.dataset.tip;
+      tip.style.opacity = 1;
+      tip.style.left = Math.min(ev.clientX + 14, window.innerWidth - tip.offsetWidth - 10) + 'px';
+      tip.style.top = (ev.clientY - 34) + 'px';
+    });
+    el.addEventListener('mouseleave', () => { tip.style.opacity = 0; });
+  });
+</script>
+</body>
+</html>

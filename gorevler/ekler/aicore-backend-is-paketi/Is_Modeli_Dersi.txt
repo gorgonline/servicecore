@@ -1,0 +1,142 @@
+AICORE İŞ MODELI — DERS ANLATIMI (SIFIRDAN)
+
+Amaç: Yapay zekâ çağında lisans gelirini nasıl koruyacağımızı ve nereden
+kazanacağımızı jargonsuz, sırayla anlamak.
+
+Tek cümle: İnsan çalışıyorsa lisans; insanın yanında yapay zekâ varsa
+lisans + sabit ek ücret; insansız biten iş yıllık paketten düşer; kapıdan
+girmeyen bot bloklanır.
+
+
+
+❓ PROBLEM NE? (NEDEN BU MODELE MECBURUZ)
+
+1. Bugün gelirimiz teknisyen lisansından geliyor: 100 teknisyen = 100 lisans.
+2. Yapay zekâ gelince aynı işi belki 60 kişi yapacak → müşteri 40 lisansı
+   kapatacak → gelir düşecek.
+3. "Yasaklayalım" diyemeyiz — müşteri verim istiyor; yasaklayan satıcıyı bırakır.
+4. "Bedava verelim" diyemeyiz — kaybolan lisansın yerine hiçbir gelir konmaz.
+5. "Bota bir lisans satalım" da çözüm değil — sınırsız tek lisans yüz
+   kişinin işini yapar; herkes bir tane alır, sistem fiyatı tek lisansa iner.
+   (Erman'ın yakaladığı delik buydu.)
+6. Geriye tek yol kalıyor: yapay zekânın yaptığı işi saymak ve sayıya göre
+   ücretlendirmek. Bütün model bu cümledir.
+
+
+🚪 KAPI — HERKES KIM OLDUĞUNU SÖYLEYECEK
+
+Benzetme: site güvenliği. İçeri giren herkes "kimim, kime geldim" der,
+deftere yazılır.
+
+7. Sisteme dışarıdan bağlanan her yazılım kapıda kendini tanıtır: "ben kimim?"
+8. İkinci soru: "sorumlum kim?" — her yazılımın arkasında kayıtlı bir insan olur.
+9. Cevap veremeyen içeri giremez.
+10. Yapılan her iş deftere yazılır: işi hangi yazılım yaptı + sorumlusu kim.
+11. Bot asla bir insanın şifresini kullanmaz. Kullansaydı defter yalan
+    söylerdi: işi bot yapmışken "Ayşe yaptı" görünürdü.
+
+
+🛣️ ÜÇ ÇALIŞMA ŞEKLI — ÜÇ AYRI GELIR YOLU
+
+12. Birinci: işi insan yapıyor. Bildiğimiz teknisyen lisansı. Değişen yok.
+13. İkinci: insan ekranda, yapay zekâ yardım ediyor (özet çıkarıyor, cevap
+    taslağı yazıyor; son kararı insan veriyor). Ücret: teknisyenin lisansının
+    üstüne yıllık sabit ek ücret. Benzetme: telefon hattının üstüne ek
+    hizmet paketi almak.
+14. Bu yol teknisyen ekranda değilse çalışmaz — canlı oturum şart. Gece
+    işi bu ucuz yoldan kaçamaz.
+15. Bu ek ücret koltuğu öldüremez — ancak koltuğun üstünde yaşar. Tersine
+    her koltuğun gelirini artırır.
+16. Üçüncü: ortada insan yok, işi yazılım bitiriyor (gece 3'te kaydı çözüp
+    kapatıyor). Ücret: yıllık iş paketi. Benzetme: telefon tarifesi —
+    ayda şu kadar dakika gibi, yılda şu kadar iş.
+17. Paket küçük/orta/büyük gelir. Fatura yıllık ve sabit. Bitince sürpriz
+    fatura yok: bot durur, iş insan kuyruğuna düşer, isteyen büyük paket alır.
+18. Limit olduğu için korkulan şey imkânsız: tek paketle yüz kişinin işi
+    yapılamaz. Çok iş = büyük paket = daha yüksek gelir.
+
+
+🔢 SAYACIN INCELIĞI — NEYI SAYIYORUZ?
+
+Benzetme: lokanta hesabı masaya gelen tabağa kesilir; mutfakta kaç tencere
+kirlendiğine değil.
+
+19. Botun içerideki teknik adımlarını saymayız — müşteri onları bilemez,
+    kontrol edemez.
+20. Sayılan tek şey: başarıyla bitmiş iş. Bot bir kaydı çözmek için
+    içeride 15 adım attıysa 1 yazılır, 15 değil.
+21. Sayılmayanlar: başarısız deneme, tekrar, yarım kalıp insana devredilen
+    iş. "Çözüldü" denip aynı dertle geri açılan kayıt sayaçtan geri düşülür.
+22. Ağır işler baştan belli çarpanla yazılır: basit cevap 1 · randevu
+    değiştirme 2 · birkaç sistemi dolaşan iş emri 5. Rakamlar
+    sözleşmede sabitlenir, sonradan oynanmaz.
+
+
+🆓 NEYI ÜCRETLENDİRMEYİZ (EN AZ SAYAÇ KADAR ÖNEMLI)
+
+23. Sisteme kayıt açan trafik bedava: e-postadan kayıt açılması, izleme
+    sisteminin arıza bildirmesi, portal. Bunlar bize iş getiriyor —
+    getirene vergi kesilmez.
+24. İki sistem arasında veri kopyalayan entegrasyon bedava.
+25. Ücret yalnız insansız çözen / kapatan / karar veren işten alınır.
+    Yazılımın markasına bakmayız, yaptığı işe bakarız — "bu yapay zekâ
+    değil, normal script" bahanesi işlemez.
+26. Aynı iş iki kere ücretlenmez: ya yardımlı iştir ya insansız iştir;
+    kayıtta tek etiket taşır.
+
+
+🕳️ KAÇAK YOLLARI — HEPSI KAPALI
+
+27. "10 teknisyenle 100 kişilik iş yaptırırım" → her insan hesabının
+    işlem tavanı var. Gerçek insan bu tavana ömründe takılmaz; bot ilk
+    saatte çarpar.
+28. "Botu insan gibi gösteririm" (tarayıcı taklidi) → bot imzası bellidir:
+    7/24 çalışma, istekler arası hep aynı süre, insanüstü hız → tespit + blok.
+29. "Yardım yolu ucuz; botun işine teknisyene formalite onay bastırırım" →
+    saniyeler arayla, okumadan toplu onay deseni yakalanır; iş insansız
+    sayılır, paketten düşer.
+30. "Kendi yazdığım program bedava çalışsın" → iş bitiren her yazılım
+    aynı kapıdan girer, aynı paketten düşer. Bizi atlatmaya çalışan
+    bile bize ödeme yapar.
+
+
+📊 PATRONA NE VAR?
+
+31. Her iş defterde olduğu için rapor kendiliğinden çıkar: kim ne kadar işi
+    yapay zekâya yaptırıyor, paket ne kadar doldu.
+32. Müşterinin fatura kontrol ekranı ücretsizdir — ödediğinin nereye
+    gittiğini görmek onun hakkı. Gelişmiş analiz (nerede daha çok otomasyon
+    yapılır, hangi bot sık hata yapıyor) ayrıca satılır.
+33. Kişi bazlı ekran ("Ali işinin %62'sini yapay zekâya yaptırıyor")
+    hassastır — çalışan gözetimi sayılır. Varsayılan ekip bazlı; kişi
+    bazlısı izin ve hukuk onayıyla açılır.
+
+
+🐢 NASIL DEVREYE ALACAĞIZ? (ACELE YOK)
+
+34. Önce sayaç sessizce çalışır: 10-15 müşteride fatura kesmeden ölçeriz,
+    gerçek rakamları görürüz.
+35. Sonra tek senaryoda küçük pilot, sabit bedelle.
+36. Fiyatlar ve paket boyları ancak bu veriden sonra kilitlenir. Demir
+    kural: sonradan kural değiştirip geçmişe dönük borç çıkarmak yasak —
+    SAP bu çukura düştü, müşterileri mahkemede kaybetti.
+
+
+
+📖 KÜÇÜK SÖZLÜK (BU DERSTE GEÇEN 3 TERIM)
+
+- token — kısa ömürlü giriş anahtarı. Şifre değil; süresi dolunca çöp olur,
+  her an iptal edilebilir.
+- oturum — teknisyenin ekranda açık, canlı çalışma penceresi.
+- entegrasyon — iki yazılımın birbiriyle veri alışverişi yapması.
+
+
+🎯 TEK CÜMLELIK ÖZET
+
+İnsan çalışıyorsa lisans; yanında yapay zekâ varsa lisans + sabit ek ücret;
+insansız biten iş yıllık paketten düşer; kayıt açan bedava; kapıdan girmeyen
+bot bloklanır; sayaç tabağı sayar, tencereyi değil.
+
+
+Karar gerektiren 8 madde ayrı sayfada: Yonetici_Ozeti_ve_Kararlar.md.
+Teknik uygulama: AICORE_Backend_Is_Paketi.md (backend ekibinin işi).

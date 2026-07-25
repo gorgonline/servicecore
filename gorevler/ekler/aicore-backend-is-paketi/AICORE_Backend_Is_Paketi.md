@@ -1,132 +1,328 @@
-# ServiceCore Backend — AICORE Koruma ve Lisans Zorlama İş Paketi
+# ServiceCore Backend — Yapay Zekâ Erişimi: Kimlik, Lisans ve Sayaç Altyapısı (Yol Haritası)
 
-> **AICORE Review toplantısı — backend ekibi ve takım liderine.** (24.07.2026)
+> **Backend ekibi ve takım liderine.** (25.07.2026 — v4)
 >
-> **Bağlam (2 cümle):** Müşteriler merkezi yapay zekâ ajanları kurmaya başladı;
-> tek bir ajan, az sayıda hesap üzerinden 100 teknisyenin işini yapabilir ve
-> lisans sayısını %90 düşürebilir (sektördeki adı: **multiplexing**). Bu paketin
-> hedefi, lisanssız otomasyonu **ürün seviyesinde imkânsız kılmak** ve ajan
-> kullanımını **Dijital Teknisyen Lisansı**na bağlamak — sözleşme değil, kilit.
->
-> Kapsam: ServiceCore çekirdeği (C#/.NET + MSSQL). AI servisi (AICORE/Gateway)
-> ayrı kutudur; yalnız İş Paketi 4'te arayüz olarak geçer.
+> **v4 notu:** İki bağımsız model çalışması (bizim yol haritası + ayrı bir
+> lisanslama analizi) karşılaştırıldı ve birleştirildi. En önemli değişiklik:
+> insansız işlerde paket sayacı artık "her yazma işlemi" değil, **başarıyla
+> bitirilen iş** sayar; kayıt AÇAN entegrasyon trafiği paket yemez.
 
 ---
 
-## İş Paketi 1 — Hesap Kapasite Tavanı ("insan lisansı = insan kapasitesi") · P1
+## İş modeli — backend'in uygulayacağı hali (2 dakikada)
 
-**Ne:** Her insan hesabı için kayıt-işleme sayaçları: cevaplama, kapatma,
-durum değiştirme, atama, eskalasyon. Dakikalık ve günlük tavanlar.
+Yapay zekâ (bizimki veya müşterinin dışarıdan getirdiği) iki şekilde çalışabilir.
+İkisi ayrı yetkilendirilir, ayrı sayılır, ayrı fiyatlanır:
 
-Gereksinimler:
-- Sayaç **kanal bağımsızdır**: UI, API, e-posta fetch, portal — işlem hangi
-  kanaldan gelirse gelsin işleyen hesaba yazılır.
-- Eşikler yapılandırılabilir (müşteri ortamı config'i, varsayılanlar üründe).
-- Aşımda **aşamalı davranış**: (1) logla — gölge mod, (2) admin bildirimi,
-  (3) blok + ekran: *"Bu hesapta otomasyon tespit edildi; devam için Dijital
-  Teknisyen Lisansı gereklidir."* Blok ekranı aynı zamanda satış ekranıdır.
-- Ürün içi meşru toplu işlemler (ör. yöneticinin toplu kapatma aksiyonu)
-  ayrı sayılır/muaftır — normal kullanıcı asla takılmamalı.
-
-**Kalibrasyon (kritik):** Doğrudan blokla BAŞLANMAZ. Önce 4-8 hafta gölge
-modda telemetri toplanır; eşik = gözlenen insan p99'unun 5-10 katı. Gerçek
-teknisyen bu tavana ömründe takılmaz; ajan ilk saatte çarpar. Yanlış-pozitif
-satış felaketidir — o yüzden önce ölç, sonra kilitle.
-
-**Kabul ölçütü:** Test botu (100 işlem/dk) X dakika içinde bloklanır; gerçek
-teknisyen senaryoları (yoğun gün dahil) hiçbir zaman takılmaz.
-
-## İş Paketi 2 — API Yazma Yetkisi Ayrımı · P1
-
-**Ne:** Kayıt-işleme yazma uçları (cevaplama, kapatma, durum, atama) insan
-hesaplarında **varsayılan kapalı**. Yazma-API yalnız **Makine Hesabı** tipiyle
-kullanılabilir.
-
-Gereksinimler:
-- Yeni varlık: **Makine Hesabı** (service account) — ayrı hesap tipi, token
-  bazlı kimlik; sahibi, amacı ve etiketi kayıtlı; insan lisansı tüketmez,
-  **Dijital Teknisyen Lisansı** kontrolüne bağlıdır (İş Paketi 4).
-- Lisanssız/insan token'ıyla yazma çağrısı → 403 + audit log.
-- Salt-okur API insan hesabında kalabilir (raporlama/BI meşru kullanım).
-
-**Geçiş riski (ekip dikkat):** Mevcut müşterilerin entegrasyonları bugün insan
-hesabıyla API'ye yazıyor olabilir. Önce **entegrasyon envanteri** çıkarılır;
-2 sürümlük geçiş dönemi tanınır; mevcut meşru entegrasyonlara sınırlı kapsamlı
-"entegrasyon makine hesabı" verilerek kırılmadan geçilir.
-
-## İş Paketi 3 — Otomasyon Tespiti + Oturum Kilidi · P2
-
-**Ne:** İnsan hesabında bot davranışını tespit edip aşamalı aksiyon almak.
-
-Sinyaller: 7/24 kesintisiz aktivite · istekler arası sabit aralık (düşük
-varyans) · insanüstü tempo · UI etkileşimi olmadan form/istek desenleri ·
-aynı hesabın paralel oturumları · user-agent tutarsızlıkları.
-
-Gereksinimler:
-- Sinyaller skorlanır; aşamalı aksiyon: işaretle → admin bildirimi → blok
-  ekranı (İş Paketi 1'deki ekranla aynı).
-- Tek aktif oturum kuralı (yapılandırılabilir).
-- **KVKK notu:** Telemetri amaç sınırlıdır — lisans uyumu; kişisel
-  profilleme değildir. Sözleşme tarafında denetim maddesi karşılığı vardır.
-
-**Kabul ölçütü:** RPA botu (tarayıcı otomasyonu senaryosu) 1 saat içinde
-tespit + blok; insan senaryolarında 0 yanlış-pozitif.
-
-## İş Paketi 4 — Dijital Teknisyen Lisansı Altyapısı · P1
-
-**Ne:** Ajanları lisansa bağlayan lisans/kimlik altyapısı.
-
-Gereksinimler:
-- Lisans modeline yeni tip: **Dijital Teknisyen Lisansı (DTL)** — ajan
-  kimliği başına, yıllık, sabit (işlem hacminden bağımsız — sayaçlı
-  faturalama YOK, bilinçli karar).
-- Makine Hesabı ↔ DTL eşleşmesi: lisanssız makine hesabının yazma uçları
-  kapalı; lisans süresi bitince otomatik pasif.
-- **"İşleyen kimlik" zorunluluğu:** Her kayıt işleminde işleyen hesabın tipi
-  (insan/makine) ve kimliği audit'e yazılır; "kim kapattı?" alanı makine
-  kimliğini açıkça gösterir.
-- **Lisans uyum raporu (admin panel):** hesap tipi bazlı işlem dağılımı +
-  şüpheli otomasyon işaretleri — müşteriyle lisans görüşmesinin veri kaynağı.
-- **AICORE arayüzü:** AICORE Gateway (AI tarafı) makine kimliklerini bu
-  altyapıya kaydedecek; backend'in sunması gereken şey kimlik + lisans
-  doğrulama API'sidir. (AI tarafının işi bizde — backend yalnız API'yi sunar.)
-
-## İş Paketi 5 — Ek Korumalar · P3
-
-- **Resmî raporlama katmanı:** Read-only raporlama view'ları/replica.
-  Politikanın ("ana şemaya doğrudan erişim destek dışıdır") teknik karşılığı;
-  meşru BI ihtiyacını resmî kapıya yönlendirir.
-- **PoC Edition:** Süre kilitli kurulum (lisans anahtarında bitiş tarihi +
-  süre sonunda kilit ekranı), kısıtlı bileşen seti, sentetik veri paketi.
-  Mevcut PoC süreciyle uyumlu: LOI (Niyet Mektubu) + Gizlilik Sözleşmesi
-  imzalanmadan tam ürün müşteri ortamına kurulmaz; kurulursa PoC Edition
-  kurulur.
-- **Kurulum parmak izi:** Kurulum başına benzersiz, zararsız şema/veri
-  izleri — olası klon vakasında "bizden kopyalandı" kanıtı.
-- (Düşük öncelik) Kritik stored procedure'lerde şifreleme.
-
----
-
-## Öncelik ve sıra önerisi
-
-| Öncelik | Paketler | Not |
+| | **Durum 1: Teknisyene yardım** | **Durum 2: Kendi başına çalışma** |
 |---|---|---|
-| **P1 — gelir koruması çekirdeği** | İP1 (gölge modda) + İP2 (makine hesabı) + İP4 (DTL altyapısı) | Aynı sürümde çıkmalı; gölge mod verisi eşikleri kalibre eder |
-| **P2** | İP3 (tespit/blok) + İP1'in blok modunun açılması | Gölge mod verisiyle beslenir |
-| **P3** | İP5 (raporlama katmanı, PoC Edition, parmak izi) | PoC Edition satış takvimine göre öne çekilebilir |
+| Senaryo | Teknisyen ekranda; yazılım özet çıkarıyor, cevap taslağı yazıyor; son kararı insan veriyor | Ortada insan yok; yazılım kaydı kendisi cevaplıyor/çözüyor/kapatıyor |
+| Kimlik | Vekâlet token'ı: **işleyen** = yazılım, **namına** = teknisyen (aktif oturum şart) | Yazılımın kayıtlı kimliği + kayıtlı **sorumlu yönetici** |
+| Lisans şartı | O teknisyenin lisansında "yapay zekâ ek paketi" işaretli olmalı | Müşteride aktif yıllık iş paketi olmalı |
+| Sayaç | İşlem, teknisyenin kişisel sayacına yazılır | **Başarıyla bitirilen iş**, paketin yıllık havuzundan düşer |
+| Ücret | Teknisyen lisansı üstüne yıllık sabit ek ücret | Yıllık sabit paket fiyatı (küçük/orta/büyük — iş sayısı farkı) |
 
-## Riskler ve dikkat noktaları
+Üç önemli sınır kuralı:
 
-1. **Mevcut entegrasyonları kırmamak** — İP2 envanter + geçiş dönemi şart.
-2. **Yanlış-pozitif** — önce gölge mod; insan asla bloklanmamalı.
-3. **Performans** — sayaçlar hafif tutulmalı (bellek içi sayaç + periyodik yazma).
-4. **KVKK** — telemetri amaç sınırlı; kişisel profilleme değil lisans uyumu.
-5. **İletişim dili** — müşteriye "ceza" değil **"adil kullanım"** diliyle
-   anlatılır: "1 teknisyen lisansı = 1 insan kapasitesi; ajanlar için Dijital
-   Teknisyen Lisansı".
+1. **Kayıt AÇAN trafik paket YEMEZ.** E-posta, izleme sistemi, portal, veri
+   kopyalama (ETL/senkron) → kimlik yine zorunlu ama bunlar normal
+   entegrasyondur, ücrete tabi değildir. Paket yiyen şey: insansız **çözen /
+   cevaplayan / karar veren / atayan / kapatan** iştir.
+2. **Aynı iş iki kere ücretlenmez.** Her iş kayıtta tek etiket taşır:
+   insan işi / insan+yardım / insansız. Hem ek ücrete hem pakete sayılmaz.
+3. **Üçüncü yol yok.** Kimliği bildirilmemiş otomasyon tespit edilir ve
+   bloklanır (Adım 7).
+
+---
+
+## Adım 0 — Mevcut durum envanteri (her şeyden önce)
+
+**Ne:** Bugün API'ye insan hesabı/anahtarıyla yazan ne varsa listesini çıkarmak.
+
+**Teknik:** IIS logları + mevcut audit kayıtlarından: hangi müşteri, hangi
+entegrasyon, hangi endpoint'e, hangi hesapla, hangi sıklıkta yazıyor.
+Çıktı: müşteri başına entegrasyon listesi (Excel yeter). Her satıra sınıf
+konur: kayıt açan / veri kopyalayan / iş bitiren.
+
+**Neden önce:** Adım 8'deki geçişin boyutunu ve muafiyet sınıflarını bu liste
+belirler. Bunu görmeden hiçbir kapı kapatılmaz — mevcut müşteriyi kırmak yasak.
+
+**Test:** Liste var; en büyük 10 müşterinin entegrasyonları sınıflarıyla
+doğrulanmış.
+
+## Adım 1 — Uygulama kimliği kaydı
+
+**Ne:** Sisteme dışarıdan bağlanan her yazılıma kayıtlı bir kimlik vermek.
+Kimlik ücretsizdir — ücret kimliğe değil, yapılan işe bağlanır.
+
+**Teknik:**
+- Yeni tablo (öneri): `YazilimKimligi` — Id, TenantId, Ad, ClientId,
+  SecretHash, Tip (yardımcı / kendi başına / entegrasyon), SorumluKullaniciId,
+  YetkiKapsami, Durum, OlusturmaTarihi. Secret hash'lenir; yenileme ucu olur.
+- Token ucu: `POST /api/auth/uygulama-token` — ClientId + Secret → kısa ömürlü
+  JWT (15-60 dk, config'te).
+- Bu token tek başına **hiçbir kayıt yazamaz**. Yazma yetkisi Adım 2 veya
+  Adım 5'ten gelir.
+- Yetki kapsamı dar tutulur: hangi işlem tiplerine yetkili olduğu kimlikte
+  yazar (ör. yalnız şifre sıfırlama). Kapsam dışı istek 403.
+- Admin panelde ekran: kayıtlı yazılımlar, tipi, sorumlusu, kapsamı, son kullanım.
+
+**Test:** Kayıtsız client 401; kayıtlı yazılım token alıyor ama yazma 403;
+kapsam dışı istek 403.
+
+## Adım 2 — Vekâlet token'ı (teknisyene yardım yolunun kapısı)
+
+**Ne:** Yazılımın, belirli bir teknisyen namına kısa ömürlü çalışma anahtarı
+almasını sağlamak.
+
+**Teknik:**
+- Uç: `POST /api/auth/vekalet-token` — girdi: uygulama token'ı + hedef
+  kullanıcı + **aktif oturum kanıtı**. Çıktı: iki claim'li kısa ömürlü JWT:
+  `isleyen_yazilim_id` ve `namina_kullanici_id`.
+- Verilme şartları (hepsi sağlanmalı, biri düşerse ret + sebep):
+  1. Kullanıcının teknisyen lisansı aktif.
+  2. Kullanıcının lisansında **yapay zekâ ek paketi işaretli** (Adım 4).
+  3. İzin eşleşmesi var: "bu yazılım şu kullanıcılar namına çalışabilir"
+     tablosu (öneri: `YazilimKullaniciIzni`). Varsayılan: izin yok.
+  4. **Kullanıcının o anda gerçek bir oturumu var.** Ekransız, gece,
+     zamanlayıcıyla veya kuyruktan tetiklenen iş vekâlet ALAMAZ — o iş
+     kendi-başına yoldur (Adım 5). Kalıcı vekâlet yok.
+- Token süresi kısa (15-60 dk); yenileme aynı uçtan, oturum kanıtıyla.
+  İnsanın kalıcı şifresi/anahtarı asla yazılıma verilmez.
+
+**Test:** Ek paketi olmayan kullanıcı reddediliyor; oturumu kapalı kullanıcı
+için istek reddediliyor; gece saatinde vekâletle yazma denemesi loglara
+"şüpheli" düşüyor; süresi biten token 401.
+
+## Adım 3 — Yazma uçlarında kimlik ve etiket zorunluluğu
+
+**Ne:** Kayıt işleyen bütün uçları (cevaplama, kapatma, durum değiştirme,
+atama, eskalasyon) tek kimlik kontrolünden geçirmek ve her işi tek tiple
+etiketlemek.
+
+**Teknik:**
+- Ortak middleware/attribute: yazma isteği ancak şu üç kimlikten biriyle geçer:
+  (a) insanın kendi UI oturumu, (b) vekâlet token'ı (Adım 2),
+  (c) kendi-başına token'ı + aktif paket (Adım 5). Aksi 403 + log.
+- Audit genişletmesi — mevcut işlem kaydına kolonlar: `IsleyenYazilimId`
+  (insan işiyse boş), `Kanal` (UI / API / e-posta / portal), `IsTipi`
+  (insan / insan+yardım / insansız) ve `KorelasyonId` (bir işin bütün teknik
+  adımlarını birbirine bağlayan takip numarası — Adım 5 sayacının temeli).
+- `IsTipi` tek değerdir; aynı iş hem "insan+yardım" hem "insansız" olamaz —
+  çifte ücretlenme yasağının teknik karşılığı.
+- UI'da "kim yaptı" alanı: *"Çözüm Asistanı — Ali Yılmaz namına"* veya
+  *"Gece botu — sorumlu: Ayşe Yılmaz"*.
+
+**Test:** Üç yol da çalışıyor, dördüncü yol yok; rastgele 100 işlemde işleyen +
+sorumlu + iş tipi + korelasyon alanları dolu.
+
+## Adım 4 — Lisans modülüne üç ürün
+
+**Ne:** Ücretlendirmenin veri modeli.
+
+1. **Platform taban bedeli** — müşteri (tenant) başına yıllık taban.
+   Mevcut sözleşmelerde benzeri varsa korunur; yoksa yalnız yeni sözleşme ve
+   yenilemelerde açılır, geçmişe dönük uygulanmaz.
+2. **Teknisyen başına yapay zekâ ek paketi** — teknisyen lisansına bayrak +
+   bitiş tarihi. İsme yazılı, yıllık sabit. Adım 2 bunu kontrol eder.
+3. **Müşteri başına yıllık iş paketi** — tenant seviyesi kayıt (öneri:
+   `OtonomIsPaketi`): Boy (küçük/orta/büyük), YillikIsLimiti (aylık rakam
+   sadece planlama referansı; hukuki havuz yıllıktır), YillikBedel,
+   BaslangicTarihi, BitisTarihi, Durum. Adım 5 bunu kontrol eder.
+
+**Teknik:** Mevcut lisans modülünün yanına; süre bitince ilgili token uçları
+otomatik ret. Satış/yenileme akışı mevcut lisans süreçleriyle aynı. Paket
+artışı imzalı sabit fiyatlı ek siparişle olur — otomatik aşım faturası YOK.
+
+**Test:** Ek paketi biten teknisyen için vekâlet token'ı kesiliyor; paketi
+biten müşteride insansız yazma duruyor (okuma serbest).
+
+## Adım 5 — Kendi başına çalışma yolu ve bitmiş-iş sayacı
+
+**Ne:** İnsansız işleri dürüst bir hesapla çalıştırmak. Sayacın birimi
+**başarıyla bitirilen iş** — botun içeride kaç teknik adım attığı değil.
+
+**Teknik — kimlik tarafı:**
+- Tip = "kendi başına" yazılım kimliği token alır; yazma yetkisi ancak
+  müşteride **aktif yıllık iş paketi** varsa açılır.
+- Zorunlu alan: `SorumluKullaniciId` — audit satırı: *"işleyen: gece botu —
+  sorumlu: Ayşe Yılmaz — yetki: şifre sıfırlama"*. Kimsenin kişisel anahtarı
+  makineye gömülmez.
+
+**Teknik — sayaç tarafı (bu maddede v4 değişikliği büyük):**
+- **Sayılan:** insansız başlayıp tanımlı sonucu başarıyla tamamlayan iş.
+  `KorelasyonId` ile tekilleştirilir (aynı işin adımları ve tekrarları tek
+  sayılır). Doğrulama süresi vardır: kayıt belirlenen süre içinde aynı sebeple
+  yeniden açılırsa sayaçtan geri düşülür.
+- **Sayılmayan:** başarısız deneme ve retry · duplicate · rollback · iç
+  teknik adımlar ve ara API çağrıları · sağlık kontrolü · insana devredilen
+  yarım işler · test/sandbox kotası · kayıt AÇAN trafik ve veri kopyalama
+  (bunlar entegrasyon sınıfıdır, Adım 0-1'deki tiple ayrılır).
+- **Ağırlık kataloğu** (sözleşmede sabitlenir, sonradan değişmez):
+  basit cevap/standart çözüm = 1 · tek sistemli işlem (ör. randevu
+  değiştirme) = 2 · çok sistemli iş emri tamamlama = 5.
+- **Çift sayaç, tek fatura:** ham insansız yazma sayısı ayrıca tutulur
+  (iç kontrol, kötüye kullanım ve performans analizi için) ama **fatura
+  yalnız bitmiş işten** kesilir.
+- **Eşikler:** %70 / %85 / %95'te admin + satış bildirimi. %100'de varsayılan
+  davranış: insansız yazma durur, iş insan kuyruğuna düşer (okuma serbest).
+  Kesinti istemeyen müşteri önceden yedek kapasite veya üst paket alır.
+  Sürpriz aşım faturası yok.
+- Sayaç performansı: bellek içi sayaç + periyodik DB yazımı; kesin mutabakat
+  zamanlanmış job'da.
+
+**Test:** Test botu 15 iç adımlı bir kaydı çözüyor → sayaç 1 artıyor;
+başarısız deneme sayacı artırmıyor; yeniden açılan kayıt geri düşüyor;
+%70/85/95 bildirimleri düşüyor; limitte insansız yazma durup iş kuyruğa gidiyor.
+
+## Adım 6 — İnsan hesabı işlem tavanı
+
+**Ne:** Bir insan hesabından insanüstü hacimde iş geçmesini engellemek.
+(10 lisansla 100 kişilik iş yaptırmayı kapatan kilit.)
+
+**Teknik:**
+- Her insan hesabına dakikalık + günlük işlem sayacı. Kanal bağımsız
+  (Adım 3'teki `Kanal` kolonu). Vekâletle yapılan yardım işi de bu sayaca
+  dahil — namına çalışmak, sayacından düşmek demektir.
+- **Önce ölç, sonra kilitle:** ilk 4-8 hafta sadece log (blok yok). Eşik,
+  gözlenen en yoğun gerçek insan temposunun 5-10 katı olarak config'e yazılır.
+  Gerçek teknisyen bu tavana ömründe takılmamalı — yanlış alarm satış felaketi.
+- Ürün içi meşru toplu işlemler (yöneticinin toplu kapatması vb.) muaf listede.
+- Aşımda sıra: log → admin bildirimi → blok + yönlendirme ekranı ("otomasyon
+  için kayıtlı yazılım kimliği ve iş paketi gerekir").
+
+**Test:** Dakikada 100 işlem basan test hesabı bloklanıyor; en yoğun günün
+gerçek verisiyle koşulan senaryoda tek bir gerçek kullanıcı takılmıyor.
+
+## Adım 7 — Kimliği bildirilmemiş otomasyonun tespiti
+
+**Ne:** Kapıdan girmeyen botu ve kural etrafından dolanmayı yakalamak.
+
+**Teknik:**
+- Sinyaller: 7/24 kesintisiz aktivite · istekler arası hep aynı süre ·
+  insanüstü tempo · ekran etkileşimi olmadan gelen form desenleri · aynı
+  hesabın paralel oturumları · tarayıcı kimlik tutarsızlıkları.
+- **Yeni sinyal — formalite onay:** bir teknisyen "insan+yardım" görünen
+  işleri saniyeler arayla, incelemeden toplu onaylıyorsa (gece boyu onay,
+  okumadan tıklama deseni) bu iş fiilen insansızdır; rapora "şüpheli
+  sınıflama" olarak düşer, tekrarında iş tipi insansıza çevrilerek paketten
+  sayılır. (Yardım yolunu ucuz diye insansız işe kılıf yapmanın panzehiri.)
+- Sinyaller puanlanır; sıra: işaretle → admin bildirimi → blok (Adım 6'daki
+  ekran). Tek aktif oturum kuralı (config).
+- KVKK: izleme lisans uyumu amaçlıdır; amaç sınırlıdır, sözleşme karşılığı
+  hukukta.
+
+**Test:** Tarayıcı taklidi yapan bot 1 saat içinde işaretlenip bloklanıyor;
+saniyede bir onay basan senaryo "şüpheli sınıflama" raporuna düşüyor; insan
+senaryolarında sıfır yanlış alarm.
+
+## Adım 8 — Mevcut entegrasyonların geçişi
+
+**Ne:** Adım 0'daki listeyi kırmadan yeni düzene taşımak.
+
+**Teknik:**
+- Her meşru entegrasyona uygulama kimliği tanımlanır (Adım 1) ve sınıfına göre
+  bağlanır: kayıt açan / veri kopyalayan → entegrasyon tipi (ücretsiz);
+  iş bitiren → vekâlet ya da paket yolu.
+- 2 sürüm boyunca eski yol çalışmaya devam eder; her kullanımda uyarı loglanır
+  + müşteriye bildirilir. Sonraki sürümde eski yol kapanır (403).
+- Geriye dönük hiçbir fatura çıkarılmaz; yeni sayaçlar yalnız ileriye dönük
+  ve yenilemede uygulanır.
+
+**Test:** Envanterdeki her entegrasyon yeni yoldan çalışıyor; eski yol
+kapatıldığında destek kaydı yağmıyor.
+
+## Adım 9 — Raporlar ve müşteri sayaç ekranı
+
+**Ne:** Toplanan verinin ürüne dönüşmesi. Ücretsiz/ücretli ayrımı net:
+
+**Ücretsiz (fatura doğrulama — müşteri hakkı):**
+- Müşteri sayaç ekranı: kaç iş hakkı alındı, kaçı kullanıldı, hangi iş neden
+  sayıldı, hangileri (hata/tekrar/yeniden açılma) sayılmadı. Olay listesi
+  dışa aktarılabilir; itiraz süresi işler.
+- Paket doluluk: kullanılan/limit, eşik uyarıları, tahmini doluş.
+
+**Ücretli (gelişmiş analitik — ayrı satılır):**
+- Ekip bazında zaman/maliyet tasarrufu · otomasyona uygun yeni alanlar ·
+  hata ve yeniden-açılma anomalileri · kapasite tahmini · iş dağılımı
+  (insan / insan+yardım / insansız / devredilen).
+
+**Mahremiyet kuralı:** "kim ne kadar işi yapay zekâya yaptırıyor" görünümü
+**varsayılan ekip bazlıdır**; kişi bazlı görünüm rol yetkisine bağlanır ve
+müşterinin aydınlatma/İK süreci tamamlanmadan açılmaz. (KVKK + çalışan
+gözetimi yükümlülüğü — hukuk görüşüyle.)
+
+**Test:** Sayaç ekranı audit tablosuyla birebir tutuyor; kişi bazlı görünüm
+yetkisiz rolde görünmüyor.
+
+## Adım 10 — Sessiz ölçüm ve ticari pilot
+
+**Ne:** Fiyat ve limitler gerçek veri görülmeden kilitlenmez.
+
+**Teknik/sıra:**
+1. Adım 1-5 altyapısı kurulunca **10-15 müşteride faturasız sessiz ölçüm**:
+   iki sayaç (ham yazma + bitmiş iş) sadece toplar, kimseye fatura çıkmaz.
+2. Çıkan veriyle paket boyları ve fiyat önerisi güncellenir (bir teknisyenin
+   aylık gerçek iş hacmi burada ölçülür).
+3. Tek kullanım senaryosunda sınırlı pilot: sabit pilot bedeli, yazılı kapsam.
+4. Pilot çıkış kriterleri: yetkisiz kritik işlem = 0 · yeniden açılma oranı
+   kontrol grubundan kötü değil · müşteri kazancı ≥ 2 kat · hedef marj
+   karşılanıyor · yıllık hacim tahmini ±%20 içinde.
+5. Ancak bundan sonra satışa açılır; yalnız yeni sözleşme ve yenilemelerde.
+
+**Test:** Sessiz ölçüm raporu iki sayacı da müşteri bazında gösteriyor.
+
+## Ek korumalar (öncelik düşük, ayrı iş)
+
+- **Resmî raporlama katmanı:** salt-okur görünümler/replika; ana şemaya
+  doğrudan erişim politikasının teknik karşılığı.
+- **PoC kurulumu:** süre kilitli lisans anahtarı + kilit ekranı, kısıtlı
+  bileşen, sentetik veri. Niyet Mektubu + Gizlilik Sözleşmesi olmadan tam
+  ürün müşteri ortamına kurulmaz.
+- **Kurulum parmak izi:** kurulum başına benzersiz, zararsız şema/veri izleri.
+- Kritik stored procedure'lerde şifreleme.
+
+---
+
+## Sıra ve bağımlılık özeti
+
+```
+Adım 0 (envanter + sınıflama)
+  └→ Adım 1 (uygulama kimliği) → Adım 2 (vekâlet, oturum şartlı) ─┐
+                                → Adım 5 (paket yolu + bitmiş-iş sayacı)├→ Adım 3 (yazma kapısı + iş tipi)
+       Adım 4 (üç lisans ürünü) ──────────────────────────────────┘
+  Adım 3 logları → Adım 6 (tavan, önce gölge) → Adım 7 (tespit + formalite-onay)
+  Adım 5 sayaçları → Adım 10 (sessiz ölçüm → pilot → satış)
+  Adım 8 (geçiş) — Adım 1 biter bitmez başlar, 2 sürüme yayılır
+  Adım 9 (raporlar) — sayaç ekranı Adım 5 ile birlikte; analitik sonra
+```
+
+Aynı sürümde çıkması gerekenler: **Adım 1-2-3-4 + Adım 5'in sayaç iskeleti**
+(kapı + ücret modeli + sayaç bir bütün). Adım 6 gölge modda aynı sürüme
+girebilir; blok modları ve Adım 7 sonraki sürüm. Satış, Adım 10 pilotu
+bitmeden açılmaz.
+
+## Riskler
+
+1. **Mevcut entegrasyonu kırmak** — Adım 0 envanteri + Adım 8'in 2 sürümlük
+   geçişi pazarlıksız uygulanır; geriye dönük fatura yasak.
+2. **Yanlış alarm** — tavan ve tespit önce gölge modda; gerçek insan asla
+   bloklanmamalı.
+3. **Bitmiş-iş tanımı tartışması** — "başarılı sonuç", doğrulama süresi ve
+   1/2/5 kataloğu sözleşmede net tanımlanır; sözleşme dönemi içinde tek
+   taraflı değiştirilmez. Tanım muğlaksa müşteri itirazı kazanır.
+4. **Performans** — sayaçlar bellekte, DB'ye periyodik; yazma uçlarına eklenen
+   kontrol tek sorgudan fazla maliyet getirmemeli.
+5. **KVKK** — izleme ve raporlar amaç sınırlı; kişi bazlı görünüm varsayılan
+   kapalı; aydınlatma + sözleşme maddeleri hukukta.
+6. **Müşteri dili** — bloklar "ceza" değil "adil kullanım" diliyle:
+   *"1 lisans = 1 insan; yazılımlar kayıtlı kimlik ve paketle serbest."*
 
 ## Tek cümlelik özet
 
-> Lisanssız ajan, kapasite tavanına çarpar (İP1), API kapısını kapalı bulur
-> (İP2), tespit edilir ve bloklanır (İP3); çalışmak isteyen her ajanın tek
-> yolu Dijital Teknisyen Lisansı olur (İP4) — kilit üründe, gelir bizde.
+> Her istek kapıda kimliğini ve sorumlusunu söyler; teknisyene yardım eden
+> yazılım teknisyenin ek paketiyle ve canlı oturum şartıyla, kendi başına
+> çalışan yazılım yıllık iş paketiyle çalışır; sayaç teknik adımı değil
+> başarıyla bitmiş işi sayar; kayıt açan entegrasyon bedavadır; kapıdan
+> girmeyen bot bloklanır; fiyat ve limitler sessiz ölçüm + pilot bitmeden
+> kilitlenmez.
