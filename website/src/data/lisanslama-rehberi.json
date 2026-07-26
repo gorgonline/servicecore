@@ -286,6 +286,8 @@
         "title": "Her koşulda geçerli kurallar:",
         "items": [
           "GateCoreAI her AICore kurulumunda ayrıca lisanslanır — hangi eklenti alınırsa alınsın zorunludur; kurum başına sabit fiyatlıdır",
+          "Eklentinin insansız çalışması eklentinin fiyatına dahildir; yaptığı iş için ayrıca ücret alınmaz",
+          "Kurumun kendi geliştirdiği veya dışarıdan aldığı ajanların insansız bitirdiği iş, GateCoreAI bandını belirler (yıllık sabit; küçük/orta/büyük)",
           "AICore lisansları isme yazılıdır; havuzdan ortak (concurrent) kullanım yoktur",
           "Kurulum ve devreye alma paketleri ayrıca fiyatlandırılır (AICORE Launch Ready / Cloud Ready / Quick Start)",
           "Yıllık bakım ve destek paketi ayrıca fiyatlandırılır (Silver / Gold / Platinum / Mission Critical)"

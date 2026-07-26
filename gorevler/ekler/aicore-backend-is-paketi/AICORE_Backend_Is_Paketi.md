@@ -19,8 +19,8 @@ Yapay zekâ (bizimki veya müşterinin dışarıdan getirdiği) iki şekilde ça
 | Senaryo | Teknisyen ekranda; yazılım özet çıkarıyor, cevap taslağı yazıyor; son kararı insan veriyor | Ortada insan yok; yazılım kaydı kendisi cevaplıyor/çözüyor/kapatıyor |
 | Kimlik | Vekâlet token'ı: **işleyen** = yazılım, **namına** = teknisyen (aktif oturum şart) | Yazılımın kayıtlı kimliği + kayıtlı **sorumlu yönetici** |
 | Lisans şartı | O teknisyenin lisansında "yapay zekâ ek paketi" işaretli olmalı | Müşteride aktif yıllık iş paketi olmalı |
-| Sayaç | İşlem, teknisyenin kişisel sayacına yazılır | **Başarıyla bitirilen iş**, paketin yıllık havuzundan düşer |
-| Ücret | Teknisyen lisansı üstüne yıllık sabit ek ücret | Yıllık sabit paket fiyatı (küçük/orta/büyük — iş sayısı farkı) |
+| Sayaç | İşlem, teknisyenin kişisel sayacına yazılır | **Başarıyla bitirilen iş** sayılır — ama yalnız işleyen yazılımın AICore eklenti lisansı YOKSA bant havuzundan düşer |
+| Ücret | Teknisyen lisansı üstüne yıllık sabit ek ücret | AICore eklentisi ise: eklenti lisansına dahil, ek ücret yok · dış ajan ise: GateCoreAI bandı (yıllık sabit, küçük/orta/büyük) |
 
 Üç önemli sınır kuralı:
 
@@ -29,8 +29,14 @@ Yapay zekâ (bizimki veya müşterinin dışarıdan getirdiği) iki şekilde ça
    entegrasyondur, ücrete tabi değildir. Paket yiyen şey: insansız **çözen /
    cevaplayan / karar veren / atayan / kapatan** iştir.
 2. **Aynı iş iki kere ücretlenmez.** Her iş kayıtta tek etiket taşır:
-   insan işi / insan+yardım / insansız. Hem ek ücrete hem pakete sayılmaz.
-3. **Üçüncü yol yok.** Kimliği bildirilmemiş otomasyon tespit edilir ve
+   insan işi / insan+yardım / insansız. Hem ek ücrete hem banda sayılmaz.
+3. **Lisanslı yazılımın işi banda girmez.** İşi yapan yazılımın geçerli bir
+   AICore eklenti lisansı varsa, o iş sayılır ve raporlanır ama bant
+   havuzundan DÜŞMEZ — bedeli eklenti lisansında ödenmiştir. Banda yalnız
+   lisansı olmayan (müşterinin kendi ya da üçüncü taraf) yazılımların
+   insansız bitirdiği iş girer. Bu ayrım `YazilimKimligi.Tip` ve bağlı
+   lisans kaydından yapılır.
+4. **Üçüncü yol yok.** Kimliği bildirilmemiş otomasyon tespit edilir ve
    bloklanır (Adım 7).
 
 ---

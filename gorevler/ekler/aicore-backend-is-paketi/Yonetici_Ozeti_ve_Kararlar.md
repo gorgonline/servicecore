@@ -10,8 +10,8 @@
 ```mermaid
 flowchart LR
     A[Dışarıdan gelen<br/>her yazılım] --> K{KAPI<br/>Sen kimsin?<br/>Sorumlun kim?}
-    K -->|teknisyene<br/>yardım ediyor| Y[Teknisyenin adına, canlı oturumla çalışır<br/>💰 lisans üstüne yıllık sabit ek ücret]
-    K -->|kendi başına<br/>iş bitiriyor| P[Kayıtlı sorumlu yönetici var<br/>💰 yıllık iş paketi — sadece BİTMİŞ iş sayılır]
+    K -->|bizim eklentimiz<br/>çalışıyor| Y[Eklenti lisansı: kişi başına ya da sabit<br/>💰 yaptığı iş fiyatına DAHİL — ayrıca sayılmaz]
+    K -->|müşterinin kendi<br/>ajanı iş bitiriyor| P[Arkasında eklenti lisansı yok<br/>💰 kapının bandını belirler — yıllık sabit]
     K -->|sadece kayıt açıyor /<br/>veri kopyalıyor| E[Normal entegrasyon<br/>kimlik zorunlu, ücret YOK]
     K -->|cevap yok| R[❌ giremez<br/>bot tespit edilir, bloklanır]
     Y --> L[Her iş kayda geçer<br/>→ sayaç ekranı + raporlar]
@@ -26,23 +26,26 @@ deftere yazılır. Cevap veremeyen giremez. Gelir dört kalemden oluşur:
 1. **Platform taban bedeli** — teknisyen sayısı ne olursa olsun, sistemi ve
    veriyi kullanmanın yıllık tabanı.
 2. **Teknisyen lisansı** — bugünkü gibi, isme yazılı.
-3. **Teknisyene yardım eden yapay zekâ** — teknisyenin lisansı üstüne yıllık
-   sabit ek ücret. Teknisyen ekranda değilse bu yol çalışmaz (gece işi buradan
-   kaçamaz).
-4. **Kendi başına iş bitiren yapay zekâ** — telefon tarifesi gibi yıllık iş
-   paketi (küçük/orta/büyük). Önemli incelik: sayaç botun içerideki teknik
-   adımlarını değil, **başarıyla bitirdiği işi** sayar. Başarısız deneme,
-   tekrar, insana devredilen yarım iş sayılmaz. Ağır işler baştan sabit
-   çarpanla yazılır (basit çözüm 1 · randevu 2 · çok sistemli iş emri 5).
+3. **AICore eklentileri** — 7 tanesi kişi başına (teknisyen lisansının üstüne
+   yıllık sabit ek), kalanı kurum başına sabit. **En önemli madde: eklentinin
+   insansız çalışması fiyatına dahildir, ayrıca sayılmaz.** Aldığınız eklenti
+   gece de çalışsa toplu da çalışsa fatura değişmez.
+4. **GateCoreAI** — zorunlu, kurum başına yıllık sabit. Bandı, müşterinin
+   **dışarıdan bağladığı** ajanların insansız bitirdiği işe göre belirlenir.
+   Kural tek cümle: *lisansı olan iş sayılmaz, lisansı olmayan iş banda girer.*
+   Sayaç bir fatura kalemi değil, bant ölçüsüdür — koltuk saymak gibi.
 
 İki koruma kuralı:
 
 - **Kayıt açan trafik bedava.** E-postadan/izleme sisteminden kayıt açılması,
-  veri kopyalama = normal entegrasyon; paket yemez. Paket yiyen şey insansız
-  ÇÖZÜLEN iştir. (Her programa vergi koysaydık müşteri isyan ederdi.)
-- **Sürpriz fatura yok.** %70/%85/%95'te uyarı; paket bitince bot durur, iş
-  insan kuyruğuna düşer; isteyen önceden yedek paket alır. Faturalar hep
-  yıllık ve sabit.
+  veri kopyalama = normal entegrasyon; banda girmez. Banda giren tek şey,
+  lisansı olmayan bir yazılımın insansız ÇÖZDÜĞÜ iştir.
+- **Çift ücret yok.** Bir iş ya eklenti lisansı kapsamındadır ya banda girer;
+  ikisine birden yazılmaz. (ServiceNow modül lisansının üstüne tüketim havuzu
+  koydu; yenilemede %50-100 artış ve "opt-out yok" tepkisi aldı. Bizim
+  kaçındığımız şey bu.)
+- **Sürpriz fatura yok.** Bandın sonuna yaklaşınca haber verilir; otomatik ek
+  ücret işlemez, üst banda geçmek imzalı ve sabit bedellidir.
 
 ## Sizin vereceğiniz 8 karar
 
@@ -56,20 +59,20 @@ Hepsi fiyat ve kural kararı. Toplantıda sırayla geçin, her birine evet/hayı
    ayda 29-30 dolara satıyor — referans, kopya değil. Önerim: koltuk fiyatının
    %20-30'u aralığında başla, pilotta test et.
 
-3. **İş paketlerinin boyları?**
+3. **GateCoreAI bantlarının sınırları?**
    Rakam kilitlemeden önce tek şart: backend'in "sessiz ölçümü" (fatura
    kesmeden sayacı 10-15 müşteride çalıştırıp gerçek hacmi görmek).
-   Başlangıç hipotezi: yılda 12.000 / 60.000 / 240.000 bitmiş iş.
+   Başlangıç hipotezi: yılda 12.000 / 60.000 / 240.000 dış ajan işi.
 
-4. **Paket fiyatları?**
+4. **GateCoreAI bant fiyatları?**
    Taban: bizim maliyet + kaybolan koltuk gelirinin altına inilmez.
    Hedef: işin insanla yapılma maliyetinin %25-40'ı (yarısı üst sınır).
    Pilotta 2-3 fiyat seviyesi gerçek teklifle denenir, sonra kilitlenir.
 
-5. **Paket bitince ne olsun?**
-   Öneri netleşti: %70/85/95 uyarı → dolunca bot durur, iş insan kuyruğuna
-   düşer → isteyen önceden yedek kapasite alır. Sürpriz aşım faturası yok.
-   Onaylıyor musunuz?
+5. **Bandın sonuna gelince ne olsun?**
+   Öneri: eşiklerde uyarı → sınırda dış ajanın yazma işlemleri durur, iş insan
+   kuyruğuna düşer → isteyen önceden üst banda geçer. Sürpriz aşım faturası
+   yok. (Kendi eklentilerimiz bu sınırdan etkilenmez.) Onaylıyor musunuz?
 
 6. **Ek ücreti olmayan teknisyene yapay zekâ ne yapabilsin?**
    (a) hiçbir şey — hepsi ücretli, (b) tadımlık: özet/okuma bedava, kayıt

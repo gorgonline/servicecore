@@ -3,9 +3,9 @@
 > Amaç: **Yapay zekâ çağında lisans gelirini nasıl koruyacağımızı ve nereden
 > kazanacağımızı** jargonsuz, sırayla anlamak.
 >
-> Tek cümle: **İnsan çalışıyorsa lisans; insanın yanında yapay zekâ varsa
-> lisans + sabit ek ücret; insansız biten iş yıllık paketten düşer; kapıdan
-> girmeyen bot bloklanır.**
+> Tek cümle: **Aldığın eklentinin yaptığı iş fiyatına dahildir; lisansı
+> olmayan dış ajanın insansız işi kapının bandını belirler; kapıdan girmeyen
+> bot bloklanır.**
 
 ---
 
@@ -46,71 +46,79 @@ deftere yazılır.
 15. Bu ek ücret koltuğu öldüremez — ancak koltuğun üstünde yaşar. Tersine
     **her koltuğun gelirini artırır.**
 16. **Üçüncü: ortada insan yok, işi yazılım bitiriyor** (gece 3'te kaydı çözüp
-    kapatıyor). Ücret: **yıllık iş paketi.** Benzetme: telefon tarifesi —
-    ayda şu kadar dakika gibi, yılda şu kadar iş.
-17. Paket küçük/orta/büyük gelir. Fatura **yıllık ve sabit.** Bitince sürpriz
-    fatura yok: bot durur, iş insan kuyruğuna düşer, isteyen büyük paket alır.
-18. Limit olduğu için korkulan şey imkânsız: tek paketle yüz kişinin işi
-    yapılamaz. **Çok iş = büyük paket = daha yüksek gelir.**
+    kapatıyor). Burada ikiye ayırmak şart — en çok karıştırılan yer burası.
+17. **Bizim eklentimiz yapıyorsa ayrıca ücret YOK.** Müşteri o eklentinin
+    bedelini zaten ödedi; gece çalışması, toplu çalışması fiyatına dahildir.
+    İkinci kez saymak haksızlık olur ve sürpriz fatura şikâyetinin kaynağıdır.
+18. **Müşterinin kendi ajanı yapıyorsa** ortada hiçbir eklenti lisansı yok —
+    ölçü buraya konur: kapının bandı. Küçük/orta/büyük, faturası **yıllık ve
+    sabit**; iş artarsa üst banda geçilir.
+19. Kural tek cümle: **lisansı olan iş sayılmaz, lisansı olmayan iş banda girer.**
+20. Bant sınırlı olduğu için korkulan şey imkânsız: tek bantla yüz kişinin işi
+    yaptırılamaz. **Çok iş = büyük bant = daha yüksek gelir.**
 
 ## 🔢 Sayacın inceliği — neyi sayıyoruz?
 
 Benzetme: **lokanta hesabı masaya gelen tabağa kesilir; mutfakta kaç tencere
 kirlendiğine değil.**
 
-19. Botun içerideki teknik adımlarını **saymayız** — müşteri onları bilemez,
+21. **Sayaç bir fatura kalemi değildir.** İki işi var: dış ajanın hangi banda
+    düştüğünü belirlemek ve kimliğini bildirmeyen otomasyonu yakalamak.
+    Benzetme: koltuk saymak — kimse her girişte fatura kesmez, sadece kaç
+    koltuk gerektiğini belirler.
+22. Botun içerideki teknik adımlarını **saymayız** — müşteri onları bilemez,
     kontrol edemez.
-20. Sayılan tek şey: **başarıyla bitmiş iş.** Bot bir kaydı çözmek için
+23. Sayılan tek şey: **başarıyla bitmiş iş.** Bot bir kaydı çözmek için
     içeride 15 adım attıysa 1 yazılır, 15 değil.
-21. **Sayılmayanlar:** başarısız deneme, tekrar, yarım kalıp insana devredilen
+24. **Sayılmayanlar:** başarısız deneme, tekrar, yarım kalıp insana devredilen
     iş. "Çözüldü" denip aynı dertle geri açılan kayıt **sayaçtan geri düşülür.**
-22. Ağır işler baştan belli çarpanla yazılır: basit cevap **1** · randevu
+25. Ağır işler baştan belli çarpanla yazılır: basit cevap **1** · randevu
     değiştirme **2** · birkaç sistemi dolaşan iş emri **5**. Rakamlar
     sözleşmede sabitlenir, sonradan oynanmaz.
 
 ## 🆓 Neyi ÜCRETLENDİRMEYİZ (en az sayaç kadar önemli)
 
-23. Sisteme **kayıt açan** trafik bedava: e-postadan kayıt açılması, izleme
+26. Sisteme **kayıt açan** trafik bedava: e-postadan kayıt açılması, izleme
     sisteminin arıza bildirmesi, portal. Bunlar bize iş **getiriyor** —
     getirene vergi kesilmez.
-24. İki sistem arasında **veri kopyalayan** entegrasyon bedava.
-25. Ücret yalnız insansız **çözen / kapatan / karar veren** işten alınır.
+27. İki sistem arasında **veri kopyalayan** entegrasyon bedava.
+28. Ücret yalnız insansız **çözen / kapatan / karar veren** işten alınır.
     Yazılımın markasına bakmayız, **yaptığı işe** bakarız — "bu yapay zekâ
     değil, normal script" bahanesi işlemez.
-26. **Aynı iş iki kere ücretlenmez:** ya yardımlı iştir ya insansız iştir;
+29. **Aynı iş iki kere ücretlenmez:** ya yardımlı iştir ya insansız iştir;
     kayıtta tek etiket taşır.
 
 ## 🕳️ Kaçak yolları — hepsi kapalı
 
-27. *"10 teknisyenle 100 kişilik iş yaptırırım"* → her insan hesabının
+30. *"10 teknisyenle 100 kişilik iş yaptırırım"* → her insan hesabının
     **işlem tavanı** var. Gerçek insan bu tavana ömründe takılmaz; bot ilk
     saatte çarpar.
-28. *"Botu insan gibi gösteririm"* (tarayıcı taklidi) → bot imzası bellidir:
+31. *"Botu insan gibi gösteririm"* (tarayıcı taklidi) → bot imzası bellidir:
     7/24 çalışma, istekler arası hep aynı süre, insanüstü hız → **tespit + blok.**
-29. *"Yardım yolu ucuz; botun işine teknisyene formalite onay bastırırım"* →
+32. *"Yardım yolu ucuz; botun işine teknisyene formalite onay bastırırım"* →
     saniyeler arayla, okumadan toplu onay deseni yakalanır; iş **insansız
     sayılır**, paketten düşer.
-30. *"Kendi yazdığım program bedava çalışsın"* → iş bitiren her yazılım
+33. *"Kendi yazdığım program bedava çalışsın"* → iş bitiren her yazılım
     **aynı kapıdan** girer, **aynı paketten** düşer. Bizi atlatmaya çalışan
     bile bize ödeme yapar.
 
 ## 📊 Patrona ne var?
 
-31. Her iş defterde olduğu için rapor kendiliğinden çıkar: **kim ne kadar işi
+34. Her iş defterde olduğu için rapor kendiliğinden çıkar: **kim ne kadar işi
     yapay zekâya yaptırıyor, paket ne kadar doldu.**
-32. Müşterinin **fatura kontrol ekranı ücretsizdir** — ödediğinin nereye
+35. Müşterinin **fatura kontrol ekranı ücretsizdir** — ödediğinin nereye
     gittiğini görmek onun hakkı. Gelişmiş analiz (nerede daha çok otomasyon
     yapılır, hangi bot sık hata yapıyor) **ayrıca satılır.**
-33. Kişi bazlı ekran (*"Ali işinin %62'sini yapay zekâya yaptırıyor"*)
+36. Kişi bazlı ekran (*"Ali işinin %62'sini yapay zekâya yaptırıyor"*)
     hassastır — çalışan gözetimi sayılır. Varsayılan **ekip bazlı**; kişi
     bazlısı izin ve hukuk onayıyla açılır.
 
 ## 🐢 Nasıl devreye alacağız? (acele yok)
 
-34. Önce sayaç **sessizce** çalışır: 10-15 müşteride fatura kesmeden ölçeriz,
+37. Önce sayaç **sessizce** çalışır: 10-15 müşteride fatura kesmeden ölçeriz,
     gerçek rakamları görürüz.
-35. Sonra **tek senaryoda küçük pilot**, sabit bedelle.
-36. Fiyatlar ve paket boyları **ancak bu veriden sonra** kilitlenir. Demir
+38. Sonra **tek senaryoda küçük pilot**, sabit bedelle.
+39. Fiyatlar ve paket boyları **ancak bu veriden sonra** kilitlenir. Demir
     kural: sonradan kural değiştirip geçmişe dönük borç çıkarmak **yasak** —
     SAP bu çukura düştü, müşterileri mahkemede kaybetti.
 
@@ -126,8 +134,9 @@ kirlendiğine değil.**
 ## 🎯 Tek cümlelik özet
 
 > İnsan çalışıyorsa lisans; yanında yapay zekâ varsa lisans + sabit ek ücret;
-> insansız biten iş yıllık paketten düşer; kayıt açan bedava; kapıdan girmeyen
-> bot bloklanır; **sayaç tabağı sayar, tencereyi değil.**
+> aldığın eklentinin işi fiyatına dahil; lisansı olmayan dış ajanın işi kapının
+> bandını belirler; kayıt açan bedava; kapıdan girmeyen bot bloklanır;
+> **sayaç tabağı sayar, tencereyi değil — ve tabağı zaten ödenmişse hiç saymaz.**
 
 ---
 

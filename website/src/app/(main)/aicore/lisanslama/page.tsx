@@ -13,6 +13,7 @@ import {
   FileText,
   Gauge,
   Layers,
+  Network,
   Receipt,
   Scale,
   ShieldCheck,
@@ -24,38 +25,53 @@ import PrivacyContact from "@/components/ui/privacy-contact";
 export const metadata: Metadata = {
   title: "AICore Lisanslama — Ne için ödersiniz? | ServiceCore",
   description:
-    "AICore'da yapay zekâ iki şekilde çalışır: teknisyene yardım eder ya da işi kendi bitirir. Ne için ödediğiniz, neyin ücretsiz olduğu ve sayacın neyi saydığı açık yazılıdır — sürpriz fatura yoktur.",
+    "AICore lisanslaması üç kalemden oluşur: eklentiler (kişi başına ya da sabit), zorunlu GateCoreAI ve kurulum-destek paketleri. Eklentinin insansız çalışması fiyatına dahildir; iş başına ayrı ücret yoktur.",
 };
 
-const KULLANIM = [
+const KALEMLER = [
   {
-    icon: UserCheck,
-    etiket: "1 · YARDIMCI KULLANIM",
-    baslik: "Teknisyeninize yardım eder",
+    icon: Layers,
+    etiket: "1 · EKLENTİLER",
+    baslik: "AICore eklentileri",
     ozet:
-      "Teknisyen ekranın başındadır. Yapay zekâ kaydı özetler, benzer çözümleri bulur, yanıt taslağı hazırlar. Son kararı ve gönderme işini her zaman insan yapar.",
-    fiyat: "Teknisyen lisansının üstüne yıllık sabit ek bedel",
-    detay: [
-      "İsme yazılıdır — havuzdan ortak kullanılan lisans yoktur.",
-      "Yalnız yapay zekâ desteği açılan teknisyenler için alınır; tüm ekip için almak zorunda değilsiniz.",
-      "Kullanım yoğunluğuna göre artmaz: teknisyen günde 5 kez de kullansa 200 kez de kullansa bedel aynıdır.",
+      "Aldığınız her eklenti iki fiyat modelinden biriyle lisanslanır. Ayrım, eklentinin bir kişinin ekranında mı yoksa kurumun verisi üzerinde mi çalıştığına göre yapılır.",
+    satirlar: [
+      "Kişi başına (7 eklenti): teknisyen lisansının üstüne yıllık sabit ek bedel.",
+      "Sabit (diğer tüm eklentiler): kurum başına yıllık sabit bedel, hacim bandına göre.",
     ],
-    ornek: "SolveCoreAI · ReplyCoreAI · ToneCoreAI gibi teknisyen yanında çalışan eklentiler",
+    fiyat: "Yıllık sabit — her iki modelde de",
   },
   {
-    icon: Bot,
-    etiket: "2 · KENDİ BAŞINA KULLANIM",
-    baslik: "İşi kendisi bitirir",
+    icon: Network,
+    etiket: "2 · KAPI",
+    baslik: "GateCoreAI",
     ozet:
-      "Ortada insan yoktur. Gece gelen kaydı yapay zekâ kendisi cevaplar, sınıflar, çözer ya da kapatır. Her işin arkasında kayıtlı bir sorumlu yönetici vardır.",
-    fiyat: "Yıllık iş paketi — küçük, orta, büyük",
-    detay: [
-      "Paketiniz yılda kaç işi insansız bitirebileceğinizi belirler; faturası yıllık ve sabittir.",
-      "Kullandıkça artan fatura değildir. Ay sonunda sürpriz ek ücret çıkmaz.",
-      "Daha çok iş yaptırmak isterseniz bir üst pakete geçersiniz — yine sabit bedelle.",
+      "Sisteme bağlanan her yazılımın geçtiği denetlenebilir kapı. Her AICore kurulumunda alınır; güvenlik katmanı olduğu için zorunludur.",
+    satirlar: [
+      "Kurum başına yıllık sabit bedel; teknisyen sayısıyla ölçeklenmez.",
+      "Bandı, kurumun dışarıdan bağladığı ajanların yaptığı işe göre belirlenir.",
     ],
-    ornek: "ClassifyCoreAI · KnowCoreAI · StormCoreAI gibi arka planda çalışan eklentiler",
+    fiyat: "Yıllık sabit — kurum başına",
   },
+  {
+    icon: ShieldCheck,
+    etiket: "3 · HİZMET",
+    baslik: "Kurulum ve destek",
+    ozet:
+      "Devreye alma bir kez, bakım-destek yıllık. Bunlar bugünkü ServiceCore hizmet paketleriyle aynı mantıkta çalışır.",
+    satirlar: [
+      "Kurulum paketi: ilk kurulumda bir kez, sonraki eklentiler daha kısa sürede eklenir.",
+      "Destek paketi: yıllık, kademeli (kapsam ve müdahale süresine göre).",
+    ],
+    fiyat: "Kurulum bir kez · destek yıllık",
+  },
+];
+
+const DAHIL = [
+  "Eklentinin gece çalışması, toplu çalışması, insansız çalışması — hepsi eklentinin fiyatına dahildir.",
+  "Ne kadar yoğun kullanıldığı bedeli değiştirmez; bir teknisyen günde 5 kez de kullansa 200 kez de kullansa fiyat aynıdır.",
+  "Eklentinin bitirdiği iş için ayrıca fatura kesilmez. Aynı iş iki kez ücretlendirilmez.",
+  "Bulut yapay zekâ hizmetlerindeki gibi istek ya da kelime başına ücret yoktur; yerinde kurulumda dil modeli kendi sunucunuzda çalışır.",
 ];
 
 const UCRETSIZ = [
@@ -69,75 +85,56 @@ const UCRETSIZ = [
     icon: Layers,
     baslik: "Veri taşıyan entegrasyonlar",
     desc:
-      "İki sistem arasında bilgi kopyalayan, senkronize eden bağlantılar normal entegrasyondur. Yapay zekâ paketinden düşmez.",
+      "İki sistem arasında bilgi kopyalayan, senkronize eden bağlantılar normal entegrasyondur; hiçbir yapay zekâ bedeline girmez.",
   },
   {
     icon: Eye,
     baslik: "Okuma ve raporlama",
     desc:
-      "Kayıtları görmek, aramak, listelemek ve mevcut raporları almak her zaman serbesttir. Paketiniz dolsa bile okuma tarafı çalışmaya devam eder.",
+      "Kayıtları görmek, aramak, listelemek ve mevcut raporları almak her zaman serbesttir.",
   },
   {
     icon: Receipt,
-    baslik: "Kendi sayaç ekranınız",
+    baslik: "Kendi kullanım ekranınız",
     desc:
-      "Ne kadar hakkınız var, ne kadarı kullanıldı, hangi iş neden sayıldı — bu ekran ücretsizdir. Ödediğinizin nereye gittiğini görmek hakkınızdır.",
+      "Hangi yazılım ne yaptı, bandınızın neresindesiniz — bu ekran ücretsizdir. Ödediğinizin karşılığını görmek hakkınızdır.",
   },
   {
     icon: ShieldCheck,
     baslik: "Yazılım kimliği tanımlamak",
     desc:
-      "Sisteme bağlanan her yazılım kayıtlı bir kimlik alır. Kimlik tanımlamak ücretsizdir — bedel kimliğe değil, yapılan işe bağlanır.",
+      "Sisteme bağlanan her yazılım kayıtlı bir kimlik alır. Kimlik tanımlamak ücretsizdir — bedel kimliğe değil, lisansa bağlıdır.",
   },
   {
     icon: Ban,
     baslik: "Başarısız denemeler",
     desc:
-      "Yapay zekâ bir işi bitiremediyse, yarıda bırakıp teknisyene devrettiyse ya da tekrar denediyse bunların hiçbiri hakkınızdan düşmez.",
+      "Yarıda kalan, tekrarlanan ya da teknisyene devredilen işler hiçbir sayıma girmez.",
   },
 ];
 
-const SAYILIR = [
-  "İnsansız başlayıp tanımlı sonucu başarıyla tamamlanan iş",
-  "Kaydın çözülmesi, kapatılması, yönlendirilmesi gibi somut sonuçlar",
-  "Sözleşmede baştan yazılı, değişmeyen tanımlar",
+const SAYAC_NE_DEGIL = [
+  "Fatura kalemi değildir — hiçbir işin karşılığında ayrıca ücret çıkmaz.",
+  "AICore eklentilerinizin yaptığı işi saymaz; onlar zaten lisanslıdır.",
+  "Sürpriz aşım faturası üretmez.",
 ];
 
-const SAYILMAZ = [
-  "Başarısız denemeler ve tekrarlar",
-  "Yapay zekânın kendi içindeki teknik adımlar — bir iş için 15 adım attıysa yine 1 sayılır",
-  "Yarım kalıp teknisyene devredilen işler",
-  "Geri alınan işlemler ve yinelenen çağrılar",
-  "Test ortamındaki makul kullanım",
-  "Kapatıldıktan sonra aynı sebeple yeniden açılan kayıt — sayaçtan geri düşülür",
+const SAYAC_NE = [
+  "Kurumunuzun dışarıdan bağladığı ajanların hangi bantta olduğunu belirler — koltuk sayar gibi.",
+  "Kimliğini bildirmeden çalışan otomasyonu yakalar; bu bir güvenlik işlevidir.",
+  "Yönetici raporlarını besler: işin ne kadarı yazılım eliyle yapılıyor.",
 ];
 
-const AGIRLIK = [
-  { is: "Standart cevap veya doğrulanmış çözüm", carpan: "1" },
-  { is: "Tek sistem üzerinde işlem — randevu değişikliği, alan güncelleme", carpan: "2" },
-  { is: "Birkaç sistemi dolaşan iş emrinin tamamlanması", carpan: "5" },
-];
-
-const FATURA_AKISI = [
+const BANT = [
   {
-    esik: "%70",
-    baslik: "İlk bilgilendirme",
-    desc: "Paketinizin dörtte üçüne yaklaştığınızda yöneticinize bildirim gider. Yılın neresinde olduğunuzu erkenden görürsünüz.",
+    baslik: "Dışarıdan ajan bağlamıyorsanız",
+    desc: "Bant devreye girmez. GateCoreAI yine alınır — çünkü kapı, kendi eklentilerimiz ve mevcut entegrasyonlarınız için de çalışır — ama en küçük bandıyla.",
+    tone: "sade",
   },
   {
-    esik: "%85",
-    baslik: "İkinci uyarı",
-    desc: "Kalan hakkınız ve gidişata göre tahmini bitiş tarihi paylaşılır. Karar vermek için zamanınız olur.",
-  },
-  {
-    esik: "%95",
-    baslik: "Son uyarı",
-    desc: "Yükseltme mi, bu yıl bu kadarla mı devam edileceği konuşulur. Karar tamamen sizindir.",
-  },
-  {
-    esik: "%100",
-    baslik: "Durur, faturalanmaz",
-    desc: "Paket dolduğunda yapay zekânın insansız işlemleri durur ve işler teknisyen kuyruğuna düşer. Habersiz ek fatura çıkmaz.",
+    baslik: "Kendi ajanınızı bağlıyorsanız",
+    desc: "Ajanın insan olmadan bitirdiği iş, kapının bandını belirler. Küçük / orta / büyük bant; faturası yıllık ve sabit. İş arttıkça bir üst banda geçilir, ay sonunda sürpriz çıkmaz.",
+    tone: "vurgu",
   },
 ];
 
@@ -145,49 +142,53 @@ const SEFFAFLIK = [
   {
     icon: Receipt,
     baslik: "Her işin dökümü açık",
-    desc: "Hangi iş ne zaman, hangi yazılım tarafından, kimin sorumluluğunda yapıldı ve neden sayıldı — hepsi kayıtlıdır ve dışa aktarılabilir.",
+    desc: "Hangi iş ne zaman, hangi yazılım tarafından, kimin sorumluluğunda yapıldı — hepsi kayıtlıdır ve dışa aktarılabilir.",
   },
   {
     icon: Scale,
     baslik: "Tanımlar sözleşmede sabit",
-    desc: "Neyin sayılacağı ve ağırlık çarpanları sözleşmenizde yazılıdır; sözleşme dönemi içinde tek taraflı değiştirilmez.",
+    desc: "Bant sınırları ve neyin sayılacağı sözleşmenizde yazılıdır; sözleşme dönemi içinde tek taraflı değiştirilmez.",
   },
   {
     icon: Bell,
-    baslik: "İtiraz süresi tanınır",
-    desc: "Sayacın bir kaydı yanlış saydığını düşünüyorsanız itiraz edebilir, ilgili işlemin dökümünü isteyebilirsiniz.",
+    baslik: "Önceden haber verilir",
+    desc: "Bandınızın sonuna yaklaştığınızda bilgilendirilirsiniz. Ne yapılacağına siz karar verirsiniz; otomatik ek ücret işlemez.",
   },
   {
     icon: Gauge,
     baslik: "Geriye dönük fatura yok",
-    desc: "Yeni bir sayaç veya kural devreye girerse yalnız ileriye dönük uygulanır. Geçmiş kullanım için sonradan bedel çıkarılmaz.",
+    desc: "Yeni bir kural ya da sayım devreye girerse yalnız ileriye dönük uygulanır. Geçmiş kullanım için sonradan bedel çıkarılmaz.",
   },
 ];
 
 const SSS = [
   {
-    s: "Yapay zekâ token veya istek başına ücretlendiriliyor mu?",
-    c: "Hayır. Yerinde kurulumda dil modeli kendi sunucunuzda çalışır; kullanım başına dış fatura oluşmaz. Ödediğiniz şey lisans bedelidir: teknisyen başına yıllık ek bedel ya da yıllık iş paketi. İkisi de sabittir.",
+    s: "Aldığımız eklentinin yaptığı iş için ayrıca ödeme yapacak mıyız?",
+    c: "Hayır. Eklentinin bedeli yıllıktır ve insansız çalışması da bu bedele dahildir. Gece çalışsın, toplu çalışsın, günde binlerce kayıt işlesin — fatura değişmez. Aynı iş için hem eklenti bedeli hem ayrı bir ücret alınmaz.",
+  },
+  {
+    s: "O hâlde iş sayacı neden var?",
+    c: "İki iş için: kurumunuzun dışarıdan bağladığı ajanların hangi bantta olduğunu belirlemek ve kimliğini bildirmeden çalışan otomasyonu yakalamak. Koltuk saymak gibi düşünün — kimse her girişte fatura kesmiyor, sadece kaç koltuk gerektiğini belirliyor.",
+  },
+  {
+    s: "GateCoreAI'yi almasak olmaz mı?",
+    c: "Olmaz. Bir güvenlik katmanıdır; sisteme bağlanan yazılımların kimlikli ve denetlenebilir olması buna bağlıdır. Bizim kendi eklentilerimiz de aynı kapıdan geçer. Bu yüzden her AICore kurulumunda alınır.",
+  },
+  {
+    s: "Kendi geliştirdiğimiz yazılım da banda girer mi?",
+    c: "Yalnızca insan olmadan iş bitiriyorsa girer — kaydı çözüyor, kapatıyor, karar veriyorsa. Sadece kayıt açıyor ya da veri taşıyorsa girmez. Yazılımın kim tarafından yazıldığına değil, ne yaptığına bakılır.",
+  },
+  {
+    s: "İstek ya da kelime başına ücret var mı?",
+    c: "Hayır. Yerinde kurulumda dil modeli kendi sunucunuzda çalışır; dışarıya giden kullanım faturası oluşmaz. Maskeli Bulut modunda bulut kullanım bedeli kurumun kendi hesabına aittir, biz araya bir ücret koymayız.",
   },
   {
     s: "Teknisyen sayımızı azaltırsak ne olur?",
-    c: "Teknisyen lisansı ve ona bağlı yapay zekâ desteği azalır; ödemeniz de azalır. İşi yapay zekâya kaydırmak istiyorsanız yıllık iş paketiyle devam edersiniz. Zorunlu asgari teknisyen sayısı diye bir şart koymuyoruz.",
-  },
-  {
-    s: "Kendi geliştirdiğimiz yazılım da paketten düşer mi?",
-    c: "Yalnızca insan yerine iş bitiriyorsa düşer — kaydı çözüyor, kapatıyor, karar veriyorsa. Sadece kayıt açıyor ya da veri taşıyorsa düşmez. Yazılımın kim tarafından yazıldığına değil, ne yaptığına bakılır.",
-  },
-  {
-    s: "Aynı iş iki kez ücretlendirilir mi?",
-    c: "Hayır. Her iş kayıtta tek tip taşır: insanın yaptığı iş, insana yardım edilen iş ya da insansız biten iş. Bir iş hem teknisyen ek bedeline hem iş paketine sayılmaz.",
-  },
-  {
-    s: "Paketimiz dolarsa sistem tamamen durur mu?",
-    c: "Hayır. Yalnız yapay zekânın insansız işlemleri durur; teknisyenleriniz çalışmaya, kayıtlar açılmaya ve raporlar alınmaya devam eder. İşler teknisyen kuyruğuna düşer.",
+    c: "Teknisyen lisansı ve ona bağlı kişi başına eklentiler azalır, ödemeniz de azalır. Zorunlu asgari teknisyen sayısı diye bir şart koymuyoruz.",
   },
   {
     s: "Havuzdan ortak kullanılan lisans mümkün mü?",
-    c: "Hayır. ServiceCore lisansları isme yazılıdır ve bu AICore tarafında da geçerlidir. Aynı hesabın birden çok kişi ya da yazılım tarafından paylaşılması lisans şartlarına aykırıdır.",
+    c: "Hayır. ServiceCore lisansları isme yazılıdır; bu AICore tarafında da geçerlidir. Aynı hesabın birden çok kişi ya da yazılım tarafından paylaşılması lisans şartlarına aykırıdır.",
   },
 ];
 
@@ -211,35 +212,33 @@ export default function AICoreLisanslamaPage() {
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-white max-w-4xl">
-          Yapay zekâ için{" "}
+          Ne için{" "}
           <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-accent-purple-light) to-(--color-brand-accent)">
-            ne ödersiniz?
+            ödersiniz?
           </span>
         </h1>
 
         <p className="mt-8 text-xl md:text-2xl font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
-          AICore'da yapay zekâ iki şekilde çalışır: ya teknisyeninize yardım eder,
-          ya da işi kendisi bitirir. İkisinin bedeli ayrıdır ve ikisi de yıllık
-          sabittir.
+          AICore lisanslaması üç kalemden oluşur ve üçü de yıllık sabittir.
+          Dördüncü bir kalem yoktur.
         </p>
 
         <p className="mt-6 text-base font-light leading-relaxed text-(--color-text-muted) max-w-3xl">
-          Bu sayfa, ne için ödediğinizi ve neyin ücretsiz olduğunu tek tek yazar.
-          Yapay zekâ lisanslamasının çoğu yerde muğlak bırakıldığını biliyoruz;
-          biz sayacın neyi saydığını ve neyi saymadığını baştan açık yazmayı
-          tercih ediyoruz.
+          Yapay zekâ lisanslamasının çoğu yerde muğlak bırakıldığını biliyoruz.
+          Bu sayfa ne için ödediğinizi, neyin ücretsiz olduğunu ve sayacın ne işe
+          yaradığını tek tek yazar.
         </p>
 
-        {/* İKİ KULLANIM ŞEKLİ */}
+        {/* ÜÇ KALEM */}
         <section className="mt-24">
           <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
-            İKİ KULLANIM ŞEKLİ
+            TEKLİFTEKİ ÜÇ KALEM
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-            {KULLANIM.map((k) => (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {KALEMLER.map((k) => (
               <div
                 key={k.baslik}
-                className="rounded-2xl border border-white/8 bg-white/2 p-8 flex flex-col"
+                className="rounded-2xl border border-white/8 bg-white/2 p-7 flex flex-col"
               >
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/10 text-(--color-accent-purple-light) mb-5">
                   <k.icon className="w-4.5 h-4.5" />
@@ -247,42 +246,146 @@ export default function AICoreLisanslamaPage() {
                 <div className="text-[10px] font-mono font-semibold tracking-[0.18em] text-(--color-text-muted) mb-2">
                   {k.etiket}
                 </div>
-                <h3 className="text-2xl font-semibold text-white tracking-tight mb-3">
-                  {k.baslik}
-                </h3>
+                <h3 className="text-xl font-semibold text-white tracking-tight mb-3">{k.baslik}</h3>
                 <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
                   {k.ozet}
                 </p>
-
-                <div className="mt-6 rounded-xl border border-(--color-accent-purple-base)/25 bg-(--color-accent-purple-base)/8 px-4 py-3">
-                  <div className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-text-muted) mb-1">
-                    Bedel
-                  </div>
-                  <div className="text-sm font-medium text-white">{k.fiyat}</div>
-                </div>
-
                 <ul className="mt-5 space-y-2.5 flex-1">
-                  {k.detay.map((d) => (
+                  {k.satirlar.map((d) => (
                     <li key={d} className="flex gap-2.5 text-sm font-light leading-relaxed text-(--color-text-secondary)">
                       <Check className="w-4 h-4 mt-0.5 shrink-0 text-(--color-accent-purple-light)" />
                       <span>{d}</span>
                     </li>
                   ))}
                 </ul>
-
-                <div className="mt-6 pt-4 border-t border-white/8 text-xs font-light text-(--color-text-muted)">
-                  {k.ornek}
+                <div className="mt-6 pt-4 border-t border-white/8 text-[13px] font-medium text-white">
+                  {k.fiyat}
                 </div>
               </div>
             ))}
           </div>
+        </section>
 
-          <div className="mt-5 rounded-2xl border border-white/8 bg-white/2 px-6 py-5">
+        {/* DAHİL OLAN */}
+        <section className="mt-24">
+          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            EN ÖNEMLİ MADDE
+          </div>
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
+            Eklentinin yaptığı iş, eklentinin fiyatına dahildir.
+          </p>
+          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
+            Bir eklentiyi aldıysanız, o eklentinin bitirdiği iş için ikinci bir
+            ücret ödemezsiniz. Yapay zekâ lisanslamasında en sık karşılaşılan
+            sürpriz budur; biz baştan kapatıyoruz.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {DAHIL.map((d) => (
+              <div
+                key={d}
+                className="rounded-2xl border border-(--color-accent-purple-base)/25 bg-(--color-accent-purple-base)/6 p-6 flex gap-3"
+              >
+                <CircleCheck className="w-5 h-5 mt-0.5 shrink-0 text-(--color-accent-purple-light)" />
+                <p className="text-sm font-light leading-relaxed text-white/85">{d}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* SAYAÇ NEDİR / NE DEĞİLDİR */}
+        <section className="mt-24">
+          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            PEKİ SAYAÇ NE İŞE YARAR
+          </div>
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
+            Koltuk saymak gibi — her girişte fatura kesmek gibi değil.
+          </p>
+          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
+            Sistemde insansız biten işler sayılır. Ama bu sayı bir fatura satırı
+            değildir; hangi bandın gerektiğini belirler ve kimliğini bildirmeyen
+            otomasyonu yakalar.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
+            <div className="rounded-2xl border border-white/8 bg-white/2 p-7">
+              <div className="flex items-center gap-2 mb-5">
+                <CircleX className="w-4.5 h-4.5 text-(--color-text-muted)" />
+                <span className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-text-muted)">
+                  Ne değildir
+                </span>
+              </div>
+              <ul className="space-y-3">
+                {SAYAC_NE_DEGIL.map((s) => (
+                  <li key={s} className="flex gap-2.5 text-sm font-light leading-relaxed text-(--color-text-secondary)">
+                    <span className="mt-1.5 w-1 h-1 rounded-full bg-(--color-text-muted) shrink-0" />
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-(--color-accent-purple-base)/25 bg-(--color-accent-purple-base)/6 p-7">
+              <div className="flex items-center gap-2 mb-5">
+                <CircleCheck className="w-4.5 h-4.5 text-(--color-accent-purple-light)" />
+                <span className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-accent-purple-light)">
+                  Ne işe yarar
+                </span>
+              </div>
+              <ul className="space-y-3">
+                {SAYAC_NE.map((s) => (
+                  <li key={s} className="flex gap-2.5 text-sm font-light leading-relaxed text-white/85">
+                    <Check className="w-4 h-4 mt-0.5 shrink-0 text-(--color-accent-purple-light)" />
+                    <span>{s}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* BANT */}
+        <section className="mt-24">
+          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            KAPININ BANDI
+          </div>
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
+            Bant yalnız dışarıdan bağlanan ajanlar için işler.
+          </p>
+          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
+            Kurumunuzun kendi geliştirdiği ya da dışarıdan aldığı bir ajan,
+            AICore eklentisi değildir — arkasında bir eklenti lisansı yoktur.
+            Bu durumda ölçü kapının bandıdır.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {BANT.map((b) => (
+              <div
+                key={b.baslik}
+                className={`rounded-2xl border p-7 ${
+                  b.tone === "vurgu"
+                    ? "border-(--color-accent-purple-base)/25 bg-(--color-accent-purple-base)/6"
+                    : "border-white/8 bg-white/2"
+                }`}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/10 text-(--color-accent-purple-light) shrink-0">
+                    {b.tone === "vurgu" ? <Bot className="w-4 h-4" /> : <UserCheck className="w-4 h-4" />}
+                  </span>
+                  <h3 className="text-lg font-semibold text-white tracking-tight">{b.baslik}</h3>
+                </div>
+                <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">{b.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-5 rounded-2xl border border-white/8 bg-white/2 px-6 py-5 max-w-4xl">
             <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
-              <span className="text-white font-medium">Aynı iş iki kez ücretlendirilmez.</span>{" "}
-              Her iş kayıtta tek tip taşır — insanın yaptığı iş, insana yardım
-              edilen iş ya da insansız biten iş. Bir işlem hem teknisyen ek
-              bedeline hem iş paketine sayılamaz.
+              <span className="text-white font-medium">Neden böyle?</span> Bir
+              eklenti aldığınızda bedelini zaten ödüyorsunuz; ikinci kez saymak
+              haksızlık olur. Kendi ajanınız ise hiçbir eklenti lisansı
+              tüketmeden aynı işi yapıyor — ölçünün oraya konması gerekiyor.
+              Kural tek cümle: <span className="text-white">lisansı olan iş sayılmaz, lisansı olmayan iş banda girer.</span>
             </p>
           </div>
         </section>
@@ -294,10 +397,6 @@ export default function AICoreLisanslamaPage() {
           </div>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Sisteme iş getiren hiçbir şeyden bedel almıyoruz.
-          </p>
-          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
-            Yapay zekâ bedeli yalnızca insansız <span className="text-white">çözülen, kapatılan,
-            karar verilen</span> işten alınır. Aşağıdakiler paketinizden düşmez.
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -313,125 +412,6 @@ export default function AICoreLisanslamaPage() {
           </div>
         </section>
 
-        {/* SAYAÇ */}
-        <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
-            SAYAÇ NEYİ SAYAR
-          </div>
-          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
-            Yalnız bitmiş iş sayılır — arka plandaki adımlar değil.
-          </p>
-          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
-            Yapay zekânın bir kaydı çözmek için içeride kaç adım attığını siz
-            göremezsiniz; göremediğiniz bir şeyin faturasını da ödememelisiniz.
-            Bu yüzden sayacın birimi tek şeydir: başarıyla tamamlanmış iş.
-          </p>
-
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
-            <div className="rounded-2xl border border-(--color-accent-purple-base)/25 bg-(--color-accent-purple-base)/6 p-7">
-              <div className="flex items-center gap-2 mb-5">
-                <CircleCheck className="w-4.5 h-4.5 text-(--color-accent-purple-light)" />
-                <span className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-accent-purple-light)">
-                  Sayılır
-                </span>
-              </div>
-              <ul className="space-y-3">
-                {SAYILIR.map((s) => (
-                  <li key={s} className="flex gap-2.5 text-sm font-light leading-relaxed text-white/85">
-                    <Check className="w-4 h-4 mt-0.5 shrink-0 text-(--color-accent-purple-light)" />
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="rounded-2xl border border-white/8 bg-white/2 p-7">
-              <div className="flex items-center gap-2 mb-5">
-                <CircleX className="w-4.5 h-4.5 text-(--color-text-muted)" />
-                <span className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-text-muted)">
-                  Sayılmaz
-                </span>
-              </div>
-              <ul className="space-y-3">
-                {SAYILMAZ.map((s) => (
-                  <li key={s} className="flex gap-2.5 text-sm font-light leading-relaxed text-(--color-text-secondary)">
-                    <span className="mt-1.5 w-1 h-1 rounded-full bg-(--color-text-muted) shrink-0" />
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-6 rounded-2xl border border-white/8 overflow-hidden">
-            <div className="px-5 py-4 border-b border-white/8 bg-white/3">
-              <div className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-text-muted)">
-                Ağırlıklar sözleşmede sabittir
-              </div>
-            </div>
-            <table className="w-full text-left">
-              <tbody>
-                {AGIRLIK.map((a) => (
-                  <tr key={a.is} className="border-b border-white/6 last:border-b-0">
-                    <td className="px-5 py-4 text-sm font-light text-white/85">{a.is}</td>
-                    <td className="px-5 py-4 text-sm font-mono font-semibold text-(--color-accent-purple-light) text-right whitespace-nowrap">
-                      {a.carpan} iş
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="mt-3 text-xs font-light text-(--color-text-muted) max-w-2xl">
-            Bir işin kaç sayılacağı baştan bellidir ve sözleşme süresince
-            değiştirilmez. Yapay zekânın o işi kaç adımda yaptığı bu sayıyı
-            etkilemez.
-          </p>
-        </section>
-
-        {/* SÜRPRİZ FATURA YOK */}
-        <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
-            SÜRPRİZ FATURA YOK
-          </div>
-          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
-            Paketiniz dolarsa fatura değil, bildirim gelir.
-          </p>
-          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
-            Bir yıl boyunca ne ödeyeceğinizi baştan bilirsiniz. Hak biterse
-            otomatik ek ücret işlemez; ne olacağına siz karar verirsiniz.
-          </p>
-
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {FATURA_AKISI.map((f) => (
-              <div key={f.esik} className="rounded-2xl border border-white/8 bg-white/2 p-6">
-                <div className="text-3xl font-bold tracking-tight text-(--color-accent-purple-light) mb-3">
-                  {f.esik}
-                </div>
-                <h3 className="text-base font-semibold text-white tracking-tight mb-2">{f.baslik}</h3>
-                <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="rounded-2xl border border-white/8 bg-white/2 px-6 py-5">
-              <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
-                <span className="text-white font-medium">Kesinti istemiyorsanız</span> — yıl
-                içinde yedek kapasiteyi önceden alabilir ya da bir üst pakete
-                geçebilirsiniz. Her ikisi de imzalı, sabit bedelli ek siparişle olur.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-white/8 bg-white/2 px-6 py-5">
-              <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
-                <span className="text-white font-medium">Paket dolduğunda</span> — teknisyen
-                çalışması, kayıt açılması, arama ve raporlama etkilenmez. Yalnız
-                insansız işlemler durur, işler kuyruğa düşer.
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* ŞEFFAFLIK */}
         <section className="mt-24">
           <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
@@ -441,7 +421,7 @@ export default function AICoreLisanslamaPage() {
             Sayaç bizde değil, sizinle birlikte.
           </p>
           <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
-            Faturanızı doğrulayabilmeniz için gereken her şey ürünün içindedir ve
+            Bandınızı doğrulayabilmeniz için gereken her şey ürünün içindedir ve
             ayrıca satılmaz.
           </p>
 
@@ -484,17 +464,17 @@ export default function AICoreLisanslamaPage() {
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
-            href="/planlar/lisanslama-rehberi"
+            href="/aicore/gatecore"
             className="inline-flex items-center gap-2 h-12 px-6 rounded-full border border-white/15 text-white/85 hover:text-white hover:border-white/30 font-medium text-sm transition-colors cursor-pointer"
           >
-            ServiceCore Lisanslama Rehberi
+            GateCoreAI
             <ArrowUpRight className="w-4 h-4" />
           </Link>
           <Link
-            href="/aicore"
+            href="/planlar/lisanslama-rehberi"
             className="inline-flex items-center gap-2 h-12 px-6 rounded-full text-white/80 hover:text-white font-medium text-sm transition-colors cursor-pointer"
           >
-            Tüm AICore Ailesi
+            Lisanslama Rehberi
             <ArrowUpRight className="w-4 h-4" />
           </Link>
         </div>
