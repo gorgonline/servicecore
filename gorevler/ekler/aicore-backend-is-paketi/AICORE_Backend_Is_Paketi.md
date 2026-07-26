@@ -181,6 +181,45 @@ biten müşteride insansız yazma duruyor (okuma serbest).
 başarısız deneme sayacı artırmıyor; yeniden açılan kayıt geri düşüyor;
 %70/85/95 bildirimleri düşüyor; limitte insansız yazma durup iş kuyruğa gidiyor.
 
+## Adım 5.1 — Bant kuralları (sayacın iş mantığı)
+
+**Ne:** Sayacın hangi işi nasıl sayacağını belirleyen kurallar. Bunlar
+sözleşmeye de aynen yazılacağı için kodda birebir karşılığı olmalı.
+
+**Teknik:**
+- **Atıf kuralı:** iş, çözüm içeriğini üreten tarafa yazılır. Kayıt üstünde
+  yalnız onay tıklaması yapılması işi "insan işi" yapmaz. Ayrımı yapan sinyal:
+  teknisyen içeriği düzenledi mi, süre geçirdi mi, alanları değiştirdi mi.
+  Salt onay → iş insansız sayılır (Adım 7'deki formalite-onay tespiti bunun
+  denetim tarafı).
+- **Tekilleştirme:** bir sonuç bir kez sayılır. `KorelasyonId` zincirdeki tüm
+  ajanları ve adımları tek işe bağlar; üç ajan sırayla dokunsa da sayaç 1 artar.
+- **Lisans muafiyeti (Adım 3'teki kuralın uygulaması):** işleyen yazılımın
+  geçerli AICore eklenti lisansı varsa iş sayılır ve raporlanır, **bant
+  havuzundan düşmez**.
+- **Dönem ve pencere:** faturaya esas havuz **sözleşme yılıdır** ve dönem
+  başında sıfırlanır. Bant tespiti ve anomali izlemesi **kayan son 12 ay**
+  penceresinden yapılır. İki değer ayrı ayrı tutulur.
+- **İlk 3 ay:** sözleşme başlangıç bandıyla açılır; ilk 3 ay sınır
+  uygulanmaz (yalnız ölçüm). 4. ayda ölçülen değere göre bant sabitlenir —
+  aşağı da inebilir.
+- **Sınır davranışı:** eşiklerde bildirim → sınır aşımında **grace süresi**
+  (config, öneri 30 gün) boyunca çalışma sürer → süre sonunda üst band
+  sözleşmeye geçmemişse dış ajanın yazma uçları kapanır (okuma açık kalır).
+  Üst banda geçildiğinde yeni bedel **aşım tarihinden ileriye** işler.
+- **Aşağı inme:** iki ardışık dönem bandın alt eşiğinin altında kalınırsa
+  yenilemede bir kademe aşağı önerilir (otomatik değil, yenileme kaydı).
+- **Tavan:** en üst bandın üst sınırı tanımlıdır; aşılırsa sistem "kurumsal
+  seviye" işaretler ve satışa bildirir — otomatik faturalama yapmaz.
+- **Sayılan sonuç listesi:** hangi sonucun iş sayıldığı config'te listedir
+  (çözüm, kapatma, yönlendirme/atama, bilgi kartı üretimi ...). Liste ve
+  ağırlıklar dönem içinde değişmez; değişiklik yalnız yeni dönemde geçerli.
+
+**Test:** Onay tıklamasıyla biten iş insansız sayılıyor; teknisyenin
+düzenlediği iş insan işi sayılıyor; 3 ajanlı zincir 1 iş üretiyor; lisanslı
+eklentinin işi rapora giriyor ama havuzdan düşmüyor; grace süresi bitince
+yalnız dış ajan yazması kapanıyor.
+
 ## Adım 6 — İnsan hesabı işlem tavanı
 
 **Ne:** Bir insan hesabından insanüstü hacimde iş geçmesini engellemek.

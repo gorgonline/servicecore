@@ -280,6 +280,22 @@
             "ChatCoreAI",
             "FlowCoreAI"
           ]
+        },
+        {
+          "label": "Bant kuralları (dış ajanlar için)",
+          "tagline": "Aşağıdaki kurallar sözleşmede aynen yer alır ve sözleşme dönemi içinde tek taraflı değiştirilmez.",
+          "items": [
+            "İş, çözüm içeriğini üreten tarafa yazılır; yalnız onay tıklaması işi insan işi yapmaz",
+            "Bir sonuç bir kez sayılır; aynı sonucu üreten zincirdeki her yazılım ayrı sayılmaz",
+            "İlk üç ay ölçüm dönemidir; bant dördüncü ayda ölçülen kullanıma göre sabitlenir",
+            "Sınır aşımında süre tanınır; üst banda geçiş aşım tarihinden ileriye işler, geçmişe dönük ücret çıkmaz",
+            "Süre sonunda üst banda geçilmezse yalnız dış ajanların yazma işlemleri durur; okuma ve teknisyen çalışması etkilenmez",
+            "İki dönem üst üste bandın altında kalınırsa yenilemede bir alt kademeye inilir",
+            "En üst bandın üst sınırını aşan kullanım kurumsal seviyeye girer ve ayrıca fiyatlanır",
+            "Kimliğini bildirmeden çalışan yazılım tespit edilirse erişimi askıya alınır; geçmiş döneme ceza faturası çıkarılmaz",
+            "Faturaya esas dönem sözleşme yılıdır; izleme ve bant tespiti kayan son on iki ay penceresinden yapılır",
+            "Hangi sonuçların iş sayıldığı sözleşmede tek tek listelenir"
+          ]
         }
       ],
       "note": {

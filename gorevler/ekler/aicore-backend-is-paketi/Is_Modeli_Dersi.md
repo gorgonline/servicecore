@@ -102,6 +102,32 @@ kirlendiğine değil.**
     **aynı kapıdan** girer, **aynı paketten** düşer. Bizi atlatmaya çalışan
     bile bize ödeme yapar.
 
+## ⚖️ Bandın kuralları — açık bırakılmaması gerekenler
+
+Bant fikri tek başına yetmiyor; şu sekiz kural yazılmazsa yıl sonunda kavga
+çıkar. (Erman'ın ekibinin yakaladığı açıklar; hepsi kapatıldı.)
+
+- **İş kime yazılır:** çözümü kim ürettiyse ona. Sona konan onay tıklaması işi
+  insan işi yapmaz — yoksa herkes bir stajyere düğmeye bastırır, bant sıfırlanır.
+- **Bir sonuç bir iş:** üç ajan sırayla dokunsa da bir kez sayılır.
+- **İlk üç ay ölçüm:** yeni müşteride geçmiş veri yok; band dördüncü ayda
+  gerçek ölçüme göre sabitlenir, gerekirse aşağı iner.
+- **Sınırda ne olur:** hemen kesilmez, süre tanınır. Üst banda geçilirse bedel
+  aşım tarihinden itibaren işler — geçmişe dönük değil. Geçilmezse dış ajanın
+  yazması durur.
+- **İmzasız fatura yok:** otomatik aşım faturası ve geçmişe borç yok.
+- **Aşağı inmek var:** iki dönem düşük kalınırsa yenilemede bir kademe iner.
+  Tek yönlü bilet güveni bitirir.
+- **Tavan var:** büyük bandın üstü ayrı fiyatlanır. Sebep maliyet değil ölçek —
+  elli bin işle beş milyon iş aynı bedele giremez.
+- **Yaptırım var:** kimliksiz otomasyon yakalanırsa erişim askıya alınır. Ama
+  geçmişe ceza faturası çıkarılmaz — o yol SAP'yi mahkemeye götürdü.
+
+İki tanım da sözleşmeye yazılır: faturaya esas dönem **sözleşme yılı**,
+izlemeye esas pencere **kayan 12 ay**; hangi sonuçların iş sayıldığı ise tek
+tek listelenir (kapanış tek başına yetmez — yönlendirme, atama, kart üretimi
+de insansız biten işlerdir).
+
 ## 📊 Patrona ne var?
 
 34. Her iş defterde olduğu için rapor kendiliğinden çıkar: **kim ne kadar işi

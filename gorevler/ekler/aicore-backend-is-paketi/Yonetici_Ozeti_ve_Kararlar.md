@@ -47,7 +47,7 @@ deftere yazılır. Cevap veremeyen giremez. Gelir dört kalemden oluşur:
 - **Sürpriz fatura yok.** Bandın sonuna yaklaşınca haber verilir; otomatik ek
   ücret işlemez, üst banda geçmek imzalı ve sabit bedellidir.
 
-## Sizin vereceğiniz 8 karar
+## Sizin vereceğiniz 9 karar
 
 Hepsi fiyat ve kural kararı. Toplantıda sırayla geçin, her birine evet/hayır/rakam verin.
 
@@ -70,9 +70,15 @@ Hepsi fiyat ve kural kararı. Toplantıda sırayla geçin, her birine evet/hayı
    Pilotta 2-3 fiyat seviyesi gerçek teklifle denenir, sonra kilitlenir.
 
 5. **Bandın sonuna gelince ne olsun?**
-   Öneri: eşiklerde uyarı → sınırda dış ajanın yazma işlemleri durur, iş insan
-   kuyruğuna düşer → isteyen önceden üst banda geçer. Sürpriz aşım faturası
-   yok. (Kendi eklentilerimiz bu sınırdan etkilenmez.) Onaylıyor musunuz?
+   Öneri netleşti: eşiklerde uyarı → sınır aşılınca **bir süre tanınır**
+   (öneri: 30 gün). O sürede üst banda geçilirse yeni bedel **aşım tarihinden
+   itibaren** işler (geçmişe dönük değil); geçilmezse dış ajanın yazma
+   işlemleri durur, iş teknisyen kuyruğuna düşer. Kendi eklentilerimiz bu
+   sınırdan etkilenmez. Karar: tanınacak süre 30 gün mü, başka mı?
+
+   *Not: Bu düzeltme, "küçük band alıp yıl boyu büyük band işi yapmak"
+   açığını kapatır. Eski hâlinde sınırda ne olacağı müşteriye açık sayfada
+   yazmıyordu.*
 
 6. **Ek ücreti olmayan teknisyene yapay zekâ ne yapabilsin?**
    (a) hiçbir şey — hepsi ücretli, (b) tadımlık: özet/okuma bedava, kayıt
@@ -82,7 +88,19 @@ Hepsi fiyat ve kural kararı. Toplantıda sırayla geçin, her birine evet/hayı
    Eski usül bağlantılar bir süre uyarıyla çalışır, sonra kapanır. "2 sürüm"
    takvimde kaç ay? Ayrıca söz: geriye dönük hiçbir fatura çıkarılmaz.
 
-8. **"Kim ne kadar işi yapay zekâya yaptırıyor" raporu nasıl açılsın?**
+8. **Bandın diğer kuralları — toplu onay:**
+   Aşağıdakiler hazırlandı, tek tek okuyup onaylamanız yeterli:
+   (a) iş, çözümü üretene yazılır — onay tıklaması işi insan işi yapmaz;
+   (b) bir sonuç bir kez sayılır, zincirdeki her ajan ayrı sayılmaz;
+   (c) ilk üç ay ölçüm dönemidir, band dördüncü ayda sabitlenir;
+   (d) iki dönem üst üste düşük kalınırsa yenilemede bir alt banda inilir;
+   (e) büyük bandın üstü kurumsal seviyedir, ayrıca fiyatlanır;
+   (f) kimliksiz otomasyon yakalanırsa erişim askıya alınır — geçmişe ceza
+       faturası çıkarılmaz;
+   (g) faturaya esas dönem sözleşme yılı, izlemeye esas pencere kayan 12 ay;
+   (h) hangi sonuçların iş sayıldığı sözleşmede tek tek listelenir.
+
+9. **"Kim ne kadar işi yapay zekâya yaptırıyor" raporu nasıl açılsın?**
    Öneri: varsayılan **ekip bazında** (KVKK ve çalışan barışı için güvenli);
    kişi bazlı görünüm müşterinin isteğine + yetkiye + hukuk onayına bağlı.
    Erman'ın istediği kişi bazlı ekran mümkün — ama varsayılan yapmayalım.

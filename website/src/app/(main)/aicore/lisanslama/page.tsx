@@ -138,6 +138,64 @@ const BANT = [
   },
 ];
 
+const BANT_KURALLARI = [
+  {
+    baslik: "İş kime yazılır",
+    desc:
+      "Çözümü kim ürettiyse iş ona yazılır. Sona konan bir onay tıklaması işi insan işi yapmaz. Teknisyen kaydı gerçekten inceleyip düzeltiyor ya da çözümü kendisi tamamlıyorsa iş insan işidir — bu ayrım kayıtta görünür.",
+  },
+  {
+    baslik: "Bir sonuç, bir iş",
+    desc:
+      "Aynı sonucu üretmek için kaç yazılım sırayla çalışırsa çalışsın, iş bir kez sayılır. Zincirin adımları ayrı ayrı yazılmaz.",
+  },
+  {
+    baslik: "İlk üç ay ölçüm dönemidir",
+    desc:
+      "Sözleşme bir başlangıç bandıyla açılır ama ilk üç ay sınır uygulanmaz. Dördüncü ayda bandınız ölçülen gerçek kullanıma göre sabitlenir — gerekirse aşağı da iner.",
+  },
+  {
+    baslik: "Sınıra gelince ne olur",
+    desc:
+      "Eşiklerde haber verilir. Sınır aşılırsa çalışma hemen kesilmez: bir süre tanınır. O sürede üst banda geçilirse yeni bedel aşım tarihinden itibaren işler — geçmişe dönük değil. Geçilmezse dış ajanların yazma işlemleri durur, işler teknisyen kuyruğuna düşer.",
+  },
+  {
+    baslik: "İmzasız fatura yok",
+    desc:
+      "Üst banda geçiş imzalı ek siparişle olur. Habersiz ek ücret, otomatik aşım faturası ya da geçmişe dönük borç çıkarılmaz.",
+  },
+  {
+    baslik: "Aşağı inmek de var",
+    desc:
+      "İş azalırsa yenilemede bir alt banda inersiniz. Şartı: iki dönem üst üste düşük kalmak; bir seferde tek kademe. Bant tek yönlü bir bilet değildir.",
+  },
+  {
+    baslik: "En üst bandın da sınırı var",
+    desc:
+      "Büyük bandın üst sınırını aşan kullanım kurumsal seviyeye girer ve ayrıca fiyatlanır. Sebep maliyet değil ölçek: bir kurumun elli bin işi ile beş milyon işi aynı bedele girmemelidir.",
+  },
+  {
+    baslik: "Kimliksiz otomasyonun sonucu",
+    desc:
+      "Kimliğini bildirmeden çalışan yazılım tespit edilirse erişimi askıya alınır ve doğru band sözleşmeye geçirilene kadar açılmaz. Geçmiş döneme ceza faturası çıkarılmaz.",
+  },
+];
+
+const OLCUM = [
+  {
+    baslik: "Faturaya esas dönem",
+    desc: "Sözleşme yılı. Bandınız bu dönem içinde geçerlidir ve dönem başında sıfırlanır.",
+  },
+  {
+    baslik: "İzlemeye esas pencere",
+    desc: "Kayan son on iki ay. Bandın doğru seçilmesi ve olağandışı hareketin görülmesi bu pencereden yapılır.",
+  },
+  {
+    baslik: "Sayılan sonuçlar",
+    desc: "Hangi sonuçların iş sayıldığı sözleşmede tek tek listelenir: kaydın çözülmesi, kapatılması, yönlendirilmesi gibi. Liste dönem içinde değişmez.",
+  },
+];
+
 const SEFFAFLIK = [
   {
     icon: Receipt,
@@ -173,6 +231,18 @@ const SSS = [
   {
     s: "GateCoreAI'yi almasak olmaz mı?",
     c: "Olmaz. Bir güvenlik katmanıdır; sisteme bağlanan yazılımların kimlikli ve denetlenebilir olması buna bağlıdır. Bizim kendi eklentilerimiz de aynı kapıdan geçer. Bu yüzden her AICore kurulumunda alınır.",
+  },
+  {
+    s: "Sona onay düğmesi koysak iş insan işi sayılır mı?",
+    c: "Hayır. İş, çözümü kim ürettiyse ona yazılır; onay tıklaması bunu değiştirmez. Teknisyen kaydı gerçekten inceleyip düzelttiğinde ya da çözümü kendisi tamamladığında iş insan işidir — bu fark kayıtta görünür ve ölçülür.",
+  },
+  {
+    s: "Bandımız dolarsa çalışma birden kesilir mi?",
+    c: "Hayır. Eşiklerde önceden haber verilir, sınır aşıldığında bir süre tanınır. O sürede üst banda geçerseniz yeni bedel aşım tarihinden itibaren işler; geçmişe dönük ücret çıkmaz. Geçmezseniz yalnız dış ajanların yazma işlemleri durur — teknisyenleriniz ve AICore eklentileriniz çalışmaya devam eder.",
+  },
+  {
+    s: "İşimiz azalırsa aşağı inebilir miyiz?",
+    c: "Evet. İki dönem üst üste bandın altında kalırsanız yenilemede bir alt kademeye inersiniz. Bant tek yönlü değildir.",
   },
   {
     s: "Kendi geliştirdiğimiz yazılım da banda girer mi?",
@@ -387,6 +457,49 @@ export default function AICoreLisanslamaPage() {
               tüketmeden aynı işi yapıyor — ölçünün oraya konması gerekiyor.
               Kural tek cümle: <span className="text-white">lisansı olan iş sayılmaz, lisansı olmayan iş banda girer.</span>
             </p>
+          </div>
+        </section>
+
+        {/* BANDIN KURALLARI */}
+        <section className="mt-24">
+          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            BANDIN KURALLARI
+          </div>
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
+            Sekiz kural, sözleşmede aynen yazılı.
+          </p>
+          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
+            Bandın nasıl belirlendiği, nasıl değiştiği ve sınıra gelindiğinde ne
+            olduğu baştan bellidir. Yoruma bırakılan hiçbir yer kalmasın diye
+            hepsi tek tek yazıldı.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+            {BANT_KURALLARI.map((k, i) => (
+              <div key={k.baslik} className="rounded-2xl border border-white/8 bg-white/2 p-6 flex gap-4">
+                <span className="shrink-0 w-8 h-8 rounded-lg border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/10 text-(--color-accent-purple-light) font-mono text-xs flex items-center justify-center">
+                  {i + 1}
+                </span>
+                <div>
+                  <h3 className="text-base font-semibold text-white tracking-tight mb-1.5">{k.baslik}</h3>
+                  <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">{k.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h3 className="text-lg font-semibold text-white tracking-tight mt-12 mb-4">
+            Ölçüm nasıl yapılır
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {OLCUM.map((o) => (
+              <div key={o.baslik} className="rounded-2xl border border-white/8 bg-white/2 p-6">
+                <div className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-text-muted) mb-2">
+                  {o.baslik}
+                </div>
+                <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">{o.desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
