@@ -72,9 +72,9 @@ kirlendiğine değil.**
     içeride 15 adım attıysa 1 yazılır, 15 değil.
 24. **Sayılmayanlar:** başarısız deneme, tekrar, yarım kalıp insana devredilen
     iş. "Çözüldü" denip aynı dertle geri açılan kayıt **sayaçtan geri düşülür.**
-25. Ağır işler baştan belli çarpanla yazılır: basit cevap **1** · randevu
-    değiştirme **2** · birkaç sistemi dolaşan iş emri **5**. Rakamlar
-    sözleşmede sabitlenir, sonradan oynanmaz.
+25. **Zorluk çarpanı yok:** her biten iş 1 sayılır. Ağır iş 2, çok ağır iş 5
+    gibi bir kademe koymadık — müşteriye "bir sonuç bir iş" diyorsak arkada
+    başka türlü sayamayız.
 
 ## 🆓 Neyi ÜCRETLENDİRMEYİZ (en az sayaç kadar önemli)
 

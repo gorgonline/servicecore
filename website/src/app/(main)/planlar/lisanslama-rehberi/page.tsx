@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { CheckCircle2, HelpCircle, ChevronRight } from "lucide-react";
 import AboutHero from "@/components/ui/AboutHero";
 import lisansData from "@/data/lisanslama-rehberi.json";
@@ -31,6 +32,20 @@ interface Section {
   moduleList?: ListBlock;
   note?: ListBlock;
 }
+
+export const metadata: Metadata = {
+  title: "Abonelik ve Lisanslama Rehberi | ServiceCore",
+  description:
+    "ServiceCore lisans rolleri, edition kuralları, minimum lisanslama, hibrit model, ESM çok tenantlı lisanslama, altyapı add-on'ları ve AICore yapay zekâ eklentilerinin lisanslanması.",
+  alternates: { canonical: "/planlar/lisanslama-rehberi" },
+  openGraph: {
+    title: "Abonelik ve Lisanslama Rehberi | ServiceCore",
+    description:
+      "Roller, edition kuralları, ESM, add-on ve AICore eklentilerinin lisanslanması tek sayfada.",
+    url: "/planlar/lisanslama-rehberi",
+    type: "article",
+  },
+};
 
 export default function LisanslamaRehberiPage() {
   const sections = lisansData.sections as Section[];

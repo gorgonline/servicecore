@@ -95,7 +95,7 @@ export default function OnPremPage() {
         </p>
 
         <p className="mt-6 text-base font-light leading-relaxed text-(--color-text-muted) max-w-3xl">
-          Piyasadaki yapay zekâ eklentilerinin çoğu SaaS'tır: veriniz sağlayıcının
+          Piyasadaki yapay zekâ eklentilerinin çoğu SaaS&apos;tır: veriniz sağlayıcının
           bulutuna gider, maliyet kullandıkça artar, model sağlayıcının takvimiyle
           değişir. AICore bunun tersini seçti — kurumsal servis yönetiminde
           yapay zekânın da kurumun malı olması gerektiğine inanıyoruz.

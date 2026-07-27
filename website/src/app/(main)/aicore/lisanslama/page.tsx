@@ -50,6 +50,7 @@ const KALEMLER = [
     satirlar: [
       "Kurum başına yıllık sabit bedel; teknisyen sayısıyla ölçeklenmez.",
       "Bandı, kurumun dışarıdan bağladığı ajanların yaptığı işe göre belirlenir.",
+      "Beta ve yol haritası aşamasındadır; devreye alma takvimi teklifte yazılır.",
     ],
     fiyat: "Yıllık sabit — kurum başına",
   },
@@ -69,7 +70,7 @@ const KALEMLER = [
 
 const DAHIL = [
   "Eklentinin gece çalışması, toplu çalışması, insansız çalışması — hepsi eklentinin fiyatına dahildir.",
-  "Ne kadar yoğun kullanıldığı bedeli değiştirmez; bir teknisyen günde 5 kez de kullansa 200 kez de kullansa fiyat aynıdır.",
+  "Sözleşilen hacim bandı içinde kullanım sıklığı bedeli değiştirmez; bir teknisyen günde 5 kez de kullansa 200 kez de kullansa fiyat aynıdır. Kurumun hacim bandı yalnız yenilemede ya da tanımlı bant geçiş koşullarında değişir.",
   "Eklentinin bitirdiği iş için ayrıca fatura kesilmez. Aynı iş iki kez ücretlendirilmez.",
   "Bulut yapay zekâ hizmetlerindeki gibi istek ya da kelime başına ücret yoktur; yerinde kurulumda dil modeli kendi sunucunuzda çalışır.",
 ];
@@ -254,7 +255,7 @@ const SSS = [
   },
   {
     s: "Teknisyen sayımızı azaltırsak ne olur?",
-    c: "Teknisyen lisansı ve ona bağlı kişi başına eklentiler azalır, ödemeniz de azalır. Zorunlu asgari teknisyen sayısı diye bir şart koymuyoruz.",
+    c: "Teknisyen lisansı ve ona bağlı kişi başına eklentiler azalır, ödemeniz de azalır. AICore tarafında zorunlu asgari teknisyen sayısı yoktur; ServiceCore ana platformunun kendi asgari lisans kuralları ise geçerliliğini korur.",
   },
   {
     s: "Havuzdan ortak kullanılan lisans mümkün mü?",
@@ -264,7 +265,7 @@ const SSS = [
 
 export default function AICoreLisanslamaPage() {
   return (
-    <main className="relative min-h-screen bg-(--color-surface-base) overflow-hidden">
+    <div className="relative min-h-screen bg-(--color-surface-base) overflow-hidden">
       <div
         className="absolute -top-40 -left-40 w-130 h-130 rounded-full pointer-events-none"
         style={{
@@ -289,21 +290,23 @@ export default function AICoreLisanslamaPage() {
         </h1>
 
         <p className="mt-8 text-xl md:text-2xl font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
-          AICore lisanslaması üç kalemden oluşur ve üçü de yıllık sabittir.
-          Dördüncü bir kalem yoktur.
+          AICore lisanslaması üç gruptan oluşur: yıllık ürün lisansları, zorunlu
+          GateCoreAI lisansı ve tek seferlik kurulum ile yıllık destek. Bunların
+          dışında bir yapay zekâ kalemi yoktur.
         </p>
 
         <p className="mt-6 text-base font-light leading-relaxed text-(--color-text-muted) max-w-3xl">
-          Yapay zekâ lisanslamasının çoğu yerde muğlak bırakıldığını biliyoruz.
-          Bu sayfa ne için ödediğinizi, neyin ücretsiz olduğunu ve sayacın ne işe
-          yaradığını tek tek yazar.
+          Bu kalemler mevcut ServiceCore platform ve teknisyen lisanslarınızın
+          üzerine eklenir; onların yerine geçmez. Yapay zekâ lisanslamasının çoğu
+          yerde muğlak bırakıldığını biliyoruz — bu sayfa ne için ödediğinizi,
+          neyin ücretsiz olduğunu ve sayacın ne işe yaradığını tek tek yazar.
         </p>
 
         {/* ÜÇ KALEM */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             TEKLİFTEKİ ÜÇ KALEM
-          </div>
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             {KALEMLER.map((k) => (
               <div
@@ -338,9 +341,9 @@ export default function AICoreLisanslamaPage() {
 
         {/* DAHİL OLAN */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             EN ÖNEMLİ MADDE
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Eklentinin yaptığı iş, eklentinin fiyatına dahildir.
           </p>
@@ -365,9 +368,9 @@ export default function AICoreLisanslamaPage() {
 
         {/* SAYAÇ NEDİR / NE DEĞİLDİR */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             PEKİ SAYAÇ NE İŞE YARAR
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Koltuk saymak gibi — her girişte fatura kesmek gibi değil.
           </p>
@@ -416,9 +419,9 @@ export default function AICoreLisanslamaPage() {
 
         {/* BANT */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             KAPININ BANDI
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Bant yalnız dışarıdan bağlanan ajanlar için işler.
           </p>
@@ -462,9 +465,9 @@ export default function AICoreLisanslamaPage() {
 
         {/* BANDIN KURALLARI */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             BANDIN KURALLARI
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Sekiz kural, sözleşmede aynen yazılı.
           </p>
@@ -505,9 +508,9 @@ export default function AICoreLisanslamaPage() {
 
         {/* ÜCRETSİZ OLANLAR */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             ÜCRETLENDİRİLMEYENLER
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Sisteme iş getiren hiçbir şeyden bedel almıyoruz.
           </p>
@@ -527,9 +530,9 @@ export default function AICoreLisanslamaPage() {
 
         {/* ŞEFFAFLIK */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             ŞEFFAFLIK
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Sayaç bizde değil, sizinle birlikte.
           </p>
@@ -555,9 +558,9 @@ export default function AICoreLisanslamaPage() {
 
         {/* SSS */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             SIKÇA SORULAN SORULAR
-          </div>
+          </h2>
           <div className="rounded-2xl border border-white/8 overflow-hidden">
             {SSS.map((q) => (
               <div key={q.s} className="border-b border-white/6 last:border-b-0 px-6 py-6">
@@ -594,6 +597,6 @@ export default function AICoreLisanslamaPage() {
       </div>
 
       <PrivacyContact />
-    </main>
+    </div>
   );
 }

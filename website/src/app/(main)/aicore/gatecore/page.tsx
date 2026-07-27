@@ -41,7 +41,7 @@ const BUGUNKU_DURUM = [
   {
     icon: FileWarning,
     baslik: "Ne çekildiğini bilemiyorsunuz",
-    desc: "Hangi kayıtların okunduğu, hangi alanların dışarı çıktığı görünmez. 'Ajan neyi gördü?' sorusunun bugün bir cevabı yok.",
+    desc: "Hangi kayıtların okunduğu, hangi alanların dışarı çıktığı görünmez. &apos;Ajan neyi gördü?&apos; sorusunun bugün bir cevabı yok.",
   },
   {
     icon: Siren,
@@ -58,7 +58,7 @@ const BUGUNKU_DURUM = [
 const UCLU = [
   {
     baslik: "Özel veriye erişir",
-    desc: "Kayıtlar, kullanıcı bilgileri, iç yazışmalar, varlık envanteri — işini yapabilmesi için hepsini görmesi gerekir.",
+    desc: "Kayıtlar, kullanıcı bilgileri, iç yazışmalar, varlık envanteri — görevi için gereken alt kümeyi görmesi gerekir; yetkisi ne kadar genişse risk o kadar büyür.",
   },
   {
     baslik: "Dışarıdan gelen metni okur",
@@ -190,7 +190,7 @@ const SARTLAR = [
 
 export default function GateCorePage() {
   return (
-    <main className="relative min-h-screen bg-(--color-surface-base) overflow-hidden">
+    <div className="relative min-h-screen bg-(--color-surface-base) overflow-hidden">
       <div
         className="absolute -top-40 -left-40 w-130 h-130 rounded-full pointer-events-none"
         style={{
@@ -213,6 +213,12 @@ export default function GateCorePage() {
               ZORUNLU BİLEŞEN
             </span>
           </span>
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/8">
+            <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-light)" />
+            <span className="text-[10px] font-mono font-semibold tracking-[0.22em] text-(--color-accent-purple-light)">
+              BETA · YOL HARİTASI
+            </span>
+          </span>
         </div>
 
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-white max-w-4xl">
@@ -224,22 +230,36 @@ export default function GateCorePage() {
 
         <p className="mt-8 text-xl md:text-2xl font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
           Kurumunuzun yapay zekâ ajanları — bizimkiler de, sizin kendi
-          geliştirdikleriniz de — ServiceCore'a tek denetlenebilir kapıdan
+          geliştirdikleriniz de — ServiceCore&apos;a tek denetlenebilir kapıdan
           bağlanır. Her istek kimliklenir, yetki kapsamında kalır, kayda geçer.
         </p>
 
         <p className="mt-6 text-base font-light leading-relaxed text-(--color-text-muted) max-w-3xl">
-          GateCoreAI bir satış kalemi değil, güvenlik katmanıdır. Bu yüzden her
-          AICore kurulumunun zorunlu bileşenidir: yapay zekâ eklentisi alsanız da
-          almasanız da, sisteminize bağlanan yazılımların bu kapıdan geçmesi
-          gerekir.
+          GateCoreAI isteğe bağlı bir eklenti değildir; AICore kurulumlarının ve
+          dış ajan erişiminin zorunlu güvenlik katmanıdır ve ayrı lisanslanır.
+          Yapay zekâ eklentisi alsanız da almasanız da, sisteminize bağlanan
+          yazılımların bu kapıdan geçmesi gerekir.
         </p>
+
+        <div className="mt-10 rounded-2xl border border-(--color-accent-purple-base)/25 bg-(--color-accent-purple-base)/6 px-6 py-5 max-w-3xl">
+          <div className="text-[10px] font-mono font-semibold tracking-[0.18em] uppercase text-(--color-accent-purple-light) mb-2">
+            ÜRÜN DURUMU
+          </div>
+          <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+            GateCoreAI şu anda <span className="text-white">beta ve yol haritası</span>{" "}
+            aşamasındadır; bu sayfada anlatılan yetenekler devreye alma planına
+            göre kademeli açılır. Yeni AICore sözleşmelerinde zorunlu bileşen
+            olarak yer alır; kapsam, hizmet seviyesi ve devreye alma takvimi
+            teklifte ayrıca yazılır. Bugün canlıda çalışan bir ürün gibi
+            sunulmaz.
+          </p>
+        </div>
 
         {/* BUGÜNKÜ DURUM */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             BUGÜN NEREDEYİZ
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Açık bir arayüz, kapalı bir görüş alanı.
           </p>
@@ -265,7 +285,7 @@ export default function GateCorePage() {
             <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
               <span className="text-white font-medium">Sorumluluk tarafı:</span>{" "}
               Bir sızıntı ya da veri kaybı yaşandığında ilk sorulacak soru
-              "neden fark edilmedi?" olur. Ağ katmanındaki güvenlik duvarı bu
+              &quot;neden fark edilmedi?&quot; olur. Ağ katmanındaki güvenlik duvarı bu
               soruya cevap veremez — yavaş ilerleyen bir dışa aktarmayı rutin
               trafikten ayıramaz. Ayrım, uygulamanın kendi kapısında yapılır.
             </p>
@@ -274,16 +294,17 @@ export default function GateCorePage() {
 
         {/* ÜÇ ŞEY BİR ARADA */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             ASIL MESELE
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Ajan, üç şeyi aynı anda yapabildiğinde tehlikeli hâle gelir.
           </p>
           <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
-            Bunların her biri tek başına zararsızdır ve bir ajandan zaten
-            beklenir. Tehlike üçünün bir arada olmasından doğar — güvenlik
-            araştırmacılarının 2025'ten beri altını çizdiği tanım budur.
+            Bu üç özellikten biri tek başına veri sızdırma zincirini tamamlamaz ve
+            her biri bir ajandan zaten beklenir. Üçü birleştiğinde risk belirgin
+            biçimde büyür — güvenlik
+            araştırmacılarının 2025&apos;ten beri altını çizdiği tanım budur.
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -313,9 +334,9 @@ export default function GateCorePage() {
 
         {/* NEDEN ITSM */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             NEDEN ÖZELLİKLE BURADA
-          </div>
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div>
               <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
@@ -327,8 +348,8 @@ export default function GateCorePage() {
                 için değil, işin doğası gereği böyledir.
               </p>
               <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-muted)">
-                Bir satış sisteminde yanlış kayıt can sıkar. Burada yanlış işlem
-                hizmeti durdurur.
+                Her sistemde hatanın bedeli vardır; burada bedel doğrudan hizmetin
+                kendisidir — yanlış işlem operasyonu durdurur.
               </p>
             </div>
             <div className="space-y-3">
@@ -350,9 +371,9 @@ export default function GateCorePage() {
         {/* CANLI TRAFİK GÖRSELİ */}
         <section className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
-            <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
               KAPI NASIL ÇALIŞIR
-            </div>
+          </h2>
             <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
               Her istek üç soruyu geçmek zorunda.
             </p>
@@ -378,9 +399,9 @@ export default function GateCorePage() {
 
         {/* RİSKLER */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             NEYE KARŞI KORUR
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Bunların hiçbiri teorik değil.
           </p>
@@ -415,9 +436,9 @@ export default function GateCorePage() {
         <section className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <GateCoreOnayKuyrugu />
           <div>
-            <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
               DURDURAN NOKTA
-            </div>
+          </h2>
             <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
               Geniş kapsamlı işlem, olmadan önce durur.
             </p>
@@ -429,7 +450,7 @@ export default function GateCorePage() {
             </p>
             <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-lg">
               Her sabah çalışan tanımlı bir iş için sürekli onay istenmez: bir kez
-              "bu rutindir" denir, kapı onu bir daha sormaz. Amaç işi
+              &quot;bu rutindir&quot; denir, kapı onu bir daha sormaz. Amaç işi
               yavaşlatmak değil, sürprizi ortadan kaldırmaktır.
             </p>
           </div>
@@ -437,9 +458,9 @@ export default function GateCorePage() {
 
         {/* YETENEKLER */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             KAPININ YAPTIKLARI
-          </div>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {YETENEKLER.map((y) => (
               <div key={y.baslik} className="rounded-2xl border border-white/8 bg-white/2 p-6">
@@ -456,11 +477,11 @@ export default function GateCorePage() {
         {/* DENETİM GÖRSELİ */}
         <section className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
-            <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
               GERİYE DÖNÜK CEVAP
-            </div>
+          </h2>
             <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
-              "Ajan neyi gördü?" sorusunun cevabı kayıtlardadır.
+              &quot;Ajan neyi gördü?&quot; sorusunun cevabı kayıtlardadır.
             </p>
             <p className="mt-5 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-lg">
               Bir denetimde, bir olayda ya da basit bir merakta cevap
@@ -500,9 +521,9 @@ export default function GateCorePage() {
 
         {/* BAĞLANMA ŞARTLARI */}
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             BAĞLANMAK İSTEYEN AJANDAN NE İSTERİZ
-          </div>
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             Kendi ajanınızı bağlayabilirsiniz — kurallar herkes için aynı.
           </p>
@@ -572,6 +593,6 @@ export default function GateCorePage() {
       </div>
 
       <PrivacyContact />
-    </main>
+    </div>
   );
 }

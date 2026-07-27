@@ -164,9 +164,11 @@ biten müşteride insansız yazma duruyor (okuma serbest).
   teknik adımlar ve ara API çağrıları · sağlık kontrolü · insana devredilen
   yarım işler · test/sandbox kotası · kayıt AÇAN trafik ve veri kopyalama
   (bunlar entegrasyon sınıfıdır, Adım 0-1'deki tiple ayrılır).
-- **Ağırlık kataloğu** (sözleşmede sabitlenir, sonradan değişmez):
-  basit cevap/standart çözüm = 1 · tek sistemli işlem (ör. randevu
-  değiştirme) = 2 · çok sistemli iş emri tamamlama = 5.
+- **Ağırlık YOK — bir sonuç bir iştir.** Zorluğa göre 1/2/5 çarpanı
+  uygulanmaz; her başarıyla biten iş 1 sayılır. (Karar 27.07: web metniyle
+  backend farklı algoritma anlatıyordu; müşteriye "bir sonuç bir iş" denip
+  arkada ağırlık uygulanamaz. Basit olan seçildi — bant zaten yıllık sabit
+  bir kademe, ağırlık ticari hassasiyet katmıyor, yalnız tartışma üretiyordu.)
 - **Çift sayaç, tek fatura:** ham insansız yazma sayısı ayrıca tutulur
   (iç kontrol, kötüye kullanım ve performans analizi için) ama **fatura
   yalnız bitmiş işten** kesilir.
@@ -213,7 +215,8 @@ sözleşmeye de aynen yazılacağı için kodda birebir karşılığı olmalı.
   seviye" işaretler ve satışa bildirir — otomatik faturalama yapmaz.
 - **Sayılan sonuç listesi:** hangi sonucun iş sayıldığı config'te listedir
   (çözüm, kapatma, yönlendirme/atama, bilgi kartı üretimi ...). Liste ve
-  ağırlıklar dönem içinde değişmez; değişiklik yalnız yeni dönemde geçerli.
+  liste dönem içinde değişmez; değişiklik yalnız yeni dönemde geçerli.
+  Her sonuç 1 iş sayılır — zorluk çarpanı yoktur.
 
 **Test:** Onay tıklamasıyla biten iş insansız sayılıyor; teknisyenin
 düzenlediği iş insan işi sayılıyor; 3 ajanlı zincir 1 iş üretiyor; lisanslı
@@ -354,7 +357,7 @@ bitmeden açılmaz.
 2. **Yanlış alarm** — tavan ve tespit önce gölge modda; gerçek insan asla
    bloklanmamalı.
 3. **Bitmiş-iş tanımı tartışması** — "başarılı sonuç", doğrulama süresi ve
-   1/2/5 kataloğu sözleşmede net tanımlanır; sözleşme dönemi içinde tek
+   sayılan sonuç listesi sözleşmede net tanımlanır; sözleşme dönemi içinde tek
    taraflı değiştirilmez. Tanım muğlaksa müşteri itirazı kazanır.
 4. **Performans** — sayaçlar bellekte, DB'ye periyodik; yazma uçlarına eklenen
    kontrol tek sorgudan fazla maliyet getirmemeli.

@@ -50,7 +50,7 @@ export function GateCoreTrafik() {
       <TitleBar
         icon={<Waypoints className="w-3.5 h-3.5" />}
         title="Kapıdan geçen trafik"
-        meta="CANLI"
+        meta="TEMSİLİ · SENTETİK VERİ"
         accent={accent}
       />
       <div className="divide-y divide-white/6">
@@ -118,7 +118,7 @@ export function GateCoreOnayKuyrugu() {
       <TitleBar
         icon={<ShieldAlert className="w-3.5 h-3.5" />}
         title="Onay kuyruğu"
-        meta="2 KAYIT"
+        meta="TEMSİLİ · 1 BEKLEYEN + 1 RUTİN"
         accent={accent}
       />
       <div className="p-5 space-y-3">
@@ -181,11 +181,11 @@ export function GateCoreDenetim() {
       <TitleBar
         icon={<ScrollText className="w-3.5 h-3.5" />}
         title="Denetim kaydı"
-        meta="SON 24 SAAT"
+        meta="TEMSİLİ · SENTETİK VERİ"
         accent={accent}
       />
       <div className="px-5 py-4 grid grid-cols-2 md:grid-cols-4 gap-2.5">
-        <KpiTile label="İstek" value="1.284" />
+        <KpiTile label="API isteği" value="1.284" />
         <KpiTile label="Onaya düşen" value="6" />
         <KpiTile label="Engellenen" value="2" trend="kapsam dışı" trendTone="down" />
         <KpiTile label="Maskelenen alan" value="418" />
@@ -195,7 +195,7 @@ export function GateCoreDenetim() {
           <div key={i} className="flex items-center gap-3 px-5 py-2.5">
             <span className="text-[10px] font-mono text-(--color-text-muted) w-11 shrink-0">{k.saat}</span>
             <span className="text-[12px] text-white/85 flex-1 min-w-0 truncate">{k.is}</span>
-            <span className="text-[10px] font-mono text-(--color-text-muted) hidden sm:block truncate max-w-40">
+            <span className="text-[10px] font-mono text-(--color-text-muted) truncate max-w-40">
               {k.ajan} → {k.sorumlu}
             </span>
             <span className="text-[10px] font-mono text-(--color-text-muted) shrink-0 hidden md:flex items-center gap-1">
@@ -206,7 +206,7 @@ export function GateCoreDenetim() {
         ))}
       </div>
       <div className="px-5 py-3 border-t border-white/8 bg-white/2 text-[10px] font-mono text-(--color-text-muted)">
-        {trUpper("İşi hangi yazılım yaptı, kimin sorumluluğunda, hangi veriyi gördü")}
+        {trUpper("Operasyonel API trafiği — lisans sayacı değildir · temsili ekran")}
       </div>
     </MockFrame>
   );
