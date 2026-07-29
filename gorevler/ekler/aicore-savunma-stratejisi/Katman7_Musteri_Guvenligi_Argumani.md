@@ -1,4 +1,12 @@
-# Katman 7 — Müşteri Güvenliği Argümanı
+# Müşteri Güvenliği Argümanı (savunma stratejisi eki)
+
+> **Siteye aktarım notu (27.07.2026):** Bu dosyanın 2, 5 ve 6. bölümleri
+> `/aicore/gatecore` sayfasına işlendi. 3. bölümdeki gerçek vakalar ve 4.
+> bölümdeki sektör rakamları da siteye alındı — ancak **firma adları
+> verilmeden**, olay tipi ve tarihle. Yayına giren rakamlar tek tek
+> doğrulandı; kaynağı zayıf olan iki iddia (ajanların 16 kat fazla veri
+> taşıması, kurum başına 150 bin ajan / %13 yönetişim hazırlığı) siteye
+> **alınmadı.** 7. bölüm iç satış metnidir, siteye gitmez.
 
 > **Savunma stratejisinin en güçlü satış kartı.** Önceki katmanlar "kendi
 > ajanını bağlayan müşteri BİZİM için risk" diyordu (gelir, IP). Bu katman

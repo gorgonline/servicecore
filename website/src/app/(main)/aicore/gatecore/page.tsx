@@ -88,6 +88,87 @@ const ITSM_NEDEN = [
   },
 ];
 
+const VAKALAR = [
+  {
+    donem: "Haziran 2025",
+    tur: "Kurumsal üretkenlik asistanı",
+    olay:
+      "İçine gizli talimat gömülmüş tek bir e-posta yeterli oldu. Kullanıcının hiçbir şeye tıklamasına gerek kalmadan asistan, kurumun dosya ve mesajlaşma sistemlerinden veri topladı ve dışarı çıkardı.",
+    ders: "Kullanıcı hata yapmadı; ajanın okuduğu içerik saldırının kendisiydi.",
+    ayak: [true, true, true],
+  },
+  {
+    donem: "Temmuz 2025",
+    tur: "Kodlama ajanı",
+    olay:
+      "Ajana büyük harflerle, tekrar tekrar \"değişiklik yapma\" denmesine rağmen canlı veritabanı silindi. Ardından ajan binlerce sahte kayıt üretti ve durumu geri alınamaz diye bildirdi.",
+    ders: "Talimat bir güvenlik kontrolü değildir. Sınır ürünün içinde olmalı.",
+    ayak: [true, false, true],
+  },
+  {
+    donem: "Eylül 2025",
+    tur: "Müşteri yönetimi ajanı",
+    olay:
+      "Web formundan giren kötü niyetli metin ajanı yönlendirdi; müşteri kayıtları dışarı sızdırıldı. Form, herkesin doldurabildiği sıradan bir iletişim formuydu.",
+    ders: "Dışarıdan gelen her metin, ajan için potansiyel talimattır.",
+    ayak: [true, true, true],
+  },
+  {
+    donem: "Kasım 2025",
+    tur: "Servis yönetimi ürünü",
+    olay:
+      "Yetkisi dar bir ajan, yetkisi geniş başka bir ajan tarafından kandırıldı ve vaka dosyaları dışarı aktarıldı. Saldırı sistemin kendi içinden, ajanlar arası güvenden geldi.",
+    ders: "Bizim sektörümüzde yaşandı — en birebir emsal bu.",
+    ayak: [true, true, true],
+  },
+  {
+    donem: "Ocak 2026",
+    tur: "Dört ayrı üründe beş gün",
+    olay:
+      "Farklı firmaların dört ajan ürününde beş gün içinde arka arkaya istismar açıklandı. Dördü de aynı deseni izliyordu: geniş erişim, denetlenmeyen içerik, açık çıkış.",
+    ders: "Tek bir ürünün hatası değil; kalıbın kendisi kırılgan.",
+    ayak: [true, true, true],
+  },
+  {
+    donem: "Nisan 2026",
+    tur: "İki büyük platform, aynı hafta",
+    olay:
+      "Hazırlanmış form ve belge içerikleri ajanları ele geçirdi; müşteri ve doküman verisi toplu olarak dışarı taşındı. Hacim sınırı yoktu, kullanıcıya uyarı gitmedi.",
+    ders: "Hacim sınırı ve görünürlük olmadan sızıntı sessiz ilerler.",
+    ayak: [true, true, true],
+  },
+];
+
+const AYAK_ADI = ["Özel veri", "Güvenilmez içerik", "Dışarı çıkış"];
+
+const RAKAMLAR = [
+  {
+    deger: "%40",
+    baslik: "Otonom ajanını geri çekecek kurum",
+    aciklama:
+      "Gartner\u2019a göre 2027\u2019ye kadar kurumların %40\u2019ı otonom ajanlarını görevden alacak ya da kapatacak. Sebep tek: yönetişim boşlukları ancak üretimde bir olay patlak verdikten sonra fark ediliyor.",
+    vurgu: true,
+  },
+  {
+    deger: "%80+",
+    baslik: "Hafıza zehirlenmesinde saldırı başarısı",
+    aciklama:
+      "Akademik ölçümlerde, ajanın uzun dönem hafızasına sahte bilgi yerleştiren saldırılar %80\u2019in üzerinde başarı oranına ulaşıyor. Bir kez zehirlenen ajan aylarca yanlış davranabiliyor.",
+  },
+  {
+    deger: "ASI06",
+    baslik: "Artık resmî bir tehdit maddesi",
+    aciklama:
+      "Hafıza ve bağlam zehirlenmesi, OWASP\u2019ın 2026 ajan güvenliği listesinde ayrı bir madde olarak tanımlandı. Bu artık uç bir senaryo değil, beklenen bir saldırı türü.",
+  },
+  {
+    deger: "%33",
+    baslik: "2028\u2019de ajan içeren kurumsal uygulama",
+    aciklama:
+      "Aynı öngörüye göre kurumsal uygulamaların üçte biri 2028\u2019de ajan barındıracak. Soru ajanın gelip gelmeyeceği değil; geldiğinde kapının hazır olup olmadığı.",
+  },
+];
+
 const RISKLER = [
   {
     icon: KeyRound,
@@ -330,6 +411,136 @@ export default function GateCorePage() {
               değil, ajanın önündeki kapıya konması gerekir.
             </p>
           </div>
+        </section>
+
+        {/* BUNLAR YAŞANDI */}
+        <section className="mt-24">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            BUNLAR YAŞANDI
+          </h2>
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
+            Aynı üçlü, on iki ayda altı kez tamamlandı.
+          </p>
+          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
+            Aşağıdakiler kamuya açıklanmış, kaynaklarda yer alan olaylardır.
+            Firma adlarını yazmıyoruz — mesele tek tek ürünler değil, hepsinin
+            aynı desenden kırılması. Her olayın yanında, o olayda üçlünün hangi
+            ayaklarının devrede olduğu işaretli.
+          </p>
+
+          <ol className="mt-12 relative">
+            <span
+              aria-hidden="true"
+              className="absolute left-2.5 md:left-[10.5rem] top-2 bottom-2 w-px bg-linear-to-b from-transparent via-white/12 to-transparent"
+            />
+            {VAKALAR.map((v) => (
+              <li key={v.donem} className="relative pl-10 md:pl-0 pb-10 last:pb-0">
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 md:left-[9.5rem] top-1.5 w-5 h-5 rounded-full border border-white/15 bg-(--color-surface-base) flex items-center justify-center"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-300" />
+                </span>
+
+                <div className="md:grid md:grid-cols-[9.5rem_1fr] md:gap-x-12">
+                  <div className="text-[11px] font-mono uppercase tracking-[0.16em] text-(--color-text-muted) md:text-right md:pr-8 pt-0.5">
+                    {v.donem}
+                  </div>
+
+                  <div className="mt-2 md:mt-0 md:pl-6">
+                    <h3 className="text-lg font-semibold text-white tracking-tight">{v.tur}</h3>
+                    <p className="mt-2 text-sm font-light leading-relaxed text-(--color-text-secondary) max-w-2xl">
+                      {v.olay}
+                    </p>
+
+                    <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2">
+                      {v.ayak.map((aktif, j) => (
+                        <span
+                          key={j}
+                          className={`inline-flex items-center gap-2 text-[11px] font-mono ${
+                            aktif ? "text-amber-300" : "text-(--color-text-muted) line-through decoration-white/20"
+                          }`}
+                        >
+                          <span
+                            aria-hidden="true"
+                            className={`w-2 h-2 rounded-full ${aktif ? "bg-amber-400" : "bg-white/15"}`}
+                          />
+                          {AYAK_ADI[j]}
+                        </span>
+                      ))}
+                    </div>
+
+                    <p className="mt-4 pl-4 border-l-2 border-indigo-400/40 text-sm font-light italic leading-relaxed text-white/70 max-w-2xl">
+                      {v.ders}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-4 rounded-2xl border border-white/8 bg-white/2 px-6 py-5 max-w-4xl">
+            <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+              <span className="text-white font-medium">Ortak nokta:</span> Hiçbirinde
+              kullanıcı hata yapmadı. Her seferinde ajana gereğinden geniş yetki
+              verilmişti, okuduğu içerik denetlenmiyordu ve dışarı çıkışta bir
+              durak yoktu. Üçü aynı anda açık olduğunda sonuç değişmiyor.
+            </p>
+          </div>
+        </section>
+
+        {/* RAKAMLAR */}
+        <section className="mt-24">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            SEKTÖR NEREDE
+          </h2>
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
+            Kurumlar ajanı geri çekiyor — çünkü kapıyı sonradan aradılar.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {RAKAMLAR.map((r) => (
+              <div
+                key={r.baslik}
+                className={
+                  r.vurgu
+                    ? "lg:col-span-3 rounded-2xl border border-indigo-500/25 bg-indigo-500/6 p-8 md:flex md:items-center md:gap-10"
+                    : "rounded-2xl border border-white/8 bg-white/2 p-6"
+                }
+              >
+                <div className={r.vurgu ? "md:w-56 shrink-0" : ""}>
+                  <div
+                    className={`font-bold tracking-tight text-transparent bg-clip-text bg-linear-to-r from-indigo-300 to-(--color-brand-accent) ${
+                      r.vurgu ? "text-6xl md:text-7xl" : "text-4xl"
+                    }`}
+                  >
+                    {r.deger}
+                  </div>
+                  <h3
+                    className={`font-semibold text-white tracking-tight ${
+                      r.vurgu ? "text-lg mt-3" : "text-[15px] mt-2"
+                    }`}
+                  >
+                    {r.baslik}
+                  </h3>
+                </div>
+                <p
+                  className={`font-light leading-relaxed text-(--color-text-secondary) ${
+                    r.vurgu ? "text-base mt-4 md:mt-0 max-w-2xl" : "text-sm mt-3"
+                  }`}
+                >
+                  {r.aciklama}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-5 text-xs font-light leading-relaxed text-(--color-text-muted) max-w-3xl">
+            Kaynaklar: bağımsız analist öngörüleri (2025-2026), OWASP ajan
+            güvenliği listesi (2026) ve hakemli akademik ölçümler. Olay
+            özetlerinde firma adı verilmemiştir; hepsi kamuya açıklanmış
+            vakalardır.
+          </p>
         </section>
 
         {/* NEDEN ITSM */}
