@@ -23,7 +23,7 @@ const USTUNLUKLER = [
   {
     icon: ShieldCheck,
     title: "Veri kurumdan çıkmaz",
-    desc: "Kayıtlar, bilgi bankası ve tüm yapay zekâ verileri kurumunuzun kendi sunucusunda işlenir ve saklanır. KVKK ve sektör regülasyonlarıyla (bankacılık, sağlık, savunma) doğal uyum.",
+    desc: "Kayıtlar, bilgi bankası ve AICore eklentilerinin ürettiği tüm veriler kurumunuzun kendi sunucusunda işlenir ve saklanır. KVKK ve sektör regülasyonlarıyla (bankacılık, sağlık, savunma) doğal uyum. Kurumun kendi bağladığı dış yazılımlar bu kapsamın dışındadır — onların denetimi GateCoreAI ile yapılır.",
   },
   {
     icon: WifiOff,
@@ -33,7 +33,7 @@ const USTUNLUKLER = [
   {
     icon: Banknote,
     title: "Kullanım başına maliyet yok",
-    desc: "Bulut yapay zekâ API'lerindeki token/istek başına faturalama burada yoktur. Ne kadar yoğun kullanırsanız kullanın maliyet sabittir — bütçe öngörülebilir kalır.",
+    desc: "Bulut yapay zekâ API'lerindeki token/istek başına faturalama burada yoktur; sözleşilen kapsam içinde kullanım sıklığı bedeli değiştirmez. Lisans bedelleri yıllık ve sabittir — bütçe öngörülebilir kalır.",
   },
   {
     icon: Gauge,
@@ -57,14 +57,14 @@ const KIYAS: { baslik: string; onprem: string; cloud: string }[] = [
   { baslik: "Dil modeli", onprem: "Kurum sunucusunda yerel model (çift model mimarisi)", cloud: "Bulut sağlayıcının modeli (OpenAI vb.)" },
   { baslik: "İnternet ihtiyacı", onprem: "Gerekmez — kapalı ağ desteklenir", cloud: "Tek denetimli çıkış gerekir" },
   { baslik: "GPU / donanım", onprem: "GPU'lu sunucu (kademeye göre)", cloud: "GPU gerekmez — hafif uygulama sunucusu" },
-  { baslik: "Maliyet modeli", onprem: "Sabit — kullanım başına ücret yok", cloud: "Bulut API kullanım (token) maliyeti kuruma aittir" },
+  { baslik: "Maliyet modeli", onprem: "Yıllık sabit lisans — token/istek başına ücret yok", cloud: "Yıllık sabit lisans + bulut API kullanım (token) maliyeti kuruma aittir" },
   { baslik: "Devreye alma", onprem: "AICORE Launch Ready · tipik 2-4 hafta", cloud: "AICORE Cloud Ready · tipik 1-2 hafta" },
   { baslik: "Kimin için", onprem: "KVKK katı sektörler, yüksek hacim, uzun vade", cloud: "Hızlı başlangıç isteyen, veri hassasiyeti esnek kurumlar" },
 ];
 
 export default function OnPremPage() {
   return (
-    <main className="relative min-h-screen bg-(--color-surface-base) overflow-hidden">
+    <div className="relative min-h-screen bg-(--color-surface-base) overflow-hidden">
       <div
         className="absolute -top-40 -left-40 w-130 h-130 rounded-full pointer-events-none"
         style={{
@@ -102,9 +102,9 @@ export default function OnPremPage() {
         </p>
 
         <section className="mt-20">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
             NEDEN ON-PREM
-          </div>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {USTUNLUKLER.map((u) => (
               <div key={u.title} className="rounded-2xl border border-white/8 bg-white/2 p-6">
@@ -119,9 +119,9 @@ export default function OnPremPage() {
         </section>
 
         <section className="mt-24">
-          <div className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
-            İKİ SEÇENEK · TEK AILE
-          </div>
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            İKİ SEÇENEK · TEK AİLE
+          </h2>
           <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
             On-Prem önerimizdir; Maskeli Bulut seçeneğimizdir.
           </p>
@@ -161,6 +161,91 @@ export default function OnPremPage() {
           </div>
         </section>
 
+        <section className="mt-24">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+            KURULUMUN İKİNCİ YARISI
+          </h2>
+          <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
+            Yapay zekâ kurum içinde çalışır; kapı da kurum içinde durur.
+          </p>
+          <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
+            Yukarıdaki üstünlükler <span className="text-white">AICore eklentileri</span>{" "}
+            içindir: onlar sizin sunucunuzda çalışır, veriniz dışarı çıkmaz.
+            Ama bir kurumda yapay zekâya bağlanan tek yazılım bunlar değildir —
+            kurumun kendi geliştirdiği ajanlar, dışarıdan alınan asistanlar ve
+            mevcut entegrasyonlar da sisteme bağlanır. Onların denetimi ayrı bir
+            katmanın işidir.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="rounded-2xl border border-white/8 bg-white/2 p-6">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/10 text-(--color-accent-purple-light) mb-4">
+                <ShieldCheck className="w-4 h-4" />
+              </span>
+              <h3 className="text-base font-semibold text-white tracking-tight mb-2">
+                Kapalı ağda da gereklidir
+              </h3>
+              <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+                İnternete kapalı bir kurulumda dışarıdan ajan bağlanmaz; ama
+                kurum içindeki eklentiler, mevcut entegrasyonlar ve kendi
+                yazdığınız yazılımlar yine kayıtlarınıza dokunur. Kapı, kimin ne
+                yaptığını kayıt altına alan yerdir.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/8 bg-white/2 p-6">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/10 text-(--color-accent-purple-light) mb-4">
+                <Lock className="w-4 h-4" />
+              </span>
+              <h3 className="text-base font-semibold text-white tracking-tight mb-2">
+                Her kurulumun bileşenidir
+              </h3>
+              <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+                GateCoreAI isteğe bağlı bir eklenti değil, AICore kurulumlarının
+                zorunlu güvenlik katmanıdır ve ayrı lisanslanır. Beta ve yol
+                haritası aşamasındadır; devreye alma takvimi teklifte yazılır.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/8 bg-white/2 p-6">
+              <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-(--color-accent-purple-base)/40 bg-(--color-accent-purple-base)/10 text-(--color-accent-purple-light) mb-4">
+                <Banknote className="w-4 h-4" />
+              </span>
+              <h3 className="text-base font-semibold text-white tracking-tight mb-2">
+                Bedeli nasıl belirlenir
+              </h3>
+              <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+                Kurum başına yıllık sabit. Dışarıdan ajan bağlamıyorsanız en
+                küçük bandıyla alınır; bağlıyorsanız o ajanların insansız
+                bitirdiği iş bandı belirler. Kullanım başına fatura yoktur.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-5 rounded-2xl border border-white/8 bg-white/2 px-6 py-5 max-w-4xl">
+            <p className="text-sm font-light leading-relaxed text-(--color-text-secondary)">
+              <span className="text-white font-medium">Kısaca:</span> Bu sayfa
+              yapay zekânın nerede çalıştığını anlatır. Neyin ne kadara
+              lisanslandığı ve kapının bedelinin nasıl belirlendiği ayrı
+              sayfadadır.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-4">
+              <Link
+                href="/aicore/gatecore"
+                className="inline-flex items-center gap-2 text-sm font-medium text-(--color-accent-purple-light) hover:text-white transition-colors cursor-pointer"
+              >
+                GateCoreAI — kapı neye karşı korur
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/aicore/lisanslama"
+                className="inline-flex items-center gap-2 text-sm font-medium text-(--color-accent-purple-light) hover:text-white transition-colors cursor-pointer"
+              >
+                AICore Lisanslama — ne için ödersiniz
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <div className="mt-20 flex flex-wrap items-center gap-3">
           <Link
             href="/demo"
@@ -187,6 +272,6 @@ export default function OnPremPage() {
       </div>
 
       <PrivacyContact />
-    </main>
+    </div>
   );
 }

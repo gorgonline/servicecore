@@ -107,6 +107,12 @@ const UCRETSIZ = [
       "Sisteme bağlanan her yazılım kayıtlı bir kimlik alır. Kimlik tanımlamak ücretsizdir — bedel kimliğe değil, lisansa bağlıdır.",
   },
   {
+    icon: Eye,
+    baslik: "Maskeleme ve denetim kaydı",
+    desc:
+      "Kişisel verilerin ajana gitmeden maskelenmesi ve her işlemin kayda geçmesi güvenlik katmanının parçasıdır; ayrıca ücretlendirilmez.",
+  },
+  {
     icon: Ban,
     baslik: "Başarısız denemeler",
     desc:
