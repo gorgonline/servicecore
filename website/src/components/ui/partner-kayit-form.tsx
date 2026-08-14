@@ -9,7 +9,8 @@ import { submitForm } from "@/lib/forms";
 import { useFormGuard } from "@/hooks/useFormGuard";
 
 // Basari durumu artik /tesekkurler?from=partner redirect ile yonetiliyor — "success" stati state'te yok.
-type Status = "idle" | "loading" | "error";
+// "invalid" = eksik zorunlu secim (gonderim hic denenmedi), "error" = sunucu/ag hatasi.
+type Status = "idle" | "loading" | "invalid" | "error";
 
 interface PartnerField {
   id: string;
@@ -40,15 +41,43 @@ export function PartnerKayitForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [fieldState, setFieldState] = useState<Record<string, string>>({});
+  const [missingIds, setMissingIds] = useState<string[]>([]);
   const guard = useFormGuard();
+
+  // Zorunlu radyo gruplari tarayicinin native dogrulamasina takilmaz (gercek bir
+  // form kontrolu degiller) — bu yuzden gonderimde elle kontrol edilirler.
+  const requiredRadios = sections.flatMap((section) =>
+    section.fields.filter((field) => field.type === "radio" && field.required),
+  );
 
   function setField(id: string, value: string) {
     setFieldState((prev) => ({ ...prev, [id]: value }));
+    setMissingIds((prev) => prev.filter((missingId) => missingId !== id));
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (status === "loading") return;
+
+    const missing = requiredRadios.filter((field) => !(fieldState[field.id] ?? "").trim());
+    if (missing.length > 0) {
+      setMissingIds(missing.map((field) => field.id));
+      setStatus("invalid");
+      setErrorMessage(
+        missing.length === 1
+          ? `"${missing[0].label}" alanında bir seçim yapmanız gerekiyor.`
+          : `${missing.length} zorunlu seçim eksik: ${missing.map((field) => field.label).join(", ")}.`,
+      );
+
+      const target = document.getElementById(`alan-${missing[0].id}`);
+      if (target) {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+      }
+      return;
+    }
+
+    setMissingIds([]);
 
     const data: Record<string, string> = {};
     for (const section of sections) {
@@ -106,28 +135,45 @@ export function PartnerKayitForm() {
                 const value = fieldState[field.id] ?? "";
 
                 if (field.type === "radio") {
+                  const missing = missingIds.includes(field.id);
                   return (
-                    <div key={field.id} className="space-y-3">
-                      <label className="block text-sm font-medium text-white">
+                    <div
+                      key={field.id}
+                      id={`alan-${field.id}`}
+                      className={`space-y-3 scroll-mt-28 ${
+                        missing ? "rounded-2xl border border-red-500/30 bg-red-500/5 p-4 -m-1" : ""
+                      }`}
+                    >
+                      <label id={`etiket-${field.id}`} className="block text-sm font-medium text-white">
                         {field.label}
                         {field.required && <span className="text-(--color-accent-red-light) ml-1">*</span>}
                       </label>
                       {field.hint && (
                         <p className="text-xs text-(--color-text-muted) -mt-2 mb-2">{field.hint}</p>
                       )}
-                      <div className="flex flex-wrap gap-2">
+                      <div
+                        role="radiogroup"
+                        aria-labelledby={`etiket-${field.id}`}
+                        aria-required={field.required}
+                        aria-invalid={missing}
+                        className="flex flex-wrap gap-2"
+                      >
                         {(field.options ?? []).map((opt) => {
                           const selected = value === opt;
                           return (
                             <button
                               type="button"
                               key={opt}
+                              role="radio"
+                              aria-checked={selected}
                               onClick={() => setField(field.id, opt)}
                               disabled={disabled}
                               className={`cursor-pointer px-4 py-2 rounded-full text-sm font-medium transition-all border ${
                                 selected
                                   ? "bg-(--color-brand-primary)/15 border-(--color-brand-primary)/60 text-white"
-                                  : "bg-white/2 border-white/10 text-(--color-text-secondary) hover:border-white/30"
+                                  : missing
+                                    ? "bg-white/2 border-red-500/40 text-(--color-text-secondary) hover:border-red-500/70"
+                                    : "bg-white/2 border-white/10 text-(--color-text-secondary) hover:border-white/30"
                               }`}
                             >
                               {opt}
@@ -135,15 +181,11 @@ export function PartnerKayitForm() {
                           );
                         })}
                       </div>
-                      {field.required && !value && (
-                        <input
-                          tabIndex={-1}
-                          aria-hidden="true"
-                          required
-                          value=""
-                          onChange={() => {}}
-                          className="sr-only"
-                        />
+                      {missing && (
+                        <p className="flex items-center gap-2 text-xs font-medium text-(--color-accent-red-light)">
+                          <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                          Bu alan zorunlu — bir seçenek işaretleyin.
+                        </p>
                       )}
                     </div>
                   );
@@ -211,11 +253,17 @@ export function PartnerKayitForm() {
       ))}
 
       <div className="space-y-4">
-        {status === "error" && (
-          <div className="flex items-start gap-3 px-5 py-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)">
+        {(status === "error" || status === "invalid") && (
+          <div
+            role="alert"
+            aria-live="polite"
+            className="flex items-start gap-3 px-5 py-4 rounded-2xl bg-red-500/10 border border-red-500/30 text-(--color-accent-red-light)"
+          >
             <AlertCircle className="w-5 h-5 shrink-0 mt-0.5" />
             <span className="text-sm font-medium leading-relaxed">
-              {submit.errorPrefix}: {errorMessage || "Lütfen tekrar deneyin."}
+              {status === "invalid"
+                ? errorMessage
+                : `${submit.errorPrefix}: ${errorMessage || "Lütfen tekrar deneyin."}`}
             </span>
           </div>
         )}
