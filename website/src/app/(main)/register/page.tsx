@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Script from "next/script";
 import partnerData from "@/data/partner-kayit.json";
 import { PartnerKayitForm } from "@/components/ui/partner-kayit-form";
 
@@ -98,6 +99,13 @@ export default function PartnerKayitPage() {
           </div>
         </div>
       </div>
+
+      {/* Zoho WebForm Analytics — id ("wf_anal") ve URL Zoho form üreticisinden birebir, değiştirme. */}
+      <Script
+        id="wf_anal"
+        src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=0bf3caf4ebf261e5f8fde7889121931f8e1897bf080665c99415be12e70177f68ec7c36d4667c5210f5bee31d557939cgid7db19919c379cff2d9b119bc24a87e107004129cd5221e3d0bc0252b7d670cf5gida8dc97ed5bcc0f2ae2e1c253855925906629127c03ec4512328a63390d216e94gidb33e1bd2403d4503470f44bf411fcb76022bf42525951a510624115be972eab0&tw=ab5e8259cd99aba128fee92104bf0d12eb4b0dd9888f6ace42ed1666b565aafc&version=v2"
+        strategy="lazyOnload"
+      />
     </main>
   );
 }

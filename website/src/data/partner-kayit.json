@@ -97,7 +97,8 @@
           "id": "mevcut_cozum",
           "label": "Kullandıkları bir çözüm var mı? Varsa adı nedir?",
           "type": "text",
-          "placeholder": "Örn. ServiceNow, Jira Service Management, çözüm yok"
+          "placeholder": "Örn. ServiceNow, Jira Service Management, çözüm yok",
+          "required": true
         },
         {
           "id": "alim_modeli",
@@ -130,10 +131,27 @@
       ]
     }
   ],
+  "captcha": {
+    "icon": "6",
+    "title": "Güvenlik Doğrulaması",
+    "description": "Formu göndermeden önce görseldeki doğrulama kodunu girin. Bu adım otomatik kayıtları engeller.",
+    "label": "Görseldeki kod",
+    "placeholder": "Kodu buraya girin",
+    "reload": "Yenile",
+    "imageAlt": "Doğrulama kodu görseli",
+    "hint": "Kod okunmuyorsa Yenile ile yeni bir görsel alabilirsiniz.",
+    "required": "Görseldeki doğrulama kodunu girmeniz gerekiyor."
+  },
+  "validation": {
+    "radioSingle": "\"{label}\" alanında bir seçim yapmanız gerekiyor.",
+    "radioMultiple": "{count} zorunlu seçim eksik: {labels}.",
+    "radioOption": "Bu alan zorunlu — bir seçenek işaretleyin.",
+    "requiredField": "\"{label}\" alanı boş bırakılamaz.",
+    "zohoFailed": "Gönderim tamamlanamadı. Bağlantınızı kontrol edip yeni doğrulama koduyla tekrar deneyin."
+  },
   "submit": {
     "label": "Kayıt Formunu Gönder",
     "loading": "Gönderiliyor…",
-    "success": "Müşteri adayı kaydı alındı. ServiceCore iş ortağı yöneticisi 1 iş günü içinde sizinle iletişime geçecek.",
     "errorPrefix": "Bir hata oluştu"
   }
 }

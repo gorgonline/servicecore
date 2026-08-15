@@ -46,6 +46,9 @@ export async function submitForm(
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=utf-8" },
       body: JSON.stringify({ sheet, data, guard }),
+      // Gönderimin hemen ardından sayfa değişse bile (Register akışı Zoho'ya
+      // tam sayfa POST atar) tarayıcı bekleyen isteği iptal etmesin.
+      keepalive: true,
     });
 
     if (!response.ok) {
