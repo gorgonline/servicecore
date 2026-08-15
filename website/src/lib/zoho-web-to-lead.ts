@@ -20,11 +20,11 @@ const XMIWTLD =
 
 /**
  * Zoho form üreticisinin orijinal returnURL değeri
- * "https://servicecore.app/tr/basvuru-alindi" idi. Site bu formun onaylı
- * başarı sayfası olarak /tesekkurler'i kullandığı için hedef korunmuştur;
+ * "https://servicecore.app/tr/basvuru-alindi" idi. Hedef, register'a özel
+ * teşekkür varyantıdır (?from=register — Erman'ın talebi, 2026-08-15);
  * farklı bir hedef onaylanırsa yalnızca bu sabit değiştirilmelidir.
  */
-export const ZOHO_RETURN_URL = "https://www.servicecore.com.tr/tesekkurler?from=partner";
+export const ZOHO_RETURN_URL = "https://www.servicecore.com.tr/tesekkurler?from=register";
 
 const ZOHO_HIDDEN_FIELDS: Record<string, string> = {
   xnQsjsdp: XNQSJSDP,

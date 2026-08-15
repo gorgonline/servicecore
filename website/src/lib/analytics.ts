@@ -31,7 +31,12 @@ declare global {
   }
 }
 
-export type FormConversionType = "demo" | "iletisim" | "analiz" | "partner";
+export type FormConversionType =
+  | "demo"
+  | "iletisim"
+  | "analiz"
+  | "partner"
+  | "register";
 
 const CONSENT_STORAGE_KEY = "sc-consent-v1";
 

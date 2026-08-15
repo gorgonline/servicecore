@@ -51,6 +51,7 @@ type TesekkurlerContext =
   | "iletisim"
   | "partner"
   | "analiz"
+  | "register"
   | "default";
 
 const ALLOWED_CONTEXTS: ReadonlyArray<TesekkurlerContext> = [
@@ -58,6 +59,7 @@ const ALLOWED_CONTEXTS: ReadonlyArray<TesekkurlerContext> = [
   "iletisim",
   "partner",
   "analiz",
+  "register",
 ];
 
 // Lucide ikon eslestirmesi — JSON'daki "icon" stringi bu haritadan cozulur.

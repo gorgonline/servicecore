@@ -7,7 +7,7 @@
     "badge": "Talebiniz Alındı",
     "fallbackContextKey": "default"
   },
-  "allowedContexts": ["demo", "iletisim", "partner", "analiz"],
+  "allowedContexts": ["demo", "iletisim", "partner", "analiz", "register"],
   "contexts": {
     "demo": {
       "ticketCode": "REQ-DEMO",
@@ -325,6 +325,86 @@
             "title": "Teknik Özet",
             "description": "Mimari ve güvenlik başlıklarını içeren özet kart.",
             "href": "/specsheet"
+          }
+        ]
+      }
+    },
+    "register": {
+      "ticketCode": "REQ-REGISTER",
+      "ticketStatusLabel": "İncelemede",
+      "overline": "Müşteri Adayı Kaydı",
+      "title": "Register talebiniz alındı.",
+      "titleHighlight": "alındı",
+      "lead": "Müşteri adayı bilgileri kaydedilmiştir. Adayın müsait olması durumunda kurumunuza kaydedilmesi işlemi yapılacaktır.",
+      "description": "Kayıt, iş ortağı önceliği esasına göre değerlendirilir: aday başka bir iş ortağı tarafından register edilmemişse kayıt kurumunuz adına onaylanır ve iş ortağı yöneticiniz sizinle iletişime geçer.",
+      "timeline": {
+        "overline": "Register Süreci",
+        "title": "Bundan sonra ne olacak?",
+        "steps": [
+          {
+            "step": "01",
+            "icon": "FileCheck",
+            "title": "Talep kaydedildi",
+            "description": "Register talebiniz ve müşteri adayı bilgileri sistemimize düştü."
+          },
+          {
+            "step": "02",
+            "icon": "Search",
+            "title": "Uygunluk kontrolü",
+            "description": "Adayın başka bir iş ortağı tarafından register edilip edilmediği kontrol edilir."
+          },
+          {
+            "step": "03",
+            "icon": "ShieldCheck",
+            "title": "Register onayı",
+            "description": "Adayın müsait olması durumunda kayıt kurumunuz adına onaylanır."
+          },
+          {
+            "step": "04",
+            "icon": "Handshake",
+            "title": "Birlikte ilerleyiş",
+            "description": "İş ortağı yöneticiniz satış sürecini sizinle birlikte planlar."
+          }
+        ]
+      },
+      "primaryCta": {
+        "label": "Yeni Register Talebi",
+        "href": "/register",
+        "icon": "ClipboardList"
+      },
+      "secondaryCta": {
+        "label": "Anasayfaya Dön",
+        "href": "/",
+        "icon": "Home"
+      },
+      "explore": {
+        "overline": "Süreç Devam Ederken",
+        "title": "Satışa hazırlık kaynakları",
+        "description": "Adayınızla görüşmeye hazırlanırken aşağıdaki kaynaklar işinize yarayabilir.",
+        "cards": [
+          {
+            "id": "cozumler",
+            "icon": "LayoutGrid",
+            "iconAccent": "primary",
+            "title": "Çözüm Hatları",
+            "description": "ITSM, ESM, CSM, ITAM ve EAM çözümlerinin kapsamlı görünümü.",
+            "href": "/cozumler"
+          },
+          {
+            "id": "moduller",
+            "icon": "Boxes",
+            "iconAccent": "accent",
+            "title": "Modül Kütüphanesi",
+            "description": "Müşterinize sunabileceğiniz 30+ modülün listesi.",
+            "href": "/moduller"
+          },
+          {
+            "id": "hizmetler",
+            "icon": "Briefcase",
+            "iconAccent": "purple",
+            "title": "Profesyonel Hizmetler",
+            "description": "Kurulum, destek, eğitim ve danışmanlık hizmet portföyü.",
+            "href": "/hizmetler"
           }
         ]
       }

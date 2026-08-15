@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Send, AlertCircle, Loader2, RefreshCw } from "lucide-react";
 import partnerData from "@/data/partner-kayit.json";
 import { submitForm } from "@/lib/forms";
-import { isLikelyBot } from "@/lib/form-guard";
 import {
   ZOHO_CAPTCHA_URL,
   buildZohoLeadPayload,
@@ -56,7 +54,6 @@ export function PartnerKayitForm() {
   const { submit, captcha, validation } = partnerData;
   const sections = partnerData.sections as PartnerSection[];
 
-  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [fieldState, setFieldState] = useState<Record<string, string>>({});
@@ -188,13 +185,11 @@ export function PartnerKayitForm() {
     setStatus("loading");
     setErrorMessage("");
 
+    // Bot elemesi bu formda Zoho captcha'ya bırakıldı: honeypot/zaman tuzağı
+    // false-positive verirse (ör. tarayıcı autofill gizli alanı doldurursa)
+    // gerçek bir lead sessizce kaybolur. Guard yalnızca Sheets yedeğini süzer
+    // (submitForm kendi içinde eler).
     const guardData = guard.collect();
-    // Bot şüphesinde önceki davranış korunur: hiçbir uca gönderim yapılmaz,
-    // bota sessizce başarı sinyali verilir.
-    if (isLikelyBot(guardData)) {
-      router.push("/tesekkurler?from=partner");
-      return;
-    }
 
     // Yedek kayıt: mevcut Google Sheets akışı korunuyor. Birincil kayıt artık
     // Zoho olduğu için buradaki sonuç ne olursa olsun gönderim sürer; Sheets
