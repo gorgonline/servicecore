@@ -13,7 +13,7 @@
         "description": "Teknisyenler, süreç yöneticileri ve servis yöneticileri için sunulan; Servis yönetimi süreçlerinin ne olduğu, nasıl çalıştığı, ürün üzerinde nasıl kullanıldığının aktarıldığı uygulamalı bir eğitimdir. Servicecore kullanımına başlamadan önce tüm teknisyenlerin bu eğitimi almış olması tavsiye edilir. Hem iyi pratiklerde anlatılan süreçlerin baştan doğru öğrenilmesi, hem de ürün yeteneklerinin doğru öğrenilmesi daha sağlıklı bir servis yönetimi işletilmesini sağlayacaktır. Teknik ekiplerin ürün modüllerini öğrenmesi, kurumsal bir servis yönetim sistemini inşa etmenin en önemli adımıdır. Bu sayede teknik ekipler çok daha doğru ve konforlu bir kullanıma sahip olacaklardır.",
         "badge_type": "PRACTITIONER",
         "info_cards": [
-          { "label": "Eğitim Tarihi", "value": "30 Mart 2026", "icon": "Calendar" },
+          { "label": "Eğitim Tarihi", "value": "25 Eylül 2026", "icon": "Calendar" },
           { "label": "Eğitim Süresi", "value": "10:00 - 17:00", "icon": "Clock" },
           { "label": "Eğitim Metodu", "value": "Eğitmen eşliğinde online senkron sunum", "icon": "Users" },
           { "label": "Sertifikasyon", "value": "Eğitim katılımı (%80) + Sınav (%80)", "icon": "Trophy" }
@@ -39,7 +39,7 @@
         "description": "Servicecore SM ürün sahipleri, ITSM admin-ürün yöneticileri, süreç sahipleri, servis sahipleri ve danışman adayları için sunulan bu eğitim, servis yönetim sisteminin tüm yönetim ayarları, konfigürasyonu ve özelleştirilmesi işlemlerini içerir. Servicecore kurulumu sonrası implementasyona başlamadan önce tüm proje paydaşlarının, adminlerin, süreç ve servis yöneticilerinin bu eğitimi alması gerekir. Bu sayede kurulum sonrası yapılandırma, süreç uyarlama ve devreye alma adımları daha sağlıklı olacaktır. Canlıya alım sonrası servis yönetimini işletme, yaşatma ve sürekli iyileştirme için de her kurumda servis yönetim ekibinin bu eğitimdeki bilgileri kullanması gerekecektir.",
         "badge_type": "ADMINISTRATOR",
         "info_cards": [
-          { "label": "Eğitim Tarihi", "value": "28-29 Nisan 2026", "icon": "Calendar" },
+          { "label": "Eğitim Tarihi", "value": "23 Ekim 2026", "icon": "Calendar" },
           { "label": "Eğitim Süresi", "value": "10:00 - 17:00", "icon": "Clock" },
           { "label": "Eğitim Metodu", "value": "Eğitmen eşliğinde online senkron sunum", "icon": "Users" },
           { "label": "Sertifikasyon", "value": "Eğitim katılımı (%80) + Sınav (%80)", "icon": "Trophy" }
@@ -64,7 +64,7 @@
         "description": "Servicecore adminleri, Servicecore geliştiricileri, Servicecore danışmanları ve Servicecore İş Ortakları için sunulan bu eğitimde, ileri düzey mimari, kurulum, süreç tasarımı, iş akış geliştirmeleri, arayüz geliştirmeleri, custom formlar ve custom actionlar için scripting, custom flowlar ile özelleştirilmiş süreç ve onay mekanizmaları, entegrasyon geliştirme, entegrasyonla otomasyon, rapor geliştirme, süreç otomasyonu gibi ileri düzey konular öğretilmektedir. Bu eğitime sahip bir danışman tüm Servicecore kullanan kurumlarda profesyonel hizmetler sunabilecek teknik ve süreç bilgisine ulaşmış olacaktır. Bu sayede Servicecore kullanan bir kurumdaki tüm ileri düzey ihtiyaçları bağımsız olarak karşılayabilen bir danışman bilgisi temin edilecektir.",
         "badge_type": "CONSULTANT",
         "info_cards": [
-          { "label": "Eğitim Tarihi", "value": "20-21-22 Mayıs 2026", "icon": "Calendar" },
+          { "label": "Eğitim Tarihi", "value": "27 Kasım 2026", "icon": "Calendar" },
           { "label": "Eğitim Süresi", "value": "10:00 - 17:00", "icon": "Clock" },
           { "label": "Eğitim Metodu", "value": "Sınıf Eğitimi + Lab Uygulamaları", "icon": "Users" },
           { "label": "Sertifikasyon", "value": "Katılım (%80) + Sınav (%80) + Lab (%80)", "icon": "Trophy" }
