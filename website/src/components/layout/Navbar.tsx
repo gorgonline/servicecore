@@ -359,7 +359,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top overflow-y-auto overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
                   onMouseEnter={() => setActiveMenu("modules")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -421,7 +421,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto overscroll-contain"
                   onMouseEnter={() => setActiveMenu("solutions")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -477,7 +477,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-8 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-8 shadow-2xl origin-top overflow-y-auto overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
                   onMouseEnter={() => setActiveMenu("aicore")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -560,7 +560,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top ${isScrolled ? "top-14" : "top-20"}`}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top overflow-y-auto overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
                   onMouseEnter={() => setActiveMenu("hizmetler")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -678,7 +678,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto overscroll-contain"
                   onMouseEnter={() => setActiveMenu("plans")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -732,7 +732,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-137.5 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-137.5 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto overscroll-contain"
                   onMouseEnter={() => setActiveMenu("resources")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
