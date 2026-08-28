@@ -301,7 +301,8 @@
           },
           {
             "name": "Sandbox / Test Sistem Add-on",
-            "desc": "ServiceCore Sandbox / Test Sistem Add-on, kullanıcıların ServiceCore platformu üzerinde gerçekleştirecekleri değişiklikler ve yenilikleri gerçek ortamda uygulamadan önce güvenli bir şekilde test etmelerini sağlar."
+            "desc": "ServiceCore Sandbox / Test Sistem Add-on, kullanıcıların ServiceCore platformu üzerinde gerçekleştirecekleri değişiklikler ve yenilikleri gerçek ortamda uygulamadan önce güvenli bir şekilde test etmelerini sağlar.",
+            "link": "/sandbox"
           },
           {
             "name": "Shift Management Add-on",

@@ -89,7 +89,7 @@ const addonCategories: AddonCategory[] = [
       { name: "Task Calendar Sync Eklentisi", desc: "Kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli hizmet yönetimi yapmalarını sağlar." },
       { name: "Failover / Cluster Sistem Add-on", desc: "Yüksek erişilebilirlik ve kesintisiz hizmet için ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır." },
       { name: "Disaster Center Add-on", desc: "Şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır." },
-      { name: "Sandbox / Test Sistem Add-on", desc: "Değişikliklerin ve yeniliklerin gerçek ortamda uygulanmadan önce güvenli bir şekilde test edilmesini sağlar." }
+      { name: "Sandbox / Test Sistem Add-on", desc: "Değişikliklerin ve yeniliklerin gerçek ortamda uygulanmadan önce güvenli bir şekilde test edilmesini sağlar. Lisans, kurulum ve bakım yapısı için Sandbox sayfasını inceleyin.", link: "/sandbox" }
     ]
   },
   {

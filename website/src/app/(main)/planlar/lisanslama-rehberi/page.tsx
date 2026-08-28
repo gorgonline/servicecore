@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { CheckCircle2, HelpCircle, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, CheckCircle2, HelpCircle, ChevronRight } from "lucide-react";
 import AboutHero from "@/components/ui/AboutHero";
 import lisansData from "@/data/lisanslama-rehberi.json";
 import PrivacyContact from "@/components/ui/privacy-contact";
+
+type ListItem = string | { text: string; href: string };
 
 interface ListBlock {
   title?: string;
@@ -25,7 +28,7 @@ interface Section {
   number: string;
   title: string;
   intro?: string;
-  items?: string[];
+  items?: ListItem[];
   groups?: Group[];
   categories?: Category[];
   examples?: ListBlock;
@@ -48,7 +51,7 @@ export const metadata: Metadata = {
 };
 
 export default function LisanslamaRehberiPage() {
-  const sections = lisansData.sections as Section[];
+  const sections = lisansData.sections as unknown as Section[];
 
   return (
     <div className="bg-(--color-surface-base-dark) text-white selection:bg-(--color-brand-primary)/30">
@@ -104,7 +107,10 @@ export default function LisanslamaRehberiPage() {
 
 function SectionCard({ section }: { section: Section }) {
   return (
-    <article className="relative p-10 rounded-3xl bg-white/2 border border-white/5 hover:border-white/10 transition-colors backdrop-blur-md">
+    <article
+      id={`bolum-${section.number}`}
+      className="relative scroll-mt-28 p-10 rounded-3xl bg-white/2 border border-white/5 hover:border-white/10 transition-colors backdrop-blur-md"
+    >
       <header className="flex items-start gap-6 mb-8">
         <div className="shrink-0 flex items-center justify-center w-14 h-14 rounded-2xl bg-(--color-brand-primary)/10 border border-(--color-brand-primary)/30 text-(--color-brand-primary) font-mono font-semibold text-lg">
           {section.number}
@@ -149,13 +155,23 @@ function SectionCard({ section }: { section: Section }) {
   );
 }
 
-function BulletList({ items }: { items: string[] }) {
+function BulletList({ items }: { items: ListItem[] }) {
   return (
     <ul className="space-y-3">
       {items.map((item, i) => (
         <li key={i} className="flex items-start gap-3 text-(--color-text-secondary) font-light leading-relaxed">
           <CheckCircle2 className="w-5 h-5 text-(--color-brand-secondary) shrink-0 mt-0.5" />
-          <span>{item}</span>
+          {typeof item === "string" ? (
+            <span>{item}</span>
+          ) : (
+            <Link
+              href={item.href}
+              className="inline-flex items-center gap-1.5 text-white hover:text-(--color-brand-primary) transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-(--color-brand-primary) focus-visible:ring-offset-2 focus-visible:ring-offset-(--color-surface-base) rounded-sm"
+            >
+              {item.text}
+              <ArrowUpRight className="w-4 h-4 shrink-0" aria-hidden="true" />
+            </Link>
+          )}
         </li>
       ))}
     </ul>

@@ -1,0 +1,344 @@
+{
+  "hero": {
+    "badge": "SANDBOX / TEST SİSTEM ADD-ON",
+    "titleLead": "Test ortamı bir kopya değil,",
+    "titleAccent": "ikinci bir sistemdir",
+    "lead": "ServiceCore Sandbox / Test Sistem Add-on, kullanıcıların ServiceCore platformu üzerinde gerçekleştirecekleri değişiklikler ve yenilikleri gerçek ortamda uygulamadan önce güvenli bir şekilde test etmelerini sağlar. Bu ortam, üretim sisteminizin yanında duran bağımsız bir kurulumdur: kendi veritabanı örneği, kendi uygulama sunucusu, kendi servis hesapları, kendi güvenlik yapılandırması ve kendi entegrasyon uçlarıyla çalışır.",
+    "support": "Test ortamının neden ayrı lisanslandığı, kurulumunun neden ayrı fiyatlandığı ve bakımının neden yıllık olarak yürütüldüğü bu sayfada kalem kalem açıklanmıştır. Kısa cevap şudur: ServiceCore on-premise çalışır ve bir test ortamı klasör kopyalayarak elde edilmez. İkinci bir veritabanı ayağa kaldırılır, entegrasyonlar test uçlarına yönlendirilir, canlı veri anonimleştirilerek aktarılır ve kurulan bu yapı üretim sistemiyle aynı hizada kalsın diye sürekli bakım görür."
+  },
+  "ozet": {
+    "overline": "MALİYETİN ÜÇ BİLEŞENİ",
+    "title": "Sandbox üç ayrı kalemden oluşur",
+    "description": "Üç kalemin de tanımı Abonelik ve Lisanslama Rehberi ile hizmet portföyünde yazılıdır; adet, kapsam ve bedeller teklifte açıkça yer alır.",
+    "items": [
+      {
+        "no": "01",
+        "label": "Lisans ve fikri mülkiyet hakkı",
+        "hint": "Sabit adetli add-on"
+      },
+      {
+        "no": "02",
+        "label": "Kurulum ve mimari mühendislik eforu",
+        "hint": "Tek seferlik hizmet"
+      },
+      {
+        "no": "03",
+        "label": "Sürekli bakım, sürüm güncelleme ve destek",
+        "hint": "Yıllık kapsam"
+      }
+    ]
+  },
+  "yanilsama": {
+    "overline": "YAYGIN ALGI VE TEKNİK GERÇEK",
+    "title": "Test ortamı bir kopya değildir",
+    "intro": "Test ortamı tartışmasının büyük bölümü tek bir varsayımdan doğar: sistem zaten kurulu olduğuna göre, ikinci bir sunucuya kopyalanması ek bir iş değildir. On-premise mimaride bu varsayımın karşılığı yoktur. Aşağıda sahada en sık karşılaştığımız dört algının karşısına ortamın teknik gerçeğini koyduk.",
+    "items": [
+      {
+        "myth": "Canlının yedeğini alır, ikinci bir sunucuya açarız.",
+        "fact": "Yedek bir veri dosyasıdır; ortam değildir.",
+        "text": "Geri yükleme, işin en kısa süren adımıdır ve birkaç saatte biter; asıl efor ondan sonra başlar. Veritabanı yedeği yalnızca kayıtları taşır. Uygulama sunucusu, servis hesapları, zamanlanmış iş akışları, ağ geçitleri ve sertifikalar yeni ortamda sıfırdan yapılandırılır; üretimden gelen yapılandırmanın içindeki her sunucu adı, her ağ geçidi adresi ve her sertifika referansı tek tek test karşılığıyla değiştirilir."
+      },
+      {
+        "myth": "Test ortamı üretimin birebir aynısı olsun, böylece ek çalışma gerekmesin.",
+        "fact": "Üretimle birebir aynı bırakılan bir test ortamı tehlikelidir.",
+        "text": "Yapılandırması üretimle özdeş bırakılan bir ortam ilk denemede gerçek müşterilere e-posta gönderir, gerçek numaralara SMS gönderir, ERP tarafında gerçek kayıt açar. Bu nedenle Sandbox kurulumunun büyük bölümü ortamı üretime benzetmek değil, ortamı üretimden güvenli biçimde ayırmaktır. Modül ve iş akışı kapsamı birebir aynı olmalıdır; bağlantı uçları asla."
+      },
+      {
+        "myth": "Lisansı zaten aldık; aynı lisans test ortamında da geçerlidir.",
+        "fact": "Lisans yükümlülüğü, sözleşmede tanımlı ölçüye göre doğar.",
+        "text": "Satın alınan lisansın ölçüsü üretim ortamına göre belirlenir; teknisyen adedi de modül kapsamı da o ortamda yürüyen operasyona göre fiyatlanır. Sandbox ayağa kalktığında mevcut lisans ikiye bölünmez; yanında, kendi kullanım hakkı olan ikinci bir kurulum doğar. ServiceCore bu nedenle test ortamını teknisyen lisansının bir türevi olarak değil, Abonelik ve Lisanslama Rehberi'nin 12. bölümündeki Altyapı ve Sistem Add-on'ları arasında, sabit adetli ayrı bir kalem olarak tanımlar."
+      },
+      {
+        "myth": "Kurulur, bir kenarda bekler; bozulursa aceleye gerek yok.",
+        "fact": "Test ortamı durduğunda duran şey, üretime yapılacak değişikliktir.",
+        "text": "Üretim sistemi sürüm aldıkça, entegrasyonlar değiştikçe ve veri modeli genişledikçe bakılmayan test ortamı geride kalır; iki ortam arasındaki fark büyüdüğünde testin verdiği olumlu sonuç artık üretim için geçerli değildir. Ortam hiç ayakta değilse geriye iki seçenek kalır: değişikliği ertelemek ya da doğrulanmış kanıt olmadan canlıda denemek. Birincisi proje takvimini durdurur, ikincisi denetimde bulgu ve operasyonda kesinti üretir."
+      }
+    ]
+  },
+  "sutunlar": {
+    "overline": "MALİYET BİLEŞENLERİ",
+    "title": "Üç kalem, üç ayrı iş",
+    "items": [
+      {
+        "no": "01",
+        "title": "Lisans ve Fikri Mülkiyet Hakları",
+        "subtitle": "IP Right — ortam bazlı kullanım hakkı",
+        "text": "ServiceCore lisans modelinde kullanım hakkı, ürünün çalıştırıldığı bağımsız ortam üzerinden tanımlanır. Test ortamı, ürünün hiçbir özelliği kısıtlanmamış ikinci bir örneğidir: yazılımın çekirdek algoritmalarını, iş akışı motorunu, entegrasyon katmanını ve raporlama altyapısını üretimle aynı biçimde çalıştırır. Donanım ölçeği küçültülse dahi kullanılan hak aynıdır. Bu nedenle test ortamı, teknisyen lisansının içinden düşülen bir kalem değil, kendi başına duran bir add-on kalemidir.",
+        "items": [
+          "Kullanım hakkı yalnızca kullanıcı sayısına değil, çalıştırılan bağımsız ortam sayısına bağlıdır.",
+          "Test ortamı üretimle aynı sürümü, aynı modülleri ve aynı otomasyon çekirdeğini çalıştırır.",
+          "Sandbox / Test Sistem Add-on, Altyapı ve Sistem Add-on grubunda sabit adet üzerinden fiyatlandırılır.",
+          "Add-on teknisyen lisansınızdan bağımsızdır; teknisyen sayınız değişse de adet üzerinden yürür.",
+          "Kurulum ve bakım hizmetleri lisanstan ayrı fiyatlandırılır; ihtiyaç duyulan test ortamı adedi teklif öncesinde netleştirilir."
+        ],
+        "linkLabel": "Abonelik ve Lisanslama Rehberi — Bölüm 12",
+        "linkHref": "/planlar/lisanslama-rehberi#bolum-12"
+      },
+      {
+        "no": "02",
+        "title": "Kurulum ve Mimari Mühendislik Eforu",
+        "subtitle": "Professional Services — Test Sistemi Konfigürasyon Paketi",
+        "text": "Test ortamının kurulumu bir kurulum dosyası çalıştırmaktan ibaret değildir. Veritabanı ve uygulama katmanlarının üretimden tam olarak izole edilmesi, dış sistem entegrasyonlarının test uçlarına yönlendirilmesi, güvenlik ve yetkilendirme yapılandırmasının baştan kurulması ve canlı verinin anonimleştirilerek aktarılacağı mimarinin tasarlanması gerekir. Bu adımların tamamı doğrudan kıdemli uzman adam/gün eforu tüketir ve ServiceCore hizmet portföyünde Test Sistemi Konfigürasyon Paketi adıyla ayrı bir kalem olarak tanımlıdır.",
+        "items": [
+          "Üretim ortamının lisans ve veri kapsamı dışında, bağımsız bir kurulum ayağa kaldırılır.",
+          "ERP, CRM, Active Directory, SMTP ve SMS ağ geçitleri üretim uçlarından koparılıp test veya taklit uçlarına bağlanır.",
+          "Güvenlik duvarı, SSL ve yetkilendirme katmanları Sandbox için yeniden yapılandırılır; üretim yetkileri olduğu gibi taşınmaz.",
+          "Canlı veri, kişisel ve ticari alanları anonimleştirilerek aktarılır; bu mimari KVKK yükümlülüklerinizin test ortamında da karşılanmasını destekler.",
+          "Kurulum, kabul testi ve devir dokümantasyonuyla kapanır; ortamın sahipliği yazılı olarak kuruma teslim edilir."
+        ],
+        "linkLabel": "Kurulum Hizmetleri — Test Sistemi Konfigürasyon Paketi",
+        "linkHref": "/hizmetler/setup"
+      },
+      {
+        "no": "03",
+        "title": "Sürekli Bakım, Sürüm Güncelleme ve Destek",
+        "subtitle": "Ongoing Maintenance ve SLA — yıllık kapsam",
+        "text": "Sandbox kurulduğu gün tamamlanmaz; üretim sistemiyle birlikte yaşamaya devam eder. Üretime çıkacak her yeni sürüm ve yama önce burada uygulanır, doğrulanır ve gerektiğinde geri alınır. Bu da her güncelleme döngüsünde aynı mühendislik işinin iki sistemde ayrı ayrı yapılması, iki ortamın senkron tutulması ve her ikisinin ayrı ayrı desteklenmesi anlamına gelir. Yıllık bakım ve destek kalemi, bu tekrarlanan yükün ve ortama verilen hizmet seviyesi taahhüdünün karşılığıdır.",
+        "items": [
+          "Her yeni sürüm ve yama önce Sandbox'a uygulanır, doğrulanır ve kayıt altına alınır; sonra üretime geçer.",
+          "İki ortam arasındaki sürüm, parametre, şema ve iş akışı farkları düzenli olarak karşılaştırılıp eşitlenir.",
+          "Veri tazeleme döngüsü, maskeleme kuralları ve bildirim izolasyonuyla birlikte sürdürülür.",
+          "Test ortamındaki yapılandırma hataları, veritabanı büyümesi ve entegrasyon kopmaları destek kapsamında ele alınır.",
+          "Hizmet seviyesi taahhüdü yalnızca bakım kapsamındaki ortamlar için verilebilir; add-on'un kurulum ve bakım hizmetleri lisanslama rehberinin 12. bölümünde belirtildiği gibi ayrıca fiyatlandırılır."
+        ],
+        "linkLabel": "Destek Paketleri ve Kanalları",
+        "linkHref": "/destek"
+      }
+    ]
+  },
+  "efor": {
+    "overline": "KURULUM EFORU NEREYE GİDER",
+    "title": "Adam/gün eforunun kalem kalem dökümü",
+    "intro": "Aşağıdaki adımların her biri ürün iç bilgisi gerektirir. Kurulumun ağırlığı buradadır: donanım ve işletim sistemi katmanı değil, uygulama mimarisinin ikinci kez ve izole biçimde kurulmasıdır.",
+    "items": [
+      {
+        "title": "Bağımsız veritabanı örneği",
+        "text": "Test ortamı için üretimden tamamen ayrı bir veritabanı örneği kurulur; karakter seti, şema, kullanıcılar, yedekleme planı ve büyüme takibi bu ortama özel tanımlanır."
+      },
+      {
+        "title": "İzole uygulama katmanı ve servis hesapları",
+        "text": "Uygulama servisleri ayrı bir sunucuda, kendi kaynak havuzu ve port yapılandırmasıyla çalıştırılır; üretim servis hesaplarıyla hiçbir yetki paylaşmayan yeni hesaplar tanımlanır."
+      },
+      {
+        "title": "Sunucu ve kaynak planlaması",
+        "text": "İşlemci, bellek ve disk kaynakları, yapılacak testin türüne göre ve test yükünü anlamlı biçimde temsil edecek ölçüde boyutlandırılır."
+      },
+      {
+        "title": "Ayrı alan adı kaydı ve SSL sertifikası",
+        "text": "Sandbox kendi alan adı kaydını ve kendi SSL sertifikasını alır; böylece kullanıcı hangi ortamda çalıştığını adres satırından ilk bakışta ayırt eder."
+      },
+      {
+        "title": "Ağ segmentasyonu ve güvenlik duvarı kuralları",
+        "text": "Güvenlik duvarı kuralları ve ağ segmentasyonu, test ortamının trafiğinin üretim trafiğine hiçbir noktada karışmayacağı biçimde yapılandırılır."
+      },
+      {
+        "title": "Kimlik ve yetkilendirme yapılandırması",
+        "text": "Dizin servisi bağlantısı, çoklu oturum açma (SSO) ayarları ve rol/yetki matrisi test ortamı için ayrı bir yapılandırma üzerinden yeniden kurulur."
+      },
+      {
+        "title": "Entegrasyonların test uçlarına yönlendirilmesi",
+        "text": "ERP, CRM, Active Directory ve diğer kurumsal sistemlerin bağlantıları karşı tarafın üretim uçlarından alınıp test veya taklit uçlarına taşınır."
+      },
+      {
+        "title": "E-posta ve SMS ağ geçitlerinin izolasyonu",
+        "text": "Bildirim kanalları test aktarıcısına yönlendirilir veya karantinaya alınır; bu yapılmazsa Sandbox'ta açılan tek bir kayıt gerçek müşterilere e-posta ve SMS gönderir."
+      },
+      {
+        "title": "Veri maskeleme mimarisi",
+        "text": "Üretimden aktarılacak kayıtlarda kişisel veri, iletişim bilgisi ve sözleşme detayları maskeleme kurallarıyla anonimleştirilir; kurallar veri modeli genişledikçe güncellenir."
+      },
+      {
+        "title": "Ortam tazeleme prosedürü",
+        "text": "Üretimden Sandbox'a veri tazeleme akışı yazılır ve zamanlanır; her tazelemede maskeleme, entegrasyon yönlendirmeleri ve bildirim izolasyonu yeniden uygulanır."
+      },
+      {
+        "title": "Sürüm ve konfigürasyon karşılaştırma hattı",
+        "text": "İki ortam arasındaki modül, parametre ve şema farklarının izlenip eşitleneceği hat kurulur; böylece Sandbox'ta yapılan test üretim için anlamlı bir kanıt üretir."
+      },
+      {
+        "title": "Kabul testi, dokümantasyon ve devir",
+        "text": "Kurulum sonrası temel iş akışları, bildirim kanalları ve entegrasyonlar uçtan uca çalıştırılır; ortamın topolojisi, hesapları, bağlantıları ve tazeleme yordamı belgelenip BT ekibine devredilir."
+      }
+    ]
+  },
+  "bakim": {
+    "overline": "KURULDUKTAN SONRA NE OLUR",
+    "title": "Bakım, sürüm yönetimi ve hizmet seviyesi",
+    "items": [
+      {
+        "title": "Sürüm güncellemeleri",
+        "text": "Üretime geçecek her yeni sürüm ve yama önce test ortamına uygulanır. Aynı güncellemeyi iki ayrı sisteme ayrı ayrı kurar, iki ayrı veri setiyle sınar, iki ortamın birbiriyle uyumunu doğrular ve sonucu kayıt altına alırız. ServiceCore güncellemeleri, izin verdiğiniz ölçüde Continuous Delivery yöntemiyle otomatik olarak yüklenir; test ortamı bu hattın ilk durağıdır. Bu tekrar, bir sürümün üretimde ilk kez denenmesini önleyen tek mekanizmadır."
+      },
+      {
+        "title": "Sorun giderme",
+        "text": "Test ortamında yaşanan yapılandırma hataları, veritabanı şişmeleri, entegrasyon kopuklukları ve performans sorunları teknik destek ekibi tarafından üretim sistemi mantığıyla ele alınır. Ortamın amacı deneme olsa da müdahale disiplini üretimle aynıdır; aksi hâlde testin sonucuna güvenilemez. Duran bir test ortamı yalnızca o ortamı değil, kurumun tüm değişiklik akışını durdurur."
+      },
+      {
+        "title": "Hizmet seviyesi taahhüdü",
+        "text": "Destek ve bakım kapsamı dışında bırakılan bir ortam için hizmet seviyesi taahhüdü verilemez; taahhüt ancak bakım aboneliği süren ve kapsamı tanımlı ortamlar için geçerlidir. Test ortamı çalışmayan bir kurum, üretim ortamına yeni geliştirme aktarırken güvence altında değildir. Sandbox'un kurulum ve bakım hizmetlerinin ayrı bir kalem olarak tanımlanmasının nedeni budur."
+      }
+    ]
+  },
+  "karsilastirma": {
+    "overline": "KARŞILAŞTIRMALI ÖZET",
+    "title": "Üretim ortamı ve test ortamı",
+    "columns": {
+      "parametre": "Parametre",
+      "canli": "Üretim Ortamı",
+      "canliEn": "Production",
+      "test": "Test Ortamı",
+      "testEn": "Non-Production"
+    },
+    "rows": [
+      {
+        "parametre": "Kullanım amacı",
+        "canli": "Günlük operasyonel iş süreçlerini kesintisiz yürütmek.",
+        "test": "Güncellemeleri, entegrasyonları ve yeni modülleri riske girmeden denemek."
+      },
+      {
+        "parametre": "Lisans modeli",
+        "canli": "Teknisyen lisansları ve seçilen modül kapsamı üzerinden ölçeklenir.",
+        "test": "Teknisyen lisansından bağımsız, sabit adetli Sandbox / Test Sistem Add-on ile lisanslanır."
+      },
+      {
+        "parametre": "Altyapı ihtiyacı",
+        "canli": "Tam kapasiteli fiziksel veya sanal sunucu kaynağı.",
+        "test": "Ayrı ve bağımsız sunucu kaynağı; tipik olarak üretim kaynağının yarısı ile tamamı arasında ölçeklenir."
+      },
+      {
+        "parametre": "Veri ve entegrasyonlar",
+        "canli": "Gerçek ve güncel kurum verisi; ERP, CRM, dizin sunucusu ve bildirim kanallarının üretim uçları.",
+        "test": "Maskelenmiş ve düzenli aralıklarla tazelenen kopya veri; aynı entegrasyonların test veya taklit uçları."
+      },
+      {
+        "parametre": "Kurulum eforu",
+        "canli": "İlk kurulum, veri aktarımı ve canlıya geçiş desteği.",
+        "test": "İzole kurulum, test uçlarına yönlendirilmiş entegrasyonlar ve maskeli veri aktarım mimarisi."
+      },
+      {
+        "parametre": "Sürüm ve değişiklik yönetimi",
+        "canli": "Yalnızca doğrulanmış, onay almış kararlı sürümler uygulanır.",
+        "test": "Yeni sürümlerin üretim öncesi ilk kez uygulandığı, geri dönüş planının denendiği ortam."
+      },
+      {
+        "parametre": "Destek ve bakım",
+        "canli": "Yıllık destek paketiniz kapsamında hizmet seviyesi taahhüdü ve teknik destek.",
+        "test": "Sürüm uyumluluğu, ortam senkronizasyonu ve ayrıca tanımlanan bakım kapsamı."
+      }
+    ]
+  },
+  "sektor": {
+    "overline": "SEKTÖRDE DURUM",
+    "title": "Canlı dışı ortam nasıl ele alınır?",
+    "intro": "Canlı dışı ortamların lisans ve bakım kapsamında ele alınması ServiceCore'a özgü bir tercih değildir; ancak sektörde tek bir yaklaşım da yoktur. Aşağıdaki başlıklar, kurumsal yazılım sözleşmelerinin genel çerçevesini ve ServiceCore'un bu çerçeve içindeki kendi kuralını tarif eder.",
+    "items": [
+      {
+        "title": "Lisans ortama göre değil, sözleşmedeki ölçüye göre doğar",
+        "text": "Kurumsal yazılımda lisans yükümlülüğü ortamın canlı olup olmamasına göre değil, sözleşmede tanımlı ölçüye göre doğar. Bu ölçü üründen ürüne değişir: kurulu örnek, işlemci kapasitesi, isimli kullanıcı veya geliştirici aboneliği. Bu nedenle canlı dışı bir ortam, yalnızca canlı olmadığı için lisans kapsamının dışına çıkmaz."
+      },
+      {
+        "title": "Muafiyet ancak lisans metninde açıkça tanımlıysa geçerlidir",
+        "text": "Canlı dışı kullanım için tanınan haklar çoğunlukla dardır: geliştirme, prototip ve gösterim ile sınırlıdır. Gerçek iş verisiyle çalışan veya üretimi birebir kopyalayan bir ortam, bu dar muafiyetlerin kapsamına girmez."
+      },
+      {
+        "title": "Uygulama üreticiden üreticiye ciddi biçimde ayrışır",
+        "text": "Bazı üreticiler canlı dışı kullanım için ayrı ve daha düşük fiyatlı bir ürün kodu sunar; bazıları hiçbir indirim tanımaz ve canlı ile aynı lisansı ister; bazıları ise lisansı ortama değil, ortama erişen kişiye bağlar. Bu nedenle test ortamının her koşulda ücretsiz olduğu, sektörde genel geçer bir kural değildir."
+      },
+      {
+        "title": "Toplam sahip olma maliyeti lisans bedelinden ibaret değildir",
+        "text": "Bakım ve destek bedeli genellikle lisanslı miktarla orantılı olarak hesaplanır; lisans nerede doğuyorsa bakım da orada doğar. Ayrıca sunucu kaynağı, yedekleme, izleme, sertifika yenileme ve sürüm senkronizasyonu her koşulda oluşur. Bu yüzden canlı dışı bir ortamın toplam maliyeti, lisans bedeli sıfır olsa bile sıfır değildir."
+      },
+      {
+        "title": "Denetim çerçeveleri ortam ayrımını bekler",
+        "text": "Bilgi güvenliği ve BT yönetişim çerçeveleri; geliştirme, test ve üretim ortamlarının birbirinden ayrılmasını temel bir kontrol maddesi olarak tanımlar. ITIL4 değişiklik yönetimi pratiği de değişikliğin üretim öncesinde doğrulanmasını ve geri dönüş planının hazır olmasını bekler. Tek ortam üzerinde çalışan kurum bu kontrolü karşılayamaz."
+      },
+      {
+        "title": "ServiceCore'da kural açıkça yazılıdır",
+        "text": "Sandbox / Test Sistem Add-on teknisyen lisanslarından bağımsız olarak sabit adet üzerinden lisanslanır; kurulum Test Sistemi Konfigürasyon Paketi kapsamında, bakım ise ayrı bir kalem olarak fiyatlandırılır. Bu ayrım Abonelik ve Lisanslama Rehberi'nin 12. bölümünde açıkça yazılıdır."
+      }
+    ]
+  },
+  "faq": {
+    "overline": "SIKÇA SORULAN SORULAR",
+    "title": "Müşterilerin en sık sorduğu yedi soru",
+    "items": [
+      {
+        "question": "Canlı lisansımız var; neden aynı lisansı test ortamında kullanamıyoruz?",
+        "answer": "Lisans, satın alan kuruma değil, ürünün çalıştırıldığı bağımsız ortama tanımlanan bir kullanım hakkıdır; tek bir lisansın iki ortamda aynı anda çalıştırılması bu tanımın dışındadır. Test ortamı ServiceCore çekirdeğini, iş akışı motorunu, entegrasyon ve raporlama katmanlarını üretimle aynı biçimde çalıştırır, yani ikinci bir kullanım oluşturur. Bu ikinci kullanımın bedeli teknisyen sayınıza değil, açtığınız ortam adedine bağlıdır; rehberde Altyapı ve Sistem Add-on'ları başlığı altında sabit adetli bir kalem olarak yazılıdır."
+      },
+      {
+        "question": "Sunucu bizim, kurulumu kendi ekibimiz yapar. Kurulum bedeli neden alınıyor?",
+        "answer": "Donanım ve işletim sistemi katmanını kendi ekibiniz sağlayabilir; ücretlendirilen kalem sunucu değil, uygulama mimarisinin kurulmasıdır. Bağımsız veritabanı örneğinin ayrılması, bağlantı dizeleri ve servis hesaplarının tanımlanması, dizin servisi bağlantısı, sertifika ve alan adı yapılandırması, entegrasyonların test uçlarına yönlendirilmesi, dışa giden bildirimlerin kesilmesi ve maskeleme kurallarının yazılması ürün iç bilgisi gerektirir. Bu adımlar eksik yapıldığında ortaya çalışmayan bir ortam değil, çalışıyor görünüp üretim için yanlış kanıt üreten bir ortam çıkar. Ayrıca kurmadığımız ve doğrulamadığımız bir ortam için sürüm uyumluluğu taahhüt edemeyiz. Kapsamın bir bölümünü ekibiniz üstlenecekse görüşmede birlikte daraltırız ve fiyat buna göre şekillenir."
+      },
+      {
+        "question": "Yıllık bakımı zaten ödüyoruz ve test ortamını yılda yalnızca birkaç kez kullanacağız; neden ayrı bir yıllık kalem var?",
+        "answer": "Abonelik bedeliniz ürünün bakımını kapsar: düzeltici bakım, yol haritası kapsamındaki yeni özellikler ve güncellemelerin ortamınıza kurulumu. Altyapı ve sistem add-on'larında ise lisanslama rehberinin 12. bölümünde belirtildiği gibi kurulum ve bakım hizmetleri ayrıca fiyatlandırılır; çünkü ikinci ortam, her sürümde kurulum ve doğrulama işini fiilen ikiye katlar. Kullanım sıklığı ise maliyeti belirlemez: yılda üç kez açacağınız bir ortamın o üç anda doğru cevabı verebilmesi için aradaki her sürümün, yamanın ve entegrasyon değişikliğinin bu ortama da uygulanmış olması gerekir. Bakılmayan ortam, kullanılacağı gün üretimle arasındaki fark yüzünden yanlış sonuç üretir ve test edilmiş sanılan değişiklik canlıda geri alınır."
+      },
+      {
+        "question": "Test ortamında gerçek verimizi kullanabilir miyiz?",
+        "answer": "Test ortamı üretim verisinin bir kopyasıyla beslenir, ancak veri olduğu gibi taşınmaz. Kişisel veri, iletişim bilgisi ve sözleşme detayı içeren alanlar maskelenerek aktarılır; e-posta ve SMS ağ geçitleri test uçlarına yönlendirilerek gerçek kullanıcılara bildirim gitmesi engellenir. Bu mimari hem KVKK yükümlülüklerinin karşılanması hem de test kayıtlarının operasyona sızmaması için kurulum kapsamında tanımlanır. Ortamın periyodik tazelenmesi de aynı maskeleme hattı üzerinden yapılır; veri modeli genişledikçe maskeleme kuralları güncellenir."
+      },
+      {
+        "question": "Kaç adet test ortamına ihtiyacımız var ve üretimle aynı büyüklükte olmak zorunda mı?",
+        "answer": "Çoğu kurum için tek bir Sandbox yeterlidir. Geliştirme ile kabul testini ayrı yürüten, paralel proje çalıştıran veya farklı ekiplerin birbirinin verisini bozmadan çalışması gereken kurumlar ikinci bir ortam tercih eder. Donanım tarafında üretimin birebir aynısı gerekmez: yaklaşık olarak üretim kaynağının yarısı ile tamamı arasında bir ölçek işlevsel testler için uygundur; performans ve yük testi planlıyorsanız kaynak üretime yaklaştırılır. Buna karşılık modül, iş akışı ve entegrasyon kapsamı birebir aynı olmalıdır, çünkü test ortamında bulunmayan bir modül üretimde hiç denenmemiş demektir. Adet ve ölçek, analiz aşamasındaki ihtiyaç görüşmesinde birlikte netleştirilir."
+      },
+      {
+        "question": "Sandbox ile PoC aynı şey mi?",
+        "answer": "Hayır; ikisinin amacı da statüsü de farklıdır. PoC, satın alma öncesinde ürünü değerlendirmeniz için kurulan geçici bir ortamdır; yerinde kurulan PoC sürümü süre kilitlidir ve süre sonunda kurulum ile tüm kopyalar kaldırılır. Sandbox ise satın alma sonrasında, üretim sisteminizin yanında kalıcı olarak duran, lisanslı ve bakım kapsamındaki ikinci ortamdır ve tam ürün üzerinde çalışır. Henüz karar aşamasındaysanız ihtiyacınız olan Sandbox değil, PoC sürecidir; canlıya geçtikten sonra ihtiyacınız olan ise PoC değil, Sandbox'tur."
+      },
+      {
+        "question": "Test ortamını kapatırsak ne olur?",
+        "answer": "Add-on'u kapsam dışına aldığınızda test ortamının kullanım hakkı ve bakım kalemi sona erer; buna karşılık değişiklik yönetiminizin kanıt üretme yeteneği de ortadan kalkar. ITIL4 değişiklik yönetimi pratiğinde bir değişikliğin onaylanması, etkisinin ve geri dönüş planının önceden doğrulanmış olmasına dayanır. Test ortamı olmadan her sürüm üretimde ilk kez denenir: başarısız değişiklik oranı yükselir, kurtarma süresi uzar ve test kanıtı istenen her değişiklik denetimde bulgu olarak yazılır. Ortamı ileride yeniden açmak isterseniz kurulum eforu güncel sürüm ve güncel yapılandırma üzerinden yeniden doğar. Kararı verirken karşılaştırılması gereken iki rakam, ortamın yıllık bedeli ile tek bir başarısız sürümün yaratacağı kesinti maliyetidir."
+      }
+    ]
+  },
+  "kapanis": {
+    "overline": "ÖZET VE SONUÇ",
+    "title": "Test ortamı bir hediye değil, mühendislik garantisidir",
+    "text": "Sandbox bir bonus ürün ya da lisansın yanında verilen bir ikram değildir; kurumun değişiklik riskini üretime dokunmadan önce tükettiği stratejik bir güvence mekanizmasıdır. Test lisansı, kurulum hizmeti ve yıllık bakım kapsamı; canlı sistemin durmasını engellemek, geri dönüşü olmayan veri kayıplarının önüne geçmek ve yeni özellikleri güvenle devreye almak için birlikte çalışan üç bileşendir.",
+    "text2": "Bu üç kalemin yıllık toplamı, tek bir başarısız sürümün yaratacağı kesinti maliyetinin yanında çoğu kurum için küçük bir rakam olarak kalır. Kaç adet test ortamına ihtiyaç duyduğunuzu, kurulumun kapsamını ve bakımın nasıl yürüyeceğini görüşmede şeffaf biçimde birlikte netleştiriyoruz.",
+    "ctaPrimary": {
+      "label": "Sandbox Teklifi İsteyin",
+      "href": "/iletisim"
+    },
+    "ctaSecondary": {
+      "label": "Lisanslama Rehberini İnceleyin",
+      "href": "/planlar/lisanslama-rehberi"
+    }
+  },
+  "ilgili": {
+    "overline": "İLGİLİ SAYFALAR",
+    "items": [
+      {
+        "label": "Değişiklik Yönetimi",
+        "desc": "Sandbox'ta doğrulanan değişiklik, onay ve geri dönüş planıyla canlıya alınır.",
+        "href": "/degisiklik-yonetimi"
+      },
+      {
+        "label": "PoC Süreci",
+        "desc": "Henüz satın almadıysanız aradığınız Sandbox değil, süre kilitli PoC ortamıdır.",
+        "href": "/poc"
+      },
+      {
+        "label": "Planlar ve Lisanslama",
+        "desc": "Sandbox add-on'unun yer aldığı lisans planlarını ve eklentileri inceleyin.",
+        "href": "/planlar"
+      },
+      {
+        "label": "Kurulum Hizmetleri",
+        "desc": "Test Sistemi Konfigürasyon Paketi ve diğer kurulum paketleri.",
+        "href": "/hizmetler/setup"
+      },
+      {
+        "label": "Destek Paketleri",
+        "desc": "Silver, Gold, Platinum ve Mission Critical destek kapsamları.",
+        "href": "/destek"
+      },
+      {
+        "label": "Güncellemeler",
+        "desc": "Yeni sürümde ne değiştiğini görüp geçişi önce Sandbox'ta deneyin.",
+        "href": "/guncellemeler"
+      }
+    ]
+  }
+}
