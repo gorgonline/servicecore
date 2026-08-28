@@ -75,7 +75,7 @@ export default function SandboxPage() {
 
         {/* Ozet — uc kalem */}
         <section className="mt-16 rounded-3xl border border-white/8 bg-white/2 backdrop-blur-md p-8 lg:p-10 max-w-4xl shadow-(--shadow-glow-primary-subtle)">
-          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted)">
+          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-overline)">
             {ozet.overline}
           </p>
           <h2 className="mt-4 text-2xl md:text-3xl font-semibold tracking-tight text-white">{ozet.title}</h2>
@@ -104,7 +104,7 @@ export default function SandboxPage() {
 
         {/* Yanilsama — sanilan / gercek */}
         <section className="mt-24">
-          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-overline) mb-6">
             {yanilsama.overline}
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
@@ -160,7 +160,7 @@ export default function SandboxPage() {
 
         {/* Uc maliyet sutunu */}
         <section className="mt-24">
-          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-overline) mb-6">
             {sutunlar.overline}
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
@@ -225,7 +225,7 @@ export default function SandboxPage() {
 
         {/* Kurulum eforu dokumu */}
         <section className="mt-24">
-          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-overline) mb-6">
             {efor.overline}
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
@@ -257,7 +257,7 @@ export default function SandboxPage() {
 
         {/* Bakim */}
         <section className="mt-24">
-          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-overline) mb-6">
             {bakim.overline}
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
@@ -289,7 +289,7 @@ export default function SandboxPage() {
 
         {/* Karsilastirma tablosu */}
         <section className="mt-24">
-          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-overline) mb-6">
             {karsilastirma.overline}
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
@@ -352,7 +352,7 @@ export default function SandboxPage() {
 
         {/* Sektor */}
         <section className="mt-24">
-          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-overline) mb-6">
             {sektor.overline}
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
@@ -379,7 +379,7 @@ export default function SandboxPage() {
 
         {/* SSS */}
         <section className="mt-24">
-          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <p className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-overline) mb-6">
             {faq.overline}
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white max-w-3xl">
@@ -446,7 +446,7 @@ export default function SandboxPage() {
 
         {/* Ilgili sayfalar */}
         <section className="mt-20 mb-8">
-          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-muted) mb-6">
+          <h2 className="text-xs font-mono font-semibold tracking-[0.22em] uppercase text-(--color-text-overline) mb-6">
             {ilgili.overline}
           </h2>
           <div className="grid md:grid-cols-2 gap-3">
