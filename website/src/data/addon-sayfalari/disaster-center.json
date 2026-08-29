@@ -1,0 +1,352 @@
+{
+  "bakim": {
+    "overline": "KURULDUKTAN SONRA NE OLUR",
+    "title": "Replikasyon, tatbikat ve hizmet seviyesi",
+    "items": [
+      {
+        "title": "Replikasyonun ve sürüm eşitliğinin sürdürülmesi",
+        "text": "Birincil merkezde her sürüm yükseltmesi, her şema değişikliği ve her yeni entegrasyon ikincil merkezde de karşılığını bulmak zorundadır. Uygulama sürümü iki tarafta ayrıştığında replikasyon çalışıyor görünse bile devralma denemesi başarısız olur; çünkü gelen veri, karşı taraftaki eski şemaya oturmaz. Bakım kapsamı bu nedenle iki merkezin sürüm, parametre ve şema hizasının düzenli olarak karşılaştırılmasını, replikasyon gecikmesinin izlenmesini ve sapma oluştuğunda düzeltilmesini içerir."
+      },
+      {
+        "title": "Tatbikat ve çalışma kitabının güncel tutulması",
+        "text": "Devralma tatbikatı, felaket kurtarma merkezinin gerçekten çalıştığını gösteren tek kanıttır. Planlanmış bir pencerede hizmet ikincil merkeze alınır, iş akışları ve entegrasyonlar uçtan uca doğrulanır, geçen süre ve oluşan veri farkı ölçülür, ardından birincil merkeze geri dönülür. Her tatbikat çalışma kitabındaki adımları test eder ve kurumun personeli değiştikçe, ağ topolojisi genişledikçe veya entegrasyon sayısı arttıkça kitap yeniden yazılır. Tatbikat sonuç raporu denetimde kanıt olarak kullanılabilecek biçimde kayıt altına alınır."
+      },
+      {
+        "title": "İzleme, destek ve hizmet seviyesi taahhüdü",
+        "text": "İkincil merkez günlük operasyonda kullanılmadığı için sessizce bozulabilir: replikasyon durur, disk dolar, sertifika süresi biter, servis hesabının parolası geçersiz kalır. Bunların hiçbiri normal iş gününde fark edilmez, yalnızca felaket anında ortaya çıkar. Bakım kapsamı bu nedenle replikasyon gecikmesi, disk doluluğu, servis durumu ve sertifika süresi üzerine kurulmuş alarmlarla yürür. Hizmet seviyesi taahhüdü ancak bakım kapsamındaki ve kapsamı yazılı olarak tanımlanmış merkezler için verilebilir."
+      }
+    ]
+  },
+  "efor": {
+    "overline": "KURULUM EFORU NEREYE GİDER",
+    "title": "Adam/gün eforunun kalem kalem dökümü",
+    "intro": "Aşağıdaki adımların hiçbiri sunucu açmaktan ibaret değildir; her biri hizmetin ikinci bir coğrafyada, ilk seferde ve doğru sırayla ayağa kalkması için mimari, altyapı ve prosedür tarafında karar gerektirir. Kurulum eforunun ağırlığı buradadır.",
+    "items": [
+      {
+        "title": "İkincil lokasyon topolojisinin tasarımı",
+        "text": "İkincil merkezin sunucu, depolama, ağ ve güvenlik katmanları birincil merkezin mimarisi referans alınarak çıkarılır; iki lokasyon arasındaki bant genişliği ve gecikme ölçülür, tasarım bu ölçüme göre şekillenir."
+      },
+      {
+        "title": "Veri replikasyon hattı ve RPO hedefine göre yöntem seçimi",
+        "text": "Kabul edilebilir veri kaybı süresi belirlendikten sonra replikasyon yöntemi buna göre seçilir; eşzamanlı, eşzamansız ya da belirli aralıklarla çalışan bir hat kurulur. Hedef sıkılaştıkça hat da altyapı ihtiyacı da büyür, bu nedenle yöntem kurumun hedefiyle birlikte kararlaştırılır."
+      },
+      {
+        "title": "Uygulama katmanının ikincil lokasyonda kurulması",
+        "text": "ServiceCore uygulama servisleri, iş akışı motoru, zamanlanmış görevler ve raporlama katmanı ikincil merkezde birincil merkezle aynı sürümde kurulur; devralma anında ürünün kendisinin kurulmasını bekleyecek zaman yoktur."
+      },
+      {
+        "title": "DNS ve ağ devri planı",
+        "text": "Hizmetin adresinin ikincil merkeze nasıl yöneleceği önceden kurgulanır: kayıt yaşam süreleri kısaltılır, devir adımı yazılır ve kimin hangi onayla tetikleyeceği belirlenir. Bu adım eksikse veri hazır olsa bile kullanıcı hizmete ulaşamaz."
+      },
+      {
+        "title": "Sertifika ve kimlik yapılandırması",
+        "text": "SSL sertifikaları, dizin servisi bağlantısı ve çoklu oturum açma yapılandırması ikincil merkez için de geçerli olacak biçimde kurulur ve yenileme takvimi iki merkezi birlikte kapsayacak şekilde tanımlanır."
+      },
+      {
+        "title": "Entegrasyonların ikincil uçlara yönlendirilmesi",
+        "text": "ERP, CRM, dizin sunucusu, e-posta ve SMS ağ geçitleri ile izleme sistemlerinin ikincil merkezden erişilebilir uçları tanımlanır; karşı taraftaki güvenlik duvarı izinleri ikincil merkezin adresleri için de açılır."
+      },
+      {
+        "title": "Geri dönüş (failback) prosedürü",
+        "text": "Birincil merkez tekrar ayağa kalktığında ikincil merkezde biriken verinin geri taşınması ve hizmetin asıl lokasyona döndürülmesi ayrı bir prosedürdür. Bu adım yazılmazsa kurum felaket sonrasında kalıcı olarak ikincil merkezde yaşamaya başlar."
+      },
+      {
+        "title": "Çalışma kitabı (runbook) yazımı",
+        "text": "Devralma kararının hangi eşikte verileceği, hangi adımın hangi sırayla uygulanacağı, her adımın beklenen süresi ve doğrulama kontrolleri adım adım yazılır. Felaket anında karar veren kişi mimariyi çözmeye değil, kitabı uygulamaya odaklanır."
+      },
+      {
+        "title": "Rol ve yetki matrisi",
+        "text": "Devralmayı kimin tetikleyeceği, kimin onaylayacağı, iletişimi kimin yürüteceği ve nöbetçi kişiye ulaşılamadığında sıranın kime geçeceği isim ve rol düzeyinde tanımlanır; erişim yetkileri bu matrise göre önceden verilir."
+      },
+      {
+        "title": "Tatbikat takvimi",
+        "text": "Devralma ve geri dönüş tatbikatlarının hangi sıklıkta, hangi kapsamda ve hangi bakım penceresinde yapılacağı takvime bağlanır; her tatbikatın çıktısı ölçülür ve raporlanır."
+      },
+      {
+        "title": "İzleme ve replikasyon gecikme alarmları",
+        "text": "Replikasyon gecikmesi, hat kopması, ikincil merkezdeki disk doluluğu ve servis durumu için eşik değerli alarmlar kurulur; ikincil merkezin sessizce bozulması ancak bu alarmlarla önlenir."
+      },
+      {
+        "title": "Dokümantasyon ve devir",
+        "text": "İki merkezin topolojisi, hesapları, bağlantı uçları, replikasyon yapılandırması, çalışma kitabı ve tatbikat yordamı belgelenir; ortamın sahipliği kabul testinin ardından yazılı olarak BT ekibine devredilir."
+      }
+    ]
+  },
+  "faq": {
+    "overline": "SIKÇA SORULAN SORULAR",
+    "title": "Müşterilerin en sık sorduğu yedi soru",
+    "items": [
+      {
+        "question": "Yedeğimiz düzenli alınıyor; felaket kurtarma merkezine neden ihtiyacımız olsun?",
+        "answer": "Yedek, verinin bir zaman kesitindeki kopyasıdır ve tek başına hizmet üretmez. Felaket sonrasında yedeğin işe yaraması için önce ikinci bir sunucu bulunması, işletim sistemi ve veritabanı kurulması, ServiceCore sürümünün doğru numarayla yüklenmesi, yedeğin geri yüklenmesi, entegrasyonların yeniden bağlanması, sertifikaların yerine konması ve adresin yeni ortama yönlendirilmesi gerekir. Bu zincirin toplam süresi çoğu kurumda hiç ölçülmemiştir. Felaket kurtarma merkezi ise bu adımların tamamının felaketten önce yapılmış olması demektir; kurtarma anında yapılacak iş, sıfırdan kurmak değil, devralmayı tetiklemektir."
+      },
+      {
+        "question": "Felaket kurtarma ile failover arasındaki fark nedir, ikisi birden mi gerekir?",
+        "answer": "Failover, aynı lokasyondaki bir bileşenin arızasını karşılar: bir sunucu düşer, küme içindeki diğer düğüm hizmeti devralır ve kullanıcı çoğu zaman bunu fark etmez. Felaket kurtarma ise lokasyonun tamamının kaybını karşılar; veri merkezi elektrik, yangın, sel, ağ omurgası ya da fiziksel erişim nedeniyle bütünüyle devre dışı kaldığında hizmet ayrı bir coğrafyada yeniden ayağa kaldırılır. İkisi birbirinin yerine geçmez: veri merkezi kaybında kümenin tüm düğümleri aynı anda hizmet dışı kalır; felaket kurtarma merkezi ise tek bir sunucunun arızasında devreye alınacak kadar hızlı ve düşük maliyetli bir çözüm değildir. Çoğu kurumda doğru kurgu, günlük arızalar için Failover kümesinin, lokasyon kaybı için felaket kurtarma merkezinin birlikte konumlandırılmasıdır."
+      },
+      {
+        "question": "RPO ve RTO ne demek, bizim için nasıl belirlenir?",
+        "answer": "RPO, felaket anında kaybedilmesi kabul edilebilir veri süresidir; yanıtladığı soru şudur: “Son kaç dakikanın veya saatin kayıtları yeniden girilebilir?” RTO ise hizmetin yeniden çalışır hâle gelmesi için kabul edilebilir süredir. Bu iki değer teknik bir tercih değil, iş kararıdır: kesintinin kuruma dakika başına maliyeti, sözleşmelerinizdeki taahhütler ve tabi olduğunuz mevzuat belirler. Analiz aşamasında süreç bazında çalışılır, çünkü olay kaydı ile varlık envanteri aynı hassasiyeti gerektirmeyebilir. Belirlenen hedefler replikasyon yöntemini, altyapı ölçeğini ve çalışma kitabının ayrıntı düzeyini doğrudan şekillendirir; hedef netleşmeden mimari de bedel de doğru kurgulanamaz."
+      },
+      {
+        "question": "Felaket kurtarma merkezini hiç kullanmazsak paraya yazık olmaz mı?",
+        "answer": "Beklenen sonuç zaten hiç kullanmamaktır; kullanıldığı gün kurum için kötü bir gündür. Buna karşılık merkez, kullanılmadığı yıllarda da iş üretir: replikasyon sürekli çalışır, iki ortamın sürüm hizası korunur, tatbikatlar yapılır ve her tatbikat kurumun kurtarma yeteneğini ölçülebilir bir kanıta dönüştürür. Denetim ve müşteri sözleşmelerinde iş sürekliliği kanıtı istendiğinde sunulan belge bu tatbikat kayıtlarıdır. Karşılaştırma yapılırken merkezin yıllık bedeli ile tek bir lokasyon kaybının maliyeti yan yana konulmalıdır: ikincisi yalnızca kesinti süresini değil, kalıcı veri kaybını, sözleşme cezalarını ve itibar kaybını da içerir."
+      },
+      {
+        "question": "Kendi felaket kurtarma merkezimiz var; ServiceCore oraya kurulabilir mi?",
+        "answer": "Evet. Kurumun hâlihazırda ikinci bir veri merkezi, kiralanmış kabin alanı veya bulut bölgesi varsa ServiceCore ikincil örneği bu altyapıda konumlandırılır; ayrıca bir tesis kurmanız gerekmez. Bu durumda sunucu, depolama ve ağ katmanını siz sağlarsınız; uygulama mimarisini biz kurarız: ikincil örneğin kurulumu, replikasyon hattının ürüne uygun biçimde tasarlanması, entegrasyon ve kimlik yapılandırması, devralma ile geri dönüş prosedürleri ve tatbikat kurgusu hizmet kapsamındadır. Lisans tarafında ise sonuç değişmez; ürünün ikinci bir lokasyonda kurulu ve çalıştırılabilir durumda olması, altyapının kime ait olduğundan bağımsız olarak add-on kapsamına girer."
+      },
+      {
+        "question": "Tatbikat ne sıklıkta yapılır ve kim yürütür?",
+        "answer": "Sıklık kurumun risk profiline ve tabi olduğu çerçeveye göre belirlenir; yaygın uygulama yılda en az bir tam devralma tatbikatı ile ara dönemlerde daha dar kapsamlı doğrulamalardır. Bunun dışında büyük bir sürüm geçişi, yeni bir entegrasyon veya ağ topolojisinde köklü bir değişiklik sonrasında tatbikat yenilenir, çünkü değişen her bileşen kurtarma zincirinin bir halkasıdır. Tatbikat, ServiceCore teknik ekibi ile kurumun BT ve iş sürekliliği sorumlularının birlikte yürüttüğü planlı bir çalışmadır; kapsam, pencere ve başarı ölçütleri önceden yazılır, sonuç raporu ise ölçülen süreleri, oluşan veri farkını ve düzeltilecek maddeleri içerir."
+      },
+      {
+        "question": "Felaket kurtarma merkezini sonradan ekleyebilir miyiz?",
+        "answer": "Eklenebilir; add-on mevcut kurulumunuza sonradan tanımlanır ve kurulum paketi o tarihteki sürüm, veri hacmi ve entegrasyon envanteri üzerinden planlanır. Yalnız iki noktayı baştan belirtelim. Birincisi, sistem büyüdükçe kurulum eforu da büyür, çünkü ikincil merkezde karşılığı kurulacak entegrasyon ve iş akışı sayısı artmıştır. İkincisi, felaket kurtarma yeteneği yalnızca devreye alındığı andan itibaren koruma sağlar. Bu nedenle çoğu kurum add-on kapsamını, RPO ve RTO hedeflerini netleştirdiği analiz görüşmesinin hemen ardından belirler."
+      }
+    ]
+  },
+  "hero": {
+    "badge": "DISASTER CENTER ADD-ON",
+    "titleLead": "Felaket kurtarma bir yedek dosyası değil,",
+    "titleAccent": "ikinci bir coğrafyadır",
+    "lead": "ServiceCore Disaster Center Add-on, kurumların olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır. Add-on, ServiceCore kurulumunuzun ayrı bir lokasyonda konumlanan ikinci bir örneğini tanımlar. Bu örnek; kendi sunucu ve depolama katmanı, birincil merkezle sürekli çalışan veri replikasyon hattı, kendi kimlik ve sertifika yapılandırması, ikincil uçlara bağlanmış entegrasyonları ve önceden yazılmış devralma prosedürüyle birlikte kurulur.",
+    "support": "Bu sayfa, felaket kurtarma merkezinin neden ayrı lisanslandığını, kurulumunun neden ayrı fiyatlandığını ve bakımının neden yıllık yürüdüğünü kalem kalem açıklar. Kısa cevap şudur: felaket kurtarma, ana lokasyon tamamen kaybedildiğinde hizmetin başka bir coğrafyada yeniden ayağa kalkmasıdır. Bu yetenek, kabul edilebilir veri kaybı süresi (RPO) ve kabul edilebilir kurtarma süresi (RTO) hedefleri belirlenmeden ne tasarlanabilir, ne de fiyatlanabilir."
+  },
+  "ilgili": {
+    "overline": "İLGİLİ SAYFALAR",
+    "items": [
+      {
+        "label": "Failover / Cluster Add-on",
+        "desc": "Aynı lokasyondaki donanım arızasını karşılayan yedeklilik katmanını inceleyin.",
+        "href": "/failover"
+      },
+      {
+        "label": "Servis Seviyesi Yönetimi",
+        "desc": "Kurtarma hedefleriyle hizmet seviyesi taahhütleri arasındaki bağı görün.",
+        "href": "/servis-seviye-yonetimi"
+      },
+      {
+        "label": "Planlar ve Lisanslama",
+        "desc": "Disaster Center add-on'unun yer aldığı lisans planlarını ve eklentileri inceleyin.",
+        "href": "/planlar"
+      },
+      {
+        "label": "Kurulum Hizmetleri",
+        "desc": "Felaket Kurtarma Merkezi Konfigürasyon Paketi ve diğer kurulum paketleri.",
+        "href": "/hizmetler/setup"
+      },
+      {
+        "label": "Destek Paketleri",
+        "desc": "Silver, Gold, Platinum ve Mission Critical destek kapsamları.",
+        "href": "/destek"
+      },
+      {
+        "label": "Sandbox / Test Sistem Add-on",
+        "desc": "Devralma ve geri dönüş adımlarını üretime dokunmadan denediğiniz ortam.",
+        "href": "/sandbox"
+      }
+    ]
+  },
+  "kapanis": {
+    "overline": "ÖZET VE SONUÇ",
+    "title": "Felaket kurtarma merkezi, hizmetin devamlılık sigortasıdır",
+    "text": "Felaket kurtarma merkezi bir yedekleme ürünü ya da lisansın yanında beliren bir kopya değildir; ana lokasyon bütünüyle kaybedildiğinde kurumun hizmet yönetimini ayakta tutan ikinci bir işletim gerçekliğidir. Lisans, kurulum hizmeti ve yıllık bakım kapsamı bu gerçekliği üç ayrı iş olarak taşır: kullanım hakkı, ikincil merkezin mühendisliği ve merkezin yıllar boyunca kullanıma hazır kalması.",
+    "text2": "Doğru başlangıç noktası fiyat değil, hedeftir: ne kadar veri kaybını ve ne kadar kesinti süresini gözden çıkarabileceğinizi belirlediğimiz an mimarinin ölçeği, replikasyon yöntemi ve kurulum kapsamı netleşir. Kaç sunucu üzerinden planlanacağını, hangi süreçlerin kapsama gireceğini ve tatbikatın nasıl yürüyeceğini görüşmede birlikte şeffaf biçimde belirliyoruz.",
+    "ctaPrimary": {
+      "label": "Felaket Kurtarma Teklifi İsteyin",
+      "href": "/iletisim"
+    },
+    "ctaSecondary": {
+      "label": "Lisanslama Rehberini İnceleyin",
+      "href": "/planlar/lisanslama-rehberi"
+    }
+  },
+  "karsilastirma": {
+    "overline": "KARŞILAŞTIRMALI ÖZET",
+    "title": "Yedekleme ile felaket kurtarma merkezi aynı şey değildir",
+    "columns": {
+      "parametre": "Parametre",
+      "canli": "Yedekleme",
+      "canliEn": "Backup",
+      "test": "Felaket Kurtarma Merkezi",
+      "testEn": "DR Center"
+    },
+    "rows": [
+      {
+        "parametre": "Neyi korur",
+        "canli": "Veriyi korur; silinen, bozulan veya istenmeden değiştirilen kayıtların geri getirilmesini sağlar.",
+        "test": "Hizmeti korur; lokasyonun tamamı kaybedildiğinde ServiceCore'un ayrı bir coğrafyada çalışmaya devam etmesini sağlar."
+      },
+      {
+        "parametre": "Kurtarma birimi",
+        "canli": "Dosya, tablo, veritabanı ya da sanal makine imajı.",
+        "test": "Çalışan hizmetin bütünü: uygulama, veri, entegrasyonlar, kimlik katmanı ve erişim adresi."
+      },
+      {
+        "parametre": "Tipik kurtarma süresi",
+        "canli": "Donanım temini, kurulum ve geri yükleme adımlarına bağlıdır; kurumun altyapısına ve veri hacmine göre belirlenir.",
+        "test": "Önceden hazırlanmış devralma prosedürüne bağlıdır; hedef süre kurumun RTO kararına göre belirlenir ve tatbikatla ölçülür."
+      },
+      {
+        "parametre": "Lisans modeli",
+        "canli": "Kurum tarafından kullanılan yedekleme altyapısının kendi lisans ve saklama modeline tabidir.",
+        "test": "Teknisyen lisansından bağımsız, sabit adetli Disaster Center Add-on ile lisanslanır."
+      },
+      {
+        "parametre": "Altyapı ihtiyacı",
+        "canli": "Yedek deposu, saklama alanı ve saklama süresi planı.",
+        "test": "Ayrı lokasyonda sunucu, depolama ve ağ kapasitesi; iki merkez arasında sürekli çalışan replikasyon hattı."
+      },
+      {
+        "parametre": "Kurulum eforu",
+        "canli": "Yedekleme işlerinin tanımlanması, planlanması ve geri yükleme testlerinin yapılması.",
+        "test": "İkincil merkezde uygulama katmanının kurulması, replikasyonun tasarlanması, DNS ve entegrasyon devri ile çalışma kitabının yazılması."
+      },
+      {
+        "parametre": "Tatbikat",
+        "canli": "Örnek geri yükleme denemeleriyle yedeğin okunabilirliği doğrulanır.",
+        "test": "Planlı devralma ve geri dönüş tatbikatlarıyla hizmetin ikincil merkezde uçtan uca çalıştığı kanıtlanır."
+      },
+      {
+        "parametre": "Destek ve bakım",
+        "canli": "Yedekleme çözümünün kendi bakım ve destek kapsamı içinde yürür.",
+        "test": "Sürüm hizasının korunması, replikasyon izleme, tatbikat yürütümü ve ayrıca tanımlanan bakım kapsamı."
+      }
+    ]
+  },
+  "metaDescription": "Felaket kurtarma merkezi ana lokasyon kaybedildiğinde hizmeti ikinci coğrafyada ayağa kaldırır; RPO, RTO, lisans, kurulum ve tatbikat kalem kalem açıklanır.",
+  "metaTitle": "Disaster Center Add-on — Lokasyon kaybında hizmet ayakta kalır | ServiceCore",
+  "ozet": {
+    "overline": "MALİYETİN ÜÇ BİLEŞENİ",
+    "title": "Felaket kurtarma merkezi üç ayrı kalemden oluşur",
+    "description": "Üç kalemin de tanımı Abonelik ve Lisanslama Rehberi ile hizmet portföyünde yazılıdır; adet, kapsam ve bedeller teklifte açıkça yer alır.",
+    "items": [
+      {
+        "no": "01",
+        "label": "Lisans ve fikri mülkiyet hakkı",
+        "hint": "Sabit adetli add-on"
+      },
+      {
+        "no": "02",
+        "label": "Kurulum ve mimari mühendislik eforu",
+        "hint": "Tek seferlik hizmet"
+      },
+      {
+        "no": "03",
+        "label": "Sürekli bakım, tatbikat ve destek",
+        "hint": "Yıllık kapsam"
+      }
+    ]
+  },
+  "sektor": {
+    "overline": "SEKTÖRDE DURUM",
+    "title": "Felaket kurtarma nasıl ele alınır?",
+    "intro": "İkincil merkezlerin lisans ve bakım kapsamında ele alınması ServiceCore'a özgü bir tercih değildir. Aşağıdaki başlıklar, kurumsal yazılım sözleşmelerinin ve denetim çerçevelerinin genel yaklaşımını, ardından ServiceCore'un bu çerçeve içindeki kendi kuralını tarif eder.",
+    "items": [
+      {
+        "title": "Denetim çerçeveleri iş sürekliliğini ayrı bir kontrol maddesi olarak arar",
+        "text": "Bilgi güvenliği ve BT yönetişim çerçeveleri; iş sürekliliği planını, felaket kurtarma yeteneğini ve bu yeteneğin düzenli olarak test edilmesini birbirinden ayrı kontrol maddeleri olarak tanımlar. Yedekleme politikasının varlığı bu maddelerin yalnızca birini karşılar. Denetçinin sorduğu soru genellikle planın kâğıt üzerinde bulunup bulunmadığı değil, en son ne zaman ve hangi sonuçla denendiğidir."
+      },
+      {
+        "title": "Lisans, kullanımdan değil, kurulu ve çalıştırılabilir olmaktan doğar",
+        "text": "Kurumsal yazılımda lisans yükümlülüğü ortamın günlük operasyonda kullanılıp kullanılmamasına göre değil, sözleşmede tanımlı ölçüye göre doğar. Bekleme durumundaki bir kurulum da ürünün çekirdeğini, iş akışı motorunu ve entegrasyon katmanını barındırdığı için ikinci bir kullanım oluşturur. Bu nedenle ikincil merkez, yalnızca çoğu zaman boşta durduğu için lisans kapsamının dışına çıkmaz."
+      },
+      {
+        "title": "Sıcak, ılık ve soğuk merkez ayrımı maliyetin ana değişkenidir",
+        "text": "Sektörde felaket kurtarma merkezleri hazır olma derecesine göre ayrışır: sürekli çalışan ve anında devralan bir merkez ile ancak felaket sonrasında ayağa kaldırılan bir merkez arasında hem kurtarma süresi hem de yıllık maliyet bakımından belirgin fark vardır. Doğru seçim en hızlı olan değil, kurumun kurtarma hedefini karşılayan en sade kurgudur."
+      },
+      {
+        "title": "Bakım bedeli lisanslı miktarla orantılı olarak doğar",
+        "text": "Kurumsal yazılımda bakım ve destek bedeli genellikle lisanslı miktar üzerinden hesaplanır; lisans nerede doğuyorsa bakım da orada doğar. Buna ek olarak ikinci lokasyonun sunucu kaynağı, hat kapasitesi, izleme, sertifika yenileme ve sürüm senkronizasyonu her koşulda gider üretir. Bu nedenle bekleme durumundaki bir merkezin toplam maliyeti hiçbir zaman sıfır değildir."
+      },
+      {
+        "title": "Tatbikat edilmemiş plan, denetimde kanıt sayılmaz",
+        "text": "İş sürekliliği çerçeveleri planın yazılı olmasını yeterli görmez; tatbikat kayıtlarını, ölçülen kurtarma sürelerini ve tatbikat sonrası düzeltici aksiyonları arar. ITIL4 tarafında da hizmet sürekliliği yönetimi pratiği, kurtarma yeteneğinin düzenli olarak doğrulanmasını ve bulguların iyileştirmeye dönüştürülmesini bekler. Bu nedenle tatbikat, kurulumun sonrası değil, hizmetin kalıcı bir parçasıdır."
+      },
+      {
+        "title": "ServiceCore'da kural açıkça yazılıdır",
+        "text": "Disaster Center Add-on — Abonelik ve Lisanslama Rehberi'nde Disaster Recovery Center Add-on adıyla geçer — teknisyen lisanslarından bağımsız olarak sabit adet üzerinden lisanslanır; kurulum Felaket Kurtarma Merkezi Konfigürasyon Paketi kapsamında, bakım ise ayrı bir kalem olarak fiyatlandırılır. Bu ayrım Abonelik ve Lisanslama Rehberi'nin 12. bölümünde açıkça yazılıdır."
+      }
+    ]
+  },
+  "sutunlar": {
+    "overline": "MALİYET BİLEŞENLERİ",
+    "title": "Üç kalem, üç ayrı iş",
+    "items": [
+      {
+        "no": "01",
+        "title": "Lisans ve Fikri Mülkiyet Hakları",
+        "subtitle": "IP Right — kurulum bazlı kullanım hakkı",
+        "text": "ServiceCore lisans modelinde kullanım hakkı, ürünün çalıştırıldığı bağımsız kurulum üzerinden tanımlanır. İkincil merkezdeki örnek, hiçbir özelliği kısıtlanmamış tam bir ServiceCore kurulumudur: iş akışı motorunu, entegrasyon katmanını ve raporlama altyapısını birincil merkezle aynı biçimde çalıştırabilecek durumda tutulur, çünkü devralma anında eksik hiçbir bileşen kabul edilemez. Ürünün çoğu zaman bekleme durumunda olması bu hakkı ortadan kaldırmaz; hazır olma hâli, hizmetin kendisidir.",
+        "items": [
+          "Kullanım hakkı yalnızca kullanıcı sayısına değil, çalıştırılan bağımsız kurulum sayısına bağlıdır.",
+          "İkincil merkez birincil merkezle aynı sürümü, aynı modülleri ve aynı otomasyon çekirdeğini barındırır.",
+          "Disaster Center Add-on, Altyapı ve Sistem Add-on grubunda sabit adet üzerinden fiyatlandırılır.",
+          "Add-on teknisyen lisansınızdan bağımsızdır; teknisyen sayınız değişse de adet üzerinden yürür.",
+          "Kurulum ve bakım hizmetleri lisanstan ayrı fiyatlandırılır; kaç sunucu üzerinden planlanacağı teklif öncesinde netleştirilir."
+        ],
+        "linkLabel": "Abonelik ve Lisanslama Rehberi — Bölüm 12",
+        "linkHref": "/planlar/lisanslama-rehberi#bolum-12"
+      },
+      {
+        "no": "02",
+        "title": "Kurulum ve Mimari Mühendislik Eforu",
+        "subtitle": "Professional Services — Felaket Kurtarma Merkezi Konfigürasyon Paketi",
+        "text": "Felaket kurtarma merkezinin kurulumu, ikincil lokasyona bir kurulum dosyası çalıştırmaktan ibaret değildir. İki merkez arasındaki replikasyon hattının kabul edilebilir veri kaybı hedefine göre tasarlanması, uygulama katmanının ikincil tarafta kurulması, ağ ve adres devrinin kurgulanması, entegrasyonların ikincil uçlara bağlanması ve devralma ile geri dönüş adımlarının yazılı hâle getirilmesi gerekir. Bu adımların tamamı kıdemli uzman adam/gün eforu tüketir ve hizmet portföyünde Felaket Kurtarma Merkezi Konfigürasyon Paketi adıyla tek seferlik bir kalem olarak tanımlıdır.",
+        "items": [
+          "Kurtarma hedefleri belirlenir; replikasyon yöntemi ve altyapı ölçeği bu hedeflere göre tasarlanır.",
+          "İkincil merkezde uygulama, veritabanı ve entegrasyon katmanları birincil mimariyle hizalı biçimde kurulur.",
+          "DNS devri, sertifika ve kimlik yapılandırması ile güvenlik duvarı izinleri ikincil merkez için hazırlanır.",
+          "Devralma ve geri dönüş prosedürleri yazılır, rol ve yetki matrisi tanımlanır, çalışma kitabı çıkarılır.",
+          "Kurulum, devralma tatbikatı ve devir dokümantasyonuyla kapanır; merkezin sahipliği yazılı olarak kuruma teslim edilir."
+        ],
+        "linkLabel": "Kurulum Hizmetleri — Felaket Kurtarma Merkezi Konfigürasyon Paketi",
+        "linkHref": "/hizmetler/setup"
+      },
+      {
+        "no": "03",
+        "title": "Sürekli Bakım, Tatbikat ve Destek",
+        "subtitle": "Ongoing Maintenance ve SLA — yıllık kapsam",
+        "text": "Felaket kurtarma merkezi kurulduğu gün tamamlanmaz; birincil sistem yaşadıkça onunla birlikte yaşamak zorundadır. Her sürüm yükseltmesi, her yeni entegrasyon ve her şema değişikliği ikincil merkezde de karşılığını bulmalıdır. Replikasyon gecikmesi izlenir, sertifikalar yenilenir, tatbikatlar yürütülür ve her tatbikatın çıktısı çalışma kitabına işlenir. Yıllık bakım ve destek kalemi, bu tekrarlanan mühendislik yükünün ve merkeze verilen hizmet seviyesi taahhüdünün karşılığıdır.",
+        "items": [
+          "Birincil merkeze uygulanan her sürüm ve yama ikincil merkezde de karşılığıyla uygulanır ve hiza doğrulanır.",
+          "Replikasyon gecikmesi, hat sağlığı ve depolama kapasitesi eşik değerli alarmlarla sürekli izlenir.",
+          "Planlı devralma ve geri dönüş tatbikatları yürütülür; ölçülen süreler ve bulgular raporlanır.",
+          "Çalışma kitabı, rol matrisi ve iletişim planı kurumdaki değişikliklere göre güncel tutulur.",
+          "Hizmet seviyesi taahhüdü yalnızca bakım kapsamındaki merkezler için verilebilir; add-on'un kurulum ve bakım hizmetleri lisanslama rehberinin 12. bölümünde belirtildiği gibi ayrıca fiyatlandırılır."
+        ],
+        "linkLabel": "Destek Paketleri ve Kanalları",
+        "linkHref": "/destek"
+      }
+    ]
+  },
+  "yanilsama": {
+    "overline": "YAYGIN ALGI VE TEKNİK GERÇEK",
+    "title": "Yedek almak, kurtarabilmek anlamına gelmez",
+    "intro": "Felaket kurtarma tartışmasının büyük bölümü tek bir varsayımdan doğar: veri güvendeyse hizmet de güvendedir. Gerçekte veri, kurtarma zincirinin yalnızca ilk halkasıdır. Aşağıda sahada en sık karşılaştığımız dört algının karşısına teknik gerçeği koyduk.",
+    "items": [
+      {
+        "myth": "Yedeğimiz var, felaket kurtarma zaten sağlanmış oluyor.",
+        "fact": "Yedek bir dosyadır; kurtarma merkezi çalışan bir ortamdır.",
+        "text": "Yedek, bir zaman kesitindeki verinin kopyasıdır ve tek başına hiçbir hizmet üretmez. Felaket anında o dosyanın açılacağı sunucu, üzerinde koşacak işletim sistemi ve veritabanı, doğru sürümdeki uygulama katmanı, ağ erişimi ve kullanıcıların bağlanacağı adres gerekir. Yedekten dönüş süresi çoğu kurumda ölçülmemiş bir varsayımdır; ilk kez felaket anında ölçülür ve o gün çıkan sonuç genellikle beklenenin çok üzerindedir."
+      },
+      {
+        "myth": "Buluta yedek atıyoruz, bu kadarı yeterli.",
+        "fact": "Verinin başka bir yerde durması, hizmetin orada çalışması demek değildir.",
+        "text": "Veri ikinci bir konumda bulunabilir; ancak uygulama katmanı kurulu değilse, entegrasyonlar ikincil uçlara bağlanmamışsa, sertifikalar hazır değilse ve adres devri kurgulanmamışsa hizmet ayağa kalkmaz. Kullanıcı bir depolama alanına değil, çalışan bir ServiceCore ortamına bağlanır. Kurtarma zincirinin en uzun adımları veriyi taşımak değil, verinin etrafındaki hizmeti yeniden inşa etmektir."
+      },
+      {
+        "myth": "Kurtarma merkezi boşta duran bir kopya, o hâlde ücretsiz olmalı.",
+        "fact": "İkincil merkez bekler görünse de sürekli çalışan bir sistemdir.",
+        "text": "İkinci lokasyon ürünü kurulu ve çalıştırılabilir durumda tutar; replikasyon hattı kesintisiz işler; her sürüm yükseltmesi iki tarafta ayrı ayrı uygulanır; sertifikalar, kimlik yapılandırması ve entegrasyon uçları güncel tutulur; tatbikatlar düzenli olarak yürütülür. Bekleme durumu bir hareketsizlik değil, sürekli bakımla korunan bir hazır olma hâlidir ve bu hâlin altyapı, lisans ve mühendislik karşılığı vardır."
+      },
+      {
+        "myth": "Bir kez kurulsun, lazım olursa kullanırız.",
+        "fact": "Tatbikat edilmemiş bir plan, felaket anında ilk kez denenir.",
+        "text": "Kurulduğu günden sonra dokunulmayan bir kurtarma merkezi sessizce geride kalır: birincil taraf sürüm alır, şema değişir, yeni entegrasyonlar eklenir, sertifikaların süresi dolar. Devralma o hâliyle denendiğinde beklenmeyen adımlar birbiri ardına ortaya çıkar ve süre uzadıkça kayıp büyür. Tatbikat, kurtarma yeteneğinin kâğıt üzerindeki iddiadan ölçülmüş bir kanıta dönüştüğü tek noktadır; o anda öğrenmenin bedeli ise hizmetin tamamıdır."
+      }
+    ]
+  },
+  "kapsamNotu": "Bu sayfa Disaster Center Add-on'un kapsamını ve maliyet yapısını anlatır. Sunucu sayısı, kurtarma hedefleri ve kurulum kapsamı kuruma göre değişir; bağlayıcı kalem ve bedeller yalnızca size özel hazırlanan teklifte yer alır."
+}

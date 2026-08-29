@@ -148,6 +148,8 @@ const footerData = {
         { text: "Demo", href: "/demo" },
         { text: "PoC Süreci", href: "/poc" },
         { text: "Sandbox / Test Ortamı", href: "/sandbox" },
+        { text: "Failover / Yedekli Sistem", href: "/failover" },
+        { text: "Disaster Center", href: "/disaster-center" },
         { text: "İş Ortaklığı", href: "/partnerlik" },
         { text: "Özellikler", href: "/cozumler/itsm" },
         { text: "Planlar & Lisanslama", href: "/planlar" },

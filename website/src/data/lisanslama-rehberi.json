@@ -215,8 +215,8 @@
       "title": "Altyapı ve Sistem Add-on'ları",
       "intro": "Aşağıdaki eklentiler teknisyen lisanslarından bağımsız olarak sabit fiyatlı lisanslanır:",
       "items": [
-        "Failover / Cluster Sistem Add-on",
-        "Disaster Recovery Center Add-on",
+        { "text": "Failover / Cluster Sistem Add-on", "href": "/failover" },
+        { "text": "Disaster Recovery Center Add-on", "href": "/disaster-center" },
         { "text": "Sandbox / Test Sistem Add-on", "href": "/sandbox" },
         "Servicecore Discovery Add-on",
         "VMware Discovery Add-on",

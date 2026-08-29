@@ -340,5 +340,8 @@
         "href": "/guncellemeler"
       }
     ]
-  }
+  },
+  "kapsamNotu": "Bu sayfa Sandbox / Test Sistem Add-on'un kapsamını ve maliyet yapısını anlatır. Add-on adedi, kurulum kapsamı ve bakımın nasıl yürüyeceği kuruma göre değişir; bağlayıcı kalem ve bedeller yalnızca size özel hazırlanan teklifte yer alır.",
+  "metaTitle": "Sandbox / Test Sistem Add-on — Test Ortamı Neden Ayrı Lisanslanır | ServiceCore",
+  "metaDescription": "ServiceCore Sandbox / Test Sistem Add-on'un üç maliyet bileşeni: lisans ve fikri mülkiyet hakkı, kurulum ve mimari mühendislik eforu, sürekli bakım ve destek. Üretim ile test ortamının karşılaştırmalı özeti."
 }

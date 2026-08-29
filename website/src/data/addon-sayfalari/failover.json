@@ -1,0 +1,347 @@
+{
+  "bakim": {
+    "overline": "KURULDUKTAN SONRA NE OLUR",
+    "title": "Bakım, sürüm eşitliği ve hizmet seviyesi",
+    "items": [
+      {
+        "title": "Sürüm ve yama eşitliği",
+        "text": "Her sürüm ve yama iki düğüme de uygulanır; güncelleme sırası, devir yolunun hiçbir aşamada açıkta kalmaması için önceden planlanır. Sürüm farkı bırakılan bir kümede ikinci düğüm izleme ekranında ayakta görünür, ancak devraldığı anda şema ve parametre uyumsuzluğu nedeniyle hizmet veremez. ServiceCore güncellemeleri, izin verdiğiniz ölçüde Continuous Delivery yöntemiyle yüklenir; yedekli kurulumlarda bu hattın adımları küme sırasına göre yürütülür ve her adım sonrasında replikasyonun sağlıklı devam ettiği doğrulanır."
+      },
+      {
+        "title": "Küme sağlığının izlenmesi ve sorun giderme",
+        "text": "Replikasyon gecikmesi, disk doluluğu, sertifika süresi, witness erişimi ve ağ kopmaları teknik destek kapsamında ele alınır. Yedekliliğin bozulduğu an, kesintinin yaşandığı an değildir; ikisi arasında geçen süre boyunca kurum kendini yedekli sanarak çalışır ve arıza geldiğinde beklediği korumayı bulamaz. Bakımın asıl işlevi bu görünmeyen aralığı ortadan kaldırmaktır."
+      },
+      {
+        "title": "Tatbikat ve hizmet seviyesi taahhüdü",
+        "text": "Devir tatbikatı planlı olarak yapılır, geçiş süresi ölçülür ve sonuç kayıt altına alınır; ölçülmemiş bir devir süresi hedef değil, tahmindir. Destek ve bakım kapsamı dışında bırakılan bir küme için hizmet seviyesi taahhüdü verilemez, çünkü taahhüt ancak düzenli olarak doğrulanan bir yapı üzerinde anlam taşır. Failover / Cluster Sistem Add-on'un kurulum ve bakım hizmetlerinin ayrı kalemler olarak tanımlanmasının nedeni budur."
+      }
+    ]
+  },
+  "efor": {
+    "overline": "KURULUM EFORU NEREYE GİDER",
+    "title": "Adam/gün eforunun kalem kalem dökümü",
+    "intro": "Aşağıdaki adımların her biri hem ürün iç bilgisi hem de altyapı tarafında karar gerektirir. Yedekli kurulumun ağırlığı buradadır: ikinci sunucunun açılması değil, iki sunucunun dışarıdan tek bir hizmet gibi davranmasının sağlanmasıdır.",
+    "items": [
+      {
+        "title": "Küme topolojisi tasarımı",
+        "text": "Aktif-pasif mi yoksa aktif-aktif mi çalışılacağı, hangi bileşenin hangi düğümde duracağı ve devrin hangi arıza sinyalinde tetikleneceği kurumun kesinti toleransına göre kararlaştırılır. Topoloji kararı sonraki bütün adımların çerçevesini belirler."
+      },
+      {
+        "title": "Veritabanı replikasyonu",
+        "text": "Üretim veritabanı ile ikinci düğüm arasındaki replikasyon hattı kurulur. Senkron seçenek veri kaybı hedefini (RPO) sıfıra yaklaştırır ve işlem gecikmesini artırır; asenkron seçenek gecikmeyi düşürür ve küçük bir veri kaybı penceresi bırakır. Karar, kabul edilen pencere ile birlikte yazılı olarak verilir."
+      },
+      {
+        "title": "Paylaşımlı depolama veya replike disk",
+        "text": "Ekler, günlükler ve dosya alanları iki düğümden de aynı içerikle görünmelidir. Bunun için paylaşımlı depolama ya da blok düzeyinde replike disk yapılandırılır; bu katman eksik kurulduğunda devir sonrası kayıt açılır, fakat kaydın eki bulunamaz."
+      },
+      {
+        "title": "Yük dengeleyici ve sağlık kontrolü",
+        "text": "Trafiği hangi düğüme yönlendireceğine karar veren katman kurulur. Sağlık kontrolü yalnızca sunucunun ayakta olup olmadığına değil, uygulama servisinin gerçekten anlamlı cevap verdiğine bakacak biçimde tanımlanır; aksi hâlde donmuş bir servis sağlıklı sayılır ve trafik almaya devam eder."
+      },
+      {
+        "title": "Sanal IP ve DNS devri",
+        "text": "Kullanıcıların ve entegre sistemlerin adresi değişmeden çalışabilmesi için sanal IP taşınır veya DNS kaydı yönlendirilir. Kayıt yaşam süreleri, hedeflenen devir süresiyle uyumlu olacak biçimde ayarlanır; uzun süreli önbellek, ikinci düğüm hazır olsa bile kullanıcıyı arızalı adrese göndermeye devam eder."
+      },
+      {
+        "title": "Quorum ve witness düğümü",
+        "text": "İki düğümlü bir kümede yetkinin kimde olduğuna karar verecek üçüncü bir oy tanımlanır. Witness düğümü, ağ kopmalarında kararı belirleyen bileşendir; iki düğümden bağımsız bir konumda çalışacak biçimde konumlandırılır."
+      },
+      {
+        "title": "Split-brain koruması",
+        "text": "İki düğümün aynı anda kendini yetkili sayması, veri bütünlüğünü bozan en pahalı arıza biçimidir. Kilitleme ve dışlama mekanizmaları, kümeden ayrılan düğümün yazma yetkisini kaybedeceği biçimde yapılandırılır ve bu davranış kurulum sırasında bilinçli olarak sınanır."
+      },
+      {
+        "title": "Servis hesapları ve sertifikaların eşitlenmesi",
+        "text": "Dizin servisi bağlantısı, servis hesapları, SSL sertifikaları ve şifreleme anahtarları iki düğümde de aynı biçimde tanımlanır. Tek düğümde kalan bir sertifika veya yenilenmemiş bir hesap parolası, devir anında oturum açılamamasına ve entegrasyonların kopmasına yol açar."
+      },
+      {
+        "title": "Oturum sürekliliği",
+        "text": "Kullanıcı oturumlarının ve açık formların devir sırasında nasıl davranacağı belirlenir. Oturum bilgisi düğümden bağımsız paylaşılan bir katmanda tutulduğunda kullanıcı yeniden oturum açmadan çalışmaya devam eder; tutulmadığında devir başarılı olsa bile herkes yeniden giriş yapar."
+      },
+      {
+        "title": "İzleme ve alarm entegrasyonu",
+        "text": "Düğüm sağlığı, replikasyon gecikmesi, küme durumu ve devir olayları izleme sistemine bağlanır. Sessiz kalan bir yedeklilik bozulduğunda kimseye haber vermez; alarm hattı, kümenin tek düğüme düştüğü anı nöbetteki ekibe bildirecek biçimde kurulur."
+      },
+      {
+        "title": "Devir tatbikatı",
+        "text": "Kurulum, planlı bir devir denemesiyle doğrulanır. Birinci düğüm bilinçli olarak devre dışı bırakılır, geçiş süresi ölçülür, veri bütünlüğü ve entegrasyonların yeniden bağlanması kontrol edilir; geri dönüş de aynı disiplinle yapılır ve ölçülen değerler kayda geçer."
+      },
+      {
+        "title": "Dokümantasyon ve devir",
+        "text": "Küme topolojisi, replikasyon ayarları, quorum kararı, devir ve geri dönüş yordamları belgelenir. Belge, nöbetteki ekibin gece yarısı okuyup adım adım uygulayabileceği düzeyde yazılır ve BT ekibine yazılı olarak devredilir."
+      }
+    ]
+  },
+  "faq": {
+    "overline": "SIKÇA SORULAN SORULAR",
+    "title": "Müşterilerin en sık sorduğu yedi soru",
+    "items": [
+      {
+        "question": "Yedek sunucu boşta duruyorsa neden ayrıca lisans gerekiyor?",
+        "answer": "Lisans bedeli, düğümün o an kaç kullanıcıya hizmet verdiğine göre değil, ürünün orada kurulu ve devralmaya hazır olmasına göre doğar. Beklemedeki düğüm arıza anında bütün operasyonu tek başına taşır; dolayısıyla satın aldığınız şey ikinci bir sunucu değil, hizmetin kesintiye uğramama garantisidir. Bu garanti ancak ikinci düğümde ürünün tam sürümü kurulu, güncel ve doğrulanmış durumdayken verilebilir. Bedel teknisyen sayınıza bağlı olmadığı için de yedekli çalışacak düğüm adedine göre hesaplanır ve rehberde Altyapı ve Sistem Add-on'ları başlığı altında sabit adetli bir kalem olarak yer alır."
+      },
+      {
+        "question": "Kaç sunucu gerekir?",
+        "answer": "Yedekli kurulumun tabanı iki düğümdür: biri hizmeti taşır, diğeri devralmaya hazır bekler. İki düğümlü kümelerde ağ kopması hâlinde yetkinin kimde olduğuna karar verecek üçüncü bir oya ihtiyaç duyulur; bu rol düşük kaynaklı bir witness sunucusuyla karşılanır. Veritabanı ile uygulama katmanını ayrı sunucularda çalıştıran kurumlarda düğüm sayısı katman başına artar; yükü paylaştırmak isteyen kurumlarda ise ikiden fazla düğüm gündeme gelir. Analiz aşamasında sorduğumuz “Kaç sunucu üzerinden planlanacak?” sorusunun amacı budur: düğüm adedi, kurumun kesinti toleransı ve mevcut altyapı topolojisiyle birlikte netleştirilir."
+      },
+      {
+        "question": "Failover ile yedekleme (backup) aynı şey mi?",
+        "answer": "Hayır; ikisi farklı riskleri karşılar ve birbirinin yerine geçmez. Yedekleme geçmişe dönüktür: silinen kaydı, bozulan tabloyu veya hatalı bir toplu işlemi geri almanızı sağlar, buna karşılık geri yükleme boyunca hizmet durur. Yedekli kurulum ise şimdiye dönüktür: bir düğüm arızalandığında hizmeti ayakta tutar, ancak yanlışlıkla silinen veriyi geri getirmez, çünkü silme işlemi replikasyon yoluyla ikinci düğüme de anında yansır. Kurumsal bir kurulumda ikisi birlikte bulunur; biri kesintiyi, diğeri veri kaybını karşılar."
+      },
+      {
+        "question": "Devir ne kadar sürer, bir taahhüt verebilir misiniz?",
+        "answer": "Devir süresi yalnızca ServiceCore tarafında değil, altında duran katmanlarda belirlenir: replikasyon türü, depolama hızı, sanal IP veya DNS kayıt yaşam süresi, sağlık kontrolü aralığı ve ağ topolojisi süreyi doğrudan etkiler. Bu nedenle sahayı görmeden bir rakam yazmayız. Kurulum sırasında hedef süre birlikte belirlenir, mimari bu hedefe göre tasarlanır ve tatbikatta ölçülen gerçek süre kayıt altına alınır; taahhüt de ölçülmüş bu süre ve bakım kapsamı üzerinden verilir. Ölçüm yapılmadan verilen bir devir süresi, arıza anında ilk kez sınanacak bir varsayımdan ibarettir."
+      },
+      {
+        "question": "Kendi sanallaştırma altyapımızın HA özelliği yeterli değil mi?",
+        "answer": "Sanallaştırma katmanındaki yüksek erişilebilirlik, sanal makineyi başka bir fiziksel sunucuda yeniden başlatır; bu değerli bir korumadır, fakat uygulama düzeyinde bir devir sağlamaz. Yeniden başlatma sırasında işletim sistemi ve uygulama servisleri baştan ayağa kalkar, açık oturumlar düşer, devam eden işlemler geri alınır ve veritabanı tutarlılık denetimi yapar. Uygulama düzeyinde kümede ise ikinci düğüm hâlihazırda çalışır durumdadır ve devralma açılış beklemeden gerçekleşir. Ayrıca sanallaştırma katmanı, replikasyonun sağlıklı olup olmadığını veya uygulama servisinin cevap verip vermediğini bilmez. İki katman birbirinin alternatifi değil, tamamlayıcısıdır."
+      },
+      {
+        "question": "Failover varken DR merkezi de gerekir mi?",
+        "answer": "İhtiyacınız, hangi arıza senaryosuna karşı korunmak istediğinize bağlıdır. Yedekli kurulum sunucu, servis ve donanım arızasını karşılar ve genellikle aynı salonda veya aynı kampüste konumlanır. Yangın, su baskını, uzun süreli elektrik kaybı veya binaya erişimin kapanması gibi senaryolarda ise iki düğüm birlikte etkilenir. Kurumunuzun iş sürekliliği planı bu senaryoları kapsıyorsa ya da tabi olduğunuz düzenleme ikinci lokasyon şartı getiriyorsa Disaster Center Add-on gündeme gelir. Uygulamada çoğu kurum önce yedekliliği kurar, ikinci lokasyonu ise süreklilik planı olgunlaştıkça devreye alır."
+      },
+      {
+        "question": "Failover / Cluster Sistem Add-on'u sonradan kapsam dışına alabilir miyiz?",
+        "answer": "Add-on kapsam dışına alındığında ikinci düğümün kullanım hakkı ve bakım kalemi sona erer, kurulum ikili yapıdan tek düğümlü yapıya geri alınır. Bu teknik olarak mümkündür, ancak sonucu açıktır: tek nokta arızası geri döner, planlı bakımlar yeniden kesinti penceresi ister ve erişilebilirlik hedefinizin arkasındaki kanıt ortadan kalkar. Yapıyı ileride yeniden kurmak isterseniz efor güncel sürüm, güncel altyapı ve güncel entegrasyon yapısı üzerinden baştan doğar; kümeyi ikinci kez kurmak ilkinden ucuz değildir. Kararı verirken karşılaştırılması gereken iki rakam, yedekliliğin yıllık bedeli ile kurumun bir saatlik plansız kesintisinin maliyetidir."
+      }
+    ]
+  },
+  "hero": {
+    "badge": "FAILOVER / CLUSTER SİSTEM ADD-ON",
+    "titleLead": "Yedeklilik bir ayar değil,",
+    "titleAccent": "ikinci bir çalışan sistemdir",
+    "lead": "ServiceCore Failover / Cluster Sistem Add-on, ServiceCore platformunun en az iki düğüm üzerinde yedekli çalışmasını sağlar: bir düğüm arızalandığında kritik hizmetler ikinci düğüm üzerinden, kullanıcı ve entegrasyon adresleri değişmeden devam eder. Yüksek erişilebilirlik tek bir kutucuğun işaretlenmesiyle elde edilmez; ikinci düğüm, üretim düğümüyle aynı sürümü, aynı veriyi ve aynı entegrasyonları taşıyan bağımsız bir kurulumdur.",
+    "support": "Yedekliliğin neden ayrı lisanslandığı, kurulumunun neden ayrı fiyatlandığı ve bakımının neden yıllık olarak yürütüldüğü bu sayfada kalem kalem açıklanmıştır. Kısa cevap şudur: ikinci düğüm boşta bekleyen bir donanım parçası değil, ürünü çalıştıran ikinci bir sistemdir. Replikasyon hattı, quorum kararı, sanal IP devri ve sağlık kontrolü sürekli mühendislik ister; kesinti anında devreye girmesi de o ana kadar her gün doğrulanmış olmasına bağlıdır."
+  },
+  "ilgili": {
+    "overline": "İLGİLİ SAYFALAR",
+    "items": [
+      {
+        "label": "Servis Seviyesi Yönetimi",
+        "desc": "Erişilebilirlik hedefini tanımlayın; yedeklilik bu hedefin altyapıdaki karşılığıdır.",
+        "href": "/servis-seviye-yonetimi"
+      },
+      {
+        "label": "Sandbox / Test Sistem Add-on",
+        "desc": "Sürümü önce test ortamında doğrulayın, sonra yedekli kümede sırayla uygulayın.",
+        "href": "/sandbox"
+      },
+      {
+        "label": "Planlar ve Lisanslama",
+        "desc": "Failover / Cluster add-on'unun yer aldığı lisans planlarını ve eklentileri inceleyin.",
+        "href": "/planlar"
+      },
+      {
+        "label": "Kurulum Hizmetleri",
+        "desc": "Yedekli Sistem Konfigürasyon Paketi ve diğer kurulum paketleri.",
+        "href": "/hizmetler/setup"
+      },
+      {
+        "label": "Destek Paketleri",
+        "desc": "Silver, Gold, Platinum ve Mission Critical destek kapsamları.",
+        "href": "/destek"
+      },
+      {
+        "label": "Disaster Center Add-on",
+        "desc": "Yedeklilik donanım arızasını karşılar; lokasyonun tamamen kaybı ayrı bir kalemdir.",
+        "href": "/disaster-center"
+      }
+    ]
+  },
+  "kapanis": {
+    "overline": "ÖZET VE SONUÇ",
+    "title": "Kesintisizlik satın alınan bir özellik değil, sürdürülen bir disiplindir",
+    "text": "Failover / Cluster Sistem Add-on bir kutucuk ya da lisansın yanında verilen bir ikram değildir; kurumun kritik hizmetlerini tek bir sunucunun kaderinden ayıran ikinci bir çalışan sistemdir. Lisans, kurulum hizmeti ve yıllık bakım kapsamı; arıza anında hizmetin ayakta kalması, planlı bakımların kesinti penceresi gerektirmemesi ve erişilebilirlik hedefinin kanıtlanabilir olması için birlikte çalışan üç bileşendir.",
+    "text2": "Bu üç kalemin yıllık toplamı, kritik hizmetin durduğu tek bir günün maliyetiyle birlikte değerlendirildiğinde çoğu kurum için küçük bir rakam olarak kalır. Kaç düğüm üzerinden planlama yapılacağını, hangi topolojinin kurulacağını ve bakımın nasıl yürüyeceğini görüşmede şeffaf biçimde birlikte netleştiriyoruz.",
+    "ctaPrimary": {
+      "label": "Yedeklilik Teklifi İsteyin",
+      "href": "/iletisim"
+    },
+    "ctaSecondary": {
+      "label": "Lisanslama Rehberini İnceleyin",
+      "href": "/planlar/lisanslama-rehberi"
+    }
+  },
+  "karsilastirma": {
+    "overline": "KARŞILAŞTIRMALI ÖZET",
+    "title": "Tek düğümlü kurulum ve yedekli kurulum",
+    "columns": {
+      "parametre": "Parametre",
+      "canli": "Tek Düğümlü Kurulum",
+      "canliEn": "Standalone",
+      "test": "Yedekli Kurulum",
+      "testEn": "Failover / Cluster"
+    },
+    "rows": [
+      {
+        "parametre": "Kesinti davranışı",
+        "canli": "Sunucu veya servis durduğunda hizmet durur; ayağa kaldırma süresi arıza türüne ve müdahale ekibinin erişimine bağlıdır.",
+        "test": "Arızalı düğümün yükü ikinci düğüme devredilir; hizmet, devir süresi kadar bir aradan sonra aynı adres üzerinden çalışmaya devam eder."
+      },
+      {
+        "parametre": "Planlı bakım",
+        "canli": "Yama, sürüm geçişi ve donanım bakımı için mesai dışına planlanan kesinti penceresi gerekir.",
+        "test": "Düğümler sırayla bakıma alınır; bakım, çoğu senaryoda kullanıcıya kesinti yaşatmadan tamamlanır."
+      },
+      {
+        "parametre": "Lisans modeli",
+        "canli": "Teknisyen lisansları ve seçilen modül kapsamı üzerinden ölçeklenir.",
+        "test": "Teknisyen lisansından bağımsız, sabit adetli Failover / Cluster Sistem Add-on ile lisanslanır; pasif düğüm de adede dahildir."
+      },
+      {
+        "parametre": "Altyapı ihtiyacı",
+        "canli": "Tek sunucu kaynağı, tek depolama alanı ve tek ağ yolu.",
+        "test": "İkinci sunucu kaynağı, replikasyona uygun depolama, yük dengeleyici, sanal IP ve witness düğümü."
+      },
+      {
+        "parametre": "Kurulum eforu",
+        "canli": "Tek kurulum, yapılandırma ve canlıya geçiş desteği.",
+        "test": "Küme topolojisi tasarımı, replikasyon kurulumu, devir yolunun yapılandırılması ve tatbikatla doğrulama."
+      },
+      {
+        "parametre": "İzleme ve tatbikat",
+        "canli": "Sunucu ve uygulama sağlığının izlenmesi.",
+        "test": "Küme durumu ile replikasyon gecikmesinin izlenmesi, planlı devir tatbikatı ve ölçülen devir süresinin kaydı."
+      },
+      {
+        "parametre": "Destek ve bakım",
+        "canli": "Yıllık destek paketiniz kapsamında hizmet seviyesi taahhüdü ve teknik destek.",
+        "test": "İki düğümün sürüm eşitliği, küme bakımı ve ayrıca tanımlanan bakım kapsamı."
+      }
+    ]
+  },
+  "metaDescription": "Failover / Cluster Sistem Add-on'un üç maliyet bileşeni: lisans, yedekli kurulum mühendisliği ve yıllık bakım; tek düğümlü ve yedekli kurulum karşılaştırması.",
+  "metaTitle": "Failover / Cluster Sistem Add-on — Kesintisiz Hizmet İçin Yedekli Kurulum | ServiceCore",
+  "ozet": {
+    "overline": "MALİYETİN ÜÇ BİLEŞENİ",
+    "title": "Yedeklilik üç ayrı kalemden oluşur",
+    "description": "Üç kalemin de tanımı Abonelik ve Lisanslama Rehberi ile hizmet portföyünde yazılıdır; düğüm adedi, topoloji kapsamı ve bedeller teklifte açıkça yer alır.",
+    "items": [
+      {
+        "no": "01",
+        "label": "Lisans ve fikri mülkiyet hakkı",
+        "hint": "Sabit adetli add-on"
+      },
+      {
+        "no": "02",
+        "label": "Kurulum ve yüksek erişilebilirlik mimarisi",
+        "hint": "Tek seferlik hizmet"
+      },
+      {
+        "no": "03",
+        "label": "Sürekli bakım, sürüm eşitleme ve tatbikat",
+        "hint": "Yıllık kapsam"
+      }
+    ]
+  },
+  "sektor": {
+    "overline": "SEKTÖRDE DURUM",
+    "title": "Yüksek erişilebilirlik nasıl lisanslanır?",
+    "intro": "Yedekli kurulumun lisans ve bakım kapsamında ayrıca ele alınması ServiceCore'a özgü bir tercih değildir; ancak sektörde tek bir yaklaşım da yoktur. Aşağıdaki başlıklar, kurumsal yazılım sözleşmelerinin genel çerçevesini ve ServiceCore'un bu çerçeve içindeki kendi kuralını tarif eder.",
+    "items": [
+      {
+        "title": "Lisans, ürünün kurulu olduğu her düğümde doğar",
+        "text": "Kurumsal yazılımda lisans ölçüsü çoğunlukla kurulu örnek, işlemci kapasitesi veya isimli kullanıcıdır. Bu ölçülerin hiçbiri düğümün o an trafik alıp almadığına bakmaz; ürünün kurulu ve çalıştırılabilir durumda olması yükümlülüğün doğması için yeterlidir."
+      },
+      {
+        "title": "Pasif düğüm de bir kurulumdur",
+        "text": "Yüksek erişilebilirlik için beklemede tutulan düğüm, üzerinde ürünün kurulu olduğu, servisleri açık ve devralmaya hazır bir sistemdir. Kapalı duran ve yalnızca arıza sonrası kurulacak soğuk bir yedek için sektörde dar muafiyetler tanımlanabilir; sıcak beklemede tutulan ve saniyeler içinde devralması beklenen bir düğüm bu muafiyetlerin kapsamına girmez."
+      },
+      {
+        "title": "Bakım bedeli lisanslı miktarla orantılıdır",
+        "text": "Bakım ve destek genellikle lisanslı miktar üzerinden hesaplanır; lisans nerede doğuyorsa bakım da orada doğar. Yedekli kurulumda sürüm uygulaması, izleme, sertifika yenileme ve tatbikat işi tek düğümlü kuruluma göre fiilen artar, dolayısıyla bakım kapsamı da bu artışı yansıtır."
+      },
+      {
+        "title": "Kurumsal denetim çerçeveleri iş sürekliliği kontrolü bekler",
+        "text": "Bilgi güvenliği ve BT yönetişim çerçeveleri; kritik hizmetler için erişilebilirlik hedefinin tanımlanmasını, tek nokta arızalarının giderilmesini ve süreklilik planının düzenli olarak test edilmesini kontrol maddesi sayar. ITIL4 tarafında da erişilebilirlik ve hizmet sürekliliği yönetimi aynı yönü işaret eder: hedefin ölçülmesi ve tatbikatla kanıtlanması."
+      },
+      {
+        "title": "Erişilebilirlik hedefi altyapıyla birlikte belirlenir",
+        "text": "Bir uygulamanın erişilebilirliği, altında duran sunucu, depolama, ağ ve elektrik zincirinin en zayıf halkasından yüksek olamaz. Yedekli ServiceCore kurulumu, kurumun altyapı tarafındaki yedekliliğiyle birlikte anlam kazanır; bu nedenle hedef tek bir ürünün üzerine değil, zincirin tamamına yazılır."
+      },
+      {
+        "title": "ServiceCore'da kural açıkça yazılıdır",
+        "text": "Failover / Cluster Sistem Add-on teknisyen lisanslarından bağımsız olarak sabit adet üzerinden lisanslanır; kurulum Yedekli Sistem Konfigürasyon Paketi kapsamında, bakım ise ayrı bir kalem olarak fiyatlandırılır. Bu ayrım Abonelik ve Lisanslama Rehberi'nin 12. bölümünde açıkça yazılıdır."
+      }
+    ]
+  },
+  "sutunlar": {
+    "overline": "MALİYET BİLEŞENLERİ",
+    "title": "Üç kalem, üç ayrı iş",
+    "items": [
+      {
+        "no": "01",
+        "title": "Lisans ve Fikri Mülkiyet Hakları",
+        "subtitle": "IP Right — düğüm bazlı kullanım hakkı",
+        "text": "ServiceCore lisans modelinde kullanım hakkı, ürünün çalıştırıldığı bağımsız düğüm üzerinden tanımlanır. Yedekli mimaride ikinci düğüm, ürünün hiçbir özelliği kısıtlanmamış çalışır bir örneğidir: iş akışı motorunu, entegrasyon katmanını, bildirim hattını ve raporlama altyapısını üretim düğümüyle aynı biçimde barındırır ve devir anında bunların tamamını üstlenir. Trafiği hangi anda aldığı kullanım hakkının doğmasını değiştirmez; bu nedenle yedeklilik, teknisyen lisansının içinden düşülen bir kalem değil, kendi başına duran bir add-on kalemidir.",
+        "items": [
+          "Kullanım hakkı, ürünü çalıştıran bağımsız düğüm sayısına bağlıdır; pasif düğüm de bu sayıya dahildir.",
+          "İkinci düğüm üretimle aynı sürümü, aynı modülleri ve aynı otomasyon çekirdeğini barındırır.",
+          "Failover / Cluster Sistem Add-on, Altyapı ve Sistem Add-on grubunda sabit adet üzerinden fiyatlandırılır.",
+          "Add-on teknisyen lisansınızdan bağımsızdır; teknisyen sayınız değişse de düğüm adedi üzerinden yürür.",
+          "Kurulum ve bakım hizmetleri lisanstan ayrı fiyatlandırılır; planlanan düğüm adedi teklif öncesinde netleştirilir."
+        ],
+        "linkLabel": "Abonelik ve Lisanslama Rehberi — Bölüm 12",
+        "linkHref": "/planlar/lisanslama-rehberi#bolum-12"
+      },
+      {
+        "no": "02",
+        "title": "Kurulum ve Yüksek Erişilebilirlik Mimarisi",
+        "subtitle": "Professional Services — Yedekli Sistem Konfigürasyon Paketi",
+        "text": "Yedekli kurulum, ikinci sunucuda aynı kurulum dosyasını çalıştırmakla bitmez. Aktif-pasif mi yoksa aktif-aktif mi çalışılacağı, veritabanı replikasyonunun senkron mu asenkron mu olacağı, devrin hangi eşikte tetikleneceği ve geri dönüşün nasıl yapılacağı önce mimari olarak kararlaştırılır; ardından yük dengeleyici, sanal IP, quorum düğümü ve sağlık kontrolleri bu karara göre yapılandırılır. Bu adımların tamamı doğrudan kıdemli uzman adam/gün eforu tüketir ve ServiceCore hizmet portföyünde Yedekli Sistem Konfigürasyon Paketi adıyla ayrı bir kalem olarak tanımlıdır.",
+        "items": [
+          "Topoloji kararı verilir: aktif-pasif veya aktif-aktif; devir eşikleri ve geri dönüş senaryosu yazılı hâle getirilir.",
+          "Veritabanı replikasyonu kurulur; senkron ve asenkron seçenekler veri kaybı ile işlem gecikmesi dengesi üzerinden değerlendirilir.",
+          "Yük dengeleyici, sağlık kontrolü ve sanal IP / DNS devri, kullanıcı adresi değişmeden çalışacak biçimde yapılandırılır.",
+          "Quorum ve witness düğümü tanımlanır; split-brain koruması iki düğümün aynı anda yetkili olmasını engeller.",
+          "Kurulum, devir tatbikatı ve devir dokümantasyonuyla kapanır; yedekli yapının sahipliği yazılı olarak kuruma teslim edilir."
+        ],
+        "linkLabel": "Kurulum Hizmetleri — Yedekli Sistem Konfigürasyon Paketi",
+        "linkHref": "/hizmetler/setup"
+      },
+      {
+        "no": "03",
+        "title": "Sürekli Bakım, Sürüm Eşitleme ve Tatbikat",
+        "subtitle": "Ongoing Maintenance ve SLA — yıllık kapsam",
+        "text": "Yedeklilik kurulduğu gün tamamlanmaz; iki düğüm birlikte yaşamaya devam eder. Her sürüm ve yama iki tarafa da uygulanır, replikasyon hattı izlenir, sertifikalar iki düğümde birlikte yenilenir ve devir yolu düzenli aralıklarla fiilen denenir. Yıllık bakım ve destek kalemi, bu tekrarlanan yükün ve yedekli ortama verilen hizmet seviyesi taahhüdünün karşılığıdır.",
+        "items": [
+          "Sürüm ve yamalar iki düğümde de uygulanır; sürüm farkı bırakılan bir küme devir anında hizmete açılmaz.",
+          "Replikasyon gecikmesi, düğüm sağlığı ve küme durumu izleme ekranları üzerinden sürekli takip edilir.",
+          "Sertifikalar, servis hesapları ve yapılandırma parametreleri iki düğüm arasında düzenli olarak karşılaştırılıp eşitlenir.",
+          "Planlı devir tatbikatı takvime bağlanır; sonucu, ölçülen geçiş süresiyle birlikte kayıt altına alınır.",
+          "Hizmet seviyesi taahhüdü yalnızca bakım kapsamındaki ortamlar için verilebilir; add-on'un kurulum ve bakım hizmetleri lisanslama rehberinin 12. bölümünde belirtildiği gibi ayrıca fiyatlandırılır."
+        ],
+        "linkLabel": "Destek Paketleri ve Kanalları",
+        "linkHref": "/destek"
+      }
+    ]
+  },
+  "yanilsama": {
+    "overline": "YAYGIN ALGI VE TEKNİK GERÇEK",
+    "title": "Yedeklilik bir kopya değildir",
+    "intro": "Yedeklilik tartışmasının büyük bölümü tek bir varsayımdan doğar: sistem zaten kurulu olduğuna göre ikincisini kurmak aynı işin tekrarıdır. Yüksek erişilebilirlik mimarisinde bu varsayımın karşılığı yoktur; işin ağırlığı ikinci düğümü kurmakta değil, iki düğümü her an aynı gerçeği gösterecek biçimde birbirine bağlı tutmaktadır. Aşağıda sahada en sık karşılaştığımız dört algının karşısına mimarinin teknik gerçeğini koyduk.",
+    "items": [
+      {
+        "myth": "Sunucuyu klonlarız; biri durursa diğeri devreye girer.",
+        "fact": "Klonlama bir anlık görüntüdür, replikasyon ise süreklidir.",
+        "text": "Klon, alındığı andaki durumu taşır; o andan sonra açılan her kayıt, değişen her parametre ve uygulanan her yama ikinci düğümün dışında kalır. Yedekli mimaride veri, işlem düzeyinde ve kesintisiz biçimde ikinci düğüme akar; hangi düğümün yetkili olduğuna quorum kararı verir; iki düğümün aynı anda kendini yetkili sanmasını ise split-brain koruması engeller. Bu üç bileşen kurulmadan elde edilen şey yedeklilik değil, güncelliğini yitirmiş bir kopyadır."
+      },
+      {
+        "myth": "Yedek sunucu boşta duruyor; ayrıca lisans gerektirmez.",
+        "fact": "İkinci düğüm ürünü çalıştırır, bu nedenle kullanım hakkı doğar.",
+        "text": "Pasif düğüm kapalı bir kutu değildir: ServiceCore çekirdeği kuruludur, servisleri açıktır, replikasyonu dinler, sağlık kontrolüne cevap verir ve devir anında hizmeti üstlenir. Kullanıcı trafiği almıyor olması, ürünün orada kurulu ve çalışır durumda tutulduğu gerçeğini değiştirmez. ServiceCore bu nedenle yedekliliği teknisyen lisansının bir türevi olarak değil, Abonelik ve Lisanslama Rehberi'nin 12. bölümündeki Altyapı ve Sistem Add-on'ları arasında, sabit adetli ayrı bir kalem olarak tanımlar."
+      },
+      {
+        "myth": "Bir kez kurulur, sonrasında kendi kendine bekler.",
+        "fact": "Test edilmemiş failover, failover değildir.",
+        "text": "Devir yolu; sertifika süresi dolduğunda, replikasyon gecikmesi büyüdüğünde, sanal IP kaydı değiştiğinde veya bir sürüm yalnızca tek düğüme uygulandığında sessizce bozulur. Bu bozulmaların hiçbiri günlük işleyişte kendini göstermez, çünkü birinci düğüm ayaktadır ve kullanıcı tarafında hiçbir belirti oluşmaz. Kurumun devralma yeteneği ancak planlı tatbikatla görünür hâle gelir; tatbikat yapılmayan bir yedeklilik, arıza anında ilk kez denenmiş olur."
+      },
+      {
+        "myth": "Yedekliliğimiz var, felaket kurtarma da hallolmuş sayılır.",
+        "fact": "Yüksek erişilebilirlik ile felaket kurtarma farklı sorunları çözer.",
+        "text": "Yüksek erişilebilirlik (HA), aynı veri merkezindeki düğüm, servis veya donanım arızasını hedefler; devir saniyeler ile dakikalar arasında tamamlanır ve veri kaybı hedefi düşük tutulur. Felaket kurtarma (DR) ise veri merkezinin tamamının kaybını hedefler; ikinci lokasyon, ayrı elektrik ve ağ beslemesi, uzak mesafe replikasyonu ve ayrıca belirlenen RPO ile RTO hedefleri gerektirir. Aynı salonda duran iki düğüm, salonun kendisi kaybedildiğinde birlikte kaybedilir. ServiceCore bu iki ihtiyacı ayrı kalemlerde tanımlar: yerinde yedeklilik için Failover / Cluster Sistem Add-on, ikinci lokasyon için Disaster Center Add-on."
+      }
+    ]
+  },
+  "kapsamNotu": "Bu sayfa Failover / Cluster Sistem Add-on'un kapsamını ve maliyet yapısını anlatır. Düğüm sayısı, topoloji tercihi ve kurulum kapsamı kuruma göre değişir; bağlayıcı kalem ve bedeller yalnızca size özel hazırlanan teklifte yer alır."
+}

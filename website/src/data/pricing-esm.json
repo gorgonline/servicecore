@@ -293,11 +293,13 @@
           },
           {
             "name": "Failover / Cluster Sistem Add-on",
-            "desc": "ServiceCore Failover / Cluster Sistem Add-on, yüksek erişilebilirlik ve kesintisiz hizmet sağlamak amacıyla, ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır. Bu özellik, kritik iş süreçlerinin ve hizmetlerin herhangi bir kesinti durumunda devamlılık göstermesini sağlar. Failover ve Cluster sistemleri, platformun daha dayanıklı, güvenilir ve kesintisiz çalışmasını garanti eder."
+            "desc": "ServiceCore Failover / Cluster Sistem Add-on, yüksek erişilebilirlik ve kesintisiz hizmet sağlamak amacıyla, ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır. Bu özellik, kritik iş süreçlerinin ve hizmetlerin herhangi bir kesinti durumunda devamlılık göstermesini sağlar. Failover ve Cluster sistemleri, platformun daha dayanıklı, güvenilir ve kesintisiz çalışmasını garanti eder.",
+            "link": "/failover"
           },
           {
             "name": "Disaster Center Add-on",
-            "desc": "ServiceCore Disaster Center Add-on, şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır."
+            "desc": "ServiceCore Disaster Center Add-on, şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır.",
+            "link": "/disaster-center"
           },
           {
             "name": "Sandbox / Test Sistem Add-on",

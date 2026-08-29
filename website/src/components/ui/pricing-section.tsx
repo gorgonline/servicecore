@@ -85,11 +85,15 @@ const addonCategories: AddonCategory[] = [
     items: [
       { name: "Asset Discovery Add-on", desc: "Ağ üzerindeki tüm BT varlıklarını otomatik keşfeder; envanteri ve CMDB'yi sürekli güncel tutar. Detaylı bilgi için Discovery modülü sayfasını inceleyin.", link: "/discovery" },
       { name: "VMware Varlık Keşif Eklentisi", desc: "VMware ortamındaki sanal makineleri ve altyapıyı otomatik keşfetmenize olanak tanır. IT varlık yönetimini verimli hale getirir ve yapılandırma yönetimini güçlendirir." },
+      { name: "Intune Discovery Add-on", desc: "Microsoft Intune ile yönetilen uç noktaları ve mobil cihazları otomatik keşfeder; cihaz envanterini ve yapılandırma bilgilerini CMDB ile güncel tutar." },
+      { name: "Lansweeper Discovery Add-on", desc: "Lansweeper envanter verilerini ServiceCore'a aktararak ağdaki donanım ve yazılım varlıklarının tek merkezde güncel kalmasını sağlar." },
       { name: "MS Teams Eklentisi", desc: "Microsoft Teams ile entegre olarak, hizmet yönetimi ve işbirliği süreçlerini daha verimli hale getirir." },
       { name: "Task Calendar Sync Eklentisi", desc: "Kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli hizmet yönetimi yapmalarını sağlar." },
-      { name: "Failover / Cluster Sistem Add-on", desc: "Yüksek erişilebilirlik ve kesintisiz hizmet için ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır." },
-      { name: "Disaster Center Add-on", desc: "Şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır." },
-      { name: "Sandbox / Test Sistem Add-on", desc: "Değişikliklerin ve yeniliklerin gerçek ortamda uygulanmadan önce güvenli bir şekilde test edilmesini sağlar. Lisans, kurulum ve bakım yapısı için Sandbox sayfasını inceleyin.", link: "/sandbox" }
+      { name: "Failover / Cluster Sistem Add-on", desc: "Yüksek erişilebilirlik ve kesintisiz hizmet için ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır.", link: "/failover" },
+      { name: "Disaster Center Add-on", desc: "Şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır.", link: "/disaster-center" },
+      { name: "Sandbox / Test Sistem Add-on", desc: "Değişikliklerin ve yeniliklerin gerçek ortamda uygulanmadan önce güvenli bir şekilde test edilmesini sağlar. Lisans, kurulum ve bakım yapısı için Sandbox sayfasını inceleyin.", link: "/sandbox" },
+      { name: "Shift Management Add-on", desc: "Teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır.", link: "/vardiya-yonetimi" },
+      { name: "Federation Service Add-on", desc: "Birden fazla ServiceCore örneğini veya dış servis sağlayıcılarını birbirine bağlayarak kayıtların organizasyonlar arası paylaşılmasını sağlar.", link: "/federasyon-motoru" }
     ]
   },
   {

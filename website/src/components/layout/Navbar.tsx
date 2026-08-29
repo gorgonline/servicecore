@@ -206,8 +206,11 @@ const aicoreSubmenu = [
 const plansSubmenu = [
   { name: "Servis Yönetimi Lisans Seçenekleri", icon: ShieldCheck, desc: "ESM - ITSM - CSM - FSM - ITAM - EAM Lisanslamaları", href: "/planlar" },
   { name: "Proje Yönetimi Lisans Seçenekleri", icon: Target, desc: "Agile, hibrit ve stratejik proje yönetimi lisans seçenekleri.", href: "/planlar-pm" },
+  { name: "AICore Lisanslama", icon: Sparkles, desc: "Yapay zekâ eklentilerinin lisans, GateCoreAI ve kurulum kalemleri.", href: "/aicore/lisanslama" },
   { name: "Abonelik ve Lisanslama Rehberi", icon: ScrollText, desc: "Roller, edition kuralları, ESM ve add-on lisanslama detayları.", href: "/planlar/lisanslama-rehberi" },
   { name: "Sandbox / Test Ortamı", icon: FlaskConical, desc: "Test ortamının lisans, kurulum ve bakım yapısı.", href: "/sandbox" },
+  { name: "Failover / Yedekli Sistem", icon: Network, desc: "Yedekli kurulumun lisans, kurulum ve bakım yapısı.", href: "/failover" },
+  { name: "Disaster Center / Felaket Kurtarma", icon: ShieldAlert, desc: "Felaket kurtarma merkezinin lisans, kurulum ve bakım yapısı.", href: "/disaster-center" },
 ];
 
 const resourcesSubmenu = [
