@@ -213,23 +213,103 @@
     {
       "number": "12",
       "title": "Altyapı ve Sistem Add-on'ları",
-      "intro": "Aşağıdaki eklentiler teknisyen lisanslarından bağımsız olarak sabit fiyatlı lisanslanır:",
+      "intro": "Aşağıdaki eklentiler teknisyen lisansına dahil değildir, teknisyen lisansından düşülmez ve ücretsiz sağlanmaz; her biri sabit adet üzerinden ayrıca lisanslanır. Sandbox / Test Sistem, Failover / Cluster Sistem ve Disaster Recovery Center add-on'larında sayılan birim kullanıcı sayısı değil, ürünün kurulu ve çalıştırılabilir durumda olduğu ortam, düğüm veya kurulum sayısıdır:",
       "items": [
-        { "text": "Failover / Cluster Sistem Add-on", "href": "/failover" },
-        { "text": "Disaster Recovery Center Add-on", "href": "/disaster-center" },
-        { "text": "Sandbox / Test Sistem Add-on", "href": "/sandbox" },
-        "Servicecore Discovery Add-on",
-        "VMware Discovery Add-on",
-        "Intune Discovery Add-on",
-        "Lansweeper Discovery Add-on",
-        "Shift Management Add-on",
-        "Federation Service Add-on"
+        {
+          "text": "Failover / Cluster Sistem Add-on",
+          "href": "/failover"
+        },
+        {
+          "text": "Disaster Recovery Center Add-on",
+          "href": "/disaster-center"
+        },
+        {
+          "text": "Sandbox / Test Sistem Add-on",
+          "href": "/sandbox"
+        },
+        {
+          "text": "ServiceCore Discovery Add-on",
+          "href": "/discovery"
+        },
+        {
+          "text": "VMware Discovery Add-on",
+          "href": "/discovery"
+        },
+        {
+          "text": "Intune Discovery Add-on",
+          "href": "/discovery"
+        },
+        {
+          "text": "Lansweeper Discovery Add-on",
+          "href": "/discovery"
+        },
+        {
+          "text": "Shift Management Add-on",
+          "href": "/vardiya-yonetimi"
+        },
+        {
+          "text": "Federation Service Add-on",
+          "href": "/federasyon-motoru"
+        },
+        {
+          "text": "Kurulum ve konfigürasyon paketleri",
+          "href": "/hizmetler/setup"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Her add-on'un üç kalemi",
+          "tagline": "Sandbox / Test Sistem, Failover / Cluster Sistem ve Disaster Recovery Center add-on'larında bedel tek kalemden oluşmaz; aşağıdaki üç kalem her üçünde de ayrı ayrı doğar.",
+          "items": [
+            "Lisans ve fikri mülkiyet hakkı — sabit adetli add-on lisansı; teknisyen lisansından bağımsızdır",
+            "Kurulum ve mimari mühendislik eforu — tek seferlik paket: Test Sistemi, Yedekli Sistem veya Felaket Kurtarma Merkezi Konfigürasyon Paketi",
+            "Yıllık bakım, sürüm güncelleme ve destek — ikinci ortam her sürüm döngüsünde aynı mühendislik işini ikiye katlar"
+          ]
+        },
+        {
+          "label": "Sandbox / Test Sistem Add-on — ortam bazlı",
+          "tagline": "Test ortamı, hiçbir özelliği kısıtlanmamış ikinci bir kurulumdur; mevcut lisans ikiye bölünmez, yanında kendi kullanım hakkı olan ikinci bir kurulum doğar.",
+          "items": [
+            "Donanım ölçeği küçültülse dahi kullanılan hak aynıdır; buna karşılık modül, iş akışı ve entegrasyon kapsamı üretimle aynı olmalıdır",
+            "Kullanım sıklığı bedeli düşürmez; aradaki her sürüm, yama ve entegrasyon değişikliği bu ortama da uygulanır",
+            "Yıllık bakım: her sürüm ve yama önce test ortamına uygulanır, iki ortam arasındaki sürüm ve şema farkı eşitlenir",
+            "PoC ile aynı şey değildir: PoC satın alma öncesi süre kilitli geçici ortam, Sandbox satın alma sonrası kalıcı ve lisanslı ikinci ortamdır"
+          ]
+        },
+        {
+          "label": "Failover / Cluster Sistem Add-on — düğüm bazlı",
+          "tagline": "İkinci düğüm ürünü çalıştırdığı için kullanım hakkı doğurur; kullanıcı trafiği almaması, ürünün orada kurulu ve devralmaya hazır tutulduğunu değiştirmez.",
+          "items": [
+            "Yedekli kurulumun tabanı iki düğümdür; veritabanı ile uygulama katmanı ayrı sunuculardaysa düğüm sayısı katman başına artar",
+            "İkinci sunucu, replikasyona uygun depolama, yük dengeleyici, sanal IP ve witness düğümü lisansa dahil değildir; ayrı altyapı kalemidir",
+            "Yıllık bakım: sürüm ve yamaların iki düğümde uygulanması, replikasyon ile küme durumunun izlenmesi, planlı devir tatbikatı",
+            "Yedeklemenin ve sanallaştırma katmanındaki HA özelliğinin yerine geçmez; lokasyon kaybı ayrı bir kalemdir",
+            "Devir süresi için saha görülmeden rakam verilmez; taahhüt tatbikatta ölçülen süre üzerinden verilir"
+          ]
+        },
+        {
+          "label": "Disaster Recovery Center Add-on — kurulum bazlı",
+          "tagline": "İkincil merkezdeki örnek, hiçbir özelliği kısıtlanmamış tam bir kurulumdur; bekleme durumundaki ikincil kurulum da kullanım hakkı doğurur. Add-on sayfasında Disaster Center adıyla geçer.",
+          "items": [
+            "İkinci veri merkezi, kiralanmış kabin veya bulut bölgesi kuruma ait olsa da lisans yükümlülüğü değişmez",
+            "İkinci lokasyonun sunucu, depolama ve ağ kapasitesi ile merkezler arası hat kapasitesi ayrı altyapı kalemidir",
+            "RPO ve RTO hedefleri belirlenmeden merkez ne tasarlanabilir ne de fiyatlanabilir",
+            "Yıllık bakım: iki merkezin sürüm ve şema hizası, eşik değerli alarmlar, devralma ve geri dönüş tatbikatları",
+            "Buluta yedek atmanın yerine geçmez: uygulama katmanı kurulu, entegrasyonlar ikincil uçlara bağlı ve adres devri kurgulanmış olmalıdır",
+            "Geri dönüş (failback) prosedürü kurulum kapsamında ayrıca yazılır; Failover / Cluster Sistem Add-on'unun yerine geçmez ve onu kapsamaz"
+          ]
+        }
       ],
       "note": {
-        "title": "Bu add-on'lar:",
+        "title": "Bu add-on'lar için her koşulda geçerli kurallar:",
         "items": [
-          "Sabit (fixed) adetler üzerinden fiyatlandırılır",
-          "Kurulum ve bakım hizmetleri ayrıca fiyatlandırılır"
+          "Sabit (fixed) adetler üzerinden fiyatlandırılır; Sandbox, Failover ve Disaster Recovery Center'da adet ortam, düğüm veya kurulum sayısına bağlıdır",
+          "Kurulum ve bakım hizmetleri ayrıca fiyatlandırılır; kurulum tek seferlik, bakım yıllık kalemdir",
+          "14. bölümdeki abonelik süresi boyunca tüm bakım hizmetleri fiyata dahildir kuralı ürün aboneliğinin kendisi içindir; altyapı ve sistem add-on'larının kurulumu ile bakımı bu kapsamın dışındadır",
+          "Pasif düğüm, bekleme durumundaki ikincil merkez ve donanımı küçültülmüş test ortamı adede dahildir; trafik almamak yükümlülüğü kaldırmaz",
+          "Hizmet seviyesi taahhüdü (SLA) yalnızca bakım kapsamındaki ve kapsamı yazılı olarak tanımlanmış ortamlar için verilebilir",
+          "Add-on kapsam dışına alındığında kullanım hakkı ve bakım kalemi sona erer; yeniden kurulumda efor güncel sürüm ve envanter üzerinden baştan doğar",
+          "Adet, kurulum kapsamı ve bedeller kuruma özel hazırlanan teklifte netleşir"
         ]
       }
     },
@@ -366,6 +446,14 @@
     {
       "question": "Abonelik bitince ne olur?",
       "answer": "Abonelik yenilenmezse yazılımın kullanım hakkı sona erer ve ürün otomatik kapanarak kullanılamaz hale gelir."
+    },
+    {
+      "question": "Test ve yedeklilik ortamları lisansa dahil mi?",
+      "answer": "Hayır. Sandbox, Failover ve Disaster Recovery Center add-on'ları sabit adet üzerinden ayrıca lisanslanır; kurulum ve yıllık bakım da ayrı kalemlerdir."
+    },
+    {
+      "question": "Yedek düğüm trafik almıyorsa lisans gerekir mi?",
+      "answer": "Evet. Lisans, ürünün kurulu ve çalıştırılabilir durumda olmasına göre doğar; pasif düğüm de bekleme durumundaki kurtarma merkezi de adede dahildir."
     }
   ]
 }

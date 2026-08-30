@@ -76,24 +76,24 @@ const addonCategories: AddonCategory[] = [
   {
     title: "Eklenebilecek Yönetim Modülleri",
     items: [
-      { name: "Proje Yönetimi Modülü", desc: "ITIL4 ile birlikte proje yönetimi süreci ITSM’in doğal bir parçası ve zorunlu bir pratiği haline gelmiştir. Projelerin doğuşu her zaman iyileştirme, değişiklik, istek gibi süreçler tarafından tetiklenmektedir." },
-      { name: "Servis İlişkileri Yönetimi Modülü", desc: "Gelişmiş otomasyon özellikleri ile servislerinizi standartlaştırın ve müşteri hizmetlerinizi uçtan uca dijitalleştirin." }
+      { name: "Proje Yönetimi Modülü", desc: "ITIL4 ile birlikte proje yönetimi süreci ITSM’in doğal bir parçası ve zorunlu bir pratiği haline gelmiştir. Projelerin doğuşu her zaman iyileştirme, değişiklik, istek gibi süreçler tarafından tetiklenmektedir.", link: "/proje-yonetimi" },
+      { name: "Servis İlişkileri Yönetimi Modülü", desc: "Gelişmiş otomasyon özellikleri ile servislerinizi standartlaştırın ve müşteri hizmetlerinizi uçtan uca dijitalleştirin.", link: "/servis-iliskileri-yonetimi" },
+      { name: "Shift Management Add-on", desc: "Teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır.", link: "/vardiya-yonetimi" },
+      { name: "Federation Service Add-on", desc: "Birden fazla ServiceCore örneğini veya dış servis sağlayıcılarını birbirine bağlayarak kayıtların organizasyonlar arası paylaşılmasını sağlar.", link: "/federasyon-motoru" }
     ]
   },
   {
     title: "Eklentiler (Add-ons)",
     items: [
       { name: "Asset Discovery Add-on", desc: "Ağ üzerindeki tüm BT varlıklarını otomatik keşfeder; envanteri ve CMDB'yi sürekli güncel tutar. Detaylı bilgi için Discovery modülü sayfasını inceleyin.", link: "/discovery" },
-      { name: "VMware Varlık Keşif Eklentisi", desc: "VMware ortamındaki sanal makineleri ve altyapıyı otomatik keşfetmenize olanak tanır. IT varlık yönetimini verimli hale getirir ve yapılandırma yönetimini güçlendirir." },
-      { name: "Intune Discovery Add-on", desc: "Microsoft Intune ile yönetilen uç noktaları ve mobil cihazları otomatik keşfeder; cihaz envanterini ve yapılandırma bilgilerini CMDB ile güncel tutar." },
-      { name: "Lansweeper Discovery Add-on", desc: "Lansweeper envanter verilerini ServiceCore'a aktararak ağdaki donanım ve yazılım varlıklarının tek merkezde güncel kalmasını sağlar." },
+      { name: "VMware Varlık Keşif Eklentisi", desc: "VMware ortamındaki sanal makineleri ve altyapıyı otomatik keşfetmenize olanak tanır. IT varlık yönetimini verimli hale getirir ve yapılandırma yönetimini güçlendirir.", link: "/discovery" },
+      { name: "Intune Discovery Add-on", desc: "Microsoft Intune ile yönetilen uç noktaları ve mobil cihazları otomatik keşfeder; cihaz envanterini ve yapılandırma bilgilerini CMDB ile güncel tutar.", link: "/discovery" },
+      { name: "Lansweeper Discovery Add-on", desc: "Lansweeper envanter verilerini ServiceCore'a aktararak ağdaki donanım ve yazılım varlıklarının tek merkezde güncel kalmasını sağlar.", link: "/discovery" },
       { name: "MS Teams Eklentisi", desc: "Microsoft Teams ile entegre olarak, hizmet yönetimi ve işbirliği süreçlerini daha verimli hale getirir." },
       { name: "Task Calendar Sync Eklentisi", desc: "Kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli hizmet yönetimi yapmalarını sağlar." },
       { name: "Failover / Cluster Sistem Add-on", desc: "Yüksek erişilebilirlik ve kesintisiz hizmet için ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır.", link: "/failover" },
       { name: "Disaster Center Add-on", desc: "Şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır.", link: "/disaster-center" },
-      { name: "Sandbox / Test Sistem Add-on", desc: "Değişikliklerin ve yeniliklerin gerçek ortamda uygulanmadan önce güvenli bir şekilde test edilmesini sağlar. Lisans, kurulum ve bakım yapısı için Sandbox sayfasını inceleyin.", link: "/sandbox" },
-      { name: "Shift Management Add-on", desc: "Teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır.", link: "/vardiya-yonetimi" },
-      { name: "Federation Service Add-on", desc: "Birden fazla ServiceCore örneğini veya dış servis sağlayıcılarını birbirine bağlayarak kayıtların organizasyonlar arası paylaşılmasını sağlar.", link: "/federasyon-motoru" }
+      { name: "Sandbox / Test Sistem Add-on", desc: "Değişikliklerin ve yeniliklerin gerçek ortamda uygulanmadan önce güvenli bir şekilde test edilmesini sağlar. Lisans, kurulum ve bakım yapısı için Sandbox sayfasını inceleyin.", link: "/sandbox" }
     ]
   },
   {
