@@ -1,6 +1,6 @@
 import { ExpandedPricingSection } from "@/components/ui/expanded-pricing";
 import AboutHero from "@/components/ui/AboutHero";
-import pricingData from "@/data/pricing-css.json";
+import pricingData from "@/data/pricing-csm.json";
 import { HelpCircle } from "lucide-react";
 import PrivacyContact from "@/components/ui/privacy-contact";
 
@@ -9,12 +9,13 @@ export const metadata = {
   description: pricingData.hero.description,
 };
 
-export default function PlanlarCssPage() {
+export default function PlanlarCsmPage() {
   return (
     <div className="bg-(--color-surface-base-dark) text-white selection:bg-(--color-brand-primary)/30">
       <AboutHero
         title={pricingData.hero.title}
         subtitle={pricingData.hero.subtitle}
+        subtitleEn={pricingData.hero.subtitleEn}
         description={pricingData.hero.description}
       />
 

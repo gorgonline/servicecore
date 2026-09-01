@@ -4,14 +4,18 @@ import { motion, Variants, useInView } from "framer-motion";
 import { MeshGradient } from "@paper-design/shaders-react";
 import { useState, useEffect, useRef } from "react";
 import { tokens as runtimeTokens } from "@/lib/tokens";
+import { En } from "@/components/ui/En";
 
 interface AboutHeroProps {
   title: string;
   subtitle?: string;
+  /** Overline'in Ingilizce kismi. lang="en" ile sarilir; <html lang="tr"> altinda
+   *  CSS uppercase'in "I" harfini "İ"ye cevirmesini engeller. */
+  subtitleEn?: string;
   description: string;
 }
 
-export default function AboutHero({ title, subtitle, description }: AboutHeroProps) {
+export default function AboutHero({ title, subtitle, subtitleEn, description }: AboutHeroProps) {
   const [dimensions, setDimensions] = useState({ width: 1920, height: 1080 });
   const [mounted, setMounted] = useState(false);
   
@@ -87,7 +91,13 @@ export default function AboutHero({ title, subtitle, description }: AboutHeroPro
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 w-fit backdrop-blur-md mb-8 mx-auto">
             <span className="flex h-2 w-2 rounded-full bg-(--color-brand-primary)" />
             <span className="text-xs font-semibold tracking-[0.2em] text-(--color-text-overline) uppercase">
-              {subtitle || "SERVICECORE HİKAYESİ"}
+              {subtitleEn && (
+                <>
+                  <En>{subtitleEn}</En>
+                  {subtitle ? " — " : null}
+                </>
+              )}
+              {subtitle || (subtitleEn ? null : "SERVICECORE HİKAYESİ")}
             </span>
           </motion.div>
           

@@ -26,6 +26,12 @@ const nextConfig: NextConfig = {
       destination: "/cozumler/itsm",
       permanent: true,
     },
+    // CSM sayfasi yanlislikla "css" slug'i ile yayinlanmisti.
+    {
+      source: "/planlar-css",
+      destination: "/planlar-csm",
+      permanent: true,
+    },
   ],
 
   headers: async () => [

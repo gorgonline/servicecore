@@ -15,6 +15,7 @@ export default function PlanlarFsmPage() {
       <AboutHero
         title={pricingData.hero.title}
         subtitle={pricingData.hero.subtitle}
+        subtitleEn={pricingData.hero.subtitleEn}
         description={pricingData.hero.description}
       />
 

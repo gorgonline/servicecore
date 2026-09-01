@@ -1,8 +1,9 @@
 {
   "hero": {
     "title": "FSM Lisanslama ve Planlar",
-    "subtitle": "Field Service Management — Modüler, Adil ve Esnek Lisanslama",
-    "description": "ServiceCore'un modüler yapısı ile ihtiyacınız olan özellikleri seçin, sadece kullandığınız kadar ödeyin."
+    "subtitle": "Modüler, Adil ve Esnek Lisanslama",
+    "description": "ServiceCore'un modüler yapısı ile ihtiyacınız olan özellikleri seçin, sadece kullandığınız kadar ödeyin.",
+    "subtitleEn": "Field Service Management"
   },
   "section": {
     "badge": "Versiyonlar ve Kapsam",
