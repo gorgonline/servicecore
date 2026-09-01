@@ -208,6 +208,8 @@ const plansSubmenu = [
   { name: "ESM Lisans Seçenekleri", icon: Building2, desc: "Enterprise Service Management — çok tenantlı kurumsal servis yönetimi lisanslaması.", href: "/planlar-esm" },
   { name: "CSM Lisans Seçenekleri", icon: Headphones, desc: "Customer Service Management — dış müşteri hizmetleri lisanslaması.", href: "/planlar-csm" },
   { name: "FSM Lisans Seçenekleri", icon: Truck, desc: "Field Service Management — saha ekipleri ve mobil servis lisanslaması.", href: "/planlar-fsm" },
+  { name: "ITAM Lisans Seçenekleri", icon: Boxes, desc: "IT Asset Management — tek paket; varlık keşfi ve CMDB dahil.", href: "/planlar-itam" },
+  { name: "EAM Lisans Seçenekleri", icon: Package, desc: "Enterprise Asset Management — tek paket; bakım ve saha operasyonları dahil.", href: "/planlar-eam" },
   { name: "Proje Yönetimi Lisans Seçenekleri", icon: Target, desc: "Agile, hibrit ve stratejik proje yönetimi lisans seçenekleri.", href: "/planlar-pm" },
   { name: "AICore Lisanslama", icon: Sparkles, desc: "Yapay zekâ eklentilerinin lisans, GateCoreAI ve kurulum kalemleri.", href: "/aicore/lisanslama" },
   { name: "Abonelik ve Lisanslama Rehberi", icon: ScrollText, desc: "Roller, edition kuralları, ESM ve add-on lisanslama detayları.", href: "/planlar/lisanslama-rehberi" },

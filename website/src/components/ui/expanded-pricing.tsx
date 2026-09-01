@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, MessageSquare, ShieldCheck, Zap, ArrowUpRight } from "lucide-react";
+import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, Boxes, MessageSquare, ShieldCheck, Zap, ArrowUpRight } from "lucide-react";
 
 // --- Data Models ---
 export interface PricingFeature {
@@ -28,6 +28,21 @@ export interface ProInfoBox {
   suffix: string;
 }
 
+export interface PricingFeatureGroup {
+  label: string;
+  features: PricingFeature[];
+}
+
+/** Standart/Pro ayrimi olmayan tek paketli urunler (ITAM, EAM) icin. */
+export interface PricingSinglePlan {
+  title: string;
+  description: string;
+  infoBox: string;
+  ctaLabel: string;
+  footerNote: string;
+  featureGroups: PricingFeatureGroup[];
+}
+
 export interface PricingData {
   section: {
     badge: string;
@@ -37,7 +52,9 @@ export interface PricingData {
     deploymentPill: string;
     subscriptionPill: string;
   };
-  standard: {
+  /** Tek paketli sayfalarda `single` doldurulur, `standard`/`pro` bos birakilir. */
+  single?: PricingSinglePlan;
+  standard?: {
     title: string;
     description: string;
     infoBox: string;
@@ -46,7 +63,7 @@ export interface PricingData {
     footerNote: string;
     features: PricingFeature[];
   };
-  pro: {
+  pro?: {
     title: string;
     description: string;
     infoBox: ProInfoBox;
@@ -105,7 +122,7 @@ const FeatureAccordion = ({ feature, isPro = false, isHighlight = false }: { fea
 };
 
 export function ExpandedPricingSection({ data }: { data: PricingData }) {
-  const { section, standard, pro, addons } = data;
+  const { section, standard, pro, single, addons } = data;
 
   return (
     <section id="expanded-pricing" className="relative w-full py-24 overflow-hidden bg-(--color-surface-base-dark)">
@@ -150,7 +167,69 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
           </div>
         </motion.div>
 
+        {/* Tek paketli urunler (ITAM, EAM): Standart/Pro ayrimi yok, tek kart */}
+        {single && (
+          <div className="mb-16 mx-auto w-full max-w-3xl">
+            <motion.div
+              transition={{ duration: 0.6 }}
+              className="flex flex-col rounded-4xl bg-linear-to-b from-(--color-brand-primary)/8 to-(--color-surface-base-dark) border border-(--color-brand-primary)/30 p-8 md:p-10 relative shadow-(--shadow-glow-primary-card)"
+            >
+              <div className="absolute inset-0 rounded-4xl overflow-hidden pointer-events-none">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-(--color-brand-primary)/15 to-transparent rounded-full pointer-events-none" />
+              </div>
+
+              <div className="mb-8 relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2.5 rounded-lg bg-(--color-brand-primary)/20 border border-(--color-brand-primary)/30">
+                    <Boxes className="w-6 h-6 text-(--color-brand-primary)" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">{single.title}</h3>
+                </div>
+
+                <p className="text-(--color-text-secondary) text-sm leading-relaxed mb-6">
+                  {single.description}
+                </p>
+
+                <Link
+                  href="/iletisim"
+                  className="w-full inline-flex items-center justify-center gap-2 h-14 px-6 rounded-full bg-(--color-brand-primary) hover:bg-(--color-brand-primary-hover) text-white font-semibold transition-all duration-300 shadow-(--shadow-glow-primary) hover:shadow-(--shadow-glow-primary-strong) focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  {single.ctaLabel}
+                </Link>
+              </div>
+
+              <div className="w-full h-px bg-linear-to-r from-(--color-brand-primary)/30 via-(--color-brand-primary)/20 to-transparent mb-8" />
+
+              <div className="mb-6 flex items-start gap-3 px-4 py-3.5 rounded-xl bg-(--color-brand-primary)/15 border border-(--color-brand-primary)/30 shadow-(--shadow-glow-primary-weak) relative z-10">
+                <CheckCircle2 className="w-4 h-4 text-(--color-brand-primary) mt-0.5 shrink-0" />
+                <span className="text-sm text-blue-100/90 leading-relaxed font-medium">{single.infoBox}</span>
+              </div>
+
+              <div className="flex flex-col gap-6 relative z-10">
+                {single.featureGroups.map((group) => (
+                  <div key={group.label}>
+                    <h4 className="text-xs font-semibold text-(--color-brand-primary) mb-3 px-1 uppercase tracking-wider">
+                      {group.label} ({group.features.length})
+                    </h4>
+                    <div className="flex flex-col gap-0.5">
+                      {group.features.map((feat, idx) => (
+                        <FeatureAccordion key={idx} feature={feat} isPro={true} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 pt-6 border-t border-(--color-brand-primary)/20 text-xs text-(--color-text-secondary) leading-relaxed font-light relative z-10">
+                {single.footerNote}
+              </div>
+            </motion.div>
+          </div>
+        )}
+
         {/* Pricing Cards Grid - 2 Columns Desktop */}
+        {standard && pro && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16 items-start">
 
           {/* 1. Standart Versiyon */}
@@ -291,6 +370,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
           </motion.div>
 
         </div>
+        )}
 
         {/* Add-ons & Solutions Section (Bottom Row) */}
         <motion.div
@@ -311,7 +391,15 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
                </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <div
+               className={`grid grid-cols-1 gap-8 md:gap-12 ${
+                  addons.categories.length === 1
+                     ? "max-w-2xl"
+                     : addons.categories.length === 2
+                       ? "md:grid-cols-2"
+                       : "md:grid-cols-3"
+               }`}
+            >
                {addons.categories.map((category, idx) => (
                   <div key={idx} className="flex flex-col">
                      <h4 className="text-sm font-semibold text-white mb-6 border-b border-white/10 pb-4 uppercase tracking-wider">{category.title}</h4>
