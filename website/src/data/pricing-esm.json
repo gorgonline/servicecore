@@ -224,10 +224,6 @@
         "description": "ServiceCore, global kullanıcılar için Çoklu Dil Desteği sunarak, farklı dillerde çalışma imkanı sağlar. Bu özellik, kullanıcıların kendi tercihlerine göre platformu farklı dillerde kullanabilmelerini ve daha verimli bir deneyim elde etmelerini mümkün kılar."
       },
       {
-        "title": "Vardiya Yönetimi Modülü",
-        "description": "Vardiya Yönetimi Modülü, mevcut olay ve servis talebi kayıtlarının atandığı teknisyen gruplarına bağlı olarak, belirlenen koşullar çerçevesinde santral aramalarının yönetimini sağlayan bir çözümdür. Bu modül sayesinde kritik kayıtlar için teknisyenlerin telefonla otomatik olarak bilgilendirilmesi ve operasyonel süreçlerin aksamadan ilerlemesi hedeflenir."
-      },
-      {
         "title": "Multitenant Yapı (ESM versiyon ile)",
         "description": "Servicecore'un içindeki tüm hizmet süreçlerini ve bu süreçlere odaklanan bir yaklaşımı ifade eder. Bu, Servicecore'un sadece IT (Bilgi Teknolojileri) departmanı için değil, aynı zamanda diğer departmanlar ve iş birimleri için de hizmet yönetimi uygulamalarını içerir. Servicecore ESM yaklaşımı, bir şirketin genel hizmet verimliliğini ve müşteri memnuniyetini artırmayı amaçlar. ESM versiyonda alt tenantlarda üye olan her bir teknisyen tenant bazında ayrı lisanslanmaktadır."
       },
