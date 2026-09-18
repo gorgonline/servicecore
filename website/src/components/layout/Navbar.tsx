@@ -116,6 +116,9 @@ const modules = [
   { name: "Integration System", icon: Plug, desc: "Connector katalogu, görsel akış tasarımı ve canlı çalıştırma izleme.", href: "/entegrasyon-sistemi" },
   { name: "Low Code Geliştirme Modülü", icon: Code, desc: "Özel formlar ve süreç tasarımları oluşturun.", href: "/low-code-gelistirme" },
   { name: "Sözleşme Yönetimi", icon: FileSignature, desc: "Hizmet Seviyeleri ve sözleşmeleri yönetin.", href: "/sozlesme-yonetimi" },
+  { name: "Sandbox / Test Ortamı", icon: FlaskConical, desc: "Değişiklikleri canlıya almadan önce test edin.", href: "/sandbox" },
+  { name: "Failover / Yedekli Sistem", icon: Network, desc: "Yedekli kurulumla hizmeti kesintisiz sürdürün.", href: "/failover" },
+  { name: "Disaster Center / Felaket Kurtarma", icon: ShieldAlert, desc: "Hizmeti ikinci lokasyonda ayağa kaldırın.", href: "/disaster-center" },
 ];
 
 const solutionsSubmenu = [
