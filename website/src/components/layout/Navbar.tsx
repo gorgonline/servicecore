@@ -369,7 +369,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top overflow-y-auto overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top overflow-y-auto glass-scrollbar overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
                   onMouseEnter={() => setActiveMenu("modules")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -431,7 +431,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto overscroll-contain"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto glass-scrollbar overscroll-contain"
                   onMouseEnter={() => setActiveMenu("solutions")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -487,7 +487,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-8 shadow-2xl origin-top overflow-y-auto overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-8 shadow-2xl origin-top overflow-y-auto glass-scrollbar overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
                   onMouseEnter={() => setActiveMenu("aicore")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -570,7 +570,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top overflow-y-auto overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top overflow-y-auto glass-scrollbar overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
                   onMouseEnter={() => setActiveMenu("hizmetler")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -688,7 +688,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto overscroll-contain"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto glass-scrollbar overscroll-contain"
                   onMouseEnter={() => setActiveMenu("plans")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -742,7 +742,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-137.5 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto overscroll-contain"
+                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-137.5 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto glass-scrollbar overscroll-contain"
                   onMouseEnter={() => setActiveMenu("resources")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
@@ -830,7 +830,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 left-0 h-dvh w-[85vw] max-w-sm bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-r border-white/10 z-50 lg:hidden flex flex-col overflow-y-auto"
+              className="fixed top-0 left-0 h-dvh w-[85vw] max-w-sm bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border-r border-white/10 z-50 lg:hidden flex flex-col overflow-y-auto glass-scrollbar"
             >
               <div className="flex flex-col pt-8 pb-8 px-6 h-full">
                 

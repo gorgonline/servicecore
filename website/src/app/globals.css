@@ -227,3 +227,38 @@ select:-webkit-autofill:focus {
 .blue-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(0, 112, 243, 0.6);
 }
+
+/* Cam yuzeyli panel/menu scrollbar'i. Chromium + Safari ::-webkit-scrollbar ile
+   tam ozellestirilir (Windows'taki ok butonlari ve beyaz ray gizlenir); standart
+   scrollbar-color sadece Firefox'a verilir, cunku Chrome 121+ scrollbar-color
+   gorunce ::-webkit-scrollbar kurallarini yok sayar. */
+.glass-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.glass-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 16px;
+}
+
+.glass-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-surface-alpha-white15);
+  border-radius: 9999px;
+}
+
+.glass-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-active);
+}
+
+.glass-scrollbar::-webkit-scrollbar-button,
+.glass-scrollbar::-webkit-scrollbar-corner {
+  display: none;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .glass-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-surface-alpha-white15) transparent;
+  }
+}
