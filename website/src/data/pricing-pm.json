@@ -20,36 +20,500 @@
     "ctaLabel": "Teklif İsteyin",
     "footerNote": "* Standart versiyona, Premium versiyon modüllerinden veya eklentilerden ihtiyaç duyulan modüller tekil olarak eklenebilmektedir. Minimum Standart 10 teknisyen alınabilir.",
     "features": [
-      { "title": "Proje Yönetimi Modülü", "description": "Proje yönetimi temel özelliklerini içeren modüldür." },
-      { "title": "Çevik Proje Yönetimi", "description": "Agile metodların SCRUM vb. kullanılabildiği modüldür." },
-      { "title": "SDLC Yönetimi", "description": "Yazılım geliştirme işlerinin yönetimi, takibi, raporlanması ve CI CD platformları ile entegrasyonlar." },
-      { "title": "Panolar Dashboardlar", "description": "Projelerin farklı panolar ve dashboardlar ile takip edilebileceği modül." },
-      { "title": "Gantt Modülü", "description": "Gantt Chartlar ile proje bağımlıkları ve zaman takibi." },
-      { "title": "Kaynak Yönetimi", "description": "Proje kaynaklarının görev, müsaitlik, kapasite, kullanım ve yük dağılımlarının yönetimi." },
-      { "title": "İş Kayıtları / Time Sheet Yönetimi", "description": "Karşılanan kayıtlar içerisinde iş kayıtlarınızı tutabilir ve o kayıt için toplam efor sürelerini hesaplayabilirsiniz." },
-      { "title": "Kapasite ve İş Yükü Takibi", "description": "Kapasite ve İş Yükü Takibi." },
-      { "title": "Portföy ve Program Yönetimi Modülü", "description": "Kurumsal portföy, program ve girişimlerin yönetimi modülüdür." },
-      { "title": "Release (Sürüm) Yönetimi", "description": "Tüm yazılım ve proje sürümlerinin yönetimi; yayın paketi ve versiyonlama işlemleri için kullanılan modüldür." },
-      { "title": "OKR Modülü", "description": "Hedeflerin ve OKR'ların yönetimi modülüdür." },
-      { "title": "SCM Entegrasyonu", "description": "Yazılım versiyon kontrol sistemleri ile tam entegrasyon ve uyumluluk modülüdür. Jenkins, GitHub Actions vb. otomasyon yazılımlarıyla karşılıklı süreç takibi sağlar." },
-      { "title": "Bağımlılıkların Yönetimi", "description": "Dependency management kapsamında projeler ve epikler arası bağıntılar görüntülenebilir, kritik yol takibi yapılabilir." },
-      { "title": "Proje Risk Yönetimi", "description": "Projeye etkisi olan tüm durumlar için etki ve olasılık bazlı risk matrisleri oluşturmayı ve risk öğelerini aktif olarak takip etmeyi sağlayan yönetim fonksiyonudur." },
-      { "title": "Proje İletişim Modülü", "description": "Her projenin kendine özel gelen kutusunun bulunduğu; ekibin proje boyunca yaptığı tüm yazışmaların ve dış kullanıcıların proje kapsamında yazdıklarının kaydedildiği iletişim modülüdür." },
-      { "title": "Proje Bildirim Yönetimi", "description": "Proje boyunca görev, epik, bağımlılık ve sprintlerdeki durum değişimleri ve güncellemeler için tüm paydaşların otomatik bilgilendirildiği bildirim otomasyonu modülüdür." },
-      { "title": "Proje Bazlı Yetki Yönetimi", "description": "Kurum bazında yapılan yetkilendirmeye ek olarak her proje için özelleştirilebilir, detaylı alt yetkilerin kapsamlı olarak sunulduğu modüldür." },
-      { "title": "Proje Bazlı Akış ve Onay Diyagramları - Görev Durum Geçiş ve Akış Yönetimi", "description": "Tasklar arası tüm transition kurallarının proje bazlı tanımlanabildiği, esnek kural ve akış diyagramları oluşturulabilen modüldür." },
-      { "title": "Proje Bazlı Özel Alan Yönetimi", "description": "Her projede her görev türü için kapsamlı, ayrı ve bağımsız özel ek alanların sınırsızca ve kolayca tanımlanabildiği modüldür." },
-      { "title": "Proje İş Kuralları ve Otomasyon Modülü", "description": "Projelerde görev türüne göre iş kurallarının sınırsız koşul ve sınırsız aksiyonla, kompleks kurgulara izin veren bir yapıda kolayca tasarlanmasını ve otomasyonunu sağlayan modüldür." },
-      { "title": "Self Servis Portal", "description": "Kullanıcıların olaylarını, isteklerini, değişikliklerini, varlıklarını ve destek ekiplerinizle olan tüm etkileşimlerini izleyebilmeleri için portal." },
-      { "title": "Bilgi ve Doküman Yönetimi Modülü", "description": "Kapsamlı Bilgi ve Doküman Yönetim Sistemi, hem teknik ekip hem de kullanıcılar için proje dokümantasyonunu, workspaceleri, makaleleri yönetmeyi, versiyonlamayı, paylaşmayı ve düzenlemeyi kolaylaştırır." },
-      { "title": "Görev, İş Günlüğü, Doküman Şablonları", "description": "Servicecore'un şablon yapısı sayesinde, kayıt oluşturma süreçleri standartlaşır ve hız kazanır. Tekrar eden işlemler için zaman kaybı ortadan kalkar, verimlilik artar." },
-      { "title": "Raporlama Modülü", "description": "Servicecore raporlama modülüyle proje, sprint, backlog, task verilerini anlamlı bilgilere dönüştürerek performansı ölçer ve iyileştirme alanlarını tespit eder. Hazır raporlar, dinamik panolar ve Report Wizard sayesinde stratejik, operasyonel ve analitik raporlamalar kolayca yapılabilir. Sürekli iyileştirme için gereken veri odaklı yönetim bu sayede sağlanır." },
-      { "title": "Zamanlanmış Raporlar", "description": "Zamanlanmış Raporlar ile tüm paydaşları güncel tutun." },
-      { "title": "Rol Yönetimi", "description": "Teknisyenlere farklı yetkiler tanımlanarak uygulama içinde yalnızca ilgili alanlara erişim sağlanır. Bu sayede güvenli ve verimli bir görev dağılımı gerçekleştirilir." },
-      { "title": "E-Posta, SMS, Web Bildirim Şablonları", "description": "Servicecore, açılan kayıtlar için kullanıcılara ve teknisyenlere anlık e-posta bildirimleri göndererek hızlı bilgilendirme sağlar. Bu sayede süreçler kesintisiz ilerler ve müdahale süreleri minimuma iner." },
-      { "title": "Sınırsız AD Senkronizasyonu", "description": "Dilediğiniz kadar AD hesabı entegre ederek sınırsız kullanıcıyı Servicecore'da yetkilendir." },
-      { "title": "Genel Yönetim Modülü", "description": "Servicecore'un esnek, kolay kullanımlı ve kapsamlı administration seçenekleriyle iş süreçlerinizi kolaylaştırın!" }
-    ]
+      {
+        "title": "Proje Yönetimi Modülü",
+        "description": "Proje yönetimi temel özelliklerini içeren modüldür.",
+        "paragraphs": [
+          "Proje Yönetimi modülü, ServiceCore Project'in çekirdek yapısıdır. Proje açılışından kapanışına kadar tüm yaşam döngüsünü; hedefleri, kapsamı, paydaşları, zaman çizelgesini ve teslim kriterlerini tek bir kayıt altında toplar. Her proje; kendi takımı, takvimi, backlog'u ve raporlama düzlemiyle bağımsız bir çalışma alanı olarak tanımlanır.",
+          "Projeler portföy seviyesinde gruplanabilir, programlara bağlanabilir ve organizasyon hiyerarşisine göre yetkilendirilebilir. Böylece yüzlerce paralel proje, dağınık tablolar yerine tek bir merkezden ve tutarlı bir veri modeliyle yönetilir.",
+          "Modül; epik, story, görev, hata ve alt görev hiyerarşisini destekler. Çevik ekipler sprint ritmiyle, klasik ekipler aşama bazlı planla çalışır; iki yaklaşım da aynı proje kaydı üzerinde bir arada yaşar. Görev türleri, durumları ve akışları her projenin çalışma biçimine göre uyarlanır.",
+          "Proje sağlığı, ilerleme yüzdesi, açık riskler ve teslim tahminleri proje özet ekranında anlık görünür. Yöneticiler tek bakışta hangi projenin yolunda ilerlediğini, hangisinin müdahale gerektirdiğini ayırt eder. Raporlar doğrudan proje verisinden beslendiği için ayrıca veri toplama eforu gerekmez.",
+          "Diğer tüm modüller bu çekirdeğe bağlanır: kanban panosu, Gantt görünümü, kaynak yönetimi ve raporlama aynı proje verisini paylaşır. Tek kaynaktan beslenen, bütünleşik bir proje yönetimi deneyimi oluşur."
+        ],
+        "highlights": [
+          "Uçtan uca proje yaşam döngüsü",
+          "Portföy ve program hiyerarşisi",
+          "Epik, story, görev, hata yapısı",
+          "Çevik ve klasik planlama",
+          "Anlık proje sağlığı göstergesi"
+        ]
+      },
+      {
+        "title": "Çevik Proje Yönetimi",
+        "description": "Scrum başta olmak üzere çevik metodolojilerin uçtan uca uygulanabildiği modüldür.",
+        "paragraphs": [
+          "Çevik Proje Yönetimi modülü, Scrum ve diğer çevik metodolojileri platforma yerleşik olarak getirir. Ürün backlog'u, sprint backlog'u, sprint planlama ve sprint inceleme adımları tek bir akışta birleşir. Ekipler dağınık dokümanlar yerine herkesin aynı anda gördüğü canlı bir backlog üzerinde çalışır.",
+          "Tahminleme, planning poker mantığıyla story point üzerinden yapılır. Geçmiş sprintlerin gerçekleşen verisinden velocity otomatik hesaplanır ve bir sonraki sprintin kapasitesi ekibin gerçek hızına göre belirlenir. Böylece taahhüt edilen kapsam, temenniye değil ölçüme dayanır.",
+          "Sprint süresince burndown grafiği günlük olarak güncellenir; kalan iş ile ideal çizgi arasındaki fark daha ilk günlerde görünür hale gelir. Sprint içinde kapsam değiştiğinde etkisi aynı gün grafiğe yansır. Scrum master, sprint hedefinin risk altında olup olmadığını veriye dayalı değerlendirir.",
+          "Sprint sonunda retrospektif iş akışları devreye girer. Ekip neyin iyi gittiğini ve neyin geliştirilmesi gerektiğini yapılandırılmış bir formatta kaydeder. Çıkan aksiyon maddeleri sahibiyle birlikte bir sonraki sprintin backlog'una taşınır ve takibi kaybolmaz.",
+          "Modül, kanban ve Gantt modülleriyle aynı veri modelini paylaşır. Bir story'yi sprintten yol haritasına taşımak veya panoda durumunu güncellemek ek bir senkronizasyon gerektirmez; her kayıt tek bir gerçeğe sahiptir."
+        ],
+        "highlights": [
+          "Ürün ve sprint backlog yönetimi",
+          "Story point ve velocity hesabı",
+          "Günlük burndown takibi",
+          "Yapılandırılmış retrospektif akışı",
+          "Kanban ve Gantt ile ortak veri"
+        ]
+      },
+      {
+        "title": "SDLC Yönetimi",
+        "description": "Yazılım geliştirme işlerinin yönetimi, takibi, raporlanması ve CI/CD platformlarıyla entegrasyonu.",
+        "paragraphs": [
+          "SDLC Yönetimi modülü; gereksinim toplama, analiz, geliştirme, test ve devreye alma adımlarını tek bir izlenebilir akışta birleştirir. Her iş kalemi, hangi aşamada olduğu ve hangi sürüme ait olduğu bilgisiyle takip edilir. Geliştirme işleri proje planından kopmadan yürütülür.",
+          "Modül, yaygın CI/CD platformlarıyla entegre çalışacak biçimde tasarlanmıştır. Build, test ve devreye alma adımlarından dönen durumlar ilgili story ve göreve yansır. Böylece geliştirme hattı ile proje yönetimi arasındaki kopukluk ortadan kalkar.",
+          "Gereksinimler story ve epik yapılarına bağlanır; yazılan her kod parçasının hangi iş ihtiyacından doğduğu geriye doğru izlenebilir. Bu izlenebilirlik, denetim kayıtları ve sürüm dokümantasyonu için sağlam bir temel oluşturur.",
+          "Hata kayıtları geliştirme akışının içindedir; bir hata açıldığında ilgili sürüm, ortam ve sorumlu geliştirici bilgisiyle birlikte takip edilir ve çözümü sprint ritmine dahil edilir. Yöneticiler sürüm bazında ilerlemeyi, açık gereksinimleri ve test kapsamını tek ekranda görür; teslim tarihleri gerçek geliştirme hızına dayanarak tahmin edilir."
+        ],
+        "highlights": [
+          "Gereksinimden sürüme izlenebilirlik",
+          "CI/CD platform entegrasyonu",
+          "Sürüm bazlı ilerleme takibi",
+          "Hata ve story bağlantısı",
+          "Denetime hazır kayıt zinciri"
+        ]
+      },
+      {
+        "title": "Panolar Dashboardlar",
+        "description": "Proje verisinin role göre özelleştirilebilen panolar ve dashboardlar üzerinden anlık izlendiği görselleştirme modülüdür.",
+        "paragraphs": [
+          "Panolar ve Dashboardlar modülü, proje verisini role ve sorumluluğa göre özelleştirilebilen görsel ekranlara dönüştürür. Yönetici özeti, sprint durumu, ekip iş yükü ve teslim takvimi aynı düzlemde toplanır. Her kullanıcı kendi günlük çalışma akışına uyan panoyu kendisi kurar ve kaydeder.",
+          "Pano bileşenleri sürükle-bırak ile yerleştirilir ve boyutlandırılır. Burndown grafiği, açık görev sayısı, velocity trendi ve kapasite kullanımı gibi göstergeler tek tıkla eklenir, canlı veriyle beslenir. Düzen kullanıcıya bağlı olarak korunur; her girişte aynı çalışma görünümüne dönülür.",
+          "Dashboardlar gerçek zamanlı çalışır; bir görev tamamlandığında veya sprint ilerlediğinde göstergeler anında güncellenir. Günlük ayak üstü toplantılarında ekran paylaşmak için tek bakışta okunabilen bir görünüm sağlar.",
+          "Farklı paydaşlar için birbirinden bağımsız panolar tanımlanır. Geliştirme ekibi görev kırılımına inen ayrıntılı bir pano kullanırken, yönetim portföy seviyesinde özetlenmiş bir dashboard görür. Yetkilendirme panolara da yansır; kullanıcı yalnızca erişim hakkı bulunan projelerin verisini görür.",
+          "Panolar diğer modüllerin verisini tek merkezde birleştirir. Sprint, kanban, kapasite ve raporlama modüllerinden gelen göstergeler aynı ekranda buluşur; ekranlar arasında gezinmeden bütünsel durum okunur."
+        ],
+        "highlights": [
+          "Role göre özelleştirilebilir panolar",
+          "Sürükle-bırak bileşen yerleşimi",
+          "Gerçek zamanlı gösterge güncellemesi",
+          "Çoklu pano mimarisi",
+          "Modüller arası birleşik veri"
+        ]
+      },
+      {
+        "title": "Gantt Modülü",
+        "description": "Proje görevlerini, epikleri ve kilometre taşlarını tek bir zaman çizelgesinde planlayıp bağımlılıklarıyla birlikte izlemeyi sağlar.",
+        "paragraphs": [
+          "Gantt Modülü; proje görevlerini, epikleri ve kilometre taşlarını yatay bir zaman çizelgesi üzerinde gösterir. Başlangıç ve bitiş tarihleri, süreler ve ilerleme yüzdeleri aynı görselde toplanır. Böylece haftalara yayılan uzun vadeli plan, ayrı tablolara bakmaya gerek kalmadan tek bakışta kavranır.",
+          "Görevler arasındaki bağımlılıklar çizelge üzerinde çizgilerle ifade edilir; biten-başlar ve başlayan-başlar türündeki ilişkiler açıkça görünür. Bir görevin tarihi kaydığında ona bağlı görevler otomatik olarak yeniden konumlanır. Teslim zincirinin nerede kopacağı, gecikme yaşanmadan önce fark edilir.",
+          "Kritik yol analizi, projenin toplam süresini belirleyen görev zincirini çizelge üzerinde vurgular. Yöneticiler hangi gecikmenin teslim tarihini doğrudan etkileyeceğini, hangisinin bolluk payı içinde kaldığını ayırt eder. Müdahale ve kaynak takviyesi kararları bu ayrım üzerine kurulur.",
+          "Planlama doğrudan çizelge üzerinde yapılır: görev sürükleyerek ileri alınır, kenarından çekilerek süresi uzatılır, bağımlılık çizgisi elle kurulur. Değişiklik anında kaydedilir ve plana bağlı tüm görünümlere yansır. Planı güncellemek için ayrı bir form doldurma adımı yoktur.",
+          "Gantt görünümü sprint ve yol haritası modülleriyle aynı zaman ekseninde hizalanır. Çevik ekiplerin sprint taahhütleri ile yönetimin uzun vadeli teslim planı yan yana okunur. İki planlama ufku arasındaki tutarsızlık, dönem sonunu beklemeden görünür hale gelir."
+        ],
+        "highlights": [
+          "Görsel zaman çizelgesi",
+          "Görev bağımlılık çizgileri",
+          "Kritik yol analizi",
+          "Sürükleyerek tarih güncelleme",
+          "Sprint ve yol haritası hizası"
+        ]
+      },
+      {
+        "title": "Kaynak Yönetimi",
+        "description": "Proje kaynaklarının görev, müsaitlik, kapasite, kullanım ve yük dağılımlarının yönetimi.",
+        "paragraphs": [
+          "Kaynak Yönetimi modülü, projelerde görev alan insan, takım ve rol bazlı kaynakları tek bir havuzda toplar. Her kaynağın hangi projelere atandığı, hangi dönemde ne kadar müsait olduğu, tanımlı kapasitesi ve o an taşıdığı yük aynı görünümde okunur. Planlama, dağınık tablolar yerine güncel tek bir veri kümesi üzerinden yürütülür.",
+          "Bir görev veya iş kalemi bir kaynağa atanırken, o kaynağın ilgili dönemdeki doluluk oranı atama ekranında anında görünür. Planlamayı yapan kişi, kapasiteyi aşacak bir atamayı gerçekleştirmeden önce bunu görür ve kararını veriye dayandırır. Aşırı yüklenme, sprint başladıktan sonra değil planlama anında engellenir.",
+          "Yük dağılımı haritası, takım içindeki dengesizlikleri görsel olarak ortaya çıkarır. Bir kişi tıkanmışken bir başkasının boşta kalması, ayrı bir rapor beklemeden tek bakışta fark edilir ve iş yeniden dengelenir. Yeniden dağıtımın ardından tablo anında güncellenir; değişikliğin etkisi aynı ekranda doğrulanır.",
+          "Müsaitlik takvimi izin, resmi tatil ve kısmi kapasite durumlarını hesaba katar. Yarım gün çalışan veya birden çok projeye bölünmüş bir kaynağın fiilen ayrılabilir süresi plana olduğu gibi yansır. Teslim tahminleri kâğıt üzerindeki kapasiteye değil gerçek kapasiteye dayandığı için sapma azalır.",
+          "Modül, kapasite takibi ve iş kaydı modülleriyle birlikte çalışır. Planlanan yük ile gerçekleşen efor yan yana karşılaştırılır; hangi rolde veya hangi iş türünde tahminin sistematik olarak saptığı ortaya çıkar. Bu geri besleme, bir sonraki dönemin planlamasını daha gerçekçi kılar."
+        ],
+        "highlights": [
+          "Merkezi kaynak havuzu",
+          "Anlık doluluk görünürlüğü",
+          "Yük dağılımı haritası",
+          "İzin ve kısmi kapasite takvimi",
+          "Planlanan ile gerçekleşen karşılaştırması"
+        ]
+      },
+      {
+        "title": "İş Kayıtları / Time Sheet Yönetimi",
+        "description": "Görevler üzerinde harcanan eforu kayıt altına alan ve kayıt bazında toplam çalışma sürelerini hesaplayan modüldür.",
+        "paragraphs": [
+          "İş Kayıtları / Time Sheet modülü, ekip üyelerinin görevler üzerinde harcadığı süreyi kayıt altına alır. Her kayıt; ilgili görev, tarih, süre ve açıklama alanlarıyla tutulur, böylece hangi işe ne kadar efor harcandığı kayıt düzeyinde şeffaf biçimde görünür. Efor girişi görev ekranından yapıldığı için ekip ayrı bir araca geçmek zorunda kalmaz.",
+          "Görev ve story bazında toplam efor otomatik hesaplanır. Tahmin edilen story point ile gerçekleşen efor yan yana karşılaştırılır; bu karşılaştırma, ekibin tahmin doğruluğunu sprint bazında ölçmeyi ve zaman içinde iyileştirmeyi sağlar.",
+          "Time sheet görünümü, kullanıcının haftalık ve aylık çalışma dağılımını tablo halinde sunar. Eksik kalan günler, kayıt girilmemiş görevler ve kapasitesinin üzerinde yüklenmiş kişiler bu tabloda doğrudan fark edilir. Yönetici, ekibin dolu ve boş günlerini tek ekranda görerek iş dağılımını dengeler.",
+          "Müşteriye fatura kesilen projelerde iş kayıtları faturalandırmanın temelini oluşturur; harcanan saatler ücretli ve ücretsiz olarak ayrıştırılıp raporlanır. Gerçekleşen efor verisi aynı zamanda kapasite ve raporlama modüllerini besler, sprint analitiğini ve kaynak maliyeti raporlarını doğrudan çalıştırır."
+        ],
+        "highlights": [
+          "Görev bazlı efor kaydı",
+          "Tahmin ve gerçekleşen karşılaştırması",
+          "Haftalık ve aylık time sheet",
+          "Ücretli / ücretsiz saat ayrımı",
+          "Kapasite ve maliyet raporlarına veri"
+        ]
+      },
+      {
+        "title": "Kapasite ve İş Yükü Takibi",
+        "description": "Ekiplerin ve bireylerin kapasite kullanımını gerçek zamanlı yoğunluk haritalarıyla izleyen, sprint kapasitesini hesaplayan ve aşırı yüklenmeyi görsel uyarılarla ortaya çıkaran modüldür.",
+        "paragraphs": [
+          "Kapasite ve İş Yükü Takibi modülü, ekiplerin ve bireylerin kapasite kullanımını gerçek zamanlı olarak görselleştirir. Yoğunluk haritaları üzerinde kimin aşırı yüklendiği, kimin atıl kapasiteye sahip olduğu tek bakışta ortaya çıkar. Yönetici tahmine değil, ölçülen doluluk oranına bakarak planlama yapar.",
+          "Sprint kapasitesi, ekibin müsaitlik durumu ve geçmiş velocity verisi üzerinden hesaplanır. Bir sonraki sprinte alınacak iş bu kapasiteyi aşmayacak biçimde planlanır; aşım durumunda sistem görsel uyarı üretir. Kapasite gerçek müsaitlik üzerinden hesaplandığı için ekibin verdiği taahhütler gerçekçi kalır.",
+          "Günlük, haftalık ve aylık iş yükü analizleri planlamayı kontrollü hale getirir. Yöneticiler kapasite trendini izleyerek işe alım, dış kaynak kullanımı veya yeniden önceliklendirme kararlarını veriye dayandırır. Darboğazlar teslim tarihini tehdit etmeden önce görünür olur.",
+          "Takımlar arası iş yükü orkestrasyonu sayesinde bir takımın atıl kapasitesi, başka bir takımın darboğazını gidermek üzere yönlendirilebilir. Modül kaynak yönetimi ve iş kaydı verisini birleştirir; planlanan kapasite ile gerçekleşen efor karşılaştırılarak tahmin doğruluğu her dönem iyileştirilir."
+        ],
+        "highlights": [
+          "Gerçek zamanlı yoğunluk haritası",
+          "Sprint kapasite hesabı",
+          "Aşırı yük görsel uyarısı",
+          "Takımlar arası dengeleme",
+          "Planlanan ve gerçekleşen karşılaştırması"
+        ]
+      },
+      {
+        "title": "Portföy ve Program Yönetimi Modülü",
+        "description": "Kurumsal portföy-program ve girişimlerin yönetimi modülüdür.",
+        "paragraphs": [
+          "Portföy ve Program Yönetimi modülü, kurumun yürüttüğü tüm çalışmaları portföy, program ve proje hiyerarşisi altında tek bir yapıda toplar. Her portföy kendi altındaki programları, her program da kendisine bağlı projeleri ve girişimleri kapsar. Böylece yüzlerce paralel çalışma dağınık tablolar yerine tutarlı tek bir veri modeli üzerinden yönetilir.",
+          "Girişimler, stratejik hedef ile sahadaki icra arasındaki bağı kurar. Bir girişim altında birden fazla proje ve epik tanımlanabilir; girişimin ilerlemesi bağlı kayıtların gerçek durumundan hesaplanır ve manuel bir ilerleme beyanına ihtiyaç kalmaz.",
+          "Portföy ve program seviyesinde kapsam, takvim ve ilerleme birlikte izlenir. Yöneticiler tek ekranda hangi programın plana uygun ilerlediğini, hangisinde tamamlanmamış işlerin biriktiğini ve hangi projenin geciktiğini ayırt eder; müdahale kararı tahmine değil kayda dayanır.",
+          "Yetkilendirme organizasyon hiyerarşisini izler: portföy sahibi yalnızca kendi portföyündeki programları ve projeleri görür, program yöneticisi kendi kapsamı içinde yetkilendirilir. Modül proje, raporlama ve OKR modülleriyle aynı veriyi paylaştığı için stratejik hedeften tek bir göreve kadar kesintisiz izlenebilirlik sağlanır."
+        ],
+        "highlights": [
+          "Portföy ve program hiyerarşisi",
+          "Girişim bazlı ilerleme takibi",
+          "Kapsam, takvim ve ilerleme görünürlüğü",
+          "Hiyerarşik yetkilendirme",
+          "Stratejiden göreve izlenebilirlik"
+        ]
+      },
+      {
+        "title": "Release (Sürüm) Yönetimi",
+        "description": "Tüm yazılım ve proje sürüm yönetimi. Yayın paket ve versiyonlama yönetimi işlemleri için kullanılan modüldür.",
+        "paragraphs": [
+          "Release (Sürüm) Yönetimi modülü, tüm yazılım ve proje sürümlerini tek bir yayın takvimi üzerinde yönetir. Her sürüm; kapsamı, hedef tarihi, sorumlusu ve yayın paketi içeriğiyle birlikte kayıt altına alınır. Planlanan, geliştirilen ve yayınlanan sürümler aynı liste üzerinde durum bazlı izlenir.",
+          "Görevler, story'ler ve hata kayıtları ilgili sürüme etiketlenir; böylece bir sürümün içinde tam olarak hangi işlerin yer aldığı her an görülür. Kapsamdan çıkarılan iş kalemleri bir sonraki sürüme taşınır ve sürüm kapsamı tek ekrandan yeniden düzenlenir. Sürüm ilerlemesi, bağlı iş kalemlerinin tamamlanma durumundan otomatik hesaplanır.",
+          "Versiyonlama kuralları kurumun kendi numaralandırma düzenine göre tanımlanır; ana sürüm, ara sürüm ve yama sürümleri ayrı ayrı yönetilir. Yayın paketlerinin içeriği ve yayın tarihi kayıt altına alınır; geçmiş sürümlerin kapsamı geriye dönük olarak sorgulanabilir.",
+          "Sürüm yayına alınmadan önce onay akışından geçirilebilir ve ilgili paydaşlar bildirim üzerinden bilgilendirilir. Yayın sonrasında açılan hata kayıtları ilgili sürümle ilişkilendirilir, düzeltmeler bir sonraki yayın paketine planlanır. Böylece geliştirme, test ve yayın adımları arasındaki izlenebilirlik kopmaz."
+        ],
+        "highlights": [
+          "Sürüm ve yayın takvimi",
+          "Yayın paketi kapsamı",
+          "Ana, ara ve yama sürümleri",
+          "Sürüme bağlı iş kalemleri",
+          "Yayın öncesi onay akışı"
+        ]
+      },
+      {
+        "title": "OKR Modülü",
+        "description": "Hedeflerin ve OKR'ların yönetimi modülüdür.",
+        "paragraphs": [
+          "OKR Modülü, kurumun stratejik hedeflerini ve bu hedefleri ölçülebilir kılan anahtar sonuçları tek bir yapıda tanımlar. Her hedef; sahibi, dönemi, başlangıç değeri ve ulaşılmak istenen değeriyle kaydedilir. Stratejik niyet, yorum gerektirmeyen sayısal bir çerçeveye oturur.",
+          "Hedefler kurum, program, takım ve birey düzeyinde kırılabilir; alt hedefler bağlı oldukları üst hedefe iliştirilir. Bir takımın çeyrek hedefinin hangi kurumsal önceliği beslediği bu hiyerarşide açıkça görülür. Böylece birbirinden kopuk hedef listeleri yerine tek bir hizalanmış hedef ağacı oluşur.",
+          "Anahtar sonuçların ilerlemesi projeler, epikler ve görevlerle ilişkilendirilir; ilgili iş tamamlandıkça gerçekleşme oranı güncellenir. Hedef takibi ayrı bir tabloda değil, işin yapıldığı yerde yürür. Yönetim, hangi projenin hangi hedefe ne kadar katkı verdiğini tek ekranda görür.",
+          "Hedef durumu panolara ve raporlama modülüne taşınır; dönem sonu gözden geçirmelerinde gerçekleşme oranları ve sapmalar somut veriyle tartışılır. Risk altına giren anahtar sonuçlar için sorumlular bildirim akışıyla uyarılır. Dönem kapandığında sonuçlar arşivlenir ve bir sonraki dönemin hedefleri geçmiş performansla karşılaştırılabilir."
+        ],
+        "highlights": [
+          "Hedef ve anahtar sonuç tanımı",
+          "Kurum, takım ve birey kırılımı",
+          "Projeyle ilişkilendirilmiş ilerleme",
+          "Panolarda canlı hedef takibi",
+          "Dönemsel gözden geçirme"
+        ]
+      },
+      {
+        "title": "SCM Entegrasyonu",
+        "description": "Yazılım versiyon kontrol sistemleri ile tam entegrasyon ve uyumluluk modülüdür. Jenkins, GitHub Actions vb. otomasyon yazılımlarıyla karşılıklı süreç takibi.",
+        "paragraphs": [
+          "SCM Entegrasyonu modülü, kurumun yazılım versiyon kontrol sistemleriyle tam uyumlu çalışır. Depo, dal ve commit düzeyindeki hareketler platformdaki görev ve story kayıtlarıyla eşleştirilir. Geliştiricinin kod tarafında yaptığı iş, proje tarafında ayrıca raporlanmasına gerek kalmadan görünür olur.",
+          "Jenkins ve GitHub Actions başta olmak üzere otomasyon yazılımlarıyla karşılıklı süreç takibi kurulur. Çalıştırılan işin sonucu ilgili kayda düşer; platform tarafındaki durum değişimi de otomasyon hattını tetikleyecek biçimde kurgulanabilir. İki taraf arasında tek bir ortak durum bilgisi oluşur.",
+          "Her görev, kendisine bağlı dal ve birleştirme talepleriyle birlikte görüntülenir. Bir işin kod tarafında başlayıp başlamadığı, hangi sürüme alındığı ve hangi ortama çıktığı kayıt üzerinden okunur. Sürüm notu hazırlanırken hangi değişikliğin hangi talepten geldiği elle derlenmez.",
+          "Entegrasyon; bildirim, iş kuralı ve raporlama katmanlarıyla birlikte çalışır. Kod hareketine bağlı durum geçişleri paydaşlara otomatik bildirilir. Geliştirme hızı ve sürüm içeriği, raporlara doğrudan veri olarak akar."
+        ],
+        "highlights": [
+          "Versiyon kontrol sistemi uyumu",
+          "Jenkins ve GitHub Actions bağlantısı",
+          "Commit ve görev eşleşmesi",
+          "Karşılıklı süreç takibi",
+          "Dal ve birleştirme görünürlüğü"
+        ]
+      },
+      {
+        "title": "Bağımlılıkların Yönetimi",
+        "description": "Dependency management kapsamında projeler, epikler arası bağıntılar görüntülenebilir ve kritik yol takibi yapılabilir.",
+        "paragraphs": [
+          "Bağımlılıkların Yönetimi modülü, projeler ve epikler arasındaki bağıntıları tek bir görünümde toplar. Bir işin başlayabilmesi için hangi işin tamamlanması gerektiği, hangi ekibin çıktısının beklendiği ilişki kaydı olarak tutulur. Böylece bağımlılıklar ayrı takip tablolarında değil, proje verisinin içinde yaşar.",
+          "Bağımlılık yalnızca tek bir projenin içinde değil, projeler arasında da kurulabilir. Bir programın altındaki farklı projelerin birbirine bağlı teslimatları ilişkilendirilir; portföy seviyesinde hangi projenin hangisini beklettiği görünür hale gelir.",
+          "Kritik yol takibi, projenin toplam süresini belirleyen zinciri öne çıkarır. Yönetici, hangi gecikmenin teslim tarihini doğrudan etkileyeceğini gecikme yaşanmadan önce görür. Zincir üzerindeki bir kalem beklemeye girdiğinde bundan etkilenen işler aynı ilişki üzerinden izlenir.",
+          "Bloke eden ve bloke olan kalemler ilişkinin iki ucu olarak ayrı ayrı görüntülenir; bir işin neyi beklettiği ve neyi beklediği aynı kayıttan okunur. Sprint planlamasında bağımlılığı henüz çözülmemiş işler ayırt edilir, ekip kapasitesini çözülmeyi bekleyen bir işe bağlamaz.",
+          "Modül bildirim ve iş kuralı altyapısıyla birlikte çalışır; bağımlı bir kalemin durumu değiştiğinde bekleyen tarafın sorumluları otomatik bilgilendirilir. Bağımlılık kayıtları raporlanabilir, kronik bekleme noktaları dönem sonunda analiz edilir."
+        ],
+        "highlights": [
+          "Projeler arası bağıntı",
+          "Epik seviyesinde bağımlılık",
+          "Kritik yol takibi",
+          "Bloke eden iş görünürlüğü",
+          "Bağımlılık değişiminde bildirim"
+        ]
+      },
+      {
+        "title": "Proje Risk Yönetimi",
+        "description": "Projeye etkisi olan tüm durumların etki ve olasılık bazlı risk matrislerini oluşturma ve risk öğelerinin aktif takibi için yönetim fonksiyonudur.",
+        "paragraphs": [
+          "Proje Risk Yönetimi, her projenin kendi risk kaydını tutmasını sağlar. Riskin tanımı, kategorisi, sahibi, tespit tarihi ve güncel durumu tek bir kayıtta toplanır. Risk; ilgili projeye, epike veya göreve bağlanarak kapsamı belirsiz bırakılmaz ve proje verisinin dışında ayrı bir yerde unutulmaz.",
+          "Her risk için etki ve olasılık ayrı ayrı derecelendirilir; bu iki boyutun kesişimi riski matris üzerinde konumlandırır ve risk skorunu üretir. Matris görünümü hangi risklerin öncelikli müdahale gerektirdiğini matristeki konumu üzerinden ayırt eder. Derecelendirme güncellendiğinde riskin matristeki yeri ve önceliği anında değişir.",
+          "Riskler yalnızca kayıt altına alınmaz, aktif olarak yönetilir. Her risk için sahip, yanıt stratejisi ve azaltma aksiyonları tanımlanır; aksiyonlar proje görevine dönüştürülerek sorumlu ve termin ile takip edilir. Böylece risk yönetimi, dönem başında hazırlanıp rafa kaldırılan bir belge olmaktan çıkar ve işin akışına girer.",
+          "Risk kayıtlarındaki durum ve skor değişimleri bildirim otomasyonuna bağlanabilir; belirlenen eşik aşıldığında veya bir risk açılıp kapandığında ilgili paydaşlar otomatik bilgilendirilir. Proje bazlı yetkilendirme sayesinde hassas riskler yalnızca yetkili rollere görünür. Kurumun risk taksonomisi, proje bazlı özel alanlarla kendi terminolojisine uyarlanır.",
+          "Açık risk sayısı, kategori dağılımı ve skor trendi raporlanabilir. Yönetim toplantılarında risk tartışması, sezgi yerine güncel proje verisine dayanır; kapatılan risklerin geçmişi ise sonraki projeler için kurumsal hafıza oluşturur."
+        ],
+        "highlights": [
+          "Etki ve olasılık matrisi",
+          "Risk skoru ve önceliklendirme",
+          "Risk sahibi ve azaltma aksiyonu",
+          "Göreve bağlı aktif takip",
+          "Eşik bazlı otomatik bildirim",
+          "Risk raporlama ve trend"
+        ]
+      },
+      {
+        "title": "Proje İletişim Modülü",
+        "description": "Her bir projenin kendine özel gelen kutusu ve tüm ekibin proje boyunca yaptığı her tür yazışmanın kaydedildiği, dış kullanıcıların da proje kapsamında yazdığı her şeyin kaydedildiği iletişim modülüdür.",
+        "paragraphs": [
+          "Proje İletişim Modülü, her projeye kendine ait bir gelen kutusu tanımlar. Projeyle ilgili tüm yazışmalar bu kutuda toplanır; iletişim kişisel posta kutularında dağılmak yerine projenin kalıcı kaydı hâline gelir. Ekibe sonradan katılan bir üye, geçmiş yazışmayı tek yerden okuyarak bağlamı edinir.",
+          "Ekibin proje boyunca yaptığı her tür yazışma kayıt altına alınır. Görevler ve iş kalemleri üzerindeki yorumlar, karar gerekçeleri ve bilgilendirmeler ilgili kayda bağlı olarak saklanır; hangi kararın hangi tartışmadan çıktığı sonradan izlenebilir. Kayıtlar zaman damgasıyla sıralı kalır ve geçmişe dönük olarak bütünüyle görüntülenir.",
+          "Dış kullanıcıların proje kapsamında yazdığı her şey de aynı kutuda kayıt altına alınır. Müşteri, tedarikçi veya iş birimi temsilcisinin yazdığı ileti, ekip yazışmalarından ayrı bir yere düşmeden ilgili projenin gelen kutusunda toplanır. İletinin tamamı göndereni ve zamanı ile birlikte korunur; dış paydaşın ne istediği sonradan tek kaynaktan okunur.",
+          "Gelen kutusundaki bir ileti, projenin ilgili görevi veya iş kalemi ile ilişkilendirilebilir. Yazışma ile kayıt arasındaki bağ korunduğu için bir talebin hangi mesajla doğduğu ve hangi yanıtla sonuçlandığı izlenebilir. Kimin hangi yazışmayı görebileceği proje bazlı yetkilerle belirlenir; ekip içi tartışmalar ile dış paydaşa açık iletişim aynı kutuda birbirinden ayrışır.",
+          "Proje kapandığında iletişim geçmişi projenin arşivinde olduğu gibi kalır. Denetim, hakediş görüşmesi veya sonraki bir projenin planlaması sırasında bu arşiv birincil referanstır; kim neyi ne zaman söyledi sorusu, kişisel kayıtlara başvurmadan yanıtlanır."
+        ],
+        "highlights": [
+          "Projeye özel gelen kutusu",
+          "Ekip yazışmalarının kalıcı kaydı",
+          "Dış kullanıcı iletilerinin kaydı",
+          "İleti ile görev ilişkisi",
+          "Proje bazlı görüntüleme yetkisi",
+          "Kalıcı iletişim arşivi"
+        ]
+      },
+      {
+        "title": "Proje Bildirim Yönetimi",
+        "description": "Proje boyunca tüm görevler, epikler, bağımlılıklar, sprintler içerisinde durum değişimleri ve güncellemeler için tüm paydaşların otomatik bilgilendirildiği bildirim otomasyonu modülüdür.",
+        "paragraphs": [
+          "Proje Bildirim Yönetimi, proje boyunca oluşan her durum değişimini ilgili paydaşlara otomatik olarak ulaştırır. Görev, epik, bağımlılık ve sprint kayıtlarındaki durum geçişleri, atama değişiklikleri ve içerik güncellemeleri bildirim altyapısına olay olarak bağlanır. Böylece gelişmeleri elle haber verme yükü ortadan kalkar.",
+          "Bildirimler e-posta, SMS ve web bildirimi kanallarından tek bir şablon altyapısıyla yönetilir. Her olay türü için ayrı şablon tanımlanır; bir göreve atandığınızda, bir sprint kapandığında veya bağımlılığı bulunan bir iş geciktiğinde hangi kanaldan kimin bilgilendirileceği kurala bağlanır.",
+          "Şablon içerikleri değişkenlerle kişiselleştirilir. Alıcının adı, görev başlığı, proje adı, yeni durum ve son tarih alanları otomatik doldurularak alıcının doğrudan aksiyon alabileceği mesajlar üretilir. İçeriksiz genel uyarılar yerine, ilgili kayda yönlendiren hedefli bildirimler gönderilir.",
+          "Paydaş listesi proje rolüne göre belirlenir; proje yöneticisi, ekip üyesi ve talep sahibi farklı bildirim setleri alır. Modül otomasyon ve zamanlanmış raporlar modülleriyle entegre çalıştığından aynı altyapı hem anlık olaylarda hem periyodik gönderimlerde kullanılır. Süreçler kesintisiz ilerler, paydaşlar gelişmelerden zamanında haberdar olur ve müdahale süreleri kısalır."
+        ],
+        "highlights": [
+          "Olay tetikli otomatik bildirim",
+          "E-posta, SMS ve web kanalı",
+          "Değişkenle kişiselleştirilmiş şablon",
+          "Rol bazlı paydaş listesi",
+          "Sprint ve bağımlılık uyarıları"
+        ]
+      },
+      {
+        "title": "Proje Bazlı Yetki Yönetimi",
+        "description": "Kurum bazında yapılan yetkilendirmeye ilaveten her bir proje için özelleştirilebilir detaylı alt yetkilerin kapsamlı olarak sunulduğu modüldür.",
+        "paragraphs": [
+          "Proje Bazlı Yetki Yönetimi, kurum genelinde tanımlanan rollerin üzerine her proje için ayrı bir yetki katmanı ekler. Kullanıcı kurumsal rolüyle platformda belirli bir çerçeveye sahiptir; proje bazlı alt yetkiler bu çerçeveyi o projeye özgü biçimde daraltır veya genişletir. Böylece aynı kişi bir projede tam yetkili yönetici, başka bir projede yalnızca izleyici olarak konumlanabilir.",
+          "Yetkiler modül, proje ve aksiyon düzeyinde ayrıntılı tanımlanır. Kimin hangi projede görev oluşturabileceği, kimin raporlara erişebileceği, kimin sprint kapatabileceği veya durum geçişi yapabileceği net kurallara bağlanır. Erişim kararları kişisel inisiyatife değil, yazılı kurallara dayanır.",
+          "Roller yeniden kullanılabilir kalıplar olarak saklanır; yeni bir ekip üyesi projeye dahil olduğunda uygun rol atanır ve tüm yetkiler tek adımda devreder. Bu yaklaşım, proje sayısı ve ekip büyüklüğü arttıkça yetki yönetimini ölçeklenebilir kılar.",
+          "Rol bazlı erişim hem güvenliği hem kullanıcı deneyimini iyileştirir; kullanıcılar ilgisiz ekranlarla boğulmaz, yalnızca kendi işine ait alanlara odaklanır. Yetki katmanı tüm modüllerle kesişir: her modülün görünürlüğü ve aksiyonları rol tanımına göre filtrelenir ve platform genelinde tutarlı bir güvenlik katmanı oluşur."
+        ],
+        "highlights": [
+          "Proje bazlı alt yetkiler",
+          "Aksiyon düzeyinde kontrol",
+          "Yeniden kullanılabilir rol kalıpları",
+          "Modül bazlı görünürlük filtresi",
+          "Ölçeklenebilir güvenlik katmanı"
+        ]
+      },
+      {
+        "title": "Proje Bazlı Akış ve Onay Diyagramları - Görev Durum Geçiş ve Akış Yönetimi",
+        "description": "Tasklar arası tüm transition kurallarının proje bazlı tanımlanabildiği, esnek kural ve akış diyagramı oluşturulabilen modüldür.",
+        "paragraphs": [
+          "Bu modül, görevler arasındaki tüm durum geçişi kurallarının proje bazında tanımlanmasını sağlar. Her proje kendi iş akışını kurar; bir projede inceleme adımı zorunlu tutulurken başka bir projede tamamen farklı bir akış işletilebilir. Akışlar sürükle-bırak bir diyagram editöründe görsel olarak tasarlanır.",
+          "Geçişler koşullara bağlanabilir. Bir görev yalnızca belirli alanlar doldurulduğunda, belirli bir rol tarafından ya da bağlı kayıtlar kapandığında bir sonraki duruma ilerler. Çok adımlı onaylar, koşullu dallanmalar, paralel onaylar ve geri gönderme adımları aynı diyagram üzerinde modellenir.",
+          "Görsel temsil süreci şeffaflaştırır. Bir kaydın hangi adımda beklediği, kimin aksiyon alması gerektiği ve bir sonraki olası geçişlerin neler olduğu ilgili herkes tarafından net biçimde görülür; onay bekleyen kayıtlar takipsiz kalmaz.",
+          "Kural tabanlı akışlar manuel takip ve hatırlatma yükünü ortadan kaldırır, yanlış durum atlamalarını engeller ve karmaşık süreçleri işletilebilir kurallara dönüştürür. Modül otomasyon, bildirim ve yetki modülleriyle entegre çalışarak kurumsal yönetişimin uygulanabilir omurgasını oluşturur."
+        ],
+        "highlights": [
+          "Proje bazlı geçiş kuralları",
+          "Sürükle-bırak akış tasarımcısı",
+          "Koşullu ve paralel onay",
+          "Şeffaf onay durumu",
+          "Otomatik süreç yürütme"
+        ]
+      },
+      {
+        "title": "Proje Bazlı Özel Alan Yönetimi",
+        "description": "Her bir projede her bir görev türü için kapsamlı, ayrı ve bağımsız özel ek alanların \"sınırsızca\" ve kolayca tanımlanabildiği modüldür.",
+        "paragraphs": [
+          "Proje Bazlı Özel Alan Yönetimi modülü, standart kayıt formlarını kuruma özel alanlarla genişletir. Tanımlar proje bazında yapılır; her proje ve her görev türü kendi bağımsız alan setiyle çalışır. Bir projede zorunlu tutulan alan, başka bir projenin formunu hiçbir şekilde etkilemez.",
+          "Metin, sayı, tarih, açılır liste ve çoklu seçim başta olmak üzere farklı alan tipleri tanımlanabilir. Her alan için varsayılan değer ve zorunluluk kuralı belirlenir; böylece her süreç tam olarak ihtiyaç duyduğu veriyi toplar.",
+          "Özel alanlar raporlama ve filtrelemede standart alanlarla aynı şekilde kullanılır; kuruma özel veriler panolarda, listelerde ve analizlerde doğrudan işlenir. Böylece kuruma özel veri, analiz tarafında standart veriden ayrı bir eforu gerektirmez.",
+          "Alan tanımlarında sayı sınırı yoktur ve tüm tanımlama arayüz üzerinden, kod yazmadan yapılır. Yeni bir veri ihtiyacı doğduğunda geliştirme talebi açılması gerekmez; proje yöneticisi alanı tanımlar ve aynı anda kullanıma açar.",
+          "Modül, iş kuralları ve akış yönetimiyle birlikte çalışır: özel alanlar geçiş koşullarında, otomasyon kurallarında ve zorunluluk kontrollerinde kullanılabilir. Böylece platform jenerik bir araç olmaktan çıkar, kurumun kendi terminolojisine ve süreç gereksinimlerine uyarlanır."
+        ],
+        "highlights": [
+          "Proje bazında bağımsız alanlar",
+          "Görev türüne özel form",
+          "Sınırsız alan tanımı",
+          "Raporlamada özel alan kullanımı",
+          "Kod gerektirmeyen tanımlama"
+        ]
+      },
+      {
+        "title": "Proje İş Kuralları ve Otomasyon Modülü",
+        "description": "Projelerde görev türüne göre iş kurallarının sınırsız koşulda sınırsız aksiyon ile ve kompleks kurgulara izin veren yapıda kolayca tasarlanması ve otomasyonunu sağlayan modüldür.",
+        "paragraphs": [
+          "Proje İş Kuralları ve Otomasyon Modülü, her projenin kendi işleyişine uygun kuralları görev türü bazında tanımlamayı sağlar. Kurallar \"bu koşul oluşursa şu aksiyon çalışsın\" mantığıyla kurulur. Koşul ve aksiyon sayısında sınır yoktur; iç içe koşullarla kompleks kurgular tasarlanabilir.",
+          "Bir görev belirli bir duruma geçtiğinde sorumlunun otomatik atanması, öncelik yükseldiğinde ilgili paydaşlara bildirim gitmesi, bir alan değiştiğinde bağlı alanların güncellenmesi veya sprint kapandığında raporun üretilmesi kod yazmadan tanımlanır. Kural tasarımı arayüz üzerinden yapılır ve geliştirici desteği gerektirmez.",
+          "Kurallar proje bazlı çalışır; bir projenin otomasyonu diğer projenin akışını etkilemez. Koşullarda standart alanların yanında projeye özel tanımlanmış ek alanların değerleri de kullanılabilir. Böylece kurum genelinde tek tip bir kalıba zorlanmadan her ekip kendi süreç disiplinini kurar.",
+          "Tanımlı kurallar tüm talep ve görev kayıtlarının dinamik olarak güncellenmesini sağlar; süreçler insan müdahalesi beklemeden tutarlı biçimde ilerler. Tekrarlayan idari işlemler makineye devredildiğinde ekip üzerindeki mekanik yük azalır ve katma değerli işe ayrılan zaman artar.",
+          "Modül; bildirim, iş akışı ve standart talep modülleriyle birlikte çalışarak proje sınırlarını aşan uçtan uca otomasyon zincirleri kurar. Bir kuralın tetiklediği aksiyon, başka bir modülde yeni bir akışı başlatabilir ve süreç kesintisiz devam eder."
+        ],
+        "highlights": [
+          "Koşul-aksiyon kural motoru",
+          "Sınırsız koşul ve aksiyon",
+          "Görev türüne özel kurallar",
+          "Kod gerektirmeyen tasarım",
+          "Otomatik atama ve bildirim"
+        ]
+      },
+      {
+        "title": "Self Servis Portal",
+        "description": "Kullanıcıların olay, istek, değişiklik ve varlık kayıtlarını, destek ekipleriyle tüm etkileşimlerini izleyebildikleri portal.",
+        "paragraphs": [
+          "Self Servis Portal, proje paydaşlarının ve dış kullanıcıların kendi talep ve etkileşimlerini takip ettiği ayrı bir arayüzdür. Kullanıcı yeni talep açar, mevcut taleplerinin durumunu görür ve ekiple portal üzerinden yazışır. Durum sormak için bir ekip üyesine ulaşma ihtiyacı ortadan kalkar.",
+          "Portal, teknik olmayan paydaşlar için sadeleştirilmiş bir görünüm sunar. Backlog ve sprint detayları yerine kullanıcıyı ilgilendiren talepler, onay bekleyen konular ve teslim durumları öne çıkar. Aynı veri, farklı rollere ihtiyaç duydukları derinlikte gösterilir.",
+          "Kullanıcılar iyileştirme önerilerini, değişiklik taleplerini ve standart istekleri portaldan iletir. Bu kayıtlar ilgili proje akışına otomatik düşer ve ekip tarafında değerlendirilir. Talebin tüm yaşam döngüsü boyunca iki taraf da aynı kaydı, aynı geçmişle görür.",
+          "Portal, talep ve bilgi yönetimi modülleriyle entegre çalışır; kullanıcı bilgi bankasındaki makalelere erişerek bazı sorularının cevabını kendi başına bulur. Ekibe ulaşan talep hacmi azalır, ulaşan talepler ise daha nitelikli olur."
+        ],
+        "highlights": [
+          "Paydaş talep oluşturma",
+          "Talep durum takibi",
+          "Sadeleştirilmiş paydaş görünümü",
+          "Bilgi bankası erişimi",
+          "Ortak yaşam döngüsü görünürlüğü"
+        ]
+      },
+      {
+        "title": "Görev, İş Günlüğü, Doküman Şablonları",
+        "description": "Tekrar eden görev, iş günlüğü ve doküman kayıtlarının hazır şablonlarla standart ve hızlı biçimde oluşturulduğu modüldür.",
+        "paragraphs": [
+          "Şablonlar modülü, sık tekrarlanan görev, iş günlüğü ve doküman yapılarını önceden tanımlı kalıplara dönüştürür. Yeni bir kayıt açarken sıfırdan başlamak yerine şablon seçilir; alanlar, kontrol maddeleri ve varsayılan değerler hazır gelir.",
+          "Sprint hazırlık görevi, sürüm yayınlama kontrol listesi veya test senaryosu dokümanı birer şablon olarak tanımlanır. Ekip bu kalıpları tek tıkla çoğaltır; her kopya kendi sorumlusu ve tarihiyle bağımsız bir kayıt olarak ilerler.",
+          "Şablonlar süreci standartlaştırır. Aynı tipteki işin her zaman aynı alanlarla ve aynı adımlarla açılması sağlanır; atlanan kontrol maddeleri ve eksik bilgiyle açılan kayıtlar azalır. Kalite kişiye bağlı olmaktan çıkar, tanımlı bir yapıya taşınır.",
+          "İş günlüğü şablonları, efor kaydı girişini de tekrarlanabilir hale getirir. Düzenli yürütülen bakım, destek ve toplantı kayıtları hazır günlük kalıplarıyla girilir; efor verisi tutarlı kategorilerde birikir ve raporlanabilir olur.",
+          "Şablonlar görev, bilgi yönetimi ve iş kaydı modülleriyle birlikte çalışır. Tek bir şablon hem görev hiyerarşisini hem ilgili dokümanı birlikte üretebilir; tekrarlayan işe harcanan hazırlık süresi belirgin biçimde kısalır."
+        ],
+        "highlights": [
+          "Görev ve doküman şablonları",
+          "İş günlüğü kalıpları",
+          "Tek tıkla kayıt üretimi",
+          "Süreç standardizasyonu",
+          "Hazırlık süresinde tasarruf"
+        ]
+      },
+      {
+        "title": "Raporlama Modülü",
+        "description": "Proje, sprint, backlog ve görev verisini hazır raporlar, Report Wizard ve dinamik panolarla ölçülebilir yönetim bilgisine dönüştürür.",
+        "paragraphs": [
+          "Raporlama Modülü, ServiceCore içinde biriken proje, sprint, backlog ve görev verisini anlamlı raporlara dönüştürür. Ekip performansı ölçülür, dönemler arası trendler görünür hale gelir ve iyileştirme alanları veriye dayalı olarak tespit edilir. Raporlama, işin yürütüldüğü sistemin içinde çalıştığı için ayrı veri toplama eforu gerekmez.",
+          "Hazır rapor şablonları sayesinde velocity, burndown, sprint tamamlama oranı, açık ve kapalı görev dağılımı ile kapasite kullanımı tek adımda üretilir. Sık ihtiyaç duyulan yönetim metrikleri için sıfırdan rapor kurgulamak gerekmez. Şablonlar proje, dönem ve ekip bazında filtrelenerek doğrudan kullanıma alınır.",
+          "Report Wizard, teknik olmayan kullanıcıların da kendi raporlarını kurmasını sağlar; veri kaynağı, filtre, kolon ve görselleştirme seçimleri rehberli bir akışta yapılır. Dinamik raporlarda filtreler proje, sprint, sorumlu, durum, tarih aralığı ve özel alanlar boyutunda uygulanır; kolonlar serbestçe seçilir, sıralanır ve gruplanır. Oluşturulan görünüm kaydedilerek her açılışta güncel veriyle çalışır.",
+          "Döküm raporları, tüm modüllerdeki veriyi satır bazında ayrıntılı biçimde dışa aktarır. Görevler, sprintler, iş kayıtları, kaynaklar ve talepler özel alanlar dahil eksiksiz listelenir; çıktı elektronik tablolarda veya BI araçlarında ileri analize açılır. Bu yapı denetim, arşivleme ve dönem kapanışı senaryolarında kanıt niteliğinde kayıt üretir.",
+          "Raporlar dinamik panolara yerleştirilerek farklı izleyici gruplarına farklı görünümler sunar: yönetim için stratejik özet, proje ekibi için operasyonel takip, analistler için derinlemesine kesit. Retrospektif ve durum toplantıları böylece varsayım yerine somut sprint verisi üzerinden yürütülür."
+        ],
+        "highlights": [
+          "Hazır rapor şablonları",
+          "Report Wizard ile rehberli kurulum",
+          "Velocity ve burndown analizi",
+          "Çok boyutlu filtre ve gruplama",
+          "Özel alanlar dahil ham döküm",
+          "Rol bazlı dinamik panolar"
+        ]
+      },
+      {
+        "title": "Zamanlanmış Raporlar",
+        "description": "Tanımlı raporların belirlenen aralıklarla otomatik üretilip ilgili paydaşlara gönderilmesini sağlayan modüldür.",
+        "paragraphs": [
+          "Zamanlanmış Raporlar modülü, tanımlı raporların önceden belirlenen aralıklarla otomatik üretilip ilgili paydaşlara iletilmesini sağlar. Haftalık sprint özeti, aylık portföy durumu veya günlük açık görev listesi manuel bir işlem gerekmeden dağıtılır. Rapor hazırlamak için ayrılan tekrarlı emek ortadan kalkar.",
+          "Her zamanlama; rapor içeriği, gönderim sıklığı, gönderim saati, format ve alıcı listesiyle tanımlanır. Aynı rapordan farklı filtrelerle türevler kurulabilir; yönetici özet görünümü alırken ekip lideri kendi takımının detayını alır. Bir kez kurulan zamanlama, her dönem o günün güncel verisiyle yeniden üretilir.",
+          "Paydaşlar raporu sistemden çekmeyi hatırlamak zorunda kalmaz; bilgi düzenli aralıklarla kendilerine ulaşır. Durum toplantılarında sorulan neredeyiz sorusu toplantı öncesinde yanıtlanmış olur ve görüşme, durum aktarımı yerine karar üretmeye ayrılır.",
+          "Raporlar e-posta ekinde dosya olarak veya doğrudan panoya düşen güncellemeler biçiminde iletilebilir. Alıcı kendi tercih ettiği kanaldan bilgilenir; sisteme giriş yapmayan üst yönetim de aynı veriyi zamanında görür.",
+          "Modül, raporlama ve bildirim modülleriyle aynı altyapıyı paylaşır. Anlık üretilen bir rapor ile periyodik gönderilen rapor tek bir tanım üzerinden çalışır; iki ayrı yerde farklı kurgu tutulmadığı için raporlar arasında tutarsızlık oluşmaz."
+        ],
+        "highlights": [
+          "Otomatik periyodik gönderim",
+          "Sıklık ve alıcı tanımı",
+          "Alıcıya göre filtreli türevler",
+          "E-posta ve pano dağıtımı",
+          "Güncel veriyle yeniden üretim"
+        ]
+      },
+      {
+        "title": "Rol Yönetimi",
+        "description": "Ekip üyelerine farklı yetki setleri tanımlayarak uygulama içinde yalnızca ilgili alanlara erişim veren, güvenli ve düzenli görev dağılımını sağlayan modüldür.",
+        "paragraphs": [
+          "Rol Yönetimi modülü, ekip üyelerine farklı yetki setleri tanımlayarak platform içinde yalnızca ilgili alanlara erişim sağlar. Geliştirici, scrum master, PMO uzmanı ve yönetici kendi rolünün gerektirdiği ekranlarla çalışır. Rol tanımı, kullanıcının gördüğü menüden açabildiği kayda kadar tüm arayüzü şekillendirir.",
+          "Yetkiler modül, proje ve aksiyon düzeyinde ayrıntılı tanımlanır. Kimin hangi projede görev oluşturabileceği, kimin raporlara erişebileceği, kimin sprint kapatabileceği ve kimin efor kaydını değiştirebileceği net kurallara bağlanır.",
+          "Roller yeniden kullanılabilir kalıplardır. Yeni bir ekip üyesi katıldığında uygun rol atanır ve tüm yetkiler tek adımda devreder; ekipten ayrılan kişinin erişimi de aynı hızla kaldırılır. Bu yapı, kullanıcı sayısı arttıkça yetki yönetimini ölçeklenebilir kılar.",
+          "Rol bazlı erişim hem güvenliği hem kullanıcı deneyimini iyileştirir; kullanıcılar gereksiz ekranlarla boğulmaz, yalnızca işlerine ait alanlara odaklanır. Modül platformdaki diğer tüm modüllerle kesişir: her modülün görünürlüğü ve aksiyonları rol tanımına göre filtrelenir, böylece tutarlı tek bir güvenlik katmanı oluşur."
+        ],
+        "highlights": [
+          "Modül ve proje bazlı yetki",
+          "Aksiyon düzeyinde kontrol",
+          "Yeniden kullanılabilir rol kalıpları",
+          "Tek adımda yetki devri",
+          "Platform geneli güvenlik katmanı"
+        ]
+      },
+      {
+        "title": "E-Posta, SMS, Web Bildirim Şablonları",
+        "description": "ServiceCore, açılan kayıtlar ve süreç değişiklikleri için kullanıcılara ve teknisyenlere e-posta, SMS ve web bildirimi kanallarından anlık bilgilendirme gönderir.",
+        "paragraphs": [
+          "Bildirim Şablonları modülü, açılan kayıtlar ve süreç değişiklikleri için kullanıcılara ve teknisyenlere anlık bilgilendirme gönderir. E-posta, SMS ve web bildirimi kanallarının tamamı tek bir şablon altyapısı üzerinden yönetilir; her kanal için ayrı araç ve ayrı içerik yönetimi gerekmez.",
+          "Şablonlar olaylara bağlanır. Bir göreve atandığınızda, bir sprint kapandığında, bir talebin durumu değiştiğinde veya bir kayıt onay beklediğinde ilgili kişiler otomatik bilgilendirilir. Manuel haber verme yükü ortadan kalkar ve hiçbir paydaş bilgi akışının dışında kalmaz.",
+          "Bildirim içerikleri değişkenlerle kişiselleştirilir; alıcının adı, kayıt numarası, görev başlığı ve son tarih alanları gönderim anında otomatik doldurulur. Böylece jenerik uyarılar yerine, alıcının doğrudan aksiyon alabileceği hedefli mesajlar üretilir.",
+          "Zamanında bilgilendirme sayesinde süreçler kesintisiz ilerler ve müdahale süreleri minimuma iner. Modül otomasyon ve zamanlanmış raporlar modülleriyle entegre çalışır; aynı bildirim altyapısı hem anlık olay tetiklemelerinde hem periyodik gönderimlerde kullanılır."
+        ],
+        "highlights": [
+          "E-posta, SMS ve web bildirimi",
+          "Olay tetikli otomatik gönderim",
+          "Değişkenle kişiselleştirilen içerik",
+          "Tek merkezden şablon yönetimi",
+          "Kısalan müdahale süresi"
+        ]
+      },
+      {
+        "title": "Sınırsız AD Senkronizasyonu",
+        "description": "Dilediğiniz kadar AD hesabını entegre ederek sınırsız kullanıcıyı ServiceCore'da yetkilendirin.",
+        "paragraphs": [
+          "Sınırsız AD Senkronizasyonu modülü, dilediğiniz sayıda Active Directory hesabını ServiceCore ile entegre etmenizi sağlar. Kurum dizinindeki kullanıcılar otomatik olarak platforma taşınır ve rolleriyle birlikte yetkilendirilir; tek tek kullanıcı açma işi ortadan kalkar.",
+          "Kullanıcı bilgileri, departman ve grup üyelikleri AD üzerinden senkronize edilir. Yeni bir çalışan dizine eklendiğinde platformda da otomatik tanımlanır; kurumdan ayrılan kullanıcı pasifleştirilir ve erişimi aynı anda kapanır.",
+          "Senkronizasyonda hesap sınırı bulunmaz. Binlerce kullanıcılı kurumlarda dizin bütünüyle entegre edilir; kullanıcı sayısı arttıkça ek bir entegrasyon kurgusuna veya lisans karmaşasına ihtiyaç duyulmaz.",
+          "AD gruplarına dayalı yetkilendirme, ServiceCore rol yönetimiyle birlikte çalışır; dizindeki grup yapısı platform içi erişim kurallarına doğrudan yansıtılır. Kimlik tek kaynaktan yönetildiği için kurum genelinde tutarlılık ve denetlenebilirlik korunur."
+        ],
+        "highlights": [
+          "Sınırsız AD hesap entegrasyonu",
+          "Otomatik kullanıcı senkronizasyonu",
+          "Grup bazlı yetkilendirme",
+          "Ayrılan kullanıcıda otomatik pasifleştirme",
+          "Tek kaynaktan kimlik yönetimi"
+        ]
+      },
+      {
+        "title": "Genel Yönetim Modülü",
+        "description": "ServiceCore'un esnek, kolay kullanımlı ve kapsamlı yönetim seçenekleriyle iş süreçlerinizi kolaylaştırın.",
+        "paragraphs": [
+          "Genel Yönetim Modülü, platformun tüm yapılandırma seçeneklerini tek bir kontrol merkezinde toplar. Proje şablonları, görev tipleri, durum akışları, alan tanımları ve sistem ayarları buradan yönetilir. Yönetici, dağınık ekranlar arasında dolaşmadan tek panel üzerinden çalışır.",
+          "Sistem genelindeki parametreler, varsayılan değerler ve global kurallar merkezi olarak tanımlanır. Yeni açılan projeler bu varsayılanları devralır; kurum genelindeki tutarlılık ilk günden itibaren korunur.",
+          "Özelleştirmeler arayüz üzerinden, kod yazmadan yapılır. Yeni bir görev tipi eklemek, durum akışına adım tanımlamak veya bir alanın zorunluluğunu değiştirmek dakikalar süren yönetimsel bir işlemdir.",
+          "Kullanıcılar, roller, takımlar ve yetki setleri de aynı merkezden yönetilir; kimin hangi projede ne yapabileceği tek yerden görülür. Diğer tüm modüllerin davranışı bu merkezden şekillendiği için platform kontrollü ve öngörülebilir çalışır."
+        ],
+        "highlights": [
+          "Merkezi yapılandırma paneli",
+          "Görev tipi ve durum akışı",
+          "Global kural ve varsayılanlar",
+          "Kod gerektirmeyen özelleştirme",
+          "Kullanıcı, rol ve takım yönetimi"
+        ]
+      }
+    ],
+    "popularLabel": "En Çok Tercih Edilen"
   },
   "pro": {
     "title": "Project Premium Versiyon",
@@ -62,31 +526,415 @@
     "extraLabel": "Standart versiyona ek modüller",
     "onlyLabel": "Premium Versiyona Özgü Fonksiyonlar",
     "ctaLabel": "Teklif İsteyin",
-    "popularLabel": "En Çok Tercih Edilen",
     "footerNote": "* Standart lisansın en az %25'i kadar Premium lisans ile hibrit yapılabilmektedir. ESM versiyonunda tenant başına bağımsız lisanslama mümkündür.",
     "extraModules": [
-      { "title": "Değişiklik Talepleri Yönetimi Modülü", "description": "Bu modülde değişiklik talepleri proje yönetimi ile entegre edilmekte ve geriye dönük talep ilişkileri takip edilebilmektedir." },
-      { "title": "İyileştirme Talepleri Yönetimi Modülü", "description": "Taleplerin alınması, değerlendirilmesi, önceliklendirilmesi, fizibilite çalışması, advisory işlemleri ve uygulama kararları ve dönüşümü bu modül ile yapılır. Kullanıcı ve müşterilerden gelen iyileştirme, geliştirme öneri ve talepleri end user portalından alınarak tüm yaşam döngüsü boyunca talepler hem teknik ekip hem de kullanıcılar tarafından birlikte takip edilebilir." },
-      { "title": "Standart Taleplerin Yönetimi Modülü", "description": "Taleplerin bir diğer türü olan standartlaştırılmış ve kataloglanmış talepler ise bu modül ile alınmaktadır. Talep sonrası onay ve iş akışları ile taleplerin değerlendirilmesi, görevleri, projeye dönüşümleri bu modül üzerinden işletilmektedir." },
-      { "title": "Paydaş İlişkileri Yönetimi Modülü", "description": "Dış müşterilerle yönetilen projelerde müşteri bilgilerinin yönetimi bu modül sayesinde yapılmaktadır." },
-      { "title": "Sözleşme Yönetimi Modülü", "description": "Servicecore, işletmelerin proje süreçlerini yönetmelerine yardımcı olan güçlü bir yazılım platformudur. İçerisinde yer alan Sözleşme Yönetimi Modülü, sözleşme süreçlerini daha etkin ve organize bir şekilde yönetmek için geliştirilmiştir." },
-      { "title": "Otomasyon Modülü", "description": "Kolayca tanımlanabilen kurallar ile koşullara bağlı aksiyonlar otomatik yapılabilmekte ve bu sayede tüm talep kayıtlarının dinamik olarak güncellenmesi ve akışların hızlanması sağlanmaktadır." },
-      { "title": "Entegrasyonlar için API Modülü", "description": "Servicecore API entegrasyonu, farklı yazılım uygulamaları arasında etkin iletişim sağlayan ve veri alışverişini kolaylaştıran restAPI teknolojisini kullanan bir yapıdır. Bu entegrasyonlar, farklı platformlar arasında veri aktarımını hızlandırarak iş süreçlerinin optimize edilmesine ve verimliliğin artırılmasına yardımcı olur." },
-      { "title": "Görev Yönetimi Modülü", "description": "Kaynakları proaktif olarak yönetmek için tüm görevlerin süreçler aracılığıyla birleştirilmiş görev yönetimi ve merkezi koordinasyonu. Görevler aylık ve günlük ajanda görünümlerinde saat aralıkları ile, sürükle bırak kanban panoları ile takip edilir." },
-      { "title": "Anket Yönetimi", "description": "Servicecore'un anket yönetimi özelliği ile kullanıcı memnuniyeti ve hizmet kalitesi kolayca ölçümlenir. Otomatik gönderilen anketler sayesinde geri bildirim toplanır, analiz edilir ve sürekli iyileştirme sağlanır." },
-      { "title": "Service Desk ve Çağrı Modülü", "description": "Sisteme entegre ettiğiniz mail adresleri üzerinden gelen kayıtların ayrıştırılması, otomatik olarak çağrılara dönüştürülmesi çağrı modülünde yapılmaktadır." },
-      { "title": "Sınırsız E-mail Yakalayıcı", "description": "Servicecore, sınırsız e-posta tanımlama özelliği sayesinde, gelen e-postalar üzerinden otomatik kayıt oluşturulmasını sağlar. Bu sayede kayıt oluşturma süreçleri hızlanır, müdahale süreleri kısalır ve operasyonel verimlilik artar." },
-      { "title": "E-Posta ile Otomatik Kayıt Açma", "description": "Servicecore, gelen e-postalardan otomatik kayıt açma özelliği ile kayıt oluşturma süreçlerini hızlandırır, müdahale sürelerini kısaltır ve operasyonel verimliliği artırır." }
+      {
+        "title": "Değişiklik Talepleri Yönetimi Modülü",
+        "description": "Değişiklik taleplerini proje yönetimiyle entegre eden ve geriye dönük talep ilişkilerini izlenebilir kılan modüldür.",
+        "paragraphs": [
+          "Değişiklik Talepleri Yönetimi modülü, proje kapsamını veya teslimleri etkileyen değişiklik taleplerini yapılandırılmış bir süreçte yönetir. Talep açılır, etkisi değerlendirilir, yetkili merci tarafından onaylanır veya reddedilir ve onaylanan talep proje planına yansıtılır. ITIL4 değişiklik yönetimi disiplini ile proje yürütme pratiği aynı platformda buluşur.",
+          "Onaylanan bir değişiklik backlog'a, sprint planına veya Gantt çizelgesine doğrudan işlenir; süre ve kaynak üzerindeki etkisi anında görünür hale gelir. Plan ile sahadaki gerçek arasında kopukluk oluşmaz, ekip güncel kapsamla çalışır.",
+          "Geriye dönük talep ilişkileri izlenebilir; bir değişikliğin hangi önceki talebe, hangi karara veya hangi teslime bağlı olduğu kayıt altındadır. Kapsam kaymasının nedenleri bu ilişki ağı üzerinden şeffaf biçimde okunur ve proje sonunda denetlenebilir bir iz kalır.",
+          "Her talebin zaman, kaynak ve risk boyutundaki etkisi değerlendirme aşamasında yazılı olarak kaydedilir. Karar mercii, maliyetini bilerek onay verir; sonradan ortaya çıkan gecikmeler sürpriz olmaktan çıkar ve paydaşlara gerekçesiyle açıklanabilir.",
+          "Modül; iyileştirme talepleri ve standart talepler modülleriyle birlikte kurumsal talep yönetimi katmanını oluşturur. Tüm talep türleri aynı yaşam döngüsü mantığıyla işlenir ve tek bir kayıt disiplininde toplanır."
+        ],
+        "highlights": [
+          "Yapılandırılmış değişiklik süreci",
+          "Proje planına otomatik yansıma",
+          "Geriye dönük talep ilişkisi",
+          "Etki ve risk değerlendirmesi",
+          "Denetlenebilir karar izi"
+        ]
+      },
+      {
+        "title": "İyileştirme Talepleri Yönetimi Modülü",
+        "description": "Kullanıcı ve müşterilerden gelen iyileştirme taleplerinin alınması, değerlendirilmesi, önceliklendirilmesi ve uygulama kararına dönüştürülmesi.",
+        "paragraphs": [
+          "İyileştirme Talepleri Yönetimi modülü, kullanıcı ve müşterilerden gelen iyileştirme ve geliştirme önerilerini tek bir havuzda toplar. Öneriler son kullanıcı portalından alınır, sınıflandırılır ve yapılandırılmış bir talep kaydına dönüşür. Dağınık kanallardan gelen isteklerin izi kaybolmaz.",
+          "Her talep tanımlı bir değerlendirme sürecinden geçer. Fizibilite çalışması yapılır, danışma (advisory) adımları yürütülür ve uygulama kararı verilir. Karar verilen talep proje, epik veya göreve dönüştürülerek planlanmış işin içine girer.",
+          "Önceliklendirme; iş değeri, efor ve etki kriterleri üzerinden yapılır. Sınırlı kapasite, en yüksek faydayı üretecek iyileştirmelere yönlendirilir. Ertelenen talepler havuzda kalmayı sürdürür ve kapasite açıldığında yeniden değerlendirmeye alınır.",
+          "Talep, yaşam döngüsü boyunca hem teknik ekip hem de talep sahibi tarafından birlikte izlenir. Öneren kişi fikrinin akıbetini portaldan görür; bu şeffaflık katılımı artırır ve aynı önerinin tekrar tekrar açılmasını önler."
+        ],
+        "highlights": [
+          "Portaldan öneri toplama",
+          "Fizibilite ve danışma akışı",
+          "Değer bazlı önceliklendirme",
+          "Talep sahibiyle ortak izleme",
+          "Proje işine dönüştürme"
+        ]
+      },
+      {
+        "title": "Standart Taleplerin Yönetimi Modülü",
+        "description": "Kataloglanmış standart taleplerin onay ve iş akışlarıyla alındığı, görevlere ve gerektiğinde projeye dönüştürüldüğü modüldür.",
+        "paragraphs": [
+          "Standart Taleplerin Yönetimi modülü, önceden tanımlı ve sık tekrarlanan talep türlerini hizmet kataloğu yapısında toplar. Paydaş serbest metin yazmak yerine katalogdan ihtiyacına uyan talebi seçer ve o talebe özel alanları doldurur. Talep, açıldığı anda sınıflandırılmış ve yönlendirilebilir durumdadır.",
+          "Her standart talep kendi onay ve iş akışını taşır. Talep alındığında ilgili onay adımları, görevler ve sorumlular otomatik tetiklenir; süreç manuel yönlendirme beklemeden ilerler. Onay zinciri talebin türüne, kapsamına veya etkilediği hizmete göre farklılaştırılabilir.",
+          "Değerlendirme sonucunda talep görevlere bölünür, kapsamı büyükse doğrudan projeye dönüştürülür. Küçük bir işten kapsamlı bir projeye kadar aynı akış içinde ölçeklenir; talebin geçmişi dönüştüğü kayıtla birlikte korunur ve izlenebilir kalır.",
+          "Kataloglanmış yapı hizmet kapsamını şeffaf kılar. Paydaş hangi talepleri açabileceğini, hangi bilgileri vermesi gerektiğini ve sürecin nasıl işleyeceğini önceden bilir; beklenti yönetimi baştan netleşir.",
+          "Standart taleplerin tekrarlanabilir doğası, otomasyondan en çok fayda gören alandır. Modül otomasyon, onay akışı ve bildirim altyapısıyla entegre çalışır; talep hacmi arttığında bile işlem süresi ve yanıt kalitesi tutarlı kalır."
+        ],
+        "highlights": [
+          "Hizmet kataloğu yapısı",
+          "Talep bazlı onay akışı",
+          "Otomatik görev üretimi",
+          "Talepten projeye dönüşüm",
+          "Şeffaf hizmet kapsamı"
+        ]
+      },
+      {
+        "title": "Paydaş İlişkileri Yönetimi Modülü",
+        "description": "Dış müşterilerle yürütülen projelerde müşteri ve paydaş bilgilerinin merkezi olarak yönetilmesini sağlar.",
+        "paragraphs": [
+          "Paydaş İlişkileri Yönetimi Modülü, dış müşterilerle yürütülen projelerde müşteri ve paydaş bilgilerinin merkezi yönetimini sağlar. Her müşteri; iletişim bilgileri, yürüyen projeleri, sözleşmeleri ve etkileşim geçmişiyle tek bir kayıtta toplanır. Bilgi kişilerin kendi not defterlerinde değil, kurumun ortak kaydında durur.",
+          "Bir paydaşa bağlı tüm projeler, talepler ve iş kayıtları aynı görünümde izlenir. Müşteri ekibiyle yapılan her etkileşimin bağlamı korunduğu için, ilişkiyi devralan yeni bir ekip üyesi geçmişi baştan öğrenmek zorunda kalmaz. Proje ekibi her görüşmeye tam resmi görerek girer.",
+          "Müşteri bazlı raporlama, hangi paydaşa ne kadar efor harcandığını ve ilişkinin seyrini ortaya koyar. Açık talep sayısı, teslim performansı ve harcanan iş kaydı birlikte okunur. Hesap yönetimi kararları, izlenime değil kayıtlı veriye dayanır.",
+          "Paydaşlar proje görünürlüğüne kontrollü biçimde dahil edilir; self servis portal üzerinden yalnızca kendilerini ilgilendiren bilgilere erişir ve projenin güncel durumunu takip eder. Erişim kapsamı proje bazında belirlenir, böylece şeffaflık ile bilgi güvenliği birlikte sağlanır.",
+          "Modül, sözleşme yönetimi ve self servis portal modülleriyle birlikte çalışır. Ticari taahhüt ile operasyonel yürütme aynı müşteri kaydı üzerinden izlendiği için, taahhüt edilen kapsam ile sahada yapılan iş arasındaki fark erken görünür."
+        ],
+        "highlights": [
+          "Merkezi müşteri kaydı",
+          "Paydaş bazlı proje görünümü",
+          "Etkileşim geçmişi takibi",
+          "Müşteri bazlı efor raporu",
+          "Kontrollü self servis erişim"
+        ]
+      },
+      {
+        "title": "Sözleşme Yönetimi Modülü",
+        "description": "Sözleşme oluşturma, yenileme, süre ve yükümlülük takibini merkezi ve izlenebilir biçimde yürüten modüldür.",
+        "paragraphs": [
+          "Sözleşme Yönetimi modülü, proje süreçleriyle ilişkili sözleşmeleri merkezi ve izlenebilir bir yapıda toplar. Sözleşme oluşturma, yenileme, süre ve yükümlülük takibi tek bir kütüphane üzerinden yürütülür. Hangi sözleşmenin yürürlükte olduğu ve hangi projeyi bağladığı, dağınık kayıtlar arasında aranmadan tek yerden görülür.",
+          "Her sözleşme; taraflar, kapsam, başlangıç ve bitiş tarihleri, mali koşullar ve ilgili projelerle ilişkilendirilerek kaydedilir. Sözleşmenin hangi projeleri ve hangi teslimleri kapsadığı kayıt üzerinden doğrudan okunur. Ticari koşullar ile bu koşulların karşılığı olan proje kayıtları aynı yapıda durur; sözleşme ile sahadaki iş birbirinden kopmaz.",
+          "Süre ve yenileme tarihleri proaktif olarak izlenir. Yaklaşan bitiş tarihleri için otomatik hatırlatmalar üretilir ve sorumlularına iletilir; yenileme kararı, süre dolmadan karar verilebilecek kadar erken gündeme gelir. Sessizce sona eren ya da fark edilmeden uzayan sözleşme riski ortadan kalkar.",
+          "Sözleşme kapsamı ile projede gerçekleşen efor ilişkilendirilebilir. Planlanan teslimler ile sözleşme yükümlülükleri arasındaki uyum sürekli izlenir; kapsam dışına taşan talepler, ticari karşılığı belirlenmeden yürütülmeye başlamadan önce fark edilir.",
+          "Modül, paydaş ilişkileri ve iş kaydı modülleriyle birlikte çalışır. Ticari taahhüt ile operasyonel gerçekleşme aynı düzlemde değerlendirilir; yenileme ve fiyatlandırma görüşmelerine kayıtlı veriyle girilir."
+        ],
+        "highlights": [
+          "Merkezi sözleşme kütüphanesi",
+          "Süre ve yenileme takibi",
+          "Otomatik bitiş hatırlatması",
+          "Proje ve teslim ilişkisi",
+          "Kapsam ile efor karşılaştırması"
+        ]
+      },
+      {
+        "title": "Otomasyon Modülü",
+        "description": "Kolayca tanımlanan kurallarla koşula bağlı aksiyonları otomatik yürüten, kayıtların dinamik olarak güncellenmesini ve akışların hızlanmasını sağlayan modüldür.",
+        "paragraphs": [
+          "Otomasyon Modülü, kolayca tanımlanan kurallarla koşula bağlı aksiyonları otomatik yürütür. \"Eğer bu olursa şunu yap\" mantığıyla kurulan kurallar; durum güncelleme, sorumlu atama, bildirim gönderme ve alan değiştirme işlemlerini elle yapma ihtiyacını ortadan kaldırır.",
+          "Kural tasarımı kod yazmayı gerektirmez; koşullar ve aksiyonlar arayüzden seçilerek kurgulanır. Bir görev belirli bir duruma geçtiğinde sorumlunun otomatik atanması, bir sprint kapandığında raporun üretilmesi veya öncelik yükseldiğinde yöneticiye bildirim gitmesi kısa sürede tanımlanır.",
+          "Kurallar, tüm talep ve görev kayıtlarının dinamik olarak güncellenmesini sağlar. Süreç insan müdahalesi olmadan tutarlı biçimde ilerler; aynı koşul her seferinde aynı aksiyonu ürettiği için süreç sapmaları ve atlanan adımlar ortadan kalkar.",
+          "Otomasyon, ekibin üzerindeki mekanik yükü azaltır. Tekrarlayan idari işlemler makineye devredilir, ekip katma değerli işe odaklanır ve akışların çevrim süresi kısalır.",
+          "Modül; bildirim, iş akışı ve standart talep modülleriyle birlikte çalışarak platform genelinde uçtan uca otomasyon zincirleri kurar. Bir modülde başlayan işlem ilgili diğer modüllerde otomatik olarak devam eder ve süreç tek bir akış halinde tamamlanır."
+        ],
+        "highlights": [
+          "Koşul-aksiyon kural motoru",
+          "Kod gerektirmeyen kurulum",
+          "Otomatik atama ve güncelleme",
+          "Modüller arası otomasyon zinciri",
+          "Tekrarlayan işlemlerin devri"
+        ]
+      },
+      {
+        "title": "Entegrasyonlar için API Modülü",
+        "description": "Farklı yazılım uygulamaları arasında REST API teknolojisiyle iki yönlü veri alışverişi sağlayan, iş süreçlerini hızlandıran entegrasyon katmanıdır.",
+        "paragraphs": [
+          "Entegrasyonlar için API Modülü, ServiceCore'u kurumun diğer uygulamalarına bağlayan REST API katmanını sunar. Projeler, görevler, sprintler, talepler ve raporlar programatik olarak okunabilir ve yazılabilir. Platform kapalı bir ada olmaktan çıkar, kurumsal yazılım ekosisteminin bir parçası haline gelir.",
+          "API iki yönlü veri alışverişi sağlar. CI/CD araçları, BI platformları, kimlik sistemleri ve şirket içi uygulamalar hem ServiceCore'a veri yazar hem ondan veri okur; veri silo halinde kalmaz, doğru sistemler arasında otomatik akar.",
+          "Standart REST teknolojisi kullanıldığı için entegrasyonlar hızlı geliştirilir. Geliştiriciler tanıdık bir arayüzle çalışır, kuruma özel senaryolar kısa sürede hayata geçer ve entegrasyon çalışmaları uzun analiz dönemlerine ihtiyaç duymaz.",
+          "Otomatik veri aktarımı iş süreçlerini optimize eder; sistemler arasında manuel veri kopyalama ortadan kalkar, kopyalamadan doğan hatalar azalır ve verimlilik artar. Bu katman aynı zamanda SDLC ve analitik entegrasyonlarının ortak altyapısıdır; eklenti ve çözüm entegrasyonları API üzerine kurulur."
+        ],
+        "highlights": [
+          "REST API erişimi",
+          "İki yönlü veri alışverişi",
+          "CI/CD ve BI entegrasyonu",
+          "Hızlı entegrasyon geliştirme",
+          "Uçtan uca süreç otomasyonu"
+        ]
+      },
+      {
+        "title": "Görev Yönetimi Modülü",
+        "description": "Tüm görevlerin merkezi olarak koordine edildiği; ajanda görünümleri ve sürükle-bırak kanban panolarıyla takip edildiği modüldür.",
+        "paragraphs": [
+          "Görev Yönetimi modülü, projelerdeki tüm görevleri tek bir merkezi koordinasyon noktasında toplar. Görevler süreçler aracılığıyla birbirine bağlanır; bir görevin başlaması, bitmesi veya değişmesi bağlı görevleri ve sorumlularını tetikler. Kaynaklar böylece reaktif değil proaktif biçimde yönetilir.",
+          "Her görev sorumlu, öncelik, tahmini efor, son tarih ve durum bilgisiyle tanımlanır; epik ve story yapılarına bağlanarak çevik hiyerarşinin operasyonel katmanını oluşturur. Kullanıcılar kendilerine atanan işleri önceliğe ve son tarihe göre sıralanmış tek bir kişisel iş listesinde görür.",
+          "Aylık ajanda görünümü iş yoğunluğunu, günlük görünüm ise saat aralıklarıyla detaylı çalışma planını gösterir. Görevler planlanan zamanlarına göre takvime yerleşir; çakışmalar ve aşırı yüklenen günler görsel olarak hemen fark edilir ve kişisel kapasite planlaması sezgisel hale gelir.",
+          "Sürükle-bırak kanban panoları görevleri kolonlar halinde görselleştirir ve durum değişimini tek hareketle tamamlar. Kolon yapısı her takımın kendi iş akışına göre özelleştirilir; kolon bazlı WIP limitleri kapasite aşımında uyarı vererek darboğazları erken ortaya çıkarır. Swimlane yapısı panoyu ekip, öncelik veya epik bazında şeritlere böler.",
+          "Toplu işlemler, kayıtlı görünümler ve gelişmiş filtreleme sayesinde yüzlerce görev arasında hızla gezinilir. Görev listesi, ajanda ve kanban panosu aynı veriyi paylaşır; panoda yapılan bir hareket takvime, raporlamaya ve kapasite analizine anında yansır."
+        ],
+        "highlights": [
+          "Merkezi görev koordinasyonu",
+          "Aylık ve günlük ajanda",
+          "Saat bazlı zaman blokları",
+          "Sürükle-bırak kanban panosu",
+          "Kolon bazlı WIP limitleri",
+          "Toplu işlem ve kayıtlı filtreler"
+        ]
+      },
+      {
+        "title": "Anket Yönetimi",
+        "description": "Kullanıcı memnuniyetini ve hizmet kalitesini otomatik anketlerle ölçen, toplanan geri bildirimi analiz ederek sürekli iyileştirmeyi besleyen modüldür.",
+        "paragraphs": [
+          "Anket Yönetimi modülü; proje teslimleri, sprint sonları ve kilometre taşları sonrasında paydaş memnuniyetini ve süreç kalitesini ölçer. Sorular, puanlama ölçeği ve serbest metin alanlarıyla birlikte kurumun ihtiyacına göre tasarlanır.",
+          "Anketler tetikleyici olaylara bağlanır; bir sürüm yayınlandığında veya bir talep kapatıldığında ilgili paydaşa otomatik memnuniyet anketi iletilir. Gönderim zamanlaması ve hedef kitle kural bazlı belirlendiği için süreç elle takip gerektirmez.",
+          "Toplanan yanıtlar analiz edilerek trendler çıkarılır; memnuniyet skorundaki düşüşler ve tekrar eden şikayet başlıkları iyileştirme alanlarını işaret eder. Sonuçlar proje, takım ve dönem kırılımında karşılaştırılabilir.",
+          "Anket sonuçları retrospektif ve sürekli iyileştirme süreçlerine doğrudan girdi sağlar; ekip kararlarını sezgiye değil paydaş geri bildirimine dayandırır. Modül raporlama ve bildirim altyapısıyla entegre çalışır, sonuçlar panolarda görselleştirilir."
+        ],
+        "highlights": [
+          "Olay tetikli otomatik anket",
+          "Memnuniyet skoru ölçümü",
+          "Trend ve şikayet analizi",
+          "Retrospektife veri girdisi",
+          "Panolarda sonuç görselleştirme"
+        ]
+      },
+      {
+        "title": "Service Desk ve Çağrı Modülü",
+        "description": "Sisteme tanımlı e-posta adreslerine gelen kayıtları ayrıştırıp otomatik olarak çağrılara dönüştüren modüldür.",
+        "paragraphs": [
+          "Service Desk ve Çağrı Modülü, sisteme tanımlanan e-posta adreslerine düşen kayıtları otomatik olarak ayrıştırır ve çağrıya dönüştürür. Paydaşlardan, iç kullanıcılardan ve dış müşterilerden gelen talepler tek bir yapılandırılmış kanalda toplanır. Hiçbir talebin kişisel posta kutusunda unutulma ihtimali kalmaz.",
+          "Gelen her kayıt; gönderen, konu ve içerik bilgisiyle bir çağrı olarak açılır ve tanımlı kurallara göre uygun ekibe veya kişiye yönlendirilir. Aynı konudan gelen yanıtlar mevcut çağrıya iliştirilir, böylece yazışmanın tamamı tek kayıt altında birikir.",
+          "Çağrılar projelere, görevlere ve story'lere dönüştürülebilir. Değerlendirme sonucunda gerçek iş gerektiren bir talep doğrudan backlog'a düşürülerek çevik akışa dahil edilir; talep ile onu karşılayan iş arasındaki bağ korunur.",
+          "Talebin yaşam döngüsü baştan sona izlenebilir: çağrının ne zaman açıldığı, kime atandığı, hangi adımlardan geçtiği ve nasıl çözüldüğü kayıt altına alınır. Bu geçmiş, yük analizlerinde ve hizmet kalitesi değerlendirmelerinde veri kaynağı olarak kullanılır.",
+          "Modül; e-posta yakalayıcı ve e-posta ile otomatik kayıt açma modülleriyle birlikte çalışır. Gelen taleplerin karşılanma süreci uçtan uca otomatik işler ve müdahale süresi kısalır."
+        ],
+        "highlights": [
+          "E-postadan otomatik çağrı",
+          "Kural bazlı yönlendirme ve atama",
+          "Çağrıyı göreve dönüştürme",
+          "Uçtan uca talep izlenebilirliği",
+          "Tek kayıtta yazışma geçmişi"
+        ]
+      },
+      {
+        "title": "Sınırsız E-mail Yakalayıcı",
+        "description": "Sınırsız sayıda e-posta adresi tanımlayarak gelen iletilerden otomatik kayıt oluşturulmasını sağlayan modül.",
+        "paragraphs": [
+          "Sınırsız E-mail Yakalayıcı modülü, istediğiniz kadar e-posta adresini platforma tanımlamanıza ve bu adreslere gelen iletilerden otomatik kayıt oluşturmanıza olanak tanır. Tanımlanabilecek adres sayısında bir sınır bulunmaz.",
+          "Her proje, ekip veya talep türü için ayrı bir adres tanımlanabilir. Gelen ileti doğru kuyruğa kendiliğinden düşer ve ilgili ekip tarafından değerlendirilir; iletileri elle dağıtma adımına gerek kalmaz.",
+          "Gelen e-postanın konusu, gövdesi ve ekleri yapılandırılmış bir kayda dönüşür. Ekler doküman olarak kayda ilişkilendirilir, gönderen kişi talep sahibi olarak eşleştirilir ve yazışmanın tamamı kayıt geçmişinde saklanır.",
+          "Kayıt açma süreci hızlanır; paydaşın e-posta göndermesi yeterlidir. Manuel kayıt açma adımı ortadan kalktığı için müdahale süreleri kısalır ve operasyonel verimlilik artar. Modül, çağrı ve otomatik kayıt açma modülleriyle aynı akış üzerinde çalışır."
+        ],
+        "highlights": [
+          "Sınırsız e-posta tanımı",
+          "Otomatik kayıt oluşturma",
+          "Kuyruk bazlı yönlendirme",
+          "Ekleri doküman olarak saklama",
+          "Kısalan müdahale süresi"
+        ]
+      },
+      {
+        "title": "E-Posta ile Otomatik Kayıt Açma",
+        "description": "Gelen e-postaların kurallara göre ayrıştırılıp otomatik kayda dönüştürüldüğü, yönlendirme ve müdahale süresini kısaltan modüldür.",
+        "paragraphs": [
+          "E-Posta ile Otomatik Kayıt Açma modülü, tanımlı posta kutularına gelen iletileri kurallara göre işleyerek otomatik kayıt oluşturur. İçerikteki anahtar bilgiler ayrıştırılır ve uygun alanlara yerleştirilir; kayıt baştan yapılandırılmış olarak açılır.",
+          "Kural setleri kayıt tipini, önceliği ve atanacak ekibi belirler. Konuya, gönderene veya içeriğe göre yönlendirme insan müdahalesi olmadan yapılır; farklı nitelikteki iletiler birbirinden ayrışarak doğru kuyruğa düşer.",
+          "Gelen iletinin konusu, gövdesi ve ekleri birlikte yapılandırılmış bir kayda dönüşür; ekler doküman olarak kayda ilişkilendirilir ve gönderilen bilgi kayba uğramadan aktarılır. Talep sahibiyle yapılan yazışma kaydın altında toplanır, bilgi ayrı posta kutularında dağılmaz.",
+          "Otomasyon, manuel kayıt açma adımını ortadan kaldırır ve müdahale süresini kısaltır. Mesai dışında gelen talepler beklemeden sisteme düşer ve ilgili ekibin önüne gelir; operasyonel verimlilik, kayıt açma işçiliğinin tamamen ortadan kalkmasıyla artar.",
+          "Otomatik açılan kayıtlar el ile açılanlardan farksızdır; projeye, backlog'a veya sprinte bağlanabilir. E-postadan doğan iş çevik akışın doğal parçası olur ve modül, e-posta yakalayıcı ile otomasyon modülleriyle birlikte uçtan uca bir talep işleme zinciri kurar."
+        ],
+        "highlights": [
+          "Kural tabanlı kayıt açma",
+          "İçerik ayrıştırma",
+          "Öncelik ve atama otomasyonu",
+          "Ek dosyaların korunması",
+          "Kısalan müdahale süresi"
+        ]
+      }
     ],
     "onlyFeatures": [
-      { "title": "İş Akışları ve Onay Akışları Yönetimi", "description": "Servicecore onay iş akışları, akış şemaları ve diyagramlar aracılığıyla oluşturulur ve görsel olarak temsil edilir. Bu iş akışları, onay süreçlerini otomatikleştirmek ve optimize etmek için sıkça kullanılır. Böylece sistem onaylarını yönetmek ve izlemek daha kolay hale gelir. Onay iş akışları, verimliliği artırmak, hataları azaltmak ve karmaşık süreçleri iyi organize etmek için kullanışlı bir araçtır." },
-      { "title": "Onay ve Danışma Kurulları Yönetimi", "description": "ServiceCore, işletmelerin onay süreçlerini daha düzenli ve hızlı yönetebilmeleri için Onay Grupları özelliğini sunar. Bu yapı, belirli süreçler için onay veren ve danışmanlık sağlayan kişileri tanımlayıp, onay mekanizmalarında kullanmayı kolaylaştırır." },
-      { "title": "Özel Ek Alanlar ve Custom Formlar", "description": "Her işletmenin kendine özgü süreçleri ve ihtiyaçları vardır. ServiceCore, bu ihtiyaçlara tam uyum sağlayabilmeniz için Özel Ek Alanlar özelliğini sunar. Bu özellik sayesinde, standart formları geliştirerek işletmenize özel kayıt formları oluşturabilir ve süreçlerinizi daha verimli hale getirebilirsiniz." },
-      { "title": "Low Code Form Design ve Yönetimi", "description": "ServiceCore, yenilikçi Low-Code Form Oluşturma özelliği ile işletmenizin ihtiyaçlarına uygun özel formlar oluşturmanızı kolaylaştırır. Teknik bilgiye ihtiyaç duymadan, sürükle-bırak yöntemiyle hızlı ve etkili çözümler üretebilirsiniz." },
-      { "title": "Mobil Uygulama", "description": "ServiceCore, mobil native uygulaması ile taleplerinizi ve görevlerinizi mobil olarak da takip edebilirsiniz." },
-      { "title": "Azure AD / SSO", "description": "ServiceCore, modern iş gereksinimlerine uygun olarak geliştirilmiş bir platformdur ve güçlü kimlik doğrulama yöntemlerini destekler. Platform, Azure Active Directory (Azure AD) ve Single Sign-On (SSO) teknolojileriyle sorunsuz entegrasyon sağlar." },
-      { "title": "Validasyonlar/Süreç Doğrulama Kontrolleri", "description": "ServiceCore, iş süreçlerinizin düzenli ve eksiksiz bir şekilde yürütülmesini sağlamak için güçlü Zorunlu Alan Validasyonu özellikleri sunar. Bu özellik sayesinde, farklı modüllerde belirli alanların doldurulmasını zorunlu hale getirebilirsiniz." },
-      { "title": "Çoklu Dil Desteği", "description": "ServiceCore, global kullanıcılar için Çoklu Dil Desteği sunarak, farklı dillerde çalışma imkanı sağlar. Bu özellik, kullanıcıların kendi tercihlerine göre platformu farklı dillerde kullanabilmelerini ve daha verimli bir deneyim elde etmelerini mümkün kılar." }
+      {
+        "title": "İş Akışları ve Onay Akışları Yönetimi",
+        "description": "Onay süreçlerinin görsel akış şemalarıyla tasarlandığı, otomatikleştirildiği ve tek yerden izlendiği yönetim modülüdür.",
+        "paragraphs": [
+          "İş Akışları ve Onay Akışları Yönetimi, onay süreçlerini akış şemaları ve diyagramlar üzerinden görsel olarak tasarlamayı sağlar. Çok adımlı, birden fazla rolü ilgilendiren karmaşık onaylar sürükle-bırak bir editörde modellenir. Süreç değişikliği için geliştirme talebi açmak gerekmez; kural, tasarım ekranında güncellenir.",
+          "Akışlar koşullu dallanmalar, paralel onaylar ve geri gönderme adımları içerebilir. Örneğin belirli bir eforu aşan bir değişiklik talebi ek yönetici onayına yönlendirilir, eşiğin altındaki talep ise doğrudan ekip liderinde kapanır. Yetersiz bulunan kayıt, revizyon için talep sahibine geri gönderilir ve süreç baştan başlamaz.",
+          "Görsel temsil sayesinde süreçler şeffaftır. Bir kaydın hangi onay adımında beklediği ve kimin aksiyon alması gerektiği tüm ilgililer tarafından akış üzerinde görülür. Onay bekleyen işler kişilerin gelen kutusunda kaybolmaz.",
+          "Otomatik yürütme, manuel takip ve hatırlatma yükünü ortadan kaldırır. Bir adım tamamlandığında iş, tanımlı kural gereği sonraki sorumluya otomatik düşer; sürecin elle ilerletilmesi gerekmez. Adımların atlanması veya yanlış sırayla işletilmesi engellendiği için hata payı azalır ve karmaşık süreçler düzenli biçimde işler.",
+          "Modül, otomasyon ve onay kurulu yapılarıyla entegre çalışır; her onay adımı kim tarafından, ne zaman, hangi gerekçeyle verildiği bilgisiyle kayıt altına alınır. Bu kayıt zinciri, iç denetim ve uyum incelemelerinde geriye dönük izlenebilirlik sağlar."
+        ],
+        "highlights": [
+          "Görsel akış tasarımcısı",
+          "Koşullu dallanma kuralları",
+          "Paralel onay adımları",
+          "Geri gönderme ve revizyon",
+          "Otomatik süreç yürütme",
+          "Denetlenebilir onay kaydı"
+        ]
+      },
+      {
+        "title": "Onay ve Danışma Kurulları Yönetimi",
+        "description": "Onay veren ve danışmanlık sağlayan kişileri kurullar halinde tanımlayıp onay mekanizmalarında kullanmayı sağlayan modüldür.",
+        "paragraphs": [
+          "Onay ve Danışma Kurulları Yönetimi modülü, belirli süreçler için onay veren ve danışmanlık sağlayan kişileri kurul yapıları hâlinde tanımlar. Onay mekanizması tek tek isimlere değil, yetkilendirilmiş kurullara bağlanır. Personel değişikliği süreç tanımını bozmaz; kurulun üyeliği güncellenir, akış olduğu gibi çalışmaya devam eder.",
+          "Bir değişiklik veya iyileştirme talebi ilgili danışma kuruluna yönlendirilerek değerlendirilir. Kurul üyeleri kayıt üzerinden görüş bildirir ve kolektif bir karar oluşur; karar, gerekçesiyle birlikte talebin geçmişine yazılır. Böylece değerlendirme tek kişinin takvimine bağımlı kalmaz ve kararın dayanağı sonradan da okunabilir.",
+          "Kurullar yeniden kullanılabilir yapılardır. Aynı onay grubu birden çok süreçte ve birden çok projede kullanılarak yönetişim tutarlılığı sağlanır; aynı nitelikteki talepler her yerde aynı mercide değerlendirilir. Üyelik bir kez güncellendiğinde bağlı tüm süreçler güncel kalır.",
+          "Onay süreçleri daha düzenli ve hızlı işler. Talebin hangi mercie gideceği önceden tanımlı olduğu için kayıt ilk adımda doğru kurula ulaşır; kimin karar vereceğini bulmak için harcanan süre ortadan kalkar. Doğru kişiler doğru anda devreye girdiğinden karar gecikmeleri azalır.",
+          "Modül, iş akışları ve değişiklik talepleri modülleriyle entegre çalışır. Kurullar, görsel onay akışlarında karar mercii olarak konumlanır; akış diyagramı üzerinde hangi adımın hangi kurula düştüğü tanım anında görünür."
+        ],
+        "highlights": [
+          "Kurul bazlı onay yapısı",
+          "Kolektif karar mekanizması",
+          "Yeniden kullanılabilir kurullar",
+          "Akışta karar mercii tanımı",
+          "Hızlanan onay süreci"
+        ]
+      },
+      {
+        "title": "Özel Ek Alanlar ve Custom Formlar",
+        "description": "Standart kayıt formlarını kuruma özel alanlarla genişleterek süreçlerinize tam uyumlu form ve veri yapıları oluşturmanızı sağlayan modüldür.",
+        "paragraphs": [
+          "Özel Ek Alanlar ve Custom Formlar modülü, standart kayıt formlarını kuruma özel alanlarla genişletir. Görev, story ve talep kayıtlarına kurumun süreçlerinde gerçekten kullandığı veri alanları eklenir; platform jenerik bir araç olmaktan çıkar ve kurumun çalışma biçimine uyarlanır.",
+          "Metin, sayı, tarih, açılır liste ve çoklu seçim alan tipleri tanımlanabilir. Her süreç, ihtiyaç duyduğu veriyi eksiksiz toplayacak şekilde şekillendirilir; seçilen alan tipi, girilen verinin doğru biçimde tutulmasını sağlar.",
+          "Özel alanlar raporlama ve filtrelemede standart alanlarla aynı şekilde işlenir. Kuruma özel tanımlanan bir kategori, maliyet kodu veya birim bilgisi panolarda kırılım olarak kullanılabilir; böylece özel veri analizin dışında kalmaz.",
+          "Modül, low-code form tasarımcısı ve validasyon kontrolleriyle birlikte çalışır. Alanlar form tasarımcısı üzerinden ilgili kayıt formuna yerleştirilir, zorunluluk kuralları tanımlanır ve teknik geliştirme gerekmeden kuruma özel bir veri toplama deneyimi kurulur. Süreç değiştiğinde form da aynı hızla güncellenir."
+        ],
+        "highlights": [
+          "Kuruma özel ek alanlar",
+          "Çoklu alan tipi desteği",
+          "Raporlamada özel alan kırılımı",
+          "Low-code form tasarımı",
+          "Sürece uyarlanabilir kayıt formları"
+        ]
+      },
+      {
+        "title": "Low Code Form Design ve Yönetimi",
+        "description": "ServiceCore'un Low-Code Form Oluşturma özelliği, teknik bilgi gerektirmeden sürükle-bırak yöntemiyle kuruma özel formlar tasarlamayı sağlar.",
+        "paragraphs": [
+          "Low-Code Form Design ve Yönetimi modülü, kurumun ihtiyaç duyduğu özel formları teknik bilgi gerektirmeden oluşturmayı sağlar. Alanlar sürükle-bırak yöntemiyle yerleştirilir, sıralanır ve gruplanır; düzenlenen alanlar tek bir forma dönüştürülerek kullanıma açılır.",
+          "PMO uzmanları, ekip liderleri ve iş analistleri kod yazmadan kendi formlarını tasarlar. Geliştirici bağımlılığı ortadan kalktığı için yeni bir süreç ihtiyacı doğduğunda ilgili form kısa sürede hazırlanır ve yayına alınır.",
+          "Formlara koşullu görünürlük, zorunlu alanlar ve mantıksal kurallar eklenebilir. Bir alanın yalnızca belirli bir seçim yapıldığında görünmesi veya belirli koşullar sağlanmadan formun gönderilememesi tanımlanabilir; karmaşık veri toplama senaryoları görsel editörde kurulur.",
+          "Hazırlanan formlar projelere, taleplere ve süreç adımlarına bağlanır; kuruma özel veri toplama akışları standart kayıt ekranlarının ötesine geçer. Modül, özel ek alanlar ve validasyon modülleriyle birlikte çalışarak toplanan verinin hem esnek hem kurallı olmasını sağlar."
+        ],
+        "highlights": [
+          "Sürükle-bırak form tasarımı",
+          "Kod gerektirmeyen kurulum",
+          "Koşullu görünürlük kuralları",
+          "Sürece bağlanabilir formlar",
+          "Özel alan ve validasyon uyumu"
+        ]
+      },
+      {
+        "title": "Mobil Uygulama",
+        "description": "ServiceCore'un native mobil uygulamasıyla taleplerinizi ve görevlerinizi her yerden takip edin.",
+        "paragraphs": [
+          "Mobil Uygulama modülü, ServiceCore'un native mobil istemcisi üzerinden talepleri, görevleri, sprint durumunu, bildirimleri ve onayları erişilebilir kılar. Sahadaki çalışanlar ve seyahatteki yöneticiler masaüstüne bağımlı kalmadan akışa katkı verir.",
+          "Görev güncelleme, durum değiştirme ve yorum ekleme gibi günlük işlemler mobilde eksiksiz yürütülür. Ekip üyesi kaydı işin yapıldığı yerde günceller; bilgi gün sonuna ertelenmeden sisteme girer ve veri tazeliği korunur.",
+          "Bildirimler anlık olarak cihaza ulaşır. Onay bekleyen kayıtlar yöneticiye, yeni atanan görevler sorumlusuna gecikmeden düşer; son tarihi yaklaşan işler gözden kaçmadan zamanında ele alınır.",
+          "Mobil deneyim masaüstüyle aynı veriyi paylaşır; mobilde yapılan her değişiklik anında platforma yansır ve ayrı bir senkronizasyon adımı gerekmez. Modül bildirim, onay akışı ve görev modülleriyle entegre çalışarak kesintisiz erişim sağlar."
+        ],
+        "highlights": [
+          "Native mobil uygulama",
+          "Mobilden talep ve görev takibi",
+          "Anlık mobil bildirimler",
+          "Mobil onay aksiyonları",
+          "Masaüstüyle tam senkron"
+        ]
+      },
+      {
+        "title": "Azure AD / SSO",
+        "description": "Azure Active Directory ve tek oturum açma (SSO) teknolojileriyle sorunsuz entegrasyon sağlayan kurumsal kimlik doğrulama modülüdür.",
+        "paragraphs": [
+          "Azure AD / SSO modülü, modern kimlik doğrulama standartlarını destekler. Azure Active Directory, SAML ve tek oturum açma (SSO) teknolojileriyle sorunsuz entegrasyon sağlanır; kullanıcılar kurumsal kimlikleriyle tek tıkla oturum açar.",
+          "Tek oturum açma sayesinde kullanıcılar ayrı bir ServiceCore parolası yönetmek zorunda kalmaz. Kurum kimlik sağlayıcısına bir kez giriş yapan kullanıcı platforma otomatik erişir; parola sıfırlama talepleri ve buna bağlı destek yükü azalır.",
+          "SAML ve Azure AD entegrasyonu, kurumsal güvenlik politikalarının platforma da uygulanmasını sağlar. Çok faktörlü doğrulama ve koşullu erişim kuralları kimlik sağlayıcı üzerinden yönetilir; güvenlik tek merkezden yürütülür.",
+          "Kullanıcı yaşam döngüsü kimlik sağlayıcıyla hizalanır; bir çalışan kurumdan ayrıldığında merkezi olarak devre dışı bırakılır ve platform erişimi aynı anda kapanır. Modül, dizin senkronizasyonu ve rol yönetimiyle birlikte çalışarak kurumsal ölçekte güvenli ve tutarlı bir kimlik altyapısı sunar."
+        ],
+        "highlights": [
+          "Azure AD entegrasyonu",
+          "SAML kimlik doğrulama",
+          "Tek oturum açma (SSO)",
+          "Merkezi güvenlik politikası",
+          "Kullanıcı yaşam döngüsü senkronu"
+        ]
+      },
+      {
+        "title": "Validasyonlar/Süreç Doğrulama Kontrolleri",
+        "description": "Zorunlu alan ve durum geçiş kurallarıyla süreçlerin eksiksiz ve tanımlı standartlara uygun yürütülmesini sağlayan modüldür.",
+        "paragraphs": [
+          "Validasyonlar/Süreç Doğrulama Kontrolleri modülü, iş süreçlerinin düzenli ve eksiksiz yürütülmesi için güçlü doğrulama kuralları sunar. Belirli alanların doldurulması veya belirli koşulların sağlanması zorunlu hale getirilir. Kayıt, tanımlı şartlar karşılanmadan bir sonraki adıma geçemez.",
+          "Bir görev \"Tamamlandı\" durumuna geçmeden önce iş kaydının girilmesi, bir story kapatılmadan önce test sonucunun işaretlenmesi veya bir değişiklik onaya gönderilmeden önce etki analizinin doldurulması zorunlu kılınabilir. Süreç adımları iyi niyete bırakılmaz, sistem tarafından güvence altına alınır.",
+          "Doğrulamalar modüle ve duruma özel tanımlanır; her sürecin kendi kalite kapıları olur. Kural ihlal edildiğinde kullanıcı eksik alanı gösteren açık bir uyarı alır ve düzeltmeyi anında yapar. Kurum genelinde tek bir katı kalıp dayatmak yerine her ekip kendi standardını tanımlar.",
+          "Bu kontroller veri kalitesini ve süreç bütünlüğünü güvence altına alır. Raporlamaya giren veri eksiksiz olduğu için ölçümler güvenilir, kararlar sağlam temellidir. Modül; özel alanlar ve iş akışı modülleriyle birlikte çalışarak süreçlerin tanımlı standartlara uygun ilerlemesini garanti eder."
+        ],
+        "highlights": [
+          "Zorunlu alan kuralları",
+          "Durum geçiş doğrulaması",
+          "Modüle özel kalite kapıları",
+          "Anlık kullanıcı uyarısı",
+          "Veri bütünlüğü güvencesi"
+        ]
+      },
+      {
+        "title": "Çoklu Dil Desteği",
+        "description": "Global kullanıcılar için platformun kullanıcı bazlı dil tercihiyle farklı dillerde kullanılabilmesi.",
+        "paragraphs": [
+          "Çoklu Dil Desteği modülü, platformun farklı dillerde kullanılmasını sağlar. Dil tercihi kullanıcı bazında ayarlanır; aynı proje üzerinde çalışan ekip üyeleri arayüzü kendi tercih ettikleri dilde görür.",
+          "Veri ortak kalır, sunum dile uyarlanır. Türkiye'deki bir ekip üyesi platformu Türkçe kullanırken yurt dışındaki paydaş aynı görev, sprint ve rapor verisini kendi dilinde okur. İki taraf da tek bir kayıt üzerinde çalışmayı sürdürür.",
+          "Arayüz metinleri, menüler ve sistem bildirimleri seçilen dilde sunulur. Kullanıcının gündelik akışta karşılaştığı ekranlar baştan sona tutarlı biçimde kendi dilindedir.",
+          "Çok uluslu ekipler ve dağıtık organizasyonlar için dil, platform benimsemesinin önündeki bir engel olmaktan çıkar. Modül, bildirim ve portal modülleriyle birlikte çalışarak dış paydaşlarla iletişimin de doğru dilde kurulmasını sağlar."
+        ],
+        "highlights": [
+          "Kullanıcı bazlı dil tercihi",
+          "Yerelleştirilmiş arayüz",
+          "Çok uluslu ekip desteği",
+          "Ortak veri, farklı sunum",
+          "Bildirimlerde dil uyumu"
+        ]
+      }
+    ]
+  },
+  "knowledgeBase": {
+    "badge": "Tümleşik Bilgi ve Dokümantasyon Platformu",
+    "title": "Projectcore KB (Corefluence)",
+    "subtitle": "Projelerin, ekiplerin ve paydaşların ürettiği tüm kurumsal bilgiyi tek bir yapılandırılmış kütüphanede toplayan, ServiceCore Project içine gömülü çalışan bilgi ve doküman yönetimi ürünü.",
+    "includedNote": "Projectcore KB (Corefluence), ServiceCore Project'in hem Standart hem de Premium versiyonuna dahildir; ayrı bir lisans gerektirmez.",
+    "intro": [
+      "Projectcore KB (Corefluence), kurumsal bilgi ve dokümantasyon yönetimi için tasarlanmış bağımsız bir üründür; ancak ayrı bir uygulama olarak değil, ServiceCore Project'in içinde gömülü olarak çalışır. Teknik ekiplerin ürettiği tasarım dokümanları, mimari kararlar, kurulum yordamları ve test notları ile iş birimlerinin ürettiği süreç tanımları, toplantı kayıtları ve referans belgeleri aynı kütüphanede toplanır. Böylece proje bilgisi dosya sunucularına, kişisel makinelere ve e-posta eklerine dağılmaz. Bilginin nerede tutulduğu değil, hangi projeye ve hangi işe ait olduğu belirleyici hale gelir.",
+      "Ürünün temel yapı taşı workspace, yani her ekibin veya her alanın kendi bilgi bölgesidir. Bir workspace içinde sayfalar ve alt sayfalar hiyerarşik olarak düzenlenir; büyük bir ürün dokümantasyonu, ağaç yapısı sayesinde bağlamı kaybetmeden derinleştirilebilir. Her workspace kendi yetki kurallarına, kendi şablon setine ve kendi içerik sahiplerine sahiptir. Bu yapı, tek bir kurumsal kütüphane içinde birbirinden bağımsız çalışan ekipleri aynı anda barındırır.",
+      "Corefluence'in ServiceCore Project ile aynı platformda çalışmasının pratik sonucu, dokümanın işten kopmamasıdır. Bir makale projeye, epike veya göreve bağlandığında, geliştirici görev ekranından ilgili teknik dokümana doğrudan ulaşır; doküman tarafında ise o içeriğin hangi kayıtlara bağlı olduğu görünür. Değişiklikler versiyonlanır, yorumlar sayfa üzerinde bağlamıyla birlikte kalır, dış paydaşlar kendilerine açılan içeriklere self servis portal üzerinden erişir. Sonuçta proje yürütmesi ile proje bilgisi tek bir akış içinde ilerler."
+    ],
+    "capabilities": [
+      {
+        "title": "Workspace ve Alan Yapısı",
+        "description": "Her ekip, birim veya proje için bağımsız bir workspace açılır ve bilgi bu alanlar altında düzenlenir. Sayfalar parent-child ilişkisiyle iç içe konumlandırılır, böylece kapsamlı bir dokümantasyon ağacı oluşturulur. Alanlar arasında taşıma ve yeniden düzenleme, içerik bağlantıları korunarak yapılır."
+      },
+      {
+        "title": "Makale ve Doküman Oluşturma",
+        "description": "Zengin metin editörü ile başlık, tablo, kod bloğu, görsel, bağlantı ve uyarı kutusu içeren yapılandırılmış makaleler hazırlanır. Editör, biçimlendirme komutlarıyla çalıştığı için doküman üretimi teknik bilgi gerektirmez. Sayfa içine gömülen dinamik listeler, bağlı oldukları proje verisi değiştiğinde dokümanı güncel tutar."
+      },
+      {
+        "title": "Versiyonlama ve Değişiklik Geçmişi",
+        "description": "Her kayıt işlemi yeni bir sürüm oluşturur; değişikliğin kim tarafından ve ne zaman yapıldığı geçmişte saklanır. İki sürüm karşılaştırılarak hangi paragrafın eklendiği, değiştirildiği veya silindiği satır bazında görülür. Gerektiğinde önceki bir sürüme dönülür, böylece hatalı düzenleme bilgi kaybına yol açmaz."
+      },
+      {
+        "title": "Görev, Epik ve Proje Bağlantısı",
+        "description": "Makaleler projelere, epiklere ve görevlere çift yönlü olarak bağlanır. Geliştirici görev ekranındaki doküman sekmesinden ilgili teknik içeriğe geçer; makale tarafında da o içeriğin hangi kayıtlarda referans verildiği listelenir. Bu bağ sayesinde her iş kaleminin dayandığı bilgi kaynağı izlenebilir kalır."
+      },
+      {
+        "title": "Şablon Kütüphanesi",
+        "description": "Toplantı notu, mimari karar kaydı, test planı, sürüm notu ve kurulum yordamı benzeri tekrar eden doküman türleri için şablon tanımlanır. Yeni sayfa şablondan üretildiğinde başlık yapısı ve zorunlu bölümler hazır gelir. Aynı doküman türü tüm projelerde aynı biçimde üretildiği için kurumsal tutarlılık korunur."
+      },
+      {
+        "title": "Rol ve Yetki Bazlı Erişim",
+        "description": "Erişim yetkileri workspace ve sayfa düzeyinde, rol bazında tanımlanır; okuma, düzenleme ve yönetme hakları ayrı ayrı verilir. Hassas içerikler yalnızca ilgili ekibe açılır, diğer kullanıcılara hiç görünmez. Proje bazlı yetkilendirme yapısıyla uyumlu çalıştığı için kurum genelindeki yetki modeli bilgi kütüphanesinde de aynen geçerlidir."
+      },
+      {
+        "title": "Arama ve Etiketleme",
+        "description": "Tam metin arama, sayfa içeriği ve ek dosya adları üzerinde çalışır ve sonuçlar kullanıcının yetkili olduğu içeriklerle sınırlanır. Etiketler sayesinde farklı workspace'lerde duran ilgili içerikler ortak bir konu başlığı altında toplanır. Workspace, etiket ve güncelleme tarihi filtreleriyle arama sonuçları daraltılır."
+      },
+      {
+        "title": "Self Servis Portal Üzerinden Paydaş Erişimi",
+        "description": "Yayına açılan makaleler self servis portal üzerinden dış kullanıcılara ve proje paydaşlarına sunulur. Paydaş, kendisine açılan kullanım yordamlarına ve sürüm notlarına talep açmadan ulaşır. Portalda yayınlanan içerik ile iç kütüphanedeki kaynak aynı olduğu için ayrı bir doküman seti güncelleme yükü doğmaz."
+      }
+    ],
+    "highlights": [
+      "Workspace ve sayfa hiyerarşisi",
+      "Sürüm karşılaştırma ve geri alma",
+      "Görev ve epik bağlantısı",
+      "Şablon kütüphanesi",
+      "Rol bazlı erişim denetimi",
+      "Self servis portal yayını"
     ]
   },
   "addons": {
@@ -96,24 +944,70 @@
       {
         "title": "Standart veya Premiuma eklenebilen modüller",
         "items": [
-          { "name": "MS Teams Eklentisi", "desc": "ServiceCore MS Teams Eklentisi, Microsoft Teams ile entegre olarak, proje yönetimi ve işbirliği süreçlerini daha verimli hale getirir." },
-          { "name": "Task Calendar Sync Eklentisi", "desc": "ServiceCore kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli bir şekilde hizmet yönetimi yapmalarını sağlar." },
-          { "name": "Failover / Cluster Sistem Add-on", "desc": "ServiceCore Failover / Cluster Sistem Add-on, yüksek erişilebilirlik ve kesintisiz hizmet sağlamak amacıyla, ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır. Bu özellik, kritik iş süreçlerinin ve hizmetlerin herhangi bir kesinti durumunda devamlılık göstermesini sağlar. Failover ve Cluster sistemleri, platformun daha dayanıklı, güvenilir ve kesintisiz çalışmasını garanti eder.", "link": "/failover" },
-          { "name": "Disaster Center Add-on", "desc": "ServiceCore Disaster Center Add-on, şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır.", "link": "/disaster-center" },
-          { "name": "Sandbox / Test Sistem Add-on", "desc": "ServiceCore Sandbox / Test Sistem Add-on, kullanıcıların ServiceCore platformu üzerinde gerçekleştirecekleri değişiklikler ve yenilikleri gerçek ortamda uygulamadan önce güvenli bir şekilde test etmelerini sağlar.", "link": "/sandbox" },
-          { "name": "Intune Discovery Add-on", "desc": "ServiceCore Intune Discovery Add-on, Microsoft Intune ile yönetilen uç noktaları ve mobil cihazları otomatik olarak keşfeder; cihaz envanterini ve yapılandırma bilgilerini CMDB ile sürekli güncel tutar.", "link": "/discovery" },
-          { "name": "Lansweeper Discovery Add-on", "desc": "ServiceCore Lansweeper Discovery Add-on, Lansweeper envanter verilerini ServiceCore'a aktararak ağdaki donanım ve yazılım varlıklarının tek bir merkezde güncel kalmasını sağlar.", "link": "/discovery" },
-          { "name": "Shift Management Add-on", "desc": "ServiceCore Shift Management Add-on, teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır.", "link": "/vardiya-yonetimi" },
-          { "name": "Federation Service Add-on", "desc": "ServiceCore Federation Service Add-on, birden fazla ServiceCore örneğini veya dış servis sağlayıcılarını birbirine bağlayarak kayıtların ve süreçlerin organizasyonlar arası federasyon yapısında paylaşılmasını sağlar.", "link": "/federasyon-motoru" }
+          {
+            "name": "MS Teams Eklentisi",
+            "desc": "ServiceCore MS Teams Eklentisi, Microsoft Teams ile entegre olarak, proje yönetimi ve işbirliği süreçlerini daha verimli hale getirir."
+          },
+          {
+            "name": "Task Calendar Sync Eklentisi",
+            "desc": "ServiceCore kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli bir şekilde hizmet yönetimi yapmalarını sağlar."
+          },
+          {
+            "name": "Failover / Cluster Sistem Add-on",
+            "desc": "ServiceCore Failover / Cluster Sistem Add-on, yüksek erişilebilirlik ve kesintisiz hizmet sağlamak amacıyla, ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır. Bu özellik, kritik iş süreçlerinin ve hizmetlerin herhangi bir kesinti durumunda devamlılık göstermesini sağlar. Failover ve Cluster sistemleri, platformun daha dayanıklı, güvenilir ve kesintisiz çalışmasını garanti eder.",
+            "link": "/failover"
+          },
+          {
+            "name": "Disaster Center Add-on",
+            "desc": "ServiceCore Disaster Center Add-on, şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır.",
+            "link": "/disaster-center"
+          },
+          {
+            "name": "Sandbox / Test Sistem Add-on",
+            "desc": "ServiceCore Sandbox / Test Sistem Add-on, kullanıcıların ServiceCore platformu üzerinde gerçekleştirecekleri değişiklikler ve yenilikleri gerçek ortamda uygulamadan önce güvenli bir şekilde test etmelerini sağlar.",
+            "link": "/sandbox"
+          },
+          {
+            "name": "Intune Discovery Add-on",
+            "desc": "ServiceCore Intune Discovery Add-on, Microsoft Intune ile yönetilen uç noktaları ve mobil cihazları otomatik olarak keşfeder; cihaz envanterini ve yapılandırma bilgilerini CMDB ile sürekli güncel tutar.",
+            "link": "/discovery"
+          },
+          {
+            "name": "Lansweeper Discovery Add-on",
+            "desc": "ServiceCore Lansweeper Discovery Add-on, Lansweeper envanter verilerini ServiceCore'a aktararak ağdaki donanım ve yazılım varlıklarının tek bir merkezde güncel kalmasını sağlar.",
+            "link": "/discovery"
+          },
+          {
+            "name": "Shift Management Add-on",
+            "desc": "ServiceCore Shift Management Add-on, teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır.",
+            "link": "/vardiya-yonetimi"
+          },
+          {
+            "name": "Federation Service Add-on",
+            "desc": "ServiceCore Federation Service Add-on, birden fazla ServiceCore örneğini veya dış servis sağlayıcılarını birbirine bağlayarak kayıtların ve süreçlerin organizasyonlar arası federasyon yapısında paylaşılmasını sağlar.",
+            "link": "/federasyon-motoru"
+          }
         ]
       },
       {
         "title": "Entegrasyonlarla Sunulan Çözümler",
         "items": [
-          { "name": "Proje Analitiği Çözümleri", "desc": "PowerBI Entegre Add-on ile tüm raporların detaylı BI panolarına ürün içerisinden erişim imkanı sunar." },
-          { "name": "Sürüm Yönetimi Çözümleri", "desc": "SDLC ve DevOps Entegrasyonları ile yaygın kullanılan CI CD ürünleri ile eş güdümlü çalışma sağlanmaktadır." },
-          { "name": "GRC Çözümleri", "desc": "Risk, Audit, Compliance Add-on ile kurumun GRC platformları ile eşgüdümlü çalışma sağlanmaktadır." },
-          { "name": "Migration Çözümleri", "desc": "Diğer proje yönetimi platformlarından Veri, Konfigürasyon, Flow vb. öğelerin taşınması işlemleri yapılmaktadır." }
+          {
+            "name": "Proje Analitiği Çözümleri",
+            "desc": "PowerBI Entegre Add-on ile tüm raporların detaylı BI panolarına ürün içerisinden erişim imkanı sunar."
+          },
+          {
+            "name": "Sürüm Yönetimi Çözümleri",
+            "desc": "SDLC ve DevOps Entegrasyonları ile yaygın kullanılan CI CD ürünleri ile eş güdümlü çalışma sağlanmaktadır."
+          },
+          {
+            "name": "GRC Çözümleri",
+            "desc": "Risk, Audit, Compliance Add-on ile kurumun GRC platformları ile eşgüdümlü çalışma sağlanmaktadır."
+          },
+          {
+            "name": "Migration Çözümleri",
+            "desc": "Diğer proje yönetimi platformlarından Veri, Konfigürasyon, Flow vb. öğelerin taşınması işlemleri yapılmaktadır."
+          }
         ]
       }
     ]

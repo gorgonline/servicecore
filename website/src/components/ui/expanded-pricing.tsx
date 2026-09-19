@@ -1,14 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, Boxes, MessageSquare, ShieldCheck, Zap, ArrowUpRight } from "lucide-react";
+import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, Boxes, MessageSquare, ShieldCheck, Zap, ArrowUpRight, BookOpen } from "lucide-react";
 
 // --- Data Models ---
 export interface PricingFeature {
   title: string;
   description: string;
+  /** Akordiyon acildiginda gosterilen detay paragraflari. Yoksa `description` kullanilir. */
+  paragraphs?: string[];
+  /** Detay panelinin altindaki kisa yetenek etiketleri. */
+  highlights?: string[];
+}
+
+export interface KnowledgeBaseCapability {
+  title: string;
+  description: string;
+}
+
+/** Standart/Premium listelerinden cikarilip kendi kutusunda sunulan urun (Projectcore KB). */
+export interface KnowledgeBaseBlock {
+  badge: string;
+  title: string;
+  subtitle: string;
+  includedNote: string;
+  intro: string[];
+  capabilities: KnowledgeBaseCapability[];
+  highlights: string[];
 }
 
 export interface AddonItem {
@@ -61,6 +81,8 @@ export interface PricingData {
     featuresLabel: string;
     ctaLabel: string;
     footerNote: string;
+    /** Doluysa "en cok tercih edilen" rozeti Standart kartta gosterilir. */
+    popularLabel?: string;
     features: PricingFeature[];
   };
   pro?: {
@@ -70,11 +92,14 @@ export interface PricingData {
     extraLabel: string;
     onlyLabel: string;
     ctaLabel: string;
-    popularLabel: string;
+    /** Bos birakilirsa Premium kartta rozet gosterilmez. */
+    popularLabel?: string;
     footerNote: string;
     extraModules: PricingFeature[];
     onlyFeatures: PricingFeature[];
   };
+  /** Kendi kutusunda sunulan tumlesik urun blogu (opsiyonel). */
+  knowledgeBase?: KnowledgeBaseBlock;
   addons: {
     title: string;
     description: string;
@@ -84,36 +109,80 @@ export interface PricingData {
 
 const FeatureAccordion = ({ feature, isPro = false, isHighlight = false }: { feature: PricingFeature, isPro?: boolean, isHighlight?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const panelId = `feature-panel-${useId()}`;
+
+  const paragraphs = feature.paragraphs?.length ? feature.paragraphs : [feature.description];
+  const highlights = feature.highlights ?? [];
+
+  const accentText = isHighlight
+    ? "text-(--color-accent-emerald-light)"
+    : isPro
+      ? "text-(--color-brand-primary)"
+      : "text-(--color-text-secondary)";
+
+  const railColor = isHighlight
+    ? "bg-(--color-accent-emerald-base)/30"
+    : isPro
+      ? "bg-(--color-brand-primary)/30"
+      : "bg-white/10";
+
+  const chipStyle = isHighlight
+    ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-100/80"
+    : isPro
+      ? "bg-(--color-brand-primary)/10 border-(--color-brand-primary)/25 text-blue-100/80"
+      : "bg-white/5 border-white/10 text-(--color-text-overline)";
 
   return (
     <div className="border-b border-white/5 last:border-0 relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between py-3 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-border-active) rounded-sm cursor-pointer z-10 relative"
-        tabIndex={0}
+        className="w-full flex items-center justify-between gap-3 py-3 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-border-active) rounded-sm cursor-pointer z-10 relative"
+        aria-expanded={isOpen}
+        aria-controls={panelId}
       >
         <div className="flex items-center gap-3">
-          <CheckCircle2 className={`w-4 h-4 shrink-0 transition-colors ${
-            isHighlight ? "text-(--color-accent-emerald-light)" : isPro ? "text-(--color-brand-primary)" : "text-(--color-text-secondary)"
-          }`} />
+          <CheckCircle2 className={`w-4 h-4 shrink-0 transition-colors ${accentText}`} />
           <span className="text-sm font-medium text-white/90 group-hover:text-white transition-colors">
             {feature.title}
           </span>
         </div>
-        <ChevronDown className={`w-4 h-4 text-(--color-text-muted) transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`w-4 h-4 shrink-0 text-(--color-text-muted) group-hover:text-(--color-text-overline) transition-all duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            id={panelId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <p className="pb-4 pl-7 text-xs text-(--color-text-secondary) font-light leading-relaxed">
-              {feature.description}
-            </p>
+            <div className="pb-5 pl-7 pr-1">
+              <div className="relative pl-4">
+                <span className={`absolute left-0 top-1 bottom-1 w-px rounded-full ${railColor}`} aria-hidden="true" />
+                <div className="flex flex-col gap-2.5">
+                  {paragraphs.map((paragraph, idx) => (
+                    <p key={idx} className="text-xs text-(--color-text-secondary) font-light leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+
+                {highlights.length > 0 && (
+                  <ul className="mt-3.5 flex flex-wrap gap-1.5">
+                    {highlights.map((highlight, idx) => (
+                      <li
+                        key={idx}
+                        className={`px-2.5 py-1 rounded-md border text-[11px] font-medium leading-none ${chipStyle}`}
+                      >
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -122,7 +191,7 @@ const FeatureAccordion = ({ feature, isPro = false, isHighlight = false }: { fea
 };
 
 export function ExpandedPricingSection({ data }: { data: PricingData }) {
-  const { section, standard, pro, single, addons } = data;
+  const { section, standard, pro, single, knowledgeBase, addons } = data;
 
   return (
     <section id="expanded-pricing" className="relative w-full py-24 overflow-hidden bg-(--color-surface-base-dark)">
@@ -235,10 +304,26 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
           {/* 1. Standart Versiyon */}
           <motion.div
             transition={{ duration: 0.6 }}
-            className="flex flex-col rounded-4xl bg-(--color-surface-elevated-dark) border border-white/10 p-8 md:p-10  relative group transition-colors"
+            className={`flex flex-col rounded-4xl bg-(--color-surface-elevated-dark) p-8 md:p-10 relative group transition-colors ${
+              standard.popularLabel
+                ? "border border-(--color-accent-emerald-base)/30 shadow-[0_0_60px_-25px_rgba(16,185,129,0.45)]"
+                : "border border-white/10"
+            }`}
           >
+            {/* Standart Highlight Label */}
+            {standard.popularLabel && (
+              <div className="absolute -top-4 -right-2 md:right-8 z-20">
+                 <div className="relative">
+                    <div className="absolute inset-0 bg-(--color-accent-emerald-base) blur-md opacity-60 rounded-full" />
+                    <div className="relative bg-linear-to-r from-(--color-accent-emerald-dark) to-(--color-accent-emerald-base) text-white px-5 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xl ring-1 ring-white/20 whitespace-nowrap">
+                       {standard.popularLabel}
+                    </div>
+                 </div>
+              </div>
+            )}
+
             {/* Header Area */}
-            <div className="mb-8">
+            <div className={`mb-8 ${standard.popularLabel ? "pt-2" : ""}`}>
               <div className="flex items-center gap-3 mb-4">
                  <div className="p-2.5 rounded-lg bg-slate-800/50 border border-white/5">
                     <ShieldCheck className="w-6 h-6 text-(--color-text-overline)" />
@@ -295,14 +380,16 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
             </div>
 
             {/* Pro Highlight Label */}
-            <div className="absolute -top-4 -right-2 md:right-8 z-20">
+            {pro.popularLabel && (
+              <div className="absolute -top-4 -right-2 md:right-8 z-20">
                 <div className="relative">
                    <div className="absolute inset-0 bg-(--color-brand-primary) blur-md opacity-60 rounded-full" />
                    <div className="relative bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-blue-base) text-white px-5 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xl ring-1 ring-white/20 whitespace-nowrap">
                       {pro.popularLabel}
                    </div>
                 </div>
-            </div>
+              </div>
+            )}
 
             {/* Header Area */}
             <div className="mb-8 relative z-10 pt-2">
@@ -370,6 +457,86 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
           </motion.div>
 
         </div>
+        )}
+
+        {/* Tumlesik Urun Blogu — Projectcore KB (Corefluence) */}
+        {knowledgeBase && (
+          <motion.div
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="w-full rounded-4xl bg-linear-to-br from-(--color-accent-purple-dark)/25 via-(--color-surface-elevated-solid) to-(--color-surface-base-dark) border border-(--color-accent-purple-base)/30 p-8 md:p-12 relative overflow-hidden mb-16 shadow-[0_0_80px_-40px_rgba(168,85,247,0.6)]"
+          >
+            <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-(--color-accent-purple-base)/60 to-transparent" />
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-(--color-accent-purple-base)/20 to-transparent rounded-full pointer-events-none" />
+
+            <div className="relative z-10">
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start mb-10">
+                <div className="p-4 rounded-2xl bg-(--color-accent-purple-base)/15 border border-(--color-accent-purple-base)/30 text-(--color-accent-purple-light) shrink-0">
+                  <BookOpen className="w-8 h-8" />
+                </div>
+
+                <div className="flex-1">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-(--color-accent-purple-base)/10 border border-(--color-accent-purple-base)/25 mb-4">
+                    <Sparkles className="w-3.5 h-3.5 text-(--color-accent-purple-light)" />
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-(--color-accent-purple-light)">
+                      {knowledgeBase.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">
+                    {knowledgeBase.title}
+                  </h3>
+
+                  <p className="text-(--color-text-overline) text-sm md:text-base leading-relaxed max-w-3xl mb-5">
+                    {knowledgeBase.subtitle}
+                  </p>
+
+                  <div className="inline-flex items-start gap-2.5 px-4 py-2.5 rounded-xl bg-(--color-accent-purple-base)/10 border border-(--color-accent-purple-base)/25">
+                    <CheckCircle2 className="w-4 h-4 text-(--color-accent-purple-light) mt-0.5 shrink-0" />
+                    <span className="text-sm text-purple-100/85 leading-relaxed font-medium">
+                      {knowledgeBase.includedNote}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+                <div className="lg:col-span-1 flex flex-col gap-4">
+                  {knowledgeBase.intro.map((paragraph, idx) => (
+                    <p key={idx} className="text-sm text-(--color-text-secondary) font-light leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+
+                  {knowledgeBase.highlights.length > 0 && (
+                    <ul className="mt-2 flex flex-wrap gap-2">
+                      {knowledgeBase.highlights.map((highlight, idx) => (
+                        <li
+                          key={idx}
+                          className="px-3 py-1.5 rounded-lg bg-white/5 border border-(--color-accent-purple-base)/20 text-[11px] font-medium text-(--color-accent-purple-light) leading-none"
+                        >
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+
+                <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                  {knowledgeBase.capabilities.map((capability, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shrink-0" />
+                      <div>
+                        <h4 className="text-sm font-semibold text-white mb-1.5">{capability.title}</h4>
+                        <p className="text-xs text-(--color-text-secondary) font-light leading-relaxed">
+                          {capability.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
         )}
 
         {/* Add-ons & Solutions Section (Bottom Row) */}
