@@ -886,13 +886,13 @@
   },
   "knowledgeBase": {
     "badge": "Tümleşik Bilgi ve Dokümantasyon Platformu",
-    "title": "Projectcore KB (Corefluence)",
+    "title": "ProjectCore Knowledge Base",
     "subtitle": "Projelerin, ekiplerin ve paydaşların ürettiği tüm kurumsal bilgiyi tek bir yapılandırılmış kütüphanede toplayan, ServiceCore Project içine gömülü çalışan bilgi ve doküman yönetimi ürünü.",
-    "includedNote": "Projectcore KB (Corefluence), ServiceCore Project'in hem Standart hem de Premium versiyonuna dahildir; ayrı bir lisans gerektirmez.",
+    "includedNote": "ProjectCore Knowledge Base, ServiceCore Project'in hem Standart hem de Premium versiyonuna dahildir; ayrı bir lisans gerektirmez.",
     "intro": [
-      "Projectcore KB (Corefluence), kurumsal bilgi ve dokümantasyon yönetimi için tasarlanmış bağımsız bir üründür; ancak ayrı bir uygulama olarak değil, ServiceCore Project'in içinde gömülü olarak çalışır. Teknik ekiplerin ürettiği tasarım dokümanları, mimari kararlar, kurulum yordamları ve test notları ile iş birimlerinin ürettiği süreç tanımları, toplantı kayıtları ve referans belgeleri aynı kütüphanede toplanır. Böylece proje bilgisi dosya sunucularına, kişisel makinelere ve e-posta eklerine dağılmaz. Bilginin nerede tutulduğu değil, hangi projeye ve hangi işe ait olduğu belirleyici hale gelir.",
+      "ProjectCore Knowledge Base, kurumsal bilgi ve dokümantasyon yönetimi için tasarlanmış bağımsız bir üründür; ancak ayrı bir uygulama olarak değil, ServiceCore Project'in içinde gömülü olarak çalışır. Teknik ekiplerin ürettiği tasarım dokümanları, mimari kararlar, kurulum yordamları ve test notları ile iş birimlerinin ürettiği süreç tanımları, toplantı kayıtları ve referans belgeleri aynı kütüphanede toplanır. Böylece proje bilgisi dosya sunucularına, kişisel makinelere ve e-posta eklerine dağılmaz. Bilginin nerede tutulduğu değil, hangi projeye ve hangi işe ait olduğu belirleyici hale gelir.",
       "Ürünün temel yapı taşı workspace, yani her ekibin veya her alanın kendi bilgi bölgesidir. Bir workspace içinde sayfalar ve alt sayfalar hiyerarşik olarak düzenlenir; büyük bir ürün dokümantasyonu, ağaç yapısı sayesinde bağlamı kaybetmeden derinleştirilebilir. Her workspace kendi yetki kurallarına, kendi şablon setine ve kendi içerik sahiplerine sahiptir. Bu yapı, tek bir kurumsal kütüphane içinde birbirinden bağımsız çalışan ekipleri aynı anda barındırır.",
-      "Corefluence'in ServiceCore Project ile aynı platformda çalışmasının pratik sonucu, dokümanın işten kopmamasıdır. Bir makale projeye, epike veya göreve bağlandığında, geliştirici görev ekranından ilgili teknik dokümana doğrudan ulaşır; doküman tarafında ise o içeriğin hangi kayıtlara bağlı olduğu görünür. Değişiklikler versiyonlanır, yorumlar sayfa üzerinde bağlamıyla birlikte kalır, dış paydaşlar kendilerine açılan içeriklere self servis portal üzerinden erişir. Sonuçta proje yürütmesi ile proje bilgisi tek bir akış içinde ilerler."
+      "ProjectCore Knowledge Base ServiceCore Project ile aynı platformda çalışmasının pratik sonucu, dokümanın işten kopmamasıdır. Bir makale projeye, epike veya göreve bağlandığında, geliştirici görev ekranından ilgili teknik dokümana doğrudan ulaşır; doküman tarafında ise o içeriğin hangi kayıtlara bağlı olduğu görünür. Değişiklikler versiyonlanır, yorumlar sayfa üzerinde bağlamıyla birlikte kalır, dış paydaşlar kendilerine açılan içeriklere self servis portal üzerinden erişir. Sonuçta proje yürütmesi ile proje bilgisi tek bir akış içinde ilerler."
     ],
     "capabilities": [
       {

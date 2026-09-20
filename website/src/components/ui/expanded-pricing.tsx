@@ -459,7 +459,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
         </div>
         )}
 
-        {/* Tumlesik Urun Blogu — Projectcore KB (Corefluence) */}
+        {/* Tumlesik Urun Blogu — ProjectCore Knowledge Base */}
         {knowledgeBase && (
           <motion.div
             transition={{ duration: 0.6, delay: 0.3 }}
