@@ -34,18 +34,6 @@
         "description": "Geliştiricilerimiz tarafından icat edilen önceliklendirme kural motoru tarafından sağlanan yüksek düzeyde özelleştirilebilir ve gelişmiş Hizmet Seviyesi otomasyon yetenekleri."
       },
       {
-        "title": "Görev Yönetim Modülü",
-        "description": "Kaynakları proaktif olarak yönetmek için tüm görevlerin süreçler aracılığıyla birleştirilmiş görev yönetimi ve merkezi koordinasyonu."
-      },
-      {
-        "title": "Görev Ajanda Modülü",
-        "description": "Görevlerinizi aylık ve günlük görünümlerde saat aralıkları ile takip edebilirsiniz."
-      },
-      {
-        "title": "Görev Kanban Panoları",
-        "description": "Görevlerinizi sürekle bırak ile kanban pano seçeneği ile yönetebilirsiniz."
-      },
-      {
         "title": "İş Kayıtları / Time Sheet Yönetimi",
         "description": "Karşılanan kayıtlar içerisinde iş kayıtlarınızı tutabilir ve o kayıt için toplam efor sürelerini hesaplayabilirsiniz."
       },
@@ -160,6 +148,10 @@
       {
         "title": "Servis Otomasyon Modülü",
         "description": "Kolayca tanımlanabilen kurallar ile koşullara bağlı aksiyonlar otomatik yapılabilmekte ve bu sayede tüm servis kayıtlarının dinamik olarak güncellenmesi ve akışların hızlanması sağlanmaktadır."
+      },
+      {
+        "title": "Görev Yönetimi Modülü",
+        "description": "Tüm süreçlerde açılan görevlerin tek merkezden koordine edildiği modüldür. Görevler takvim üzerinde aylık ve günlük görünümlerde saat aralıklarıyla planlanır; ataması ya da zamanı yapılmamış görevler görev kuyruğunda ayrı başlıklar altında toplanır. Her sürecin kendi Kanban panosu bulunur ve görev durumları sürükle bırak ile yönetilir. Şablonlardan toplu görev ekleme, öncelik, grup, teknisyen ve tamamlanma yüzdesi aynı kayıtta tutulur."
       },
       {
         "title": "Entegrasyonlar için API Modülü",

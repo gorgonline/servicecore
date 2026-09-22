@@ -32,16 +32,8 @@
             "description": "Olay Yönetimi,hizmetlerinin kesintiye uğradığı ya da performansının düştüğü durumları ele alır ve bu olayların en kısa sürede çözülmesini hedefler. Kullanıcılar veya sistemler tarafından bildirilen olaylar kaydedilir, sınıflandırılır, önceliklendirilir ve çözüm süreci başlatılır. Amaç, hizmetlerin normale döndürülerek iş üzerindeki olumsuz etkilerin en aza indirilmesidir."
           },
           {
-            "title": "Görev Yönetim Modülü",
-            "description": "Kaynakları proaktif olarak yönetmek için tüm görevlerin süreçler aracılığıyla birleştirilmiş görev yönetimi ve merkezi koordinasyonu."
-          },
-          {
-            "title": "Görev Ajanda Modülü",
-            "description": "Görevlerinizi aylık ve günlük görünümlerde saat aralıkları ile takip edebilirsiniz."
-          },
-          {
-            "title": "Görev Kanban Panoları",
-            "description": "Görevlerinizi sürekle bırak ile kanban pano seçeneği ile yönetebilirsiniz."
+            "title": "Görev Yönetimi Modülü",
+            "description": "Tüm süreçlerde açılan görevlerin tek merkezden koordine edildiği modüldür. Görevler takvim üzerinde aylık ve günlük görünümlerde saat aralıklarıyla planlanır; ataması ya da zamanı yapılmamış görevler görev kuyruğunda ayrı başlıklar altında toplanır. Her sürecin kendi Kanban panosu bulunur ve görev durumları sürükle bırak ile yönetilir. Şablonlardan toplu görev ekleme, öncelik, grup, teknisyen ve tamamlanma yüzdesi aynı kayıtta tutulur."
           },
           {
             "title": "İş Kayıtları / Time Sheet Yönetimi",
