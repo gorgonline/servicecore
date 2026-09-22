@@ -434,11 +434,11 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto glass-scrollbar overscroll-contain"
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top overflow-y-auto glass-scrollbar overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
                   onMouseEnter={() => setActiveMenu("solutions")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
-                  <div className="flex flex-col gap-2">
+                  <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-1">
                     {solutionsSubmenu.map((sol, idx) => {
                       const Icon = sol.icon;
                       return (
@@ -691,11 +691,11 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: 10, scale: 0.95 }}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-120 bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-2xl origin-top max-h-[calc(100dvh_-_7rem)] overflow-y-auto glass-scrollbar overscroll-contain"
+                  className={`fixed left-1/2 -translate-x-1/2 w-[min(1240px,calc(100vw-3rem))] bg-(--color-surface-elevated-solid)/95 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-6 shadow-2xl origin-top overflow-y-auto glass-scrollbar overscroll-contain ${isScrolled ? "top-14 max-h-[calc(100dvh_-_4.5rem)]" : "top-20 max-h-[calc(100dvh_-_6rem)]"}`}
                   onMouseEnter={() => setActiveMenu("plans")}
                   onMouseLeave={() => setActiveMenu(null)}
                 >
-                  <div className="flex flex-col gap-2">
+                  <div className="grid grid-cols-2 xl:grid-cols-3 gap-x-4 gap-y-1">
                     {plansSubmenu.map((plan, idx) => {
                       const Icon = plan.icon;
                       return (
