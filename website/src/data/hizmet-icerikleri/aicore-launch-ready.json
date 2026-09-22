@@ -29,7 +29,7 @@
       "items": [
         "Altyapı gereksinim kontrolü: sunucu/GPU kademesinin doğrulanması, işletim sistemi ve ağ hazırlığı",
         "ServiceCore erişimi: eklenti bazlı yetkilendirilmiş servis hesabının tanımlanması",
-        "Eklenti seçimine göre ek erişimlerin planlanması (doküman kaynakları, izleme sistemleri, çağrı altyapısı vb.)",
+        "Eklenti seçimine göre ek erişimlerin planlanması (doküman kaynakları, izleme sistemleri ve çağrı altyapısı)",
         "Veri ve gizlilik modunun netleştirilmesi: yerinde model (kapalı ağ dahil) veya maskeli bulut"
       ]
     },

@@ -187,7 +187,7 @@
       "featured": true,
       "hasDetailPage": true,
       "tagline": "Maskeli Bulut modunda AICore kurulumu: GPU'suz hafif altyapı, denetlenebilir veri maskeleme, hızlı devreye alma.",
-      "shortDescription": "Bulut yapay zekâ modelleriyle (OpenAI vb.) çalışmak isteyen kurumlar için AICore kurulumu: hafif uygulama sunucusu, kişisel verileri denetlenebilir şekilde maskeleyen katman, veri bağlantısı, kalibrasyon ve eğitim — GPU yatırımı olmadan.",
+      "shortDescription": "OpenAI gibi bulut yapay zekâ modelleriyle çalışmak isteyen kurumlar için AICore kurulumu: hafif uygulama sunucusu, kişisel verileri denetlenebilir şekilde maskeleyen katman, veri bağlantısı, kalibrasyon ve eğitim — GPU yatırımı olmadan.",
       "valueProps": [
         "GPU gerekmez — hafif uygulama sunucusuyla 1-2 haftada devreye alma",
         "Kişisel veriler buluta gitmeden denetlenebilir şekilde maskelenir",

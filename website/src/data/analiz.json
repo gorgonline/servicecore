@@ -128,7 +128,7 @@
         {
           "id": "mevcut_moduller",
           "label": "Kullanılan modüller nelerdir?",
-          "hint": "Olay, Problem, Değişiklik, CMDB vb.",
+          "hint": "Örn. Olay, Problem, Değişiklik, CMDB",
           "type": "textarea"
         },
         { "id": "mevcut_kullanici", "label": "Toplam kullanıcı sayısı", "type": "number" },
@@ -157,7 +157,7 @@
           "id": "entegrasyon_sistemler",
           "label": "Hangi sistemlerle entegrasyon yapılacaktır?",
           "type": "textarea",
-          "placeholder": "Örn. AD, LDAP, SAP, Office365, izleme sistemleri…"
+          "placeholder": "Örn. AD, LDAP, SAP, Office365, izleme sistemleri"
         },
         {
           "id": "azure_cd_izinleri",

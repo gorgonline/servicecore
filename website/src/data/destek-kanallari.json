@@ -35,7 +35,7 @@
         "detail": "yer alan destek formu aracılığı ile de sorun bildirilebilir."
       }
     ],
-    "disclaimer": "Servicecore yukarıdaki tanımlı kanallar harici diğer iletişim kanallarından gelen (email, telefon, sms, anlık mesajlaşma uygulamaları vb.) destek isteklerini kabul etmeyecektir, Platinum ve Mission Critical destek alan müşterilerimiz bu kısıtlamaya tabi değildir."
+    "disclaimer": "Servicecore yukarıdaki tanımlı kanallar harici diğer iletişim kanallarından gelen (e-posta, telefon, SMS ve anlık mesajlaşma uygulamaları) destek isteklerini kabul etmeyecektir, Platinum ve Mission Critical destek alan müşterilerimiz bu kısıtlamaya tabi değildir."
   },
   "supportPackages": {
     "headers": ["Destek Paketleri", "Silver", "Gold", "Platinum", "Mission Critical"],

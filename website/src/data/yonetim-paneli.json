@@ -110,7 +110,7 @@
         "accent": "emerald",
         "icon": "Tags",
         "title": "Global statüslerin belirlenmesi",
-        "description": "Tüm organizasyon için geçerli olacak durum kodları (Beklemede, İşlemde, Tamamlandı vb.) yapılandırılır. Modüller arası ortak dil sağlanır, raporlama tutarlı kalır."
+        "description": "Tüm organizasyon için geçerli olacak durum kodları (Beklemede, İşlemde, Tamamlandı) yapılandırılır. Modüller arası ortak dil sağlanır, raporlama tutarlı kalır."
       }
     ]
   },
@@ -127,7 +127,7 @@
         "items": [
           { "title": "Genel Uygulama Ayarları", "desc": "Tema, dil, saat dilimi, sistem konfigürasyonları" },
           { "title": "Sistem & Instance Ayarları", "desc": "Genel sistem konfigürasyonları ve instance yönetimi" },
-          { "title": "Uyarı ve Bildirimler", "desc": "E-posta, SMS, Teams vb. kanallardan bildirim yönetimi" },
+          { "title": "Uyarı ve Bildirimler", "desc": "E-posta, SMS ve Teams kanallarından bildirim yönetimi" },
           { "title": "Süreç Şablonları", "desc": "Modüller için hazır süreç şablonları" },
           { "title": "Hazır Cevaplar", "desc": "Not ve e-postalar için hızlı yanıt şablonları" },
           { "title": "Validasyon Ayarları", "desc": "Form alanları için doğrulama kuralları" },

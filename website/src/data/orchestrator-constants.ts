@@ -10,7 +10,7 @@ export const CHIEF_PROTOCOLS = [
 
 export const AGENT_PROTOCOLS: Record<string, { id: string, label: string, desc: string }[]> = {
   "brand-expert": [
-    { id: "be1", label: "1. Identity Activation", desc: "Premium Enterprise persona ve temel kuralların (Build yasağı vb.) kuşanılması." },
+    { id: "be1", label: "1. Identity Activation", desc: "Premium Enterprise persona ve temel kuralların (Build yasağı dahil) kuşanılması." },
     { id: "be2", label: "2. Audience Profiling", desc: "C-Level vs. Teknisyen niyet analizi ve stratejik hedef belirleme." },
     { id: "be3", label: "3. Messaging Hierarchy", desc: "Birincil, ikincil ve destekleyici mesaj hiyerarşisinin kurgulanması." },
     { id: "be4", label: "4. Terminology Refinement", desc: "Ucuz dilin temizlenmesi ve 'High-Performance' terminolojisinin enjeksiyonu." },

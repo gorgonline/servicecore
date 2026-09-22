@@ -60,7 +60,7 @@
         "accent": "cyan",
         "icon": "Search",
         "title": "Gerçek zamanlı takip, gelişmiş filtreleme ve kayıtlı görünümler",
-        "description": "Yeni gelen çağrılar anlık olarak görüntülenerek kullanıcıların gecikmeden müdahale etmesi sağlanır; kayıtlar durum, müşteri, kategori ve konu gibi birçok kritere göre filtrelenebilir, aranan kayda hızlı erişim sunulur. Kullanıcılar kendi filtrelerini oluşturup kaydedebilir; sık kullanılan liste görünümlerine tek tıkla ulaşılarak günlük operasyonel rutinler hızlandırılır.",
+        "description": "Yeni gelen çağrılar anlık olarak görüntülenerek kullanıcıların gecikmeden müdahale etmesi sağlanır; kayıtlar durum, müşteri, kategori ve konu kriterlerine göre filtrelenebilir, aranan kayda hızlı erişim sunulur. Kullanıcılar kendi filtrelerini oluşturup kaydedebilir; sık kullanılan liste görünümlerine tek tıkla ulaşılarak günlük operasyonel rutinler hızlandırılır.",
         "imageKey": "filtre"
       },
       {

@@ -50,7 +50,7 @@
       "items": [
         { "label": "Entegrasyonlar menüsü", "detail": "Sistem ayarlarından Entegrasyonlar bölümüne gidilir." },
         { "label": "Yeni entegrasyon", "detail": "Sağ üstte + Yeni Entegrasyon düğmesi tıklanır." },
-        { "label": "Temel yapılandırma", "detail": "Entegrasyon Adı, HTTP Metodu (GET, POST, PUT vb.), URL bilgileri tanımlanır." },
+        { "label": "Temel yapılandırma", "detail": "Entegrasyon Adı, HTTP Metodu (GET, POST, PUT, DELETE), URL bilgileri tanımlanır." },
         { "label": "Kimlik doğrulama", "detail": "Kullanıcı adı ve şifre veya seçilen doğrulama türüne göre kriterler girilir." },
         { "label": "Modül seçimi", "detail": "Hangi ServiceCore modülü ile çalışacağı seçilir." },
         { "label": "URL ve başlık parametreleri", "detail": "Key/Value ile harici değişkenlere bağlanılır." },

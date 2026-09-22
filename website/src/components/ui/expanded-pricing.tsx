@@ -24,7 +24,7 @@ export interface KnowledgeBaseCapability {
   description: string;
 }
 
-/** Standart/Premium listelerinden cikarilip kendi kutusunda sunulan urun (Projectcore KB). */
+/** Standart/Premium listelerinden cikarilip kendi kutusunda sunulan urun (KnowledgeCore®). */
 export interface KnowledgeBaseBlock {
   badge: string;
   title: string;
@@ -486,7 +486,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
         </div>
         )}
 
-        {/* Tumlesik Urun Blogu — ProjectCore Knowledge Base */}
+        {/* Tumlesik Urun Blogu — KnowledgeCore® */}
         {knowledgeBase && (
           <motion.div
             transition={{ duration: 0.6, delay: 0.3 }}

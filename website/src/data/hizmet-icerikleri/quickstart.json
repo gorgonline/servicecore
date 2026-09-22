@@ -56,7 +56,7 @@
       "id": "dns-ssl",
       "title": "Uygulama DNS ve SSL Konfigürasyonu",
       "type": "text",
-      "content": "Uygulama müşteri lokasyonundan erişilebilir olarak teslim edilir. support.musteridomain.com vb. bir iç adresten çalışacak kurulum sonrası müşteri tarafında DNS yönlendirmesi ve SSL tanımlaması işlemleri, müşteri sistem yöneticisinin eşliğinde yapılır."
+      "content": "Uygulama müşteri lokasyonundan erişilebilir olarak teslim edilir. Kurulum sonrası uygulamanın support.musteridomain.com biçiminde bir iç adresten çalışması için gereken DNS yönlendirmesi ve SSL tanımlaması işlemleri, müşteri tarafında müşteri sistem yöneticisinin eşliğinde yapılır."
     },
     {
       "id": "ad-entegrasyon",
@@ -129,7 +129,7 @@
       "id": "lisans-teknisyen",
       "title": "Lisans Tanımlama, Teknisyenleri ve Teknisyen Gruplarını Tanımlama",
       "type": "text",
-      "content": "AD üzerinden otomatik sürekli sync ile alınan kullanıcılardan Teknisyen olarak çalışacak destek personelinin Agent'a dönüştürme işlemleri yapılır. Teknisyen rollerinin atanması işlemleri Admin panelden Servicecore danışmanı ile birlikte yapılır. Tüm BT ve diğer destek personelleri fonksiyonel çalışma gruplarına göre (sistem, yazılım, network saha destek vb.) grup, rol ve lisans atamaları yapılarak aktif edilir."
+      "content": "AD üzerinden otomatik sürekli sync ile alınan kullanıcılardan Teknisyen olarak çalışacak destek personelinin Agent'a dönüştürme işlemleri yapılır. Teknisyen rollerinin atanması işlemleri Admin panelden Servicecore danışmanı ile birlikte yapılır. Tüm BT ve diğer destek personelleri fonksiyonel çalışma gruplarına göre (sistem, yazılım, network ve saha destek) grup, rol ve lisans atamaları yapılarak aktif edilir."
     },
     {
       "id": "cssm-egitim",

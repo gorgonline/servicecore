@@ -64,7 +64,7 @@
     "Ürün sürüm güncellemeleri, uzaktan yapılan otomatik yama yükleme uygulamaları ile sürekli dağıtım (Continuous Delivery) modeli ile yapılabilir.",
     "Uygulama, çoklu dil desteği sunmaktadır. Ana dili Türkçe olan uygulamada, gerekli durumlarda diğer dillerde de kullanım yapılabilir.",
     "Yapılandırma için yönetim paneli bulunmakta ve panel üzerinden ürünle ilgili tüm düzenlemeler kolayca yapılabilir seviyede sade ve basit tasarlanmıştır.",
-    "Ürün kurulumunda uygulama sunucusu (IIS vb.) ve veri tabanı (MSSQL vb.) dışında ek bir yan ürüne veya farklı bir 3. taraf yazılıma gerek duyulmamaktadır.",
+    "Ürün kurulumunda uygulama sunucusu (IIS) ve veri tabanı (MSSQL) dışında ek bir yan ürüne veya farklı bir 3. taraf yazılıma gerek duyulmamaktadır.",
     "Farklı süreç ve modüllere erişimin kontrol edilebileceği rol yönetimi altyapısı bulunmaktadır.",
     "Üründe dış sistemlerle tüm veri alışverişi API üzerinden yapılabilmektedir. API uçlarına olan erişim teknisyenler tarafından belirlenebilmekte ve kimlik bilgisi bir anahtar (key) üzerinden yapılabilmektedir.",
     "Üründe arayüzde kayıtlar kullanıcı tarayıcılarını güncellemeye gerek kalmadan otomatik olarak yenilenebilmektedir.",
@@ -109,7 +109,7 @@
         "İlgisiz veya yanlış açılan çağrılar doğrudan kapatılabilmekte, reddedilebilmekte veya silinebilmektedir.",
         "Çağrılar çeşitli filtrelere göre görüntülenebilmekte, filtrelenerek gruplanabilmektedir.",
         "Özel filtreler ile çağrıların listelenme görünümleri değiştirilebilmekte, bu görünümler ve filtreler kaydedilebilmektedir.",
-        "Çağrılar üzerinde toplu güncelleme, toplu dönüştürme, birleştirme, kapatma vb. işlemler yapılabilmektedir.",
+        "Çağrılar üzerinde toplu güncelleme, toplu dönüştürme, birleştirme ve kapatma işlemleri yapılabilmektedir.",
         "Çağrılar içerisinde ve konularında arama yapılabilmekte, anahtar sözcüklerle çağrılar bulunup listelenebilmektedir."
       ]
     },
@@ -118,7 +118,7 @@
       "title": "Olay Yönetimi",
       "items": [
         "Tüm hizmet kesintileri, arızalar, sorun bildirimleri olay kaydı olarak kaydedilebilmektedir.",
-        "Olaylar topluca listelenmekte; kategori, öncelik, durum, iş etkisi, teknisyen, kullanıcı, tarih aralığı, teknisyen grubu gibi çeşitli kriterlere göre filtrelenebilmektedir.",
+        "Olaylar topluca listelenmekte; kategori, öncelik, durum, iş etkisi, teknisyen, kullanıcı, tarih aralığı, teknisyen grubu gibi kriterlere göre filtrelenebilmektedir.",
         "Olaylar; kullanıcı, teknisyen, öncelik, kategori, çözüm tarihi gibi özet bilgileri tek bakışta gösteren bir listede yer almaktadır. Listede yer alan öğelerin hızlı işlemlerle detay sayfalarına gidilmeden de düzenlenmesi mümkündür.",
         "Olaylar önemlerine göre sabitleme, takip etme gibi özelliklerle üste sabitlenebilmektedir.",
         "Çeşitli kriterlere göre özelleştirilebilir filtreler tanımlanabilmekte, kaydedilebilmekte ve yeniden kullanılabilmektedir.",
@@ -230,7 +230,7 @@
         "Sözleşme, garanti ve bakım anlaşmaları varlık ile ilişkilendirilmektedir.",
         "Varlıklara özel formlar ve özelleştirilmiş alanlar eklenebilmektedir.",
         "Varlık keşfi (discovery) ve otomatik içe aktarma destekli yapıdadır.",
-        "Varlık tipleri (sunucu, dizüstü, lisans, mobil cihaz vb.) sınırsız tanımlanabilmektedir.",
+        "Sunucu, dizüstü, lisans ve mobil cihaz gibi varlık tipleri sınırsız sayıda tanımlanabilmektedir.",
         "Toplu varlık güncellemeleri ve transfer işlemleri yapılabilmektedir.",
         "Yetki bazlı varlık görüntüleme son kullanıcı portalında sunulmaktadır."
       ]
@@ -241,7 +241,7 @@
       "items": [
         "Konfigürasyon Öğeleri (CI) ve aralarındaki ilişkilerin haritalanması yapılabilmektedir.",
         "CI tipleri kuruma özel tanımlanabilmektedir.",
-        "İlişki tipleri (depends-on, runs-on, hosts vb.) belirlenebilmektedir.",
+        "Depends-on, runs-on ve hosts gibi ilişki tipleri belirlenebilmektedir.",
         "Hizmet haritaları görsel olarak oluşturulabilmektedir.",
         "Olay, problem ve değişiklik kayıtlarında ilgili CI'lar otomatik bağlanabilmektedir.",
         "CI değişiklik geçmişi ve denetim izi tutulmaktadır.",
