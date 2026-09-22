@@ -982,6 +982,27 @@
         ]
       },
       {
+        "title": "Mobil Uygulama",
+        "description": "Talepleri ve görevleri telefon ile tablet üzerinden yürüten native mobil uygulama; kayıt açma, onay verme, zimmet kabulü ve zaman kaydı aynı ekranda toplanır.",
+        "paragraphs": [
+          "Mobil Uygulama modülü, ServiceCore'a telefon ve tablet üzerinden tam işlevli erişim sağlar. React tabanlı tek sayfa uygulama mimarisiyle kurulan portal, duyarlı tasarımı sayesinde masaüstü ve mobil cihazda aynı deneyimi verir; sanal DOM kullanımıyla sayfa geçişlerinde ve içerik güncellemelerinde beklemeye yol açan yavaşlamalar en aza iner. Sahada çalışan teknisyen ve sürekli hareket halindeki yönetici, işini masasına dönmeyi beklemeden yürütür.",
+          "Son kullanıcı mobil ekrandan yeni olay, yeni istek ve yeni iyileştirme kaydı açar; Kayıtlarım bölümünden açtığı kayıtların durumunu izler, detaya girip not ve dosya ekler. Bütün İşlemlerim menüsü kayıtları statüye göre ayırır ve hangi statüde kaç kayıt olduğunu ana ekranda gösterir. Bir kayıt başka bir çalışanla paylaşıldığında iki kullanıcının ekranında da görünür ve birlikte takip edilir.",
+          "Onaylarım bölümü istek, değişiklik, iyileştirme ve sözleşme onaylarını tek ekranda toplar; kullanıcı mobil cihazdan onay veya red işlemini uygular, detaya girip ek yükler. Geçmişte onaylanan ve reddedilen kayıtlar da aynı ekrandan geriye dönük görülür ve denetimlerde kullanılır. Proje geçişlerine bağlı onay istekleri için e-posta ile gönderilen bağlantı üzerinden oturum açmadan onay verilebilir; bekleyen kapılar böylece hızla kapanır.",
+          "Varlıklarım panelinde kullanıcıya zimmetli varlıkların kullanım durumu, süresi ve konumu görünür. Zimmet mobilden kabul veya reddedilir, arızalı varlık için Olay Oluştur düğmesiyle doğrudan kayıt açılır ve kayıt Kayıtlarım menüsünden izlenir. Hizmetlerim aynı yaklaşımı kullanılan hizmetlere uygular, üstelik iyileştirme talebi de buradan başlatılır. Hizmet kataloğu mobilden aranır ve seçilen katalog öğesi üzerinden istek açılır.",
+          "Kayıt açmadan önce Soru Sor alanından yetkili olunan bilgi kayıtları aranır; çözüm havuzunda numaraya, konuya, kısa özete ve görüntülenme sayısına göre filtre yapılarak hazır çözüme ulaşılır. Proje üyeleri mobil erişimle kendi görevlerini günceller, proje takvimini görür ve zaman kaydı girer; proje listesi Excel ve CSV biçiminde dışa aktarılabilir. Duyurular bölümü planlı kesinti, yama ve sürüm bilgilerini aynı ekrana taşır.",
+          "Bildirimler tek kanala bağlı değildir: e-posta, SMS, tarayıcı bildirimi ve MS Teams üzerinden iletilir; görev atandığında, durum değiştiğinde veya onay beklediğinde kayıt cihazda gecikmeden görünür. Portalın modüler React bileşen yapısı, sunulan hizmetlerin ve arayüzün kuruma göre şekillendirilmesine izin verir. Yönetici ise kullanıcı portal ayarlarından mobil kullanıcının menüde neleri göreceğini ve kayıt açarken hangi alanlara müdahale edebileceğini belirler."
+        ],
+        "highlights": [
+          "Duyarlı React portal",
+          "Mobilden olay ve istek açma",
+          "Onaylarım ekranı",
+          "E-posta bağlantısıyla onay",
+          "Zimmet kabul ve red",
+          "Tarayıcı ve Teams bildirimi",
+          "Mobil zaman kaydı"
+        ]
+      },
+      {
         "title": "Validasyonlar/Süreç Doğrulama Kontrolleri",
         "description": "Kayıt açılışı, durum geçişi ve kapanışta zorunlu alanları modül bazında denetleyerek süreç bütünlüğünü sistem düzeyinde güvence altına alır.",
         "paragraphs": [
