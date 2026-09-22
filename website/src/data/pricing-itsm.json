@@ -179,8 +179,8 @@
         "description": "ServiceCore, mobil native uygulaması ile tüm teknisyen ve end user işlemleri yapılabilmektedir."
       },
       {
-        "title": "Azure AD / SAML / SSO",
-        "description": "ServiceCore, modern iş gereksinimlerine uygun olarak geliştirilmiş bir platformdur ve güçlü kimlik doğrulama yöntemlerini destekler. Platform, Azure Active Directory (Azure AD), SAML (Security Assertion Markup Language) ve Single Sign-On (SSO) teknolojileriyle sorunsuz entegrasyon sağlar."
+        "title": "Azure AD / SSO",
+        "description": "ServiceCore, modern iş gereksinimlerine uygun olarak geliştirilmiş bir platformdur ve güçlü kimlik doğrulama yöntemlerini destekler. Platform, Azure Active Directory (Azure AD) ve tek oturum açma (SSO) kimlik sağlayıcılarıyla sorunsuz entegrasyon sağlar."
       },
       {
         "title": "Validasyonlar/Süreç Doğrulama Kontrolleri",

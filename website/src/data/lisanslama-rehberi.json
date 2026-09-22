@@ -14,7 +14,7 @@
           "tagline": "Kullanıcıların çağrı, olay, istek ve öneri gibi bildirdikleri işleri karşılayan, cevaplayan ve çözen; hizmet sağlama süreçlerinde aktif görev alan, iş yapan ve iş kaydı oluşturan kişilerdir.",
           "items": [
             "Tüm kayıtlar ve kayıt raporlarına yetkileri çerçevesinde erişebilirler",
-            "İleri düzey bilgilere (raporlar, kayıt yazışmaları, çözüm detayları, loglar vb.) erişim yalnızca bu rol için geçerlidir",
+            "İleri düzey bilgilere (raporlar, kayıt yazışmaları, çözüm detayları ve loglar) erişim yalnızca bu rol için geçerlidir",
             "Sadece bu profildeki kullanıcılar lisansa tabidir"
           ]
         },
@@ -146,7 +146,7 @@
         {
           "label": "Kimlik ve Erişim Yönetimi",
           "items": [
-            "Azure AD / SAML / SSO Entegrasyonları"
+            "Azure AD / SSO Entegrasyonları"
           ]
         },
         {

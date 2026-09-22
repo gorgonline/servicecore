@@ -60,7 +60,7 @@
     {
       "id": "ozellestirme-entegrasyon",
       "question": "Ürünü kendi süreçlerimize göre özelleştirip mevcut sistemlerimize bağlayabilir miyiz?",
-      "answer": "Evet. Formlar ve arayüzler low-code tasarımcı ile özelleştirilir, standart formlara özel ek alanlar tanımlanabilir. Dinamik iş ve onay akışları sürükle-bırak akış tasarımcısıyla modellenir; koşullu otomasyon kuralları 10'dan fazla süreçte çalışır. Kimlik tarafında Azure AD, SAML ve SSO entegrasyonları, sistem tarafında hazır entegrasyon paketleri kütüphanesi ve REST API servisleri kullanılır. Bu yeteneklerin bir bölümü Professional lisansa ya da Pro Pack fonksiyon paketine bağlıdır.",
+      "answer": "Evet. Formlar ve arayüzler low-code tasarımcı ile özelleştirilir, standart formlara özel ek alanlar tanımlanabilir. Dinamik iş ve onay akışları sürükle-bırak akış tasarımcısıyla modellenir; koşullu otomasyon kuralları 10'dan fazla süreçte çalışır. Kimlik tarafında Azure AD ve SSO entegrasyonları, sistem tarafında hazır entegrasyon paketleri kütüphanesi ve REST API servisleri kullanılır. Bu yeteneklerin bir bölümü Professional lisansa ya da Pro Pack fonksiyon paketine bağlıdır.",
       "link": {
         "label": "Low-Code Geliştirme",
         "href": "/low-code-gelistirme"
