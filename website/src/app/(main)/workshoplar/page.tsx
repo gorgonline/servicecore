@@ -3,6 +3,7 @@ import { Calendar, GraduationCap, Target, Users, ArrowUpRight, Sparkles } from "
 import workshoplarData from "@/data/workshoplar.json";
 import AboutHero from "@/components/ui/AboutHero";
 import PrivacyContact from "@/components/ui/privacy-contact";
+import { En } from "@/components/ui/En";
 
 export const metadata: Metadata = {
   title: "Workshoplar | ServiceCore",
@@ -33,6 +34,23 @@ const accentPalette = [
     glow: "from-emerald-500/20",
   },
 ];
+
+
+/**
+ * "Servicecore Onboarding · Teknik" gibi karisik etiketlerde Ingilizce onek lang="en" ile sarilir.
+ * Turkce kisim lang="tr" mirasinda kalir; boylece buyuk harfe cevrilirken "Teknik" -> "TEKNİK"
+ * dogru cikarken "Servicecore" -> "SERVICECORE" olur, "SERVİCECORE" degil.
+ */
+const KarisikEtiket = ({ metin }: { metin: string }) => {
+  const [onek, ...kalan] = metin.split(" · ");
+  if (!kalan.length) return <>{metin}</>;
+  return (
+    <>
+      <En>{onek}</En>
+      {` · ${kalan.join(" · ")}`}
+    </>
+  );
+};
 
 export default function WorkshoplarPage() {
   return (
@@ -71,7 +89,7 @@ export default function WorkshoplarPage() {
                           className={`inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] ${accent.badge}`}
                         >
                           <Sparkles className="h-3 w-3" />
-                          {workshop.category}
+                          <KarisikEtiket metin={workshop.category} />
                         </span>
                         <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-(--color-text-overline)">
                           {workshop.status}

@@ -26,7 +26,9 @@ export function ModuleSection({ module, index }: ModuleSectionProps) {
           <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.22em] text-(--color-text-muted) mb-10">
             <span className="text-(--color-brand-accent)">MODÜL {number}</span>
             <span className="text-white/15">/</span>
-            <span className="truncate">{module.title}</span>
+            <span lang="en" className="truncate">
+              {module.title}
+            </span>
           </div>
 
           <div className="flex items-center gap-4 mb-6">

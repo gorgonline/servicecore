@@ -510,7 +510,7 @@ export default function ProjeYonetimiPage() {
                     </div>
                     <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                       <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-blue-base) shadow-[0_0_8px_rgba(59,130,246,0.6)]" />
-                      Sprint Planlama
+                      <En>Sprint</En> Planlama
                     </div>
                     <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                       <div className="w-1.5 h-1.5 rounded-full bg-(--color-accent-purple-base) shadow-[0_0_8px_rgba(168,85,247,0.6)]" />

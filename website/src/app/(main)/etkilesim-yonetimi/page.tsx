@@ -145,7 +145,7 @@ export default function EtkilesimYonetimiPage() {
                         height={32}
                         className="w-8 h-8 object-contain mb-1"
                       />
-                      <span className="text-[9px] font-semibold uppercase tracking-widest text-white">
+                      <span lang="en" className="text-[9px] font-semibold uppercase tracking-widest text-white">
                         ServiceCore
                       </span>
                     </div>
@@ -1018,7 +1018,7 @@ export default function EtkilesimYonetimiPage() {
                     </div>
 
                     <div className="flex flex-wrap justify-center gap-8 text-(--color-text-muted)">
-                      <div className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
+                      <div lang="en" className="flex items-center gap-2 text-sm font-semibold tracking-wider uppercase">
                         <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
                         Omnichannel
                       </div>

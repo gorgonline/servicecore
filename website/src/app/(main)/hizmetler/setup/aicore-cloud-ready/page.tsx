@@ -116,7 +116,7 @@ export default function AicoreCloudReadyDetailPage() {
         </h1>
 
         <p className="mt-8 text-xl md:text-2xl font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
-          Bulut yapay zekâ modelleriyle (OpenAI vb.) çalışmak isteyen kurumlar
+          Bulut yapay zekâ modelleriyle (örneğin OpenAI) çalışmak isteyen kurumlar
           için AICore kurulumu: GPU yatırımı yok, denetlenebilir veri maskeleme
           var, tipik devreye alma 1-2 hafta.
         </p>

@@ -3,6 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import Image from "next/image";
 import referencesData from "@/data/references.json";
+import { EnTerms } from "@/components/ui/En";
 
 /* ── Animation Variants ── */
 const containerVariants: Variants = {
@@ -115,8 +116,8 @@ export function ReferencesDetailGrid() {
       <div className="flex items-center gap-4 mb-12">
         <div className="flex items-center gap-3">
           <span className="flex h-2 w-2 rounded-full bg-(--color-brand-secondary)" />
-          <h2 lang="en" className="text-xs font-semibold tracking-[0.2em] text-(--color-text-overline) uppercase">
-            Servicecore Referans Detayları
+          <h2 className="text-xs font-semibold tracking-[0.2em] text-(--color-text-overline) uppercase">
+            <EnTerms text="Servicecore Referans Detayları" terms={["Servicecore"]} />
           </h2>
         </div>
         <div className="flex-1 h-px bg-linear-to-r from-white/10 to-transparent" />

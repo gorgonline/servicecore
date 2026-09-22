@@ -3,7 +3,7 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { CheckCircle2, MinusCircle, AlertCircle } from "lucide-react";
-import { En } from "@/components/ui/En";
+import { En, EnTerms } from "@/components/ui/En";
 import data from "@/data/jira-karsilastirma.json";
 
 type CellStatus = "available" | "partial" | "unavailable";
@@ -184,7 +184,7 @@ export function JiraComparisonTable() {
                   {/* Feature */}
                   <div className="p-5 lg:p-6 flex flex-col gap-1 justify-center border-r border-white/5 bg-(--color-surface-elevated-dark)/40">
                     <span className="text-[10px] font-mono uppercase tracking-widest text-(--color-text-muted)">
-                      {row.category}
+                      <EnTerms text={row.category} terms={["Migration"]} />
                     </span>
                     <span className="text-sm lg:text-base font-medium text-white group-hover:text-white transition-colors">
                       {row.feature}
@@ -217,7 +217,7 @@ export function JiraComparisonTable() {
             >
               <div className="flex flex-col gap-1">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-(--color-text-muted)">
-                  {row.category}
+                  <EnTerms text={row.category} terms={["Migration"]} />
                 </span>
                 <h4 className="text-base font-semibold text-white tracking-tight">
                   {row.feature}
@@ -233,7 +233,7 @@ export function JiraComparisonTable() {
                 </div>
                 <div className="rounded-xl border border-(--color-brand-primary)/30 bg-(--color-brand-primary)/5 p-4 flex flex-col gap-2">
                   <span className="text-[10px] font-bold tracking-widest uppercase text-(--color-accent-cyan-light)">
-                    ServiceCore
+                    <En>ServiceCore</En>
                   </span>
                   <StatusCell cell={row.servicecore} isHero />
                 </div>

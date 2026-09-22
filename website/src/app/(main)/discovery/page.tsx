@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, CheckCircle2, Radar } from "lucide-react";
 import discoveryData from "@/data/discovery.json";
+import { En } from "@/components/ui/En";
 import PrivacyContact from "@/components/ui/privacy-contact";
 
 interface DiscoveryFeature {
@@ -242,7 +243,7 @@ export default function DiscoveryPage() {
                 key={p.name}
                 className="rounded-2xl border border-white/8 bg-white/2 hover:bg-white/4 hover:border-(--color-accent-cyan-base)/30 transition-all p-6"
               >
-                <div className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-(--color-accent-cyan-light) mb-3">
+                <div lang="en" className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-(--color-accent-cyan-light) mb-3">
                   {p.name}
                 </div>
                 <p className="text-sm font-light text-(--color-text-secondary) leading-relaxed">
@@ -310,7 +311,7 @@ export default function DiscoveryPage() {
           </div>
 
           <div className="mt-8 text-[11px] font-mono uppercase tracking-[0.18em] text-(--color-text-muted)">
-            ServiceCore Discovery · Versiyon {version}
+            <En>ServiceCore Discovery</En> · Versiyon {version}
           </div>
         </section>
       </div>

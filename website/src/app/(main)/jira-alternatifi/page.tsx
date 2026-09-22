@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import { JiraComparisonTable } from "@/components/ui/jira-comparison-table";
 import data from "@/data/jira-karsilastirma.json";
+import { EnTerms } from "@/components/ui/En";
 import PrivacyContact from "@/components/ui/privacy-contact";
 
 type Tone = "past" | "imminent" | "future";
@@ -248,7 +249,7 @@ export default function JiraAlternatifiPage() {
                   className="flex flex-col gap-1 items-start text-left px-4 py-3 rounded-xl border border-white/8 bg-white/2 backdrop-blur-xl"
                 >
                   <span className="text-[10px] font-semibold uppercase tracking-widest text-(--color-text-muted)">
-                    {stat.label}
+                    <EnTerms text={stat.label} terms={["Migration"]} />
                   </span>
                   <span className="text-sm lg:text-base font-bold text-white tracking-tight">
                     {stat.value}
@@ -344,7 +345,7 @@ export default function JiraAlternatifiPage() {
                     </span>
                   </div>
 
-                  <span lang="en" className="text-xs font-mono text-(--color-text-muted) tracking-wider mb-2">
+                  <span className="text-xs font-mono text-(--color-text-muted) tracking-wider mb-2">
                     {m.date}
                   </span>
                   <h3 className="text-base lg:text-lg font-bold text-white tracking-tight mb-3">
@@ -435,7 +436,7 @@ export default function JiraAlternatifiPage() {
                         <Icon className="w-7 h-7" />
                       </div>
                       <span className={`text-xs font-bold uppercase tracking-widest ${accent.iconText}`}>
-                        {item.eyebrow}
+                        <EnTerms text={item.eyebrow} terms={["Sprint"]} />
                       </span>
                     </div>
                     <h3 className="text-3xl lg:text-5xl font-bold text-white tracking-tight">

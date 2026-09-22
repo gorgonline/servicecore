@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { En } from "@/components/ui/En";
 import {
   Activity,
   AlertCircle,
@@ -200,7 +201,7 @@ function Frame({ children }: FrameProps) {
 // Shared title bar
 interface TitleBarProps {
   icon: ReactNode;
-  title: string;
+  title: ReactNode;
   meta?: string;
   accent: AccentClasses;
 }
@@ -572,7 +573,7 @@ function ChangeMock({ accent }: { accent: AccentClasses }) {
     <Frame>
       <TitleBar
         icon={<RefreshCw className="w-[3mm] h-[3mm]" />}
-        title="CHG-2841 · Auth Service v4.2"
+        title={<En>CHG-2841 · Auth Service v4.2</En>}
         meta="Risk: Düşük"
         accent={accent}
       />
@@ -1292,7 +1293,10 @@ function AutomationMock({ accent }: { accent: AccentClasses }) {
         <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
           <div className="flex items-center gap-[1.5mm] pb-[1mm] border-b border-white/8">
             <Filter className={`w-[3mm] h-[3mm] ${accent.text}`} />
-            <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-white">
+            <span
+              lang="en"
+              className="text-[7pt] font-mono uppercase tracking-[0.18em] text-white"
+            >
               Conditions
             </span>
           </div>
@@ -1319,7 +1323,10 @@ function AutomationMock({ accent }: { accent: AccentClasses }) {
         <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] flex flex-col gap-[1.5mm]">
           <div className="flex items-center gap-[1.5mm] pb-[1mm] border-b border-white/8">
             <Sparkles className={`w-[3mm] h-[3mm] ${accent.text}`} />
-            <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-white">
+            <span
+              lang="en"
+              className="text-[7pt] font-mono uppercase tracking-[0.18em] text-white"
+            >
               Actions
             </span>
           </div>
@@ -1444,10 +1451,24 @@ function TaskMock({ accent }: { accent: AccentClasses }) {
 // ============================================================
 
 function ProjectMock({ accent }: { accent: AccentClasses }) {
-  const metrics = [
-    { label: "Story Points", value: "84", suffix: "/ 120", tone: "text-white" },
-    { label: "Velocity", value: "92", suffix: "ort.", tone: "text-emerald-400" },
-    { label: "Sprint Gün", value: "7", suffix: "/ 14", tone: "text-amber-400" },
+  const metrics: Array<{
+    label: ReactNode;
+    value: string;
+    suffix: string;
+    tone: string;
+  }> = [
+    { label: <En>Story Points</En>, value: "84", suffix: "/ 120", tone: "text-white" },
+    { label: <En>Velocity</En>, value: "92", suffix: "ort.", tone: "text-emerald-400" },
+    {
+      label: (
+        <>
+          <En>Sprint</En> Gün
+        </>
+      ),
+      value: "7",
+      suffix: "/ 14",
+      tone: "text-amber-400",
+    },
     { label: "Risk", value: "2", suffix: "açık", tone: "text-red-400" },
   ];
 
@@ -1462,7 +1483,11 @@ function ProjectMock({ accent }: { accent: AccentClasses }) {
     <Frame>
       <TitleBar
         icon={<Briefcase className="w-[3mm] h-[3mm]" />}
-        title="Sprint #18 — Servis Portalı"
+        title={
+          <>
+            <En>Sprint</En> #18 — Servis Portalı
+          </>
+        }
         meta="14 gün · 4 ekip"
         accent={accent}
       />
@@ -1491,7 +1516,10 @@ function ProjectMock({ accent }: { accent: AccentClasses }) {
         {/* Backlog */}
         <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm]">
           <div className="flex items-center justify-between mb-[1.5mm]">
-            <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
+            <span
+              lang="en"
+              className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500"
+            >
               Sprint Backlog
             </span>
             <span className="text-[7pt] font-mono text-slate-500">4 hikaye</span>

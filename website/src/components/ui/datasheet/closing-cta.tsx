@@ -63,8 +63,8 @@ export function ClosingCTA({ closing, contact }: ClosingCtaProps) {
         </div>
 
         <div className="mt-16 flex flex-col md:flex-row md:items-center md:justify-between gap-2 text-[10px] font-mono uppercase tracking-[0.18em] text-(--color-text-muted)">
-          <span>{contact.url}</span>
-          <span>Servicecore Datasheet · v2026.05</span>
+          <span lang="en">{contact.url}</span>
+          <span lang="en">Servicecore Datasheet · v2026.05</span>
         </div>
       </div>
     </section>

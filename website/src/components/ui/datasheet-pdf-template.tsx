@@ -1,4 +1,6 @@
+import type { ReactNode } from "react";
 import datasheetData from "@/data/datasheet.json";
+import { En, EnTerms } from "./En";
 import { renderModuleIcon } from "./datasheet/icon-map";
 import { ModuleMock, type MockAccent } from "./datasheet/module-mocks";
 import { transformItems } from "./datasheet/text-blocks";
@@ -240,7 +242,11 @@ function CoverPage({ cover, meta }: CoverPageProps) {
         <span>
           {meta.version} · {meta.release_date} · {meta.language}
         </span>
-        <span>{meta.company_full}</span>
+        <span>
+          {/* "ServiceCore" markası İngilizce; unvanın kalanı Türkçe kalmalı
+              ki uppercase'te "BİLGİ TEKNOLOJİLERİ" doğru çıksın. */}
+          <EnTerms text={meta.company_full} terms={["ServiceCore"]} />
+        </span>
       </div>
     </section>
   );
@@ -422,7 +428,10 @@ function MockVisual({ module, index }: MockVisualProps) {
                 MODÜL {number}
               </span>
               <span className="text-white/15 text-[7pt]">·</span>
-              <span className="text-[7pt] font-mono uppercase tracking-[0.22em] text-slate-500 truncate">
+              <span
+                lang="en"
+                className="text-[7pt] font-mono uppercase tracking-[0.22em] text-slate-500 truncate"
+              >
                 {module.title}
               </span>
             </div>
@@ -482,7 +491,11 @@ function ModulePage({ module, index, pageNum }: ModulePageProps) {
   return (
     <section className="ds-page">
       <PageHeader
-        overline={`Modül ${number} · ${module.title}`}
+        overline={
+          <>
+            Modül {number} · <En>{module.title}</En>
+          </>
+        }
         pageNum={pageNum}
       />
 
@@ -507,7 +520,7 @@ function ModulePage({ module, index, pageNum }: ModulePageProps) {
                   key={bi}
                   className="mt-[6mm] mb-[2mm] text-[9pt] font-mono uppercase tracking-[0.22em] text-white"
                 >
-                  {b.text}
+                  <EnTerms text={b.text} terms={["Agile", "ServiceCore"]} />
                 </h3>
               );
             }
@@ -569,8 +582,8 @@ function ClosingPage({ closing, contact }: ClosingPageProps) {
       </div>
 
       <div className="border-t border-white/10 pt-[6mm] flex justify-between text-[8pt] font-mono uppercase tracking-[0.2em] text-slate-500">
-        <span>{contact.url}</span>
-        <span>Servicecore Datasheet</span>
+        <span lang="en">{contact.url}</span>
+        <span lang="en">Servicecore Datasheet</span>
       </div>
     </section>
   );
@@ -581,7 +594,7 @@ function ClosingPage({ closing, contact }: ClosingPageProps) {
 // ============================================================
 
 interface PageHeaderProps {
-  overline: string;
+  overline: ReactNode;
   pageNum: number;
 }
 

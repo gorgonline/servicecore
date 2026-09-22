@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { Download } from "lucide-react";
+import { EnTerms } from "@/components/ui/En";
 import type { DatasheetCover, DatasheetMeta } from "./types";
 
 interface HeroProps {
@@ -77,7 +78,11 @@ export function DatasheetHero({ cover, meta }: HeroProps) {
         <span>
           {meta.version} · {meta.release_date} · {meta.language}
         </span>
-        <span>{meta.company_full}</span>
+        <span>
+          {/* "ServiceCore" markası İngilizce; unvanın kalanı Türkçe kalmalı
+              ki uppercase'te "BİLGİ TEKNOLOJİLERİ" doğru çıksın. */}
+          <EnTerms text={meta.company_full} terms={["ServiceCore"]} />
+        </span>
       </div>
     </section>
   );

@@ -54,7 +54,7 @@ const USTUNLUKLER = [
 
 const KIYAS: { baslik: string; onprem: string; cloud: string }[] = [
   { baslik: "Veri konumu", onprem: "Tamamı kurum içinde", cloud: "Kişisel veriler maskelenir, kalan içerik bulut modeline gider" },
-  { baslik: "Dil modeli", onprem: "Kurum sunucusunda yerel model (çift model mimarisi)", cloud: "Bulut sağlayıcının modeli (OpenAI vb.)" },
+  { baslik: "Dil modeli", onprem: "Kurum sunucusunda yerel model (çift model mimarisi)", cloud: "Bulut sağlayıcının modeli (örneğin OpenAI)" },
   { baslik: "İnternet ihtiyacı", onprem: "Gerekmez — kapalı ağ desteklenir", cloud: "Tek denetimli çıkış gerekir" },
   { baslik: "GPU / donanım", onprem: "GPU'lu sunucu (kademeye göre)", cloud: "GPU gerekmez — hafif uygulama sunucusu" },
   { baslik: "Maliyet modeli", onprem: "Yıllık sabit lisans — token/istek başına ücret yok", cloud: "Yıllık sabit lisans + bulut API kullanım (token) maliyeti kuruma aittir" },
@@ -126,7 +126,7 @@ export default function OnPremPage() {
             On-Prem önerimizdir; Maskeli Bulut seçeneğimizdir.
           </p>
           <p className="mt-4 text-base font-light leading-relaxed text-(--color-text-secondary) max-w-3xl">
-            Bulut modelleriyle (OpenAI vb.) çalışmak isteyen kurumlar için AICore,
+            Bulut modelleriyle (örneğin OpenAI) çalışmak isteyen kurumlar için AICore,
             Maskeli Bulut modunda da kurulabilir: kişisel veriler denetlenebilir
             şekilde maskelendikten sonra bulut modeline gönderilir. Eklentiler her
             iki modda da aynı eklentilerdir — dilediğinizde buluttan yerinde
