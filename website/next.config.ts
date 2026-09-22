@@ -32,6 +32,12 @@ const nextConfig: NextConfig = {
       destination: "/planlar-csm",
       permanent: true,
     },
+    // Sayfa ic yazismalarda ve tekliflerde "pm-planlar" olarak aniliyor.
+    {
+      source: "/pm-planlar",
+      destination: "/planlar-pm",
+      permanent: true,
+    },
   ],
 
   headers: async () => [
