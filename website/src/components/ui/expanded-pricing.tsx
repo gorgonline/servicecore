@@ -13,6 +13,10 @@ export interface PricingFeature {
   paragraphs?: string[];
   /** Detay panelinin altindaki kisa yetenek etiketleri. */
   highlights?: string[];
+  /** Detay panelinin altina eklenen sayfa baglantisi (add-on kalemleri icin). */
+  link?: string;
+  /** Baglantinin metni. `link` varsa zorunlu. */
+  linkLabel?: string;
 }
 
 export interface KnowledgeBaseCapability {
@@ -35,6 +39,9 @@ export interface AddonItem {
   name: string;
   desc?: string;
   link?: string;
+  /** Doldurulursa kalem akordiyon olarak basilir; bos birakan sayfalar duz liste gorunumunde kalir. */
+  paragraphs?: string[];
+  highlights?: string[];
 }
 
 export interface AddonCategory {
@@ -103,34 +110,42 @@ export interface PricingData {
   addons: {
     title: string;
     description: string;
+    /** Akordiyon panelindeki sayfa baglantisinin metni. */
+    linkLabel?: string;
     categories: AddonCategory[];
   };
 }
 
-const FeatureAccordion = ({ feature, isPro = false, isHighlight = false }: { feature: PricingFeature, isPro?: boolean, isHighlight?: boolean }) => {
+const FeatureAccordion = ({ feature, isPro = false, isHighlight = false, isAddon = false }: { feature: PricingFeature, isPro?: boolean, isHighlight?: boolean, isAddon?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
   const panelId = `feature-panel-${useId()}`;
 
   const paragraphs = feature.paragraphs?.length ? feature.paragraphs : [feature.description];
   const highlights = feature.highlights ?? [];
 
-  const accentText = isHighlight
-    ? "text-(--color-accent-emerald-light)"
-    : isPro
-      ? "text-(--color-brand-primary)"
-      : "text-(--color-text-secondary)";
+  const accentText = isAddon
+    ? "text-fuchsia-400"
+    : isHighlight
+      ? "text-(--color-accent-emerald-light)"
+      : isPro
+        ? "text-(--color-brand-primary)"
+        : "text-(--color-text-secondary)";
 
-  const railColor = isHighlight
-    ? "bg-(--color-accent-emerald-base)/30"
-    : isPro
-      ? "bg-(--color-brand-primary)/30"
-      : "bg-white/10";
+  const railColor = isAddon
+    ? "bg-fuchsia-500/30"
+    : isHighlight
+      ? "bg-(--color-accent-emerald-base)/30"
+      : isPro
+        ? "bg-(--color-brand-primary)/30"
+        : "bg-white/10";
 
-  const chipStyle = isHighlight
-    ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-100/80"
-    : isPro
-      ? "bg-(--color-brand-primary)/10 border-(--color-brand-primary)/25 text-blue-100/80"
-      : "bg-white/5 border-white/10 text-(--color-text-overline)";
+  const chipStyle = isAddon
+    ? "bg-fuchsia-500/10 border-fuchsia-500/20 text-fuchsia-100/80"
+    : isHighlight
+      ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-100/80"
+      : isPro
+        ? "bg-(--color-brand-primary)/10 border-(--color-brand-primary)/25 text-blue-100/80"
+        : "bg-white/5 border-white/10 text-(--color-text-overline)";
 
   return (
     <div className="border-b border-white/5 last:border-0 relative">
@@ -180,6 +195,18 @@ const FeatureAccordion = ({ feature, isPro = false, isHighlight = false }: { fea
                       </li>
                     ))}
                   </ul>
+                )}
+
+                {feature.link && feature.linkLabel && (
+                  <a
+                    href={feature.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3.5 inline-flex items-center gap-1.5 text-[11px] font-medium text-fuchsia-400 hover:text-fuchsia-300 transition-colors cursor-pointer rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-400/50"
+                  >
+                    {feature.linkLabel}
+                    <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+                  </a>
                 )}
               </div>
             </div>
@@ -567,9 +594,30 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
                        : "md:grid-cols-3"
                }`}
             >
-               {addons.categories.map((category, idx) => (
+               {addons.categories.map((category, idx) => {
+                 const hasDetail = category.items.some((item) => item.paragraphs?.length);
+
+                 return (
                   <div key={idx} className="flex flex-col">
                      <h4 className="text-sm font-semibold text-white mb-6 border-b border-white/10 pb-4 uppercase tracking-wider">{category.title}</h4>
+                     {hasDetail ? (
+                       <div className="pr-2">
+                          {category.items.map((item, itemIdx) => (
+                            <FeatureAccordion
+                              key={itemIdx}
+                              isAddon
+                              feature={{
+                                title: item.name,
+                                description: item.desc ?? "",
+                                paragraphs: item.paragraphs,
+                                highlights: item.highlights,
+                                link: item.link,
+                                linkLabel: item.link ? addons.linkLabel : undefined,
+                              }}
+                            />
+                          ))}
+                       </div>
+                     ) : (
                      <ul className="flex flex-col gap-4">
                         {category.items.map((item, itemIdx) => {
                           const link = "link" in item ? (item as { link?: string }).link : undefined;
@@ -612,8 +660,10 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
                           );
                         })}
                      </ul>
+                     )}
                   </div>
-               ))}
+                 );
+               })}
             </div>
         </motion.div>
 
