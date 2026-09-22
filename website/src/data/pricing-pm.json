@@ -1003,6 +1003,27 @@
         ]
       },
       {
+        "title": "Azure AD / SSO",
+        "description": "Active Directory senkronizasyonu ve kimlik sağlayıcı tabanlı tek oturum açma ile hesap yaşam döngüsünü tek merkezden yönetir.",
+        "paragraphs": [
+          "Azure AD / SSO modülü, kimlik yönetimini kurumun mevcut dizinine devreder. Kullanıcı kayıtlarının elle açılması hem yavaştır hem de kurulumdan sonra listeyi güncel tutma yükünü sistem yöneticisine bırakır. ServiceCore, Active Directory senkronizasyonu ve kimlik sağlayıcı üzerinden tek oturum açma ile hesap yaşam döngüsünü tek merkeze bağlar; kullanıcılar dizinden periyodik olarak aktarılır ve platformda ayrıca tanımlanmaları gerekmez.",
+          "Active Directory bağlantısında domain adı, etki alanı denetleyicisi, dizini okuyacak yetkili kullanıcının giriş adı ve parolası, bağlantı portu ve SSL portu tanımlanır; varsayılan değerler 389 ve 636'dır. Cron saat ve cron dakika alanları eşitlemenin hangi sıklıkta tekrarlanacağını belirler. Senkronize edilecekler kümesiyle kullanıcılar, bilgisayarlar, gruplar ve kişiler aktarılır; OU listesi kapsama girecek kuruluş birimlerini sınırlar, tüm dizin alınacaksa en üst düğümden başlanır.",
+          "Eşleme bölümü, Active Directory attribute editor alanlarının platformdaki karşılıklarına bağlanmasını sağlar; dizinde tutulan bilgi uygulamaya olduğu gibi taşınır ve elle güncellenmek zorunda kalmaz. Form tabanlı giriş etkinleştirildiğinde kullanıcı dizin kimliğiyle oturum açar. Kimlik doğrulama IIS üzerinden yapılacaksa yetkilendirme alanları ayrıca doldurulur; e-posta domainleri hangi adres alan adlarının içeri alınacağını belirler.",
+          "SSO IDP tanımı, dış kimlik sağlayıcıyla yetkilendirme akışını kurar. Client ID, Client Secret, scope listesi, authorization URL, access token URL, user info URL, logout URL ve callback adresi girilir; şablon alanı entegrasyon yapılacak uygulamaların bilgilerini taşır. Giriş ekranında görünen tek oturum açma düğmesinin stili de aynı tanım üzerinden biçimlendirilir, böylece kullanıcı alışık olduğu kurumsal giriş akışını görür.",
+          "Kiracı tabanlı bağlantılar platformun diğer Microsoft entegrasyonlarında da kullanılır: MS Teams bağlantısı client ID, tenant ID ve gizli anahtar ister, e-posta yakalayıcı POP, IMAP, Exchange, Office 365, EWS ve Microsoft Graph hizmet türlerini destekler. Takvim senkronizasyonu Outlook sunucusundaki bilgileri her teknisyen için aktarır; instance ayarları ise dış kullanıcıların giriş yapacağı domainleri ve yetkili kullanıcıları tanımlar.",
+          "Dizinden gelen hesaplar önce kullanıcı listesine düşer; destek personeli teknisyene dönüştürülerek fonksiyonel çalışma grubuna, role ve lisansa bağlanır. Parola ilkeleri güvenlik ayarlarından büyük harf, küçük harf, sayısal değer, sembol ve minimum uzunluk koşullarıyla ayrıca sıkılaştırılır. Dizinden gelen kimlik, global yetkiler ve proje rolleriyle buluştuğu noktada kullanıcının hangi modüle girip proje içinde ne yapabileceğini belirler."
+        ],
+        "highlights": [
+          "Active Directory senkronizasyonu",
+          "OU bazlı kapsam sınırlama",
+          "Cron ile periyodik eşitleme",
+          "Attribute eşleme",
+          "SSO IDP tanımı",
+          "MS Teams kiracı bağlantısı",
+          "Rol ve lisans ataması"
+        ]
+      },
+      {
         "title": "Validasyonlar/Süreç Doğrulama Kontrolleri",
         "description": "Kayıt açılışı, durum geçişi ve kapanışta zorunlu alanları modül bazında denetleyerek süreç bütünlüğünü sistem düzeyinde güvence altına alır.",
         "paragraphs": [
