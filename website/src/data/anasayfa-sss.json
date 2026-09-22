@@ -1,0 +1,79 @@
+{
+  "eyebrow": "SIKÇA SORULAN SORULAR",
+  "title": "Kurumsal alıcıların en çok sorduğu başlıklar",
+  "description": "Kurulum modeli, veri egemenliği, lisans mantığı ve geçiş süreci hakkında en sık gelen soruların kısa yanıtları.",
+  "cta": {
+    "label": "Danışmanımıza Sorun",
+    "href": "/iletisim"
+  },
+  "items": [
+    {
+      "id": "kurulum-modeli",
+      "question": "ServiceCore bulut tabanlı mı, yoksa kendi sunucularımızda mı çalışır?",
+      "answer": "ServiceCore bir SaaS ürünü değildir; kurulum müşterinin kendi ortamına on-premise olarak yapılır. Sunucu hazırlığı, kurulum ve konfigürasyon işleri kurulum paketleri kapsamında yürütülür. Kendi altyapısını işletmek istemeyen kurumlar için ITSM ve ESM ürünleri, iş ortağı ağı üzerinden hosted ve yönetilen hizmet (ITSM as a Service) modeliyle de kullanılabilir.",
+      "link": {
+        "label": "Lisanslama Rehberi",
+        "href": "/planlar/lisanslama-rehberi"
+      }
+    },
+    {
+      "id": "kvkk-veri-egemenligi",
+      "question": "Verilerimiz nerede tutulur, KVKK uyumu nasıl sağlanır?",
+      "answer": "Kurulum kurumun kendi sunucularında yapıldığı için tüm kayıtlar, kullanıcı verileri ve doküman ekleri kurum sınırları içinde kalır. KVKK ve sektörel düzenleyici denetimlerin aradığı veri ikametgâhı şartı bu yapıda doğal olarak sağlanır; üçüncü taraf bulut sağlayıcıların erişim politikalarına bağımlılık oluşmaz. Hava boşluklu (air-gapped) ortamlarda çevrimdışı çalışma, lisans aktivasyonu ve güncelleme paketleri de desteklenir."
+    },
+    {
+      "id": "lisans-modeli",
+      "question": "Lisans neye göre hesaplanır — teknisyen mi, kullanıcı mı?",
+      "answer": "Lisanslama yalnızca teknisyen (agent) rolündeki kullanıcılar için geçerlidir. Talep açan son kullanıcılar ve yalnızca onay süreçlerine katılan yöneticiler lisansa tabi değildir, sayıları sınırsızdır. Varlık adedi de ücretsiz ve sınırsızdır; kayıt sayısı veya işlem adedi için herhangi bir sınır bulunmaz. Model named user'dır: her lisans belirli bir teknisyene atanır ve lisanslama minimum 10 Standart ya da 10 Professional lisansla başlar.",
+      "link": {
+        "label": "Lisanslama Rehberi",
+        "href": "/planlar/lisanslama-rehberi"
+      }
+    },
+    {
+      "id": "devreye-alma",
+      "question": "Kurulum ve devreye alma nasıl ilerler?",
+      "answer": "Devreye alma kurulum paketleri üzerinden yürütülür. Launch Ready Konfigürasyon Paketi anahtar teslim modeldir: AD senkronizasyonu ve teknisyen rol atamalarından hizmet kataloğuna, CMDB ilişkilerinden Hizmet Seviyesi politikalarına ve iş otomasyon kurallarına kadar 18 ana iskelet adımını kapsar, CSSM-A yönetici ile CSSM-P teknisyen eğitimleri birlikte teslim edilir ve canlıya geçişten sonra bir ay yakın destekle sürdürülür. Daha dar kapsamlı başlangıçlar için Quickstart Konfigürasyon Paketi kullanılır. Kapsam ve takvim kick-off toplantısında kuruma göre netleştirilir.",
+      "link": {
+        "label": "Kurulum Hizmetleri",
+        "href": "/hizmetler/setup"
+      }
+    },
+    {
+      "id": "migration",
+      "question": "Mevcut sistemimizden ServiceCore'a geçiş mümkün mü?",
+      "answer": "Evet. ServiceCore Migration Configuration Pack (SCMS), yedi aşamalı taşıma metodolojisini üç müşteri kilometre taşına indirir: veri envanteri ve alan eşleme, yedekleme ile migration yürütümü, doğrulama ve canlıya geçiş. Kayıtlar, yorum ve değişiklik geçmişi, boyut sınırı olmadan tüm ekler, özel alan tanımları, iş akışı durumları, kullanıcı ve yetki yapısı, sprint ile board geçmişi ve iş günlüğü kayıtları taşıma kapsamındadır. Doğrulama aşamasında eski ortam paralel çalıştırılır; her adımda geri dönüş planı hazır tutulur.",
+      "link": {
+        "label": "Geçiş Metodolojisi",
+        "href": "/jira-alternatifi"
+      }
+    },
+    {
+      "id": "destek-seviyeleri",
+      "question": "Destek nasıl veriliyor, hangi seviyeler var?",
+      "answer": "Abonelik süresi boyunca düzeltici bakım, iyileştirmeler ve sürüm güncellemeleri fiyata dahildir; güncellemeler Continuous Delivery yöntemiyle kurulur. Bunun üzerine dört destek paketi sunulur: Silver ve Gold 5x8, Platinum 7x8, Mission Critical 7x24 destek saatiyle çalışır. Destek kanalları support@servicecore.app adresi, support.servicecore.app destek portalı, 0216 599 07 72 çağrı merkezi hattı ve ürün içindeki yönetim panelinde yer alan destek formudur.",
+      "link": {
+        "label": "Destek Paketleri",
+        "href": "/destek"
+      }
+    },
+    {
+      "id": "ozellestirme-entegrasyon",
+      "question": "Ürünü kendi süreçlerimize göre özelleştirip mevcut sistemlerimize bağlayabilir miyiz?",
+      "answer": "Evet. Formlar ve arayüzler low-code tasarımcı ile özelleştirilir, standart formlara özel ek alanlar tanımlanabilir. Dinamik iş ve onay akışları sürükle-bırak akış tasarımcısıyla modellenir; koşullu otomasyon kuralları 10'dan fazla süreçte çalışır. Kimlik tarafında Azure AD, SAML ve SSO entegrasyonları, sistem tarafında hazır entegrasyon paketleri kütüphanesi ve REST API servisleri kullanılır. Bu yeteneklerin bir bölümü Professional lisansa ya da Pro Pack fonksiyon paketine bağlıdır.",
+      "link": {
+        "label": "Low-Code Geliştirme",
+        "href": "/low-code-gelistirme"
+      }
+    },
+    {
+      "id": "egitim",
+      "question": "Ekiplerimiz için eğitim veriliyor mu?",
+      "answer": "Evet. Eğitim hizmetleri CSSM-A yönetici, CSSM-P teknisyen, ITIL4 Foundation ve raporlama-dashboard tasarımı gibi sertifikalı programlardan oluşur; eğitim, sınav ve uygulamalı atölye birlikte kurgulanır. Bunun yanında Türkçe dokümantasyon, rehberler ve video eğitim kaynakları sürekli erişilebilir durumdadır.",
+      "link": {
+        "label": "Eğitim Hizmetleri",
+        "href": "/hizmetler/training"
+      }
+    }
+  ]
+}

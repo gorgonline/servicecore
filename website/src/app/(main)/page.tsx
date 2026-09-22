@@ -3,8 +3,12 @@ import { ArrowRight } from "lucide-react";
 import HeroSection from "@/components/ui/HeroSection";
 import { LogoCloud } from "@/components/ui/logo-cloud";
 import { ModulesGrid } from "@/components/ui/modules-grid";
+import { SolutionsSection } from "@/components/ui/solutions-section";
 import { StatsSection } from "@/components/ui/stats-section";
+import { DifferentiatorsSection } from "@/components/ui/differentiators-section";
 import { PricingSection } from "@/components/ui/pricing-section";
+import { SuccessStoriesSection } from "@/components/ui/success-stories-section";
+import { FaqSection } from "@/components/ui/faq-section";
 import { SupportCtaSection } from "@/components/ui/support-cta-section";
 import PrivacyContact from "@/components/ui/privacy-contact";
 
@@ -12,7 +16,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-(--color-surface-base)">
       <HeroSection />
-      
+
       {/* Trusted By / Logo Cloud Section */}
       <section className="relative mx-auto pt-16 max-w-7xl px-6 lg:px-12 w-full">
         <h2 className="mb-12 text-center font-medium text-lg text-(--color-text-secondary) tracking-tight md:text-xl">
@@ -33,11 +37,23 @@ export default function Home() {
       {/* Modules Grid - Phase 1 */}
       <ModulesGrid />
 
+      {/* Ürün Ailesi / Çözümler */}
+      <SolutionsSection />
+
       {/* Animated Metrics */}
       <StatsSection />
 
+      {/* Fark Yaratan Yetenekler */}
+      <DifferentiatorsSection />
+
       {/* Pricing Comparison Section */}
       <PricingSection />
+
+      {/* Başarı Öyküleri */}
+      <SuccessStoriesSection />
+
+      {/* Sıkça Sorulan Sorular */}
+      <FaqSection />
 
       {/* Support & Demo CTA Section */}
       <SupportCtaSection />

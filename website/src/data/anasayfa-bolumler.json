@@ -1,0 +1,78 @@
+{
+  "cozumler": {
+    "eyebrow": "ÜRÜN AİLESİ",
+    "title": "Tek platform, dokuz çözüm ailesi",
+    "featuredSlug": "itsm",
+    "cardCta": "Çözümü incele",
+    "cta": {
+      "label": "Tüm Modülleri İncele",
+      "href": "/moduller"
+    }
+  },
+  "farkYaratanlar": {
+    "eyebrow": "FARK YARATAN YETENEKLER",
+    "title": "Rakip ürünlerde karşılığı olmayan yetenekler",
+    "description": "Aşağıdaki başlıklar rakip ürünlerin bir kısmında hiç bulunmayan, bir kısmında ise yalnızca kısmen karşılanan yeteneklerdir. Tam listede 44 başlık yer alır.",
+    "secilenler": [
+      {
+        "baslik": "ITIL4 UYUMLULUĞU",
+        "icon": "BadgeCheck",
+        "accent": "blue"
+      },
+      {
+        "baslik": "TIME ENGINE",
+        "icon": "Timer",
+        "accent": "purple"
+      },
+      {
+        "baslik": "5 KATMANLI RAPORLAMA",
+        "icon": "ChartColumnBig",
+        "accent": "emerald"
+      },
+      {
+        "baslik": "10+ SÜREÇTE NO-CODE OTOMASYON",
+        "icon": "Workflow",
+        "accent": "cyan"
+      },
+      {
+        "baslik": "ESM - MULTICOMPANY MODE",
+        "icon": "Building2",
+        "accent": "orange"
+      },
+      {
+        "baslik": "HİBRİT LİSANSLAMA",
+        "icon": "SlidersHorizontal",
+        "accent": "amber"
+      },
+      {
+        "baslik": "ONPREMISE KULLANMA İMKANI",
+        "icon": "Server",
+        "accent": "indigo"
+      },
+      {
+        "baslik": "YEREL DESTEK",
+        "icon": "Headset",
+        "accent": "pink"
+      }
+    ],
+    "cta": {
+      "label": "44 Farkın Tamamını Gör",
+      "href": "/farkvar"
+    }
+  },
+  "basariOykuleri": {
+    "eyebrow": "BAŞARI ÖYKÜLERİ",
+    "title": "Kurumlar ServiceCore ile neyi çözdü?",
+    "description": "Savunma sanayinden perakendeye, yazılım üreticisinden servis entegratörüne kadar farklı ölçeklerde yürüyen kurulumlardan birkaç örnek.",
+    "secilenler": [
+      "roketsan",
+      "sabanci",
+      "logo-yazilim",
+      "boyner"
+    ],
+    "cta": {
+      "label": "Tüm Referanslar",
+      "href": "/referanslar"
+    }
+  }
+}

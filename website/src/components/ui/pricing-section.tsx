@@ -235,7 +235,7 @@ export function PricingSection() {
             {/* Features Accordion List */}
             <div className="flex flex-col gap-1">
                <h4 className="text-xs font-semibold text-(--color-text-secondary) mb-4 px-1 uppercase tracking-wider">Temel Modüller ({standardFeatures.length})</h4>
-               <div className="pr-2 max-h-150 overflow-y-auto green-scrollbar pb-4">
+               <div className="pr-2 pb-4">
                   {standardFeatures.map((feat, idx) => (
                       <FeatureAccordion key={idx} feature={feat} />
                   ))}
@@ -299,8 +299,8 @@ export function PricingSection() {
                <span className="text-sm text-blue-100/90 leading-relaxed font-medium">Standart versiyondaki <strong>tüm özellikleri dönemsel sınırlar olmadan</strong> kapsar.</span>
             </div>
 
-            {/* Scrollable Features Area */}
-            <div className="flex flex-col gap-6 pr-2 max-h-125 overflow-y-auto blue-scrollbar pb-4 relative z-10">
+            {/* Features Area — /planlar sayfasindaki gibi ic scroll yok, liste sayfa boyunca uzar */}
+            <div className="flex flex-col gap-6 pr-2 pb-4 relative z-10">
                
                {/* Ek Modüller */}
                <div>
