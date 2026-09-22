@@ -1,124 +1,42 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, MessageSquare, ShieldCheck, Zap, ArrowUpRight } from "lucide-react";
+import pricingData from "@/data/pricing-itsm.json";
 
+// --- Data Models ---
 // --- Data Models ---
 interface PricingFeature {
   title: string;
   description: string;
 }
 
-const standardFeatures: PricingFeature[] = [
-  { title: "Interaction / Çağrı Yönetimi Modülü", description: "Sisteme entegre ettiğiniz mail adresleri üzerinden gelen kayıtların ayrıştırılması çağrı modülünde yapılabilir." },
-  { title: "Olay / Ticket Yönetimi Modülü", description: "Olay Yönetimi,hizmetlerinin kesintiye uğradığı ya da performansının düştüğü durumları ele alır ve bu olayların en kısa sürede çözülmesini hedefler. Kullanıcılar veya sistemler tarafından bildirilen olaylar kaydedilir, sınıflandırılır, önceliklendirilir ve çözüm süreci başlatılır. Amaç, hizmetlerin normale döndürülerek iş üzerindeki olumsuz etkilerin en aza indirilmesidir." },
-  { title: "Servis Seviye Yönetim Modülü", description: "Geliştiricilerimiz tarafından icat edilen önceliklendirme kural motoru tarafından sağlanan yüksek düzeyde özelleştirilebilir ve gelişmiş Hizmet Seviyesi otomasyon yetenekleri." },
-  { title: "Görev Yönetim Modülü", description: "Kaynakları proaktif olarak yönetmek için tüm görevlerin süreçler aracılığıyla birleştirilmiş görev yönetimi ve merkezi koordinasyonu." },
-  { title: "Görev Ajanda Modülü", description: "Görevlerinizi aylık ve günlük görünümlerde saat aralıkları ile takip edebilirsiniz." },
-  { title: "Görev Kanban Panoları", description: "Görevlerinizi sürekle bırak ile kanban pano seçeneği ile yönetebilirsiniz." },
-  { title: "İş Kayıtları / Time Sheet Yönetimi", description: "Karşılanan kayıtlar içerisinde iş kayıtlarınızı tutabilir ve o kayıt için toplam efor sürelerini hesaplayabilirsiniz." },
-  { title: "Bilgi Yönetimi Modülü", description: "Servis Bilgi Yönetim Sistemi, hem teknik ekip hem de kullanıcılar için çözümleri ve makaleleri bulmayı ve ilişkilendirmeyi kolaylaştırır." },
-  { title: "Self Servis Portal", description: "Kullanıcıların olaylarını, isteklerini, değişikliklerini, varlıklarını ve destek ekiplerinizle olan tüm etkileşimlerini izleyebilmeleri için portal." },
-  { title: "Sınırsız E-mail Yakalayıcı", description: "Servicecore, sınırsız e-posta tanımlama özelliği sayesinde, gelen e-postalar üzerinden otomatik kayıt oluşturulmasını sağlar. Bu sayede kayıt oluşturma süreçleri hızlanır, müdahale süreleri kısalır ve operasyonel verimlilik artar." },
-  { title: "E-Posta ile Otomatik Kayıt Açma", description: "Servicecore, gelen e-postalardan otomatik kayıt açma özelliği ile kayıt oluşturma süreçlerini hızlandırır, müdahale sürelerini kısaltır ve operasyonel verimliliği artırır." },
-  { title: "E-Posta,SMS,Web Bildirim Şablonları", description: "Servicecore, açılan kayıtlar için kullanıcılara ve teknisyenlere anlık e-posta bildirimleri göndererek hızlı bilgilendirme sağlar. Bu sayede süreçler kesintisiz ilerler ve müdahale süreleri minimuma iner." },
-  { title: "Olay, Görev, İş Günlüğü Şablonları", description: "Servicecore'un şablon yapısı sayesinde, kayıt oluşturma süreçleri standartlaşır ve hız kazanır. Tekrar eden işlemler için zaman kaybı ortadan kalkar, verimlilik artar." },
-  { title: "Çoklu Panolar - Widget Sihirbazları", description: "ServiceCore, ITIL4 uyumlu raporlama modülüyle süreç ve servis verilerini anlamlı bilgilere dönüştürerek performansı ölçer ve iyileştirme alanlarını tespit eder. Hazır raporlar, dinamik panolar ve Service Report Wizard sayesinde stratejik, operasyonel ve analitik raporlamalar kolayca yapılabilir. Sürekli iyileştirme için gereken veri odaklı yönetim bu sayede sağlanır." },
-  { title: "Time Engine (Otomatik Süre Yönetimi)", description: "Servicecore'un otomatik süre hesaplama özelliği sayesinde işlemlerin başlangıç ve bitiş süreleri anlık olarak takip edilir, performans ölçümleri kolayca yapılır ve süreç yönetimi daha verimli hale getirilir." },
-  { title: "Genel Yönetim Modülü", description: "Servicecore’un esnek ve kapsamlı ayar seçenekleriyle iş süreçlerinizi kolaylaştırın! Genel ayarlardan Hizmet Seviyesi politikalarına, varlık yönetiminden hizmet kataloglarına kadar her detayı özelleştirerek operasyonlarınızı optimize edin ve üstün kullanıcı deneyimi sunun. Tüm departmanlar için entegre, otomatik ve etkili bir çözümle tanışın!" },
-  { title: "Sınırsız AD Senkronizasyonu", description: "Dilediğiniz kadar AD hesabı entegre ederek sınırsız kullanıcıyı Servicecore'da yetkilendir." },
-  { title: "Rol Yönetimi", description: "Teknisyenlere farklı yetkiler tanımlanarak uygulama içinde yalnızca ilgili alanlara erişim sağlanır. Bu sayede güvenli ve verimli bir görev dağılımı gerçekleştirilir." },
-  { title: "İş Saatleri Yönetimi", description: "İş saatleri ile sistemde Hizmet Seviyeleri yönetebilir. İş saatlerine göre gruplar oluşturabilirsiniz." },
-  { title: "Hazır Cevaplar", description: "Hazır cevap özelliği ile gelen maillere hızlı dönüşler sağlayarak verimliliği arttır." },
-  { title: "Otomatik Teknisyen Atama", description: "Otomatik atama özelliği ile iş yüküne veya sıralı atama şeklinde gelen kaydı direkt teknisyene yönlendir. Kayıt müdahale süresini azalt." },
-  { title: "Zamanlanmış Olaylar", description: "Periyodik olarak oluşan olay kayıtları yaratabilir ve düzenli müdahalede bulunabilirsiniz." },
-  { title: "Anket Yönetimi", description: "Servicecore'un anket yönetimi özelliği ile kullanıcı memnuniyeti ve hizmet kalitesi kolayca ölçümlenir. Otomatik gönderilen anketler sayesinde geri bildirim toplanır, analiz edilir ve sürekli iyileştirme sağlanır." },
-  { title: "Multitenant Yapı (Sadece ESM)", description: "Servicecore'un içindeki tüm hizmet süreçlerini ve bu süreçlere odaklanan bir yaklaşımı ifade eder. Bu, Servicecore'un sadece IT (Bilgi Teknolojileri) departmanı için değil, aynı zamanda diğer departmanlar ve iş birimleri için de hizmet yönetimi uygulamalarını içerir. Servicecore ESM yaklaşımı, bir şirketin genel hizmet verimliliğini ve müşteri memnuniyetini artırmayı amaçlar." }
-];
-
-const proExtraModules: PricingFeature[] = [
-  { title: "İstek & Servis Katalog Modülü", description: "Kullanıcı isteklerinin karşılandığı bu modülde ITIL4 en güncel istek yönetimi pratiklerine uyumlu modern bir istek karşılama ve sunum süreci simule edilmiştir." },
-  { title: "Problem Yönetimi Modülü", description: "Problem yönetimi uygulamasının amacı, sorunların olasılığını ve etkisini azaltmaktır. Olayların gerçek ve olası nedenlerini belirleyerek, geçici çözümleri ve bilinen hataları yönetmektir." },
-  { title: "Değişiklik Yönetimi Modülü", description: "Bu modülde değişiklik talepleri Olay, Problem, İstek gibi farklı modüllerden entegre edilerek alınmakta ve geriye dönük ilişkiler takip edilebilmektedir." },
-  { title: "Varlık Yönetimi ve CMDB Modülü", description: "Varlıkların yaşam döngüsü boyunca durumlarının, sahipliklerinin, finansal bilgilerinin takip edildiği bir uygulama modülü ile güncel aktif ve geçerli bilgilere sürekli erişim ile işlerinizi kolaylaştırın." },
-  { title: "Sözleşme Yönetimi Modülü", description: "Servicecore, işletmelerin operasyonel süreçlerini yönetmelerine yardımcı olan güçlü bir yazılım platformudur. İçerisinde yer alan Sözleşme Yönetimi Modülü, sözleşme süreçlerini daha etkin ve organize bir şekilde yönetmek için geliştirilmiştir." },
-  { title: "Sürekli İyileştirme Modülü (CSI)", description: "ITIL4’e göre servis yönetiminin bitmeyen bir sürekli iyileştirme metodu ile uygulanması gerekir. Sürekli iyileştirme ITIL4’ün ana uygulama metodolojisidir." },
-  { title: "Servis Otomasyon Modülü", description: "Kolayca tanımlanabilen kurallar ile koşullara bağlı aksiyonlar otomatik yapılabilmekte ve bu sayede tüm servis kayıtlarının dinamik olarak güncellenmesi ve akışların hızlanması sağlanmaktadır." },
-  { title: "Entegrasyonlar için API Modülü", description: "Servicecore API entegrasyonu, farklı yazılım uygulamaları arasında etkin iletişim sağlayan ve veri alışverişini kolaylaştıran restAPI teknolojisini kullanan bir yapıdır. Bu entegrasyonlar, farklı platformlar arasında veri aktarımını hızlandırarak iş süreçlerinin optimize edilmesine ve verimliliğin artırılmasına yardımcı olur." }
-];
-
-const proOnlyFeatures: PricingFeature[] = [
-  { title: "İş Akışları ve Onay Akışları Yönetimi", description: "Servicecore onay iş akışları, akış şemaları ve diyagramlar aracılığıyla oluşturulur ve görsel olarak temsil edilir. Bu iş akışları, onay süreçlerini otomatikleştirmek ve optimize etmek için sıkça kullanılır. Böylece sistem onaylarını yönetmek ve izlemek daha kolay hale gelir. Onay iş akışları, verimliliği artırmak, hataları azaltmak ve karmaşık süreçleri iyi organize etmek için kullanışlı bir araçtır." },
-  { title: "Onay ve Danışma Kurulları Yönetimi", description: "ServiceCore, işletmelerin onay süreçlerini daha düzenli ve hızlı yönetebilmeleri için Onay Grupları özelliğini sunar. Bu yapı, belirli süreçler için onay veren ve danışmanlık sağlayan kişileri tanımlayıp, onay mekanizmalarında kullanmayı kolaylaştırır." },
-  { title: "Özel Ek Alanlar ve Custom Formlar", description: "Her işletmenin kendine özgü süreçleri ve ihtiyaçları vardır. ServiceCore, bu ihtiyaçlara tam uyum sağlayabilmeniz için Özel Ek Alanlar özelliğini sunar. Bu özellik sayesinde, standart formları geliştirerek işletmenize özel kayıt formları oluşturabilir ve süreçlerinizi daha verimli hale getirebilirsiniz." },
-  { title: "Low Code Form Design ve Yönetimi", description: "ServiceCore, yenilikçi Low-Code Form Oluşturma özelliği ile işletmenizin ihtiyaçlarına uygun özel formlar oluşturmanızı kolaylaştırır. Teknik bilgiye ihtiyaç duymadan, sürükle-bırak yöntemiyle hızlı ve etkili çözümler üretebilirsiniz." },
-  { title: "Mobile ITSM Modülü Kullanımı", description: "ServiceCore, mobil native uygulaması ile tüm teknisyen ve end user işlemleri yapılabilmektedir." },
-  { title: "Azure AD / SAML / SSO", description: "ServiceCore, modern iş gereksinimlerine uygun olarak geliştirilmiş bir platformdur ve güçlü kimlik doğrulama yöntemlerini destekler. Platform, Azure Active Directory (Azure AD), SAML (Security Assertion Markup Language) ve Single Sign-On (SSO) teknolojileriyle sorunsuz entegrasyon sağlar." },
-  { title: "Validasyonlar/Süreç Doğrulama Kontrolleri", description: "ServiceCore, iş süreçlerinizin düzenli ve eksiksiz bir şekilde yürütülmesini sağlamak için güçlü Zorunlu Alan Validasyonu özellikleri sunar. Bu özellik sayesinde, farklı modüllerde (varlık, değişiklik, olay, problem, iyileştirme, görev, işbirlikleri, proje gibi) belirli alanların doldurulmasını zorunlu hale getirebilirsiniz." },
-  { title: "Olay, Problem, Değişiklik, Proje, CI, Görev, İş Günlüğü Şablonları", description: "ServiceCore, iş süreçlerinizi daha şeffaf ve verimli hale getirmek için kapsamlı bir Worklog Yönetimi sunar. Bu özellik, kayıtlar içerisine eklenen iş günlüklerini detaylı bir şekilde takip etmenizi ve bu verilerden yola çıkarak efor hesaplamaları yapmanızı sağlar." },
-  { title: "Zamanlanmış Raporlar", description: "ServiceCore, kullanıcıların raporları belirli zaman dilimlerinde otomatik olarak almasını sağlayan Zamanlanmış Rapor özelliği sunar. Bu özellik, raporlama sürecini daha verimli hale getirir ve verilerin düzenli aralıklarla toplanmasını sağlar." },
-  { title: "Döküm Raporları", description: "ServiceCore, tüm modüller üzerinden kapsamlı raporlar almanızı sağlayan Döküm Raporları özelliği sunar. Bu özellik, her modülde yer alan verileri detaylı bir şekilde döküm formatında çıkararak, işletmenizin analiz ve raporlama ihtiyaçlarını karşılar." },
-  { title: "Dinamik Raporlar", description: "ServiceCore, kullanıcıların farklı filtreler ve kolon yapıları kullanarak tamamen özelleştirilmiş raporlar oluşturabilmesini sağlayan Dinamik Raporlar özelliği sunar. Bu özellik, kullanıcıların ihtiyaçlarına göre veri analizini kişiselleştirmelerini ve daha detaylı, anlamlı raporlar elde etmelerini sağlar." },
-  { title: "Zimmet Formları ve Onay Sistemi", description: "ServiceCore, zimmetli varlıkları yönetmek ve bu varlıklar üzerinden kabul onaylarını almak için Zimmet Formları oluşturmanıza olanak tanır. Bu özellik, varlıkların doğru bir şekilde izlenmesini sağlar ve işletmeniz içindeki eşyaların kabul ve onay süreçlerini düzenler." },
-  { title: "Zamanlanmış İstekler", description: "Periyodik olarak oluşan istek kayıtları yaratabilir ve düzenli müdahalede bulunabilirsiniz." },
-  { title: "Çoklu Dil Desteği", description: "ServiceCore, global kullanıcılar için Çoklu Dil Desteği sunarak, farklı dillerde çalışma imkanı sağlar. Bu özellik, kullanıcıların kendi tercihlerine göre platformu farklı dillerde kullanabilmelerini ve daha verimli bir deneyim elde etmelerini mümkün kılar." },
-  { title: "Vardiya Yönetimi Modülü", description: "Vardiya Yönetimi Modülü, mevcut olay ve servis talebi kayıtlarının atandığı teknisyen gruplarına bağlı olarak, belirlenen koşullar çerçevesinde santral aramalarının yönetimini sağlayan bir çözümdür. Bu modül sayesinde kritik kayıtlar için teknisyenlerin telefonla otomatik olarak bilgilendirilmesi ve operasyonel süreçlerin aksamadan ilerlemesi hedeflenir." },
-  { title: "Multitenant Yapı (ESM versiyon ile)", description: "Servicecore'un içindeki tüm hizmet süreçlerini ve bu süreçlere odaklanan bir yaklaşımı ifade eder. Bu, Servicecore'un sadece IT (Bilgi Teknolojileri) departmanı için değil, aynı zamanda diğer departmanlar ve iş birimleri için de hizmet yönetimi uygulamalarını içerir. Servicecore ESM yaklaşımı, bir şirketin genel hizmet verimliliğini ve müşteri memnuniyetini artırmayı amaçlar. ESM versiyonda alt tenantlarda üye olan her bir teknisyen tenant bazında ayrı lisanslanmaktadır." },
-  { title: "Multi Company / Holding Yapısı (ESM versiyon ile)", description: "ServiceCore ESM (Enterprise Service Management), şirket içindeki tüm hizmet süreçlerini yönetmek için entegre bir yaklaşım sunar. Bu, sadece IT (Bilgi Teknolojileri) departmanı ile sınırlı kalmaz, aynı zamanda diğer departmanlar ve iş birimlerinin hizmet yönetimi uygulamalarını da kapsar. ServiceCore'un ESM yaklaşımı, organizasyonun genel verimliliğini artırmayı ve müşteri memnuniyetini yükseltmeyi hedefler. ESM versiyonda alt tenantlarda üye olan her bir teknisyen tenant bazında ayrı lisanslanmaktadır." }
-];
-
-type AddonItem = { name: string; desc?: string; link?: string };
-type AddonCategory = { title: string; items: AddonItem[] };
-
-const addonCategories: AddonCategory[] = [
-  {
-    title: "Eklenebilecek Yönetim Modülleri",
-    items: [
-      { name: "Proje Yönetimi Modülü", desc: "ITIL4 ile birlikte proje yönetimi süreci ITSM’in doğal bir parçası ve zorunlu bir pratiği haline gelmiştir. Projelerin doğuşu her zaman iyileştirme, değişiklik, istek gibi süreçler tarafından tetiklenmektedir.", link: "/proje-yonetimi" },
-      { name: "Servis İlişkileri Yönetimi Modülü", desc: "Gelişmiş otomasyon özellikleri ile servislerinizi standartlaştırın ve müşteri hizmetlerinizi uçtan uca dijitalleştirin.", link: "/servis-iliskileri-yonetimi" },
-      { name: "Shift Management Add-on", desc: "Teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır.", link: "/vardiya-yonetimi" },
-      { name: "Federation Service Add-on", desc: "Birden fazla ServiceCore örneğini veya dış servis sağlayıcılarını birbirine bağlayarak kayıtların organizasyonlar arası paylaşılmasını sağlar.", link: "/federasyon-motoru" }
-    ]
-  },
-  {
-    title: "Eklentiler (Add-ons)",
-    items: [
-      { name: "Asset Discovery Add-on", desc: "Ağ üzerindeki tüm BT varlıklarını otomatik keşfeder; envanteri ve CMDB'yi sürekli güncel tutar. Detaylı bilgi için Discovery modülü sayfasını inceleyin.", link: "/discovery" },
-      { name: "VMware Varlık Keşif Eklentisi", desc: "VMware ortamındaki sanal makineleri ve altyapıyı otomatik keşfetmenize olanak tanır. IT varlık yönetimini verimli hale getirir ve yapılandırma yönetimini güçlendirir.", link: "/discovery" },
-      { name: "Intune Discovery Add-on", desc: "Microsoft Intune ile yönetilen uç noktaları ve mobil cihazları otomatik keşfeder; cihaz envanterini ve yapılandırma bilgilerini CMDB ile güncel tutar.", link: "/discovery" },
-      { name: "Lansweeper Discovery Add-on", desc: "Lansweeper envanter verilerini ServiceCore'a aktararak ağdaki donanım ve yazılım varlıklarının tek merkezde güncel kalmasını sağlar.", link: "/discovery" },
-      { name: "MS Teams Eklentisi", desc: "Microsoft Teams ile entegre olarak, hizmet yönetimi ve işbirliği süreçlerini daha verimli hale getirir." },
-      { name: "Task Calendar Sync Eklentisi", desc: "Kullanıcıların Microsoft Exchange takvimlerini ve e-posta sistemlerini ServiceCore platformu ile entegre ederek verimli hizmet yönetimi yapmalarını sağlar." },
-      { name: "Failover / Cluster Sistem Add-on", desc: "Yüksek erişilebilirlik ve kesintisiz hizmet için ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır.", link: "/failover" },
-      { name: "Disaster Center Add-on", desc: "Şirketlerin olası felaket durumlarına karşı hazırlıklı olmalarını sağlamak amacıyla, hizmet yönetimi süreçlerini güvence altına alır.", link: "/disaster-center" },
-      { name: "Sandbox / Test Sistem Add-on", desc: "Değişikliklerin ve yeniliklerin gerçek ortamda uygulanmadan önce güvenli bir şekilde test edilmesini sağlar. Lisans, kurulum ve bakım yapısı için Sandbox sayfasını inceleyin.", link: "/sandbox" }
-    ]
-  },
-  {
-    title: "Entegrasyonlarla Sunulan Çözümler",
-    items: [
-      { name: "Servis Analitiği Çözümleri", desc: "PowerBI Entegre Add-on." },
-      { name: "Event Yönetimi Çözümleri", desc: "IT Monitoring Entegre Add-on." },
-      { name: "Sürüm Yönetimi Çözümleri", desc: "SDLC ve DevOps Entegrasyonları." },
-      { name: "GRC Çözümleri", desc: "Risk, Audit, Compliance Add-on." },
-      { name: "Migration Çözümleri", desc: "ITSM Veri, Konfig, Flow Taşıma." }
-    ]
-  }
-];
+/**
+ * Anasayfadaki lisans tablosu ile /planlar sayfasi ayni kaynaktan beslenir.
+ * Modul listeleri daha once bu dosyada kopya olarak duruyordu ve iki taraf birbirinden
+ * ayrismisti (ornegin /planlar'dan kaldirilan modul anasayfada kalmisti).
+ */
+const { section, standard, pro, addons } = pricingData;
+const standardFeatures: PricingFeature[] = standard.features;
+const proExtraModules: PricingFeature[] = pro.extraModules;
+const proOnlyFeatures: PricingFeature[] = pro.onlyFeatures;
+const addonCategories = addons.categories;
 
 // --- Internal Components ---
 
 const FeatureAccordion = ({ feature, isPro = false, isHighlight = false }: { feature: PricingFeature, isPro?: boolean, isHighlight?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const panelId = `home-feature-panel-${useId()}`;
 
   return (
     <div className="border-b border-white/5 last:border-0 relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between py-3 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-(--color-border-active) rounded-sm cursor-pointer z-10 relative"
-        tabIndex={0}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
       >
         <div className="flex items-center gap-3">
           <CheckCircle2 className={`w-4 h-4 shrink-0 transition-colors ${
@@ -133,6 +51,7 @@ const FeatureAccordion = ({ feature, isPro = false, isHighlight = false }: { fea
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id={panelId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -167,29 +86,29 @@ export function PricingSection() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-linear-to-r from-(--color-brand-primary)/10 to-emerald-500/10 border border-white/10  mb-6">
             <Sparkles className="w-4 h-4 text-(--color-brand-primary)" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-(--color-text-overline)">Versiyonlar ve Kapsam</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-(--color-text-overline)">{section.badge}</span>
           </div>
           
           <h2 className="text-4xl md:text-6xl font-medium text-white mb-6 tracking-tight">
-            İhtiyacınıza uygun <br className="hidden md:block" />
+            {section.titleLead} <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-cyan-light) font-bold">
-              lisans modelini seçin.
+              {section.titleHighlight}
             </span>
           </h2>
           
           <p className="text-base md:text-lg text-(--color-text-secondary) font-light leading-relaxed">
-            Minimum 10 teknisyen ile başlayın. Single Tenant veya ESM (Multi Tenant) mimarisiyle, ister Onpremises ister Bulut kurulumu tercih edin.
+            {section.description}
           </p>
 
           {/* Pricing Model Info Pills */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
              <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/2 border border-white/5 text-sm text-(--color-text-overline)">
                 <Building2 className="w-4 h-4 text-(--color-brand-primary)" />
-                Onpremises veya Bulut Kurulum
+                {section.deploymentPill}
              </div>
              <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/2 border border-white/5 text-sm text-(--color-text-overline)">
                 <InfinityIcon className="w-4 h-4 text-(--color-accent-emerald-light)" />
-                Yıllık Abonelik Modeli
+                {section.subscriptionPill}
              </div>
           </div>
         </motion.div>
@@ -208,11 +127,11 @@ export function PricingSection() {
                  <div className="p-2.5 rounded-lg bg-slate-800/50 border border-white/5">
                     <ShieldCheck className="w-6 h-6 text-(--color-text-overline)" />
                  </div>
-                 <h3 className="text-2xl font-bold text-white">Standart Versiyon</h3>
+                 <h3 className="text-2xl font-bold text-white">{standard.title}</h3>
               </div>
               
               <p className="text-(--color-text-secondary) text-sm leading-relaxed mb-6 h-16">
-                Service Desk ve ITIL4 temel süreçlerine ihtiyaç duyan organizasyonlar için en uygun başlangıç paketi.
+                {standard.description}
               </p>
               
               <Link
@@ -220,7 +139,7 @@ export function PricingSection() {
                 className="w-full inline-flex items-center justify-center gap-2 h-14 px-6 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-medium transition-all focus:outline-none focus:ring-2 focus:ring-white/20 cursor-pointer"
               >
                  <MessageSquare className="w-4 h-4" />
-                 Teklif İsteyin
+                 {standard.ctaLabel}
               </Link>
             </div>
 
@@ -229,12 +148,12 @@ export function PricingSection() {
             {/* Features Info Box - Standart (Green Theme) */}
             <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-sm text-emerald-100/80 font-light leading-relaxed flex items-start gap-3">
                <div className="mt-1 flex h-1.5 w-1.5 shrink-0 rounded-full bg-(--color-accent-emerald-base)" />
-               <span>Küçük ve orta ölçekli Hizmet Sağlayıcılara uygundur. Olay yönetimi, görev yönetimi ve iş günlükleri gibi temel ITIL4 uygulamalarını kapsar.</span>
+               <span>{standard.infoBox}</span>
             </div>
 
             {/* Features Accordion List */}
             <div className="flex flex-col gap-1">
-               <h4 className="text-xs font-semibold text-(--color-text-secondary) mb-4 px-1 uppercase tracking-wider">Temel Modüller ({standardFeatures.length})</h4>
+               <h4 className="text-xs font-semibold text-(--color-text-secondary) mb-4 px-1 uppercase tracking-wider">{standard.featuresLabel} ({standardFeatures.length})</h4>
                <div className="pr-2 pb-4">
                   {standardFeatures.map((feat, idx) => (
                       <FeatureAccordion key={idx} feature={feat} />
@@ -244,7 +163,7 @@ export function PricingSection() {
 
              {/* Footer Info Box */}
             <div className="mt-8 pt-6 border-t border-white/5 text-xs text-(--color-text-muted) leading-relaxed font-light">
-               * Standart versiyona, Profesyonel versiyon modüllerinden veya eklentilerden istenilenler tekil olarak eklenebilir. Minimum 10 teknisyen zorunluluğu bulunmaktadır.
+               {standard.footerNote}
             </div>
           </motion.div>
 
@@ -264,7 +183,7 @@ export function PricingSection() {
                 <div className="relative">
                    <div className="absolute inset-0 bg-(--color-brand-primary) blur-md opacity-60 rounded-full" />
                    <div className="relative bg-linear-to-r from-(--color-brand-primary) to-(--color-accent-blue-base) text-white px-5 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase shadow-xl ring-1 ring-white/20 whitespace-nowrap">
-                      En Çok Tercih Edilen
+                      {pro.popularLabel}
                    </div>
                 </div>
             </div>
@@ -275,11 +194,11 @@ export function PricingSection() {
                  <div className="p-2.5 rounded-lg bg-(--color-brand-primary)/20 border border-(--color-brand-primary)/30">
                     <Zap className="w-6 h-6 text-(--color-brand-primary)" />
                  </div>
-                 <h3 className="text-2xl font-bold text-white">Profesyonel Versiyon</h3>
+                 <h3 className="text-2xl font-bold text-white">{pro.title}</h3>
               </div>
               
               <p className="text-blue-100/90 text-sm leading-relaxed mb-6 h-16 font-medium">
-                Enterprise ESM/ITSM özelliklerine ve gelişmiş pratiklere ihtiyaç duyan kuruluşlar için kurumsal paket.
+                {pro.description}
               </p>
               
               <Link
@@ -287,7 +206,7 @@ export function PricingSection() {
                 className="w-full inline-flex items-center justify-center gap-2 h-14 px-6 rounded-full bg-(--color-brand-primary) hover:bg-(--color-brand-primary-hover) text-white font-semibold transition-all duration-300 shadow-(--shadow-glow-primary) hover:shadow-(--shadow-glow-primary-strong) focus:outline-none focus:ring-2 focus:ring-white/50 cursor-pointer"
               >
                  <MessageSquare className="w-4 h-4" />
-                 Teklif İsteyin
+                 {pro.ctaLabel}
               </Link>
             </div>
 
@@ -296,7 +215,7 @@ export function PricingSection() {
             {/* Features Info Box - Pro (Blue Theme) */}
             <div className="mb-6 flex items-start gap-3 px-4 py-3.5 rounded-xl bg-(--color-brand-primary)/15 border border-(--color-brand-primary)/30 shadow-(--shadow-glow-primary-weak)">
                <Plus className="w-4 h-4 text-(--color-brand-primary) mt-0.5 shrink-0" />
-               <span className="text-sm text-blue-100/90 leading-relaxed font-medium">Standart versiyondaki <strong>tüm özellikleri dönemsel sınırlar olmadan</strong> kapsar.</span>
+               <span className="text-sm text-blue-100/90 leading-relaxed font-medium">{pro.infoBox.prefix}<strong>{pro.infoBox.highlight}</strong>{pro.infoBox.suffix}</span>
             </div>
 
             {/* Features Area — /planlar sayfasindaki gibi ic scroll yok, liste sayfa boyunca uzar */}
@@ -304,7 +223,7 @@ export function PricingSection() {
                
                {/* Ek Modüller */}
                <div>
-                  <h4 className="text-xs font-semibold text-(--color-brand-primary) mb-3 px-1 uppercase tracking-wider">Ek Pro Modüller ({proExtraModules.length})</h4>
+                  <h4 className="text-xs font-semibold text-(--color-brand-primary) mb-3 px-1 uppercase tracking-wider">{pro.extraLabel} ({proExtraModules.length})</h4>
                   <div className="flex flex-col gap-0.5">
                      {proExtraModules.map((feat, idx) => (
                          <FeatureAccordion key={idx} feature={feat} isPro={true} />
@@ -316,7 +235,7 @@ export function PricingSection() {
                <div>
                   <h4 className="text-xs font-semibold text-(--color-accent-emerald-light) mb-3 px-1 uppercase tracking-wider flex items-center gap-2">
                      <Sparkles className="w-3 h-3" />
-                     Pro Versiyona Özgü ({proOnlyFeatures.length})
+                     {pro.onlyLabel} ({proOnlyFeatures.length})
                   </h4>
                   <div className="flex flex-col gap-0.5">
                      {proOnlyFeatures.map((feat, idx) => (
@@ -329,7 +248,7 @@ export function PricingSection() {
 
              {/* Footer Info Box */}
              <div className="mt-8 pt-6 border-t border-(--color-brand-primary)/20 text-xs text-slate-400/80 leading-relaxed font-light relative z-10">
-               * Standart lisansın en az %25&apos;i kadar Pro lisans ile hibrit kurulum yapılabilmektedir. ESM versiyonunda tenant başına bağımsız lisanslama mümkündür.
+               {pro.footerNote}
             </div>
 
           </motion.div>
@@ -348,9 +267,9 @@ export function PricingSection() {
                   <Blocks className="w-8 h-8" />
                </div>
                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">Eklentiler ve Çözümler</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">{addons.title}</h3>
                   <p className="text-(--color-text-secondary) text-sm md:text-base leading-relaxed max-w-3xl">
-                     Standart veya Profesyonel versiyonlara ek olarak (Add-on) seçilip mevcut lisansınıza entegre edilebilecek ileri seviye yönetim modülleri ve dış sistem entegrasyonları.
+                     {addons.description}
                   </p>
                </div>
             </div>
