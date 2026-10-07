@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Headphones, CalendarCheck, ShieldCheck, Zap } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { En } from "@/components/ui/En";
 
 export function SupportCtaSection() {
   return (
@@ -89,7 +90,7 @@ export function SupportCtaSection() {
               </Link>
               
               <p className="mt-6 text-xs text-(--color-text-muted) font-semibold tracking-[0.2em] uppercase">
-                Ücretsiz Online Canlı Danışman Sunumu
+                Ücretsiz <En>Online</En> Canlı Danışman Sunumu
               </p>
             </div>
           </motion.div>
