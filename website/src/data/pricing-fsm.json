@@ -19,7 +19,7 @@
     "infoBox": "Küçük ve orta ölçekli Hizmet Sağlayıcılara uygundur. Olay yönetimi, görev yönetimi ve iş günlükleri gibi temel ITIL4 uygulamalarını kapsar.",
     "featuresLabel": "Temel Modüller",
     "ctaLabel": "Teklif İsteyin",
-    "footerNote": "* Standart versiyona, Profesyonel versiyon modüllerinden veya eklentilerden istenilenler tekil olarak eklenebilir. Minimum 10 teknisyen zorunluluğu bulunmaktadır.",
+    "footerNote": "* Standart versiyona, Pro Lite ek modüllerinden veya eklentilerden istenilenler tekil olarak eklenebilir. Minimum 10 teknisyen zorunluluğu bulunmaktadır.",
     "features": [
       {
         "title": "Interaction / Çağrı Yönetimi Modülü",
@@ -32,6 +32,18 @@
       {
         "title": "Servis Seviye Yönetim Modülü",
         "description": "Geliştiricilerimiz tarafından icat edilen önceliklendirme kural motoru tarafından sağlanan yüksek düzeyde özelleştirilebilir ve gelişmiş Hizmet Seviyesi otomasyon yetenekleri."
+      },
+      {
+        "title": "Görev Yönetim Modülü",
+        "description": "Kaynakları proaktif olarak yönetmek için tüm görevlerin süreçler aracılığıyla birleştirilmiş görev yönetimi ve merkezi koordinasyonu."
+      },
+      {
+        "title": "Görev Ajanda Modülü",
+        "description": "Görevlerinizi aylık ve günlük görünümlerde saat aralıkları ile takip edebilirsiniz."
+      },
+      {
+        "title": "Görev Kanban Panoları",
+        "description": "Görevlerinizi sürükle bırak ile kanban pano seçeneği ile yönetebilirsiniz."
       },
       {
         "title": "İş Kayıtları / Time Sheet Yönetimi",
@@ -109,17 +121,27 @@
   },
   "pro": {
     "title": "Profesyonel Versiyon",
-    "description": "Enterprise ESM/ITSM özelliklerine ve gelişmiş pratiklere ihtiyaç duyan kuruluşlar için kurumsal paket.",
+    "description": "Pro Lite ve Pro Full olmak üzere iki seviyede sunulan, gelişmiş ESM/ITSM pratikleri için kurumsal paket.",
     "infoBox": {
       "prefix": "Standart versiyondaki ",
       "highlight": "tüm özellikleri dönemsel sınırlar olmadan",
       "suffix": " kapsar."
     },
-    "extraLabel": "Ek Pro Modüller",
-    "onlyLabel": "Pro Versiyona Özgü",
+    "tiers": [
+      {
+        "name": "Pro Lite",
+        "summary": "Standart + Pro Lite ek modülleri"
+      },
+      {
+        "name": "Pro Full",
+        "summary": "Pro Lite + Pro Full ek modülleri"
+      }
+    ],
+    "extraLabel": "Pro Lite Ek Modüller",
+    "onlyLabel": "Pro Full Ek Modüller",
     "ctaLabel": "Teklif İsteyin",
     "popularLabel": "En Çok Tercih Edilen",
-    "footerNote": "* Standart lisansın en az %25'i kadar Pro lisans ile hibrit kurulum yapılabilmektedir. ESM versiyonunda tenant başına bağımsız lisanslama mümkündür.",
+    "footerNote": "* Standart lisansın en az %25'i kadar Pro Full lisans ile hibrit kurulum yapılabilmektedir. ESM versiyonunda tenant başına bağımsız lisanslama mümkündür.",
     "extraModules": [
       {
         "title": "İstek & Servis Katalog Modülü",
@@ -144,21 +166,17 @@
       {
         "title": "Sürekli İyileştirme Modülü",
         "description": "ITIL4'e göre servis yönetiminin bitmeyen bir sürekli iyileştirme metodu ile uygulanması gerekir. Sürekli iyileştirme ITIL4'ün ana uygulama metodolojisidir."
-      },
+      }
+    ],
+    "onlyFeatures": [
       {
         "title": "Servis Otomasyon Modülü",
         "description": "Kolayca tanımlanabilen kurallar ile koşullara bağlı aksiyonlar otomatik yapılabilmekte ve bu sayede tüm servis kayıtlarının dinamik olarak güncellenmesi ve akışların hızlanması sağlanmaktadır."
       },
       {
-        "title": "Görev Yönetimi Modülü",
-        "description": "Tüm süreçlerde açılan görevlerin tek merkezden koordine edildiği modüldür. Görevler takvim üzerinde aylık ve günlük görünümlerde saat aralıklarıyla planlanır; ataması ya da zamanı yapılmamış görevler görev kuyruğunda ayrı başlıklar altında toplanır. Her sürecin kendi Kanban panosu bulunur ve görev durumları sürükle bırak ile yönetilir. Şablonlardan toplu görev ekleme, öncelik, grup, teknisyen ve tamamlanma yüzdesi aynı kayıtta tutulur."
-      },
-      {
         "title": "Entegrasyonlar için API Modülü",
         "description": "Servicecore API entegrasyonu, farklı yazılım uygulamaları arasında etkin iletişim sağlayan ve veri alışverişini kolaylaştıran restAPI teknolojisini kullanan bir yapıdır. Bu entegrasyonlar, farklı platformlar arasında veri aktarımını hızlandırarak iş süreçlerinin optimize edilmesine ve verimliliğin artırılmasına yardımcı olur."
-      }
-    ],
-    "onlyFeatures": [
+      },
       {
         "title": "İş Akışları ve Onay Akışları Yönetimi",
         "description": "Servicecore onay iş akışları, akış şemaları ve diyagramlar aracılığıyla oluşturulur ve görsel olarak temsil edilir. Bu iş akışları, onay süreçlerini otomatikleştirmek ve optimize etmek için sıkça kullanılır. Böylece sistem onaylarını yönetmek ve izlemek daha kolay hale gelir. Onay iş akışları, verimliliği artırmak, hataları azaltmak ve karmaşık süreçleri iyi organize etmek için kullanışlı bir araçtır."
@@ -228,7 +246,7 @@
   "faq": [
     {
       "question": "Hibrit lisanslama nedir?",
-      "answer": "Kurum içindeki farklı gruplar ihtiyaçlarına göre aynı lisans altında hem Standart hem de Profesyonel versiyonu bir arada kullanabilir. Örneğin teknik ekip Profesyonel kullanırken, idari işler Standart kullanabilir."
+      "answer": "Kurum içindeki farklı gruplar ihtiyaçlarına göre aynı lisans altında hem Standart hem de Pro Full versiyonu bir arada kullanabilir. Örneğin teknik ekip Pro Full kullanırken, idari işler Standart kullanabilir."
     },
     {
       "question": "ESM desteği mevcut mu?",

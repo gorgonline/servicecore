@@ -20,9 +20,11 @@ Rapor alıcısı: **Erman Taşkın** (Levent cc).
   katalog, bilgi bankası, CMDB/varlık, sözleşme, proje, görev, çağrı, ESM çok-tenant, mobil).
 - **Yerli** ürün, **ITIL4** terminolojisi. Kurulum **on-prem** (veriler müşteri sunucusunda; bulut
   varsayılan değil). Ticari model **yıllık kiralama**.
-- Paketler: **standart** ve **profesyonel**. Modüller esnek — profesyonel bir modül standart kullanıcıya
-  add-on olarak eklenebilir; herkesi profesyonele zorlama yok. "Alım gücünü zorlamadan en optimum paket"
-  satış dili.
+- Paketler: **Standart**, **Pro Lite** ve **Pro Full** (Pro Full = eski profesyonel). Pro Lite = Standart +
+  İstek & Servis Katalog, Problem, Değişiklik, Varlık/CMDB, Sözleşme, Sürekli İyileştirme; Pro Full = Pro Lite +
+  Servis Otomasyon, API ve gelişmiş fonksiyonlar. Modüller esnek — Pro Lite modülleri standart kullanıcıya
+  add-on olarak eklenebilir, Pro Full fonksiyonları Pro Pack ile gelir; herkesi üst pakete zorlama yok.
+  "Alım gücünü zorlamadan en optimum paket" satış dili.
 
 ## Sık görülen müşteri pattern'leri (kanıtlandıkça genişlet)
 

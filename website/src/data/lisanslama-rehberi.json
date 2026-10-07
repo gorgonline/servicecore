@@ -51,8 +51,39 @@
     },
     {
       "number": "03",
-      "title": "Lisans Modeli",
-      "intro": "Platform, kullanıcı bazlı (named user) lisanslama modeli ile sunulmaktadır. Her lisans, belirli bir teknisyene atanır."
+      "title": "Lisans Modeli ve Versiyonlar",
+      "intro": "Platform, kullanıcı bazlı (named user) lisanslama modeli ile sunulmaktadır. Her lisans, belirli bir teknisyene atanır ve Standart, Pro Lite veya Pro Full versiyonlarından biri olarak tanımlanır.",
+      "groups": [
+        {
+          "label": "Standart",
+          "tagline": "Service Desk ve ITIL4 temel süreçlerine ihtiyaç duyan organizasyonlar için başlangıç versiyonudur.",
+          "items": [
+            "Olay yönetimi, görev yönetimi ve iş günlükleri gibi temel ITIL4 uygulamalarını kapsar",
+            "Çağrı, servis seviyesi, bilgi yönetimi ve self servis portal modülleri dahildir"
+          ]
+        },
+        {
+          "label": "Pro Lite",
+          "tagline": "Standart versiyondaki tüm özellikleri dönemsel sınırlar olmadan kapsar ve aşağıdaki modülleri ekler:",
+          "items": [
+            "İstek & Servis Katalog Modülü",
+            "Problem Yönetimi Modülü",
+            "Değişiklik Yönetimi Modülü",
+            "Varlık Yönetimi ve CMDB Modülü",
+            "Sözleşme Yönetimi Modülü",
+            "Sürekli İyileştirme Modülü"
+          ]
+        },
+        {
+          "label": "Pro Full",
+          "tagline": "Pro Lite versiyonunun tüm kapsamına ek olarak aşağıdakileri içerir:",
+          "items": [
+            "Servis Otomasyon Modülü",
+            "Entegrasyonlar için API Modülü",
+            "Pro Full versiyonuna özgü gelişmiş fonksiyonlar (9. bölümde Pro Pack kapsamında listelenir)"
+          ]
+        }
+      ]
     },
     {
       "number": "04",
@@ -60,7 +91,8 @@
       "intro": "Lisanslama aşağıdaki minimum yapı ile başlar:",
       "items": [
         "Minimum 10 Standart lisans veya",
-        "Minimum 10 Professional lisans"
+        "Minimum 10 Pro Lite lisans veya",
+        "Minimum 10 Pro Full lisans"
       ]
     },
     {
@@ -80,16 +112,16 @@
       "intro": "Platform, karma (hibrit) lisanslama modelini destekler. Müşteriler aşağıdaki şekilde lisanslarını yapılandırabilir:",
       "items": [
         "Standart kullanıcılar",
-        "Professional kullanıcılar",
+        "Pro Full kullanıcılar",
         "Add-on modüller"
       ],
       "examples": {
         "title": "Örnek Yapılandırmalar",
         "items": [
-          "X adet Standart + Y adet Pro Modüllerinden biri + Z adet Add-on",
-          "A adet Standart + B adet Pro + C adet Add-on",
+          "X adet Standart + Y adet Pro Lite modüllerinden biri + Z adet Add-on",
+          "A adet Standart + B adet Pro Full + C adet Add-on",
           "M adet Standart + N adet Add-on",
-          "Q adet Pro + Z adet Add-on"
+          "Q adet Pro Full + Z adet Add-on"
         ]
       }
     },
@@ -97,8 +129,8 @@
       "number": "07",
       "title": "Edition Dağılım Kuralı",
       "items": [
-        "Professional lisans sayısı, Standart lisans sayısının %25'inden az olamaz",
-        "Örneğin 100 lisans için minimum 25 Pro + 75 Std olmalıdır"
+        "Pro Full lisans sayısı, Standart lisans sayısının %25'inden az olamaz",
+        "Örneğin 100 lisans için minimum 25 Pro Full + 75 Std olmalıdır"
       ]
     },
     {
@@ -120,14 +152,22 @@
           "Sürekli İyileştirme Modülü",
           "Proje Yönetimi Modülü",
           "Servis İlişkileri Yönetimi Modülü"
-        ]
+        ],
+        "footer": "Listedeki ilk altı modül Pro Lite versiyonuna dahildir."
       }
     },
     {
       "number": "09",
       "title": "Pro Pack Fonksiyon Paketi Lisansı",
-      "intro": "Pro versiyona özgü fonksiyonlar ile otomasyon ve entegrasyon modülleri, sistemde minimum Professional lisans bulunması durumunda aktif olarak kullanılabilir. Sistemde yalnızca Standart lisans kullanılması durumunda, aşağıdaki gelişmiş fonksiyonlar ile Otomasyon ve Entegrasyon modüllerinin kullanılabilmesi için Pro Pack (sabit fiyatlı) lisansının ayrıca alınması gerekmektedir.",
+      "intro": "Pro Full versiyonuna özgü fonksiyonlar ile otomasyon ve entegrasyon modülleri, sistemde minimum Pro Full lisans bulunması durumunda aktif olarak kullanılabilir. Sistemde yalnızca Standart veya Pro Lite lisans kullanılması durumunda, aşağıdaki gelişmiş fonksiyonlar ile Otomasyon ve Entegrasyon modüllerinin kullanılabilmesi için Pro Pack (sabit fiyatlı) lisansının ayrıca alınması gerekmektedir.",
       "categories": [
+        {
+          "label": "Otomasyon ve Entegrasyon Modülleri",
+          "items": [
+            "Servis Otomasyon Modülü",
+            "Entegrasyonlar için API Modülü"
+          ]
+        },
         {
           "label": "Süreç ve İş Akışı Yönetimi",
           "items": [
@@ -184,7 +224,7 @@
     {
       "number": "10",
       "title": "ESM (Multi-Tenant) Lisanslama",
-      "intro": "ESM (Enterprise Service Management) yapısında her tenant (organizasyon / departman / birim) ayrı lisans kapsamı olarak değerlendirilir. Professional versiyon veya Pro Function Pack gerektirir.",
+      "intro": "ESM (Enterprise Service Management) yapısında her tenant (organizasyon / departman / birim) ayrı lisans kapsamı olarak değerlendirilir. Pro Full versiyonu veya Pro Pack fonksiyon paketi gerektirir.",
       "items": [
         "Bir teknisyen, üye olduğu her tenant içinde teknisyen rolü ile aktif çalışıyorsa, ilgili tenant için ayrı lisans tüketir",
         "Aynı kişi farklı tenantlarda farklı rollerle yer alabilir, eğer teknisyen ise her tenantta lisans ataması ayrıca yapılmalıdır"
@@ -192,7 +232,7 @@
       "examples": {
         "title": "Örnek",
         "items": [
-          "BT tenantında → Professional teknisyen lisansı kullanır",
+          "BT tenantında → Pro Full teknisyen lisansı kullanır",
           "Yazılım tenantında → Standart teknisyen lisansı kullanabilir",
           "İK tenantında → sadece son kullanıcı rolünde ise lisans tüketmez"
         ],

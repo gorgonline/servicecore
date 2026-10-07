@@ -24,7 +24,7 @@
     {
       "id": "lisans-modeli",
       "question": "Lisans neye göre hesaplanır — teknisyen mi, kullanıcı mı?",
-      "answer": "Lisanslama yalnızca teknisyen (agent) rolündeki kullanıcılar için geçerlidir. Talep açan son kullanıcılar ve yalnızca onay süreçlerine katılan yöneticiler lisansa tabi değildir, sayıları sınırsızdır. Varlık adedi de ücretsiz ve sınırsızdır; kayıt sayısı veya işlem adedi için herhangi bir sınır bulunmaz. Model named user'dır: her lisans belirli bir teknisyene atanır ve lisanslama minimum 10 Standart ya da 10 Professional lisansla başlar.",
+      "answer": "Lisanslama yalnızca teknisyen (agent) rolündeki kullanıcılar için geçerlidir. Talep açan son kullanıcılar ve yalnızca onay süreçlerine katılan yöneticiler lisansa tabi değildir, sayıları sınırsızdır. Varlık adedi de ücretsiz ve sınırsızdır; kayıt sayısı veya işlem adedi için herhangi bir sınır bulunmaz. Model named user'dır: her lisans belirli bir teknisyene atanır ve lisanslama minimum 10 Standart, 10 Pro Lite ya da 10 Pro Full lisansla başlar.",
       "link": {
         "label": "Lisanslama Rehberi",
         "href": "/planlar/lisanslama-rehberi"
@@ -60,7 +60,7 @@
     {
       "id": "ozellestirme-entegrasyon",
       "question": "Ürünü kendi süreçlerimize göre özelleştirip mevcut sistemlerimize bağlayabilir miyiz?",
-      "answer": "Evet. Formlar ve arayüzler low-code tasarımcı ile özelleştirilir, standart formlara özel ek alanlar tanımlanabilir. Dinamik iş ve onay akışları sürükle-bırak akış tasarımcısıyla modellenir; koşullu otomasyon kuralları 10'dan fazla süreçte çalışır. Kimlik tarafında Azure AD ve SSO entegrasyonları, sistem tarafında hazır entegrasyon paketleri kütüphanesi ve REST API servisleri kullanılır. Bu yeteneklerin bir bölümü Professional lisansa ya da Pro Pack fonksiyon paketine bağlıdır.",
+      "answer": "Evet. Formlar ve arayüzler low-code tasarımcı ile özelleştirilir, standart formlara özel ek alanlar tanımlanabilir. Dinamik iş ve onay akışları sürükle-bırak akış tasarımcısıyla modellenir; koşullu otomasyon kuralları 10'dan fazla süreçte çalışır. Kimlik tarafında Azure AD ve SSO entegrasyonları, sistem tarafında hazır entegrasyon paketleri kütüphanesi ve REST API servisleri kullanılır. Bu yeteneklerin bir bölümü Pro Full lisansa ya da Pro Pack fonksiyon paketine bağlıdır.",
       "link": {
         "label": "Low-Code Geliştirme",
         "href": "/low-code-gelistirme"

@@ -4,6 +4,8 @@ import { useId, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, Boxes, MessageSquare, ShieldCheck, Zap, ArrowUpRight, BookOpen } from "lucide-react";
+import { EnTerms } from "@/components/ui/En";
+import { ProTierLegend, type ProTier } from "@/components/ui/pro-tier-legend";
 
 // --- Data Models ---
 export interface PricingFeature {
@@ -96,6 +98,8 @@ export interface PricingData {
     title: string;
     description: string;
     infoBox: ProInfoBox;
+    /** Doluysa bilgi kutusunun altinda seviye ozeti gosterilir; seviye adlari basliklarda lang="en" ile sarilir. */
+    tiers?: ProTier[];
     extraLabel: string;
     onlyLabel: string;
     ctaLabel: string;
@@ -219,6 +223,8 @@ const FeatureAccordion = ({ feature, isPro = false, isHighlight = false, isAddon
 
 export function ExpandedPricingSection({ data }: { data: PricingData }) {
   const { section, standard, pro, single, knowledgeBase, addons } = data;
+  // "Pro Lite" gibi seviye adlari uppercase basliklarda lang="tr" altinda "LİTE" olmasin diye sarilir.
+  const tierNames = pro?.tiers?.map((tier) => tier.name) ?? [];
 
   return (
     <section id="expanded-pricing" className="relative w-full py-24 overflow-hidden bg-(--color-surface-base-dark)">
@@ -358,7 +364,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
                  <h3 className="text-2xl font-bold text-white">{standard.title}</h3>
               </div>
 
-              <p className="text-(--color-text-secondary) text-sm leading-relaxed mb-6 h-16">
+              <p className="text-(--color-text-secondary) text-sm leading-relaxed mb-6 min-h-16">
                 {standard.description}
               </p>
 
@@ -427,7 +433,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
                  <h3 className="text-2xl font-bold text-white">{pro.title}</h3>
               </div>
 
-              <p className="text-blue-100/90 text-sm leading-relaxed mb-6 h-16 font-medium">
+              <p className="text-blue-100/90 text-sm leading-relaxed mb-6 min-h-16 font-medium">
                 {pro.description}
               </p>
 
@@ -448,12 +454,15 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
                <span className="text-sm text-blue-100/90 leading-relaxed font-medium">{pro.infoBox.prefix}<strong>{pro.infoBox.highlight}</strong>{pro.infoBox.suffix}</span>
             </div>
 
+            {/* Seviye ozeti (Pro Lite / Pro Full) */}
+            {pro.tiers && <ProTierLegend tiers={pro.tiers} />}
+
             {/* Scrollable Features Area - NO SCROLLBAR HERE */}
             <div className="flex flex-col gap-6 relative z-10">
 
                {/* Ek Modüller */}
                <div>
-                  <h4 className="text-xs font-semibold text-(--color-brand-primary) mb-3 px-1 uppercase tracking-wider">{pro.extraLabel} ({pro.extraModules.length})</h4>
+                  <h4 className="text-xs font-semibold text-(--color-brand-primary) mb-3 px-1 uppercase tracking-wider"><EnTerms text={pro.extraLabel} terms={tierNames} /> ({pro.extraModules.length})</h4>
                   <div className="flex flex-col gap-0.5">
                      {pro.extraModules.map((feat, idx) => (
                          <FeatureAccordion key={idx} feature={feat} isPro={true} />
@@ -465,7 +474,7 @@ export function ExpandedPricingSection({ data }: { data: PricingData }) {
                <div>
                   <h4 className="text-xs font-semibold text-(--color-accent-emerald-light) mb-3 px-1 uppercase tracking-wider flex items-center gap-2">
                      <Sparkles className="w-3 h-3" />
-                     {pro.onlyLabel} ({pro.onlyFeatures.length})
+                     <span><EnTerms text={pro.onlyLabel} terms={tierNames} /> ({pro.onlyFeatures.length})</span>
                   </h4>
                   <div className="flex flex-col gap-0.5">
                      {pro.onlyFeatures.map((feat, idx) => (

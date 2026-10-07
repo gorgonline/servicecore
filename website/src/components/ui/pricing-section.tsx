@@ -4,6 +4,8 @@ import { useId, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, ChevronDown, Plus, Infinity as InfinityIcon, Sparkles, Building2, Blocks, MessageSquare, ShieldCheck, Zap, ArrowUpRight } from "lucide-react";
+import { EnTerms } from "@/components/ui/En";
+import { ProTierLegend } from "@/components/ui/pro-tier-legend";
 import pricingData from "@/data/pricing-itsm.json";
 
 // --- Data Models ---
@@ -22,6 +24,7 @@ const { section, standard, pro, addons } = pricingData;
 const standardFeatures: PricingFeature[] = standard.features;
 const proExtraModules: PricingFeature[] = pro.extraModules;
 const proOnlyFeatures: PricingFeature[] = pro.onlyFeatures;
+const proTierNames = pro.tiers.map((tier) => tier.name);
 const addonCategories = addons.categories;
 
 // --- Internal Components ---
@@ -130,7 +133,7 @@ export function PricingSection() {
                  <h3 className="text-2xl font-bold text-white">{standard.title}</h3>
               </div>
               
-              <p className="text-(--color-text-secondary) text-sm leading-relaxed mb-6 h-16">
+              <p className="text-(--color-text-secondary) text-sm leading-relaxed mb-6 min-h-16">
                 {standard.description}
               </p>
               
@@ -197,7 +200,7 @@ export function PricingSection() {
                  <h3 className="text-2xl font-bold text-white">{pro.title}</h3>
               </div>
               
-              <p className="text-blue-100/90 text-sm leading-relaxed mb-6 h-16 font-medium">
+              <p className="text-blue-100/90 text-sm leading-relaxed mb-6 min-h-16 font-medium">
                 {pro.description}
               </p>
               
@@ -218,12 +221,15 @@ export function PricingSection() {
                <span className="text-sm text-blue-100/90 leading-relaxed font-medium">{pro.infoBox.prefix}<strong>{pro.infoBox.highlight}</strong>{pro.infoBox.suffix}</span>
             </div>
 
+            {/* Seviye ozeti (Pro Lite / Pro Full) — /planlar ile ayni bilesen */}
+            <ProTierLegend tiers={pro.tiers} />
+
             {/* Features Area — /planlar sayfasindaki gibi ic scroll yok, liste sayfa boyunca uzar */}
             <div className="flex flex-col gap-6 pr-2 pb-4 relative z-10">
                
                {/* Ek Modüller */}
                <div>
-                  <h4 className="text-xs font-semibold text-(--color-brand-primary) mb-3 px-1 uppercase tracking-wider">{pro.extraLabel} ({proExtraModules.length})</h4>
+                  <h4 className="text-xs font-semibold text-(--color-brand-primary) mb-3 px-1 uppercase tracking-wider"><EnTerms text={pro.extraLabel} terms={proTierNames} /> ({proExtraModules.length})</h4>
                   <div className="flex flex-col gap-0.5">
                      {proExtraModules.map((feat, idx) => (
                          <FeatureAccordion key={idx} feature={feat} isPro={true} />
@@ -235,7 +241,7 @@ export function PricingSection() {
                <div>
                   <h4 className="text-xs font-semibold text-(--color-accent-emerald-light) mb-3 px-1 uppercase tracking-wider flex items-center gap-2">
                      <Sparkles className="w-3 h-3" />
-                     {pro.onlyLabel} ({proOnlyFeatures.length})
+                     <span><EnTerms text={pro.onlyLabel} terms={proTierNames} /> ({proOnlyFeatures.length})</span>
                   </h4>
                   <div className="flex flex-col gap-0.5">
                      {proOnlyFeatures.map((feat, idx) => (
