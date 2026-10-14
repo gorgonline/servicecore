@@ -397,7 +397,8 @@
             "RisiCoreAI",
             "ShiftCoreAI",
             "ChatCoreAI",
-            "FlowCoreAI"
+            "FlowCoreAI",
+            "TalentCoreAI"
           ]
         },
         {

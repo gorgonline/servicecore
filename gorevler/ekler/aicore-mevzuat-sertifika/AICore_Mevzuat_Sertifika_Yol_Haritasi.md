@@ -4,6 +4,8 @@
 > mevzuat takvimi, (3) ISO/IEC 42001 sertifika fırsatı — tek evrakta.
 > Bu bir iş planlama evrakıdır, hukuki görüş değildir; AB'ye satış gündeme
 > geldiğinde madde bazlı hukuk görüşü alınmalıdır. (24.07.2026)
+>
+> Güncelleme (14.10.2026): TalentCoreAI eklendi — yüksek risk sınıfında.
 
 ---
 
@@ -13,7 +15,7 @@
   özel yapay zekâ kanunu henüz çıkmadı (TBMM'de 3 teklif var).
 - **AB AI Act yürürlükte ve kademeli sıkılaşıyor.** Bizi doğrudan bağlaması
   için AB'ye satış veya AB operasyonlu müşteri (Toyota, Sabancı iştirakleri)
-  gerekir. 4 ürün kartımız AB gözüyle işaretlenmeli (aşağıda).
+  gerekir. 5 ürün kartımız AB gözüyle işaretlenmeli (aşağıda).
 - **ISO/IEC 42001 bir KORUMA aracı DEĞİLDİR — satış/güven sinyalidir.**
   (Erman notu, 24.07.2026.) Bu sertifika bizi IP hırsızlığına, bypass'a veya
   koltuk ikamesine karşı korumaz; bunların cevabı ürün kilidi + sözleşmedir
@@ -36,20 +38,21 @@ Cezalar: yasak ihlali €35M/%7'ye, yüksek-risk ihlali €15M/%3'e kadar.
 kullanılan sistemler; AB operasyonlu Türk müşterinin oradaki kullanımı.
 Yalnız Türkiye içi kullanımda AI Act doğrudan uygulanmaz.
 
-## 3. Ürün ailesi — AB gözüyle risk işaretlemesi (32 ürün)
+## 3. Ürün ailesi — AB gözüyle risk işaretlemesi (33 ürün)
 
 | Ürün | AB sınıfı | Not / önlem |
 |---|---|---|
 | **SentimentCoreAI** | ⛔ Yasak riski | İşyerinde ÇALIŞAN duygu analizi mutlak yasak (Şubat 2025'ten beri). Ürün son-kullanıcı/müşteri duygusuna konumlanmalı; "teknisyen duygu analizi" ifadesi hiçbir materyalde yer almamalı. |
 | **CoachCoreAI** | 🔴 Yüksek risk | Çalışan performans değerlendirmesi = Annex III istihdam kategorisi. AB satışında tam yüksek-risk yükümlülük seti (2027'den itibaren belgeleme). |
 | **ShiftCoreAI** | 🔴 Yüksek risk | Görev dağıtımı/vardiya = istihdam kategorisi. Aynı durum. |
+| **TalentCoreAI** | 🔴 Yüksek risk | Yetkinlik ve performans analizi, kariyer ve halefiyet önerisi, uzmanlığa göre atama önerisi = Annex III istihdam kategorisi. Çıktılar yalnızca yönetici değerlendirmesini desteklemeli, kişiye otomatik uygulanmamalı; çalışan duygu veya üslup sinyali kullanılmamalı. AB satışında tam yüksek-risk yükümlülük seti (2027'den itibaren belgeleme). |
 | **ToneCoreAI** | 🟠 Gri alan | Üslup analizi duygu tanıma sayılmayabilir ama "çalışan izleme" yönü yüksek-risk sınırında. AB satışı öncesi madde bazlı görüş şart. |
 | **ClassifyCoreAI** | 🟠 Gri alan | Kayıt yönlendirme minimal; ancak "teknisyene atama" özelliği görev-dağıtımına yaklaşır. Konumlama: kayıt yönlendirme, kişi değerlendirme değil. |
 | ChatCore, VoiceCore, CallCore, TranslateCore | 🟡 Şeffaflık | Kullanıcıya AI ile etkileşimde olduğu bildirilmeli (arayüz metni yeterli — kolay uyum). |
-| Diğer 24 ürün (Solve, Know, Doc, Root, Merge, Reply, Priority, Impact, Predict, Report, KB, Storm, Flow, DisCore, Vision, Audit, Asset, Vendor, Contract, Budget, Project, Risi, Gate...) | 🟢 Minimal | İş kaydı/varlık/süreç analizi — kişi hakkında hukuki sonuç doğuran karar yok. Standart iyi uygulama yeterli. |
+| Diğer 23 ürün (Solve, Know, Doc, Root, Merge, Reply, Priority, Impact, Predict, Report, KB, Storm, Flow, DisCore, Vision, Audit, Asset, Vendor, Contract, Budget, Project, Risi, Gate) | 🟢 Minimal | İş kaydı/varlık/süreç analizi — kişi hakkında hukuki sonuç doğuran karar yok. Standart iyi uygulama yeterli. |
 
 **Pratik sonuç:** Türkiye satışında bugün engel yok. AB bağlantılı satışta
-4 işaretli ürün ya kapsam dışı bırakılır ya yeniden konumlanır; kalan 28
+5 işaretli ürün ya kapsam dışı bırakılır ya yeniden konumlanır; kalan 28
 ürün için AI Act yükü hafiftir (şeffaflık + iyi uygulama).
 
 ## 4. Türkiye — mevzuat durumu ve beklenti
@@ -121,7 +124,7 @@ gerçekçi — muhtemelen Türkiye ITSM alanında ilk.
 1. ServiceCore'un ISO 27001'i var mı? (Varsa yol yarıya iner.)
 2. Gap assessment teklifi alalım mı? (Maliyeti görmeden karar zor;
    teklif almak ücretsiz.)
-3. AB bağlantılı müşterilere satış planı var mı? (Varsa 4 işaretli ürün
+3. AB bağlantılı müşterilere satış planı var mı? (Varsa 5 işaretli ürün
    için hukuk görüşü şimdiden alınmalı.)
 4. Satış materyaline "ISO 42001 yol haritamız başladı" cümlesi ne zaman
    girsin? (Gap assessment başladığı gün söylenebilir — yalan olmaz.)

@@ -1459,6 +1459,57 @@
         "/surekli-iyilestirme",
         "/esm"
       ]
+    },
+    {
+      "slug": "talentcore",
+      "name": "TalentCoreAI",
+      "tier": "beta",
+      "tagline": "Tüm ekiplerinizin yetkinliğini kanıta dayalı tek bir haritada toplar, tek kişiye bağlı kalan uzmanlığı önceden gösterir.",
+      "description": "Kurumda kimin neyi bildiğini, hangi sistemin tek kişiye bağlı kaldığını ve önümüzdeki dönemde hangi uzmanlığın gerekebileceğini merkezi bir karar destek ekranında görürsünüz. TalentCoreAI bu tabloyu çözülmüş kayıtlardan çıkarır ama yalnızca kayıt sayısına bakmaz: kaydın karmaşıklığını, çözüm kalitesini, çalışma koşullarını ve ilgili sistemlere erişimi de hesaba katar. Eğitim, halefiyet ve kapasite kararlarınız sezgiye değil kanıta dayanır. Son söz yöneticidedir: çıktılar kariyer, performans ve personel kararlarında tek başına belirleyici olmaz, hiçbir öneri kişiye kendiliğinden uygulanmaz.",
+      "icon": "ChartNetwork",
+      "accent": "blue",
+      "year": 2027,
+      "release": "Beta — Yol Haritası",
+      "whatItDoes": [
+        "Kimin hangi teknolojide, uygulamada, hizmette ve süreçte hangi seviyede uzman olduğunu gösteren teknisyen, ekip ve organizasyon yetkinlik matrisi çıkarır; matris her yeni çözümle güncellenir.",
+        "Yalnızca bir teknisyenin çözebildiği kritik sorunları ve tek kişiye bağlı sistem ve hizmetleri bulur; personel ayrılığı ya da uzun süreli yoklukta doğabilecek operasyonel riski, yedek uzman ihtiyacını ve belgelenmemiş bilgiyi gösterir.",
+        "Eğitim, halefiyet ve kapasite planlamasına kanıt sunar: teknisyen ve ekip bazında eğitim ve sertifika ihtiyacını, Junior → Mid → Senior gelişim yollarını ve gelecek dönemin uzmanlık ve personel ihtiyacını çıkarır."
+      ],
+      "howItWorks": [
+        {
+          "label": "Kanıtı tartar",
+          "detail": "Çözülmüş kayıtlar, çözüm süreleri, kullanılan teknolojiler ve müdahale türleri okunur; kayıt sayısı tek ölçüt olmaz, kaydın karmaşıklığı, çözüm kalitesi, çalışma koşulları ve sistemlere erişim de değerlendirilir."
+        },
+        {
+          "label": "Açıkları ölçer",
+          "detail": "Teknoloji ve hizmet bazında çözüm başarısı, yeniden açılan kayıtlar ve yetkinlik eksiklerinin Hizmet Seviyesine etkisi ölçülür; kurumun yetkinlik açığı ve operasyonel risk skoru çıkarılır."
+        },
+        {
+          "label": "Atamayı destekler",
+          "detail": "Yetkinlik haritası iş dağılımına taşınır: uzmanlık, iş yükü ve uygunluk durumuna göre atama önerisi hazırlanır, karmaşık sorunlarda birden fazla uzman gösterilir, bir teknisyende yoğunlaşan iş yükü için dengeleme önerilir."
+        },
+        {
+          "label": "Bilgiyi kurumda tutar",
+          "detail": "Eğitim ihtiyacı olan teknisyenlere deneyimli mentorlar, kritik sistemler için bilgi aktarımı planı önerilir; dokümantasyonu eksik teknoloji ve süreçler işaretlenir, uzman çözümleri bilgi bankasına aday olur."
+        },
+        {
+          "label": "Karar yöneticide",
+          "detail": "Yetkinlik matrisi, bağımlılık haritası ve gelecek dönem ihtiyaç tahmini yönetici ve ekip liderlerinin karar destek ekranına gelir; hiçbir atama, eğitim ya da personel kararı kendiliğinden alınmaz, kişiye otomatik uygulanmaz."
+        }
+      ],
+      "modules": [
+        "/gorev-yonetimi",
+        "/olay-yonetimi",
+        "/istek-yonetimi",
+        "/problem-yonetimi",
+        "/servis-katalog-yonetimi",
+        "/servis-konfigurasyon-yonetimi",
+        "/servis-seviye-yonetimi",
+        "/bilgi-bankasi",
+        "/raporlama-yonetimi",
+        "/surekli-iyilestirme",
+        "/esm"
+      ]
     }
   ]
 }

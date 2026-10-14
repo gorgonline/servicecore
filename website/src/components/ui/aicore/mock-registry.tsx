@@ -25,6 +25,7 @@ import { SentimentCoreMock } from "./mocks/sentimentcore";
 import { ShiftCoreMock } from "./mocks/shiftcore";
 import { SolveCoreMock } from "./mocks/solvecore";
 import { StormCoreMock } from "./mocks/stormcore";
+import { TalentCoreMock } from "./mocks/talentcore";
 import { ToneCoreMock } from "./mocks/tonecore";
 import { TranslateCoreMock } from "./mocks/translatecore";
 import { VendorCoreMock } from "./mocks/vendorcore";
@@ -67,6 +68,7 @@ const REGISTRY: Record<string, (props: MockProps) => ReactNode> = {
   budgetcore: BudgetCoreMock,
   coachcore: CoachCoreMock,
   projectcore: ProjectCoreMock,
+  talentcore: TalentCoreMock,
 };
 
 export function hasMock(slug: string): boolean {

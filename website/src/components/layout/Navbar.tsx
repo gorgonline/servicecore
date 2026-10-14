@@ -72,6 +72,7 @@ import {
   Star,
   Compass,
   FlaskConical,
+  ChartNetwork,
   type LucideIcon
 } from "lucide-react";
 
@@ -162,6 +163,7 @@ const AICORE_ICON_MAP: Record<string, LucideIcon> = {
   FileSignature,
   Wallet,
   GraduationCap,
+  ChartNetwork,
 };
 
 interface AicoreToolEntry {

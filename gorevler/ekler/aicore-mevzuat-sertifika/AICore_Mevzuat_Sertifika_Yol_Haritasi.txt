@@ -1,6 +1,7 @@
 AICORE — AI MEVZUAT VE SERTİFİKA YOL HARİTASI
 (İş planlama evrakıdır, hukuki görüş değildir. AB'ye satış gündeme
 geldiğinde madde bazlı hukuk görüşü alınmalıdır. 24.07.2026)
+Güncelleme (14.10.2026): TalentCoreAI eklendi — yüksek risk sınıfında.
 
 
 1) YÖNETİCİ ÖZETİ
@@ -8,7 +9,7 @@ geldiğinde madde bazlı hukuk görüşü alınmalıdır. 24.07.2026)
 - Bugün Türkiye'de zorunlu AI lisansı/sertifikası YOK. KVKK ana çerçeve;
   özel yapay zekâ kanunu henüz çıkmadı (TBMM'de 3 teklif).
 - AB AI Act yürürlükte ve kademeli sıkılaşıyor. Bizi doğrudan bağlaması
-  için AB'ye satış veya AB operasyonlu müşteri gerekir. 4 ürün kartımız
+  için AB'ye satış veya AB operasyonlu müşteri gerekir. 5 ürün kartımız
   AB gözüyle işaretlenmeli (Bölüm 3).
 - ISO/IEC 42001 bir KORUMA aracı DEĞİLDİR — satış/güven sinyalidir (Erman
   notu). Bu sertifika bizi IP hırsızlığına, bypass'a veya koltuk ikamesine
@@ -34,7 +35,7 @@ kullanılan sistemler; AB operasyonlu Türk müşterinin oradaki kullanımı.
 Yalnız Türkiye içi kullanımda doğrudan uygulanmaz.
 
 
-3) ÜRÜN AİLESİ — AB GÖZÜYLE RİSK İŞARETLEMESİ (32 ÜRÜN)
+3) ÜRÜN AİLESİ — AB GÖZÜYLE RİSK İŞARETLEMESİ (33 ÜRÜN)
 
 - SentimentCoreAI — YASAK RİSKİ: İşyerinde ÇALIŞAN duygu analizi mutlak
   yasak (Şubat 2025'ten beri). Ürün son-kullanıcı/müşteri duygusuna
@@ -43,17 +44,23 @@ Yalnız Türkiye içi kullanımda doğrudan uygulanmaz.
 - CoachCoreAI — YÜKSEK RİSK: Çalışan performans değerlendirmesi =
   istihdam kategorisi. AB satışında tam yükümlülük seti.
 - ShiftCoreAI — YÜKSEK RİSK: Görev dağıtımı/vardiya = istihdam kategorisi.
+- TalentCoreAI — YÜKSEK RİSK: Yetkinlik ve performans analizi, kariyer ve
+  halefiyet önerisi, uzmanlığa göre atama önerisi = Annex III istihdam
+  kategorisi. Çıktılar yalnızca yönetici değerlendirmesini desteklemeli,
+  kişiye otomatik uygulanmamalı; çalışan duygu veya üslup sinyali
+  kullanılmamalı. AB satışında tam yüksek-risk yükümlülük seti (2027'den
+  itibaren belgeleme).
 - ToneCoreAI — GRİ ALAN: Üslup analizi duygu tanıma sayılmayabilir ama
   "çalışan izleme" yönü yüksek-risk sınırında; AB öncesi hukuk görüşü şart.
 - ClassifyCoreAI — GRİ ALAN: Kayıt yönlendirme minimal; "teknisyene atama"
   özelliği görev-dağıtımına yaklaşır. Konumlama: kayıt yönlendirme.
 - ChatCore, VoiceCore, CallCore, TranslateCore — ŞEFFAFLIK: Kullanıcıya
   AI ile etkileşimde olduğu bildirilmeli (arayüz metni yeterli).
-- Diğer 24 ürün — MİNİMAL: İş kaydı/varlık/süreç analizi; kişi hakkında
+- Diğer 23 ürün — MİNİMAL: İş kaydı/varlık/süreç analizi; kişi hakkında
   hukuki sonuç doğuran karar yok. Standart iyi uygulama yeterli.
 
 Pratik sonuç: Türkiye satışında bugün engel yok. AB bağlantılı satışta
-4 işaretli ürün ya kapsam dışı bırakılır ya yeniden konumlanır.
+5 işaretli ürün ya kapsam dışı bırakılır ya yeniden konumlanır.
 
 
 4) TÜRKİYE — MEVZUAT DURUMU
@@ -123,7 +130,7 @@ Türkiye ITSM alanında ilk.
 
 1. ServiceCore'un ISO 27001'i var mı? (Varsa yol yarıya iner.)
 2. Gap assessment teklifi alalım mı? (Teklif almak ücretsiz.)
-3. AB bağlantılı müşterilere satış planı var mı? (Varsa 4 işaretli ürün
+3. AB bağlantılı müşterilere satış planı var mı? (Varsa 5 işaretli ürün
    için hukuk görüşü şimdiden alınmalı.)
 4. Satış materyaline "ISO 42001 yol haritamız başladı" cümlesi ne zaman
    girsin? (Gap assessment başladığı gün söylenebilir.)

@@ -62,6 +62,8 @@
 | **CoachCoreAI** | Okur (performans verisi) | — | Periyodik | Teknisyen sayısı |
 | **ProjectCoreAI** | Okur (proje kayıtları) | — | Periyodik | Aktif proje sayısı |
 | **RisiCoreAI** | Okur (varlık + hizmet + sözleşme) | Zafiyet bankası veri güncellemeleri (kontrollü paket veya tek denetimli çıkış) | Periyodik | Varlık sayısı |
+| **GateCoreAI** | Yazmaz — kapıdır. Bağlanan yazılımın yetkisi neyse onu uygular; her isteği kimlik ve sorumluyla kaydeder. | Kurumun kendi yapay zekâsı / dış eklentiler; kimlik ve yetki altyapısı (ServiceCore backend) | Sürekli — her istekte | Bağlanan yazılım sayısı + istek hacmi |
+| **TalentCoreAI** | Okur (kayıt geçmişi, çözüm süreleri, atama ve iş yükü verisi); atama, eğitim ve bilgi bankası ÖNERİSİ yazar (onay yönetimde) | Eğitim, sertifika ve izin verisi (İK sistemi varsa entegrasyon) | Periyodik analiz; atama önerisi kayıt başına | Teknisyen sayısı + kayıt arşivi büyüklüğü |
 
 ## Notlar
 
