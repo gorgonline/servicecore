@@ -90,9 +90,6 @@
       "title": "Eklentiler & Add-on",
       "description": "Yardımcı bileşenler ve altyapı eklentileri.",
       "fields": [
-        { "id": "addon_vmware", "label": "VMware Varlık Keşif Eklentisi", "type": "yesno" },
-        { "id": "addon_msteams", "label": "MS Teams Eklentisi", "type": "yesno" },
-        { "id": "addon_calendar", "label": "Task Calendar Sync Eklentisi", "type": "yesno" },
         {
           "id": "addon_failover",
           "label": "Failover / Cluster Sistem Add-on",
