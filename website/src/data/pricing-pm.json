@@ -1140,44 +1140,6 @@
         "title": "STANDART VEYA PREMIUMA EKLENEBİLEN MODÜLLER",
         "items": [
           {
-            "name": "MS Teams Eklentisi",
-            "desc": "Kurumun kendi Microsoft kiracısı üzerinden yetkili bir bağlantı kurarak ServiceCore bildirimlerinin Microsoft Teams kanalından da iletilmesini sağlayan eklenti.",
-            "paragraphs": [
-              "MS Teams Eklentisi, ana lisansa kurumun Microsoft kiracısıyla kurulan yetkili bir bağlantı ekler. Bağlantı client kimliği, kiracı kimliği, kullanıcı adı, parola ve gizli anahtar bilgileriyle tanımlanır; tanım, aktif dizin ve tek oturum açma tanımlarıyla aynı sistem ayarları başlığı altında durur. Bu bağlantı kurulmadan Microsoft Teams platformda yalnızca bir şablon başlığıdır; eklenti onu fiilen ileti taşıyan bir kanala dönüştürür.",
-              "Bağlantı devreye girdiğinde bildirim motorunun Teams kanalı çalışır hale gelir. Çağrı, olay, istek, değişiklik, problem, sürekli iyileştirme, bilgi, varlık, görev, sözleşme, proje ve sistem başlıkları altında tanımlı otomatik mesajlar, teknisyen ve son kullanıcı için ayrı yazılmış metinleriyle Teams üzerinden de gönderilir. Hangi bildirimin bu kanaldan çıkacağı tek tek belirlenir.",
-              "İş akışı tasarımındaki bildirim adımı aynı motordan beslendiği için süreç içinden tetiklenen iletiler de Teams'e düşer. Onay bekleyen bir istek ya da durumu değişen bir görev, çalışanın gün boyu açık tuttuğu iş birliği uygulamasında görünür; ayrı bir ekranı düzenli aralıklarla kontrol etme alışkanlığı beklenmez ve bekleyen adımların fark edilme süresi kısalır.",
-              "Bağlantı kurumun kendi kiracısı üzerinden kurulduğundan iletiler kurumun mevcut Teams ortamında kalır, dışarıda ek bir mesajlaşma servisi devreye girmez. Yetkilendirme bilgileri aktif dizin senkronizasyonu, tek oturum açma sağlayıcısı ve Outlook takvim eşitlemesiyle aynı yönetim başlığında toplandığından bağlantıların bakımı tek noktadan yürür.",
-              "Eklenti Standart veya Premium lisansın üzerine eklenir ve mevcut süreç kurgusunu değiştirmez; yalnızca iletişimin gerçekleştiği yeri genişletir. Microsoft Teams, ServiceCore entegrasyon kataloğunda hazır bağlayıcısı bulunan sistemler arasındadır; bu nedenle paralel bir bildirim altyapısı kurmaya ya da bağımsız bir yönetim aracı işletmeye gerek kalmaz."
-            ],
-            "highlights": [
-              "Kiracı ve uygulama kimliğiyle bağlantı",
-              "Bildirim motorunun Teams kanalı",
-              "Teknisyen ve kullanıcı için ayrı metin",
-              "İş akışından çıkan Teams iletisi",
-              "Sistem ayarlarında tek noktadan tanım",
-              "Hazır Microsoft Teams bağlayıcısı"
-            ]
-          },
-          {
-            "name": "Task Calendar Sync Eklentisi",
-            "desc": "Teknisyenlerin Outlook takvimlerini Exchange üzerinden ServiceCore'a düzenli aralıklarla eşitleyerek atama ve planlama kararlarının gerçek müsaitlik bilgisiyle verilmesini sağlayan eklenti.",
-            "paragraphs": [
-              "Task Calendar Sync Eklentisi, Outlook sunucusunda tutulan takvim bilgilerinin her bir teknisyen için ServiceCore'a aktarılmasını sağlar. Tanım; takvimin adı, Exchange EWS adresi, otomatik keşif adresi, yetkili e-posta, domain adı ve parola bilgileriyle yapılır. Exchange sürümü ayrıca belirtildiğinden farklı sürümlerde çalışan sunucular aynı eklenti üzerinden desteklenir.",
-              "Eşitleme elle tetiklenebildiği gibi belirtilen zamanlama aralığında kendiliğinden de çalışır; cron saat alanı sistemin kaç saatte bir takvimleri tazeleyeceğini belirler. Eksi gün ve artı gün alanları, eşitlemenin yapıldığı günden kaç gün öncesinin ve kaç gün sonrasının alınacağını verir. Planlama penceresi böylece kurumun ihtiyacına göre daralır ya da genişler.",
-              "Teknisyenler kendi profil sayfalarında takvim sunucuları için kişisel ayarlar tanımlayabilir. Yönetici gerektiğinde merkezi tanımı tüm teknisyen ayarlarının üzerine uygulayarak kurum genelinde tek bir yapılandırma yürütür. Ortak politika ile kişisel tanım arasındaki tercih kurumun elinde kalır; tanım, diğer bağlantılarla aynı sistem ayarları başlığı altında yönetilir.",
-              "Takvim verisi platforma geldiğinde teknisyenin toplantı ve meşguliyet durumu, platformdaki iş yüküyle birlikte aynı yerde okunur. Görev ataması yapan yönetici müsaitliği görmek için ikinci bir uygulamaya geçmez; gün boyu toplantıda olan bir teknisyene iş verilmesi riski azalır, planlanan efor ile gerçekte ayrılabilecek zaman birbirine yaklaşır.",
-              "Eklenti Standart veya Premium lisansın üzerine eklenir ve kurumun hâlihazırda kullandığı Exchange altyapısından beslenir; ayrı bir takvim ürünü gerektirmez. Eşitleme tek seferlik bir aktarım değil, belirlenen aralıkla tekrarlanan kalıcı bir bağ olduğundan platformdaki müsaitlik görüntüsü eskimez; yeni eklenen her toplantı bir sonraki eşitlemede planlamaya yansır."
-            ],
-            "highlights": [
-              "Teknisyen bazlı takvim aktarımı",
-              "Exchange EWS bağlantısı",
-              "Cron saatiyle otomatik eşitleme",
-              "Eksi gün ve artı gün penceresi",
-              "Merkezi ayarın teknisyeni geçersiz kılması",
-              "Elle eşitleme tetikleme"
-            ]
-          },
-          {
             "name": "Failover / Cluster Sistem Add-on",
             "desc": "ServiceCore kurulumunu en az iki düğüm üzerinde yedekli çalıştırır; bir düğüm arızalandığında hizmet, kullanıcı ve entegrasyon adresleri değişmeden ikinci düğüm üzerinden devam eder.",
             "link": "/failover",
@@ -1235,86 +1197,6 @@
               "Düzenli veri tazeleme döngüsü",
               "Sürüm öncesi geri dönüş provası",
               "Üretimle sürüm ve şema hizası"
-            ]
-          },
-          {
-            "name": "Intune Discovery Add-on",
-            "desc": "ServiceCore Intune Discovery Add-on, Microsoft Intune ile yönetilen uç noktaları ServiceCore'a taşır; cihaz kayıtlarını ve yapılandırma bilgilerini CMDB üzerinde sürekli güncel tutar.",
-            "link": "/discovery",
-            "paragraphs": [
-              "Intune Discovery Add-on, ana lisansla gelen CMDB modülüne ayrı bir keşif kanalı ekler. Kurum envanteri ServiceCore'a elle giriş veya içeri aktarma yoluyla da alınabilir; bu kanal üçüncü yolu, entegrasyonu açar. Microsoft Intune ile yönetilen uç noktalar yapılandırma öğesi olarak varlık envanterine düşer; envanteri kimin, hangi sıklıkta güncelleyeceği sorusu operasyon ekibinin gündeminden çıkar.",
-              "Keşfedilen her cihaz, yaşam döngüsü boyunca izlenen bir varlık kaydına dönüşür. Durum, sahiplik, konum, şirket ve kuruma özel tanımlanan öznitelikler tek kayıtta toplanır; varlık geçmişi eski kullanıcı ile yeni kullanıcıyı ve durum değişimlerini tarihsel sırada saklar. IT ve IT dışı varlıklar aynı envanter yapısında yönetildiği için uç nokta kayıtları ayrı bir adacık oluşturmaz.",
-              "Keşif tekrarlandığında kayıt sayısı şişmez. Eşleştirme makine adı, MAC adresi ve seri numarası önceliğiyle yürüdüğü için cihazın adresi değişse bile mevcut kayıt korunur ve üzerine güncellenir. Kullanımdan kalkan cihazlar için doğrudan silme yerine pasife alma seçeneği vardır; kayıt geçmişiyle birlikte durur.",
-              "Kanal elle çalıştırılabildiği gibi günlük, haftalık veya aylık bir takvime bağlanır; daha hassas kontrol gerektiğinde ayrıntılı bir zamanlama ifadesi tanımlanır. Kullanılan kimlik bilgileri şifreli saklanır ve dış sistemlere çıkarılmaz, hangi taramanın hangi kimlik bilgisini ne zaman kullandığı denetim kaydına yazılır. Çalışan tarama ise ilerleme ve sonuç sayıları üzerinden anlık izlenir.",
-              "Güncel varlık verisi ana lisanstaki süreçlere doğrudan akar. Uç nokta kayıtları olay, problem ve değişiklik kayıtlarıyla bağıntılandırılır; ilişki haritası üzerinde hangi hizmetin hangi cihazlara dayandığı görünür olur. Beklenmeyen bir cihaz bulunduğunda veya tarama hata verdiğinde ilgili ekibe kayıt açılır. Böylece kararlar, güncelliği tartışmalı listeler yerine doğrulanmış yapılandırma bilgisine dayanır."
-            ],
-            "highlights": [
-              "Uç nokta envanteri",
-              "Otomatik CMDB güncellemesi",
-              "Tekrar kayıt önleme",
-              "Varlık yaşam döngüsü",
-              "İlişki haritası bağlantısı",
-              "Zamanlanmış keşif"
-            ]
-          },
-          {
-            "name": "Lansweeper Discovery Add-on",
-            "desc": "ServiceCore Lansweeper Discovery Add-on, Lansweeper envanter verilerini ServiceCore'a aktararak ağdaki donanım ve yazılım varlıklarının CMDB üzerinde tek merkezde güncel kalmasını sağlar.",
-            "link": "/discovery",
-            "paragraphs": [
-              "Lansweeper Discovery Add-on, envanterini hâlihazırda Lansweeper ile toplayan kurumlar için düşünülmüştür. Varlıklar ServiceCore tarafında ikinci bir liste olarak tutulmaz; doğrudan CMDB kayıtlarına dönüşür ve hizmet yönetimi süreçleri tek doğruluk kaynağından beslenir.",
-              "Aktarılan kayıtları geniş bir yapılandırma nesnesi kütüphanesi karşılar. Varlık türü, şirket, konum, kullanıcı ve kuruma özgü ek öznitelikler aynı kayıtta toplanır; filtreleme, sayım modu ve seçili varlıkları dışa aktarma gibi günlük envanter işleri de bu merkezi liste üzerinden yürür. Kayıt detayında varlığın tüm öznitelikleri, ekleri ve notları bir arada görüntülenir. Donanıma bağlı aksesuarlar ayrıca ilişkilendirilir, böylece hangi ekipmanın kimde ve nerede olduğu izlenir.",
-              "Yazılım envanteri lisans tarafıyla birlikte okunur. Lisans kayıtları kullanıcılara atanır, atamaların geçmişi denetlenebilir biçimde tutulur ve lisans uyum raporu aynı veriden üretilir. Varlığın satın alma maliyeti ile bağlı olduğu sözleşme de aynı kayıtta durduğu için uyum sorusu ile bütçe sorusu ayrı sistemlere dağılmaz.",
-              "Envanterin asıl değeri ilişkilerde ortaya çıkar. Varlıklar arası bağımlılıklar tanımlandığında bir hizmetin hangi sunucu, ağ cihazı ve yazılım bileşeni üzerinde çalıştığı hizmet haritasında görünür olur; olay, problem ve değişiklik kayıtları bu yapılandırma öğelerine bağlanır. İlişkiler aşağı ve yukarı yönlü kurulduğu için bir hizmetin neye dayandığı kadar, tek bir varlığın hangi hizmetleri etkilediği de okunur. Etki analizi tahmine değil, düzenli tazelenen varlık verisine dayanır.",
-              "Yönetim tarafındaki karşılık düzenli raporlardır. Aylık varlık değişim raporu, lisans uyum raporu ve keşif performans raporu aynı envanterden çıkar; çıktılar PDF veya Excel olarak alınır ve belirlenen günde ilgili kişilere kendiliğinden gönderilir. Denetim zamanı aceleyle liste toplanmaz."
-            ],
-            "highlights": [
-              "Ağ geneli varlık aktarımı",
-              "Donanım ve yazılım envanteri",
-              "Lisans uyum raporu",
-              "Aksesuar ilişkilendirme",
-              "Hizmet haritası bağımlılıkları",
-              "Zamanlanmış raporlama"
-            ]
-          },
-          {
-            "name": "Shift Management Add-on",
-            "desc": "ServiceCore Shift Management Add-on, teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır.",
-            "link": "/vardiya-yonetimi",
-            "paragraphs": [
-              "Shift Management Add-on, ana lisansla yürüyen olay ve talep süreçlerinin arkasındaki insan planını üstlenir. Çok ekipli ve kesintisiz çalışan destek operasyonlarında vardiya çizelgesi, nöbet rotasyonu, yetkinlik bazlı atama ve vardiya devri tek panelde toplanır. Kimin ne zaman görevde olduğu tablo dosyalarında değil, kayıtlarla aynı platformda durur.",
-              "Haftalık plan sürükle bırak ile kurulur, ancak boş bir takvim üzerinde değil. Sistem yetkinlik, sertifika ve dil kombinasyonuna göre atama önerisi çıkarır; uygun olmayan bir kişi vardiyaya taşınmak istendiğinde engelleyici uyarı devreye girer. 3+1, 2+2 ve 4+2 gibi yinelenen vardiya desenleri şablon kütüphanesinden tek hamlede uygulanır, çakışma ve izin kontrolleri arka planda yeniden koşar.",
-              "Nöbet rotasyonu haftalık, iki haftalık veya kuruma özgü desenlerle döner. Her vardiya için birincil ve ikincil nöbetçi ayrı atanır; izin ya da hastalık durumunda yedek otomatik devreye girer ve ekip bilgilendirilir. Rotasyon adaleti panelde açıkça görünür: kimin kaç kez birincil olduğu ve hafta sonu yükünün nasıl dağıldığı atama anında karşılaştırılır.",
-              "Eskalasyon zinciri vardiyaya bağlandığı için yanıtsız kalan çağrı önce ikinci nöbetçiye, ardından operasyon liderine tırmanır. Devir saati geldiğinde biten ekibin açık olayları, planlı değişiklikleri ve kritik müşteri notları yapılandırılmış bir devir kartında toplanır. Devri alan ekip maddeleri okuduğunu işaretler; notlar kayıtlarla bağlı durduğu için bir konunun hangi vardiyada nasıl yönetildiği geriye dönük denetlenir.",
-              "Plan onaylanmadan önce riskler görünür hale gelir. Yetkinlik, dil veya ekip eksiğinin oluştuğu saat dilimleri kapsam boşluğu olarak işaretlenir, fazla mesai eşiğine yaklaşan kişiler vurgulanır ve yasal mesai sınırı engelleyici çalışır. Onaylı izinler ile resmi tatiller çizelgeye kendiliğinden düşer, ekip içi takas talepleri ise yetkinlik kontrolünden geçtikten sonra lider onayına gelir."
-            ],
-            "highlights": [
-              "Yetkinlik bazlı atama",
-              "Nöbet rotasyon adaleti",
-              "Vardiya devir kartı",
-              "Kapsam boşluğu uyarısı",
-              "Fazla mesai eşiği",
-              "Vardiya takas onayı"
-            ]
-          },
-          {
-            "name": "Federation Service Add-on",
-            "desc": "Birden fazla bağımsız ServiceCore kurulumunu tek orkestratör altında birleştirerek kayıtların, politikaların ve raporların tenant sınırları korunarak paylaşılmasını sağlayan eklenti.",
-            "link": "/federasyon-motoru",
-            "paragraphs": [
-              "Federation Service Add-on, tek kurulum üzerinde çalışan ana lisansa çok organizasyonlu bir katman ekler. Holding ve iştirakler, hizmet sağlayıcı ile müşteri tenant'ları ya da bölge ve departman federasyonu gibi senaryolarda bağımsız ServiceCore kurulumları tek bir orkestratör hub altında toplanır; her tenant kendi veri sınırını, ekibini ve hizmet seviyesi kurallarını koruyarak çalışmaya devam eder.",
-              "Bir tenant'ta açılan kayıt, federasyon yönlendirme kurallarına göre başka bir tenant'a devredilir; beceri, lokasyon, müşteri ve kategori ölçütleri hedefi otomatik belirlediğinden elle atama gerekmez. Devir denetim izi bırakır, kayıt tek bir takip numarasıyla uçtan uca izlenir ve hangi tenant'ta ne kadar beklediği hizmet seviyesi raporlarına yansır.",
-              "Öncelik matrisleri, onay zincirleri, gizlilik kuralları ve hizmet seviyesi şablonları merkezde sürüm kontrolü altında yazılıp federe tenant'lara yayılır; yayın anlık yapılabildiği gibi zamanlanabilir. Yerel ekipler kendi katalog uzantılarını korur. Belirli bir tenant için verilen politika muafiyeti gerekçesi ve süresiyle kayda alınır, otomatik hatırlatmayla yenilenir.",
-              "Kimlik tarafında SAML, OIDC ve SCIM ile merkezi kimlik sağlayıcı bütün tenant'lara yansır; kullanıcı tek oturumla yetkili olduğu kurulumlara erişir, rol değişiklikleri merkezden uygulanır. Paylaşılan kayıtta sözleşme, fiyat ve iç not gibi alanların hangi tarafça görüleceği alan düzeyinde denetlenir; her tenant'ın verisinin hangi bölgede tutulduğu etiketlenir ve tenant sınırını geçen akışlarda bölge sınırı denetlenir.",
-              "Merkez panoda tüm tenant'ların açık kayıt sayısı, hizmet seviyesi performansı, ortalama çözüm süresi ve müşteri memnuniyeti toplanır; tenant kıyaslaması ile trend analizi tek bakışta alınır. Politika yayınından kayıt aktarımına kadar her federasyon işlemi değişmez bir denetim defterinde tutulur ve dış denetim süreçleri için kanıt zinciri dışa aktarılır."
-            ],
-            "highlights": [
-              "Hub ve spoke tenant orkestrasyonu",
-              "Tenant sınırını geçen kayıt devri",
-              "Merkezi politika yayını",
-              "SAML, OIDC ve SCIM kimlik federasyonu",
-              "Konsolide hizmet seviyesi roll-up",
-              "Veri ikametgâhı etiketleme"
             ]
           }
         ]
