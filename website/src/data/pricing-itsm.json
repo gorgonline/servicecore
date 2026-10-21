@@ -270,11 +270,6 @@
             "link": "/servis-iliskileri-yonetimi"
           },
           {
-            "name": "Shift Management Add-on",
-            "desc": "ServiceCore Shift Management Add-on, teknisyen vardiyalarını planlamanıza, nöbet çizelgelerini yönetmenize ve iş yükünü vardiyalar arasında dengelemenize olanak tanır.",
-            "link": "/vardiya-yonetimi"
-          },
-          {
             "name": "Federation Service Add-on",
             "desc": "ServiceCore Federation Service Add-on, birden fazla ServiceCore örneğini veya dış servis sağlayıcılarını birbirine bağlayarak kayıtların ve süreçlerin organizasyonlar arası federasyon yapısında paylaşılmasını sağlar.",
             "link": "/federasyon-motoru"
@@ -284,11 +279,6 @@
       {
         "title": "Eklentiler (Add-ons)",
         "items": [
-          {
-            "name": "Asset Discovery Add-on",
-            "desc": "Ağ üzerindeki tüm BT varlıklarını otomatik keşfeder; envanteri ve CMDB'yi sürekli güncel tutar. Detaylı bilgi için Discovery modülü sayfasını inceleyin.",
-            "link": "/discovery"
-          },
           {
             "name": "Failover / Cluster Sistem Add-on",
             "desc": "ServiceCore Failover / Cluster Sistem Add-on, yüksek erişilebilirlik ve kesintisiz hizmet sağlamak amacıyla, ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır. Bu özellik, kritik iş süreçlerinin ve hizmetlerin herhangi bir kesinti durumunda devamlılık göstermesini sağlar. Failover ve Cluster sistemleri, platformun daha dayanıklı, güvenilir ve kesintisiz çalışmasını garanti eder.",
