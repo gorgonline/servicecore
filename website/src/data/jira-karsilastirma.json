@@ -281,6 +281,148 @@
       "note": "ServiceCore, karşılaştırılan 16 yetenekte de native ve tek lisansa dahil çözüm sunar."
     }
   },
+  "marketplace": {
+    "id": "jira-eklentileri",
+    "badge": "Jira eklentileri",
+    "title": "Jira'da eklentiyle gelen yetenekler",
+    "titleHighlight": "ServiceCore'da lisansa dahil",
+    "subtitle": "Jira Data Center'da Excel raporu, portföy ve Gantt planı, durum süresi ve SLA takibi gibi yetenekler için Atlassian Marketplace'ten ayrı uygulama satın alınır. Her uygulamanın kendi lisansı, yenilemesi ve sürüm uyumluluğu vardır. ServiceCore'da bu yeteneklerin karşılığı ürünün içinde gelir.",
+    "jiraLabel": "Jira'da eklenti",
+    "oursLabel": "ServiceCore'da",
+    "includedLabel": "Lisansa dahil",
+    "capabilityLabel": "Yetenek",
+    "othersTitle": "Jira'da eklentiyle gelen diğer yetenekler",
+    "featured": [
+      {
+        "id": "excel",
+        "icon": "FileSpreadsheet",
+        "accent": "emerald",
+        "category": "Excel'e aktarma",
+        "apps": [{ "name": "Better Excel Exporter for Jira", "vendor": "Midori" }],
+        "jiraText": "Jira'daki işleri formül, pivot tablo ve grafik kullanılabilen gerçek XLSX dosyasına aktarır.",
+        "oursTitle": "Excel İçe ve Dışa Aktarma",
+        "oursText": "Görevler Excel'e aktarılır; tarih hücresi tarih, sayı hücresi sayı olarak gelir. Dosya düzenlenip geri yüklenir, içe aktarma her satırı doğrular ve hatalı satırları raporlar. Döküm Raporu bütün modüllerdeki kayıtları satır satır dışa aktarır.",
+        "screens": ["Excel İçe ve Dışa Aktarma", "Döküm Raporu"]
+      },
+      {
+        "id": "portfoy",
+        "icon": "ChartGantt",
+        "accent": "blue",
+        "category": "Portföy, program ve Gantt",
+        "apps": [
+          { "name": "BigPicture", "vendor": "Appfire" },
+          { "name": "WBS Gantt-Chart for Jira", "vendor": "Ricksoft" }
+        ],
+        "jiraText": "Jira'ya portföy yapısı, Gantt zaman çizelgesi, program artımı (PI) planlaması, kaynak ve risk yönetimi ekler.",
+        "oursTitle": "Portföy ve Program, Yol Haritası",
+        "oursText": "Portföy, program ve girişim katmanları projelerin üstünde kurulur; Program Increment planlaması ve WSJF önceliklendirmesi yerleşiktir. Yol Haritası'nda Gantt çubukları sürüklenir, Kritik Yolu Göster bitiş tarihini belirleyen görevleri vurgular, Referans Çizgisi plandaki kaymayı gösterir. Bağımlılıklar sayfası programlar arasındaki bağları ve kritik yolu tek matriste toplar.",
+        "screens": ["Portföyler", "Programlar", "Girişimler", "Yol Haritası", "Kritik Yolu Göster", "Referans Çizgisi", "Bağımlılıklar"]
+      },
+      {
+        "id": "durum-suresi",
+        "icon": "Hourglass",
+        "accent": "purple",
+        "category": "Durum süresi",
+        "apps": [
+          { "name": "Timepiece - Time in Status for Jira", "vendor": "OBSS" },
+          { "name": "Time in Status", "vendor": "SaaSJet" }
+        ],
+        "jiraText": "İşin her durumda ve her kişide geçirdiği süreyi, döngü ve teslim süresini raporlar; işin nerede beklediğini gösterir.",
+        "oursTitle": "Darboğaz ve Akış",
+        "oursText": "Kaynaklar sekmesindeki Darboğaz görünümü işlerin hangi durumda takılıp biriktiğini ve yükün kimde toplandığını gösterir. Kanban projelerinde kümülatif Akış diyagramı durumlardaki birikmeyi gün gün izler; Scrum projelerinde Tükenme Grafiği ve Hız sprintin seyrini verir.",
+        "screens": ["Darboğaz", "Akış", "Tükenme Grafiği", "Hız"]
+      },
+      {
+        "id": "sla",
+        "icon": "AlarmClock",
+        "accent": "cyan",
+        "category": "SLA takibi",
+        "apps": [{ "name": "Time to SLA", "vendor": "Appfire" }],
+        "jiraText": "Jira işlerine durum ve tarih alanlarına bağlı SLA sayacı, çalışma takvimi, ihlal bildirimi ve SLA raporları ekler.",
+        "oursTitle": "SLA Politikaları",
+        "oursText": "SLA Politikaları önceliğe göre müdahale ve çözüm süresini ve eskalasyonları belirler. Hedef çözüm tarihi, konuma göre tanımlanan iş saatleri ve ülkeye özel tatiller hesaba katılarak kendiliğinden yazılır. SLA Cevap ve Çözüm Performansı Raporu sonucu öncelik bazında gösterir.",
+        "screens": ["SLA Politikaları", "İş Saatleri", "SLA Cevap ve Çözüm Performansı Raporu"]
+      }
+    ],
+    "others": [
+      {
+        "id": "zaman-cizelgesi",
+        "icon": "CalendarRange",
+        "category": "Zaman çizelgesi",
+        "apps": [{ "name": "Timesheets by Tempo", "vendor": "Tempo" }],
+        "jiraText": "Jira'ya kişi ve gün bazında zaman çizelgesi ve süre raporları ekler.",
+        "oursTitle": "İş Günlükleri",
+        "oursText": "Görevlere harcanan süre aylık zaman çizelgesinde tutulur: satırlar görevler, sütunlar günlerdir. Süre hücreye tıklanarak girilir, kişi kırılımı ve günlük toplamlar aynı ekranda görünür."
+      },
+      {
+        "id": "kapasite",
+        "icon": "Gauge",
+        "category": "Kapasite planı",
+        "apps": [{ "name": "Capacity Planner", "vendor": "Tempo" }],
+        "jiraText": "Ekiplerin ve kişilerin kapasitesini, iş yükünü ve kaynak dağılımını planlar.",
+        "oursTitle": "Kapasite",
+        "oursText": "Üye başına haftalık çalışma saati tanımlanır. Kapasite sayfası takımların arzını planlanan işin talebiyle karşılaştırıp doluluğu gösterir; Isı Haritası ve İş Yükü yığılmanın kimde olduğunu gösterir."
+      },
+      {
+        "id": "onay",
+        "icon": "ClipboardCheck",
+        "category": "Onay akışları",
+        "apps": [{ "name": "Herzum Approval", "vendor": "STAGIL" }],
+        "jiraText": "Jira iş akışına onay adımı ve onay yönetimi ekler.",
+        "oursTitle": "Onay Akışları",
+        "oursText": "Bir durum geçişine onay bağlanır, görev onay sonuçlanana kadar bekleme durumunda kalır. Birden çok onay kapısı art arda kurulur; onaycı bekleyen istekleri Onaylarım sekmesinde görür ya da e-postadaki bağlantıdan onay verir."
+      },
+      {
+        "id": "sablon",
+        "icon": "CopyPlus",
+        "category": "Görev şablonları",
+        "apps": [{ "name": "Issue Templates for Jira", "vendor": "Deviniti" }],
+        "jiraText": "Karmaşık görev yapılarını şablondan oluşturur.",
+        "oursTitle": "Görev, İş Günlüğü ve Doküman Şablonları",
+        "oursText": "Sık tekrarlanan görev, iş günlüğü ve doküman yapıları şablon olarak tanımlanır; yeni kayıt şablondan açılır."
+      },
+      {
+        "id": "risk",
+        "icon": "ShieldAlert",
+        "category": "Risk kaydı",
+        "apps": [{ "name": "Risk Register", "vendor": "ProjectBalm" }],
+        "jiraText": "Jira'ya risk kaydı ve risk yönetimi ekler.",
+        "oursTitle": "Riskler",
+        "oursText": "Her risk olasılık ve etkiyle puanlanır, bir sahibe ve gözden geçirme tarihine bağlanır. Açık riskler 5×5 ısı haritasında görünür."
+      },
+      {
+        "id": "okr",
+        "icon": "Target",
+        "category": "Hedefler ve OKR",
+        "apps": [{ "name": "OKR in Jira", "vendor": "Oboard" }],
+        "jiraText": "Jira'ya hedef ve anahtar sonuç (OKR) yönetimi ekler.",
+        "oursTitle": "Hedefler (OKR)",
+        "oursText": "Hedefler ölçülebilir anahtar sonuçlara bağlanır ve portföy, program ya da proje seviyesinde tutulur. Hedefin ilerlemesi anahtar sonuçlardan hesaplanır."
+      },
+      {
+        "id": "rapor",
+        "icon": "ChartColumn",
+        "category": "Rapor ve pano",
+        "apps": [{ "name": "eazyBI for Jira", "vendor": "eazyBI" }],
+        "jiraText": "Jira verisinden özel raporlar, grafikler ve kurum çapında gösterge panoları kurar.",
+        "oursTitle": "Özel Raporlar ve Panolar",
+        "oursText": "Analitik sayfası projeler arası grafik ve tablo raporlarını, panoları ve zamanlanmış gönderimleri bir arada tutar. Raporlar Excel'e indirilir, veri Power BI'a aktarılır."
+      },
+      {
+        "id": "bildirim",
+        "icon": "MailCheck",
+        "category": "E-posta ve bildirim",
+        "apps": [
+          { "name": "Email This Issue", "vendor": "META-INF" },
+          { "name": "Notification Assistant for Jira", "vendor": "Modus Create" }
+        ],
+        "jiraText": "İşlerden e-posta ve bildirim gönderir, gelen e-postaları işlere bağlar.",
+        "oursTitle": "Bildirim Şablonları",
+        "oursText": "Bildirim metinleri arayüzden düzenlenir, gövdeye @ ile kayıt alanları eklenir; bildirim e-posta, SMS ve tarayıcı üzerinden gider. Tanımlı e-posta adreslerine gelen iletiler kendiliğinden kayda dönüşür."
+      }
+    ],
+    "footnote": "Uygulama ve üretici adları sahiplerinin ticari markalarıdır. Uygulama bilgileri, Atlassian Marketplace'te Data Center için yayımlanan sürümlerin sayfalarından alınmıştır (Kasım 2026)."
+  },
   "modules": {
     "badge": "NATIVE MODÜLLER",
     "title": "Jira'da olmayan, ServiceCore'da native gelen yetenekler",

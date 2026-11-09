@@ -331,7 +331,7 @@ export default function Navbar() {
           : "py-6 bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
+      <div className="container mx-auto px-6 xl:px-12 flex items-center justify-between">
         
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group cursor-pointer">
@@ -348,7 +348,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-2.5 xl:gap-8">
 
           {/* Mega Menu Trigger */}
           <div
@@ -777,6 +777,9 @@ export default function Navbar() {
               )}
             </AnimatePresence>
           </div>
+          <Link href="/jira-alternatifi" className="text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors cursor-pointer whitespace-nowrap">
+            <span lang="en">Jira</span> Alternatifi
+          </Link>
           <Link href="/iletisim" className="text-sm font-medium text-(--color-text-overline) hover:text-white transition-colors cursor-pointer">
             İletişim
           </Link>
@@ -788,7 +791,7 @@ export default function Navbar() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="h-10 px-6 rounded-full bg-(--color-brand-primary) text-sm font-medium text-white flex items-center gap-2 shadow-(--shadow-glow-primary-subtle) cursor-pointer"
+              className="h-10 px-6 rounded-full bg-(--color-brand-primary) text-sm font-medium text-white flex items-center gap-2 shadow-(--shadow-glow-primary-subtle) cursor-pointer whitespace-nowrap"
             >
               Demo İste
             </motion.button>
@@ -1113,6 +1116,10 @@ export default function Navbar() {
                     )}
                   </AnimatePresence>
                 </div>
+
+                <Link href="/jira-alternatifi" className="text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                  <span lang="en">Jira</span> Alternatifi
+                </Link>
 
                 <Link href="/iletisim" className="text-lg font-medium text-white hover:text-(--color-brand-primary) transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                   İletişim

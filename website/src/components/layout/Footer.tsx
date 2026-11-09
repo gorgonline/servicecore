@@ -130,6 +130,7 @@ const footerData = {
         { text: "ITSM — IT Service Management", href: "/cozumler/itsm" },
         { text: "ESM — Enterprise Service Management", href: "/cozumler/esm" },
         { text: "AgilePM — Agile Project Management", href: "/cozumler/apm" },
+        { text: "Jira Alternatifi", href: "/jira-alternatifi" },
         { text: "CSM — Customer Service Management", href: "/cozumler/css" },
         { text: "Multi-CSM — Federated Customer Service Management", href: "/multi-csm" },
         { text: "FSM — Field Service Management", href: "/cozumler/fsm" },

@@ -157,7 +157,7 @@ export function JiraComparisonTable() {
                 </h3>
               </div>
               <div className="p-5 lg:p-6 flex flex-col items-center justify-end text-center border-r border-white/5 relative">
-                <span className="text-[10px] font-bold tracking-widest uppercase text-(--color-text-muted) mb-2">
+                <span lang="en" className="text-[10px] font-bold tracking-widest uppercase text-(--color-text-muted) mb-2">
                   Atlassian
                 </span>
                 <h3 className="text-lg lg:text-xl font-bold text-(--color-text-overline)">
@@ -274,7 +274,7 @@ export function JiraComparisonTable() {
           </div>
           <div className="rounded-2xl border border-white/8 bg-white/3 p-5 flex flex-col gap-1">
             <span className="text-[10px] font-bold tracking-widest uppercase text-(--color-text-muted)">
-              <En>Jira</En> · Native
+              <En>Jira · Native</En>
             </span>
             <span className="text-3xl font-bold text-white tabular-nums tracking-tight">
               {summary.jiraNativeCount}

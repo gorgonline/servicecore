@@ -27,6 +27,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import { JiraComparisonTable } from "@/components/ui/jira-comparison-table";
+import { JiraMarketplaceSection } from "@/components/ui/jira-marketplace-section";
 import data from "@/data/jira-karsilastirma.json";
 import { EnTerms } from "@/components/ui/En";
 import PrivacyContact from "@/components/ui/privacy-contact";
@@ -369,6 +370,9 @@ export default function JiraAlternatifiPage() {
 
       {/* 3. COMPARISON */}
       <JiraComparisonTable />
+
+      {/* 3b. JIRA EKLENTILERI — Jira'da Marketplace eklentisi, ServiceCore'da lisansa dahil */}
+      <JiraMarketplaceSection />
 
       {/* 4. MODULES — Zig-zag */}
       <section className="py-24 lg:py-32 relative z-20">
