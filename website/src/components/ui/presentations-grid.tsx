@@ -22,7 +22,8 @@ import sunumlarData from "@/data/sunumlar.json";
 interface Presentation {
   id: string;
   title: string;
-  url: string;
+  /** Sunumun çevrim içi adresi; yoksa kartta yalnız PDF bağlantısı durur. */
+  url?: string;
   pdf?: string;
   icon: string;
 }
@@ -121,22 +122,24 @@ export function PresentationsGrid() {
                 {/* Action Links */}
                 <div className="mt-10 pt-6 border-t border-white/5 flex items-center justify-between gap-4">
                   {/* Sunumu Görüntüle (sol) */}
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/view inline-flex items-center gap-2 text-sm font-medium text-(--color-text-muted) hover:text-(--color-accent-blue-light) transition-colors duration-300 cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-                  >
-                    <span>Sunumu Görüntüle</span>
-                    <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/view:translate-x-0.5 group-hover/view:-translate-y-0.5" />
-                  </a>
+                  {item.url && (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/view inline-flex items-center gap-2 text-sm font-medium text-(--color-text-muted) hover:text-(--color-accent-blue-light) transition-colors duration-300 cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                    >
+                      <span>Sunumu Görüntüle</span>
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover/view:translate-x-0.5 group-hover/view:-translate-y-0.5" />
+                    </a>
+                  )}
 
-                  {/* PDF'i İndir (sağ) */}
+                  {/* PDF'i İndir (sağ; çevrim içi adres yokken de sağda kalır) */}
                   {item.pdf && (
                     <a
                       href={item.pdf}
                       download
-                      className="group/dl inline-flex items-center gap-2 text-sm font-medium text-(--color-text-muted) hover:text-white transition-colors duration-300 cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                      className="group/dl ml-auto inline-flex items-center gap-2 text-sm font-medium text-(--color-text-muted) hover:text-white transition-colors duration-300 cursor-pointer rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                     >
                       <Download className="w-4 h-4 transition-transform duration-300 group-hover/dl:translate-y-0.5" />
                       <span>PDF&apos;i İndir</span>
