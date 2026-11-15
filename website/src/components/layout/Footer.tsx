@@ -143,7 +143,6 @@ const footerData = {
       links: [
         { text: "Hakkımızda", href: "/hakkimizda" },
         { text: "Rehberler", href: "/dokumanlar" },
-        { text: "Referanslar", href: "/referanslar" },
         { text: "Datasheet", href: "/datasheet" },
         { text: "Specsheet", href: "/specsheet" },
         { text: "Demo", href: "/demo" },

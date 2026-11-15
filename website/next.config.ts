@@ -57,6 +57,21 @@ const nextConfig: NextConfig = {
         },
       ],
     },
+    // Musteri logolari sitede gosterilmiyor; dosyalar yalniz teklif sablonlari ve
+    // gonderilmis e-postalar icin yerinde duruyor. Arama motorlari listelemesin.
+    {
+      source: "/logos/:path*",
+      headers: [{ key: "X-Robots-Tag", value: "noindex" }],
+    },
+    // Teklif sayfalari musteri adayina ozel; referans bolumu de icinde. Arama motorlari listelemesin.
+    {
+      source: "/teklif/:path*",
+      headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+    },
+    {
+      source: "/teklif-intertech/:path*",
+      headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+    },
   ],
 
   poweredByHeader: false,

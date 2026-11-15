@@ -17,7 +17,6 @@ const icons: Record<string, LucideIcon> = {
   tecrube: Clock,
   temeller: Building2,
   yenilik: Lightbulb,
-  basari: Rocket,
 };
 
 export default function AboutExperience({ sections }: AboutExperienceProps) {

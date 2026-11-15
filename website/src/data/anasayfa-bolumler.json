@@ -59,20 +59,5 @@
       "label": "44 Farkın Tamamını Gör",
       "href": "/farkvar"
     }
-  },
-  "basariOykuleri": {
-    "eyebrow": "BAŞARI ÖYKÜLERİ",
-    "title": "Kurumlar ServiceCore ile neyi çözdü?",
-    "description": "Savunma sanayinden perakendeye, yazılım üreticisinden servis entegratörüne kadar farklı ölçeklerde yürüyen kurulumlardan birkaç örnek.",
-    "secilenler": [
-      "roketsan",
-      "sabanci",
-      "logo-yazilim",
-      "boyner"
-    ],
-    "cta": {
-      "label": "Tüm Referanslar",
-      "href": "/referanslar"
-    }
   }
 }
