@@ -10,6 +10,21 @@ A4-yazdırılabilir HTML teklif dosyası. Tek kaynak `brand/`'den beslenir.
   metin olarak çizilir (service koyu + core mavi), görsel değil. Tarayıcı önizlemesi için.
 - *(onay sonrası)* `servicecore-teklif.html` — tam 14 sayfalık şablon.
 
+## Yenileme teklifi (15 Kasım 2026)
+Mevcut müşterinin yıllık lisans aboneliği ve destek paketi yenilemesi için ayrı şablon. Erman istedi.
+
+- `servicecore-yenileme-teklif.html` — Zoho'ya yapıştırılacak tek dosya, 17 sayfa. İskelet, stil ve birleştirme
+  alanları Erman'ın Zoho'dan aldığı şablonla aynı; yeni stil kuralları `.yn-` ile başlar.
+- `servicecore-yenileme-teklif-onizleme.pdf` — şablonun resimli önizlemesi (Chrome, A4, kenar boşluğu 0).
+- `website/public/teklif/yenileme/` — şablondaki 21 ekran resmi; tek kopya burada durur. Şablon bunları
+  `https://www.servicecore.com.tr/teklif/yenileme/<ad>.jpg` adresinden çeker. Resim değişince site yayınlanır.
+- Sayfa sırası: kapak, yönetici özeti, yenilemenin kapsamı, dokuz yeni ürün, AICore (4), ProjectCore (2),
+  Jira'dan geçiş, yeni arayüz (2), öbür yeni ürünler (2), teklif özeti, teklif koşulları.
+- Ölçü: 794 px ende her sayfa en çok 1040 px (A4 1123 px). Chrome ve Flying Saucer 9.1.22 ikisi de 17 sayfa
+  bastı. Metin eklenince sayfanın boyu yeniden ölçülür; resimlerin ölçüsü px ile yazılıdır (640, 304, 180 px).
+- Koşullar sayfası Erman'ın 16 maddesidir. 4. maddede "İlk alım indirimi" yerine "Teklifteki indirimler"
+  yazar; 17. madde yenidir (yenilikler bölümü bilgi amaçlıdır).
+
 ## Hızlı önizleme
 `teklif/servicecore-teklif-ornek.html` dosyasını çift tıkla → tarayıcıda aç. İki sayfa
 (Kapak + Modül Vitrini) alt alta görünür. `${...}` alanları Zoho'da gerçek veriyle dolar;

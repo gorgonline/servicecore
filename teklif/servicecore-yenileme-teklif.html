@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<!--
+  ServiceCore yenileme teklifi: Zoho CRM teklif (Quotes) şablonu. Mevcut müşterinin yıllık lisans aboneliği ve
+  destek paketi yenilemesi içindir. Görünüş ve iskelet servicecore-teklif.html ile aynıdır: tablo yerleşimi,
+  düz renk, kare köşe, Arial. Resimler mutlak adresle gelir: https://www.servicecore.com.tr/teklif/yenileme/
+-->
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>ServiceCore Yenileme Teklifi</title>
+<style type="text/css">body { margin: 0; padding: 0; background: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif; color: rgb(10, 25, 48) }table { border-collapse: collapse }img { border: 0; display: block }.sheet { max-width: 820px; margin: 0 auto; background: rgb(255, 255, 255); padding: 40px 52px 38px 52px }.pb { page-break-before: always }.avoid { page-break-inside: avoid }.run { width: 100%; max-width: 820px; margin: 0 auto }.run td { font-size: 10px; color: rgb(100, 116, 139); letter-spacing: 0.05em }.run-logo { height: 20px }.hexglyph { height: 14px }.run-label { font-weight: 700; color: rgb(10, 25, 48); letter-spacing: 0.2em }.overline { font-size: 11px; font-weight: 700; color: rgb(0, 112, 243); letter-spacing: 0.26em; text-transform: uppercase; margin: 0 }.cover-title { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 32px; font-weight: 700; color: rgb(10, 25, 48); letter-spacing: -0.015em; line-height: 1.1; word-wrap: break-word; margin: 16px 0 8px 0 }.cover-sub { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 22px; font-weight: 400; font-style: italic; color: rgb(0, 112, 243); margin: 0 }.h2 { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 29px; font-weight: 700; color: rgb(10, 25, 48); letter-spacing: -0.015em; line-height: 1.15; margin: 8px 0 0 0 }.lead { font-size: 13px; font-weight: 400; color: rgb(71, 85, 105); line-height: 1.62; margin: 12px 0 0 0 }.accent { color: rgb(0, 112, 243) }.wm { font-size: 17px; font-weight: 400; letter-spacing: -0.02em; color: rgb(10, 25, 48) }.wm .c { color: rgb(0, 112, 243); font-weight: 700 }.wm-lg { font-size: 26px; font-weight: 400; letter-spacing: -0.03em; color: rgb(10, 25, 48) }.wm-lg .c { color: rgb(0, 112, 243); font-weight: 700 }.ruleC { width: 56px; height: 3px; background: rgb(0, 112, 243); margin: 18px auto 0 auto; font-size: 0; line-height: 0 }.ruleL { width: 56px; height: 3px; background: rgb(0, 112, 243); margin: 18px 0 0 0; font-size: 0; line-height: 0 }.hairline { height: 1px; background: rgb(227, 232, 240); font-size: 0; line-height: 0 }.pill { display: inline-block; padding: 5px 12px; background: rgb(234, 241, 251); border: 1px solid rgb(204, 226, 255); color: rgb(0, 112, 243); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase }.tsub { font-size: 9px; color: rgb(148, 163, 184) }.meta { width: 100%; border: 1px solid rgb(227, 232, 240); margin: 0 }.meta td { padding: 13px 18px; border-bottom: 1px solid rgb(236, 240, 245); vertical-align: top }.meta .lbl { font-size: 9px; font-weight: 700; color: rgb(148, 163, 184); letter-spacing: 0.14em; text-transform: uppercase }.meta .val { font-size: 15px; font-weight: 700; color: rgb(10, 25, 48); padding-top: 4px }.callout-band { background: rgb(244, 247, 251); border-left: 3px solid rgb(0, 112, 243); padding: 16px 18px }.callout-band p { font-size: 13px; font-weight: 700; color: rgb(10, 25, 48); line-height: 1.5; margin: 0 }.anchor-row { width: 100%; border-top: 1px solid rgb(227, 232, 240); border-bottom: 1px solid rgb(227, 232, 240) }.anchor-row td { padding: 13px 8px; text-align: center; vertical-align: middle }.anchor-txt { font-size: 11px; font-weight: 700; color: rgb(71, 85, 105); letter-spacing: 0.02em }.anchor-sep { width: 1px; background: rgb(227, 232, 240); font-size: 0; line-height: 0; padding: 13px 0 }.conf-h { font-size: 11px; font-weight: 700; color: rgb(10, 25, 48); letter-spacing: 0.04em; margin: 0 0 6px 0 }.conf-p { font-size: 10px; font-style: italic; color: rgb(148, 163, 184); line-height: 1.6; margin: 0 }.tier { width: 100%; border-spacing: 10px; border-collapse: separate }.tier > tbody > tr > td { width: 33.33%; vertical-align: top }.tcard { border: 1px solid rgb(227, 232, 240); background: rgb(255, 255, 255) }.tcard-mid { border: 2px solid rgb(0, 112, 243); background: rgb(255, 255, 255) }.tcap { background: rgb(244, 247, 251); border-bottom: 1px solid rgb(227, 232, 240); padding: 9px 14px }.tcap-mid { background: rgb(0, 112, 243); border-bottom: 1px solid rgb(0, 112, 243); padding: 9px 14px }.tflag { font-size: 8px; font-weight: 700; color: rgb(255, 255, 255); letter-spacing: 0.16em; text-transform: uppercase; margin: 0 }.tname { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 17px; font-weight: 700; color: rgb(10, 25, 48); margin: 0 }.tname-mid { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 17px; font-weight: 700; color: rgb(255, 255, 255); margin: 0 }.tbody { padding: 12px 14px 14px 14px }.tdesc { font-size: 10px; color: rgb(71, 85, 105); line-height: 1.5; margin: 0 0 9px 0 }.tli { font-size: 10px; color: rgb(51, 65, 85); line-height: 1.7 }.tdot { display: inline-block; width: 4px; height: 4px; background: rgb(0, 112, 243); margin: 0 7px 2px 0; vertical-align: middle }.ptbl { width: 100%; border: 1px solid rgb(227, 232, 240) }.ptbl th { background: rgb(10, 25, 48); color: rgb(255, 255, 255); font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-align: left; padding: 11px 12px }.ptbl th.num { text-align: right }.ptbl td { font-size: 11px; color: rgb(10, 25, 48); padding: 11px 12px; border-bottom: 1px solid rgb(236, 240, 245); vertical-align: top }.ptbl td.num { text-align: right; font-weight: 700 }.pt-name { font-size: 11px; font-weight: 700; color: rgb(10, 25, 48) }.pt-desc { font-size: 9px; color: rgb(100, 116, 139); line-height: 1.45; padding-top: 3px }.pt-sum td { font-size: 11px; padding: 9px 12px; border-bottom: 1px solid rgb(236, 240, 245) }.pt-sum td.lbl { text-align: right; color: rgb(71, 85, 105); font-weight: 700 }.pt-sum td.val { text-align: right; color: rgb(10, 25, 48); font-weight: 700; width: 150px }.pt-grand td { padding: 13px 12px; background: rgb(244, 247, 251); border-top: 2px solid rgb(10, 25, 48) }.pt-grand td.lbl { text-align: right; font-size: 11px; font-weight: 700; color: rgb(10, 25, 48); white-space: nowrap }.pt-grand td.val { text-align: right; font-size: 11px; font-weight: 700; color: rgb(0, 112, 243); width: 150px }.pt-note { font-size: 9px; color: rgb(100, 116, 139); line-height: 1.6; margin: 10px 0 0 0 }.dif { width: 100%; border-spacing: 12px; border-collapse: separate }.dif > tbody > tr > td { width: 50%; vertical-align: top; border: 1px solid rgb(227, 232, 240); background: rgb(255, 255, 255); padding: 0; page-break-inside: avoid }.dif-top { font-size: 0; line-height: 0; height: 3px; background: rgb(0, 112, 243) }.dif-pad { padding: 14px 15px 16px 15px }.dif-eyebrow { font-size: 8px; font-weight: 700; color: rgb(148, 163, 184); letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 9px 0 }.dif-title { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 15px; font-weight: 700; color: rgb(10, 25, 48); line-height: 1.2; margin: 11px 0 6px 0 }.dif-desc { font-size: 11px; color: rgb(71, 85, 105); line-height: 1.55; margin: 0 }.te { width: 100% }.te td { padding: 5px 0; vertical-align: middle }.te-lbl { font-size: 9px; font-weight: 700; color: rgb(10, 25, 48) }.te-bar { width: 100%; background: rgb(236, 240, 245); height: 9px; font-size: 0; line-height: 0 }.te-fill { background: rgb(0, 112, 243); height: 9px; font-size: 0; line-height: 0 }.te-val { font-size: 9px; font-weight: 700; color: rgb(0, 112, 243); font-family: "Helvetica Neue", Arial, sans-serif }.te-auto { display: inline-block; font-size: 7px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(5, 150, 105); background: rgb(228, 242, 240); border: 1px solid rgb(191, 224, 219); padding: 1px 6px }.esm { width: 100%; border-spacing: 6px; border-collapse: separate }.esm td { width: 33.33%; text-align: center; border: 1px solid rgb(227, 232, 240); background: rgb(251, 252, 254); padding: 9px 4px; vertical-align: middle }.esm-co { font-size: 9px; font-weight: 700; color: rgb(10, 25, 48) }.esm-sub { font-size: 7px; color: rgb(148, 163, 184); letter-spacing: 0.06em; text-transform: uppercase; padding-top: 2px }.esm-core { background: rgb(10, 25, 48) }.esm-core .esm-co { color: rgb(255, 255, 255) }.esm-core .esm-sub { color: rgb(148, 163, 184) }.lyr { width: 100% }.lyr td { padding: 3px 0; vertical-align: middle }.lyr-band { height: 11px; font-size: 0; line-height: 0 }.lyr-lbl { font-size: 8px; font-weight: 700; color: rgb(71, 85, 105); letter-spacing: 0.04em; padding-left: 8px }.wf { width: 100% }.wf td { vertical-align: middle }.wf-node { border: 1px solid rgb(204, 226, 255); background: rgb(234, 241, 251); padding: 7px 6px; text-align: center }.wf-node-em { border: 1px solid rgb(191, 224, 219); background: rgb(228, 242, 240); padding: 7px 6px; text-align: center }.wf-t { font-size: 8px; font-weight: 700; color: rgb(0, 112, 243); letter-spacing: 0.04em }.wf-t-em { font-size: 8px; font-weight: 700; color: rgb(5, 150, 105); letter-spacing: 0.04em }.wf-arr { width: 16px; text-align: center; font-size: 11px; font-weight: 700; color: rgb(148, 163, 184) }.hyb { width: 100%; border: 1px solid rgb(227, 232, 240) }.hyb td { padding: 8px 10px; vertical-align: middle; border-bottom: 1px solid rgb(236, 240, 245) }.hyb-grp { font-size: 9px; font-weight: 700; color: rgb(10, 25, 48) }.hyb-bar { width: 100%; background: rgb(236, 240, 245); height: 8px; font-size: 0; line-height: 0 }.hyb-pro { background: rgb(0, 112, 243); height: 8px; font-size: 0; line-height: 0 }.hyb-std { background: rgb(148, 163, 184); height: 8px; font-size: 0; line-height: 0 }.hyb-tag { font-size: 8px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase }.hyb-key { width: 100% }.hyb-key td { border-bottom: 0; padding: 6px 0 0 0 }.hyb-sw { display: inline-block; width: 9px; height: 9px; margin: 0 5px 1px 0; vertical-align: middle }.onp { width: 100%; border: 1px solid rgb(227, 232, 240); background: rgb(251, 252, 254) }.onp td { padding: 11px 12px; vertical-align: middle }.onp-server { width: 46px; height: 46px; background: rgb(10, 25, 48); vertical-align: middle; text-align: center }.onp-srvtxt { font-size: 7px; font-weight: 700; color: rgb(255, 255, 255); letter-spacing: 0.08em; text-transform: uppercase }.onp-h { font-size: 10px; font-weight: 700; color: rgb(10, 25, 48); margin: 0 0 3px 0 }.onp-p { font-size: 9px; color: rgb(100, 116, 139); line-height: 1.45; margin: 0 }.onp-lock { display: inline-block; font-size: 7px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(0, 112, 243); background: rgb(234, 241, 251); border: 1px solid rgb(204, 226, 255); padding: 2px 7px }.fk-h { display: inline-block; padding: 5px 12px; background: rgb(10, 25, 48); color: rgb(255, 255, 255); font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase }.fk { width: 100%; border-spacing: 10px; border-collapse: separate }.fk > tbody > tr > td { width: 50%; vertical-align: top; border: 1px solid rgb(227, 232, 240); background: rgb(251, 252, 254); padding: 0; page-break-inside: avoid }.fk-cell { padding: 12px 14px 13px 14px; page-break-inside: avoid }.fk-row { page-break-inside: avoid }.fk-row td { padding: 4px 0; vertical-align: top }.fk-no { width: 24px; vertical-align: top }.fk-num { display: inline-block; width: 22px; height: 22px; background: rgb(234, 241, 251); border: 1px solid rgb(204, 226, 255); color: rgb(0, 112, 243); font-size: 9px; font-weight: 700; text-align: center; line-height: 22px }.fk-title { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 12px; font-weight: 700; color: rgb(10, 25, 48); line-height: 1.25; margin: 0 0 4px 0 }.fk-desc { font-size: 10px; color: rgb(71, 85, 105); line-height: 1.5; margin: 0 }.ko { width: 100% }.ko-item { width: 100%; border: 1px solid rgb(227, 232, 240); background: rgb(251, 252, 254); margin: 0 0 3px 0; page-break-inside: avoid }.ko-item td { padding: 6px 14px; vertical-align: top }.ko-no { width: 34px; vertical-align: top }.ko-num { display: inline-block; width: 20px; height: 20px; background: rgb(10, 25, 48); color: rgb(255, 255, 255); font-family: "Helvetica Neue", Arial, sans-serif; font-size: 11px; font-weight: 700; text-align: center; line-height: 20px }.ko-txt { font-size: 11px; color: rgb(51, 65, 85); line-height: 1.45; margin: 0 }.ko-txt strong { color: rgb(10, 25, 48); font-weight: 700 }.ko-link { color: rgb(0, 112, 243); font-weight: 700; text-decoration: none }.ko-foot { font-size: 10px; font-style: italic; color: rgb(148, 163, 184); line-height: 1.6; margin: 14px 0 0 0 }.ko-vat { width: 100%; border: 1px solid rgb(204, 226, 255); background: rgb(234, 241, 251); border-left: 3px solid rgb(0, 112, 243) }.ko-vat td { padding: 13px 16px; vertical-align: top }.ko-vat p { font-size: 11px; color: rgb(10, 25, 48); line-height: 1.55; margin: 0 }.ko-vat .vat-cap { font-size: 9px; font-weight: 700; color: rgb(0, 112, 243); letter-spacing: 0.12em; text-transform: uppercase; margin: 0 0 5px 0 }.rf-subhead { font-size: 11px; font-weight: 700; color: rgb(10, 25, 48); letter-spacing: 0.04em; margin: 0 0 4px 0 }.rf-subline { width: 28px; height: 2px; background: rgb(0, 112, 243); font-size: 0; line-height: 0; margin: 0 0 11px 0 }.rf-grid { width: 100%; border-spacing: 7px; border-collapse: separate }.rf-grid td { width: 20%; height: 48px; border: 1px solid rgb(227, 232, 240); background: rgb(255, 255, 255); text-align: center; vertical-align: middle; padding: 7px 8px }.rf-logo { max-height: 26px; max-width: 100%; margin: 0 auto }.rf-case-wrap { width: 100%; border-spacing: 9px; border-collapse: separate }.rf-case-wrap > tbody > tr > td { width: 50%; vertical-align: top; border: 1px solid rgb(227, 232, 240); background: rgb(251, 252, 254); padding: 0; page-break-inside: avoid }.rf-case-top { font-size: 0; line-height: 0; height: 3px; background: rgb(0, 112, 243) }.rf-case-pad { padding: 13px 15px 14px 15px }.rf-case-name { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 14px; font-weight: 700; color: rgb(10, 25, 48); margin: 0 0 6px 0 }.rf-case-desc { font-size: 10px; color: rgb(71, 85, 105); line-height: 1.55; margin: 0 }.nose { width: 100%; border-spacing: 11px; border-collapse: separate }.nose > tbody > tr > td { width: 25%; vertical-align: top; border: 1px solid rgb(227, 232, 240); background: rgb(251, 252, 254); padding: 0; page-break-inside: avoid }.nose-top { font-size: 0; line-height: 0; height: 3px; background: rgb(0, 112, 243) }.nose-pad { padding: 13px 13px 15px 13px }.nose-step { font-size: 8px; font-weight: 700; color: rgb(148, 163, 184); letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 7px 0 }.nose-h { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 13px; font-weight: 700; color: rgb(10, 25, 48); line-height: 1.2; margin: 0 0 6px 0 }.nose-p { font-size: 10px; color: rgb(71, 85, 105); line-height: 1.55; margin: 0 }.es-flow td { vertical-align: top }.es-num { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 22px; font-weight: 700; color: rgb(0, 112, 243); line-height: 1 }.es-body { padding: 14px 0 0 0 }.es-h { font-size: 12px; font-weight: 700; color: rgb(10, 25, 48); margin: 0 0 4px 0; letter-spacing: 0.01em }.es-p { font-size: 12px; color: rgb(71, 85, 105); line-height: 1.6; margin: 0 }.es-rule { width: 18px; height: 2px; background: rgb(227, 232, 240); font-size: 0; line-height: 0 }.coi-lead { font-size: 13px; font-weight: 400; color: rgb(71, 85, 105); line-height: 1.62; margin: 12px 0 0 0 }.stat-hero { width: 100%; border: 1px solid rgb(227, 232, 240); background: rgb(251, 247, 241); border-left: 3px solid rgb(217, 119, 6) }.stat-hero td { padding: 18px 22px; vertical-align: middle }.sh-cap { font-size: 9px; font-weight: 700; color: rgb(217, 119, 6); letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 6px 0 }.sh-num { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 42px; font-weight: 700; color: rgb(10, 25, 48); line-height: 1; letter-spacing: -0.02em }.sh-unit { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: 400; color: rgb(217, 119, 6) }.sh-sub { font-size: 10px; color: rgb(100, 116, 139); line-height: 1.5; margin: 7px 0 0 0 }.sh-tag { display: inline-block; font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgb(217, 119, 6); background: rgb(246, 233, 216); border: 1px solid rgb(230, 203, 163); padding: 2px 8px }.coi { width: 100%; border: 1px solid rgb(227, 232, 240) }.coi th { background: rgb(10, 25, 48); color: rgb(255, 255, 255); font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-align: left; padding: 10px 12px }.coi th.num { text-align: right }.coi td { padding: 11px 12px; border-bottom: 1px solid rgb(236, 240, 245); vertical-align: middle }.coi-item { font-size: 11px; font-weight: 700; color: rgb(10, 25, 48) }.coi-base { font-size: 9px; color: rgb(100, 116, 139); line-height: 1.4; padding-top: 2px }.coi-val { font-size: 12px; font-weight: 700; color: rgb(10, 25, 48); font-family: "Helvetica Neue", Arial, sans-serif; text-align: right }.coi-bar { width: 100%; background: rgb(236, 240, 245); height: 9px; font-size: 0; line-height: 0 }.coi-fill { background: rgb(217, 119, 6); height: 9px; font-size: 0; line-height: 0 }.coi-sum td { padding: 12px 12px; background: rgb(251, 247, 241); border-top: 2px solid rgb(217, 119, 6); border-bottom: 0 }.coi-sum .lbl { font-size: 11px; font-weight: 700; color: rgb(10, 25, 48); letter-spacing: 0.03em }.coi-sum .val { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 18px; font-weight: 700; color: rgb(217, 119, 6); text-align: right }.proj { width: 100%; border-spacing: 10px; border-collapse: separate }.proj > tbody > tr > td { width: 33.33%; vertical-align: top; border: 1px solid rgb(227, 232, 240); background: rgb(251, 252, 254); padding: 15px 14px; text-align: center; page-break-inside: avoid }.proj-mid { border: 1px solid rgb(230, 203, 163); background: rgb(251, 247, 241) }.proj-lbl { font-size: 9px; font-weight: 700; color: rgb(148, 163, 184); letter-spacing: 0.1em; text-transform: uppercase; margin: 0 }.proj-num { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 26px; font-weight: 700; color: rgb(10, 25, 48); line-height: 1; margin: 8px 0 4px 0 }.proj-num-em { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 26px; font-weight: 700; color: rgb(217, 119, 6); line-height: 1; margin: 8px 0 4px 0 }.proj-sub { font-size: 9px; color: rgb(100, 116, 139); margin: 0 }.callout-amber { background: rgb(251, 247, 241); border-left: 3px solid rgb(217, 119, 6); padding: 16px 18px }.callout-amber p { font-size: 13px; font-weight: 700; color: rgb(10, 25, 48); line-height: 1.5; margin: 0 }.recap { width: 100%; border: 1px solid rgb(227, 232, 240); border-left: 3px solid rgb(0, 112, 243); background: rgb(244, 247, 251) }.recap td { padding: 13px 18px; vertical-align: middle }.recap p { font-size: 11px; font-weight: 700; color: rgb(10, 25, 48); line-height: 1.5; margin: 0 }.spacer-l { height: 40px; font-size: 0; line-height: 0 }.spacer-m { height: 26px; font-size: 0; line-height: 0 }.spacer-s { height: 16px; font-size: 0; line-height: 0 }.yn-hero { border: 1px solid rgb(227, 232, 240); background: rgb(244, 247, 251); padding: 12px 0 12px 0; text-align: center }.yn-img { margin: 0 auto }.yn-duo { width: 100% }.yn-fr { border: 1px solid rgb(227, 232, 240); background: rgb(244, 247, 251); padding: 10px 0 10px 0; vertical-align: top; text-align: center }.yn-gap { width: 14px; font-size: 0; line-height: 0 }.yn-cap { font-size: 10px; color: rgb(71, 85, 105); line-height: 1.5; margin: 7px 0 0 0 }.yn-cap strong { color: rgb(10, 25, 48); font-weight: 700 }.yn-capc { padding: 7px 0 0 0; vertical-align: top; font-size: 10px; color: rgb(71, 85, 105); line-height: 1.5 }.yn-capc strong { color: rgb(10, 25, 48); font-weight: 700 }.yn-g3 { width: 100%; border-spacing: 10px; border-collapse: separate }.yn-g3 > tbody > tr > td { width: 33.33%; vertical-align: top; border: 1px solid rgb(227, 232, 240); background: rgb(251, 252, 254); padding: 0; page-break-inside: avoid }.yn-ul { width: 100% }.yn-ul td { padding: 2px 0; vertical-align: top; font-size: 10px; color: rgb(51, 65, 85); line-height: 1.5 }.yn-ul td.yn-b { width: 11px }.yn-prod { width: 100%; border: 1px solid rgb(227, 232, 240); background: rgb(251, 252, 254); margin: 0 0 10px 0; page-break-inside: avoid }.yn-prod td { vertical-align: top }.yn-thumb { width: 194px; padding: 13px 0 13px 13px }.yn-timg { border: 1px solid rgb(227, 232, 240) }.yn-ptxt { padding: 12px 16px 11px 16px }.yn-psub { font-size: 8px; font-weight: 700; color: rgb(0, 112, 243); letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 4px 0 }.yn-pname { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 16px; font-weight: 700; color: rgb(10, 25, 48); line-height: 1.2; margin: 0 0 5px 0 }.yn-pdesc { font-size: 10px; color: rgb(71, 85, 105); line-height: 1.55; margin: 0 0 5px 0 }.yn-sup td { padding: 6px 12px }.yn-sup th.c { text-align: center }.yn-sup td.c { text-align: center }.yn-var { font-size: 10px; font-weight: 700; color: rgb(0, 112, 243) }.yn-yok { font-size: 10px; color: rgb(148, 163, 184) }.yn-kv { width: 100%; border-top: 1px solid rgb(227, 232, 240) }.yn-kv td { width: 50%; padding: 6px 14px 6px 0; border-bottom: 1px solid rgb(236, 240, 245); vertical-align: top; font-size: 10px; color: rgb(71, 85, 105); line-height: 1.5 }.yn-kv strong { color: rgb(10, 25, 48); font-weight: 700 }.yn-tl { width: 100%; border: 1px solid rgb(227, 232, 240) }.yn-tl td { padding: 10px 11px 11px 11px; border-right: 1px solid rgb(236, 240, 245); vertical-align: top; background: rgb(251, 252, 254) }.yn-tl-d { font-family: "Helvetica Neue", Arial, sans-serif; font-size: 12px; font-weight: 700; color: rgb(10, 25, 48); margin: 0 0 4px 0 }.yn-tl-p { font-size: 9px; color: rgb(71, 85, 105); line-height: 1.5; margin: 0 }</style>
+</head>
+<body>
+
+<section id="header-container">
+<div id="pdfgen-header" style="padding-bottom: 10px">
+
+</div>
+</section>
+
+<section id="page-container">
+<div id="pdfgen-content">
+
+  <div class="sheet">
+
+    <table width="100%" class="avoid">
+      <tbody><tr>
+        <td align="left" valign="middle">&#160;</td>
+        <td align="right" valign="middle"><span class="pill">KURUMA ÖZEL · CONFIDENTIAL</span></td>
+      </tr>
+    </tbody></table>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+
+    <table width="100%" class="avoid">
+      <tbody><tr>
+        <td align="left" valign="middle">
+          <table><tbody><tr>
+            <td valign="middle"><img src="https://www.servicecore.com.tr/teklif/sc-logo.png" alt="ServiceCore" style="height: 42px" /></td>
+          </tr></tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+
+    <p class="overline">LİSANS ABONELİĞİ VE DESTEK YENİLEME TEKLİFİ</p>
+    <h1 class="cover-title">${Quotes.Account Name}</h1>
+    <p class="cover-sub">${Quotes.Subject}</p>
+    <div class="ruleL"></div>
+
+    <div class="spacer-s"></div>
+    <p class="lead" style="max-width: 560px">ServiceCore yıllık lisans aboneliğinizin ve destek paketinizin yeni dönemi için hazırlanmış yenileme teklifidir. Teklifle birlikte, platforma eklenen yeni ürünleri ve yeni sürümle gelen yenilikleri de bilginize sunuyoruz.</p>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+
+    <table class="meta avoid">
+      <tbody><tr>
+        <td width="50%" style="border-right: 1px solid rgb(236, 240, 245)">
+          <div class="lbl">TEKLİF NO</div><div class="val">${Quotes.Quote Number}</div>
+        </td>
+        <td width="50%">
+          <div class="lbl">TEKLİF TARİHİ</div><div class="val">${Quotes.Created Time}</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" style="border-right: 1px solid rgb(236, 240, 245); border-bottom: 0">
+          <div class="lbl">SON GEÇERLİLİK</div><div class="val">${Quotes.Valid Until}</div>
+        </td>
+        <td width="50%" style="border-bottom: 0">
+          <div class="lbl">YETKİLİ</div><div class="val">${Quotes.Contact Name}</div>
+        </td>
+      </tr>
+    </tbody></table>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-m"></div>
+
+    <table class="anchor-row avoid">
+      <tbody><tr>
+        <td width="30%"><span class="anchor-txt">9 Yeni Ürün</span></td>
+        <td class="anchor-sep">&#160;</td>
+        <td width="32%"><span class="anchor-txt">30+ Yapay Zekâ Aracı</span></td>
+        <td class="anchor-sep">&#160;</td>
+        <td width="36%"><span class="anchor-txt">Yeni Sürümle Yenilenen Arayüz</span></td>
+      </tr>
+    </tbody></table>
+
+    <div class="spacer-l"></div>
+    <div class="spacer-l"></div>
+    <div class="hairline"></div>
+    <div class="spacer-s"></div>
+    <p class="conf-h">Sınıflandırma: Kuruma Özel — Confidential</p>
+    <p class="conf-p">${Quotes.Created Time} tarihinde düzenlenmiştir. ${Quotes.Quote Number} numaralı, ${Quotes.Account Name} kurumuna özel ve ${Quotes.Subject} konulu teklifidir. ${Quotes.Contact Name} şahsına özel paylaşılmıştır; gizli bilgi olarak sınıflandırılmıştır ve yetkisiz üçüncü kişilerle paylaşılmaması gerekmektedir.</p>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">YÖNETİCİ ÖZETİ</p>
+    <h2 class="h2">Aboneliğinizin yeni dönemi ve platformdaki yenilikler.</h2>
+    <p class="lead">Bu teklif, ${Quotes.Account Name} için ServiceCore lisans aboneliğinin ve destek paketinin yenilenmesini kapsar. Son dönemde platforma dokuz yeni ürün eklendi, yapay zekâ ailesi 30’dan fazla araca ulaştı ve arayüz baştan tasarlandı. İlerleyen sayfalarda önce yenilenen kapsamı, ardından bu yenilikleri özetliyoruz.</p>
+
+    <div class="spacer-m"></div>
+
+    <table width="100%" class="es-flow avoid">
+      <tbody><tr>
+        <td width="40" valign="top"><span class="es-num">01</span></td>
+        <td valign="top" style="padding-left: 14px">
+          <div class="es-body" style="padding-top: 0">
+            <p class="es-h">Yenilenen kapsam</p>
+            <p class="es-p">Lisans aboneliğiniz ve destek paketiniz yeni dönem için yenilenir. Yenilenen kalemler, adetleri ve tutarları Teklif Özeti sayfasındadır.</p>
+          </div>
+        </td>
+      </tr>
+      <tr><td>&#160;</td><td style="padding-left: 14px; padding-top: 12px; padding-bottom: 12px"><div class="es-rule"></div></td></tr>
+      <tr>
+        <td width="40" valign="top"><span class="es-num">02</span></td>
+        <td valign="top" style="padding-left: 14px">
+          <div class="es-body" style="padding-top: 0">
+            <p class="es-h">Dönem boyunca süren haklar</p>
+            <p class="es-p">Abonelik süresince bakım, üretici yol haritasındaki yeni sürümler ve bu sürümlerin ortamınıza yüklenmesi abonelik bedeline dahildir. Destek, paketinizin kapsamıyla doğrudan üreticiden verilir.</p>
+          </div>
+        </td>
+      </tr>
+      <tr><td>&#160;</td><td style="padding-left: 14px; padding-top: 12px; padding-bottom: 12px"><div class="es-rule"></div></td></tr>
+      <tr>
+        <td width="40" valign="top"><span class="es-num">03</span></td>
+        <td valign="top" style="padding-left: 14px">
+          <div class="es-body" style="padding-top: 0">
+            <p class="es-h">Platformdaki yenilikler</p>
+            <p class="es-p">AICore, ProjectCore, KnowledgeCore, AssetCore, FlowCore, AppliCore, Discore, RelCore ve GraphCore ürün ailesine katıldı. Yeni sürüm, baştan tasarlanan arayüzle geliyor.</p>
+          </div>
+        </td>
+      </tr>
+    </tbody></table>
+
+    <div class="spacer-m"></div>
+
+    <table class="meta avoid">
+      <tbody><tr>
+        <td width="33.33%" style="border-right: 1px solid rgb(236, 240, 245); border-bottom: 0">
+          <div class="lbl">YENİ ÜRÜN</div><div class="val">9 Ürün</div>
+        </td>
+        <td width="33.33%" style="border-right: 1px solid rgb(236, 240, 245); border-bottom: 0">
+          <div class="lbl">YAPAY ZEKÂ</div><div class="val">30+ AICore Aracı</div>
+        </td>
+        <td width="33.34%" style="border-bottom: 0">
+          <div class="lbl">ARAYÜZ</div><div class="val">Yeni Sürümle Yenilendi</div>
+        </td>
+      </tr>
+    </tbody></table>
+
+    <div class="spacer-m"></div>
+
+    <div class="callout-band avoid">
+      <p>Özet: Aboneliğinizi yenilediğinizde bakım, yeni sürümler ve üretici desteği yeni dönemde de sürer; <span class="accent">platformunuz yeni ürünlerle ve yeni arayüzle büyümeye devam eder</span>.</p>
+    </div>
+
+    <div class="spacer-s"></div>
+
+    <table class="meta avoid">
+      <tbody><tr>
+        <td width="50%" style="border-right: 1px solid rgb(236, 240, 245)">
+          <div class="lbl">LİSANS ABONELİĞİ</div><div class="val">Yıllık Kullanım Hakkı</div>
+        </td>
+        <td width="50%">
+          <div class="lbl">BAKIM + GÜNCELLEME</div><div class="val">Abonelikte Dahil</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" style="border-right: 1px solid rgb(236, 240, 245)">
+          <div class="lbl">DESTEK PAKETİ</div><div class="val">Doğrudan Üretici Desteği</div>
+        </td>
+        <td width="50%">
+          <div class="lbl">YENİ SÜRÜMLER</div><div class="val">Ortamınıza Yüklenir</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" style="border-right: 1px solid rgb(236, 240, 245)">
+          <div class="lbl">LİSANSLAMA</div><div class="val">Yalnız Teknisyen · Sınırsız Son Kullanıcı</div>
+        </td>
+        <td width="50%">
+          <div class="lbl">KURULUM</div><div class="val">On-Premise · Veri Sizde Kalır</div>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%" style="border-right: 1px solid rgb(236, 240, 245); border-bottom: 0">
+          <div class="lbl">YENİ ÜRÜNLER</div><div class="val">AICore, ProjectCore ve Yedi Ürün Daha</div>
+        </td>
+        <td width="50%" style="border-bottom: 0">
+          <div class="lbl">YENİ ARAYÜZ</div><div class="val">Bütün Ürünlerde Aynı Tasarım</div>
+        </td>
+      </tr>
+    </tbody></table>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">YENİLEMENİN KAPSAMI</p>
+    <h2 class="h2">Yenilenen ürünler ve hizmetler.</h2>
+    <p class="lead">Yenileme iki başlıktan oluşur: yazılımın kullanım hakkını ve bakımını kapsayan lisans aboneliği ile üretici desteğini kapsayan destek paketi. Aşağıda her birinin yeni dönemde neleri sağladığı yer alır.</p>
+    <div class="spacer-s"></div>
+    <table class="rf-case-wrap avoid">
+      <tbody><tr>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad">
+            <p class="dif-eyebrow">ÜRÜN · LİSANS ABONELİĞİ</p>
+            <p class="rf-case-name">Lisans aboneliği</p>
+            <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>Lisanslı modüllerinizin kullanım hakkı yeni dönem için sisteme tanımlanır.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Düzeltici bakım: yazılımda görülen sorunlar teşhis edilir ve düzeltilir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>İyileştirici bakım: güvenilirliği, performansı ve işlevi artıran güncellemeler gelir; bunlar yeni özellikler de içerebilir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Üretici yol haritasındaki yeni sürümler ortamınıza yüklenir; bu yükleme abonelik bedeline dahildir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Lisans yalnız teknisyen sayısına bağlıdır; son kullanıcı, varlık ve kayıt adedi sınırsızdır.</td></tr></tbody></table>
+          </div>
+        </td>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad">
+            <p class="dif-eyebrow">HİZMET · DESTEK PAKETİ</p>
+            <p class="rf-case-name">Destek paketi</p>
+            <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>Destek doğrudan üreticiden, Türkiye’deki Türkçe destek ekibinden verilir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Kayıt açma kanalları: support@servicecore.app, destek portalı (support.servicecore.app) ve 444 CORE çağrı merkezi.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Uzak masaüstü desteği, bilgi bankası ve Health-Check hizmeti bütün paketlerde vardır.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Destek saatleri ve yıllık kayıt adedi paketinize göre belirlenir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Proje kapsamı dışındaki geliştirme, uyarlama ve entegrasyon istekleri ek hizmet olarak ayrıca tekliflendirilir.</td></tr></tbody></table>
+          </div>
+        </td>
+      </tr>
+    </tbody></table>
+    <div class="spacer-s"></div>
+    <table class="ptbl yn-sup avoid">
+      <thead>
+        <tr>
+          <th width="40%">DESTEK PAKETİNİN KAPSAMI</th>
+          <th class="c" width="13%">SILVER</th>
+          <th class="c" width="13%">GOLD</th>
+          <th class="c" width="15%">PLATINUM</th>
+          <th class="c" width="19%">MISSION CRITICAL</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="pt-name">Ticket (Yıllık Toplam)</span></td><td class="c">15</td><td class="c">30</td><td class="c">60</td><td class="c">60</td></tr>
+        <tr><td><span class="pt-name">Destek Saatleri</span></td><td class="c">5x8</td><td class="c">5x8</td><td class="c">7x8</td><td class="c">7x24</td></tr>
+        <tr><td><span class="pt-name">Online Anlık Mesaj Desteği</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">E-Posta ile Destek Açma</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Telefon Desteği · 444 CORE</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Service Portal Erişimi</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Uzak Masaüstü Destek</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Knowledge Base Kullanımı</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Ürün Hata Log Takibi</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Continuous Delivery ile Sürekli Update</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Seminer ve Etkinliklere Ücretsiz Katılım</span></td><td class="c">2</td><td class="c">5</td><td class="c">Sınırsız</td><td class="c">Sınırsız</td></tr>
+        <tr><td><span class="pt-name">Health-Check Hizmeti</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Ürün Konfigürasyon Yönetimi</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Yüksek Öncelikli Müdahale</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Dedicated Teknisyen</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+        <tr><td><span class="pt-name">Uygulama Performansı İzleme</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-yok">—</span></td><td class="c"><span class="yn-var">Var</span></td><td class="c"><span class="yn-var">Var</span></td></tr>
+      </tbody>
+    </table>
+    <p class="pt-note">Paketlerin kapsamı servicecore.com.tr/destek sayfasındaki tanımlara göredir. Yenilenen destek paketiniz Teklif Özeti sayfasındaki kalemde yazılıdır.</p>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">PLATFORMDAKİ YENİLİKLER</p>
+    <h2 class="h2">Dokuz yeni ürün ve yeni bir sürüm.</h2>
+    <p class="lead">Platforma yatırım yapmayı sürdürüyoruz. Geçen dönemde dokuz yeni ürün eklendi, yapay zekâ ailesi 33 araca ulaştı ve arayüz baştan tasarlandı. Her ürünün özeti aşağıda, ayrıntısı ilerleyen sayfalardadır.</p>
+    <div class="spacer-m"></div>
+    <table class="yn-g3 avoid">
+      <tbody>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">YAPAY ZEKÂ</p>
+            <p class="nose-h">AICore</p>
+            <p class="nose-p">ServiceCore’un yapay zekâ ajanları. Kaydı sınıflandırır, önceliklendirir, çözüm önerir, yanıt taslağı yazar ve bilgi bankasını besler. Kullandığınız modüllerin içinde çalışır.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">PROJE YÖNETİMİ VE SDLC</p>
+            <p class="nose-h">ProjectCore</p>
+            <p class="nose-p">Proje ve iş yönetimi platformu. Panoları, sprint planlamayı, yol haritasını, kapasiteyi, iş günlüklerini ve raporları aynı yerde sunar; Jira’daki kavramlarla çalışır.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">BİLGİ VE DOKÜMAN YÖNETİMİ</p>
+            <p class="nose-h">KnowledgeCore</p>
+            <p class="nose-p">Ekipler kendi alanlarında sayfa ağacıyla yazar ve birlikte düzenler. Sayfalar olay, talep, problem ve proje kayıtlarına canlı bağlanır.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">VARLIK YÖNETİMİ</p>
+            <p class="nose-h">AssetCore</p>
+            <p class="nose-p">Varlık, hizmet, lisans, aksesuar ve sarf malzemesi aynı liste ve kayıt düzeniyle yönetilir. Zimmet, barkod etiketi, el okuyucuyla sayım ve 16 hazır rapor içerir.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">İŞ VE ONAY AKIŞLARI</p>
+            <p class="nose-h">FlowCore</p>
+            <p class="nose-p">İş ve BT süreçleri sürükle-bırak çizilir. Yönetici zinciri, koşul ve paralel onay kod yazmadan kurulur; kayıtta akışın nerede olduğu görünür.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">FORM VE TABLO TASARIMI</p>
+            <p class="nose-h">AppliCore</p>
+            <p class="nose-p">Uygulamada hazır olmayan süreçlerinizi kendiniz tasarlarsınız: sürükle-bırak formlar, kurumunuza özel tablolar ve ek alanlar.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">AĞ KEŞFİ VE ENVANTER</p>
+            <p class="nose-h">Discore</p>
+            <p class="nose-p">Ağdaki cihazları kendiliğinden bulur, envanterini toplar ve varlık kayıtlarına mükerrer kayıt açmadan yazar. Cihaza bir şey kurulmaz.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">İLİŞKİ HARİTALARI</p>
+            <p class="nose-h">RelCore</p>
+            <p class="nose-p">Varlıkların ve hizmetlerin birbirine nasıl bağlı olduğunu haritada gösterir; ilişkileri yönlü ve adı yazılı oklarla çizer.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">KAYIT BAĞLARI</p>
+            <p class="nose-h">GraphCore</p>
+            <p class="nose-p">Olay, istek, problem, değişiklik, bilgi bankası ve varlık kayıtları arasındaki bağları kaydın çevresinde haritada gösterir.</p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="spacer-m"></div>
+    <table class="proj avoid">
+      <tbody><tr>
+        <td>
+          <p class="proj-lbl">YENİ ÜRÜN</p>
+          <p class="proj-num">9</p>
+          <p class="proj-sub">Yapay zekâdan proje yönetimine, varlık keşfinden akış tasarımına.</p>
+        </td>
+        <td>
+          <p class="proj-lbl">YAPAY ZEKÂ ARACI</p>
+          <p class="proj-num">33</p>
+          <p class="proj-sub">AICore ailesinde; on ajan yönetim panelinden açılır.</p>
+        </td>
+        <td>
+          <p class="proj-lbl">JIRA EKLENTİSİNİN KARŞILIĞI</p>
+          <p class="proj-num">12</p>
+          <p class="proj-sub">Jira’da eklentiyle gelen yetenek ProjectCore’da ürünün içindedir.</p>
+        </td>
+      </tr>
+    </tbody></table>
+    <div class="spacer-m"></div>
+    <div class="callout-band avoid">
+      <p>Bu yeniliklerin birçoğu ürünün parçasıdır ve aboneliğiniz kapsamında yeni sürümle birlikte gelir. Bir bölümü ayrı ürün ya da eklenti olarak lisanslanır. <span class="accent">Hangi yeniliğin kurulumunuzda nasıl yer alacağını birlikte netleştiririz.</span></p>
+    </div>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">AICORE · YAPAY ZEKÂ</p>
+    <h2 class="h2">AICore: 30’dan fazla yapay zekâ aracı.</h2>
+    <p class="lead">AICore, ServiceCore’un yapay zekâ araç ailesidir. Ayrı bir ekranda değil, kullandığınız modüllerin içinde çalışır: kaydı sınıflandırır, önceliklendirir, çözüm önerir, yanıt taslağı yazar ve bilgi bankasını besler. 33 araçlık kapsamıyla servis yönetimi alanındaki en geniş yapay zekâ ailesidir.</p>
+    <div class="spacer-s"></div>
+    <table class="proj avoid">
+      <tbody><tr>
+        <td>
+          <p class="proj-lbl">AICORE AİLESİ</p>
+          <p class="proj-num">33</p>
+          <p class="proj-sub">Yapay zekâ aracı; üretim hattı ve yol haritasıyla birlikte.</p>
+        </td>
+        <td>
+          <p class="proj-lbl">YÖNETİM PANELİNDE</p>
+          <p class="proj-num">10</p>
+          <p class="proj-sub">Ajan aynı yönetim sayfasından açılır ve kuruma göre ayarlanır.</p>
+        </td>
+        <td>
+          <p class="proj-lbl">İŞ ALANI</p>
+          <p class="proj-num">3</p>
+          <p class="proj-sub">Kayıt yönetimi, bilgi yönetimi, self-servis ve raporlama.</p>
+        </td>
+      </tr>
+    </tbody></table>
+    <div class="spacer-s"></div>
+    <div class="yn-hero avoid"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/aicore-ajanlar.jpg" width="640" height="358" alt="AICore ajanlarının yönetim sayfası" style="width: 640px; height: 358px" /></div>
+    <p class="yn-cap"><strong>Yönetim › AI Ayarları.</strong> On ajan ve ortak ayarlar aynı sayfadadır; her ajan buradan açılır ve kuruma göre ayarlanır.</p>
+    <div class="spacer-s"></div>
+    <div class="avoid">
+      <p class="rf-subhead">Kontrol sizde</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="nose avoid">
+      <tbody>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ÖNERİ VE ONAY</p>
+            <p class="nose-h">Son karar teknisyende</p>
+            <p class="nose-p">Ajan önerisini kaydın üstüne yazar; teknisyen onaylar ya da değiştirir. Otomatik uygulama kapalı başlar.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">GÜVEN EŞİĞİ</p>
+            <p class="nose-h">Emin değilse uydurmaz</p>
+            <p class="nose-p">Güven eşiğinin altındaki öneri kayda yazılmaz; ajan kaydı uzmana bırakır.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">YEREL MODEL</p>
+            <p class="nose-h">Kurumun sunucusunda</p>
+            <p class="nose-p">Yerel dil modeliyle kurumun kendi sunucusunda çalışır; veri kurum dışına çıkmaz.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">İZ KAYDI</p>
+            <p class="nose-h">Her işlem kayıtlı</p>
+            <p class="nose-p">Her yazma işlemi iz kaydına düşer. Ayar değişikliği yeniden kurulum gerektirmez.</p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">AICORE · KAYIT YÖNETİMİ</p>
+    <h2 class="h2">Kayıt kuyruğa düştüğü andan çözüme.</h2>
+    <p class="lead">Beş ajan, kaydın sınıflandırılmasından yanıtın yazılmasına kadar teknisyenin yanında çalışır. Öneriler kaydın üstüne yazılır; teknisyen onaylar ya da değiştirir.</p>
+    <div class="spacer-s"></div>
+    <table class="fk">
+      <tbody>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">01</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">ClassifyCore</p>
+                <p class="fk-desc">Kategoriyi ve kayıt tipini önerir. Güveni düşükse kaydı elle sınıflandırmaya bırakır.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">02</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">PriorityCore</p>
+                <p class="fk-desc">Etkiyi ve aciliyeti değerlendirir, önceliği gerekçesiyle önerir.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">03</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">MergeCore</p>
+                <p class="fk-desc">Aynı sorunu anlatan kayıtları bulur ve benzerlik oranıyla gösterir. Kendi başına birleştirmez; onayınızla kayıtlar ana kayda bağlanır.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">04</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">ReplyCore</p>
+                <p class="fk-desc">Otuz mesajı aşan yazışmayı dört beş maddeye indirir, kök nedeni ayrıca işaretler. Yanıt taslağını geçmiş çözümlere dayanarak yazar; taslak teknisyenin onayıyla gider.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="spacer-s"></div>
+    <div class="avoid">
+      <p class="rf-subhead">SolveCore: kanıta dayanan çözüm</p>
+      <div class="rf-subline"></div>
+    </div>
+    <p class="lead" style="font-size: 12px; margin-top: 0">Teknisyen öneri istediğinde SolveCore kaydı okur, benzer kapanmış kayıtlardan ve bilgi bankasından kanıt toplar. Önerinin verilip verilmeyeceğine kanıt kapısı karar verir. Karar yalnız arama skoruna bakar, modelin kendinden emin olmasına değil.</p>
+    <div style="height: 10px; font-size: 0; line-height: 0">&#160;</div>
+    <table class="yn-g3 avoid">
+      <tbody>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">KARAR 1</p>
+            <p class="nose-h">Öner</p>
+            <p class="nose-p">Kanıt güçlüdür. Çözüm, dayandığı kayıtlar ve makaleyle birlikte gelir.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">KARAR 2</p>
+            <p class="nose-h">Eskale</p>
+            <p class="nose-p">Kanıt sınırdadır. Kayıt kıdemli teknisyene devredilir.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">KARAR 3</p>
+            <p class="nose-h">Sus</p>
+            <p class="nose-p">Kanıt yoktur. Ajan uydurmak yerine öneri vermez.</p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="spacer-s"></div>
+    <table class="yn-duo avoid">
+      <tbody><tr>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/aicore-solvecore.jpg" width="304" height="237" alt="SolveCore’un önerdiği çözüm" style="width: 304px; height: 237px" /></td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/aicore-replycore.jpg" width="304" height="237" alt="ReplyCore’un yanıt taslağı" style="width: 304px; height: 237px" /></td>
+      </tr>
+      <tr>
+        <td class="yn-capc"><strong>SolveCore.</strong> Önerilen çözüm, dayandığı kayıtlar ve kanıt kapısının kararı kaydın sayfasındadır.</td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-capc"><strong>ReplyCore.</strong> Yanıt taslağı e-posta penceresine yazılır; üslubu ve dayandığı kaynaklar üstünde görünür.</td>
+      </tr></tbody>
+    </table>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">AICORE · BİLGİ YÖNETİMİ, SELF-SERVİS VE RAPORLAMA</p>
+    <h2 class="h2">Bilgi yönetimi, self-servis ve raporlama ajanları.</h2>
+    <p class="lead">Kapanan kayıtlar, kılavuzlar ve eski makaleler uzman onayına hazır bilgiye dönüşür. Son kullanıcı sorusunun yanıtını portalda bulur; yönetici istediği raporu düz metinle tarif eder.</p>
+    <div class="spacer-s"></div>
+    <div class="avoid">
+      <p class="rf-subhead">Bilgi yönetimi</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="yn-g3 avoid">
+      <tbody>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            
+            <p class="nose-h">KnowCore</p>
+            <p class="nose-p">Kapanan kayıt kümelerinden bilgi kartı üretir. Uzman kartı onaylar, düzeltir ya da reddeder; onaylanan kart bilgi bankasına yazılır.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            
+            <p class="nose-h">DocCore</p>
+            <p class="nose-p">PDF, Word ve Excel belgelerini okur, bilgi kartlarına çevirir. Her kart kaynak belgesini ve sayfasını taşır; uzman onaylamadan bilgi bankasına girmez.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            
+            <p class="nose-h">KBCore</p>
+            <p class="nose-p">Makaleleri kurumsal şablona göre tarar, eksik bölümleri kayıt geçmişinden tamamlar. Öneriler editör onayından sonra yayınlanır.</p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="spacer-s"></div>
+    <div class="avoid">
+      <p class="rf-subhead">Self-servis ve raporlama</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="rf-case-wrap avoid">
+      <tbody><tr>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad">
+            <p class="rf-case-name">ChatCore</p>
+            <p class="rf-case-desc" style="margin: 0 0 5px 0">Son kullanıcı sorununu portalda kendi cümlesiyle yazar; asistan doğru makaleye ve katalog öğesine yönlendirir.</p>
+            <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>Öneriler güven yüzdesiyle gelir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Sorun çözülmezse kayıt konuşmanın dökümüyle açılır; teknisyen baştan sormaz.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Üç sonuçsuz denemeden sonra konuşma teknisyene devredilir.</td></tr></tbody></table>
+          </div>
+        </td>
+        <td>
+          <div class="rf-case-top"></div>
+          <div class="rf-case-pad">
+            <p class="rf-case-name">ReportCore</p>
+            <p class="rf-case-desc" style="margin: 0 0 5px 0">Yönetici istediği raporu düz metinle yazar: “Bu ay açılan olayları önceliğe göre pasta grafikte göster.”</p>
+            <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>Sihirbaz isteği anlar, veri modelini eşleştirir ve uygun görseli önerir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Rapor sohbet ederek değiştirilir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Hazır rapor Gösterge Paneli’ne eklenir ve gerçek veriyle güncellenir.</td></tr></tbody></table>
+          </div>
+        </td>
+      </tr>
+    </tbody></table>
+    <div class="spacer-s"></div>
+    <table class="yn-duo avoid">
+      <tbody><tr>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/aicore-knowcore.jpg" width="304" height="237" alt="KnowCore’un bilgi kartı onay kuyruğu" style="width: 304px; height: 237px" /></td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/aicore-reportcore.jpg" width="304" height="237" alt="ReportCore’un rapor sihirbazı" style="width: 304px; height: 237px" /></td>
+      </tr>
+      <tr>
+        <td class="yn-capc"><strong>KnowCore.</strong> Bilgi kartı, kaynak kayıtları ve güven puanıyla uzmanın onay kuyruğuna gelir.</td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-capc"><strong>ReportCore.</strong> Rapor Sihirbazı’nda tarif solda, raporun ön izlemesi sağdadır.</td>
+      </tr></tbody>
+    </table>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">AICORE · ÜRETİM HATTI VE YOL HARİTASI</p>
+    <h2 class="h2">AICore ailesi büyümeye devam ediyor.</h2>
+    <p class="lead">On ajanın yanında 23 araç üretim hattında ve yol haritasındadır. Bu araçlar hazır oldukça yeni sürümlerle birlikte duyurulur. Aşağıda her birinin ne yapacağı yer alır.</p>
+    <div class="spacer-s"></div>
+    <table class="proj avoid">
+      <tbody><tr>
+        <td>
+          <p class="proj-lbl">YÖNETİM PANELİNDE</p>
+          <p class="proj-num">10</p>
+          <p class="proj-sub">Ajan; önceki sayfalarda anlatıldı.</p>
+        </td>
+        <td>
+          <p class="proj-lbl">ÜRETİM HATTINDA</p>
+          <p class="proj-num">5</p>
+          <p class="proj-sub">Araç; aşağıdaki ilk listede.</p>
+        </td>
+        <td>
+          <p class="proj-lbl">YOL HARİTASINDA</p>
+          <p class="proj-num">18</p>
+          <p class="proj-sub">Araç; beta aşamasında, ikinci listede.</p>
+        </td>
+      </tr>
+    </tbody></table>
+    <div class="spacer-s"></div>
+    <div class="avoid">
+      <p class="rf-subhead">Üretim hattındaki araçlar</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="yn-kv avoid">
+      <tbody>
+        <tr><td><strong>RootCoreAI.</strong> Teknisyenlerin önerilere verdiği geri bildirimi analiz eder; tekrar eden hataları kalıcı iyileştirmeye çevirir.</td><td style="padding: 6px 0 6px 14px"><strong>ImpactCoreAI.</strong> Değişiklik taleplerinin risk seviyesini teknik bağımlılığa, servis kritikliğine ve geçmiş veriye göre puanlar.</td></tr>
+        <tr><td><strong>PredictCoreAI.</strong> Geçmiş veriden hizmet seviyesi ihlallerini önceden tahmin eder.</td><td style="padding: 6px 0 6px 14px"><strong>SentimentCoreAI.</strong> Kullanıcı mesajlarından duygu durumunu tespit eder.</td></tr>
+        <tr><td><strong>ToneCoreAI.</strong> Teknisyen yazışmalarında kurumsal dil standardını sağlar.</td><td style="padding: 6px 0 6px 14px">&#160;</td></tr>
+      </tbody>
+    </table>
+    <div class="spacer-s"></div>
+    <div class="avoid">
+      <p class="rf-subhead">Yol haritasındaki araçlar (beta)</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="yn-kv avoid">
+      <tbody>
+        <tr><td><strong>StormCoreAI.</strong> Yoğun alarm ve olay akınında aynı kök nedene bağlı kayıtları tek başlık altında toplar.</td><td style="padding: 6px 0 6px 14px"><strong>FlowCoreAI.</strong> Metinle tarif edilen iş akışının şemasını oluşturur.</td></tr>
+        <tr><td><strong>DisCoreAI.</strong> Varlıklar arasındaki bağımlılıkları ve servis ilişkilerini çıkarır, CMDB’yi günceller.</td><td style="padding: 6px 0 6px 14px"><strong>TranslateCoreAI.</strong> Kullanıcı ve teknisyen yazışmasını diller arasında anlık çevirir.</td></tr>
+        <tr><td><strong>VoiceCoreAI.</strong> Sesle kayıt açmayı, durum sorgulamayı ve yönlendirmeyi sağlar.</td><td style="padding: 6px 0 6px 14px"><strong>CallCoreAI.</strong> Sesli görüşmeyi yazıya döker; özet, kategori ve aksiyon önerir.</td></tr>
+        <tr><td><strong>VisionCoreAI.</strong> Yüklenen ekran görüntülerindeki hataları tespit eder.</td><td style="padding: 6px 0 6px 14px"><strong>AuditCoreAI.</strong> ITIL ve ISO uyumunu sürekli denetler.</td></tr>
+        <tr><td><strong>AssetCoreAI.</strong> Cihaz performansını analiz ederek yaşam döngüsünü yönetir.</td><td style="padding: 6px 0 6px 14px"><strong>VendorCoreAI.</strong> Tedarikçi performansını puanlar; risk ve sözleşme yenileme önerileri sunar.</td></tr>
+        <tr><td><strong>ContractCoreAI.</strong> Sözleşme metinlerinden hizmet seviyesi maddelerini, ceza kalemlerini ve yenileme tarihlerini çıkarır.</td><td style="padding: 6px 0 6px 14px"><strong>BudgetCoreAI.</strong> Lisans, donanım ve operasyon harcamalarındaki bütçe sapmalarını önceden raporlar.</td></tr>
+        <tr><td><strong>ProjectCoreAI.</strong> Proje ilerlemesini analiz ederek gecikmeleri tahmin eder.</td><td style="padding: 6px 0 6px 14px"><strong>RisiCoreAI.</strong> Varlık, hizmet ve sözleşme verisini birlikte analiz ederek BT risklerini çıkarır.</td></tr>
+        <tr><td><strong>GateCoreAI.</strong> Kurumun kendi yapay zekâ ajanlarını ServiceCore’a bağlayan denetlenebilir kapıdır.</td><td style="padding: 6px 0 6px 14px"><strong>ShiftCoreAI.</strong> İş yükünü analiz ederek vardiya planı hazırlar.</td></tr>
+        <tr><td><strong>CoachCoreAI.</strong> Teknisyen başına gelişim alanlarını çıkarır, kişiye özel eğitim önerir.</td><td style="padding: 6px 0 6px 14px"><strong>TalentCoreAI.</strong> Ekiplerin yetkinlik haritasını çıkarır; tek kişiye bağlı kalan sistemleri gösterir.</td></tr>
+      </tbody>
+    </table>
+    <div class="spacer-s"></div>
+    <div class="callout-band avoid">
+      <p>AICore araçları eklenti olarak, yıllık sabit bedelle lisanslanır; istek ya da kelime başına ücret yoktur. <span class="accent">Hangi araçların kurulumunuzda açılacağını kullandığınız modüllere göre birlikte belirleriz.</span></p>
+    </div>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">PROJECTCORE · PROJE YÖNETİMİ VE SDLC</p>
+    <h2 class="h2">ProjectCore: proje yönetimi ve SDLC.</h2>
+    <p class="lead">ProjectCore, kendi sunucunuza ya da buluta kurulan proje ve iş yönetimi platformudur. ServiceCore, ProjectCore ile proje yönetimi ve yazılım geliştirme yaşam döngüsü (SDLC) alanında da Türkiye’nin lider yerli platformudur.</p>
+    <div class="spacer-s"></div>
+    <div class="yn-hero avoid"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/projectcore-zaman-cizelgesi.jpg" width="640" height="382" alt="ProjectCore’un zaman çizelgesi" style="width: 640px; height: 382px" /></div>
+    <p class="yn-cap"><strong>Zaman çizelgesi.</strong> İşler tarih çubuklarıyla planlanır; çubuk sürüklenerek tarih değişir, bağımlılıklar çizgiyle görünür.</p>
+    <div class="spacer-s"></div>
+    <table class="fk">
+      <tbody>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">01</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">PANOLAR</p>
+                <p class="fk-desc">Ekipler Scrum ya da Kanban yöntemiyle çalışır. Kanban panosunda sütun sınırı aşılınca başlık işaretlenir; pano kişiye, önceliğe, epiğe ya da takıma göre kulvarlara ayrılır.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">02</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">SPRINT PLANLAMA</p>
+                <p class="fk-desc">Bekleyen işler sprintlere sürüklenerek dağıtılır; sprintteki izinli günler aynı ekranda görünür. Her sprintin hedefi ve ilerlemesi ayrı izlenir.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">03</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">YOL HARİTASI VE PLANLAR</p>
+                <p class="fk-desc">Planlar birden çok alanın işini tek zaman çizelgesinde toplar. Plan özeti durum dağılımını ve ilerlemeyi gösterir.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">04</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">KAPASİTE VE İŞ YÜKÜ</p>
+                <p class="fk-desc">Kişi başına haftalık kapasite tanımlanır; izinler ve resmî tatiller hesaba katılır. Isı haritası yükün kimde toplandığını gösterir.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">05</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">İŞ GÜNLÜKLERİ</p>
+                <p class="fk-desc">Çalışılan süre biletin üzerinden girilir. Çizelge bu süreyi görev, kişi ve gün kırılımıyla toplar.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+        <td>
+          <div class="fk-cell avoid">
+            <table class="fk-row"><tbody><tr>
+              <td class="fk-no"><span class="fk-num">06</span></td>
+              <td style="padding-left: 10px">
+                <p class="fk-title">RAPORLAR</p>
+                <p class="fk-desc">Hız, burndown, sprint karşılaştırma, devreden iş, kümülatif akış ve darboğaz raporları ayrıca kurulum gerektirmez.</p>
+              </td>
+            </tr></tbody></table>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">PROJECTCORE · YAZILIM GELİŞTİRME YAŞAM DÖNGÜSÜ</p>
+    <h2 class="h2">Yazılım işi, iş listesinden teslime kadar tek hatta.</h2>
+    <p class="lead">Sprint, pano, ölçüm ve yol haritası aynı veriyi paylaşır. Geliştirme araçlarınız ProjectCore’a bağlanır; kodun durumu biletin üzerinde görünür.</p>
+    <div class="spacer-s"></div>
+    <table class="wf avoid">
+      <tbody><tr>
+        <td width="14%"><div class="wf-node"><span class="wf-t">BEKLEYEN İŞLER</span></div></td>
+        <td class="wf-arr">→</td>
+        <td width="14%"><div class="wf-node-em"><span class="wf-t-em">SPRINT VE PANO</span></div></td>
+        <td class="wf-arr">→</td>
+        <td width="14%"><div class="wf-node"><span class="wf-t">GELİŞTİRME</span></div></td>
+        <td class="wf-arr">→</td>
+        <td width="14%"><div class="wf-node-em"><span class="wf-t-em">ONAYLI GEÇİŞ</span></div></td>
+        <td class="wf-arr">→</td>
+        <td width="14%"><div class="wf-node"><span class="wf-t">SÜRÜM</span></div></td>
+        <td class="wf-arr">→</td>
+        <td width="14%"><div class="wf-node-em"><span class="wf-t-em">ÖLÇÜM</span></div></td>
+      </tr>
+    </tbody></table>
+    <div style="height: 8px; font-size: 0; line-height: 0">&#160;</div>
+    <table class="yn-g3 avoid">
+      <tbody>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 01</p>
+            <p class="nose-h">Bekleyen işler</p>
+            <p class="nose-p">İşler bekleyen işler listesinde toplanır ve sprintlere sürüklenerek dağıtılır.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 02</p>
+            <p class="nose-h">Sprint ve pano</p>
+            <p class="nose-p">Aktif sprintin işleri Scrum panosunda, sürekli akan iş Kanban panosunda izlenir.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 03</p>
+            <p class="nose-h">Geliştirme</p>
+            <p class="nose-p">Araç Zinciri alanı Bitbucket, GitHub ve GitLab’e bağlar. Dallar, commit’ler ve çekme istekleri biletin Geliştirme bölümünde görünür.</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 04</p>
+            <p class="nose-h">Onaylı geçiş</p>
+            <p class="nose-p">Seçilen durum geçişi onaya bağlanır. İş, onaylayan onay verene kadar bekler.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 05</p>
+            <p class="nose-h">Sürüm</p>
+            <p class="nose-p">Sürümler sekmesi sürümlerin durumunu, tarihini ve kapsamını izler.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 06</p>
+            <p class="nose-h">Ölçüm</p>
+            <p class="nose-p">Hız, burndown, kümülatif akış ve darboğaz raporları sprintin ve akışın seyrini verir.</p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="spacer-s"></div>
+    <table class="yn-duo avoid">
+      <tbody><tr>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/projectcore-pano.jpg" width="304" height="237" alt="ProjectCore’un Scrum panosu" style="width: 304px; height: 237px" /></td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/projectcore-gelistirme.jpg" width="304" height="237" alt="ProjectCore’da biletin sayfası" style="width: 304px; height: 237px" /></td>
+      </tr>
+      <tr>
+        <td class="yn-capc"><strong>Scrum panosu.</strong> Aktif sprintin işleri durum sütunlarındadır; kartta bilet türü, epik, bitiş tarihi ve hikâye puanı yazar.</td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-capc"><strong>Biletin sayfası.</strong> Açıklama, bağlı biletler ve KnowledgeCore içeriği solda; ayrıntılar ve Geliştirme bölümü sağdadır.</td>
+      </tr></tbody>
+    </table>
+    <div class="spacer-s"></div>
+    <div class="callout-band avoid">
+      <p>İş akışları, bilet türleri, ekranlar, izin şemaları ve otomasyon kuralları alan bazında yapılandırılır. <span class="accent">Yazılım ekipleri ve iş ekipleri aynı platformda, kendi düzenleriyle çalışır.</span></p>
+    </div>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">JIRA’DAN GEÇİŞ</p>
+    <h2 class="h2">ProjectCore, Jira’nın yerini alır.</h2>
+    <p class="lead">Atlassian, Jira Data Center’ı 28 Mart 2029’da salt okunur hale getiriyor. ProjectCore’da ekibiniz bildiği düzende çalışmaya devam eder; Jira’daki verinizi olduğu gibi taşıyoruz.</p>
+    <div style="height: 10px; font-size: 0; line-height: 0">&#160;</div>
+    <div class="avoid">
+      <p class="rf-subhead">Atlassian’ın açıkladığı takvim</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="yn-tl avoid">
+      <tbody><tr>
+        <td width="20%"><p class="yn-tl-d">15 Şubat 2024</p><p class="yn-tl-p">Jira Server desteği sona erdi.</p></td>
+        <td width="20%"><p class="yn-tl-d">17 Şubat 2026</p><p class="yn-tl-p">Data Center liste fiyatları yüzde 15 arttı.</p></td>
+        <td width="20%"><p class="yn-tl-d">30 Mart 2026</p><p class="yn-tl-p">Yeni müşterilere Data Center satışı sona erdi.</p></td>
+        <td width="20%"><p class="yn-tl-d">30 Mart 2028</p><p class="yn-tl-p">Mevcut müşterilere yeni abonelik, genişletme ve uygulama satışı sona erer.</p></td>
+        <td width="20%" style="border-right: 0"><p class="yn-tl-d">28 Mart 2029</p><p class="yn-tl-p">Abonelikler sona erer, ürünler salt okunur olur; destek ve güvenlik düzeltmeleri biter.</p></td>
+      </tr>
+    </tbody></table>
+    <p class="pt-note" style="margin-top: 6px">Kaynak: Atlassian, Data Center ürünlerinin kullanım ömrünün sonu (atlassian.com/licensing/data-center-end-of-life) ve 2026 mali yılı Data Center fiyat duyurusu.</p>
+    <div style="height: 10px; font-size: 0; line-height: 0">&#160;</div>
+    <div class="avoid">
+      <p class="rf-subhead">Çekirdekte kavramlar, menüler ve işlevler Jira’daki ile aynıdır</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="yn-tl avoid">
+      <tbody><tr>
+        <td width="25%"><p class="yn-tl-d">Temel kavramlar</p><p class="yn-tl-p">Alan · Bilet · Epik · Alt görev · Sprint · Sürümler</p></td>
+        <td width="25%"><p class="yn-tl-d">Alanın sekmeleri</p><p class="yn-tl-p">Özet · Liste · Bekleyen işler · Pano · Takvim · Zaman çizelgesi</p></td>
+        <td width="25%"><p class="yn-tl-d">Arama ve izleme</p><p class="yn-tl-p">Filtreler · JQL · Gösterge Panoları · Planlar · Raporlar · Otomasyon</p></td>
+        <td width="25%" style="border-right: 0"><p class="yn-tl-d">Yönetici ayarları</p><p class="yn-tl-p">Bilet türleri · İş akışları · Ekranlar · Alanlar · İzin şemaları · Bildirim şemaları</p></td>
+      </tr>
+    </tbody></table>
+    <div style="height: 10px; font-size: 0; line-height: 0">&#160;</div>
+    <div class="avoid">
+      <p class="rf-subhead">Jira’da eklentiyle gelen yetenekler ProjectCore’da ürünün içindedir</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="yn-kv avoid">
+      <tbody>
+        <tr><td><strong>Excel’e aktarma.</strong> Görevler gerçek tarih ve sayı hücreleriyle aktarılır; düzenlenen dosya geri yüklenir.</td><td style="padding: 6px 0 6px 14px"><strong>Portföy, program ve Gantt.</strong> Portföy ve program katmanları kurulur; Gantt çubuklarında kritik yol ve referans çizgisi görünür.</td></tr>
+        <tr><td><strong>Durum süresi.</strong> Darboğaz görünümü işlerin hangi durumda biriktiğini gösterir.</td><td style="padding: 6px 0 6px 14px"><strong>SLA takibi.</strong> Önceliğe göre müdahale ve çözüm süresi ile eskalasyonlar tanımlanır.</td></tr>
+        <tr><td><strong>Zaman çizelgesi.</strong> Harcanan süre aylık çizelgede kişi ve gün kırılımıyla tutulur.</td><td style="padding: 6px 0 6px 14px"><strong>Kapasite planı.</strong> Haftalık çalışma saati, izinler ve resmî tatiller kapasite hesabına girer.</td></tr>
+        <tr><td><strong>Onay akışları.</strong> Durum geçişine onay bağlanır; onay kapıları art arda kurulur.</td><td style="padding: 6px 0 6px 14px"><strong>Görev şablonları.</strong> Sık tekrarlanan görev, iş günlüğü ve doküman yapıları şablondan açılır.</td></tr>
+        <tr><td><strong>Risk kaydı.</strong> Riskler olasılık ve etkiyle puanlanır, 5×5 ısı haritasında görünür.</td><td style="padding: 6px 0 6px 14px"><strong>Hedefler ve OKR.</strong> Hedefler ölçülebilir anahtar sonuçlara bağlanır; ilerleme onlardan hesaplanır.</td></tr>
+        <tr><td><strong>Rapor ve pano.</strong> Projeler arası raporlar, panolar ve zamanlanmış gönderimler bir aradadır.</td><td style="padding: 6px 0 6px 14px"><strong>E-posta ve bildirim.</strong> Bildirim metinleri arayüzden düzenlenir; e-posta, SMS ve tarayıcıdan gider.</td></tr>
+      </tbody>
+    </table>
+    <div style="height: 10px; font-size: 0; line-height: 0">&#160;</div>
+    <div class="avoid">
+      <p class="rf-subhead">Üç adımda taşıma</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="yn-g3 avoid">
+      <tbody>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 01</p>
+            <p class="nose-h">Envanter ve haritalama</p>
+            <p class="nose-p">Jira projeleriniz, özel alanlarınız, iş akışlarınız ve ek hacminiz incelenir; ProjectCore’daki karşılıkları belirlenir.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 02</p>
+            <p class="nose-h">Yedekleme ve taşıma</p>
+            <p class="nose-p">Jira veritabanı yedeklenir; veri aşamalı taşınır, aktarım hataları anında izlenir.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 03</p>
+            <p class="nose-h">Doğrulama ve canlıya geçiş</p>
+            <p class="nose-p">Veri doğrulanır, kullanıcılarınızla kabul testleri yapılır; onayınızdan sonra canlıya geçilir.</p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div style="height: 10px; font-size: 0; line-height: 0">&#160;</div>
+    <div class="callout-band avoid">
+      <p>Biletler, yorumlar, ekler, özel alanlar, iş akışları, kullanıcılar, sprint geçmişi ve iş günlükleri taşınır. Geçiş, Jira lisansınız sürerken yapılır; <span class="accent">taşımada sıfır veri kaybını taahhüt ediyoruz</span>.</p>
+    </div>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">YENİ SÜRÜM · YENİ ARAYÜZ</p>
+    <h2 class="h2">Yeni sürüm, baştan tasarlanan arayüzle geliyor.</h2>
+    <p class="lead">ServiceCore’un ekranları yeni tasarım sistemiyle yeniden kuruldu. Üstte arama ve Oluştur düğmesi, solda menü, listede süzgeçler, kaydın sayfasında sekmeler: düzen bütün ekranlarda aynıdır. Aşağıdaki ekranlar yeni sürümden alınmıştır.</p>
+    <div class="spacer-s"></div>
+    <div class="yn-hero avoid"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/arayuz-olaylar.jpg" width="640" height="388" alt="Yeni arayüzde Olaylar listesi" style="width: 640px; height: 388px" /></div>
+    <p class="yn-cap"><strong>Olaylar listesi.</strong> Arama, süzgeçler ve tablo aynı ekrandadır; yapay zekânın önerdiği kategori ve öncelik kendi sütununda işaretli gelir.</p>
+    <div class="spacer-s"></div>
+    <table class="yn-duo avoid">
+      <tbody><tr>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/arayuz-gosterge-paneli.jpg" width="304" height="237" alt="Yeni arayüzde Gösterge Paneli" style="width: 304px; height: 237px" /></td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/arayuz-olay-kaydi.jpg" width="304" height="237" alt="Yeni arayüzde olay kaydı" style="width: 304px; height: 237px" /></td>
+      </tr>
+      <tr>
+        <td class="yn-capc"><strong>Gösterge Paneli.</strong> Açık olaylar, hizmet seviyesi uyumu ve teknisyen grubuna göre dağılım aynı panodadır.</td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-capc"><strong>Olay kaydı.</strong> Durum ve öncelik başlıkta; ayrıntılar, görevler, iş günlükleri, çözümler ve süreçler sekmelerdedir.</td>
+      </tr></tbody>
+    </table>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">YENİ SÜRÜM · YENİ ARAYÜZ</p>
+    <h2 class="h2">Aynı tasarım dili, bütün ürünlerde.</h2>
+    <p class="lead">Varlık yönetiminden bilgi yönetimine, self-servis portaldan akış tasarımına kadar her ekran aynı bileşenlerle kurulur. Bir ekranda öğrenilen düzen öbür ekranlarda da geçerlidir.</p>
+    <div class="spacer-s"></div>
+    <div class="yn-hero avoid"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/arayuz-varliklar.jpg" width="640" height="376" alt="Yeni arayüzde AssetCore Varlıklar listesi" style="width: 640px; height: 376px" /></div>
+    <p class="yn-cap"><strong>AssetCore › Varlıklar.</strong> Hazır ve kişisel görünümler üstte, tür ağacı solda; liste süzülür, sütunları seçilir.</p>
+    <div class="spacer-s"></div>
+    <table class="yn-duo avoid">
+      <tbody><tr>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/arayuz-knowledgecore.jpg" width="304" height="237" alt="Yeni arayüzde KnowledgeCore sayfası" style="width: 304px; height: 237px" /></td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-fr" width="49%"><img class="yn-img" src="https://www.servicecore.com.tr/teklif/yenileme/arayuz-portal.jpg" width="304" height="237" alt="Yeni arayüzde self-servis portal" style="width: 304px; height: 237px" /></td>
+      </tr>
+      <tr>
+        <td class="yn-capc"><strong>KnowledgeCore.</strong> Sayfa ağacı solda, içindekiler ve okuyanlar sağdadır; sayfa ilgili olay kaydına bağlıdır.</td>
+        <td class="yn-gap">&#160;</td>
+        <td class="yn-capc"><strong>Self-servis portal.</strong> Son kullanıcı hizmetleri ve kendi kayıtlarını görür; asistan sorusunu yanıtlar.</td>
+      </tr></tbody>
+    </table>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">YENİ ÜRÜNLER</p>
+    <h2 class="h2">Bilgi yönetimi, ağ keşfi ve ilişki haritaları.</h2>
+    <p class="lead">KnowledgeCore, Discore, RelCore ve GraphCore; bilgiyi, varlıkları ve kayıtlar arasındaki bağları görünür kılar.</p>
+    <div class="spacer-s"></div>
+    <table class="yn-prod avoid">
+      <tbody><tr>
+        <td class="yn-thumb" width="194"><img class="yn-timg" src="https://www.servicecore.com.tr/teklif/yenileme/urun-knowledgecore.jpg" width="180" height="141" alt="KnowledgeCore’da birlikte yazma" style="width: 180px; height: 141px" /></td>
+        <td class="yn-ptxt">
+          <p class="yn-psub">BİLGİ VE DOKÜMAN YÖNETİMİ</p>
+          <p class="yn-pname">KnowledgeCore</p>
+          <p class="yn-pdesc">Her ekip kendi alanında çalışır; sayfalar klasör ve alt sayfa olarak dizilir. Aynı sayfayı birden çok kişi aynı anda düzenler. Makaleye yapıştırılan olay, talep, problem ya da görev bağlantısı canlı karta dönüşür.</p>
+          <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>Alan tipleri: Bilgi Bankası, Dokümantasyon, Proje. On hazır sayfa şablonu vardır.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Satır içi yorum, taslak, onay ve yayın akışı; her güncelleme ayrı sürümdür.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Sağlık raporu süresi dolan, bayatlayan ve sahipsiz içeriği gösterir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Kayıttan makaleye, makaleden kayda çift yönlü bağ kurulur.</td></tr></tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+    <table class="yn-prod avoid">
+      <tbody><tr>
+        <td class="yn-thumb" width="194"><img class="yn-timg" src="https://www.servicecore.com.tr/teklif/yenileme/urun-discore.jpg" width="180" height="141" alt="Discore’un keşif panosu" style="width: 180px; height: 141px" /></td>
+        <td class="yn-ptxt">
+          <p class="yn-psub">AĞ KEŞFİ VE ENVANTER</p>
+          <p class="yn-pname">Discore</p>
+          <p class="yn-pdesc">Tespit katmanı hangi cihazların var olduğunu bulur; envanter katmanı verilen hesapla cihazın içini okur. Bulunan her cihaz mevcut varlık kayıtlarına yazılır.</p>
+          <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>SSH, WinRM/WMI ve SNMP ile işletim sistemi, donanım, yazılım, servis ve port bilgisi toplanır.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Eşleşme sırası seri no, MAC, hostname ve IP’dir; IP değişse de cihaz aynı kayıtta güncellenir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Belirlenen gün boyunca görünmeyen cihaz seçilen duruma alınır; kayıt silinmez.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Parolalar kimlik kasasında şifreli saklanır; işlemler denetim kaydına geçer.</td></tr></tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+    <table class="yn-prod avoid">
+      <tbody><tr>
+        <td class="yn-thumb" width="194"><img class="yn-timg" src="https://www.servicecore.com.tr/teklif/yenileme/urun-relcore.jpg" width="180" height="141" alt="RelCore’un ilişki haritası" style="width: 180px; height: 141px" /></td>
+        <td class="yn-ptxt">
+          <p class="yn-psub">VARLIK VE HİZMET İLİŞKİLERİ</p>
+          <p class="yn-pname">RelCore</p>
+          <p class="yn-pdesc">Seçilen kayıttan başlar; ona bağlı olanları ve onun bağlı olduklarını zincir boyunca toplar, yönlü ve adı yazılı oklarla çizer.</p>
+          <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>Bir hizmetin hangi varlıklara ve hizmetlere dayandığı haritada görünür.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Kurulan ilişki iki kaydın da İlişkiler sekmesinde yer alır.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>İlişki türlerini yönetici tanımlar: ad ve karşıt ad.</td></tr></tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+    <table class="yn-prod avoid">
+      <tbody><tr>
+        <td class="yn-thumb" width="194"><img class="yn-timg" src="https://www.servicecore.com.tr/teklif/yenileme/urun-graphcore.jpg" width="180" height="141" alt="GraphCore’un bağ haritası" style="width: 180px; height: 141px" /></td>
+        <td class="yn-ptxt">
+          <p class="yn-psub">KAYITLAR ARASI BAĞLAR</p>
+          <p class="yn-pname">GraphCore</p>
+          <p class="yn-pdesc">Olayın problem, istek, değişiklik, iyileştirme ve proje bağları bugün Süreçler sekmesinde tablo olarak listelenir. GraphCore aynı bağları makale ve etkilenen varlıkla birlikte haritada gösterir.</p>
+          <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>Düğüme basınca kaydın özeti açılır.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Harita kayıt türüne göre süzülür.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Liste ile harita arasında aynı sekmeden geçilir.</td></tr></tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">YENİ ÜRÜNLER</p>
+    <h2 class="h2">Kendi süreçleriniz, varlıklarınız ve onay akışlarınız.</h2>
+    <p class="lead">AppliCore, AssetCore ve FlowCore; kurumunuza özel süreçleri kod yazmadan kurmanızı ve varlıklarınızı aynı düzende yönetmenizi sağlar.</p>
+    <div class="spacer-s"></div>
+    <table class="yn-prod avoid">
+      <tbody><tr>
+        <td class="yn-thumb" width="194"><img class="yn-timg" src="https://www.servicecore.com.tr/teklif/yenileme/urun-applicore.jpg" width="180" height="141" alt="AppliCore’un form tasarımcısı" style="width: 180px; height: 141px" /></td>
+        <td class="yn-ptxt">
+          <p class="yn-psub">FORM VE TABLO TASARIMI</p>
+          <p class="yn-pname">AppliCore</p>
+          <p class="yn-pdesc">Uygulamada hazır olmayan süreçler için sürükle-bırak formlar, kuruma özel tablolar ve ek alanlar tanımlanır. Özel alanlar otomasyonu, onay akışını ve hizmet seviyesini de yönlendirir.</p>
+          <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>Teknisyen ve son kullanıcı formu ayrı tasarlanır; 40’tan fazla hazır ServiceCore alanı forma eklenir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>16 kayıt türünde 10 alan türüyle özel ek alan tanımlanır.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Koşullu alanlar: bir seçim öbür alanları gösterir, gizler ya da kilitler.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Kuruma özel tablonun kayıtları listelenir, sıralanır ve aranır.</td></tr></tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+    <table class="yn-prod avoid">
+      <tbody><tr>
+        <td class="yn-thumb" width="194"><img class="yn-timg" src="https://www.servicecore.com.tr/teklif/yenileme/urun-assetcore.jpg" width="180" height="141" alt="AssetCore’da varlık kaydı" style="width: 180px; height: 141px" /></td>
+        <td class="yn-ptxt">
+          <p class="yn-psub">VARLIK YÖNETİMİNİN YENİ ARAYÜZÜ</p>
+          <p class="yn-pname">AssetCore</p>
+          <p class="yn-pdesc">Varlık, hizmet, lisans, aksesuar ve sarf malzemesi tek uygulamada, aynı liste ve kayıt düzeniyle yönetilir. Her kaydın kendi adresi vardır; değerler yerinde düzenlenir.</p>
+          <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>Hazır ve kişisel görünümler, tür ağacı, sayaçlı süzgeç ve sütun seçici.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Lisans koltukları kişilere ve varlıklara atanır; aşım hemen görünür.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>El okuyucuyla sayım: okutulan kod barkod, varlık no, etiket ya da seri no ile eşleşir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Zimmet formunun şablonunu kurum düzenler; form PDF olarak açılır. 16 hazır rapor vardır.</td></tr></tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+    <table class="yn-prod avoid">
+      <tbody><tr>
+        <td class="yn-thumb" width="194"><img class="yn-timg" src="https://www.servicecore.com.tr/teklif/yenileme/urun-flowcore.jpg" width="180" height="141" alt="FlowCore’un akış tasarımcısı" style="width: 180px; height: 141px" /></td>
+        <td class="yn-ptxt">
+          <p class="yn-psub">İŞ VE ONAY AKIŞLARI</p>
+          <p class="yn-pname">FlowCore</p>
+          <p class="yn-pdesc">Kurumun iş ve BT süreçleri sürükle-bırak çizilir. Akışlar isimli şablonlardır: bir kez tasarlanır, birden çok yerde kullanılır. Kayıtta akışın nerede olduğu ve kimin karar verdiği görünür.</p>
+          <table class="yn-ul"><tbody><tr><td class="yn-b"><span class="tdot"></span></td><td>12 onaycı kaynağı: yönetici zinciri, departman yöneticisi, onay grubu, seçilen kullanıcılar ve diğerleri.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Koşul düğümünde 16 operatör; kurallar VE ya da VEYA ile birleşir. Paralel onay desteklenir.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>8 aksiyon: durumu, grubu, teknisyeni ya da önceliği değiştirme, kaydı kapatma, e-posta ve HTTP isteği.</td></tr><tr><td class="yn-b"><span class="tdot"></span></td><td>Onay zaman çizelgesi kimin ne zaman karar verdiğini gösterir.</td></tr></tbody></table>
+        </td>
+      </tr>
+    </tbody></table>
+    <div class="spacer-s"></div>
+    <div class="avoid">
+      <p class="rf-subhead">Yenilikleri birlikte ele alalım</p>
+      <div class="rf-subline"></div>
+    </div>
+    <table class="yn-g3 avoid">
+      <tbody>
+      <tr>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 01</p>
+            <p class="nose-h">Tanıtım oturumu</p>
+            <p class="nose-p">Yeni ürünleri ve yeni arayüzü ekibinize çevrimiçi bir oturumda gösteririz.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 02</p>
+            <p class="nose-h">Kapsam</p>
+            <p class="nose-p">Hangi yeniliğin aboneliğinizin kapsamında geldiğini, hangisinin ayrıca lisanslandığını birlikte netleştiririz.</p>
+          </div>
+        </td>
+        <td>
+          <div class="nose-top"></div>
+          <div class="nose-pad">
+            <p class="nose-step">ADIM 03</p>
+            <p class="nose-h">Geçiş takvimi</p>
+            <p class="nose-p">Yeni sürüme geçişi ve açılacak ürünlerin sırasını ekibinizle birlikte planlarız.</p>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">YENİLEME TEKLİFİ</p>
+    <h2 class="h2">Teklif özeti.</h2>
+    <p class="lead">Bu teklif; lisans aboneliğinizin yenilenmesini, tüm bakımı, üretici yol haritasındaki güncellemeleri ve destek paketinizin kapsamındaki üretici desteğini yeni abonelik dönemi boyunca kapsar. Lisans yalnızca teknisyen sayısına bağlıdır; son kullanıcı, varlık ve kayıt adedi sınırsızdır.</p>
+
+    <div class="spacer-m"></div>
+
+    <table class="ptbl avoid">
+      <thead>
+        <tr>
+          <th width="40%">ÜRÜNLER VE HİZMETLER</th>
+          <th class="num" width="16%">BİRİM FİYAT</th>
+          <th class="num" width="10%">ADET</th>
+          <th class="num" width="14%">İNDİRİM</th>
+          <th class="num" width="20%">TUTAR</th>
+        </tr>
+      </thead>
+      <tbody id="subform_1" class="QuotedItems">
+        <tr>
+          <td>
+            <div class="pt-name">${Ürün ve Hizmet Listesi.Product Name}</div>
+            <div class="pt-desc">${Ürün ve Hizmet Listesi.Description}</div>
+          </td>
+          <td class="num">${Ürün ve Hizmet Listesi.List Price}</td>
+          <td class="num">${Ürün ve Hizmet Listesi.Quantity}</td>
+          <td class="num">${Ürün ve Hizmet Listesi.Discount}</td>
+          <td class="num">${Ürün ve Hizmet Listesi.Total After Discount}</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr class="pt-sum"><td colspan="3" style="border-bottom: 0">&#160;</td><td class="lbl">Ara Toplam</td><td class="val">${Quotes.Sub Total}</td></tr>
+        <tr class="pt-sum"><td colspan="3" style="border-bottom: 0">&#160;</td><td class="lbl">KDV</td><td class="val">${Quotes.Tax}</td></tr>
+        <tr class="pt-grand"><td colspan="3" style="background: rgb(255, 255, 255); border-top: 0">&#160;</td><td class="lbl">GENEL TOPLAM</td><td class="val">${Quotes.Grand Total}</td></tr>
+      </tbody>
+    </table>
+
+    <div class="spacer-s"></div>
+    <div class="callout-band avoid">
+      <p style="color: rgb(71, 85, 105); line-height: 1.6"><font size="2" style="">${Quotes.Terms and Conditions}</font></p>
+    </div>
+
+  </div>
+
+  <div class="sheet pb">
+
+    <p class="overline">TEKLİF KOŞULLARI</p>
+    <h2 class="h2">Teklif ve hizmet koşulları.</h2>
+    <p class="lead">Aşağıdaki koşullar, iki tarafın da başarısını güvence altına almak için tanımlanmıştır.</p>
+    <div class="spacer-s"></div>
+    <table class="ko">
+      <tbody><tr><td>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">1</span></td>
+            <td><p class="ko-txt"><strong>KDV Muafiyeti — STB 092050.</strong> Servicecore A.Ş. ürünleri teknopark bünyesinde ve T.C. Sanayi ve Ticaret Bakanlığı’na bağlıdır. T.C. STB 092050 kodlu Servicecore ürünü 223-20/1 kapsamında KDV’den muaftır.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">2</span></td>
+            <td><p class="ko-txt">Teklif yukarıda belirtilen süreyle (Son Geçerlilik tarihi) geçerlidir. Fiyatlar geçerlilik süresinden sonra değiştirilebilir, güncellenebilir.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">3</span></td>
+            <td><p class="ko-txt">Sözleşme ve fatura imza tarihindeki TCMB kuru ile Türk Lirası olarak düzenlenmektedir. Fiyatlar global olarak tüm yurtdışı ve yurtiçi müşterilere sunulduğundan teklif USD veya TL para biriminde sunulabilmektedir.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">4</span></td>
+            <td><p class="ko-txt">Teklifteki indirimler müşteriye özel sunulmuştur. Fiyatlar sözleşme süresince geçerlidir ve sonraki yıllarda değişebilir. Liste fiyatları, indirim oranları ve özel fiyatlarda enflasyon kaynaklı değişiklik hakkımız saklıdır.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">5</span></td>
+            <td><p class="ko-txt">Teklife konu ürünlerin detayları ve taahhüt edilen tüm fonksiyonları ilgili sayfada; ayrıca özet olarak <strong>datasheet</strong> ve kapsamlı olarak <strong>specsheet</strong> içinde yer alır. (<a class="ko-link" href="https://servicecore.com.tr/datasheet">servicecore.com.tr/datasheet</a> · <a class="ko-link" href="https://servicecore.com.tr/specsheet">servicecore.com.tr/specsheet</a>)</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">6</span></td>
+            <td><p class="ko-txt">Sözleşmemizde tanımlanan koşullarda teklif sunulmuştur; lisans kiralama sözleşmemiz <a class="ko-link" href="https://servicecoreas.sharepoint.com/:w:/s/docs/IQBwQiQM6D-ERaF7iOgZBUH3AWj14UBoC_uq9s8RQ_YFKIo?e=hdxOhm">şu linkteki</a> gibidir.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">7</span></td>
+            <td><p class="ko-txt">Teklifte yer alan <strong>destek hizmetleri</strong> ilgili koşullara göre sunulur. (<a class="ko-link" href="https://servicecore.com.tr/destek">servicecore.com.tr/destek</a>)</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">8</span></td>
+            <td><p class="ko-txt">Teklifte yer alan <strong>kurulum ve implementasyon hizmetleri</strong> ilgili kapsamlarda sunulur. (<a class="ko-link" href="https://servicecore.com.tr/hizmetler/setup">servicecore.com.tr/hizmetler/setup</a>)</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">9</span></td>
+            <td><p class="ko-txt">Teklifin daha sağlıklı oluşturulması ve en doğru ihtiyaç analizi için <strong>analiz formu</strong> kullanılabilir; bu formdaki sorular lisans ve hizmet ihtiyaçlarının tespiti için yeterlidir. Form, online toplantıda birlikte doldurulduktan sonra en sağlıklı tekliflendirme yapılır. (<a class="ko-link" href="https://servicecore.com.tr/analiz">servicecore.com.tr/analiz</a>)</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">10</span></td>
+            <td><p class="ko-txt">Talep üzerine ve analiz formundaki cevaplara göre implementasyon, migration, entegrasyon ve özel ek geliştirmeler için ek tekliflendirme yapılabilir.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">11</span></td>
+            <td><p class="ko-txt">Ürün kullanım hakları yıllık, 3 yıllık vb. sürelerde abonelik (subscription / kiralama) modeli ile sunulur.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">12</span></td>
+            <td><p class="ko-txt">Bu sürelerde yapılan abonelik, ürünle ilgili her tür bakımı kapsar. Tüm bakım (düzeltici + üretici standart roadmap yeni özellikleri ve bunların müşteri ortamına yüklenmesi) abonelik ücretine dahildir.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">13</span></td>
+            <td><p class="ko-txt">Abonelik/Subscription modeli SaaS anlamına gelmez. Ürün abonelik olarak lisanslansa da kurulum müşteri ortamına on-premises yapılır.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">14</span></td>
+            <td><p class="ko-txt">Lisans, yıllık bazda kullanım hakkı olarak sisteme tanımlanır. Abonelik süresi sonunda yazılımın çalışmaya devamı için abonelik yenilenmelidir.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">15</span></td>
+            <td><p class="ko-txt">Lisanslama minimum 10 teknisyen ile başlar. Hibrit/karma lisans mümkündür (“X adet Standart + Y adet Add-on + Z adet Professional”); doğru kullanım analizi ile en tasarruflu modele ulaşılır. Hibrit lisanslamada Professional lisans, Standart lisansın %25’inden az olamaz.</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">16</span></td>
+            <td><p class="ko-txt">Lisanslama rehberinde tüm detaylar yer almaktadır. En sağlıklı ürün seçimi için şu linkteki rehberi incelemenizde fayda olabilir. (<a class="ko-link" href="https://www.servicecore.com.tr/planlar/lisanslama-rehberi">Servicecore Lisans Rehberi</a>)</p></td>
+          </tr>
+        </tbody></table>
+        <table class="ko-item avoid">
+          <tbody><tr>
+            <td class="ko-no"><span class="ko-num">17</span></td>
+            <td><p class="ko-txt">Teklifin yenilikler bölümü bilgi amaçlıdır. Lisans kapsamınızdaki yenilikler yeni sürümle birlikte sunulur; ayrıca lisanslanan ürün ve eklentiler bu teklifin kalemlerinde yer almadıkça teklife dahil değildir. Yol haritasının takvimi değişebilir.</p></td>
+          </tr>
+        </tbody></table>
+      </td></tr>
+    </tbody></table>
+
+    <p class="ko-foot">Detaylı sözleşme şartları imzaya esas ana sözleşmede yer alır; yukarıdaki maddeler özet niteliğindedir.</p>
+
+  </div>
+
+</div>
+</section>
+
+<section id="footer-container">
+<div id="pdfgen-footer"></div>
+</section>
+
+</body>
+</html>
