@@ -25,7 +25,7 @@ const docsData = {
     {
       title: "TEKNİSYEN KILAVUZU",
       description: "Teknisyenler için tüm modüller",
-      url: "https://docs.servicecore.app/docs/category/tekni%CC%87syen",
+      url: "https://doc.servicecore.com.tr/docs/teknisyen",
       icon: Settings,
       color: "text-(--color-accent-blue-light)",
       bg: "bg-blue-500/10"
@@ -33,7 +33,7 @@ const docsData = {
     {
       title: "KULLANICI KILAVUZU",
       description: "Son kullanıcı ekranları",
-      url: "https://docs.servicecore.app/docs/category/kullanici/",
+      url: "https://doc.servicecore.com.tr/docs/kullanici",
       icon: UserCircle,
       color: "text-(--color-accent-emerald-light)",
       bg: "bg-emerald-500/10"
@@ -41,7 +41,7 @@ const docsData = {
     {
       title: "YÖNETİCİ KILAVUZU",
       description: "Tüm admin ayarları kılavuzu",
-      url: "https://docs.servicecore.app/docs/category/y%C3%B6neti%CC%87ci%CC%87/",
+      url: "https://doc.servicecore.com.tr/docs/yonetici",
       icon: BookOpen,
       color: "text-(--color-accent-purple-light)",
       bg: "bg-purple-500/10"
@@ -49,7 +49,7 @@ const docsData = {
     {
       title: "ENTEGRASYON KILAVUZU",
       description: "Entegrasyonlar ile ilgili tüm bilgiler",
-      url: "https://docs.servicecore.app/docs/category/entegrasyon/",
+      url: "https://doc.servicecore.com.tr/docs/entegrasyonlar",
       icon: LinkIcon,
       color: "text-(--color-accent-orange-light)",
       bg: "bg-orange-500/10"
@@ -57,7 +57,7 @@ const docsData = {
     {
       title: "MIGRATION KILAVUZU",
       description: "Migration kuralları",
-      url: "https://docs.servicecore.app/docs/category/migration/",
+      url: "https://doc.servicecore.com.tr/docs/migration",
       icon: RefreshCw,
       color: "text-(--color-accent-cyan-light)",
       bg: "bg-cyan-500/10"
@@ -65,7 +65,7 @@ const docsData = {
     {
       title: "KURULUM KILAVUZU",
       description: "Kurulum esnasında gerekli bilgiler",
-      url: "https://docs.servicecore.app/docs/category/kurulum/",
+      url: "https://doc.servicecore.com.tr/docs/kurulum",
       icon: Download,
       color: "text-rose-400",
       bg: "bg-rose-500/10"
@@ -73,7 +73,7 @@ const docsData = {
     {
       title: "ESM KILAVUZU",
       description: "ESM tanıtımı ve kullanımı",
-      url: "https://docs.servicecore.app/docs/category/ESM/",
+      url: "https://doc.servicecore.com.tr/docs/esm",
       icon: Monitor,
       color: "text-indigo-400",
       bg: "bg-indigo-500/10"
@@ -81,7 +81,7 @@ const docsData = {
     {
       title: "CSSM-A ADMINISTRATOR",
       description: "Admin Eğitim Videoları",
-      url: "https://docs.servicecore.app/docs/category/admin-e%C4%9Fi%CC%87ti%CC%87mleri%CC%87/",
+      url: "https://doc.servicecore.com.tr/docs/admin-egitimleri",
       icon: PlayCircle,
       color: "text-amber-400",
       bg: "bg-amber-500/10"
@@ -89,7 +89,7 @@ const docsData = {
     {
       title: "CSSM-P PRACTITIONER",
       description: "Teknisyen Eğitim Videoları",
-      url: "https://docs.servicecore.app/docs/category/tekni%CC%87syen-e%C4%9Fi%CC%87ti%CC%87mleri%CC%87/",
+      url: "https://doc.servicecore.com.tr/docs/teknisyen-egitimleri",
       icon: PlayCircle,
       color: "text-teal-400",
       bg: "bg-teal-500/10"
