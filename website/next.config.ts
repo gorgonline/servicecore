@@ -21,6 +21,14 @@ const nextConfig: NextConfig = {
   },
 
   redirects: async () => [
+    // applicore.com.tr AppliCore'un modul sayfasini acar. Gecici yonlendirme:
+    // ileride kendi sitesi olursa tarayicilar eski adresi aklinda tutmasin.
+    {
+      source: "/:path*",
+      has: [{ type: "host", value: "(?:www\\.)?applicore\\.com\\.tr" }],
+      destination: "https://www.servicecore.com.tr/applicore",
+      permanent: false,
+    },
     {
       source: "/ozellikler",
       destination: "/cozumler/itsm",
