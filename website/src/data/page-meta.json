@@ -47,9 +47,9 @@
     "title": "Vardiya Yönetimi | ServiceCore",
     "description": "Vardiya, nöbet ve kapasiteyi tek panelde planlayın. Yetkinlik bazlı atama, on-call rotation ve vardiya devri akışlarıyla 7/24 destek operasyonu."
   },
-  "entegrasyon-sistemi": {
-    "title": "Integration System | ServiceCore",
-    "description": "Connector katalogu, görsel akış tasarımı ve canlı çalıştırma izleme — başlangıçtan tasarlamaya, çalıştırmadan denetime entegrasyon yaşam döngüsü."
+  "applicore": {
+    "title": "AppliCore | ServiceCore",
+    "description": "Kendi iş uygulamalarınız, ServiceCore'un içinde: formu, onayı ve takibi olan iç süreçlerinizi aynı veritabanı, roller ve onay motoru üzerinde kurun."
   },
   "surekli-iyilestirme": {
     "title": "Sürekli İyileştirme | ServiceCore",

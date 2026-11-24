@@ -33,7 +33,7 @@ import {
   Waypoints,
   Combine,
   CalendarClock,
-  Plug,
+  PencilRuler,
   type LucideIcon,
 } from "lucide-react";
 import data from "@/data/moduller.json";
@@ -68,7 +68,7 @@ const iconMap: Record<string, LucideIcon> = {
   Waypoints,
   Combine,
   CalendarClock,
-  Plug,
+  PencilRuler,
 };
 
 const toneMap: Record<

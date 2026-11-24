@@ -115,7 +115,7 @@ const footerData = {
         { text: "Mobil Servis Yönetimi", href: "/mobil-servis-yonetimi" },
         { text: "İş Akışı Yönetimi", href: "/is-akisi-yonetimi" },
         { text: "Entegrasyon Modülü", href: "/entegrasyon-yonetimi" },
-        { text: "Integration System", href: "/entegrasyon-sistemi" },
+        { text: "AppliCore", href: "/applicore" },
         { text: "Low Code Geliştirme Modülü", href: "/low-code-gelistirme" },
         { text: "Sözleşme Yönetimi", href: "/sozlesme-yonetimi" },
       ],

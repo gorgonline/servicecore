@@ -16,7 +16,6 @@ import {
   CheckSquare,
   ChevronRight,
   Clock,
-  Cloud,
   Code,
   Combine,
   Cpu,
@@ -43,14 +42,13 @@ import {
   Mail,
   MapPin,
   MessageCircle,
-  MessageSquare,
   Monitor,
   Moon,
   Network,
   Package,
+  PencilRuler,
   Phone,
   Play,
-  Plug,
   Plus,
   Printer,
   Radar,
@@ -3275,167 +3273,77 @@ function IntegrationApiMock({ accent }: { accent: AccentClasses }) {
 }
 
 // ============================================================
-// Integration System — connector katalogu & çalıştırma
+// AppliCore — Uygulama Stüdyosu: veri seti ve aşamalar
 // ============================================================
 
-function IntegrationSystemMock({ accent }: { accent: AccentClasses }) {
-  const connectors = [
-    { label: "E-posta", system: "SMTP / IMAP", icon: Mail, online: true },
-    { label: "Teams", system: "Microsoft 365", icon: MessageSquare, online: true },
-    { label: "Webhook", system: "HTTP / REST", icon: Webhook, online: true },
-    { label: "Veritabanı", system: "PostgreSQL", icon: Database, online: true },
-    { label: "Bulut Depolama", system: "Azure Blob", icon: Cloud, online: true },
-    { label: "ERP", system: "SAP S/4HANA", icon: GitMerge, online: false },
-  ];
+function AppliCoreMock({ accent }: { accent: AccentClasses }) {
+  const stages = ["Taslak", "Onayda", "Onaylandı", "Kapandı"];
 
-  const runs = [
-    {
-      flow: "Olay → Teams bildirim",
-      trigger: "Olay",
-      tIcon: CheckCircle2,
-      tTone: "text-purple-400 bg-purple-500/10 border-purple-500/25",
-      state: "Başarılı",
-      sIcon: CheckCircle2,
-      sTone: "text-emerald-400",
-      dur: "1,2 sn",
-    },
-    {
-      flow: "ERP varlık eşitleme",
-      trigger: "Cron",
-      tIcon: CalendarClock,
-      tTone: "text-cyan-400 bg-cyan-500/10 border-cyan-500/25",
-      state: "Çalışıyor",
-      sIcon: RefreshCw,
-      sTone: accent.text,
-      dur: "4,8 sn",
-    },
-    {
-      flow: "CRM talep oluştur",
-      trigger: "Webhook",
-      tIcon: Webhook,
-      tTone: "text-amber-400 bg-amber-500/10 border-amber-500/25",
-      state: "Başarılı",
-      sIcon: CheckCircle2,
-      sTone: "text-emerald-400",
-      dur: "0,9 sn",
-    },
-    {
-      flow: "Toplu kullanıcı içe aktar",
-      trigger: "Manuel",
-      tIcon: MessageSquare,
-      tTone: "text-slate-300 bg-white/5 border-white/10",
-      state: "Hata",
-      sIcon: XCircle,
-      sTone: "text-red-400",
-      dur: "2,1 sn",
-    },
+  const fields = [
+    { label: "Talep konusu", type: "Metin", icon: Type },
+    { label: "Tutar", type: "Sayı", icon: Gauge },
+    { label: "Kategori", type: "Seçim", icon: List },
+    { label: "İhtiyaç tarihi", type: "Tarih", icon: Calendar },
+    { label: "Talep eden", type: "Kişi", icon: User },
+    { label: "Teklif", type: "Dosya", icon: Upload },
   ];
 
   return (
     <Frame>
       <TitleBar
-        icon={<Plug className="w-[3mm] h-[3mm]" />}
-        title="Entegrasyon İstasyonu — Akış Motoru"
-        meta="6 connector · 248 çalıştırma/gün"
+        icon={<PencilRuler className="w-[3mm] h-[3mm]" />}
+        title="Uygulama Stüdyosu — Satın Alma"
+        meta="Yayında · v9"
         accent={accent}
       />
 
-      {/* Connector catalog */}
-      <div className="mb-[3mm]">
-        <div className="flex items-center justify-between mb-[1.5mm]">
-          <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
-            Connector Kataloğu
-          </span>
-          <div className="flex items-center gap-[1mm]">
-            <span className="w-[1.2mm] h-[1.2mm] rounded-full bg-emerald-400" />
-            <span className="text-[7pt] font-mono text-slate-500">5 bağlı</span>
-          </div>
-        </div>
-        <div className="grid grid-cols-3 gap-[1.5mm]">
-          {connectors.map((c, i) => {
-            const Icon = c.icon;
-            return (
-              <div
-                key={i}
-                className="rounded-md border border-white/8 bg-white/2 p-[2mm] flex items-center gap-[1.5mm]"
+      {/* Stages */}
+      <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm] mb-[3mm]">
+        <span className="block text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500 mb-[1.5mm]">
+          Aşamalar
+        </span>
+        <div className="flex items-center gap-[1.5mm]">
+          {stages.map((stage, i) => (
+            <div key={stage} className="flex items-center gap-[1.5mm] flex-1 last:flex-none">
+              <span
+                className={`text-[7.5pt] font-medium px-[2mm] py-[0.8mm] rounded-md border whitespace-nowrap ${
+                  i === 1 ? accent.chip : "text-white bg-white/3 border-white/8"
+                }`}
               >
-                <div
-                  className={`w-[6mm] h-[6mm] rounded-md ${accent.bg} border ${accent.border} flex items-center justify-center shrink-0`}
-                >
-                  <Icon className={`w-[3mm] h-[3mm] ${accent.text}`} />
-                </div>
-                <div className="flex flex-col min-w-0 flex-1">
-                  <span className="text-[8pt] font-semibold text-white truncate">
-                    {c.label}
-                  </span>
-                  <span className="text-[6.5pt] font-mono text-slate-500 truncate">
-                    {c.system}
-                  </span>
-                </div>
-                <span
-                  className={`w-[1.5mm] h-[1.5mm] rounded-full shrink-0 ${
-                    c.online ? "bg-emerald-400" : "bg-slate-600"
-                  }`}
-                />
-              </div>
-            );
-          })}
+                {stage}
+              </span>
+              {i < stages.length - 1 && <span className="h-px flex-1 bg-white/15" />}
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Recent runs */}
+      {/* Data set fields */}
       <div className="rounded-md border border-white/8 bg-white/2 p-[2.5mm]">
         <div className="flex items-center justify-between mb-[1.5mm]">
           <span className="text-[7pt] font-mono uppercase tracking-[0.18em] text-slate-500">
-            Son Çalıştırmalar
+            Veri seti · Talep
           </span>
-          <span className="text-[7pt] font-mono text-slate-500">canlı</span>
+          <span className="text-[7pt] font-mono text-slate-500">
+            {fields.length} alan
+          </span>
         </div>
-
-        <div className="grid grid-cols-[16mm_1fr_18mm_14mm] gap-[2mm] px-[1.5mm] pb-[1mm] text-[6.5pt] font-mono font-semibold uppercase tracking-[0.16em] text-slate-500 border-b border-white/5 mb-[1mm]">
-          <span>Tetikleyici</span>
-          <span>Akış</span>
-          <span>Durum</span>
-          <span className="text-right">Süre</span>
-        </div>
-
-        <div className="flex flex-col gap-[1mm]">
-          {runs.map((r, i) => {
-            const TIcon = r.tIcon;
-            const SIcon = r.sIcon;
+        <div className="grid grid-cols-2 gap-[1.5mm]">
+          {fields.map((f) => {
+            const Icon = f.icon;
             return (
               <div
-                key={i}
-                className="grid grid-cols-[16mm_1fr_18mm_14mm] gap-[2mm] items-center px-[1.5mm] py-[1mm] rounded-md bg-white/2 border border-white/5"
+                key={f.label}
+                className="flex items-center gap-[1.5mm] rounded-md border border-white/8 bg-white/3 px-[2mm] py-[1.5mm]"
               >
-                <span
-                  className={`flex items-center gap-[1mm] text-[6.5pt] font-mono px-[1.2mm] py-[0.3mm] rounded-full border ${r.tTone}`}
-                >
-                  <TIcon className="w-[2mm] h-[2mm]" />
-                  {r.trigger}
+                <Icon className={`w-[2.5mm] h-[2.5mm] shrink-0 ${accent.text}`} />
+                <span className="text-[8pt] font-medium text-white truncate flex-1">
+                  {f.label}
                 </span>
-                <span className="text-[8pt] font-medium text-white truncate">
-                  {r.flow}
-                </span>
-                <span
-                  className={`flex items-center gap-[1mm] text-[7pt] font-mono font-semibold ${r.sTone}`}
-                >
-                  <SIcon className="w-[2.5mm] h-[2.5mm]" />
-                  {r.state}
-                </span>
-                <span className="text-[7pt] font-mono text-slate-400 tabular-nums text-right">
-                  {r.dur}
-                </span>
+                <span className="text-[7pt] font-mono text-slate-500">{f.type}</span>
               </div>
             );
           })}
-        </div>
-
-        <div className="flex items-center justify-end gap-[1mm] mt-[1.5mm] pt-[1.5mm] border-t border-white/5">
-          <span className={`text-[7pt] font-mono ${accent.text}`}>
-            Tüm çalıştırma geçmişi
-          </span>
-          <ArrowRight className={`w-[2.5mm] h-[2.5mm] ${accent.text}`} />
         </div>
       </div>
     </Frame>
@@ -3882,8 +3790,8 @@ export function ModuleMock({ moduleId, accent }: ModuleMockProps): ReactNode {
       return <WorkflowMock accent={a} />;
     case "integration-management":
       return <IntegrationApiMock accent={a} />;
-    case "integration-system":
-      return <IntegrationSystemMock accent={a} />;
+    case "applicore":
+      return <AppliCoreMock accent={a} />;
     case "low-code-development":
       return <LowCodeMock accent={a} />;
     case "contract-management":

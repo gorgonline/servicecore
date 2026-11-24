@@ -38,6 +38,12 @@ const nextConfig: NextConfig = {
       destination: "/planlar-pm",
       permanent: true,
     },
+    // Integration System, Entegrasyon Modulu ile mukerrerdi; tek sayfa kaldi.
+    {
+      source: "/entegrasyon-sistemi",
+      destination: "/entegrasyon-yonetimi",
+      permanent: true,
+    },
   ],
 
   headers: async () => [

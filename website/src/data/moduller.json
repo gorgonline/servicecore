@@ -32,7 +32,7 @@
     { "name": "Mobil Servis Yönetimi", "icon": "Smartphone", "desc": "Mobil ITOM uygulaması deneyimi.", "href": "/mobil-servis-yonetimi", "tone": "purple", "category": "Mobil" },
     { "name": "İş Akışı Yönetimi", "icon": "GitBranch", "desc": "Süreçlerinizi sürükle bırak diyagramlarla modelleyin.", "href": "/is-akisi-yonetimi", "tone": "cyan", "category": "Otomasyon" },
     { "name": "Entegrasyon Modülü", "icon": "Link2", "desc": "API aracılığıyla veri alışverişi yapın.", "href": "/entegrasyon-yonetimi", "tone": "orange", "category": "Entegrasyon" },
-    { "name": "Integration System", "icon": "Plug", "desc": "Connector katalogu, görsel akış tasarımı ve canlı çalıştırma izleme.", "href": "/entegrasyon-sistemi", "tone": "orange", "category": "Entegrasyon" },
+    { "name": "AppliCore", "icon": "PencilRuler", "desc": "Kendi iş uygulamalarınızı kurun.", "href": "/applicore", "tone": "indigo", "category": "Geliştirme" },
     { "name": "Low Code Geliştirme Modülü", "icon": "Code", "desc": "Özel formlar ve süreç tasarımları oluşturun.", "href": "/low-code-gelistirme", "tone": "blue", "category": "Geliştirme" },
     { "name": "Sözleşme Yönetimi", "icon": "FileSignature", "desc": "Hizmet Seviyeleri ve sözleşmeleri yönetin.", "href": "/sozlesme-yonetimi", "tone": "emerald", "category": "Sözleşme" }
   ],
