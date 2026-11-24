@@ -1,0 +1,103 @@
+{
+  "hero": {
+    "eyebrow": "ServiceCore modülü",
+    "titleLead": "Kendi iş uygulamalarınız,",
+    "titleAccent": "ServiceCore'un içinde",
+    "lede": "Formu, onayı ve takibi olan iç süreçlerinizi; ayrı bir platform kurmadan, aynı veritabanı, roller ve onay motoru üzerinde kurun.",
+    "description": "Yönetici; kayıt tiplerini, formları, listeleri, panoları, takvimleri, aşamalı iş akışını, onayı ve yetkileri tek bir modülde toplar. Uygulama menüde görünür, rol bazında yetkilendirilir ve test ortamından canlıya taşınır.",
+    "primaryLabel": "Demo İste",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Hazır uygulamaları görün",
+    "secondaryHref": "#hazir-uygulamalar",
+    "image": "/images/applicore/satin-alma-merkezi.webp",
+    "imageAlt": "AppliCore ile kurulmuş Satın Alma Yönetimi uygulamasının Merkez ekranı: harcama, süreç hattı, ilgilenilecek işler ve bütçeler",
+    "imageCaption": "Hazır uygulamalardan Satın Alma Yönetimi, Merkez ekranı"
+  },
+  "stats": [
+    { "value": "23", "label": "alan tipi", "detail": "Metin, sayı, tarih, seçim, kişi ve kurum, ilişki, dosya" },
+    { "value": "4", "label": "hazır uygulama", "detail": "Satın Alma, Sözleşme, İnsan Kaynakları, Tesis Yönetimi" },
+    { "value": "3", "label": "kayıt görünümü", "detail": "Liste, pano ve takvim" },
+    { "value": "2", "label": "yetkili kişi", "detail": "Her yayın, gönderenden başka bir yetkilinin onayından geçer" }
+  ],
+  "nav": {
+    "label": "Bu sayfada",
+    "items": [
+      { "id": "neden", "label": "Neden" },
+      { "id": "icinde", "label": "ServiceCore'un içinde" },
+      { "id": "hazir-uygulamalar", "label": "Hazır uygulamalar" },
+      { "id": "ilk-uygulama", "label": "İlk uygulama" },
+      { "id": "studyo", "label": "Stüdyo" },
+      { "id": "veri", "label": "Veri" },
+      { "id": "ekranlar", "label": "Ekranlar" },
+      { "id": "asamalar", "label": "Aşamalar" },
+      { "id": "onay", "label": "Onay" },
+      { "id": "kod", "label": "Kod" },
+      { "id": "cm-cli", "label": "cm-cli" },
+      { "id": "entegrasyon", "label": "Entegrasyon" },
+      { "id": "yayin", "label": "Yayın" },
+      { "id": "yetki", "label": "Yetki" },
+      { "id": "hassas-veri", "label": "Hassas veri" },
+      { "id": "kullanim", "label": "Kullanım" },
+      { "id": "olcek", "label": "Ölçek" },
+      { "id": "sorular", "label": "Sorular" }
+    ]
+  },
+  "why": {
+    "id": "neden",
+    "eyebrow": "Neden",
+    "title": "Satın alma talebi, sözleşme onayı, izin, bakım iş emri… Bu süreçlerin çoğu bugün e-posta ve Excel'de yürüyor.",
+    "lead": "Ayrı bir uygulama platformu ise ayrı sunucu, ayrı kullanıcı yönetimi, ayrı onay ve ayrı denetim izi demek. AppliCore bu süreçleri, bildiğiniz ServiceCore'un içinde kurmanızı sağlar.",
+    "columns": { "topic": "Konu", "separate": "Ayrı bir uygulama platformu", "applicore": "AppliCore" },
+    "rows": [
+      { "topic": "Sunucu ve veritabanı", "separate": "Ayrı sunucu kurulur", "applicore": "Ek sunucu ve ek veritabanı gerekmez; kayıtlar ServiceCore veritabanında durur" },
+      { "topic": "Kullanıcılar", "separate": "Ayrı kullanıcı yönetimi gerekir", "applicore": "ServiceCore'un kullanıcıları, rolleri ve teknisyen grupları kullanılır" },
+      { "topic": "Onay", "separate": "Ayrı onay düzeni kurulur", "applicore": "ServiceCore'un gelişmiş onay akışı ve Onaylarım ekranı kullanılır" },
+      { "topic": "Denetim izi", "separate": "Ayrı denetim izi tutulur", "applicore": "Kayıt geçmişi ve uygulamanın sürüm geçmişi ServiceCore'da kalır" }
+    ]
+  },
+  "what": {
+    "eyebrow": "Nedir",
+    "title": "Bir uygulama, tek bir modül olarak paketlenir",
+    "lead": "Yönetici ServiceCore'un içinde kendi iş uygulamasını kurar. Bir uygulamanın parçaları şunlardır:",
+    "cards": [
+      { "icon": "Database", "title": "Veri setleri", "text": "Kayıt tipleri ve 23 alan tipi: metin, sayı, tarih, seçim, kişi ve kurum, ilişki, dosya." },
+      { "icon": "LayoutDashboard", "title": "Ekranlar", "text": "Formlar; liste, pano ve takvim görünümleri; göstergeli panolar." },
+      { "icon": "GitBranch", "title": "İş akışı ve onay", "text": "Aşamalar, geçiş kuralları ve ServiceCore'un gelişmiş onay akışı." },
+      { "icon": "ShieldCheck", "title": "Yetki", "text": "Rol başına eylem yetkisi ve kayıt düzeyinde görme ve değiştirme kapsamı." },
+      { "icon": "Code2", "title": "Kod, gerekirse", "text": "Sunucu betikleri ve React bileşenleri; TypeScript ile, kendi editörünüzde." },
+      { "icon": "PackageCheck", "title": "Sürüm ve yayın", "text": "Her yayın numaralı bir sürümdür; dört göz onayıyla canlıya alınır." }
+    ]
+  },
+  "pillars": {
+    "eyebrow": "Beş başlık",
+    "title": "AppliCore'u beş başlıkta anlatıyoruz",
+    "items": [
+      { "no": "01", "href": "#icinde", "title": "ServiceCore'un içinde çalışır", "text": "Aynı veritabanı, roller, onay motoru ve Onaylarım ekranı." },
+      { "no": "02", "href": "#hazir-uygulamalar", "title": "Hazır uygulamalarla başlanır", "text": "Satın Alma, Sözleşme, İnsan Kaynakları, Tesis Yönetimi." },
+      { "no": "03", "href": "#ilk-uygulama", "title": "Kodsuz başlar, kodla derinleşir", "text": "İş analisti Stüdyo'da kurar; yazılımcı TypeScript ve kendi editörüyle devam eder." },
+      { "no": "04", "href": "#yayin", "title": "Dört gözle yayınlanır", "text": "Onaycı tanım farkını, kod farkını ve çalışacak SQL'i onaydan önce görür." },
+      { "no": "05", "href": "#yetki", "title": "Kayıt düzeyinde yetki", "text": "Rol başına eylem; Tümü, Grubunun, Kendi kapsamı; hassas alan maskesi ve açma izi." }
+    ]
+  },
+  "inside": {
+    "id": "icinde",
+    "eyebrow": "01 · ServiceCore'un içinde",
+    "title": "Yeni bir platform değil, bildiğiniz ServiceCore",
+    "lead": "AppliCore ServiceCore'un bir parçasıdır. Kurulum, yedekleme, kullanıcı yönetimi ve onay için yeni bir düzen kurmazsınız.",
+    "cards": [
+      { "icon": "Server", "title": "Aynı altyapı", "text": "Ek sunucu, ek veritabanı, Redis ya da Node gerekmez. Özellik ServiceCore güncellemesiyle gelir." },
+      { "icon": "HardDrive", "title": "Veri sizin sunucunuzda", "text": "Kayıtlar ServiceCore'un SQL Server veritabanında, ayrı bir şemada, her kayıt tipi için gerçek bir tabloda durur. Mevcut yedekleme düzeninize girer." },
+      { "icon": "Users", "title": "Aynı kullanıcılar ve onaylar", "text": "ServiceCore'un kullanıcıları, rolleri, teknisyen grupları, onay motoru ve Onaylarım ekranı kullanılır." },
+      { "icon": "Link2", "title": "ITSM kayıtlarına bağlanır", "text": "Olay, istek, problem, değişiklik, sürekli iyileştirme ve varlık kayıtlarına bağlantı alanı. İnternete kapalı ağda da çalışır." }
+    ],
+    "dataTitle": "Veri nerede ve nasıl durur",
+    "dataPoints": [
+      { "title": "Gerçek tablolar", "text": "Her veri setinin kendi tablosu, her alanın kendi kolonu vardır. Kayıtlar raporlanabilir ve indekslenebilir." },
+      { "title": "Ekrandan SQL yazılmaz", "text": "Tablo ve kolon değişikliklerini sunucu üretir; yalnız yayın onayıyla, ayrı ve kısıtlı bir veritabanı kullanıcısıyla uygular." },
+      { "title": "Değişiklik yalnız ekler", "text": "Kaldırılan alan ya da veri seti gizlenir, verisi silinmez." },
+      { "title": "Silinen kayıt iz bırakır", "text": "Silinen kayıt listeden kalkar, veritabanında iz olarak kalır." },
+      { "title": "Dosyalar veritabanında", "text": "Dosya ve görsel alanlarına yüklenen dosyalar veritabanında saklanır; sunucu diskine yazılmaz." },
+      { "title": "Aynı yedek", "text": "Uygulama kayıtları, diğer ServiceCore verileriyle aynı yedeğe girer." }
+    ]
+  }
+}

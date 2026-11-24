@@ -1,0 +1,201 @@
+{
+  "journey": {
+    "id": "ilk-uygulama",
+    "eyebrow": "03 · Kodsuz kurulum",
+    "title": "İlk uygulamanız yedi adımda yayında",
+    "lead": "Örnek olarak Ekipman Talebi adlı bir uygulama kuralım: teknisyenler ekipman ister; talep tarihi, ekipman türü, talep eden ve adet tutulur.",
+    "steps": [
+      { "title": "Yeni modül açın", "text": "Modülün adını yazarsınız. Anahtarı ve ilk veri seti bu addan oluşur, Uygulama Stüdyosu açılır." },
+      { "title": "Alanları ekleyin", "text": "Alanın adını yazar, tipini seçersiniz: Talep tarihi (Tarih), Ekipman türü (Tek seçim), Talep eden (Kullanıcı), Adet (Tam sayı)." },
+      { "title": "Seçenekleri tanımlayın", "text": "Ekipman türüne Dizüstü bilgisayar, Monitör ve Telefon seçeneklerini eklersiniz." },
+      { "title": "Taslağı kaydedin", "text": "Stüdyo taslağı kaydederken denetler; eksikleri ve veritabanında yapılacak değişiklikleri durum çubuğunda gösterir. Kullanıcılar henüz bir şey görmez." },
+      { "title": "Önizleyin", "text": "Taslak ekranlar, yayınlamadan önce sağ bölmede salt okunur olarak denenir." },
+      { "title": "Onaya gönderin", "text": "Yayın çekmecesi tanım değişikliklerini, dosya farkını ve çalışacak SQL betiğini gösterir. Onaya giden taslak kilitlenir." },
+      { "title": "İkinci yetkili yayınlar", "text": "Yayın izni olan başka bir kişi inceler ve yayınlar. Tablolar oluşur, sürüm kullanıma açılır; rollere yetki verirsiniz." }
+    ]
+  },
+  "studio": {
+    "id": "studyo",
+    "eyebrow": "03 · Uygulama Stüdyosu",
+    "title": "İş analisti Uygulama Stüdyosu'nda kurar",
+    "lead": "Stüdyo, uygulamanın bütün parçalarının tek ekranda tasarlandığı düzenleyicidir. Tarayıcıda çalışır.",
+    "image": "/images/applicore/studyo-asamalar.webp",
+    "imageAlt": "Uygulama Stüdyosu: solda veri setleri, sorgular ve veri kaynakları, ortada aşama diyagramı, sağda aşamanın ayarları",
+    "imageCaption": "Stüdyo'da aşama diyagramı ve seçili aşamanın geçişleri",
+    "bullets": [
+      { "title": "Veri seti ve alan", "text": "23 alan tipinden seçilir, forma sürüklenir." },
+      { "title": "Aşama diyagramı", "text": "Geçişler çizilir; geçişe zorunlu alan, gerekçe ve onay sorusu konur." },
+      { "title": "Hesaplanan alan", "text": "Kalem toplamı gibi değerler için tek satırlık formül yazılır." },
+      { "title": "Önizleme", "text": "Taslak, yayınlamadan önce salt okunur olarak denenir." }
+    ],
+    "areasTitle": "Stüdyo'nun dört alanı",
+    "areas": [
+      { "icon": "Monitor", "title": "Ekranlar", "text": "Uygulamanın sayfaları, formları ve listeleri." },
+      { "icon": "Database", "title": "Veri", "text": "Veri setleri, sorgular ve veri kaynakları." },
+      { "icon": "Code2", "title": "Kod", "text": "Uygulamanın dosya ağacı ve kod düzenleyicisi." },
+      { "icon": "Settings2", "title": "Ayarlar", "text": "Gezinme ve tema, ad ve menü, yetkiler, ham JSON." }
+    ],
+    "toolsTitle": "Stüdyo'nun araçları",
+    "tools": [
+      { "title": "Komut paleti", "text": "Ctrl K ile komut çalıştırır ya da istediğiniz sayfaya, alana, aşamaya gidersiniz. Arama Türkçe karakterlere duyarsızdır." },
+      { "title": "Geri al, yinele", "text": "Son 100 adım geri alınır ve yinelenir." },
+      { "title": "Sorunlar", "text": "Taslağın yayına engel eksikleri listelenir; satıra tıklamak ilgili öğeyi açar." },
+      { "title": "Şema değişikliği", "text": "Yayınlanınca veritabanında ne yapılacağı önceden görünür." },
+      { "title": "Çakışma uyarısı", "text": "Taslağı siz düzenlerken başka biri değiştirmişse Stüdyo uyarır." },
+      { "title": "Adresle açma", "text": "Belirli bir alan, aşama, sayfa ya da çekmece doğrudan adresle açılır." }
+    ]
+  },
+  "data": {
+    "id": "veri",
+    "eyebrow": "03 · Veri setleri",
+    "title": "Kayıtlarınızı 23 alan tipiyle tanımlayın",
+    "lead": "Veri seti bir kayıt tipidir: Talep, Tedarikçi, Bina gibi. Her veri setinin kendi kayıt numarası, alanları, aşamaları ve erişim kuralı vardır.",
+    "groups": [
+      { "icon": "Type", "name": "Metin", "types": ["Kısa metin", "Uzun metin", "Zengin metin", "E-posta", "Telefon", "Web adresi"] },
+      { "icon": "Hash", "name": "Sayı", "types": ["Tam sayı", "Ondalık sayı"] },
+      { "icon": "CalendarDays", "name": "Tarih", "types": ["Tarih", "Tarih ve saat"] },
+      { "icon": "ListChecks", "name": "Seçim", "types": ["Evet / Hayır", "Tek seçim", "Çoklu seçim"] },
+      { "icon": "Users", "name": "Kişi ve kurum", "types": ["Kullanıcı", "Teknisyen", "Teknisyen grubu", "Şirket", "Departman", "Lokasyon"] },
+      { "icon": "Link2", "name": "İlişki", "types": ["Bu modülde başka kayıt", "ServiceCore kaydı"] },
+      { "icon": "Paperclip", "name": "Dosya", "types": ["Dosya", "Görsel"] }
+    ],
+    "featuresTitle": "Alanların yapabildikleri",
+    "features": [
+      { "title": "ServiceCore'a bağlanır", "text": "Kullanıcı, teknisyen, departman ve lokasyon ServiceCore'un kendi kayıtlarından seçilir. İlişki alanı olay, istek, problem, değişiklik, sürekli iyileştirme ya da varlık kaydına bağlanır." },
+      { "title": "Ana kayıt ve kalemler", "text": "Talep ve talep kalemi gibi satırlı kayıtlar kurulur. Satırlar ana kaydın formunda kalem tablosuyla girilir, ana kayıtla birlikte kaydedilir." },
+      { "title": "Hesaplanan değer", "text": "Toplam, adet, yuvarlama, en küçük ve en büyük gibi formüllerle değeri sunucu hesaplar; formda salt okunur görünür." },
+      { "title": "Kayıt numarası", "text": "Her veri setinin kendi öneki olur: TAL-000123 gibi. Numaralar veri seti başına sayılır." },
+      { "title": "Dış listeden seçim", "text": "Kısa metin alanı bir dış sistemin listesinden doldurulur; seçilen satır başka alanları da doldurabilir." },
+      { "title": "Güvenli değişiklik", "text": "Yayınlanmış alan daraltılamaz. Kaldırılan alan gizlenir; aynı adla ve uyumlu tiple geri eklenirse eski verisiyle döner." }
+    ]
+  },
+  "screens": {
+    "id": "ekranlar",
+    "eyebrow": "03 · Ekranlar",
+    "title": "Sayfalar, formlar ve görünümler",
+    "lead": "Uygulamanın ekranlarını bloklarla, formlarla ve görünümlerle kurarsınız. Her blok kendi veri setini, ekranı açan kullanıcının yetkisiyle okur.",
+    "demo": {
+      "label": "Görünüm",
+      "views": [
+        { "id": "liste", "label": "Liste" },
+        { "id": "pano", "label": "Pano" },
+        { "id": "takvim", "label": "Takvim" }
+      ],
+      "title": "Örnek kayıt",
+      "caption": "Aynı kayıtlar üç görünümde. Örnek, Yetenek Galerisi'nin kurgu kayıtlarıyla çizilmiştir.",
+      "columns": ["Kayıt no", "Başlık", "Öncelik", "Aşama", "Kalem toplamı"],
+      "month": "Kasım 2026",
+      "days": ["Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz"],
+      "stages": [
+        { "name": "Taslak", "tone": "slate" },
+        { "name": "İncelemede", "tone": "amber" },
+        { "name": "Onaylandı", "tone": "blue" },
+        { "name": "Tamamlandı", "tone": "emerald" }
+      ],
+      "emptyColumn": "Henüz kayıt yok.",
+      "records": [
+        { "no": "ORN-000010", "title": "Müşteri sunumu ekipmanı", "priority": "Yüksek", "stage": "Taslak", "total": "₺42.000", "day": 19 },
+        { "no": "ORN-000009", "title": "Kâğıt stoğu", "priority": "Düşük", "stage": "Taslak", "total": "₺3.450", "day": 0 },
+        { "no": "ORN-000007", "title": "Yedek monitörler", "priority": "Düşük", "stage": "Taslak", "total": "₺19.000", "day": 20 },
+        { "no": "ORN-000005", "title": "Süreç danışmanlığı", "priority": "Yüksek", "stage": "Onaylandı", "total": "₺72.000", "day": 0 },
+        { "no": "ORN-000001", "title": "Yeni ekip için bilgisayar", "priority": "Yüksek", "stage": "Onaylandı", "total": "₺93.500", "day": 0 },
+        { "no": "ORN-000006", "title": "Saha ekibi tableti", "priority": "Orta", "stage": "Taslak", "total": "₺0", "day": 5 },
+        { "no": "ORN-000002", "title": "Lisans yenileme", "priority": "Orta", "stage": "Tamamlandı", "total": "₺9.600", "day": 0 }
+      ]
+    },
+    "cards": [
+      {
+        "icon": "LayoutDashboard",
+        "title": "Sayfa tasarımcısı",
+        "text": "Sayfa bloklarla kurulur ve sürüklenerek yerleştirilir.",
+        "items": [
+          "Veri blokları: Gösterge, Grafik, Aşama çubuğu, Kısa liste, Liste, Düğme",
+          "Girdiler: Seçim, Tarih aralığı, Arama",
+          "Yerleşim: Kart, Izgara, Sekmeler, Açılır bölümler, Form düzeni, Yan yana, Metin",
+          "Grafik türleri: Çubuk, Çizgi, Halka; gün, hafta ve ay aralığı",
+          "Tıklayınca: sayfaya git, kayıt aç, verileri yenile, bildirim göster, bağlantı aç, veri kaynağını çağır"
+        ]
+      },
+      {
+        "icon": "FormInput",
+        "title": "Form tasarımcısı",
+        "text": "Her veri setinin bir formu vardır; tasarlanmamış form kendiliğinden oluşur.",
+        "items": [
+          "Form sayfada, yan çekmecede ya da pencerede açılır",
+          "Adımlı form: Temel, Kişiler ve kurum, Ayrıntı, Kalemler, Dosyalar gibi",
+          "Alan başka bir alana göre görünür, gizlenir ya da salt okunur olur",
+          "Alt veri seti formda kalem tablosu olarak durur",
+          "Zaman çizelgesi, sekmeler ve açılır bölümler forma eklenir"
+        ]
+      },
+      {
+        "icon": "KanbanSquare",
+        "title": "Liste, pano, takvim",
+        "text": "Bir veri setinin birden çok görünümü olabilir; kullanıcı aralarında geçer.",
+        "items": [
+          "Liste: 30 kolona kadar, sıralama ve kolon seçimi",
+          "Pano: sütunlar aşamalardır; kart sürüklenince geçişin kuralları uygulanır",
+          "Takvim: kayıt seçilen tarih alanının gününde görünür; kart sürüklenince tarih değişir",
+          "Pano ve takvim kartında 6 alana kadar bilgi"
+        ]
+      },
+      {
+        "icon": "Palette",
+        "title": "Gezinme ve tema",
+        "text": "Uygulamanın kendi menüsü ve görünüşü olur.",
+        "items": [
+          "Yerleşim: üst sekmeler, yan menü ya da kod bileşeni",
+          "Ana renk, menü zemini, menü yazısı ve uygulamaya özel CSS",
+          "Açılış öğesi ve menü grupları",
+          "ServiceCore menüsünde Uygulamalar grubunda ya da üst seviye öğe olarak yer alır"
+        ]
+      }
+    ]
+  },
+  "stages": {
+    "id": "asamalar",
+    "eyebrow": "03 · Aşamalar",
+    "title": "Kaydın izleyeceği yolu çizin, kuralını koyun",
+    "lead": "Aşamaları tanımlar, aralarındaki geçişleri çizersiniz. Geçiş tanımlanınca kayıt yalnız o geçişlerle ilerler; aşama, kayıt detayındaki düğmelerle değişir.",
+    "diagram": {
+      "label": "Örnek aşama diyagramı",
+      "main": [
+        { "name": "Taslak", "tag": "Başlangıç", "tone": "slate", "action": "İncelemeye gönder" },
+        { "name": "İncelemede", "tag": "Onay akışı", "tone": "amber", "action": "Onaylanınca" },
+        { "name": "Onaylandı", "tag": "", "tone": "blue", "action": "Tamamla" },
+        { "name": "Tamamlandı", "tag": "Son aşama", "tone": "emerald", "action": "" }
+      ],
+      "side": [
+        { "name": "Reddedildi", "tag": "Son aşama", "tone": "red", "from": "İncelemede aşamasından, onay reddedilince" },
+        { "name": "İptal", "tag": "Son aşama", "tone": "slate", "from": "Taslak ve Onaylandı aşamalarından" }
+      ]
+    },
+    "rulesTitle": "Geçişe konan kurallar",
+    "rules": [
+      { "title": "Düğme adı", "text": "Kayıt detayındaki düğmenin yazısını siz belirlersiniz: İncelemeye gönder, Tamamla, İptal et." },
+      { "title": "Zorunlu alanlar", "text": "Geçiş anında doldurulması gereken alanlar seçilir; boşsa kullanıcıya pencerede sorulur." },
+      { "title": "Gerekçe", "text": "Kullanıcıdan gerekçe istenir; gerekçe kaydın geçmişine yazılır." },
+      { "title": "Onay iletisi", "text": "Geçişten önce kullanıcıya bir uyarı metni gösterilir." }
+    ],
+    "note": "Kurallar ekranda, API'de ve sunucu betiklerinde aynı şekilde uygulanır. Panoda kartı sürüklemek de aynı kurallarla çalışır."
+  },
+  "approval": {
+    "id": "onay",
+    "eyebrow": "03 · Onay akışı",
+    "title": "Onay motoru, sizin kurallarınızla",
+    "lead": "AppliCore, ServiceCore'un gelişmiş onay akışı motorunu kullanır. Kayıt, onay akışına bağlı aşamaya girince akış kendiliğinden başlar.",
+    "image": "/images/applicore/onay-akisi.webp",
+    "imageAlt": "Kayıt detayında Onay sekmesi: onaylanmış akış, akış diyagramı ve onay zaman çizelgesi",
+    "imageCaption": "Kayıt detayındaki Onay sekmesi",
+    "bullets": [
+      { "title": "Koşullu yollar", "text": "Tutar, kategori, tarih gibi alanlara göre farklı onaycı." },
+      { "title": "Sıralı ve paralel adımlar", "text": "Yönetici zinciri, departman yöneticisi, onay grubu, teknisyen grubu." },
+      { "title": "Kendiliğinden başlar", "text": "Kayıt belirli bir aşamaya girince akış çalışır; sonuç kaydı seçtiğiniz aşamaya taşır." },
+      { "title": "Tek yerde karar", "text": "Kayıttaki Onay sekmesi ve Onaylarım ekranı; onaycıya ve kaydı oluşturana e-posta bildirimi." },
+      { "title": "Revize istenir", "text": "Onaycı revize isterse kayıt düzeltilir ve tekrar onaya gönderilir." },
+      { "title": "Akış sürerken kayıt korunur", "text": "Onay sürerken kaydın aşaması değiştirilemez." },
+      { "title": "Onaycı gerektiği kadar görür", "text": "Kaydı normalde göremeyen onaycı, adım onu beklerken kaydı salt okunur görür." },
+      { "title": "Onaydan sonra işlem", "text": "Akış e-posta gönderir, HTTP isteği yapar ya da veri kaynağını çağırır; örneğin onaylanan talep ERP'de sipariş açar." }
+    ]
+  }
+}

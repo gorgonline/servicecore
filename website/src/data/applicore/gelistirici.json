@@ -1,0 +1,125 @@
+{
+  "scripts": {
+    "id": "kod",
+    "eyebrow": "03 · Kodla derinleşme",
+    "title": "Karmaşık kurallar betikle yazılır",
+    "lead": "Uygulamaların çoğu kod yazmadan kurulur. Kuralı ya da ekranı ayarların ötesine taşımanız gerektiğinde kod devreye girer; JavaScript ya da TypeScript ile yazılır.",
+    "image": "/images/applicore/sunucu-betigi.webp",
+    "imageAlt": "Stüdyo'nun Kod alanı: solda dosya ağacı, sağda TypeScript ile yazılmış doğrulama betiği",
+    "imageCaption": "Stüdyo'nun Kod alanında bir doğrulama betiği",
+    "types": [
+      { "icon": "ShieldCheck", "title": "Doğrulama", "text": "Kayıt kaydedilmeden önce çalışır. Hata iletisi döndürürse kayıt reddedilir." },
+      { "icon": "Zap", "title": "Tetikleyici", "text": "Kayıt oluşturulunca, güncellenince, aşaması değişince ya da belirli bir aşamaya girince çalışır." },
+      { "icon": "MousePointerClick", "title": "Uç", "text": "Ekrandan ya da koddan çağrılınca çalışır; çağıranın sahip olması gereken yetki ayarlanır." },
+      { "icon": "Clock", "title": "Zamanlanmış", "text": "Saatte bir, her gün, hafta içi her gün ya da haftada bir çalışır." }
+    ],
+    "bullets": [
+      { "title": "Kısıtlı motor", "text": "Dosya sistemine, işletim sistemine ve veritabanına doğrudan erişim yoktur." },
+      { "title": "Kullanıcının yetkisiyle", "text": "Betik yalnız kendi modülünün verisine, isteği yapan kullanıcının yetkisi ve kapsamıyla erişir." },
+      { "title": "Dene ve hata ayıkla", "text": "Betik taslaktan çalıştırılır; Konsol sonucu gösterir, adım adım oynatıcıda değişkenler ve çağrı yığını izlenir." },
+      { "title": "Tek kural, iki yer", "text": "Ortak kod hem ekranda canlı uyarı hem sunucuda doğrulama olarak çalışır." }
+    ],
+    "sampleTitle": "Örnek: incelemeye giden kayıtta en az bir kalem olmalı",
+    "sampleFile": "scripts/ornek_kurali.ts",
+    "sample": [
+      "export const validate: CmValidate<\"ornek\"> = (record, old, ctx) => {",
+      "  const hatalar = [];",
+      "  const ileti = \"İncelemeye göndermek için en az bir kalem ekleyin.\";",
+      "  const incelemeyeGidiyor =",
+      "    record.asama === \"incelemede\" &&",
+      "    (!old || old.asama !== \"incelemede\");",
+      "",
+      "  if (incelemeyeGidiyor && !ctx.value(\"kalem_sayisi\")) {",
+      "    hatalar.push({ field: \"asama\", message: ileti });",
+      "  }",
+      "  return hatalar;",
+      "};"
+    ],
+    "componentsTitle": "Kod bileşenleri",
+    "componentsText": "React ile yazılan sayfa, blok ya da uygulamanın bütün düzenidir. cm-sdk ile veri okur, kayıt yazar, sorgu ve veri kaynağı çağırır.",
+    "componentsItems": [
+      "Sayfa tasarımcısında blok, kendi başına Kod sayfası ya da uygulama düzeni olarak kullanılır",
+      "Çubuk, çizgi ve halka grafik bileşenleri hazır gelir",
+      "Bileşenin ayarları tasarımcıda görünür: metin, sayı, evet/hayır, seçim, veri seti, sayfa",
+      "Kod, sayfayı açan kullanıcının oturumu ve yetkisiyle çalışır; yetki yükseltmez"
+    ],
+    "limitsTitle": "Betiğin çalışma sınırları",
+    "limits": [
+      { "label": "Çalışma süresi", "value": "10 sn" },
+      { "label": "Bellek", "value": "16 MB" },
+      { "label": "Kayıt yazımı", "value": "10" },
+      { "label": "Bildirim", "value": "5" },
+      { "label": "Hata ayıklama", "value": "1.000 adım" }
+    ]
+  },
+  "cli": {
+    "id": "cm-cli",
+    "eyebrow": "03 · Yazılım ekibi için cm-cli",
+    "title": "Kendi editörünüzle, kendi Git deponuzla",
+    "lead": "cm-cli, uygulamayı dosya ağacı olarak bilgisayarınıza çeker. Stüdyo ve cm-cli aynı tanıma yazar: Stüdyo'da yaptığınız değişiklik cm-cli'de, cm-cli'den gönderdiğiniz değişiklik Stüdyo'da görünür.",
+    "flow": [
+      { "title": "Çek", "text": "Modül bilgisayara dosya ağacı olarak iner." },
+      { "title": "Geliştir", "text": "TypeScript, React, tip denetimi ve yerel test." },
+      { "title": "Taslağa yaz", "text": "Her kayıtta taslak güncellenir, önizleme yenilenir." },
+      { "title": "Dört göz", "text": "Yayın yine Stüdyo'da, ikinci yetkilinin onayıyla." }
+    ],
+    "terminalTitle": "Terminal",
+    "terminal": [
+      { "comment": true, "text": "# Paket ServiceCore sunucusundan indirilir" },
+      { "comment": false, "text": "npm install -g ./servicecore-cm-cli-<sürüm>.tgz" },
+      { "comment": false, "text": "cm-cli login --server https://<sunucu>" },
+      { "comment": false, "text": "cm-cli pull satin_alma" },
+      { "comment": false, "text": "cm-cli dev" },
+      { "comment": false, "text": "cm-cli test" }
+    ],
+    "notesTitle": "Bilmeniz gerekenler",
+    "notes": [
+      "cm-cli yayın yapamaz; değişiklik taslağa gider.",
+      "Kişisel erişim anahtarıyla çalışır; anahtarın sahibi tasarım iznine sahip olmalıdır.",
+      "Node.js 18.17 ve üstü gerekir; bağımlılıklar için kurumun iç npm aynası yeterlidir.",
+      "Paketler sunucudan gelir; internete kapalı kurulumlarda da çalışır.",
+      "Çekilen klasördeki AGENTS.md komutları ve kuralları anlatır; yapay zekâ kod asistanları da bu dosyayı okuyarak çalışabilir.",
+      "Betikler bellekte, gerçek veri ve e-posta olmadan test edilir."
+    ],
+    "commandsTitle": "Komutlar",
+    "commands": [
+      { "name": "pull", "text": "Modülü dosya ağacı olarak çeker." },
+      { "name": "status", "text": "Yerel değişiklikleri listeler." },
+      { "name": "build", "text": "Yerelde derler." },
+      { "name": "check", "text": "Sunucuda doğrular, yazmaz." },
+      { "name": "push", "text": "Değişiklikleri taslağa yazar; çakışma varsa bildirir ve yazmaz." },
+      { "name": "dev", "text": "Her kaydetmede taslağa yükler; önizleme birkaç saniyede güncellenir." },
+      { "name": "types", "text": "Veri setlerinden tip tanımlarını üretir." },
+      { "name": "run", "text": "Kayıtlı taslaktaki betiği çalıştırır." },
+      { "name": "test", "text": "Testleri çalıştırır." },
+      { "name": "open", "text": "Stüdyo'yu önizleme açık olarak açar." }
+    ]
+  },
+  "integration": {
+    "id": "entegrasyon",
+    "eyebrow": "03 · Entegrasyon",
+    "title": "İç sistemlerden veri çekin, onaydan sonra işlem açın",
+    "lead": "Örnek: müşteri numarası girilince ad ve şube çekirdek sistemden dolsun; onaylanan talep ERP'de sipariş açsın.",
+    "cards": [
+      { "icon": "Plug", "title": "Tanımlı veri kaynakları", "text": "REST/JSON servisleri modülde tanımlanır; formdan, sayfadaki düğmeden, sunucu betiğinden ve onay akışından çağrılır." },
+      { "icon": "ServerCog", "title": "Çağrı sunucudan", "text": "Adres ve şifreler tarayıcıya gelmez. Şifreler modül başına şifreli saklanır ve hiçbir ekrandan geri okunamaz." },
+      { "icon": "Lock", "title": "Kapalı kapılar", "text": "Yerel adresler, bulut metadata adresi ve http/https dışı adresler her zaman kapalıdır; yönlendirme izlenmez." }
+    ],
+    "usesTitle": "Veri kaynağı nerelerde kullanılır",
+    "uses": [
+      { "title": "Form alanında", "text": "Alan dış listeden doldurulur; yazdıkça arama yapılır, seçilen satır başka alanları da doldurur." },
+      { "title": "Sayfadaki düğmede", "text": "Tıklayınca veri kaynağı çağrılır." },
+      { "title": "Sunucu betiğinde", "text": "Betik, tanımlı kaynağı adıyla çağırır." },
+      { "title": "Kod bileşeninde", "text": "Bileşen aynı kaynağı cm-sdk ile kullanır." },
+      { "title": "Onay akışında", "text": "Onaydan sonra dış sistemde işlem açılır." }
+    ],
+    "queriesTitle": "Sorgular: bir kez tanımlayın, her yerde kullanın",
+    "queriesText": "Sorgu, bir veri setinden adlandırılmış ve yeniden kullanılabilir bir okumadır. Göstergeler, grafikler, listeler, kod bileşenleri ve betikler aynı sorguyu kullanır.",
+    "queries": [
+      { "title": "Özet sorgusu", "text": "Kayıt sayısı, toplam, ortalama, en küçük, en büyük; gruplama ve gün, hafta, ay aralığı." },
+      { "title": "Kayıt listesi", "text": "Süzgeç, sıralama ve kolon seçimi." },
+      { "title": "Parametre ve belirteç", "text": "Sorgu parametre alır; süzgeçte giriş yapan kullanıcı, bugün ya da son yedi gün gibi belirteçler kullanılır." },
+      { "title": "Yetkiyle çalışır", "text": "Sorgu yalnız kullanıcının görebildiği kayıtları okur." }
+    ]
+  }
+}

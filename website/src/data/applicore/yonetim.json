@@ -1,0 +1,145 @@
+{
+  "publish": {
+    "id": "yayin",
+    "eyebrow": "04 · Güvenlik ve denetim",
+    "title": "Her yayın dört gözden geçer",
+    "lead": "Stüdyo'da yapılan her değişiklik önce taslağa yazılır. Taslak, ikinci bir yetkilinin onayıyla yayınlanır; yeni sürüm o anda kullanıma açılır.",
+    "image": "/images/applicore/yayin-cekmecesi.webp",
+    "imageAlt": "Yayın çekmecesi: yayın durumu, tanım değişiklikleri, dosya değişiklikleri ve çalışacak SQL betiği",
+    "imageCaption": "Onaycının gördüğü yayın çekmecesi",
+    "bullets": [
+      { "title": "Gönderen onaylayamaz", "text": "Kural kapatılamaz; süper yönetici de dahildir." },
+      { "title": "Onaycı ne göreceğini bilir", "text": "Tanım farkı, satır satır kod farkı ve çalışacak SQL betiği." },
+      { "title": "Tek işlem", "text": "Veritabanı değişikliğinde hata olursa hiçbir şey uygulanmaz." },
+      { "title": "Veri silinmez", "text": "Şema değişiklikleri yalnız ekler; kaldırılan alan gizlenir." },
+      { "title": "Ret notla döner", "text": "Reddedilen sürüm notuyla kalır; aynı tanım yeni bir taslağa kopyalanır, düzeltilip yeniden gönderilir." }
+    ],
+    "statesTitle": "Bir sürümün durumları",
+    "states": [
+      { "name": "Taslak", "tone": "slate", "text": "Üzerinde çalışılan sürüm." },
+      { "name": "Onay bekliyor", "tone": "amber", "text": "Onaya gönderildi, düzenlenemez." },
+      { "name": "Yayında", "tone": "emerald", "text": "Kullanıcıların kullandığı sürüm." },
+      { "name": "Geride kaldı", "tone": "blue", "text": "Önceki yayın." },
+      { "name": "Reddedildi", "tone": "red", "text": "Onaycının reddettiği sürüm; notuyla iz olarak kalır." }
+    ]
+  },
+  "audit": {
+    "eyebrow": "04 · Denetim ve değişiklik yönetimi",
+    "title": "Her değişikliğin izi kalır",
+    "image": "/images/applicore/kayit-gecmisi.webp",
+    "imageAlt": "Kayıt detayında Geçmiş sekmesi: alan bazında eski ve yeni değerler, kişi ve saat",
+    "imageCaption": "Kaydın Geçmiş sekmesi",
+    "bullets": [
+      { "title": "Kayıt geçmişi", "text": "Her değişiklik alan bazında eski ve yeni değerle, kişi ve saatle yazılır." },
+      { "title": "Uygulamanın geçmişi", "text": "Her yayın numaralı bir sürümdür; gönderen, onaylayan, reddeden ve tarihler görünür." },
+      { "title": "Testten canlıya", "text": "Modül tek paket dosyasıdır; hedefte taslak açılır, o ortamın dört gözüyle yayınlanır." },
+      { "title": "Geri dönüş", "text": "Eski sürüm yeni taslak olarak gelir ve yeniden onaydan geçer." }
+    ],
+    "packageTitle": "Ortamlar arası paket",
+    "packageIn": { "title": "Pakette", "items": ["Modül tanımı", "Rol yetkileri ve kapsamları, rol adıyla", "Bağlı onay akışları"] },
+    "packageOut": { "title": "Pakette olmayan", "items": ["Kayıtlar ve ekler", "Şifreler; hedef ortamda yeniden girilir", "Custom Endpoint'ler"] }
+  },
+  "access": {
+    "id": "yetki",
+    "eyebrow": "05 · Kayıt düzeyinde yetki",
+    "title": "Kim neyi yapar, kim hangi kaydı görür",
+    "lead": "Rol başına iki karar verirsiniz: rol hangi eylemleri yapar ve hangi kayıtları görüp değiştirir. Varsayılan olarak bütün eylemler kapalıdır; yetki verilmeyen rol modülü göremez. Yetki her istekte sunucuda yeniden denetlenir.",
+    "actionsTitle": "Rol başına eylem",
+    "actions": [
+      { "name": "Görüntüle", "text": "Modülü ve kayıtları görür." },
+      { "name": "Oluştur", "text": "Yeni kayıt açar." },
+      { "name": "Düzenle", "text": "Kaydı değiştirir, aşama geçişi yapar, panoda kart sürükler." },
+      { "name": "Sil", "text": "Kaydı siler." },
+      { "name": "Dışa aktar", "text": "Listeyi Excel'e aktarır." },
+      { "name": "Hassas alanları gör", "text": "Maskeli alanları açar; açma geçmişe yazılır." }
+    ],
+    "scopeTitle": "Rol başına kapsam",
+    "scopeText": "Görme ve değiştirme kapsamı ayrı ayrı seçilir. Değiştirme kapsamı, görme kapsamından geniş olamaz.",
+    "scopeDemo": {
+      "label": "Görme kapsamı",
+      "caption": "Örnek: Satın Alma grubundaki Ayşe Demir'in gördüğü kayıtlar",
+      "user": "Ayşe Demir",
+      "group": "Satın Alma",
+      "columns": ["Kayıt no", "Başlık", "Sahibi", "Grup"],
+      "countLabel": "kayıt görünüyor",
+      "scopes": [
+        { "id": "tumu", "label": "Tümü", "text": "Modüldeki bütün kayıtlar." },
+        { "id": "grubunun", "label": "Grubunun", "text": "Kullanıcının kendi kayıtları ile üyesi olduğu teknisyen grubunun kayıtları." },
+        { "id": "kendi", "label": "Kendi", "text": "Sahip alanlarından birinde kullanıcının kendisi olan kayıtlar." }
+      ],
+      "rows": [
+        { "no": "TAL-000118", "title": "Çağrı merkezi ekipmanı", "owner": "Ayşe Demir", "group": "Satın Alma" },
+        { "no": "TAL-000121", "title": "Yeni ofis bilgisayarları", "owner": "Mehmet Kaya", "group": "Satın Alma" },
+        { "no": "TAL-000124", "title": "Bodrum aydınlatma", "owner": "Zeynep Arslan", "group": "Tesis" },
+        { "no": "TAL-000132", "title": "Kâğıt ikmali", "owner": "Ayşe Demir", "group": "Tesis" },
+        { "no": "TAL-000141", "title": "Yıl sonu eğitim paketi", "owner": "Can Yıldız", "group": "İnsan Kaynakları" }
+      ]
+    },
+    "rulesTitle": "Kapsam her yerde geçerlidir",
+    "rules": [
+      "Kapsam dışındaki kayıt adresle açılırsa “Kayıt bulunamadı” döner; varlığı belli edilmez.",
+      "Listeler, sayımlar, göstergeler, grafikler, pano, takvim ve Excel yalnız görünen kayıtları kullanır.",
+      "Görünmeyen bir kayda verilen referansta yalnız kayıt numarası görünür, başlık görünmez.",
+      "Seçiciler ve sunucu betikleri de yalnız kullanıcının görebildiği kayıtları kullanır.",
+      "Bir kullanıcının birden çok rolü varsa yetkiler birleşir, en geniş kapsam geçerli olur."
+    ],
+    "peopleTitle": "Kim ne yapar",
+    "people": [
+      { "icon": "PencilRuler", "title": "Tasarımcı", "text": "Modül açar, Stüdyo'da düzenler, onaya gönderir, pazar yerinden kurar, dışa ve içe aktarır, modül yetkilerini verir." },
+      { "icon": "BadgeCheck", "title": "Yayın onaycısı", "text": "Taslağı inceler, onaylayıp yayınlar ya da reddeder. Taslağı gönderen kişi onaylayamaz." },
+      { "icon": "UserCheck", "title": "Kullanıcı", "text": "Rolüne verilen eylemlerle uygulamanın kayıt ekranlarını kullanan teknisyendir." }
+    ]
+  },
+  "sensitive": {
+    "id": "hassas-veri",
+    "eyebrow": "05 · Hassas veri",
+    "title": "Hassas veri şifreli saklanır, maskeli gelir",
+    "image": "/images/applicore/hassas-alan.webp",
+    "imageAlt": "Stüdyo'da IBAN alanının ayarları: Hassas anahtarı açık, alan listesinde Hassas etiketi",
+    "imageCaption": "Stüdyo'da bir alanı hassas yapmak tek ayardır",
+    "bullets": [
+      { "title": "Tek ayar", "text": "TC kimlik no, IBAN, maaş gibi alanlar “Hassas” olarak işaretlenir." },
+      { "title": "Veritabanında şifreli", "text": "Değer uygulama katmanında AES-256 ile şifrelenir; hassas dosyanın içeriği de." },
+      { "title": "Herkese maskeli", "text": "Ekranda, Excel'de ve betiklerde; süper yönetici de maskeli görür." },
+      { "title": "Açmak yetki ister", "text": "“Hassas alanları gör” yetkisi gerekir." },
+      { "title": "Her açma kayda geçer", "text": "Kişi ve saatle kaydın geçmişine yazılır; yalnız alan adları yazılır, değerler yazılmaz." }
+    ],
+    "demo": {
+      "title": "Deneyin: çalışan kartı",
+      "permissionLabel": "“Hassas alanları gör” yetkisi",
+      "permissionOn": "Var",
+      "permissionOff": "Yok",
+      "openLabel": "Hassas alanları aç",
+      "closeLabel": "Yeniden maskele",
+      "noPermission": "Bu yetki olmadan düğme görünmez; alanlar maskeli kalır.",
+      "mask": "•••",
+      "fields": [
+        { "label": "Ad soyad", "value": "Örnek Çalışan", "sensitive": false },
+        { "label": "Birim", "value": "Bilgi Teknolojileri", "sensitive": false },
+        { "label": "TC kimlik no", "value": "000 000 000 00", "sensitive": true },
+        { "label": "IBAN", "value": "TR00 0000 0000 0000 0000 0000 00", "sensitive": true },
+        { "label": "Maaş", "value": "₺00.000", "sensitive": true }
+      ],
+      "historyTitle": "Geçmiş",
+      "historyEmpty": "Henüz açma kaydı yok.",
+      "historyEntry": "Hassas alanlar açıldı",
+      "historyFields": "TC kimlik no, IBAN, Maaş",
+      "historyUser": "Siz",
+      "historyNote": "Örnek değerlerdir."
+    }
+  },
+  "usage": {
+    "id": "kullanim",
+    "eyebrow": "Kullanım",
+    "title": "Kullanıcı bildiği ekranlarda çalışır",
+    "lead": "Yayındaki uygulamaları oturum açmış teknisyenler, rollerine verilen modül yetkileriyle kullanır.",
+    "cards": [
+      { "icon": "AppWindow", "title": "Uygulamalar", "text": "Kullanıcı, görebildiği uygulamaları tek sayfada görür. İsterseniz uygulamalar ServiceCore menüsünde de yer alır." },
+      { "icon": "List", "title": "Kayıt listesi", "text": "Arama, kolon seçme, sıralama ve boyutlandırma; seçimler saklanır. Yetkisi olan listeyi Excel'e aktarır." },
+      { "icon": "FileText", "title": "Kayıt detayı", "text": "Aşama çubuğu ve geçiş düğmeleri; Kayıt, Ekler, Geçmiş, Onay ve İlişkili kayıtlar sekmeleri." },
+      { "icon": "FilePlus2", "title": "Yeni kayıt", "text": "Form, tasarımcının seçtiği biçimde açılır: sayfa, yan çekmece ya da pencere. Adımlı formda adım adım ilerlenir." },
+      { "icon": "Copy", "title": "Çakışma koruması", "text": "Kaydı siz düzenlerken başka biri değiştirmişse kaydetme reddedilir, güncel hâli yüklenir." },
+      { "icon": "BellRing", "title": "Bildirimler", "text": "Onayınız bekleniyor, düzeltme istendi ve onay süreci tamamlandı e-postaları gider." }
+    ]
+  }
+}

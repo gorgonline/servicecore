@@ -1,0 +1,104 @@
+{
+  "id": "hazir-uygulamalar",
+  "eyebrow": "02 · Hazır uygulamalar",
+  "title": "Dört hazır uygulamayla başlayın",
+  "lead": "Pazar yeri, ürünle birlikte gelen hazır uygulamaları listeler. Bir uygulamayı olduğu gibi kullanabilir ya da kendi uygulamanıza başlangıç alıp Stüdyo'da değiştirebilirsiniz. Katalog ürünün içindedir; internete kapalı kurulumlarda da çalışır.",
+  "image": "/images/applicore/pazar-yeri.webp",
+  "imageAlt": "Pazar yeri: İnsan Kaynakları, Satın Alma Yönetimi, Sözleşme Yönetimi ve Tesis Yönetimi kartları",
+  "imageCaption": "Pazar yeri: her kartta uygulamanın yetenekleri, veri seti ve sayfa sayısı yazar",
+  "tabsLabel": "Hazır uygulamalar",
+  "labels": { "datasets": "Veri setleri", "stages": "Aşamalar", "approval": "Onay", "highlights": "Öne çıkanlar" },
+  "apps": [
+    {
+      "id": "satin-alma",
+      "icon": "ShoppingCart",
+      "name": "Satın Alma Yönetimi",
+      "kind": "Kurumsal hizmet (ESM)",
+      "summary": "Katalogdan alışveriş, bütçeye takılan onay, tedarikçi karnesi ve yöneticinin açılış ekranı; talepten teslime tek modül.",
+      "highlights": [
+        "Satın Alma Merkezi: harcama, açık taahhüt, bütçe kullanımı ve geciken işler tek ekranda.",
+        "Katalogdan alışveriş: sepet, talep fişi ve kategori başına talep.",
+        "Bütçe kontrolü: bütçeyi aşan talep onaya giderken durur.",
+        "Tedarikçi karnesi: harcama sırası ve zamanında teslim notu.",
+        "Süreç hattı: Taslak'tan Kapandı'ya her aşamada kaç talep ve ne tutar var."
+      ],
+      "datasets": ["Talep", "Talep Kalemi", "Katalog Kalemi", "Tedarikçi", "Bütçe"],
+      "stages": ["Taslak", "Onayda", "Onaylandı", "Sipariş verildi", "Teslim alındı", "Kapandı", "Reddedildi", "İptal"],
+      "approval": "Yönetici onaylar; yüksek tutarda departman yöneticisi de onaylar."
+    },
+    {
+      "id": "sozlesme",
+      "icon": "FileSignature",
+      "name": "Sözleşme Yönetimi",
+      "kind": "İş süreci (BPM)",
+      "summary": "Talepten arşive sözleşme yaşam döngüsü: hukuk onayı akışı, paydaşlar, görevler ve bitiş takibi.",
+      "highlights": [
+        "Koyu yan menülü uygulama: Pano, Sözleşmeler, Akış, Görevler, Analitik.",
+        "8 aşamalı akış, aşama başına sayı ve zaman çizelgesi.",
+        "Hukuk onayı akışıyla gelir.",
+        "Yakında bitenler ve bana atanan görevler listeleri."
+      ],
+      "datasets": ["Sözleşme", "Paydaş", "Görev"],
+      "stages": ["Talep", "Taslak", "Müzakere", "Hukuk onayı", "İmza", "Yürürlükte", "Yenileme", "Arşiv"],
+      "approval": "Sahibin yöneticisi onaylar; büyük bedelde şirket yöneticisi de onaylar."
+    },
+    {
+      "id": "insan-kaynaklari",
+      "icon": "IdCard",
+      "name": "İnsan Kaynakları",
+      "kind": "Kurumsal hizmet (ESM)",
+      "summary": "İşe giriş sihirbazı, çalışan kartı, organizasyon şeması ve izin takibi.",
+      "highlights": [
+        "4 adımlı işe giriş sihirbazı: kişisel, iş, ekipman ve belgeler.",
+        "Fotoğraf yükleme, hassas alanlar ve koşullu alanlar.",
+        "Kod bileşeniyle çizilen organizasyon şeması.",
+        "İzin talepleri: yan çekmecede form, onay ve takvim göstergeleri."
+      ],
+      "datasets": ["Çalışan", "Birim", "İzin"],
+      "stages": [],
+      "approval": ""
+    },
+    {
+      "id": "tesis",
+      "icon": "Building2",
+      "name": "Tesis Yönetimi",
+      "kind": "Kurumsal hizmet (ESM)",
+      "summary": "Bina ve bölüm bazında bakım iş emirleri: teknisyen dağıtımı, acil kayıt ve maliyet raporları.",
+      "highlights": [
+        "Üst sekmeli uygulama: Pano, İş emirleri, Teknisyen dağıtımı, Acil kayıt, Raporlar, Binalar, Özet.",
+        "Toplam, açık, geciken ve bu ay tamamlanan iş emri göstergeleri.",
+        "Bölüme göre çubuk, duruma göre halka grafik ve son 3 ay eğilimi.",
+        "Yan çekmecede iş emri formu, fotoğraf ve maliyet alanları."
+      ],
+      "datasets": ["Bina", "İş Emri"],
+      "stages": ["Yeni", "Atandı", "Devam ediyor", "Beklemede", "Tamamlandı", "İptal"],
+      "approval": ""
+    },
+    {
+      "id": "yetenek-galerisi",
+      "icon": "Sparkles",
+      "name": "Yetenek Galerisi",
+      "kind": "Rehber",
+      "summary": "Platformun öğretici örneği. Her yetenek canlı bir sayfada gösterilir; sayfanın altındaki Nasıl yapıldı kartı, ekranın hangi dosyalardan geldiğini yazar ve dosyayı tek tıkla Stüdyo'da açar.",
+      "highlights": [
+        "Veri: alan türleri, ana-alt kayıt, aşama ve onay, geçiş kuralları, kayıt görünürlüğü.",
+        "Ekran: formlar, bloklar, etkileşim, pano ve takvim.",
+        "Kod ve sunucu: kod bileşeni, doğrulama, uç, tetikleyici, bildirim, zamanlanmış betik.",
+        "Entegrasyon: dış sistem çağrısı örnekleri.",
+        "5 veri seti ve 20 sayfa; kendi modülünüze başlamadan önce kurup inceleyebilirsiniz."
+      ],
+      "datasets": ["Örnek kayıt", "Örnek kalemi", "Kategori", "Ürün", "Kayıt etkinliği"],
+      "stages": ["Taslak", "İncelemede", "Onaylandı", "Tamamlandı", "Reddedildi", "İptal"],
+      "approval": ""
+    }
+  ],
+  "installTitle": "Hazır uygulama nasıl kurulur",
+  "installSteps": [
+    { "title": "Kur", "text": "Pazar yerindeki kartta Kur'a basılır. Uygulama bu ortamda taslak olarak açılır." },
+    { "title": "Onaya gönder", "text": "Stüdyo yayın çekmecesi açık gelir; taslak onaya gönderilir." },
+    { "title": "Yayınla", "text": "Yayın izni olan başka bir kişi onaylar ve yayınlar." },
+    { "title": "Yetki ver", "text": "Rollere modül yetkisi verilir." },
+    { "title": "Örnek veriyle dene", "text": "İsterseniz örnek veriler yüklenir. Kayıtlar kurgudur; onay başlatmaz, e-posta göndermez." }
+  ],
+  "installNote": "Paket, uygulamayla birlikte onay akışını ve gerekiyorsa Custom Endpoint'leri de getirir. Yeniden kur, paketin güncel hâlini yeni bir taslak olarak açar; yayındaki sürüm onaya kadar değişmez."
+}

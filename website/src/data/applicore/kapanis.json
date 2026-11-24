@@ -1,0 +1,69 @@
+{
+  "scale": {
+    "id": "olcek",
+    "eyebrow": "Ölçek",
+    "title": "Sayısal sınırlar",
+    "lead": "Teknik ekibiniz için: bir uygulamanın kapasitesi.",
+    "items": [
+      { "label": "Modülde veri seti", "value": "50" },
+      { "label": "Veri setinde alan", "value": "300" },
+      { "label": "Görünüm", "value": "100" },
+      { "label": "Form", "value": "100" },
+      { "label": "Sayfa", "value": "100" },
+      { "label": "Gezinme öğesi", "value": "30" },
+      { "label": "Sorgu", "value": "100" },
+      { "label": "Veri kaynağı", "value": "50" },
+      { "label": "Sunucu betiği", "value": "50" },
+      { "label": "Kod bileşeni", "value": "50" },
+      { "label": "Ana kayıtta kalem", "value": "200" },
+      { "label": "Dosya alanında dosya", "value": "20" },
+      { "label": "Dosya başına boyut", "value": "25 MB" },
+      { "label": "Excel'e aktarma", "value": "10.000 satır" },
+      { "label": "Pano ve takvimde kayıt", "value": "500" },
+      { "label": "Dışa aktarılan paket", "value": "5 MB" }
+    ]
+  },
+  "demo": {
+    "eyebrow": "Canlı gösterim",
+    "title": "Demoda neler göreceksiniz",
+    "items": [
+      { "title": "Hazır uygulama", "text": "Pazar yerinden Satın Alma'yı açar, Merkez ekranında gezinirsiniz." },
+      { "title": "Tutara göre onay", "text": "19.000 TL ve 135.000 TL'lik iki talebin farklı onay yolunu görürsünüz." },
+      { "title": "Bütçe kuralı", "text": "Bütçeyi aşan talebin onaya giderken durduğunu görürsünüz." },
+      { "title": "Hassas alan", "text": "İnsan Kaynakları çalışan kartında hassas alan açılır, izi Geçmiş'te görünür." },
+      { "title": "Kayıt kapsamı", "text": "Kapsamı “Kendi” olan iki kullanıcının farklı listelerini karşılaştırırsınız." },
+      { "title": "Stüdyo ve yayın", "text": "Alan eklenir, onaya gönderilir; ikinci yetkili onaylar." }
+    ]
+  },
+  "faq": {
+    "id": "sorular",
+    "eyebrow": "Sorular",
+    "title": "Sık sorulan sorular",
+    "items": [
+      { "q": "AppliCore ile Özel Modüller aynı şey mi?", "a": "Evet. Özel Modüller'in (Custom Modules) yeni adı AppliCore'dur. Ürün ekranlarında ve kullanım kılavuzunda eski adı da görebilirsiniz." },
+      { "q": "Ayrı sunucu ya da veritabanı gerekir mi?", "a": "Gerekmez. Ek sunucu, ek veritabanı, Redis ya da Node kurulmaz. Özellik ServiceCore güncellemesiyle gelir, kayıtlar ServiceCore'un SQL Server veritabanında durur." },
+      { "q": "Kod bilmeden uygulama kurulabilir mi?", "a": "Evet. Veri setleri, formlar, görünümler, aşamalar ve onay Uygulama Stüdyosu'nda kod yazmadan kurulur. Kod, kuralı ya da ekranı ayarların ötesine taşımak istediğinizde devreye girer." },
+      { "q": "İnternete kapalı ağda çalışır mı?", "a": "Evet. Pazar yeri kataloğu ürünün içindedir; cm-cli paketleri de ServiceCore sunucusundan indirilir." },
+      { "q": "Hazır uygulamayı kendimize göre değiştirebilir miyiz?", "a": "Evet. Hazır uygulama olduğu gibi kullanılır ya da başlangıç noktası olarak alınıp Stüdyo'da değiştirilir. Menüsü ve ekranları da değişebilir." },
+      { "q": "Bir alanı kaldırırsak verisi silinir mi?", "a": "Silinmez. Yayınlanmış alan kaldırılınca gizlenir, verisi veritabanında kalır. Aynı adla ve uyumlu tiple geri eklenirse eski verisiyle döner." },
+      { "q": "Bir uygulamayı tek kişi yayınlayabilir mi?", "a": "Hayır. Taslağı onaya gönderen kişi onaylayamaz; süper yönetici de bu kurala tabidir. Yayın için en az iki yetkili kişi gerekir." },
+      { "q": "Test ortamındaki uygulama canlıya nasıl taşınır?", "a": "Modül tek bir paket dosyası olarak dışa aktarılır. Canlı ortamda taslak olarak açılır ve o ortamın dört göz onayından geçerek yayınlanır." },
+      { "q": "Uygulama dış sistemlere bağlanır mı?", "a": "Evet. REST/JSON servisleri veri kaynağı olarak tanımlanır; formdan, sayfadan, betikten ve onay akışından çağrılır. Çağrı sunucudan yapılır; adres ve şifreler tarayıcıya gelmez." },
+      { "q": "Hassas verileri süper yönetici görür mü?", "a": "Hassas alanlar süper yöneticiye de maskeli gelir. Açmak için “Hassas alanları gör” yetkisi gerekir ve her açma kaydın geçmişine yazılır." }
+    ]
+  },
+  "next": {
+    "eyebrow": "Sonraki adımlar",
+    "title": "Bir süreçle başlayalım",
+    "steps": [
+      { "title": "Süreç seçimi", "text": "Formu, onayı ve takibi olan bir iç süreç: alanlar, onay kuralları, kullanıcılar." },
+      { "title": "Teknik görüşme", "text": "SQL Server sürümü, uygulama login'inin rolü, veri koruma sertifikası, entegrasyon protokolleri." },
+      { "title": "Çalıştay", "text": "Seçilen süreci birlikte Stüdyo'da kuralım; hazır uygulamalardan biriyle karşılaştıralım." }
+    ],
+    "note": "Sorularınızı yazılı olarak da toplayıp cevaplıyoruz.",
+    "primaryLabel": "Demo İste",
+    "primaryHref": "/demo",
+    "secondaryLabel": "Bize Ulaşın",
+    "secondaryHref": "/iletisim"
+  }
+}
