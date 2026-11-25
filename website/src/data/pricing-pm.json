@@ -1140,6 +1140,25 @@
         "title": "STANDART VEYA PREMIUMA EKLENEBİLEN MODÜLLER",
         "items": [
           {
+            "name": "AppliCore Add-on",
+            "desc": "Formu, onayı ve takibi olan iç süreçlerinizi ayrı bir platform kurmadan, ServiceCore'un içinde iş uygulaması olarak kurmanızı sağlar; dört hazır uygulamayla gelir.",
+            "link": "/applicore",
+            "paragraphs": [
+              "AppliCore Add-on; satın alma talebi, sözleşme onayı, izin ve bakım iş emri gibi çoğu kurumda e-posta ve elektronik tablolarla yürüyen süreçleri iş uygulamasına dönüştürür. Uygulama ServiceCore'un veritabanı, kullanıcıları, rolleri ve onay motoru üzerinde çalışır; ek sunucu ve ek veritabanı gerekmez.",
+              "Bir uygulama; veri setleri, formlar, liste, pano ve takvim görünümleri, aşamalar, onay akışı ve yetkilerle tek bir modül olarak paketlenir. Uygulama Stüdyosu'nda kod yazmadan kurulur, alanlar 23 alan tipinden seçilir. Karmaşık kural ya da özel ekran gerektiğinde sunucu betikleri ve React bileşenleri TypeScript ile yazılır.",
+              "Satın Alma Yönetimi, Sözleşme Yönetimi, İnsan Kaynakları ve Tesis Yönetimi hazır uygulamaları ürünle birlikte gelir. Hazır uygulama olduğu gibi kullanılır ya da kendi uygulamanıza başlangıç alınıp Stüdyo'da değiştirilir.",
+              "Her yayın numaralı bir sürümdür ve gönderenden başka bir yetkilinin onayıyla canlıya alınır; onaycı tanım farkını, kod farkını ve çalışacak SQL betiğini onaydan önce görür. Yetki rol başına eylem ve kayıt düzeyinde verilir; hassas alanlar maskelenir, her açma kaydın geçmişine yazılır."
+            ],
+            "highlights": [
+              "Kod yazmadan kurulum",
+              "23 alan tipi",
+              "Liste, pano ve takvim",
+              "Aşamalar ve onay akışı",
+              "Dört hazır uygulama",
+              "Dört göz onayıyla yayın"
+            ]
+          },
+          {
             "name": "Failover / Cluster Sistem Add-on",
             "desc": "ServiceCore kurulumunu en az iki düğüm üzerinde yedekli çalıştırır; bir düğüm arızalandığında hizmet, kullanıcı ve entegrasyon adresleri değişmeden ikinci düğüm üzerinden devam eder.",
             "link": "/failover",

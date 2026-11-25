@@ -219,12 +219,17 @@
     ]
   },
   "addons": {
-    "title": "Altyapı Eklentileri",
-    "description": "Aşağıdaki altyapı eklentileri pakete dahil değildir; teknisyen lisansından bağımsız olarak, sabit adet üzerinden ayrıca lisanslanır. Kurulum ve yıllık bakım kalemleri de ayrıdır — ayrıntısı Abonelik ve Lisanslama Rehberi'nin 12. bölümündedir.",
+    "title": "Eklentiler",
+    "description": "Aşağıdaki eklentiler pakete dahil değildir. Failover / Cluster, Disaster Center ve Sandbox altyapı eklentileri teknisyen lisansından bağımsız olarak, sabit adet üzerinden ayrıca lisanslanır. Kurulum ve yıllık bakım kalemleri de ayrıdır — ayrıntısı Abonelik ve Lisanslama Rehberi'nin 12. bölümündedir.",
     "categories": [
       {
         "title": "Eklentiler (Add-ons)",
         "items": [
+          {
+            "name": "AppliCore Add-on",
+            "desc": "ServiceCore AppliCore Add-on; formu, onayı ve takibi olan iç süreçlerinizi ayrı bir platform kurmadan, ServiceCore'un içinde iş uygulaması olarak kurmanızı sağlar. Satın Alma, Sözleşme, İnsan Kaynakları ve Tesis Yönetimi hazır uygulamalarıyla gelir.",
+            "link": "/applicore"
+          },
           {
             "name": "Failover / Cluster Sistem Add-on",
             "desc": "ServiceCore Failover / Cluster Sistem Add-on, yüksek erişilebilirlik ve kesintisiz hizmet sağlamak amacıyla, ServiceCore platformunun yedekli bir yapıda çalışmasına olanak tanır. Bu özellik, kritik iş süreçlerinin ve hizmetlerin herhangi bir kesinti durumunda devamlılık göstermesini sağlar. Failover ve Cluster sistemleri, platformun daha dayanıklı, güvenilir ve kesintisiz çalışmasını garanti eder.",
