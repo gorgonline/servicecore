@@ -42,13 +42,16 @@
     "items": [
       { "q": "AppliCore ile Özel Modüller aynı şey mi?", "a": "Evet. Özel Modüller'in (Custom Modules) yeni adı AppliCore'dur. Ürün ekranlarında ve kullanım kılavuzunda eski adı da görebilirsiniz." },
       { "q": "Ayrı sunucu ya da veritabanı gerekir mi?", "a": "Gerekmez. Ek sunucu, ek veritabanı, Redis ya da Node kurulmaz. Özellik ServiceCore güncellemesiyle gelir, kayıtlar ServiceCore'un SQL Server veritabanında durur." },
+      { "q": "AppliCore uygulamalarını kimler kullanır?", "a": "ServiceCore'a teknisyen hesabıyla girenler kullanır. Ayrı bir kullanıcı yönetimi yoktur; ServiceCore'un kullanıcıları, rolleri ve teknisyen grupları geçerlidir." },
       { "q": "Kod bilmeden uygulama kurulabilir mi?", "a": "Evet. Veri setleri, formlar, görünümler, aşamalar ve onay Uygulama Stüdyosu'nda kod yazmadan kurulur. Kod, kuralı ya da ekranı ayarların ötesine taşımak istediğinizde devreye girer." },
       { "q": "İnternete kapalı ağda çalışır mı?", "a": "Evet. Pazar yeri kataloğu ürünün içindedir; cm-cli paketleri de ServiceCore sunucusundan indirilir." },
       { "q": "Hazır uygulamayı kendimize göre değiştirebilir miyiz?", "a": "Evet. Hazır uygulama olduğu gibi kullanılır ya da başlangıç noktası olarak alınıp Stüdyo'da değiştirilir. Menüsü ve ekranları da değişebilir." },
       { "q": "Bir alanı kaldırırsak verisi silinir mi?", "a": "Silinmez. Yayınlanmış alan kaldırılınca gizlenir, verisi veritabanında kalır. Aynı adla ve uyumlu tiple geri eklenirse eski verisiyle döner." },
       { "q": "Bir uygulamayı tek kişi yayınlayabilir mi?", "a": "Hayır. Taslağı onaya gönderen kişi onaylayamaz; süper yönetici de bu kurala tabidir. Yayın için en az iki yetkili kişi gerekir." },
       { "q": "Test ortamındaki uygulama canlıya nasıl taşınır?", "a": "Modül tek bir paket dosyası olarak dışa aktarılır. Canlı ortamda taslak olarak açılır ve o ortamın dört göz onayından geçerek yayınlanır." },
-      { "q": "Uygulama dış sistemlere bağlanır mı?", "a": "Evet. REST/JSON servisleri veri kaynağı olarak tanımlanır; formdan, sayfadan, betikten ve onay akışından çağrılır. Çağrı sunucudan yapılır; adres ve şifreler tarayıcıya gelmez." },
+      { "q": "Uygulama dış sistemlere bağlanır mı?", "a": "Evet. REST/JSON servisleri veri kaynağı olarak tanımlanır; formdan, sayfadan, betikten ve onay akışından çağrılır. Çağrı sunucudan yapılır; adres ve şifreler tarayıcıya gelmez. SOAP ya da MQ için arada bir servis kullanılır; protokolleri teknik görüşmede birlikte netleştiririz." },
+      { "q": "Uygulamanın verisini raporlayabilir miyiz?", "a": "Evet. Uygulamanın kendi panoları ve Excel'e aktarması vardır. Veriler SQL tablolarında durduğu için BI aracınız da doğrudan bağlanabilir; hassas alanlar orada şifreli görünür." },
+      { "q": "Kodu kim inceler?", "a": "Yayın onaycısı inceler. Kod bileşenleri sayfayı açan kullanıcının yetkisiyle çalışır; yayın onayı bu yüzden bir kod incelemesidir ve kod okuyabilen bir yetkili tarafından yapılır." },
       { "q": "Hassas verileri süper yönetici görür mü?", "a": "Hassas alanlar süper yöneticiye de maskeli gelir. Açmak için “Hassas alanları gör” yetkisi gerekir ve her açma kaydın geçmişine yazılır." }
     ]
   },
@@ -57,7 +60,7 @@
     "title": "Bir süreçle başlayalım",
     "steps": [
       { "title": "Süreç seçimi", "text": "Formu, onayı ve takibi olan bir iç süreç: alanlar, onay kuralları, kullanıcılar." },
-      { "title": "Teknik görüşme", "text": "SQL Server sürümü, uygulama login'inin rolü, veri koruma sertifikası, entegrasyon protokolleri." },
+      { "title": "Teknik görüşme", "text": "SQL Server sürümü, uygulama login'inin rolü, veri koruma sertifikası, entegrasyon protokolleri, tek ya da çok kurumlu kurulum, beklenen kayıt ve kullanıcı sayısı." },
       { "title": "Çalıştay", "text": "Seçilen süreci birlikte Stüdyo'da kuralım; hazır uygulamalardan biriyle karşılaştıralım." }
     ],
     "note": "Sorularınızı yazılı olarak da toplayıp cevaplıyoruz.",

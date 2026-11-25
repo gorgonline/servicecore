@@ -11,13 +11,15 @@
       { "icon": "ShieldCheck", "title": "Doğrulama", "text": "Kayıt kaydedilmeden önce çalışır. Hata iletisi döndürürse kayıt reddedilir." },
       { "icon": "Zap", "title": "Tetikleyici", "text": "Kayıt oluşturulunca, güncellenince, aşaması değişince ya da belirli bir aşamaya girince çalışır." },
       { "icon": "MousePointerClick", "title": "Uç", "text": "Ekrandan ya da koddan çağrılınca çalışır; çağıranın sahip olması gereken yetki ayarlanır." },
-      { "icon": "Clock", "title": "Zamanlanmış", "text": "Saatte bir, her gün, hafta içi her gün ya da haftada bir çalışır." }
+      { "icon": "Clock", "title": "Zamanlanmış", "text": "Saatte bir, her gün, hafta içi her gün ya da haftada bir, kullanıcı kapsamına bağlı olmadan çalışır; hatırlatma e-postası gibi işler için." }
     ],
     "bullets": [
       { "title": "Kısıtlı motor", "text": "Dosya sistemine, işletim sistemine ve veritabanına doğrudan erişim yoktur." },
       { "title": "Kullanıcının yetkisiyle", "text": "Betik yalnız kendi modülünün verisine, isteği yapan kullanıcının yetkisi ve kapsamıyla erişir." },
       { "title": "Dene ve hata ayıkla", "text": "Betik taslaktan çalıştırılır; Konsol sonucu gösterir, adım adım oynatıcıda değişkenler ve çağrı yığını izlenir." },
-      { "title": "Tek kural, iki yer", "text": "Ortak kod hem ekranda canlı uyarı hem sunucuda doğrulama olarak çalışır." }
+      { "title": "Tek kural, iki yer", "text": "Ortak kod hem ekranda canlı uyarı hem sunucuda doğrulama olarak çalışır." },
+      { "title": "Her değişiklik onaydan geçer", "text": "Betik değişikliği de dört göz onayıyla yayınlanır; betik dışarıya yalnız modülde tanımlı veri kaynaklarından çıkar." },
+      { "title": "Canlıda izlenir", "text": "Başarısız çalışmalar 30 gün izlenir; kullanıcıya gösterilen başvuru numarasıyla Konsol'da bulunur." }
     ],
     "sampleTitle": "Örnek: incelemeye giden kayıtta en az bir kalem olmalı",
     "sampleFile": "scripts/ornek_kurali.ts",
@@ -43,7 +45,7 @@
       "Bileşenin ayarları tasarımcıda görünür: metin, sayı, evet/hayır, seçim, veri seti, sayfa",
       "Kod, sayfayı açan kullanıcının oturumu ve yetkisiyle çalışır; yetki yükseltmez"
     ],
-    "limitsTitle": "Betiğin çalışma sınırları",
+    "limitsTitle": "Betiğin çalışma sınırları (sabittir, ayarla gevşetilemez)",
     "limits": [
       { "label": "Çalışma süresi", "value": "10 sn" },
       { "label": "Bellek", "value": "16 MB" },
@@ -75,9 +77,10 @@
     "notesTitle": "Bilmeniz gerekenler",
     "notes": [
       "cm-cli yayın yapamaz; değişiklik taslağa gider.",
-      "Kişisel erişim anahtarıyla çalışır; anahtarın sahibi tasarım iznine sahip olmalıdır.",
+      "Kişisel erişim anahtarıyla çalışır; anahtarın sahibi tasarım iznine sahip olmalıdır. Anahtar, Profil altındaki API erişimi ekranından açılır.",
       "Node.js 18.17 ve üstü gerekir; bağımlılıklar için kurumun iç npm aynası yeterlidir.",
-      "Paketler sunucudan gelir; internete kapalı kurulumlarda da çalışır.",
+      "cm-cli ve cm-sdk, Stüdyo'daki Yerel geliştirme penceresinden sunucunuzun sürümüne uygun olarak iner; internete kapalı kurulumlarda da çalışır.",
+      "Dosyalar kendi Git deponuzda tutulabilir.",
       "Çekilen klasördeki AGENTS.md komutları ve kuralları anlatır; yapay zekâ kod asistanları da bu dosyayı okuyarak çalışabilir.",
       "Betikler bellekte, gerçek veri ve e-posta olmadan test edilir."
     ],
@@ -87,7 +90,7 @@
       { "name": "status", "text": "Yerel değişiklikleri listeler." },
       { "name": "build", "text": "Yerelde derler." },
       { "name": "check", "text": "Sunucuda doğrular, yazmaz." },
-      { "name": "push", "text": "Değişiklikleri taslağa yazar; çakışma varsa bildirir ve yazmaz." },
+      { "name": "push", "text": "Değişiklikleri taslağa yazar; taslağı başkası değiştirdiyse çakışmayı bildirir ve yazmaz." },
       { "name": "dev", "text": "Her kaydetmede taslağa yükler; önizleme birkaç saniyede güncellenir." },
       { "name": "types", "text": "Veri setlerinden tip tanımlarını üretir." },
       { "name": "run", "text": "Kayıtlı taslaktaki betiği çalıştırır." },
@@ -103,7 +106,10 @@
     "cards": [
       { "icon": "Plug", "title": "Tanımlı veri kaynakları", "text": "REST/JSON servisleri modülde tanımlanır; formdan, sayfadaki düğmeden, sunucu betiğinden ve onay akışından çağrılır." },
       { "icon": "ServerCog", "title": "Çağrı sunucudan", "text": "Adres ve şifreler tarayıcıya gelmez. Şifreler modül başına şifreli saklanır ve hiçbir ekrandan geri okunamaz." },
-      { "icon": "Lock", "title": "Kapalı kapılar", "text": "Yerel adresler, bulut metadata adresi ve http/https dışı adresler her zaman kapalıdır; yönlendirme izlenmez." }
+      { "icon": "Lock", "title": "Kapalı kapılar", "text": "Yerel adresler, bulut metadata adresi ve http/https dışı adresler her zaman kapalıdır; yönlendirme izlenmez." },
+      { "icon": "BadgeCheck", "title": "Yayınlanmış kaynak, denetlenen yetki", "text": "Dışarıya yalnız modülde tanımlı ve dört gözle yayınlanmış kaynaklara çıkılır. Çağıranın modül yetkisi denetlenir." },
+      { "icon": "ShieldCheck", "title": "Şifreler pakete girmez", "text": "Şifreler AES-256-GCM ile şifreli yazılır; ekranda yalnız Girildi ya da Girilmedi görünür, hedef ortamda yeniden girilir." },
+      { "icon": "Clock", "title": "Süre ve boyut sınırı", "text": "Çağrı 15 saniyede zaman aşımına düşer, yanıt en çok 1 MB olabilir." }
     ],
     "usesTitle": "Veri kaynağı nerelerde kullanılır",
     "uses": [

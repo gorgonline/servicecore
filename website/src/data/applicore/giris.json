@@ -46,7 +46,7 @@
     "id": "neden",
     "eyebrow": "Neden",
     "title": "Satın alma talebi, sözleşme onayı, izin, bakım iş emri… Bu süreçlerin çoğu bugün e-posta ve Excel'de yürüyor.",
-    "lead": "Ayrı bir uygulama platformu ise ayrı sunucu, ayrı kullanıcı yönetimi, ayrı onay ve ayrı denetim izi demek. AppliCore bu süreçleri, bildiğiniz ServiceCore'un içinde kurmanızı sağlar.",
+    "lead": "Ayrı bir uygulama platformu ise ayrı sunucu, ayrı kullanıcı yönetimi, ayrı onay ve ayrı denetim izi demek. AppliCore bu süreçleri, bildiğiniz ServiceCore'un içinde kurmanızı sağlar. İşe giriş, erişim talebi ve denetim bulgusu takibi gibi süreçler de aynı yoldan kurulur.",
     "columns": { "topic": "Konu", "separate": "Ayrı bir uygulama platformu", "applicore": "AppliCore" },
     "rows": [
       { "topic": "Sunucu ve veritabanı", "separate": "Ayrı sunucu kurulur", "applicore": "Ek sunucu ve ek veritabanı gerekmez; kayıtlar ServiceCore veritabanında durur" },
@@ -93,11 +93,14 @@
     "dataTitle": "Veri nerede ve nasıl durur",
     "dataPoints": [
       { "title": "Gerçek tablolar", "text": "Her veri setinin kendi tablosu, her alanın kendi kolonu vardır. Kayıtlar raporlanabilir ve indekslenebilir." },
-      { "title": "Ekrandan SQL yazılmaz", "text": "Tablo ve kolon değişikliklerini sunucu üretir; yalnız yayın onayıyla, ayrı ve kısıtlı bir veritabanı kullanıcısıyla uygular." },
+      { "title": "Ekrandan SQL yazılmaz", "text": "Tablo ve kolon değişikliklerini sunucu üretir ve yalnız yayın onayında uygular. Onaycı, değişikliğin hangi veritabanı kimliğiyle uygulanacağını onaydan önce görür." },
       { "title": "Değişiklik yalnız ekler", "text": "Kaldırılan alan ya da veri seti gizlenir, verisi silinmez." },
       { "title": "Silinen kayıt iz bırakır", "text": "Silinen kayıt listeden kalkar, veritabanında iz olarak kalır." },
       { "title": "Dosyalar veritabanında", "text": "Dosya ve görsel alanlarına yüklenen dosyalar veritabanında saklanır; sunucu diskine yazılmaz." },
-      { "title": "Aynı yedek", "text": "Uygulama kayıtları, diğer ServiceCore verileriyle aynı yedeğe girer." }
+      { "title": "Aynı yedek", "text": "Uygulama kayıtları, diğer ServiceCore verileriyle aynı yedeğe girer." },
+      { "title": "BI aracınız bağlanır", "text": "Uygulamanın kendi panoları ve Excel'i vardır. Veriler SQL tablolarında durduğu için BI aracınız da doğrudan bağlanabilir." },
+      { "title": "Çok sunuculu kurulum", "text": "Uygulamanın tanımı her istekte veritabanından okunur; sunucular arasında tutarsızlık oluşmaz." },
+      { "title": "İnternete kapalı ağ", "text": "Stüdyo, tasarımcılar, kod düzenleyicisi ve hazır uygulama kataloğu ürünle gelir." }
     ]
   }
 }

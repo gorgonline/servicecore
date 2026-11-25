@@ -3,16 +3,17 @@
     "id": "yayin",
     "eyebrow": "04 · Güvenlik ve denetim",
     "title": "Her yayın dört gözden geçer",
-    "lead": "Stüdyo'da yapılan her değişiklik önce taslağa yazılır. Taslak, ikinci bir yetkilinin onayıyla yayınlanır; yeni sürüm o anda kullanıma açılır.",
+    "lead": "Uygulamanın tanımı ve kodu önce taslağa yazılır. Taslak, ikinci bir yetkilinin onayıyla yayınlanır; yeni sürüm o anda kullanıma açılır. Tasarlama ve yayın onaylama iki ayrı yetkidir.",
     "image": "/images/applicore/yayin-cekmecesi.webp",
     "imageAlt": "Yayın çekmecesi: yayın durumu, tanım değişiklikleri, dosya değişiklikleri ve çalışacak SQL betiği",
     "imageCaption": "Onaycının gördüğü yayın çekmecesi",
     "bullets": [
       { "title": "Gönderen onaylayamaz", "text": "Kural kapatılamaz; süper yönetici de dahildir." },
-      { "title": "Onaycı ne göreceğini bilir", "text": "Tanım farkı, satır satır kod farkı ve çalışacak SQL betiği." },
+      { "title": "Onaycı ne göreceğini bilir", "text": "Tanım farkı, satır satır kod farkı ve çalışacak SQL betiği. Onaycı betiği kopyalayıp indirebilir." },
+      { "title": "Dört gözün kapsamı", "text": "Tanım, veritabanı değişikliği, betik, kod ve içe aktarılan paketin rol yetkileri onaydan geçer. Ekrandan verilen rol yetkileri ve dış sistem şifreleri yönetici ekranından anında değişir." },
       { "title": "Tek işlem", "text": "Veritabanı değişikliğinde hata olursa hiçbir şey uygulanmaz." },
       { "title": "Veri silinmez", "text": "Şema değişiklikleri yalnız ekler; kaldırılan alan gizlenir." },
-      { "title": "Ret notla döner", "text": "Reddedilen sürüm notuyla kalır; aynı tanım yeni bir taslağa kopyalanır, düzeltilip yeniden gönderilir." }
+      { "title": "Ret notla döner", "text": "Ret için not zorunludur. Reddedilen sürüm notuyla kalır; aynı tanım yeni bir taslağa kopyalanır, düzeltilip yeniden gönderilir." }
     ],
     "statesTitle": "Bir sürümün durumları",
     "states": [
@@ -30,20 +31,21 @@
     "imageAlt": "Kayıt detayında Geçmiş sekmesi: alan bazında eski ve yeni değerler, kişi ve saat",
     "imageCaption": "Kaydın Geçmiş sekmesi",
     "bullets": [
-      { "title": "Kayıt geçmişi", "text": "Her değişiklik alan bazında eski ve yeni değerle, kişi ve saatle yazılır." },
+      { "title": "Kayıt geçmişi", "text": "Her değişiklik alan bazında eski ve yeni değerle, kişi ve saatle, kayıtla aynı işlemde yazılır. Aşama geçişinin gerekçesi ve hassas alan açmaları da geçmişe girer." },
       { "title": "Uygulamanın geçmişi", "text": "Her yayın numaralı bir sürümdür; gönderen, onaylayan, reddeden ve tarihler görünür." },
-      { "title": "Testten canlıya", "text": "Modül tek paket dosyasıdır; hedefte taslak açılır, o ortamın dört gözüyle yayınlanır." },
-      { "title": "Geri dönüş", "text": "Eski sürüm yeni taslak olarak gelir ve yeniden onaydan geçer." }
+      { "title": "Denetim günlüğü", "text": "Modül oluşturma, yayın, ret, geri alma, paket aktarma, yetki ve şifre değişiklikleri ServiceCore'un denetim günlüğünde de görünür." },
+      { "title": "Testten canlıya", "text": "Modül tek paket dosyasıdır; hedefte taslak açılır, o ortamın dört gözüyle yayınlanır. Paket, değişiklik kaydına (CAB) eklenebilir." },
+      { "title": "Geri dönüş", "text": "Eski sürüm yeni taslak olarak gelir ve yeniden onaydan geçer. Veritabanı değişiklikleri geri alınmaz; fazladan kolonlar gizli kalır." }
     ],
     "packageTitle": "Ortamlar arası paket",
-    "packageIn": { "title": "Pakette", "items": ["Modül tanımı", "Rol yetkileri ve kapsamları, rol adıyla", "Bağlı onay akışları"] },
+    "packageIn": { "title": "Pakette", "items": ["Modül tanımı", "Rol yetkileri ve kapsamları, rol adıyla; aktarılırsa yayın onayıyla uygulanır", "Bağlı onay akışları", "Paketin bütünlük özeti (hash)"] },
     "packageOut": { "title": "Pakette olmayan", "items": ["Kayıtlar ve ekler", "Şifreler; hedef ortamda yeniden girilir", "Custom Endpoint'ler"] }
   },
   "access": {
     "id": "yetki",
     "eyebrow": "05 · Kayıt düzeyinde yetki",
     "title": "Kim neyi yapar, kim hangi kaydı görür",
-    "lead": "Rol başına iki karar verirsiniz: rol hangi eylemleri yapar ve hangi kayıtları görüp değiştirir. Varsayılan olarak bütün eylemler kapalıdır; yetki verilmeyen rol modülü göremez. Yetki her istekte sunucuda yeniden denetlenir.",
+    "lead": "Rol başına iki karar verirsiniz: rol hangi eylemleri yapar ve hangi kayıtları görüp değiştirir. Varsayılan olarak bütün eylemler kapalıdır; yetki verilmeyen rol modülü göremez. Yetki rol ekranından ya da Stüdyo'nun Ayarlar alanından verilir ve her istekte sunucuda yeniden denetlenir.",
     "actionsTitle": "Rol başına eylem",
     "actions": [
       { "name": "Görüntüle", "text": "Modülü ve kayıtları görür." },
@@ -75,13 +77,16 @@
         { "no": "TAL-000141", "title": "Yıl sonu eğitim paketi", "owner": "Can Yıldız", "group": "İnsan Kaynakları" }
       ]
     },
-    "rulesTitle": "Kapsam her yerde geçerlidir",
+    "rulesTitle": "Kapsam nasıl çalışır",
     "rules": [
       "Kapsam dışındaki kayıt adresle açılırsa “Kayıt bulunamadı” döner; varlığı belli edilmez.",
       "Listeler, sayımlar, göstergeler, grafikler, pano, takvim ve Excel yalnız görünen kayıtları kullanır.",
       "Görünmeyen bir kayda verilen referansta yalnız kayıt numarası görünür, başlık görünmez.",
-      "Seçiciler ve sunucu betikleri de yalnız kullanıcının görebildiği kayıtları kullanır.",
-      "Bir kullanıcının birden çok rolü varsa yetkiler birleşir, en geniş kapsam geçerli olur."
+      "Seçiciler ve kullanıcının çalıştırdığı sunucu betikleri de yalnız onun görebildiği kayıtları kullanır.",
+      "Bir kullanıcının birden çok rolü varsa yetkiler birleşir, en geniş kapsam geçerli olur.",
+      "Kapsam, kayıt tipinde sahip ve grup alanları tanımlanınca çalışır.",
+      "Süper yönetici bütün kayıtları görür; sırası gelen onaycı kaydı salt okunur görür.",
+      "Zamanlanmış betik ve onay akışı kapsama bağlı değildir."
     ],
     "peopleTitle": "Kim ne yapar",
     "people": [
@@ -99,10 +104,11 @@
     "imageCaption": "Stüdyo'da bir alanı hassas yapmak tek ayardır",
     "bullets": [
       { "title": "Tek ayar", "text": "TC kimlik no, IBAN, maaş gibi alanlar “Hassas” olarak işaretlenir." },
-      { "title": "Veritabanında şifreli", "text": "Değer uygulama katmanında AES-256 ile şifrelenir; hassas dosyanın içeriği de." },
+      { "title": "Veritabanında şifreli", "text": "Değer uygulama katmanında AES-256-GCM ile şifrelenir; hassas dosyanın içeriği de. Tabloyu ya da yedeğini tek başına okuyan araç yalnız şifreli metni görür; anahtar tablosunu okuma yetkisini siz daraltırsınız." },
       { "title": "Herkese maskeli", "text": "Ekranda, Excel'de ve betiklerde; süper yönetici de maskeli görür." },
       { "title": "Açmak yetki ister", "text": "“Hassas alanları gör” yetkisi gerekir." },
-      { "title": "Her açma kayda geçer", "text": "Kişi ve saatle kaydın geçmişine yazılır; yalnız alan adları yazılır, değerler yazılmaz." }
+      { "title": "Her açma kayda geçer", "text": "Kişi ve saatle kaydın geçmişine yazılır; yalnız alan adları yazılır, değerler yazılmaz. İz yazılamazsa değer gösterilmez." },
+      { "title": "Aramada ve süzgeçte yer almaz", "text": "Hassas alan süzgeçte, sıralamada, aramada, göstergede ve onay koşulunda kullanılamaz; açma yetkisi olan için de böyledir." }
     ],
     "demo": {
       "title": "Deneyin: çalışan kartı",

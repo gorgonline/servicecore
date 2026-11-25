@@ -18,7 +18,7 @@
     "id": "studyo",
     "eyebrow": "03 · Uygulama Stüdyosu",
     "title": "İş analisti Uygulama Stüdyosu'nda kurar",
-    "lead": "Stüdyo, uygulamanın bütün parçalarının tek ekranda tasarlandığı düzenleyicidir. Tarayıcıda çalışır.",
+    "lead": "Stüdyo, uygulamanın bütün parçalarının tek ekranda tasarlandığı düzenleyicidir. Tarayıcıda çalışır. Veri seti, alan, form, aşama, onay, görünüm ve özet grafikler sürükle bırakla ve ayarlarla kurulur; kod yalnız özel ekranlar ve karmaşık sunucu kuralları için gerekir.",
     "image": "/images/applicore/studyo-asamalar.webp",
     "imageAlt": "Uygulama Stüdyosu: solda veri setleri, sorgular ve veri kaynakları, ortada aşama diyagramı, sağda aşamanın ayarları",
     "imageCaption": "Stüdyo'da aşama diyagramı ve seçili aşamanın geçişleri",
@@ -39,7 +39,7 @@
     "tools": [
       { "title": "Komut paleti", "text": "Ctrl K ile komut çalıştırır ya da istediğiniz sayfaya, alana, aşamaya gidersiniz. Arama Türkçe karakterlere duyarsızdır." },
       { "title": "Geri al, yinele", "text": "Son 100 adım geri alınır ve yinelenir." },
-      { "title": "Sorunlar", "text": "Taslağın yayına engel eksikleri listelenir; satıra tıklamak ilgili öğeyi açar." },
+      { "title": "Sorunlar", "text": "Taslak siz çalışırken denetlenir, yayına engel eksikler listelenir; satıra tıklamak ilgili öğeyi açar. Sorun varken taslak onaya gönderilemez." },
       { "title": "Şema değişikliği", "text": "Yayınlanınca veritabanında ne yapılacağı önceden görünür." },
       { "title": "Çakışma uyarısı", "text": "Taslağı siz düzenlerken başka biri değiştirmişse Stüdyo uyarır." },
       { "title": "Adresle açma", "text": "Belirli bir alan, aşama, sayfa ya da çekmece doğrudan adresle açılır." }
@@ -66,7 +66,7 @@
       { "title": "Hesaplanan değer", "text": "Toplam, adet, yuvarlama, en küçük ve en büyük gibi formüllerle değeri sunucu hesaplar; formda salt okunur görünür." },
       { "title": "Kayıt numarası", "text": "Her veri setinin kendi öneki olur: TAL-000123 gibi. Numaralar veri seti başına sayılır." },
       { "title": "Dış listeden seçim", "text": "Kısa metin alanı bir dış sistemin listesinden doldurulur; seçilen satır başka alanları da doldurabilir." },
-      { "title": "Güvenli değişiklik", "text": "Yayınlanmış alan daraltılamaz. Kaldırılan alan gizlenir; aynı adla ve uyumlu tiple geri eklenirse eski verisiyle döner." }
+      { "title": "Güvenli değişiklik", "text": "Yayınlanmış alan daraltılamaz; yalnız verisini koruyan tiplere çevrilir. Kaldırılan alan gizlenir; aynı adla ve uyumlu tiple geri eklenirse eski verisiyle döner." }
     ]
   },
   "screens": {
@@ -191,8 +191,10 @@
       { "title": "Koşullu yollar", "text": "Tutar, kategori, tarih gibi alanlara göre farklı onaycı." },
       { "title": "Sıralı ve paralel adımlar", "text": "Yönetici zinciri, departman yöneticisi, onay grubu, teknisyen grubu." },
       { "title": "Kendiliğinden başlar", "text": "Kayıt belirli bir aşamaya girince akış çalışır; sonuç kaydı seçtiğiniz aşamaya taşır." },
-      { "title": "Tek yerde karar", "text": "Kayıttaki Onay sekmesi ve Onaylarım ekranı; onaycıya ve kaydı oluşturana e-posta bildirimi." },
+      { "title": "Tek yerde karar", "text": "Kayıttaki Onay sekmesi ve Onaylarım ekranındaki ayrı sekme; onaycıya ve kaydı oluşturana e-posta bildirimi." },
       { "title": "Revize istenir", "text": "Onaycı revize isterse kayıt düzeltilir ve tekrar onaya gönderilir." },
+      { "title": "Vekil ve inisiyatif", "text": "ServiceCore'daki vekil (yedek onaycı) kuralı ve inisiyatif kullanımı bu uygulamalarda da geçerlidir." },
+      { "title": "Örnek: Satın Alma", "text": "19.000 TL'lik talebi yönetici onaylar; 135.000 TL'lik talep departman yöneticisine de gider." },
       { "title": "Akış sürerken kayıt korunur", "text": "Onay sürerken kaydın aşaması değiştirilemez." },
       { "title": "Onaycı gerektiği kadar görür", "text": "Kaydı normalde göremeyen onaycı, adım onu beklerken kaydı salt okunur görür." },
       { "title": "Onaydan sonra işlem", "text": "Akış e-posta gönderir, HTTP isteği yapar ya da veri kaynağını çağırır; örneğin onaylanan talep ERP'de sipariş açar." }

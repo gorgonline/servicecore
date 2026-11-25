@@ -97,8 +97,8 @@
     { "title": "Kur", "text": "Pazar yerindeki kartta Kur'a basılır. Uygulama bu ortamda taslak olarak açılır." },
     { "title": "Onaya gönder", "text": "Stüdyo yayın çekmecesi açık gelir; taslak onaya gönderilir." },
     { "title": "Yayınla", "text": "Yayın izni olan başka bir kişi onaylar ve yayınlar." },
-    { "title": "Yetki ver", "text": "Rollere modül yetkisi verilir." },
+    { "title": "Yetki ver", "text": "Hazır uygulama rol yetkisi taşımaz; rollere modül yetkisini kurulumdan sonra siz verirsiniz." },
     { "title": "Örnek veriyle dene", "text": "İsterseniz örnek veriler yüklenir. Kayıtlar kurgudur; onay başlatmaz, e-posta göndermez." }
   ],
-  "installNote": "Paket, uygulamayla birlikte onay akışını ve gerekiyorsa Custom Endpoint'leri de getirir. Yeniden kur, paketin güncel hâlini yeni bir taslak olarak açar; yayındaki sürüm onaya kadar değişmez."
+  "installNote": "Paket, uygulamayla birlikte onay akışını ve gerekiyorsa Custom Endpoint'leri de getirir. Yeniden kur, paketin güncel hâlini yeni bir taslak olarak açar; yayındaki sürüm onaya kadar değişmez. Uygulamalar, Genel Ayarlar'daki “Uygulamaları menüde göster” açılınca ServiceCore menüsünde de görünür."
 }
